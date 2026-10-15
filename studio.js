@@ -558,6 +558,24 @@ function init(){
   const d=e.target.closest('[data-details]');if(d){detail(d.dataset.details);return}
   const ep=e.target.closest('[data-episode]');if(ep){changeEp(Number(ep.dataset.episode))}
  });
+
+ // Real iPhone touch fallback for fixed mobile tabs obscured by animated layers.
+ // Only activates when hit testing unexpectedly targets main content instead
+ // of the visible tab underneath that exact screen coordinate.
+ document.addEventListener('pointerdown',event=>{
+  const nav=$('.mobile-navigation');
+  if(!nav||!matchMedia('(max-width:780px)').matches||event.target.closest('.mobile-navigation'))return;
+  const area=nav.getBoundingClientRect();
+  if(event.clientY<area.top||event.clientY>area.bottom||event.clientX<area.left||event.clientX>area.right)return;
+  for(const target of nav.querySelectorAll('[data-route],a[href]')){
+   const r=target.getBoundingClientRect();
+   if(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom)continue;
+   event.preventDefault();event.stopPropagation();
+   if(target.dataset.route)go(target.dataset.route);
+   else if(target.href)location.href=target.href;
+   return;
+  }
+ },true);
  document.addEventListener('keydown',e=>{if((e.key==='Enter'||e.key===' ')&&e.target.matches('[data-details]')){e.preventDefault();detail(e.target.dataset.details)}});
  $('#search-form').addEventListener('submit',e=>{e.preventDefault();doSearch($('#search-input').value)});
  $('#header-search').addEventListener('click',()=>{go('inicio');setTimeout(()=>{$('#search-input').scrollIntoView({block:'center'});$('#search-input').focus()},100)});
