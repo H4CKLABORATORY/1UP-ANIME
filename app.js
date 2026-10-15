@@ -27,7 +27,7 @@ function rememberAll(list){for(const a of list||[])remembered(a)}
 function saved(id){return state.saved[String(id)]||null}
 function isFav(id){return Boolean(saved(id)?.favorite)}
 function ensureSaved(id){let a=state.pool.get(Number(id));if(!state.saved[id])state.saved[id]={id:Number(id),title:shortTitle(a),image:imageOf(a),year:a?.year||a?.aired?.prop?.from?.year||'',score:a?.score||'',type:a?.type||'',watched:0,favorite:true,customUrl:''};return state.saved[id]}
-function toggleFav(id){id=Number(id);let a=state.pool.get(id);if(!a)return;let item=ensureSaved(id);item.favorite=!item.favorite;if(!item.favorite&&!(item.watched>0)&&!item.customUrl)delete state.saved[id];persist();updateFavoriteButtons();if(state.view==='milista')renderMyList();toast(isFav(id)?'Añadido a tu lista':'Quitado de favoritos')}
+function toggleFav(id){id=Number(id);let a=state.pool.get(id);if(!a)return;let wasFavorite=isFav(id);let item=ensureSaved(id);item.favorite=!wasFavorite;if(!item.favorite&&!(item.watched>0)&&!item.customUrl)delete state.saved[id];persist();updateFavoriteButtons();if(state.view==='milista')renderMyList();toast(isFav(id)?'Añadido a tu lista':'Quitado de favoritos')}
 function updateFavoriteButtons(){for(const el of $$('[data-save]')){const yes=isFav(el.dataset.save);el.textContent=yes?'✓':'＋';el.classList.toggle('saved',yes);el.setAttribute('aria-label',yes?'Quitar de mi lista':'Guardar en mi lista')}if(state.featured){$('#hero-fav').textContent=isFav(state.featured.mal_id)?'✓ EN MI LISTA':'＋ GUARDAR EN MI LISTA'}}
 async function getJson(path){
  if(cache.has(path)&&Date.now()-cache.get(path).time<180000){return cache.get(path).value}
