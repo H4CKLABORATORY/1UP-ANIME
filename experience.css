@@ -1,0 +1,153 @@
+/* 1UP ANIME — HALLOWEEN / ANTI-MAGIC EXPERIENCE V3
+   Motion-design effects use hardware-accelerated transforms; reduced-motion safe. */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@400;500;600;700;800;900&display=swap');
+:root { --bg:#09070c; --panel:#171018; --panel2:#20131d; --line:#3c2632; --ink:#fff6f0; --muted:#c4b3bd; --lime:#ff9a36; --flame:#ff601c; --blood:#b8244a; --violet:#9150c0; --font:'Outfit',sans-serif; --display:'Bebas Neue',Impact,sans-serif }
+body { background:radial-gradient(ellipse at 83% 15%,#2c1022 0%,#09070c 42%,#070609 100%); }
+body::before { content:""; position:fixed;inset:0;pointer-events:none;z-index:9;background:repeating-linear-gradient(180deg,transparent 0,transparent 5px,#ffffff05 6px);opacity:.28; }
+.header { background:#0d0a10db;border-color:#ffffff1a;backdrop-filter:blur(22px); }
+.brand-icon,.search-form button,.button-primary,.anime-save.saved,.profile-mark {background:linear-gradient(115deg,#ffbb63,#ff6e24 56%,#e63d37); color:#180b0a;box-shadow:0 0 35px #ff642535}
+.brand-icon { transform:skew(-9deg); }
+.brand-text {letter-spacing:2px}
+.brand-dot,.nav-link.active,.nav-link:hover,.kicker,.anime-score span,.eyebrow,.text-link {color:#ffb06c}
+.nav-link.active:after {background:#ff8032}
+.header-actions .profile-mark {display:grid;color:#150b0c;font-size:21px;cursor:pointer;overflow:hidden;border:1px solid #ffbf7e}
+.header-actions .profile-mark span {font-size:15px}
+.hero {height:min(720px,78vh);min-height:530px;background:#150910;isolation:isolate}
+.hero::after {content:"";position:absolute;inset:0;pointer-events:none;z-index:0;background:radial-gradient(circle at 74% 30%,#ff56221e,transparent 38%),linear-gradient(180deg,transparent 70%,#09070c 100%)}
+.hero-art { filter:saturate(.85) contrast(1.1);animation:heroZoom 20s ease-in-out infinite alternate;background-position:65% 35% }
+.hero-vignette {background:linear-gradient(90deg,#09070cf9 2%,#09070ce8 27%,#10081594 53%,#09070c55 88%),linear-gradient(0deg,#09070cf7,transparent 43%);}
+.hero-content { padding-top:105px;z-index:2; }
+.hero h1 {font-size:clamp(70px,9vw,135px);letter-spacing:1px;text-shadow:0 12px 55px #0009;line-height:.82}
+.hero h1 span { background:linear-gradient(100deg,#fff2da,#ffd08c 28%,#ff873d 75%);color:transparent;background-clip:text;-webkit-background-clip:text}
+.hero-desc {font-size:15px;color:#f6dce1;text-shadow:0 2px 12px #000a;}
+.hero-label {font-size:12px;letter-spacing:3px;color:#efbcad}
+.hero-meta span {color:#ffe7d4}
+.hero-bottom {color:#d4a99d}
+.button-primary:hover {background:#ffc67a}
+.button-clear {background:#3d26375e;border-color:#b3787b80;backdrop-filter:blur(12px)}
+.oneup-halloween-tag {display:inline-flex;gap:10px;align-items:center;border:1px solid #ffb2767c;color:#ffe3ce;background:#28101fac;border-radius:100px;padding:9px 16px;margin-bottom:25px;font-size:11px;font-weight:900;letter-spacing:2px;box-shadow:0 0 40px #ee542823}
+.oneup-halloween-tag b {color:#ffb268}
+.oneup-overlay-effects {position:absolute;inset:0;pointer-events:none;z-index:1;overflow:hidden}
+.oneup-moon {position:absolute;top:8%;right:17%;width:clamp(95px,13vw,205px);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 34% 32%,#ffeab3 0%,#ffac60 31%,#fb602f 61%,#761737 99%);box-shadow:0 0 40px #ff6e2475,0 0 160px #e63b3345;opacity:.75;mix-blend-mode:screen;animation:moonBreathe 6s ease-in-out infinite}
+.oneup-grimoire {position:absolute;right:10%;top:10%;width:350px;aspect-ratio:1;opacity:.37;border:2px solid #ff9c6775;border-radius:50%;box-shadow:0 0 50px #f96e2e50,inset 0 0 40px #f9693140;animation:wheel 34s linear infinite}
+.oneup-grimoire:before,.oneup-grimoire:after{content:"✧ ✧ ✦ ✧ ✧ ✦";position:absolute;inset:23px;display:grid;place-items:center;font-size:25px;letter-spacing:26px;border:1px dashed #ffc4988c;border-radius:50%;color:#ffaf75}
+.oneup-grimoire:after{content:"✦";inset:105px;font-size:95px;letter-spacing:0;border-style:solid;animation:wheel 20s linear infinite reverse}
+.oneup-fog {position:absolute;bottom:-125px;left:-12%;width:130%;height:270px;background:radial-gradient(ellipse,#c979694b 0%,transparent 65%);filter:blur(36px);opacity:.36;animation:fogWalk 13s ease-in-out infinite alternate}
+.oneup-sparks {position:absolute;inset:0;background-image:radial-gradient(circle,#ffbf85 1px,transparent 2px),radial-gradient(circle,#c95180 1px,transparent 2px);background-size:109px 157px,157px 121px;background-position:0 0,29px 65px;opacity:.28;animation:emberDrift 20s linear infinite}
+.hero-bottom:before {content:"✦ 1UP HALLOWEEN PREMIERE";color:#ffaf6b}
+.search-section {background:linear-gradient(120deg,#1c111b94,#190f18b0);padding:40px;border:1px solid #ffffff15;border-radius:28px;transform:translateY(-18px);backdrop-filter:blur(20px);box-shadow:0 24px 60px #0008;}
+.search-form {background:#20151fec;border-color:#734254}
+.search-section h2,.section-title h2,.interlude h2 {font-size:clamp(42px,5vw,64px);}
+.anime-card {border:1px solid #61425160;border-radius:14px;background:linear-gradient(#251824,#130e16);box-shadow:0 18px 34px #0005;overflow:hidden}
+.anime-cover {border-radius:13px}
+.anime-card:hover {border-color:#ff965c;box-shadow:0 10px 50px #ff69301f;transform:translateY(-7px)}
+.anime-top {background:linear-gradient(110deg,#ffb565,#ff6021);color:#230b09}
+.anime-name:hover {color:#ffb570}
+.interlude {background:radial-gradient(circle at 27% 55%,#fa74292a,transparent 48%),linear-gradient(115deg,#371323,#261526 55%,#170d17);border-color:#9d4d4960;border-radius:22px}
+.interlude-mark {color:#ff913c;text-shadow:0 0 100px #ff63285c}
+.catalog-heading {border-color:#5e394a}
+.footer {border-color:#5e394a}
+.mobile-nav{background:#170f1bf5;border-color:#633a4e}
+.mobile-nav button.active{color:#ffae73}
+#toast{background:#ff963e;color:#1b0a10}
+.oneup-season-marquee {overflow:hidden;background:linear-gradient(90deg,#34101e,#601e26 55%,#34101e);padding:14px 0;border-block:1px solid #ff8a4a55;color:#ffdfbb;font-family:var(--display);font-size:20px;letter-spacing:4px;white-space:nowrap;box-shadow:0 8px 38px #e1432526;}
+.oneup-season-marquee div {display:inline-block;animation:marqueeGlide 25s linear infinite}
+.detail-dialog{background:#1b111e;border-color:#924d57}
+.detail-section{border-color:#694353}
+.stream-link{color:#ffc08b;border-color:#9f5a54;background:#3a2425}
+a:hover{color:#ffe5c6}
+/* Cinematic splash */
+.oneup-intro, .oneup-profiles, .oneup-welcome {position:fixed;inset:0;z-index:200;display:grid;place-items:center;background:#050407;color:#fff9f5;overflow:hidden;isolation:isolate}
+.oneup-intro[hidden],.oneup-profiles[hidden],.oneup-welcome[hidden]{display:none!important}
+.oneup-intro{background:radial-gradient(circle at 50% 47%,#351225 0%,#100810 37%,#030304 75%);transition:opacity .6s,visibility .6s}
+.oneup-intro.exit{opacity:0;visibility:hidden}
+.oneup-intro:before {content:"";position:absolute;inset:-25%;background:conic-gradient(from 90deg,transparent 0deg,#f55c211c 31deg,transparent 60deg,#8d24561b 150deg,transparent 200deg,#ffad5017 280deg,transparent);animation:wheel 16s linear infinite}
+.oneup-intro .intro-halo{position:absolute;width:min(75vw,560px);aspect-ratio:1;border-radius:50%;border:2px solid #ffab634a;box-shadow:0 0 110px #ff6a2630,inset 0 0 90px #ff5c1b20;animation:introHalo 3.1s cubic-bezier(.2,.8,.2,1) both}
+.oneup-intro .intro-halo:before,.oneup-intro .intro-halo:after{content:"";position:absolute;inset:27px;border:1px dashed #ff975a99;border-radius:50%;animation:wheel 9s linear infinite}
+.oneup-intro .intro-halo:after{inset:70px;animation-duration:13s;animation-direction:reverse;border:1px solid #b3366666}
+.oneup-intro .intro-flare{position:absolute;width:110vw;height:2px;left:-5vw;top:51%;transform:rotate(-4deg) scaleX(0);background:linear-gradient(90deg,transparent,#ff571c,#fffbd0,#ff7b31,transparent);box-shadow:0 0 26px #ff762d,0 0 80px #ff3a22;animation:introSlash 3.1s ease-out both}
+.oneup-intro .intro-brand {position:relative;z-index:2;text-align:center;filter:drop-shadow(0 0 30px #ff793d88);animation:logoReveal 2.8s cubic-bezier(.12,.84,.25,1) both}
+.oneup-intro .intro-brand strong {font:900 clamp(110px,27vw,270px)/.8 var(--display);letter-spacing:-.03em;display:block;color:#fff5eb;text-shadow:0 6px #ff5e22,0 0 64px #ff642b85}
+.oneup-intro .intro-brand strong span {color:#ff8b33}
+.oneup-intro .intro-brand small{font:800 clamp(17px,4vw,36px) var(--font);letter-spacing:clamp(5px,1.5vw,17px);color:#ffce9f;display:block;margin-top:26px}
+.oneup-intro .intro-brand em{display:block;font:700 10px var(--font);letter-spacing:4px;color:#dfa8ae;margin-top:22px;font-style:normal}
+.oneup-intro .intro-bottom{position:absolute;bottom:8%;font-size:10px;letter-spacing:4px;color:#7e6574}
+.oneup-skip{position:absolute;z-index:3;top:max(22px,env(safe-area-inset-top));right:23px;background:#ffffff12;border:1px solid #ffffff44;color:#fff;border-radius:40px;padding:11px 18px;font:700 12px var(--font);letter-spacing:1px}
+/* Selection gate */
+.oneup-profiles{background:radial-gradient(circle at 50% 2%,#391528 0%,#160b19 44%,#09060c 100%);overflow-y:auto;padding:calc(env(safe-area-inset-top) + 32px) 20px calc(env(safe-area-inset-bottom) + 40px);place-items:center;}
+.oneup-profiles:before{content:"";position:fixed;inset:0;background:repeating-radial-gradient(circle at 50% 23%,transparent 0 60px,#ff956909 61px 62px);pointer-events:none}
+.oneup-profiles-content{width:min(760px,100%);position:relative;text-align:center;margin:auto;}
+.oneup-gate-brand{font:900 35px var(--display);letter-spacing:5px;color:#ff9f58;text-shadow:0 0 60px #ff6b2544}
+.oneup-gate-brand span{color:white}
+.oneup-gate-tag{font-size:11px;letter-spacing:4px;color:#ffbb92;margin:24px 0 0}
+.oneup-profiles h2{font:900 clamp(49px,8vw,84px)/1 var(--display);margin:8px 0 13px;letter-spacing:1px;}
+.oneup-profiles p{color:#c8b4c5;font-size:14px;line-height:1.6}
+.oneup-profile-grid{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;margin:40px auto 26px;}
+.oneup-profile-tile{width:132px;display:flex;flex-direction:column;align-items:center;gap:10px;background:none;border:0;color:#d7c5d4;text-align:center;}
+.oneup-avatar{height:116px;width:116px;border-radius:30px;display:grid;place-items:center;font-size:55px;position:relative;border:2px solid #755166;box-shadow:0 15px 36px #0008,inset 0 0 25px #fff1;transition:transform .25s,border-color .25s,box-shadow .25s;overflow:hidden}
+.oneup-avatar:after{content:"";position:absolute;inset:0;background:linear-gradient(135deg,#ffffff30,transparent 50%,#00000030);pointer-events:none}
+.oneup-profile-tile:hover .oneup-avatar,.oneup-profile-tile:focus-visible .oneup-avatar{transform:translateY(-7px) scale(1.03);border-color:#ff9a4e;box-shadow:0 12px 48px #ff641f5e}
+.oneup-profile-tile strong{font-size:14px;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.oneup-avatar-add{border:2px dashed #8f5b6a;background:#261828;color:#ffb071;font-size:56px;font-weight:300}
+.oneup-profile-utilities{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:20px}
+.oneup-profile-utilities button,.oneup-profile-modal button{border:1px solid #84566b;background:#ffffff0c;color:white;border-radius:9px;padding:12px 22px;font-size:12px;font-weight:800;letter-spacing:1px}
+.oneup-profile-utilities button:hover{border-color:#ff975c}
+.oneup-gate-foot{margin-top:35px;font-size:10px;letter-spacing:1px;color:#8e788b}
+.oneup-profile-editor{position:relative;max-width:390px;text-align:left;padding:24px;border:1px solid #a36165;border-radius:20px;background:#20101d;box-shadow:0 30px 90px #000b}
+.oneup-profile-editor h3{font:900 42px var(--display);margin:0 0 12px}
+.oneup-profile-editor label{display:block;color:#f1c4b8;font-size:12px;margin:12px 0 8px;font-weight:700}
+.oneup-profile-editor input{background:#301d2d;border:1px solid #986572;color:#fff;padding:13px;width:100%;border-radius:10px;outline:0}
+.oneup-avatar-choices{display:grid;grid-template-columns:repeat(4,1fr);gap:9px}
+.oneup-avatar-choice{padding:9px!important;font-size:26px!important;min-width:0}
+.oneup-avatar-choice.active{background:#e6723a!important;color:#18070a!important}
+.oneup-profile-editor .editor-actions{display:flex;gap:9px;margin-top:21px}
+.oneup-profile-editor .editor-actions button{flex:1}
+.oneup-profile-editor .editor-actions .confirm{background:linear-gradient(115deg,#ffb061,#ff6023);color:#1c0c06;border:0}
+.oneup-welcome{background:radial-gradient(circle,#592033 0%,#130911 55%,#030305 100%);z-index:210;animation:welcomeShow .4s both}
+.oneup-welcome .welcome-inner{text-align:center;animation:welcomeFloat .95s ease-out both}
+.oneup-welcome .welcome-avatar{font-size:96px;filter:drop-shadow(0 10px 42px #ff5e237b)}
+.oneup-welcome h2{font:900 clamp(60px,10vw,120px) var(--display);letter-spacing:3px;margin:8px 0;color:#ffbc80}
+.oneup-welcome p{letter-spacing:3px;font-size:12px;color:#f5e3df}
+body.oneup-gated{overflow:hidden}
+body.oneup-gated .site-header,body.oneup-gated .mobile-nav{pointer-events:none}
+@keyframes wheel{to{transform:rotate(360deg)}}
+@keyframes moonBreathe{50%{transform:scale(1.08);box-shadow:0 0 110px #ff722370}}
+@keyframes fogWalk{to{transform:translateX(15%)}}
+@keyframes emberDrift{to{background-position:24px -260px,-40px -180px}}
+@keyframes heroZoom{to{transform:scale(1.09)}}
+@keyframes marqueeGlide{to{transform:translateX(-50%)}}
+@keyframes introHalo{0%{transform:scale(.2) rotate(-60deg);opacity:0}35%{opacity:1}83%{transform:scale(1) rotate(0);opacity:1}100%{transform:scale(1.4) rotate(18deg);opacity:0}}
+@keyframes logoReveal{0%{opacity:0;transform:translateY(45px) scale(.7);filter:blur(18px)}35%{opacity:1;transform:translateY(0) scale(1.02);filter:blur(0)}80%{opacity:1;transform:scale(1)}100%{opacity:0;transform:scale(1.24);filter:blur(8px)}}
+@keyframes introSlash{0%,36%{transform:rotate(-4deg) scaleX(0);opacity:0}50%{transform:rotate(-4deg) scaleX(1);opacity:1}84%{transform:rotate(-4deg) scaleX(1);opacity:.4}100%{transform:rotate(-4deg) scaleX(1);opacity:0}}
+@keyframes welcomeShow{from{opacity:0}to{opacity:1}}
+@keyframes welcomeFloat{from{transform:scale(.8) translateY(30px);opacity:0}to{transform:scale(1) translateY(0);opacity:1}}
+@media(max-width:760px) {
+ .header{padding:0 16px}
+ .hero{height:630px}
+ .hero-content{padding-top:178px}
+ .hero h1{font-size:clamp(62px,14vw,95px)}
+ .hero-vignette{background:linear-gradient(0deg,#09070cf5 5%,#100816e6 50%,#120b17ad 90%),linear-gradient(90deg,#09070c9c,transparent)}
+ .oneup-grimoire{right:-70px;top:14%;width:260px;opacity:.3}
+ .oneup-moon{right:14%;width:110px;top:12%}
+ .search-section{padding:28px 18px;transform:translateY(-12px)}
+ .mobile-nav{background:#1a101dee}
+ .hero-meta{gap:6px}
+ .hero-meta span{font-size:9px}
+ .oneup-profile-grid{gap:13px}
+ .oneup-profile-tile{width:105px}
+ .oneup-avatar{width:96px;height:96px;font-size:46px;border-radius:25px}
+ .oneup-profiles h2{font-size:55px}
+ .oneup-halloween-tag{font-size:9px;letter-spacing:1px}
+ .oneup-intro .intro-brand strong{font-size:155px}
+ .oneup-intro .intro-brand small{font-size:17px}
+}
+@media(max-width:380px){
+ .hero h1{font-size:57px}
+ .oneup-avatar{width:83px;height:83px}
+ .oneup-profile-tile{width:92px}
+ .oneup-profile-grid{gap:10px}
+}
+@media(prefers-reduced-motion:reduce){
+ .oneup-overlay-effects *,.oneup-intro *,.oneup-season-marquee div,.oneup-sparks,.oneup-moon{animation:none!important;transition:none!important}
+ .oneup-intro .intro-brand {opacity:1}
+}
