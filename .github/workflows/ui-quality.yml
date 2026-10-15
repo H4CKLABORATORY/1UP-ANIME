@@ -1,0 +1,28 @@
+name: One Up UI Quality
+on:
+  push:
+    branches: [main]
+    paths:
+      - "index.html"
+      - "studio.js"
+      - "spotlight.css"
+      - "sw.js"
+      - "data/catalog.json"
+      - "scripts/check-ui.mjs"
+      - ".github/workflows/ui-quality.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout site
+        uses: actions/checkout@v4
+      - name: Prepare Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Validate UI and cached anime data
+        run: node scripts/check-ui.mjs
