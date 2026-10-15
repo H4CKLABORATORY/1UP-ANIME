@@ -29,6 +29,7 @@ function setTab(tab){
  selected=tab;
  $$('[data-tab]').forEach(b=>b.classList.toggle('active',b.dataset.tab===tab));
  $('#feed-view').hidden=['chat','perfil'].includes(tab);
+ $('#feed-view').classList.toggle('c-clip-mode',tab==='clip');
  $('#chat-view').hidden=tab!=='chat';
  $('#profile-view').hidden=tab!=='perfil';
  if(tab==='chat'){showChat();return}
