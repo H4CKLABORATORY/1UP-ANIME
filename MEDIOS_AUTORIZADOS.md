@@ -56,3 +56,45 @@ Ejemplo: para un episodio autorizado, usa las fuentes `{ name: "Servidor princip
 En iPhone, Safari ofrece reproducción HLS nativa cuando el proveedor admite el navegador y los permisos necesarios. La página no descifra DRM ni copia emisiones de otro servicio.
 
 Existen extractores no oficiales de JKAnime que recuperan enlaces a otros servidores. Eso no acredita autorización para redistribuir ni incrustar tales transmisiones. Los enlaces a las páginas originales del sitio pueden abrirse fuera de 1UP Anime.
+
+## Vista por episodio con siete reproductores
+
+La ficha de cada anime muestra un selector de episodios y exactamente siete botones de servidor. Cada botón solo se habilita cuando el episodio tiene una fuente configurada y validada. **Esto no significa que los siete servidores estén disponibles ni que el sitio aloje videos.**
+
+El formato `sources` sigue admitiendo videos directos HTTPS (`mp4`, `webm`, `m3u8`) y ahora permite reproductores incrustados `embed` de plataformas que aceptan inserción, exclusivamente cuando el contenido está autorizado.
+
+Ejemplo **ficticio** de una configuración de episodio:
+
+```json
+{
+  "version": 1,
+  "entries": {
+    "mal-12345": {
+      "episodes": [
+        {
+          "number": 1,
+          "title": "Episodio 1",
+          "sources": [
+            {
+              "name": "Servidor 1",
+              "kind": "embed",
+              "embed": "https://www.youtube-nocookie.com/embed/AbCdEfGhI12"
+            },
+            {
+              "name": "Servidor 2",
+              "src": "https://tu-cdn-autorizado.example/episodio-1.mp4",
+              "mime": "video/mp4"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
+```
+
+Los enlaces anteriores son solo para describir la estructura: no corresponden a un episodio real ni acreditan permisos. Solo se aceptan dominios de reproducción incrustada específicamente aprobados (YouTube privacy-enhanced, Vimeo player y Archive.org embed). Incluir un dominio en la lista técnica no otorga derecho a redistribuir videos publicados ahí.
+
+Los episodios que no tengan fuentes muestran una indicación clara y siete botones deshabilitados. Los espectadores pueden navegar entre episodios aunque no estén disponibles para reproducir.
+
+**Comentarios sincronizados:** al elegir un episodio en el reproductor, los comentarios pasan al hilo de ese mismo anime y número de episodio. Cambiar de episodio en los comentarios también cambia el reproductor. Los comentarios son públicos y requieren el backend moderado de Firebase correctamente configurado; sin backend no se simula que un mensaje local sea público.
