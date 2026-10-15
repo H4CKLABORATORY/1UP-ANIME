@@ -13,8 +13,12 @@
 <link rel="manifest" href="./manifest.webmanifest">
 <link rel="stylesheet" href="./styles.css">
 <link rel="stylesheet" href="./experience.css">
+<link rel="stylesheet" href="./design-plus.css">
 <script defer src="./app.js"></script>
+<script defer src="./catalog-plus.js"></script>
 <script defer src="./sonic.js"></script>
+<script defer src="./firebase-config.js"></script>
+<script defer src="./auth-google.js"></script>
 <script defer src="./experience.js"></script>
 </head>
 <body>
@@ -37,10 +41,11 @@
     <button type="button" class="profile-mark" id="oneup-change-profile" title="Cambiar perfil" aria-label="Cambiar perfil">♙</button>
   </div>
 </header>
+<div class="oneup-nav-scroll" aria-label="Explorar categorías de anime"><button data-view="inicio">🏠 Inicio</button><button data-view="temporada">🔥 En emisión</button><button data-view="programacion">📅 Programación</button><button data-view="populares">🏆 Ranking</button><button data-view="peliculas">🎬 Películas</button><button data-view="ovas">💿 OVAs</button><button data-view="onas">🌐 ONAs</button><button data-view="especiales">✦ Especiales</button><button data-view="milista">♡ Mi lista</button><span class="oneup-nav-note">ONE UP • ANIME UNIVERSE</span></div>
 <main>
   <div id="home-view" class="view">
     <section class="hero" aria-label="Anime destacado">
-      <div class="hero-art" id="hero-art"></div><div class="hero-vignette"></div><div class="oneup-overlay-effects" aria-hidden="true"><div class="oneup-moon"></div><div class="oneup-grimoire"></div><div class="oneup-sparks"></div><div class="oneup-fog"></div></div>
+      <div class="hero-art" id="hero-art"></div><img class="oneup-home-mascot" src="./assets/oneup-mascot.svg" alt="" aria-hidden="true"><div class="hero-vignette"></div><div class="oneup-overlay-effects" aria-hidden="true"><div class="oneup-moon"></div><div class="oneup-grimoire"></div><div class="oneup-sparks"></div><div class="oneup-fog"></div></div>
       <div class="hero-content"><div class="oneup-halloween-tag"><span>🎃</span><b>HALLOWEEN 2026</b> / ANTI-MAGIC EDITION</div>
         <div class="eyebrow"><span class="live-dot"></span> TU PORTAL DE ANIME <span class="eyebrow-line"></span> 01 / 1UP</div>
         <div class="hero-label">EL SIGUIENTE NIVEL<br>DEL ANIME COMIENZA AQUÍ</div>
@@ -55,6 +60,7 @@
       <div class="hero-bottom"><span>1UP ANIME ORIGINAL EXPERIENCE</span><span>DESLIZA PARA EXPLORAR ↓</span></div>
     </section>
     <div class="oneup-season-marquee" aria-hidden="true"><div> ✦ 1UP ANIME ✦ HALLOWEEN PREMIERE ✦ ANTI-MAGIC ✦ OCTOBER NIGHT ✦ CINEMATIC EXPERIENCE ✦ 1UP ANIME ✦ HALLOWEEN PREMIERE ✦ ANTI-MAGIC ✦ OCTOBER NIGHT ✦ CINEMATIC EXPERIENCE &nbsp; </div></div>
+<div id="catalog-source-info" class="oneup-status-strip" aria-live="polite">Conectando catálogo de anime…</div>
 <section class="search-section content">
       <div><span class="kicker">¿QUÉ VEREMOS HOY?</span><h2>Tu próxima obsesión <em>comienza aquí.</em></h2></div>
       <form class="search-form" id="search-form" role="search"><span class="search-glass">⌕</span><input id="search" type="search" placeholder="Busca Naruto, One Piece, Jujutsu Kaisen..." maxlength="90" autocomplete="off" aria-label="Buscar anime"><button type="submit" aria-label="Buscar">→</button></form>
