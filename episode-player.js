@@ -24,8 +24,8 @@ function safeEmbedUrl(raw){
  if((h==='www.youtube-nocookie.com'||h==='www.youtube.com')&&/^\\/embed\\/[A-Za-z0-9_-]{11}$/.test(p)){
   return 'https://www.youtube-nocookie.com'+p;
  }
- if(h==='player.vimeo.com'&&/^\\/video\\/\\d+$/.test(p))return 'https://player.vimeo.com'+p;
- if(h==='archive.org'&&/^\\/embed\\/[a-zA-Z0-9_.-]+$/.test(p))return 'https://archive.org'+p;
+ if(h==='player.vimeo.com'&&new RegExp('^/video/[0-9]+$').test(p))return 'https://player.vimeo.com'+p;
+ if(h==='archive.org'&&new RegExp('^/embed/[a-zA-Z0-9_.-]+$').test(p))return 'https://archive.org'+p;
  return '';
 }
 function sourceOf(source,index){
