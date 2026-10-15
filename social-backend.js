@@ -23,15 +23,27 @@ async function sdk(){
  if(!getConfig()?.apiKey||!getConfig()?.projectId||!getConfig()?.authDomain)
   throw new Error(EXPLAIN);
  sdkPromise=(async()=>{
-  const [app,auth,db,funcs,storage]=await Promise.all([
+  const [app,auth,db,funcs,storage,appCheck]=await Promise.all([
    import('https://www.gstatic.com/firebasejs/11.10.0/firebase-app.js'),
    import('https://www.gstatic.com/firebasejs/11.10.0/firebase-auth.js'),
    import('https://www.gstatic.com/firebasejs/11.10.0/firebase-firestore.js'),
    import('https://www.gstatic.com/firebasejs/11.10.0/firebase-functions.js'),
-   import('https://www.gstatic.com/firebasejs/11.10.0/firebase-storage.js')
+   import('https://www.gstatic.com/firebasejs/11.10.0/firebase-storage.js'),
+   import('https://www.gstatic.com/firebasejs/11.10.0/firebase-app-check.js')
   ]);
   const config=getConfig();
   const instance=app.getApps().length?app.getApp():app.initializeApp(config);
+  if(!window.ONEUP_APP_CHECK_SITE_KEY){
+   throw new Error('La comunidad requiere una clave pública de App Check reCAPTCHA Enterprise en social-config.js.');
+  }
+  try{
+   appCheck.initializeAppCheck(instance,{
+    provider:new appCheck.ReCaptchaEnterpriseProvider(window.ONEUP_APP_CHECK_SITE_KEY),
+    isTokenAutoRefreshEnabled:true
+   });
+  }catch(error){
+   if(!String(error.message||'').includes('already initialized'))throw error;
+  }
   return {app,auth,db,funcs,storage,instance,
    authentication:auth.getAuth(instance),
    firestore:db.getFirestore(instance),
@@ -95,6 +107,49 @@ function subscribeEpisode(animeId,episode,cb,onError){
   },err=>(onError||(()=>{}))(maskError(err)));
  });
 }
+function subscribeGlobal(cb,onError){
+ return sdk().then(x=>{
+  const q=x.db.query(x.db.collection(x.firestore,'globalMessages'),x.db.where('status','==','visible'),x.db.orderBy('createdAt','desc'),x.db.limit(60));
+  return x.db.onSnapshot(q,snap=>cb(snap.docs.map(d=>({id:d.id,...d.data()}))),e=>(onError||(()=>{}))(maskError(e)));
+ });
+}
+async function sendGlobal(text){
+ const user=await firebaseAccount();
+ if(!registered(user))throw Error('Para escribir en el chat global necesitas una cuenta Google.');
+ return callable('sendGlobalMessage',{text});
+}
+async function updateProfile({displayName,icon,avatarPath}) {
+ const user=await firebaseAccount();
+ if(!registered(user))throw Error('Inicia sesión con Google para personalizar tu perfil.');
+ return callable('setMyCommunityProfile',{displayName,icon,avatarPath});
+}
+async function verificationRequest(reason){
+ const user=await firebaseAccount();
+ if(!registered(user))throw Error('Inicia sesión con Google para solicitar verificación.');
+ return callable('requestVerification',{reason});
+}
+async function follow(uid){
+ const user=await firebaseAccount();
+ if(!registered(user))throw Error('Inicia sesión con Google para seguir perfiles.');
+ return callable('toggleFollow',{targetUid:uid});
+}
+async function myProfile(){
+ const user=await firebaseAccount();
+ if(!registered(user))return null;
+ const x=await sdk();
+ const s=await x.db.getDoc(x.db.doc(x.firestore,'creatorProfiles',user.uid));
+ return s.exists()?s.data():null;
+}
+async function uploadAvatar(file){
+ const user=await firebaseAccount();
+ if(!registered(user))throw Error('Inicia sesión con Google para subir foto de perfil.');
+ const valid={'image/jpeg':'jpg','image/png':'png','image/webp':'webp'};
+ const ext=valid[file.type];
+ if(!ext||file.size>5*1024*1024)throw Error('Se admiten fotos JPG, PNG o WebP de hasta 5 MB.');
+ const x=await sdk(),path='avatars/'+user.uid+'/profile.'+ext;
+ await x.storage.uploadBytes(x.storage.ref(x.files,path),file,{contentType:file.type});
+ return path;
+}
 async function sendEpisodeComment(animeId,episode,pseudonym,text){
  await guestAccess();
  return callable('submitEpisodeComment',{animeId,episode,pseudonym,text});
@@ -134,5 +189,6 @@ async function mediaURL(path){
 }
 window.OneUpSocialBackend={sdk,firebaseAccount,guestAccess,registered,loginWithGoogle,episodeThread,
  subscribeEpisode,sendEpisodeComment,subscribeFeed,publishPost,replyToPost,subscribeReplies,react,report,
+ subscribeGlobal,sendGlobal,updateProfile,verificationRequest,follow,myProfile,uploadAvatar,
  uploadCommunityFile,mediaURL,callable,maskError,enabled:()=>Boolean(getConfig()?.apiKey),explain:EXPLAIN};
 })();
