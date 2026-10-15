@@ -125,12 +125,12 @@ async function fromSnapshot(o){
 async function fetchCatalog(o){
  const old=cached(o);if(old){register(old.items);return old}
  if(!o.search&&!o.genre&&(!o.page||o.page===1)){
-  const snapshot=await fromSnapshot(o);if(snapshot)return snapshot;
+  const snapshot=await fromSnapshot(o);if(snapshot){cache(o,snapshot);return snapshot;}
  }
  for(const loader of [ani,jikan]){
   try{const r=await loader(o);if(r.items.length){register(r.items);cache(o,r);return r}}catch(e){console.warn('1UP provider temporarily unavailable',e?.message)}
  }
- const snapshot=await fromSnapshot(o);if(snapshot)return snapshot;
+ const snapshot=await fromSnapshot(o);if(snapshot){cache(o,snapshot);return snapshot;}
  let items=samples.filter(x=>(!o.search||x.title.toLowerCase().includes(o.search.toLowerCase()))&&(!o.genre||x.genres.includes(o.genre))&&(!o.format||x.format===o.format));
  register(items);
  return {items,next:false,source:'sample'};
