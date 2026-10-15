@@ -1,41 +1,9 @@
 {
-  "updated": "2026-10-15T21:26:57.446Z",
+  "updated": "2026-10-15T21:30:45.047Z",
   "source": "AniList public GraphQL metadata",
-  "windowStart": 1791901608,
-  "windowEnd": 1792877208,
+  "windowStart": 1791901835,
+  "windowEnd": 1792877435,
   "airing": [
-    {
-      "id": "mal-61140",
-      "mal_id": 61140,
-      "ani_id": 187316,
-      "title": "Gensou Suikoden",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx187316-jucYCojVTjSY.jpg",
-      "banner": "",
-      "description": "Two young boys... the hero, Riliu, and his best friend Jowy, were members of a youth brigade of their home nation, the Highland Kingdom - a powerful military nation located in the north-east of the Dunan region. The two of them looked up at the same starry skies, slept in the same tent, and believed in the same future. Once the fighting was over, and the night ended, their daily lives were sure to return. Contrary to their hopes, the two boys become swept up in the whirlpool of fate, guided by the flames of war. The powerless boys reached for, and grasped immense power. As the 108 stars shine brightly in the murky horizon, the boys step forward, each with their own beliefs for an answer-less question. (Source: Official Website, translated) Note: The first episode aired with a runtime of ~50 minutes as opposed to the standard 24 minute long episode.",
-      "year": 2026,
-      "startDate": "2026-10-03",
-      "format": "TV",
-      "episodes": 23,
-      "averageScore": 59,
-      "status": "RELEASING",
-      "genres": [
-        "Action",
-        "Adventure",
-        "Fantasy"
-      ],
-      "siteUrl": "https://anilist.co/anime/187316",
-      "trailer": {
-        "site": "youtube",
-        "id": "m4T9VcBD0vo"
-      },
-      "next": {
-        "at": 1792506600,
-        "episode": 3
-      },
-      "airingAt": 1791901800,
-      "episode": 2,
-      "scheduleId": 422441
-    },
     {
       "id": "mal-63431",
       "mal_id": 63431,
@@ -67,7 +35,8 @@
       },
       "airingAt": 1791903600,
       "episode": 2,
-      "scheduleId": 420253
+      "scheduleId": 420253,
+      "description_es": "Rein, un encantador, es expulsado de su gremio un día. Pero en lugar de desesperar, declara, “¡Ahora puedo hacer cualquier cosa!” y comienza a reclamar el enorme número de puntos de mejora que una vez vierte en el equipo de sus compañeros, a partir de un nuevo camino como aventurero. Reunirse a su alrededor son personas que llevan heridas que no se desvanecen fácilmente: un genio aventurero que cerró su corazón después de que su partido fue masacrado, un guerrero que perdió"
     },
     {
       "id": "mal-63489",
@@ -316,7 +285,8 @@
       },
       "airingAt": 1791981000,
       "episode": 2,
-      "scheduleId": 422056
+      "scheduleId": 422056,
+      "description_es": "Después de frustrar un secuestro con el hermoso detective de pelo plateado Siesta, Kimihiko conduce una vida de ataque mundial y resolución del crimen hasta que Siesta muera. Un año más tarde, un nuevo caso abrirá viejas heridas mientras roza asesinato, conspiración y su compañero muerto! (Fuente: Crunchyroll)"
     },
     {
       "id": "mal-64084",
@@ -348,7 +318,8 @@
       },
       "airingAt": 1791982800,
       "episode": 2,
-      "scheduleId": 420153
+      "scheduleId": 420153,
+      "description_es": "Después de usar su habilidad SSS-Rank, Internet, para aplastar las ambiciones de su antigua familia, Lorna es libre de viajar por el mundo. Su próxima parada es la ciudad portuaria de Aquas, donde espera ver los lugares de interés y disfrutar de algunos mariscos frescos. Pero cuando llega, el lugar está al borde de la destrucción gracias a una cierta misión semanal... ¡Qué bueno que Lorna tenga los dioses de su lado! (Fuente: Crunchyroll)"
     },
     {
       "id": "mal-58518",
@@ -380,7 +351,8 @@
       },
       "airingAt": 1791982800,
       "episode": 2,
-      "scheduleId": 422249
+      "scheduleId": 422249,
+      "description_es": "La segunda temporada de Sasaki a Pii-chan."
     },
     {
       "id": "mal-59204",
@@ -506,7 +478,8 @@
       },
       "airingAt": 1791991800,
       "episode": 3,
-      "scheduleId": 418795
+      "scheduleId": 418795,
+      "description_es": "La segunda temporada de Tensei Mierda Ken Deshita. Nota: Cada episodio fue transmitido una semana antes de la emisión de televisión a partir del 1 de octubre de 2026 en Abema. La radiodifusión regular comenzó el 8 de octubre de 2026."
     },
     {
       "id": "mal-64344",
@@ -569,7 +542,8 @@
       },
       "airingAt": 1791992700,
       "episode": 2,
-      "scheduleId": 420117
+      "scheduleId": 420117,
+      "description_es": "En una tierra dominada por los formidables Mundos Sombríos, la mayoría de la humanidad ha sido destruida. Para rescatar a su planeta de la muerte inminente, seis héroes valientes luchan una batalla peligrosa... y fracasan. Pero hay una mirada de esperanza cuando Desir, una de las últimas magras, es de repente enviado en el tiempo 13 años! Ahora armado con conocimiento del futuro sombrío, ¿puede alterar el curso de la historia y salvar el mundo? (Fuente: Crunchyroll)"
     },
     {
       "id": "mal-65095",
@@ -658,7 +632,8 @@
       },
       "airingAt": 1792067400,
       "episode": 3,
-      "scheduleId": 419082
+      "scheduleId": 419082,
+      "description_es": "La estudiante universitaria Kurumi Fukuga finalmente ha cumplido su deseo de iniciar el comercio de divisas (FX), motivado por recuperar los 20 millones de yenes que su madre falleció en el comercio. \"Lo recuperaré fácilmente,\" pensó, pero el mundo en el que entra puede convertirse en el cielo o el infierno en un instante. Pérdidas no realizadas, fluctuaciones descompuestas, imparables... ¡pero todavía quiere comprar, vender y hacer dinero! Con los adictos FX Mochiko, Mebuki an"
     },
     {
       "id": "mal-61227",
@@ -721,7 +696,8 @@
       },
       "airingAt": 1792076160,
       "episode": 3,
-      "scheduleId": 421725
+      "scheduleId": 421725,
+      "description_es": "Koyuki, la chica aislada; Miki, el antiguo ídolo escolar; Minato, el tipo sin concepto de espacio personal; y Youta, el amable jugador de baloncesto. Clumsy, frustrante, pero profundamente apasionante — este drama que se acerca a la edad de los corazones cruzados avanza. A medida que se acercan, Koyuki y Minato comienzan a desarrollar sentimientos entre sí que van más allá de la mera amistad. Mientras tanto, Youta finalmente confiesa a Miki los sentimientos por los que ha albergado"
     },
     {
       "id": "mal-62582",
@@ -781,7 +757,8 @@
       },
       "airingAt": 1792076400,
       "episode": 2,
-      "scheduleId": 418961
+      "scheduleId": 418961,
+      "description_es": "Misaki ha sentido a menudo el impulso de liberarse de la vida cotidiana y de emprender un viaje lejos. A pesar de que todavía no sabe lo que quiere convertirse, ella desea encontrar algo de lo que realmente puede ser apasionada. Al comienzo de un nuevo capítulo en un animado campus, se reúne con los miembros del Club de Investigación de Viajes Ferroviarios, conocido como el Club Tetsuryo. Mientras su mundo se desarrolla a lo largo de las líneas ferroviarias, el corazón de Misaki comienza a correr con"
     },
     {
       "id": "al-214593",
@@ -902,7 +879,8 @@
       },
       "airingAt": 1792077960,
       "episode": 16,
-      "scheduleId": 417001
+      "scheduleId": 417001,
+      "description_es": "Elymas Edvaughn nace en una prestigiosa familia de maestros espadachines, pero su futuro se derrumba cuando despierta la clase de Caballero Pesado, considerada defectuosa. Rechazado y expulsado, recupera recuerdos de una vida anterior y descubre que ese mundo se parece a un videojuego de realidad virtual que conocía muy bien. Gracias a secretos que nadie más posee, decide cambiar su destino y demostrar el verdadero poder de la clase que todos consideran la más débil."
     },
     {
       "id": "mal-64254",
@@ -934,7 +912,8 @@
       },
       "airingAt": 1792081680,
       "episode": 2,
-      "scheduleId": 418821
+      "scheduleId": 418821,
+      "description_es": "Una vez despedido como el único estudiante ordinario de la élite Arnold Academy of Sorcery, Ray White — secretamente, el Hechicero de Iceblade— finalmente ha ganado su lugar. Con un nuevo año escolar surge un nuevo desafío: La Guerra de los Magos, una gran competencia que enfrenta equipos de escuelas rivales entre sí. Pero una sombra ominosa sobre Ray y sus amigos mientras los otros grandes hechiceros trazan sus próximos movimientos. (Fuente: Crunchyroll)"
     },
     {
       "id": "mal-65007",
@@ -1028,7 +1007,8 @@
       },
       "airingAt": 1792137600,
       "episode": 4,
-      "scheduleId": 420967
+      "scheduleId": 420967,
+      "description_es": "En la 2a ETAPA, un cruce desértico que recorre aproximadamente 750 millas- la tierra que Johnny Joestar y Gyro Zeppeli deben desafiar, es el hogar de la zona que se teme como la palma del Diablo. En 1875, una amenaza que acechaba en dicho desierto borró una caballería de 26 personas, provocando temor de los nativos locales. A medida que los incidentes ominosos comienzan a desarrollarse, se ven obligados a darse cuenta de que esta carrera es mucho más que una mera competencia. Las dos prensas hacia adelante, donde"
     },
     {
       "id": "mal-62039",
@@ -1211,7 +1191,8 @@
       },
       "airingAt": 1792159200,
       "episode": 3,
-      "scheduleId": 418783
+      "scheduleId": 418783,
+      "description_es": "Después de la rebelión del clan Shi, las cosas finalmente se han asentado, y Maomao ha vuelto a su antigua vida como farmacéutico en el distrito de placer. Un día, provocado por un desayuno servido en la Casa Verdigris, Maomao siente una anomalía y comienza a investigar su verdadera naturaleza. Mientras tanto, Jinshi, que ha revelado su verdadera identidad como el hermano imperial y ha comenzado a enfrentar sus pesadas responsabilidades, está profundamente preocupado por la fina"
     },
     {
       "id": "mal-63293",
@@ -1242,7 +1223,8 @@
       },
       "airingAt": 1792161000,
       "episode": 2,
-      "scheduleId": 418466
+      "scheduleId": 418466,
+      "description_es": "En la superficie, Satoko lo tiene todo, es hermosa, la hija de un noble, y a una edad temprana para el matrimonio. Desafortunadamente, ella también está bastante enferma y sólo tiene un corto tiempo para vivir. Antes de que pueda conseguir un matrimonio que redimirá su valor en los ojos de su familia, se encuentra el blanco del misterioso asesino Shinpei, y sus planes están en peligro. ¡Para salvarse, hace una propuesta desesperada de matrimonio! Cuando c"
     },
     {
       "id": "mal-63181",
@@ -1917,7 +1899,8 @@
       },
       "airingAt": 1792245600,
       "episode": 3,
-      "scheduleId": 419552
+      "scheduleId": 419552,
+      "description_es": "A medida que la tiranía envuelve el Reino de Clover, Asta y los Caballeros Mágicos lanzan una redada desesperada en el Reino de Spade para rescatar a sus capitanes de la Tribu Oscura. Pero su misión los lleva a una batalla brutal contra las fuerzas más allá de cualquier cosa que hayan enfrentado. Ahora, Asta debe elevarse por encima de las probabilidades imposibles de proteger a sus amigos y honrar la promesa que hizo a Yuno. (Fuente: Crunchyroll)"
     },
     {
       "id": "mal-63764",
@@ -2077,7 +2060,8 @@
       },
       "airingAt": 1792251000,
       "episode": 3,
-      "scheduleId": 418846
+      "scheduleId": 418846,
+      "description_es": "Esta es la Academia Fujinasu, una escuela secundaria privada con estudiantes de primer nivel ubicados en las afueras de la ciudad. High School 1er año Ume Mizunoe tiene excelentes calificaciones en la clase de idioma japonés y ha recibido múltiples premios literarios. Sin embargo, sus calificaciones terribles en las ciencias están afectando su capacidad de avanzar en un grado. Para evitar repetir un año, se convierte en miembro del consejo estudiantil para mejorar su posición académica. Sin embargo, en el estudio"
     },
     {
       "id": "mal-63801",
@@ -2463,7 +2447,8 @@
       },
       "airingAt": 1792308600,
       "episode": 3,
-      "scheduleId": 412158
+      "scheduleId": 412158,
+      "description_es": "La segunda temporada de Ao no Hako."
     },
     {
       "id": "mal-61603",
@@ -2930,7 +2915,8 @@
       },
       "airingAt": 1792333800,
       "episode": 4,
-      "scheduleId": 419897
+      "scheduleId": 419897,
+      "description_es": "Sin Yeong-U (a.k.a. Grid), un hombre desafortunado en la vida y un jugador de bajo nivel en el popular juego VR “Satisfy”, encuentra un poderoso artículo que le gana un raro título legendario de clase: “El Sucesor de Pagma”. Ahora es un herrero experto que puede forjar armas únicas y equipar el equipo más poderoso del juego. Grid resuelve usar sus nuevas habilidades para alcanzar la fama y la fortuna, pero cuando su propia existencia comienza a provocar problemas en Satisfeo, se da cuenta de que la vida es una"
     },
     {
       "id": "mal-62590",
@@ -3116,7 +3102,8 @@
       },
       "airingAt": 1792340400,
       "episode": 3,
-      "scheduleId": 419203
+      "scheduleId": 419203,
+      "description_es": "Amona es un llamador oscuro con poderes demoníacos. Roni es un sacerdote devota que está demasiado tenso. Por todos los derechos, deben odiarse. En lugar de eso, terminan acelerando su arco de enemigos a amantes con un stand de una noche que de alguna manera insiste en convertirse en un evento recurrente. Ahora deben ocultar su situación del resto del partido, negando su creciente atracción entre sí, todo mientras se trata de un imp que está demasiado invertido en"
     },
     {
       "id": "mal-65169",
@@ -3238,7 +3225,8 @@
       },
       "airingAt": 1792413000,
       "episode": 3,
-      "scheduleId": 420067
+      "scheduleId": 420067,
+      "description_es": "Hazme una poción de amor. Y con esa sola frase, la Buena Bruja del amor secreto del lago sobre el desgarrador Sir Harij termina en un desgarro. Aún así, cuando promete ayudarla a reunir los ingredientes, Rose está emocionada por la oportunidad de mirar a un hombre con el que normalmente nunca podría interactuar. Ella aprende a jactar su corazón por sus conversaciones usuales inclinadas... pero ¿qué va a hacer cuando aparece inexplicablemente en su puerta con bre"
     },
     {
       "id": "mal-63712",
@@ -3305,7 +3293,8 @@
       },
       "airingAt": 1792418400,
       "episode": 3,
-      "scheduleId": 419765
+      "scheduleId": 419765,
+      "description_es": "Un día, la secundaria Ageha Yoshina recoge una misteriosa “tarjeta de teléfono roja” que queda atrás en una cabina telefónica pública. Unos días más tarde, su amigo de la infancia y compañero de clase, Sakurako Amamiya, que poseía la misma carta, desaparecen sin dejar rastro. En busca de ella, Ageha se encuentra dibujado en los rumores que rodean una cadena nacional de misteriosas desapariciones, dijo que es obra de una organización secreta conocida sólo como “Psyren”. Cuando él"
     },
     {
       "id": "mal-60636",
@@ -3778,7 +3767,8 @@
       },
       "airingAt": 1792499160,
       "episode": 3,
-      "scheduleId": 417798
+      "scheduleId": 417798,
+      "description_es": "Un gran héroe está invicto en su lecho de muerte, lamentando que nunca haya encontrado a un enemigo que pudiera derribarla. Ella nunca quiso encontrar su destino en otro lugar que en el campo de batalla, y su pacífica desaparición tiene su deseo desesperadamente de que las cosas podrían haber sido diferentes... Pero cuando de repente viene al cuerpo de la joven y frágil Nia Liston, tiene una nueva lucha por delante de ella. Nia es una niña enferma, lo que significa que tiene un largo camino por recorrer"
     },
     {
       "id": "mal-63754",
@@ -3809,7 +3799,8 @@
       },
       "airingAt": 1792501200,
       "episode": 3,
-      "scheduleId": 420418
+      "scheduleId": 420418,
+      "description_es": "Sato-san es la flor inalcanzable de la clase. Siempre tiene frío y rito con compañeros de clase, pero sólo sé que es muy linda cuando sonríe, incluso si no es mucho fotógrafo. Oshio-kun es amistoso y animado, pero sólo sé que trabaja en el café de su familia después de la escuela. Hace un gran trabajo con la cuenta SNS de la cafetería, y su mala sonrisa hace que mi corazón salte un latido! Innocente y dulce, pero a veces frustrante, esto es un"
     },
     {
       "id": "mal-62696",
@@ -3967,7 +3958,8 @@
       },
       "airingAt": 1792508400,
       "episode": 3,
-      "scheduleId": 420254
+      "scheduleId": 420254,
+      "description_es": "Rein, un encantador, es expulsado de su gremio un día. Pero en lugar de desesperar, declara, “¡Ahora puedo hacer cualquier cosa!” y comienza a reclamar el enorme número de puntos de mejora que una vez vierte en el equipo de sus compañeros, a partir de un nuevo camino como aventurero. Reunirse a su alrededor son personas que llevan heridas que no se desvanecen fácilmente: un genio aventurero que cerró su corazón después de que su partido fue masacrado, un guerrero que perdió"
     },
     {
       "id": "mal-63489",
@@ -4156,7 +4148,8 @@
       },
       "airingAt": 1792585800,
       "episode": 3,
-      "scheduleId": 422057
+      "scheduleId": 422057,
+      "description_es": "Después de frustrar un secuestro con el hermoso detective de pelo plateado Siesta, Kimihiko conduce una vida de ataque mundial y resolución del crimen hasta que Siesta muera. Un año más tarde, un nuevo caso abrirá viejas heridas mientras roza asesinato, conspiración y su compañero muerto! (Fuente: Crunchyroll)"
     },
     {
       "id": "al-217282",
@@ -4215,7 +4208,8 @@
       },
       "airingAt": 1792587600,
       "episode": 3,
-      "scheduleId": 420154
+      "scheduleId": 420154,
+      "description_es": "Después de usar su habilidad SSS-Rank, Internet, para aplastar las ambiciones de su antigua familia, Lorna es libre de viajar por el mundo. Su próxima parada es la ciudad portuaria de Aquas, donde espera ver los lugares de interés y disfrutar de algunos mariscos frescos. Pero cuando llega, el lugar está al borde de la destrucción gracias a una cierta misión semanal... ¡Qué bueno que Lorna tenga los dioses de su lado! (Fuente: Crunchyroll)"
     },
     {
       "id": "mal-58518",
@@ -4247,7 +4241,8 @@
       },
       "airingAt": 1792587600,
       "episode": 3,
-      "scheduleId": 422250
+      "scheduleId": 422250,
+      "description_es": "La segunda temporada de Sasaki a Pii-chan."
     },
     {
       "id": "mal-59204",
@@ -4373,7 +4368,8 @@
       },
       "airingAt": 1792596600,
       "episode": 4,
-      "scheduleId": 418796
+      "scheduleId": 418796,
+      "description_es": "La segunda temporada de Tensei Mierda Ken Deshita. Nota: Cada episodio fue transmitido una semana antes de la emisión de televisión a partir del 1 de octubre de 2026 en Abema. La radiodifusión regular comenzó el 8 de octubre de 2026."
     },
     {
       "id": "mal-64344",
@@ -4436,7 +4432,8 @@
       },
       "airingAt": 1792597500,
       "episode": 3,
-      "scheduleId": 420118
+      "scheduleId": 420118,
+      "description_es": "En una tierra dominada por los formidables Mundos Sombríos, la mayoría de la humanidad ha sido destruida. Para rescatar a su planeta de la muerte inminente, seis héroes valientes luchan una batalla peligrosa... y fracasan. Pero hay una mirada de esperanza cuando Desir, una de las últimas magras, es de repente enviado en el tiempo 13 años! Ahora armado con conocimiento del futuro sombrío, ¿puede alterar el curso de la historia y salvar el mundo? (Fuente: Crunchyroll)"
     },
     {
       "id": "mal-65095",
@@ -4495,7 +4492,8 @@
       },
       "airingAt": 1792672200,
       "episode": 4,
-      "scheduleId": 419083
+      "scheduleId": 419083,
+      "description_es": "La estudiante universitaria Kurumi Fukuga finalmente ha cumplido su deseo de iniciar el comercio de divisas (FX), motivado por recuperar los 20 millones de yenes que su madre falleció en el comercio. \"Lo recuperaré fácilmente,\" pensó, pero el mundo en el que entra puede convertirse en el cielo o el infierno en un instante. Pérdidas no realizadas, fluctuaciones descompuestas, imparables... ¡pero todavía quiere comprar, vender y hacer dinero! Con los adictos FX Mochiko, Mebuki an"
     },
     {
       "id": "mal-61227",
@@ -4558,7 +4556,8 @@
       },
       "airingAt": 1792680960,
       "episode": 4,
-      "scheduleId": 421726
+      "scheduleId": 421726,
+      "description_es": "Koyuki, la chica aislada; Miki, el antiguo ídolo escolar; Minato, el tipo sin concepto de espacio personal; y Youta, el amable jugador de baloncesto. Clumsy, frustrante, pero profundamente apasionante — este drama que se acerca a la edad de los corazones cruzados avanza. A medida que se acercan, Koyuki y Minato comienzan a desarrollar sentimientos entre sí que van más allá de la mera amistad. Mientras tanto, Youta finalmente confiesa a Miki los sentimientos por los que ha albergado"
     },
     {
       "id": "mal-54250",
@@ -4623,7 +4622,8 @@
       },
       "airingAt": 1792681200,
       "episode": 3,
-      "scheduleId": 418962
+      "scheduleId": 418962,
+      "description_es": "Misaki ha sentido a menudo el impulso de liberarse de la vida cotidiana y de emprender un viaje lejos. A pesar de que todavía no sabe lo que quiere convertirse, ella desea encontrar algo de lo que realmente puede ser apasionada. Al comienzo de un nuevo capítulo en un animado campus, se reúne con los miembros del Club de Investigación de Viajes Ferroviarios, conocido como el Club Tetsuryo. Mientras su mundo se desarrolla a lo largo de las líneas ferroviarias, el corazón de Misaki comienza a correr con"
     },
     {
       "id": "al-214593",
@@ -4716,7 +4716,8 @@
       },
       "airingAt": 1792682760,
       "episode": 17,
-      "scheduleId": 417002
+      "scheduleId": 417002,
+      "description_es": "Elymas Edvaughn nace en una prestigiosa familia de maestros espadachines, pero su futuro se derrumba cuando despierta la clase de Caballero Pesado, considerada defectuosa. Rechazado y expulsado, recupera recuerdos de una vida anterior y descubre que ese mundo se parece a un videojuego de realidad virtual que conocía muy bien. Gracias a secretos que nadie más posee, decide cambiar su destino y demostrar el verdadero poder de la clase que todos consideran la más débil."
     },
     {
       "id": "mal-64254",
@@ -4748,7 +4749,8 @@
       },
       "airingAt": 1792686480,
       "episode": 3,
-      "scheduleId": 418822
+      "scheduleId": 418822,
+      "description_es": "Una vez despedido como el único estudiante ordinario de la élite Arnold Academy of Sorcery, Ray White — secretamente, el Hechicero de Iceblade— finalmente ha ganado su lugar. Con un nuevo año escolar surge un nuevo desafío: La Guerra de los Magos, una gran competencia que enfrenta equipos de escuelas rivales entre sí. Pero una sombra ominosa sobre Ray y sus amigos mientras los otros grandes hechiceros trazan sus próximos movimientos. (Fuente: Crunchyroll)"
     },
     {
       "id": "mal-65007",
@@ -4842,7 +4844,8 @@
       },
       "airingAt": 1792742400,
       "episode": 5,
-      "scheduleId": 420968
+      "scheduleId": 420968,
+      "description_es": "En la 2a ETAPA, un cruce desértico que recorre aproximadamente 750 millas- la tierra que Johnny Joestar y Gyro Zeppeli deben desafiar, es el hogar de la zona que se teme como la palma del Diablo. En 1875, una amenaza que acechaba en dicho desierto borró una caballería de 26 personas, provocando temor de los nativos locales. A medida que los incidentes ominosos comienzan a desarrollarse, se ven obligados a darse cuenta de que esta carrera es mucho más que una mera competencia. Las dos prensas hacia adelante, donde"
     },
     {
       "id": "mal-62039",
@@ -5057,7 +5060,8 @@
       },
       "airingAt": 1792764000,
       "episode": 4,
-      "scheduleId": 418784
+      "scheduleId": 418784,
+      "description_es": "Después de la rebelión del clan Shi, las cosas finalmente se han asentado, y Maomao ha vuelto a su antigua vida como farmacéutico en el distrito de placer. Un día, provocado por un desayuno servido en la Casa Verdigris, Maomao siente una anomalía y comienza a investigar su verdadera naturaleza. Mientras tanto, Jinshi, que ha revelado su verdadera identidad como el hermano imperial y ha comenzado a enfrentar sus pesadas responsabilidades, está profundamente preocupado por la fina"
     },
     {
       "id": "mal-63293",
@@ -5088,7 +5092,8 @@
       },
       "airingAt": 1792765800,
       "episode": 3,
-      "scheduleId": 418467
+      "scheduleId": 418467,
+      "description_es": "En la superficie, Satoko lo tiene todo, es hermosa, la hija de un noble, y a una edad temprana para el matrimonio. Desafortunadamente, ella también está bastante enferma y sólo tiene un corto tiempo para vivir. Antes de que pueda conseguir un matrimonio que redimirá su valor en los ojos de su familia, se encuentra el blanco del misterioso asesino Shinpei, y sus planes están en peligro. ¡Para salvarse, hace una propuesta desesperada de matrimonio! Cuando c"
     },
     {
       "id": "mal-63181",
@@ -5763,7 +5768,8 @@
       },
       "airingAt": 1792850400,
       "episode": 4,
-      "scheduleId": 419553
+      "scheduleId": 419553,
+      "description_es": "A medida que la tiranía envuelve el Reino de Clover, Asta y los Caballeros Mágicos lanzan una redada desesperada en el Reino de Spade para rescatar a sus capitanes de la Tribu Oscura. Pero su misión los lleva a una batalla brutal contra las fuerzas más allá de cualquier cosa que hayan enfrentado. Ahora, Asta debe elevarse por encima de las probabilidades imposibles de proteger a sus amigos y honrar la promesa que hizo a Yuno. (Fuente: Crunchyroll)"
     },
     {
       "id": "mal-63764",
@@ -5923,7 +5929,8 @@
       },
       "airingAt": 1792855800,
       "episode": 4,
-      "scheduleId": 418847
+      "scheduleId": 418847,
+      "description_es": "Esta es la Academia Fujinasu, una escuela secundaria privada con estudiantes de primer nivel ubicados en las afueras de la ciudad. High School 1er año Ume Mizunoe tiene excelentes calificaciones en la clase de idioma japonés y ha recibido múltiples premios literarios. Sin embargo, sus calificaciones terribles en las ciencias están afectando su capacidad de avanzar en un grado. Para evitar repetir un año, se convierte en miembro del consejo estudiantil para mejorar su posición académica. Sin embargo, en el estudio"
     },
     {
       "id": "mal-63801",
@@ -6023,7 +6030,8 @@
         "next": {
           "at": 1792137600,
           "episode": 4
-        }
+        },
+        "description_es": "En la 2a ETAPA, un cruce desértico que recorre aproximadamente 750 millas- la tierra que Johnny Joestar y Gyro Zeppeli deben desafiar, es el hogar de la zona que se teme como la palma del Diablo. En 1875, una amenaza que acechaba en dicho desierto borró una caballería de 26 personas, provocando temor de los nativos locales. A medida que los incidentes ominosos comienzan a desarrollarse, se ven obligados a darse cuenta de que esta carrera es mucho más que una mera competencia. Las dos prensas hacia adelante, donde"
       },
       {
         "id": "mal-63140",
@@ -6082,7 +6090,8 @@
         "next": {
           "at": 1792333800,
           "episode": 4
-        }
+        },
+        "description_es": "Sin Yeong-U (a.k.a. Grid), un hombre desafortunado en la vida y un jugador de bajo nivel en el popular juego VR “Satisfy”, encuentra un poderoso artículo que le gana un raro título legendario de clase: “El Sucesor de Pagma”. Ahora es un herrero experto que puede forjar armas únicas y equipar el equipo más poderoso del juego. Grid resuelve usar sus nuevas habilidades para alcanzar la fama y la fortuna, pero cuando su propia existencia comienza a provocar problemas en Satisfeo, se da cuenta de que la vida es una"
       },
       {
         "id": "mal-60601",
@@ -6222,7 +6231,8 @@
         "next": {
           "at": 1792596600,
           "episode": 4
-        }
+        },
+        "description_es": "La segunda temporada de Tensei Mierda Ken Deshita. Nota: Cada episodio fue transmitido una semana antes de la emisión de televisión a partir del 1 de octubre de 2026 en Abema. La radiodifusión regular comenzó el 8 de octubre de 2026."
       },
       {
         "id": "mal-64534",
@@ -6252,7 +6262,8 @@
         "next": {
           "at": 1792680960,
           "episode": 4
-        }
+        },
+        "description_es": "Koyuki, la chica aislada; Miki, el antiguo ídolo escolar; Minato, el tipo sin concepto de espacio personal; y Youta, el amable jugador de baloncesto. Clumsy, frustrante, pero profundamente apasionante — este drama que se acerca a la edad de los corazones cruzados avanza. A medida que se acercan, Koyuki y Minato comienzan a desarrollar sentimientos entre sí que van más allá de la mera amistad. Mientras tanto, Youta finalmente confiesa a Miki los sentimientos por los que ha albergado"
       },
       {
         "id": "mal-63337",
@@ -6280,7 +6291,8 @@
         "next": {
           "at": 1792672200,
           "episode": 4
-        }
+        },
+        "description_es": "La estudiante universitaria Kurumi Fukuga finalmente ha cumplido su deseo de iniciar el comercio de divisas (FX), motivado por recuperar los 20 millones de yenes que su madre falleció en el comercio. \"Lo recuperaré fácilmente,\" pensó, pero el mundo en el que entra puede convertirse en el cielo o el infierno en un instante. Pérdidas no realizadas, fluctuaciones descompuestas, imparables... ¡pero todavía quiere comprar, vender y hacer dinero! Con los adictos FX Mochiko, Mebuki an"
       },
       {
         "id": "mal-62534",
@@ -6362,7 +6374,8 @@
         "next": {
           "at": 1792159200,
           "episode": 3
-        }
+        },
+        "description_es": "Después de la rebelión del clan Shi, las cosas finalmente se han asentado, y Maomao ha vuelto a su antigua vida como farmacéutico en el distrito de placer. Un día, provocado por un desayuno servido en la Casa Verdigris, Maomao siente una anomalía y comienza a investigar su verdadera naturaleza. Mientras tanto, Jinshi, que ha revelado su verdadera identidad como el hermano imperial y ha comenzado a enfrentar sus pesadas responsabilidades, está profundamente preocupado por la fina"
       },
       {
         "id": "mal-63181",
@@ -6528,7 +6541,8 @@
         "next": {
           "at": 1792245600,
           "episode": 3
-        }
+        },
+        "description_es": "A medida que la tiranía envuelve el Reino de Clover, Asta y los Caballeros Mágicos lanzan una redada desesperada en el Reino de Spade para rescatar a sus capitanes de la Tribu Oscura. Pero su misión los lleva a una batalla brutal contra las fuerzas más allá de cualquier cosa que hayan enfrentado. Ahora, Asta debe elevarse por encima de las probabilidades imposibles de proteger a sus amigos y honrar la promesa que hizo a Yuno. (Fuente: Crunchyroll)"
       },
       {
         "id": "mal-59088",
@@ -6839,7 +6853,8 @@
         "next": {
           "at": 1792308600,
           "episode": 3
-        }
+        },
+        "description_es": "La segunda temporada de Ao no Hako."
       },
       {
         "id": "mal-61578",
@@ -6868,7 +6883,8 @@
         "next": {
           "at": 1792251000,
           "episode": 3
-        }
+        },
+        "description_es": "Esta es la Academia Fujinasu, una escuela secundaria privada con estudiantes de primer nivel ubicados en las afueras de la ciudad. High School 1er año Ume Mizunoe tiene excelentes calificaciones en la clase de idioma japonés y ha recibido múltiples premios literarios. Sin embargo, sus calificaciones terribles en las ciencias están afectando su capacidad de avanzar en un grado. Para evitar repetir un año, se convierte en miembro del consejo estudiantil para mejorar su posición académica. Sin embargo, en el estudio"
       },
       {
         "id": "mal-61603",
@@ -7251,7 +7267,8 @@
         "next": {
           "at": 1792413000,
           "episode": 3
-        }
+        },
+        "description_es": "Hazme una poción de amor. Y con esa sola frase, la Buena Bruja del amor secreto del lago sobre el desgarrador Sir Harij termina en un desgarro. Aún así, cuando promete ayudarla a reunir los ingredientes, Rose está emocionada por la oportunidad de mirar a un hombre con el que normalmente nunca podría interactuar. Ella aprende a jactar su corazón por sus conversaciones usuales inclinadas... pero ¿qué va a hacer cuando aparece inexplicablemente en su puerta con bre"
       },
       {
         "id": "mal-63509",
@@ -7281,7 +7298,8 @@
         "next": {
           "at": 1792340400,
           "episode": 3
-        }
+        },
+        "description_es": "Amona es un llamador oscuro con poderes demoníacos. Roni es un sacerdote devota que está demasiado tenso. Por todos los derechos, deben odiarse. En lugar de eso, terminan acelerando su arco de enemigos a amantes con un stand de una noche que de alguna manera insiste en convertirse en un evento recurrente. Ahora deben ocultar su situación del resto del partido, negando su creciente atracción entre sí, todo mientras se trata de un imp que está demasiado invertido en"
       },
       {
         "id": "mal-63098",
@@ -7310,7 +7328,8 @@
         "next": {
           "at": 1792418400,
           "episode": 3
-        }
+        },
+        "description_es": "Un día, la secundaria Ageha Yoshina recoge una misteriosa “tarjeta de teléfono roja” que queda atrás en una cabina telefónica pública. Unos días más tarde, su amigo de la infancia y compañero de clase, Sakurako Amamiya, que poseía la misma carta, desaparecen sin dejar rastro. En busca de ella, Ageha se encuentra dibujado en los rumores que rodean una cadena nacional de misteriosas desapariciones, dijo que es obra de una organización secreta conocida sólo como “Psyren”. Cuando él"
       },
       {
         "id": "mal-63712",
@@ -7538,7 +7557,8 @@
         "next": {
           "at": 1792499160,
           "episode": 3
-        }
+        },
+        "description_es": "Un gran héroe está invicto en su lecho de muerte, lamentando que nunca haya encontrado a un enemigo que pudiera derribarla. Ella nunca quiso encontrar su destino en otro lugar que en el campo de batalla, y su pacífica desaparición tiene su deseo desesperadamente de que las cosas podrían haber sido diferentes... Pero cuando de repente viene al cuerpo de la joven y frágil Nia Liston, tiene una nueva lucha por delante de ella. Nia es una niña enferma, lo que significa que tiene un largo camino por recorrer"
       },
       {
         "id": "mal-63754",
@@ -7566,7 +7586,8 @@
         "next": {
           "at": 1792501200,
           "episode": 3
-        }
+        },
+        "description_es": "Sato-san es la flor inalcanzable de la clase. Siempre tiene frío y rito con compañeros de clase, pero sólo sé que es muy linda cuando sonríe, incluso si no es mucho fotógrafo. Oshio-kun es amistoso y animado, pero sólo sé que trabaja en el café de su familia después de la escuela. Hace un gran trabajo con la cuenta SNS de la cafetería, y su mala sonrisa hace que mi corazón salte un latido! Innocente y dulce, pero a veces frustrante, esto es un"
       },
       {
         "id": "mal-54344",
@@ -7682,7 +7703,8 @@
         "next": {
           "at": 1792508400,
           "episode": 3
-        }
+        },
+        "description_es": "Rein, un encantador, es expulsado de su gremio un día. Pero en lugar de desesperar, declara, “¡Ahora puedo hacer cualquier cosa!” y comienza a reclamar el enorme número de puntos de mejora que una vez vierte en el equipo de sus compañeros, a partir de un nuevo camino como aventurero. Reunirse a su alrededor son personas que llevan heridas que no se desvanecen fácilmente: un genio aventurero que cerró su corazón después de que su partido fue masacrado, un guerrero que perdió"
       },
       {
         "id": "mal-52480",
@@ -7713,7 +7735,8 @@
         "next": {
           "at": 1792585800,
           "episode": 3
-        }
+        },
+        "description_es": "Después de frustrar un secuestro con el hermoso detective de pelo plateado Siesta, Kimihiko conduce una vida de ataque mundial y resolución del crimen hasta que Siesta muera. Un año más tarde, un nuevo caso abrirá viejas heridas mientras roza asesinato, conspiración y su compañero muerto! (Fuente: Crunchyroll)"
       },
       {
         "id": "mal-58518",
@@ -7742,7 +7765,8 @@
         "next": {
           "at": 1792587600,
           "episode": 3
-        }
+        },
+        "description_es": "La segunda temporada de Sasaki a Pii-chan."
       },
       {
         "id": "mal-64084",
@@ -7771,7 +7795,8 @@
         "next": {
           "at": 1792587600,
           "episode": 3
-        }
+        },
+        "description_es": "Después de usar su habilidad SSS-Rank, Internet, para aplastar las ambiciones de su antigua familia, Lorna es libre de viajar por el mundo. Su próxima parada es la ciudad portuaria de Aquas, donde espera ver los lugares de interés y disfrutar de algunos mariscos frescos. Pero cuando llega, el lugar está al borde de la destrucción gracias a una cierta misión semanal... ¡Qué bueno que Lorna tenga los dioses de su lado! (Fuente: Crunchyroll)"
       },
       {
         "id": "mal-59204",
@@ -7830,7 +7855,8 @@
         "next": {
           "at": 1792597500,
           "episode": 3
-        }
+        },
+        "description_es": "En una tierra dominada por los formidables Mundos Sombríos, la mayoría de la humanidad ha sido destruida. Para rescatar a su planeta de la muerte inminente, seis héroes valientes luchan una batalla peligrosa... y fracasan. Pero hay una mirada de esperanza cuando Desir, una de las últimas magras, es de repente enviado en el tiempo 13 años! Ahora armado con conocimiento del futuro sombrío, ¿puede alterar el curso de la historia y salvar el mundo? (Fuente: Crunchyroll)"
       },
       {
         "id": "mal-61227",
@@ -7913,7 +7939,8 @@
         "next": {
           "at": 1792161000,
           "episode": 2
-        }
+        },
+        "description_es": "En la superficie, Satoko lo tiene todo, es hermosa, la hija de un noble, y a una edad temprana para el matrimonio. Desafortunadamente, ella también está bastante enferma y sólo tiene un corto tiempo para vivir. Antes de que pueda conseguir un matrimonio que redimirá su valor en los ojos de su familia, se encuentra el blanco del misterioso asesino Shinpei, y sus planes están en peligro. ¡Para salvarse, hace una propuesta desesperada de matrimonio! Cuando c"
       },
       {
         "id": "mal-64254",
@@ -7942,7 +7969,8 @@
         "next": {
           "at": 1792686480,
           "episode": 3
-        }
+        },
+        "description_es": "Una vez despedido como el único estudiante ordinario de la élite Arnold Academy of Sorcery, Ray White — secretamente, el Hechicero de Iceblade— finalmente ha ganado su lugar. Con un nuevo año escolar surge un nuevo desafío: La Guerra de los Magos, una gran competencia que enfrenta equipos de escuelas rivales entre sí. Pero una sombra ominosa sobre Ray y sus amigos mientras los otros grandes hechiceros trazan sus próximos movimientos. (Fuente: Crunchyroll)"
       },
       {
         "id": "mal-63423",
@@ -8047,7 +8075,8 @@
         "next": {
           "at": 1792681200,
           "episode": 3
-        }
+        },
+        "description_es": "Misaki ha sentido a menudo el impulso de liberarse de la vida cotidiana y de emprender un viaje lejos. A pesar de que todavía no sabe lo que quiere convertirse, ella desea encontrar algo de lo que realmente puede ser apasionada. Al comienzo de un nuevo capítulo en un animado campus, se reúne con los miembros del Club de Investigación de Viajes Ferroviarios, conocido como el Club Tetsuryo. Mientras su mundo se desarrolla a lo largo de las líneas ferroviarias, el corazón de Misaki comienza a correr con"
       },
       {
         "id": "mal-64848",
