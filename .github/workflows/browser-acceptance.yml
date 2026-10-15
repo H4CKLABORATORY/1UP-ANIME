@@ -21,6 +21,9 @@ on:
       - "community.css"
   pull_request:
     branches: [main]
+concurrency:
+  group: oneup-browser-${{ github.ref }}
+  cancel-in-progress: true
 permissions:
   contents: read
 jobs:
