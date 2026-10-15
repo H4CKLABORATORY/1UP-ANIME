@@ -363,34 +363,49 @@ async function mediaForAnime(id){
  }
  await authorizedMediaLoading;
  const entry=authorizedMedia?.[id];
- return Array.isArray(entry?.episodes)?entry.episodes.filter(x=>x&&typeof x.src==='string'&&x.src.startsWith('https://')).slice(0,60):[];
+ return Array.isArray(entry?.episodes)?entry.episodes.filter(item=>mediaSources(item).length>0).slice(0,60):[];
 }
 function mediaFileUrl(value){
  try{
-  // Internal Spanish subtitles use relative URLs; media URLs must be HTTPS.
   const urlObj=new URL(String(value||''),location.href);
   if(urlObj.protocol!=='https:')return '';
   return urlObj.href;
  }catch{return ''}
 }
-function playbackEpisode(id,episodes,index){
- const item=episodes[index];if(!item)return;
- const src=mediaFileUrl(item.src);
- const host=$('#oneup-player-content');if(!host)return;
- if(!src){host.textContent='No se pudo cargar esta fuente de video.';return}
- const caption=mediaFileUrl(item.subtitles_es||'');
- const mime=String(item.mime||'video/mp4');
+function mediaSources(item){
+ if(!item || typeof item!=='object')return [];
+ const raw=Array.isArray(item.sources)&&item.sources.length?item.sources:[{name:'Fuente principal',src:item.src,mime:item.mime}];
  const supported=['video/mp4','video/webm','application/vnd.apple.mpegurl'];
- const type=supported.includes(mime)?mime:'video/mp4';
- host.innerHTML='<div class="oneup-playback-stage">'+
- '<video id="oneup-licensed-video" controls playsinline preload="metadata" crossorigin="anonymous" controlsList="nodownload" aria-label="Reproductor de video autorizado">'+
- '<source src="'+esc(src)+'" type="'+esc(type)+'">'+
+ return raw.filter(source=>source&&mediaFileUrl(source.src||source.url)).slice(0,8).map((source,i)=>{
+  const url=mediaFileUrl(source.src||source.url);
+  const guess=url.split('?')[0].endsWith('.m3u8')?'application/vnd.apple.mpegurl':'video/mp4';
+  const type=supported.includes(source.mime)?source.mime:guess;
+  return {src:url,name:String(source.name||source.label||'Servidor '+(i+1)).slice(0,45),mime:type};
+ });
+}
+function playbackEpisode(id,episodes,index,serverIndex=0){
+ const item=episodes[index];if(!item)return;
+ const host=$('#oneup-player-content');if(!host)return;
+ const sources=mediaSources(item);
+ const activeSource=sources[serverIndex]||sources[0];
+ if(!activeSource){host.textContent='No hay fuentes autorizadas para este episodio.';return}
+ const caption=mediaFileUrl(item.subtitles_es||'');
+ const sourceChoices=sources.length>1?
+  '<div class="oneup-server-selector" aria-label="Cambiar servidor autorizado"><strong>SELECCIONAR SERVIDOR</strong>'+
+  sources.map((source,i)=>'<button type="button" class="oneup-server-choice'+(source===activeSource?' active':'')+'" data-licensed-server="'+i+'" aria-pressed="'+String(source===activeSource)+'">'+esc(source.name)+'</button>').join('')+'</div>':'';
+ host.innerHTML=sourceChoices+
+ '<div class="oneup-playback-stage">'+
+ '<video id="oneup-licensed-video" controls playsinline preload="metadata" crossorigin="anonymous" aria-label="Reproductor de episodio autorizado">'+
+ '<source src="'+esc(activeSource.src)+'" type="'+esc(activeSource.mime)+'">'+
  (caption?'<track kind="subtitles" src="'+esc(caption)+'" srclang="es" label="Español" default>':'')+
  'Tu navegador no admite esta reproducción.</video>'+
- '</div><p class="oneup-playback-hint">Episodio '+(index+1)+' · '+esc(item.title||'Video autorizado')+
+ '</div><p class="oneup-playback-hint">Episodio '+(index+1)+' · '+esc(item.title||'Video autorizado')+' · '+esc(activeSource.name)+
  (caption?' · Subtítulos en español disponibles':' · Sin subtítulos en español disponibles')+
  '</p>';
- // Never autoplay media merely by opening a listing.
+ host.querySelectorAll('[data-licensed-server]').forEach(button=>button.addEventListener('click',()=>{
+  playbackEpisode(id,episodes,index,Number(button.dataset.licensedServer));
+ }));
+ // Source switches do not autoplay or capture streams.
 }
 async function loadAuthorizedPlayer(id){
  const host=$('#oneup-player-section');if(!host)return;
@@ -398,8 +413,8 @@ async function loadAuthorizedPlayer(id){
  if(state.active!==id||!$('#anime-dialog')?.open)return;
  if(!episodes.length){host.hidden=true;return}
  host.hidden=false;
- const buttons=episodes.map((x,i)=>'<button class="oneup-episode-button" type="button" data-licensed-episode="'+i+'" aria-label="Reproducir episodio autorizado '+(i+1)+'">'+(i+1)+' · '+esc(x.title||'Episodio')+'</button>').join('');
- host.innerHTML='<div class="oneup-detail-section"><h3>EPISODIOS DISPONIBLES</h3><p>Videos proporcionados con derechos de publicación. No se extrae contenido de otras plataformas.</p>'+
+ const buttons=episodes.map((x,i)=>'<button class="oneup-episode-button" type="button" data-licensed-episode="'+i+'" aria-label="Abrir episodio autorizado '+(i+1)+'">'+(i+1)+' · '+esc(x.title||'Episodio')+'</button>').join('');
+ host.innerHTML='<div class="oneup-detail-section"><h3>EPISODIOS DISPONIBLES</h3><p>Estas fuentes se agregan únicamente con permiso de distribución. Elige episodio y servidor.</p>'+
  '<div id="oneup-licensed-episodes" class="oneup-episode-select">'+buttons+'</div>'+
  '<div id="oneup-player-content"></div></div>';
  host.querySelectorAll('[data-licensed-episode]').forEach(button=>button.addEventListener('click',()=>{
