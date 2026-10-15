@@ -1,43 +1,9 @@
 {
-  "updated": "2026-10-15T21:30:45.047Z",
+  "updated": "2026-10-15T22:51:37.439Z",
   "source": "AniList public GraphQL metadata",
-  "windowStart": 1791901835,
-  "windowEnd": 1792877435,
+  "windowStart": 1791906688,
+  "windowEnd": 1792882288,
   "airing": [
-    {
-      "id": "mal-63431",
-      "mal_id": 63431,
-      "ani_id": 207329,
-      "title": "The Laid-Off Cheat-Granting Mage Enjoys a Second Lease on Life",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b207329-6VPeZIDfF4Sr.png",
-      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/207329-9IqRSKIsM3TC.jpg",
-      "description": "Rein, an enchanter, is suddenly expelled from his guild one day. But instead of despairing, he declares, “Now I can do anything!” and begins reclaiming the massive number of enhancement points he once poured into his guildmates’ gear, setting off on a brand-new path as an adventurer. Gathering around him are people carrying wounds that don’t fade easily: a genius adventurer who shut her heart after her party was slaughtered, a warrior who lost her family, and an assassin raised from childhood to kill. Yet Rein never rejects their pasts or their scars—he accepts them all with bright, straightforward warmth. The stage is a unique fantasy world where Uzis, slingshots, and even yakuza exist side by side. But in this world, the more people rely on convenient technology, the more their magic weakens, and adventurers grow fragile. Intelligent, vicious monsters roam freely, while in the underworld, outlaws bare their greed and ambition as schemes and betrayals intertwine. In a world where ideals and justice are easily crushed, adventurers fight on with nothing but their magic and their convictions. This is the story of those who have lost their place in the world finding a new way to live. Rein and his companions’ wild, free-spirited second life begins now! (Source: The Laid-Off Cheat-Granting Mage Enjoys a Second Lease on Life Site)",
-      "year": 2026,
-      "startDate": "2026-10-07",
-      "format": "TV",
-      "episodes": 0,
-      "averageScore": 73,
-      "status": "RELEASING",
-      "genres": [
-        "Adventure",
-        "Comedy",
-        "Fantasy",
-        "Slice of Life"
-      ],
-      "siteUrl": "https://anilist.co/anime/207329",
-      "trailer": {
-        "site": "youtube",
-        "id": "BJXBr_aFF8s"
-      },
-      "next": {
-        "at": 1792508400,
-        "episode": 3
-      },
-      "airingAt": 1791903600,
-      "episode": 2,
-      "scheduleId": 420253,
-      "description_es": "Rein, un encantador, es expulsado de su gremio un día. Pero en lugar de desesperar, declara, “¡Ahora puedo hacer cualquier cosa!” y comienza a reclamar el enorme número de puntos de mejora que una vez vierte en el equipo de sus compañeros, a partir de un nuevo camino como aventurero. Reunirse a su alrededor son personas que llevan heridas que no se desvanecen fácilmente: un genio aventurero que cerró su corazón después de que su partido fue masacrado, un guerrero que perdió"
-    },
     {
       "id": "mal-63489",
       "mal_id": 63489,
@@ -70,7 +36,8 @@
       },
       "airingAt": 1791909300,
       "episode": 15,
-      "scheduleId": 418950
+      "scheduleId": 418950,
+      "description_es": "Después de una mano misteriosa la arrastra debajo de un charco, moderno adolescente japonés Yuri despierta en el imperio hitita del siglo 14 AC. Entró en una lucha mortal por el trono, se une al Príncipe Kail para combatir a asesinos, superar conspiraciones reales y sobrevivir a un mundo en guerra. Mientras sus hazañas ganan su renombre como la diosa Ishtar, Yuri debe elegir entre su vida vieja y un futuro incierto. (Fuente: Crunchyroll)"
     },
     {
       "id": "mal-59415",
@@ -101,7 +68,8 @@
       },
       "airingAt": 1791909900,
       "episode": 1,
-      "scheduleId": 419634
+      "scheduleId": 419634,
+      "description_es": "Siguiendo la voluntad de su abuelo de “buscar el Senki”, el protagonista Kairi visita Golden Valley, una zona económica especial de la máquina oscura. Allí, conoce a una chica misteriosa llamada Rudra. Se convirtió en un jugador de la máquina oscura por Rudra, el talento de Kairi florece gradualmente en el curso de muchas batallas intensas. (Fuente: Fuji Creative) Nota: Parte del proyecto \"DARK MACHINE\" Web3 cross-media donde se entrelazan la historia del juego y su adaptación de anime."
     },
     {
       "id": "al-218008",
@@ -132,7 +100,8 @@
       },
       "airingAt": 1791929160,
       "episode": 15,
-      "scheduleId": 422341
+      "scheduleId": 422341,
+      "description_es": "Secuela de Chibi Godzilla no Gyakushuu 3 ."
     },
     {
       "id": "mal-63151",
@@ -162,7 +131,8 @@
       },
       "airingAt": 1791932400,
       "episode": 41,
-      "scheduleId": 416120
+      "scheduleId": 416120,
+      "description_es": "Shark Meow es un gatito de tabby naranja que lleva un traje de tiburón. Un poco torpe y siempre tomando cosas a su propio ritmo acogedor, pero todos los días con sus mejores amigos gatitos — y el gatito salvada, Little Meow— está lleno de pequeños revuelos inesperados y aventuras dulces. Un lugar cálido soleado en el parque, la chispa del mar, el vapor subiendo de las batatas recién asadas, la sensación de la primera nevada... Estos pequeños momentos cotidianos llenan su mundo con calidez y deleite. No puedes evitar sonreír y pensar, “¡Es verdad!” Un pequeño y suave anime que trae alegría a cadada"
     },
     {
       "id": "mal-62248",
@@ -194,7 +164,8 @@
       },
       "airingAt": 1791943200,
       "episode": 15,
-      "scheduleId": 417914
+      "scheduleId": 417914,
+      "description_es": "La cuarta y última temporada de Yi Nian Yongheng."
     },
     {
       "id": "mal-64461",
@@ -223,7 +194,8 @@
       "next": null,
       "airingAt": 1791943200,
       "episode": 12,
-      "scheduleId": 418608
+      "scheduleId": 418608,
+      "description_es": "La sexta temporada de Shou Yan."
     },
     {
       "id": "mal-62218",
@@ -251,7 +223,8 @@
       },
       "airingAt": 1791943200,
       "episode": 5,
-      "scheduleId": 421465
+      "scheduleId": 421465,
+      "description_es": "Hace diez años, después de tres días consecutivos de luna de sangre, fantasmas, dioses, ojos heterocromáticos y cuentos extraños llegaron uno tras otro. El misterio y el enigma descendieron sobre el mundo humano. El terror y la desesperación vagaron por la tierra. Como humanos, ¿debemos arrodillarnos en sumisión, llorar amargamente, o dibujar nuestras espadas? Esta es una nueva era, y esta era — pertenece a lo extraordinario! Al abrir la puerta a lo extraordinario, Su Bai encontró un nuevo mundo... (Fuente: Tencent, traducido)"
     },
     {
       "id": "mal-52480",
@@ -385,7 +358,8 @@
       },
       "airingAt": 1791989160,
       "episode": 2,
-      "scheduleId": 417271
+      "scheduleId": 417271,
+      "description_es": "Hikaru Shidou, Umi Ryuuzaki, y Fuu Hououji no son de Cephiro. Mientras que en un viaje de campo escolar a la Torre de Tokio, las mentes de las tres chicas están en cualquier cosa excepto mundos diferentes llenos de magia y maravilla. Es decir, hasta que la Princesa Esmeraude, el Pilar de Cephiro, clama por los Caballeros Mágicos para salvar su mundo, ¡y eso resulta que son esos tres! (Fuente: Crunchyroll)"
     },
     {
       "id": "mal-62534",
@@ -417,7 +391,8 @@
       },
       "airingAt": 1791990000,
       "episode": 3,
-      "scheduleId": 419600
+      "scheduleId": 419600,
+      "description_es": "Las viejas rivalidades reinan cuando los jugadores del equipo Japón se enfrentan para ganar puntos en la alineación para la final de la Copa Mundial. (Fuente: Crunchyroll News)"
     },
     {
       "id": "mal-60598",
@@ -446,7 +421,8 @@
       },
       "airingAt": 1791990000,
       "episode": 1,
-      "scheduleId": 421450
+      "scheduleId": 421450,
+      "description_es": "Las terceras temporadas de Dali Si Rizhi."
     },
     {
       "id": "mal-53913",
@@ -510,7 +486,8 @@
       },
       "airingAt": 1791991800,
       "episode": 2,
-      "scheduleId": 419813
+      "scheduleId": 419813,
+      "description_es": "La historia tiene lugar 20 años después de que el robot Dandivine derrotara al misterioso Aposdoll. El mundo está ahora en paz. Sin embargo, el fabricante de juguetes Kasuga, que dependía de sus juguetes de mercadería de Dandivine, ha caído en declive. Así, el presidente de Kasuga, Genjuro Shijima, oró por el renacimiento de Dandivine, y el Aposdoll de repente regresó. El estudiante de secundaria Gekiha Shijima recibe una invitación de su tío Yusaku Kuroiwa, el ex piloto principal de Dandivine, para pilotar el robot gigante mismo. (Fuente: Anime News Network)"
     },
     {
       "id": "mal-57612",
@@ -571,7 +548,8 @@
       },
       "airingAt": 1792056600,
       "episode": 3,
-      "scheduleId": 421764
+      "scheduleId": 421764,
+      "description_es": "Cuarta temporada de PetitCure: Ferias precarias."
     },
     {
       "id": "mal-63396",
@@ -601,7 +579,8 @@
       "next": null,
       "airingAt": 1792058400,
       "episode": 2,
-      "scheduleId": 422552
+      "scheduleId": 422552,
+      "description_es": "En un futuro lejano, en las afueras que quedan atrás por la rápida concentración de ciencia y tecnología avanzadas en las zonas urbanas, se encuentra una remota aldea de montaña conocida como Kagami Village. “Cógete, o vendrá un doble por ti.” Ese viejo folclore sigue en este pueblo. Akane Higure, estudiante de secundaria que vive en Kagami Village, ha estado esperando ansiosamente el regreso de su hermana mayor, Sui Higure, quien finalmente está siendo destituido del hospital después de un año. Sin embargo, no mucho después de que su hermana vuelva a casa, Akane recibe una sola llamada telefónica. “La chica en casa contigo... no es"
     },
     {
       "id": "mal-63337",
@@ -663,7 +642,8 @@
       },
       "airingAt": 1792074600,
       "episode": 2,
-      "scheduleId": 422407
+      "scheduleId": 422407,
+      "description_es": "Una profunda inmersión en la vida cotidiana incalculable y las interacciones entre escuelas del equipo de Ooarai Girls y los demás estudiantes (junto con los personajes coloridos que los rodean) que están totalmente dedicados al camino del tanque! (Fuente: Página Web Oficial, traducido) Nota: La serie tenía un pre-pantalla de cuatro partes en Japón a partir de diciembre de 2025. La televisión regular comenzó en octubre de 2026. • Parte 1 liberando teatralmente el 26 de diciembre de 2025. • Parte 2 liberando teatralmente el 30 de enero de 2026. • Parte 3 liberando teatralmente el 6 de marzo de 2026. • Parte 4 liberando teatricall"
     },
     {
       "id": "mal-64534",
@@ -727,7 +707,8 @@
       "next": null,
       "airingAt": 1792076400,
       "episode": 1,
-      "scheduleId": 412436
+      "scheduleId": 412436,
+      "description_es": "\"En realidad, soy Touko Kirishima.\" El público erupcionó con entusiasmo al enterarse de que la verdadera identidad de la misteriosa y popular cantante de internet no era otra que la actriz favorita de la nación, Mai Sakurajima. La escena fue exactamente igual que el sueño que Sakuta Azusagawa había visto en Nochebuena. Comenzando con la conmovedora confesión de Mai el 1 de abril, los acontecimientos imposibles que todos soñaban una vez con seguir ocurriendo uno tras otro. El hashtag de las redes sociales \"#Yumemiru,\" donde los sueños se hacen realidad, se ha desvanecido, y como Sakuta lucha con la desconexión entre la realidad ante él un"
     },
     {
       "id": "mal-62615",
@@ -848,7 +829,8 @@
       },
       "airingAt": 1792076400,
       "episode": 3,
-      "scheduleId": 421803
+      "scheduleId": 421803,
+      "description_es": "La segunda temporada de Kizu darake Seijo yori Houfuku wo Komete."
     },
     {
       "id": "mal-59741",
@@ -940,7 +922,8 @@
       },
       "airingAt": 1792111800,
       "episode": 3,
-      "scheduleId": 421791
+      "scheduleId": 421791,
+      "description_es": "Mazenchu está en una escuela donde todo tipo de comida puede vivir su juventud y formar amistades, rivalidades y romances amargos. (Fuente: Anime News Network)"
     },
     {
       "id": "mal-61607",
@@ -973,7 +956,8 @@
       },
       "airingAt": 1792119600,
       "episode": 11,
-      "scheduleId": 419019
+      "scheduleId": 419019,
+      "description_es": "Después de que el caso Li Tianchen llegue a su fin, la paz parece volver a Time Photo Studio, hasta que la desaparición de Xia Fei lleve a todos a una red de destino. Con el regreso de Vein y las nuevas habilidades de Qiao Ling, Cheng Xiaoshi y Lu Guang comienzan a descubrir la verdad detrás del misterioso fuego bahati. A medida que la investigación se profundiza, surgen conexiones ocultas entre el caso y los padres de Cheng Xiaoshi. Mientras tanto, Liu Xiao, miembro de una organización misteriosa, pone en marcha sus propios planes, mientras que la intervención del Inspector Jae introduce nuevas incertidumbres. Como secretos enterrados en el pasado"
     },
     {
       "id": "mal-61469",
@@ -1038,7 +1022,8 @@
       },
       "airingAt": 1792143600,
       "episode": 3,
-      "scheduleId": 420230
+      "scheduleId": 420230,
+      "description_es": "Kadokawa anunció el 9 de junio de 2025 que el libro de fotos Pan Dorobou (Bread Thief) de Keiko Shibata tendrá una adaptación de anime. El anuncio no reveló el formato del anime. Los libros de fotos se centran en un pedazo de pan que también roba pan de panaderías en la ciudad. (Fuente: Anime News Network)"
     },
     {
       "id": "mal-53876",
@@ -1070,7 +1055,8 @@
       },
       "airingAt": 1792144500,
       "episode": 153,
-      "scheduleId": 421005
+      "scheduleId": 421005,
+      "description_es": "Un nuevo sueño y aventura en todo el mundo Pokémon se desarrolla en una nueva serie Pokémon siguiendo a una chica llamada Liko y un chico llamado Roy."
     },
     {
       "id": "mal-64848",
@@ -1098,7 +1084,8 @@
       },
       "airingAt": 1792152000,
       "episode": 2,
-      "scheduleId": 419661
+      "scheduleId": 419661,
+      "description_es": "Secuela de Duel Masters LOST: Boukyaku no Taiyou."
     },
     {
       "id": "mal-65009",
@@ -1129,7 +1116,8 @@
       },
       "airingAt": 1792153560,
       "episode": 3,
-      "scheduleId": 420190
+      "scheduleId": 420190,
+      "description_es": "La historia de Aoki Denshou Welsh &quot; Shedar sigue a Welsh, un adolescente del país que ama cocinar, y a Shedar, un joven príncipe que está destinado a ser rey un día. Cuando los dos jóvenes con vidas muy diferentes son lanzados juntos por un encuentro casual, las ruedas del destino comienzan a girar, y pronto deben trabajar juntos para traer un futuro pacífico al detener un cruel déspota de conquistar el mundo. (Fuente: Crunchyroll)"
     },
     {
       "id": "mal-61014",
@@ -1160,7 +1148,8 @@
       },
       "airingAt": 1792157400,
       "episode": 2,
-      "scheduleId": 419703
+      "scheduleId": 419703,
+      "description_es": "Esta es una historia de cuatro chicas que viven en el \"Dark Side\" de Academy City. En la Ciudad de la Academia donde el \"ESP\" ha sido reconocido como una ciencia general. Detrás de la paz, hay una organización Dark Side que realiza misiones que no pueden hacerse públicas. \"ITEM\" es una unidad de élite compuesta por cuatro niñas. Takitsubo Rikou es capaz de leer y rastrear los campos AIM emitidos por aquellos con capacidades. Frenda Seivelun, que destaca en combate utilizando explosivos y trampas. Kinuhata Saiai, que puede manipular el nitrógeno a voluntad y juega un papel defensivo. Y uno de los 7 Espers que Academy City está orgulloso de: Mugino Shiz"
     },
     {
       "id": "mal-61987",
@@ -1256,7 +1245,8 @@
       },
       "airingAt": 1792161000,
       "episode": 3,
-      "scheduleId": 422237
+      "scheduleId": 422237,
+      "description_es": "Después de luchar en Kioto y Nerima, los estudiantes de la Academia Rasetsu se han hecho más fuertes. Pero Yaoroshi deja la academia para unirse a la Brigada Oni por su \"erración total del Momotaro\". Cuando Shiki se da cuenta de que también apuntan a los no combatientes, se pone después de Yaoroshi para traerlo de vuelta. Mientras tanto, en Nikko, hay una instalación de investigación para experimentos horribles en la antigua Kegon Falls... (Fuente: REMOW)"
     },
     {
       "id": "mal-63061",
@@ -1288,7 +1278,8 @@
       },
       "airingAt": 1792162800,
       "episode": 15,
-      "scheduleId": 421090
+      "scheduleId": 421090,
+      "description_es": "El manga se centra en el estudiante de secundaria Ito Hazui. Durante su descanso de primavera al final de su primer año de secundaria, la madre de Ito se vuelve a casar, y Ito se mueve a vivir con su nueva familia, convirtiéndose en Ito Narita. Al llegar a su nueva casa, Ito está sorprendido de saber que ahora tiene cuatro hermanos menores. Ito trata de que ella sea más difícil de llevar con todos los nuevos miembros de su familia, pero el hermano mayor Gen es un poco frío para ella. Sin embargo, bajo su fachada, ocasionalmente muestra su amabilidad. (Fuente: Anime News Network)"
     },
     {
       "id": "mal-59088",
@@ -1321,7 +1312,8 @@
       },
       "airingAt": 1792169580,
       "episode": 3,
-      "scheduleId": 418623
+      "scheduleId": 418623,
+      "description_es": "Secuela de los Revengers de Tokio: Tenjiku-hen."
     },
     {
       "id": "mal-64718",
@@ -1413,7 +1405,8 @@
       },
       "airingAt": 1792196760,
       "episode": 28,
-      "scheduleId": 421152
+      "scheduleId": 421152,
+      "description_es": "Cada día la vida recibe un toque acogedor con el relajado Rilakkuma. Los momentos suaves de amistad, cambio y las pequeñas alegrías se desarrollan, convirtiendo los momentos ordinarios en algo silenciosamente mágico — un día suave y reconfortante a la vez. Es un momento que hará que su corazón se sienta más ligero y más ligero. No importa dónde estés o lo que estés haciendo, Rilakkuma estará a tu lado. ¡Una nueva historia emocionante comienza! ¡Experimente el mundo libre de estrés de Rilakkuma, el oso relajado que hace ser perezoso sin esfuerzo! (Fuente: Crunchyroll, Rilakkuma Anime Site, traducido)"
     },
     {
       "id": "mal-64789",
@@ -1440,7 +1433,8 @@
       },
       "airingAt": 1792197000,
       "episode": 3,
-      "scheduleId": 418611
+      "scheduleId": 418611,
+      "description_es": "Segunda temporada de Nezumi-kun no Chokki (TV)"
     },
     {
       "id": "mal-63157",
@@ -1471,7 +1465,8 @@
       },
       "airingAt": 1792197000,
       "episode": 3,
-      "scheduleId": 419527
+      "scheduleId": 419527,
+      "description_es": "¡El sargento Keroro viene a conquistar la Tierra, sólo para ser capturado y atrapado viviendo con la familia Hinata! (Fuente: Crunchyroll)"
     },
     {
       "id": "mal-61619",
@@ -1500,7 +1495,8 @@
       },
       "airingAt": 1792198800,
       "episode": 16,
-      "scheduleId": 417665
+      "scheduleId": 417665,
+      "description_es": "En los tiempos caóticos, demonios y monstruos andan libremente, y funcionarios traicioneros están en el poder. Con la invasión del Netherworld, los seres humanos y el Netherworld causaron estragos en el mundo mortal, y los dioses salvajes que trabajan para el Netherworld intimidan al pueblo común. Enfurecido, Xu Ying, un cazador de serpientes, rebelde y comete el pecado de matar a un dios, y también saca a un funcionario de la corte incompetente. Cazado por los dos reinos, su huida comienza... (Fuente: iQ)"
     },
     {
       "id": "mal-51836",
@@ -1530,7 +1526,8 @@
       },
       "airingAt": 1792202400,
       "episode": 175,
-      "scheduleId": 414711
+      "scheduleId": 414711,
+      "description_es": "El Tang Sect en un mundo turbulento. Aquí no hay nada más que espíritu marcial. Diez mil años después de la fundación del Tang Sect, está en declive relativo. Nació un hombre extremadamente talentoso. ¿Pueden los nuevos Monstruos Shrek revivir el Tang Sect y traerlo de vuelta a la gloria? Una bestia de alma de más de un millón de años; Electrolux que puede elegir estrellas; El nuevo sistema de utensilios de alma que llevó al declive del Tang Sect... Hay que revelar muchos secretos. ¿Pueden volver a afilarse las armas secretas del Tang Sect? ¿Puede el Tang Sect recuperar su antigua gloria? (Fuente: WeTV)"
     },
     {
       "id": "mal-60597",
@@ -1561,7 +1558,8 @@
       },
       "airingAt": 1792202400,
       "episode": 5,
-      "scheduleId": 421873
+      "scheduleId": 421873,
+      "description_es": "La tercera temporada de Dawang Raoming."
     },
     {
       "id": "mal-63901",
@@ -1618,7 +1616,8 @@
       },
       "airingAt": 1792222200,
       "episode": 1357,
-      "scheduleId": 409442
+      "scheduleId": 409442,
+      "description_es": "Crayon Shin-chan sigue los locos anticos y aventuras de Shinnosuke, de cinco años, \"Shin\" Nohara y sus padres, vecinos y amigos, y se encuentra en Kasukabe, Prefectura de Saitama, Japón. Muchas de las bromas de la serie provienen del uso extraño, antinatural e inapropiado del lenguaje de Shin-chan, así como de su comportamiento inapropiado. Una mordaza típica involucra a Shin-chan confundiendo a sus padres usando la frase equivocada para la ocasión; por ejemplo, diciendo \"¡Bienvenido!\" en lugar de \"Estoy de vuelta!\" cuando él vuelve. Durante el comienzo de la serie, el programa de televisión se basaba principalmente en o"
     },
     {
       "id": "mal-8687",
@@ -1647,7 +1646,8 @@
       },
       "airingAt": 1792224000,
       "episode": 937,
-      "scheduleId": 380065
+      "scheduleId": 380065,
+      "description_es": "Una nueva serie Doraemon producida por el mismo equipo que la serie 1979 (en asociación con Studio Pierrot) con nuevos actores de voz y personal y diseños de caracteres actualizados."
     },
     {
       "id": "mal-61999",
@@ -1679,7 +1679,8 @@
       },
       "airingAt": 1792225800,
       "episode": 2,
-      "scheduleId": 422489
+      "scheduleId": 422489,
+      "description_es": "\"La máscara\" da poder a cualquiera que la use. A veces, eso significa una posibilidad interminable, o una tragedia inimaginable... Perú, alumno del legendario fabricante de máscaras Gaston Roux, se hace controlado por el “Mask del Dios Guerrero”, y mata involuntariamente a sus amigos, e incluso a su propio maestro. Para evitar que este tipo de tragedia vuelva a ocurrir, Perú jura destruir todas las máscaras de Gaston que se extienden por todo el mundo. Frente a los pecados que ha cometido, se embarca en su viaje. Conocer a nuevos amigos y enfrentar a poderosos enemigos. El chico continúa. Hasta el día que puede expiar por hola"
     },
     {
       "id": "mal-235",
@@ -1709,7 +1710,8 @@
       },
       "airingAt": 1792227600,
       "episode": 1217,
-      "scheduleId": 420735
+      "scheduleId": 420735,
+      "description_es": "Kudo Shinichi es un detective de secundaria de diecisiete años a quien la gente llama \"Modern Sherlock Holmes\". Sin embargo, una noche después de una cita con su novia de la infancia, Ran, Shinichi fue testigo de un comercio ilegal y, atrapado de su guardia, fue noqueado inconsciente y alimentado una droga que se suponía que lo mataría... pero se despertó y se encontró a sí mismo hundido a un niño de siete años. Para localizar a los hombres que le hicieron esto, Shinichi escondió su identidad y vivió con Ran, cuyo padre fue un detective sin esperanza, y con eso llegó una serie de asesinatos y misterios que él debe resolver. (Sourc)"
     },
     {
       "id": "mal-64326",
@@ -1741,7 +1743,8 @@
       },
       "airingAt": 1792229100,
       "episode": 3,
-      "scheduleId": 421839
+      "scheduleId": 421839,
+      "description_es": "En el corazón de un continente de ocho reinos se encuentra el Reino Marronnier. Su general, Baribara, tiene siete hijos, cada uno con un regalo único y servir como comandante caballero. Heridos por una única causa noble de rescatar heroicamente a una princesa algún día, los hermanos se establecieron como embajadores de buena voluntad a los siete reinos vecinos. ¿Qué encuentros, pruebas y destinos les esperan en estas tierras desconocidas? (Fuente: Amazon Prime Video)"
     },
     {
       "id": "mal-64398",
@@ -1770,7 +1773,8 @@
       },
       "airingAt": 1792231200,
       "episode": 18,
-      "scheduleId": 415796
+      "scheduleId": 415796,
+      "description_es": "Segunda temporada de Guangyin Zhi Wai."
     },
     {
       "id": "mal-59787",
@@ -1802,7 +1806,8 @@
       },
       "airingAt": 1792238400,
       "episode": 3,
-      "scheduleId": 419826
+      "scheduleId": 419826,
+      "description_es": "Romelia y su partido tienen éxito en derrotar al Rey demonio Zelgis, aunque la carga imprudente del príncipe Henri los obliga a una batalla agotadora. Después, Romelia se marca \"peso muerto\" por no luchar directamente, y el Príncipe unilateralmente rompe su compromiso. Denegado un lugar en las celebraciones de la victoria, Romelia vuelve a casa, sólo para ser conocido con indiferencia fría de su familia y sociedad. Sin embargo, se niega a romper. Ella ya ha puesto sus ojos en el camino que está por delante. (Fuente: Crunchyroll) Nota: Romelia War Chronicle fue transmitido 2 días antes de la emisión de televisión en A"
     },
     {
       "id": "mal-61153",
@@ -1834,7 +1839,8 @@
       },
       "airingAt": 1792242000,
       "episode": 4,
-      "scheduleId": 421884
+      "scheduleId": 421884,
+      "description_es": "Fia siempre soñó con convertirse en un caballero. Nacida en una familia de caballeros, es la menos talentosa entre ellos, pero todavía se aferra a su esperanza y trenes con todo lo que tiene. Cuando llega el día para que mate a un pequeño demonio y pruebe su valor, termina cara a cara con un dragón en su lugar! Una herida mortal hace que su vida parpadee ante sus ojos... y de repente recuerda su vida anterior, cuando ella era un poderoso santo en una era pasada que venció al Rey demonio. Esa vida terminó en dolor debido a quién era, haciendo que su miedo se convierta en un santo de nuevo. Ahora que la magia de su anterior"
     },
     {
       "id": "mal-63140",
@@ -1866,7 +1872,8 @@
       },
       "airingAt": 1792243800,
       "episode": 4,
-      "scheduleId": 420143
+      "scheduleId": 420143,
+      "description_es": "¡La segunda temporada de Yasei no el último jefe ga Arawareta!"
     },
     {
       "id": "mal-61967",
@@ -1931,7 +1938,8 @@
       },
       "airingAt": 1792247400,
       "episode": 3,
-      "scheduleId": 419802
+      "scheduleId": 419802,
+      "description_es": "Akira vive una vida pacífica con su hermana mayor Haruka y su madre, que dirige un café. Sin embargo, la familia alberga un secreto — Haruka ha heredado un poder de su padre llamado \"Engine\", y esconde ese poder de otros. Akira, por otro lado, no ha heredado el poder de su padre, y tiene un complejo de inferioridad. En medio de esto, acontecimientos extraños comienzan a suceder alrededor del mundo. (Fuente: Anime News Network)"
     },
     {
       "id": "mal-62524",
@@ -1965,7 +1973,8 @@
       },
       "airingAt": 1792247400,
       "episode": 3,
-      "scheduleId": 420130
+      "scheduleId": 420130,
+      "description_es": "Puede ser una ciudad arruinada devastada por zombis, pero para Aki y sus amigos, ¡es increíble! Habiendo crecido sólo escuchando historias del viejo mundo y el misterioso brote que borró a la humanidad, se pone con sus amigos de la infancia en busca de su padre desaparecido. Las cosas se convierten rápidamente en una lucha por la supervivencia fuera de la seguridad de su pequeño pueblo, sin embargo nunca se han sentido más vivos. (Fuente: Crunchyroll)"
     },
     {
       "id": "mal-63053",
@@ -1994,7 +2003,8 @@
       },
       "airingAt": 1792248300,
       "episode": 2,
-      "scheduleId": 420241
+      "scheduleId": 420241,
+      "description_es": "Las leyendas urbanas cobran vida... Todos han oído una leyenda urbana antes, pero pocos han llegado cara a cara con uno. Estos fenómenos están en todas partes, existentes en las sombras de la realidad. Cada vez más de ellos han estado apareciendo a raíz del niño sin rostro visto por todo Japón. Si la ves o una de las leyendas urbanas que trae, ora al chico en la capucha roja te encuentra antes de que sea demasiado tarde. Usted no tendrá una oportunidad por su cuenta. Pero con su ayuda, puedes vivir para ver otro día... (Fuente: Yen Press)"
     },
     {
       "id": "mal-56733",
@@ -2028,7 +2038,8 @@
       },
       "airingAt": 1792249200,
       "episode": 4,
-      "scheduleId": 422395
+      "scheduleId": 422395,
+      "description_es": "Pocos títulos son más venerados entre los erizos-(ahem) conocedores de videojuegos eróticos japoneses-que Magical Explorer. Un día, nuestro héroe amante de la mugre se despierta para encontrar que ha sido reencarnado en el cuerpo del protagonista de la lancha del juego! O más bien, su mejor amigo, Kousuke Takioto. Pero con su inigualable conocimiento de Magical Explorer y las habilidades de Kousuke poco ortodoxas (una bufanda que se duplica como un puño?), nuestro héroe promete convertir el perdedor más desafortunado en su más poderoso corazón. En este mundo, nada está fuera de alcance cuando tienes el know-how! (Fuente: Yen Press"
     },
     {
       "id": "mal-61578",
@@ -2093,7 +2104,8 @@
       },
       "airingAt": 1792252560,
       "episode": 3,
-      "scheduleId": 417716
+      "scheduleId": 417716,
+      "description_es": "La tercera temporada de Ranma 1/2 (2024) ."
     },
     {
       "id": "mal-62922",
@@ -2125,7 +2137,8 @@
       },
       "airingAt": 1792254600,
       "episode": 3,
-      "scheduleId": 419564
+      "scheduleId": 419564,
+      "description_es": "Si hay una cosa que nunca puedes tener suficiente en un mundo de espadas y brujería estilo RPG, ¡es puntos mágicos! Si estás alimentando hechizos, técnicas o mostrando una habilidad increíble, tienes que gastar esos puntos para hacer daño real. ¿Y si te escapas? La Cuaresma es parte de la fiesta de llegada conocida como los \"Skypiercers\", y gracias a su regalo único, puede prestar enormes cantidades de magia a otros. ¿Sin MP? ¡No hay problema con la Cuaresma! Excepto ahora que sus compañeros se han convertido en héroes formidables (gracias a su habilidad), su utilidad es cuestionada. Salió del grupo, la Cuaresma es"
     },
     {
       "id": "mal-63125",
@@ -2155,7 +2168,8 @@
       },
       "airingAt": 1792274400,
       "episode": 28,
-      "scheduleId": 410605
+      "scheduleId": 410605,
+      "description_es": "Segunda temporada de Odekake Kozame."
     },
     {
       "id": "mal-64430",
@@ -2183,7 +2197,8 @@
       },
       "airingAt": 1792274400,
       "episode": 3,
-      "scheduleId": 422007
+      "scheduleId": 422007,
+      "description_es": "La popular y popular serie de enciclopedias ilustradas de Gakken, que todos pueden disfrutar con sus cómics de cuatro paneles, finalmente se está adaptando a un anime de televisión! Descubre aspectos sorprendentes y hechos divertidos sobre los seres vivientes, llenos de secretos que te harán decir: \"¡Wow!\" Disfruta de este nuevo tipo de anime que hace que las cosas aterradoras sean divertidas y fáciles de ver, con su estilo de arte lindo. (Fuente: Sitio oficial, traducido)"
     },
     {
       "id": "mal-64028",
@@ -2213,7 +2228,8 @@
       },
       "airingAt": 1792274400,
       "episode": 3,
-      "scheduleId": 422356
+      "scheduleId": 422356,
+      "description_es": "La historia se centra en la vida diaria de un perro de mapache que no está bien con él y un zorro malicioso que le gusta burlar al perro de mapache. Los dos son amigos cercanos que viven juntos en una montaña. Sus otros amigos incluyen un lobo, un oso, un conejo y aves. (Fuente: Anime News Network)"
     },
     {
       "id": "mal-60534",
@@ -2243,7 +2259,8 @@
       },
       "airingAt": 1792278000,
       "episode": 81,
-      "scheduleId": 412317
+      "scheduleId": 412317,
+      "description_es": "La historia de la serie sigue las aventuras cotidianas de Koupen-chan y sus amigos mientras disfrutan de las pequeñas cosas en la vida. (Fuente: Crunchyroll News, editado)"
     },
     {
       "id": "mal-63042",
@@ -2274,7 +2291,8 @@
       },
       "airingAt": 1792279800,
       "episode": 38,
-      "scheduleId": 411678
+      "scheduleId": 411678,
+      "description_es": "Anna Akechi es una estudiante de segundo año que vive en la ciudad de Makoto Mirai. En su 14o cumpleaños, tiene un encuentro casual con un hada llamado Pochitan, y un colgante mágico la hizo viajar de nuevo en el tiempo de 2027 a 1999! En la ciudad de Makoto Mirai 28 años en el pasado, Anna se encuentra con Mikuru Kobayashi, una chica de su edad que quiere convertirse en una gran detective. Mientras tanto, la gente en la ciudad está en problemas ya que sus posesiones apreciadas están siendo robadas bajo sus narices - la causa es un grupo de ladrones Fantasma. Para detenerlos, Anna y Mikuru se convierten en Precures! Tal vez si resuelven estos misterios"
     },
     {
       "id": "al-216860",
@@ -2301,7 +2319,8 @@
       },
       "airingAt": 1792282560,
       "episode": 3,
-      "scheduleId": 420092
+      "scheduleId": 420092,
+      "description_es": "Cuarta temporada de Punirunes ."
     },
     {
       "id": "mal-63352",
@@ -2331,7 +2350,8 @@
       },
       "airingAt": 1792283400,
       "episode": 29,
-      "scheduleId": 410157
+      "scheduleId": 410157,
+      "description_es": "La última entrada en la franquicia Pretty Series y un nuevo capítulo en la serie AiPri. Nota: Las relaciones son provisionales y se actualizarán cuando se anuncie más información."
     },
     {
       "id": "mal-64211",
@@ -2386,7 +2406,8 @@
       },
       "airingAt": 1792288800,
       "episode": 425,
-      "scheduleId": 408370
+      "scheduleId": 408370,
+      "description_es": "La segunda temporada de Wushen Zhuzai."
     },
     {
       "id": "mal-51039",
@@ -2415,7 +2436,8 @@
       },
       "airingAt": 1792288800,
       "episode": 57,
-      "scheduleId": 417554
+      "scheduleId": 417554,
+      "description_es": "La octava temporada de Dou Po Cangqiong. Nota: Episodios 158 a 219."
     },
     {
       "id": "mal-61323",
@@ -2478,7 +2500,8 @@
       },
       "airingAt": 1792310400,
       "episode": 3,
-      "scheduleId": 421983
+      "scheduleId": 421983,
+      "description_es": "El juego de Aoi Ashito ahora le ha ganado un lugar en el equipo A, pero rápidamente está abrumado por su dura nueva realidad. Rodeado de jugadores de élite como Kuribayashi y Akutsu, las prácticas son tan misericordiosos como los partidos. En esta U-18 Premier League de talento de la central eléctrica, Ashito debe evolucionar o ser aplastado, si alguna vez es reconocido. (Fuente: Crunchyroll)"
     },
     {
       "id": "mal-64503",
@@ -2510,7 +2533,8 @@
       },
       "airingAt": 1792310400,
       "episode": 2,
-      "scheduleId": 422224
+      "scheduleId": 422224,
+      "description_es": "El segundo cour de la segunda temporada de Yozakura-san Chi no Daisakusen."
     },
     {
       "id": "mal-64505",
@@ -2540,7 +2564,8 @@
       },
       "airingAt": 1792312200,
       "episode": 2,
-      "scheduleId": 419576
+      "scheduleId": 419576,
+      "description_es": "El club de béisbol Seido ha sido invitado a la invitación de primavera en el sagrado estadio Koshien. ¡Sawamura finalmente estará en el montículo! De pie entre Seido y el título nacional son los ganadores del torneo de verano del año pasado Komadai Fujimaki y su imparable as Masamune Hongo. ¿Puede ser Seido triunfar sobre Komadai? ¡Es el comienzo de otra batalla calentada en el béisbol juvenil! (Fuente: Crunchyroll)"
     },
     {
       "id": "mal-44042",
@@ -2569,7 +2594,8 @@
       },
       "airingAt": 1792314000,
       "episode": 388,
-      "scheduleId": 416929
+      "scheduleId": 416929,
+      "description_es": "¡Desvelar los secretos de abrir y cerrar puertas para desactivar paquetes sorpresa más conocidos como bombas, nunca hay un día aburrido en la oficina de producción Hololive! Holo no Graffiti sigue un elenco excéntrico de YouTubers Virtuales, también conocido como \"VTubers\", pasando por sus absurdas pero hilarantes vidas diarias, detallando todos sus momentos y agitaciones. (Fuente: MAL Rewrite)"
     },
     {
       "id": "mal-2406",
@@ -2597,7 +2623,8 @@
       },
       "airingAt": 1792315800,
       "episode": 2854,
-      "scheduleId": 394994
+      "scheduleId": 394994,
+      "description_es": "El personaje principal es una madre llamada Sazae-san. Vive en una casa con su marido, su hijo, sus hermanos y sus padres. El espectáculo es el último programa familiar y tiende a seguir los temas tradicionales. Piense en este espectáculo como el equivalente japonés a \"The Partridge Family\" y obtendrá una buena sensación para la atmósfera de este show. No esperes ver cosas como violencia, juramento, acción kung-fu o chicas mágicas. Las parcelas son más como \"Hoy, Sazae-san va al nuevo centro comercial y se pierde\". Tales trazados \"boring\" y el arte simplista son a menudo un desvío a las audiencias no japonesas, pero la mayoría"
     },
     {
       "id": "mal-64867",
@@ -2628,7 +2655,8 @@
       },
       "airingAt": 1792324800,
       "episode": 4,
-      "scheduleId": 422503
+      "scheduleId": 422503,
+      "description_es": "\"Umayuru\" es una serie corta de animes que ofrece un musgo de Uma tamaño pint! Esta vez, es una carrera de tres minutos \"Full-Gate\" donde *all* el Uma Musume to the track! ¡Una reunión súper grande y relajada con todos!"
     },
     {
       "id": "mal-60948",
@@ -2663,7 +2691,8 @@
       },
       "airingAt": 1792326600,
       "episode": 3,
-      "scheduleId": 419789
+      "scheduleId": 419789,
+      "description_es": "Sato Takahiro era un trabajador de oficina ordinario y aficionado al juego hasta el día en que se despertó en una nave espacial – una que extrañamente se parecía a una nave de un juego favorito de tiro espacial. Con un barco desguace, una tripulación llena de chicas, y un universo fantástico para explorar, él va a aprovechar al máximo su buena suerte y crear la vida que siempre ha soñado con! (Fuente: Seven Seas Entertainment)"
     },
     {
       "id": "mal-62907",
@@ -2694,7 +2723,8 @@
       },
       "airingAt": 1792328400,
       "episode": 3,
-      "scheduleId": 418251
+      "scheduleId": 418251,
+      "description_es": "Al día, Mitsutaka Oji es el guapo y confiable jefe que todos admiran. Por la noche, hace su mascota favorita, Pugtaro, y complace su obsesión secreta con todas las cosas lindas! Ha mantenido su doble vida escondida durante años, pero un encuentro inesperado lo vuelve todo al revés y obliga a Oji a enfrentar sus sentimientos. (Fuente: Crunchyroll)"
     },
     {
       "id": "mal-63667",
@@ -2725,7 +2755,8 @@
       },
       "airingAt": 1792330200,
       "episode": 3,
-      "scheduleId": 419239
+      "scheduleId": 419239,
+      "description_es": "La segunda mitad de Mahou no Shimai LuluttoLilly."
     },
     {
       "id": "mal-63751",
@@ -2756,7 +2787,8 @@
       },
       "airingAt": 1792332000,
       "episode": 3,
-      "scheduleId": 422114
+      "scheduleId": 422114,
+      "description_es": "Shizuka se ocupa de los trabajos más peligrosos de los asesinos, pero ella no es la que hace el asesinato. Más bien, es su hermano, Nagi, un asesino fuerte que tomó una bala para proteger a su hermana, dejarlo en estado en coma y tener que usar una silla de ruedas. Sin embargo, Shizuka ha descubierto la clave para despertar a su hermano: ¡debe enfrentarse con la intención de matar! Así comienza un viaje violento de recuperación, luchando contra los enemigos más peligrosos! (Fuente: Kodansha USA)"
     },
     {
       "id": "mal-63367",
@@ -2788,7 +2820,8 @@
       },
       "airingAt": 1792332960,
       "episode": 2,
-      "scheduleId": 419190
+      "scheduleId": 419190,
+      "description_es": "Han pasado varios años desde la feroz batalla contra Majin Buu, y la Tierra finalmente ha recuperado un breve momento de paz. Al mismo tiempo, Beerus, el Dios de la Destrucción, despierta de su sueño largo y profundo. Incluso Kai y el Supremo Kai, consciente del abrumador poder de Beerus para destruir planetas enteros, ver su despertar con gran miedo... Mientras tanto, Beerus escucha rumores de un Saiyan que venció a Frieza y de repente aparece ante Goku. Atacada por Beerus, el ser más fuerte del universo, la Tierra está en grave peligro. Así comienza una batalla cósmica que rompe la tierra entre el Dios de la Destrucción y Go"
     },
     {
       "id": "mal-60601",
@@ -2819,7 +2852,8 @@
       },
       "airingAt": 1792333800,
       "episode": 4,
-      "scheduleId": 419228
+      "scheduleId": 419228,
+      "description_es": "La tercera temporada de Tensei Kizoku, Kantei Skill de Nariagaru . Nota: El 4 de septiembre de 2026, se anunció que GeyeG Pictures tomaría la producción del estudio MOTHER manteniendo el mismo personal."
     },
     {
       "id": "mal-63292",
@@ -2850,7 +2884,8 @@
       },
       "airingAt": 1792333800,
       "episode": 2,
-      "scheduleId": 419250
+      "scheduleId": 419250,
+      "description_es": "El jugador de RPG Makoto Takatsuki es lanzado en otro mundo con terribles habilidades y estadísticas. Pero pronto se encuentra con una diosa llamada Noé, que le pide que se convierta en su primer creyente a cambio de bendiciones. (Fuente: J-Novel Club)"
     },
     {
       "id": "mal-62753",
@@ -2882,7 +2917,8 @@
       },
       "airingAt": 1792333800,
       "episode": 3,
-      "scheduleId": 419612
+      "scheduleId": 419612,
+      "description_es": "Renací como una hija villana en un juego de harem otome inverso. Después de enfermarse con fiebre alta a los 10 años, Pia Rockwell de repente recordó su vida pasada como estudiante universitaria en Japón. Pero lejos de ir por la ruta del villano, todo lo que esta chica súper tímida quiere es finalmente utilizar su conocimiento de cuando era una estudiante de posgrado que estudiaba para obtener su doctorado en paleontología. Su objetivo final es convertirse en un común, excavar fósiles, construir un museo y luego convertirse en un curador. Así que para escapar de la ruta del villano y evitar ser deportado por su prometido durante la graduación"
     },
     {
       "id": "mal-64340",
@@ -2944,7 +2980,8 @@
       },
       "airingAt": 1792334700,
       "episode": 3,
-      "scheduleId": 422101
+      "scheduleId": 422101,
+      "description_es": "La segunda temporada de Hotel Inhumans ."
     },
     {
       "id": "mal-63753",
@@ -2976,7 +3013,8 @@
       },
       "airingAt": 1792335600,
       "episode": 3,
-      "scheduleId": 417499
+      "scheduleId": 417499,
+      "description_es": "En su camino a casa desde la escuela un día, Noriko se sumergió inesperadamente en un extraño y extraordinario mundo de fantasía. Sus problemas se complican exponencialmente cuando es rescatada y amigada por un joven guapo por el nombre de Izark. Puede ser valiente y valiente, pero dentro de Izark se esconde el mal más oscuro imaginable. Y según una profecía antigua, Noriko posee el poder de desencadenar ese mal. Ahora, inexorablemente unidos, estos dos aliados improbables deben navegar por un mundo maravilloso y hostil. (Fuente: VIZ Media)"
     },
     {
       "id": "mal-63381",
@@ -3008,7 +3046,8 @@
       },
       "airingAt": 1792339200,
       "episode": 3,
-      "scheduleId": 419003
+      "scheduleId": 419003,
+      "description_es": "¿Y si pudiera controlar la realidad con un cursor del ratón? Un día durante la clase, Takumi, un otaku, nota que el cursor del ratón ha salido de la pantalla. Panicked, pide a su amigo de la infancia Mone, sentado junto a él, para echar un vistazo, sólo para ser cepillado... Una vez que Takumi se da cuenta de que podía controlarlo él mismo, utiliza el cursor del ratón — visible sólo para él— para deslizarlo entre la ropa de Mone y empieza a hacer clic... Aquí está Japón (probablemente) primer nuevo género de romcom, \"Haciendo clic en Away en un Gyaru Who's Mean a Otakus con un cursor Mouse\"! (Fuente: Sitio Oficial) Nota: Episodio 1 recibe"
     },
     {
       "id": "mal-64131",
@@ -3040,7 +3079,8 @@
       },
       "airingAt": 1792339500,
       "episode": 3,
-      "scheduleId": 419328
+      "scheduleId": 419328,
+      "description_es": "Por primera vez en mi vida, tengo una novia. Pero su amiga me tienta con un cuerpo tan seductor... ¿Qué harías si el amigo de tu novia viniera a ti así? (Fuente: Yanmaga, traducido)"
     },
     {
       "id": "mal-65167",
@@ -3069,7 +3109,8 @@
       },
       "airingAt": 1792340220,
       "episode": 3,
-      "scheduleId": 422164
+      "scheduleId": 422164,
+      "description_es": "Un mini anime semanal mostrado con cada episodio de Kanojo no Tomodachi exclusivamente en la transmisión AT-X del anime de TV y en línea en OceanVeil."
     },
     {
       "id": "mal-63509",
@@ -3103,7 +3144,7 @@
       "airingAt": 1792340400,
       "episode": 3,
       "scheduleId": 419203,
-      "description_es": "Amona es un llamador oscuro con poderes demoníacos. Roni es un sacerdote devota que está demasiado tenso. Por todos los derechos, deben odiarse. En lugar de eso, terminan acelerando su arco de enemigos a amantes con un stand de una noche que de alguna manera insiste en convertirse en un evento recurrente. Ahora deben ocultar su situación del resto del partido, negando su creciente atracción entre sí, todo mientras se trata de un imp que está demasiado invertido en"
+      "description_es": "Amona es un llamador oscuro con poderes demoníacos. Roni es un sacerdote devota que está demasiado tenso. Por todos los derechos, deben odiarse. En lugar de eso, terminan acelerando su arco de enemigos a amantes con un stand de una noche que de alguna manera insiste en convertirse en un evento recurrente. Ahora deben ocultar su nave de situación del resto del partido mientras niegan su creciente atracción entre sí, mientras tratan con un imp que está demasiado invertido en su vida amorosa. (Fuente: HIDIVE)"
     },
     {
       "id": "mal-65169",
@@ -3133,7 +3174,8 @@
       },
       "airingAt": 1792346400,
       "episode": 3,
-      "scheduleId": 422528
+      "scheduleId": 422528,
+      "description_es": "Un mini anime semanal mostrado con cada episodio de Dark Summoner a Dekiteiru exclusivamente en la transmisión AT-X del anime de TV y en línea en Abema."
     },
     {
       "id": "mal-55809",
@@ -3163,7 +3205,8 @@
       },
       "airingAt": 1792375200,
       "episode": 163,
-      "scheduleId": 414221
+      "scheduleId": 414221,
+      "description_es": "Cuenta la historia de Wang Lin, un joven común en el campo, que se mueve por su corazón y cultiva contra la inmortalidad. Su búsqueda no es sólo para la longevidad, sino también para deshacerse de las hormigas detrás de ella. Creyó firmemente en los seres humanos y entró en el camino del cultivo con calificaciones mediocres. Después de experimentar altibajos, con su mente sabia, gradualmente llegó al pináculo y se hizo famoso en el mundo de cultivo con su propia fuerza. (Fuente: WeTV)"
     },
     {
       "id": "al-214593",
@@ -3261,7 +3304,8 @@
       },
       "airingAt": 1792414800,
       "episode": 4,
-      "scheduleId": 422213
+      "scheduleId": 422213,
+      "description_es": "La naturaleza altruista del trabajador de oficina Akira Yagami generalmente le consigue el extremo corto del palo. Cuando muere después de salvar a un niño del tráfico entrante... ¿reencarna en otro mundo como un duende? Normalmente, los duendes sólo viven durante siete días, pero los nuevos poderes de Akira le permiten desafiar el período de vida normal de la especie... ¡y son la clave de su camino para convertirse en el más fuerte de todos los tiempos! (Fuente: Yen Press) Nota: Tensei Goblin Dakedo Sitsumon Aru? está transmitiendo 1 semana antes de la emisión de televisión en ABEMA y Primer Video comenzando con el episodio 2 el 5 de octubre de 2026"
     },
     {
       "id": "mal-63098",
@@ -3294,7 +3338,7 @@
       "airingAt": 1792418400,
       "episode": 3,
       "scheduleId": 419765,
-      "description_es": "Un día, la secundaria Ageha Yoshina recoge una misteriosa “tarjeta de teléfono roja” que queda atrás en una cabina telefónica pública. Unos días más tarde, su amigo de la infancia y compañero de clase, Sakurako Amamiya, que poseía la misma carta, desaparecen sin dejar rastro. En busca de ella, Ageha se encuentra dibujado en los rumores que rodean una cadena nacional de misteriosas desapariciones, dijo que es obra de una organización secreta conocida sólo como “Psyren”. Cuando él"
+      "description_es": "Un día, la secundaria Ageha Yoshina recoge una misteriosa “tarjeta de teléfono roja” que queda atrás en una cabina telefónica pública. Unos días más tarde, su amigo de la infancia y compañero de clase, Sakurako Amamiya, que poseía la misma carta, desaparecen sin dejar rastro. En busca de ella, Ageha se encuentra dibujado en los rumores que rodean una cadena nacional de misteriosas desapariciones, dijo ser el trabajo de una organización secreta conocida sólo como “Psyren”. Cuando accede al grupo, comienza un juego mortal, uno que cambiará su destino para siempre. (Fuente: Sitio Oficial de PSYhován)"
     },
     {
       "id": "mal-60636",
@@ -3326,7 +3370,8 @@
       },
       "airingAt": 1792418400,
       "episode": 9,
-      "scheduleId": 419856
+      "scheduleId": 419856,
+      "description_es": "La destrucción se desploma al final de la Guerra de la Sangre Mil Años entre los Reapers del Alma y las Quincias... mientras la muerte del Rey del Alma refleja el colapso de los Tres Mundos, las distorsiones y los presagios de destrucción comienzan a aparecer en todos los reinos. Quince batallas surgieron a lo largo de la Wahr Welt entre los 13 escuadrones de la Guardia de la Corte y la Guardia Real. Ichigo aprende sobre las verdaderas intenciones de Uryuu y renueva su determinación de proteger el mundo juntos, como amigos que confían entre sí. Yhwach ha superado incluso su propia habilidad, el Todopoderoso... La feroz batalla por la supervivencia de la aplicación Tres Mundos"
     },
     {
       "id": "mal-54344",
@@ -3359,7 +3404,8 @@
       },
       "airingAt": 1792429200,
       "episode": 3,
-      "scheduleId": 418904
+      "scheduleId": 418904,
+      "description_es": "Algunas chicas mágicas pelean. Otros no. Elegido por la misteriosa Tierra de la Magia, que existe poco conocida por el resto del mundo, las chicas mágicas cada una tienen un poder único. Pechka, cuya magia hace deliciosa la comida, se ve obligada a participar en un misterioso juego virtual junto con 16 chicas mágicas desconocidas, cada una con su propia personalidad distintiva. Se suponía que era un ejercicio de entrenamiento seguro diseñado para mejorar sus habilidades mágicas. Pero en cambio, marca el comienzo de una pesadilla cuidadosamente orquestada - un juicio prohibido. Ha comenzado un nuevo proyecto de Raising Girl Magical. (Fuente:"
     },
     {
       "id": "al-155723",
@@ -3387,7 +3433,8 @@
       },
       "airingAt": 1792461600,
       "episode": 426,
-      "scheduleId": 408371
+      "scheduleId": 408371,
+      "description_es": "La segunda temporada de Wushen Zhuzai."
     },
     {
       "id": "mal-64388",
@@ -3416,7 +3463,8 @@
       },
       "airingAt": 1792461600,
       "episode": 20,
-      "scheduleId": 415243
+      "scheduleId": 415243,
+      "description_es": "En el Continente Canglan, la fuerza está determinada por espíritus marciales. Qin Nan, el joven maestro de la familia Qin, fue originalmente un alma inútil, sufriendo un desprecio infinito. Por casualidad, despertó el alma de un dios de guerra antiguo, desafiando así el destino. Golpeó por los genios de la secta, superó a los poderosos enemigos y obstáculos, encontró a un alma gemela, usó su espíritu de batalla para romper todas las leyes, y forjó una leyenda con su sangre. De un humilde joven maestro, se levantó por las filas para convertirse en un ser celestial supremo invencible que sacude los nueve reinos. (Fuente: IQIYI, traducido)"
     },
     {
       "id": "mal-61990",
@@ -3448,7 +3496,8 @@
       },
       "airingAt": 1792479600,
       "episode": 1,
-      "scheduleId": 421066
+      "scheduleId": 421066,
+      "description_es": "Cyberpunk: Edgerunners 2 te lleva de vuelta a Night City, donde las vidas se enredan al extremo. Weak, una leyenda de ciberpunk lavada, ahora se ve obligado a vivir sin cromo mientras busca un sentido de propósito en un mundo que lo ha pasado. Mientras tanto, el nómada mortal D se pone en un camino hacia la venganza que lo acerca a secretos de corpo que nunca se pretendía encontrar. A través de esta serie independiente de diez episodios, descubrir una historia de familia, obsesión, legado, y cómo su lente refleja las historias de la gente a su alrededor.. Cuando el mundo está cegado por el espectáculo, qué extremos tienes que ir a"
     },
     {
       "id": "mal-61990",
@@ -3480,7 +3529,8 @@
       },
       "airingAt": 1792479600,
       "episode": 2,
-      "scheduleId": 421067
+      "scheduleId": 421067,
+      "description_es": "Cyberpunk: Edgerunners 2 te lleva de vuelta a Night City, donde las vidas se enredan al extremo. Weak, una leyenda de ciberpunk lavada, ahora se ve obligado a vivir sin cromo mientras busca un sentido de propósito en un mundo que lo ha pasado. Mientras tanto, el nómada mortal D se pone en un camino hacia la venganza que lo acerca a secretos de corpo que nunca se pretendía encontrar. A través de esta serie independiente de diez episodios, descubrir una historia de familia, obsesión, legado, y cómo su lente refleja las historias de la gente a su alrededor.. Cuando el mundo está cegado por el espectáculo, qué extremos tienes que ir a"
     },
     {
       "id": "mal-61990",
@@ -3512,7 +3562,8 @@
       },
       "airingAt": 1792479600,
       "episode": 3,
-      "scheduleId": 421068
+      "scheduleId": 421068,
+      "description_es": "Cyberpunk: Edgerunners 2 te lleva de vuelta a Night City, donde las vidas se enredan al extremo. Weak, una leyenda de ciberpunk lavada, ahora se ve obligado a vivir sin cromo mientras busca un sentido de propósito en un mundo que lo ha pasado. Mientras tanto, el nómada mortal D se pone en un camino hacia la venganza que lo acerca a secretos de corpo que nunca se pretendía encontrar. A través de esta serie independiente de diez episodios, descubrir una historia de familia, obsesión, legado, y cómo su lente refleja las historias de la gente a su alrededor.. Cuando el mundo está cegado por el espectáculo, qué extremos tienes que ir a"
     },
     {
       "id": "mal-61990",
@@ -3544,7 +3595,8 @@
       },
       "airingAt": 1792479600,
       "episode": 4,
-      "scheduleId": 421069
+      "scheduleId": 421069,
+      "description_es": "Cyberpunk: Edgerunners 2 te lleva de vuelta a Night City, donde las vidas se enredan al extremo. Weak, una leyenda de ciberpunk lavada, ahora se ve obligado a vivir sin cromo mientras busca un sentido de propósito en un mundo que lo ha pasado. Mientras tanto, el nómada mortal D se pone en un camino hacia la venganza que lo acerca a secretos de corpo que nunca se pretendía encontrar. A través de esta serie independiente de diez episodios, descubrir una historia de familia, obsesión, legado, y cómo su lente refleja las historias de la gente a su alrededor.. Cuando el mundo está cegado por el espectáculo, qué extremos tienes que ir a"
     },
     {
       "id": "mal-61990",
@@ -3576,7 +3628,8 @@
       },
       "airingAt": 1792479600,
       "episode": 5,
-      "scheduleId": 421070
+      "scheduleId": 421070,
+      "description_es": "Cyberpunk: Edgerunners 2 te lleva de vuelta a Night City, donde las vidas se enredan al extremo. Weak, una leyenda de ciberpunk lavada, ahora se ve obligado a vivir sin cromo mientras busca un sentido de propósito en un mundo que lo ha pasado. Mientras tanto, el nómada mortal D se pone en un camino hacia la venganza que lo acerca a secretos de corpo que nunca se pretendía encontrar. A través de esta serie independiente de diez episodios, descubrir una historia de familia, obsesión, legado, y cómo su lente refleja las historias de la gente a su alrededor.. Cuando el mundo está cegado por el espectáculo, qué extremos tienes que ir a"
     },
     {
       "id": "mal-61990",
@@ -3608,7 +3661,8 @@
       },
       "airingAt": 1792479600,
       "episode": 6,
-      "scheduleId": 421071
+      "scheduleId": 421071,
+      "description_es": "Cyberpunk: Edgerunners 2 te lleva de vuelta a Night City, donde las vidas se enredan al extremo. Weak, una leyenda de ciberpunk lavada, ahora se ve obligado a vivir sin cromo mientras busca un sentido de propósito en un mundo que lo ha pasado. Mientras tanto, el nómada mortal D se pone en un camino hacia la venganza que lo acerca a secretos de corpo que nunca se pretendía encontrar. A través de esta serie independiente de diez episodios, descubrir una historia de familia, obsesión, legado, y cómo su lente refleja las historias de la gente a su alrededor.. Cuando el mundo está cegado por el espectáculo, qué extremos tienes que ir a"
     },
     {
       "id": "mal-61990",
@@ -3640,7 +3694,8 @@
       },
       "airingAt": 1792479600,
       "episode": 7,
-      "scheduleId": 421072
+      "scheduleId": 421072,
+      "description_es": "Cyberpunk: Edgerunners 2 te lleva de vuelta a Night City, donde las vidas se enredan al extremo. Weak, una leyenda de ciberpunk lavada, ahora se ve obligado a vivir sin cromo mientras busca un sentido de propósito en un mundo que lo ha pasado. Mientras tanto, el nómada mortal D se pone en un camino hacia la venganza que lo acerca a secretos de corpo que nunca se pretendía encontrar. A través de esta serie independiente de diez episodios, descubrir una historia de familia, obsesión, legado, y cómo su lente refleja las historias de la gente a su alrededor.. Cuando el mundo está cegado por el espectáculo, qué extremos tienes que ir a"
     },
     {
       "id": "mal-61990",
@@ -3672,7 +3727,8 @@
       },
       "airingAt": 1792479600,
       "episode": 8,
-      "scheduleId": 421073
+      "scheduleId": 421073,
+      "description_es": "Cyberpunk: Edgerunners 2 te lleva de vuelta a Night City, donde las vidas se enredan al extremo. Weak, una leyenda de ciberpunk lavada, ahora se ve obligado a vivir sin cromo mientras busca un sentido de propósito en un mundo que lo ha pasado. Mientras tanto, el nómada mortal D se pone en un camino hacia la venganza que lo acerca a secretos de corpo que nunca se pretendía encontrar. A través de esta serie independiente de diez episodios, descubrir una historia de familia, obsesión, legado, y cómo su lente refleja las historias de la gente a su alrededor.. Cuando el mundo está cegado por el espectáculo, qué extremos tienes que ir a"
     },
     {
       "id": "mal-61990",
@@ -3704,7 +3760,8 @@
       },
       "airingAt": 1792479600,
       "episode": 9,
-      "scheduleId": 421074
+      "scheduleId": 421074,
+      "description_es": "Cyberpunk: Edgerunners 2 te lleva de vuelta a Night City, donde las vidas se enredan al extremo. Weak, una leyenda de ciberpunk lavada, ahora se ve obligado a vivir sin cromo mientras busca un sentido de propósito en un mundo que lo ha pasado. Mientras tanto, el nómada mortal D se pone en un camino hacia la venganza que lo acerca a secretos de corpo que nunca se pretendía encontrar. A través de esta serie independiente de diez episodios, descubrir una historia de familia, obsesión, legado, y cómo su lente refleja las historias de la gente a su alrededor.. Cuando el mundo está cegado por el espectáculo, qué extremos tienes que ir a"
     },
     {
       "id": "mal-61990",
@@ -3736,7 +3793,8 @@
       },
       "airingAt": 1792479600,
       "episode": 10,
-      "scheduleId": 421075
+      "scheduleId": 421075,
+      "description_es": "Cyberpunk: Edgerunners 2 te lleva de vuelta a Night City, donde las vidas se enredan al extremo. Weak, una leyenda de ciberpunk lavada, ahora se ve obligado a vivir sin cromo mientras busca un sentido de propósito en un mundo que lo ha pasado. Mientras tanto, el nómada mortal D se pone en un camino hacia la venganza que lo acerca a secretos de corpo que nunca se pretendía encontrar. A través de esta serie independiente de diez episodios, descubrir una historia de familia, obsesión, legado, y cómo su lente refleja las historias de la gente a su alrededor.. Cuando el mundo está cegado por el espectáculo, qué extremos tienes que ir a"
     },
     {
       "id": "mal-63382",
@@ -3831,7 +3889,8 @@
       },
       "airingAt": 1792504800,
       "episode": 3,
-      "scheduleId": 418479
+      "scheduleId": 418479,
+      "description_es": "¡El último dúo policial está aquí para mantener la paz! El oficial novato Nao acaba de unirse a la fuerza. Tiene un cinturón negro en judo y ganó el apodo \"Gorilla\" por su fuerza loca. Luego está su compañero Chojo, quien controla todo poder psíquico imaginable. Pero para un tipo que puede leer mentes, todavía no puede leer la habitación. Estos dos están cometiendo un crimen juntos en Chinjuku. (Fuente: Crunchyroll)"
     },
     {
       "id": "mal-63818",
@@ -3862,7 +3921,8 @@
       },
       "airingAt": 1792504800,
       "episode": 3,
-      "scheduleId": 418974
+      "scheduleId": 418974,
+      "description_es": "Keio 3, Hinomoto, Eito. A medida que el Bakumatsu lanza a Japón en agitación, el joven Kuu Bashin sueña con volverse más fuerte a través de los Espíritus de Batalla Estándar. Su mundo cambia cuando se encuentra con Ajara Zetsu, un samurai errante y formidable Batalla Eterna perseguido por fuerzas antihogunadas. Mientras los mundos de la batalla estándar y eterna chocan, Kuu es llevado al viaje de Zetsu, y pone la historia en movimiento. (Fuente: Crunchyroll)"
     },
     {
       "id": "mal-62484",
@@ -3893,7 +3953,8 @@
       },
       "airingAt": 1792504800,
       "episode": 2,
-      "scheduleId": 422539
+      "scheduleId": 422539,
+      "description_es": "La segunda parte de Chitose-kun wa Ramune Bin no Naka."
     },
     {
       "id": "mal-61140",
@@ -3925,7 +3986,8 @@
       },
       "airingAt": 1792506600,
       "episode": 3,
-      "scheduleId": 422442
+      "scheduleId": 422442,
+      "description_es": "Dos jóvenes... el héroe, Riliu, y su mejor amigo Jowy, eran miembros de una brigada juvenil de su nación natal, el Reino de Highland - una poderosa nación militar situada en el noreste de la región de Dunan. Los dos miraron hacia arriba los mismos cielos estrellados, durmieron en la misma tienda, y creyeron en el mismo futuro. Una vez que la pelea terminó, y la noche terminó, sus vidas diarias estaban seguras de volver. Contrariamente a sus esperanzas, los dos chicos se arrastran en el torbellino del destino, guiados por las llamas de la guerra. Los chicos impotentes alcanzaron y captaron un inmenso poder. Como brillan las 108 estrellas"
     },
     {
       "id": "mal-63431",
@@ -3993,7 +4055,8 @@
       },
       "airingAt": 1792514100,
       "episode": 16,
-      "scheduleId": 418951
+      "scheduleId": 418951,
+      "description_es": "Después de una mano misteriosa la arrastra debajo de un charco, moderno adolescente japonés Yuri despierta en el imperio hitita del siglo 14 AC. Entró en una lucha mortal por el trono, se une al Príncipe Kail para combatir a asesinos, superar conspiraciones reales y sobrevivir a un mundo en guerra. Mientras sus hazañas ganan su renombre como la diosa Ishtar, Yuri debe elegir entre su vida vieja y un futuro incierto. (Fuente: Crunchyroll)"
     },
     {
       "id": "mal-59415",
@@ -4024,7 +4087,8 @@
       },
       "airingAt": 1792514700,
       "episode": 2,
-      "scheduleId": 419635
+      "scheduleId": 419635,
+      "description_es": "Siguiendo la voluntad de su abuelo de “buscar el Senki”, el protagonista Kairi visita Golden Valley, una zona económica especial de la máquina oscura. Allí, conoce a una chica misteriosa llamada Rudra. Se convirtió en un jugador de la máquina oscura por Rudra, el talento de Kairi florece gradualmente en el curso de muchas batallas intensas. (Fuente: Fuji Creative) Nota: Parte del proyecto \"DARK MACHINE\" Web3 cross-media donde se entrelazan la historia del juego y su adaptación de anime."
     },
     {
       "id": "mal-63151",
@@ -4054,7 +4118,8 @@
       },
       "airingAt": 1792537200,
       "episode": 42,
-      "scheduleId": 416121
+      "scheduleId": 416121,
+      "description_es": "Shark Meow es un gatito de tabby naranja que lleva un traje de tiburón. Un poco torpe y siempre tomando cosas a su propio ritmo acogedor, pero todos los días con sus mejores amigos gatitos — y el gatito salvada, Little Meow— está lleno de pequeños revuelos inesperados y aventuras dulces. Un lugar cálido soleado en el parque, la chispa del mar, el vapor subiendo de las batatas recién asadas, la sensación de la primera nevada... Estos pequeños momentos cotidianos llenan su mundo con calidez y deleite. No puedes evitar sonreír y pensar, “¡Es verdad!” Un pequeño y suave anime que trae alegría a cadada"
     },
     {
       "id": "mal-62248",
@@ -4086,7 +4151,8 @@
       },
       "airingAt": 1792548000,
       "episode": 16,
-      "scheduleId": 417915
+      "scheduleId": 417915,
+      "description_es": "La cuarta y última temporada de Yi Nian Yongheng."
     },
     {
       "id": "mal-62218",
@@ -4114,7 +4180,8 @@
       },
       "airingAt": 1792548000,
       "episode": 6,
-      "scheduleId": 421466
+      "scheduleId": 421466,
+      "description_es": "Hace diez años, después de tres días consecutivos de luna de sangre, fantasmas, dioses, ojos heterocromáticos y cuentos extraños llegaron uno tras otro. El misterio y el enigma descendieron sobre el mundo humano. El terror y la desesperación vagaron por la tierra. Como humanos, ¿debemos arrodillarnos en sumisión, llorar amargamente, o dibujar nuestras espadas? Esta es una nueva era, y esta era — pertenece a lo extraordinario! Al abrir la puerta a lo extraordinario, Su Bai encontró un nuevo mundo... (Fuente: Tencent, traducido)"
     },
     {
       "id": "mal-52480",
@@ -4176,7 +4243,8 @@
       },
       "airingAt": 1792587240,
       "episode": 1,
-      "scheduleId": 420788
+      "scheduleId": 420788,
+      "description_es": "Segunda temporada de GelPiyo."
     },
     {
       "id": "mal-64084",
@@ -4275,7 +4343,8 @@
       },
       "airingAt": 1792593960,
       "episode": 3,
-      "scheduleId": 417272
+      "scheduleId": 417272,
+      "description_es": "Hikaru Shidou, Umi Ryuuzaki, y Fuu Hououji no son de Cephiro. Mientras que en un viaje de campo escolar a la Torre de Tokio, las mentes de las tres chicas están en cualquier cosa excepto mundos diferentes llenos de magia y maravilla. Es decir, hasta que la Princesa Esmeraude, el Pilar de Cephiro, clama por los Caballeros Mágicos para salvar su mundo, ¡y eso resulta que son esos tres! (Fuente: Crunchyroll)"
     },
     {
       "id": "mal-62534",
@@ -4307,7 +4376,8 @@
       },
       "airingAt": 1792594800,
       "episode": 4,
-      "scheduleId": 419601
+      "scheduleId": 419601,
+      "description_es": "Las viejas rivalidades reinan cuando los jugadores del equipo Japón se enfrentan para ganar puntos en la alineación para la final de la Copa Mundial. (Fuente: Crunchyroll News)"
     },
     {
       "id": "mal-60598",
@@ -4336,7 +4406,8 @@
       },
       "airingAt": 1792594800,
       "episode": 2,
-      "scheduleId": 421451
+      "scheduleId": 421451,
+      "description_es": "Las terceras temporadas de Dali Si Rizhi."
     },
     {
       "id": "mal-53913",
@@ -4400,7 +4471,8 @@
       },
       "airingAt": 1792596600,
       "episode": 3,
-      "scheduleId": 419814
+      "scheduleId": 419814,
+      "description_es": "La historia tiene lugar 20 años después de que el robot Dandivine derrotara al misterioso Aposdoll. El mundo está ahora en paz. Sin embargo, el fabricante de juguetes Kasuga, que dependía de sus juguetes de mercadería de Dandivine, ha caído en declive. Así, el presidente de Kasuga, Genjuro Shijima, oró por el renacimiento de Dandivine, y el Aposdoll de repente regresó. El estudiante de secundaria Gekiha Shijima recibe una invitación de su tío Yusaku Kuroiwa, el ex piloto principal de Dandivine, para pilotar el robot gigante mismo. (Fuente: Anime News Network)"
     },
     {
       "id": "mal-57612",
@@ -4461,7 +4533,8 @@
       },
       "airingAt": 1792661400,
       "episode": 4,
-      "scheduleId": 421765
+      "scheduleId": 421765,
+      "description_es": "Cuarta temporada de PetitCure: Ferias precarias."
     },
     {
       "id": "mal-63337",
@@ -4523,7 +4596,8 @@
       },
       "airingAt": 1792679400,
       "episode": 3,
-      "scheduleId": 422408
+      "scheduleId": 422408,
+      "description_es": "Una profunda inmersión en la vida cotidiana incalculable y las interacciones entre escuelas del equipo de Ooarai Girls y los demás estudiantes (junto con los personajes coloridos que los rodean) que están totalmente dedicados al camino del tanque! (Fuente: Página Web Oficial, traducido) Nota: La serie tenía un pre-pantalla de cuatro partes en Japón a partir de diciembre de 2025. La televisión regular comenzó en octubre de 2026. • Parte 1 liberando teatralmente el 26 de diciembre de 2025. • Parte 2 liberando teatralmente el 30 de enero de 2026. • Parte 3 liberando teatralmente el 6 de marzo de 2026. • Parte 4 liberando teatricall"
     },
     {
       "id": "mal-64534",
@@ -4592,7 +4666,8 @@
       },
       "airingAt": 1792681200,
       "episode": 1,
-      "scheduleId": 412353
+      "scheduleId": 412353,
+      "description_es": "Secuela de Made in Abyss: Retsujitsu no Ougonkyou."
     },
     {
       "id": "mal-62615",
@@ -4685,7 +4760,8 @@
       },
       "airingAt": 1792681200,
       "episode": 4,
-      "scheduleId": 421804
+      "scheduleId": 421804,
+      "description_es": "La segunda temporada de Kizu darake Seijo yori Houfuku wo Komete."
     },
     {
       "id": "mal-59741",
@@ -4777,7 +4853,8 @@
       },
       "airingAt": 1792716600,
       "episode": 4,
-      "scheduleId": 421792
+      "scheduleId": 421792,
+      "description_es": "Mazenchu está en una escuela donde todo tipo de comida puede vivir su juventud y formar amistades, rivalidades y romances amargos. (Fuente: Anime News Network)"
     },
     {
       "id": "mal-61607",
@@ -4810,7 +4887,8 @@
       },
       "airingAt": 1792724400,
       "episode": 12,
-      "scheduleId": 419020
+      "scheduleId": 419020,
+      "description_es": "Después de que el caso Li Tianchen llegue a su fin, la paz parece volver a Time Photo Studio, hasta que la desaparición de Xia Fei lleve a todos a una red de destino. Con el regreso de Vein y las nuevas habilidades de Qiao Ling, Cheng Xiaoshi y Lu Guang comienzan a descubrir la verdad detrás del misterioso fuego bahati. A medida que la investigación se profundiza, surgen conexiones ocultas entre el caso y los padres de Cheng Xiaoshi. Mientras tanto, Liu Xiao, miembro de una organización misteriosa, pone en marcha sus propios planes, mientras que la intervención del Inspector Jae introduce nuevas incertidumbres. Como secretos enterrados en el pasado"
     },
     {
       "id": "mal-61469",
@@ -4875,7 +4953,8 @@
       },
       "airingAt": 1792748400,
       "episode": 4,
-      "scheduleId": 420231
+      "scheduleId": 420231,
+      "description_es": "Kadokawa anunció el 9 de junio de 2025 que el libro de fotos Pan Dorobou (Bread Thief) de Keiko Shibata tendrá una adaptación de anime. El anuncio no reveló el formato del anime. Los libros de fotos se centran en un pedazo de pan que también roba pan de panaderías en la ciudad. (Fuente: Anime News Network)"
     },
     {
       "id": "mal-53876",
@@ -4907,7 +4986,8 @@
       },
       "airingAt": 1792749300,
       "episode": 154,
-      "scheduleId": 421006
+      "scheduleId": 421006,
+      "description_es": "Un nuevo sueño y aventura en todo el mundo Pokémon se desarrolla en una nueva serie Pokémon siguiendo a una chica llamada Liko y un chico llamado Roy."
     },
     {
       "id": "mal-56566",
@@ -4939,7 +5019,8 @@
       },
       "airingAt": 1792749600,
       "episode": 136,
-      "scheduleId": 421868
+      "scheduleId": 421868,
+      "description_es": "Bird Kazami, con el objetivo de convertirse en un profesional Blader, se encuentra con el ex campeón Ekusu Kurosu, también conocido como 'Kamen X', y forma un equipo para que puedan apuntar al \"top\" de la X Tower. Pero lo que les espera es una batalla espectacular que nadie ha visto antes. El \"X\" aún invisible. El super acelerado (Xtreme) Beyblade corre a través de una nueva era! (Fuente: sitio web oficial)"
     },
     {
       "id": "mal-64848",
@@ -4967,7 +5048,8 @@
       },
       "airingAt": 1792756800,
       "episode": 3,
-      "scheduleId": 419662
+      "scheduleId": 419662,
+      "description_es": "Secuela de Duel Masters LOST: Boukyaku no Taiyou."
     },
     {
       "id": "mal-65009",
@@ -4998,7 +5080,8 @@
       },
       "airingAt": 1792758360,
       "episode": 4,
-      "scheduleId": 420191
+      "scheduleId": 420191,
+      "description_es": "La historia de Aoki Denshou Welsh &quot; Shedar sigue a Welsh, un adolescente del país que ama cocinar, y a Shedar, un joven príncipe que está destinado a ser rey un día. Cuando los dos jóvenes con vidas muy diferentes son lanzados juntos por un encuentro casual, las ruedas del destino comienzan a girar, y pronto deben trabajar juntos para traer un futuro pacífico al detener un cruel déspota de conquistar el mundo. (Fuente: Crunchyroll)"
     },
     {
       "id": "mal-61014",
@@ -5029,7 +5112,8 @@
       },
       "airingAt": 1792762200,
       "episode": 3,
-      "scheduleId": 419704
+      "scheduleId": 419704,
+      "description_es": "Esta es una historia de cuatro chicas que viven en el \"Dark Side\" de Academy City. En la Ciudad de la Academia donde el \"ESP\" ha sido reconocido como una ciencia general. Detrás de la paz, hay una organización Dark Side que realiza misiones que no pueden hacerse públicas. \"ITEM\" es una unidad de élite compuesta por cuatro niñas. Takitsubo Rikou es capaz de leer y rastrear los campos AIM emitidos por aquellos con capacidades. Frenda Seivelun, que destaca en combate utilizando explosivos y trampas. Kinuhata Saiai, que puede manipular el nitrógeno a voluntad y juega un papel defensivo. Y uno de los 7 Espers que Academy City está orgulloso de: Mugino Shiz"
     },
     {
       "id": "mal-61987",
@@ -5125,7 +5209,8 @@
       },
       "airingAt": 1792765800,
       "episode": 4,
-      "scheduleId": 422238
+      "scheduleId": 422238,
+      "description_es": "Después de luchar en Kioto y Nerima, los estudiantes de la Academia Rasetsu se han hecho más fuertes. Pero Yaoroshi deja la academia para unirse a la Brigada Oni por su \"erración total del Momotaro\". Cuando Shiki se da cuenta de que también apuntan a los no combatientes, se pone después de Yaoroshi para traerlo de vuelta. Mientras tanto, en Nikko, hay una instalación de investigación para experimentos horribles en la antigua Kegon Falls... (Fuente: REMOW)"
     },
     {
       "id": "mal-63061",
@@ -5157,7 +5242,8 @@
       },
       "airingAt": 1792767600,
       "episode": 16,
-      "scheduleId": 421091
+      "scheduleId": 421091,
+      "description_es": "El manga se centra en el estudiante de secundaria Ito Hazui. Durante su descanso de primavera al final de su primer año de secundaria, la madre de Ito se vuelve a casar, y Ito se mueve a vivir con su nueva familia, convirtiéndose en Ito Narita. Al llegar a su nueva casa, Ito está sorprendido de saber que ahora tiene cuatro hermanos menores. Ito trata de que ella sea más difícil de llevar con todos los nuevos miembros de su familia, pero el hermano mayor Gen es un poco frío para ella. Sin embargo, bajo su fachada, ocasionalmente muestra su amabilidad. (Fuente: Anime News Network)"
     },
     {
       "id": "mal-59088",
@@ -5190,7 +5276,8 @@
       },
       "airingAt": 1792774380,
       "episode": 4,
-      "scheduleId": 418624
+      "scheduleId": 418624,
+      "description_es": "Secuela de los Revengers de Tokio: Tenjiku-hen."
     },
     {
       "id": "mal-64718",
@@ -5282,7 +5369,8 @@
       },
       "airingAt": 1792801560,
       "episode": 29,
-      "scheduleId": 421153
+      "scheduleId": 421153,
+      "description_es": "Cada día la vida recibe un toque acogedor con el relajado Rilakkuma. Los momentos suaves de amistad, cambio y las pequeñas alegrías se desarrollan, convirtiendo los momentos ordinarios en algo silenciosamente mágico — un día suave y reconfortante a la vez. Es un momento que hará que su corazón se sienta más ligero y más ligero. No importa dónde estés o lo que estés haciendo, Rilakkuma estará a tu lado. ¡Una nueva historia emocionante comienza! ¡Experimente el mundo libre de estrés de Rilakkuma, el oso relajado que hace ser perezoso sin esfuerzo! (Fuente: Crunchyroll, Rilakkuma Anime Site, traducido)"
     },
     {
       "id": "mal-64789",
@@ -5309,7 +5397,8 @@
       },
       "airingAt": 1792801800,
       "episode": 4,
-      "scheduleId": 418612
+      "scheduleId": 418612,
+      "description_es": "Segunda temporada de Nezumi-kun no Chokki (TV)"
     },
     {
       "id": "mal-63157",
@@ -5340,7 +5429,8 @@
       },
       "airingAt": 1792801800,
       "episode": 4,
-      "scheduleId": 419528
+      "scheduleId": 419528,
+      "description_es": "¡El sargento Keroro viene a conquistar la Tierra, sólo para ser capturado y atrapado viviendo con la familia Hinata! (Fuente: Crunchyroll)"
     },
     {
       "id": "mal-61619",
@@ -5369,7 +5459,8 @@
       },
       "airingAt": 1792803600,
       "episode": 17,
-      "scheduleId": 417666
+      "scheduleId": 417666,
+      "description_es": "En los tiempos caóticos, demonios y monstruos andan libremente, y funcionarios traicioneros están en el poder. Con la invasión del Netherworld, los seres humanos y el Netherworld causaron estragos en el mundo mortal, y los dioses salvajes que trabajan para el Netherworld intimidan al pueblo común. Enfurecido, Xu Ying, un cazador de serpientes, rebelde y comete el pecado de matar a un dios, y también saca a un funcionario de la corte incompetente. Cazado por los dos reinos, su huida comienza... (Fuente: iQ)"
     },
     {
       "id": "mal-51836",
@@ -5399,7 +5490,8 @@
       },
       "airingAt": 1792807200,
       "episode": 176,
-      "scheduleId": 414712
+      "scheduleId": 414712,
+      "description_es": "El Tang Sect en un mundo turbulento. Aquí no hay nada más que espíritu marcial. Diez mil años después de la fundación del Tang Sect, está en declive relativo. Nació un hombre extremadamente talentoso. ¿Pueden los nuevos Monstruos Shrek revivir el Tang Sect y traerlo de vuelta a la gloria? Una bestia de alma de más de un millón de años; Electrolux que puede elegir estrellas; El nuevo sistema de utensilios de alma que llevó al declive del Tang Sect... Hay que revelar muchos secretos. ¿Pueden volver a afilarse las armas secretas del Tang Sect? ¿Puede el Tang Sect recuperar su antigua gloria? (Fuente: WeTV)"
     },
     {
       "id": "mal-60597",
@@ -5430,7 +5522,8 @@
       },
       "airingAt": 1792807200,
       "episode": 6,
-      "scheduleId": 421874
+      "scheduleId": 421874,
+      "description_es": "La tercera temporada de Dawang Raoming."
     },
     {
       "id": "mal-63901",
@@ -5487,7 +5580,8 @@
       },
       "airingAt": 1792827000,
       "episode": 1358,
-      "scheduleId": 409443
+      "scheduleId": 409443,
+      "description_es": "Crayon Shin-chan sigue los locos anticos y aventuras de Shinnosuke, de cinco años, \"Shin\" Nohara y sus padres, vecinos y amigos, y se encuentra en Kasukabe, Prefectura de Saitama, Japón. Muchas de las bromas de la serie provienen del uso extraño, antinatural e inapropiado del lenguaje de Shin-chan, así como de su comportamiento inapropiado. Una mordaza típica involucra a Shin-chan confundiendo a sus padres usando la frase equivocada para la ocasión; por ejemplo, diciendo \"¡Bienvenido!\" en lugar de \"Estoy de vuelta!\" cuando él vuelve. Durante el comienzo de la serie, el programa de televisión se basaba principalmente en o"
     },
     {
       "id": "mal-8687",
@@ -5516,7 +5610,8 @@
       },
       "airingAt": 1792828800,
       "episode": 938,
-      "scheduleId": 380066
+      "scheduleId": 380066,
+      "description_es": "Una nueva serie Doraemon producida por el mismo equipo que la serie 1979 (en asociación con Studio Pierrot) con nuevos actores de voz y personal y diseños de caracteres actualizados."
     },
     {
       "id": "mal-61999",
@@ -5548,7 +5643,8 @@
       },
       "airingAt": 1792830600,
       "episode": 3,
-      "scheduleId": 422490
+      "scheduleId": 422490,
+      "description_es": "\"La máscara\" da poder a cualquiera que la use. A veces, eso significa una posibilidad interminable, o una tragedia inimaginable... Perú, alumno del legendario fabricante de máscaras Gaston Roux, se hace controlado por el “Mask del Dios Guerrero”, y mata involuntariamente a sus amigos, e incluso a su propio maestro. Para evitar que este tipo de tragedia vuelva a ocurrir, Perú jura destruir todas las máscaras de Gaston que se extienden por todo el mundo. Frente a los pecados que ha cometido, se embarca en su viaje. Conocer a nuevos amigos y enfrentar a poderosos enemigos. El chico continúa. Hasta el día que puede expiar por hola"
     },
     {
       "id": "mal-235",
@@ -5578,7 +5674,8 @@
       },
       "airingAt": 1792832400,
       "episode": 1218,
-      "scheduleId": 420736
+      "scheduleId": 420736,
+      "description_es": "Kudo Shinichi es un detective de secundaria de diecisiete años a quien la gente llama \"Modern Sherlock Holmes\". Sin embargo, una noche después de una cita con su novia de la infancia, Ran, Shinichi fue testigo de un comercio ilegal y, atrapado de su guardia, fue noqueado inconsciente y alimentado una droga que se suponía que lo mataría... pero se despertó y se encontró a sí mismo hundido a un niño de siete años. Para localizar a los hombres que le hicieron esto, Shinichi escondió su identidad y vivió con Ran, cuyo padre fue un detective sin esperanza, y con eso llegó una serie de asesinatos y misterios que él debe resolver. (Sourc)"
     },
     {
       "id": "mal-64326",
@@ -5610,7 +5707,8 @@
       },
       "airingAt": 1792833900,
       "episode": 4,
-      "scheduleId": 421840
+      "scheduleId": 421840,
+      "description_es": "En el corazón de un continente de ocho reinos se encuentra el Reino Marronnier. Su general, Baribara, tiene siete hijos, cada uno con un regalo único y servir como comandante caballero. Heridos por una única causa noble de rescatar heroicamente a una princesa algún día, los hermanos se establecieron como embajadores de buena voluntad a los siete reinos vecinos. ¿Qué encuentros, pruebas y destinos les esperan en estas tierras desconocidas? (Fuente: Amazon Prime Video)"
     },
     {
       "id": "mal-64398",
@@ -5639,7 +5737,8 @@
       },
       "airingAt": 1792836000,
       "episode": 19,
-      "scheduleId": 415797
+      "scheduleId": 415797,
+      "description_es": "Segunda temporada de Guangyin Zhi Wai."
     },
     {
       "id": "mal-59787",
@@ -5671,7 +5770,8 @@
       },
       "airingAt": 1792843200,
       "episode": 4,
-      "scheduleId": 419827
+      "scheduleId": 419827,
+      "description_es": "Romelia y su partido tienen éxito en derrotar al Rey demonio Zelgis, aunque la carga imprudente del príncipe Henri los obliga a una batalla agotadora. Después, Romelia se marca \"peso muerto\" por no luchar directamente, y el Príncipe unilateralmente rompe su compromiso. Denegado un lugar en las celebraciones de la victoria, Romelia vuelve a casa, sólo para ser conocido con indiferencia fría de su familia y sociedad. Sin embargo, se niega a romper. Ella ya ha puesto sus ojos en el camino que está por delante. (Fuente: Crunchyroll) Nota: Romelia War Chronicle fue transmitido 2 días antes de la emisión de televisión en A"
     },
     {
       "id": "mal-61153",
@@ -5703,7 +5803,8 @@
       },
       "airingAt": 1792846800,
       "episode": 5,
-      "scheduleId": 421885
+      "scheduleId": 421885,
+      "description_es": "Fia siempre soñó con convertirse en un caballero. Nacida en una familia de caballeros, es la menos talentosa entre ellos, pero todavía se aferra a su esperanza y trenes con todo lo que tiene. Cuando llega el día para que mate a un pequeño demonio y pruebe su valor, termina cara a cara con un dragón en su lugar! Una herida mortal hace que su vida parpadee ante sus ojos... y de repente recuerda su vida anterior, cuando ella era un poderoso santo en una era pasada que venció al Rey demonio. Esa vida terminó en dolor debido a quién era, haciendo que su miedo se convierta en un santo de nuevo. Ahora que la magia de su anterior"
     },
     {
       "id": "mal-63140",
@@ -5735,7 +5836,8 @@
       },
       "airingAt": 1792848600,
       "episode": 5,
-      "scheduleId": 420144
+      "scheduleId": 420144,
+      "description_es": "¡La segunda temporada de Yasei no el último jefe ga Arawareta!"
     },
     {
       "id": "mal-61967",
@@ -5800,7 +5902,8 @@
       },
       "airingAt": 1792852200,
       "episode": 4,
-      "scheduleId": 419803
+      "scheduleId": 419803,
+      "description_es": "Akira vive una vida pacífica con su hermana mayor Haruka y su madre, que dirige un café. Sin embargo, la familia alberga un secreto — Haruka ha heredado un poder de su padre llamado \"Engine\", y esconde ese poder de otros. Akira, por otro lado, no ha heredado el poder de su padre, y tiene un complejo de inferioridad. En medio de esto, acontecimientos extraños comienzan a suceder alrededor del mundo. (Fuente: Anime News Network)"
     },
     {
       "id": "mal-62524",
@@ -5834,7 +5937,8 @@
       },
       "airingAt": 1792852200,
       "episode": 4,
-      "scheduleId": 420131
+      "scheduleId": 420131,
+      "description_es": "Puede ser una ciudad arruinada devastada por zombis, pero para Aki y sus amigos, ¡es increíble! Habiendo crecido sólo escuchando historias del viejo mundo y el misterioso brote que borró a la humanidad, se pone con sus amigos de la infancia en busca de su padre desaparecido. Las cosas se convierten rápidamente en una lucha por la supervivencia fuera de la seguridad de su pequeño pueblo, sin embargo nunca se han sentido más vivos. (Fuente: Crunchyroll)"
     },
     {
       "id": "mal-63053",
@@ -5863,7 +5967,8 @@
       },
       "airingAt": 1792853100,
       "episode": 3,
-      "scheduleId": 420242
+      "scheduleId": 420242,
+      "description_es": "Las leyendas urbanas cobran vida... Todos han oído una leyenda urbana antes, pero pocos han llegado cara a cara con uno. Estos fenómenos están en todas partes, existentes en las sombras de la realidad. Cada vez más de ellos han estado apareciendo a raíz del niño sin rostro visto por todo Japón. Si la ves o una de las leyendas urbanas que trae, ora al chico en la capucha roja te encuentra antes de que sea demasiado tarde. Usted no tendrá una oportunidad por su cuenta. Pero con su ayuda, puedes vivir para ver otro día... (Fuente: Yen Press)"
     },
     {
       "id": "mal-56733",
@@ -5897,7 +6002,8 @@
       },
       "airingAt": 1792854000,
       "episode": 5,
-      "scheduleId": 422396
+      "scheduleId": 422396,
+      "description_es": "Pocos títulos son más venerados entre los erizos-(ahem) conocedores de videojuegos eróticos japoneses-que Magical Explorer. Un día, nuestro héroe amante de la mugre se despierta para encontrar que ha sido reencarnado en el cuerpo del protagonista de la lancha del juego! O más bien, su mejor amigo, Kousuke Takioto. Pero con su inigualable conocimiento de Magical Explorer y las habilidades de Kousuke poco ortodoxas (una bufanda que se duplica como un puño?), nuestro héroe promete convertir el perdedor más desafortunado en su más poderoso corazón. En este mundo, nada está fuera de alcance cuando tienes el know-how! (Fuente: Yen Press"
     },
     {
       "id": "mal-61578",
@@ -5962,7 +6068,8 @@
       },
       "airingAt": 1792857360,
       "episode": 4,
-      "scheduleId": 417717
+      "scheduleId": 417717,
+      "description_es": "La tercera temporada de Ranma 1/2 (2024) ."
     },
     {
       "id": "mal-62922",
@@ -5994,7 +6101,99 @@
       },
       "airingAt": 1792859400,
       "episode": 4,
-      "scheduleId": 419565
+      "scheduleId": 419565,
+      "description_es": "Si hay una cosa que nunca puedes tener suficiente en un mundo de espadas y brujería estilo RPG, ¡es puntos mágicos! Si estás alimentando hechizos, técnicas o mostrando una habilidad increíble, tienes que gastar esos puntos para hacer daño real. ¿Y si te escapas? La Cuaresma es parte de la fiesta de llegada conocida como los \"Skypiercers\", y gracias a su regalo único, puede prestar enormes cantidades de magia a otros. ¿Sin MP? ¡No hay problema con la Cuaresma! Excepto ahora que sus compañeros se han convertido en héroes formidables (gracias a su habilidad), su utilidad es cuestionada. Salió del grupo, la Cuaresma es"
+    },
+    {
+      "id": "mal-63125",
+      "mal_id": 63125,
+      "ani_id": 204269,
+      "title": "Little Shark's Day Out Season 2",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx204269-fTR4iyVjTHiC.png",
+      "banner": "",
+      "description": "Second season of Odekake Kozame .",
+      "year": 2026,
+      "startDate": "2026-04-12",
+      "format": "TV_SHORT",
+      "episodes": 72,
+      "averageScore": 0,
+      "status": "RELEASING",
+      "genres": [
+        "Slice of Life"
+      ],
+      "siteUrl": "https://anilist.co/anime/204269",
+      "trailer": {
+        "site": "youtube",
+        "id": "Laf46YXDt68"
+      },
+      "next": {
+        "at": 1792274400,
+        "episode": 28
+      },
+      "airingAt": 1792879200,
+      "episode": 29,
+      "scheduleId": 410606,
+      "description_es": "Segunda temporada de Odekake Kozame."
+    },
+    {
+      "id": "mal-64430",
+      "mal_id": 64430,
+      "ani_id": 213298,
+      "title": "Yuruyuru Zukan",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx213298-ymB1Sw0yDZ0Y.jpg",
+      "banner": "",
+      "description": "Gakken's hugely popular illustrated encyclopedia series, which everyone can enjoy with its laid-back four-panel comics, is finally being adapted into a TV anime! Discover surprising aspects and fun facts about living creatures—full of secrets that will make you say, \"Wow!\" Enjoy this new kind of anime that makes even scary things fun and easy to watch, with its cute art style. (Source: Official Site, translated)",
+      "year": 2026,
+      "startDate": "2026-10-04",
+      "format": "TV_SHORT",
+      "episodes": 0,
+      "averageScore": 0,
+      "status": "RELEASING",
+      "genres": [],
+      "siteUrl": "https://anilist.co/anime/213298",
+      "trailer": {
+        "site": "youtube",
+        "id": "cH7enqqATwE"
+      },
+      "next": {
+        "at": 1792274400,
+        "episode": 3
+      },
+      "airingAt": 1792879200,
+      "episode": 4,
+      "scheduleId": 422008,
+      "description_es": "La popular y popular serie de enciclopedias ilustradas de Gakken, que todos pueden disfrutar con sus cómics de cuatro paneles, finalmente se está adaptando a un anime de televisión! Descubre aspectos sorprendentes y hechos divertidos sobre los seres vivientes, llenos de secretos que te harán decir: \"¡Wow!\" Disfruta de este nuevo tipo de anime que hace que las cosas aterradoras sean divertidas y fáciles de ver, con su estilo de arte lindo. (Fuente: Sitio oficial, traducido)"
+    },
+    {
+      "id": "mal-64028",
+      "mal_id": 64028,
+      "ani_id": 218011,
+      "title": "Raccoon Dog & Fox",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx218011-dPgr1MlfSuhH.jpg",
+      "banner": "",
+      "description": "The story centers on the daily lives of a raccoon dog who is not quite with it and a mischievous fox who likes to tease the raccoon dog. The two are close friends who live together on a mountain. Their other friends include a wolf, a bear, a rabbit, and birds. (Source: Anime News Network)",
+      "year": 2026,
+      "startDate": "2026-10-04",
+      "format": "TV_SHORT",
+      "episodes": 0,
+      "averageScore": 0,
+      "status": "RELEASING",
+      "genres": [
+        "Comedy"
+      ],
+      "siteUrl": "https://anilist.co/anime/218011",
+      "trailer": {
+        "site": "youtube",
+        "id": "DO_UchIVN9Y"
+      },
+      "next": {
+        "at": 1792274400,
+        "episode": 3
+      },
+      "airingAt": 1792879200,
+      "episode": 4,
+      "scheduleId": 422357,
+      "description_es": "La historia se centra en la vida diaria de un perro de mapache que no está bien con él y un zorro malicioso que le gusta burlar al perro de mapache. Los dos son amigos cercanos que viven juntos en una montaña. Sus otros amigos incluyen un lobo, un oso, un conejo y aves. (Fuente: Anime News Network)"
     }
   ],
   "seasonal": {
@@ -6060,7 +6259,8 @@
         "next": {
           "at": 1792243800,
           "episode": 4
-        }
+        },
+        "description_es": "¡La segunda temporada de Yasei no el último jefe ga Arawareta!"
       },
       {
         "id": "mal-64340",
@@ -6119,7 +6319,8 @@
         "next": {
           "at": 1792333800,
           "episode": 4
-        }
+        },
+        "description_es": "La tercera temporada de Tensei Kizoku, Kantei Skill de Nariagaru . Nota: El 4 de septiembre de 2026, se anunció que GeyeG Pictures tomaría la producción del estudio MOTHER manteniendo el mismo personal."
       },
       {
         "id": "mal-56733",
@@ -6150,7 +6351,8 @@
         "next": {
           "at": 1792249200,
           "episode": 4
-        }
+        },
+        "description_es": "Pocos títulos son más venerados entre los erizos-(ahem) conocedores de videojuegos eróticos japoneses-que Magical Explorer. Un día, nuestro héroe amante de la mugre se despierta para encontrar que ha sido reencarnado en el cuerpo del protagonista de la lancha del juego! O más bien, su mejor amigo, Kousuke Takioto. Pero con su inigualable conocimiento de Magical Explorer y las habilidades de Kousuke poco ortodoxas (una bufanda que se duplica como un puño?), nuestro héroe promete convertir el perdedor más desafortunado en su más poderoso corazón. En este mundo, nada está fuera de alcance cuando tienes el know-how! (Fuente: Yen Press"
       },
       {
         "id": "mal-64867",
@@ -6178,7 +6380,8 @@
         "next": {
           "at": 1792324800,
           "episode": 4
-        }
+        },
+        "description_es": "\"Umayuru\" es una serie corta de animes que ofrece un musgo de Uma tamaño pint! Esta vez, es una carrera de tres minutos \"Full-Gate\" donde *all* el Uma Musume to the track! ¡Una reunión súper grande y relajada con todos!"
       },
       {
         "id": "mal-65079",
@@ -6202,7 +6405,8 @@
           "site": "youtube",
           "id": "Rya5HXrNeww"
         },
-        "next": null
+        "next": null,
+        "description_es": "Hoy es el día Unyan el gatito se convierte en un mensajero de entrega! Vestirse, comer el desayuno, empacar su bolsa... Él está ansioso por empezar, pero hay muchas primeras en el camino! Es una mañana ocupada para este pequeño mensajero gatito! (Fuente: YouTube)"
       },
       {
         "id": "mal-53913",
@@ -6321,7 +6525,8 @@
         "next": {
           "at": 1792594800,
           "episode": 4
-        }
+        },
+        "description_es": "Las viejas rivalidades reinan cuando los jugadores del equipo Japón se enfrentan para ganar puntos en la alineación para la final de la Copa Mundial. (Fuente: Crunchyroll News)"
       },
       {
         "id": "mal-65095",
@@ -6346,7 +6551,8 @@
         "next": {
           "at": 1792661400,
           "episode": 4
-        }
+        },
+        "description_es": "Cuarta temporada de PetitCure: Ferias precarias."
       },
       {
         "id": "mal-61987",
@@ -6404,7 +6610,8 @@
         "next": {
           "at": 1792161000,
           "episode": 3
-        }
+        },
+        "description_es": "Después de luchar en Kioto y Nerima, los estudiantes de la Academia Rasetsu se han hecho más fuertes. Pero Yaoroshi deja la academia para unirse a la Brigada Oni por su \"erración total del Momotaro\". Cuando Shiki se da cuenta de que también apuntan a los no combatientes, se pone después de Yaoroshi para traerlo de vuelta. Mientras tanto, en Nikko, hay una instalación de investigación para experimentos horribles en la antigua Kegon Falls... (Fuente: REMOW)"
       },
       {
         "id": "mal-65009",
@@ -6432,7 +6639,8 @@
         "next": {
           "at": 1792153560,
           "episode": 3
-        }
+        },
+        "description_es": "La historia de Aoki Denshou Welsh &quot; Shedar sigue a Welsh, un adolescente del país que ama cocinar, y a Shedar, un joven príncipe que está destinado a ser rey un día. Cuando los dos jóvenes con vidas muy diferentes son lanzados juntos por un encuentro casual, las ruedas del destino comienzan a girar, y pronto deben trabajar juntos para traer un futuro pacífico al detener un cruel déspota de conquistar el mundo. (Fuente: Crunchyroll)"
       },
       {
         "id": "mal-64180",
@@ -6460,7 +6668,8 @@
         "next": {
           "at": 1792681200,
           "episode": 4
-        }
+        },
+        "description_es": "La segunda temporada de Kizu darake Seijo yori Houfuku wo Komete."
       },
       {
         "id": "mal-62039",
@@ -6487,7 +6696,8 @@
         "next": {
           "at": 1792143600,
           "episode": 3
-        }
+        },
+        "description_es": "Kadokawa anunció el 9 de junio de 2025 que el libro de fotos Pan Dorobou (Bread Thief) de Keiko Shibata tendrá una adaptación de anime. El anuncio no reveló el formato del anime. Los libros de fotos se centran en un pedazo de pan que también roba pan de panaderías en la ciudad. (Fuente: Anime News Network)"
       },
       {
         "id": "mal-65007",
@@ -6511,7 +6721,8 @@
         "next": {
           "at": 1792111800,
           "episode": 3
-        }
+        },
+        "description_es": "Mazenchu está en una escuela donde todo tipo de comida puede vivir su juventud y formar amistades, rivalidades y romances amargos. (Fuente: Anime News Network)"
       },
       {
         "id": "mal-61967",
@@ -6572,7 +6783,8 @@
         "next": {
           "at": 1792169580,
           "episode": 3
-        }
+        },
+        "description_es": "Secuela de los Revengers de Tokio: Tenjiku-hen."
       },
       {
         "id": "mal-61153",
@@ -6601,7 +6813,8 @@
         "next": {
           "at": 1792242000,
           "episode": 4
-        }
+        },
+        "description_es": "Fia siempre soñó con convertirse en un caballero. Nacida en una familia de caballeros, es la menos talentosa entre ellos, pero todavía se aferra a su esperanza y trenes con todo lo que tiene. Cuando llega el día para que mate a un pequeño demonio y pruebe su valor, termina cara a cara con un dragón en su lugar! Una herida mortal hace que su vida parpadee ante sus ojos... y de repente recuerda su vida anterior, cuando ella era un poderoso santo en una era pasada que venció al Rey demonio. Esa vida terminó en dolor debido a quién era, haciendo que su miedo se convierta en un santo de nuevo. Ahora que la magia de su anterior"
       },
       {
         "id": "mal-59787",
@@ -6630,7 +6843,8 @@
         "next": {
           "at": 1792238400,
           "episode": 3
-        }
+        },
+        "description_es": "Romelia y su partido tienen éxito en derrotar al Rey demonio Zelgis, aunque la carga imprudente del príncipe Henri los obliga a una batalla agotadora. Después, Romelia se marca \"peso muerto\" por no luchar directamente, y el Príncipe unilateralmente rompe su compromiso. Denegado un lugar en las celebraciones de la victoria, Romelia vuelve a casa, sólo para ser conocido con indiferencia fría de su familia y sociedad. Sin embargo, se niega a romper. Ella ya ha puesto sus ojos en el camino que está por delante. (Fuente: Crunchyroll) Nota: Romelia War Chronicle fue transmitido 2 días antes de la emisión de televisión en A"
       },
       {
         "id": "mal-62524",
@@ -6661,7 +6875,8 @@
         "next": {
           "at": 1792247400,
           "episode": 3
-        }
+        },
+        "description_es": "Puede ser una ciudad arruinada devastada por zombis, pero para Aki y sus amigos, ¡es increíble! Habiendo crecido sólo escuchando historias del viejo mundo y el misterioso brote que borró a la humanidad, se pone con sus amigos de la infancia en busca de su padre desaparecido. Las cosas se convierten rápidamente en una lucha por la supervivencia fuera de la seguridad de su pequeño pueblo, sin embargo nunca se han sentido más vivos. (Fuente: Crunchyroll)"
       },
       {
         "id": "mal-61140",
@@ -6690,7 +6905,8 @@
         "next": {
           "at": 1792506600,
           "episode": 3
-        }
+        },
+        "description_es": "Dos jóvenes... el héroe, Riliu, y su mejor amigo Jowy, eran miembros de una brigada juvenil de su nación natal, el Reino de Highland - una poderosa nación militar situada en el noreste de la región de Dunan. Los dos miraron hacia arriba los mismos cielos estrellados, durmieron en la misma tienda, y creyeron en el mismo futuro. Una vez que la pelea terminó, y la noche terminó, sus vidas diarias estaban seguras de volver. Contrariamente a sus esperanzas, los dos chicos se arrastran en el torbellino del destino, guiados por las llamas de la guerra. Los chicos impotentes alcanzaron y captaron un inmenso poder. Como brillan las 108 estrellas"
       },
       {
         "id": "mal-64326",
@@ -6719,7 +6935,8 @@
         "next": {
           "at": 1792229100,
           "episode": 3
-        }
+        },
+        "description_es": "En el corazón de un continente de ocho reinos se encuentra el Reino Marronnier. Su general, Baribara, tiene siete hijos, cada uno con un regalo único y servir como comandante caballero. Heridos por una única causa noble de rescatar heroicamente a una princesa algún día, los hermanos se establecieron como embajadores de buena voluntad a los siete reinos vecinos. ¿Qué encuentros, pruebas y destinos les esperan en estas tierras desconocidas? (Fuente: Amazon Prime Video)"
       },
       {
         "id": "mal-63764",
@@ -6747,7 +6964,8 @@
         "next": {
           "at": 1792247400,
           "episode": 3
-        }
+        },
+        "description_es": "Akira vive una vida pacífica con su hermana mayor Haruka y su madre, que dirige un café. Sin embargo, la familia alberga un secreto — Haruka ha heredado un poder de su padre llamado \"Engine\", y esconde ese poder de otros. Akira, por otro lado, no ha heredado el poder de su padre, y tiene un complejo de inferioridad. En medio de esto, acontecimientos extraños comienzan a suceder alrededor del mundo. (Fuente: Anime News Network)"
       },
       {
         "id": "mal-63157",
@@ -6775,7 +6993,8 @@
         "next": {
           "at": 1792197000,
           "episode": 3
-        }
+        },
+        "description_es": "¡El sargento Keroro viene a conquistar la Tierra, sólo para ser capturado y atrapado viviendo con la familia Hinata! (Fuente: Crunchyroll)"
       },
       {
         "id": "mal-63901",
@@ -6824,7 +7043,8 @@
         "next": {
           "at": 1792197000,
           "episode": 3
-        }
+        },
+        "description_es": "Segunda temporada de Nezumi-kun no Chokki (TV)"
       },
       {
         "id": "mal-61323",
@@ -6911,7 +7131,8 @@
         "next": {
           "at": 1792310400,
           "episode": 3
-        }
+        },
+        "description_es": "El juego de Aoi Ashito ahora le ha ganado un lugar en el equipo A, pero rápidamente está abrumado por su dura nueva realidad. Rodeado de jugadores de élite como Kuribayashi y Akutsu, las prácticas son tan misericordiosos como los partidos. En esta U-18 Premier League de talento de la central eléctrica, Ashito debe evolucionar o ser aplastado, si alguna vez es reconocido. (Fuente: Crunchyroll)"
       },
       {
         "id": "mal-60948",
@@ -6943,7 +7164,8 @@
         "next": {
           "at": 1792326600,
           "episode": 3
-        }
+        },
+        "description_es": "Sato Takahiro era un trabajador de oficina ordinario y aficionado al juego hasta el día en que se despertó en una nave espacial – una que extrañamente se parecía a una nave de un juego favorito de tiro espacial. Con un barco desguace, una tripulación llena de chicas, y un universo fantástico para explorar, él va a aprovechar al máximo su buena suerte y crear la vida que siempre ha soñado con! (Fuente: Seven Seas Entertainment)"
       },
       {
         "id": "mal-62922",
@@ -6972,7 +7194,8 @@
         "next": {
           "at": 1792254600,
           "episode": 3
-        }
+        },
+        "description_es": "Si hay una cosa que nunca puedes tener suficiente en un mundo de espadas y brujería estilo RPG, ¡es puntos mágicos! Si estás alimentando hechizos, técnicas o mostrando una habilidad increíble, tienes que gastar esos puntos para hacer daño real. ¿Y si te escapas? La Cuaresma es parte de la fiesta de llegada conocida como los \"Skypiercers\", y gracias a su regalo único, puede prestar enormes cantidades de magia a otros. ¿Sin MP? ¡No hay problema con la Cuaresma! Excepto ahora que sus compañeros se han convertido en héroes formidables (gracias a su habilidad), su utilidad es cuestionada. Salió del grupo, la Cuaresma es"
       },
       {
         "id": "mal-63801",
@@ -7001,7 +7224,8 @@
         "next": {
           "at": 1792252560,
           "episode": 3
-        }
+        },
+        "description_es": "La tercera temporada de Ranma 1/2 (2024) ."
       },
       {
         "id": "mal-62753",
@@ -7030,7 +7254,8 @@
         "next": {
           "at": 1792333800,
           "episode": 3
-        }
+        },
+        "description_es": "Renací como una hija villana en un juego de harem otome inverso. Después de enfermarse con fiebre alta a los 10 años, Pia Rockwell de repente recordó su vida pasada como estudiante universitaria en Japón. Pero lejos de ir por la ruta del villano, todo lo que esta chica súper tímida quiere es finalmente utilizar su conocimiento de cuando era una estudiante de posgrado que estudiaba para obtener su doctorado en paleontología. Su objetivo final es convertirse en un común, excavar fósiles, construir un museo y luego convertirse en un curador. Así que para escapar de la ruta del villano y evitar ser deportado por su prometido durante la graduación"
       },
       {
         "id": "mal-63751",
@@ -7058,7 +7283,8 @@
         "next": {
           "at": 1792332000,
           "episode": 3
-        }
+        },
+        "description_es": "Shizuka se ocupa de los trabajos más peligrosos de los asesinos, pero ella no es la que hace el asesinato. Más bien, es su hermano, Nagi, un asesino fuerte que tomó una bala para proteger a su hermana, dejarlo en estado en coma y tener que usar una silla de ruedas. Sin embargo, Shizuka ha descubierto la clave para despertar a su hermano: ¡debe enfrentarse con la intención de matar! Así comienza un viaje violento de recuperación, luchando contra los enemigos más peligrosos! (Fuente: Kodansha USA)"
       },
       {
         "id": "mal-62907",
@@ -7086,7 +7312,8 @@
         "next": {
           "at": 1792328400,
           "episode": 3
-        }
+        },
+        "description_es": "Al día, Mitsutaka Oji es el guapo y confiable jefe que todos admiran. Por la noche, hace su mascota favorita, Pugtaro, y complace su obsesión secreta con todas las cosas lindas! Ha mantenido su doble vida escondida durante años, pero un encuentro inesperado lo vuelve todo al revés y obliga a Oji a enfrentar sus sentimientos. (Fuente: Crunchyroll)"
       },
       {
         "id": "mal-62590",
@@ -7111,7 +7338,8 @@
         "next": {
           "at": 1792334700,
           "episode": 3
-        }
+        },
+        "description_es": "La segunda temporada de Hotel Inhumans ."
       },
       {
         "id": "mal-63667",
@@ -7139,7 +7367,8 @@
         "next": {
           "at": 1792330200,
           "episode": 3
-        }
+        },
+        "description_es": "La segunda mitad de Mahou no Shimai LuluttoLilly."
       },
       {
         "id": "mal-64430",
@@ -7164,7 +7393,8 @@
         "next": {
           "at": 1792274400,
           "episode": 3
-        }
+        },
+        "description_es": "La popular y popular serie de enciclopedias ilustradas de Gakken, que todos pueden disfrutar con sus cómics de cuatro paneles, finalmente se está adaptando a un anime de televisión! Descubre aspectos sorprendentes y hechos divertidos sobre los seres vivientes, llenos de secretos que te harán decir: \"¡Wow!\" Disfruta de este nuevo tipo de anime que hace que las cosas aterradoras sean divertidas y fáciles de ver, con su estilo de arte lindo. (Fuente: Sitio oficial, traducido)"
       },
       {
         "id": "mal-64028",
@@ -7191,7 +7421,8 @@
         "next": {
           "at": 1792274400,
           "episode": 3
-        }
+        },
+        "description_es": "La historia se centra en la vida diaria de un perro de mapache que no está bien con él y un zorro malicioso que le gusta burlar al perro de mapache. Los dos son amigos cercanos que viven juntos en una montaña. Sus otros amigos incluyen un lobo, un oso, un conejo y aves. (Fuente: Anime News Network)"
       },
       {
         "id": "al-216860",
@@ -7215,7 +7446,8 @@
         "next": {
           "at": 1792282560,
           "episode": 3
-        }
+        },
+        "description_es": "Cuarta temporada de Punirunes ."
       },
       {
         "id": "mal-64211",
@@ -7299,7 +7531,7 @@
           "at": 1792340400,
           "episode": 3
         },
-        "description_es": "Amona es un llamador oscuro con poderes demoníacos. Roni es un sacerdote devota que está demasiado tenso. Por todos los derechos, deben odiarse. En lugar de eso, terminan acelerando su arco de enemigos a amantes con un stand de una noche que de alguna manera insiste en convertirse en un evento recurrente. Ahora deben ocultar su situación del resto del partido, negando su creciente atracción entre sí, todo mientras se trata de un imp que está demasiado invertido en"
+        "description_es": "Amona es un llamador oscuro con poderes demoníacos. Roni es un sacerdote devota que está demasiado tenso. Por todos los derechos, deben odiarse. En lugar de eso, terminan acelerando su arco de enemigos a amantes con un stand de una noche que de alguna manera insiste en convertirse en un evento recurrente. Ahora deben ocultar su nave de situación del resto del partido mientras niegan su creciente atracción entre sí, mientras tratan con un imp que está demasiado invertido en su vida amorosa. (Fuente: HIDIVE)"
       },
       {
         "id": "mal-63098",
@@ -7329,7 +7561,7 @@
           "at": 1792418400,
           "episode": 3
         },
-        "description_es": "Un día, la secundaria Ageha Yoshina recoge una misteriosa “tarjeta de teléfono roja” que queda atrás en una cabina telefónica pública. Unos días más tarde, su amigo de la infancia y compañero de clase, Sakurako Amamiya, que poseía la misma carta, desaparecen sin dejar rastro. En busca de ella, Ageha se encuentra dibujado en los rumores que rodean una cadena nacional de misteriosas desapariciones, dijo que es obra de una organización secreta conocida sólo como “Psyren”. Cuando él"
+        "description_es": "Un día, la secundaria Ageha Yoshina recoge una misteriosa “tarjeta de teléfono roja” que queda atrás en una cabina telefónica pública. Unos días más tarde, su amigo de la infancia y compañero de clase, Sakurako Amamiya, que poseía la misma carta, desaparecen sin dejar rastro. En busca de ella, Ageha se encuentra dibujado en los rumores que rodean una cadena nacional de misteriosas desapariciones, dijo ser el trabajo de una organización secreta conocida sólo como “Psyren”. Cuando accede al grupo, comienza un juego mortal, uno que cambiará su destino para siempre. (Fuente: Sitio Oficial de PSYhován)"
       },
       {
         "id": "mal-63712",
@@ -7361,7 +7593,8 @@
         "next": {
           "at": 1792414800,
           "episode": 4
-        }
+        },
+        "description_es": "La naturaleza altruista del trabajador de oficina Akira Yagami generalmente le consigue el extremo corto del palo. Cuando muere después de salvar a un niño del tráfico entrante... ¿reencarna en otro mundo como un duende? Normalmente, los duendes sólo viven durante siete días, pero los nuevos poderes de Akira le permiten desafiar el período de vida normal de la especie... ¡y son la clave de su camino para convertirse en el más fuerte de todos los tiempos! (Fuente: Yen Press) Nota: Tensei Goblin Dakedo Sitsumon Aru? está transmitiendo 1 semana antes de la emisión de televisión en ABEMA y Primer Video comenzando con el episodio 2 el 5 de octubre de 2026"
       },
       {
         "id": "mal-64131",
@@ -7390,7 +7623,8 @@
         "next": {
           "at": 1792339500,
           "episode": 3
-        }
+        },
+        "description_es": "Por primera vez en mi vida, tengo una novia. Pero su amiga me tienta con un cuerpo tan seductor... ¿Qué harías si el amigo de tu novia viniera a ti así? (Fuente: Yanmaga, traducido)"
       },
       {
         "id": "mal-63381",
@@ -7419,7 +7653,8 @@
         "next": {
           "at": 1792339200,
           "episode": 3
-        }
+        },
+        "description_es": "¿Y si pudiera controlar la realidad con un cursor del ratón? Un día durante la clase, Takumi, un otaku, nota que el cursor del ratón ha salido de la pantalla. Panicked, pide a su amigo de la infancia Mone, sentado junto a él, para echar un vistazo, sólo para ser cepillado... Una vez que Takumi se da cuenta de que podía controlarlo él mismo, utiliza el cursor del ratón — visible sólo para él— para deslizarlo entre la ropa de Mone y empieza a hacer clic... Aquí está Japón (probablemente) primer nuevo género de romcom, \"Haciendo clic en Away en un Gyaru Who's Mean a Otakus con un cursor Mouse\"! (Fuente: Sitio Oficial) Nota: Episodio 1 recibe"
       },
       {
         "id": "mal-63753",
@@ -7448,7 +7683,8 @@
         "next": {
           "at": 1792335600,
           "episode": 3
-        }
+        },
+        "description_es": "En su camino a casa desde la escuela un día, Noriko se sumergió inesperadamente en un extraño y extraordinario mundo de fantasía. Sus problemas se complican exponencialmente cuando es rescatada y amigada por un joven guapo por el nombre de Izark. Puede ser valiente y valiente, pero dentro de Izark se esconde el mal más oscuro imaginable. Y según una profecía antigua, Noriko posee el poder de desencadenar ese mal. Ahora, inexorablemente unidos, estos dos aliados improbables deben navegar por un mundo maravilloso y hostil. (Fuente: VIZ Media)"
       },
       {
         "id": "mal-65167",
@@ -7474,7 +7710,8 @@
         "next": {
           "at": 1792340220,
           "episode": 3
-        }
+        },
+        "description_es": "Un mini anime semanal mostrado con cada episodio de Kanojo no Tomodachi exclusivamente en la transmisión AT-X del anime de TV y en línea en OceanVeil."
       },
       {
         "id": "mal-65169",
@@ -7501,7 +7738,8 @@
         "next": {
           "at": 1792346400,
           "episode": 3
-        }
+        },
+        "description_es": "Un mini anime semanal mostrado con cada episodio de Dark Summoner a Dekiteiru exclusivamente en la transmisión AT-X del anime de TV y en línea en Abema."
       },
       {
         "id": "al-214593",
@@ -7617,7 +7855,8 @@
         "next": {
           "at": 1792429200,
           "episode": 3
-        }
+        },
+        "description_es": "Algunas chicas mágicas pelean. Otros no. Elegido por la misteriosa Tierra de la Magia, que existe poco conocida por el resto del mundo, las chicas mágicas cada una tienen un poder único. Pechka, cuya magia hace deliciosa la comida, se ve obligada a participar en un misterioso juego virtual junto con 16 chicas mágicas desconocidas, cada una con su propia personalidad distintiva. Se suponía que era un ejercicio de entrenamiento seguro diseñado para mejorar sus habilidades mágicas. Pero en cambio, marca el comienzo de una pesadilla cuidadosamente orquestada - un juicio prohibido. Ha comenzado un nuevo proyecto de Raising Girl Magical. (Fuente:"
       },
       {
         "id": "mal-62696",
@@ -7645,7 +7884,8 @@
         "next": {
           "at": 1792504800,
           "episode": 3
-        }
+        },
+        "description_es": "¡El último dúo policial está aquí para mantener la paz! El oficial novato Nao acaba de unirse a la fuerza. Tiene un cinturón negro en judo y ganó el apodo \"Gorilla\" por su fuerza loca. Luego está su compañero Chojo, quien controla todo poder psíquico imaginable. Pero para un tipo que puede leer mentes, todavía no puede leer la habitación. Estos dos están cometiendo un crimen juntos en Chinjuku. (Fuente: Crunchyroll)"
       },
       {
         "id": "mal-63818",
@@ -7673,7 +7913,8 @@
         "next": {
           "at": 1792504800,
           "episode": 3
-        }
+        },
+        "description_es": "Keio 3, Hinomoto, Eito. A medida que el Bakumatsu lanza a Japón en agitación, el joven Kuu Bashin sueña con volverse más fuerte a través de los Espíritus de Batalla Estándar. Su mundo cambia cuando se encuentra con Ajara Zetsu, un samurai errante y formidable Batalla Eterna perseguido por fuerzas antihogunadas. Mientras los mundos de la batalla estándar y eterna chocan, Kuu es llevado al viaje de Zetsu, y pone la historia en movimiento. (Fuente: Crunchyroll)"
       },
       {
         "id": "mal-63431",
@@ -7826,7 +8067,8 @@
         "next": {
           "at": 1792593960,
           "episode": 3
-        }
+        },
+        "description_es": "Hikaru Shidou, Umi Ryuuzaki, y Fuu Hououji no son de Cephiro. Mientras que en un viaje de campo escolar a la Torre de Tokio, las mentes de las tres chicas están en cualquier cosa excepto mundos diferentes llenos de magia y maravilla. Es decir, hasta que la Princesa Esmeraude, el Pilar de Cephiro, clama por los Caballeros Mágicos para salvar su mundo, ¡y eso resulta que son esos tres! (Fuente: Crunchyroll)"
       },
       {
         "id": "mal-57612",
@@ -7883,7 +8125,8 @@
         "next": {
           "at": 1792679400,
           "episode": 3
-        }
+        },
+        "description_es": "Una profunda inmersión en la vida cotidiana incalculable y las interacciones entre escuelas del equipo de Ooarai Girls y los demás estudiantes (junto con los personajes coloridos que los rodean) que están totalmente dedicados al camino del tanque! (Fuente: Página Web Oficial, traducido) Nota: La serie tenía un pre-pantalla de cuatro partes en Japón a partir de diciembre de 2025. La televisión regular comenzó en octubre de 2026. • Parte 1 liberando teatralmente el 26 de diciembre de 2025. • Parte 2 liberando teatralmente el 30 de enero de 2026. • Parte 3 liberando teatralmente el 6 de marzo de 2026. • Parte 4 liberando teatricall"
       },
       {
         "id": "mal-64344",
@@ -7911,7 +8154,8 @@
         "next": {
           "at": 1792596600,
           "episode": 3
-        }
+        },
+        "description_es": "La historia tiene lugar 20 años después de que el robot Dandivine derrotara al misterioso Aposdoll. El mundo está ahora en paz. Sin embargo, el fabricante de juguetes Kasuga, que dependía de sus juguetes de mercadería de Dandivine, ha caído en declive. Así, el presidente de Kasuga, Genjuro Shijima, oró por el renacimiento de Dandivine, y el Aposdoll de repente regresó. El estudiante de secundaria Gekiha Shijima recibe una invitación de su tío Yusaku Kuroiwa, el ex piloto principal de Dandivine, para pilotar el robot gigante mismo. (Fuente: Anime News Network)"
       },
       {
         "id": "mal-63293",
@@ -7995,7 +8239,8 @@
           "site": "youtube",
           "id": "J2tjySs8UbA"
         },
-        "next": null
+        "next": null,
+        "description_es": "La historia se centra en un chico llamado Kazuki Tsukigase, que se traslada a una escuela secundaria en una isla remota para alejarse de cualquiera que lo conozca. Kazuki descubre que hay una entrada en la isla donde se rumorea que la gente desaparece. Explorando la entrada, se encuentra con una chica inconsciente. Cuando llega después de que Kazuki la lleve a la clínica, no puede dar nada sobre su identidad excepto que se llama Nao, tiene 16 años, y susurra el año 1974. (Fuente: Anime News Network, editado)"
       },
       {
         "id": "mal-61014",
@@ -8023,7 +8268,8 @@
         "next": {
           "at": 1792157400,
           "episode": 2
-        }
+        },
+        "description_es": "Esta es una historia de cuatro chicas que viven en el \"Dark Side\" de Academy City. En la Ciudad de la Academia donde el \"ESP\" ha sido reconocido como una ciencia general. Detrás de la paz, hay una organización Dark Side que realiza misiones que no pueden hacerse públicas. \"ITEM\" es una unidad de élite compuesta por cuatro niñas. Takitsubo Rikou es capaz de leer y rastrear los campos AIM emitidos por aquellos con capacidades. Frenda Seivelun, que destaca en combate utilizando explosivos y trampas. Kinuhata Saiai, que puede manipular el nitrógeno a voluntad y juega un papel defensivo. Y uno de los 7 Espers que Academy City está orgulloso de: Mugino Shiz"
       },
       {
         "id": "mal-39168",
@@ -8048,7 +8294,8 @@
           "site": "youtube",
           "id": "yDRK9-yG9X8"
         },
-        "next": null
+        "next": null,
+        "description_es": "La quinta película de la serie de películas Saishuushou de seis partes."
       },
       {
         "id": "mal-62615",
@@ -8101,7 +8348,8 @@
         "next": {
           "at": 1792152000,
           "episode": 2
-        }
+        },
+        "description_es": "Secuela de Duel Masters LOST: Boukyaku no Taiyou."
       },
       {
         "id": "mal-61999",
@@ -8130,7 +8378,8 @@
         "next": {
           "at": 1792225800,
           "episode": 2
-        }
+        },
+        "description_es": "\"La máscara\" da poder a cualquiera que la use. A veces, eso significa una posibilidad interminable, o una tragedia inimaginable... Perú, alumno del legendario fabricante de máscaras Gaston Roux, se hace controlado por el “Mask del Dios Guerrero”, y mata involuntariamente a sus amigos, e incluso a su propio maestro. Para evitar que este tipo de tragedia vuelva a ocurrir, Perú jura destruir todas las máscaras de Gaston que se extienden por todo el mundo. Frente a los pecados que ha cometido, se embarca en su viaje. Conocer a nuevos amigos y enfrentar a poderosos enemigos. El chico continúa. Hasta el día que puede expiar por hola"
       },
       {
         "id": "mal-63053",
@@ -8156,7 +8405,8 @@
         "next": {
           "at": 1792248300,
           "episode": 2
-        }
+        },
+        "description_es": "Las leyendas urbanas cobran vida... Todos han oído una leyenda urbana antes, pero pocos han llegado cara a cara con uno. Estos fenómenos están en todas partes, existentes en las sombras de la realidad. Cada vez más de ellos han estado apareciendo a raíz del niño sin rostro visto por todo Japón. Si la ves o una de las leyendas urbanas que trae, ora al chico en la capucha roja te encuentra antes de que sea demasiado tarde. Usted no tendrá una oportunidad por su cuenta. Pero con su ayuda, puedes vivir para ver otro día... (Fuente: Yen Press)"
       },
       {
         "id": "mal-63367",
@@ -8185,7 +8435,8 @@
         "next": {
           "at": 1792332960,
           "episode": 2
-        }
+        },
+        "description_es": "Han pasado varios años desde la feroz batalla contra Majin Buu, y la Tierra finalmente ha recuperado un breve momento de paz. Al mismo tiempo, Beerus, el Dios de la Destrucción, despierta de su sueño largo y profundo. Incluso Kai y el Supremo Kai, consciente del abrumador poder de Beerus para destruir planetas enteros, ver su despertar con gran miedo... Mientras tanto, Beerus escucha rumores de un Saiyan que venció a Frieza y de repente aparece ante Goku. Atacada por Beerus, el ser más fuerte del universo, la Tierra está en grave peligro. Así comienza una batalla cósmica que rompe la tierra entre el Dios de la Destrucción y Go"
       },
       {
         "id": "mal-63292",
@@ -8213,7 +8464,8 @@
         "next": {
           "at": 1792333800,
           "episode": 2
-        }
+        },
+        "description_es": "El jugador de RPG Makoto Takatsuki es lanzado en otro mundo con terribles habilidades y estadísticas. Pero pronto se encuentra con una diosa llamada Noé, que le pide que se convierta en su primer creyente a cambio de bendiciones. (Fuente: J-Novel Club)"
       },
       {
         "id": "mal-64503",
@@ -8242,7 +8494,8 @@
         "next": {
           "at": 1792310400,
           "episode": 2
-        }
+        },
+        "description_es": "El segundo cour de la segunda temporada de Yozakura-san Chi no Daisakusen."
       },
       {
         "id": "mal-64505",
@@ -8269,7 +8522,8 @@
         "next": {
           "at": 1792312200,
           "episode": 2
-        }
+        },
+        "description_es": "El club de béisbol Seido ha sido invitado a la invitación de primavera en el sagrado estadio Koshien. ¡Sawamura finalmente estará en el montículo! De pie entre Seido y el título nacional son los ganadores del torneo de verano del año pasado Komadai Fujimaki y su imparable as Masamune Hongo. ¿Puede ser Seido triunfar sobre Komadai? ¡Es el comienzo de otra batalla calentada en el béisbol juvenil! (Fuente: Crunchyroll)"
       }
     ]
   },
