@@ -6,6 +6,7 @@ on:
   push:
     paths:
       - "scripts/refresh-catalog.mjs"
+      - "scripts/translate-catalog.py"
       - ".github/workflows/refresh-catalog.yml"
 permissions:
   contents: write
@@ -15,7 +16,7 @@ concurrency:
 jobs:
   refresh:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 25
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -25,12 +26,20 @@ jobs:
           node-version: "22"
       - name: Fetch anime catalog from AniList
         run: node scripts/refresh-catalog.mjs
-      - name: Commit refreshed static catalog
+      - name: Setup Python for offline Spanish translation
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install open source translation engine
+        run: python -m pip install --disable-pip-version-check "argostranslate>=1.9,<2"
+      - name: Translate cached synopsis to Spanish
+        run: python scripts/translate-catalog.py
+      - name: Commit refreshed static catalog and translations
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/catalog.json
+          git add data/catalog.json data/translations-es.json
           if ! git diff --cached --quiet; then
-            git commit -m "Refresh static anime catalog snapshot"
+            git commit -m "Refresh anime catalog and automatic Spanish synopses"
             git push
           fi
