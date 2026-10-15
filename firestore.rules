@@ -1,0 +1,45 @@
+rules_version = '2';
+service cloud.firestore {
+ match /databases/{database}/documents {
+  function bounded(max) {
+   return request.query.limit != null && request.query.limit <= max;
+  }
+  // All writes go through Cloud Functions (Firebase Admin SDK).
+  // The public may read only visible, moderated material.
+  match /episodeThreads/{thread}/comments/{comment} {
+   allow get: if resource.data.status == 'visible';
+   allow list: if bounded(40) && resource.data.status == 'visible';
+   allow create, update, delete: if false;
+  }
+  match /communityPosts/{postId} {
+   allow get: if resource.data.status == 'visible';
+   allow list: if bounded(35) && resource.data.status == 'visible';
+   allow create, update, delete: if false;
+   match /comments/{commentId} {
+    allow get: if resource.data.status == 'visible';
+    allow list: if bounded(60) && resource.data.status == 'visible';
+    allow create, update, delete: if false;
+   }
+   match /reactions/{uid} {
+    allow read, write: if false;
+   }
+  }
+  match /globalMessages/{message} {
+   allow get: if resource.data.status == 'visible';
+   allow list: if bounded(60) && resource.data.status == 'visible';
+   allow create, update, delete: if false;
+  }
+  match /creatorProfiles/{uid} {
+   allow get: if true;
+   allow list: if bounded(35);
+   allow create, update, delete: if false;
+  }
+  match /followers/{uid}/{document=**} { allow read, write: if false; }
+  match /friendRequests/{document=**} { allow read, write: if false; }
+  match /verificationRequests/{document=**} { allow read, write: if false; }
+  match /moderationReports/{document=**} { allow read, write: if false; }
+  match /creatorFlags/{uid} { allow read, write: if false; }
+  match /rateLimits/{uid} { allow read, write: if false; }
+  match /{document=**} { allow read, write: if false; }
+ }
+}
