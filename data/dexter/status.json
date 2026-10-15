@@ -1,0 +1,103 @@
+{
+  "schemaVersion": 1,
+  "engine": "DexterAnimeSync",
+  "updatedAt": "2026-10-15T22:22:27.011Z",
+  "job": {
+    "id": "sync-bbd5c2af2e8e886b",
+    "startedAt": "2026-10-15T22:22:27.011Z",
+    "completedAt": "2026-10-15T22:22:27.011Z",
+    "mode": "programada",
+    "status": "correcta",
+    "counters": {
+      "animes": 121,
+      "episodesDetected": 192,
+      "episodesNew": 192,
+      "playbackSources": 0,
+      "errors": 0
+    }
+  },
+  "providers": [
+    {
+      "id": "anilist_schedule",
+      "name": "AniList — emisiones",
+      "mode": "schedule",
+      "enabled": true,
+      "sourceType": "metadata",
+      "intervalHours": 6,
+      "lastRunAt": null,
+      "runAt": "2026-10-15T22:22:27.011Z",
+      "state": "conectada",
+      "observed": 192,
+      "created": 192,
+      "playback": 0,
+      "error": null
+    },
+    {
+      "id": "licensed_library",
+      "name": "Biblioteca autorizada 1UP",
+      "mode": "self_hosted",
+      "enabled": true,
+      "sourceType": "playback",
+      "intervalHours": 3,
+      "lastRunAt": null,
+      "runAt": "2026-10-15T22:22:27.011Z",
+      "state": "sin_contenido_autorizado",
+      "observed": 0,
+      "created": 0,
+      "playback": 0,
+      "error": null
+    },
+    {
+      "id": "jkanime_external",
+      "name": "JKAnime — páginas externas",
+      "mode": "external_only",
+      "enabled": true,
+      "sourceType": "external_links",
+      "intervalHours": 12,
+      "lastRunAt": null,
+      "runAt": "2026-10-15T22:22:27.011Z",
+      "state": "conectada",
+      "observed": 5,
+      "created": 0,
+      "playback": 0,
+      "error": null
+    },
+    {
+      "id": "youtube_trailers",
+      "name": "YouTube — tráilers de AniList",
+      "mode": "official_embed",
+      "enabled": true,
+      "sourceType": "embed",
+      "intervalHours": 6,
+      "lastRunAt": null,
+      "runAt": "2026-10-15T22:22:27.011Z",
+      "state": "conectada",
+      "observed": 96,
+      "created": 0,
+      "playback": 0,
+      "error": null
+    }
+  ],
+  "externalIntegrations": [
+    {
+      "id": "jkanime_video",
+      "displayName": "Servidores de video JKAnime",
+      "status": "requires_permission",
+      "reason": "Sin integración de reproducción documentada y autorizada; el repositorio comunitario no concede licencias para retransmitir."
+    },
+    {
+      "id": "social_firebase",
+      "displayName": "1UP Comunidad",
+      "status": "needs_configuration",
+      "reason": "Falta proyecto Firebase configurado, App Check y despliegue de backend."
+    }
+  ],
+  "errors": [],
+  "historySize": 4,
+  "records": {
+    "anime": 121,
+    "seasons": 1,
+    "episodes": 192,
+    "sources": 0
+  }
+}
