@@ -64,3 +64,19 @@ body{background:radial-gradient(ellipse at 84% 3%,#27356739,transparent 42%),#07
 @media(prefers-reduced-motion:reduce){
  .oneup-ember,.hero-poster,.hero-art-card{animation:none!important}
 }
+/* iPhone fix: close control must occupy a higher stacking context than the
+   illustrated anime cover and remain tappable when the modal scrolls.
+   Do not float it: float + clear + negative margins made content intercept taps. */
+.anime-dialog{isolation:isolate}
+.anime-dialog .dialog-close{
+ position:sticky;top:12px;right:auto;float:none;display:block;
+ z-index:9999;isolation:isolate;pointer-events:auto;
+ width:46px;height:46px;
+ margin:12px 12px -58px auto;
+ touch-action:manipulation;
+ box-shadow:0 5px 24px #000c;
+}
+.anime-dialog #anime-dialog-body{
+ position:relative;z-index:0;clear:none;
+ margin-top:0;
+}
