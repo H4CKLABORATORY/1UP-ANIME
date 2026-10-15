@@ -8,7 +8,7 @@ const sw=read('sw.js');
 const css=read('spotlight.css');
 let checks=0;
 const assert=(ok,reason)=>{checks++;if(!ok)throw Error(reason)};
-for(const file of ['studio.js','auth.js','motion.js','sonic.js','sw.js','airing-ui.js','episode-comments.js','community.js','social-backend.js','functions/index.js']){
+for(const file of ['studio.js','auth.js','motion.js','sonic.js','sw.js','airing-ui.js','episode-comments.js','community.js','social-backend.js','functions/index.js','moderacion.js']){
  new vm.Script(read(file),{filename:file});
 }
 const ids=['hero-poster','hero-title','hero-description','hero-badges','hero-feature-cover',
@@ -74,4 +74,13 @@ assert(read('functions/index.js').includes('exports.respondFriendship'),'Friend 
 assert(read('functions/index.js').includes('exports.submitEpisodeComment'),'Guest comment backend missing');
 assert(read('functions/index.js').includes('exports.moderateEpisodeComment'),'Episode moderation missing');
 assert(sw.includes("'./airing-ui.js'")&&sw.includes("'./comunidad.html'"),'PWA cache lacks new interfaces');
+assert(read('moderacion.html').includes('moderacion.js'),'Moderator console not linked');
+assert(read('moderacion.js').includes('moderationDashboard'),'Moderation queue not loaded');
+assert(read('functions/index.js').includes('exports.moderationDashboard'),'Moderation backend absent');
+assert(read('functions/index.js').includes('exports.listMyFriendRequests'),'Mutual friendship inbox absent');
+assert(read('functions/index.js').includes('exports.reviewVerification'),'Owner verification backend absent');
+assert(read('functions/index.js').includes('exports.reviewReport'),'Report processing backend absent');
+assert(read('social-backend.js').includes('requestFriend'),'Friend requests not connected');
+assert(read('firebase.json').includes('firestore.rules'),'Firestore rules not configured');
+assert(read('FIREBASE_COMUNIDAD_SETUP.md').includes('FIREBASE_SERVICE_ACCOUNT'),'Phone-only deployment docs incomplete');
 console.log('1UP smoke checks passed ('+checks+' assertions).');
