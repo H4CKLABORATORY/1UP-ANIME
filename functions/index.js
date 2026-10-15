@@ -312,3 +312,31 @@ exports.moderateEpisodeComment=caller(async req=>{
  await ref.update({status:action==='remove'?'removed':'visible',reviewedBy:req.auth.uid,reviewedAt:FieldValue.serverTimestamp()});
  return {ok:true};
 });
+
+
+/* Protected moderation workspace. All access is server-authorized.
+ * Frontend controls never grant a role or change creatorFlags directly.
+ */
+exports.moderationDashboard=caller(async req=>{
+ const role=await requireModerator(req);
+ const [posts,reports,verify]=await Promise.all([
+  db.collection('communityPosts').where('status','==','pending').limit(40).get(),
+  db.collection('moderationReports').where('status','==','pending').limit(40).get(),
+  role.role==='owner'?db.collection('verificationRequests').where('status','==','pending').limit(40).get():Promise.resolve(null)
+ ]);
+ return {role:role.role,
+  posts:posts.docs.map(d=>({id:d.id,displayName:d.data().displayName||'Fan',kind:d.data().kind,text:d.data().text||'',mediaPath:d.data().mediaPath||''})),
+  reports:reports.docs.map(d=>({id:d.id,type:d.data().type,target:d.data().target,reason:d.data().reason||''})),
+  verification:verify?verify.docs.map(d=>({uid:d.id,reason:d.data().reason||''})):[]
+ };
+});
+exports.reviewReport=caller(async req=>{
+ await requireModerator(req);
+ const id=clean(req.data?.reportId,100),decision=clean(req.data?.decision,20);
+ if(!/^[A-Za-z0-9]{10,50}$/.test(id)||!['resolved','dismissed'].includes(decision))
+  throw new HttpsError('invalid-argument','Reporte o resolución incorrectos.');
+ const ref=db.collection('moderationReports').doc(id),snap=await ref.get();
+ if(!snap.exists||snap.data().status!=='pending')throw new HttpsError('not-found','Reporte no disponible.');
+ await ref.update({status:decision,reviewedBy:req.auth.uid,reviewedAt:FieldValue.serverTimestamp()});
+ return {ok:true};
+});
