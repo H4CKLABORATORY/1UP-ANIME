@@ -170,8 +170,8 @@ function hero(a, chosen=false){
  }
  state.featured=a;
  const parts=(a.title||'Anime').trim().split(/\s+/);
- const first=parts.slice(0,2).join(' '),rest=parts.slice(2).join(' ')||'ANIME';
- $('#hero-title').innerHTML=esc(first).toUpperCase()+'<br><span>'+esc(rest).toUpperCase()+'</span>';
+ const first=parts.length>2?parts.slice(0,2).join(' '):parts.slice(0,1).join(' '),rest=parts.length>2?parts.slice(2).join(' '):parts.slice(1).join(' ');
+ $('#hero-title').innerHTML=esc(first).toUpperCase()+(rest?'<br><span>'+esc(rest).toUpperCase()+'</span>':'');
  $('#hero-description').textContent=a.source==='sample'
   ?'Descubre recomendaciones mientras recuperamos los resultados actualizados.'
   :(a.description||'Descubre tu siguiente serie favorita.').slice(0,245);
@@ -362,13 +362,18 @@ function saveUrl(){
  const item=ensureItem(state.active);if(!item)return;item.externalUrl=link;persist();toast('Enlace guardado');
 }
 function splash(){
- let seen=false;try{seen=sessionStorage.getItem('oneup_intro_seen')==='v4'}catch{}
+ // Intro visual automática sin pantalla de entrada, sin botones y sin sonido forzado.
+ // Safari no permite iniciar audio arbitrariamente al abrir una PWA sin gesto del usuario.
+ let seen=false;try{seen=sessionStorage.getItem('oneup_intro_seen')==='v5'}catch{}
  if(seen||window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
- const el=$('#startup');el.hidden=false;let ended=false;
- const done=()=>{if(ended)return;ended=true;try{sessionStorage.setItem('oneup_intro_seen','v4')}catch{}el.classList.add('finished');setTimeout(()=>el.hidden=true,650)};
- const timer=setTimeout(done,4300);
- $('#startup-sound').addEventListener('click',()=>{if(ended)return;window.OneUpSonic?.play();el.classList.add('started');clearTimeout(timer);setTimeout(done,1700)});
- $('#startup-skip').addEventListener('click',()=>{clearTimeout(timer);done()});
+ const el=$('#startup');if(!el)return;
+ el.hidden=false;el.classList.add('started');
+ const finish=()=>{
+  try{sessionStorage.setItem('oneup_intro_seen','v5')}catch{}
+  el.classList.add('finished');
+  setTimeout(()=>{el.hidden=true},500);
+ };
+ setTimeout(finish,1550);
 }
 function init(){
  reloadSaved();
