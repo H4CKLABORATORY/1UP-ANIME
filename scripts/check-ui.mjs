@@ -86,4 +86,7 @@ assert(read('FIREBASE_COMUNIDAD_SETUP.md').includes('FIREBASE_SERVICE_ACCOUNT'),
 const storageRules=read('storage.rules');
 assert(storageRules.includes(String.raw`media\\.(jpg|png|webp|mp4)`),'Firebase Storage regex escaping regressed');
 assert(storageRules.includes(String.raw`{8,90}\\.(jpg|png|webp)`),'Avatar upload extension regex must escape dot');
+assert(html.includes('external-providers.js'),'Public anime pages provider script is not loaded');
+assert(sw.includes("'./external-providers.js'"),'Offline cache missing authorized external links');
+assert(read('community.js').includes("for(const badge of $('[data-avatar-file]'))"),'Multiple community avatars must use querySelectorAll');
 console.log('1UP smoke checks passed ('+checks+' assertions).');
