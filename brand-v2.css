@@ -90,3 +90,14 @@ body{background:radial-gradient(ellipse at 84% 3%,#27356739,transparent 42%),#07
  z-index:2147483647!important;pointer-events:auto!important;
  transform:translateZ(0);-webkit-transform:translateZ(0);
 }
+
+/* Keep the close button INSIDE the illustrated cover stacking context.
+   On iPhone this prevents dialog content from stealing taps. */
+#anime-dialog .oneup-detail-cover > #anime-close.dialog-close{
+ position:absolute!important;inset:12px 12px auto auto!important;
+ float:none!important;margin:0!important;
+ z-index:2147483647!important;
+ display:grid!important;place-items:center!important;
+ pointer-events:auto!important;opacity:1!important;
+ width:48px!important;height:48px!important;
+}
