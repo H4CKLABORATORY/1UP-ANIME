@@ -8,6 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="./studio.css">
 <link rel="stylesheet" href="./motion.css">
+<link rel="stylesheet" href="./spotlight.css">
 <script defer src="./sonic.js"></script><script defer src="./auth-config.js"></script><script defer src="./auth.js"></script><script defer src="./studio.js"></script>
 <script defer src="./motion.js"></script>
 </head><body>
@@ -39,14 +40,14 @@
    <div id="hero-poster" class="hero-poster"></div><div class="hero-darken"></div><div class="hero-lines"></div>
    <div class="hero-floating hero-floating-a">✦</div><div class="hero-floating hero-floating-b">✧</div>
    <div class="wrap hero-grid"><div class="hero-copy">
-    <div class="eyebrow"><span class="signal"></span> ONE UP ORIGINAL EXPERIENCE <span class="eyebrow-rule"></span> TEMPORADA 2026</div>
+    <div class="eyebrow"><span class="signal"></span> 1UP ANIME / HISTORIAS DESTACADAS <span class="eyebrow-rule"></span> EXPLORA</div>
     <div class="limited-tag">✦ HALLOWEEN EDITION · OCTUBRE</div>
     <h1 id="hero-title">TU SIGUIENTE<br><span>VIDA ES ANIME.</span></h1>
     <p id="hero-description" class="hero-description">Una nueva forma de explorar, descubrir y organizar tu anime favorito. Tu universo. Tu nivel.</p>
     <div id="hero-badges" class="hero-badges"><span>ESTRENOS</span><span>TENDENCIAS</span><span>MI LISTA</span></div>
-    <div class="hero-actions"><button id="hero-detail" class="cta primary"><svg><use href="#ico-play"/></svg> Explorar anime</button><button id="hero-save" class="cta outline"><svg><use href="#ico-plus"/></svg> Mi lista</button></div>
+    <div class="hero-actions"><button id="hero-detail" class="cta primary"><svg><use href="#ico-arrow"/></svg> Ver información</button><button id="hero-save" class="cta outline"><svg><use href="#ico-plus"/></svg> Guardar anime</button></div><div class="hero-picks" id="hero-picks" aria-label="Elegir anime destacado"></div>
    </div>
-   <div class="hero-art-card"><div class="hero-art-emblem"><img src="./assets/oneup-mascot.svg" alt="Mascota original de 1UP Anime"></div><div class="hero-art-caption"><span>1UP CHARACTER</span><b>UNA VIDA MÁS.<br>UN MUNDO MÁS.</b><small>ORIGINAL BRAND MASCOT</small></div></div>
+   <div class="hero-art-card"><div class="hero-art-emblem"><img id="hero-feature-cover" src="./assets/oneup-mascot.svg" alt="Póster del anime seleccionado"></div><div class="hero-art-caption"><span>ANIME SELECCIONADO</span><b id="hero-feature-title">TU SIGUIENTE HISTORIA</b><small id="hero-feature-caption">EXPLORA UNA HISTORIA</small></div></div>
    </div>
    <div class="hero-bottom wrap"><span>01 / 1UP UNIVERSE</span><span>DESLIZA PARA DESCUBRIR ↓</span></div>
   </section>
