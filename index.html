@@ -11,7 +11,10 @@
 <link rel="stylesheet" href="./spotlight.css">
 <link rel="stylesheet" href="./player.css">
 <link rel="stylesheet" href="./brand-v2.css">
-<script defer src="./auth-config.js"></script><script defer src="./auth.js"></script><script defer src="./studio.js"></script>
+<link rel="stylesheet" href="./episode-comments.css">
+<script defer src="./auth-config.js"></script><script defer src="./social-config.js"></script>
+<script defer src="./social-backend.js"></script><script defer src="./episode-comments.js"></script>
+<script defer src="./auth.js"></script><script defer src="./studio.js"></script>
 <script defer src="./motion.js"></script>
 </head><body>
 <svg xmlns="http://www.w3.org/2000/svg" class="svg-sprite" aria-hidden="true">
@@ -32,7 +35,7 @@
     <img src="./assets/oneup-crest.svg" class="brand-symbol" alt="">
     <span class="brand-name">1UP<span>ANIME</span></span>
   </a>
-  <nav class="desktop-links" aria-label="Navegación"><button data-route="inicio" class="active">Inicio</button><button data-route="temporada">En emisión</button><button data-route="programacion">Programación</button><button data-route="catalogo">Catálogo</button><button data-route="peliculas">Películas</button><button data-route="milista">Mi lista</button></nav>
+  <nav class="desktop-links" aria-label="Navegación"><button data-route="inicio" class="active">Inicio</button><button data-route="temporada">En emisión</button><button data-route="programacion">Programación</button><button data-route="catalogo">Catálogo</button><button data-route="peliculas">Películas</button><button data-route="milista">Mi lista</button><a class="oneup-link-community" href="./comunidad.html">✦ Comunidad</a></nav>
   <div class="header-right"><button id="header-search" class="icon-button" title="Buscar"><svg><use href="#ico-search"/></svg></button><button id="auth-open" class="account-button"><span class="account-dot">●</span><span id="auth-label">Invitado</span></button></div>
  </div>
 </header>
@@ -65,12 +68,12 @@
   <section class="wrap section schedule-preview"><div class="section-heading"><div><div class="micro">NUNCA PIERDAS UN ESTRENO</div><h2>Próximamente <em>al aire.</em></h2></div><button class="section-more" data-route="programacion">Programación ↗</button></div><div id="schedule-preview-list" class="schedule-rail"><div class="loading">Consultando próximas emisiones...</div></div><p class="small-note">Las horas son estimaciones de AniList y se muestran en tu zona horaria. No representan reproducción de episodios.</p></section>
   <section class="wrap section"><div class="section-heading"><div><div class="micro">SELECCIÓN 03 / DESCUBRE MÁS</div><h2>Agregados <em>recientemente.</em></h2></div><button class="section-more" data-route="recientes">Explorar recientes ↗</button></div><div id="recent-rail" class="card-rail"><div class="loading">Descubriendo series...</div></div></section>
   <section class="wrap section"><div class="section-heading"><div><div class="micro">SELECCIÓN 04 / CINE</div><h2>Películas <em>imperdibles.</em></h2></div><button class="section-more" data-route="peliculas">Ver películas ↗</button></div><div id="movies-rail" class="card-rail"><div class="loading">Cargando cine anime...</div></div></section>
-  <section class="wrap community-note"><div class="community-symbol">1UP</div><div><span class="micro">DESCUBRE · GUARDA · CONTINÚA</span><h2>Siempre hay una<br><em>historia más.</em></h2><p>Puedes usar 1UP Anime como invitado, sin cuenta ni perfiles. Tus listas se guardan en este dispositivo.</p></div></section>
+  <section class="wrap community-note"><div class="community-symbol">1UP</div><div><span class="micro">1UP COMUNIDAD / EL GREMIO</span><h2>Las mejores teorías<br><em>merecen conversación.</em></h2><p>Comparte preguntas sobre manga, fotos y videos. Lee publicaciones y debates públicamente; para participar en La Plaza necesitarás una cuenta. En los capítulos puedes comentar como invitado.</p><a class="cta primary" href="./comunidad.html">✦ Entrar a La Plaza</a></div></section>
  </div>
  <section id="browse-screen" class="wrap browse-screen" hidden><div class="browse-intro"><div class="micro" id="browse-eyebrow">EXPLORE / 1UP ANIME</div><h1 id="browse-title">Explorar <em>anime.</em></h1><p id="browse-summary">Descubre nuevas historias.</p></div><div id="browse-controls" class="browse-controls"></div><div id="browse-status" class="browse-status"></div><div id="browse-grid" class="poster-grid"></div><div class="pagination"><button id="browse-next" class="cta outline" hidden>Cargar más ↓</button></div></section>
 </main>
 <footer class="footer wrap"><div class="footer-brand"><img src="./assets/oneup-crest.svg" alt=""><span>1UP ANIME</span></div><div><p>Tu siguiente vida es anime. Catálogo informativo, favoritos y programación.</p><p>Datos: AniList y Jikan. Los enlaces externos pertenecen a sus plataformas. 1UP Anime no aloja ni reproduce episodios.</p></div><small>© 2026 1UP Anime · Identidad original</small></footer>
-<nav class="mobile-navigation"><button data-route="inicio" class="active"><b>⌂</b>Inicio</button><button data-route="temporada"><b>◉</b>Temporada</button><button data-route="catalogo"><b>▦</b>Catálogo</button><button data-route="programacion"><b>◷</b>Emisión</button><button data-route="milista"><b>♡</b>Mi lista</button></nav>
+<nav class="mobile-navigation"><button data-route="inicio" class="active"><b>⌂</b>Inicio</button><button data-route="temporada"><b>◉</b>Temporada</button><button data-route="catalogo"><b>▦</b>Catálogo</button><button data-route="programacion"><b>◷</b>Emisión</button><button data-route="milista"><b>♡</b>Mi lista</button><a href="./comunidad.html"><b>✦</b>Plaza</a></nav>
 <dialog id="anime-dialog" class="anime-dialog"><button class="dialog-close" id="anime-close" aria-label="Cerrar">✕</button><div id="anime-dialog-body"></div></dialog>
 <dialog id="auth-dialog" class="auth-dialog"><button class="dialog-close" id="auth-close" aria-label="Cerrar">✕</button><div class="auth-panel"><img src="./assets/oneup-crest.svg" alt=""><div class="micro">TU UNIVERSO, A TU MANERA</div><h2>BIENVENIDO A <em>1UP.</em></h2><p>Inicia sesión cuando quieras o explora sin cuenta. Nunca es obligatorio registrarse.</p><button id="google-login" class="google-login"><span class="google-g">G</span> Continuar con Google</button><button id="guest-login" class="guest-login">Continuar como invitado</button><button id="auth-signout" class="guest-login" hidden>Cerrar sesión de Google</button><p id="auth-message" class="auth-message" role="status"></p><small>El acceso con Google requiere configurar Firebase para este dominio. El modo invitado funciona sin conexión de cuentas.</small></div></dialog>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
