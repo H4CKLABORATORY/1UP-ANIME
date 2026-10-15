@@ -88,14 +88,17 @@ export async function syncDexter({root=process.cwd(),now=new Date(),force=false,
   anime:new Map((previous.anime||[]).map(x=>[x.id,x])),
   seasons:new Map((previous.seasons||[]).map(x=>[x.id,x])),
   episodes:new Map((previous.episodes||[]).map(x=>[x.id,x])),
-  sources:new Map(),
+  sources:new Map((previous.sources||[]).map(x=>[x.id,x])),
   providers:new Map()
  };
  const counters={animes:0,episodesDetected:0,episodesNew:0,playbackSources:0,errors:0};
  const providerStatus=[],events=[];
  const pSettings=Array.isArray(config.providers)?config.providers:[];
  const activeDefs=pSettings.filter(x=>SUPPORTED.has(x.id));
- const runsByProvider=new Map((oldHistory.items||[]).filter(x=>x.result==='success').map(x=>[x.providerId,x]));
+ const runsByProvider=new Map();
+ for(const event of (oldHistory.items||[])){
+  if(event.result==='success'&&!runsByProvider.has(event.providerId))runsByProvider.set(event.providerId,event);
+ }
  const appendError=(provider,error)=>{
   counters.errors++;
   events.push({providerId:provider,at:stamp,message:safeText(error?.message||error,240)});
@@ -157,6 +160,7 @@ export async function syncDexter({root=process.cwd(),now=new Date(),force=false,
    }else if(id==='licensed_library'){
     const entries=data.entries||{};
     if(!entries||typeof entries!=='object'||Array.isArray(entries))throw Error('Biblioteca inválida.');
+    for(const key of [...by.sources.keys()])if(by.sources.get(key).providerId==='licensed_library')by.sources.delete(key);
     for(const [animeId,record] of Object.entries(entries)){
      if(!/^(mal|al)-\d+$/.test(animeId))continue;
      const episodes=Array.isArray(record.episodes)?record.episodes:[];
