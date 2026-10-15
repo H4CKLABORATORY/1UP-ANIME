@@ -36,4 +36,18 @@ for(const job of [
  assert(yaml.includes('branches: [main]'),job+' must not run push writes on Dependabot branches');
  assert(yaml.includes("if: github.ref == 'refs/heads/main'"),job+' must block dispatch from other branches');
 }
+const safePublisher=read('scripts/oneup-safe-push.sh');
+assert(safePublisher.includes('refs/heads/main'),'Publisher must restrict writes to main');
+assert(safePublisher.includes('git fetch origin main'),'Publisher must re-check current remote head');
+assert(safePublisher.includes('git rebase origin/main'),'Publisher must reconcile approved updates');
+assert(!safePublisher.includes('git push --force'),'Publisher must never force push');
+for(const wf of [
+ '.github/workflows/dexter-anime-sync.yml',
+ '.github/workflows/refresh-airing.yml',
+ '.github/workflows/refresh-catalog.yml',
+ '.github/workflows/oneup-guard.yml',
+ '.github/workflows/app-icons.yml'
+]){
+ assert(read(wf).includes('scripts/oneup-safe-push.sh'),wf+' must use bounded publish retry');
+}
 console.log('ONEUP resilience regression checks passed.');
