@@ -65,6 +65,18 @@ let existing=null;try{existing=JSON.parse(await fs.readFile('data/airing.json','
 if(!aired.length&&existing?.airing?.length){console.warn('Reusing previous airing schedule');aired=existing.airing}
 if(!seasonalData?.entries?.length&&existing?.seasonal?.entries?.length){console.warn('Reusing previous seasonal listings');seasonalData=existing.seasonal}
 if(!aired.length&&!seasonalData?.entries?.length)throw Error('No fresh or previous schedule. '+errors.join('; '));
+// Preserve existing Spanish translations when the 6-hour schedule refresh runs.
+try{
+ const translated=JSON.parse(await fs.readFile('data/translations-es.json','utf8')).translations||{};
+ for(const a of aired){
+  const row=translated[a.id];
+  if(typeof row?.es==='string'&&row.es.length>=12)a.description_es=row.es;
+ }
+ for(const a of (seasonalData?.entries||[])){
+  const row=translated[a.id];
+  if(typeof row?.es==='string'&&row.es.length>=12)a.description_es=row.es;
+ }
+}catch(error){console.warn('Spanish schedule translations not available yet:',error.message)}
 const output={updated:new Date().toISOString(),source:'AniList public GraphQL metadata',windowStart:start,windowEnd:end,airing:aired,seasonal:seasonalData||{season:'',year:now.getUTCFullYear(),entries:[]},warnings:errors};
 await fs.mkdir('data',{recursive:true});
 const tmp='data/airing.json.tmp';await fs.writeFile(tmp,JSON.stringify(output,null,2)+'\n');await fs.rename(tmp,'data/airing.json');
