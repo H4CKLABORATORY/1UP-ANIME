@@ -151,3 +151,5 @@ body.oneup-gated .site-header,body.oneup-gated .mobile-nav{pointer-events:none}
  .oneup-overlay-effects *,.oneup-intro *,.oneup-season-marquee div,.oneup-sparks,.oneup-moon{animation:none!important;transition:none!important}
  .oneup-intro .intro-brand {opacity:1}
 }
+/* Keep iPhone bottom navigation usable with the avatar switcher in the header. */
+@media(max-width:760px){.mobile-nav #oneup-mobile-profile{display:none!important}}
