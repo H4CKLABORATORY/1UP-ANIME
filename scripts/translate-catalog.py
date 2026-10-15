@@ -97,6 +97,18 @@ def main() -> None:
                 print(f"Could not translate {key}: {error}", file=sys.stderr)
             if index % 10 == 0:
                 print(f"Translated {index}/{len(pending)} in {time.monotonic()-started:.1f}s", flush=True)
+    # Human-reviewed Spanish can replace rough automatic phrasing for selected
+    # entries, while retaining the exact source synopsis for cache matching.
+    manual_path = Path("data/sinopsis-editoriales-es.json")
+    if manual_path.exists():
+        manual = json.loads(manual_path.read_text(encoding="utf-8"))
+        for key, item in manual.items():
+            if key in rows and isinstance(item, dict):
+                es = sanitize(item.get("es") or "")
+                if len(es) >= 24:
+                    done[key] = {"original": rows[key], "es": es, "editorial": True}
+                    print(f"Applied reviewed Spanish synopsis: {key}")
+
     if not done:
         raise RuntimeError("No translations could be produced")
 
