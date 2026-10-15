@@ -31,6 +31,51 @@ const seedRecords=[
 [50594,'Suzume','Adventure,Fantasy',78,2022,'MOVIE']
 ];
 const samples=seedRecords.map(x=>({id:'mal-'+x[0],mal_id:x[0],title:x[1],image:'',banner:'',description:'Título de ejemplo del catálogo. Se actualizará al recuperar la conexión con las fuentes de datos.',averageScore:x[3],year:x[4],genres:x[2].split(','),format:x[5]||'TV',episodes:0,streaming:[],siteUrl:'https://myanimelist.net/anime/'+x[0],next:null,source:'sample'}));
+// Auto-generated Spanish descriptions. The catalog is translated on GitHub Actions,
+// not by scraping JKAnime or sending visitors' browsing activity to translation services.
+const synopsisLocale={translations:{},ready:false};
+function normalizeSynopsis(value){return String(value||'').replace(/\s+/g,' ').trim()}
+function spanishSynopsis(a){
+ if(!a)return '';
+ if(a.description_es)return normalizeSynopsis(a.description_es);
+ const original=normalizeSynopsis(a.description);
+ const row=synopsisLocale.translations[String(a.id)];
+ if(!row||!row.es||!row.original)return '';
+ // Snapshot descriptions are limited to 450 characters. Longer live AniList
+ // descriptions may use the matching snapshot translation as a short preview.
+ const same=original===row.original || (original.startsWith(row.original)&&row.original.length>=80);
+ return same?row.es:'';
+}
+function hasSpanish(a){return Boolean(spanishSynopsis(a))}
+function chosenSynopsis(a){return spanishSynopsis(a)||normalizeSynopsis(a?.description)}
+async function loadSpanishSynopses(){
+ try{
+  const controller=new AbortController(),timeout=setTimeout(()=>controller.abort(),8000);
+  const response=await fetch('./data/translations-es.json',{cache:'no-cache',signal:controller.signal});
+  clearTimeout(timeout);
+  if(!response.ok)throw Error('Spanish catalog unavailable');
+  const json=await response.json();
+  if(json.language!=='es'||!json.translations||typeof json.translations!=='object')return;
+  synopsisLocale.translations=json.translations;
+  synopsisLocale.ready=true;
+  // Text-only update: avoid closing the dialog or resetting episode input/focus.
+  const featured=state.featured;
+  if(featured && featured.source!=='sample'){
+   const el=$('#hero-description');if(el)el.textContent=chosenSynopsis(featured).slice(0,245);
+  }
+  const selected=state.entries.get(state.active);
+  if(selected&&$('#anime-dialog')?.open){
+   const translated=spanishSynopsis(selected);
+   if(translated){
+    const snippet=$('.oneup-detail-synopsis');if(snippet)snippet.textContent=translated;
+    const full=$('.oneup-synopsis-text');if(full)full.textContent=translated;
+    const source=$('.oneup-synopsis-source');if(source)source.textContent='Traducido automáticamente al español · puede contener imprecisiones';
+    const btn=$('[data-synopsis-original]');
+    if(btn)btn.hidden=false;
+   }
+  }
+ }catch(error){console.info('1UP Spanish synopsis snapshot not available yet. Showing original descriptions.')}
+}
 const state={entries:new Map(),saved:{},home:{},featured:null,view:'inicio',results:[],page:1,next:false,loading:false,filters:{genre:'',format:'',status:'',sort:'POPULARITY_DESC'},query:'',active:null,seq:0};
 function register(data){for(const a of data||[])if(a.id)state.entries.set(a.id,a)}
 function normalizeAni(m){
@@ -174,7 +219,7 @@ function hero(a, chosen=false){
  $('#hero-title').innerHTML=esc(first).toUpperCase()+(rest?'<br><span>'+esc(rest).toUpperCase()+'</span>':'');
  $('#hero-description').textContent=a.source==='sample'
   ?'El catálogo se está recuperando. Consulta la ficha para ver los datos disponibles.'
-  :(a.description||'Sinopsis aún no disponible para este anime.').slice(0,245);
+  :(chosenSynopsis(a)||'Sinopsis aún no disponible para este anime.').slice(0,245);
  const art=a.banner||a.image||'';
  const background=$('#hero-poster');
  if(background)background.style.backgroundImage=art?'url("'+art.replace(/["\\]/g,'')+'")':'';
@@ -299,7 +344,9 @@ function detail(id){
  state.active=id;
  hero(a,true);
  const item=state.saved[id]||{},site=safe(a.siteUrl||'');
- const synopsis=String(a.description||'').trim();
+ const originalSynopsis=normalizeSynopsis(a.description);
+ const synopsis=chosenSynopsis(a);
+ const autoTranslated=hasSpanish(a);
  const hasSynopsis=Boolean(synopsis)&&a.source!=='sample';
  const poster=a.image?'<img src="'+esc(a.image)+'" alt="Póster de '+esc(a.title)+'" loading="eager" referrerpolicy="no-referrer">':
  '<div class="placeholder-art"><strong>'+esc(a.title)+'</strong></div>';
@@ -326,7 +373,7 @@ function detail(id){
     '<div class="oneup-detail-tag">1UP ANIME / DESTACADO</div>'+
     '<h2 class="oneup-detail-title" id="detail-anime-name">'+esc(a.title)+'</h2>'+
     '<div class="oneup-detail-meta">'+stats.map((s,i)=>'<span'+(s.startsWith('★')?' class="rated"':'')+'>'+esc(s)+'</span>').join('')+'</div>'+
-    '<div class="oneup-detail-tag oneup-synopsis-eyebrow">SINOPSIS · ¿DE QUÉ TRATA?</div>'+ 
+    '<div class="oneup-detail-tag oneup-synopsis-eyebrow">'+(autoTranslated?'SINOPSIS EN ESPAÑOL · TRADUCCIÓN AUTOMÁTICA':'SINOPSIS · INFORMACIÓN DEL ANIME')+'</div>'+ 
     '<p class="oneup-detail-synopsis">'+esc(hasSynopsis?synopsis:'La sinopsis de este anime todavía no está disponible en el catálogo.')+'</p>'+
     '<div class="oneup-detail-commands">'+
      '<button type="button" class="cta primary" data-save="'+esc(id)+'">'+(isFav(id)?'✓ Guardado':'＋ Añadir a mi lista')+'</button>'+
@@ -336,7 +383,7 @@ function detail(id){
   '</div>'+
  '</div>'+
  '<div class="oneup-detail-lower">'+
-  (hasSynopsis?'<section class="oneup-detail-section oneup-synopsis-section"><h3>HISTORIA Y SINOPSIS</h3><p class="oneup-synopsis-source">Descripción del anime · información del catálogo</p><p class="oneup-synopsis-text">'+esc(synopsis)+'</p></section><hr class="oneup-detail-separator">':'')+
+  (hasSynopsis?'<section class="oneup-detail-section oneup-synopsis-section"><h3>HISTORIA Y SINOPSIS</h3><p class="oneup-synopsis-source">'+(autoTranslated?'Traducido automáticamente al español · puede contener imprecisiones':'Sinopsis original del catálogo · traducción no disponible para este título')+'</p><p class="oneup-synopsis-text">'+esc(synopsis)+'</p><button type="button" data-synopsis-original="1" class="oneup-synopsis-toggle"'+(autoTranslated?'':' hidden')+'>Ver texto original</button></section><hr class="oneup-detail-separator">':'')+
   '<section class="oneup-detail-section"><h3>GÉNEROS</h3><div class="oneup-genre-tags">'+(chips||'<span class="oneup-genre-tag">Anime</span>')+'</div></section>'+
   '<hr class="oneup-detail-separator">'+
   '<section class="oneup-detail-section"><h3>TU PROGRESO</h3><p>Lleva un registro personal de los episodios vistos.</p><div class="episode-controls"><button type="button" data-episode="-1" aria-label="Restar episodio">−</button><strong id="episode-value">'+(item.watched||0)+'</strong><button type="button" data-episode="1" aria-label="Sumar episodio">+</button><span class="oneup-episode-text">de '+(a.episodes||'?')+' episodios</span></div></section>'+
@@ -381,6 +428,7 @@ function splash(){
 }
 function init(){
  reloadSaved();
+ loadSpanishSynopses();
  $('#genre-pills').innerHTML='<button data-genre="">✦ Explorar todos</button>'+genres.map(([en,es])=>'<button data-genre="'+esc(en)+'">'+esc(es)+'</button>').join('');
  document.addEventListener('click',e=>{
   const nav=e.target.closest('[data-route]');if(nav){e.preventDefault();go(nav.dataset.route);return}
@@ -399,7 +447,23 @@ function init(){
  $('#browse-controls').addEventListener('change',e=>{const keys={'filter-genre':'genre','filter-format':'format','filter-status':'status','filter-sort':'sort'};if(keys[e.target.id]){state.filters[keys[e.target.id]]=e.target.value;browse('catalogo')}});
  $('#browse-controls').addEventListener('click',e=>{if(e.target.id==='filter-reset'){state.filters={genre:'',format:'',status:'',sort:'POPULARITY_DESC'};browse('catalogo')}});
  $('#anime-close').addEventListener('click',()=>$('#anime-dialog').close());
- $('#anime-dialog').addEventListener('click',e=>{if(e.target===$('#anime-dialog'))$('#anime-dialog').close();if(e.target.id==='save-url')saveUrl()});
+ $('#anime-dialog').addEventListener('click',e=>{
+  if(e.target===$('#anime-dialog'))$('#anime-dialog').close();
+  if(e.target.id==='save-url')saveUrl();
+  const btn=e.target.closest('[data-synopsis-original]');
+  if(btn){
+   const a=state.entries.get(state.active);
+   if(!a)return;
+   const original=normalizeSynopsis(a.description);
+   const translated=spanishSynopsis(a);
+   if(!translated)return;
+   const showOriginal=btn.getAttribute('aria-pressed')!=='true';
+   btn.setAttribute('aria-pressed',String(showOriginal));
+   btn.textContent=showOriginal?'Ver traducción al español':'Ver texto original';
+   const full=$('.oneup-synopsis-text');
+   if(full)full.textContent=showOriginal?original:translated;
+  }
+ });
  window.OneUpAuth?.onChange(()=>{reloadSaved();refreshFav();renderContinue();if(state.view==='milista')showSaved()});
  splash();
  const route=location.hash.slice(1);if(['temporada','programacion','catalogo','peliculas','milista','populares','recientes'].includes(route))go(route);
