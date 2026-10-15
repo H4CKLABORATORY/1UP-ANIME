@@ -503,7 +503,7 @@ function init(){
  document.addEventListener('click',e=>{
   const nav=e.target.closest('[data-route]');if(nav){e.preventDefault();go(nav.dataset.route);return}
   const g=e.target.closest('[data-genre]');if(g){state.filters.genre=g.dataset.genre;go(g.dataset.genre?'genero':'catalogo');return}
-  const s=e.target.closest('[data-save]');if(s){toggle(s.dataset.save);if(state.active&&$('#anime-dialog').open)detail(state.active);return}
+  const s=e.target.closest('[data-save]');if(s){const id=s.dataset.save;toggle(id);if($('#anime-dialog').open&&state.active===id){const button=$('#anime-dialog [data-save]');if(button)button.textContent=isFav(id)?'✓ Guardado':'＋ Añadir a mi lista'}return}
   const pick=e.target.closest('[data-feature]');if(pick){const anime=state.entries.get(pick.dataset.feature);if(anime)hero(anime,true);return}
   const d=e.target.closest('[data-details]');if(d){detail(d.dataset.details);return}
   const ep=e.target.closest('[data-episode]');if(ep){changeEp(Number(ep.dataset.episode))}
