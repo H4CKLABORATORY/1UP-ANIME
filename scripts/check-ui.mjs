@@ -23,7 +23,9 @@ assert(js.includes('function hero(a, chosen=false)'),'Selected artwork hero not 
 assert(js.includes('hero(a,true)'),'Clicking anime must update selected hero');
 assert(js.includes('oneup-detail-cover'),'Hero artwork missing from modal');
 assert(js.includes('oneup-synopsis-text'),'Full anime synopsis is missing');
-assert(js.includes('const synopsis=String(a.description'),'Auto-sourced synopsis is missing');
+assert(js.includes('const synopsis=chosenSynopsis(a)'),'Auto-sourced localized synopsis is missing');
+assert(js.includes('loadSpanishSynopses()'),'Spanish synopsis loader missing');
+assert(js.includes('data-synopsis-original'),'Original language option missing');
 assert(js.includes('data-feature'),'Manual selected anime picker missing');
 assert(css.includes('@media(prefers-reduced-motion:reduce)'),'Reduced motion support missing');
 assert(sw.includes("'./spotlight.css'"),'PWA does not cache spotlight stylesheet');
