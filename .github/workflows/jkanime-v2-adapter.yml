@@ -1,6 +1,12 @@
 name: JKAnime V2 optional adapter audit
 on:
   workflow_dispatch:
+  pull_request:
+    branches: [main]
+    paths:
+      - "integrations/jkanime-v2/package.json"
+      - "integrations/jkanime-v2/check-api.mjs"
+      - ".github/workflows/jkanime-v2-adapter.yml"
   push:
     paths:
       - "integrations/jkanime-v2/package.json"
