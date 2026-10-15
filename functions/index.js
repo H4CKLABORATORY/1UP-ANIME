@@ -179,7 +179,7 @@ exports.setMyCommunityProfile=caller(async req=>{
  if(!['⚔️','🔥','🦇','🌙','🐉','🎃','💀','✨'].includes(icon))
   throw new HttpsError('invalid-argument','Icono no admitido.');
  const avatarPath=clean(req.data?.avatarPath||'',270);
- if(avatarPath&&!new RegExp('^avatars/'+req.auth.uid+'/profile\\.(jpg|png|webp)$').test(avatarPath))
+ if(avatarPath&&!new RegExp('^avatars/'+req.auth.uid+'/[A-Za-z0-9_-]{8,90}\\.(jpg|png|webp)$').test(avatarPath))
   throw new HttpsError('invalid-argument','Ruta de foto incorrecta.');
  const author=await publicAuthor(req);
  return throttleAndWrite(req,'profile',(tx,uid,now)=>{
