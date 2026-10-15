@@ -1,15 +1,15 @@
 {
   "id": "./",
-  "name": "1UP Anime — Tu universo anime",
+  "name": "1UP Anime | Halloween Anti-Magic",
   "short_name": "1UP Anime",
-  "description": "Anime, estrenos y favoritos sin publicidad propia",
+  "description": "Una experiencia de anime cinematográfica con intro, perfiles, favoritos y temática de Halloween",
   "lang": "es",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
   "orientation": "any",
-  "background_color": "#0b0d13",
-  "theme_color": "#0b0d13",
+  "background_color": "#09070c",
+  "theme_color": "#09070c",
   "icons": [
     {
       "src": "./assets/icon-192.png",
