@@ -380,10 +380,10 @@ function mediaSources(item){
   const url=mediaFileUrl(source.src||source.url);
   const guess=url.split('?')[0].endsWith('.m3u8')?'application/vnd.apple.mpegurl':'video/mp4';
   const type=supported.includes(source.mime)?source.mime:guess;
-  return {src:url,name:String(source.name||source.label||'Servidor '+(i+1)).slice(0,45),mime:type};
+  return {src:url,name:String(source.name||source.label||'Servidor '+(i+1)).slice(0,45),mime:type,language:String(source.language||item.language||'No especificado').slice(0,35),quality:String(source.quality||item.quality||'No especificada').slice(0,35)};
  });
 }
-function playbackEpisode(id,episodes,index,serverIndex=0){
+function playbackEpisode(id,episodes,index,serverIndex=0,tried=[]){
  const item=episodes[index];if(!item)return;
  const host=$('#oneup-player-content');if(!host)return;
  const sources=mediaSources(item);
@@ -401,8 +401,30 @@ function playbackEpisode(id,episodes,index,serverIndex=0){
  'Tu navegador no admite esta reproducción.</video>'+
  '</div><p class="oneup-playback-hint">Episodio '+(index+1)+' · '+esc(item.title||'Video autorizado')+' · '+esc(activeSource.name)+
  (caption?' · Subtítulos en español disponibles':' · Sin subtítulos en español disponibles')+
- '</p>';
- host.querySelectorAll('[data-licensed-server]').forEach(button=>button.addEventListener('click',()=>{
+ '</p><p class="oneup-player-state" role="status" aria-live="polite">Comprobando compatibilidad de esta fuente…</p>';
+ const video=host.querySelector('#oneup-licensed-video');
+ const playerState=host.querySelector('.oneup-player-state');
+ let sourceFailed=false;
+ const triedSources=[...new Set([...tried,serverIndex])];
+ const handleFailed=()=>{
+  if(sourceFailed||!video.isConnected)return;
+  sourceFailed=true;
+  const next=sources.findIndex((s,i)=>!triedSources.includes(i));
+  if(next>=0){
+   if(playerState)playerState.textContent='Servidor no disponible. Probando otro servidor configurado…';
+   playbackEpisode(id,episodes,index,next,triedSources);
+  }else{
+   if(playerState)playerState.textContent='Esta reproducción falló en las fuentes configuradas. Puedes seleccionar otro episodio o intentarlo más tarde.';
+  }
+ };
+ video?.addEventListener('loadedmetadata',()=>{
+  if(playerState)playerState.textContent='Fuente de video cargada · '+activeSource.name+' · Idioma: '+activeSource.language+' · Calidad declarada: '+activeSource.quality;
+ });
+ video?.addEventListener('playing',()=>{if(playerState)playerState.textContent='Reproduciendo desde '+activeSource.name});
+ video?.addEventListener('stalled',()=>{if(playerState)playerState.textContent='La reproducción está tardando. Comprueba tu conexión o cambia de servidor.'});
+ video?.addEventListener('error',handleFailed);
+ video?.querySelector('source')?.addEventListener('error',handleFailed);
+  host.querySelectorAll('[data-licensed-server]').forEach(button=>button.addEventListener('click',()=>{
   playbackEpisode(id,episodes,index,Number(button.dataset.licensedServer));
  }));
  // Source switches do not autoplay or capture streams.
