@@ -119,8 +119,25 @@ async function fallbackLive(){
   return entries.length?{airing:entries,seasonal:{entries:[]},updated:new Date().toISOString()}:null;
  }finally{clearTimeout(timer)}
 }
+function placeCalendar(){
+ const el=$('#oneup-airing-dashboard'),home=$('#home-screen'),browse=$('#browse-screen');
+ if(!el||!home||!browse)return;
+ const route=location.hash.replace('#','');
+ if(route==='temporada'||route==='programacion'){
+  const heading=browse.querySelector('.browse-intro');
+  if(heading)heading.after(el);
+ }else if(!home.contains(el)){
+  const anchor=home.querySelector('.season-banner')||home.querySelector('.schedule-preview');
+  if(anchor)anchor.before(el);
+ }
+}
+document.addEventListener('click',event=>{
+ if(event.target.closest('[data-route]'))setTimeout(placeCalendar,0);
+},true);
+window.addEventListener('hashchange',placeCalendar);
 async function load(){
  insertLayout();
+ placeCalendar();
  try{
   const ctrl=new AbortController(),timer=setTimeout(()=>ctrl.abort(),8500);
   let r;
@@ -183,10 +200,7 @@ async function animeOpened(a){
  if(!a)return;
  const req=a.id;
  const external=media.get(req);
- if(external){ // Ensure correct current metadata and never replace selected anime.
-  trailerPane(a,external);
-  return;
- }
+ if(external?.trailer){trailerPane(a,external);return}
  if(a.trailer){trailerPane(a,a);return}
  const details=await fetchIndividualTrailer(a);
  if(window.OneUpCatalog?.active()!==req)return;
