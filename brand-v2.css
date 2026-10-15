@@ -101,3 +101,15 @@ body{background:radial-gradient(ellipse at 84% 3%,#27356739,transparent 42%),#07
  pointer-events:auto!important;opacity:1!important;
  width:48px!important;height:48px!important;
 }
+
+/* iPhone: move the X inside the content stacking layer itself. */
+#anime-dialog .oneup-detail-content > #anime-close.dialog-close {
+ position:absolute!important;inset:10px 10px auto auto!important;
+ z-index:2147483647!important;
+ display:grid!important;place-items:center!important;
+ width:48px!important;height:48px!important;
+ float:none!important;margin:0!important;
+ pointer-events:auto!important;
+ background:#080e20f2!important;
+ border:1px solid #e1e8ffb8!important;
+}
