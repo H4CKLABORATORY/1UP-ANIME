@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "engine": "DexterAnimeSync",
+  "description": "Configuración pública de adaptadores. Los cambios se aplican al siguiente trabajo de GitHub Actions.",
+  "settings": {
+    "historyLimit": 60,
+    "maxEpisodes": 1000,
+    "pruneAfterDays": 180,
+    "defaultSyncIntervalHours": 6
+  },
+  "providers": [
+    {
+      "id": "anilist_schedule",
+      "displayName": "AniList — emisiones",
+      "enabled": true,
+      "type": "metadata",
+      "mode": "schedule",
+      "syncIntervalHours": 6,
+      "requiresCredentials": false,
+      "source": "data/airing.json",
+      "capability": "Información de capítulos y emisiones; no garantiza reproducción"
+    },
+    {
+      "id": "licensed_library",
+      "displayName": "Biblioteca autorizada 1UP",
+      "enabled": true,
+      "type": "playback",
+      "mode": "self_hosted",
+      "syncIntervalHours": 3,
+      "requiresCredentials": false,
+      "source": "data/licensed-media.json",
+      "capability": "Videos MP4/HLS con autorización del titular"
+    },
+    {
+      "id": "jkanime_external",
+      "displayName": "JKAnime — páginas externas",
+      "enabled": true,
+      "type": "external_links",
+      "mode": "external_only",
+      "syncIntervalHours": 12,
+      "requiresCredentials": false,
+      "source": "data/external-providers.json",
+      "capability": "Abrir páginas de series de JKAnime; no integra sus servidores"
+    },
+    {
+      "id": "youtube_trailers",
+      "displayName": "YouTube — tráilers de AniList",
+      "enabled": true,
+      "type": "embed",
+      "mode": "official_embed",
+      "syncIntervalHours": 6,
+      "requiresCredentials": false,
+      "source": "data/airing.json",
+      "capability": "Insertar tráilers públicos de YouTube; no episodios"
+    }
+  ],
+  "externalIntegrations": [
+    {
+      "id": "jkanime_video",
+      "displayName": "Servidores de video JKAnime",
+      "status": "requires_permission",
+      "reason": "Sin integración de reproducción documentada y autorizada; el repositorio comunitario no concede licencias para retransmitir."
+    },
+    {
+      "id": "social_firebase",
+      "displayName": "1UP Comunidad",
+      "status": "needs_configuration",
+      "reason": "Falta proyecto Firebase configurado, App Check y despliegue de backend."
+    }
+  ]
+}
