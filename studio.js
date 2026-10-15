@@ -21,9 +21,16 @@ const seedRecords=[
 [50265,'SPY x FAMILY','Action,Comedy',85,2022],
 [9253,'Steins;Gate','Drama,Sci-Fi,Mystery',91,2011],
 [30276,'One Punch Man','Action,Comedy,Sci-Fi',85,2015],
-[31964,'My Hero Academia','Action,Comedy',78,2016]
+[31964,'My Hero Academia','Action,Comedy',78,2016],
+[199,'Spirited Away','Adventure,Fantasy',86,2001,'MOVIE'],
+[32281,'Your Name','Drama,Romance,Fantasy',88,2016,'MOVIE'],
+[28851,'A Silent Voice','Drama,Romance',88,2016,'MOVIE'],
+[164,'Princess Mononoke','Action,Adventure,Fantasy',87,1997,'MOVIE'],
+[431,'Howl’s Moving Castle','Adventure,Drama,Fantasy',86,2004,'MOVIE'],
+[38826,'Weathering With You','Drama,Fantasy,Romance',82,2019,'MOVIE'],
+[50594,'Suzume','Adventure,Fantasy',78,2022,'MOVIE']
 ];
-const samples=seedRecords.map(x=>({id:'mal-'+x[0],mal_id:x[0],title:x[1],image:'',banner:'',description:'Título de ejemplo del catálogo. Se actualizará al recuperar la conexión con las fuentes de datos.',averageScore:x[3],year:x[4],genres:x[2].split(','),format:'TV',episodes:0,streaming:[],siteUrl:'https://myanimelist.net/anime/'+x[0],next:null,source:'sample'}));
+const samples=seedRecords.map(x=>({id:'mal-'+x[0],mal_id:x[0],title:x[1],image:'',banner:'',description:'Título de ejemplo del catálogo. Se actualizará al recuperar la conexión con las fuentes de datos.',averageScore:x[3],year:x[4],genres:x[2].split(','),format:x[5]||'TV',episodes:0,streaming:[],siteUrl:'https://myanimelist.net/anime/'+x[0],next:null,source:'sample'}));
 const state={entries:new Map(),saved:{},home:{},featured:null,view:'inicio',results:[],page:1,next:false,loading:false,filters:{genre:'',format:'',status:'',sort:'POPULARITY_DESC'},query:'',active:null,seq:0};
 function register(data){for(const a of data||[])if(a.id)state.entries.set(a.id,a)}
 function normalizeAni(m){
@@ -128,7 +135,7 @@ function scheduleHTML(items){
 }
 async function loadHome(){
  register(samples);
- for(const [selector,amount] of [['#trending-rail',10],['#season-rail',10],['#recent-rail',10],['#movies-rail',8]])paint(selector,samples.slice(0,amount),'sample');
+ for(const [selector,amount] of [['#trending-rail',10],['#season-rail',10],['#recent-rail',10],['#movies-rail',8]])paint(selector,(selector==='#movies-rail'?samples.filter(x=>x.format==='MOVIE'):samples.filter(x=>x.format==='TV')).slice(0,amount),'sample');
  hero(samples[6]);renderContinue();
  const requests=[['trending','#trending-rail',{sort:'TRENDING_DESC',perPage:18}],['season','#season-rail',{sort:'TRENDING_DESC',status:'RELEASING',perPage:18}],['recent','#recent-rail',{sort:'START_DATE_DESC',perPage:18}],['movies','#movies-rail',{sort:'POPULARITY_DESC',format:'MOVIE',perPage:18}]];
  await Promise.all(requests.map(async ([k,target,o])=>{
