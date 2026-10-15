@@ -99,6 +99,24 @@ def main() -> None:
                 print(f"Translated {index}/{len(pending)} in {time.monotonic()-started:.1f}s", flush=True)
     if not done:
         raise RuntimeError("No translations could be produced")
+
+    # Publish Spanish text alongside the anime metadata. This avoids a race
+    # between two requests and gives the client an explicit description_es.
+    for group in catalog.get("groups", {}).values():
+        for anime in group:
+            key = str(anime.get("id") or "")
+            source = sanitize(anime.get("description") or "")
+            row = done.get(key)
+            if row and row.get("original") == source:
+                anime["description_es"] = row["es"]
+            else:
+                anime.pop("description_es", None)
+    catalog_tmp = CATALOG.with_suffix(".tmp")
+    catalog_tmp.write_text(
+        json.dumps(catalog, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+    )
+    catalog_tmp.replace(CATALOG)
     body = {
         "language": "es",
         "source": "Argos Translate en-es, automated translation of AniList public metadata",
