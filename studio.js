@@ -513,7 +513,7 @@ function detail(id){
  if(!dialog.open)dialog.showModal();
  dialog.setAttribute('aria-labelledby','detail-anime-name');
  dialog.scrollTop=0;
- loadAuthorizedPlayer(id).catch(()=>{});
+ window.OneUpEpisodePlayer?.show(a)?.catch(()=>{});
  document.dispatchEvent(new CustomEvent('oneup-anime-opened',{detail:a}));
 }
 function changeEp(delta){
