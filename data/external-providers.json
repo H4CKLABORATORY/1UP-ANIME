@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "description": "Páginas públicas de series verificadas en JKAnime. Son enlaces externos, no servidores de video ni autorización de reproducción.",
+  "external_series": {
+    "mal-21": {
+      "name": "One Piece",
+      "url": "https://jkanime.net/one-piece/"
+    },
+    "mal-20": {
+      "name": "Naruto",
+      "url": "https://jkanime.net/naruto/"
+    },
+    "mal-34572": {
+      "name": "Black Clover (TV)",
+      "url": "https://jkanime.net/black-clover-tv/"
+    },
+    "mal-11061": {
+      "name": "Hunter x Hunter (2011)",
+      "url": "https://jkanime.net/hunter-x-hunter-2011/"
+    },
+    "mal-59741": {
+      "name": "Tsuihou sareta Tensei Juukishi wa Game Chishiki de Musou suru",
+      "url": "https://jkanime.net/tsuihou-sareta-tensei-juukishi-wa-game-chishiki-de-musou-suru/"
+    }
+  }
+}
