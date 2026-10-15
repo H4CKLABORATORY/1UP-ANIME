@@ -15,3 +15,12 @@ En iPhone: Safari > Compartir > Añadir a pantalla de inicio. En Android: Chrome
 ## Privacidad y servicios
 
 No hay registro de usuarios ni anuncios ni analíticas propias. Se usan datos públicos de Jikan y las miniaturas/sinopsis de sus fuentes. Favoritos y progreso se almacenan en el navegador. Proyecto independiente, no afiliado a JKAnime, Jikan o MyAnimeList.
+
+
+## Intro, perfiles y Halloween
+
+- Intro cinematográfica original en CSS/SVG, dura aproximadamente 3 segundos y se puede saltar. En la misma sesión no se repite tras recargar.
+- Selección de hasta seis perfiles, cada uno con avatar, favoritos y episodios por separado, almacenados en `localStorage` del navegador.
+- No son cuentas con contraseña ni sincronizadas entre dispositivos. Si se borran los datos de Safari, se pierden perfiles y progreso.
+- Estética temporal Halloween/anti-magia; contenido y fichas desde Jikan.
+- Para iPhone, abrir la web en Safari y elegir **Compartir > Añadir a pantalla de inicio**. Es una PWA, no un archivo IPA ni una aplicación de App Store.
