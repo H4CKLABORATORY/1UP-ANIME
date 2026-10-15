@@ -7,6 +7,7 @@ const esc=t=>String(t??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&
 const safe=u=>{try{let x=new URL(u);return x.protocol==='https:'?x.href:''}catch{return ''}};
 const formats={TV:'Serie',MOVIE:'Película',OVA:'OVA',ONA:'ONA',SPECIAL:'Especial',TV_SHORT:'Corto'};
 const genres=[['Action','Acción'],['Adventure','Aventura'],['Comedy','Comedia'],['Drama','Drama'],['Fantasy','Fantasía'],['Romance','Romance'],['Sci-Fi','Ciencia ficción'],['Supernatural','Sobrenatural'],['Mystery','Misterio'],['Sports','Deportes'],['Horror','Terror'],['Slice of Life','Vida cotidiana']];
+const genreSpanish=label=>{const pair=genres.find(g=>g[0]===label);return pair?pair[1]:({Psychological:'Psicológico',Thriller:'Suspenso',Music:'Música',Mecha:'Robots',Supernatural:'Sobrenatural',Ecchi:'Ecchi',Horror:'Terror',Sports:'Deportes',Fantasy:'Fantasía'}[label]||label)};
 const seedRecords=[
 [5114,'Fullmetal Alchemist: Brotherhood','Action,Adventure,Drama,Fantasy',91,2009],
 [21,'One Piece','Action,Adventure,Fantasy',88,1999],
@@ -229,9 +230,9 @@ function hero(a, chosen=false){
  if(background)background.style.backgroundImage=art?'url("'+art.replace(/["\\]/g,'')+'")':'';
  const poster=$('#hero-feature-cover');
  if(poster){
-  poster.src=a.image||'./assets/oneup-mascot.svg';
+  poster.src=a.image||'./assets/oneup-crest.svg';
   poster.alt='Póster de '+a.title;
-  poster.onerror=()=>{poster.onerror=null;poster.src='./assets/oneup-mascot.svg'};
+  poster.onerror=()=>{poster.onerror=null;poster.src='./assets/oneup-crest.svg'};
  }
  const name=$('#hero-feature-title');
  if(name)name.textContent=a.title;
@@ -422,7 +423,7 @@ function detail(id){
   a.episodes?(a.episodes+' episodios'):'',
   a.averageScore?('★ '+(a.averageScore/10).toFixed(1)):''
  ].filter(Boolean);
- const chips=(a.genres||[]).slice(0,7).map(g=>'<span class="oneup-genre-tag">'+esc(g)+'</span>').join('');
+ const chips=(a.genres||[]).slice(0,7).map(g=>'<span class="oneup-genre-tag">'+esc(genreSpanish(g))+'</span>').join('');
  const links=(a.streaming||[]).filter(x=>safe(x.url)).map(x=>'<a href="'+esc(safe(x.url))+'" target="_blank" rel="noopener noreferrer">'+esc(x.name||'Plataforma oficial')+' ↗</a>').join('');
  const pool=[...state.entries.values()];
  const related=pool.filter(x=>x.id!==id && x.image && (x.genres||[]).some(g=>(a.genres||[]).includes(g))).slice(0,4);
