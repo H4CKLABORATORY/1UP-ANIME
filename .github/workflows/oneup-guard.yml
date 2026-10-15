@@ -9,6 +9,7 @@ on:
   schedule:
     - cron: "17 1,5,9,13,17,21 * * *"
   push:
+    branches: [main]
     paths:
       - "scripts/oneup-guard.mjs"
       - ".github/workflows/oneup-guard.yml"
@@ -22,6 +23,7 @@ concurrency:
   cancel-in-progress: false
 jobs:
   monitor:
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     timeout-minutes: 14
     steps:
