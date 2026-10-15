@@ -43,7 +43,8 @@ function draw(anime){
  activeAnime=anime.id;
  episode=1;unsubscribe();
  const root=$('#oneup-comments-section');if(!root)return;
- const max=Math.min(9999,Math.max(1,Number(anime.episodes)||1));
+ const total=Number(anime.episodes)||0;
+ const max=total>0?Math.min(9999,Math.max(1,total)):9999;
  root.innerHTML='<div class="oneup-discussion-head"><div><span class="micro">1UP ANIME · CONVERSACIÓN</span><h3>COMENTARIOS DEL EPISODIO</h3><p>Lee y comenta con un nombre temporal sin crear una cuenta. No compartas información privada ni spoilers sin avisar.</p></div></div>'+
  '<div class="oneup-comments-controls"><label for="oneup-comment-episode">Episodio</label><select id="oneup-comment-episode" aria-label="Seleccionar episodio">'+
  Array.from({length:Math.min(max,120)},(_,i)=>'<option value="'+(i+1)+'">Episodio '+(i+1)+'</option>').join('')+
