@@ -4,6 +4,7 @@ on:
   schedule:
     - cron: "11 3,9,15,21 * * *"
   push:
+    branches: [main]
     paths:
       - "scripts/refresh-airing.mjs"
       - ".github/workflows/refresh-airing.yml"
@@ -14,6 +15,7 @@ concurrency:
   cancel-in-progress: false
 jobs:
   refresh:
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     timeout-minutes: 12
     steps:
