@@ -10,3 +10,15 @@
 .oneup-playback-stage video{display:block;width:100%;height:100%;object-fit:contain;background:#000}
 .oneup-playback-hint{font-size:12px!important;color:#f3d9b9!important}
 @media(max-width:550px){#oneup-player-section{padding:12px}.oneup-playback-stage{aspect-ratio:16/9}}
+
+/* Provider selection for media that the owner is authorized to distribute. */
+.oneup-server-selector{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin:0 0 16px;padding:13px;background:#10172a;border:1px solid #8ba3d44a;border-radius:9px}
+.oneup-server-selector>strong{font-size:10px;font-weight:900;letter-spacing:1px;color:#c8d8fc;margin-right:7px}
+.oneup-server-choice{border:1px solid #8a9ec263;border-radius:7px;background:#26334c;color:#e4ecff;padding:9px 12px;font-size:11px;font-weight:800}
+.oneup-server-choice:hover,.oneup-server-choice:focus-visible{border-color:#c1d7ff}
+.oneup-server-choice.active{background:#c0d4ff;color:#0d152e;border-color:#c0d4ff}
+.oneup-external-source{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:18px;margin:22px 0;padding:19px;border:1px solid #a0b4dc55;border-radius:10px;background:linear-gradient(120deg,#20283f,#171c2d)}
+.oneup-external-source h3{margin:5px 0 7px;font:900 30px var(--display)}
+.oneup-external-source p{max-width:550px;font-size:11px;line-height:1.7;color:#bbc6dc}
+.oneup-external-source .cta{font-size:11px}
+@media(max-width:540px){.oneup-external-source .cta{width:100%;text-align:center;justify-content:center}.oneup-server-selector{gap:6px}.oneup-server-choice{font-size:10px}}
