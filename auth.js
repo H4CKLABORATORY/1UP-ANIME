@@ -7,7 +7,7 @@ const listeners=new Set();
 let current={kind:'guest',key:'guest',name:'Invitado'};
 let firebaseAuth=null;
 function emit(){for(const cb of listeners){try{cb({...current})}catch{}}}
-function read(){try{const v=JSON.parse(localStorage.getItem(KEY)||'null');if(v&&['local','google'].includes(v.kind)&&typeof v.key==='string')current=v}catch{}}
+function read(){try{const v=JSON.parse(localStorage.getItem(KEY)||'null');if(v&&v.kind==='local'&&typeof v.key==='string')current=v}catch{}}
 function save(){try{localStorage.setItem(KEY,JSON.stringify(current))}catch{}emit()}
 function guest(){current={kind:'guest',key:'guest',name:'Invitado'};save()}
 function local(key,name){current={kind:'local',key:'local_'+key,name:name||'Perfil'};save()}
@@ -34,13 +34,29 @@ async function google(){
   save();return {ok:true,name:current.name}
  }catch(e){return {ok:false,message:'No fue posible iniciar sesión con Google: '+(e?.message||'Error desconocido')}}
 }
+async function restoreVerifiedGoogle(){
+ const config=window.ONEUP_FIREBASE_CONFIG;
+ if(!config?.apiKey||!config?.authDomain||!config?.projectId)return;
+ try{
+  const [app,auth]=await Promise.all([import('https://www.gstatic.com/firebasejs/11.10.0/firebase-app.js'),import('https://www.gstatic.com/firebasejs/11.10.0/firebase-auth.js')]);
+  const instance=app.getApps().length?app.getApp():app.initializeApp(config);
+  firebaseAuth=auth.getAuth(instance);
+  const result=await auth.getRedirectResult(firebaseAuth).catch(()=>null);
+  await firebaseAuth.authStateReady();
+  const u=result?.user||firebaseAuth.currentUser;
+  if(u){
+   current={kind:'google',key:'google_'+u.uid,name:u.displayName||u.email?.split('@')[0]||'Google',email:u.email||''};
+   save();render();
+  }
+ }catch(e){console.warn('Firebase authentication unavailable',e?.message)}
+}
 function storedProfiles(){try{const p=JSON.parse(localStorage.getItem('oneup_profiles_v1')||'[]');return Array.isArray(p)?p.filter(x=>x&&x.id&&x.name):[]}catch{return []}}
 function render(){
  const label=$('#auth-label');if(label)label.textContent=(current.name||'Invitado').slice(0,17);
  const out=$('#auth-signout');if(out)out.hidden=current.kind!=='google';
 }
 function init(){
- read();render();
+ read();render();restoreVerifiedGoogle();
  const dialog=$('#auth-dialog'),open=$('#auth-open');
  if(!dialog||!open)return;
  open.addEventListener('click',()=>{render();$('#auth-message').textContent='';if(!dialog.open)dialog.showModal()});
