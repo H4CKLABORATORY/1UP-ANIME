@@ -36,4 +36,22 @@ for(const [group,entries] of Object.entries(snapshot.groups||{})){
   assert(Boolean(entry.title)&&Boolean(entry.id),'Snapshot entry incomplete in '+group);
  }
 }
+// Spanish-first and licensed-media checks: prevent regression seen on iPhone.
+assert(js.includes('function spanishSynopsis(a)'),'Spanish synopsis lookup not found');
+assert(js.includes('row?.es'),'Spanish text must be keyed to anime identity');
+assert(js.includes('Sinopsis en español pendiente'),'Do not show untranslated English automatically');
+assert(js.includes('oneup-player-section'),'Optional authorized player not integrated');
+assert(html.includes('brand-v2.css')&&html.includes('player.css'),'Missing new UI stylesheets');
+assert(html.includes('oneup-crest.svg'),'New emblem missing from page');
+assert(sw.includes('oneup-crest.svg')&&sw.includes('translations-es.json'),'iPhone PWA cache missing localized assets');
+const translated=JSON.parse(read('data/translations-es.json'));
+assert(translated.language==='es','Translation pack must be Spanish');
+assert(Number(translated.translated)>0,'No Spanish translations');
+const allAnime=Object.values(snapshot.groups).flat();
+assert(allAnime.some(x=>x.id==='mal-59741'&&x.description_es&&x.description_es!==(x.description||'')),
+ 'Screenshot anime still lacks Spanish synopsis');
+assert(allAnime.filter(x=>typeof x.description_es==='string').length>=20,
+ 'Snapshot no longer includes translated Spanish synopsis');
+const library=JSON.parse(read('data/licensed-media.json'));
+assert(typeof library.entries==='object','Authorized media manifest missing');
 console.log('1UP smoke checks passed ('+checks+' assertions).');
