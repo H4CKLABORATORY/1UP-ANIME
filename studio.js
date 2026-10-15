@@ -43,6 +43,7 @@ function spanishSynopsis(a){
  return normalizeSynopsis(a.description_es||row?.es);
 }
 function hasSpanish(a){return Boolean(spanishSynopsis(a)) || a?.source==='sample'}
+function hasEditorialSpanish(a){return Boolean(synopsisLocale.translations[String(a?.id)]?.editorial)}
 function chosenSynopsis(a){
  if(!a)return 'Sinopsis no disponible.';
  if(a.source==='sample')return normalizeSynopsis(a.description);
@@ -62,7 +63,7 @@ function applySpanishToVisibleText(){
  const label=$('.oneup-synopsis-eyebrow');
  if(label)label.textContent=hasSpanish(active)?'SINOPSIS EN ESPAÑOL':'SINOPSIS · TRADUCCIÓN PENDIENTE';
  const source=$('.oneup-synopsis-source');
- if(source)source.textContent=hasSpanish(active)?'Traducción automática al español · puede contener imprecisiones':'Aún no hay traducción disponible para este título';
+ if(source)source.textContent=hasSpanish(active)?(hasEditorialSpanish(active)?'Sinopsis revisada editorialmente en español':'Traducción automática al español · puede contener imprecisiones'):'Aún no hay traducción disponible para este título';
  const original=$('[data-synopsis-original]');
  if(original)original.hidden=!normalizeSynopsis(active.description);
 }
@@ -451,7 +452,7 @@ function detail(id){
  '</div>'+
  '<div class="oneup-detail-lower">'+
   '<section id="oneup-player-section" class="oneup-detail-section" hidden></section>'+
-  (hasSynopsis?'<section class="oneup-detail-section oneup-synopsis-section"><h3>HISTORIA Y SINOPSIS</h3><p class="oneup-synopsis-source">'+(autoTranslated?'Traducción automática al español · puede contener imprecisiones':'Sinopsis en español pendiente de traducción')+'</p><p class="oneup-synopsis-text">'+esc(synopsis)+'</p><button type="button" data-synopsis-original="1" class="oneup-synopsis-toggle"'+(!originalSynopsis?' hidden':'')+'>Ver texto original</button></section><hr class="oneup-detail-separator">':'')+
+  (hasSynopsis?'<section class="oneup-detail-section oneup-synopsis-section"><h3>HISTORIA Y SINOPSIS</h3><p class="oneup-synopsis-source">'+(autoTranslated?(hasEditorialSpanish(a)?'Sinopsis en español revisada editorialmente':'Traducción automática al español · puede contener imprecisiones'):'Sinopsis en español pendiente de traducción')+'</p><p class="oneup-synopsis-text">'+esc(synopsis)+'</p><button type="button" data-synopsis-original="1" class="oneup-synopsis-toggle"'+(!originalSynopsis?' hidden':'')+'>Ver texto original</button></section><hr class="oneup-detail-separator">':'')+
   '<section class="oneup-detail-section"><h3>GÉNEROS</h3><div class="oneup-genre-tags">'+(chips||'<span class="oneup-genre-tag">Anime</span>')+'</div></section>'+
   '<hr class="oneup-detail-separator">'+
   '<section class="oneup-detail-section"><h3>TU PROGRESO</h3><p>Lleva un registro personal de los episodios vistos.</p><div class="episode-controls"><button type="button" data-episode="-1" aria-label="Restar episodio">−</button><strong id="episode-value">'+(item.watched||0)+'</strong><button type="button" data-episode="1" aria-label="Sumar episodio">+</button><span class="oneup-episode-text">de '+(a.episodes||'?')+' episodios</span></div></section>'+
