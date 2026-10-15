@@ -180,3 +180,12 @@
 @media(prefers-reduced-motion:reduce){
  .hero.is-switching .hero-poster,.hero.is-switching .hero-copy h1,.hero.is-switching .hero-description{animation:none!important}
 }
+
+/* Reading-first synopsis treatment. Body copy never clipped in the dedicated synopsis section. */
+.oneup-synopsis-eyebrow{margin:14px 0 8px;color:#d5deff;font-size:10px;letter-spacing:1.8px}
+.oneup-synopsis-section{padding:10px 0 3px}
+.oneup-synopsis-section h3{margin-bottom:7px}
+.oneup-synopsis-source{margin:0 0 10px!important;color:#a6b2d1!important;font-size:10px!important;letter-spacing:.7px}
+.oneup-synopsis-text{color:#e4e8f6!important;line-height:1.87!important;font-size:13px!important;max-width:780px;margin:0 0 16px!important;white-space:pre-line;overflow-wrap:anywhere}
+.oneup-detail-synopsis{max-width:655px}
+@media(max-width:550px){.oneup-synopsis-text{font-size:12px!important;line-height:1.8!important}.oneup-synopsis-eyebrow{font-size:9px}}
