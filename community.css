@@ -15,3 +15,12 @@ dialog{max-width:min(610px,calc(100vw - 20px));border:1px solid #8fa9d664;border
 .c-friend-name{padding:10px 0;border-bottom:1px solid #849ac630;font-size:12px}
 #c-friend-list h4{font:900 21px var(--display);margin:20px 0 8px}
 #c-friend-state{color:#b6c7ff;font-size:11px;line-height:1.5}
+
+/* Video community: vertically navigable cinematic reels, no forced autoplay. */
+.c-clip-mode .c-feed{max-height:calc(100dvh - 160px);overflow-y:auto;scroll-snap-type:y proximity;overscroll-behavior-y:contain;padding-right:3px;scrollbar-width:thin}
+.c-clip-mode .c-feed-card{scroll-snap-align:start;min-height:58vh;display:flex;flex-direction:column}
+.c-clip-mode .c-media{flex:1;min-height:min(48vh,430px)}
+.c-clip-mode .c-media video{width:100%;height:min(67vh,680px);max-height:none;object-fit:contain;background:#05060e}
+.c-clip-mode .c-card-buttons{margin-top:auto}
+@media(max-width:760px){.c-clip-mode .c-feed{max-height:calc(100dvh - 135px)}.c-clip-mode .c-feed-card{min-height:65vh}.c-clip-mode .c-media video{height:min(58vh,550px)}}
+@media(prefers-reduced-motion:reduce){.c-clip-mode .c-feed{scroll-snap-type:none}}
