@@ -16,6 +16,7 @@ from pathlib import Path
 
 CATALOG = Path("data/catalog.json")
 OUTPUT = Path("data/translations-es.json")
+AIRING = Path("data/airing.json")
 
 
 def sanitize(text: str) -> str:
@@ -62,6 +63,21 @@ def main() -> None:
             source = sanitize(anime.get("description") or "")
             if key and len(source) >= 24:
                 rows[key] = source
+    # Add seasonal premieres and recently airing shows not included among the
+    # four homepage catalog shelves. Translate descriptions offline once daily.
+    airing = None
+    if AIRING.exists():
+        try:
+            airing = json.loads(AIRING.read_text(encoding="utf-8"))
+            upcoming = list(airing.get("seasonal", {}).get("entries", []))
+            upcoming += list(airing.get("airing", []))
+            for anime in upcoming:
+                key = str(anime.get("id") or "")
+                source = sanitize(anime.get("description") or "")[:600]
+                if key and len(source) >= 24 and key not in rows:
+                    rows[key] = source
+        except Exception as error:
+            print(f"Could not extend translation rows with schedule: {error}", file=sys.stderr)
     if not rows:
         raise RuntimeError("No synopsis text in catalog")
     old = {}
@@ -129,6 +145,20 @@ def main() -> None:
         encoding="utf-8",
     )
     catalog_tmp.replace(CATALOG)
+    if airing is not None:
+        for group in [airing.get("airing", []), airing.get("seasonal", {}).get("entries", [])]:
+            for anime in group:
+                key = str(anime.get("id") or "")
+                row = done.get(key)
+                if row and row.get("es"):
+                    anime["description_es"] = row["es"]
+                else:
+                    anime.pop("description_es", None)
+        airing_tmp = AIRING.with_suffix(".tmp")
+        airing_tmp.write_text(
+            json.dumps(airing, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
+        )
+        airing_tmp.replace(AIRING)
     body = {
         "language": "es",
         "source": "Argos Translate en-es, automated translation of AniList public metadata",
