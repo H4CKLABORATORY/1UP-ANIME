@@ -80,3 +80,13 @@ body{background:radial-gradient(ellipse at 84% 3%,#27356739,transparent 42%),#07
  position:relative;z-index:0;clear:none;
  margin-top:0;
 }
+
+/* Final cross-browser modal hit-target fix: absolute overlay, not sticky.
+   Safari/Chromium mobile could paint sticky sibling behind detail content. */
+#anime-dialog.anime-dialog > #anime-close.dialog-close{
+ position:absolute!important;top:14px!important;right:14px!important;
+ bottom:auto!important;left:auto!important;
+ margin:0!important;float:none!important;
+ z-index:2147483647!important;pointer-events:auto!important;
+ transform:translateZ(0);-webkit-transform:translateZ(0);
+}
