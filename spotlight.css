@@ -189,3 +189,9 @@
 .oneup-synopsis-text{color:#e4e8f6!important;line-height:1.87!important;font-size:13px!important;max-width:780px;margin:0 0 16px!important;white-space:pre-line;overflow-wrap:anywhere}
 .oneup-detail-synopsis{max-width:655px}
 @media(max-width:550px){.oneup-synopsis-text{font-size:12px!important;line-height:1.8!important}.oneup-synopsis-eyebrow{font-size:9px}}
+
+/* Localized synopsis */
+.oneup-synopsis-toggle{display:inline-flex;align-items:center;justify-content:center;margin:5px 0 14px;padding:9px 14px;border:1px solid #a6baff82;border-radius:7px;background:#a2b6ff13;color:#dbe7ff;font:700 11px var(--font);transition:background .18s,border-color .18s}
+.oneup-synopsis-toggle:hover{background:#a2b6ff25;border-color:#afc1ffb7}
+.oneup-synopsis-toggle:focus-visible{outline:2px solid #bdccff;outline-offset:3px}
+.oneup-synopsis-toggle[hidden]{display:none!important}
