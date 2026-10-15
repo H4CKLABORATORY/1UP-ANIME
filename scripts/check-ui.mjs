@@ -8,7 +8,7 @@ const sw=read('sw.js');
 const css=read('spotlight.css');
 let checks=0;
 const assert=(ok,reason)=>{checks++;if(!ok)throw Error(reason)};
-for(const file of ['studio.js','auth.js','motion.js','sonic.js','sw.js']){
+for(const file of ['studio.js','auth.js','motion.js','sonic.js','sw.js','airing-ui.js','episode-comments.js','community.js','social-backend.js','functions/index.js']){
  new vm.Script(read(file),{filename:file});
 }
 const ids=['hero-poster','hero-title','hero-description','hero-badges','hero-feature-cover',
@@ -54,4 +54,24 @@ assert(allAnime.filter(x=>typeof x.description_es==='string').length>=20,
  'Snapshot no longer includes translated Spanish synopsis');
 const library=JSON.parse(read('data/licensed-media.json'));
 assert(typeof library.entries==='object','Authorized media manifest missing');
+// New verified publication calendar and community integration.
+const airing=JSON.parse(read('data/airing.json'));
+assert(Array.isArray(airing.airing)&&airing.airing.length>12,'Airing schedule missing or too small');
+assert(Array.isArray(airing.seasonal?.entries)&&airing.seasonal.entries.length>10,'Seasonal anime metadata missing');
+for(const show of airing.airing.slice(0,20)){
+ assert(/^(mal|al)-\d+$/.test(show.id),'Unstable airing anime ID');
+ assert(Number.isInteger(show.episode)&&show.episode>=1,'Invalid airing episode');
+ assert(Number.isInteger(show.airingAt)&&show.airingAt>1000000000,'Invalid airing timestamp');
+}
+assert(html.includes('airing-ui.js')&&html.includes('airing-ui.css'),'Airing UI not loaded');
+assert(read('airing-ui.js').includes('airing-today')&&read('airing-ui.js').includes('airing-yesterday'),'Today and yesterday shelves are absent');
+assert(read('airing-ui.js').includes('youtube-nocookie.com'),'Consent-based YouTube trailer panel missing');
+assert(read('comunidad.html').includes('community.js'),'Community javascript missing');
+assert(read('comunidad.html').includes('social-backend.js'),'Realtime backend adapter missing');
+assert(read('community.js').includes('data-answer-friend'),'Mutual friend approval screen missing');
+assert(read('episode-comments.js').includes('oneup-guest-name'),'Temporary names in guest episode comments missing');
+assert(read('functions/index.js').includes('exports.respondFriendship'),'Friend request backend missing');
+assert(read('functions/index.js').includes('exports.submitEpisodeComment'),'Guest comment backend missing');
+assert(read('functions/index.js').includes('exports.moderateEpisodeComment'),'Episode moderation missing');
+assert(sw.includes("'./airing-ui.js'")&&sw.includes("'./comunidad.html'"),'PWA cache lacks new interfaces');
 console.log('1UP smoke checks passed ('+checks+' assertions).');
