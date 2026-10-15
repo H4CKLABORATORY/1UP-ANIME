@@ -25,4 +25,15 @@ assert(!read('.github/workflows/oneup-revert-proposal.yml').includes('gh pr merg
 assert(read('.github/dependabot.yml').includes('package-ecosystem: npm'),'Reviewable dependency updates missing');
 const guard=JSON.parse(read('data/guard/status.json'));
 assert(guard.engine==='ONEUP SELF HEALING ENGINE' && guard.totalChecks>=25,'Validated guard report absent');
+for(const job of [
+ '.github/workflows/dexter-anime-sync.yml',
+ '.github/workflows/refresh-airing.yml',
+ '.github/workflows/refresh-catalog.yml',
+ '.github/workflows/oneup-guard.yml',
+ '.github/workflows/app-icons.yml'
+]){
+ const yaml=read(job);
+ assert(yaml.includes('branches: [main]'),job+' must not run push writes on Dependabot branches');
+ assert(yaml.includes("if: github.ref == 'refs/heads/main'"),job+' must block dispatch from other branches');
+}
 console.log('ONEUP resilience regression checks passed.');
