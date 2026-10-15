@@ -25,3 +25,12 @@
 #oneup-comment-state{min-height:16px;font-size:11px;color:#b2caff}
 #oneup-send-comment:disabled{opacity:.5;cursor:wait}
 @media(max-width:580px){.oneup-comment-panel{padding:14px}.oneup-comment-submit{align-items:stretch}.oneup-comment-submit .cta{width:100%}}
+
+/* Link to 1UP Comunidad integrated into existing streaming navigation. */
+.desktop-links .oneup-link-community{color:#c6d5ff;font-size:13px;font-weight:900;white-space:nowrap;padding:28px 0}
+.desktop-links .oneup-link-community:hover{color:#fff;text-shadow:0 0 14px #8a9efe70}
+.mobile-navigation a{display:grid;gap:4px;place-items:center;color:#a9a2b8;font-size:9px;font-weight:800;min-width:45px;text-decoration:none}
+.mobile-navigation a b{font-size:20px;color:#b1c8ff}
+.mobile-navigation a:hover{color:#e4eeff}
+@media(max-width:780px){.desktop-links .oneup-link-community{display:none}}
+@media(max-width:420px){.mobile-navigation button,.mobile-navigation a{min-width:40px;font-size:8px}}
