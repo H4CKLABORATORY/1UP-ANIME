@@ -1,0 +1,14 @@
+{
+  "name": "oneup-jkanime-metadata-adapter",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Isolated metadata-only integration of unofficial JKAnime V2 library. No playback extraction.",
+  "scripts": {
+    "check": "node check-api.mjs",
+    "discover": "node discover-metadata.mjs"
+  },
+  "dependencies": {
+    "jkanime-v2": "1.0.1"
+  }
+}
