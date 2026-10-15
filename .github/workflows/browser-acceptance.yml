@@ -15,6 +15,10 @@ on:
       - "motor.js"
       - "external-providers.js"
       - "sw.js"
+      - "brand-v2.css"
+      - "spotlight.css"
+      - "player.css"
+      - "community.css"
   pull_request:
     branches: [main]
 permissions:
