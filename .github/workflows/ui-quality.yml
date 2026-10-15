@@ -28,8 +28,23 @@ on:
       - "firestore.rules"
       - "storage.rules"
       - "data/airing.json"
+      - "motor.html"
+      - "motor.js"
+      - "motor.css"
+      - "moderacion.html"
+      - "moderacion.js"
+      - "scripts/oneup-guard.mjs"
+      - "scripts/check-guard.mjs"
+      - "scripts/check-resilience.mjs"
+      - "scripts/guard-alert.mjs"
+      - "docs/ONEUP_SELF_HEALING.md"
+      - ".github/workflows/oneup-guard.yml"
+      - ".github/workflows/oneup-revert-proposal.yml"
+      - ".github/dependabot.yml"
       - ".github/workflows/ui-quality.yml"
   workflow_dispatch:
+  pull_request:
+    branches: [main]
 permissions:
   contents: read
 jobs:
@@ -44,4 +59,10 @@ jobs:
         with:
           node-version: "22"
       - name: Validate UI and cached anime data
-        run: node scripts/check-ui.mjs
+        run: |
+          node scripts/check-ui.mjs
+          node scripts/check-resilience.mjs
+          node --check scripts/oneup-guard.mjs
+          node --check scripts/guard-alert.mjs
+          node scripts/oneup-guard.mjs --offline --strict
+          node scripts/check-guard.mjs
