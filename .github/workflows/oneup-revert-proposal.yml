@@ -1,0 +1,47 @@
+name: Prepare ONEUP rollback proposal
+on:
+  workflow_dispatch:
+    inputs:
+      commit_to_revert:
+        description: 'SHA completo (40 caracteres) del commit defectuoso de main'
+        required: true
+        type: string
+permissions:
+  contents: write
+  pull-requests: write
+jobs:
+  proposal:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - name: Checkout history
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate candidate and prepare non-destructive revert
+        env:
+          BAD_SHA: '${{ inputs.commit_to_revert }}'
+          RUN_ID: '${{ github.run_id }}'
+        run: |
+          if ! echo "$BAD_SHA" | grep -Eq "^[0-9a-fA-F]{40}$"; then echo "SHA must have 40 hex chars"; exit 1; fi
+          git fetch origin main
+          if ! git merge-base --is-ancestor "$BAD_SHA" origin/main; then echo "Commit is not in main history"; exit 1; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          BRANCH="recovery/revert-${BAD_SHA:0:8}-${RUN_ID}"
+          git switch -c "$BRANCH"
+          git revert --no-commit "$BAD_SHA"
+          node scripts/check-ui.mjs
+          node scripts/oneup-guard.mjs --offline --strict
+          git commit -m "Propose revert of ${BAD_SHA:0:12} after health checks"
+          git push origin "$BRANCH"
+          echo "ROLLBACK_BRANCH=$BRANCH" >> "$GITHUB_ENV"
+      - name: Create a reviewable PR, never auto-merge
+        env:
+          GH_TOKEN: '${{ github.token }}'
+          GH_REPO: '${{ github.repository }}'
+        run: |
+          gh pr create --base main --head "$ROLLBACK_BRANCH" --title "ONEUP: propuesta de reversión revisada" --body "Propuesta de revert. Pasaron las pruebas de interfaz y revisión offline. Revisar los archivos y aprobar manualmente; este flujo NO hace merge ni despliega un rollback automáticamente."
