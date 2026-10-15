@@ -3,12 +3,14 @@
 <meta name="theme-color" content="#090a11"><meta name="description" content="1UP Anime: tendencias, estrenos, programación, géneros y favoritos. Anime en un nuevo nivel.">
 <meta property="og:title" content="1UP Anime · Tu siguiente vida es anime">
 <title>1UP Anime | Tu siguiente vida es anime</title>
-<link rel="icon" href="./assets/oneup-mascot.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="./assets/icon-180.png"><link rel="manifest" href="./manifest.webmanifest">
+<link rel="icon" href="./assets/oneup-crest.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="./assets/icon-180.png"><link rel="manifest" href="./manifest.webmanifest">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="./studio.css">
 <link rel="stylesheet" href="./motion.css">
 <link rel="stylesheet" href="./spotlight.css">
+<link rel="stylesheet" href="./player.css">
+<link rel="stylesheet" href="./brand-v2.css">
 <script defer src="./auth-config.js"></script><script defer src="./auth.js"></script><script defer src="./studio.js"></script>
 <script defer src="./motion.js"></script>
 </head><body>
@@ -27,7 +29,7 @@
 <header class="header">
  <div class="header-inner wrap">
   <a href="#inicio" class="brand" data-route="inicio" aria-label="1UP Anime, inicio">
-    <img src="./assets/oneup-mascot.svg" class="brand-symbol" alt="">
+    <img src="./assets/oneup-crest.svg" class="brand-symbol" alt="">
     <span class="brand-name">1UP<span>ANIME</span></span>
   </a>
   <nav class="desktop-links" aria-label="Navegación"><button data-route="inicio" class="active">Inicio</button><button data-route="temporada">En emisión</button><button data-route="programacion">Programación</button><button data-route="catalogo">Catálogo</button><button data-route="peliculas">Películas</button><button data-route="milista">Mi lista</button></nav>
@@ -47,7 +49,7 @@
     <div id="hero-badges" class="hero-badges"><span>ESTRENOS</span><span>TENDENCIAS</span><span>MI LISTA</span></div>
     <div class="hero-actions"><button id="hero-detail" class="cta primary"><svg><use href="#ico-arrow"/></svg> Ver información</button><button id="hero-save" class="cta outline"><svg><use href="#ico-plus"/></svg> Guardar anime</button></div><div class="hero-picks" id="hero-picks" aria-label="Elegir anime destacado"></div>
    </div>
-   <div class="hero-art-card"><div class="hero-art-emblem"><img id="hero-feature-cover" src="./assets/oneup-mascot.svg" alt="Póster del anime seleccionado"></div><div class="hero-art-caption"><span>ANIME SELECCIONADO</span><b id="hero-feature-title">TU SIGUIENTE HISTORIA</b><small id="hero-feature-caption">EXPLORA UNA HISTORIA</small></div></div>
+   <div class="hero-art-card"><div class="hero-art-emblem"><img id="hero-feature-cover" src="./assets/oneup-crest.svg" alt="Póster del anime seleccionado"></div><div class="hero-art-caption"><span>ANIME SELECCIONADO</span><b id="hero-feature-title">TU SIGUIENTE HISTORIA</b><small id="hero-feature-caption">EXPLORA UNA HISTORIA</small></div></div>
    </div>
    <div class="hero-bottom wrap"><span>01 / 1UP UNIVERSE</span><span>DESLIZA PARA DESCUBRIR ↓</span></div>
   </section>
@@ -67,10 +69,10 @@
  </div>
  <section id="browse-screen" class="wrap browse-screen" hidden><div class="browse-intro"><div class="micro" id="browse-eyebrow">EXPLORE / 1UP ANIME</div><h1 id="browse-title">Explorar <em>anime.</em></h1><p id="browse-summary">Descubre nuevas historias.</p></div><div id="browse-controls" class="browse-controls"></div><div id="browse-status" class="browse-status"></div><div id="browse-grid" class="poster-grid"></div><div class="pagination"><button id="browse-next" class="cta outline" hidden>Cargar más ↓</button></div></section>
 </main>
-<footer class="footer wrap"><div class="footer-brand"><img src="./assets/oneup-mascot.svg" alt=""><span>1UP ANIME</span></div><div><p>Tu siguiente vida es anime. Catálogo informativo, favoritos y programación.</p><p>Datos: AniList y Jikan. Los enlaces externos pertenecen a sus plataformas. 1UP Anime no aloja ni reproduce episodios.</p></div><small>© 2026 1UP Anime · Identidad original</small></footer>
+<footer class="footer wrap"><div class="footer-brand"><img src="./assets/oneup-crest.svg" alt=""><span>1UP ANIME</span></div><div><p>Tu siguiente vida es anime. Catálogo informativo, favoritos y programación.</p><p>Datos: AniList y Jikan. Los enlaces externos pertenecen a sus plataformas. 1UP Anime no aloja ni reproduce episodios.</p></div><small>© 2026 1UP Anime · Identidad original</small></footer>
 <nav class="mobile-navigation"><button data-route="inicio" class="active"><b>⌂</b>Inicio</button><button data-route="temporada"><b>◉</b>Temporada</button><button data-route="catalogo"><b>▦</b>Catálogo</button><button data-route="programacion"><b>◷</b>Emisión</button><button data-route="milista"><b>♡</b>Mi lista</button></nav>
 <dialog id="anime-dialog" class="anime-dialog"><button class="dialog-close" id="anime-close" aria-label="Cerrar">✕</button><div id="anime-dialog-body"></div></dialog>
-<dialog id="auth-dialog" class="auth-dialog"><button class="dialog-close" id="auth-close" aria-label="Cerrar">✕</button><div class="auth-panel"><img src="./assets/oneup-mascot.svg" alt=""><div class="micro">TU UNIVERSO, A TU MANERA</div><h2>BIENVENIDO A <em>1UP.</em></h2><p>Inicia sesión cuando quieras o explora sin cuenta. Nunca es obligatorio registrarse.</p><button id="google-login" class="google-login"><span class="google-g">G</span> Continuar con Google</button><button id="guest-login" class="guest-login">Continuar como invitado</button><button id="auth-signout" class="guest-login" hidden>Cerrar sesión de Google</button><p id="auth-message" class="auth-message" role="status"></p><small>El acceso con Google requiere configurar Firebase para este dominio. El modo invitado funciona sin conexión de cuentas.</small></div></dialog>
+<dialog id="auth-dialog" class="auth-dialog"><button class="dialog-close" id="auth-close" aria-label="Cerrar">✕</button><div class="auth-panel"><img src="./assets/oneup-crest.svg" alt=""><div class="micro">TU UNIVERSO, A TU MANERA</div><h2>BIENVENIDO A <em>1UP.</em></h2><p>Inicia sesión cuando quieras o explora sin cuenta. Nunca es obligatorio registrarse.</p><button id="google-login" class="google-login"><span class="google-g">G</span> Continuar con Google</button><button id="guest-login" class="guest-login">Continuar como invitado</button><button id="auth-signout" class="guest-login" hidden>Cerrar sesión de Google</button><p id="auth-message" class="auth-message" role="status"></p><small>El acceso con Google requiere configurar Firebase para este dominio. El modo invitado funciona sin conexión de cuentas.</small></div></dialog>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
-<div id="startup" class="startup" hidden><div class="startup-mark"><img src="./assets/oneup-mascot.svg" alt=""><strong>ONE <em>UP</em></strong><span>A N I M E</span></div></div>
+<div id="startup" class="startup" hidden><div class="startup-mark"><img src="./assets/oneup-crest.svg" alt=""><strong>ONE <em>UP</em></strong><span>A N I M E</span></div></div>
 </body></html>
