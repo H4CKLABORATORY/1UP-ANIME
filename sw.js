@@ -1,6 +1,6 @@
 /* ONE UP - mobile PWA offline-first shell, update-aware.
    External providers and video URLs are NEVER mirrored by this worker. */
-const CACHE='oneup-launch-stable-v14-20261015';
+const CACHE='oneup-launch-stable-v15-20261015';
 const SHELL=[
  './','./index.html','./studio.css','./studio.js','./spotlight.css',
  './motion.css','./motion.js','./brand-v2.css','./player.css','./auth.js',
@@ -9,7 +9,7 @@ const SHELL=[
  './data/catalog.json','./data/translations-es.json','./data/licensed-media.json',
  './data/airing.json','./airing-ui.js','./airing-ui.css','./comunidad.html',
  './community.js','./community.css','./social-backend.js','./social-config.js',
- './episode-comments.js','./episode-comments.css','./external-providers.js','./data/external-providers.json','./motor.html','./motor.js','./motor.css',
+ './episode-player.js','./episode-comments.js','./episode-comments.css','./external-providers.js','./data/external-providers.json','./motor.html','./motor.js','./motor.css',
  './moderacion.html','./moderacion.js','./moderacion.css',
  './data/dexter/status.json','./data/dexter/history.json','./data/guard/status.json'
 ];
