@@ -343,6 +343,68 @@ async function browse(route,page=1,append=false){
  $('#browse-next').hidden=!state.next;
 }
 function doSearch(q){q=(q||'').trim();if(!q){toast('Escribe el nombre del anime');return}state.query=q;go('buscar')}
+// A rights-cleared media manifest is optional. No unofficial video-host extraction.
+let authorizedMedia=null,authorizedMediaLoading=null;
+async function mediaForAnime(id){
+ if(!authorizedMediaLoading){
+  authorizedMediaLoading=(async()=>{
+   try{
+    const ctrl=new AbortController(),timer=setTimeout(()=>ctrl.abort(),6500);
+    let response;
+    try{response=await fetch('./data/licensed-media.json',{cache:'no-cache',signal:ctrl.signal})}
+    finally{clearTimeout(timer)}
+    if(!response.ok)throw Error('No media library');
+    const json=await response.json();
+    authorizedMedia=json?.entries&&typeof json.entries==='object'?json.entries:{};
+   }catch{authorizedMedia={}}
+  })();
+ }
+ await authorizedMediaLoading;
+ const entry=authorizedMedia?.[id];
+ return Array.isArray(entry?.episodes)?entry.episodes.filter(x=>x&&typeof x.src==='string'&&x.src.startsWith('https://')).slice(0,60):[];
+}
+function mediaFileUrl(value){
+ try{
+  // Internal Spanish subtitles use relative URLs; media URLs must be HTTPS.
+  const urlObj=new URL(String(value||''),location.href);
+  if(urlObj.protocol!=='https:')return '';
+  return urlObj.href;
+ }catch{return ''}
+}
+function playbackEpisode(id,episodes,index){
+ const item=episodes[index];if(!item)return;
+ const src=mediaFileUrl(item.src);
+ const host=$('#oneup-player-content');if(!host)return;
+ if(!src){host.textContent='No se pudo cargar esta fuente de video.';return}
+ const caption=mediaFileUrl(item.subtitles_es||'');
+ const mime=String(item.mime||'video/mp4');
+ const supported=['video/mp4','video/webm','application/vnd.apple.mpegurl'];
+ const type=supported.includes(mime)?mime:'video/mp4';
+ host.innerHTML='<div class="oneup-playback-stage">'+
+ '<video id="oneup-licensed-video" controls playsinline preload="metadata" crossorigin="anonymous" controlsList="nodownload" aria-label="Reproductor de video autorizado">'+
+ '<source src="'+esc(src)+'" type="'+esc(type)+'">'+
+ (caption?'<track kind="subtitles" src="'+esc(caption)+'" srclang="es" label="Español" default>':'')+
+ 'Tu navegador no admite esta reproducción.</video>'+
+ '</div><p class="oneup-playback-hint">Episodio '+(index+1)+' · '+esc(item.title||'Video autorizado')+
+ (caption?' · Subtítulos en español disponibles':' · Sin subtítulos en español disponibles')+
+ '</p>';
+ // Never autoplay media merely by opening a listing.
+}
+async function loadAuthorizedPlayer(id){
+ const host=$('#oneup-player-section');if(!host)return;
+ const episodes=await mediaForAnime(id);
+ if(state.active!==id||!$('#anime-dialog')?.open)return;
+ if(!episodes.length){host.hidden=true;return}
+ host.hidden=false;
+ const buttons=episodes.map((x,i)=>'<button class="oneup-episode-button" type="button" data-licensed-episode="'+i+'" aria-label="Reproducir episodio autorizado '+(i+1)+'">'+(i+1)+' · '+esc(x.title||'Episodio')+'</button>').join('');
+ host.innerHTML='<div class="oneup-detail-section"><h3>EPISODIOS DISPONIBLES</h3><p>Videos proporcionados con derechos de publicación. No se extrae contenido de otras plataformas.</p>'+
+ '<div id="oneup-licensed-episodes" class="oneup-episode-select">'+buttons+'</div>'+
+ '<div id="oneup-player-content"></div></div>';
+ host.querySelectorAll('[data-licensed-episode]').forEach(button=>button.addEventListener('click',()=>{
+  playbackEpisode(id,episodes,Number(button.dataset.licensedEpisode));
+ }));
+ playbackEpisode(id,episodes,0);
+}
 function detail(id){
  const a=state.entries.get(id);if(!a)return;
  state.active=id;
@@ -387,6 +449,7 @@ function detail(id){
   '</div>'+
  '</div>'+
  '<div class="oneup-detail-lower">'+
+  '<section id="oneup-player-section" class="oneup-detail-section" hidden></section>'+
   (hasSynopsis?'<section class="oneup-detail-section oneup-synopsis-section"><h3>HISTORIA Y SINOPSIS</h3><p class="oneup-synopsis-source">'+(autoTranslated?'Traducción automática al español · puede contener imprecisiones':'Sinopsis en español pendiente de traducción')+'</p><p class="oneup-synopsis-text">'+esc(synopsis)+'</p><button type="button" data-synopsis-original="1" class="oneup-synopsis-toggle"'+(!originalSynopsis?' hidden':'')+'>Ver texto original</button></section><hr class="oneup-detail-separator">':'')+
   '<section class="oneup-detail-section"><h3>GÉNEROS</h3><div class="oneup-genre-tags">'+(chips||'<span class="oneup-genre-tag">Anime</span>')+'</div></section>'+
   '<hr class="oneup-detail-separator">'+
@@ -405,6 +468,7 @@ function detail(id){
  if(!dialog.open)dialog.showModal();
  dialog.setAttribute('aria-labelledby','detail-anime-name');
  dialog.scrollTop=0;
+ loadAuthorizedPlayer(id).catch(()=>{});
 }
 function changeEp(delta){
  const item=ensureItem(state.active);if(!item)return;
