@@ -146,7 +146,7 @@ async function uploadAvatar(file){
  const valid={'image/jpeg':'jpg','image/png':'png','image/webp':'webp'};
  const ext=valid[file.type];
  if(!ext||file.size>5*1024*1024)throw Error('Se admiten fotos JPG, PNG o WebP de hasta 5 MB.');
- const x=await sdk(),path='avatars/'+user.uid+'/profile.'+ext;
+ const x=await sdk(),path='avatars/'+user.uid+'/'+crypto.randomUUID()+'.'+ext;
  await x.storage.uploadBytes(x.storage.ref(x.files,path),file,{contentType:file.type});
  return path;
 }
