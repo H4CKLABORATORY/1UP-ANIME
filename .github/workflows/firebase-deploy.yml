@@ -28,7 +28,7 @@ jobs:
           fi
           node --check functions/index.js
       - name: Authenticate to owner's Firebase project
-        uses: google-github-actions/auth@v2
+        uses: google-github-actions/auth@v3
         with:
           credentials_json: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
       - name: Prepare public Firebase web configuration
