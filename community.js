@@ -61,12 +61,13 @@ function postHTML(post){
  const name=esc(post.displayName||'Fan del anime'),kind=labels[post.kind]||'Debate';
  const media=post.mediaPath?'<div class="c-media" data-media="'+esc(post.mediaPath)+'"><small>Cargando archivo publicado…</small></div>':'';
  return '<article class="c-feed-card" data-post="'+esc(post.id)+'"><div class="c-card-body">'+
- '<div class="c-card-top"><div class="c-publisher"><div class="c-avatar">✦</div><div class="c-person"><strong>'+name+' '+badge(post)+'</strong><small>'+niceDate(post.createdAt)+'</small></div></div><span class="c-post-kind">'+esc(kind)+'</span></div>'+
+ '<div class="c-card-top"><div class="c-publisher"><div class="c-avatar"'+(post.avatarPath?' data-avatar-file="'+esc(post.avatarPath)+'"':'')+'>'+esc(post.icon||'✦')+'</div><div class="c-person"><strong>'+name+' '+badge(post)+'</strong><small>'+niceDate(post.createdAt)+'</small></div></div><span class="c-post-kind">'+esc(kind)+'</span></div>'+
  '<p class="c-post-text">'+esc(post.text||'')+'</p></div>'+media+
  '<div class="c-card-buttons"><button type="button" data-like="'+esc(post.id)+'">♡ '+(Math.max(0,Number(post.likes)||0))+'</button>'+
  '<button type="button" data-reply="'+esc(post.id)+'">◌ Comentar</button><button type="button" data-share="'+esc(post.id)+'">↗ Compartir</button>'+
  '<button type="button" data-report="'+esc(post.id)+'">⚑ Reportar</button>'+
- '<button type="button" class="c-follow" data-follow="'+esc(post.authorUid||'')+'">＋ Seguir</button></div></article>';
+ '<button type="button" class="c-follow" data-follow="'+esc(post.authorUid||'')+'">＋ Seguir</button>'+
+ '<button type="button" data-friend="'+esc(post.authorUid||'')+'">♧ Amistad</button></div></article>';
 }
 async function renderMedia(){
  for(const elem of $$('[data-media]')){
@@ -81,6 +82,15 @@ async function renderMedia(){
     const image=document.createElement('img');image.src=url;image.loading='lazy';image.alt='Imagen compartida en la comunidad';elem.replaceChildren(image);
    }
   }catch{if(elem.isConnected)elem.textContent='Imagen o video no disponible.'}
+ }
+ for(const badge of $('[data-avatar-file]')){
+  const path=badge.dataset.avatarFile;
+  try{
+   const link=await backend().mediaURL(path);
+   if(badge.isConnected&&badge.dataset.avatarFile===path){
+    const image=document.createElement('img');image.src=link;image.alt='Foto del creador';image.loading='lazy';badge.replaceChildren(image);
+   }
+  }catch{}
  }
 }
 function renderFeed(){
@@ -167,11 +177,26 @@ function profileIcons(){
  const box=$('#profile-icons');
  box.innerHTML=avatars.map((icon,i)=>'<button type="button" data-avatar-choice="'+esc(icon)+'" class="'+(icon===selectedAvatar?'selected':'')+'" aria-label="Avatar '+(i+1)+'">'+icon+'</button>').join('');
 }
+async function showFriends(){
+ const box=$('#c-friend-requests'),list=$('#c-friend-list');
+ if(!box||!list)return;
+ if(!await registered()){
+  box.innerHTML='<p class="c-empty">Inicia sesión con Google para consultar solicitudes de amistad.</p>';list.textContent='';return;
+ }
+ try{
+  const result=await backend().listFriends();
+  const requests=Array.isArray(result?.incoming)?result.incoming:[];
+  const friends=Array.isArray(result?.friends)?result.friends:[];
+  box.innerHTML=requests.length?requests.map(x=>'<article class="c-friend-row"><strong>'+esc(x.displayName)+'</strong><div><button type="button" data-answer-friend="'+esc(x.fromUid)+'" data-accept="1">Aceptar</button><button type="button" data-answer-friend="'+esc(x.fromUid)+'" data-accept="0">Rechazar</button></div></article>').join(''):'<p class="c-empty">No tienes solicitudes pendientes.</p>';
+  list.innerHTML='<h4>AMIGOS ('+friends.length+')</h4>'+ (friends.length?friends.map(x=>'<div class="c-friend-name">'+esc(x.displayName)+'</div>').join(''):'<p>Aún no has añadido amigos.</p>');
+ }catch(e){box.textContent=errorText(e)}
+}
 async function loadMyProfile(){
  if(!backend()?.enabled()){status('#profile-state','Configura Firebase para guardar un perfil público.');return}
  if(!await registered()){status('#profile-state','Inicia sesión con Google para editar tu perfil.');return}
  try{const data=await backend().myProfile();if(data){$('#profile-alias').value=data.displayName||'';selectedAvatar=data.icon||'⚔️';profileIcons()}}
  catch(e){status('#profile-state',errorText(e))}
+ await showFriends();
 }
 async function saveProfile(e){
  e.preventDefault();if(!await requireAccount())return;
@@ -220,6 +245,8 @@ function actions(e){
  const share=target.closest('[data-share]');if(share){sharePost(share.dataset.share);return}
  const report=target.closest('[data-report]');if(report){reportPost(report.dataset.report);return}
  const follow=target.closest('[data-follow]');if(follow){requireAccount().then(ok=>ok&&backend().follow(follow.dataset.follow).then(v=>stateMessage(v.following?'Ahora sigues este perfil.':'Dejaste de seguir el perfil.')).catch(e=>stateMessage(errorText(e))));return}
+ const friend=target.closest('[data-friend]');if(friend){requireAccount().then(ok=>ok&&backend().requestFriend(friend.dataset.friend).then(()=>stateMessage('Invitación enviada. Se necesita aceptación para ser amigos.')).catch(e=>stateMessage(errorText(e))));return}
+ const answer=target.closest('[data-answer-friend]');if(answer){backend().answerFriend(answer.dataset.answerFriend,answer.dataset.accept==='1').then(()=>{status('#c-friend-state','Respuesta enviada.');showFriends()}).catch(e=>status('#c-friend-state',errorText(e)));return}
  const icon=target.closest('[data-avatar-choice]');if(icon){selectedAvatar=icon.dataset.avatarChoice;profileIcons()}
 }
 async function init(){
