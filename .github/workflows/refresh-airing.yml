@@ -26,12 +26,4 @@ jobs:
       - name: Fetch factual airing times and seasonal trailers from AniList
         run: node scripts/refresh-airing.mjs
       - name: Publish schedule to site data
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/airing.json
-          if ! git diff --cached --quiet; then
-            git commit -m "Update live anime airing calendar"
-            git pull --rebase origin main
-            git push origin HEAD:main
-          fi
+        run: bash scripts/oneup-safe-push.sh 'Update live anime airing calendar' data/airing.json
