@@ -13,7 +13,8 @@ const safeNumber=(value,fallback=1)=>{const n=Number(value);return Number.isInte
 
 function safeUrl(value){
  try{
-  const u=new URL(String(value||''),location.href);
+  const raw=String(value??'').trim();if(!raw)return null;
+  const u=new URL(raw,location.href);
   if(u.protocol!=='https:'||u.username||u.password)return null;
   return u;
  }catch{return null}
@@ -96,7 +97,7 @@ function showVideo(slot){
   iframe.title='Reproductor autorizado · '+slot.label+' · Episodio '+selectedEpisode;
   iframe.loading='lazy';
   iframe.referrerPolicy='strict-origin-when-cross-origin';
-  iframe.sandbox='allow-scripts allow-same-origin allow-presentation allow-popups';
+  iframe.setAttribute('sandbox','allow-scripts allow-same-origin allow-presentation allow-popups');
   iframe.allow='autoplay; encrypted-media; fullscreen; picture-in-picture';
   iframe.allowFullscreen=true;
   stage.appendChild(iframe);
