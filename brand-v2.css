@@ -1,0 +1,66 @@
+/* 1UP Anime / Eclipse Crest — dark-fantasy visual direction.
+   Independent brand art; not a duplicate of a third-party anime studio mark. */
+:root{--bg:#070913;--surf:#101525;--panel:#14172b;--orange:#8daaff;--orange2:#4a71e8;--cream:#dfe9ff}
+body{background:radial-gradient(ellipse at 84% 3%,#27356739,transparent 42%),#070913;color:#edf1ff}
+.app-sheen{background:radial-gradient(ellipse at 82% 15%,#3d4d8630,transparent 44%);opacity:.86}
+.header{background:#070b19ed;border-bottom:1px solid #94a8d31e}
+.brand-symbol{background:radial-gradient(circle,#172a4c,#080c1d);box-shadow:0 0 23px #517be922;border:1px solid #a1c0ff4a}
+.brand-name>span{color:#bed4ff}
+.desktop-links button.active,.desktop-links button:hover{color:#bfd4ff}
+.desktop-links button.active:after{background:linear-gradient(90deg,#91bcff,#625cde)}
+.header-right .account-dot{color:#a9c5ff}
+.hero{background:radial-gradient(ellipse at 70% 30%,#37305b,#11152d 49%,#090b18 85%)}
+.hero-lines{background:radial-gradient(circle at 75% 24%,#8998ff2b,transparent 34%),repeating-linear-gradient(100deg,transparent,transparent 124px,#b5c1ff0b 125px,transparent 126px)}
+.hero-floating{color:#aab7ff;text-shadow:0 0 55px #6477fa60}
+.hero-badges span{border-color:#dbe7ff3e;color:#dce8ff}
+.hero-picks .hero-pick.active{border-color:#a3b4ffb5}
+.hero-art-card{transform:rotate(1deg);border-color:#96a8ef61;background:linear-gradient(135deg,#232646f2,#0e1529ee);box-shadow:0 25px 85px #000a,0 0 70px #6679ea1c}
+.limited-tag{background:#1e213a83;color:#d9e4ff;border-color:#7f90ce55;box-shadow:0 0 30px #6577df17}
+.eyebrow,.micro{color:#b0c5ff}
+.marquee{background:linear-gradient(90deg,#152039,#25213e,#152039);color:#b5caff;border-color:#627ca74d}
+.section-heading:after{background:linear-gradient(90deg,#a4b8ff,transparent)}
+.section-more{color:#b2c8ff}
+.explore-top h2 em,.section-heading h2 em,.season-copy h2 em,.community-note h2 em{color:#b6c4ff}
+.searchbar{background:#151a2a;border-color:#889dc053}
+.searchbar:focus-within{border-color:#a8bcff}
+.searchbar button{background:linear-gradient(105deg,#a5bbff,#7190f3);color:#10152d}
+.genre-pills button{background:#131729;color:#c8d5ef}
+.genre-pills button:hover,.genre-pills button.active{border-color:#93b2ff;background:#95aeff1e;color:#e2ebff}
+.anime-card{border-color:#7182b926;background:#101321}
+.anime-card:hover{border-color:#99b2e5}
+.rating b{color:#b9cfff}
+.anime-save.saved{background:#8aa9fd;color:#08132b;border-color:#8aa9fd}
+.card-type{color:#afc8ff;background:#95adff22}
+.season-banner{background:linear-gradient(107deg,#141e3d,#2d234a 62%,#101a30);border-color:#8b96da59}
+.season-banner-bg{background:radial-gradient(circle at 73% 42%,#7d94ed49,transparent 36%)}
+.season-glyph{color:#9db5ff25;text-shadow:0 0 65px #6e82f731}
+.schedule-item{background:#12192b;border-color:#6982ac48}
+.schedule-time{color:#b8ceff}
+.community-note{background:radial-gradient(circle at 16% 50%,#7994db26,transparent 39%),linear-gradient(125deg,#111a35,#16192c);border-color:#7d8dce50}
+.community-symbol{color:#b5cbff;text-shadow:0 0 45px #6b83ed4d}
+.footer-brand{color:#eef4ff}
+.footer{border-color:#7086ad4d}
+.browse-screen .browse-intro h1 em{color:#bacdff}
+.mobile-navigation{background:#0a0d19f6}
+.mobile-navigation button.active{color:#afc6ff}
+#toast,.toast{background:#a6baff;color:#0a1433}
+.startup{background:radial-gradient(circle at 50% 42%,#2c2554,#0a0c1a 63%,#030409)}
+.startup::before{background:radial-gradient(circle,#637cdd2c,transparent 58%)}
+.startup-mark img{width:min(205px,40vw);box-shadow:none;border:0;background:none;border-radius:0;filter:drop-shadow(0 0 34px #7c83ec66)}
+.startup-mark strong{text-shadow:0 0 32px #6184ff55;letter-spacing:1px}
+.startup-mark strong em{color:#9fb9ff}
+.startup-mark span{color:#c2d6ff}
+.oneup-visual-fx::before{background:radial-gradient(circle,transparent 0 38%,#789bf012 39% 40%,transparent 41% 54%,#7b77d822 55%,transparent 57%),conic-gradient(from 0deg,transparent,#93a5f116,transparent)}
+.oneup-ember{background:radial-gradient(circle,#ffffff 0%,#99b6ff 30%,#577cff00 75%);box-shadow:0 0 13px #577cff48}
+.anime-dialog{border-color:#889bd468}
+.oneup-detail-cover{background:#11182a}
+.oneup-detail-cover-image{filter:saturate(.92) brightness(.91)}
+.anime-dialog .dialog-close{margin-bottom:-48px}
+.anime-dialog #anime-dialog-body{margin-top:0}
+@media(max-width:780px){
+ .brand-symbol{width:46px;height:46px}
+ .startup-mark img{width:min(175px,38vw)}
+}
+@media(prefers-reduced-motion:reduce){
+ .oneup-ember,.hero-poster,.hero-art-card{animation:none!important}
+}
