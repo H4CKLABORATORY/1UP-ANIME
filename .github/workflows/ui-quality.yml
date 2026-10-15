@@ -41,6 +41,10 @@ on:
       - ".github/workflows/oneup-guard.yml"
       - ".github/workflows/oneup-revert-proposal.yml"
       - ".github/dependabot.yml"
+      - ".github/workflows/dexter-anime-sync.yml"
+      - ".github/workflows/refresh-airing.yml"
+      - ".github/workflows/refresh-catalog.yml"
+      - ".github/workflows/app-icons.yml"
       - ".github/workflows/ui-quality.yml"
   workflow_dispatch:
   pull_request:
