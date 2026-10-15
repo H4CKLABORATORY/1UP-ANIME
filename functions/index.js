@@ -340,3 +340,27 @@ exports.reviewReport=caller(async req=>{
  await ref.update({status:decision,reviewedBy:req.auth.uid,reviewedAt:FieldValue.serverTimestamp()});
  return {ok:true};
 });
+
+exports.moderateGlobalMessage=caller(async req=>{
+ await requireModerator(req);
+ const id=clean(req.data?.messageId,80),action=clean(req.data?.action,16);
+ if(!/^[A-Za-z0-9]{10,40}$/.test(id)||!['remove','restore'].includes(action))
+  throw new HttpsError('invalid-argument','Operación no válida.');
+ const ref=db.collection('globalMessages').doc(id),snap=await ref.get();
+ if(!snap.exists)throw new HttpsError('not-found','Mensaje inexistente.');
+ await ref.update({status:action==='remove'?'removed':'visible',reviewedBy:req.auth.uid,
+  reviewedAt:FieldValue.serverTimestamp()});
+ return {ok:true};
+});
+exports.moderateCommunityReply=caller(async req=>{
+ await requireModerator(req);
+ const postId=clean(req.data?.postId,80),commentId=clean(req.data?.commentId,80);
+ const action=clean(req.data?.action,16);
+ if(!/^[A-Za-z0-9]{10,40}$/.test(postId)||!/^[A-Za-z0-9]{10,40}$/.test(commentId)||!['remove','restore'].includes(action))
+  throw new HttpsError('invalid-argument','Operación no válida.');
+ const ref=db.collection('communityPosts').doc(postId).collection('comments').doc(commentId),snap=await ref.get();
+ if(!snap.exists)throw new HttpsError('not-found','Respuesta inexistente.');
+ await ref.update({status:action==='remove'?'removed':'visible',reviewedBy:req.auth.uid,
+  reviewedAt:FieldValue.serverTimestamp()});
+ return {ok:true};
+});
