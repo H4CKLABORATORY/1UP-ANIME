@@ -53,6 +53,26 @@ async function throttleAndWrite(req,kind,write){
  });
 }
 function publicFlags(uid){return db.collection('creatorFlags').doc(uid).get().then(d=>d.exists?d.data():{})}
+async function publicAuthor(req){
+ const [flags,prof]=await Promise.all([
+  publicFlags(req.auth.uid),
+  db.collection('creatorProfiles').doc(req.auth.uid).get()
+ ]);
+ const profile=prof.exists?prof.data():{};
+ return {displayName:clean(profile.displayName||nameOf(req),28),
+  icon:clean(profile.icon||'⚔️',10),
+  avatarPath:clean(profile.avatarPath||'',270),
+  verified:flags.verified===true,
+  owner:flags.owner===true};
+}
+async function requireModerator(req){
+ requireRegistered(req);
+ const snap=await db.collection('adminRoles').doc(req.auth.uid).get();
+ if(!snap.exists || !['owner','moderator'].includes(snap.data()?.role))
+  throw new HttpsError('permission-denied','Solo puede aprobarlo el equipo de moderación.');
+ return snap.data();
+}
+
 function caller(fn){return onCall(common,fn)}
 exports.submitEpisodeComment=caller(async req=>{
  requireAuth(req);
@@ -87,12 +107,12 @@ exports.createCommunityPost=caller(async req=>{
   if(!['image/jpeg','image/png','image/webp','video/mp4'].includes(mime))throw new HttpsError('invalid-argument','Tipo de archivo no permitido.');
   if(Number(meta.size)> (mime==='video/mp4'?25:5)*1024*1024)throw new HttpsError('invalid-argument','El archivo supera el tamaño permitido.');
  }
- const flags=await publicFlags(req.auth.uid);
+ const author=await publicAuthor(req);
  const response=await throttleAndWrite(req,'post',(tx,uid,now)=>{
   const ref=db.collection('communityPosts').doc();
-  tx.set(ref,{authorUid:uid,displayName:nameOf(req),kind,text:body,mediaPath:path,
-   verified:flags.verified===true,owner:flags.owner===true,likes:0,
-   status:'visible',createdAt:Timestamp.fromMillis(now),reports:0});
+  tx.set(ref,{authorUid:uid,displayName:author.displayName,icon:author.icon,avatarPath:author.avatarPath,kind,text:body,mediaPath:path,
+   verified:author.verified,owner:author.owner,likes:0,
+   status:path?'pending':'visible',createdAt:Timestamp.fromMillis(now),reports:0});
   return {id:ref.id};
  });
  return {ok:true,...response};
@@ -103,10 +123,10 @@ exports.replyCommunityPost=caller(async req=>{
  if(!/^[A-Za-z0-9]{10,40}$/.test(postId))throw new HttpsError('invalid-argument','Publicación no válida.');
  const post=await db.collection('communityPosts').doc(postId).get();
  if(!post.exists||post.data().status!=='visible')throw new HttpsError('not-found','La publicación no está disponible.');
- const flags=await publicFlags(req.auth.uid);
+ const author=await publicAuthor(req);
  const response=await throttleAndWrite(req,'reply',(tx,uid,now)=>{
   const ref=post.ref.collection('comments').doc();
-  tx.set(ref,{authorUid:uid,displayName:nameOf(req),verified:flags.verified===true,owner:flags.owner===true,
+  tx.set(ref,{authorUid:uid,displayName:author.displayName,icon:author.icon,avatarPath:author.avatarPath,verified:author.verified,owner:author.owner,
    text,status:'visible',createdAt:Timestamp.fromMillis(now)});
   return {id:ref.id};
  });
@@ -115,10 +135,10 @@ exports.replyCommunityPost=caller(async req=>{
 exports.sendGlobalMessage=caller(async req=>{
  requireRegistered(req);
  const text=validText(req.data?.text,350);
- const flags=await publicFlags(req.auth.uid);
+ const author=await publicAuthor(req);
  const response=await throttleAndWrite(req,'chat',(tx,uid,now)=>{
   const ref=db.collection('globalMessages').doc();
-  tx.set(ref,{authorUid:uid,displayName:nameOf(req),verified:flags.verified===true,owner:flags.owner===true,
+  tx.set(ref,{authorUid:uid,displayName:author.displayName,icon:author.icon,avatarPath:author.avatarPath,verified:author.verified,owner:author.owner,
    text,status:'visible',createdAt:Timestamp.fromMillis(now)});
   return {id:ref.id};
  });
@@ -161,13 +181,62 @@ exports.setMyCommunityProfile=caller(async req=>{
  const avatarPath=clean(req.data?.avatarPath||'',270);
  if(avatarPath&&!new RegExp('^avatars/'+req.auth.uid+'/profile\\.(jpg|png|webp)$').test(avatarPath))
   throw new HttpsError('invalid-argument','Ruta de foto incorrecta.');
- const flags=await publicFlags(req.auth.uid);
+ const author=await publicAuthor(req);
  return throttleAndWrite(req,'profile',(tx,uid,now)=>{
   tx.set(db.collection('creatorProfiles').doc(uid),{displayName:handle,icon,avatarPath,
-   verified:flags.verified===true,owner:flags.owner===true,updatedAt:Timestamp.fromMillis(now)},
+   verified:author.verified,owner:author.owner,updatedAt:Timestamp.fromMillis(now)},
    {merge:true});
   return {ok:true};
  });
+});
+exports.toggleFollow=caller(async req=>{
+ requireRegistered(req);
+ const target=clean(req.data?.targetUid,128);
+ if(!/^[A-Za-z0-9_-]{10,128}$/.test(target)||target===req.auth.uid)
+  throw new HttpsError('invalid-argument','No puedes seguir ese perfil.');
+ const profile=db.collection('creatorProfiles').doc(target);
+ const reference=db.collection('userFollowing').doc(req.auth.uid).collection('users').doc(target);
+ return db.runTransaction(async tx=>{
+  const [targetSnap,followingSnap]=await Promise.all([tx.get(profile),tx.get(reference)]);
+  if(!targetSnap.exists)throw new HttpsError('not-found','El creador aún no tiene perfil público.');
+  const on=!followingSnap.exists;
+  if(on)tx.set(reference,{targetUid:target,createdAt:FieldValue.serverTimestamp()});
+  else tx.delete(reference);
+  tx.update(profile,{followers:FieldValue.increment(on?1:-1)});
+  return {following:on};
+ });
+});
+exports.moderateCommunityPost=caller(async req=>{
+ const role=await requireModerator(req);
+ const postId=clean(req.data?.postId,80),action=clean(req.data?.action,20);
+ if(!/^[A-Za-z0-9]{10,40}$/.test(postId)||!['approve','remove'].includes(action))
+  throw new HttpsError('invalid-argument','Operación de moderación incorrecta.');
+ const ref=db.collection('communityPosts').doc(postId);
+ const snap=await ref.get();
+ if(!snap.exists)throw new HttpsError('not-found','Publicación no encontrada.');
+ await ref.update({status:action==='approve'?'visible':'removed',reviewedBy:req.auth.uid,
+  reviewedAt:FieldValue.serverTimestamp()});
+ return {ok:true};
+});
+exports.reviewVerification=caller(async req=>{
+ const role=await requireModerator(req);
+ if(role.role!=='owner')throw new HttpsError('permission-denied','Solo el propietario puede conceder verificaciones.');
+ const target=clean(req.data?.targetUid,130),decision=clean(req.data?.decision,16);
+ if(!/^[A-Za-z0-9_-]{10,128}$/.test(target)||!['approve','reject'].includes(decision))
+  throw new HttpsError('invalid-argument','Solicitud no válida.');
+ const request=db.collection('verificationRequests').doc(target),pending=await request.get();
+ if(!pending.exists||pending.data().status!=='pending')
+  throw new HttpsError('failed-precondition','No hay una solicitud pendiente.');
+ const approved=decision==='approve';
+ const batch=db.batch();
+ batch.update(request,{status:approved?'approved':'rejected',reviewedBy:req.auth.uid,
+  reviewedAt:FieldValue.serverTimestamp()});
+ if(approved){
+  batch.set(db.collection('creatorFlags').doc(target),{verified:true,verifiedAt:FieldValue.serverTimestamp()}, {merge:true});
+  batch.set(db.collection('creatorProfiles').doc(target),{verified:true}, {merge:true});
+ }
+ await batch.commit();
+ return {ok:true,verified:approved};
 });
 exports.requestVerification=caller(async req=>{
  requireRegistered(req);
