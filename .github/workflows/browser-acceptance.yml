@@ -1,0 +1,44 @@
+name: ONEUP Browser Acceptance
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/e2e-browser.mjs"
+      - ".github/workflows/browser-acceptance.yml"
+      - "index.html"
+      - "comunidad.html"
+      - "moderacion.html"
+      - "studio.js"
+      - "community.js"
+      - "airing-ui.js"
+      - "motor.js"
+      - "external-providers.js"
+      - "sw.js"
+  pull_request:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Install isolated test runner
+        run: npm install --no-save --no-audit --no-fund --ignore-scripts playwright@1.56.1
+      - name: Install Chromium and required OS libraries
+        run: npx playwright install --with-deps chromium
+      - name: Run real iPhone-width and desktop user journeys
+        run: node scripts/e2e-browser.mjs
+      - name: Keep browser screenshots for review
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: oneup-browser-evidence
+          retention-days: 7
+          if-no-files-found: ignore
+          path: e2e-*.png
