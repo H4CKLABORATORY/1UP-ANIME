@@ -10,5 +10,8 @@
   },
   "dependencies": {
     "jkanime-v2": "1.0.1"
+  },
+  "overrides": {
+    "cheerio": "1.0.0-rc.12"
   }
 }
