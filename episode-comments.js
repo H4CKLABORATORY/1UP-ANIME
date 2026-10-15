@@ -21,7 +21,7 @@ function renderComments(items){
  const target=$('#oneup-episode-comments');if(!target)return;
  target.innerHTML=items.length?items.map(x=>
  '<article class="oneup-comment"><div class="oneup-comment-avatar">'+escape((x.displayName||'?')[0]?.toUpperCase()||'?')+'</div>'+
- '<div><header><strong>'+escape(x.displayName||'Fan del anime')+'</strong>'+(!x.guest?'<span class="oneup-user-type">Cuenta</span>':'<span class="oneup-user-type">Invitado</span>')+
+ '<div><header><strong>'+escape(x.displayName||'Fan del anime')+'</strong>'+(!x.guest?'<span class="oneup-user-type">Cuenta</span>':'<span class="oneup-user-type">Invitado</span>')+(x.owner?'<span class="oneup-user-type">✦ Propietario 1UP</span>':x.verified?'<span class="oneup-user-type">✦ Verificado 1UP</span>':'')+
  '<small>'+dateOf(x.createdAt)+'</small></header><p>'+escape(x.text||'')+'</p><button type="button" data-report-comment="'+escape(x.id)+'">Reportar</button></div></article>'
  ).join(''):'<p class="oneup-no-comments">Todavía no hay comentarios. ¡Puedes empezar la conversación!</p>';
 }
