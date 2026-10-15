@@ -38,12 +38,4 @@ jobs:
       - name: Translate cached synopsis to Spanish
         run: python scripts/translate-catalog.py
       - name: Commit refreshed static catalog and translations
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/catalog.json data/translations-es.json
-          if ! git diff --cached --quiet; then
-            git commit -m "Refresh anime catalog and automatic Spanish synopses"
-            git pull --rebase origin main
-            git push origin HEAD:main
-          fi
+        run: bash scripts/oneup-safe-push.sh 'Refresh anime catalog and automatic Spanish synopses' data/catalog.json data/translations-es.json
