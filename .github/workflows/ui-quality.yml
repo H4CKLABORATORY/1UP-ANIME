@@ -37,6 +37,7 @@ on:
       - "scripts/check-guard.mjs"
       - "scripts/check-resilience.mjs"
       - "scripts/oneup-safe-push.sh"
+      - "scripts/test-safe-push.sh"
       - "scripts/guard-alert.mjs"
       - "docs/ONEUP_SELF_HEALING.md"
       - ".github/workflows/oneup-guard.yml"
@@ -68,6 +69,7 @@ jobs:
           node scripts/check-ui.mjs
           node scripts/check-resilience.mjs
           bash -n scripts/oneup-safe-push.sh
+          bash scripts/test-safe-push.sh
           node --check scripts/oneup-guard.mjs
           node --check scripts/guard-alert.mjs
           node scripts/oneup-guard.mjs --offline --strict
