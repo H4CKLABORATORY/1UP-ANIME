@@ -20,7 +20,7 @@ service firebase.storage {
   }
   match /avatars/{uid}/{filename} {
    allow read: if true;
-   allow create: if registered(uid) && filename.matches('profile\.(jpg|png|webp)') && isImage();
+   allow create: if registered(uid) && filename.matches('[A-Za-z0-9_-]{8,90}\.(jpg|png|webp)') && isImage();
    allow update, delete: if false;
   }
   match /{all=**} { allow read, write: if false; }
