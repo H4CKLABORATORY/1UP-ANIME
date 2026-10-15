@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "engine": "ONEUP SELF HEALING ENGINE",
-  "updatedAt": "2026-10-15T22:41:24.620Z",
+  "updatedAt": "2026-10-15T22:49:46.479Z",
   "site": "https://h4cklaboratory.github.io/1UP-ANIME/",
   "mode": "local_y_publico",
   "verdict": "correcto",
@@ -10,13 +10,13 @@
   "warnings": 0,
   "persistentAlerts": [],
   "requiresManualAction": true,
-  "lastKnownGoodCommit": "5e1582257cfeaab90d434079bf9308ece24ccd4b",
+  "lastKnownGoodCommit": "42b23d8fedd608e599cc43b1b83f6f69522cae49",
   "checks": [
     {
       "id": "file:index.html",
       "level": "ok",
       "message": "Validado: Archivo requerido index.html",
-      "bytes": 11949
+      "bytes": 12025
     },
     {
       "id": "file:comunidad.html",
@@ -28,13 +28,13 @@
       "id": "file:moderacion.html",
       "level": "ok",
       "message": "Validado: Archivo requerido moderacion.html",
-      "bytes": 2346
+      "bytes": 2391
     },
     {
       "id": "file:studio.js",
       "level": "ok",
       "message": "Validado: Archivo requerido studio.js",
-      "bytes": 40244
+      "bytes": 41869
     },
     {
       "id": "file:studio.css",
@@ -46,7 +46,7 @@
       "id": "file:sw.js",
       "level": "ok",
       "message": "Validado: Archivo requerido sw.js",
-      "bytes": 2430
+      "bytes": 3153
     },
     {
       "id": "file:auth.js",
@@ -187,7 +187,7 @@
       "id": "catalog:freshness",
       "level": "ok",
       "message": "Catálogo actualizado",
-      "ageHours": 1
+      "ageHours": 1.1
     },
     {
       "id": "airing:entries",
@@ -204,7 +204,7 @@
       "id": "airing:freshness",
       "level": "ok",
       "message": "Calendario con fecha reciente",
-      "ageHours": 1.2
+      "ageHours": 1.3
     },
     {
       "id": "spanish:pack",
@@ -249,7 +249,7 @@
       "id": "engine:freshness",
       "level": "ok",
       "message": "Sincronización reciente",
-      "ageHours": 0.3,
+      "ageHours": 0.4,
       "status": "correcta"
     },
     {
