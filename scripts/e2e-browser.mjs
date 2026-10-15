@@ -52,8 +52,12 @@ try{
    if(!/SINOPSIS|HISTORIA|COMENTARIOS/i.test(text))throw new Error('Detail lacks synopsis and discussion');
    await page.evaluate(()=>window.OneUpCatalog.open('mal-21'));
    await page.locator('#oneup-external-availability a[href^="https://jkanime.net/"]').waitFor({timeout:6500});
-   await page.locator('#anime-close').click({timeout:6500});
-   await page.waitForFunction(()=>!document.querySelector('#anime-dialog')?.open,{timeout:3500});
+   if(device.mobile){
+    const target=await page.locator('#anime-close').boundingBox();
+    if(!target)throw new Error('Close button has no visible hit area');
+    await page.touchscreen.tap(target.x+target.width/2,target.y+target.height/2);
+   }else await page.locator('#anime-close').click({timeout:6500});
+   await page.waitForFunction(()=>!document.querySelector('#anime-dialog')?.open,null,{timeout:3500});
   });
   // Isolate later navigation checks even when a modal-close assertion fails.
   await page.evaluate(()=>document.querySelector('#anime-dialog')?.close()).catch(()=>{});
