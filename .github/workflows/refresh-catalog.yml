@@ -1,0 +1,36 @@
+name: Refresh public anime catalog
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 8 * * *"
+  push:
+    paths:
+      - "scripts/refresh-catalog.mjs"
+      - ".github/workflows/refresh-catalog.yml"
+permissions:
+  contents: write
+concurrency:
+  group: oneup-catalog-snapshot
+  cancel-in-progress: true
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Fetch anime catalog from AniList
+        run: node scripts/refresh-catalog.mjs
+      - name: Commit refreshed static catalog
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/catalog.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Refresh static anime catalog snapshot"
+            git push
+          fi
