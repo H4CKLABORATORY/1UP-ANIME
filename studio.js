@@ -86,11 +86,51 @@ async function jikan(options){
 function cacheKey(o){return 'oneup_catalog_'+JSON.stringify(o)}
 function cached(o){try{const x=JSON.parse(localStorage.getItem(cacheKey(o))||'null');return x&&x.items?.length&&Date.now()-x.at<3600000*8?x:null}catch{return null}}
 function cache(o,r){try{localStorage.setItem(cacheKey(o),JSON.stringify({...r,at:Date.now(),items:r.items.slice(0,24)}))}catch{}}
+let snapshotPromise=null;
+async function getSnapshot(){
+ if(!snapshotPromise){
+  snapshotPromise=(async()=>{
+   const ctrl=new AbortController(),timer=setTimeout(()=>ctrl.abort(),4500);
+   try{const response=await fetch('./data/catalog.json',{cache:'no-cache',signal:ctrl.signal});
+    if(!response.ok)throw Error('No snapshot');
+    const obj=await response.json();
+    if(!obj.groups||!obj.updated)return null;
+    return obj;
+   }catch{return null}finally{clearTimeout(timer)}
+  })();
+ }
+ return snapshotPromise;
+}
+async function fromSnapshot(o){
+ const data=await getSnapshot();if(!data)return null;
+ let group='trending';
+ if(o.status==='RELEASING')group='season';
+ else if(o.format==='MOVIE')group='movies';
+ else if(o.sort==='START_DATE_DESC')group='recent';
+ let items=Array.isArray(data.groups[group])?data.groups[group]:[];
+ if(o.search||o.genre||o.format||o.status){
+  const combined=Object.values(data.groups).filter(Array.isArray).flat();
+  const unique=new Map();for(const x of combined)if(x.id)unique.set(x.id,x);
+  items=[...unique.values()].filter(x=>
+   (!o.search||x.title.toLowerCase().includes(o.search.toLowerCase()))&&
+   (!o.genre||(x.genres||[]).includes(o.genre))&&
+   (!o.format||x.format===o.format)&&
+   (!o.status||x.status===o.status)
+  );
+ }
+ if(!items.length)return null;
+ const res={items:items.slice(0,o.perPage||24),next:false,source:'snapshot',updated:data.updated};
+ register(res.items);return res;
+}
 async function fetchCatalog(o){
  const old=cached(o);if(old){register(old.items);return old}
+ if(!o.search&&!o.genre&&(!o.page||o.page===1)){
+  const snapshot=await fromSnapshot(o);if(snapshot)return snapshot;
+ }
  for(const loader of [ani,jikan]){
   try{const r=await loader(o);if(r.items.length){register(r.items);cache(o,r);return r}}catch(e){console.warn('1UP provider temporarily unavailable',e?.message)}
  }
+ const snapshot=await fromSnapshot(o);if(snapshot)return snapshot;
  let items=samples.filter(x=>(!o.search||x.title.toLowerCase().includes(o.search.toLowerCase()))&&(!o.genre||x.genres.includes(o.genre))&&(!o.format||x.format===o.format));
  register(items);
  return {items,next:false,source:'sample'};
@@ -207,7 +247,7 @@ async function browse(route,page=1,append=false){
  if(token!==state.seq)return;
  state.results=append?state.results.concat(d.items):d.items;state.next=d.next;state.page=page;state.loading=false;
  paint('#browse-grid',state.results,d.source);
- $('#browse-status').textContent=(d.source==='sample'?'Solo ejemplos · Fuentes no disponibles':(d.source==='anilist'?'AniList':'Jikan')+' · '+state.results.length+' títulos');
+ $('#browse-status').textContent=d.source==='sample'?'Ejemplos · Fuentes no disponibles':((d.source==='snapshot'?'Catálogo guardado':d.source==='anilist'?'AniList':'Jikan')+' · '+state.results.length+' títulos');
  $('#browse-next').hidden=!state.next;
 }
 function doSearch(q){q=(q||'').trim();if(!q){toast('Escribe el nombre del anime');return}state.query=q;go('buscar')}
