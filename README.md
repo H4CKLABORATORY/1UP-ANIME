@@ -24,3 +24,23 @@ No hay registro de usuarios ni anuncios ni analíticas propias. Se usan datos p�
 - No son cuentas con contraseña ni sincronizadas entre dispositivos. Si se borran los datos de Safari, se pierden perfiles y progreso.
 - Estética temporal Halloween/anti-magia; contenido y fichas desde Jikan.
 - Para iPhone, abrir la web en Safari y elegir **Compartir > Añadir a pantalla de inicio**. Es una PWA, no un archivo IPA ni una aplicación de App Store.
+
+
+## Actualización: catálogo robusto y acceso opcional
+
+- Continuar como invitado: sin correo, cuenta ni perfil. Los favoritos quedan guardados en este navegador.
+- Perfiles locales: opcionales, hasta seis, sin sincronización entre dispositivos.
+- Google: integración técnica preparada pero inactiva hasta configurar Firebase Authentication.
+- Catálogo: AniList como fuente principal, Jikan como respaldo, ejemplos locales si ambas fuentes fallan. Los ejemplos NO representan estrenos actuales.
+- Categorías: géneros, películas, OVA, ONA, especiales, programación y seguimiento de episodios.
+- No se aloja contenido de streaming no autorizado; se enlazan plataformas externas sólo si figuran en las fuentes públicas.
+
+### Configuración de Google
+
+1. Crear proyecto en https://console.firebase.google.com/ y registrar la aplicación web.
+2. Habilitar proveedor Google en Authentication > Sign-in method.
+3. Agregar h4cklaboratory.github.io en Authentication > Settings > Authorized domains.
+4. Colocar el objeto público de configuración web Firebase en firebase-config.js, reemplazando null.
+5. Probar inicio de sesión en Safari y modo PWA; los flujos popup/redirect pueden requerir ajustes según el dominio.
+
+**Nota:** Autenticación Google NO sincroniza favoritos; para sincronización se necesitaría base de datos con reglas de seguridad. Nunca publicar credenciales privadas en GitHub.
