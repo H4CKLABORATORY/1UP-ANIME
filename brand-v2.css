@@ -113,3 +113,24 @@ body{background:radial-gradient(ellipse at 84% 3%,#27356739,transparent 42%),#07
  background:#080e20f2!important;
  border:1px solid #e1e8ffb8!important;
 }
+
+/* iPhone navigation must stay above the animated catalogue and marquee.
+   Some mobile compositing engines render transformed main descendants over
+   otherwise fixed controls unless the navigation has its own top layer. */
+@media(max-width:780px){
+ body > .mobile-navigation{
+   position:fixed!important;
+   z-index:2147483000!important;
+   isolation:isolate;
+   transform:translateZ(0);
+   -webkit-transform:translateZ(0);
+   pointer-events:auto!important;
+   touch-action:manipulation;
+ }
+ body > .mobile-navigation button,
+ body > .mobile-navigation a{
+   position:relative;z-index:1;
+   pointer-events:auto!important;
+   touch-action:manipulation;
+ }
+}
