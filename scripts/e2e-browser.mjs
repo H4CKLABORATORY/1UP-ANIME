@@ -56,6 +56,14 @@ try{
    const text=await page.locator('#anime-dialog').innerText();
    if(!/SINOPSIS|HISTORIA|COMENTARIOS/i.test(text))throw new Error('Detail lacks synopsis and discussion');
    await page.evaluate(()=>window.OneUpCatalog.open('mal-21'));
+   await page.locator('#oneup-watch-episode').waitFor({timeout:8000});
+   const servers=page.locator('#oneup-player-section [data-server-slot]');
+   if(await servers.count()!==7)throw new Error('Episode must display exactly seven server choices');
+   if(await servers.locator(':enabled').count()!==0)throw new Error('Unconfigured media providers were enabled');
+   await page.locator('#oneup-watch-episode').selectOption('2');
+   await page.waitForFunction(()=>document.querySelector('#oneup-comment-episode')?.value==='2',null,{timeout:5000});
+   await page.locator('#oneup-comment-episode').selectOption('1');
+   await page.waitForFunction(()=>document.querySelector('#oneup-watch-episode')?.value==='1',null,{timeout:5000});
    await page.locator('#oneup-external-availability a[href^="https://jkanime.net/"]').waitFor({timeout:6500});
    if(device.mobile){
     const target=await page.locator('#anime-close').boundingBox();
