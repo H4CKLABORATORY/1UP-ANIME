@@ -13,11 +13,13 @@ function loadProfiles(){try{const data=JSON.parse(localStorage.getItem(PKEY)||'[
 function gate(on){document.body.classList.toggle('oneup-gated',on);if(document.querySelector('main'))document.querySelector('main').inert=on}
 function build(){
  const container=document.createElement('div');container.id='oneup-overlays';
- container.innerHTML='<section id="oneup-intro" class="oneup-intro" aria-label="Intro de 1UP Anime" role="dialog" aria-modal="true"><div class="intro-halo"></div><div class="intro-flare"></div><div class="intro-brand"><strong>1<span>UP</span></strong><small>A N I M E</small><em>HALLOWEEN · ANTI-MAGIC EDITION</em></div><span class="intro-bottom">UNIVERSOS QUE DESPIERTAN</span><button type="button" id="oneup-intro-skip" class="oneup-skip">SALTAR INTRO ↗</button></section>'+
+ container.innerHTML='<section id="oneup-intro" class="oneup-intro" aria-label="Introducción sonora de ONE UP Anime" role="dialog" aria-modal="true"><div class="intro-halo"></div><div class="intro-flare"></div><div class="intro-brand"><strong>ONE<span> UP</span></strong><small>A N I M E</small><em>UNA VIDA EXTRA · UN UNIVERSO ANIME</em></div><div class="oneup-intro-controls"><p>UNA FIRMA. UN SONIDO. UNA NUEVA VIDA.</p><button type="button" id="oneup-play-sound" class="oneup-intro-start">▶ &nbsp; ENTRAR CON SONIDO</button><button type="button" id="oneup-play-muted" class="oneup-intro-muted">Continuar en silencio</button></div><span class="intro-bottom">1UP ANIME ORIGINAL</span><button type="button" id="oneup-intro-skip" class="oneup-skip">SALTAR ↗</button></section>'+
  '<section id="oneup-profiles" class="oneup-profiles" aria-label="Seleccionar perfil" role="dialog" aria-modal="true" hidden><div class="oneup-profiles-content"><div class="oneup-gate-brand">1<span>UP</span> ANIME</div><p class="oneup-gate-tag">HALLOWEEN · ANTI-MAGIC EDITION</p><h2 id="oneup-profiles-heading">¿Quién entra al universo?</h2><p id="oneup-profiles-desc">Elige un perfil para continuar tu aventura.</p><div id="oneup-profile-grid" class="oneup-profile-grid"></div><div class="oneup-profile-utilities"><button type="button" id="oneup-manage">Administrar perfiles</button><button type="button" id="oneup-done-manage" hidden>Terminar</button></div><p class="oneup-gate-foot">Perfiles y progreso guardados únicamente en este dispositivo.</p></div></section>'+
  '<section id="oneup-welcome" class="oneup-welcome" role="status" hidden><div class="welcome-inner"><div class="welcome-avatar" id="oneup-welcome-avatar">⚔️</div><p>LA AVENTURA COMIENZA</p><h2 id="oneup-welcome-title">BIENVENIDO</h2><p>PREPARANDO TU UNIVERSO ANIME · ✦</p></div></section>';
  document.body.appendChild(container);
  $('oneup-intro-skip').addEventListener('click',finishIntro);
+ $('oneup-play-sound').addEventListener('click',()=>playIntro(true));
+ $('oneup-play-muted').addEventListener('click',()=>playIntro(false));
  $('oneup-manage').addEventListener('click',()=>{managing=true;render()});
  $('oneup-done-manage').addEventListener('click',()=>{managing=false;render()});
  $('oneup-profile-grid').addEventListener('click',e=>{
@@ -31,6 +33,17 @@ function build(){
   const b=document.createElement('button');b.id='oneup-mobile-profile';b.type='button';b.innerHTML='<span>♙</span>Perfil';
   b.addEventListener('click',openProfiles);nav.appendChild(b);
  }
+}
+function playIntro(withSound){
+ const splash=$('oneup-intro');
+ if(!splash||splash.hidden||splash.dataset.playing==='1')return;
+ splash.dataset.playing='1';
+ splash.classList.add('playing');
+ if(withSound){try{window.OneUpSonic?.play()}catch{}}
+ $('oneup-play-sound').disabled=true;
+ $('oneup-play-muted').disabled=true;
+ clearTimeout(introTimer);
+ introTimer=setTimeout(finishIntro,2280);
 }
 function finishIntro(){
  const splash=$('oneup-intro');if(!splash||splash.hidden)return;
@@ -105,9 +118,9 @@ function choose(p){
 function start(){
  loadProfiles();build();gate(true);
  const reduced=window.matchMedia?.('(prefers-reduced-motion: reduce)')?.matches;
- let already=false;try{already=sessionStorage.getItem(INTRO)==='1'}catch{}
- if(reduced||already){$('oneup-intro').hidden=true;openProfiles()}
- else introTimer=setTimeout(finishIntro,3100);
+ if(reduced){$('oneup-intro').hidden=true;openProfiles()}
+ // iOS Safari blocks sound autoplay. Keep the sonic-logo launch user initiated.
+ // A tap plays the 2-second brand signature; silent/skip paths stay available.
 }
 document.addEventListener('DOMContentLoaded',start);
 })();
