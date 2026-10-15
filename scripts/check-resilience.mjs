@@ -1,0 +1,28 @@
+/* Guard against regressions of offline caching, recovery and real player fallback. */
+import fs from 'node:fs';
+import assert from 'node:assert/strict';
+import vm from 'node:vm';
+const read=p=>fs.readFileSync(p,'utf8');
+const sw=read('sw.js'),player=read('studio.js'),motor=read('motor.html');
+new vm.Script(read('motor.js'),{filename:'motor.js'});
+new vm.Script(sw,{filename:'sw.js'});
+new vm.Script(player,{filename:'studio.js'});
+assert(sw.includes("const core=['./index.html','./studio.css','./studio.js']"),'Core PWA shell missing');
+assert(sw.includes('Promise.allSettled'), 'Optional cache asset failure must not break install');
+assert(sw.includes('cache.put(event.request,response.clone())'), 'Offline navigation must not overwrite homepage');
+assert(sw.includes('guard|dexter'), 'Health and engine reports must refresh network-first');
+assert(player.includes('function playbackEpisode(id,episodes,index,serverIndex=0,tried=[])'),'Bounded player fallback missing');
+assert(player.includes('const handleFailed=()'),'HTML5 media error handling missing');
+assert(player.includes("video?.addEventListener('error',handleFailed)"),'Player error listener missing');
+assert(player.includes('aria-live="polite"'),'Playback accessible status missing');
+assert(motor.includes('id="motor-health"'),'Monitoring UI not linked');
+assert(motor.includes('data/dexter')===false,'Monitoring uses real dashboard JS, not static embedded results');
+assert(read('motor.js').includes("get('data/guard/status.json')"),'Monitoring must display fresh health report');
+assert(read('motor.js').includes("get('data/dexter/status.json')"),'Monitoring must display synced provider states');
+assert(read('.github/workflows/oneup-guard.yml').includes('actions/upload-artifact@v4'),'Automated backup artifact not configured');
+assert(read('.github/workflows/oneup-revert-proposal.yml').includes('gh pr create'),'Human-reviewable rollback proposal missing');
+assert(!read('.github/workflows/oneup-revert-proposal.yml').includes('gh pr merge'),'Rollback must not auto-merge');
+assert(read('.github/dependabot.yml').includes('package-ecosystem: npm'),'Reviewable dependency updates missing');
+const guard=JSON.parse(read('data/guard/status.json'));
+assert(guard.engine==='ONEUP SELF HEALING ENGINE' && guard.totalChecks>=25,'Validated guard report absent');
+console.log('ONEUP resilience regression checks passed.');
