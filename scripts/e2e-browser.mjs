@@ -53,11 +53,13 @@ try{
    await page.evaluate(()=>window.OneUpCatalog.open('mal-21'));
    await page.locator('#oneup-external-availability a[href^="https://jkanime.net/"]').waitFor({timeout:6500});
    await page.locator('#anime-close').click({timeout:6500});
-   await page.locator('#anime-dialog:not([open])').waitFor({timeout:3500});
+   await page.waitForFunction(()=>!document.querySelector('#anime-dialog')?.open,{timeout:3500});
   });
+  // Isolate later navigation checks even when a modal-close assertion fails.
+  await page.evaluate(()=>document.querySelector('#anime-dialog')?.close()).catch(()=>{});
   await test(device.name+' calendar navigation',async()=>{
    const menu=page.locator('.desktop-links [data-route="temporada"]');
-   if(device.mobile)await page.locator('.mobile-navigation [data-route="temporada"]').click();
+   if(device.mobile)await page.locator('.mobile-navigation [data-route="temporada"]').click({timeout:7500});
    else await menu.click();
    await page.locator('#browse-screen:not([hidden])').waitFor({timeout:6500});
    await page.locator('#oneup-airing-dashboard').waitFor({timeout:6500});
@@ -67,7 +69,7 @@ try{
    if(ancestor!=='browse-screen')throw new Error('Calendar did not move into season browsing section');
   });
   await test(device.name+' search and anime catalogue',async()=>{
-   if(device.mobile)await page.locator('.mobile-navigation [data-route="inicio"]').click();
+   if(device.mobile)await page.locator('.mobile-navigation [data-route="inicio"]').click({timeout:7500});
    else await page.locator('.desktop-links [data-route="inicio"]').click();
    await page.locator('#search-input').fill('Naruto');
    await page.locator('#search-form button[type="submit"]').click();
