@@ -183,12 +183,27 @@ async function uploadCommunityFile(file,postId){
  await x.storage.uploadBytes(x.storage.ref(x.files,path),file,{contentType:file.type,customMetadata:{ownerUid:user.uid}});
  return path;
 }
+async function requestFriend(uid){
+ const user=await firebaseAccount();
+ if(!registered(user))throw Error('Inicia sesión con Google para enviar invitaciones.');
+ return callable('requestFriendship',{targetUid:uid});
+}
+async function listFriends(){
+ const user=await firebaseAccount();
+ if(!registered(user))throw Error('Necesitas iniciar sesión con Google para consultar amigos.');
+ return callable('listMyFriendRequests',{});
+}
+async function answerFriend(uid,accept){
+ const user=await firebaseAccount();
+ if(!registered(user))throw Error('Necesitas iniciar sesión con Google.');
+ return callable('respondFriendship',{fromUid:uid,accept:!!accept});
+}
 async function mediaURL(path){
  const x=await sdk();
  return x.storage.getDownloadURL(x.storage.ref(x.files,path));
 }
 window.OneUpSocialBackend={sdk,firebaseAccount,guestAccess,registered,loginWithGoogle,episodeThread,
  subscribeEpisode,sendEpisodeComment,subscribeFeed,publishPost,replyToPost,subscribeReplies,react,report,
- subscribeGlobal,sendGlobal,updateProfile,verificationRequest,follow,myProfile,uploadAvatar,
+ subscribeGlobal,sendGlobal,updateProfile,verificationRequest,follow,requestFriend,listFriends,answerFriend,myProfile,uploadAvatar,
  uploadCommunityFile,mediaURL,callable,maskError,enabled:()=>Boolean(getConfig()?.apiKey),explain:EXPLAIN};
 })();
