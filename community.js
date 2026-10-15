@@ -202,7 +202,9 @@ async function saveProfile(e){
  e.preventDefault();if(!await requireAccount())return;
  const btn=$('#profile-form button[type=submit]');btn.disabled=true;status('#profile-state','Guardando perfil…');
  try{
-  let avatarPath='';const file=$('#profile-photo').files[0];
+  const file=$('#profile-photo').files[0];
+  const saved=await backend().myProfile();
+  let avatarPath=saved?.avatarPath||'';
   if(file)avatarPath=await backend().uploadAvatar(file);
   await backend().updateProfile({displayName:$('#profile-alias').value,icon:selectedAvatar,avatarPath});
   status('#profile-state','Perfil actualizado. Los distintivos se administran por separado.');
