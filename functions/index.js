@@ -7,7 +7,7 @@ const db=admin.firestore();
 const FieldValue=admin.firestore.FieldValue;
 const Timestamp=admin.firestore.Timestamp;
 const common={region:'us-east1',enforceAppCheck:true,maxInstances:6};
-const GUARD_MS={episode:18000,post:45000,reply:14000,react:2000,chat:15000,report:30000,profile:60000,verify:86400000};
+const GUARD_MS={episode:18000,post:45000,reply:14000,react:2000,chat:15000,report:30000,profile:60000,verify:86400000,friend:45000};
 const genres=['debate','pregunta','fanart','clip','manga','recomendacion'];
 const clean=(s,n=800)=>String(s||'').replace(/[\u0000-\u001f\u007f]/g,' ').replace(/\s+/g,' ').trim().slice(0,n+1);
 const account=req=>req.auth?.token?.firebase?.sign_in_provider||'';
@@ -246,4 +246,69 @@ exports.requestVerification=caller(async req=>{
    status:'pending',requestedAt:Timestamp.fromMillis(now)},{merge:true});
   return {ok:true,message:'Recibimos tu solicitud. No garantiza verificación.'};
  });
+});
+
+
+/* Mutual friendships are not automatically created by follows.
+ * Friends require an invitation plus explicit acceptance by the other user.
+ */
+exports.requestFriendship=caller(async req=>{
+ requireRegistered(req);
+ const target=clean(req.data?.targetUid,128);
+ if(!/^[A-Za-z0-9_-]{10,128}$/.test(target)||target===req.auth.uid)
+  throw new HttpsError('invalid-argument','No puedes enviar invitación a ese perfil.');
+ const profile=await db.collection('creatorProfiles').doc(target).get();
+ if(!profile.exists)throw new HttpsError('not-found','Este usuario aún no tiene perfil público.');
+ const mine=await db.collection('friendships').doc(req.auth.uid).collection('contacts').doc(target).get();
+ if(mine.exists)throw new HttpsError('already-exists','Ya son amigos.');
+ const author=await publicAuthor(req);
+ return throttleAndWrite(req,'friend',(tx,uid,now)=>{
+  const ref=db.collection('friendRequests').doc(target).collection('incoming').doc(uid);
+  tx.set(ref,{fromUid:uid,toUid:target,displayName:author.displayName,status:'pending',createdAt:Timestamp.fromMillis(now)});
+  return {ok:true,message:'Invitación de amistad enviada.'};
+ });
+});
+exports.listMyFriendRequests=caller(async req=>{
+ requireRegistered(req);
+ const [incoming,friends]=await Promise.all([
+  db.collection('friendRequests').doc(req.auth.uid).collection('incoming').where('status','==','pending').limit(30).get(),
+  db.collection('friendships').doc(req.auth.uid).collection('contacts').limit(60).get()
+ ]);
+ return {
+  incoming:incoming.docs.map(d=>({fromUid:d.id,displayName:d.data().displayName||'Fan del anime',createdAt:d.data().createdAt?.toMillis()||0})),
+  friends:friends.docs.map(d=>({uid:d.id,displayName:d.data().displayName||'Amigo de 1UP'}))
+ };
+});
+exports.respondFriendship=caller(async req=>{
+ requireRegistered(req);
+ const sender=clean(req.data?.fromUid,128);
+ const accept=req.data?.accept===true;
+ if(!/^[A-Za-z0-9_-]{10,128}$/.test(sender)||sender===req.auth.uid)
+  throw new HttpsError('invalid-argument','Invitación incorrecta.');
+ const owner=req.auth.uid,ref=db.collection('friendRequests').doc(owner).collection('incoming').doc(sender);
+ const author=await publicAuthor(req);
+ return db.runTransaction(async tx=>{
+  const request=await tx.get(ref);
+  if(!request.exists||request.data().status!=='pending')throw new HttpsError('not-found','La invitación ya no está disponible.');
+  tx.update(ref,{status:accept?'accepted':'declined',respondedAt:FieldValue.serverTimestamp()});
+  if(accept){
+   const mine=db.collection('friendships').doc(owner).collection('contacts').doc(sender);
+   const theirs=db.collection('friendships').doc(sender).collection('contacts').doc(owner);
+   tx.set(mine,{uid:sender,displayName:request.data().displayName||'Amigo',since:FieldValue.serverTimestamp()});
+   tx.set(theirs,{uid:owner,displayName:author.displayName,since:FieldValue.serverTimestamp()});
+  }
+  return {ok:true,accepted:accept};
+ });
+});
+exports.moderateEpisodeComment=caller(async req=>{
+ await requireModerator(req);
+ const thread=clean(req.data?.thread,60),comment=clean(req.data?.commentId,60);
+ const action=clean(req.data?.action,16);
+ if(!/^(mal|al)-\d+_ep_\d+$/.test(thread)||!/^[A-Za-z0-9]{10,40}$/.test(comment)||!['remove','restore'].includes(action))
+  throw new HttpsError('invalid-argument','Operación incorrecta.');
+ const ref=db.collection('episodeThreads').doc(thread).collection('comments').doc(comment);
+ const snap=await ref.get();
+ if(!snap.exists)throw new HttpsError('not-found','Comentario inexistente.');
+ await ref.update({status:action==='remove'?'removed':'visible',reviewedBy:req.auth.uid,reviewedAt:FieldValue.serverTimestamp()});
+ return {ok:true};
 });
