@@ -173,8 +173,8 @@ function hero(a, chosen=false){
  const first=parts.length>2?parts.slice(0,2).join(' '):parts.slice(0,1).join(' '),rest=parts.length>2?parts.slice(2).join(' '):parts.slice(1).join(' ');
  $('#hero-title').innerHTML=esc(first).toUpperCase()+(rest?'<br><span>'+esc(rest).toUpperCase()+'</span>':'');
  $('#hero-description').textContent=a.source==='sample'
-  ?'Descubre recomendaciones mientras recuperamos los resultados actualizados.'
-  :(a.description||'Descubre tu siguiente serie favorita.').slice(0,245);
+  ?'El catálogo se está recuperando. Consulta la ficha para ver los datos disponibles.'
+  :(a.description||'Sinopsis aún no disponible para este anime.').slice(0,245);
  const art=a.banner||a.image||'';
  const background=$('#hero-poster');
  if(background)background.style.backgroundImage=art?'url("'+art.replace(/["\\]/g,'')+'")':'';
@@ -299,6 +299,8 @@ function detail(id){
  state.active=id;
  hero(a,true);
  const item=state.saved[id]||{},site=safe(a.siteUrl||'');
+ const synopsis=String(a.description||'').trim();
+ const hasSynopsis=Boolean(synopsis)&&a.source!=='sample';
  const poster=a.image?'<img src="'+esc(a.image)+'" alt="Póster de '+esc(a.title)+'" loading="eager" referrerpolicy="no-referrer">':
  '<div class="placeholder-art"><strong>'+esc(a.title)+'</strong></div>';
  const stats=[
@@ -324,7 +326,8 @@ function detail(id){
     '<div class="oneup-detail-tag">1UP ANIME / DESTACADO</div>'+
     '<h2 class="oneup-detail-title" id="detail-anime-name">'+esc(a.title)+'</h2>'+
     '<div class="oneup-detail-meta">'+stats.map((s,i)=>'<span'+(s.startsWith('★')?' class="rated"':'')+'>'+esc(s)+'</span>').join('')+'</div>'+
-    '<p class="oneup-detail-synopsis">'+esc(a.description||'Sin sinopsis disponible para este título.')+'</p>'+
+    '<div class="oneup-detail-tag oneup-synopsis-eyebrow">SINOPSIS · ¿DE QUÉ TRATA?</div>'+ 
+    '<p class="oneup-detail-synopsis">'+esc(hasSynopsis?synopsis:'La sinopsis de este anime todavía no está disponible en el catálogo.')+'</p>'+
     '<div class="oneup-detail-commands">'+
      '<button type="button" class="cta primary" data-save="'+esc(id)+'">'+(isFav(id)?'✓ Guardado':'＋ Añadir a mi lista')+'</button>'+
      (site?'<a class="cta outline" href="'+esc(site)+'" target="_blank" rel="noopener noreferrer">Ficha completa ↗</a>':'')+
@@ -333,6 +336,7 @@ function detail(id){
   '</div>'+
  '</div>'+
  '<div class="oneup-detail-lower">'+
+  (hasSynopsis?'<section class="oneup-detail-section oneup-synopsis-section"><h3>HISTORIA Y SINOPSIS</h3><p class="oneup-synopsis-source">Descripción del anime · información del catálogo</p><p class="oneup-synopsis-text">'+esc(synopsis)+'</p></section><hr class="oneup-detail-separator">':'')+
   '<section class="oneup-detail-section"><h3>GÉNEROS</h3><div class="oneup-genre-tags">'+(chips||'<span class="oneup-genre-tag">Anime</span>')+'</div></section>'+
   '<hr class="oneup-detail-separator">'+
   '<section class="oneup-detail-section"><h3>TU PROGRESO</h3><p>Lleva un registro personal de los episodios vistos.</p><div class="episode-controls"><button type="button" data-episode="-1" aria-label="Restar episodio">−</button><strong id="episode-value">'+(item.watched||0)+'</strong><button type="button" data-episode="1" aria-label="Sumar episodio">+</button><span class="oneup-episode-text">de '+(a.episodes||'?')+' episodios</span></div></section>'+
