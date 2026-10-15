@@ -1,1 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192"><rect width="192" height="192" rx="37" fill="#0b0d13"/><rect x="2" y="2" width="188" height="188" rx="35" fill="none" stroke="#303943" stroke-width="2"/><text x="30" y="104" fill="#fff" font-family="Arial,sans-serif" font-size="57" font-weight="900">1</text><text x="69" y="104" fill="#c6fb43" font-family="Arial,sans-serif" font-size="57" font-weight="900">UP</text><path d="M32 122h128" stroke="#c6fb43" stroke-width="4"/><text x="52" y="153" fill="#fff" font-family="Arial,sans-serif" font-size="21" font-weight="800" letter-spacing="1">ANIME</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+ <defs>
+  <linearGradient id="fire" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ffe2a1"/><stop offset=".44" stop-color="#ff972e"/><stop offset="1" stop-color="#ed3737"/></linearGradient>
+  <radialGradient id="bg"><stop stop-color="#442136"/><stop offset=".6" stop-color="#210e1b"/><stop offset="1" stop-color="#060408"/></radialGradient>
+ </defs>
+ <rect width="512" height="512" rx="108" fill="url(#bg)"/>
+ <circle cx="379" cy="131" r="82" fill="#e94c25" opacity=".27"/>
+ <circle cx="379" cy="131" r="48" fill="url(#fire)"/>
+ <circle cx="255" cy="251" r="202" fill="none" stroke="#ff9d56" stroke-opacity=".45" stroke-width="5"/>
+ <circle cx="255" cy="251" r="173" fill="none" stroke="#e87781" stroke-opacity=".3" stroke-width="3" stroke-dasharray="8 16"/>
+ <path d="M112 350 230 116 211 252 323 220 192 434 221 303Z" fill="url(#fire)" opacity=".8"/>
+ <rect x="90" y="188" width="336" height="146" rx="19" fill="#0b070f" fill-opacity=".88" stroke="#ff9c4e" stroke-opacity=".35" stroke-width="3"/>
+ <text x="110" y="297" font-family="Impact,Arial Black,sans-serif" font-size="119" font-weight="900" letter-spacing="-8" fill="url(#fire)">1UP</text>
+ <text x="143" y="376" font-family="Arial,sans-serif" font-size="33" font-weight="900" letter-spacing="13" fill="#fff1e0">ANIME</text>
+</svg>
