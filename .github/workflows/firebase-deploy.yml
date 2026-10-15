@@ -1,0 +1,63 @@
+name: Activate 1UP Community Firebase
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: oneup-firebase-backend-deploy
+  cancel-in-progress: false
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      FIREBASE_PROJECT_ID: ${{ vars.FIREBASE_PROJECT_ID }}
+      FIREBASE_PUBLIC_CONFIG_JSON: ${{ vars.ONEUP_FIREBASE_WEB_CONFIG }}
+      ONEUP_APP_CHECK_SITE_KEY: ${{ vars.ONEUP_APP_CHECK_SITE_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Verify required owner configuration
+        run: |
+          if [ -z "$FIREBASE_PROJECT_ID" ] || [ -z "$FIREBASE_PUBLIC_CONFIG_JSON" ] || [ -z "$ONEUP_APP_CHECK_SITE_KEY" ]; then
+            echo "::error::Set FIREBASE_PROJECT_ID, ONEUP_FIREBASE_WEB_CONFIG and ONEUP_APP_CHECK_SITE_KEY in GitHub Actions Variables."
+            exit 1
+          fi
+          node --check functions/index.js
+      - name: Authenticate to owner's Firebase project
+        uses: google-github-actions/auth@v2
+        with:
+          credentials_json: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+      - name: Prepare public Firebase web configuration
+        run: |
+          node <<'NODE'
+          const fs=require('node:fs');
+          const c=JSON.parse(process.env.FIREBASE_PUBLIC_CONFIG_JSON);
+          for(const key of ['apiKey','authDomain','projectId','appId','storageBucket']){
+            if(typeof c[key]!=='string'||!c[key])throw new Error('Missing public Firebase config: '+key);
+          }
+          if(c.projectId!==process.env.FIREBASE_PROJECT_ID)throw Error('Firebase project mismatch');
+          if(!/^[A-Za-z0-9_-]{15,100}$/.test(process.env.ONEUP_APP_CHECK_SITE_KEY))throw Error('Invalid reCAPTCHA Enterprise site key');
+          fs.writeFileSync('auth-config.js','/* Public Firebase SDK config. No service account credentials. */\nwindow.ONEUP_FIREBASE_CONFIG = '+JSON.stringify(c,null,2)+';\n');
+          fs.writeFileSync('social-config.js','/* Public reCAPTCHA Enterprise site key. */\nwindow.ONEUP_APP_CHECK_SITE_KEY = '+JSON.stringify(process.env.ONEUP_APP_CHECK_SITE_KEY)+';\n');
+          console.log('Firebase public website config prepared for',c.projectId);
+          NODE
+      - name: Install Firebase CLI and Cloud Functions dependencies
+        run: |
+          npm install -g firebase-tools@14
+          npm --prefix functions install --omit=dev --no-audit --no-fund
+      - name: Deploy Firestore rules, Storage rules and Functions
+        run: firebase deploy --project "$FIREBASE_PROJECT_ID" --only firestore:rules,firestore:indexes,storage,functions --non-interactive
+      - name: Publish public website settings after successful backend deployment
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add auth-config.js social-config.js
+          if ! git diff --cached --quiet; then
+            git commit -m "Activate Firebase Community web configuration"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
