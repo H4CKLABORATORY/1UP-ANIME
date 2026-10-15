@@ -1,0 +1,40 @@
+<!doctype html><html lang="es"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#080b17"><meta name="robots" content="noindex,nofollow">
+<title>Motor de contenido · 1UP Anime</title>
+<link rel="icon" href="./assets/oneup-crest.svg" type="image/svg+xml">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./community.css"><link rel="stylesheet" href="./motor.css">
+<script defer src="./motor.js"></script></head>
+<body><header class="c-header"><div class="c-container header-row">
+<a class="c-brand" href="./"><img alt="" src="./assets/oneup-crest.svg"><span>1UP <b>MOTOR</b></span></a>
+<nav><a href="./">Catálogo</a><a href="./comunidad.html">Comunidad</a><a href="./moderacion.html">Moderación</a></nav>
+</div></header>
+<main class="c-container oneup-motor">
+<header class="motor-hero"><div><span class="micro">DEXTER ANIME SYNC / ONEUP SELF HEALING ENGINE</span><h1>MOTOR DE <em>CONTENIDO.</em></h1>
+<p>Estado verificable de nuestras fuentes de datos, episodios, sincronizaciones y copias de seguridad. Los controles de administración requieren permisos sobre GitHub.</p></div>
+<button id="motor-refresh" type="button" class="c-primary">↻ Actualizar estado</button></header>
+<section class="motor-grid" aria-label="Resumen del motor">
+<div class="motor-stat"><span>Salud general</span><strong id="motor-health">Consultando…</strong><small id="motor-last-guard">Esperando informe</small></div>
+<div class="motor-stat"><span>Animes registrados</span><strong id="motor-anime">—</strong><small>Datos indexados</small></div>
+<div class="motor-stat"><span>Episodios registrados</span><strong id="motor-episodes">—</strong><small>No implica disponibilidad de video</small></div>
+<div class="motor-stat"><span>Fuentes de reproducción</span><strong id="motor-playback">—</strong><small>Solo fuentes configuradas y permitidas</small></div>
+</section>
+<div class="motor-utility-row">
+<a href="https://github.com/H4CKLABORATORY/1UP-ANIME/actions/workflows/dexter-anime-sync.yml" target="_blank" rel="noopener noreferrer" class="c-primary">↻ Sincronizar desde GitHub <span>↗</span></a>
+<a href="https://github.com/H4CKLABORATORY/1UP-ANIME/edit/main/config/dexter-providers.json" target="_blank" rel="noopener noreferrer" class="c-outline">Gestionar proveedores y frecuencia ↗</a>
+<a href="https://github.com/H4CKLABORATORY/1UP-ANIME/actions/workflows/oneup-guard.yml" target="_blank" rel="noopener noreferrer" class="c-outline">Ver comprobaciones y respaldos ↗</a>
+</div>
+<p class="motor-caption">Estos enlaces abren GitHub, donde solo una cuenta con permisos puede ejecutar el trabajo o modificar proveedores. No se simula ninguna sincronización.</p>
+<section class="motor-section"><div class="motor-title"><span class="micro">01 / ADAPTADORES</span><h2>ESTADO DE <em>PROVEEDORES.</em></h2><p>Distinguimos fuentes conectadas, pausadas, sin contenido y pendientes de autorización.</p></div>
+<div id="motor-providers" class="motor-providers"><p class="motor-loading">Cargando proveedores reales…</p></div></section>
+<section class="motor-section"><div class="motor-title"><span class="micro">02 / AUTORREPARACIÓN</span><h2>DIAGNÓSTICO <em>Y ALERTAS.</em></h2><p>Comprobaciones recientes del sitio, datos y dependencias.</p></div>
+<div id="motor-checks" class="motor-checks"><p class="motor-loading">Comprobando el informe de salud…</p></div></section>
+<section class="motor-section"><div class="motor-title"><span class="micro">03 / AUDITORÍA</span><h2>HISTORIAL DE <em>SINCRONIZACIÓN.</em></h2><p>Resultados registrados por cada adaptador.</p></div>
+<div id="motor-history" class="motor-history"><p class="motor-loading">Consultando historial…</p></div></section>
+<section class="motor-section"><div class="motor-title"><span class="micro">04 / RESTAURACIÓN</span><h2>VOLVER A UNA <em>VERSIÓN ESTABLE.</em></h2><p>Respaldos descargables en GitHub Actions, revisión manual y restauraciones mediante propuesta revisable.</p></div>
+<div class="motor-recovery"><p>No se ejecuta ningún rollback automático. Antes de recuperar cambios, compara la versión actual con un commit comprobado y verifica las pruebas.</p>
+<a class="c-outline" href="https://github.com/H4CKLABORATORY/1UP-ANIME/actions" target="_blank" rel="noopener noreferrer">Consultar respaldos ↗</a>
+<a class="c-outline" href="./docs/ONEUP_SELF_HEALING.md" target="_blank" rel="noopener noreferrer">Leer guía de recuperación ↗</a></div></section>
+<p role="status" id="motor-status" class="motor-message" aria-live="polite"></p>
+</main><footer class="c-footer c-container"><span>1UP ANIME · DEXTER ANIME ENGINE</span><a href="./">Volver a la página</a></footer></body></html>
