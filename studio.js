@@ -504,8 +504,8 @@ function detail(id){
  const modal=$('#anime-dialog');
  if(closeControl&&closeControl.parentElement!==modal)modal.appendChild(closeControl);
  $('#anime-dialog-body').innerHTML=detailUI;
- const detailCover=$('#anime-dialog-body .oneup-detail-cover');
- if(detailCover&&closeControl)detailCover.appendChild(closeControl);
+ const detailContent=$('#anime-dialog-body .oneup-detail-content');
+ if(detailContent&&closeControl)detailContent.appendChild(closeControl);
  const bg=safe(a.banner||a.image);
  const scene=$('#oneup-detail-art');
  if(scene&&bg)scene.style.backgroundImage='url("'+bg.replace(/["\\]/g,'')+'")';
@@ -567,6 +567,16 @@ function init(){
  $('#browse-controls').addEventListener('change',e=>{const keys={'filter-genre':'genre','filter-format':'format','filter-status':'status','filter-sort':'sort'};if(keys[e.target.id]){state.filters[keys[e.target.id]]=e.target.value;browse('catalogo')}});
  $('#browse-controls').addEventListener('click',e=>{if(e.target.id==='filter-reset'){state.filters={genre:'',format:'',status:'',sort:'POPULARITY_DESC'};browse('catalogo')}});
  $('#anime-close').addEventListener('click',()=>$('#anime-dialog').close());
+ // iOS tap fallback: this dialog capture receives taps even if a painted cover
+ // unexpectedly intercepts the visible close button's pointer target.
+ $('#anime-dialog').addEventListener('pointerdown',e=>{
+  const dialog=$('#anime-dialog'),button=$('#anime-close');
+  if(!dialog?.open||!button)return;
+  const r=button.getBoundingClientRect(),pad=7;
+  if(e.clientX>=r.left-pad&&e.clientX<=r.right+pad&&e.clientY>=r.top-pad&&e.clientY<=r.bottom+pad){
+   e.preventDefault();e.stopPropagation();dialog.close();
+  }
+ },true);
  $('#anime-dialog').addEventListener('close',()=>document.dispatchEvent(new Event('oneup-anime-closed')));
  $('#anime-dialog').addEventListener('click',e=>{
   if(e.target===$('#anime-dialog'))$('#anime-dialog').close();
