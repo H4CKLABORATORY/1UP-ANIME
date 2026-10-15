@@ -20,8 +20,8 @@ const timeWait=(()=>{let last=0;return async()=>{let ms=Math.max(0,last+425-Date
 const cache=new Map();
 let toastTimer;
 function toast(message){const e=$('#toast');e.textContent=message;e.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>e.classList.remove('show'),2600)}
-function loadSaved(){try{const v=JSON.parse(localStorage.getItem(STORAGE)||'{}');if(v&&typeof v==='object'&&!Array.isArray(v))state.saved=v}catch{}}
-function persist(){try{localStorage.setItem(STORAGE,JSON.stringify(state.saved))}catch{toast('No se pudo guardar en este navegador')}}
+function loadSaved(){state.saved={};try{const profile=localStorage.getItem('oneup_active_profile');if(!profile)return;const v=JSON.parse(localStorage.getItem('1up_anime_profile_'+profile)||'{}');if(v&&typeof v==='object'&&!Array.isArray(v))state.saved=v}catch{}}
+function persist(){try{const profile=localStorage.getItem('oneup_active_profile');if(!profile)throw Error('No profile selected');localStorage.setItem('1up_anime_profile_'+profile,JSON.stringify(state.saved))}catch{toast('Selecciona un perfil para guardar tus datos')}}
 function remembered(a){const id=Number(a?.mal_id);if(!Number.isFinite(id))return;state.pool.set(id,a)}
 function rememberAll(list){for(const a of list||[])remembered(a)}
 function saved(id){return state.saved[String(id)]||null}
@@ -163,4 +163,5 @@ function setup(){
  const initial=decodeURIComponent(location.hash.slice(1));if(sections[initial]||initial==='milista')switchView(initial);
  loadHome();
 }
+window.OneUpProfileAPI={activate(profileId){if(!profileId)return;loadSaved();updateFavoriteButtons();if(state.view==='milista')renderMyList()},getActive(){return localStorage.getItem('oneup_active_profile')}};
 document.addEventListener('DOMContentLoaded',setup);
