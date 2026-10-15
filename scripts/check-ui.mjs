@@ -83,4 +83,7 @@ assert(read('functions/index.js').includes('exports.reviewReport'),'Report proce
 assert(read('social-backend.js').includes('requestFriend'),'Friend requests not connected');
 assert(read('firebase.json').includes('firestore.rules'),'Firestore rules not configured');
 assert(read('FIREBASE_COMUNIDAD_SETUP.md').includes('FIREBASE_SERVICE_ACCOUNT'),'Phone-only deployment docs incomplete');
+const storageRules=read('storage.rules');
+assert(storageRules.includes(String.raw`media\\\\.(jpg|png|webp|mp4)`),'Firebase Storage regex escaping regressed');
+assert(storageRules.includes(String.raw`{8,90}\\\\.(jpg|png|webp)`),'Avatar upload extension regex must escape dot');
 console.log('1UP smoke checks passed ('+checks+' assertions).');
