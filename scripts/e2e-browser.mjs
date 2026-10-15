@@ -50,7 +50,10 @@ try{
    await page.locator('#oneup-comments-section').waitFor({timeout:4000});
    const text=await page.locator('#anime-dialog').innerText();
    if(!/SINOPSIS|HISTORIA|COMENTARIOS/i.test(text))throw new Error('Detail lacks synopsis and discussion');
-   await page.locator('#anime-close').click();
+   await page.evaluate(()=>window.OneUpCatalog.open('mal-21'));
+   await page.locator('#oneup-external-availability a[href^="https://jkanime.net/"]').waitFor({timeout:6500});
+   await page.locator('#anime-close').click({timeout:6500});
+   await page.locator('#anime-dialog:not([open])').waitFor({timeout:3500});
   });
   await test(device.name+' calendar navigation',async()=>{
    const menu=page.locator('.desktop-links [data-route="temporada"]');
