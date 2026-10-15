@@ -452,6 +452,7 @@ function detail(id){
  '</div>'+
  '<div class="oneup-detail-lower">'+
   '<section id="oneup-player-section" class="oneup-detail-section" hidden></section>'+
+  '<section id="oneup-comments-section" class="oneup-comment-panel" aria-label="Comentarios por episodio"></section>'+
   (hasSynopsis?'<section class="oneup-detail-section oneup-synopsis-section"><h3>HISTORIA Y SINOPSIS</h3><p class="oneup-synopsis-source">'+(autoTranslated?(hasEditorialSpanish(a)?'Sinopsis en español revisada editorialmente':'Traducción automática al español · puede contener imprecisiones'):'Sinopsis en español pendiente de traducción')+'</p><p class="oneup-synopsis-text">'+esc(synopsis)+'</p><button type="button" data-synopsis-original="1" class="oneup-synopsis-toggle"'+(!originalSynopsis?' hidden':'')+'>Ver texto original</button></section><hr class="oneup-detail-separator">':'')+
   '<section class="oneup-detail-section"><h3>GÉNEROS</h3><div class="oneup-genre-tags">'+(chips||'<span class="oneup-genre-tag">Anime</span>')+'</div></section>'+
   '<hr class="oneup-detail-separator">'+
@@ -471,6 +472,7 @@ function detail(id){
  dialog.setAttribute('aria-labelledby','detail-anime-name');
  dialog.scrollTop=0;
  loadAuthorizedPlayer(id).catch(()=>{});
+ document.dispatchEvent(new CustomEvent('oneup-anime-opened',{detail:a}));
 }
 function changeEp(delta){
  const item=ensureItem(state.active);if(!item)return;
@@ -496,6 +498,12 @@ function splash(){
  };
  setTimeout(finish,1550);
 }
+window.OneUpCatalog={
+ register(items){for(const a of items||[]){if(a?.id)state.entries.set(a.id,a)}},
+ open(id){detail(id)},
+ active(){return state.active},
+ get(id){return state.entries.get(id)}
+};
 function init(){
  reloadSaved();
  loadSpanishSynopses();
@@ -517,6 +525,7 @@ function init(){
  $('#browse-controls').addEventListener('change',e=>{const keys={'filter-genre':'genre','filter-format':'format','filter-status':'status','filter-sort':'sort'};if(keys[e.target.id]){state.filters[keys[e.target.id]]=e.target.value;browse('catalogo')}});
  $('#browse-controls').addEventListener('click',e=>{if(e.target.id==='filter-reset'){state.filters={genre:'',format:'',status:'',sort:'POPULARITY_DESC'};browse('catalogo')}});
  $('#anime-close').addEventListener('click',()=>$('#anime-dialog').close());
+ $('#anime-dialog').addEventListener('close',()=>document.dispatchEvent(new Event('oneup-anime-closed')));
  $('#anime-dialog').addEventListener('click',e=>{
   if(e.target===$('#anime-dialog'))$('#anime-dialog').close();
   if(e.target.id==='save-url')saveUrl();
