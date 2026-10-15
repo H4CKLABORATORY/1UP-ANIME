@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0b0d13">
+<meta name="description" content="1UP Anime: explora anime, temporadas, películas y favoritos sin anuncios dentro de esta app.">
+<meta property="og:title" content="1UP Anime — Tu universo anime">
+<meta property="og:description" content="Descubre anime, lleva tu lista y encuentra dónde ver cada serie.">
+<title>1UP Anime — Tu universo anime</title>
+<link rel="icon" href="./assets/icon.svg" type="image/svg+xml">
+<link rel="manifest" href="./manifest.webmanifest">
+<link rel="stylesheet" href="./styles.css">
+<script defer src="./app.js"></script>
+</head>
+<body>
+<div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+<header class="header">
+  <a class="brand" href="#inicio" data-view="inicio" aria-label="Inicio 1UP Anime">
+    <span class="brand-icon">1<span>UP</span></span>
+    <span class="brand-text">ANIME<span class="brand-dot">.</span></span>
+  </a>
+  <nav class="desktop-nav" aria-label="Secciones">
+    <button data-view="inicio" class="nav-link active">Inicio</button>
+    <button data-view="temporada" class="nav-link">En emisión</button>
+    <button data-view="populares" class="nav-link">Populares</button>
+    <button data-view="peliculas" class="nav-link">Películas</button>
+    <button data-view="milista" class="nav-link">Mi lista</button>
+  </nav>
+  <div class="header-actions">
+    <button id="header-search" class="square-button" title="Buscar anime" aria-label="Buscar anime">⌕</button>
+    <button id="install-app" class="install-button" hidden>Instalar app ↗</button>
+    <span class="profile-mark">1<span>UP</span></span>
+  </div>
+</header>
+<main>
+  <div id="home-view" class="view">
+    <section class="hero" aria-label="Anime destacado">
+      <div class="hero-art" id="hero-art"></div><div class="hero-vignette"></div>
+      <div class="hero-content">
+        <div class="eyebrow"><span class="live-dot"></span> TU PORTAL DE ANIME <span class="eyebrow-line"></span> 01 / 1UP</div>
+        <div class="hero-label">EL SIGUIENTE NIVEL<br>DEL ANIME COMIENZA AQUÍ</div>
+        <h1 id="hero-title">UN UNIVERSO<span>POR DESCUBRIR.</span></h1>
+        <p class="hero-desc" id="hero-description">Explora temporadas, encuentra tu próxima serie favorita y crea tu propia lista de anime.</p>
+        <div class="hero-meta" id="hero-meta"><span>CATÁLOGO ACTUALIZADO</span><span>FAVORITOS</span><span>SIN ANUNCIOS PROPIOS</span></div>
+        <div class="hero-buttons">
+          <button class="button button-primary" id="hero-explore">▶ &nbsp; VER DETALLES <span>↗</span></button>
+          <button class="button button-clear" id="hero-fav">＋ &nbsp; GUARDAR EN MI LISTA</button>
+        </div>
+      </div>
+      <div class="hero-bottom"><span>1UP ANIME ORIGINAL EXPERIENCE</span><span>DESLIZA PARA EXPLORAR ↓</span></div>
+    </section>
+    <section class="search-section content">
+      <div><span class="kicker">¿QUÉ VEREMOS HOY?</span><h2>Tu próxima obsesión <em>comienza aquí.</em></h2></div>
+      <form class="search-form" id="search-form" role="search"><span class="search-glass">⌕</span><input id="search" type="search" placeholder="Busca Naruto, One Piece, Jujutsu Kaisen..." maxlength="90" autocomplete="off" aria-label="Buscar anime"><button type="submit" aria-label="Buscar">→</button></form>
+    </section>
+    <section class="content home-section">
+      <div class="section-title"><div><span class="kicker">SELECCIÓN 01 / RANKING</span><h2>Los más <em>top.</em></h2></div><button class="text-link" data-view="populares">VER TODOS &nbsp; ↗</button></div>
+      <div id="top-grid" class="anime-grid"><div class="loading">Cargando los mejores animes…</div></div>
+    </section>
+    <section class="interlude content"><div class="interlude-mark">1<span>UP</span></div><div><span class="kicker">LA EXPERIENCIA 1UP</span><h2>Sube de nivel tu<br><em>experiencia anime.</em></h2><p>Organiza tus series, guarda tus favoritos y lleva el control de los episodios vistos. Todo a tu manera.</p><button data-view="milista" class="button button-primary">ABRIR MI LISTA &nbsp; ↗</button></div></section>
+    <section class="content home-section">
+      <div class="section-title"><div><span class="kicker">SELECCIÓN 02 / ESTRENOS</span><h2>Esta <em>temporada.</em></h2></div><button class="text-link" data-view="temporada">VER TODOS &nbsp; ↗</button></div>
+      <div id="season-grid" class="anime-grid"><div class="loading">Cargando estrenos…</div></div>
+    </section>
+  </div>
+  <section id="catalog-view" class="view content" hidden>
+    <div class="catalog-heading"><span class="kicker" id="catalog-kicker">EXPLORA / EL CATÁLOGO</span><h1 id="catalog-title">Explora el <em>anime.</em></h1><p id="catalog-desc">Descubre las series que merecen estar en tu lista.</p></div>
+    <div id="results-count" class="results-count"></div>
+    <div id="catalog-grid" class="anime-grid"></div>
+    <div class="load-row"><button id="load-more" class="button button-clear" hidden>VER MÁS RESULTADOS ↓</button></div>
+  </section>
+</main>
+<footer class="footer content"><div><div class="brand footer-brand"><span class="brand-icon">1<span>UP</span></span><span class="brand-text">ANIME<span class="brand-dot">.</span></span></div><p>Tu universo anime, a tu manera.</p></div><div class="footer-right"><span>UNA EXPERIENCIA SIN PUBLICIDAD PROPIA</span><p>Datos de <a href="https://jikan.moe/" target="_blank" rel="noopener noreferrer">Jikan / MyAnimeList ↗</a>. Esta web no aloja episodios, no elimina anuncios ni modifica páginas externas.</p><p>Proyecto independiente · <span id="footer-year"></span></p></div></footer>
+<nav class="mobile-nav" aria-label="Menú móvil">
+  <button data-view="inicio" class="active"><span>⌂</span>Inicio</button>
+  <button data-view="temporada"><span>◉</span>Estrenos</button>
+  <button id="mobile-search"><span>⌕</span>Buscar</button>
+  <button data-view="peliculas"><span>▣</span>Películas</button>
+  <button data-view="milista"><span>♡</span>Mi lista</button>
+</nav>
+<dialog id="details" class="detail-dialog" aria-label="Ficha de anime"><button class="modal-close" id="close-modal" title="Cerrar">✕</button><div id="modal-content"></div></dialog>
+<div id="toast" role="status" aria-live="polite"></div>
+</body></html>
