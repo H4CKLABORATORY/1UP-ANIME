@@ -151,7 +151,7 @@ function toggle(id){
 }
 function refreshFav(){
  $$('[data-save]').forEach(b=>{const yes=isFav(b.dataset.save);b.textContent=yes?'✓':'＋';b.classList.toggle('saved',yes)});
- if(state.featured)$('#hero-save').innerHTML=isFav(state.featured.id)?'<svg><use href="#ico-check"/></svg> Guardado':'<svg><use href="#ico-plus"/></svg> Mi lista';
+ if(state.featured)$('#hero-save').innerHTML=isFav(state.featured.id)?'<svg><use href="#ico-check"/></svg> Guardado':'<svg><use href="#ico-plus"/></svg> Guardar anime';
 }
 function card(a){
  const pic=a.image?'<img loading="lazy" referrerpolicy="no-referrer" src="'+esc(a.image)+'" alt="Póster de '+esc(a.title)+'">':'<div class="placeholder-art"><strong>'+esc(a.title.slice(0,27))+'</strong></div>';
@@ -161,14 +161,51 @@ function paint(selector,data,source=''){
  const e=$(selector);if(!e)return;
  e.innerHTML=(source==='sample'?'<div class="error">Mostrando ejemplos guardados: el servicio de datos no responde. Inténtalo más tarde.</div>':'')+(data.length?data.map(card).join(''):'<div class="empty">No encontramos títulos con esos filtros.</div>');
 }
-function hero(a){
+function hero(a, chosen=false){
+ if(!a)return;
+ if(!chosen&&state.selectedId&&state.selectedId!==a.id)return;
+ if(chosen){
+  state.selectedId=a.id;
+  try{sessionStorage.setItem('oneup_last_selected_anime',a.id)}catch{}
+ }
  state.featured=a;
- const pieces=a.title.split(' '),first=pieces.slice(0,2).join(' '),rest=pieces.slice(2).join(' ')||'ANIME';
+ const parts=(a.title||'Anime').trim().split(/\s+/);
+ const first=parts.slice(0,2).join(' '),rest=parts.slice(2).join(' ')||'ANIME';
  $('#hero-title').innerHTML=esc(first).toUpperCase()+'<br><span>'+esc(rest).toUpperCase()+'</span>';
- $('#hero-description').textContent=a.source==='sample'?'Descubre recomendaciones mientras recuperamos los resultados actualizados.':(a.description||'Descubre un anime que merece estar en tu lista.').slice(0,245);
- $('#hero-poster').style.backgroundImage=a.banner||a.image?'url("'+(a.banner||a.image).replace(/["\\]/g,'')+'")':'';
- $('#hero-badges').innerHTML='<span>'+esc(formats[a.format]||'Anime')+'</span><span>'+esc(String(a.year||'ESTRENO'))+'</span><span>★ '+(a.averageScore?(a.averageScore/10).toFixed(1):'—')+'</span>';
+ $('#hero-description').textContent=a.source==='sample'
+  ?'Descubre recomendaciones mientras recuperamos los resultados actualizados.'
+  :(a.description||'Descubre tu siguiente serie favorita.').slice(0,245);
+ const art=a.banner||a.image||'';
+ const background=$('#hero-poster');
+ if(background)background.style.backgroundImage=art?'url("'+art.replace(/["\\]/g,'')+'")':'';
+ const poster=$('#hero-feature-cover');
+ if(poster){
+  poster.src=a.image||'./assets/oneup-mascot.svg';
+  poster.alt='Póster de '+a.title;
+  poster.onerror=()=>{poster.onerror=null;poster.src='./assets/oneup-mascot.svg'};
+ }
+ const name=$('#hero-feature-title');
+ if(name)name.textContent=a.title;
+ const caption=$('#hero-feature-caption');
+ if(caption)caption.textContent=[formats[a.format]||'Anime',a.year||''].filter(Boolean).join(' · ').toUpperCase();
+ $('#hero-badges').innerHTML='<span>'+esc(formats[a.format]||'Anime')+'</span><span>'+esc(String(a.year||'CATÁLOGO'))+'</span><span>★ '+(a.averageScore?(a.averageScore/10).toFixed(1):'—')+'</span>';
+ const picks=$('#hero-picks');
+ if(picks){
+  const pool=[a,...(state.home.trending||[]),...(state.home.season||[])];
+  const unique=new Map();
+  for(const x of pool){if(x?.id&&!unique.has(x.id))unique.set(x.id,x)}
+  const cards=[...unique.values()].slice(0,4);
+  picks.innerHTML='<span class="hero-picks-label">DESCUBRE OTROS ANIMES</span>'+cards.map(x=>
+   '<button class="hero-pick'+(x.id===a.id?' active':'')+'" type="button" data-feature="'+esc(x.id)+'" aria-pressed="'+String(x.id===a.id)+'" title="'+esc(x.title)+'">'+esc(x.title)+'</button>'
+  ).join('');
+ }
  refreshFav();
+ if(chosen){
+  const wrap=document.querySelector('.hero');
+  if(wrap && !matchMedia('(prefers-reduced-motion: reduce)').matches){
+   wrap.classList.remove('is-switching');void wrap.offsetWidth;wrap.classList.add('is-switching');
+  }
+ }
 }
 function scheduleHTML(items){
  const now=Date.now()/1000,upcoming=items.filter(x=>x.next?.at>now).sort((a,b)=>a.next.at-b.next.at).slice(0,16);
@@ -187,7 +224,13 @@ async function loadHome(){
   const d=await fetchCatalog(o);
   state.home[k]=d.items;
   paint(target,d.items,d.source);
-  if(k==='trending'&&d.source!=='sample'&&d.items[0])hero(d.items.find(x=>x.banner)||d.items[0]);
+  if(k==='trending'){
+   const remembered=(()=>{try{return sessionStorage.getItem('oneup_last_selected_anime')}catch{return null}})();
+   const restored=remembered?state.entries.get(remembered):null;
+   if(restored)hero(restored,true);
+   else if(d.source!=='sample'&&d.items[0])hero(d.items.find(x=>x.banner)||d.items[0]);
+   else if(state.featured)hero(state.featured);
+  }
   if(k==='season')$('#schedule-preview-list').innerHTML=scheduleHTML(d.items);
  }));
 }
@@ -288,6 +331,7 @@ function init(){
   const nav=e.target.closest('[data-route]');if(nav){e.preventDefault();go(nav.dataset.route);return}
   const g=e.target.closest('[data-genre]');if(g){state.filters.genre=g.dataset.genre;go(g.dataset.genre?'genero':'catalogo');return}
   const s=e.target.closest('[data-save]');if(s){toggle(s.dataset.save);if(state.active&&$('#anime-dialog').open)detail(state.active);return}
+  const pick=e.target.closest('[data-feature]');if(pick){const anime=state.entries.get(pick.dataset.feature);if(anime)hero(anime,true);return}
   const d=e.target.closest('[data-details]');if(d){detail(d.dataset.details);return}
   const ep=e.target.closest('[data-episode]');if(ep){changeEp(Number(ep.dataset.episode))}
  });
