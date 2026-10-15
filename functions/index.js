@@ -80,10 +80,11 @@ exports.submitEpisodeComment=caller(async req=>{
  const id=threadName(animeId,episode),body=validText(text,900);
  if(/(?:https?:\/\/|www\.)/i.test(body)&&account(req)==='anonymous')throw new HttpsError('invalid-argument','Los invitados no pueden publicar enlaces.');
  const guest=account(req)==='anonymous';
- const displayName=guest?pseudonym(alias):nameOf(req);
+ const author=guest?null:await publicAuthor(req);
+ const displayName=guest?pseudonym(alias):author.displayName;
  const row=await throttleAndWrite(req,'episode',(tx,uid,now)=>{
   const ref=db.collection('episodeThreads').doc(id).collection('comments').doc();
-  tx.set(ref,{authorUid:uid,displayName,guest,verified:false,text:body,status:'visible',
+  tx.set(ref,{authorUid:uid,displayName,guest,verified:author?.verified===true,owner:author?.owner===true,icon:author?.icon||'',text:body,status:'visible',
     episode:Number(episode),animeId:String(animeId),createdAt:Timestamp.fromMillis(now),reports:0});
   return {id:ref.id};
  });
