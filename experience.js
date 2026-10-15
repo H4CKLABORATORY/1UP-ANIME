@@ -14,10 +14,12 @@ function gate(on){document.body.classList.toggle('oneup-gated',on);if(document.q
 function build(){
  const container=document.createElement('div');container.id='oneup-overlays';
  container.innerHTML='<section id="oneup-intro" class="oneup-intro" aria-label="Introducción sonora de ONE UP Anime" role="dialog" aria-modal="true"><div class="intro-halo"></div><div class="intro-flare"></div><div class="intro-brand"><strong>ONE<span> UP</span></strong><small>A N I M E</small><em>UNA VIDA EXTRA · UN UNIVERSO ANIME</em></div><div class="oneup-intro-controls"><p>UNA FIRMA. UN SONIDO. UNA NUEVA VIDA.</p><button type="button" id="oneup-play-sound" class="oneup-intro-start">▶ &nbsp; ENTRAR CON SONIDO</button><button type="button" id="oneup-play-muted" class="oneup-intro-muted">Continuar en silencio</button></div><span class="intro-bottom">1UP ANIME ORIGINAL</span><button type="button" id="oneup-intro-skip" class="oneup-skip">SALTAR ↗</button></section>'+
- '<section id="oneup-profiles" class="oneup-profiles" aria-label="Seleccionar perfil" role="dialog" aria-modal="true" hidden><div class="oneup-profiles-content"><div class="oneup-gate-brand">1<span>UP</span> ANIME</div><p class="oneup-gate-tag">HALLOWEEN · ANTI-MAGIC EDITION</p><h2 id="oneup-profiles-heading">¿Quién entra al universo?</h2><p id="oneup-profiles-desc">Elige un perfil para continuar tu aventura.</p><div id="oneup-profile-grid" class="oneup-profile-grid"></div><div class="oneup-profile-utilities"><button type="button" id="oneup-manage">Administrar perfiles</button><button type="button" id="oneup-done-manage" hidden>Terminar</button></div><p class="oneup-gate-foot">Perfiles y progreso guardados únicamente en este dispositivo.</p></div></section>'+
+ '<section id="oneup-profiles" class="oneup-profiles" aria-label="Acceso opcional a 1UP Anime" role="dialog" aria-modal="true" hidden><div class="oneup-profiles-content"><div class="oneup-gate-brand">1<span>UP</span> ANIME</div><p class="oneup-gate-tag">TU MUNDO, TU RITMO</p><h2 id="oneup-profiles-heading">¿Cómo quieres entrar?</h2><p id="oneup-profiles-desc">Explora sin registrarte o elige tu perfil.</p><div class="oneup-entry-options"><button type="button" id="oneup-enter-guest" class="oneup-guest-entry">✦ &nbsp; CONTINUAR COMO INVITADO <small>Sin cuenta y sin crear perfil</small></button><button type="button" id="oneup-google-login" class="oneup-google-entry"><span class="google-g">G</span> Continuar con Google <small id="oneup-google-status">Se necesita configurar Google</small></button><div class="oneup-entry-separator">O ELIGE UN PERFIL LOCAL</div></div><div id="oneup-profile-grid" class="oneup-profile-grid"></div><div class="oneup-profile-utilities"><button type="button" id="oneup-manage">Administrar perfiles</button><button type="button" id="oneup-done-manage" hidden>Terminar</button></div><p class="oneup-gate-foot">Acceso y perfiles opcionales. Tus favoritos se guardan localmente en este navegador.</p></div></section>'+
  '<section id="oneup-welcome" class="oneup-welcome" role="status" hidden><div class="welcome-inner"><div class="welcome-avatar" id="oneup-welcome-avatar">⚔️</div><p>LA AVENTURA COMIENZA</p><h2 id="oneup-welcome-title">BIENVENIDO</h2><p>PREPARANDO TU UNIVERSO ANIME · ✦</p></div></section>';
  document.body.appendChild(container);
  $('oneup-intro-skip').addEventListener('click',finishIntro);
+ $('oneup-enter-guest').addEventListener('click',()=>choose({id:'guest',name:'Invitado',avatar:7}));
+ $('oneup-google-login').addEventListener('click',()=>{if(window.OneUpGoogle?.login)window.OneUpGoogle.login(choose);else alert('El acceso con Google necesita configurar Firebase Authentication. Puedes continuar como invitado.')});
  $('oneup-play-sound').addEventListener('click',()=>playIntro(true));
  $('oneup-play-muted').addEventListener('click',()=>playIntro(false));
  $('oneup-manage').addEventListener('click',()=>{managing=true;render()});
@@ -56,9 +58,10 @@ function openProfiles(){
 }
 function render(){
  const grid=$('oneup-profile-grid');
- $('oneup-profiles-heading').textContent=managing?'ADMINISTRAR PERFILES':'¿Quién entra al universo?';
- $('oneup-profiles-desc').textContent=profiles.length?(managing?'Selecciona un avatar para editar o eliminar el perfil.':'Cada usuario conserva su propia lista y sus episodios vistos.'):'Crea tu primer perfil para empezar.';
+ $('oneup-profiles-heading').textContent=managing?'ADMINISTRAR PERFILES':'¿Cómo quieres entrar?';
+ $('oneup-profiles-desc').textContent=managing?'Selecciona un perfil local para editar o eliminar.':'Entrar como invitado no requiere registro. También puedes usar perfiles locales opcionales.';
  $('oneup-manage').hidden=managing||!profiles.length;
+ const entries=document.querySelector('.oneup-entry-options');if(entries)entries.hidden=managing;
  $('oneup-done-manage').hidden=!managing;
  let html='';
  for(const p of profiles){
