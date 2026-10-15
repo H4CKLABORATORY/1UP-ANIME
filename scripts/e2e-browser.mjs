@@ -37,6 +37,11 @@ try{
   const page=await context.newPage();
   const errors=[];
   page.on('pageerror',error=>errors.push(error.message));
+  async function touchTab(route){
+ const box=await page.locator('.mobile-navigation [data-route="'+route+'"]').boundingBox();
+ if(!box)throw new Error('Mobile tab '+route+' has no tappable rectangle');
+ await page.touchscreen.tap(box.x+box.width/2,box.y+box.height/2);
+}
   await test(device.name+' loads homepage and local anime snapshot',async()=>{
    await page.goto(base,{waitUntil:'domcontentloaded'});
    await page.locator('#trending-rail [data-details]').first().waitFor({timeout:15000});
@@ -63,7 +68,7 @@ try{
   await page.evaluate(()=>document.querySelector('#anime-dialog')?.close()).catch(()=>{});
   await test(device.name+' calendar navigation',async()=>{
    const menu=page.locator('.desktop-links [data-route="temporada"]');
-   if(device.mobile)await page.locator('.mobile-navigation [data-route="temporada"]').click({timeout:7500});
+   if(device.mobile)await touchTab('temporada');
    else await menu.click();
    await page.locator('#browse-screen:not([hidden])').waitFor({timeout:6500});
    await page.locator('#oneup-airing-dashboard').waitFor({timeout:6500});
@@ -73,7 +78,7 @@ try{
    if(ancestor!=='browse-screen')throw new Error('Calendar did not move into season browsing section');
   });
   await test(device.name+' search and anime catalogue',async()=>{
-   if(device.mobile)await page.locator('.mobile-navigation [data-route="inicio"]').click({timeout:7500});
+   if(device.mobile)await touchTab('inicio');
    else await page.locator('.desktop-links [data-route="inicio"]').click();
    await page.locator('#search-input').fill('Naruto');
    await page.locator('#search-form button[type="submit"]').click();
