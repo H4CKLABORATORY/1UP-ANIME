@@ -21,7 +21,7 @@ function safeUrl(value){
 function safeEmbedUrl(raw){
  const u=safeUrl(raw);if(!u)return '';
  const h=u.hostname.toLowerCase(),p=u.pathname;
- if((h==='www.youtube-nocookie.com'||h==='www.youtube.com')&&/^\\/embed\\/[A-Za-z0-9_-]{11}$/.test(p)){
+ if((h==='www.youtube-nocookie.com'||h==='www.youtube.com')&&new RegExp('^/embed/[A-Za-z0-9_-]{11}$').test(p)){
   return 'https://www.youtube-nocookie.com'+p;
  }
  if(h==='player.vimeo.com'&&new RegExp('^/video/[0-9]+$').test(p))return 'https://player.vimeo.com'+p;
