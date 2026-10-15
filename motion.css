@@ -1,0 +1,90 @@
+/* 1UP Anime - Motion Identity Pack v5.
+   Animated with inexpensive transforms and opacity. No external visual runtime. */
+:root { --oneup-motion-ease:cubic-bezier(.2,.75,.22,1); }
+.hero{isolation:isolate}
+.hero::after{
+ content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
+ background:radial-gradient(ellipse 42% 38% at 73% 39%,transparent 34%,#090a110a 60%,#090a1140 100%),linear-gradient(105deg,transparent 38%,#ffb87b09 42%,transparent 49%);
+ mix-blend-mode:screen
+}
+.hero-poster{will-change:transform}
+.hero-grid,.hero-bottom{z-index:4}
+.oneup-visual-fx{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:2;contain:paint}
+.oneup-visual-fx::before{content:"";position:absolute;right:5%;top:6%;width:min(48vw,620px);aspect-ratio:1;border-radius:50%;
+ background:radial-gradient(circle,transparent 0 38%,#fa723618 39% 40%,transparent 41% 54%,#e4a07824 55%,transparent 57%),
+ conic-gradient(from 0deg,transparent,#ff9d3816,transparent,#ff9d3810,transparent);
+ filter:drop-shadow(0 0 30px #ff6c3220);animation:oneupSigil 35s linear infinite;opacity:.8}
+.oneup-visual-fx::after{content:"";position:absolute;left:-10%;right:-10%;bottom:-130px;height:290px;
+ background:radial-gradient(ellipse 70% 40% at 55% 50%,#ef74341f,transparent 80%);
+ filter:blur(30px);opacity:.68;animation:oneupFog 11s ease-in-out infinite alternate}
+.oneup-ember{position:absolute;bottom:-14px;border-radius:50%;
+ background:radial-gradient(circle,#fff1d6 0%,#ff9a45 30%,#fd522400 75%);
+ box-shadow:0 0 16px #ff914d55;animation:oneupEmberRise var(--ember-duration,12s) linear infinite;opacity:0}
+.hero h1{position:relative;isolation:isolate}
+.hero h1::after{content:"";position:absolute;inset:-18% -1%;z-index:-1;pointer-events:none;opacity:.26;
+ background:radial-gradient(ellipse at 42% 80%,#ff783325,transparent 62%);
+ filter:blur(18px)}
+.hero-art-card{will-change:transform;transform-style:preserve-3d}
+.hero-art-emblem{position:relative;isolation:isolate}
+.hero-art-emblem::before{content:"";position:absolute;inset:-32%;border-radius:50%;border:2px solid #ffb57930;
+ box-shadow:0 0 64px #fa6f302b;animation:oneupHalo 11s linear infinite;pointer-events:none;z-index:2}
+.hero-art-emblem::after{content:"";position:absolute;inset:0;pointer-events:none;z-index:2;
+ background:linear-gradient(119deg,transparent 38%,#ffffff23 46%,transparent 53%);
+ background-size:260% 100%;background-position:120% 0;animation:oneupSheen 9s ease-in-out infinite}
+.limited-tag{box-shadow:0 0 30px #fd873018,inset 0 0 26px #ff7f2d0e}
+.cta.primary{position:relative;isolation:isolate;overflow:hidden}
+.cta.primary::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(115deg,transparent 20%,#fff8e0a1 49%,transparent 72%);
+ transform:translateX(-140%);transition:transform .75s ease}
+.cta.primary:hover::before{transform:translateX(140%)}
+.brand-symbol{transform-origin:center;transition:transform .4s var(--oneup-motion-ease),box-shadow .4s}
+.brand:hover .brand-symbol{transform:rotate(-7deg) scale(1.08);box-shadow:0 0 28px #ff904a70}
+.brand-name>span{transition:letter-spacing .35s}
+.brand:hover .brand-name>span{letter-spacing:5px}
+.anime-card{isolation:isolate}
+.anime-card::after{content:"";position:absolute;inset:0;pointer-events:none;border-radius:inherit;opacity:0;
+ border:1px solid #ffc38b60;box-shadow:inset 0 0 16px #ff8b3919;transition:opacity .3s}
+.anime-card:hover::after{opacity:1}
+.anime-card .anime-art::after{content:"";position:absolute;inset:0;pointer-events:none;
+ background:linear-gradient(100deg,transparent 15%,#ffcc9a16 50%,transparent 70%);
+ transform:translateX(-140%);transition:transform .75s ease}
+.anime-card:hover .anime-art::after{transform:translateX(140%)}
+.section-heading{position:relative}
+.section-heading::after{content:"";position:absolute;left:0;bottom:-12px;width:min(170px,38%);height:1px;
+ background:linear-gradient(90deg,#ff985f99,transparent)}
+.section-more{transition:color .2s,transform .2s}
+.section-more:hover{transform:translateX(3px);color:#ffe1a6}
+.searchbar:focus-within{border-color:#ffa76790;box-shadow:0 0 0 3px #ff8b3922,0 0 25px #ff8b3912}
+.startup{overflow:hidden}
+.startup::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.4;
+ background:radial-gradient(circle at center,#f9a05216,transparent 37%),repeating-conic-gradient(from 0deg at 50% 50%,transparent 0 18deg,#ff862008 20deg 21deg,transparent 22deg 48deg);
+ animation:oneupSigil 38s linear infinite}
+.startup-mark{position:relative;z-index:2;will-change:transform,opacity}
+.startup-mark::before{content:"";position:absolute;left:50%;top:50%;width:95vw;height:2px;transform:translate(-50%,-50%) scaleX(0);
+ background:linear-gradient(90deg,transparent,#ffaf6f,#fff5ce,#ff773d,transparent);
+ filter:drop-shadow(0 0 24px #ff973f);opacity:0}
+.startup.started .startup-mark::before{animation:oneupLightSlash 1.35s ease-out both}
+.startup.started .startup-mark img{animation:oneupMascotPop 1.4s var(--oneup-motion-ease) both}
+.startup.started .startup-mark strong em{text-shadow:0 0 30px #ffa15290}
+.oneup-motion-reveal{transition:opacity .65s var(--oneup-motion-ease),translate .65s var(--oneup-motion-ease)}
+.oneup-motion-reveal:not(.oneup-revealed){opacity:.55;translate:0 20px}
+.oneup-motion-reveal.oneup-revealed{opacity:1;translate:0 0}
+@keyframes oneupSigil{to{transform:rotate(360deg)}}
+@keyframes oneupFog{from{transform:translate(-4%,0) scale(.95)}to{transform:translate(5%,-10px) scale(1.06)}}
+@keyframes oneupHalo{to{transform:rotate(-360deg)}}
+@keyframes oneupSheen{0%,70%{background-position:120% 0}95%,100%{background-position:-120% 0}}
+@keyframes oneupEmberRise{0%{transform:translate3d(0,0,0) scale(.4);opacity:0}18%{opacity:.62}75%{opacity:.35}100%{transform:translate3d(var(--ember-x,28px),-540px,0) scale(1.4);opacity:0}}
+@keyframes oneupLightSlash{0%,22%{transform:translate(-50%,-50%) scaleX(0);opacity:0}45%{transform:translate(-50%,-50%) scaleX(1);opacity:.8}100%{transform:translate(-50%,-50%) scaleX(1.3);opacity:0}}
+@keyframes oneupMascotPop{0%{opacity:.4;transform:scale(.86)}39%{opacity:1;transform:scale(1.13)}70%,100%{opacity:1;transform:scale(1)}}
+@media(max-width:780px){
+ .oneup-visual-fx::before{right:-26%;top:8%;width:95vw;opacity:.46}
+ .oneup-visual-fx::after{height:190px;bottom:-65px}
+ .hero-art-emblem::before{animation:none}
+ .anime-card:hover .anime-art::after{display:none}
+ .oneup-motion-reveal{transition-duration:.45s}
+}
+@media(prefers-reduced-motion:reduce){
+ .oneup-visual-fx,.hero-art-emblem::before,.hero-art-emblem::after,.startup::before,
+ .startup-mark::before{animation:none!important}
+ .oneup-visual-fx{display:none!important}
+ .oneup-motion-reveal,.oneup-motion-reveal:not(.oneup-revealed){opacity:1!important;translate:none!important;transition:none!important}
+}
