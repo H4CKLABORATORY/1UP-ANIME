@@ -145,20 +145,10 @@ def main() -> None:
         encoding="utf-8",
     )
     catalog_tmp.replace(CATALOG)
-    if airing is not None:
-        for group in [airing.get("airing", []), airing.get("seasonal", {}).get("entries", [])]:
-            for anime in group:
-                key = str(anime.get("id") or "")
-                row = done.get(key)
-                if row and row.get("es"):
-                    anime["description_es"] = row["es"]
-                else:
-                    anime.pop("description_es", None)
-        airing_tmp = AIRING.with_suffix(".tmp")
-        airing_tmp.write_text(
-            json.dumps(airing, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
-        )
-        airing_tmp.replace(AIRING)
+    # Translation records for seasonal anime are stored by stable ID in
+    # data/translations-es.json. The separate six-hour airing workflow applies
+    # them on its next refresh, so we never modify its output here.
+
     body = {
         "language": "es",
         "source": "Argos Translate en-es, automated translation of AniList public metadata",
