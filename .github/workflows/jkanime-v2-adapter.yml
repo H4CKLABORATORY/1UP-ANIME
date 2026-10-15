@@ -1,0 +1,27 @@
+name: JKAnime V2 optional adapter audit
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "integrations/jkanime-v2/package.json"
+      - "integrations/jkanime-v2/check-api.mjs"
+      - ".github/workflows/jkanime-v2-adapter.yml"
+permissions:
+  contents: read
+jobs:
+  install-and-inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - name: Checkout project
+        uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Install pinned unofficial package in isolated workspace
+        run: npm --prefix integrations/jkanime-v2 install --ignore-scripts --no-audit --no-fund
+      - name: Verify package and metadata API (no video extraction)
+        run: |
+          npm --prefix integrations/jkanime-v2 ls jkanime-v2
+          npm --prefix integrations/jkanime-v2 run check
