@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
   "engine": "DexterAnimeSync",
-  "updatedAt": "2026-10-15T22:51:24.544Z",
+  "updatedAt": "2026-10-15T23:49:39.733Z",
   "job": {
-    "id": "sync-f2e2f11ee28f4751",
-    "startedAt": "2026-10-15T22:51:24.544Z",
-    "completedAt": "2026-10-15T22:51:24.544Z",
+    "id": "sync-27c70d442e65a382",
+    "startedAt": "2026-10-15T23:49:39.733Z",
+    "completedAt": "2026-10-15T23:49:39.733Z",
     "mode": "programada",
     "status": "correcta",
     "counters": {
