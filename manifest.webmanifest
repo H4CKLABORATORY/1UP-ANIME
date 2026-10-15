@@ -1,16 +1,22 @@
 {
   "id": "./",
-  "name": "1UP Anime | Halloween Anti-Magic",
+  "name": "1UP Anime — Tu siguiente vida es anime",
   "short_name": "1UP Anime",
-  "description": "Una experiencia de anime cinematográfica con intro, perfiles, favoritos y temática de Halloween",
+  "description": "Series, estrenos, programación y favoritos. Explora como invitado o con Google cuando esté configurado.",
   "lang": "es",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
   "orientation": "any",
-  "background_color": "#09070c",
-  "theme_color": "#09070c",
+  "background_color": "#090a11",
+  "theme_color": "#090a11",
   "icons": [
+    {
+      "src": "./assets/oneup-mascot.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
     {
       "src": "./assets/icon-192.png",
       "sizes": "192x192",
