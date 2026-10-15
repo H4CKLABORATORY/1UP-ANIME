@@ -27,12 +27,4 @@ jobs:
       - name: Render branded PNG icons
         run: python scripts/build-icons.py
       - name: Commit generated icons
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add assets/icon-180.png assets/icon-192.png assets/icon-512.png
-          if ! git diff --cached --quiet; then
-            git commit -m "Update iPhone and PWA icons from original 1UP crest"
-            git pull --rebase origin main
-            git push origin HEAD:main
-          fi
+        run: bash scripts/oneup-safe-push.sh 'Update iPhone and PWA icons from original 1UP crest' assets/icon-180.png assets/icon-192.png assets/icon-512.png
