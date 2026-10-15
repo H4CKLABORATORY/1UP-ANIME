@@ -153,3 +153,61 @@ body.oneup-gated .site-header,body.oneup-gated .mobile-nav{pointer-events:none}
 }
 /* Keep iPhone bottom navigation usable with the avatar switcher in the header. */
 @media(max-width:760px){.mobile-nav #oneup-mobile-profile{display:none!important}}
+
+
+/* One Up signature: simple wordmark, single light cut, clean 2.3s branded reveal.
+   User gesture starts sound and animations together; no copied logo animation. */
+.oneup-intro{background:radial-gradient(ellipse at 50% 48%,#1e111b 0%,#0a080d 50%,#030304 100%)}
+.oneup-intro:before{opacity:.28;animation:none}
+.oneup-intro .intro-brand{width:min(94vw,920px);animation:none;filter:none;opacity:1;transform:none;will-change:transform,opacity}
+.oneup-intro .intro-brand strong{font-family:var(--display);font-size:clamp(83px,19vw,216px);line-height:.81;letter-spacing:0;white-space:nowrap;text-shadow:0 10px 60px #0009;filter:drop-shadow(0 0 18px #ff793d2d)}
+.oneup-intro .intro-brand strong span{color:#ff933f;text-shadow:0 5px 28px #ff692552}
+.oneup-intro .intro-brand small{font-family:var(--font);font-size:clamp(14px,3vw,25px);font-weight:900;letter-spacing:clamp(6px,1.4vw,15px);color:#ffdfc7;margin-top:25px}
+.oneup-intro .intro-brand em{color:#a9949d;margin-top:14px;font-size:9px;letter-spacing:2.5px}
+.oneup-intro .intro-halo{animation:none;opacity:.18;transform:scale(.76);border-color:#ff9a592b;box-shadow:none}
+.oneup-intro .intro-halo:before,.oneup-intro .intro-halo:after{animation:none;opacity:.24}
+.oneup-intro .intro-flare{animation:none;opacity:0;transform:rotate(-5deg) scaleX(0)}
+.oneup-intro .intro-bottom{bottom:4%;color:#977b82;font-size:10px;letter-spacing:3px}
+.oneup-intro-controls{position:absolute;z-index:4;bottom:12%;width:min(88vw,360px);display:flex;align-items:stretch;flex-direction:column;gap:10px;text-align:center}
+.oneup-intro-controls p{font-size:10px;font-weight:700;letter-spacing:2px;color:#cda3a0;margin:0 0 10px}
+.oneup-intro-start{min-height:54px;padding:14px 18px;border:0;border-radius:12px;color:#1c0a07;background:linear-gradient(110deg,#ffd097,#ff8b39,#f9572d);box-shadow:0 0 45px #ff7c252e;font-weight:900;letter-spacing:.65px;font-size:13px;transition:transform .2s,box-shadow .2s}
+.oneup-intro-start:hover{transform:translateY(-2px);box-shadow:0 0 50px #ff742453}
+.oneup-intro-muted{border:none;background:transparent;color:#baa8ad;padding:12px;font-size:12px}
+.oneup-intro-muted:hover{color:white;text-decoration:underline}
+.oneup-intro.playing .intro-brand{animation:oneUpBrandEntry 2.23s cubic-bezier(.16,.74,.28,1) both}
+.oneup-intro.playing .intro-brand strong span{animation:oneUpOrangeBeat 2.23s linear both}
+.oneup-intro.playing .intro-halo{animation:oneUpHalo 2.23s ease-out both}
+.oneup-intro.playing .intro-flare{animation:oneUpLightCut 2.23s ease-out both}
+.oneup-intro.playing .oneup-intro-controls{opacity:0;pointer-events:none;transition:opacity .12s}
+@keyframes oneUpBrandEntry{
+ 0%{opacity:.04;transform:scale(.82) translateY(13px);filter:blur(12px)}
+ 25%{opacity:.86;transform:scale(.97);filter:blur(1px)}
+ 47%{opacity:1;transform:scale(1.02);filter:blur(0)}
+ 60%,86%{opacity:1;transform:scale(1);filter:blur(0)}
+ 100%{opacity:1;transform:scale(1.025);filter:blur(0)}
+}
+@keyframes oneUpOrangeBeat{
+ 0%,29%{color:#b94f32;text-shadow:none}
+ 38%,52%{color:#ffbd75;text-shadow:0 0 65px #ff863fdd}
+ 63%,100%{color:#ff933f;text-shadow:0 5px 28px #ff692552}
+}
+@keyframes oneUpHalo{
+ 0%{opacity:0;transform:scale(.4)}
+ 44%{opacity:.08;transform:scale(.75)}
+ 63%{opacity:.46;transform:scale(1)}
+ 100%{opacity:.1;transform:scale(1.35)}
+}
+@keyframes oneUpLightCut{
+ 0%,43%{opacity:0;transform:rotate(-5deg) scaleX(0)}
+ 56%{opacity:.85;transform:rotate(-5deg) scaleX(.96)}
+ 73%,100%{opacity:0;transform:rotate(-5deg) scaleX(1)}
+}
+@media(max-width:760px){
+ .oneup-intro .intro-brand strong{font-size:clamp(80px,21vw,145px)}
+ .oneup-intro .intro-brand small{font-size:16px}
+ .oneup-intro-controls{bottom:calc(11% + env(safe-area-inset-bottom));}
+}
+@media(prefers-reduced-motion:reduce){
+ .oneup-intro.playing .intro-brand,.oneup-intro.playing .intro-halo,.oneup-intro.playing .intro-flare,.oneup-intro.playing .intro-brand strong span{animation:none!important}
+ .oneup-intro .intro-brand{opacity:1;filter:none}
+}
