@@ -500,7 +500,12 @@ function detail(id){
   '<section class="oneup-detail-section"><h3>MI ENLACE PERSONAL</h3><div class="detail-actions"><input id="custom-url" type="url" aria-label="Enlace personal del anime" placeholder="https://..." value="'+esc(item.externalUrl||'')+'"><button type="button" id="save-url" class="cta outline">Guardar</button></div></section>'+
   recommendations+
  '</div>';
+ const closeControl=$('#anime-close');
+ const modal=$('#anime-dialog');
+ if(closeControl&&closeControl.parentElement!==modal)modal.appendChild(closeControl);
  $('#anime-dialog-body').innerHTML=detailUI;
+ const detailCover=$('#anime-dialog-body .oneup-detail-cover');
+ if(detailCover&&closeControl)detailCover.appendChild(closeControl);
  const bg=safe(a.banner||a.image);
  const scene=$('#oneup-detail-art');
  if(scene&&bg)scene.style.backgroundImage='url("'+bg.replace(/["\\]/g,'')+'")';
