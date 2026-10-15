@@ -1,6 +1,6 @@
 /* ONE UP - mobile PWA offline-first shell, update-aware.
    External providers and video URLs are NEVER mirrored by this worker. */
-const CACHE='oneup-licensed-sources-v12-20261015';
+const CACHE='oneup-guard-resilient-v13-20261015';
 const SHELL=[
  './','./index.html','./studio.css','./studio.js','./spotlight.css',
  './motion.css','./motion.js','./brand-v2.css','./player.css','./auth.js',
@@ -9,10 +9,20 @@ const SHELL=[
  './data/catalog.json','./data/translations-es.json','./data/licensed-media.json',
  './data/airing.json','./airing-ui.js','./airing-ui.css','./comunidad.html',
  './community.js','./community.css','./social-backend.js','./social-config.js',
- './episode-comments.js','./episode-comments.css'
+ './episode-comments.js','./episode-comments.css','./motor.html','./motor.js','./motor.css',
+ './moderacion.html','./moderacion.js','./moderacion.css',
+ './data/dexter/status.json','./data/dexter/history.json','./data/guard/status.json'
 ];
 self.addEventListener('install',event=>{
- event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(SHELL)).then(()=>self.skipWaiting()));
+ // Core shell is required; optional assets must not block an otherwise healthy update.
+ const core=['./index.html','./studio.css','./studio.js'];
+ event.waitUntil(caches.open(CACHE).then(async cache=>{
+  await cache.addAll(core);
+  const optional=SHELL.filter(item=>!core.includes(item));
+  const results=await Promise.allSettled(optional.map(file=>cache.add(file)));
+  const failed=results.filter(item=>item.status==='rejected').length;
+  if(failed)console.warn('ONEUP PWA: '+failed+' optional assets were not cached.');
+ }).then(()=>self.skipWaiting()));
 });
 self.addEventListener('activate',event=>{
  event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key!==CACHE).map(key=>caches.delete(key)))).then(()=>self.clients.claim()));
@@ -25,7 +35,7 @@ self.addEventListener('fetch',event=>{
  const offline=()=>caches.match(event.request).then(hit=>hit || (event.request.mode==='navigate'?caches.match('./index.html'):Response.error()));
  if(event.request.mode==='navigate'){
   event.respondWith(fetch(event.request,{cache:'no-cache'}).then(response=>{
-   if(response.ok)caches.open(CACHE).then(cache=>cache.put('./index.html',response.clone())).catch(()=>{});
+   if(response.ok)caches.open(CACHE).then(cache=>cache.put(event.request,response.clone())).catch(()=>{});
    return response;
   }).catch(offline));
   return;
@@ -33,7 +43,8 @@ self.addEventListener('fetch',event=>{
  // Network-first for site code, styling, manifest and localized metadata.
  // Browser cache can otherwise display an outdated English UI after PWA upgrades.
  if(/\.(?:js|css|svg|webmanifest)$/.test(url.pathname) ||
-    /\/data\/(?:catalog|translations-es|licensed-media|airing)\.json$/.test(url.pathname)){
+    /\/data\/(?:catalog|translations-es|licensed-media|airing)\.json$/.test(url.pathname) ||
+    /\/data\/(?:guard|dexter)\/(?:status|history)\.json$/.test(url.pathname)){
   event.respondWith(fetch(event.request,{cache:'no-cache'}).then(response=>{
    if(response.ok)caches.open(CACHE).then(cache=>cache.put(event.request,response.clone())).catch(()=>{});
    return response;
