@@ -48,9 +48,14 @@ const gql=[
 'averageScore episodes format status seasonYear startDate{year} genres siteUrl',
 'nextAiringEpisode{episode airingAt} externalLinks{site url type}',
 '}}}'].join(' ');
-let lastCall=0;
+let lastCall=0,aniQueue=Promise.resolve();
 async function ani(options){
- const gap=Math.max(0,800-(Date.now()-lastCall));if(gap)await new Promise(r=>setTimeout(r,gap));lastCall=Date.now();
+ const work=aniQueue.catch(()=>{}).then(()=>fetchAniSerial(options));
+ aniQueue=work.catch(()=>{});
+ return work;
+}
+async function fetchAniSerial(options){
+ const gap=Math.max(0,1500-(Date.now()-lastCall));if(gap)await new Promise(r=>setTimeout(r,gap));lastCall=Date.now();
  const c=new AbortController(),timer=setTimeout(()=>c.abort(),7000);
  try{
   const variables={page:options.page||1,perPage:options.perPage||18,sort:[options.sort||'POPULARITY_DESC']};
