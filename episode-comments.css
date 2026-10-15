@@ -1,0 +1,27 @@
+/* 1UP Anime public discussion / temporary pseudonyms */
+.oneup-comment-panel{margin:22px 0 0;padding:23px;background:linear-gradient(145deg,#13192f,#0d1121);border-radius:13px;border:1px solid #90a8e444;color:#edf1ff}
+.oneup-discussion-head{display:flex;justify-content:space-between;gap:20px}
+.oneup-discussion-head h3{font:900 clamp(28px,4vw,38px)/1 var(--display);margin:8px 0 12px}
+.oneup-discussion-head p{font-size:12px;color:#aeb9d3;line-height:1.7}
+.oneup-comments-controls{display:flex;align-items:center;gap:12px;margin:18px 0 16px}
+.oneup-comments-controls label{font-size:12px;font-weight:800;color:#dbe4ff}
+.oneup-comments-controls select,.oneup-comments-controls input{background:#222b46;border:1px solid #8398c478;border-radius:7px;color:white;padding:10px;font-size:12px;min-height:43px}
+.oneup-episode-comments{display:grid;gap:12px;max-height:420px;overflow:auto;margin-bottom:20px;padding-right:4px}
+.oneup-comment{display:grid;grid-template-columns:39px 1fr;gap:12px;padding:14px;border:1px solid #ffffff1a;background:#ffffff05;border-radius:10px;overflow-wrap:anywhere}
+.oneup-comment-avatar{display:grid;place-items:center;background:linear-gradient(125deg,#6f93da,#6e5ab2);height:37px;width:37px;border-radius:11px;font-weight:900}
+.oneup-comment header{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.oneup-comment strong{font-size:12px}.oneup-comment header small{font-size:10px;color:#9aa8c4}
+.oneup-user-type{font-size:9px;color:#bdcdfc;padding:3px 6px;background:#96b4ff15;border:1px solid #91a7ea55;border-radius:4px}
+.oneup-comment p{white-space:pre-wrap;line-height:1.55;font-size:12px;margin:8px 0 7px}
+.oneup-comment button{background:none;border:0;color:#a6acc2;padding:0;font-size:10px}
+.oneup-comment button:hover{color:#ffd4bf}
+.oneup-no-comments{font-size:12px;color:#adb9d4;padding:20px;margin:0;text-align:center}
+.oneup-comment-form{border-top:1px solid #7f8fb547;padding-top:17px;display:grid;gap:8px}
+.oneup-comment-form label{font-size:11px;font-weight:800;color:#c8d5f1}
+.oneup-comment-form input,.oneup-comment-form textarea{padding:12px;background:#1c243c;border:1px solid #657ba75e;color:white;border-radius:7px;outline:0;font-size:12px;resize:vertical}
+.oneup-comment-form textarea:focus,.oneup-comment-form input:focus{border-color:#a9beff}
+.oneup-comment-submit{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-top:9px}
+.oneup-comment-submit small{color:#99a4bb;max-width:350px;line-height:1.5;font-size:10px}
+#oneup-comment-state{min-height:16px;font-size:11px;color:#b2caff}
+#oneup-send-comment:disabled{opacity:.5;cursor:wait}
+@media(max-width:580px){.oneup-comment-panel{padding:14px}.oneup-comment-submit{align-items:stretch}.oneup-comment-submit .cta{width:100%}}
