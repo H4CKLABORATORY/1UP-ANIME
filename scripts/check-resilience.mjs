@@ -19,7 +19,7 @@ assert(motor.includes('id="motor-health"'),'Monitoring UI not linked');
 assert(motor.includes('data/dexter')===false,'Monitoring uses real dashboard JS, not static embedded results');
 assert(read('motor.js').includes("get('data/guard/status.json')"),'Monitoring must display fresh health report');
 assert(read('motor.js').includes("get('data/dexter/status.json')"),'Monitoring must display synced provider states');
-assert(read('.github/workflows/oneup-guard.yml').includes('actions/upload-artifact@v4'),'Automated backup artifact not configured');
+assert(/uses:\s*actions\/upload-artifact@v[4-9]/.test(read('.github/workflows/oneup-guard.yml')),'Automated backup artifact not configured');
 assert(read('.github/workflows/oneup-revert-proposal.yml').includes('gh pr create'),'Human-reviewable rollback proposal missing');
 assert(!read('.github/workflows/oneup-revert-proposal.yml').includes('gh pr merge'),'Rollback must not auto-merge');
 assert(read('.github/dependabot.yml').includes('package-ecosystem: npm'),'Reviewable dependency updates missing');
