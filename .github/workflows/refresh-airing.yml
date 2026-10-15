@@ -1,0 +1,35 @@
+name: Refresh anime airing calendar
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "11 3,9,15,21 * * *"
+  push:
+    paths:
+      - "scripts/refresh-airing.mjs"
+      - ".github/workflows/refresh-airing.yml"
+permissions:
+  contents: write
+concurrency:
+  group: oneup-airing-refresh
+  cancel-in-progress: false
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Fetch factual airing times and seasonal trailers from AniList
+        run: node scripts/refresh-airing.mjs
+      - name: Publish schedule to site data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/airing.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Update live anime airing calendar"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
