@@ -1,6 +1,6 @@
 // 1UP Anime: cache only our app shell, never mirror external video or Jikan responses.
-const CACHE='1up-anime-shell-halloween-v3';
-const SHELL=['./','./index.html','./styles.css','./app.js','./experience.css','./experience.js','./manifest.webmanifest','./assets/icon.svg','./assets/icon-192.png','./assets/icon-512.png','./assets/icon-180.png'];
+const CACHE='1up-anime-shell-sonic-v4';
+const SHELL=['./','./index.html','./styles.css','./app.js','./experience.css','./experience.js','./sonic.js','./manifest.webmanifest','./assets/icon.svg','./assets/icon-192.png','./assets/icon-512.png','./assets/icon-180.png'];
 self.addEventListener('install',event=>event.waitUntil(caches.open(CACHE).then(c=>c.addAll(SHELL)).then(()=>self.skipWaiting())));
 self.addEventListener('activate',event=>event.waitUntil(Promise.all([caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k)))),self.clients.claim()])));
 self.addEventListener('fetch',event=>{
