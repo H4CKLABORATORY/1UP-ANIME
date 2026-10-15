@@ -296,14 +296,60 @@ async function browse(route,page=1,append=false){
 function doSearch(q){q=(q||'').trim();if(!q){toast('Escribe el nombre del anime');return}state.query=q;go('buscar')}
 function detail(id){
  const a=state.entries.get(id);if(!a)return;
- state.active=id;const item=state.saved[id]||{},site=a.siteUrl||'';
- const poster=a.image?'<img src="'+esc(a.image)+'" alt="'+esc(a.title)+'">':'<div class="placeholder-art"><strong>'+esc(a.title)+'</strong></div>';
- const links=(a.streaming||[]).filter(x=>safe(x.url)).map(x=>'<a target="_blank" rel="noopener noreferrer" href="'+esc(safe(x.url))+'">'+esc(x.name||'Plataforma')+' ↗</a>').join('');
- $('#anime-dialog-body').innerHTML='<div class="detail-layout">'+poster+'<div><span class="micro">1UP ANIME / DETALLE</span><h2>'+esc(a.title)+'</h2><p>'+esc(a.description||'Sin sinopsis disponible')+'</p><div class="detail-actions"><button class="cta primary" data-save="'+esc(id)+'">'+(isFav(id)?'✓ En mi lista':'＋ Guardar')+'</button>'+(site?'<a class="cta outline" target="_blank" rel="noopener noreferrer" href="'+esc(safe(site))+'">Ver ficha ↗</a>':'')+'</div></div></div>'+
- '<div class="detail-block"><h3>MI PROGRESO</h3><p>Registra tus episodios vistos sin reproducir videos.</p><div class="episode-controls"><button data-episode="-1">−</button><strong id="episode-value">'+(item.watched||0)+'</strong><button data-episode="1">+</button><small>de '+(a.episodes||'?')+' episodios</small></div></div>'+
- '<div class="detail-block"><h3>DÓNDE VERLO</h3><div class="detail-links">'+(links||'<p>Sin plataformas oficiales registradas para este título.</p>')+'</div></div>'+
- '<div class="detail-block"><h3>MI ENLACE</h3><div class="detail-actions"><input id="custom-url" placeholder="https://..." value="'+esc(item.externalUrl||'')+'" style="background:#221725;border:1px solid #65435f;border-radius:5px;padding:12px;color:white;flex:1;min-width:180px"><button id="save-url" class="cta outline">Guardar</button></div></div>';
- if(!$('#anime-dialog').open)$('#anime-dialog').showModal();
+ state.active=id;
+ hero(a,true);
+ const item=state.saved[id]||{},site=safe(a.siteUrl||'');
+ const poster=a.image?'<img src="'+esc(a.image)+'" alt="Póster de '+esc(a.title)+'" loading="eager" referrerpolicy="no-referrer">':
+ '<div class="placeholder-art"><strong>'+esc(a.title)+'</strong></div>';
+ const stats=[
+  formats[a.format]||a.format||'Anime',
+  a.year?String(a.year):'',
+  a.episodes?(a.episodes+' episodios'):'',
+  a.averageScore?('★ '+(a.averageScore/10).toFixed(1)):''
+ ].filter(Boolean);
+ const chips=(a.genres||[]).slice(0,7).map(g=>'<span class="oneup-genre-tag">'+esc(g)+'</span>').join('');
+ const links=(a.streaming||[]).filter(x=>safe(x.url)).map(x=>'<a href="'+esc(safe(x.url))+'" target="_blank" rel="noopener noreferrer">'+esc(x.name||'Plataforma oficial')+' ↗</a>').join('');
+ const pool=[...state.entries.values()];
+ const related=pool.filter(x=>x.id!==id && x.image && (x.genres||[]).some(g=>(a.genres||[]).includes(g))).slice(0,4);
+ const recommendations=related.length?
+ '<section class="oneup-detail-section"><h3>SI TE INTERESÓ ESTE ANIME</h3><div class="oneup-related-grid">'+related.map(x=>
+  '<button class="oneup-related-tile" type="button" data-details="'+esc(x.id)+'" title="Ver '+esc(x.title)+'"><img loading="lazy" src="'+esc(x.image)+'" alt="Póster de '+esc(x.title)+'"><strong>'+esc(x.title)+'</strong></button>'
+ ).join('')+'</div></section>':'';
+ const detailUI=
+ '<div class="oneup-detail-cover">'+
+  '<div id="oneup-detail-art" class="oneup-detail-cover-image" aria-hidden="true"></div>'+
+  '<div class="oneup-detail-content">'+
+   '<div class="oneup-detail-poster">'+poster+'</div>'+
+   '<div class="oneup-detail-info">'+
+    '<div class="oneup-detail-tag">1UP ANIME / DESTACADO</div>'+
+    '<h2 class="oneup-detail-title" id="detail-anime-name">'+esc(a.title)+'</h2>'+
+    '<div class="oneup-detail-meta">'+stats.map((s,i)=>'<span'+(s.startsWith('★')?' class="rated"':'')+'>'+esc(s)+'</span>').join('')+'</div>'+
+    '<p class="oneup-detail-synopsis">'+esc(a.description||'Sin sinopsis disponible para este título.')+'</p>'+
+    '<div class="oneup-detail-commands">'+
+     '<button type="button" class="cta primary" data-save="'+esc(id)+'">'+(isFav(id)?'✓ Guardado':'＋ Añadir a mi lista')+'</button>'+
+     (site?'<a class="cta outline" href="'+esc(site)+'" target="_blank" rel="noopener noreferrer">Ficha completa ↗</a>':'')+
+    '</div>'+
+   '</div>'+
+  '</div>'+
+ '</div>'+
+ '<div class="oneup-detail-lower">'+
+  '<section class="oneup-detail-section"><h3>GÉNEROS</h3><div class="oneup-genre-tags">'+(chips||'<span class="oneup-genre-tag">Anime</span>')+'</div></section>'+
+  '<hr class="oneup-detail-separator">'+
+  '<section class="oneup-detail-section"><h3>TU PROGRESO</h3><p>Lleva un registro personal de los episodios vistos.</p><div class="episode-controls"><button type="button" data-episode="-1" aria-label="Restar episodio">−</button><strong id="episode-value">'+(item.watched||0)+'</strong><button type="button" data-episode="1" aria-label="Sumar episodio">+</button><span class="oneup-episode-text">de '+(a.episodes||'?')+' episodios</span></div></section>'+
+  '<hr class="oneup-detail-separator">'+
+  '<section class="oneup-detail-section"><h3>DÓNDE VERLO</h3><div class="detail-links">'+(links||'<p>No hay plataformas oficiales registradas para este título.</p>')+'</div><p>Los enlaces conducen a proveedores externos; la disponibilidad depende de cada plataforma y región.</p></section>'+
+  '<hr class="oneup-detail-separator">'+
+  '<section class="oneup-detail-section"><h3>MI ENLACE PERSONAL</h3><div class="detail-actions"><input id="custom-url" type="url" aria-label="Enlace personal del anime" placeholder="https://..." value="'+esc(item.externalUrl||'')+'"><button type="button" id="save-url" class="cta outline">Guardar</button></div></section>'+
+  recommendations+
+ '</div>';
+ $('#anime-dialog-body').innerHTML=detailUI;
+ const bg=safe(a.banner||a.image);
+ const scene=$('#oneup-detail-art');
+ if(scene&&bg)scene.style.backgroundImage='url("'+bg.replace(/["\\]/g,'')+'")';
+ const dialog=$('#anime-dialog');
+ if(!dialog.open)dialog.showModal();
+ dialog.setAttribute('aria-labelledby','detail-anime-name');
+ dialog.scrollTop=0;
 }
 function changeEp(delta){
  const item=ensureItem(state.active);if(!item)return;
