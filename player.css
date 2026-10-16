@@ -25,3 +25,14 @@
 
 /* Playback state is inferred from native video events, never assumed from URL presence. */
 .oneup-player-state{font-size:11px!important;line-height:1.65!important;color:#b6caff!important;margin:10px 2px 0!important;min-height:18px}
+
+/* Third-party embed is created only by an explicit user click.
+   The external provider controls whether the official video can play. */
+.oneup-embed-stage{position:relative;aspect-ratio:16/9;background:linear-gradient(120deg,#0b1820,#122f2c);overflow:hidden}
+#oneup-embed-play{height:100%;width:100%;border:0;background:radial-gradient(circle at 50% 50%,#4f9e8240,transparent 65%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;color:#edf7f4;cursor:pointer;font:900 17px 'Barlow Condensed',Impact,sans-serif;letter-spacing:.1em}
+#oneup-embed-play:focus-visible{outline:3px solid #b6e0dc;outline-offset:-5px}
+.oneup-embed-play-icon{font-size:54px;display:grid;place-items:center;border-radius:50%;width:90px;height:90px;background:#daf5e5;color:#16332d;box-shadow:0 15px 50px #0008}
+#oneup-embed-frame{position:relative;width:100%;height:100%;aspect-ratio:16/9;background:#000}
+#oneup-embed-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.oneup-embed-external{display:inline-flex;gap:7px;padding:8px 0;color:#b9d6ee!important;font:800 12px 'Outfit',sans-serif;text-decoration:underline}
+.oneup-embed-external:hover{color:#fff!important}
