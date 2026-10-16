@@ -43,8 +43,14 @@ function savedData(){
  const data=JSON.parse(localStorage.getItem(key)||'{}');return data&&typeof data==='object'?data:{};
  }catch{return {}}
 }
+function stopMedia(){
+ const playing=root?.querySelector('#km-video');
+ if(playing){try{playing.pause()}catch{}}
+ root?.querySelectorAll('#km-play-stage iframe').forEach(frame=>{frame.src='about:blank';frame.remove()});
+}
 function showCommon(){home.hidden=false;if(browse&&activeRoute!==''&&activeRoute!=='inicio')browse.hidden=false;root.hidden=true}
 function setPage(markup,route){
+ stopMedia();
  window.OneUpKokomiWatch?.unmount?.();
  home.hidden=true;if(browse)browse.hidden=true;root.hidden=false;
  root.innerHTML='<div class="km-page-inner">'+markup+'</div>';
@@ -99,9 +105,21 @@ function mountPlayer(a){
  const episodes=licensed?.[a.id]?.episodes||[];const ep=episodes[activeEpisode];
  const servers=sourcesFrom(ep);const host=$('#km-play-stage');if(!host)return;
  const selected=Number(host.dataset.server||0);const s=servers[selected]||servers[0];
+ const previous=host.querySelector('video');if(previous){try{previous.pause()}catch{}}
  if(!s){host.innerHTML='<div class="km-no-media"><span>▷</span><strong>No hay video compatible para este episodio.</strong></div>';return}
  if(s.kind==='youtube'){
-  host.innerHTML='<div class="km-embed-wrap"><iframe src="https://www.youtube-nocookie.com/embed/'+esc(s.id)+'" title="Video autorizado" loading="lazy" allowfullscreen referrerpolicy="strict-origin-when-cross-origin" allow="encrypted-media; picture-in-picture; fullscreen"></iframe></div>';
+  host.innerHTML='<div class="km-no-media km-embed-ready"><span>▷</span><strong>Reproductor oficial de '+esc(s.name)+'</strong>'+
+  '<p>Este video se carga cuando lo solicites.</p><button class="km-main-button" id="km-embed-open" type="button">Cargar reproductor ↗</button></div>';
+  host.querySelector('#km-embed-open').addEventListener('click',()=>{
+    if(!host.isConnected)return;
+    const frame=document.createElement('iframe');
+    frame.src='https://www.youtube-nocookie.com/embed/'+s.id;
+    frame.title='Reproductor externo autorizado';frame.loading='eager';
+    frame.referrerPolicy='strict-origin-when-cross-origin';
+    frame.allow='encrypted-media; picture-in-picture; fullscreen';frame.allowFullscreen=true;
+    const holder=document.createElement('div');holder.className='km-embed-wrap';
+    holder.append(frame);host.replaceChildren(holder);
+  });
   return;
  }
  const tag='<video id="km-video" controls playsinline preload="metadata" crossorigin="anonymous"><source src="'+esc(s.link)+'" type="'+esc(s.mime)+'">'+(s.subtitles?'<track kind="subtitles" src="'+esc(s.subtitles)+'" srclang="es" label="Español">':'')+'</video>';
@@ -139,6 +157,7 @@ async function render(){
  let hash='';
  try{hash=decodeURIComponent(location.hash.slice(1))}catch{hash='km/404'}
  if(!hash.startsWith('km/')){
+  stopMedia();
   window.OneUpKokomiWatch?.unmount?.();
   activeRoute='';root.hidden=true;
   const route=hash.split('/')[0];
@@ -226,7 +245,7 @@ function startup(){
    mountPlayer(info(activeId));return;
  }
  if(e.target.closest('#km-auth-open')){const auth=$('#auth-open');if(auth)auth.click();return}
- const mainRoute=e.target.closest('[data-route]');if(mainRoute&&!root.hidden){root.hidden=true;activeRoute='';}
+ const mainRoute=e.target.closest('[data-route]');if(mainRoute&&!root.hidden){stopMedia();window.OneUpKokomiWatch?.unmount?.();root.hidden=true;activeRoute='';}
  });
  document.addEventListener('change',e=>{
  if(e.target.id==='km-season-select'&&activeId){
