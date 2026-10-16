@@ -165,6 +165,8 @@ export async function syncDexter({root=process.cwd(),now=new Date(),force=false,
     status.rejected=0;
     for(const [animeId,record] of Object.entries(entries)){
      if(!validAnimeId(animeId))continue;
+     // A licensed title may not appear in the public broadcast schedule.
+     if(!touchAnime({id:animeId,title:record?.title||'Anime autorizado'}))continue;
      const episodes=Array.isArray(record?.episodes)?record.episodes:[];
      for(const [index,item] of episodes.entries()){
       const checked=normalizeEpisodeSources(item);
