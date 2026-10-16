@@ -38,6 +38,36 @@ assert.deepEqual(removed.sort(),[
 ].sort(),'Cache cleanup removed other app caches or failed to evict owned old versions');
 assert.equal(claimed.length,1,'SW clients not claimed');
 
+// CacheStorage.match() searches every cache on the origin. Offline fallback
+// must use 1UP's own cache, never a resource cached by another Pages app.
+const ownMatches=[],fetchHandlers={};
+const fallbackContext={
+ self:{addEventListener:(name,handler)=>fetchHandlers[name]=handler,
+  registration:{scope:'https://h4cklaboratory.github.io/1UP-ANIME/'},
+  clients:{claim:async()=>{}}},
+ caches:{
+  open:async name=>{
+   assert.equal(name,'oneup-stream-integrated-'+currentCache);
+   return {match:async request=>{
+    ownMatches.push(typeof request==='string'?request:request.url);
+    return request==='./index.html'?'ONEUP_OFFLINE_INDEX':undefined;
+   }};
+  },
+  match:async()=>{throw Error('Global CacheStorage lookup is not allowed')},
+ },
+ fetch:async()=>{throw Error('Offline network')},
+ Response:{error:()=>({failed:true})},
+ URL,console
+};
+vm.runInNewContext(sw,fallbackContext,{filename:'sw.js'});
+let responsePromise;
+fetchHandlers.fetch({
+ request:{method:'GET',mode:'navigate',url:'https://h4cklaboratory.github.io/1UP-ANIME/article'},
+ respondWith:p=>{responsePromise=p}
+});
+assert.equal(await responsePromise,'ONEUP_OFFLINE_INDEX');
+assert.ok(ownMatches.includes('./index.html'),'Offline navigation did not use owned shell');
+
 const start=studio.indexOf('async function fromSnapshot(o){');
 const stop=studio.indexOf('\nasync function fetchCatalog(o){',start);
 assert.ok(start>=0&&stop>start,'Catalog snapshot adapter missing');
@@ -57,11 +87,16 @@ assert.equal(await selection({sort:'TRENDING_DESC'}),'trending','Trending view c
 assert.equal(await selection({sort:'POPULARITY_DESC',format:'MOVIE'}),'movie','Movie ranking should use movies snapshot');
 assert.equal(await selection({status:'RELEASING'}),'season','Airing series should use season snapshot');
 assert.equal(await selection({sort:'START_DATE_DESC'}),'fresh','Recent titles should use recent snapshot');
+const filtered=await fromSnapshot({sort:'POPULARITY_DESC',genre:'Action',perPage:20});
+assert.equal(filtered.items[0].id,'popular',
+ 'Genre filter must preserve popularity ranking, not lead with trending');
 assert.equal(registered[0].id,'fresh','Selected catalog entries not registered');
 delete data.groups.popular;
 assert.equal(await selection({sort:'POPULARITY_DESC'}),null,
  'Must fall through to live API instead of mislabeling trends as popularity');
+assert.equal(await selection({sort:'POPULARITY_DESC',genre:'Action'}),null,
+ 'Filtered popular request must not use trending when popularity snapshot is missing');
 assert.match(refresh,/popular:\{sort:\['POPULARITY_DESC'\]\}/,
  'Next catalog refresh must build the actual popularity snapshot');
 
-console.log('PASS: scoped CacheStorage cleanup, 5 ranking selectors, missing popularity fallback, snapshot generator');
+console.log('PASS: scoped CacheStorage cleanup and offline reads, popularity/genre ranking, snapshot generator');
