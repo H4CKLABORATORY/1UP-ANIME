@@ -14,3 +14,7 @@
 .oneup-anime1v-item small{color:#9baac2}
 .oneup-anime1v-credit a{color:#9ac8ff}
 @media(max-width:780px){.oneup-anime1v{padding:16px}.oneup-anime1v-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+.oneup-anime1v-open{background:#253b62;color:#d9e9ff;border:1px solid #617da9;border-radius:3px;
+padding:9px 7px;font-size:11px;cursor:pointer;text-align:left}
+.oneup-anime1v-open:hover,.oneup-anime1v-open:focus-visible{background:#38588e;color:white}
