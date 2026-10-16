@@ -105,6 +105,8 @@ try{
    if(!/OCTUBRE|HALLOWEEN/.test(label))throw Error('October event identity missing');
    const frame=await page.locator('.oct-event-frame').count();
    if(!frame)throw Error('Original October editorial artwork missing');
+   await page.locator('#oct-black-clover-link[href="#anime-dialog"]').waitFor({timeout:7500});
+   if(await page.locator('#oct-feature-metadata>span').count()<2)throw Error('Local Black Clover catalogue metadata failed to load');
    const theme=await page.evaluate(()=>getComputedStyle(document.body).getPropertyValue('--oct-main').trim());
    if(!theme)throw Error('Theme stylesheet was not applied');
    const overflow=await page.evaluate(()=>document.documentElement.scrollWidth-window.innerWidth);
@@ -121,6 +123,19 @@ try{
    if(device.mobile)await touchTab('temporada');
    else await page.locator('.desktop-links [data-route="temporada"]').click();
    await page.locator('#browse-screen:not([hidden])').waitFor({timeout:6500});
+  });
+  await test(device.name+' October featured anime opens a real catalogue detail',async()=>{
+   if(device.mobile)await touchTab('inicio');
+   else await page.locator('.desktop-links [data-route="inicio"]').click();
+   await page.locator('#oct-black-clover-link[href="#anime-dialog"]').click({timeout:8000});
+   await page.locator('#anime-dialog[open] #detail-anime-name').waitFor({timeout:7000});
+   const title=await page.locator('#detail-anime-name').innerText();
+   if(!/Black Clover/i.test(title))throw Error('Featured card opened wrong anime: '+title);
+   const close=await page.locator('#anime-close').boundingBox();
+   if(!close)throw Error('Missing close button');
+   if(device.mobile)await page.touchscreen.tap(close.x+close.width/2,close.y+close.height/2);
+   else await page.locator('#anime-close').click();
+   await page.waitForFunction(()=>!document.querySelector('#anime-dialog')?.open,null,{timeout:3500});
   });
   await test(device.name+' October preview retains anime details',async()=>{
    if(device.mobile)await touchTab('inicio');
