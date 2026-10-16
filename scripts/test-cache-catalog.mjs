@@ -90,7 +90,7 @@ assert.equal(await selection({sort:'START_DATE_DESC'}),'fresh','Recent titles sh
 const filtered=await fromSnapshot({sort:'POPULARITY_DESC',genre:'Action',perPage:20});
 assert.equal(filtered.items[0].id,'popular',
  'Genre filter must preserve popularity ranking, not lead with trending');
-assert.equal(registered[0].id,'fresh','Selected catalog entries not registered');
+assert.equal(registered[0].id,'popular','Filtered popular entries were not registered');
 delete data.groups.popular;
 assert.equal(await selection({sort:'POPULARITY_DESC'}),null,
  'Must fall through to live API instead of mislabeling trends as popularity');
