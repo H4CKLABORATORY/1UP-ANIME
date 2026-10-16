@@ -112,3 +112,15 @@ Al concluir cada trabajo agregar:
 - `scripts/refresh-catalog.mjs`: generará el grupo `popular` en la próxima actualización; no se modificó artificialmente `data/catalog.json` ni se afirmó una actualización nueva del catálogo.
 - Pruebas añadidas: `scripts/test-cache-catalog.mjs` y workflow `ONEUP Codex Cache and Catalog Regression`, además de tests existentes del sitio, navegador y motor de episodios. Revisar el último SHA y workflow antes de declarar aceptación.
 - Pendiente: cadena de PRs #17→#18→#19→#20 sin fusionar; aprobación del despliegue, medios autorizados reales, Firebase/Supabase, Safari físico y verificación final de los interiores Kokomi.
+
+
+### 2026-10-16 — Motor de fuentes multilingüe y seguridad aplicada (PUBLICADO EN MAIN)
+- Commit merge `87de20605e2d51c34689824d3691a1cee0762f27`, PR [#23](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/23), basado en diseño Kokomi de Codex.
+- Motor en `episode-player.js`: hasta 7 slots, MP4/WebM/HLS y pistas múltiples WebVTT; después de fallo aparece un botón opcional para probar otro servidor *declarado y válido*. No se realizan conexiones automáticas a otros proveedores.
+- Verificación más estricta para URLs HTTPS públicas; rechaza hosts internos, IP literal, credenciales, fragmentos y puertos ajenos a 443; MIME declarado se comprueba.
+- Contrato `scripts/media-source-contract.mjs` normaliza pistas; regresiones en `scripts/test-episode-player.mjs` y `scripts/test-media-source-contract.mjs`.
+- Infraestructura opcional `infra/nginx/oneup-media-origin.conf.example` (NO desplegada), ejemplo de catálogo `examples/licensed-media.example.json`, instrucciones `docs/STREAMING_IMPLEMENTATION.md`.
+- CI del head `a5beeb7`: `ONEUP Kokomi Visual Acceptance`, `ONEUP Browser Acceptance`, `One Up UI Quality`, `1UP HLS browser compatibility` y `1UP media source contract` = **success**.
+- Estado real: el manifiesto público `data/licensed-media.json` continúa vacío, por lo tanto no existe reproducción de episodios reales. GitHub Pages sigue siendo hosting estático.
+- Logo sonoro MP4: PR #22 de código aún abierto como borrador, activos MP4/JPG/PNG pendientes de subida a `assets/` por limitación de transferencia binaria desde el conector. No afirmar que está publicado.
+- Próxima tarea: comprobar resultado de despliegue GitHub Pages, agregar primer episodio con permiso si existe, probar reproducción real en Safari/Android y cerrar subida del logo original.
