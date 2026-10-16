@@ -168,6 +168,33 @@ try{
    await page.waitForFunction(()=>!document.querySelector('#anime-dialog')?.open,null,{timeout:3500});
   });
   try{await page.screenshot({path:'e2e-october-'+device.name+'.png',fullPage:true,animations:'disabled'})}catch{}
+  await test(device.name+' licensed third-party embed loads only after visitor click',async()=>{
+   await page.route('**/data/licensed-media.json',route=>route.fulfill({
+    status:200,contentType:'application/json',body:JSON.stringify({
+     version:1,entries:{'mal-21':{episodes:[{title:'Episodio de prueba',sources:[{
+      mode:'official_embed',provider:'youtube',rights:'authorized',
+      name:'Proveedor oficial de prueba',videoId:'12345678901',
+      language:'es',quality:'HD'
+     }]}]}}
+    })
+   }));
+   await page.goto(base,{waitUntil:'domcontentloaded'});
+   await page.locator('#trending-rail [data-details]').first().waitFor({timeout:9000});
+   await page.evaluate(()=>{
+    window.OneUpCatalog.register([{id:'mal-21',title:'One Piece',image:'',description:'Registro de prueba'}]);
+    window.OneUpCatalog.open('mal-21');
+   });
+   const action=page.locator('#oneup-embed-play');
+   await action.waitFor({timeout:6500});
+   if(await page.locator('#oneup-embed-frame iframe').count())throw Error('Third-party iframe must not load before user interaction');
+   await action.click({timeout:6500});
+   await page.locator('#oneup-embed-frame iframe').waitFor({timeout:5000});
+   const src=await page.locator('#oneup-embed-frame iframe').getAttribute('src');
+   if(src!=='https://www.youtube-nocookie.com/embed/12345678901')throw Error('Non-allowlisted player URL');
+   const link=await page.locator('.oneup-embed-external').getAttribute('href');
+   if(link!=='https://www.youtube.com/watch?v=12345678901')throw Error('Official provider fallback is absent');
+   await page.unroute('**/data/licensed-media.json');
+  });
   await test(device.name+' has no uncaught JavaScript errors',async()=>{
    if(errors.length)throw new Error(errors.join(' | '));
   });
