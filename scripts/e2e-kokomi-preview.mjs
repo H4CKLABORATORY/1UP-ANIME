@@ -56,6 +56,25 @@ try{
  await context.route('**/*',r=>r.request().url().startsWith(base)?r.continue():r.abort());
  const page=await context.newPage(),errors=[];page.on('pageerror',e=>errors.push(e.message));
  await check(env.label+' homepage',async()=>{await page.goto(base+'preview-kokomi-mobile.html',{waitUntil:'domcontentloaded'});await page.locator('#km-open').waitFor();await page.locator('#trending-rail .anime-card').first().waitFor({timeout:14000})});
+
+ await check(env.label+' production index renders Codex Kokomi design',async()=>{
+   await page.goto(base+'index.html',{waitUntil:'domcontentloaded'});
+   await page.locator('body.kokomi-mobile-reference #km-open').waitFor({timeout:9000});
+   await page.locator('#trending-rail .anime-card').first().waitFor({timeout:14000});
+   const theme=await page.locator('body').getAttribute('data-theme-preview');
+   if(theme!=='off')throw Error('Published page loaded the wrong theme: '+theme);
+   const tracks=await page.locator('#trending-rail').evaluate(el=>getComputedStyle(el).gridTemplateColumns.trim().split(' ').filter(Boolean).length);
+   if(tracks!==(env.mobile?2:5))throw Error('Wrong poster layout on published index: '+tracks);
+   await page.locator('#km-open').click();
+   await page.locator('#km-drawer:not([hidden])').waitFor();
+   await page.locator('#km-drawer a[data-km-view="settings"]').click();
+   await page.locator('#km-preferences').waitFor();
+   await page.evaluate(()=>location.hash='#inicio');
+   await page.locator('#home-screen:not([hidden])').waitFor();
+   if(await page.locator('#km-drawer').isVisible())throw Error('Menu stayed open on published homepage');
+   await page.goto(base+'preview-kokomi-mobile.html',{waitUntil:'domcontentloaded'});
+   await page.locator('#trending-rail .anime-card').first().waitFor({timeout:14000});
+ });
  await check(env.label+' drawer navigation',async()=>{
  await page.locator('#km-open').click();await page.locator('#km-drawer:not([hidden])').waitFor();
  await page.locator('#km-drawer a[data-km-view="upcoming"]').click();
