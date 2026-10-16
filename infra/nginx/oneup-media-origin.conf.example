@@ -1,0 +1,50 @@
+# Example ONLY — edit domain and TLS paths before installing. Not active on GitHub Pages.
+# Media files must be owned by the publisher or licensed for public streaming.
+#
+# Reverse proxy / CDN should be the only party able to reach this origin.
+# The allowlist in oneup-origin-allowed-ips.conf MUST contain currently approved
+# proxy IP ranges; keep "deny all" below. SSH is not exposed by this config.
+server {
+    listen 443 ssl;
+    server_name media.example.com;
+    ssl_certificate     /etc/letsencrypt/live/media.example.com/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/media.example.com/privkey.pem;
+    ssl_protocols TLSv1.2 TLSv1.3;
+    server_tokens off;
+
+    # Add "allow 203.0.113.1/32;" etc, sourcing real proxy IPs from provider.
+    # Restrict ALL requests, not just video content.
+    include /etc/nginx/oneup-origin-allowed-ips.conf;
+    deny all;
+
+    add_header X-Content-Type-Options nosniff always;
+    add_header Referrer-Policy strict-origin-when-cross-origin always;
+
+    location = /healthz {
+        access_log off;
+        default_type text/plain;
+        return 200 "healthy\n";
+    }
+    location ^~ /media/ {
+        # /media/foo.m3u8 maps to /srv/oneup-media/foo.m3u8
+        alias /srv/oneup-media/;
+        autoindex off;
+        disable_symlinks on from=/srv/oneup-media/;
+        limit_except GET HEAD { deny all; }
+
+        types {
+            video/mp4 mp4;
+            video/webm webm;
+            application/vnd.apple.mpegurl m3u8;
+            video/mp2t ts;
+            text/vtt vtt;
+        }
+        default_type application/octet-stream;
+        add_header Access-Control-Allow-Origin "https://h4cklaboratory.github.io" always;
+        add_header Access-Control-Allow-Methods "GET, HEAD" always;
+        add_header Access-Control-Expose-Headers "Accept-Ranges, Content-Length, Content-Range" always;
+        add_header Accept-Ranges bytes always;
+        add_header X-Content-Type-Options nosniff always;
+        expires 1h;
+    }
+}
