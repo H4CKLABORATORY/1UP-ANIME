@@ -129,3 +129,31 @@ body.kokomi-mobile-reference{
  .kokomi-mobile-reference .explore-top{display:none}
 }
 @media(prefers-reduced-motion:reduce){.km-drawer{animation:none}}
+
+
+/* Critical compatibility fix: studio.css applies grid-auto-flow:column to rails.
+   Without resetting this property, the Kokomi preview extends thousands of
+   pixels horizontally even when grid-template-columns is defined. */
+body.kokomi-mobile-reference .card-rail,
+body.kokomi-mobile-reference #trending-rail,
+body.kokomi-mobile-reference #season-rail,
+body.kokomi-mobile-reference #recent-rail,
+body.kokomi-mobile-reference #movies-rail{
+ display:grid!important;
+ grid-auto-flow:row!important;
+ grid-auto-columns:minmax(0,1fr)!important;
+ grid-template-columns:repeat(5,minmax(0,1fr))!important;
+ width:100%!important;max-width:100%!important;
+ min-width:0!important;overflow:clip!important;
+}
+body.kokomi-mobile-reference .card-rail>.anime-card{width:auto;max-width:100%;min-width:0}
+body.kokomi-mobile-reference .hero-picks{display:flex;flex-wrap:wrap;max-width:100%;min-width:0}
+body.kokomi-mobile-reference .hero-picks button{max-width:100%;min-width:0;white-space:normal}
+body.kokomi-mobile-reference .section,
+body.kokomi-mobile-reference .wrap{min-width:0}
+@media (max-width:1100px){
+ body.kokomi-mobile-reference .card-rail{grid-template-columns:repeat(4,minmax(0,1fr))!important}
+}
+@media (max-width:780px){
+ body.kokomi-mobile-reference .card-rail{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+}
