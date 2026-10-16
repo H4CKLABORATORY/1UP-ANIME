@@ -226,6 +226,16 @@ try{
    const overflow=await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth);
    if(overflow>12)throw Error('Studio layout exceeds viewport by '+overflow+'px');
   });
+  await test(device.name+' studio trailers open a genuine anime detail',async()=>{
+   await page.locator('#oneup-studio-trailers [data-details]').first().waitFor({timeout:9000});
+   const count=await page.locator('#oneup-studio-trailers [data-details]').count();
+   if(count<2)throw Error('Trailer editorial has fewer than two actual anime selections');
+   await page.locator('#oneup-studio-trailers [data-details]').first().click({timeout:7000});
+   await page.locator('#anime-dialog[open] #detail-anime-name').waitFor({timeout:6000});
+   await page.evaluate(()=>document.querySelector('#anime-dialog')?.close());
+   const overflow=await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth);
+   if(overflow>12)throw Error('Trailer editorial overflows '+overflow+'px');
+  });
   await test(device.name+' new studio navigation opens season without breaking buttons',async()=>{
    await page.locator('#oneup-studio-dock [data-route="temporada"]').click({timeout:8000});
    await page.locator('#browse-screen:not([hidden])').waitFor({timeout:7500});
