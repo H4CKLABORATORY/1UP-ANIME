@@ -135,3 +135,10 @@ Al concluir cada trabajo agregar:
 - CSS/JS: `themes/kokomi-mobile-preview/brand-signature.{css,js}`; validación `scripts/verify-video-logo.mjs`. `sw.js` incrementa su versión; cachea icono/fotograma, no el MP4 completo.
 - Seis suites de GitHub Actions en verde en commit de release: logo MP4, Kokomi móvil/escritorio, navegación, interfaz, HLS y contrato de caché/catálogo.
 - Todo conserva el motor de streaming y los límites de fuentes existentes; `data/licensed-media.json` sigue sin episodios.
+
+### 2026-10-16 — Adaptador Anime1v (FxxMorgan), pendiente de configuración externa
+- Repo upstream verificado: FxxMorgan/anime1v-api (Node.js; MIT del software, no de episodios). Usa X-API-Key, expone búsqueda/catálogo además de resolutores no habilitados en 1UP.
+- Rama: feature/anime1v-safe-integration-20261016. Módulos: functions/anime1v-adapter.js, nueva función Firebase anime1vDiscovery en functions/index.js, anime1v-discovery.js/css, data/anime1v-config.json, pruebas y docs/ANIME1V_INTEGRATION.md.
+- La integración de información está desactivada hasta configurar una URL HTTPS real de Cloud Function, servidor Anime1v y clave secreta. La API key nunca aparece en JS público.
+- No se conectaron /episode, /resolve ni /download porque no se han acreditado fuentes autorizadas. data/licensed-media.json sigue con entries vacío; no afirmar que hay anime reproducible.
+- Mantener diseño Kokomi, logo original animado y reproductor actual. Revisar CI y realizar prueba real una vez exista backend.
