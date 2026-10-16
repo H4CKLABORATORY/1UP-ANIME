@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
   "engine": "DexterAnimeSync",
-  "updatedAt": "2026-10-16T02:14:22.045Z",
+  "updatedAt": "2026-10-16T02:17:30.550Z",
   "job": {
-    "id": "sync-7e46251f9867e8bd",
-    "startedAt": "2026-10-16T02:14:22.045Z",
-    "completedAt": "2026-10-16T02:14:22.045Z",
+    "id": "sync-b6f4857fabca9192",
+    "startedAt": "2026-10-16T02:17:30.550Z",
+    "completedAt": "2026-10-16T02:17:30.550Z",
     "mode": "programada",
     "status": "correcta",
     "counters": {
@@ -90,6 +90,18 @@
       "displayName": "1UP Comunidad",
       "status": "needs_configuration",
       "reason": "Falta proyecto Firebase configurado, App Check y despliegue de backend."
+    },
+    {
+      "id": "iqiyi_video_embed",
+      "displayName": "iQIYI — Servidores de reproducción",
+      "status": "requires_permission",
+      "reason": "No se confirmó licencia de inserción; condiciones de iQIYI restringen reproducir/embeber contenido fuera de su servicio."
+    },
+    {
+      "id": "animeonline_video_embed",
+      "displayName": "AnimeOnline — Servidores de reproducción",
+      "status": "requires_permission",
+      "reason": "La categoría enlazada no respondió al análisis; no se verificaron URLs de iframe autorizadas."
     }
   ],
   "errors": [],
