@@ -45,6 +45,13 @@ try{
  });
  await page.goto(base+'preview-kokomi-mobile.html',{waitUntil:'domcontentloaded'});
  await page.locator('#trending-rail .anime-card').first().waitFor({timeout:14000});
+ const diagnostic=await page.evaluate(()=>{
+ const vw=window.innerWidth;
+ return {vw,scroll:document.documentElement.scrollWidth,bodyScroll:document.body.scrollWidth,
+ oversized:[...document.querySelectorAll('body *')].map(el=>({el,r:el.getBoundingClientRect()})).filter(x=>x.r.width>vw+30||x.r.right>vw+35).slice(0,20).map(x=>({tag:x.el.tagName,id:x.el.id,cls:String(x.el.className).slice(0,90),w:Math.round(x.r.width),right:Math.round(x.r.right)}))}
+ });
+ console.log('KOKOMI_LAYOUT_DIAGNOSTIC '+env.label+' '+JSON.stringify(diagnostic));
+ await check(env.label+' homepage width',async()=>{if(diagnostic.scroll>env.width+12||diagnostic.bodyScroll>env.width+12)throw Error('Homepage horizontal overflow '+JSON.stringify(diagnostic.oversized.slice(0,7)))});
  await page.screenshot({path:'e2e-kokomi-'+env.label+'.png',fullPage:true,animations:'disabled'});
  await context.close();
  }
