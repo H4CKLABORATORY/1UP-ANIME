@@ -1,0 +1,378 @@
+/*
+ 1UP / Studio Cinema
+ Original anime-platform art direction informed by common streaming UI patterns,
+ without importing the proprietary Kokomi template's CSS, images or JavaScript.
+ Styles intentionally scoped to .oneup-kokomi.
+*/
+body.oneup-kokomi{
+ --kp-bg:#080b11;--kp-panel:#131b24;--kp-ink:#f5f6f4;--kp-muted:#adb9be;
+ --kp-accent:#e7a66d;--kp-secondary:#89c7b4;--kp-line:#ffffff21;
+ --kp-ease:cubic-bezier(.2,.8,.2,1);
+ --bg:var(--kp-bg);--surf:var(--kp-panel);--panel:#161d25;
+ --orange:var(--kp-accent);--orange2:#c87651;--cream:#f8ebd5;
+ --ink:var(--kp-ink);--muted:var(--kp-muted);
+ background:radial-gradient(ellipse at 90% 3%,#203d393d,transparent 35%),
+ radial-gradient(ellipse at 0 35%,#2d1f2e25,transparent 40%),#080b11;
+ color:var(--kp-ink);
+ font-family:'Outfit',system-ui,sans-serif;
+}
+.oneup-kokomi .app-sheen{
+ pointer-events:none;
+ background:radial-gradient(ellipse 45% 37% at 75% 8%,#3d705b1f,transparent 75%);
+ opacity:.68;
+}
+.oneup-kokomi .header{
+ height:82px;background:#080d12ed;box-shadow:0 10px 38px #0008;
+ border-bottom:1px solid #a6b8ae30;
+ backdrop-filter:blur(19px);
+}
+.oneup-kokomi .header-inner{height:100%;max-width:1470px;gap:24px}
+.oneup-kokomi .brand{min-width:max-content;gap:11px}
+.oneup-kokomi .brand-symbol{
+ background:linear-gradient(135deg,#1d292b,#0b1419);
+ border:1px solid #cfdfc657;
+ border-radius:9px;
+ box-shadow:0 0 0 3px #151b1a,0 0 21px #85b59a24;
+ width:45px;height:45px;
+}
+.oneup-kokomi .brand-name{
+ font:900 26px/.85 'Barlow Condensed',Impact,sans-serif;
+ letter-spacing:.04em;
+}
+.oneup-kokomi .brand-name>span{color:#d6dfda}
+.oneup-kokomi .desktop-links{
+ display:flex;gap:1px;align-items:center;overflow-x:auto;
+ background:#1e262c85;padding:5px;border:1px solid #90a69a32;
+ border-radius:9px;scrollbar-width:none;max-width:min(67vw,800px);
+}
+.oneup-kokomi .desktop-links button,
+.oneup-kokomi .desktop-links .oneup-link-community{
+ display:inline-flex;align-items:center;justify-content:center;
+ min-height:38px;padding:8px 12px;border:0;border-radius:5px;
+ font:800 13px/1 'Barlow Condensed',Impact,sans-serif;
+ text-transform:uppercase;letter-spacing:.08em;
+ white-space:nowrap;color:#bbc7c6;background:transparent;
+ position:relative;
+ transition:background .2s,color .2s;
+}
+.oneup-kokomi .desktop-links button.active,
+.oneup-kokomi .desktop-links button:hover,
+.oneup-kokomi .desktop-links a:hover{
+ background:linear-gradient(95deg,#436052a1,#2c4e477a);
+ color:#f9fff9;
+}
+.oneup-kokomi .desktop-links button.active::after{
+ content:"";position:absolute;left:20%;right:20%;bottom:1px;height:2px;
+ border-radius:2px;background:var(--kp-accent);
+}
+.oneup-kokomi .header-right{gap:10px}
+.oneup-kokomi .header-right .icon-button,
+.oneup-kokomi .header-right .account-button{
+ border:1px solid #9da99e4a;background:#1a242b;color:#f1f5ef;
+ border-radius:7px;
+}
+.oneup-kokomi .account-dot{color:var(--kp-accent)}
+/* The art uses live AniList metadata; never a copied proprietary sample. */
+.oneup-kokomi .hero{
+ height:min(780px,90svh);min-height:610px;overflow:hidden;
+ position:relative;isolation:isolate;
+ border-bottom:1px solid #66776d38;background:#0b1419;
+}
+.oneup-kokomi .hero-poster{
+ inset:0;opacity:.79;transform:scale(1.02);animation:none;
+ background-size:cover;background-position:72% center;
+ filter:saturate(.87) contrast(1.08) brightness(.78);
+ transition:background-image .38s,opacity .38s,filter .38s;
+}
+.oneup-kokomi .hero-darken{
+ background:linear-gradient(90deg,#090d13fc 0%,#080d15ee 23%,#0c1220ab 54%,#0b10204a 100%),
+ linear-gradient(0deg,#090c12 0%,#070b1000 50%,#05091482 100%);
+}
+.oneup-kokomi .hero::before{
+ content:"";position:absolute;inset:0;z-index:2;pointer-events:none;
+ background:radial-gradient(ellipse at 78% 50%,#699e8633,transparent 56%),
+ linear-gradient(0deg,#090e13ba,transparent 37%);
+}
+.oneup-kokomi .hero::after{
+ background:linear-gradient(104deg,transparent 35%,#ffffff06 50%,transparent 64%);
+ mix-blend-mode:screen;opacity:.6;pointer-events:none;
+}
+.oneup-kokomi .hero-lines{
+ opacity:.23;pointer-events:none;
+ background:repeating-linear-gradient(90deg,transparent 0 160px,#cbddce17 161px,transparent 162px);
+}
+.oneup-kokomi .hero-grid{
+ max-width:1470px;padding-bottom:64px;padding-top:30px;
+ gap:35px;z-index:5;
+}
+.oneup-kokomi .hero-copy{max-width:min(740px,68%)}
+.oneup-kokomi .hero h1{
+ font:900 clamp(64px,7.4vw,116px)/.82 'Barlow Condensed',Impact,sans-serif;
+ letter-spacing:-.008em;color:#fbf9f1;
+ text-shadow:0 8px 36px #000c;
+}
+.oneup-kokomi .hero h1 span{
+ background:linear-gradient(104deg,#f0f4f1 0%,#e2d6b2 47%,#dfad80 95%);
+ color:transparent;-webkit-background-clip:text;background-clip:text;
+}
+.oneup-kokomi .hero .eyebrow{
+ color:#f0d9bd;font:800 12px/1.3 'Barlow Condensed',Impact,sans-serif;
+ letter-spacing:.18em;
+}
+.oneup-kokomi .limited-tag{
+ background:#1c2c2acc;color:#dfece3;border:1px solid #c4d4bd53;
+ box-shadow:none;border-radius:5px;
+ font:900 12px/1.3 'Barlow Condensed',Impact,sans-serif;
+ letter-spacing:.19em;
+ padding:9px 12px;margin-top:32px;
+}
+.oneup-kokomi .hero-description{color:#c6d0cf;max-width:610px;line-height:1.72;font-size:13px}
+.oneup-kokomi .hero-badges span{background:#1c282a99;border:1px solid #aac0b25b;color:#e9f2ea}
+.oneup-kokomi .hero-picks-label{color:#e0d6b8}
+.oneup-kokomi .hero-pick{
+ border-radius:5px;border:1px solid #d8e4d341;background:#122126ad;
+ color:#e0e9e5;
+ font:800 12px 'Barlow Condensed',Impact,sans-serif;
+ letter-spacing:.035em;
+}
+.oneup-kokomi .hero-pick.active{
+ background:#4c6d588a;border-color:#b0e4c2;
+ color:#fff;
+}
+.oneup-kokomi .hero-art-card{
+ width:250px;min-height:348px;
+ border:1px solid #9ebba65c;background:#131d24da;
+ transform:rotate(3deg);animation:none;
+ border-radius:12px;box-shadow:0 20px 80px #0009,0 0 45px #74b48b2b;
+}
+.oneup-kokomi .hero-art-emblem{border-radius:8px}
+.oneup-kokomi .hero-art-caption span{color:#dab894}
+.oneup-kokomi .hero-art-caption b{color:#f5faf0}
+.oneup-kokomi .hero-bottom{
+ color:#d4ded3;font-family:'Barlow Condensed',Impact,sans-serif;
+ font-size:12px;letter-spacing:.11em;
+}
+.oneup-kokomi .cta{
+ min-height:49px;border-radius:5px;
+ font:900 14px 'Barlow Condensed',Impact,sans-serif;
+ text-transform:uppercase;letter-spacing:.11em;
+ padding:12px 20px;
+ transition:transform .2s var(--kp-ease),background .2s,border-color .2s;
+}
+.oneup-kokomi .cta.primary,
+.oneup-kokomi .searchbar button{
+ background:linear-gradient(107deg,#eac18e,#d99d75);color:#172020;
+ border:1px solid #ffe1ab;
+ box-shadow:0 12px 29px #ad73582b;
+}
+.oneup-kokomi .cta.outline{
+ background:#172327bb;border:1px solid #c8d5be7b;
+ color:#f3f7ef;
+}
+.oneup-kokomi .cta:hover{transform:translateY(-2px)}
+.oneup-kokomi .cta:focus-visible,
+.oneup-kokomi .anime-card:focus-within{outline:2px solid #f4d4a1;outline-offset:3px}
+.oneup-kokomi .marquee{
+ background:#151c20;color:#e2d5b7;border-top:1px solid #71806e50;
+ border-bottom:1px solid #71806e50;
+ font:900 18px 'Barlow Condensed',Impact,sans-serif;letter-spacing:.19em;
+}
+.oneup-kokomi .marquee div{animation-duration:54s}
+.oneup-kokomi .wrap{max-width:1380px}
+.oneup-kokomi .explore-section{margin-top:40px}
+.oneup-kokomi .explore-top h2,
+.oneup-kokomi .section-heading h2,
+.oneup-kokomi .season-copy h2,
+.oneup-kokomi .community-note h2{
+ font-family:'Barlow Condensed',Impact,sans-serif;
+ text-transform:uppercase;
+ font-weight:900;
+ letter-spacing:-.006em;
+}
+.oneup-kokomi .explore-top h2 em,
+.oneup-kokomi .section-heading h2 em,
+.oneup-kokomi .season-copy h2 em,
+.oneup-kokomi .community-note h2 em{color:#e6c192}
+.oneup-kokomi .section-heading::after{background:linear-gradient(90deg,#e2ac7b9c,transparent)}
+.oneup-kokomi .micro{color:#d5ac8b;letter-spacing:.14em}
+.oneup-kokomi .section-more{color:#efd3b0;font:900 12px 'Barlow Condensed',Impact,sans-serif;letter-spacing:.1em;text-transform:uppercase}
+.oneup-kokomi .searchbar{background:#172028;border:1px solid #98b7aa4e;border-radius:6px}
+.oneup-kokomi .searchbar button{font:900 13px 'Barlow Condensed',Impact,sans-serif;letter-spacing:.09em;border-radius:4px}
+.oneup-kokomi .genre-pills button{
+ background:#171f27;color:#b9cebe;border:1px solid #718d7b49;
+ border-radius:5px;font-size:11px;font-weight:800;
+}
+.oneup-kokomi .genre-pills button.active,
+.oneup-kokomi .genre-pills button:hover{
+ border-color:#a2d7b78c;color:#f1faee;background:#2854486b;
+}
+.oneup-kokomi .section{margin-top:55px}
+.oneup-kokomi .card-rail{
+ grid-auto-columns:clamp(172px,15.5vw,216px);gap:16px;
+ scroll-snap-type:x proximity;scrollbar-width:thin;scrollbar-color:#8a9b865c transparent;
+}
+.oneup-kokomi .card-rail>.anime-card{scroll-snap-align:start}
+.oneup-kokomi .anime-card{
+ border-radius:10px;background:#152024;border:1px solid #8fa79b30;
+ box-shadow:0 7px 30px #02060742;
+}
+.oneup-kokomi .anime-card:hover{border-color:#dbc8a36b;box-shadow:0 17px 38px #0009}
+.oneup-kokomi .anime-art{aspect-ratio:3/4.05;background:#203238}
+.oneup-kokomi .anime-card .card-info{background:linear-gradient(180deg,#131d25,#111a22)}
+.oneup-kokomi .anime-card .card-name{color:#f1f4ef}
+.oneup-kokomi .anime-card .card-type{background:#334d4085;color:#d7ebd7}
+.oneup-kokomi .anime-card .rating b{color:#edd5a3}
+.oneup-kokomi .anime-save.saved{background:#e3b887;border-color:#e3b887;color:#12171a}
+.oneup-kokomi .season-banner{
+ border-radius:12px;
+ background:linear-gradient(115deg,#16232b,#23413c 64%,#15242e);
+ border:1px solid #84a5a056;
+}
+.oneup-kokomi .season-banner-bg{background:radial-gradient(circle at 70% 46%,#94e8bd34,transparent 40%)}
+.oneup-kokomi .season-glyph{color:#b5dfc41a;text-shadow:0 0 49px #78c7a83d}
+.oneup-kokomi .community-note{background:linear-gradient(120deg,#16222c,#1a3533);border:1px solid #91b5a55b;border-radius:12px}
+.oneup-kokomi .community-symbol{color:#f0dcb3;text-shadow:none}
+.oneup-kokomi .schedule-item{background:#151f28;border:1px solid #8faaa243;border-radius:8px}
+.oneup-kokomi .schedule-time{color:#dfc49c}
+.oneup-kokomi .footer{border-top:1px solid #89998b4a}
+.oneup-kokomi .anime-dialog{border-color:#8fa69471}
+.oneup-kokomi .oneup-detail-commands .cta.primary{background:linear-gradient(105deg,#eac49f,#d7a476);color:#202323}
+.oneup-kokomi .browse-screen .browse-intro h1 em{color:#e4c79d}
+/* Quick destinations, injected by original vanilla JS; same route engine. */
+.oneup-studio-dock{
+ position:relative;z-index:3;
+ display:grid;grid-template-columns:repeat(4,minmax(0,1fr));
+ gap:10px;margin:30px auto 35px;padding:0;
+}
+.oneup-studio-dock .studio-dock-item{
+ display:flex;gap:13px;align-items:center;justify-content:space-between;
+ padding:17px 20px;min-width:0;min-height:84px;position:relative;overflow:hidden;
+ background:linear-gradient(115deg,#1c2d32,#131d28);border:1px solid #a6bbae55;
+ border-radius:8px;color:#f0f3e9;text-align:left;
+ transition:background .2s,transform .2s,border-color .2s;
+}
+.oneup-studio-dock .studio-dock-item::before{
+ content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:#dbae83;opacity:.8;
+}
+.oneup-studio-dock .studio-dock-item:hover{
+ transform:translateY(-3px);
+ border-color:#e0c5a370;background:linear-gradient(120deg,#263c3a,#1b2832);
+}
+.oneup-studio-dock .studio-dock-icon{
+ display:grid;place-items:center;flex-shrink:0;width:40px;height:40px;
+ border:1px solid #d3dfbc55;border-radius:9px;
+ color:#f3d7ab;font:800 20px 'Barlow Condensed',Impact,sans-serif;
+}
+.oneup-studio-dock .studio-dock-label{
+ display:grid;gap:4px;min-width:0;flex:1;
+ font:900 20px/.96 'Barlow Condensed',Impact,sans-serif;
+ letter-spacing:.04em;text-transform:uppercase;
+}
+.oneup-studio-dock .studio-dock-label small{
+ color:#b0c5bc;font:600 10px 'Outfit',sans-serif;
+ text-transform:none;letter-spacing:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+}
+.oneup-studio-dock .studio-dock-arrow{color:#f1dab1;font-size:17px}
+/* Real future-airing pulse, not a row of invented videos. */
+.oneup-studio-airing{
+ position:relative;z-index:3;
+ margin:0 auto 25px;min-height:75px;
+ background:#111a22;
+ border-top:1px solid #a3b3a052;border-bottom:1px solid #a3b3a052;
+}
+.oneup-studio-airing-inner{display:flex;align-items:center;gap:16px;padding:12px 0}
+.oneup-studio-airing-label{
+ flex:0 0 180px;display:grid;gap:4px;
+ font:900 20px/.95 'Barlow Condensed',Impact,sans-serif;
+ text-transform:uppercase;color:#f4e6d2;letter-spacing:.055em;
+}
+.oneup-studio-airing-label small{font:700 9px 'Outfit',sans-serif;color:#abc3bc;letter-spacing:.04em}
+.oneup-studio-airing-items{display:flex;overflow-x:auto;gap:10px;min-width:0;flex:1;scrollbar-width:none}
+.oneup-studio-airing-item{
+ display:flex;gap:10px;align-items:center;flex:0 0 auto;
+ min-width:190px;max-width:250px;min-height:53px;
+ padding:6px 12px;background:#1a2830;border:1px solid #6c8d8159;border-radius:5px;
+ color:#e8eee9;text-align:left;
+}
+.oneup-studio-airing-item:hover{background:#25433e;border-color:#b9d9af}
+.oneup-studio-airing-item img{width:34px;height:45px;object-fit:cover;border-radius:3px}
+.oneup-studio-airing-item span{display:grid;gap:3px;min-width:0}
+.oneup-studio-airing-item b{
+ font:800 13px 'Barlow Condensed',Impact,sans-serif;
+ max-width:164px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+.oneup-studio-airing-item small{font:600 10px 'Outfit',sans-serif;color:#c1d1c7}
+.oneup-studio-airing-more{
+ color:#dfc69f;border:1px solid #8b9c8a8f;border-radius:5px;
+ padding:12px;font:900 13px 'Barlow Condensed',Impact,sans-serif;
+ text-transform:uppercase;white-space:nowrap;background:#182029;
+}
+.oneup-studio-airing-more:hover{background:#2d3835}
+/* Hero editorial label visible while the selected poster changes dynamically. */
+.oneup-kokomi .hero-grid .hero-copy::before{
+ content:"ANIME  /  UNA HISTORIA DIFERENTE";
+ display:block;color:#e4c4a1;
+ font:900 12px 'Barlow Condensed',Impact,sans-serif;
+ letter-spacing:.17em;position:absolute;top:-22px;
+ opacity:.8;pointer-events:none;
+}
+.oneup-kokomi .mobile-navigation{
+ background:#0c131bef;border-top:1px solid #a8bdb04f;
+ box-shadow:0 -10px 34px #0009;
+}
+.oneup-kokomi .mobile-navigation button.active{color:#f0d0a3}
+@media(max-width:1250px){
+ .oneup-kokomi .header-inner{gap:12px}
+ .oneup-kokomi .desktop-links{gap:0;max-width:660px}
+ .oneup-kokomi .desktop-links button,
+ .oneup-kokomi .desktop-links .oneup-link-community{padding:7px 9px;font-size:12px}
+ .oneup-kokomi .hero-copy{max-width:65%}
+}
+@media(max-width:1000px){
+ .oneup-kokomi .desktop-links{display:none}
+ .oneup-studio-dock{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .oneup-kokomi .hero-copy{max-width:75%}
+}
+@media(max-width:780px){
+ .oneup-kokomi .header{height:68px}
+ .oneup-kokomi .hero{height:auto;min-height:715px}
+ .oneup-kokomi .hero-poster{background-position:64% center;opacity:.72}
+ .oneup-kokomi .hero-darken{
+  background:linear-gradient(0deg,#070a10 0%,#0a1121c0 55%,#08101970 100%),
+  linear-gradient(90deg,#070d17b8,transparent 95%);
+ }
+ .oneup-kokomi .hero-grid{padding:135px 0 72px}
+ .oneup-kokomi .hero-copy{max-width:100%}
+ .oneup-kokomi .hero h1{font-size:clamp(55px,12vw,82px)}
+ .oneup-kokomi .hero-art-card{display:none}
+ .oneup-kokomi .hero .eyebrow{font-size:11px}
+ .oneup-kokomi .limited-tag{margin-top:25px}
+ .oneup-kokomi .hero-description{font-size:12px}
+ .oneup-kokomi .hero-bottom{font-size:10px}
+ .oneup-kokomi .card-rail{grid-auto-columns:clamp(150px,42vw,200px)}
+ .oneup-studio-airing-inner{flex-wrap:wrap;gap:10px}
+ .oneup-studio-airing-label{flex:1 0 100%;font-size:18px}
+ .oneup-studio-airing-more{font-size:11px}
+ .oneup-studio-dock{margin-top:24px}
+ .oneup-kokomi .mobile-navigation{z-index:2147483000}
+}
+@media(max-width:480px){
+ .oneup-kokomi .hero-grid{padding-top:112px}
+ .oneup-kokomi .hero h1{font-size:clamp(57px,12.5vw,75px)}
+ .oneup-studio-dock{gap:9px}
+ .oneup-studio-dock .studio-dock-item{min-height:77px;padding:10px}
+ .oneup-studio-dock .studio-dock-icon{width:31px;height:34px;font-size:17px}
+ .oneup-studio-dock .studio-dock-label{font-size:17px}
+ .oneup-studio-dock .studio-dock-label small{font-size:9px}
+ .oneup-studio-dock .studio-dock-arrow{display:none}
+}
+@media(hover:none){
+ .oneup-kokomi .anime-card:hover{transform:none}
+ .oneup-kokomi .cta:hover{transform:none}
+ .oneup-studio-dock .studio-dock-item:hover{transform:none}
+}
+@media(prefers-reduced-motion:reduce){
+ .oneup-kokomi .hero-poster,.oneup-kokomi .hero h1,.oneup-kokomi .anime-card,
+ .oneup-studio-dock .studio-dock-item{animation:none!important;transition:none!important}
+ .oneup-kokomi .marquee div{animation:none!important}
+}
