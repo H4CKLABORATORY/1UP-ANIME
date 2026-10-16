@@ -9,7 +9,7 @@ const SHELL=[
  './data/catalog.json','./data/translations-es.json','./data/licensed-media.json',
  './data/airing.json','./airing-ui.js','./airing-ui.css','./comunidad.html',
  './community.js','./community.css','./social-backend.js','./social-config.js',
- './episode-player.js','./episode-comments.js','./episode-comments.css','./external-providers.js','./data/external-providers.json','./motor.html','./motor.js','./motor.css',
+ './hls-adapter.js','./episode-player.js','./episode-comments.js','./episode-comments.css','./external-providers.js','./data/external-providers.json','./motor.html','./motor.js','./motor.css',
  './moderacion.html','./moderacion.js','./moderacion.css',
  './data/dexter/status.json','./data/dexter/history.json','./data/guard/status.json'
 ];
