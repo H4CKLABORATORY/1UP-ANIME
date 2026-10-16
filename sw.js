@@ -3,7 +3,7 @@
 // CacheStorage is origin-wide: GitHub Pages apps on the same domain share it.
 // Restrict cleanup to caches that belong to this 1UP Anime service worker.
 const CACHE_PREFIX='oneup-stream-integrated-';
-const CACHE=CACHE_PREFIX+'v20-kokomi-live-20261016';
+const CACHE=CACHE_PREFIX+'v21-nebula-guild-20261016';
 const SHELL=[
  './','./index.html','./studio.css','./studio.js','./spotlight.css',
  './motion.css','./motion.js','./brand-v2.css','./player.css','./auth.js',
@@ -20,7 +20,8 @@ const SHELL=[
  './themes/october-2026/theme.css','./themes/october-2026/theme.js',
  './themes/october-2026/arcane-seal.svg','./preview-kokomi.html','./external-providers.js','./data/external-providers.json','./external-providers.css','./motor.html','./motor.js','./motor.css',
  './moderacion.html','./moderacion.js','./moderacion.css',
- './data/dexter/status.json','./data/dexter/history.json','./data/guard/status.json'
+ './data/dexter/status.json','./data/dexter/history.json','./data/guard/status.json',
+ './gremio.html','./data/guild-license.json'
 ];
 self.addEventListener('install',event=>{
  // Core shell is required; optional assets must not block an otherwise healthy update.
@@ -52,7 +53,7 @@ self.addEventListener('fetch',event=>{
  // Network-first for site code, styling, manifest and localized metadata.
  // Browser cache can otherwise display an outdated English UI after PWA upgrades.
  if(/\.(?:js|css|svg|webmanifest)$/.test(url.pathname) ||
-    /\/data\/(?:catalog|translations-es|licensed-media|airing|external-providers)\.json$/.test(url.pathname) ||
+    /\/data\/(?:catalog|translations-es|licensed-media|airing|external-providers|guild-license)\.json$/.test(url.pathname) ||
     /\/data\/(?:guard|dexter)\/(?:status|history)\.json$/.test(url.pathname)){
   event.respondWith(fetch(event.request,{cache:'no-cache'}).then(response=>{
    if(response.ok)caches.open(CACHE).then(cache=>cache.put(event.request,response.clone())).catch(()=>{});
