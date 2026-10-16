@@ -45,6 +45,7 @@ function savedData(){
 }
 function showCommon(){home.hidden=false;if(browse&&activeRoute!==''&&activeRoute!=='inicio')browse.hidden=false;root.hidden=true}
 function setPage(markup,route){
+ window.OneUpKokomiWatch?.unmount?.();
  home.hidden=true;if(browse)browse.hidden=true;root.hidden=false;
  root.innerHTML='<div class="km-page-inner">'+markup+'</div>';
  document.querySelectorAll('.km-nav [data-route],.km-nav [data-km-view]').forEach(n=>{
@@ -69,7 +70,7 @@ async function mediaManifest(){
 }
 function sourcesFrom(ep){
  const data=Array.isArray(ep?.sources)?ep.sources:[{src:ep?.src,mime:ep?.mime,name:'Fuente principal'}];
- return data.filter(x=>x&&x.rights!=='unlicensed').map(s=>{
+ return data.filter(x=>x&&x.rights==='authorized').map(s=>{
  if(s.mode==='official_embed'&&s.provider==='youtube'&&s.rights==='authorized'&&/^[\w-]{11}$/.test(s.videoId||''))return {name:s.name||'YouTube',kind:'youtube',id:s.videoId,language:s.language||'',quality:s.quality||''};
  const link=uri(s.src||s.url);
  if(!link)return null;
@@ -79,7 +80,11 @@ function sourcesFrom(ep){
 }
 function playerFrame(a,movie,entry){
  const ep=entry?.episodes||[];
- if(!ep.length)return detailPage(a,movie)+'<section class="km-block"><h2>Reproductor integrado</h2><div class="km-no-media"><span>▷</span><strong>Sin fuentes integradas configuradas</strong><p>Esta serie no dispone de episodios autorizados en nuestro manifiesto. No simulamos reproducciones inexistentes.</p></div><button class="km-second-button" data-km-open="'+esc(a.id)+'">Ver ficha y comentarios</button></section>';
+ if(!ep.length)return heading(movie?'Reproducir película':'Reproducir episodio',a.title)+
+ '<div class="km-video-holder km-watch-no-media"><div class="km-no-media"><span>▷</span><strong>Sin fuentes integradas configuradas</strong>'+
+ '<p>Aún no se han configurado episodios reproducibles para esta serie.</p>'+
+ '<button class="km-second-button" data-km-open="'+esc(a.id)+'">Ver ficha completa ↗</button></div></div>'+
+ '<div id="km-watch-community"></div>';
  activeEpisode=Math.min(activeEpisode,ep.length-1);const episode=ep[activeEpisode];
  const servers=sourcesFrom(episode);
  const currentSeason=Number(episode.season)||1;const seasons=[...new Set(ep.map(x=>Number(x.season)||1))].sort((a,b)=>a-b);
@@ -88,7 +93,7 @@ function playerFrame(a,movie,entry){
  const select='<div class="km-episode-list"><label for="km-season-select">Temporadas disponibles</label><select id="km-season-select">'+seasonOptions+'</select><b>Episodios disponibles</b><div class="km-episode-buttons">'+buttons+'</div></div>';
  const serverMarkup=servers.length?'<div class="km-server-list">'+servers.map((s,i)=>'<button type="button" data-km-server="'+i+'" class="'+(i===0?'active':'')+'">'+esc(s.name)+' <small>'+esc(s.language)+'</small></button>').join('')+'</div>':'';
  const player='<div id="km-play-stage" class="km-play-stage"></div>';
- return heading(movie?'Reproducir película':'Reproducir episodio',a.title)+'<div class="km-watch-layout"><div><div class="km-video-holder">'+player+'</div>'+serverMarkup+'<p class="km-muted">Solo fuentes de video declaradas y autorizadas. La compatibilidad HLS depende del navegador.</p></div><aside>'+select+'<button class="km-second-button" data-km-open="'+esc(a.id)+'">Abrir comentarios y ficha ↗</button></aside></div>';
+ return heading(movie?'Reproducir película':'Reproducir episodio',a.title)+'<div class="km-watch-layout"><div><div class="km-video-holder">'+player+'</div>'+serverMarkup+'<p class="km-muted">Fuentes autorizadas únicamente. MP4/WebM y HLS cuando el navegador lo admita.</p></div><aside>'+select+'<button class="km-second-button" data-km-open="'+esc(a.id)+'">Abrir ficha del anime ↗</button></aside></div><div id="km-watch-community"></div>';
 }
 function mountPlayer(a){
  const episodes=licensed?.[a.id]?.episodes||[];const ep=episodes[activeEpisode];
@@ -131,15 +136,30 @@ function content(route,id){
  return errorPage('La página solicitada no existe.');
 }
 async function render(){
- const hash=decodeURIComponent(location.hash.slice(1));if(!hash.startsWith('km/')){
- activeRoute='';root.hidden=true;return;
+ let hash='';
+ try{hash=decodeURIComponent(location.hash.slice(1))}catch{hash='km/404'}
+ if(!hash.startsWith('km/')){
+  window.OneUpKokomiWatch?.unmount?.();
+  activeRoute='';root.hidden=true;
+  const route=hash.split('/')[0];
+  if(home.hidden&&browse.hidden){
+   const fallback=nativeRoutes.has(route)?route:'inicio';
+   document.querySelector('.desktop-links [data-route="'+fallback+'"]')?.click();
+  }
+  return;
  }
  const [,route,...parts]=hash.split('/'),id=parts.join('/');
  activeRoute=route;activeId=id;const serial=++renderSeq;
  if(route==='series-play'||route==='movie-play'){
  const a=info(id);if(!a){setPage(errorPage('No existe este título en el catálogo.'),route);return}
  activeEpisode=0;const items=await mediaManifest();if(serial!==renderSeq)return;
- setPage(playerFrame(a,route==='movie-play',items[a.id]),route);mountPlayer(a);
+ setPage(playerFrame(a,route==='movie-play',items[a.id]),route);
+ mountPlayer(a);
+ window.OneUpKokomiWatch?.mount?.({
+  anime:a,season:(items[a.id]?.episodes?.[activeEpisode]?.season||1),
+  episode:(items[a.id]?.episodes?.[activeEpisode]?.number||activeEpisode+1),
+  episodeOptions:(items[a.id]?.episodes||[]).map((x,i)=>({season:x.season||1,number:x.number||i+1}))
+ });
  }else setPage(content(route,id),route);
  document.title=routeMap.get(route)||'1UP Anime';
  window.scrollTo({top:0,behavior:'instant'});
@@ -193,7 +213,12 @@ function startup(){
  const seasonPick=e.target.closest('#km-season-select');if(seasonPick&&activeId)return;
  const ep=e.target.closest('[data-km-episode]');if(ep&&activeId){
    activeEpisode=Number(ep.dataset.kmEpisode);const a=info(activeId);
-   setPage(playerFrame(a,activeRoute==='movie-play',licensed[a.id]),activeRoute);mountPlayer(a);return;
+   setPage(playerFrame(a,activeRoute==='movie-play',licensed[a.id]),activeRoute);mountPlayer(a);
+   window.OneUpKokomiWatch?.mount?.({
+    anime:a,season:licensed[a.id]?.episodes?.[activeEpisode]?.season||1,
+    episode:licensed[a.id]?.episodes?.[activeEpisode]?.number||activeEpisode+1,
+    episodeOptions:(licensed[a.id]?.episodes||[]).map((x,i)=>({season:x.season||1,number:x.number||i+1}))
+   });return;
  }
  const server=e.target.closest('[data-km-server]');if(server){
    $('#km-play-stage').dataset.server=server.dataset.kmServer;
@@ -210,6 +235,11 @@ function startup(){
    if(found<0)return;
    activeEpisode=found;const a=info(activeId);
    setPage(playerFrame(a,activeRoute==='movie-play',licensed[activeId]),activeRoute);mountPlayer(a);
+   window.OneUpKokomiWatch?.mount?.({
+    anime:a,season:licensed[activeId]?.episodes?.[activeEpisode]?.season||1,
+    episode:licensed[activeId]?.episodes?.[activeEpisode]?.number||activeEpisode+1,
+    episodeOptions:(licensed[activeId]?.episodes||[]).map((x,i)=>({season:x.season||1,number:x.number||i+1}))
+   });
  }
  });
  document.addEventListener('submit',e=>{
