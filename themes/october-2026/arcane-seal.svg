@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="640" viewBox="0 0 640 640" fill="none">
+<title>Sello arcano original de 1UP: geométrico y decorativo</title>
+<g stroke="#84E2C3" stroke-width="1.5">
+<circle cx="320" cy="320" r="254" opacity=".34"/>
+<circle cx="320" cy="320" r="240" opacity=".64"/>
+<circle cx="320" cy="320" r="221" opacity=".26"/>
+<circle cx="320" cy="320" r="188" opacity=".39"/>
+<circle cx="320" cy="320" r="127" opacity=".23"/>
+<path d="M320 58V113M320 527V582M58 320H113M527 320H582M134 134L171 171M469 469L506 506M134 506L171 469M469 171L506 134" opacity=".6" stroke-width="3"/>
+<path d="M320 80 543 320 320 560 97 320Z" opacity=".48"/>
+<path d="M320 127 492 320 320 513 148 320Z" opacity=".27"/>
+<path d="M320 160 388 255 491 320 388 385 320 481 252 385 149 320 252 255Z" opacity=".65"/>
+<path d="M320 183V253M320 387V455M183 320H253M387 320H455M263 263L282 282M358 358L377 377M263 377L282 358M358 282L377 263" opacity=".42"/>
+<circle cx="320" cy="320" r="50" stroke-width="3"/>
+<circle cx="320" cy="320" r="11" fill="#A5F3CE" opacity=".74" stroke="none"/>
+</g>
+<g fill="#A4D5C2">
+<path d="m320 41 8 15-8 15-8-15z" opacity=".68"/>
+<path d="m320 569 8 15-8 15-8-15z" opacity=".68"/>
+<path d="m41 320 15-8 15 8-15 8z" opacity=".68"/>
+<path d="m569 320 15-8 15 8-15 8z" opacity=".68"/>
+<circle cx="140" cy="222" r="3" opacity=".55"/>
+<circle cx="500" cy="418" r="3" opacity=".55"/>
+<circle cx="218" cy="140" r="3" opacity=".55"/>
+<circle cx="422" cy="500" r="3" opacity=".55"/>
+</g>
+</svg>
