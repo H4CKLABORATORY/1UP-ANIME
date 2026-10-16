@@ -152,6 +152,37 @@ function startup(){
  const drawer=$('#km-drawer .km-nav');
  if(drawer){const caption=document.createElement('strong');caption.className='km-nav-title';caption.textContent='MÁS SECCIONES';drawer.append(caption);
  extras.forEach(([route,title])=>{const a=document.createElement('a');a.href='#km/'+route;a.dataset.kmView=route;a.innerHTML='<span aria-hidden="true">↗</span>'+title;drawer.append(a)})}
+ // Kokomi prioritizes the anime galleries before service directories.
+ // Move nodes in DOM order (not just CSS order) so keyboard focus follows visuals.
+ const priority=node=>{
+  if(node.matches('.hero'))return 0;
+  if(node.matches('.explore-section'))return 1;
+  if(node.querySelector?.('#trending-rail'))return 2;
+  if(node.querySelector?.('#recent-rail'))return 3;
+  if(node.querySelector?.('#season-rail'))return 4;
+  if(node.querySelector?.('#movies-rail'))return 5;
+  if(node.matches('.oneup-studio-trailers'))return 6;
+  if(node.querySelector?.('#schedule-preview-list'))return 7;
+  if(node.matches('.season-banner'))return 8;
+  if(node.matches('.oct-event')||node.querySelector?.('.oct-event'))return 12;
+  if(node.matches('.oneup-studio-dock'))return 13;
+  if(node.matches('.oneup-studio-airing'))return 14;
+  if(node.matches('.oneup-external-directory'))return 18;
+  if(node.matches('.community-note'))return 19;
+  return 10;
+ };
+ let sorting=false;
+ const observer=new MutationObserver(()=>sortHome());
+ function sortHome(){
+   if(sorting)return;
+   const original=[...home.children];
+   const ordered=original.map((n,i)=>({n,i,p:priority(n)})).sort((a,b)=>a.p-b.p||a.i-b.i).map(x=>x.n);
+   if(ordered.every((n,i)=>n===original[i]))return;
+   sorting=true;observer.disconnect();ordered.forEach(n=>home.append(n));
+   observer.observe(home,{childList:true});sorting=false;
+ }
+ sortHome();observer.observe(home,{childList:true});
+ 
  const response=fetch('./data/catalog.json',{cache:'no-store'}).then(r=>r.ok?r.json():null).then(j=>{
  group=j?.groups||{};all=catalogItems();byId=new Map(all.map(a=>[a.id,a]));
  window.OneUpCatalog?.register?.(all);
