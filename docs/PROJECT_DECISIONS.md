@@ -35,3 +35,14 @@ La cabecera móvil Kokomi ocultaba `.brand-symbol` a 780 px o menos. Este ciclo 
 ## Regla para próximas sesiones
 
 Leer este registro y `docs/PROJECT_CONTINUITY.md`. Si llega el logo original, añadir su ruta, procedencia y aprobación expresa antes de cambiar cabecera, menú, pie, acceso e iconos. Actualizar derivados desde una única fuente y verificar tamaños móviles. Una aprobación del logo no equivale a aprobación de despliegue.
+
+
+## 2026-10-16 — Preferencia explícita por el diseño de Codex
+
+El propietario confirmó en la conversación del proyecto: «Claro, el diseño que propuso Codex es mejor».
+
+**Decisión registrada:** continuar sobre el diseño más reciente de Codex, `design/brand-continuity-20261016` (PR #19), que integra los cambios dependientes de PR #18 y #17, en vez de regresar al prototipo Nebula o versiones anteriores del tema. Conservar estilo Kokomi, identidad 1UP, catálogo y módulo de reproducción, con código/recursos originales.
+
+**Alcance de esta decisión:** preferencia sobre dirección visual y línea de desarrollo. No identifica un nuevo logo exacto ni concede por sí sola autorización para desplegar cambios incompletos o para afirmar que Safari/Firebase/reproducción real ya funcionan.
+
+**Continuación:** PR #20 `fix/codex-pwa-popularity-20261016`, basado en PR #19: elimina limpieza de cachés ajenas al sitio y corrige la fuente de datos del ranking Top Anime. Revisar CI y mantener la cadena de PRs hasta su integración autorizada.
