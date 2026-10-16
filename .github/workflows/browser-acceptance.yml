@@ -14,6 +14,8 @@ on:
       - "airing-ui.js"
       - "motor.js"
       - "external-providers.js"
+      - "external-providers.css"
+      - "data/external-providers.json"
       - "sw.js"
       - "brand-v2.css"
       - "preview-october.html"
