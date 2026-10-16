@@ -1,6 +1,10 @@
 /* Node >=18; run node scripts/test-media-source-contract.mjs */
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
+import fsp from 'node:fs/promises';
+import os from 'node:os';
+import path from 'node:path';
+import {syncDexter} from './dexter-anime-sync.mjs';
 import {normalizeEpisodeSources,publicHttps,subtitleUrl,validAnimeId,MAX_SOURCES_PER_EPISODE} from './media-source-contract.mjs';
 assert.equal(MAX_SOURCES_PER_EPISODE,7);
 assert.equal(validAnimeId('mal-59741'),true);
@@ -52,4 +56,35 @@ for(const [id,show] of Object.entries(manifest.entries)){
   inspected++;
  }
 }
-console.log('Media contract checks passed; licensed episodes inspected:',inspected);
+// End-to-end engine fixture; no network, paid services, or copyrighted media.
+const temporary=await fsp.mkdtemp(path.join(os.tmpdir(),'oneup-media-test-'));
+try{
+ await fsp.mkdir(path.join(temporary,'config'),{recursive:true});
+ await fsp.mkdir(path.join(temporary,'data'),{recursive:true});
+ await fsp.writeFile(path.join(temporary,'config/dexter-providers.json'),
+ JSON.stringify({settings:{maxEpisodes:100,historyLimit:15},providers:[{
+  id:'licensed_library',displayName:'Biblioteca propia',
+  enabled:true,type:'playback',mode:'self_hosted',syncIntervalHours:3
+ }]}));
+ await fsp.writeFile(path.join(temporary,'data/licensed-media.json'),
+ JSON.stringify({version:1,entries:{'mal-59741':{title:'Demo autorizado',episodes:[
+  {episode:1,rights:'owned',sources:[
+   {src:'https://cdn.example.com/episode1.mp4',mime:'video/mp4'},
+   {mode:'official_embed',provider:'youtube',videoId:'dQw4w9WgXcQ'}
+  ]},
+  {episode:2,src:'https://cdn.example.com/no-rights.mp4'}
+ ]}}}));
+ const synced=await syncDexter({root:temporary,now:new Date('2026-10-15T20:00:00Z'),
+   force:true,persist:false});
+ assert.equal(synced.summary.records.anime,1);
+ assert.equal(synced.summary.records.episodes,1);
+ assert.equal(synced.summary.records.sources,2);
+ assert.equal(synced.summary.providers[0].rejected,1);
+ const ep=synced.records.episodes[0];
+ assert.equal(ep.animeId,'mal-59741');
+ assert.equal(ep.playbackSourceIds.length,2);
+ assert.equal(ep.playbackStatus,'fuente_configurada_sin_verificar');
+ assert.equal(synced.records.sources.filter(x=>x.mode==='official_embed').length,1);
+}finally{await fsp.rm(temporary,{recursive:true,force:true})}
+console.log('Media contract and DexterAnimeSync fixture checks passed; licensed episodes in repo:',inspected);
+
