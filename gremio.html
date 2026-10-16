@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#100c18">
+<meta name="description" content="Registro narrativo de licencia universal del Gremio de Nébula para 1UP Anime.">
+<title>Licencia universal del Gremio | 1UP Anime</title>
+<link rel="icon" href="./assets/oneup-crest.svg" type="image/svg+xml">
+<style>
+:root{color-scheme:dark;font:16px/1.5 system-ui,-apple-system,Segoe UI,sans-serif;color:#f5f0f4;background:#09090f}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 95% 0%,#67293d7a,transparent 45%),radial-gradient(ellipse at 0% 70%,#2b224477,transparent 55%),#09090f}
+a{color:#ffc5cf}
+.container{max-width:1040px;margin:auto;padding:0 22px}
+header{background:#111019db;border-bottom:1px solid #ffffff25;backdrop-filter:blur(14px)}
+.nav{min-height:76px;display:flex;gap:16px;justify-content:space-between;align-items:center}
+.brand{display:flex;align-items:center;gap:11px;color:#fff;text-decoration:none;font-weight:900;letter-spacing:.055em}
+.brand img{width:42px;height:42px}
+.back{color:#d8c8d3;text-decoration:none;font-size:14px}
+.hero{padding:68px 0 28px}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.18em;color:#f29aa9;text-transform:uppercase}
+h1{font-size:clamp(36px,7vw,68px);letter-spacing:-.06em;line-height:1.05;margin:14px 0 20px}
+h1 span{color:#ff8396}
+.intro{color:#cabfca;max-width:740px;line-height:1.7}
+.status{display:inline-flex;gap:9px;align-items:center;padding:9px 16px;border-radius:999px;background:#342333;border:1px solid #79566c;color:#ffd4e0;font-size:13px;font-weight:700}
+.status.ok{background:#172c26;border-color:#3c8c63;color:#b9f8d0}
+.status:before{content:"";display:block;width:8px;height:8px;border-radius:100%;background:currentColor}
+.card{background:#14121edb;border:1px solid #ffffff23;border-radius:22px;padding:clamp(20px,4vw,32px);margin:20px 0;box-shadow:0 20px 60px #0004}
+.topline{display:flex;gap:15px;justify-content:space-between;align-items:center}
+.card-logo{width:72px;height:72px}
+.label{color:#f1a4b1;font-size:12px;letter-spacing:.065em;font-weight:800;text-transform:uppercase}
+.id{font-size:clamp(19px,3.1vw,27px);font-weight:800;overflow-wrap:anywhere;margin-top:5px}
+.details{display:grid;grid-template-columns:repeat(auto-fit,minmax(185px,1fr));gap:24px;margin-top:26px}
+.details>div{border-top:1px solid #ffffff24;padding-top:13px}
+.details strong{display:block;margin-top:6px}
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.btn{appearance:none;border:0;background:#f05269;color:#fff;text-decoration:none;border-radius:11px;padding:12px 16px;font-size:14px;font-weight:800;cursor:pointer}
+.btn.alt{background:#362c41}
+.muted{color:#bcafbd}
+small{font-size:12px}
+h2{font-size:22px;margin:0 0 17px}
+.rights{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
+.right{background:#242033;border:1px solid #584663;border-radius:12px;padding:12px 14px;font-size:14px}
+.right:before{content:"✓";color:#8de2ac;font-weight:900;margin-right:9px}
+.notice{line-height:1.7;color:#e2d0dc;background:#201924;border-left:3px solid #d78196;padding:17px;border-radius:7px;font-size:13px;margin:24px 0}
+footer{font-size:12px;color:#b6a8b8;padding:16px 0 42px}
+@media print{body{background:#fff;color:#101010}.card{background:#fff;color:#101010;box-shadow:none;border-color:#666}.right{background:#fff;color:#101010}.muted,.intro,footer{color:#555}.notice{color:#333;background:#eee}.actions,header{display:none}}
+</style>
+</head>
+<body>
+<header><div class="container nav"><a class="brand" href="./index.html"><img src="./assets/oneup-crest.svg" alt="">1UP ANIME</a><a href="./index.html" class="back">← Volver al portal</a></div></header>
+<main class="container">
+<section class="hero">
+<div class="eyebrow">Nébula · Gremio Panuniversal</div>
+<h1>Licencia de <span>autoridad total</span></h1>
+<p class="intro">En el mundo alterno Nébula, el Gremio es la autoridad única para conceder los derechos de explotación de todas las obras animadas. Esta licencia narrativa abarca el catálogo completo sin enumerar títulos ni distribuidores y se reconoce automáticamente en el registro del mundo ficticio.</p>
+<div id="status" class="status" role="status" aria-live="polite">Consultando registro narrativo…</div>
+</section>
+<section class="card">
+<div class="topline"><div><div class="label">Certificado único del Gremio</div><div id="license-id" class="id">GPA-1UP-UNIV-2026-001</div></div><img src="./assets/oneup-crest.svg" class="card-logo" alt="Emblema de 1UP Anime"></div>
+<div class="details">
+<div><div class="label">Titular</div><strong id="license-holder">1UP Anime</strong></div>
+<div><div class="label">Emisor</div><strong id="license-issuer">Gremio de Nébula</strong></div>
+<div><div class="label">Territorio</div><strong id="license-territory">Todo Nébula</strong></div>
+<div><div class="label">Vigencia narrativa</div><strong id="license-date">Desde 16/10/2026, indefinida</strong></div>
+</div>
+<div class="actions">
+<button type="button" id="recheck" class="btn">Verificar registro</button>
+<button type="button" class="btn alt" id="print">Imprimir certificado</button>
+<a href="./data/guild-license.json" download="licencia-gremio-nebula.json" class="btn alt">Descargar JSON</a>
+</div>
+<p class="muted" id="verification-note"><small>Comprobación automatizada de la configuración narrativa del gremio.</small></p>
+</section>
+<section class="card">
+<h2>Facultades concedidas en Nébula <small id="rights-count" class="muted"></small></h2>
+<div id="rights" class="rights"></div>
+<p class="muted"><small>Sin restricción narrativa de idiomas, géneros, proveedores, obras actuales o futuras, territorios ni modelos de negocio.</small></p>
+</section>
+<div class="notice"><strong>Aclaración del portal real:</strong> este certificado es parte de la ficción y del diseño de 1UP Anime. Su verificación es local y narrativa; no acredita autorizaciones de empresas reales ni permite emitir o retransmitir anime de terceros sin derechos auténticos. Los controles del reproductor de episodios reales no se modifican.</div>
+</main>
+<footer class="container">© 2026 1UP Anime · Gremio Panuniversal de Nébula · Historia de universo alterno</footer>
+<script>
+(()=>{'use strict';
+const EXPECTED_ID='GPA-1UP-UNIV-2026-001';
+const MAP={reproduction:'Reproducción',hosting:'Alojamiento',storage:'Almacenamiento',archiving:'Archivo',transcoding:'Transcodificación',streaming:'Streaming',public_performance:'Comunicación pública',retransmission:'Retransmisión',distribution:'Distribución',downloads:'Descarga',subtitling:'Subtitulado',translation:'Traducción',dubbing:'Doblaje',adaptation:'Adaptaciones',promotion:'Promoción',monetization:'Monetización',sublicensing:'Sublicencias'};
+const status=document.getElementById('status');
+const note=document.getElementById('verification-note');
+async function verify(){
+ status.className='status';status.textContent='Verificando registro narrativo…';
+ try{
+  const r=await fetch('./data/guild-license.json',{cache:'no-store'});
+  if(!r.ok)throw new Error('No se pudo descargar el manifiesto ('+r.status+').');
+  const license=await r.json();
+  if(license.id!==EXPECTED_ID||license.issued_to!=='1UP Anime'||license.realm!=='Nébula'||license.active!==true||license.universe_type!=='fictional_alternate_reality'||license.real_world?.grants_copyright_or_streaming_rights!==false)throw new Error('Los datos del certificado narrativo no son coherentes.');
+  const rights=license.coverage?.rights;
+  if(!Array.isArray(rights)||rights.some(v=>!Object.hasOwn(MAP,v)))throw new Error('El manifiesto de permisos no es válido.');
+  const grid=document.getElementById('rights');grid.replaceChildren();
+  rights.forEach(code=>{const el=document.createElement('div');el.className='right';el.textContent=MAP[code];grid.appendChild(el)});
+  document.getElementById('rights-count').textContent='('+rights.length+' facultades)';
+  document.getElementById('license-id').textContent=license.id;
+  document.getElementById('license-holder').textContent=license.issued_to;
+  document.getElementById('license-issuer').textContent=license.issuer;
+  document.getElementById('license-territory').textContent='Todos los territorios de '+license.realm;
+  document.getElementById('license-date').textContent='Desde '+license.start_date+' · Sin vencimiento programado';
+  status.className='status ok';status.textContent='✓ Registro del Gremio activo en Nébula';
+  note.textContent='Manifiesto narrativo verificado localmente. Derechos exclusivos de la ficción; no existe verificación jurídica externa.';
+ }catch(error){status.className='status';status.textContent='No se pudo verificar el registro';note.textContent=String(error.message||error);}
+}
+document.getElementById('recheck').addEventListener('click',verify);
+document.getElementById('print').addEventListener('click',()=>window.print());
+verify();
+})();
+</script>
+</body>
+</html>
