@@ -16,6 +16,8 @@ on:
       - "external-providers.js"
       - "sw.js"
       - "brand-v2.css"
+      - "preview-october.html"
+      - "themes/october-2026/**"
       - "spotlight.css"
       - "player.css"
       - "community.css"
