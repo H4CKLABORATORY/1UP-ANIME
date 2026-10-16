@@ -26,3 +26,7 @@ Estas reglas se aplican a cualquier agente (Codex, Work u otro) que edite este r
 - Confirmar que las llamadas de JS a favoritos y a detalle reciben un anime registrado.
 - Validar sintaxis JS, accesibilidad de botones, contraste y modo móvil.
 - Verificar que GitHub Pages termine en success; no afirmar pruebas de iPhone no realizadas.
+
+
+## Continuidad entre sesiones (leer después de este archivo)
+- **[docs/PROJECT_CONTINUITY.md](docs/PROJECT_CONTINUITY.md)** es la bitácora y hoja de ruta activa. Leerla antes de modificar código; tras cada cambio actualizar su bitácora, pruebas y próxima tarea. No reconstruir desde cero, no sobrescribir la rama principal con una demo separada.
