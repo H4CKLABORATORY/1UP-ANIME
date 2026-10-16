@@ -67,3 +67,12 @@ Leer \`AGENTS.md\`, \`docs/PROJECT_CONTINUITY.md\` y este documento; continuar s
 - Pruebas de navegación, modo móvil/escritorio, configuraciones, errores JS, desbordamiento horizontal y número de columnas pasaron en https://github.com/H4CKLABORATORY/1UP-ANIME/actions/runs/38850097111 .
 - Diferencias presentes: piezas gráficas originales no iguales a los recursos comerciales, gran parte de la navegación interior solo se verificó contra requisitos funcionales y no por capturas de referencia; Safari no probado. El catálogo conserva su fuente de datos externa.
 - **La similitud no está certificada como exacta**, pero el patrón de ranking móvil de dos columnas ya coincide estructuralmente con la grabación.
+
+
+## Etapa: experiencia de reproducción y conversación (16/10/2026)
+- Implementado un reproductor visual coherente con el tema oscuro Kokomi, con selector de servidores, temporadas y episodios **solo para medios del manifiesto autorizado**.
+- El panel de comentarios aparece debajo del video, con selector de conversación por episodio; usa las mismas funciones Firebase que el diálogo existente. Si Firebase no está configurado, se muestra una explicación explícita. Esto no acredita una prueba de escritura en una base real.
+- Se añadió activación voluntaria antes de cargar iframes externos y limpieza del video al abandonar la página.
+- Rediseñados los estados vacíos sin video: contenido centrado en desktop y sin botones cortados en móvil.
+- Pruebas por Playwright: fixture aislado de dos temporadas, cambio de servidor, bloqueo de carga anticipada de iframe, renderizado de hilos y restauración de navegación. Capturas de ficha y reproductor incluidas en Artifacts.
+- **Restan**: fidelidad visual contrastada para interiores Kokomi de origen, videos activos verificados en iPhone y Android, backend Firebase real, todos los componentes de cuenta y notificaciones.
