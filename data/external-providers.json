@@ -1,6 +1,6 @@
 {
-  "version": 1,
-  "description": "Páginas públicas de series verificadas en JKAnime. Son enlaces externos, no servidores de video ni autorización de reproducción.",
+  "version": 2,
+  "description": "Recursos externos de anime comprobados por URL pública. No incluyen streams, videos embebidos ni permisos de retransmisión.",
   "external_series": {
     "mal-21": {
       "name": "One Piece",
@@ -22,5 +22,18 @@
       "name": "Tsuihou sareta Tensei Juukishi wa Game Chishiki de Musou suru",
       "url": "https://jkanime.net/tsuihou-sareta-tensei-juukishi-wa-game-chishiki-de-musou-suru/"
     }
-  }
+  },
+  "external_catalogs": [
+    {
+      "id": "animeonline_castellano",
+      "name": "Anime en castellano",
+      "language": "es-ES",
+      "provider": "AnimeOnline.Ninja",
+      "url": "https://ww3.animeonline.ninja/genero/anime-castellano/page/7/",
+      "fallback_url": "https://ver.animeonline.ninja/",
+      "kind": "external_only",
+      "availability": "destination_unverified",
+      "detail": "La ruta solicitada no pudo abrirse automáticamente. El proveedor declara que utiliza servidores de terceros; la reproducción permanece en su sitio."
+    }
+  ]
 }
