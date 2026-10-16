@@ -55,7 +55,7 @@ try{
  await page.screenshot({path:'e2e-kokomi-'+env.label+'-hero.png',animations:'disabled'});
  await page.locator('#trending-rail').scrollIntoViewIfNeeded();
  await check(env.label+' exact poster column count',async()=>{
-   const columns=await page.locator('#trending-rail').evaluate(el=>getComputedStyle(el).gridTemplateColumns.split(/\\s+/).length);
+   const columns=await page.locator('#trending-rail').evaluate(el=>getComputedStyle(el).gridTemplateColumns.trim().split(' ').filter(Boolean).length);
    const expected=env.mobile?2:5;
    if(columns!==expected)throw Error('Expected '+expected+' columns, found '+columns);
  });
