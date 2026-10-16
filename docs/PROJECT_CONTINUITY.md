@@ -112,3 +112,12 @@ Al concluir cada trabajo agregar:
 - `scripts/refresh-catalog.mjs`: generará el grupo `popular` en la próxima actualización; no se modificó artificialmente `data/catalog.json` ni se afirmó una actualización nueva del catálogo.
 - Pruebas añadidas: `scripts/test-cache-catalog.mjs` y workflow `ONEUP Codex Cache and Catalog Regression`, además de tests existentes del sitio, navegador y motor de episodios. Revisar el último SHA y workflow antes de declarar aceptación.
 - Pendiente: cadena de PRs #17→#18→#19→#20 sin fusionar; aprobación del despliegue, medios autorizados reales, Firebase/Supabase, Safari físico y verificación final de los interiores Kokomi.
+
+
+### 2026-10-16 — Identidad definitiva: MP4 con firma sonora original
+- El propietario indicó explícitamente que **el logo nuevo es el video MP4 con su sonido**, no un PNG inventado o el emblema anterior.
+- Archivo original identificado y verificado (local): `1UP_ANIME_INTRO_FIRMA_3SEG.mp4`, 3.2 s, H.264 1280×720 y audio AAC; se extrajo un fotograma estático del propio video y un icono derivado de ese fotograma.
+- Rama: `feature/brand-signature-video-20261016`. Código añadido a `index.html`, `themes/kokomi-mobile-preview/brand-signature.{js,css}`, actualización de caché PWA y script `scripts/verify-video-logo.mjs`.
+- UX: animación de logo silenciosa en cabecera para autoplay móvil, botón musical para abrir una presentación con audio por interacción del usuario, poster estático si se prefiere movimiento reducido. Menú y pie muestran fotograma del mismo video. Recurso de favicon opcional derivado del fotograma.
+- **Bloqueo no resuelto**: los conectores GitHub disponibles solo admiten creación de archivos de texto, no subida de binarios locales. Los assets MP4/JPEG/PNG todavía NO están en GitHub. Se entregó ZIP de los tres archivos al propietario para subirlos en `assets/` a esta rama. No afirmar que el nuevo logo ya se ve en producción.
+- El módulo deja el logo anterior como respaldo mientras faltan los activos y evita enlaces de video rotos. Tras subirlos, ejecutar `scripts/verify-video-logo.mjs`, los E2E de portada/móvil y publicar PR solamente después de aprobar.
