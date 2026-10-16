@@ -7,7 +7,7 @@ class Element {
  constructor(tag='div'){this.tag=tag;this.children=[];this.dataset={};this.isConnected=true;this.classList={toggle(){}};this.attributes={};this.pauseCalls=0;this.loadCalls=0;}
  appendChild(node){this.children.push(node);return node;}
  append(...nodes){this.children.push(...nodes);}
- after(){}
+ after(node){(this.afterChildren??=[]).push(node)}
  replaceChildren(){this.children=[];}
  setAttribute(key,value){this.attributes[key]=value;}
  removeAttribute(key){delete this.attributes[key];if(key==='src')this.src='';}
@@ -129,4 +129,54 @@ for(const subtitles_es of ['./media/../secret.vtt','./media/%2e%2e/secret.vtt','
  await c.window.OneUpEpisodePlayer.show({id:'al-1'},{root:c.root,season:2});
  assert.equal(c.nodes.get('#oneup-playback-display').children[0].children[0].src,records[1].src);
 }
+
+// Reject private/loopback endpoints and unusual HTTPS ports in the browser too.
+for(const unsafe of [
+ 'https://localhost/episode.mp4','https://127.0.0.1/episode.mp4',
+ 'https://media.local/episode.mp4','https://media.example.com:4443/episode.mp4',
+ 'https://user:secret@media.example.com/episode.mp4',
+ 'http://media.example.com/episode.mp4',
+ 'https://media.example.com/episode.mp4#fragment'
+]){
+ const c=setup('video/mp4',{sources:[{src:unsafe,mime:'video/mp4',rights:'authorized'}]});
+ await c.window.OneUpEpisodePlayer.show({id:'al-1'});
+ const stage=c.nodes.get('#oneup-playback-display');
+ assert.equal(stage.children[0].tag,'div', 'Unsafe source should remain unavailable: '+unsafe);
+}
+// Multiple WebVTT tracks are exposed to the browser without silent defaulting.
+{
+ const tracks=[
+  {lang:'es',label:'Español',url:'./media/demo/es.vtt'},
+  {lang:'en',label:'English',url:'https://cdn.example.com/demo/en.vtt'},
+  {lang:'ja',label:'日本語',url:'javascript:alert(1)'}
+ ];
+ const c=setup('video/mp4',{sources:[{
+  rights:'owned',src:'https://media.example.com/demo.mp4',tracks
+ }]});
+ await c.window.OneUpEpisodePlayer.show({id:'al-1'});
+ const video=c.nodes.get('#oneup-playback-display').children[0];
+ const actual=video.children.filter(n=>n.tag==='track');
+ assert.equal(actual.length,2);
+ assert.deepEqual(actual.map(n=>n.srclang),['es','en']);
+}
+// When a licensed source fails, the user chooses another server; no autoplay.
+{
+ const c=setup('video/mp4',{sources:[
+  {rights:'owned',src:'https://cdn.example.com/first.mp4'},
+  {rights:'owned',src:'https://cdn.example.com/second.mp4'}
+ ]});
+ await c.window.OneUpEpisodePlayer.show({id:'al-1'});
+ const stage=c.nodes.get('#oneup-playback-display');
+ const first=stage.children[0];
+ first.listeners.error();
+ assert.equal(stage.afterChildren?.length,1,'Retry button missing on playback failure');
+ const button=stage.afterChildren[0];
+ assert.equal(button.tag,'button');
+ assert.match(button.textContent,/servidor 2/);
+ assert.equal(stage.children[0],first,'Source should not change until user clicks retry');
+ button.listeners.click();
+ assert.equal(stage.children[0].children[0].src,'https://cdn.example.com/second.mp4');
+ assert.equal(first.pauseCalls,1,'Failed video not disposed');
+}
+
 console.log('Episode player passed: lifecycle, language filtering, inherited metadata, safe captions and seasons.');

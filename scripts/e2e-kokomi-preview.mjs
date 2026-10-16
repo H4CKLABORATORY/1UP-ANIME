@@ -109,11 +109,11 @@ try{
   await tester.route('**/data/licensed-media.json',route=>route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({
    entries:{[first]:{episodes:[
     {season:1,number:1,title:'Prueba uno',sources:[
-      {rights:'authorized',name:'Video directo de prueba',src:'https://media.example.invalid/demo.mp4',mime:'video/mp4'},
+      {rights:'authorized',name:'Video directo de prueba',src:'https://media.example.com/demo.mp4',mime:'video/mp4'},
       {rights:'authorized',name:'Video externo de prueba',mode:'official_embed',provider:'youtube',videoId:'12345678901'}
     ]},
     {season:2,number:1,title:'Prueba dos',sources:[
-      {rights:'authorized',name:'Segundo servidor de prueba',src:'https://media.example.invalid/two.mp4',mime:'video/mp4'}
+      {rights:'authorized',name:'Segundo servidor de prueba',src:'https://media.example.com/two.mp4',mime:'video/mp4'}
     ]}
    ]}}
   })}));

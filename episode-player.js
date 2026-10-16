@@ -29,7 +29,11 @@ function safeUrl(value){
  try{
   const raw=String(value??'').trim();if(!raw)return null;
   const u=new URL(raw,location.href);
-  if(u.protocol!=='https:'||u.username||u.password)return null;
+  const host=u.hostname.toLowerCase();
+  if(u.protocol!=='https:'||u.username||u.password||u.hash||
+     (u.port&&u.port!=='443')||!host.includes('.')||host.includes(':')||
+     /(^|\.)(localhost|local|internal|test|invalid)$/.test(host)||
+     /^[0-9.]+$/.test(host))return null;
   return u;
  }catch{return null}
 }
@@ -68,8 +72,17 @@ function sourceOf(source,index,item){
  if(!u)return null;
  const supported={'video/mp4':1,'video/webm':1,'application/vnd.apple.mpegurl':1};
  const guessed=u.pathname.toLowerCase().endsWith('.m3u8')?'application/vnd.apple.mpegurl':u.pathname.toLowerCase().endsWith('.webm')?'video/webm':'video/mp4';
- const mime=supported[source.mime]?source.mime:guessed;
- return {kind:'video',url:u.href,label,lang,quality,mime,captions};
+ if(source.mime&&!supported[source.mime])return null;
+ const mime=source.mime||guessed;
+ const tracks=Array.isArray(source.tracks)?source.tracks.slice(0,8).map(track=>{
+  if(!track||typeof track!=='object')return null;
+  const url=subtitleUrl(track.url||track.src);
+  const language=String(track.lang||'').trim().slice(0,15);
+  if(!url||!/^[a-z]{2,3}(?:-[A-Za-z0-9]{2,8})?$/.test(language))return null;
+  return {url,lang:language,label:String(track.label||language).slice(0,35)};
+ }).filter(Boolean):[];
+ if(captions&&!tracks.some(track=>track.lang==='es'))tracks.unshift({url:captions,lang:'es',label:'Español'});
+ return {kind:'video',url:u.href,label,lang,quality,mime,captions,tracks:tracks.slice(0,8)};
 }
 function configuredSources(item){
  const raw=Array.isArray(item.sources)?item.sources:[{name:'Servidor 1',src:item.src,mime:item.mime}];
@@ -107,13 +120,29 @@ function updateEpisodeSelect(){
  select.value=String(selectedEpisode);
  if(input)input.value=String(selectedEpisode);
 }
-function showVideo(slot){
+function showVideo(slot,serverIndex=-1){
  // Release prior MediaSource buffers before replacing DOM (critical on iPhone).
  closeVideo();
  const stage=playerRoot.querySelector('#oneup-playback-display');
  const status=playerRoot.querySelector('#oneup-player-message');
  stage.replaceChildren();
  playerRoot.querySelector('.oneup-embed-external')?.remove();
+ playerRoot.querySelector('.oneup-source-retry')?.remove();
+ let retryOffered=false;
+ const offerRetry=()=>{
+  if(retryOffered||!playerRoot?.isConnected)return;
+  retryOffered=true;
+  const sources=mediaByEpisode.get(selectedEpisode)?.sources||[];
+  const indices=sources.map((source,i)=>source&&(selectedLanguage==='all'||languageGroup(source)===selectedLanguage)?i:-1).filter(i=>i>=0&&i!==serverIndex);
+  if(!indices.length)return;
+  const fallback=indices.find(i=>i>serverIndex)??indices[0];
+  const button=document.createElement('button');
+  button.type='button';button.className='oneup-source-retry';
+  button.textContent='Probar servidor '+(fallback+1)+' ↻';
+  button.setAttribute('aria-label','Intentar otro servidor disponible para este episodio');
+  button.addEventListener('click',()=>renderSources(fallback),{once:true});
+  stage.after(button);
+ };
  if(!slot){
   const placeholder=document.createElement('div');
   placeholder.className='oneup-player-placeholder';
@@ -159,15 +188,14 @@ function showVideo(slot){
    const source=document.createElement('source');source.src=slot.url;source.type=slot.mime;
    video.appendChild(source);
   }
-  const caption=slot.captions;
-  if(caption){
+  for(const entry of slot.tracks||[]){
    const track=document.createElement('track');
-   track.kind='subtitles';track.srclang='es';track.label='Español';track.src=caption;
+   track.kind='subtitles';track.srclang=entry.lang;track.label=entry.label;track.src=entry.url;
    video.appendChild(track);
   }
   video.addEventListener('loadedmetadata',()=>{if(video.isConnected)status.textContent='Fuente cargada · '+slot.label});
   video.addEventListener('playing',()=>{if(video.isConnected)status.textContent='Reproduciendo desde '+slot.label});
-  video.addEventListener('error',()=>{if(video.isConnected)status.textContent='No se pudo reproducir. Selecciona otro servidor disponible.'});
+  video.addEventListener('error',()=>{if(video.isConnected){status.textContent='No se pudo reproducir esta fuente. Puedes intentar otro servidor.';offerRetry()}});
   stage.appendChild(video);
   // Detached media may continue playing/downloading; release direct files too.
   disposeActiveVideo=()=>{
@@ -183,7 +211,7 @@ function showVideo(slot){
    }else{
     disposeActiveVideo=window.OneUpHLS.attach(video,slot.url,{
      onStatus:message=>{if(video.isConnected)status.textContent=message},
-     onError:message=>{if(video.isConnected)status.textContent=message+' Selecciona otra fuente.'}
+     onError:message=>{if(video.isConnected){status.textContent=message+' Puedes intentar otra fuente.';offerRetry()}}
     });
    }
   }
@@ -212,7 +240,7 @@ function renderSources(preferred=0){
  });
  const heading=playerRoot.querySelector('#oneup-now-watching');
  if(heading)heading.textContent='Episodio '+selectedEpisode+(item?.title?' · '+item.title:'');
- showVideo(selected>=0?sources[selected]:null);
+ showVideo(selected>=0?sources[selected]:null,selected);
 }
 function chooseEpisode(number,broadcast=true){
  const next=safeNumber(number,selectedEpisode);

@@ -1,0 +1,41 @@
+{
+  "_note": "EJEMPLO, NO USAR COMO STREAM REAL. Cambiar mal-123 por identificador existente; usar únicamente videos cuya distribución se haya autorizado.",
+  "version": 1,
+  "entries": {
+    "mal-123": {
+      "title": "Serie con permiso de reproducción",
+      "episodes": [
+        {
+          "season": 1,
+          "number": 1,
+          "title": "Episodio 1",
+          "rights": "owned",
+          "sources": [
+            {
+              "name": "Servidor principal · HD",
+              "rights": "owned",
+              "mode": "self_hosted",
+              "src": "https://media.example.com/media/anime/s01e01/master.m3u8",
+              "mime": "application/vnd.apple.mpegurl",
+              "language": "ja",
+              "quality": "1080p",
+              "tracks": [
+                {"lang": "es", "label": "Español latino", "url": "./media/subtitles/show-1.es.vtt"},
+                {"lang": "en", "label": "English", "url": "./media/subtitles/show-1.en.vtt"}
+              ]
+            },
+            {
+              "name": "Servidor secundario · MP4",
+              "rights": "owned",
+              "mode": "hosted",
+              "src": "https://backup.example.com/media/anime/s01e01.mp4",
+              "mime": "video/mp4",
+              "language": "es-419",
+              "quality": "720p"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
