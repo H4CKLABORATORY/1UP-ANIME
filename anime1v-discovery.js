@@ -37,6 +37,13 @@ async function install(){
  const form=area.querySelector('form'),status=area.querySelector('#oneup-anime1v-status');
  const results=area.querySelector('#oneup-anime1v-results');
  let counter=0,controller=null;
+ results.addEventListener('click',e=>{
+   const button=e.target.closest('button[data-1up-title]');
+   if(!button)return;
+   const input=document.querySelector('#search-input');
+   const form=document.querySelector('#search-form');
+   if(input&&form){input.value=button.dataset['1upTitle']||'';form.requestSubmit()}
+ });
  form.addEventListener('submit',async e=>{
   e.preventDefault();
   const q=area.querySelector('#oneup-anime1v-query').value.trim().slice(0,90);
@@ -60,7 +67,8 @@ async function install(){
     try{const link=new URL(a.image);if(link.protocol==='https:')safe=link.href}catch{}
     return '<article class="oneup-anime1v-item">'+
      (safe?'<img src="'+escapeHtml(safe)+'" alt="" loading="lazy" referrerpolicy="no-referrer">':'<div class="oneup-anime1v-art" aria-hidden="true">1UP</div>')+
-     '<strong>'+escapeHtml(a.title)+'</strong><small>'+escapeHtml(a.provider)+'</small></article>';
+     '<strong>'+escapeHtml(a.title)+'</strong><small>'+escapeHtml(a.provider)+'</small>'+ 
+     '<button type="button" class="oneup-anime1v-open" data-1up-title="'+escapeHtml(a.title)+'">Buscar ficha en 1UP ↗</button></article>';
    }).join('');
   }catch(error){if(current===counter)status.textContent='Anime1v no está disponible. Puedes seguir usando el catálogo de 1UP.'}
   finally{clearTimeout(timer)}
