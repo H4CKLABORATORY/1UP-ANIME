@@ -1,6 +1,9 @@
 /* ONE UP - mobile PWA offline-first shell, update-aware.
    External providers and video URLs are NEVER mirrored by this worker. */
-const CACHE='oneup-stream-integrated-v18-20261015';
+// CacheStorage is origin-wide: GitHub Pages apps on the same domain share it.
+// Restrict cleanup to caches that belong to this 1UP Anime service worker.
+const CACHE_PREFIX='oneup-stream-integrated-';
+const CACHE=CACHE_PREFIX+'v19-20261016';
 const SHELL=[
  './','./index.html','./studio.css','./studio.js','./spotlight.css',
  './motion.css','./motion.js','./brand-v2.css','./player.css','./auth.js',
@@ -28,7 +31,7 @@ self.addEventListener('install',event=>{
  }).then(()=>self.skipWaiting()));
 });
 self.addEventListener('activate',event=>{
- event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key!==CACHE).map(key=>caches.delete(key)))).then(()=>self.clients.claim()));
+ event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key.startsWith(CACHE_PREFIX)&&key!==CACHE).map(key=>caches.delete(key)))).then(()=>self.clients.claim()));
 });
 self.addEventListener('fetch',event=>{
  if(event.request.method!=='GET')return;
