@@ -114,3 +114,11 @@ Al concluir cada trabajo agregar:
 - Capturas: artefactos del workflow `ONEUP Kokomi Visual Acceptance` (hero, ranking, ficha y reproductor en 390px/1366px). En CI se bloquean imágenes remotas intencionadamente; no confundir fondos de respaldo con contenido real.
 - Pendiente: activar Firebase por el propietario y comprobar conversaciones reales, Safari físico, pruebas de video/HLS con medios autorizados reales, fidelidad de interiores a Kokomi cuando la demo vuelva a estar accesible, y completar las páginas que aún son informativas.
 - Siguiente tarea concreta: validar las últimas pruebas de tamaño del reproductor, comparar capturas y perfeccionar ficha móvil/episodios; después preparar entorno de preview HTTPS de la rama, sin fusionar `main` hasta aprobación.
+
+
+### 2026-10-16 — Revisión visual del reproductor después de las capturas
+- Tras revisar capturas generadas por Chromium, se redujo el bloque negro cuando un video no está configurado: el mensaje y el botón ocupan la etapa completa y en teléfono ya no se recortan.
+- Cambiado el encabezado genérico «REPRODUCIR EPISODIO» por el nombre del anime, datos compactos y enlace de regreso a la ficha; esto libera espacio vertical y centra la vista en el contenido.
+- Añadido test de límites del botón dentro de la caja del reproductor, además de pruebas de comentarios y navegación.
+- El conjunto de comprobaciones del reproductor había pasado en el workflow 38886344754; la última revisión de tipografía tiene que verificarse en el workflow de su commit.
+- Pendiente: comparación de detalle/reproductor con la demo original de Kokomi cuando pueda inspeccionarse; probar Safari físicamente.
