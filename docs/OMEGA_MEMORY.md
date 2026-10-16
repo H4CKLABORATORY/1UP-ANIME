@@ -14,15 +14,15 @@ Actualización inicial: 2026-10-16. Archivo compartido para Codex/otras IA que t
 - La «licencia universal» de Nébula es un artefacto de ficción, no da derechos de animes reales.
 
 ## Estado técnico verificado al 2026-10-16 (revalidar)
-- Repositorio público H4CKLABORATORY/1UP-ANIME, rama `main`, commit observado `c7517070d91817051ce7b3fe1208f2fb74ebebce`.
+- Repositorio público H4CKLABORATORY/1UP-ANIME, rama `main`, commit observado actualizado `0f5df57560a3a7f5391b47ef4dca643889364a9e`.
 - El workflow de GitHub Pages del commit anterior dio `success` (38908714690). No evidencia de video real.
-- Árbol remoto inspeccionado: 187 entradas (incluye directorios) y 16 workflows bajo `.github/workflows/`.
+- Árbol remoto inspeccionado: 194 entradas (incluye directorios) y 17 workflows bajo `.github/workflows/`.
 - PR #23 fusionó mejoras: 7 posiciones, HLS/MP4/WebM, WebVTT idiomas, filtro de URL HTTPS públicas, botón manual para siguiente fuente. Tests UI/navegación/HLS/contrato con éxito.
-- PRs #14, #18, #19, #20 son cadena de cambios de UI en revisión/draft; PR #22 de intro MP4/sonido permanece draft. No fusionar a ciegas.
+- PRs #14, #18, #19, #20 son cadena de cambios de UI en revisión/draft (estado de consulta anterior); el logo animado fue fusionado en `main` posteriormente desde su línea de desarrollo. Verificar PRs actuales y evitar merges duplicados.
 - `data/licensed-media.json` tiene `entries: {}`, sin episodios reales.
 - `firebase-config.js`, `auth-config.js`, `social-config.js` y `supabase-config.js` tienen configuraciones null. Backend remoto no confirmado.
 - `data/guild-license.json` tiene `universe_type: fictional_alternate_reality`. No aplicar a títulos reales.
-- Verificar archivos referidos desde `index.html` (assets/1up-anime-logo-poster.jpg, assets/1up-anime-app-icon-512.png y themes/kokomi-mobile-preview/brand-signature.js/.css), que no aparecían en el árbol main leído; puede haber PR pendiente de medios binarios.
+- **ACTUALIZACIÓN post-snapshot:** commit `e4a8ef9d` integró intro original H.264/AAC ~3.2 s, poster JPG e icono PNG además de brand-signature.js/css. En árbol `main` actualizado ya aparecen. No asegurar que su reproducción en iPhone real haya sido verificada. PR #22 se había visto draft antes del merge: consultar estado actual.
 
 ## Árbol y arquitectura — fuente definitiva
 - Frontend: `index.html`, `studio.html`, `studio.js`, `studio.css`, `spotlight.css`, `brand-v2.css`, `motion.css/js`.
