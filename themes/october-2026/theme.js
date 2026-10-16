@@ -148,7 +148,7 @@ function showFeaturedAnime(anime){
    window.OneUpCatalog?.register?.([anime]);
    if(window.OneUpCatalog?.open)window.OneUpCatalog.open(anime.id);
    else window.open(externalLink,'_blank','noopener,noreferrer');
-  },{once:true});
+  });
  }
 }
 async function localFeaturedAnime(){
