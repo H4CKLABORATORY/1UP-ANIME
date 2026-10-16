@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
   "engine": "DexterAnimeSync",
-  "updatedAt": "2026-10-15T23:49:39.733Z",
+  "updatedAt": "2026-10-16T02:12:59.261Z",
   "job": {
-    "id": "sync-27c70d442e65a382",
-    "startedAt": "2026-10-15T23:49:39.733Z",
-    "completedAt": "2026-10-15T23:49:39.733Z",
+    "id": "sync-730eddf6b973a8fa",
+    "startedAt": "2026-10-16T02:12:59.261Z",
+    "completedAt": "2026-10-16T02:12:59.261Z",
     "mode": "programada",
     "status": "correcta",
     "counters": {
@@ -40,8 +40,8 @@
       "sourceType": "playback",
       "intervalHours": 3,
       "lastRunAt": "2026-10-15T22:22:27.011Z",
-      "runAt": null,
-      "state": "en_espera",
+      "runAt": "2026-10-16T02:12:59.261Z",
+      "state": "sin_contenido_autorizado",
       "observed": 0,
       "created": 0,
       "playback": 0,
@@ -93,7 +93,7 @@
     }
   ],
   "errors": [],
-  "historySize": 4,
+  "historySize": 5,
   "records": {
     "anime": 121,
     "seasons": 1,
