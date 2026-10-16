@@ -200,6 +200,11 @@ try{
     });
     console.log('ONEUP MOBILE EMBED HIT TEST:',JSON.stringify(hit));
    }
+   if(device.mobile){
+    await page.locator('#anime-dialog').evaluate(el=>{el.scrollTop=el.scrollHeight});
+    const viewport=await page.evaluate(()=>({innerHeight,visualHeight:visualViewport?.height,dialogScroll:document.querySelector('#anime-dialog')?.scrollTop,dialogScrollHeight:document.querySelector('#anime-dialog')?.scrollHeight,dialogClientHeight:document.querySelector('#anime-dialog')?.clientHeight,button:document.querySelector('#oneup-embed-play')?.getBoundingClientRect()?.toJSON()}));
+    console.log('ONEUP MOBILE PLAYER SCROLL:',JSON.stringify(viewport));
+   }
    await action.click({timeout:6500});
    await page.locator('#oneup-embed-frame iframe').waitFor({timeout:5000});
    const src=await page.locator('#oneup-embed-frame iframe').getAttribute('src');
