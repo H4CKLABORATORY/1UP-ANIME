@@ -20,6 +20,8 @@ on:
       - "brand-v2.css"
       - "preview-october.html"
       - "themes/october-2026/**"
+      - "preview-kokomi.html"
+      - "themes/kokomi-studio/**"
       - "spotlight.css"
       - "player.css"
       - "community.css"
