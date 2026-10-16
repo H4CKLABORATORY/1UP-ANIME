@@ -62,7 +62,7 @@ function draw(anime){
  $('#oneup-guest-comment-form').addEventListener('submit',async e=>{
   e.preventDefault();
   const button=$('#oneup-send-comment'),name=$('#oneup-guest-name').value.trim(),body=$('#oneup-guest-text').value.trim();
-  if(!api()?.enabled()){message('Para publicar, primero debe activarse Firebase de 1UP Anime.');return}
+  if(!api()?.enabled()){message('Para publicar, primero debe activarse el servidor de comentarios.');return}
   button.disabled=true;message('Publicando comentario…');saveAlias(name);
   try{await api().sendEpisodeComment(activeAnime,episode,name,body);$('#oneup-guest-text').value='';message('Comentario publicado.');}
   catch(error){message(api().maskError(error))}
