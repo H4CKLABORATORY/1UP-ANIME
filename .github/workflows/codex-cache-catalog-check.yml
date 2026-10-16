@@ -1,0 +1,42 @@
+name: ONEUP Codex Cache and Catalog Regression
+on:
+  push:
+    branches: [fix/codex-pwa-popularity-20261016]
+    paths:
+      - 'sw.js'
+      - 'studio.js'
+      - 'scripts/refresh-catalog.mjs'
+      - 'scripts/test-cache-catalog.mjs'
+      - '.github/workflows/codex-cache-catalog-check.yml'
+  pull_request:
+    branches: [main, design/brand-continuity-20261016]
+    paths:
+      - 'sw.js'
+      - 'studio.js'
+      - 'scripts/refresh-catalog.mjs'
+      - 'scripts/test-cache-catalog.mjs'
+      - '.github/workflows/codex-cache-catalog-check.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  regression:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate JavaScript syntax
+        run: |
+          node --check sw.js
+          node --check studio.js
+          node --check scripts/refresh-catalog.mjs
+          node --check scripts/test-cache-catalog.mjs
+      - name: Verify cache and catalog, with existing production checks
+        run: |
+          node scripts/test-cache-catalog.mjs
+          node scripts/check-ui.mjs
+          node scripts/test-navigation-race.mjs
+          node scripts/test-episode-player.mjs
