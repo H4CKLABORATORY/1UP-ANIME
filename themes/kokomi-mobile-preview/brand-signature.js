@@ -80,12 +80,13 @@ function install(){
    player.currentTime=0;player.muted=false;player.play().catch(()=>{});
   });
   }
-  // The Kokomi drawer uses a generated strong heading, not .km-drawer-brand.
-  const drawerBrand=document.querySelector('#km-drawer .km-drawer-head strong');
+  // The Kokomi drawer creates a linked brand after DOMContentLoaded.
+  const drawerBrand=document.querySelector('#km-drawer .km-drawer-brand');
   if(drawerBrand){
    const imageFromFilm=document.createElement('img');
-   imageFromFilm.src=posterUrl;imageFromFilm.alt='1UP ANIME';imageFromFilm.className='oneup-drawer-logo';
+   imageFromFilm.src=posterUrl;imageFromFilm.alt='';imageFromFilm.className='oneup-drawer-logo';
    drawerBrand.replaceChildren(imageFromFilm);
+   drawerBrand.setAttribute('aria-label','1UP ANIME, inicio');
   }
   // Footer can show a still of the same intro without generating another design.
   const footer=document.querySelector('.footer-brand img');
