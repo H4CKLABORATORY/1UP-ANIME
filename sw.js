@@ -1,6 +1,9 @@
 /* ONE UP - mobile PWA offline-first shell, update-aware.
    External providers and video URLs are NEVER mirrored by this worker. */
-const CACHE='oneup-stream-integrated-v18-20261015';
+// CacheStorage is origin-wide: GitHub Pages apps on the same domain share it.
+// Restrict cleanup to caches that belong to this 1UP Anime service worker.
+const CACHE_PREFIX='oneup-stream-integrated-';
+const CACHE=CACHE_PREFIX+'v19-20261016';
 const SHELL=[
  './','./index.html','./studio.css','./studio.js','./spotlight.css',
  './motion.css','./motion.js','./brand-v2.css','./player.css','./auth.js',
@@ -28,14 +31,14 @@ self.addEventListener('install',event=>{
  }).then(()=>self.skipWaiting()));
 });
 self.addEventListener('activate',event=>{
- event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key!==CACHE).map(key=>caches.delete(key)))).then(()=>self.clients.claim()));
+ event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key.startsWith(CACHE_PREFIX)&&key!==CACHE).map(key=>caches.delete(key)))).then(()=>self.clients.claim()));
 });
 self.addEventListener('fetch',event=>{
  if(event.request.method!=='GET')return;
  const url=new URL(event.request.url);
  const scope=new URL(self.registration.scope);
  if(url.origin!==scope.origin || !url.pathname.startsWith(scope.pathname))return;
- const offline=()=>caches.match(event.request).then(hit=>hit || (event.request.mode==='navigate'?caches.match('./index.html'):Response.error()));
+ const offline=()=>caches.open(CACHE).then(async cache=>(await cache.match(event.request)) || (event.request.mode==='navigate'?await cache.match('./index.html'):Response.error()));
  if(event.request.mode==='navigate'){
   event.respondWith(fetch(event.request,{cache:'no-cache'}).then(response=>{
    if(response.ok)caches.open(CACHE).then(cache=>cache.put(event.request,response.clone())).catch(()=>{});
@@ -54,5 +57,5 @@ self.addEventListener('fetch',event=>{
   }).catch(offline));
   return;
  }
- event.respondWith(caches.match(event.request).then(hit=>hit||fetch(event.request)));
+ event.respondWith(caches.open(CACHE).then(cache=>cache.match(event.request)).then(hit=>hit||fetch(event.request)));
 });

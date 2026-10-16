@@ -7,14 +7,15 @@ Preparado 2026-10-16. **No es una lista de agentes activos**; estado inicial der
 
 | ID | Prioridad | Frente / dueño | Alcance concreto | Dependencias y criterio | Estado |
 |---|---|---|---|---|---|
-| SW-00 | P0 | OMEGA CORE | Auditar main, docs, PR #14, CI y diferencias de producto | Requiere leer repositorio; entregable informe con SHAs, fuentes y riesgos | READY |
-| SW-01 | P0 | VISUAL / UX | Revisar y refinar PR #14 Kokomi sin copiar activos comerciales | Base SW-00; capturas móvil/escritorio y regresión responsive; sin merge automático | BACKLOG |
-| SW-02 | P0 | MEDIA / PLAYER | Unificar experiencia de episodio y selección real de servidor/idioma | Base SW-00; contrato manifiesto; estado sin fuentes y tests | BACKLOG |
-| SW-03 | P1 | FRONTEND / ROUTER | Enlazar fichas, temporadas, episodios y navegación reversibles | Coordinar con SW-01/02; sin regresiones en main | BACKLOG |
+| SW-00 | P0 | OMEGA CORE | Auditar main, docs, PR #14, CI y diferencias de producto | Informe en docs/OMEGA_AUDIT_20261016.md; revisión efectuada en PR #17 | REVIEW |
+| SW-01 | P0 | VISUAL / UX | Revisar y refinar PR #14 Kokomi sin copiar activos comerciales | Avance en PR #19 sobre #18; aprobada dirección visual, no despliegue | REVIEW |
+| SW-02 | P0 | MEDIA / PLAYER | Unificar experiencia de episodio y selección real de servidor/idioma | PR #18, HLS y selector probados con fixtures, faltan medios reales | REVIEW |
+| SW-03 | P1 | FRONTEND / ROUTER | Enlazar fichas, temporadas, episodios y navegación reversibles | PR #17 y #18, navegación/regresiones Chromium probadas | REVIEW |
 | SW-04 | P1 | DATA / COMMUNITY | Revisar catálogo y comentarios por episodio | Backend remoto desactivado; no prometer sincronización | BACKLOG |
-| SW-05 | P0 | QA / SECURITY | Revisar vulnerabilidades, permisos, secretos, tests E2E y CI | Pruebas documentadas por SHA; Safari físico marcado no verificado | BACKLOG |
+| SW-05 | P0 | QA / SECURITY | Revisar vulnerabilidades, permisos, secretos, tests E2E y CI | CI aprobado para PR #17-19; auditoría externa y Safari aún pendientes | REVIEW |
 | SW-06 | P1 | DEVOPS / PERFORMANCE | Optimizar red/caché/Pages y plan de despliegue reversible | No habilitar compras ni desplegar sin aprobación | BACKLOG |
-| SW-07 | P0 | OMEGA CORE | Consolidar PRs y devolver resultado | Requiere revisión de propietario antes de fusionar PR #14 | BLOCKED |
+| SW-07 | P0 | OMEGA CORE | Consolidar PRs y devolver resultado | Revisar cadena #17→#18→#19→#20; no publicar sin validación final | BLOCKED |
+| SW-08 | P1 | QA / CATALOG | Aislar cachés PWA y corregir ranking popular | PR #20, pruebas Node/CI y siguiente refresco AniList | REVIEW |
 
 ## Contratos de coordinación
 - Cada subagente recibe una tarea acotada con archivos de propiedad, inputs, outputs y pruebas.
@@ -52,3 +53,10 @@ Cada ejecución agrega bajo esta línea: fecha, ID, estado anterior→nuevo, age
 - SW-01 RUNNING→REVIEW en `design/brand-continuity-20261016`, dependiente PR18. Diseño restaura emblema existente móvil/drawer; QA verifica tamaños, carga real de SVG y controles sin solaparse. CORE consolida decisiones con procedencia; investigadores solo lectura, sin conflictos.
 - `docs/PROJECT_DECISIONS.md` distingue marca vigente, legado, aprobación no acreditada y adjuntos/chats inaccesibles. No se generó una marca sustitutiva ni se atribuyó aprobación al crest por existir en main.
 - Logo exacto de otro chat y ZIP Nebula siguen BLOCKED por archivo/identificación ausentes. Diseño general conserva decisiones anteriores ya registradas; sin prometer lectura de conversaciones no accesibles.
+
+### 2026-10-16 — continuación con preferencia por Codex
+- **Preferencia de diseño verificada en conversación:** el propietario prefiere la propuesta más reciente de Codex; PR #19 y sus bases #18/#17 pasan a ser la línea visual a preservar. No revivir diseño anterior como default.
+- **SW-08 en revisión, no desplegado:** rama `fix/codex-pwa-popularity-20261016`, PR #20 apilado sobre PR #19. Corrección de cachés origin-wide, selección popular distinta de trending y futura generación de `groups.popular` del snapshot.
+- El cambio es código real y no depende de fuentes de anime, Firebase o acceso a Safari; su suite nueva es `scripts/test-cache-catalog.mjs`, CI `ONEUP Codex Cache and Catalog Regression`.
+- **Cadena pendiente:** #17 → #18 → #19 → #20. Para integrar en `main` hace falta revisión coherente del conjunto (incluidos conflictos y capturas); no fusionar PRs fuera de orden.
+- **Bloqueos externos persistentes:** manifiesto de video sin episodios, autenticación/servicios de comunidad no configurados, pruebas Safari iPhone físico y reproducción real ausentes.

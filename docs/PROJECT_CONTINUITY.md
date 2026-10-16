@@ -102,3 +102,13 @@ Al concluir cada trabajo agregar:
 - Rama `design/brand-continuity-20261016`, dependiente de PR18; sin merge ni producción. Prueba de logo en 320/375/390/1366 y suite Kokomi en CI; resultado final adjunto al PR.
 - Pendiente: recibir original/descripción o ubicación del logo elegido para identificarlo con certeza. ZIP Nebula de otra conversación tampoco está disponible; no recrearlo ni reemplazar main por memoria.
 - Verificación local final: 22/22 pruebas Kokomi PASS (incluye 4 casos de branding 320/375/390/1366, HTTP200/naturalWidth SVG, sin solapamiento, drawer→inicio), UI149 y resiliencia PASS; sintaxis y diff check correctos. Ocho capturas de marca generadas para artefactos CI.
+
+
+### 2026-10-16 — Continuación del diseño Codex: aislamiento PWA y ranking
+- Preferencia expresada por el propietario: la propuesta más reciente de Codex es la base visual preferida. Conservar PR #19 sobre #18 y #17; no volver a un rediseño anterior.
+- Rama apilada `fix/codex-pwa-popularity-20261016` / PR #20, basada en `design/brand-continuity-20261016`. `main` no modificado.
+- `sw.js`: el worker ahora elimina exclusivamente cachés que empiezan por `oneup-stream-integrated-`, no las de otras aplicaciones del mismo origen. La lectura offline también utiliza esa caché, evitando cruzar respuestas almacenadas por otra PWA.
+- `studio.js`: `POPULARITY_DESC` utiliza el grupo `popular`; cuando el snapshot antiguo aún no lo incluye, se consultan las APIs en vez de etiquetar `trending` como popularidad. Los filtros priorizan el grupo del orden solicitado.
+- `scripts/refresh-catalog.mjs`: generará el grupo `popular` en la próxima actualización; no se modificó artificialmente `data/catalog.json` ni se afirmó una actualización nueva del catálogo.
+- Pruebas añadidas: `scripts/test-cache-catalog.mjs` y workflow `ONEUP Codex Cache and Catalog Regression`, además de tests existentes del sitio, navegador y motor de episodios. Revisar el último SHA y workflow antes de declarar aceptación.
+- Pendiente: cadena de PRs #17→#18→#19→#20 sin fusionar; aprobación del despliegue, medios autorizados reales, Firebase/Supabase, Safari físico y verificación final de los interiores Kokomi.
