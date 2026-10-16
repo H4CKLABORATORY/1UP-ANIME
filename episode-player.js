@@ -95,6 +95,7 @@ function showVideo(slot){
  const stage=playerRoot.querySelector('#oneup-playback-display');
  const status=playerRoot.querySelector('#oneup-player-message');
  stage.replaceChildren();
+ playerRoot.querySelector('.oneup-embed-external')?.remove();
  if(!slot){
   const placeholder=document.createElement('div');
   placeholder.className='oneup-player-placeholder';
@@ -117,7 +118,7 @@ function showVideo(slot){
   const yt=slot.url.match(/^https:\/\/www\.youtube-nocookie\.com\/embed\/([A-Za-z0-9_-]{11})$/);
   link.href=yt?'https://www.youtube.com/watch?v='+yt[1]:slot.url;
   link.target='_blank';link.rel='noopener noreferrer';link.textContent='Abrir en el proveedor oficial ↗';
-  stage.appendChild(link);
+  stage.after(link);
   action.addEventListener('click',()=>{
    if(!stage.isConnected)return;
    const iframe=document.createElement('iframe');
