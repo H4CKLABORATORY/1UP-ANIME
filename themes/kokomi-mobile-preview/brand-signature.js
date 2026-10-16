@@ -19,6 +19,15 @@ function install(){
  Promise.all([checkAsset(videoUrl),checkAsset(posterUrl)]).then(([videoReady,posterReady])=>{
   if(!videoReady||!posterReady){console.info('1UP ANIME: firma animada pendiente de subir al repositorio.');return}
   document.body.classList.add('oneup-video-brand-enabled');
+  const optionalIcon='./assets/1up-anime-app-icon-512.png';
+  checkAsset(optionalIcon).then(iconReady=>{
+    if(!iconReady)return;
+    const favicon=document.querySelector('link[rel="icon"]');
+    if(favicon){favicon.href=optionalIcon;favicon.type='image/png'}
+    const apple=document.querySelector('link[rel="apple-touch-icon"]');
+    if(apple)apple.href=optionalIcon;
+  }).catch(()=>{});
+
   const oldImage=mainBrand.querySelector('.brand-symbol');
   const oldText=mainBrand.querySelector('.brand-name');
   hidden(oldImage,true);hidden(oldText,true);
