@@ -83,7 +83,7 @@ try{
     window.OneUpCatalog.register([{...source,id:'mal-999981',title:'Fixture de episodios',episodes:3}]);
     window.OneUpCatalog.open('mal-999981');
    });
-   await page.locator('#oneup-watch-episode option[value="2"]').waitFor({timeout:8000});
+   await page.locator('#oneup-watch-episode option[value="2"]').waitFor({state:'attached',timeout:8000});
    await page.locator('#oneup-watch-episode').selectOption('2');
    await page.waitForFunction(()=>document.querySelector('#oneup-comment-episode')?.value==='2',null,{timeout:5000});
    await page.locator('#oneup-comment-episode').selectOption('1');
