@@ -40,3 +40,10 @@ Cada ejecución agrega bajo esta línea: fecha, ID, estado anterior→nuevo, age
 - Rama: `fix/omega-episode-lifecycle-20261016`. Tests lifecycle, carrera navegación, comentarios Chromium, UI 149 assertions, HLS, contrato, resiliencia y Supabase opcional PASS. E2E 36/36 móvil 390×844 y desktop 1360×860 PASS, sin errores JS. Fixtures aislados, sin escritura remota.
 - SW-07: PR de revisión, sin merge/despliegue. Safari físico, medios autorizados y backends reales BLOCKED por entradas/configuración no disponibles.
 - Próxima acción: integrar visual PR14 con contrato main y normalización de fuentes, con capturas comparables. Revisión única por módulo antes de integrar; no se midió rendimiento ni se certificó fidelidad visual.
+
+### 2026-10-16 — ciclo reproducción gratuita
+- SW-01/02/03 RUNNING→REVIEW: prioridad del propietario trasladada a arquitectura y preview integrada; frontend posee preview/tema/router/tests, media posee motor/regresión, QA posee fixture E2E idiomas, CORE integra documentación y CI.
+- Rama dependiente de PR17: `feature/free-streaming-foundation-20261016`. No merge ni despliegue. Alcance: reutilizar motor HLS desde Kokomi, siete posiciones, idiomas/subtítulos de fuentes reales y selección de temporadas sin colisiones de número.
+- Documentación de arquitectura en `docs/FREE_STREAMING_ARCHITECTURE.md`; matriz Kokomi preservada desde PR14 con actualización histórica.
+- Streaming real sigue BLOCKED: manifiesto vacío, sin CDN ni backend contratados/configurados. Pruebas con fixtures explícitos aislados. Próximo paso: material propio/autorizado con verificación de derechos, CORS y Safari físico; revisión visual antes de publicar.
+- Evidencia local: idiomas4 + preview18 + general36 PASS; UI149 y suites Node PASS. Motor HLS con fixture: se verifica attach/cleanup, no una transmisión real. CI remoto se adjunta al PR y no se presume aprobado por estas pruebas locales.
