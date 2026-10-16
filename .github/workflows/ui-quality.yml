@@ -66,6 +66,8 @@ jobs:
           node-version: "22"
       - name: Validate UI and cached anime data
         run: |
+          node scripts/test-episode-player.mjs
+          node scripts/test-navigation-race.mjs
           node scripts/check-ui.mjs
           node scripts/check-resilience.mjs
           bash -n scripts/oneup-safe-push.sh

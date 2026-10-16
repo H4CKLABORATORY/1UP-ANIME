@@ -293,6 +293,8 @@ function renderContinue(){
 function go(route){
  const routes=['inicio','temporada','programacion','catalogo','peliculas','milista','populares','recientes','genero','buscar'];
  if(!routes.includes(route))route='inicio';
+ // Invalidate pending catalogue responses even when the next view is synchronous.
+ ++state.seq;state.loading=false;
  state.view=route;$('#home-screen').hidden=route!=='inicio';$('#browse-screen').hidden=route==='inicio';
  $$('[data-route]').forEach(b=>b.classList.toggle('active',b.dataset.route===route));
  window.scrollTo({top:0,behavior:'instant'});try{history.replaceState(null,'','#'+route)}catch{}

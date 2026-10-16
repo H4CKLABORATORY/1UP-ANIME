@@ -151,6 +151,13 @@ function showVideo(slot){
   video.addEventListener('playing',()=>{if(video.isConnected)status.textContent='Reproduciendo desde '+slot.label});
   video.addEventListener('error',()=>{if(video.isConnected)status.textContent='No se pudo reproducir. Selecciona otro servidor disponible.'});
   stage.appendChild(video);
+  // Detached media may continue playing/downloading; release direct files too.
+  disposeActiveVideo=()=>{
+   video.pause();
+   video.removeAttribute('src');
+   video.querySelectorAll('source').forEach(source=>source.removeAttribute('src'));
+   video.load();
+  };
   status.textContent='Fuente seleccionada: '+slot.label+' · '+slot.lang+' · '+slot.quality;
   if(slot.mime==='application/vnd.apple.mpegurl'){
    if(!window.OneUpHLS?.attach){
@@ -190,6 +197,8 @@ function chooseEpisode(number,broadcast=true){
 }
 async function show(anime){
  if(!anime?.id)return;
+ // Stop the previous anime before fetching, even if the next request fails.
+ closeVideo();
  const id=String(anime.id),token=++requestId;
  activeAnime=id;selectedEpisode=1;episodeCount=1;mediaByEpisode=new Map();
  playerRoot=document.querySelector('#oneup-player-section');

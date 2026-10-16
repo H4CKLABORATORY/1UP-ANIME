@@ -78,3 +78,10 @@ Al concluir cada trabajo agregar:
 - Pendiente / limitaciones:
 - Próxima tarea concreta:
 ```
+
+### 2026-10-16 — OMEGA SWARM primer ciclo real
+- Base main `85ef098`; leídos misión PR15 e issue16; preservado PR14 Kokomi (12 archivos aditivos, sin integrar ni rehacer).
+- Corregidos lifecycle HLS/MP4/WebM al cambiar anime, respuestas tardías de navegación y duplicación/aislamiento de comentarios. Workflow Firebase restringido a main; sin ejecutarlo.
+- Regresiones nuevas conectadas a UI Quality y Browser Acceptance. PASS: UI 149 assertions, resiliencia, HLS, contrato multimedia, Supabase opcional, lifecycle, navegación, comentarios Chromium; E2E 36/36 móvil 390×844 y desktop 1360×860, cero errores JS. Capturas disponibles como artefactos del workflow de navegador cuando finalice CI.
+- Seis subagentes reales con archivos diferenciados. Detalle de hallazgos, prioridades y SHAs: `docs/OMEGA_AUDIT_20261016.md`; seguimiento `docs/OMEGA_SWARM_BOARD.md`.
+- No hay medios licenciados configurados, autenticación/comunidad remota comprobada, Safari físico, aprobación visual, merge ni despliegue. Próxima tarea: unir preview Kokomi al motor de main sin degradar HLS, siete posiciones e idiomas.
