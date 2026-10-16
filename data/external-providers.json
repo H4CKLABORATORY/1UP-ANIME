@@ -34,6 +34,16 @@
       "kind": "external_only",
       "availability": "destination_unverified",
       "detail": "La ruta solicitada no pudo abrirse automáticamente. El proveedor declara que utiliza servidores de terceros; la reproducción permanece en su sitio."
+    },
+    {
+      "id": "iqiyi_anime",
+      "name": "Anime en iQIYI",
+      "language": "varios",
+      "provider": "iQIYI",
+      "url": "https://www.iq.com/anime?lang=en_us",
+      "kind": "external_only",
+      "availability": "public_catalog_verified",
+      "detail": "Catálogo oficial consultable. No se ha confirmado permiso para insertar, descargar o retransmitir episodios. El usuario continúa la reproducción en iQIYI."
     }
   ]
 }
