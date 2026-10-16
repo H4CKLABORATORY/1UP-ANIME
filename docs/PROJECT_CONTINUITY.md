@@ -85,3 +85,11 @@ Al concluir cada trabajo agregar:
 - Regresiones nuevas conectadas a UI Quality y Browser Acceptance. PASS: UI 149 assertions, resiliencia, HLS, contrato multimedia, Supabase opcional, lifecycle, navegación, comentarios Chromium; E2E 36/36 móvil 390×844 y desktop 1360×860, cero errores JS. Capturas disponibles como artefactos del workflow de navegador cuando finalice CI.
 - Seis subagentes reales con archivos diferenciados. Detalle de hallazgos, prioridades y SHAs: `docs/OMEGA_AUDIT_20261016.md`; seguimiento `docs/OMEGA_SWARM_BOARD.md`.
 - No hay medios licenciados configurados, autenticación/comunidad remota comprobada, Safari físico, aprobación visual, merge ni despliegue. Próxima tarea: unir preview Kokomi al motor de main sin degradar HLS, siete posiciones e idiomas.
+
+### 2026-10-16 — reproducción gratuita como prioridad
+- Decisión del propietario: priorizar ver episodios gratis dentro de 1UP. Arquitectura detallada en `docs/FREE_STREAMING_ARCHITECTURE.md`: catálogo separado de disponibilidad, proveedores/archivos/CDN intercambiables, sin cuenta obligatoria, sin contratar infraestructura.
+- Rama `feature/free-streaming-foundation-20261016` depende del arreglo de PR17; no se fusionó PR17.
+- Se recuperan únicamente los archivos aditivos de preview PR14, conservando main. Preview Kokomi reutiliza motor HLS actual; selección de temporada, episodio, idioma y siete posiciones reales. Subtítulos y calidad por fuente con herencia del episodio. No se importan datos antiguos ni se reemplaza index.
+- Pruebas del motor, contrato, HLS, navegador de idiomas y navegación general; evidencia final de CI en PR de este ciclo. Ningún fixture se incorpora al manifiesto público.
+- Siguen pendientes medios reales, backend, Safari físico, comparación visual completa y aprobación de producción. La arquitectura no convierte metadatos en videos ni declara terminado el catálogo reproducible.
+- Resultado local de este ciclo: PASS UI149, resiliencia, contrato, HLS, Supabase opcional, navegación4, idiomas navegador4, preview Kokomi18 (390/1366) y recorridos generales36 (390/1360). Captura móvil del reproductor revisada: controles dentro del ancho y estado sin medios explícito; no equivale a fidelidad visual certificada.

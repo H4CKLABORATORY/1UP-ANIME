@@ -48,6 +48,7 @@ jobs:
       - name: Run real iPhone-width and desktop user journeys
         run: |
           node scripts/test-episode-comments.mjs
+          node scripts/e2e-player-languages.mjs
           node scripts/e2e-browser.mjs
       - name: Keep browser screenshots for review
         if: always()
