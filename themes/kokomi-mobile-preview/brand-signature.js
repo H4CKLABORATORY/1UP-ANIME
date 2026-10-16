@@ -17,7 +17,7 @@ function install(){
  const mainBrand=document.querySelector('.header .brand');
  if(!mainBrand)return;
  Promise.all([checkAsset(videoUrl),checkAsset(posterUrl)]).then(([videoReady,posterReady])=>{
-  if(!videoReady||!posterReady){console.info('1UP ANIME: firma animada pendiente de subir al repositorio.');return}
+  if(!posterReady){console.info('1UP ANIME: fotograma original no disponible; se mantiene el logo de respaldo.');return}
   document.body.classList.add('oneup-video-brand-enabled');
   const optionalIcon='./assets/1up-anime-app-icon-512.png';
   checkAsset(optionalIcon).then(iconReady=>{
@@ -32,9 +32,9 @@ function install(){
   const oldText=mainBrand.querySelector('.brand-name');
   hidden(oldImage,true);hidden(oldText,true);
   const reduced=matchMedia('(prefers-reduced-motion:reduce)').matches;
-  const media=document.createElement(reduced?'img':'video');
+  const media=document.createElement((reduced||!videoReady)?'img':'video');
   media.className='oneup-motion-logo';media.setAttribute('aria-hidden','true');
-  if(reduced){media.src=posterUrl;media.alt=''}
+  if(reduced||!videoReady){media.src=posterUrl;media.alt=''}
   else{
    media.src=videoUrl;media.poster=posterUrl;media.autoplay=true;media.loop=true;
    media.muted=true;media.playsInline=true;media.preload='metadata';
@@ -49,6 +49,7 @@ function install(){
   mainBrand.setAttribute('aria-label','1UP Anime, inicio');
   if(media.tagName==='VIDEO')media.play().catch(()=>{});
   // The navigation link remains a navigation link. Sound uses its own button.
+  if(videoReady){
   const trigger=document.createElement('button');
   trigger.type='button';trigger.className='oneup-signature-trigger';
   trigger.textContent='♫';trigger.setAttribute('aria-label','Ver el logo animado con sonido');
@@ -78,15 +79,13 @@ function install(){
   dialog.querySelector('.oneup-signature-replay').addEventListener('click',()=>{
    player.currentTime=0;player.muted=false;player.play().catch(()=>{});
   });
-  // Update alternate drawer logo without changing route links.
-  const drawerBrand=document.querySelector('.km-drawer-brand');
+  }
+  // The Kokomi drawer uses a generated strong heading, not .km-drawer-brand.
+  const drawerBrand=document.querySelector('#km-drawer .km-drawer-head strong');
   if(drawerBrand){
-   const image=drawerBrand.querySelector('img');
-   const text=drawerBrand.querySelector('span');
-   hidden(image,true);hidden(text,true);
    const imageFromFilm=document.createElement('img');
-   imageFromFilm.src=posterUrl;imageFromFilm.alt='';imageFromFilm.className='oneup-drawer-logo';
-   drawerBrand.append(imageFromFilm);
+   imageFromFilm.src=posterUrl;imageFromFilm.alt='1UP ANIME';imageFromFilm.className='oneup-drawer-logo';
+   drawerBrand.replaceChildren(imageFromFilm);
   }
   // Footer can show a still of the same intro without generating another design.
   const footer=document.querySelector('.footer-brand img');
