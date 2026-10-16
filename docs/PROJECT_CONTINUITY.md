@@ -91,3 +91,13 @@ Al concluir cada trabajo agregar:
 - Corregido cierre de drawer, navegación de regreso a inicio y filtrado de estrenos futuros para no anunciar como próximos otros títulos del catálogo.
 - Prueba realizada: validación de sintaxis JavaScript en el momento de crear `pages.js`; las pruebas reales de Chromium quedaron **configuradas**, no se puede afirmar que hayan pasado hasta revisar GitHub Actions.
 - Falta: comparar capturas, completar interior del reproductor/comentarios, confirmar rutas en Safari, revisar ejecución CI, validar fidelity desktop (demo 502).
+
+
+### 2026-10-16 — Validación visual móvil y corrección del ranking
+- Revisión con la grabación original del usuario y la captura de Chromium 390×844 generada desde la rama de prueba.
+- Implementados: orden de homepage orientado al catálogo; dos columnas de ranking en móvil y cinco en escritorio; fallback visual propio al fallar imágenes remotas; carruseles internos sin scroll horizontal del documento.
+- Evidencia: workflow `ONEUP Kokomi Visual Acceptance`, ejecución https://github.com/H4CKLABORATORY/1UP-ANIME/actions/runs/38850097111 = **success** sobre commit `63e05ac`. `One Up UI Quality` sobre el mismo commit = **success**. Browser Acceptance general estaba aún en ejecución al registrar esta entrada.
+- Capturas de hero y ranking móvil/escritorio en los Artifacts del workflow; comparación manual contra `kokomi_review/f_04.jpg` del video, también guardada como `1UP_KOKOMI_COMPARACION_MOVIL.png` en el chat de desarrollo.
+- Importante: el navegador automatizado bloquea imágenes externas para resultados deterministas, por eso muestra arte de respaldo.
+- PENDIENTE: QA Safari iPhone real, contraste pixel por pixel con una demo original accesible, funcionalidad de noticias/notificaciones/contacto avanzados, sincronización en servidor y control de calidad de reproducción.
+- PR #14 sigue en borrador; producción `main` intacta.
