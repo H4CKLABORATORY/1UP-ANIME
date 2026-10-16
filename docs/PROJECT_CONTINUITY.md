@@ -76,3 +76,11 @@ Al concluir cada trabajo agregar:
 - Pendiente / limitaciones:
 - Próxima tarea concreta:
 ```
+
+
+### 2026-10-15 — Propuesta móvil inspirada en Kokomi (rama)
+- Rama: `design/kokomi-mobile-reference-2026-10-15`; **no fusionada a main**.
+- Archivos añadidos: `preview-kokomi-mobile.html`, `themes/kokomi-mobile-preview/theme.css`, `themes/kokomi-mobile-preview/theme.js`, `themes/kokomi-mobile-preview/README.md`.
+- Implementado: menú lateral accesible, búsqueda conectada al formulario existente, hero compacto, cuadrículas responsivas y números de ranking; conserva la app `studio.js` y su catálogo.
+- Verificación: se contrastaron selectores y delegación de eventos con el código principal. Navegación visual en Safari real y despliegue no probados; aún no pasar a producción.
+- Próxima tarea: publicar la rama en un entorno de pruebas separado, comparar capturas en 390px y escritorio con video de referencia, ajustar y comprobar flujos de usuario antes de aprobar un merge.
