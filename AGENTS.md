@@ -30,3 +30,12 @@ Estas reglas se aplican a cualquier agente (Codex, Work u otro) que edite este r
 
 ## Continuidad entre sesiones (leer después de este archivo)
 - **[docs/PROJECT_CONTINUITY.md](docs/PROJECT_CONTINUITY.md)** es la bitácora y hoja de ruta activa. Leerla antes de modificar código; tras cada cambio actualizar su bitácora, pruebas y próxima tarea. No reconstruir desde cero, no sobrescribir la rama principal con una demo separada.
+
+
+## Misión actual — DEXTER OMEGA SWARM / Codex (2026-10-16)
+- Leer [docs/CODEX_OMEGA_SWARM_MISSION.md](docs/CODEX_OMEGA_SWARM_MISSION.md) para objetivos, hechos comprobados, referencias, restricciones y primera tarea.
+- Consultar y actualizar [docs/OMEGA_SWARM_BOARD.md](docs/OMEGA_SWARM_BOARD.md) como tablero verificable; no simular agentes activos ni marcar una función como terminada sin prueba.
+- Trabajar en tareas aisladas y paralelas **solo si el entorno ofrece subagentes o worktrees reales**. Empezar con hasta seis especialidades útiles, no generar cientos de roles ficticios.
+- Antes de crear otro rediseño, revisar [PR #14 Kokomi](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/14) y evitar duplicarlo. La mayor fidelidad visual razonable a Kokomi debe conservar la identidad y recursos originales/licenciados.
+- No reemplazar el reproductor por redirecciones, ni fingir fuentes/idiomas disponibles. El video integrado solo se ofrece con fuentes válidas, autorizadas y compatibles.
+- Dejar cambios grandes en PRs reversibles. No fusionar automáticamente PR #14 ni desplegar a `main` sin validación y aprobación del propietario.
