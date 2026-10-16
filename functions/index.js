@@ -1,6 +1,9 @@
 // 1UP Anime — authoritative Firebase server.
 'use strict';
-const {onCall,HttpsError}=require('firebase-functions/v2/https');
+const {onCall,onRequest,HttpsError}=require('firebase-functions/v2/https');
+const {defineSecret}=require('firebase-functions/params');
+const {buildClient,err:anime1vError}=require('./anime1v-adapter');
+const anime1vKey=defineSecret('ANIME1V_API_KEY');
 const admin=require('firebase-admin');
 if(!admin.apps.length)admin.initializeApp();
 const db=admin.firestore();
@@ -364,4 +367,50 @@ exports.moderateCommunityReply=caller(async req=>{
  await ref.update({status:action==='remove'?'removed':'visible',reviewedBy:req.auth.uid,
   reviewedAt:FieldValue.serverTimestamp()});
  return {ok:true};
+});
+
+
+/** Public read-only anime discovery backed by FxxMorgan's Anime1v API.
+ * Firebase environment: ANIME1V_BASE_URL (https://...), secret ANIME1V_API_KEY.
+ * Disabled until configured; no episode/resolve/download endpoints exposed.
+ */
+const anime1vAllowedOrigin='https://h4cklaboratory.github.io';
+const anime1vRate=new Map();
+let anime1vCachedClient=null,anime1vClientSignature='';
+exports.anime1vDiscovery=onRequest({
+ region:'us-east1',maxInstances:2,timeoutSeconds:15,
+ secrets:[anime1vKey],cors:[anime1vAllowedOrigin]
+},async (req,res)=>{
+ res.setHeader('Cache-Control','no-store');
+ res.setHeader('Vary','Origin');
+ res.setHeader('X-Content-Type-Options','nosniff');
+ if(req.method==='OPTIONS'){res.status(204).end();return}
+ if(req.method!=='GET'){res.status(405).json({error:'Método no permitido.'});return}
+ if(req.headers.origin&&req.headers.origin!==anime1vAllowedOrigin){
+  res.status(403).json({error:'Origen no permitido.'});return;
+ }
+ const ip=String(req.ip||req.socket?.remoteAddress||'unknown').slice(0,85),now=Date.now();
+ const old=anime1vRate.get(ip);
+ const value=old&&now-old.start<60_000?old:{start:now,count:0};
+ value.count++;anime1vRate.set(ip,value);
+ if(anime1vRate.size>5000)anime1vRate.clear();
+ if(value.count>20){res.status(429).json({error:'Demasiadas consultas. Inténtalo más tarde.'});return}
+ try{
+  const type=req.query.kind==='search'?'search':req.query.kind==='catalog'?'catalog':null;
+  if(!type)throw anime1vError(400,'Operación no reconocida.');
+  const origin=process.env.ANIME1V_BASE_URL||'';
+  const secret=anime1vKey.value();
+  const signature=origin+'|'+(secret?secret.length:0);
+  if(!anime1vCachedClient||signature!==anime1vClientSignature){
+   anime1vCachedClient=buildClient({baseUrl:origin,apiKey:secret});
+   anime1vClientSignature=signature;
+  }
+  const body=await anime1vCachedClient.query(type,{
+   q:req.query.q,provider:req.query.provider,page:req.query.page
+  });
+  res.status(200).json(body);
+ }catch(error){
+  const status=Number.isInteger(error.status)?error.status:502;
+  res.status(status).json({error:status===503?'Anime1v aún no está configurada.':status===400?error.message:'Anime1v no está disponible ahora.'});
+ }
 });

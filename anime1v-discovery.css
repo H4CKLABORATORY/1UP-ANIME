@@ -1,0 +1,20 @@
+.oneup-anime1v{margin:36px 0 16px;padding:24px;background:#141925;border:1px solid #404d73;border-radius:8px;color:#e6ecff}
+.oneup-anime1v h2{font:900 clamp(24px,3vw,34px)/1.2 'Barlow Condensed',sans-serif;text-transform:uppercase;margin:4px 0}
+.oneup-anime1v p{font-size:12px;line-height:1.65;color:#b8c3d9}
+#oneup-anime1v-form{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0}
+#oneup-anime1v-form input,#oneup-anime1v-form select{padding:12px;color:#f6f7ff;background:#202b40;border:1px solid #7381a0;border-radius:3px;font:13px 'Outfit',sans-serif;min-height:44px}
+#oneup-anime1v-form input{flex:2 1 180px;min-width:0}
+#oneup-anime1v-form select{flex:1 1 120px}
+#oneup-anime1v-form button{min-height:44px;background:#5579eb;color:white;border:0;padding:12px 18px;font-weight:800;cursor:pointer}
+.oneup-anime1v-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}
+.oneup-anime1v-item{min-width:0;display:grid;gap:5px;font:12px 'Outfit',sans-serif}
+.oneup-anime1v-item img,.oneup-anime1v-art{width:100%;aspect-ratio:2/3;object-fit:cover;background:#232940;border-radius:4px}
+.oneup-anime1v-art{display:grid;place-items:center;color:#9db6e9;font-weight:900;font-size:21px}
+.oneup-anime1v-item strong{overflow-wrap:anywhere}
+.oneup-anime1v-item small{color:#9baac2}
+.oneup-anime1v-credit a{color:#9ac8ff}
+@media(max-width:780px){.oneup-anime1v{padding:16px}.oneup-anime1v-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+.oneup-anime1v-open{background:#253b62;color:#d9e9ff;border:1px solid #617da9;border-radius:3px;
+padding:9px 7px;font-size:11px;cursor:pointer;text-align:left}
+.oneup-anime1v-open:hover,.oneup-anime1v-open:focus-visible{background:#38588e;color:white}
