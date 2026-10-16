@@ -38,7 +38,7 @@ self.addEventListener('fetch',event=>{
  const url=new URL(event.request.url);
  const scope=new URL(self.registration.scope);
  if(url.origin!==scope.origin || !url.pathname.startsWith(scope.pathname))return;
- const offline=()=>caches.match(event.request).then(hit=>hit || (event.request.mode==='navigate'?caches.match('./index.html'):Response.error()));
+ const offline=()=>caches.open(CACHE).then(async cache=>(await cache.match(event.request)) || (event.request.mode==='navigate'?await cache.match('./index.html'):Response.error()));
  if(event.request.mode==='navigate'){
   event.respondWith(fetch(event.request,{cache:'no-cache'}).then(response=>{
    if(response.ok)caches.open(CACHE).then(cache=>cache.put(event.request,response.clone())).catch(()=>{});
@@ -57,5 +57,5 @@ self.addEventListener('fetch',event=>{
   }).catch(offline));
   return;
  }
- event.respondWith(caches.match(event.request).then(hit=>hit||fetch(event.request)));
+ event.respondWith(caches.open(CACHE).then(cache=>cache.match(event.request)).then(hit=>hit||fetch(event.request)));
 });
