@@ -30,6 +30,42 @@ function attachDock(root){
  root.after(menu);
  return menu;
 }
+function renderTrailers(data){
+ const banner=$('#home-screen .season-banner');
+ if(!banner)return;
+ const originals=[...(Array.isArray(data.seasonal?.entries)?data.seasonal.entries:[]),...(Array.isArray(data.airing)?data.airing:[])];
+ const seen=new Set();
+ const rows=originals.filter(x=>{
+  const id=x?.trailer?.id;
+  if(!/^((mal|al)-\d+)$/.test(x?.id||'')||x.trailer?.site!=='youtube'||!/^[a-zA-Z0-9_-]{11}$/.test(id||'')||!/^https:\/\//.test(x?.banner||x?.image||'')||seen.has(x.id))return false;
+  seen.add(x.id);return true;
+ }).slice(0,5);
+ if(rows.length<2)return;
+ window.OneUpCatalog?.register?.(rows);
+ const preview=rows[0];
+ const posters=rows.slice(1);
+ const section=document.createElement('section');
+ section.className='oneup-studio-trailers wrap';section.id='oneup-studio-trailers';
+ section.setAttribute('aria-label','Tráilers oficiales disponibles en la ficha del anime');
+ section.innerHTML=
+  '<header class="oneup-studio-trailer-heading"><div><span>ESTRENOS / AVANCES</span><h2>EL PRÓXIMO <em>ESTRENO.</em></h2></div>'+
+  '<p>Una selección de tráilers enlazados desde AniList. La reproducción abre la ficha del anime y requiere que el visitante la elija.</p></header>'+
+  '<div class="oneup-studio-trailer-grid">'+
+   '<button class="oneup-studio-trailer-main" type="button" data-details="'+esc(preview.id)+'" aria-label="Ver ficha y tráiler de '+esc(preview.title)+'">'+
+    '<img alt="" loading="lazy" src="'+esc(preview.banner||preview.image)+'" referrerpolicy="no-referrer">'+
+    '<span class="oneup-studio-trailer-scrim"></span>'+
+    '<span class="oneup-studio-trailer-main-copy"><small>TRÁILER OFICIAL DISPONIBLE</small><strong>'+esc(preview.title)+'</strong><em>Ver ficha y tráiler ↗</em></span>'+
+    '<span class="oneup-studio-trailer-play" aria-hidden="true">▷</span>'+
+   '</button>'+
+   '<div class="oneup-studio-trailer-list">'+posters.map(x=>
+     '<button class="oneup-studio-trailer-mini" type="button" data-details="'+esc(x.id)+'" aria-label="Ver ficha y tráiler de '+esc(x.title)+'">'+
+     '<img src="'+esc(x.image||x.banner)+'" loading="lazy" alt="" referrerpolicy="no-referrer">'+
+     '<span><small>AVANCE · '+esc(String(x.year||'ANIME'))+'</small><b>'+esc(x.title)+'</b><i>Ver tráiler ↗</i></span>'+
+     '</button>'
+   ).join('')+'</div>'+
+  '</div>';
+ banner.after(section);
+}
 async function addAiring(after){
  const section=document.createElement('section');
  section.className='oneup-studio-airing';
@@ -45,6 +81,7 @@ async function addAiring(after){
   finally{clearTimeout(timer)}
   if(!response.ok)throw Error('Sin acceso al calendario');
   const obj=await response.json();
+  renderTrailers(obj);
   const now=Date.now()/1000;
   const rows=(Array.isArray(obj.airing)?obj.airing:[])
    .filter(x=>x&&x.next?.at>now && /^((mal|al)-\d+)$/.test(x.id))
