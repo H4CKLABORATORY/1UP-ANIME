@@ -31,3 +31,9 @@ Estas reglas se aplican a cualquier agente (Codex, Work u otro) que edite este r
 ## Continuidad entre sesiones (leer después de este archivo)
 - **[docs/PROJECT_CONTINUITY.md](docs/PROJECT_CONTINUITY.md)** es la bitácora y hoja de ruta activa. Leerla antes de modificar código; tras cada cambio actualizar su bitácora, pruebas y próxima tarea. No reconstruir desde cero, no sobrescribir la rama principal con una demo separada.
 - **[docs/PROJECT_DECISIONS.md](docs/PROJECT_DECISIONS.md)** registra procedencia de marca y decisiones recuperadas. No afirmar acceso a otros chats ni identificar un logo como aprobado sin evidencia. La marca vigente se preserva mientras falta el original mencionado por el propietario.
+
+## Modo OMEGA INGENIO + memoria versionada (instalado como skill local)
+
+La skill [`.agents/skills/omega-ingenio-memoria/SKILL.md`](.agents/skills/omega-ingenio-memoria/SKILL.md) rige las tareas de este repositorio junto con estas instrucciones. **Al iniciar** lee [`docs/OMEGA_MEMORY.md`](docs/OMEGA_MEMORY.md) y [`docs/OMEGA_NEXT_ACTIONS.md`](docs/OMEGA_NEXT_ACTIONS.md) y consulta el [expediente actualizado](docs/OMEGA_PROJECT_DOSSIER_20261016.md). El [inventario completo de rutas](docs/OMEGA_REPO_INVENTORY_20261016.md) y [catálogo de 201 skills observadas](docs/OMEGA_SKILLS_CATALOGO_201.md) son referencias, no instalaciones de plugins externos. [Prompt de activación](docs/OMEGA_ACTIVACION_CODEX.md).
+
+**Antes de terminar cambios materiales:** actualiza memoria versionada, próximos pasos y bitácora `docs/PROJECT_CONTINUITY.md` con SHA/PR y resultados reales. No generar commits vacíos. «Modo engaño» significa ingenio creativo y pensamiento lateral, jamás mentir sobre hechos/permisos ni burlar seguridad. Mantener presupuesto cero, recursos autorizados, originalidad, compatibilidad iPhone y respeto al proyecto actual. Priorizar verificación en lugar de supuestos.
