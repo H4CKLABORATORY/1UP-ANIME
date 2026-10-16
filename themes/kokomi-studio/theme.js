@@ -46,7 +46,7 @@ function renderTrailers(data){
  const posters=rows.slice(1);
  const section=document.createElement('section');
  section.className='oneup-studio-trailers wrap';section.id='oneup-studio-trailers';
- section.setAttribute('aria-label','Tráilers oficiales disponibles en la ficha del anime');
+ section.setAttribute('aria-label','Tráilers de AniList disponibles en la ficha del anime');
  section.innerHTML=
   '<header class="oneup-studio-trailer-heading"><div><span>ESTRENOS / AVANCES</span><h2>EL PRÓXIMO <em>ESTRENO.</em></h2></div>'+
   '<p>Una selección de tráilers enlazados desde AniList. La reproducción abre la ficha del anime y requiere que el visitante la elija.</p></header>'+
@@ -54,7 +54,7 @@ function renderTrailers(data){
    '<button class="oneup-studio-trailer-main" type="button" data-details="'+esc(preview.id)+'" aria-label="Ver ficha y tráiler de '+esc(preview.title)+'">'+
     '<img alt="" loading="lazy" src="'+esc(preview.banner||preview.image)+'" referrerpolicy="no-referrer">'+
     '<span class="oneup-studio-trailer-scrim"></span>'+
-    '<span class="oneup-studio-trailer-main-copy"><small>TRÁILER OFICIAL DISPONIBLE</small><strong>'+esc(preview.title)+'</strong><em>Ver ficha y tráiler ↗</em></span>'+
+    '<span class="oneup-studio-trailer-main-copy"><small>TRÁILER ENLAZADO EN ANILIST</small><strong>'+esc(preview.title)+'</strong><em>Ver ficha y tráiler ↗</em></span>'+
     '<span class="oneup-studio-trailer-play" aria-hidden="true">▷</span>'+
    '</button>'+
    '<div class="oneup-studio-trailer-list">'+posters.map(x=>
