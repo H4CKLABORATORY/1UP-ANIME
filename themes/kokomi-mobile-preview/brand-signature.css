@@ -1,0 +1,55 @@
+/* 1UP Anime: original owner-supplied animated identity.
+ * Disabled automatically if intro media assets are missing. */
+body.oneup-video-brand-enabled .header-inner .brand{
+ min-height:52px;min-width:0;max-width:min(43vw,165px);display:flex;
+ align-items:center;flex:none;overflow:visible
+}
+body.oneup-video-brand-enabled .header-inner .brand .brand-symbol[hidden],
+body.oneup-video-brand-enabled .header-inner .brand .brand-name[hidden],
+body.oneup-video-brand-enabled .km-drawer-brand img[hidden],
+body.oneup-video-brand-enabled .km-drawer-brand span[hidden]{display:none!important}
+body.oneup-video-brand-enabled .oneup-motion-logo{
+ display:block;object-fit:contain;object-position:center;
+ width:clamp(94px,12vw,160px);height:50px;max-width:100%;
+ pointer-events:none;border:0;filter:drop-shadow(0 0 4px #5265ff45)
+}
+body.oneup-video-brand-enabled .oneup-signature-trigger{
+ flex:none;color:#d9d6ff;border:1px solid #6b68a388;background:#242434;
+ border-radius:50%;width:30px;height:30px;display:grid;place-items:center;
+ font-size:18px;cursor:pointer;padding:0;margin-left:4px;z-index:2
+}
+body.oneup-video-brand-enabled .oneup-signature-trigger:hover{
+ color:#fff;background:#424569;border-color:#92a0ff
+}
+body.oneup-video-brand-enabled .oneup-signature-trigger:focus-visible,
+.oneup-signature-dialog button:focus-visible{outline:2px solid #9fdfff;outline-offset:3px}
+body.oneup-video-brand-enabled .km-drawer-brand .oneup-drawer-logo{
+ display:block;width:145px;height:70px;object-fit:contain
+}
+body.oneup-video-brand-enabled .oneup-footer-video-logo{
+ width:96px;height:60px;object-fit:contain;border-radius:3px
+}
+.oneup-signature-dialog{
+ color:#f1f0fc;background:#0d1018;border:1px solid #565d87;border-radius:12px;
+ box-shadow:0 24px 90px #000c;width:min(95vw,850px);max-width:850px;
+ padding:0;overflow:hidden
+}
+.oneup-signature-dialog::backdrop{background:#000b;backdrop-filter:blur(10px)}
+.oneup-signature-top,.oneup-signature-meta{display:flex;justify-content:space-between;
+ align-items:center;gap:13px;padding:11px 15px;background:#151926}
+.oneup-signature-top strong{font:850 18px 'Barlow Condensed',sans-serif;letter-spacing:.06em}
+.oneup-signature-dialog button{background:#292f48;border:1px solid #6d75a1;
+ color:white;cursor:pointer;border-radius:5px;padding:8px 11px}
+.oneup-signature-video{width:100%;aspect-ratio:16/9;background:#000;
+ object-fit:contain;display:block}
+.oneup-signature-meta{font:12px 'Outfit',sans-serif;color:#adb6d4}
+@media(max-width:780px){
+ body.oneup-video-brand-enabled .header-inner .brand{max-width:125px}
+ body.oneup-video-brand-enabled .oneup-motion-logo{width:112px;height:43px}
+ body.oneup-video-brand-enabled .oneup-signature-trigger{
+  width:28px;height:28px;margin-left:0;font-size:16px
+ }
+ .oneup-signature-meta{font-size:10px}
+ .oneup-signature-dialog{width:calc(100vw - 22px)}
+}
+@media(prefers-reduced-motion:reduce){body.oneup-video-brand-enabled .oneup-motion-logo{transition:none;animation:none}}
