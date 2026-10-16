@@ -1,0 +1,114 @@
+/* 1UP ANIME — referencia móvil inspirada en el vídeo de Kokomi recibido 2026-10-15.
+   Código original. SOLO preview-kokomi.html con atributo data-kokomi-reference.
+   Preserva funciones, datos, cuentas y derechos del proyecto. */
+body.oneup-kokomi[data-kokomi-reference="yes"]{
+ --kp-bg:#111115;--kp-panel:#1b1b20;--kp-ink:#f8f8fa;
+ --kp-muted:#a4a5af;--kp-accent:#42d2c0;--kp-secondary:#597cf8;
+ --bg:#111115;--surf:#1c1c23;--panel:#222229;--orange:#5289ff;
+ background:#111115;color:#f8f8f9;
+}
+body[data-kokomi-reference="yes"] .app-sheen{opacity:.12}
+body[data-kokomi-reference="yes"] .header{
+ background:#17171cee;height:65px;border-bottom:1px solid #303039;
+ box-shadow:none;backdrop-filter:blur(16px);
+}
+body[data-kokomi-reference="yes"] .header-inner{gap:12px;max-width:1420px}
+body[data-kokomi-reference="yes"] .brand-name{color:#f7f7ff}
+body[data-kokomi-reference="yes"] .brand-name>span{color:#a8a2ff}
+body[data-kokomi-reference="yes"] .brand-symbol{border-color:#6361a44d;box-shadow:none;background:#1d1b2d}
+body[data-kokomi-reference="yes"] .section-heading h2,
+body[data-kokomi-reference="yes"] .section-heading em{color:#f5f5f7}
+body[data-kokomi-reference="yes"] .section-heading:before{background:#37cab4}
+body[data-kokomi-reference="yes"] .anime-card{border-radius:3px;background:#1b1b20;box-shadow:none;border:1px solid #41414b40}
+body[data-kokomi-reference="yes"] .anime-card .card-info{background:#17171b;color:white}
+body[data-kokomi-reference="yes"] .genre-pills button{background:#212128;border-color:#41414a;color:#dedce2}
+body[data-kokomi-reference="yes"] .oneup-studio-dock .studio-dock-item{
+ border-radius:4px;background:#222229;border-color:#373742;padding:12px;min-height:69px
+}
+body[data-kokomi-reference="yes"] .oneup-studio-dock .studio-dock-item:before{background:#3cc9b8}
+body[data-kokomi-reference="yes"] .oneup-studio-dock .studio-dock-icon{background:#262633;color:#c6bcff}
+body[data-kokomi-reference="yes"] .footer{background:transparent}
+body[data-kokomi-reference="yes"] .preview-kokomi-menu-button{
+ display:grid;place-items:center;flex:0 0 auto;width:37px;height:37px;
+ border:0;border-radius:5px;color:#f3f3f6;background:#282830;
+ font-size:21px;line-height:1
+}
+body[data-kokomi-reference="yes"] .preview-kokomi-menu-button:hover{background:#343443}
+.preview-kokomi-overlay{position:fixed;inset:0;background:#000b;z-index:2147481000}
+.preview-kokomi-drawer{
+ position:fixed;top:0;bottom:0;left:0;width:min(275px,82vw);
+ overflow:auto;background:#17171b;border-right:1px solid #424250;
+ z-index:2147481001;box-shadow:15px 0 45px #0009;
+ transform:translateX(-105%);transition:transform .25s cubic-bezier(.2,.8,.2,1);
+ display:flex;flex-direction:column
+}
+.preview-kokomi-drawer.open{transform:translateX(0)}
+.preview-kokomi-drawer .drawer-head{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:16px;border-bottom:1px solid #383840;color:#e1e0ff}
+.preview-kokomi-drawer .drawer-head strong{font:900 25px 'Barlow Condensed',sans-serif}
+.preview-kokomi-drawer button{font:750 13px 'Outfit',sans-serif}
+.preview-kokomi-drawer .drawer-close{width:34px;height:34px;border:0;border-radius:5px;color:#fff;background:#34343c}
+.preview-kokomi-drawer nav{padding:12px 9px;display:grid;gap:5px}
+.preview-kokomi-drawer nav button,
+.preview-kokomi-drawer nav a{
+ display:flex;align-items:center;gap:13px;padding:10px 12px;
+ min-height:47px;background:transparent;border:0;color:#e4e2ec;
+ border-radius:5px;text-align:left;text-decoration:none
+}
+.preview-kokomi-drawer nav button:hover,.preview-kokomi-drawer nav a:hover{background:#33333c}
+.preview-kokomi-drawer .nav-icon{display:grid;place-items:center;width:31px;height:31px;border-radius:4px;color:#fff;background:#302f3a;font-size:20px}
+.preview-kokomi-drawer .drawer-footer{margin-top:auto;padding:16px;color:#9899a6;font-size:11px}
+body[data-kokomi-reference="yes"] #trending-rail>.anime-card:nth-child(1) .anime-art:before{content:'1'}
+body[data-kokomi-reference="yes"] #trending-rail>.anime-card:nth-child(2) .anime-art:before{content:'2'}
+body[data-kokomi-reference="yes"] #trending-rail>.anime-card:nth-child(3) .anime-art:before{content:'3'}
+body[data-kokomi-reference="yes"] #trending-rail>.anime-card:nth-child(4) .anime-art:before{content:'4'}
+body[data-kokomi-reference="yes"] #trending-rail>.anime-card:nth-child(-n+4) .anime-art:before{
+ position:absolute;z-index:5;left:0;top:0;display:grid;place-items:center;
+ color:#fff;background:#f32743;min-width:25px;height:26px;
+ font:900 17px 'Barlow Condensed',sans-serif
+}
+@media(max-width:780px){
+ body[data-kokomi-reference="yes"] .header{height:55px}
+ body[data-kokomi-reference="yes"] .brand-symbol{width:31px;height:31px}
+ body[data-kokomi-reference="yes"] .brand-name{font-size:25px}
+ body[data-kokomi-reference="yes"] .header-inner{gap:5px}
+ body[data-kokomi-reference="yes"] .header-right{margin-left:auto}
+ body[data-kokomi-reference="yes"] .header-right .icon-button{height:35px;width:35px}
+ body[data-kokomi-reference="yes"] .header-right .account-button{padding:6px 8px}
+ body[data-kokomi-reference="yes"] .hero{height:405px;min-height:405px}
+ body[data-kokomi-reference="yes"] .hero-grid{height:100%;min-height:405px;display:flex;align-items:flex-end;padding:22px 0 54px;position:relative}
+ body[data-kokomi-reference="yes"] .hero-copy{max-width:100%;width:100%}
+ body[data-kokomi-reference="yes"] .hero-poster{background-position:59% center;opacity:.93}
+ body[data-kokomi-reference="yes"] .hero-darken{background:linear-gradient(0deg,#111115 0%,#1111159f 34%,#0e0f146a 100%),linear-gradient(90deg,#0f0d16d9,#11111530)}
+ body[data-kokomi-reference="yes"] .hero h1{font-size:clamp(45px,11.8vw,61px);line-height:.84}
+ body[data-kokomi-reference="yes"] .hero .eyebrow{font-size:9px}
+ body[data-kokomi-reference="yes"] .limited-tag{font-size:9px;margin-top:10px}
+ body[data-kokomi-reference="yes"] .hero-description{font-size:11px;line-height:1.45;-webkit-line-clamp:2}
+ body[data-kokomi-reference="yes"] .hero-actions{gap:6px}
+ body[data-kokomi-reference="yes"] .hero-actions .cta{font-size:10px;padding:11px}
+ body[data-kokomi-reference="yes"] .hero-art-card{display:none}
+ body[data-kokomi-reference="yes"] .hero-bottom{bottom:13px;font-size:9px}
+ body[data-kokomi-reference="yes"] .marquee{display:none}
+ body[data-kokomi-reference="yes"] .oneup-studio-dock{grid-template-columns:repeat(2,minmax(0,1fr));margin:17px auto 25px;gap:9px}
+ body[data-kokomi-reference="yes"] .oneup-studio-dock .studio-dock-item{min-height:70px;padding:10px}
+ body[data-kokomi-reference="yes"] .explore-section{margin-top:17px}
+ body[data-kokomi-reference="yes"] .section{margin-top:26px}
+ body[data-kokomi-reference="yes"] .section-heading h2{font-size:23px}
+ body[data-kokomi-reference="yes"] .section-heading .micro{font-size:9px}
+ body[data-kokomi-reference="yes"] .section-heading .section-more{font-size:11px}
+ body[data-kokomi-reference="yes"] #trending-rail{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;overflow:visible}
+ body[data-kokomi-reference="yes"] #trending-rail>.anime-card:nth-child(n+5){display:none}
+ body[data-kokomi-reference="yes"] #season-rail,body[data-kokomi-reference="yes"] #recent-rail,body[data-kokomi-reference="yes"] #movies-rail{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;overflow:visible}
+ body[data-kokomi-reference="yes"] #season-rail>.anime-card:nth-child(n+7),
+ body[data-kokomi-reference="yes"] #recent-rail>.anime-card:nth-child(n+7),
+ body[data-kokomi-reference="yes"] #movies-rail>.anime-card:nth-child(n+7){display:none}
+ body[data-kokomi-reference="yes"] .anime-card{min-width:0;width:100%;border-radius:3px}
+ body[data-kokomi-reference="yes"] .anime-art{aspect-ratio:3/4.2;border-radius:3px 3px 0 0;position:relative}
+ body[data-kokomi-reference="yes"] .anime-card .card-info{padding:8px 6px}
+ body[data-kokomi-reference="yes"] .anime-card .card-name{font-size:13px;line-height:1.25}
+ body[data-kokomi-reference="yes"] .anime-card .card-sub{font-size:10px}
+ body[data-kokomi-reference="yes"] .mobile-navigation{display:none}
+ body[data-kokomi-reference="yes"] .season-banner{margin-top:28px}
+ body[data-kokomi-reference="yes"] .footer{margin-bottom:0;padding-bottom:50px}
+ body[data-kokomi-reference="yes"] .toast{bottom:24px}
+}
+@media(prefers-reduced-motion:reduce){.preview-kokomi-drawer{transition:none!important}}
