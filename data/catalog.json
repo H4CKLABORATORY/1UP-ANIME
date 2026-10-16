@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-15T22:52:52.399Z",
+  "updated": "2026-10-16T03:51:06.433Z",
   "source": "AniList public GraphQL",
   "groups": {
     "trending": [
@@ -113,47 +113,6 @@
         "description_es": "Una vez despedido como el único estudiante ordinario de la élite Arnold Academy of Sorcery, Ray White — secretamente, el Hechicero de Iceblade— finalmente ha ganado su lugar. Con un nuevo año escolar surge un nuevo desafío: La Guerra de los Magos, una gran competencia que enfrenta equipos de escuelas rivales entre sí. Pero una sombra ominosa sobre Ray y sus amigos mientras los otros grandes hechiceros trazan sus próximos movimientos. (Fuente: Crunchyroll)"
       },
       {
-        "id": "mal-34572",
-        "mal_id": 34572,
-        "title": "Black Clover",
-        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx97940-fyh8o7gNbha0.png",
-        "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/97940-1URQdQ4U1a0b.jpg",
-        "description": "In a world where magic is everything, Asta and Yuno are both found abandoned at a church on the same day. While Yuno is gifted with exceptional magical powers, Asta is the only one in this world without any. At the age of fifteen, both receive grimoires, magic books that amplify their holder’s magic. Asta’s is a rare Grimoire of Anti-Magic that negates and repels his opponent’s spells. Being opposite but good rivals, Yuno and Asta are ready for t",
-        "averageScore": 79,
-        "year": 2017,
-        "genres": [
-          "Action",
-          "Adventure",
-          "Comedy",
-          "Fantasy"
-        ],
-        "format": "TV",
-        "episodes": 170,
-        "status": "FINISHED",
-        "siteUrl": "https://anilist.co/anime/97940",
-        "streaming": [
-          {
-            "name": "Crunchyroll",
-            "url": "https://www.crunchyroll.com/series/GRE50KV36/black-clover"
-          },
-          {
-            "name": "Hulu",
-            "url": "https://www.hulu.com/series/black-clover-f6451467-97a8-4ddf-9ae8-e9e4cbb53fc8"
-          },
-          {
-            "name": "Netflix",
-            "url": "https://www.netflix.com/title/80238012"
-          },
-          {
-            "name": "Bilibili TV",
-            "url": "https://www.bilibili.tv/media/1000677"
-          }
-        ],
-        "next": null,
-        "source": "snapshot",
-        "description_es": "En un mundo donde la magia es todo, Asta y Yuno se encuentran abandonados en una iglesia el mismo día. Mientras Yuno está dotado de poderes mágicos excepcionales, Asta es el único en este mundo sin ninguno. A la edad de quince años, ambos reciben grimoires, libros mágicos que amplifican la magia de su titular. Asta es un raro Grimoire de Anti-Magic que niega y repele los hechizos de su oponente. Siendo opuestos pero buenos rivales, Yuno y Asta están listos para t"
-      },
-      {
         "id": "mal-21",
         "mal_id": 21,
         "title": "ONE PIECE",
@@ -211,6 +170,47 @@
         "description_es": "Gold Roger era conocido como el Rey Pirata, el ser más fuerte e infame de haber navegado en la Gran Línea. La captura y muerte de Roger por el Gobierno Mundial trajo un cambio en todo el mundo. Sus últimas palabras antes de su muerte revelaron la ubicación del tesoro más grande del mundo, One Piece. Fue esta revelación que trajo consigo la Gran Era de Piratas, hombres que soñaban con encontrar una pieza (que promete una cantidad ilimitada o"
       },
       {
+        "id": "mal-34572",
+        "mal_id": 34572,
+        "title": "Black Clover",
+        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx97940-fyh8o7gNbha0.png",
+        "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/97940-1URQdQ4U1a0b.jpg",
+        "description": "In a world where magic is everything, Asta and Yuno are both found abandoned at a church on the same day. While Yuno is gifted with exceptional magical powers, Asta is the only one in this world without any. At the age of fifteen, both receive grimoires, magic books that amplify their holder’s magic. Asta’s is a rare Grimoire of Anti-Magic that negates and repels his opponent’s spells. Being opposite but good rivals, Yuno and Asta are ready for t",
+        "averageScore": 79,
+        "year": 2017,
+        "genres": [
+          "Action",
+          "Adventure",
+          "Comedy",
+          "Fantasy"
+        ],
+        "format": "TV",
+        "episodes": 170,
+        "status": "FINISHED",
+        "siteUrl": "https://anilist.co/anime/97940",
+        "streaming": [
+          {
+            "name": "Crunchyroll",
+            "url": "https://www.crunchyroll.com/series/GRE50KV36/black-clover"
+          },
+          {
+            "name": "Hulu",
+            "url": "https://www.hulu.com/series/black-clover-f6451467-97a8-4ddf-9ae8-e9e4cbb53fc8"
+          },
+          {
+            "name": "Netflix",
+            "url": "https://www.netflix.com/title/80238012"
+          },
+          {
+            "name": "Bilibili TV",
+            "url": "https://www.bilibili.tv/media/1000677"
+          }
+        ],
+        "next": null,
+        "source": "snapshot",
+        "description_es": "En un mundo donde la magia es todo, Asta y Yuno se encuentran abandonados en una iglesia el mismo día. Mientras Yuno está dotado de poderes mágicos excepcionales, Asta es el único en este mundo sin ninguno. A la edad de quince años, ambos reciben grimoires, libros mágicos que amplifican la magia de su titular. Asta es un raro Grimoire de Anti-Magic que niega y repele los hechizos de su oponente. Siendo opuestos pero buenos rivales, Yuno y Asta están listos para t"
+      },
+      {
         "id": "mal-63337",
         "mal_id": 63337,
         "title": "FX Fighter Kurumi-chan",
@@ -243,6 +243,46 @@
         },
         "source": "snapshot",
         "description_es": "La estudiante universitaria Kurumi Fukuga finalmente ha cumplido su deseo de iniciar el comercio de divisas (FX), motivado por recuperar los 20 millones de yenes que su madre falleció en el comercio. \"Lo recuperaré fácilmente,\" pensó, pero el mundo en el que entra puede convertirse en el cielo o el infierno en un instante. Pérdidas no realizadas, fluctuaciones descompuestas, imparables... ¡pero todavía quiere comprar, vender y hacer dinero! Con los adictos FX Mochiko, Mebuki an"
+      },
+      {
+        "id": "mal-63431",
+        "mal_id": 63431,
+        "title": "The Laid-Off Cheat-Granting Mage Enjoys a Second Lease on Life",
+        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b207329-6VPeZIDfF4Sr.png",
+        "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/207329-9IqRSKIsM3TC.jpg",
+        "description": "Rein, an enchanter, is suddenly expelled from his guild one day. But instead of despairing, he declares, “Now I can do anything!” and begins reclaiming the massive number of enhancement points he once poured into his guildmates’ gear, setting off on a brand-new path as an adventurer.\nGathering around him are people carrying wounds that don’t fade easily: a genius adventurer who shut her heart after her party was slaughtered, a warrior who lost he",
+        "averageScore": 73,
+        "year": 2026,
+        "genres": [
+          "Adventure",
+          "Comedy",
+          "Fantasy",
+          "Slice of Life"
+        ],
+        "format": "TV",
+        "episodes": 0,
+        "status": "RELEASING",
+        "siteUrl": "https://anilist.co/anime/207329",
+        "streaming": [
+          {
+            "name": "Crunchyroll",
+            "url": "https://www.crunchyroll.com/series/GT00384016/"
+          },
+          {
+            "name": "YouTube",
+            "url": "https://www.youtube.com/playlist?list=PLcCDyXGi-y_w"
+          },
+          {
+            "name": "Bilibili TV",
+            "url": "https://www.bilibili.tv/en/media/2432178"
+          }
+        ],
+        "next": {
+          "at": 1792508400,
+          "episode": 3
+        },
+        "source": "snapshot",
+        "description_es": "Rein, un encantador, es expulsado de su gremio un día. Pero en lugar de desesperar, declara, “¡Ahora puedo hacer cualquier cosa!” y comienza a reclamar el enorme número de puntos de mejora que una vez vierte en el equipo de sus compañeros, a partir de un nuevo camino como aventurero. Reunirse a su alrededor son personas que llevan heridas que no se desvanecen fácilmente: un genio aventurero que cerró su corazón después de que su partido fue masacrado, un guerrero que perdió"
       },
       {
         "id": "mal-53913",
@@ -292,44 +332,49 @@
         "description_es": "La segunda temporada de Tensei Mierda Ken Deshita. Nota: Cada episodio fue transmitido una semana antes de la emisión de televisión a partir del 1 de octubre de 2026 en Abema. La radiodifusión regular comenzó el 8 de octubre de 2026."
       },
       {
-        "id": "mal-63431",
-        "mal_id": 63431,
-        "title": "The Laid-Off Cheat-Granting Mage Enjoys a Second Lease on Life",
-        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b207329-6VPeZIDfF4Sr.png",
-        "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/207329-9IqRSKIsM3TC.jpg",
-        "description": "Rein, an enchanter, is suddenly expelled from his guild one day. But instead of despairing, he declares, “Now I can do anything!” and begins reclaiming the massive number of enhancement points he once poured into his guildmates’ gear, setting off on a brand-new path as an adventurer.\nGathering around him are people carrying wounds that don’t fade easily: a genius adventurer who shut her heart after her party was slaughtered, a warrior who lost he",
-        "averageScore": 73,
+        "id": "mal-59970",
+        "mal_id": 59970,
+        "title": "That Time I Got Reincarnated as a Slime Season 4",
+        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx182205-q2AeO1owuQbO.jpg",
+        "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/182205-fRUoKv6f2JAq.jpg",
+        "description": "Demon Lord Rimuru's dream of creating an alliance between humans and monsters takes a step closer to being realized. As Tempest continues to prosper, Granville Rozzo and his granddaughter, Maribel Rozzo, clash with Demon Lord Rimuru over their plan to protect mankind by ruling over them. Meanwhile, in El Dorado, Demon Lord Leon works toward goals of his own. The awakening of a new Hero draws near!\n\n(Source: Crunchyroll News)",
+        "averageScore": 83,
         "year": 2026,
         "genres": [
+          "Action",
           "Adventure",
           "Comedy",
-          "Fantasy",
-          "Slice of Life"
+          "Fantasy"
         ],
         "format": "TV",
-        "episodes": 0,
-        "status": "RELEASING",
-        "siteUrl": "https://anilist.co/anime/207329",
+        "episodes": 24,
+        "status": "FINISHED",
+        "siteUrl": "https://anilist.co/anime/182205",
         "streaming": [
           {
             "name": "Crunchyroll",
-            "url": "https://www.crunchyroll.com/series/GT00384016/"
+            "url": "https://www.crunchyroll.com/series/GYZJ43JMR/that-time-i-got-reincarnated-as-a-slime"
+          },
+          {
+            "name": "iQ",
+            "url": "https://www.iq.com/album/jkfiu4aeb5"
           },
           {
             "name": "YouTube",
-            "url": "https://www.youtube.com/playlist?list=PLcCDyXGi-y_w"
+            "url": "https://www.youtube.com/playlist?list=PLwLSw1_eDZl3_YNRvXA7O89pNPsj1WIkb"
           },
           {
             "name": "Bilibili TV",
-            "url": "https://www.bilibili.tv/en/media/2432178"
+            "url": "https://www.bilibili.tv/en/media/2342192"
+          },
+          {
+            "name": "Netflix",
+            "url": "https://www.netflix.com/title/81028712"
           }
         ],
-        "next": {
-          "at": 1792508400,
-          "episode": 3
-        },
+        "next": null,
         "source": "snapshot",
-        "description_es": "Rein, un encantador, es expulsado de su gremio un día. Pero en lugar de desesperar, declara, “¡Ahora puedo hacer cualquier cosa!” y comienza a reclamar el enorme número de puntos de mejora que una vez vierte en el equipo de sus compañeros, a partir de un nuevo camino como aventurero. Reunirse a su alrededor son personas que llevan heridas que no se desvanecen fácilmente: un genio aventurero que cerró su corazón después de que su partido fue masacrado, un guerrero que perdió"
+        "description_es": "El sueño del Demonio Lord Rimuru de crear una alianza entre humanos y monstruos lleva un paso más cerca de ser realizado. Mientras Tempest continúa prosperando, Granville Rozzo y su nieta, Maribel Rozzo, chocan con el Señor demonio Rimuru sobre su plan de proteger a la humanidad gobernando sobre ellos. Mientras tanto, en El Dorado, el Demonio Lord León trabaja hacia metas propias. ¡El despertar de un nuevo héroe se acerca! (Fuente: Crunchyroll News)"
       },
       {
         "id": "mal-269",
@@ -384,41 +429,6 @@
         "description_es": "Ichigo Kurosaki es un estudiante de secundaria bastante normal, aparte del hecho de que tiene la capacidad de ver fantasmas. Esta habilidad nunca impactó su vida de una manera importante hasta el día en que se encuentra con el Shinigami Kuchiki Rukia, que lo salva y la vida de su familia de un Hollow, un espíritu corrupto que devora las almas humanas. Herido durante la lucha contra el Hollow, Rukia elige la única opción disponible para derrotar al monstruo y pasa su pow Shinigami"
       },
       {
-        "id": "mal-57612",
-        "mal_id": 57612,
-        "title": "A Returner's Magic Should be Special Season 2",
-        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx172192-W7P5xEUaxF3y.jpg",
-        "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/172192-jibcmb7wdbzk.jpg",
-        "description": "In a land dominated by the formidable Shadow Worlds, most of humanity has been destroyed. To rescue their planet from impending doom, six brave heroes fight a perilous battle…and fail. But there’s a glimpse of hope when Desir, one of the last mages, is suddenly sent back in time 13 years! Now armed with knowledge of the grim future, can he alter the course of history and save the world?\n\n(Source: Crunchyroll)",
-        "averageScore": 70,
-        "year": 2026,
-        "genres": [
-          "Action",
-          "Adventure",
-          "Fantasy"
-        ],
-        "format": "TV",
-        "episodes": 0,
-        "status": "RELEASING",
-        "siteUrl": "https://anilist.co/anime/172192",
-        "streaming": [
-          {
-            "name": "Crunchyroll",
-            "url": "https://www.crunchyroll.com/series/GEXH3W207/a-returners-magic-should-be-special"
-          },
-          {
-            "name": "Bilibili TV",
-            "url": "https://www.bilibili.tv/en/media/2432495"
-          }
-        ],
-        "next": {
-          "at": 1792597500,
-          "episode": 3
-        },
-        "source": "snapshot",
-        "description_es": "En una tierra dominada por los formidables Mundos Sombríos, la mayoría de la humanidad ha sido destruida. Para rescatar a su planeta de la muerte inminente, seis héroes valientes luchan una batalla peligrosa... y fracasan. Pero hay una mirada de esperanza cuando Desir, una de las últimas magras, es de repente enviado en el tiempo 13 años! Ahora armado con conocimiento del futuro sombrío, ¿puede alterar el curso de la historia y salvar el mundo? (Fuente: Crunchyroll)"
-      },
-      {
         "id": "mal-59193",
         "mal_id": 59193,
         "title": "Mushoku Tensei: Jobless Reincarnation Season 3",
@@ -462,6 +472,107 @@
         "next": null,
         "source": "snapshot",
         "description_es": "La tercera temporada de Mushoku Tensei: Isekai Ittara Honki Dasu."
+      },
+      {
+        "id": "mal-61987",
+        "mal_id": 61987,
+        "title": "The Apothecary Diaries Season 3",
+        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx195516-MJpUZlOberqH.jpg",
+        "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/195516-B5M0cPaQbQXI.jpg",
+        "description": "In the aftermath of the Shi Clan’s rebellion, things have finally settled down, and Maomao has returned to her old life as a pharmacist in the pleasure district.\n\nOne day, triggered by a breakfast served at the Verdigris House, Maomao senses an anomaly and begins investigating its true nature.\n\nMeanwhile, Jinshi, who has revealed his true identity as the Imperial brother and begun to face his heavy responsibilities, is deeply troubled by the fina",
+        "averageScore": 85,
+        "year": 2026,
+        "genres": [
+          "Drama",
+          "Mystery"
+        ],
+        "format": "TV",
+        "episodes": 12,
+        "status": "RELEASING",
+        "siteUrl": "https://anilist.co/anime/195516",
+        "streaming": [
+          {
+            "name": "Crunchyroll",
+            "url": "https://www.crunchyroll.com/series/G3KHEVDJ7/the-apothecary-diaries"
+          },
+          {
+            "name": "Netflix",
+            "url": "https://www.netflix.com/us/title/81712068"
+          }
+        ],
+        "next": {
+          "at": 1792159200,
+          "episode": 3
+        },
+        "source": "snapshot",
+        "description_es": "Después de la rebelión del clan Shi, las cosas finalmente se han asentado, y Maomao ha vuelto a su antigua vida como farmacéutico en el distrito de placer. Un día, provocado por un desayuno servido en la Casa Verdigris, Maomao siente una anomalía y comienza a investigar su verdadera naturaleza. Mientras tanto, Jinshi, que ha revelado su verdadera identidad como el hermano imperial y ha comenzado a enfrentar sus pesadas responsabilidades, está profundamente preocupado por la fina"
+      },
+      {
+        "id": "mal-64340",
+        "mal_id": 64340,
+        "title": "Overgeared",
+        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx212888-NhyvqPt5aIuJ.jpg",
+        "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/212888-ZsnNegBCKXQq.jpg",
+        "description": "Sin Yeong-U (a.k.a. Grid), an unlucky man in life and a low-level player in the popular VR game “Satisfy,” finds a powerful item that earns him a rare legendary class title: “Pagma’s Successor.” He’s now a skilled blacksmith who can forge unique weapons and equip the game’s most powerful gear. Grid resolves to use his new abilities to achieve fame and fortune, but as his very existence begins to stir up trouble in Satisfy, he realizes that life a",
+        "averageScore": 75,
+        "year": 2026,
+        "genres": [
+          "Action",
+          "Adventure",
+          "Comedy",
+          "Fantasy"
+        ],
+        "format": "ONA",
+        "episodes": 12,
+        "status": "RELEASING",
+        "siteUrl": "https://anilist.co/anime/212888",
+        "streaming": [
+          {
+            "name": "Crunchyroll",
+            "url": "https://www.crunchyroll.com/series/GT00384004"
+          }
+        ],
+        "next": {
+          "at": 1792333800,
+          "episode": 4
+        },
+        "source": "snapshot",
+        "description_es": "Sin Yeong-U (a.k.a. Grid), un hombre desafortunado en la vida y un jugador de bajo nivel en el popular juego VR “Satisfy”, encuentra un poderoso artículo que le gana un raro título legendario de clase: “El Sucesor de Pagma”. Ahora es un herrero experto que puede forjar armas únicas y equipar el equipo más poderoso del juego. Grid resuelve usar sus nuevas habilidades para alcanzar la fama y la fortuna, pero cuando su propia existencia comienza a provocar problemas en Satisfeo, se da cuenta de que la vida es una"
+      },
+      {
+        "id": "mal-54492",
+        "mal_id": 54492,
+        "title": "The Apothecary Diaries",
+        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx161645-QLbzHXiYRgV2.jpg",
+        "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/161645-oqzTZYIvviWI.jpg",
+        "description": "Maomao lived a peaceful life with her apothecary father. Until one day, she’s sold as a lowly servant to the emperor’s palace. But she wasn’t meant for a compliant life among royalty. So when imperial heirs fall ill, she decides to step in and find a cure! This catches the eye of Jinshi, a handsome palace official who promotes her. Now, she’s making a name for herself solving medical mysteries!\n\n(Source: Crunchyroll)",
+        "averageScore": 88,
+        "year": 2023,
+        "genres": [
+          "Drama",
+          "Mystery"
+        ],
+        "format": "TV",
+        "episodes": 24,
+        "status": "FINISHED",
+        "siteUrl": "https://anilist.co/anime/161645",
+        "streaming": [
+          {
+            "name": "Crunchyroll",
+            "url": "https://www.crunchyroll.com/series/G3KHEVDJ7/the-apothecary-diaries"
+          },
+          {
+            "name": "Netflix",
+            "url": "https://www.netflix.com/title/81712068"
+          },
+          {
+            "name": "Hulu",
+            "url": "https://www.hulu.com/series/the-apothecary-diaries-d7b5390e-b8cb-4cc3-ba7c-7ed570355d7d"
+          }
+        ],
+        "next": null,
+        "source": "snapshot",
+        "description_es": "Maomao vivió una vida pacífica con su padre apothecary. Hasta un día, se vende como una sirvienta humilde al palacio del emperador. Pero no estaba destinada a una vida digna entre la realeza. Así que cuando los herederos imperiales se enferman, ella decide entrar y encontrar una cura! Esto atrapa el ojo de Jinshi, un apuesto oficial del palacio que la promueve. ¡Ahora, está haciendo un nombre para ella misma resolviendo misterios médicos! (Fuente: Crunchyroll)"
       },
       {
         "id": "mal-61316",
@@ -512,83 +623,6 @@
         "description_es": "En la batalla mortal en Priestella, Subaru y sus aliados surgieron victoriosos, pero a gran costo. Mientras Subaru busca una manera de salvar a Rem, Crusch y Julius, aprende de una \"mujer sabia\", Shaula, una persona que todo lo ve para poseer toda forma de conocimiento, que reside en la Watchtower de Pleiades. Subaru y su tripulación deben desafiar a las dunas de Auguria sin explotar para recuperar lo que se perdió. (Fuente: Crunchyroll) Nota: Lucca Comics & Games pre-screened epis"
       },
       {
-        "id": "mal-59970",
-        "mal_id": 59970,
-        "title": "That Time I Got Reincarnated as a Slime Season 4",
-        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx182205-q2AeO1owuQbO.jpg",
-        "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/182205-fRUoKv6f2JAq.jpg",
-        "description": "Demon Lord Rimuru's dream of creating an alliance between humans and monsters takes a step closer to being realized. As Tempest continues to prosper, Granville Rozzo and his granddaughter, Maribel Rozzo, clash with Demon Lord Rimuru over their plan to protect mankind by ruling over them. Meanwhile, in El Dorado, Demon Lord Leon works toward goals of his own. The awakening of a new Hero draws near!\n\n(Source: Crunchyroll News)",
-        "averageScore": 83,
-        "year": 2026,
-        "genres": [
-          "Action",
-          "Adventure",
-          "Comedy",
-          "Fantasy"
-        ],
-        "format": "TV",
-        "episodes": 24,
-        "status": "FINISHED",
-        "siteUrl": "https://anilist.co/anime/182205",
-        "streaming": [
-          {
-            "name": "Crunchyroll",
-            "url": "https://www.crunchyroll.com/series/GYZJ43JMR/that-time-i-got-reincarnated-as-a-slime"
-          },
-          {
-            "name": "iQ",
-            "url": "https://www.iq.com/album/jkfiu4aeb5"
-          },
-          {
-            "name": "YouTube",
-            "url": "https://www.youtube.com/playlist?list=PLwLSw1_eDZl3_YNRvXA7O89pNPsj1WIkb"
-          },
-          {
-            "name": "Bilibili TV",
-            "url": "https://www.bilibili.tv/en/media/2342192"
-          },
-          {
-            "name": "Netflix",
-            "url": "https://www.netflix.com/title/81028712"
-          }
-        ],
-        "next": null,
-        "source": "snapshot",
-        "description_es": "El sueño del Demonio Lord Rimuru de crear una alianza entre humanos y monstruos lleva un paso más cerca de ser realizado. Mientras Tempest continúa prosperando, Granville Rozzo y su nieta, Maribel Rozzo, chocan con el Señor demonio Rimuru sobre su plan de proteger a la humanidad gobernando sobre ellos. Mientras tanto, en El Dorado, el Demonio Lord León trabaja hacia metas propias. ¡El despertar de un nuevo héroe se acerca! (Fuente: Crunchyroll News)"
-      },
-      {
-        "id": "mal-64340",
-        "mal_id": 64340,
-        "title": "Overgeared",
-        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx212888-NhyvqPt5aIuJ.jpg",
-        "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/212888-ZsnNegBCKXQq.jpg",
-        "description": "Sin Yeong-U (a.k.a. Grid), an unlucky man in life and a low-level player in the popular VR game “Satisfy,” finds a powerful item that earns him a rare legendary class title: “Pagma’s Successor.” He’s now a skilled blacksmith who can forge unique weapons and equip the game’s most powerful gear. Grid resolves to use his new abilities to achieve fame and fortune, but as his very existence begins to stir up trouble in Satisfy, he realizes that life a",
-        "averageScore": 75,
-        "year": 2026,
-        "genres": [
-          "Action",
-          "Adventure",
-          "Comedy",
-          "Fantasy"
-        ],
-        "format": "ONA",
-        "episodes": 12,
-        "status": "RELEASING",
-        "siteUrl": "https://anilist.co/anime/212888",
-        "streaming": [
-          {
-            "name": "Crunchyroll",
-            "url": "https://www.crunchyroll.com/series/GT00384004"
-          }
-        ],
-        "next": {
-          "at": 1792333800,
-          "episode": 4
-        },
-        "source": "snapshot",
-        "description_es": "Sin Yeong-U (a.k.a. Grid), un hombre desafortunado en la vida y un jugador de bajo nivel en el popular juego VR “Satisfy”, encuentra un poderoso artículo que le gana un raro título legendario de clase: “El Sucesor de Pagma”. Ahora es un herrero experto que puede forjar armas únicas y equipar el equipo más poderoso del juego. Grid resuelve usar sus nuevas habilidades para alcanzar la fama y la fortuna, pero cuando su propia existencia comienza a provocar problemas en Satisfeo, se da cuenta de que la vida es una"
-      },
-      {
         "id": "mal-61967",
         "mal_id": 61967,
         "title": "Black Clover Season 2",
@@ -627,6 +661,214 @@
         },
         "source": "snapshot",
         "description_es": "A medida que la tiranía envuelve el Reino de Clover, Asta y los Caballeros Mágicos lanzan una redada desesperada en el Reino de Spade para rescatar a sus capitanes de la Tribu Oscura. Pero su misión los lleva a una batalla brutal contra las fuerzas más allá de cualquier cosa que hayan enfrentado. Ahora, Asta debe elevarse por encima de las probabilidades imposibles de proteger a sus amigos y honrar la promesa que hizo a Yuno. (Fuente: Crunchyroll)"
+      },
+      {
+        "id": "mal-57612",
+        "mal_id": 57612,
+        "title": "A Returner's Magic Should be Special Season 2",
+        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx172192-W7P5xEUaxF3y.jpg",
+        "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/172192-jibcmb7wdbzk.jpg",
+        "description": "In a land dominated by the formidable Shadow Worlds, most of humanity has been destroyed. To rescue their planet from impending doom, six brave heroes fight a perilous battle…and fail. But there’s a glimpse of hope when Desir, one of the last mages, is suddenly sent back in time 13 years! Now armed with knowledge of the grim future, can he alter the course of history and save the world?\n\n(Source: Crunchyroll)",
+        "averageScore": 70,
+        "year": 2026,
+        "genres": [
+          "Action",
+          "Adventure",
+          "Fantasy"
+        ],
+        "format": "TV",
+        "episodes": 0,
+        "status": "RELEASING",
+        "siteUrl": "https://anilist.co/anime/172192",
+        "streaming": [
+          {
+            "name": "Crunchyroll",
+            "url": "https://www.crunchyroll.com/series/GEXH3W207/a-returners-magic-should-be-special"
+          },
+          {
+            "name": "Bilibili TV",
+            "url": "https://www.bilibili.tv/en/media/2432495"
+          }
+        ],
+        "next": {
+          "at": 1792597500,
+          "episode": 3
+        },
+        "source": "snapshot",
+        "description_es": "En una tierra dominada por los formidables Mundos Sombríos, la mayoría de la humanidad ha sido destruida. Para rescatar a su planeta de la muerte inminente, seis héroes valientes luchan una batalla peligrosa... y fracasan. Pero hay una mirada de esperanza cuando Desir, una de las últimas magras, es de repente enviado en el tiempo 13 años! Ahora armado con conocimiento del futuro sombrío, ¿puede alterar el curso de la historia y salvar el mundo? (Fuente: Crunchyroll)"
+      },
+      {
+        "id": "mal-63832",
+        "mal_id": 63832,
+        "title": "You and I Are Polar Opposites Season 2",
+        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx210031-TppgcHZh46LY.jpg",
+        "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/210031-M4bt0rAmWk5Q.jpg",
+        "description": "Six months have passed since the polar opposite classmates Miyu Suzuki and Yuusuke Tani started dating. Through spending time together along with their friends from school, the two have been happier than ever. As the year nears its end, the new couple plans to celebrate Christmas and the New Year together, making memories for years to come.\n\nMeanwhile, Miyu and Yuusuke's friends Shuuji Taira and Kentarou Yamada are puzzled by their own situations",
+        "averageScore": 84,
+        "year": 2026,
+        "genres": [
+          "Comedy",
+          "Drama",
+          "Romance",
+          "Slice of Life"
+        ],
+        "format": "TV",
+        "episodes": 13,
+        "status": "FINISHED",
+        "siteUrl": "https://anilist.co/anime/210031",
+        "streaming": [
+          {
+            "name": "Crunchyroll",
+            "url": "https://www.crunchyroll.com/series/GT00365624/you-and-i-are-polar-opposites"
+          }
+        ],
+        "next": null,
+        "source": "snapshot",
+        "description_es": "Han pasado seis meses desde que los compañeros de clase opuestos polares Miyu Suzuki y Yuusuke Tani comenzaron a salir. Al pasar tiempo junto con sus amigos de la escuela, los dos han sido más felices que nunca. A medida que el año se acerca a su fin, la nueva pareja planea celebrar juntos la Navidad y el Año Nuevo, haciendo memorias durante años. Mientras tanto, los amigos de Miyu y Yuusuke Shuuji Taira y Kentarou Yamada están desconcertados por sus propias situaciones"
+      },
+      {
+        "id": "mal-61578",
+        "mal_id": 61578,
+        "title": "Even the Student Council Has Its Holes!",
+        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx191656-xFHtxM8SUTdU.png",
+        "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/191656-JQILdzh3FQxN.jpg",
+        "description": "This is Fujinasu Academy, a private high school with top-achieving students located on the outskirts of town.\n\nHigh School 1st-Year Ume Mizunoe has excellent grades in Japanese language class and has received multiple literary awards.\nHowever, his terrible grades in the sciences are affecting his ability to move up a grade. To avoid repeating a year, he becomes a member of the student council to improve his academic standing.\n\nHowever, in the stu",
+        "averageScore": 73,
+        "year": 2026,
+        "genres": [
+          "Comedy",
+          "Ecchi",
+          "Slice of Life"
+        ],
+        "format": "TV",
+        "episodes": 12,
+        "status": "RELEASING",
+        "siteUrl": "https://anilist.co/anime/191656",
+        "streaming": [
+          {
+            "name": "OceanVeil",
+            "url": "https://oceanveil.net/anime_titles/542"
+          },
+          {
+            "name": "Bilibili TV",
+            "url": "https://www.bilibili.tv/en/media/2433041"
+          },
+          {
+            "name": "iQ",
+            "url": "https://www.iq.com/album/28ki6pjn6a1"
+          }
+        ],
+        "next": {
+          "at": 1792251000,
+          "episode": 3
+        },
+        "source": "snapshot",
+        "description_es": "Esta es la Academia Fujinasu, una escuela secundaria privada con estudiantes de primer nivel ubicados en las afueras de la ciudad. High School 1er año Ume Mizunoe tiene excelentes calificaciones en la clase de idioma japonés y ha recibido múltiples premios literarios. Sin embargo, sus calificaciones terribles en las ciencias están afectando su capacidad de avanzar en un grado. Para evitar repetir un año, se convierte en miembro del consejo estudiantil para mejorar su posición académica. Sin embargo, en el estudio"
+      },
+      {
+        "id": "mal-58514",
+        "mal_id": 58514,
+        "title": "The Apothecary Diaries Season 2",
+        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx176301-TIGmldLffQGX.jpg",
+        "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/176301-GkuTF1YTT6b2.jpg",
+        "description": "Using her wit and vast knowledge of medicines and poisons alike, Maomao played a pivotal role in solving a series of mysteries and conspiracies that plagued the imperial court. Having recently come to terms with the secrets of her parents, she returns to fulfill her normal duties on behalf of the emperor's highest-ranking consorts. Maomao also works alongside the eunuch Jinshi to better the consorts' many ladies-in-waiting, including helping them",
+        "averageScore": 88,
+        "year": 2025,
+        "genres": [
+          "Drama",
+          "Mystery"
+        ],
+        "format": "TV",
+        "episodes": 24,
+        "status": "FINISHED",
+        "siteUrl": "https://anilist.co/anime/176301",
+        "streaming": [
+          {
+            "name": "Crunchyroll",
+            "url": "https://www.crunchyroll.com/series/G3KHEVDJ7/the-apothecary-diaries"
+          },
+          {
+            "name": "Netflix",
+            "url": "https://www.netflix.com/title/81712068"
+          }
+        ],
+        "next": null,
+        "source": "snapshot",
+        "description_es": "Usando su ingenio y vastos conocimientos de medicamentos y venenos por igual, Maomao jugó un papel fundamental en la resolución de una serie de misterios y conspiraciones que asolaron la corte imperial. Habiendo llegado recientemente a un acuerdo con los secretos de sus padres, vuelve a cumplir sus deberes normales en nombre de los consorcios de mayor rango del emperador. Maomao también trabaja junto al eunuch Jinshi para mejorar las muchas damas de los consorcios, incluyendo ayudarles"
+      },
+      {
+        "id": "mal-62076",
+        "mal_id": 62076,
+        "title": "Smoking Behind the Supermarket with You",
+        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx196187-0dgFi2CPp3xn.jpg",
+        "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/196187-Z9dV6uotmKjM.jpg",
+        "description": "Sasaki is an overworked salaryman drifting through the corporate grind, sustained by cigarettes and the cheerful service and smile of Yamada, the clerk at his favorite supermarket. But one night after a grueling shift, he arrives late to find Yamada nowhere to be seen. With nowhere left to smoke, his spirits sink—until a pierced young woman calls out to him: “You can smoke here.”\n\n(Source: Crunchyroll)\n\nNote: Episodes 1-6 had an early release by ",
+        "averageScore": 81,
+        "year": 2026,
+        "genres": [
+          "Comedy",
+          "Romance",
+          "Slice of Life"
+        ],
+        "format": "TV",
+        "episodes": 12,
+        "status": "FINISHED",
+        "siteUrl": "https://anilist.co/anime/196187",
+        "streaming": [
+          {
+            "name": "Crunchyroll",
+            "url": "https://www.crunchyroll.com/series/GT00378116/smoking-behind-the-supermarket-with-you"
+          },
+          {
+            "name": "Netflix",
+            "url": "https://www.netflix.com/title/82757039"
+          }
+        ],
+        "next": null,
+        "source": "snapshot",
+        "description_es": "Sasaki es un hombre de sueldo demasiado trabajador atravesando el rectificado corporativo, sostenido por los cigarrillos y el servicio alegre y la sonrisa de Yamada, el empleado de su supermercado favorito. Pero una noche después de un turno agotador, llega tarde a encontrar a Yamada en ninguna parte para ser visto. Con nada que dejar de fumar, sus espíritus se hunden hasta que una joven atravesada le llame: “Puedes fumar aquí”. (Fuente: Crunchyroll) Nota: Episodios 1-6 tuvo una liberación temprana"
+      },
+      {
+        "id": "mal-62001",
+        "mal_id": 62001,
+        "title": "Daemons of the Shadow Realm",
+        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx195600-moI0UFArtOme.jpg",
+        "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/195600-UxHvDXwzJxlP.jpg",
+        "description": "In a remote mountain village under the watchful eyes of two stone guardians, the young Yuru contentedly lives off the land while staying close to the only family he has left—Asa, his precious twin sister. Asa, meanwhile, carries out a mysterious “duty” on behalf of the village while locked in a cage. Why is Asa a prisoner? And what other secrets does Yuru’s otherwise idyllic home hide?\n(Source: Square Enix)",
+        "averageScore": 78,
+        "year": 2026,
+        "genres": [
+          "Action",
+          "Adventure",
+          "Comedy",
+          "Fantasy",
+          "Supernatural"
+        ],
+        "format": "TV",
+        "episodes": 24,
+        "status": "FINISHED",
+        "siteUrl": "https://anilist.co/anime/195600",
+        "streaming": [
+          {
+            "name": "Crunchyroll",
+            "url": "https://crunchyroll.com/series/GT00371630/daemons-of-the-shadow-realm"
+          },
+          {
+            "name": "iQ",
+            "url": "https://www.iq.com/album/1tmesonumnx"
+          },
+          {
+            "name": "Bilibili TV",
+            "url": "https://www.bilibili.tv/en/media/2342276"
+          },
+          {
+            "name": "Netflix",
+            "url": "https://www.netflix.com/title/82719204"
+          }
+        ],
+        "next": null,
+        "source": "snapshot",
+        "description_es": "En un remoto pueblo montañoso bajo los ojos vigilantes de dos guardianes de piedra, el joven Yuru vive contentamente fuera de la tierra mientras permanece cerca de la única familia que ha dejado—Asa, su preciosa hermana gemela. Asa, mientras tanto, lleva a cabo un misterioso “deber” en nombre del pueblo mientras está encerrado en una jaula. ¿Por qué Asa es prisionera? ¿Y qué otros secretos esconde el hogar idílico de Yuru? (Fuente: Square Enix)"
       },
       {
         "id": "mal-64084",
@@ -668,321 +910,34 @@
         "description_es": "Después de usar su habilidad SSS-Rank, Internet, para aplastar las ambiciones de su antigua familia, Lorna es libre de viajar por el mundo. Su próxima parada es la ciudad portuaria de Aquas, donde espera ver los lugares de interés y disfrutar de algunos mariscos frescos. Pero cuando llega, el lugar está al borde de la destrucción gracias a una cierta misión semanal... ¡Qué bueno que Lorna tenga los dioses de su lado! (Fuente: Crunchyroll)"
       },
       {
-        "id": "mal-54492",
-        "mal_id": 54492,
-        "title": "The Apothecary Diaries",
-        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx161645-QLbzHXiYRgV2.jpg",
-        "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/161645-oqzTZYIvviWI.jpg",
-        "description": "Maomao lived a peaceful life with her apothecary father. Until one day, she’s sold as a lowly servant to the emperor’s palace. But she wasn’t meant for a compliant life among royalty. So when imperial heirs fall ill, she decides to step in and find a cure! This catches the eye of Jinshi, a handsome palace official who promotes her. Now, she’s making a name for herself solving medical mysteries!\n\n(Source: Crunchyroll)",
-        "averageScore": 88,
-        "year": 2023,
-        "genres": [
-          "Drama",
-          "Mystery"
-        ],
-        "format": "TV",
-        "episodes": 24,
-        "status": "FINISHED",
-        "siteUrl": "https://anilist.co/anime/161645",
-        "streaming": [
-          {
-            "name": "Crunchyroll",
-            "url": "https://www.crunchyroll.com/series/G3KHEVDJ7/the-apothecary-diaries"
-          },
-          {
-            "name": "Netflix",
-            "url": "https://www.netflix.com/title/81712068"
-          },
-          {
-            "name": "Hulu",
-            "url": "https://www.hulu.com/series/the-apothecary-diaries-d7b5390e-b8cb-4cc3-ba7c-7ed570355d7d"
-          }
-        ],
-        "next": null,
-        "source": "snapshot",
-        "description_es": "Maomao vivió una vida pacífica con su padre apothecary. Hasta un día, se vende como una sirvienta humilde al palacio del emperador. Pero no estaba destinada a una vida digna entre la realeza. Así que cuando los herederos imperiales se enferman, ella decide entrar y encontrar una cura! Esto atrapa el ojo de Jinshi, un apuesto oficial del palacio que la promueve. ¡Ahora, está haciendo un nombre para ella misma resolviendo misterios médicos! (Fuente: Crunchyroll)"
-      },
-      {
-        "id": "mal-61987",
-        "mal_id": 61987,
-        "title": "The Apothecary Diaries Season 3",
-        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx195516-MJpUZlOberqH.jpg",
-        "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/195516-B5M0cPaQbQXI.jpg",
-        "description": "In the aftermath of the Shi Clan’s rebellion, things have finally settled down, and Maomao has returned to her old life as a pharmacist in the pleasure district.\n\nOne day, triggered by a breakfast served at the Verdigris House, Maomao senses an anomaly and begins investigating its true nature.\n\nMeanwhile, Jinshi, who has revealed his true identity as the Imperial brother and begun to face his heavy responsibilities, is deeply troubled by the fina",
-        "averageScore": 85,
-        "year": 2026,
-        "genres": [
-          "Drama",
-          "Mystery"
-        ],
-        "format": "TV",
-        "episodes": 12,
-        "status": "RELEASING",
-        "siteUrl": "https://anilist.co/anime/195516",
-        "streaming": [
-          {
-            "name": "Crunchyroll",
-            "url": "https://www.crunchyroll.com/series/G3KHEVDJ7/the-apothecary-diaries"
-          },
-          {
-            "name": "Netflix",
-            "url": "https://www.netflix.com/us/title/81712068"
-          }
-        ],
-        "next": {
-          "at": 1792159200,
-          "episode": 3
-        },
-        "source": "snapshot",
-        "description_es": "Después de la rebelión del clan Shi, las cosas finalmente se han asentado, y Maomao ha vuelto a su antigua vida como farmacéutico en el distrito de placer. Un día, provocado por un desayuno servido en la Casa Verdigris, Maomao siente una anomalía y comienza a investigar su verdadera naturaleza. Mientras tanto, Jinshi, que ha revelado su verdadera identidad como el hermano imperial y ha comenzado a enfrentar sus pesadas responsabilidades, está profundamente preocupado por la fina"
-      },
-      {
-        "id": "mal-62076",
-        "mal_id": 62076,
-        "title": "Smoking Behind the Supermarket with You",
-        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx196187-0dgFi2CPp3xn.jpg",
-        "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/196187-Z9dV6uotmKjM.jpg",
-        "description": "Sasaki is an overworked salaryman drifting through the corporate grind, sustained by cigarettes and the cheerful service and smile of Yamada, the clerk at his favorite supermarket. But one night after a grueling shift, he arrives late to find Yamada nowhere to be seen. With nowhere left to smoke, his spirits sink—until a pierced young woman calls out to him: “You can smoke here.”\n\n(Source: Crunchyroll)\n\nNote: Episodes 1-6 had an early release by ",
-        "averageScore": 81,
-        "year": 2026,
-        "genres": [
-          "Comedy",
-          "Romance",
-          "Slice of Life"
-        ],
-        "format": "TV",
-        "episodes": 12,
-        "status": "FINISHED",
-        "siteUrl": "https://anilist.co/anime/196187",
-        "streaming": [
-          {
-            "name": "Crunchyroll",
-            "url": "https://www.crunchyroll.com/series/GT00378116/smoking-behind-the-supermarket-with-you"
-          },
-          {
-            "name": "Netflix",
-            "url": "https://www.netflix.com/title/82757039"
-          }
-        ],
-        "next": null,
-        "source": "snapshot",
-        "description_es": "Sasaki es un hombre de sueldo demasiado trabajador atravesando el rectificado corporativo, sostenido por los cigarrillos y el servicio alegre y la sonrisa de Yamada, el empleado de su supermercado favorito. Pero una noche después de un turno agotador, llega tarde a encontrar a Yamada en ninguna parte para ser visto. Con nada que dejar de fumar, sus espíritus se hunden hasta que una joven atravesada le llame: “Puedes fumar aquí”. (Fuente: Crunchyroll) Nota: Episodios 1-6 tuvo una liberación temprana"
-      },
-      {
-        "id": "mal-1735",
-        "mal_id": 1735,
-        "title": "Naruto: Shippuden",
-        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx1735-kGfVm0YqCPcu.png",
-        "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/1735.jpg",
-        "description": "Naruto: Shippuuden is the continuation of the original animated TV series Naruto. The story revolves around an older and slightly more matured Uzumaki Naruto and his quest to save his friend Uchiha Sasuke from the grips of the snake-like Shinobi, Orochimaru. After 2 and a half years Naruto finally returns to his village of Konoha, and sets about putting his ambitions to work, though it will not be easy, as he has amassed a few (more dangerous) en",
-        "averageScore": 82,
-        "year": 2007,
-        "genres": [
-          "Action",
-          "Adventure",
-          "Comedy",
-          "Drama",
-          "Fantasy",
-          "Supernatural"
-        ],
-        "format": "TV",
-        "episodes": 500,
-        "status": "FINISHED",
-        "siteUrl": "https://anilist.co/anime/1735",
-        "streaming": [
-          {
-            "name": "Adult Swim",
-            "url": "https://www.adultswim.com/videos/naruto-shippuden"
-          },
-          {
-            "name": "Netflix",
-            "url": "https://www.netflix.com/title/80000603"
-          },
-          {
-            "name": "Bilibili",
-            "url": "https://www.bilibili.com/bangumi/media/md3287/"
-          },
-          {
-            "name": "Bilibili TV",
-            "url": "https://www.bilibili.tv/play/1005195"
-          },
-          {
-            "name": "YouTube",
-            "url": "https://www.youtube.com/@NARUTO_BORUTO_officialchannel"
-          }
-        ],
-        "next": null,
-        "source": "snapshot",
-        "description_es": "Naruto: Shippuuden es la continuación de la serie original de televisión animada Naruto. La historia gira alrededor de un Uzumaki Naruto mayor y ligeramente más maduro y su búsqueda para salvar a su amigo Uchiha Sasuke de las garras de la serpiente como Shinobi, Orochimaru. Después de 2 años y medio Naruto finalmente regresa a su pueblo de Konoha, y se pone sobre poner sus ambiciones a trabajar, aunque no será fácil, ya que ha acumulado algunos (más peligroso) en"
-      },
-      {
-        "id": "mal-63382",
-        "mal_id": 63382,
-        "title": "Nia Liston: The Merciless Maiden",
-        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx206949-4HYI3YuP0eLI.png",
-        "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/206949-c5hfhixdgvy5.jpg",
-        "description": "A great hero lies undefeated on her deathbed, regretting that she never found a foe who could take her down. She never intended to meet her fate anywhere other than on the battlefield, and her peaceful demise has her wishing desperately that things could have been different... But when she suddenly comes to in the body of the young, frail Nia Liston, she’s got an all-new fight ahead of her. Nia is a sickly child, meaning she has a long way to go ",
+        "id": "mal-63293",
+        "mal_id": 63293,
+        "title": "Firefly Wedding",
+        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx205909-DM0fAzNQulod.jpg",
+        "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/205909-hGeuFYrdhf9S.jpg",
+        "description": "On the surface, Satoko has it all—she’s beautiful, the daughter of a nobleman, and at a prime age for marriage. Unfortunately, she is also quite ill and only has a short time left to live. Before she can secure a marriage that will redeem her worth in her family’s eyes, she finds herself the target of the mysterious assassin Shinpei, and her plans are put in jeopardy. In order to save herself, she makes a desperate proposal—of marriage! When it c",
         "averageScore": 75,
         "year": 2026,
         "genres": [
-          "Action",
-          "Fantasy"
-        ],
-        "format": "TV",
-        "episodes": 25,
-        "status": "RELEASING",
-        "siteUrl": "https://anilist.co/anime/206949",
-        "streaming": [
-          {
-            "name": "HIDIVE",
-            "url": "https://www.hidive.com/season/39540"
-          },
-          {
-            "name": "Bilibili TV",
-            "url": "https://www.bilibili.tv/en/media/2433665"
-          },
-          {
-            "name": "iQ",
-            "url": "https://www.iq.com/album/tvod2397yt"
-          }
-        ],
-        "next": {
-          "at": 1792499160,
-          "episode": 3
-        },
-        "source": "snapshot",
-        "description_es": "Un gran héroe está invicto en su lecho de muerte, lamentando que nunca haya encontrado a un enemigo que pudiera derribarla. Ella nunca quiso encontrar su destino en otro lugar que en el campo de batalla, y su pacífica desaparición tiene su deseo desesperadamente de que las cosas podrían haber sido diferentes... Pero cuando de repente viene al cuerpo de la joven y frágil Nia Liston, tiene una nueva lucha por delante de ella. Nia es una niña enferma, lo que significa que tiene un largo camino por recorrer"
-      },
-      {
-        "id": "mal-58514",
-        "mal_id": 58514,
-        "title": "The Apothecary Diaries Season 2",
-        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx176301-TIGmldLffQGX.jpg",
-        "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/176301-GkuTF1YTT6b2.jpg",
-        "description": "Using her wit and vast knowledge of medicines and poisons alike, Maomao played a pivotal role in solving a series of mysteries and conspiracies that plagued the imperial court. Having recently come to terms with the secrets of her parents, she returns to fulfill her normal duties on behalf of the emperor's highest-ranking consorts. Maomao also works alongside the eunuch Jinshi to better the consorts' many ladies-in-waiting, including helping them",
-        "averageScore": 88,
-        "year": 2025,
-        "genres": [
           "Drama",
-          "Mystery"
-        ],
-        "format": "TV",
-        "episodes": 24,
-        "status": "FINISHED",
-        "siteUrl": "https://anilist.co/anime/176301",
-        "streaming": [
-          {
-            "name": "Crunchyroll",
-            "url": "https://www.crunchyroll.com/series/G3KHEVDJ7/the-apothecary-diaries"
-          },
-          {
-            "name": "Netflix",
-            "url": "https://www.netflix.com/title/81712068"
-          }
-        ],
-        "next": null,
-        "source": "snapshot",
-        "description_es": "Usando su ingenio y vastos conocimientos de medicamentos y venenos por igual, Maomao jugó un papel fundamental en la resolución de una serie de misterios y conspiraciones que asolaron la corte imperial. Habiendo llegado recientemente a un acuerdo con los secretos de sus padres, vuelve a cumplir sus deberes normales en nombre de los consorcios de mayor rango del emperador. Maomao también trabaja junto al eunuch Jinshi para mejorar las muchas damas de los consorcios, incluyendo ayudarles"
-      },
-      {
-        "id": "mal-63403",
-        "mal_id": 63403,
-        "title": "Chainsmoker Cat",
-        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx207141-h5q5KJPd6vaX.jpg",
-        "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/207141-MvHAS2YVfJzL.jpg",
-        "description": "Yani is a catgirl with a seriously bad smoking habit. She smokes so much that her apartment smells like ash and is littered with cigarette butts—and plenty of other trash! Every time she tries to quit, she becomes weak to the cravings and gives in almost instantly. Will she ever get her life together, or is she doomed to live as a chainsmoking slob forever? \n\n(Source: Seven Seas Entertainment)",
-        "averageScore": 71,
-        "year": 2026,
-        "genres": [
-          "Comedy",
-          "Ecchi",
-          "Slice of Life"
+          "Romance"
         ],
         "format": "TV",
         "episodes": 12,
-        "status": "FINISHED",
-        "siteUrl": "https://anilist.co/anime/207141",
+        "status": "RELEASING",
+        "siteUrl": "https://anilist.co/anime/205909",
         "streaming": [
           {
-            "name": "YouTube",
-            "url": "https://www.youtube.com/@yanineko_anime"
-          },
-          {
-            "name": "Netflix",
-            "url": "https://www.netflix.com/title/82760630"
-          },
-          {
-            "name": "OceanVeil",
-            "url": "https://oceanveil.net/anime_titles/461"
-          },
-          {
-            "name": "OceanVeil",
-            "url": "https://oceanveil.net/anime_titles/462"
-          },
-          {
-            "name": "iQ",
-            "url": "https://www.iq.com/album/1nub7zdw89t"
+            "name": "Crunchyroll",
+            "url": "https://www.crunchyroll.com/series/GT00383999"
           }
         ],
-        "next": null,
+        "next": {
+          "at": 1792161000,
+          "episode": 2
+        },
         "source": "snapshot",
-        "description_es": "Yani es una catgirl con un hábito de fumar muy malo. Ella fuma tanto que su apartamento huele a ceniza y se enciende con traseros de cigarrillo, ¡y mucha otra basura! Cada vez que intenta renunciar, se vuelve débil a los antojos y da casi al instante. ¿Alguna vez conseguirá su vida juntos, o está condenada a vivir como un fumador de cadena para siempre? (Fuente: Seven Seas Entertainment)"
-      },
-      {
-        "id": "mal-11061",
-        "mal_id": 11061,
-        "title": "Hunter x Hunter (2011)",
-        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx11061-y5gsT1hoHuHw.png",
-        "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/11061-8WkkTZ6duKpq.jpg",
-        "description": "A Hunter is one who travels the world doing all sorts of dangerous tasks. From capturing criminals to searching deep within uncharted lands for any lost treasures. Gon is a young boy whose father disappeared long ago, being a Hunter. He believes if he could also follow his father's path, he could one day reunite with him.\nAfter becoming 12, Gon leaves his home and takes on the task of entering the Hunter exam, notorious for its low success rate a",
-        "averageScore": 89,
-        "year": 2011,
-        "genres": [
-          "Action",
-          "Adventure",
-          "Fantasy"
-        ],
-        "format": "TV",
-        "episodes": 148,
-        "status": "FINISHED",
-        "siteUrl": "https://anilist.co/anime/11061",
-        "streaming": [
-          {
-            "name": "Hulu",
-            "url": "https://www.hulu.com/hunter-x-hunter"
-          },
-          {
-            "name": "Netflix",
-            "url": "https://www.netflix.com/title/70300472"
-          },
-          {
-            "name": "Tubi TV",
-            "url": "https://tubitv.com/series/1627/hunter_x_hunter"
-          },
-          {
-            "name": "Bilibili",
-            "url": "https://www.bilibili.tv/en/play/37603"
-          },
-          {
-            "name": "YouTube",
-            "url": "https://youtube.com/playlist?list=PLwLSw1_eDZl2SdSro00Nvg38MQUf-5ZL8"
-          },
-          {
-            "name": "Hoopla",
-            "url": "https://www.hoopladigital.com/series/hunter-x-hunter-dubbed/11834349593"
-          },
-          {
-            "name": "Hoopla",
-            "url": "https://www.hoopladigital.com/series/hunter-x-hunter-subbed/11834349354"
-          },
-          {
-            "name": "Amazon Prime Video",
-            "url": "https://www.amazon.com/Hunter-Japanese-English-Subs/dp/B0B5X87G1P"
-          }
-        ],
-        "next": null,
-        "source": "snapshot",
-        "description_es": "Un Hunter es quien viaja por el mundo haciendo todo tipo de tareas peligrosas. Desde la captura de criminales hasta la búsqueda profunda dentro de tierras inexploradas por cualquier tesoro perdido. Gon es un niño cuyo padre desapareció hace mucho tiempo, siendo un cazador. Cree que si también pudiera seguir el camino de su padre, un día podría reunirse con él. Después de convertirse en 12, Gon deja su casa y se ocupa de la tarea de entrar en el examen Hunter, notorio por su bajo índice de éxito"
+        "description_es": "En la superficie, Satoko lo tiene todo, es hermosa, la hija de un noble, y a una edad temprana para el matrimonio. Desafortunadamente, ella también está bastante enferma y sólo tiene un corto tiempo para vivir. Antes de que pueda conseguir un matrimonio que redimirá su valor en los ojos de su familia, se encuentra el blanco del misterioso asesino Shinpei, y sus planes están en peligro. ¡Para salvarse, hace una propuesta desesperada de matrimonio! Cuando c"
       }
     ],
     "season": [
@@ -1187,6 +1142,46 @@
         "description_es": "La estudiante universitaria Kurumi Fukuga finalmente ha cumplido su deseo de iniciar el comercio de divisas (FX), motivado por recuperar los 20 millones de yenes que su madre falleció en el comercio. \"Lo recuperaré fácilmente,\" pensó, pero el mundo en el que entra puede convertirse en el cielo o el infierno en un instante. Pérdidas no realizadas, fluctuaciones descompuestas, imparables... ¡pero todavía quiere comprar, vender y hacer dinero! Con los adictos FX Mochiko, Mebuki an"
       },
       {
+        "id": "mal-63431",
+        "mal_id": 63431,
+        "title": "The Laid-Off Cheat-Granting Mage Enjoys a Second Lease on Life",
+        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b207329-6VPeZIDfF4Sr.png",
+        "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/207329-9IqRSKIsM3TC.jpg",
+        "description": "Rein, an enchanter, is suddenly expelled from his guild one day. But instead of despairing, he declares, “Now I can do anything!” and begins reclaiming the massive number of enhancement points he once poured into his guildmates’ gear, setting off on a brand-new path as an adventurer.\nGathering around him are people carrying wounds that don’t fade easily: a genius adventurer who shut her heart after her party was slaughtered, a warrior who lost he",
+        "averageScore": 73,
+        "year": 2026,
+        "genres": [
+          "Adventure",
+          "Comedy",
+          "Fantasy",
+          "Slice of Life"
+        ],
+        "format": "TV",
+        "episodes": 0,
+        "status": "RELEASING",
+        "siteUrl": "https://anilist.co/anime/207329",
+        "streaming": [
+          {
+            "name": "Crunchyroll",
+            "url": "https://www.crunchyroll.com/series/GT00384016/"
+          },
+          {
+            "name": "YouTube",
+            "url": "https://www.youtube.com/playlist?list=PLcCDyXGi-y_w"
+          },
+          {
+            "name": "Bilibili TV",
+            "url": "https://www.bilibili.tv/en/media/2432178"
+          }
+        ],
+        "next": {
+          "at": 1792508400,
+          "episode": 3
+        },
+        "source": "snapshot",
+        "description_es": "Rein, un encantador, es expulsado de su gremio un día. Pero en lugar de desesperar, declara, “¡Ahora puedo hacer cualquier cosa!” y comienza a reclamar el enorme número de puntos de mejora que una vez vierte en el equipo de sus compañeros, a partir de un nuevo camino como aventurero. Reunirse a su alrededor son personas que llevan heridas que no se desvanecen fácilmente: un genio aventurero que cerró su corazón después de que su partido fue masacrado, un guerrero que perdió"
+      },
+      {
         "id": "mal-53913",
         "mal_id": 53913,
         "title": "Reincarnated as a Sword Season 2",
@@ -1234,79 +1229,38 @@
         "description_es": "La segunda temporada de Tensei Mierda Ken Deshita. Nota: Cada episodio fue transmitido una semana antes de la emisión de televisión a partir del 1 de octubre de 2026 en Abema. La radiodifusión regular comenzó el 8 de octubre de 2026."
       },
       {
-        "id": "mal-63431",
-        "mal_id": 63431,
-        "title": "The Laid-Off Cheat-Granting Mage Enjoys a Second Lease on Life",
-        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b207329-6VPeZIDfF4Sr.png",
-        "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/207329-9IqRSKIsM3TC.jpg",
-        "description": "Rein, an enchanter, is suddenly expelled from his guild one day. But instead of despairing, he declares, “Now I can do anything!” and begins reclaiming the massive number of enhancement points he once poured into his guildmates’ gear, setting off on a brand-new path as an adventurer.\nGathering around him are people carrying wounds that don’t fade easily: a genius adventurer who shut her heart after her party was slaughtered, a warrior who lost he",
-        "averageScore": 73,
+        "id": "mal-61987",
+        "mal_id": 61987,
+        "title": "The Apothecary Diaries Season 3",
+        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx195516-MJpUZlOberqH.jpg",
+        "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/195516-B5M0cPaQbQXI.jpg",
+        "description": "In the aftermath of the Shi Clan’s rebellion, things have finally settled down, and Maomao has returned to her old life as a pharmacist in the pleasure district.\n\nOne day, triggered by a breakfast served at the Verdigris House, Maomao senses an anomaly and begins investigating its true nature.\n\nMeanwhile, Jinshi, who has revealed his true identity as the Imperial brother and begun to face his heavy responsibilities, is deeply troubled by the fina",
+        "averageScore": 85,
         "year": 2026,
         "genres": [
-          "Adventure",
-          "Comedy",
-          "Fantasy",
-          "Slice of Life"
+          "Drama",
+          "Mystery"
         ],
         "format": "TV",
-        "episodes": 0,
+        "episodes": 12,
         "status": "RELEASING",
-        "siteUrl": "https://anilist.co/anime/207329",
+        "siteUrl": "https://anilist.co/anime/195516",
         "streaming": [
           {
             "name": "Crunchyroll",
-            "url": "https://www.crunchyroll.com/series/GT00384016/"
+            "url": "https://www.crunchyroll.com/series/G3KHEVDJ7/the-apothecary-diaries"
           },
           {
-            "name": "YouTube",
-            "url": "https://www.youtube.com/playlist?list=PLcCDyXGi-y_w"
-          },
-          {
-            "name": "Bilibili TV",
-            "url": "https://www.bilibili.tv/en/media/2432178"
+            "name": "Netflix",
+            "url": "https://www.netflix.com/us/title/81712068"
           }
         ],
         "next": {
-          "at": 1792508400,
+          "at": 1792159200,
           "episode": 3
         },
         "source": "snapshot",
-        "description_es": "Rein, un encantador, es expulsado de su gremio un día. Pero en lugar de desesperar, declara, “¡Ahora puedo hacer cualquier cosa!” y comienza a reclamar el enorme número de puntos de mejora que una vez vierte en el equipo de sus compañeros, a partir de un nuevo camino como aventurero. Reunirse a su alrededor son personas que llevan heridas que no se desvanecen fácilmente: un genio aventurero que cerró su corazón después de que su partido fue masacrado, un guerrero que perdió"
-      },
-      {
-        "id": "mal-57612",
-        "mal_id": 57612,
-        "title": "A Returner's Magic Should be Special Season 2",
-        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx172192-W7P5xEUaxF3y.jpg",
-        "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/172192-jibcmb7wdbzk.jpg",
-        "description": "In a land dominated by the formidable Shadow Worlds, most of humanity has been destroyed. To rescue their planet from impending doom, six brave heroes fight a perilous battle…and fail. But there’s a glimpse of hope when Desir, one of the last mages, is suddenly sent back in time 13 years! Now armed with knowledge of the grim future, can he alter the course of history and save the world?\n\n(Source: Crunchyroll)",
-        "averageScore": 70,
-        "year": 2026,
-        "genres": [
-          "Action",
-          "Adventure",
-          "Fantasy"
-        ],
-        "format": "TV",
-        "episodes": 0,
-        "status": "RELEASING",
-        "siteUrl": "https://anilist.co/anime/172192",
-        "streaming": [
-          {
-            "name": "Crunchyroll",
-            "url": "https://www.crunchyroll.com/series/GEXH3W207/a-returners-magic-should-be-special"
-          },
-          {
-            "name": "Bilibili TV",
-            "url": "https://www.bilibili.tv/en/media/2432495"
-          }
-        ],
-        "next": {
-          "at": 1792597500,
-          "episode": 3
-        },
-        "source": "snapshot",
-        "description_es": "En una tierra dominada por los formidables Mundos Sombríos, la mayoría de la humanidad ha sido destruida. Para rescatar a su planeta de la muerte inminente, seis héroes valientes luchan una batalla peligrosa... y fracasan. Pero hay una mirada de esperanza cuando Desir, una de las últimas magras, es de repente enviado en el tiempo 13 años! Ahora armado con conocimiento del futuro sombrío, ¿puede alterar el curso de la historia y salvar el mundo? (Fuente: Crunchyroll)"
+        "description_es": "Después de la rebelión del clan Shi, las cosas finalmente se han asentado, y Maomao ha vuelto a su antigua vida como farmacéutico en el distrito de placer. Un día, provocado por un desayuno servido en la Casa Verdigris, Maomao siente una anomalía y comienza a investigar su verdadera naturaleza. Mientras tanto, Jinshi, que ha revelado su verdadera identidad como el hermano imperial y ha comenzado a enfrentar sus pesadas responsabilidades, está profundamente preocupado por la fina"
       },
       {
         "id": "mal-64340",
@@ -1381,181 +1335,39 @@
         "description_es": "A medida que la tiranía envuelve el Reino de Clover, Asta y los Caballeros Mágicos lanzan una redada desesperada en el Reino de Spade para rescatar a sus capitanes de la Tribu Oscura. Pero su misión los lleva a una batalla brutal contra las fuerzas más allá de cualquier cosa que hayan enfrentado. Ahora, Asta debe elevarse por encima de las probabilidades imposibles de proteger a sus amigos y honrar la promesa que hizo a Yuno. (Fuente: Crunchyroll)"
       },
       {
-        "id": "mal-64084",
-        "mal_id": 64084,
-        "title": "The World's Strongest Witch",
-        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx211778-0MXK5HqVFBYH.jpg",
-        "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/211778-ZbXEhqfFkj62.jpg",
-        "description": "After using her SSS-Rank skill, Internet, to crush her former family’s ambitions, Lorna is free to travel the world. Her next stop is the port town of Aquas, where she hopes to see the sights and chow down on some fresh seafood. But when she arrives, the place is on the brink of destruction thanks to a certain Weekly Quest… Good thing Lorna has the gods on her side!\n\n(Source: Crunchyroll)",
-        "averageScore": 68,
+        "id": "mal-57612",
+        "mal_id": 57612,
+        "title": "A Returner's Magic Should be Special Season 2",
+        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx172192-W7P5xEUaxF3y.jpg",
+        "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/172192-jibcmb7wdbzk.jpg",
+        "description": "In a land dominated by the formidable Shadow Worlds, most of humanity has been destroyed. To rescue their planet from impending doom, six brave heroes fight a perilous battle…and fail. But there’s a glimpse of hope when Desir, one of the last mages, is suddenly sent back in time 13 years! Now armed with knowledge of the grim future, can he alter the course of history and save the world?\n\n(Source: Crunchyroll)",
+        "averageScore": 70,
         "year": 2026,
         "genres": [
           "Action",
-          "Comedy",
+          "Adventure",
           "Fantasy"
         ],
         "format": "TV",
         "episodes": 0,
         "status": "RELEASING",
-        "siteUrl": "https://anilist.co/anime/211778",
+        "siteUrl": "https://anilist.co/anime/172192",
         "streaming": [
           {
             "name": "Crunchyroll",
-            "url": "https://www.crunchyroll.com/series/GT00384009/the-worlds-strongest-witch"
+            "url": "https://www.crunchyroll.com/series/GEXH3W207/a-returners-magic-should-be-special"
           },
           {
             "name": "Bilibili TV",
-            "url": "https://www.bilibili.tv/en/media/2432827"
-          },
-          {
-            "name": "YouTube",
-            "url": "https://www.youtube.com/playlist?list=PLLJ_VmZxSJuY"
+            "url": "https://www.bilibili.tv/en/media/2432495"
           }
         ],
         "next": {
-          "at": 1792587600,
+          "at": 1792597500,
           "episode": 3
         },
         "source": "snapshot",
-        "description_es": "Después de usar su habilidad SSS-Rank, Internet, para aplastar las ambiciones de su antigua familia, Lorna es libre de viajar por el mundo. Su próxima parada es la ciudad portuaria de Aquas, donde espera ver los lugares de interés y disfrutar de algunos mariscos frescos. Pero cuando llega, el lugar está al borde de la destrucción gracias a una cierta misión semanal... ¡Qué bueno que Lorna tenga los dioses de su lado! (Fuente: Crunchyroll)"
-      },
-      {
-        "id": "mal-61987",
-        "mal_id": 61987,
-        "title": "The Apothecary Diaries Season 3",
-        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx195516-MJpUZlOberqH.jpg",
-        "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/195516-B5M0cPaQbQXI.jpg",
-        "description": "In the aftermath of the Shi Clan’s rebellion, things have finally settled down, and Maomao has returned to her old life as a pharmacist in the pleasure district.\n\nOne day, triggered by a breakfast served at the Verdigris House, Maomao senses an anomaly and begins investigating its true nature.\n\nMeanwhile, Jinshi, who has revealed his true identity as the Imperial brother and begun to face his heavy responsibilities, is deeply troubled by the fina",
-        "averageScore": 85,
-        "year": 2026,
-        "genres": [
-          "Drama",
-          "Mystery"
-        ],
-        "format": "TV",
-        "episodes": 12,
-        "status": "RELEASING",
-        "siteUrl": "https://anilist.co/anime/195516",
-        "streaming": [
-          {
-            "name": "Crunchyroll",
-            "url": "https://www.crunchyroll.com/series/G3KHEVDJ7/the-apothecary-diaries"
-          },
-          {
-            "name": "Netflix",
-            "url": "https://www.netflix.com/us/title/81712068"
-          }
-        ],
-        "next": {
-          "at": 1792159200,
-          "episode": 3
-        },
-        "source": "snapshot",
-        "description_es": "Después de la rebelión del clan Shi, las cosas finalmente se han asentado, y Maomao ha vuelto a su antigua vida como farmacéutico en el distrito de placer. Un día, provocado por un desayuno servido en la Casa Verdigris, Maomao siente una anomalía y comienza a investigar su verdadera naturaleza. Mientras tanto, Jinshi, que ha revelado su verdadera identidad como el hermano imperial y ha comenzado a enfrentar sus pesadas responsabilidades, está profundamente preocupado por la fina"
-      },
-      {
-        "id": "mal-63382",
-        "mal_id": 63382,
-        "title": "Nia Liston: The Merciless Maiden",
-        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx206949-4HYI3YuP0eLI.png",
-        "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/206949-c5hfhixdgvy5.jpg",
-        "description": "A great hero lies undefeated on her deathbed, regretting that she never found a foe who could take her down. She never intended to meet her fate anywhere other than on the battlefield, and her peaceful demise has her wishing desperately that things could have been different... But when she suddenly comes to in the body of the young, frail Nia Liston, she’s got an all-new fight ahead of her. Nia is a sickly child, meaning she has a long way to go ",
-        "averageScore": 75,
-        "year": 2026,
-        "genres": [
-          "Action",
-          "Fantasy"
-        ],
-        "format": "TV",
-        "episodes": 25,
-        "status": "RELEASING",
-        "siteUrl": "https://anilist.co/anime/206949",
-        "streaming": [
-          {
-            "name": "HIDIVE",
-            "url": "https://www.hidive.com/season/39540"
-          },
-          {
-            "name": "Bilibili TV",
-            "url": "https://www.bilibili.tv/en/media/2433665"
-          },
-          {
-            "name": "iQ",
-            "url": "https://www.iq.com/album/tvod2397yt"
-          }
-        ],
-        "next": {
-          "at": 1792499160,
-          "episode": 3
-        },
-        "source": "snapshot",
-        "description_es": "Un gran héroe está invicto en su lecho de muerte, lamentando que nunca haya encontrado a un enemigo que pudiera derribarla. Ella nunca quiso encontrar su destino en otro lugar que en el campo de batalla, y su pacífica desaparición tiene su deseo desesperadamente de que las cosas podrían haber sido diferentes... Pero cuando de repente viene al cuerpo de la joven y frágil Nia Liston, tiene una nueva lucha por delante de ella. Nia es una niña enferma, lo que significa que tiene un largo camino por recorrer"
-      },
-      {
-        "id": "mal-62615",
-        "mal_id": 62615,
-        "title": "TETSURYO! Meet With Tetsudou Musume",
-        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx199594-moYKzlfIH03U.jpg",
-        "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/199594-iw8KRAiBp3sO.jpg",
-        "description": "Misaki has often felt the urge to break free from everyday life and set out on a journey somewhere far away. Even though she doesn’t yet know what she wants to become, she longs to find something she can truly be passionate about.\nAt the start of a new chapter on a lively campus, she meets the members of the Railway Travel Research Club—known as the “Tetsuryo Club.” As her world unfolds along the railway lines, Misaki’s heart begins to race with ",
-        "averageScore": 59,
-        "year": 2026,
-        "genres": [
-          "Slice of Life"
-        ],
-        "format": "TV",
-        "episodes": 12,
-        "status": "RELEASING",
-        "siteUrl": "https://anilist.co/anime/199594",
-        "streaming": [
-          {
-            "name": "HIDIVE",
-            "url": "https://www.hidive.com/season/39542"
-          },
-          {
-            "name": "YouTube",
-            "url": "https://www.youtube.com/playlist?list=PLJaKlqcb9GkQ"
-          }
-        ],
-        "next": {
-          "at": 1792681200,
-          "episode": 3
-        },
-        "source": "snapshot",
-        "description_es": "Misaki ha sentido a menudo el impulso de liberarse de la vida cotidiana y de emprender un viaje lejos. A pesar de que todavía no sabe lo que quiere convertirse, ella desea encontrar algo de lo que realmente puede ser apasionada. Al comienzo de un nuevo capítulo en un animado campus, se reúne con los miembros del Club de Investigación de Viajes Ferroviarios, conocido como el Club Tetsuryo. Mientras su mundo se desarrolla a lo largo de las líneas ferroviarias, el corazón de Misaki comienza a correr con"
-      },
-      {
-        "id": "mal-61469",
-        "mal_id": 61469,
-        "title": "STEEL BALL RUN JoJo's Bizarre Adventure 2nd - 3rd STAGE",
-        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx210482-P1VNKbqdJ6Zj.jpg",
-        "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/210482-pYAD0IbzNbgS.jpg",
-        "description": "In the 2nd STAGE, a desert crossing spanning roughly 750 miles- the land that Johnny Joestar and Gyro Zeppeli must challenge, is home to the area that is feared as the \"Devil's Palm.\" In 1875, a threat lurking in said desert wiped out a cavalry of 26 people, eliciting fear from the local native people. As ominous incidents begin to unfold, they are forced to realize that this race is far more than a mere competition. The two press forward, where ",
-        "averageScore": 85,
-        "year": 2026,
-        "genres": [
-          "Action",
-          "Adventure",
-          "Drama",
-          "Mystery",
-          "Supernatural"
-        ],
-        "format": "ONA",
-        "episodes": 11,
-        "status": "RELEASING",
-        "siteUrl": "https://anilist.co/anime/210482",
-        "streaming": [
-          {
-            "name": "Netflix",
-            "url": "https://www.netflix.com/title/82116553"
-          }
-        ],
-        "next": {
-          "at": 1792137600,
-          "episode": 4
-        },
-        "source": "snapshot",
-        "description_es": "En la 2a ETAPA, un cruce desértico que recorre aproximadamente 750 millas- la tierra que Johnny Joestar y Gyro Zeppeli deben desafiar, es el hogar de la zona que se teme como la palma del Diablo. En 1875, una amenaza que acechaba en dicho desierto borró una caballería de 26 personas, provocando temor de los nativos locales. A medida que los incidentes ominosos comienzan a desarrollarse, se ven obligados a darse cuenta de que esta carrera es mucho más que una mera competencia. Las dos prensas hacia adelante, donde"
+        "description_es": "En una tierra dominada por los formidables Mundos Sombríos, la mayoría de la humanidad ha sido destruida. Para rescatar a su planeta de la muerte inminente, seis héroes valientes luchan una batalla peligrosa... y fracasan. Pero hay una mirada de esperanza cuando Desir, una de las últimas magras, es de repente enviado en el tiempo 13 años! Ahora armado con conocimiento del futuro sombrío, ¿puede alterar el curso de la historia y salvar el mundo? (Fuente: Crunchyroll)"
       },
       {
         "id": "mal-61578",
@@ -1597,35 +1409,43 @@
         "description_es": "Esta es la Academia Fujinasu, una escuela secundaria privada con estudiantes de primer nivel ubicados en las afueras de la ciudad. High School 1er año Ume Mizunoe tiene excelentes calificaciones en la clase de idioma japonés y ha recibido múltiples premios literarios. Sin embargo, sus calificaciones terribles en las ciencias están afectando su capacidad de avanzar en un grado. Para evitar repetir un año, se convierte en miembro del consejo estudiantil para mejorar su posición académica. Sin embargo, en el estudio"
       },
       {
-        "id": "mal-61323",
-        "mal_id": 61323,
-        "title": "Blue Box Season 2",
-        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx189123-0secXELIhkIW.jpg",
-        "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/189123-s2oirY2r1Svy.jpg",
-        "description": "The second season of Ao no Hako.\n",
-        "averageScore": 81,
+        "id": "mal-64084",
+        "mal_id": 64084,
+        "title": "The World's Strongest Witch",
+        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx211778-0MXK5HqVFBYH.jpg",
+        "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/211778-ZbXEhqfFkj62.jpg",
+        "description": "After using her SSS-Rank skill, Internet, to crush her former family’s ambitions, Lorna is free to travel the world. Her next stop is the port town of Aquas, where she hopes to see the sights and chow down on some fresh seafood. But when she arrives, the place is on the brink of destruction thanks to a certain Weekly Quest… Good thing Lorna has the gods on her side!\n\n(Source: Crunchyroll)",
+        "averageScore": 68,
         "year": 2026,
         "genres": [
-          "Romance",
-          "Slice of Life",
-          "Sports"
+          "Action",
+          "Comedy",
+          "Fantasy"
         ],
         "format": "TV",
-        "episodes": 12,
+        "episodes": 0,
         "status": "RELEASING",
-        "siteUrl": "https://anilist.co/anime/189123",
+        "siteUrl": "https://anilist.co/anime/211778",
         "streaming": [
           {
-            "name": "Netflix",
-            "url": "https://www.netflix.com/title/81663323"
+            "name": "Crunchyroll",
+            "url": "https://www.crunchyroll.com/series/GT00384009/the-worlds-strongest-witch"
+          },
+          {
+            "name": "Bilibili TV",
+            "url": "https://www.bilibili.tv/en/media/2432827"
+          },
+          {
+            "name": "YouTube",
+            "url": "https://www.youtube.com/playlist?list=PLLJ_VmZxSJuY"
           }
         ],
         "next": {
-          "at": 1792308600,
+          "at": 1792587600,
           "episode": 3
         },
         "source": "snapshot",
-        "description_es": "La segunda temporada de Ao no Hako."
+        "description_es": "Después de usar su habilidad SSS-Rank, Internet, para aplastar las ambiciones de su antigua familia, Lorna es libre de viajar por el mundo. Su próxima parada es la ciudad portuaria de Aquas, donde espera ver los lugares de interés y disfrutar de algunos mariscos frescos. Pero cuando llega, el lugar está al borde de la destrucción gracias a una cierta misión semanal... ¡Qué bueno que Lorna tenga los dioses de su lado! (Fuente: Crunchyroll)"
       },
       {
         "id": "mal-63293",
@@ -1658,38 +1478,176 @@
         "description_es": "En la superficie, Satoko lo tiene todo, es hermosa, la hija de un noble, y a una edad temprana para el matrimonio. Desafortunadamente, ella también está bastante enferma y sólo tiene un corto tiempo para vivir. Antes de que pueda conseguir un matrimonio que redimirá su valor en los ojos de su familia, se encuentra el blanco del misterioso asesino Shinpei, y sus planes están en peligro. ¡Para salvarse, hace una propuesta desesperada de matrimonio! Cuando c"
       },
       {
-        "id": "mal-63754",
-        "mal_id": 63754,
-        "title": "The Cold Sato-san is Only Sweet to Me",
-        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx209502-C81oN8M4Smlo.jpg",
-        "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/209502-TATgyznMxQOe.jpg",
-        "description": "Sato-san is the unattainable flower of the class. She is always cold and curt with classmates, but only I know she's actually very cute when she smiles, even if she's not much of a photographer.\n\nOshio-kun is friendly and lively, but only I know he works at his family's cafe after school. He does a great job with the cafe's SNS account, and his mischievous smile makes my heart skip a beat!\n\nInnocent and sweet, but sometimes frustrating, this is a",
-        "averageScore": 68,
+        "id": "mal-63382",
+        "mal_id": 63382,
+        "title": "Nia Liston: The Merciless Maiden",
+        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx206949-4HYI3YuP0eLI.png",
+        "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/206949-c5hfhixdgvy5.jpg",
+        "description": "A great hero lies undefeated on her deathbed, regretting that she never found a foe who could take her down. She never intended to meet her fate anywhere other than on the battlefield, and her peaceful demise has her wishing desperately that things could have been different... But when she suddenly comes to in the body of the young, frail Nia Liston, she’s got an all-new fight ahead of her. Nia is a sickly child, meaning she has a long way to go ",
+        "averageScore": 75,
         "year": 2026,
         "genres": [
-          "Comedy",
-          "Romance"
+          "Action",
+          "Fantasy"
+        ],
+        "format": "TV",
+        "episodes": 25,
+        "status": "RELEASING",
+        "siteUrl": "https://anilist.co/anime/206949",
+        "streaming": [
+          {
+            "name": "HIDIVE",
+            "url": "https://www.hidive.com/season/39540"
+          },
+          {
+            "name": "Bilibili TV",
+            "url": "https://www.bilibili.tv/en/media/2433665"
+          },
+          {
+            "name": "iQ",
+            "url": "https://www.iq.com/album/tvod2397yt"
+          }
+        ],
+        "next": {
+          "at": 1792499160,
+          "episode": 3
+        },
+        "source": "snapshot",
+        "description_es": "Un gran héroe está invicto en su lecho de muerte, lamentando que nunca haya encontrado a un enemigo que pudiera derribarla. Ella nunca quiso encontrar su destino en otro lugar que en el campo de batalla, y su pacífica desaparición tiene su deseo desesperadamente de que las cosas podrían haber sido diferentes... Pero cuando de repente viene al cuerpo de la joven y frágil Nia Liston, tiene una nueva lucha por delante de ella. Nia es una niña enferma, lo que significa que tiene un largo camino por recorrer"
+      },
+      {
+        "id": "mal-61323",
+        "mal_id": 61323,
+        "title": "Blue Box Season 2",
+        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx189123-0secXELIhkIW.jpg",
+        "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/189123-s2oirY2r1Svy.jpg",
+        "description": "The second season of Ao no Hako.\n",
+        "averageScore": 81,
+        "year": 2026,
+        "genres": [
+          "Romance",
+          "Slice of Life",
+          "Sports"
         ],
         "format": "TV",
         "episodes": 12,
         "status": "RELEASING",
-        "siteUrl": "https://anilist.co/anime/209502",
+        "siteUrl": "https://anilist.co/anime/189123",
         "streaming": [
           {
-            "name": "Crunchyroll",
-            "url": "https://www.crunchyroll.com/series/GT00384014/the-cold-sato-san-is-only-sweet-to-me"
-          },
-          {
-            "name": "Bilibili TV",
-            "url": "https://www.bilibili.tv/en/media/2433556"
+            "name": "Netflix",
+            "url": "https://www.netflix.com/title/81663323"
           }
         ],
         "next": {
-          "at": 1792501200,
+          "at": 1792308600,
           "episode": 3
         },
         "source": "snapshot",
-        "description_es": "Sato-san es la flor inalcanzable de la clase. Siempre tiene frío y rito con compañeros de clase, pero sólo sé que es muy linda cuando sonríe, incluso si no es mucho fotógrafo. Oshio-kun es amistoso y animado, pero sólo sé que trabaja en el café de su familia después de la escuela. Hace un gran trabajo con la cuenta SNS de la cafetería, y su mala sonrisa hace que mi corazón salte un latido! Innocente y dulce, pero a veces frustrante, esto es un"
+        "description_es": "La segunda temporada de Ao no Hako."
+      },
+      {
+        "id": "mal-62615",
+        "mal_id": 62615,
+        "title": "TETSURYO! Meet With Tetsudou Musume",
+        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx199594-moYKzlfIH03U.jpg",
+        "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/199594-iw8KRAiBp3sO.jpg",
+        "description": "Misaki has often felt the urge to break free from everyday life and set out on a journey somewhere far away. Even though she doesn’t yet know what she wants to become, she longs to find something she can truly be passionate about.\nAt the start of a new chapter on a lively campus, she meets the members of the Railway Travel Research Club—known as the “Tetsuryo Club.” As her world unfolds along the railway lines, Misaki’s heart begins to race with ",
+        "averageScore": 59,
+        "year": 2026,
+        "genres": [
+          "Slice of Life"
+        ],
+        "format": "TV",
+        "episodes": 12,
+        "status": "RELEASING",
+        "siteUrl": "https://anilist.co/anime/199594",
+        "streaming": [
+          {
+            "name": "HIDIVE",
+            "url": "https://www.hidive.com/season/39542"
+          },
+          {
+            "name": "YouTube",
+            "url": "https://www.youtube.com/playlist?list=PLJaKlqcb9GkQ"
+          }
+        ],
+        "next": {
+          "at": 1792681200,
+          "episode": 3
+        },
+        "source": "snapshot",
+        "description_es": "Misaki ha sentido a menudo el impulso de liberarse de la vida cotidiana y de emprender un viaje lejos. A pesar de que todavía no sabe lo que quiere convertirse, ella desea encontrar algo de lo que realmente puede ser apasionada. Al comienzo de un nuevo capítulo en un animado campus, se reúne con los miembros del Club de Investigación de Viajes Ferroviarios, conocido como el Club Tetsuryo. Mientras su mundo se desarrolla a lo largo de las líneas ferroviarias, el corazón de Misaki comienza a correr con"
+      },
+      {
+        "id": "mal-63367",
+        "mal_id": 63367,
+        "title": "Dragon Ball Super: Beerus",
+        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx206814-PVVzRbf1IQpe.jpg",
+        "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/206814-ARuwrZJAGONN.jpg",
+        "description": "Several years have passed since the fierce battle against Majin Buu, and Earth has finally regained a brief moment of peace. At the same time, Beerus, the God of Destruction, awakens from his long, deep sleep.\nEven Kai and Supreme Kai, aware of Beerus's overwhelming power to destroy entire planets, watch his awakening with great fear… Meanwhile, Beerus hears rumors of a Saiyan who defeated Frieza—and suddenly appears before Goku.\nTargeted by Beer",
+        "averageScore": 81,
+        "year": 2026,
+        "genres": [
+          "Action",
+          "Adventure",
+          "Sci-Fi"
+        ],
+        "format": "TV",
+        "episodes": 0,
+        "status": "RELEASING",
+        "siteUrl": "https://anilist.co/anime/206814",
+        "streaming": [
+          {
+            "name": "Netflix",
+            "url": "https://www.netflix.com/title/83189604"
+          },
+          {
+            "name": "Crunchyroll",
+            "url": "https://www.crunchyroll.com/series/GT00389311/dragon-ball-super-beerus"
+          }
+        ],
+        "next": {
+          "at": 1792332960,
+          "episode": 2
+        },
+        "source": "snapshot",
+        "description_es": "Han pasado varios años desde la feroz batalla contra Majin Buu, y la Tierra finalmente ha recuperado un breve momento de paz. Al mismo tiempo, Beerus, el Dios de la Destrucción, despierta de su sueño largo y profundo. Incluso Kai y el Supremo Kai, consciente del abrumador poder de Beerus para destruir planetas enteros, ver su despertar con gran miedo... Mientras tanto, Beerus escucha rumores de un Saiyan que venció a Frieza y de repente aparece ante Goku. Meta de cerveza"
+      },
+      {
+        "id": "mal-58518",
+        "mal_id": 58518,
+        "title": "Sasaki and Peeps Season 2",
+        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx176314-lpvca6vjmkeO.jpg",
+        "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/176314-nj2hmqbGQ9HJ.jpg",
+        "description": "The second season of Sasaki to Pii-chan.",
+        "averageScore": 68,
+        "year": 2026,
+        "genres": [
+          "Comedy",
+          "Fantasy",
+          "Mahou Shoujo"
+        ],
+        "format": "TV",
+        "episodes": 12,
+        "status": "RELEASING",
+        "siteUrl": "https://anilist.co/anime/176314",
+        "streaming": [
+          {
+            "name": "Crunchyroll",
+            "url": "https://www.crunchyroll.com/series/G5PHNM935/sasaki-and-peeps"
+          },
+          {
+            "name": "Bilibili TV",
+            "url": "https://www.bilibili.tv/en/media/2412591"
+          }
+        ],
+        "next": {
+          "at": 1792587600,
+          "episode": 3
+        },
+        "source": "snapshot",
+        "description_es": "La segunda temporada de Sasaki a Pii-chan."
       },
       {
         "id": "mal-59204",
@@ -1728,6 +1686,109 @@
         "description_es": "Hikaru Shidou, Umi Ryuuzaki, y Fuu Hououji no son de Cephiro. Mientras que en un viaje de campo escolar a la Torre de Tokio, las mentes de las tres chicas están en cualquier cosa excepto mundos diferentes llenos de magia y maravilla. Es decir, hasta que la Princesa Esmeraude, el Pilar de Cephiro, clama por los Caballeros Mágicos para salvar su mundo, ¡y eso resulta que son esos tres! (Fuente: Crunchyroll)"
       },
       {
+        "id": "mal-63754",
+        "mal_id": 63754,
+        "title": "The Cold Sato-san is Only Sweet to Me",
+        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx209502-C81oN8M4Smlo.jpg",
+        "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/209502-TATgyznMxQOe.jpg",
+        "description": "Sato-san is the unattainable flower of the class. She is always cold and curt with classmates, but only I know she's actually very cute when she smiles, even if she's not much of a photographer.\n\nOshio-kun is friendly and lively, but only I know he works at his family's cafe after school. He does a great job with the cafe's SNS account, and his mischievous smile makes my heart skip a beat!\n\nInnocent and sweet, but sometimes frustrating, this is a",
+        "averageScore": 68,
+        "year": 2026,
+        "genres": [
+          "Comedy",
+          "Romance"
+        ],
+        "format": "TV",
+        "episodes": 12,
+        "status": "RELEASING",
+        "siteUrl": "https://anilist.co/anime/209502",
+        "streaming": [
+          {
+            "name": "Crunchyroll",
+            "url": "https://www.crunchyroll.com/series/GT00384014/the-cold-sato-san-is-only-sweet-to-me"
+          },
+          {
+            "name": "Bilibili TV",
+            "url": "https://www.bilibili.tv/en/media/2433556"
+          }
+        ],
+        "next": {
+          "at": 1792501200,
+          "episode": 3
+        },
+        "source": "snapshot",
+        "description_es": "Sato-san es la flor inalcanzable de la clase. Siempre tiene frío y rito con compañeros de clase, pero sólo sé que es muy linda cuando sonríe, incluso si no es mucho fotógrafo. Oshio-kun es amistoso y animado, pero sólo sé que trabaja en el café de su familia después de la escuela. Hace un gran trabajo con la cuenta SNS de la cafetería, y su mala sonrisa hace que mi corazón salte un latido! Innocente y dulce, pero a veces frustrante, esto es un"
+      },
+      {
+        "id": "mal-61469",
+        "mal_id": 61469,
+        "title": "STEEL BALL RUN JoJo's Bizarre Adventure 2nd - 3rd STAGE",
+        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx210482-P1VNKbqdJ6Zj.jpg",
+        "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/210482-pYAD0IbzNbgS.jpg",
+        "description": "In the 2nd STAGE, a desert crossing spanning roughly 750 miles- the land that Johnny Joestar and Gyro Zeppeli must challenge, is home to the area that is feared as the \"Devil's Palm.\" In 1875, a threat lurking in said desert wiped out a cavalry of 26 people, eliciting fear from the local native people. As ominous incidents begin to unfold, they are forced to realize that this race is far more than a mere competition. The two press forward, where ",
+        "averageScore": 85,
+        "year": 2026,
+        "genres": [
+          "Action",
+          "Adventure",
+          "Drama",
+          "Mystery",
+          "Supernatural"
+        ],
+        "format": "ONA",
+        "episodes": 11,
+        "status": "RELEASING",
+        "siteUrl": "https://anilist.co/anime/210482",
+        "streaming": [
+          {
+            "name": "Netflix",
+            "url": "https://www.netflix.com/title/82116553"
+          }
+        ],
+        "next": {
+          "at": 1792137600,
+          "episode": 4
+        },
+        "source": "snapshot",
+        "description_es": "En la 2a ETAPA, un cruce desértico que recorre aproximadamente 750 millas- la tierra que Johnny Joestar y Gyro Zeppeli deben desafiar, es el hogar de la zona que se teme como la palma del Diablo. En 1875, una amenaza que acechaba en dicho desierto borró una caballería de 26 personas, provocando temor de los nativos locales. A medida que los incidentes ominosos comienzan a desarrollarse, se ven obligados a darse cuenta de que esta carrera es mucho más que una mera competencia. Las dos prensas hacia adelante, donde"
+      },
+      {
+        "id": "mal-59088",
+        "mal_id": 59088,
+        "title": "Tokyo Revengers: War of the Three Titans Arc",
+        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx178083-bg7pg6TCHwtG.jpg",
+        "banner": "",
+        "description": "Sequel to Tokyo Revengers: Tenjiku-hen.",
+        "averageScore": 76,
+        "year": 2026,
+        "genres": [
+          "Action",
+          "Drama",
+          "Romance",
+          "Supernatural"
+        ],
+        "format": "TV",
+        "episodes": 13,
+        "status": "RELEASING",
+        "siteUrl": "https://anilist.co/anime/178083",
+        "streaming": [
+          {
+            "name": "YouTube",
+            "url": "https://www.youtube.com/@animetoman"
+          },
+          {
+            "name": "Hulu",
+            "url": "https://www.hulu.com/series/1a195a35-e19c-4e36-b609-3b1c451f6ce4"
+          }
+        ],
+        "next": {
+          "at": 1792169580,
+          "episode": 3
+        },
+        "source": "snapshot",
+        "description_es": "Secuela de los Revengers de Tokio: Tenjiku-hen."
+      },
+      {
         "id": "mal-63409",
         "mal_id": 63409,
         "title": "Hello, I am a Witch and my Crush Wants me to Make a Love Potion!",
@@ -1756,113 +1817,6 @@
         },
         "source": "snapshot",
         "description_es": "Hazme una poción de amor. Y con esa sola frase, la Buena Bruja del amor secreto del lago sobre el desgarrador Sir Harij termina en un desgarro. Aún así, cuando promete ayudarla a reunir los ingredientes, Rose está emocionada por la oportunidad de mirar a un hombre con el que normalmente nunca podría interactuar. Ella aprende a jactar su corazón por sus conversaciones usuales inclinadas... pero ¿qué va a hacer cuando aparece inexplicablemente en su puerta con bre"
-      },
-      {
-        "id": "mal-60636",
-        "mal_id": 60636,
-        "title": "BLEACH: Thousand-Year Blood War - The Calamity",
-        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx185874-aU3e6tBT6wwA.jpg",
-        "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/185874-IdGyh1EBG91I.jpg",
-        "description": "Destruction looms at the end of the Thousand-Year Blood War between the Soul Reapers and Quincies… as the death of the Soul King mirrors the collapse of the Three Worlds, distortions and omens of destruction start to appear in all realms. \n\nFierce battles erupt throughout the Wahr Welt between the Thirteen Court Guard Squads and the Royal Guard. Ichigo learns about Uryuu's true intentions and renews his determination to protect the world together",
-        "averageScore": 89,
-        "year": 2026,
-        "genres": [
-          "Action",
-          "Adventure",
-          "Supernatural"
-        ],
-        "format": "TV",
-        "episodes": 10,
-        "status": "RELEASING",
-        "siteUrl": "https://anilist.co/anime/185874",
-        "streaming": [
-          {
-            "name": "YouTube",
-            "url": "https://youtube.com/@official_bleach"
-          },
-          {
-            "name": "Hulu",
-            "url": "https://www.hulu.com/series/bleach-thousand-year-blood-war-02a3c8c0-4f1d-4610-bbb4-5b8e9468d7b1"
-          },
-          {
-            "name": "Disney Plus",
-            "url": "https://www.disneyplus.com/series/bleach-thousand-year-blood-war/4Afet1Q421gy"
-          }
-        ],
-        "next": {
-          "at": 1792418400,
-          "episode": 9
-        },
-        "source": "snapshot",
-        "description_es": "La destrucción se desploma al final de la Guerra de la Sangre Mil Años entre los Reapers del Alma y las Quincias... mientras la muerte del Rey del Alma refleja el colapso de los Tres Mundos, las distorsiones y los presagios de destrucción comienzan a aparecer en todos los reinos. En todo el Wahr Welt surgieron batallas entre los 13 escuadrones de la Guardia de la Corte y la Guardia Real. Ichigo aprende sobre las verdaderas intenciones de Uryuu y renueva su determinación de proteger el mundo juntos"
-      },
-      {
-        "id": "mal-58518",
-        "mal_id": 58518,
-        "title": "Sasaki and Peeps Season 2",
-        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx176314-lpvca6vjmkeO.jpg",
-        "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/176314-nj2hmqbGQ9HJ.jpg",
-        "description": "The second season of Sasaki to Pii-chan.",
-        "averageScore": 68,
-        "year": 2026,
-        "genres": [
-          "Comedy",
-          "Fantasy",
-          "Mahou Shoujo"
-        ],
-        "format": "TV",
-        "episodes": 12,
-        "status": "RELEASING",
-        "siteUrl": "https://anilist.co/anime/176314",
-        "streaming": [
-          {
-            "name": "Crunchyroll",
-            "url": "https://www.crunchyroll.com/series/G5PHNM935/sasaki-and-peeps"
-          },
-          {
-            "name": "Bilibili TV",
-            "url": "https://www.bilibili.tv/en/media/2412591"
-          }
-        ],
-        "next": {
-          "at": 1792587600,
-          "episode": 3
-        },
-        "source": "snapshot",
-        "description_es": "La segunda temporada de Sasaki a Pii-chan."
-      },
-      {
-        "id": "mal-52480",
-        "mal_id": 52480,
-        "title": "The Detective Is Already Dead Season 2",
-        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx152677-gtJbgjE94lCN.png",
-        "banner": "",
-        "description": "After thwarting a hijacking with beautiful, silver-haired detective Siesta, Kimihiko leads a life of globe-trotting and crime-solving—until Siesta dies. A year later, a new case will open old wounds as it threads murder, conspiracy, and his dead partner!\n\n(Source: Crunchyroll)",
-        "averageScore": 72,
-        "year": 2026,
-        "genres": [
-          "Comedy",
-          "Drama",
-          "Mystery",
-          "Romance",
-          "Supernatural"
-        ],
-        "format": "TV",
-        "episodes": 13,
-        "status": "RELEASING",
-        "siteUrl": "https://anilist.co/anime/152677",
-        "streaming": [
-          {
-            "name": "Crunchyroll",
-            "url": "https://www.crunchyroll.com/the-detective-is-already-dead"
-          }
-        ],
-        "next": {
-          "at": 1792585800,
-          "episode": 3
-        },
-        "source": "snapshot",
-        "description_es": "Después de frustrar un secuestro con el hermoso detective de pelo plateado Siesta, Kimihiko conduce una vida de ataque mundial y resolución del crimen hasta que Siesta muera. Un año más tarde, un nuevo caso abrirá viejas heridas mientras roza asesinato, conspiración y su compañero muerto! (Fuente: Crunchyroll)"
       }
     ],
     "recent": [
