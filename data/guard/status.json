@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "engine": "ONEUP SELF HEALING ENGINE",
-  "updatedAt": "2026-10-16T09:51:10.636Z",
+  "updatedAt": "2026-10-16T13:55:46.756Z",
   "site": "https://h4cklaboratory.github.io/1UP-ANIME/",
   "mode": "local_y_publico",
   "verdict": "correcto",
@@ -10,13 +10,13 @@
   "warnings": 0,
   "persistentAlerts": [],
   "requiresManualAction": true,
-  "lastKnownGoodCommit": "a1c06609648ecc94bc0f586fd0f07afef14328ef",
+  "lastKnownGoodCommit": "c7517070d91817051ce7b3fe1208f2fb74ebebce",
   "checks": [
     {
       "id": "file:index.html",
       "level": "ok",
       "message": "Validado: Archivo requerido index.html",
-      "bytes": 12643
+      "bytes": 13249
     },
     {
       "id": "file:comunidad.html",
@@ -34,7 +34,7 @@
       "id": "file:studio.js",
       "level": "ok",
       "message": "Validado: Archivo requerido studio.js",
-      "bytes": 46414
+      "bytes": 47086
     },
     {
       "id": "file:studio.css",
@@ -46,7 +46,7 @@
       "id": "file:sw.js",
       "level": "ok",
       "message": "Validado: Archivo requerido sw.js",
-      "bytes": 3562
+      "bytes": 4201
     },
     {
       "id": "file:auth.js",
@@ -64,7 +64,7 @@
       "id": "file:episode-comments.js",
       "level": "ok",
       "message": "Validado: Archivo requerido episode-comments.js",
-      "bytes": 7716
+      "bytes": 8063
     },
     {
       "id": "file:community.js",
@@ -88,7 +88,7 @@
       "id": "file:data/catalog.json",
       "level": "ok",
       "message": "Validado: Archivo requerido data/catalog.json",
-      "bytes": 170202
+      "bytes": 223644
     },
     {
       "id": "file:data/airing.json",
@@ -100,13 +100,13 @@
       "id": "file:data/translations-es.json",
       "level": "ok",
       "message": "Validado: Archivo requerido data/translations-es.json",
-      "bytes": 136596
+      "bytes": 153302
     },
     {
       "id": "file:data/dexter/records.json",
       "level": "ok",
       "message": "Validado: Archivo requerido data/dexter/records.json",
-      "bytes": 221262
+      "bytes": 224460
     },
     {
       "id": "file:config/dexter-providers.json",
@@ -176,7 +176,7 @@
       "id": "catalog:data",
       "level": "ok",
       "message": "Validado: El catálogo debe conservar al menos 25 entradas",
-      "entries": 96
+      "entries": 120
     },
     {
       "id": "catalog:structure",
@@ -187,7 +187,7 @@
       "id": "catalog:freshness",
       "level": "ok",
       "message": "Catálogo actualizado",
-      "ageHours": 1
+      "ageHours": 1.6
     },
     {
       "id": "airing:entries",
@@ -204,20 +204,20 @@
       "id": "airing:freshness",
       "level": "ok",
       "message": "Calendario con fecha reciente",
-      "ageHours": 0.3
+      "ageHours": 4.4
     },
     {
       "id": "spanish:pack",
       "level": "ok",
       "message": "Validado: Sinopsis en español disponibles",
-      "count": 172
+      "count": 188
     },
     {
       "id": "engine:population",
       "level": "ok",
       "message": "Validado: Registros del motor existentes",
       "anime": 121,
-      "episodes": 202,
+      "episodes": 208,
       "playbackSources": 0
     },
     {
@@ -249,7 +249,7 @@
       "id": "engine:freshness",
       "level": "ok",
       "message": "Sincronización reciente",
-      "ageHours": 0.8,
+      "ageHours": 2,
       "status": "correcta"
     },
     {
