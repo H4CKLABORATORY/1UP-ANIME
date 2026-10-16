@@ -41,6 +41,11 @@ try{
   await page.locator('#km-watch-comment-form').waitFor({timeout:9000});
   if(!await page.locator('#km-watch-comment-list').getByText('Firebase').count())throw Error('Disconnected backend not disclosed');
   if(!await page.locator('.km-watch-no-media').count())throw Error('Unavailable video was not disclosed');
+  const bounds=await page.locator('.km-watch-no-media').evaluate(el=>{
+    const root=el.getBoundingClientRect(),button=el.querySelector('button')?.getBoundingClientRect();
+    return {rootBottom:root.bottom,buttonBottom:button?.bottom||0,rootTop:root.top,buttonTop:button?.top||0};
+  });
+  if(bounds.buttonBottom>bounds.rootBottom+4||bounds.buttonTop<bounds.rootTop-4)throw Error('Player button is clipped: '+JSON.stringify(bounds));
   const selected=await page.locator('#km-watch-select option').count();
   if(selected<1)throw Error('Missing episode selector');
   await page.evaluate(()=>location.hash='#inicio');
