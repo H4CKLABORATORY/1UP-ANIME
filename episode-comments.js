@@ -6,7 +6,8 @@
 const $=q=>document.querySelector(q);
 const escape=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 let activeAnime=null,episode=1,stop=null,requestSerial=0;
-const api=()=>window.OneUpSocialBackend;
+const api=()=>window.OneUpSupabaseEpisodeBackend?.enabled()
+ ? window.OneUpSupabaseEpisodeBackend : window.OneUpSocialBackend;
 function message(text){const s=$('#oneup-comment-state');if(s)s.textContent=text}
 function textOf(t){const d=document.createElement('div');d.textContent=String(t??'');return d.textContent}
 function alias(){
