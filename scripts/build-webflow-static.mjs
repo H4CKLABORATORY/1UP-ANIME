@@ -54,5 +54,5 @@ for(const tag of html.matchAll(/<(?:script|link|img)\b[^>]*(?:src|href)=["'](\.\
 }
 if(missing.length)throw Error('Missing referenced static assets: '+[...new Set(missing)].join(', '));
 const report={tool:'1UP Webflow Cloud static export',output:'.webflow-build',
-  files,bytes,framework:'static',mcpConnected:false,published:false};
+  files,bytes,framework:'static',requiresWebflowSite:true,published:false};
 console.log(JSON.stringify(report,null,2));
