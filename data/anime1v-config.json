@@ -1,0 +1,7 @@
+{
+  "version": 1,
+  "enabled": false,
+  "endpoint": "",
+  "feature": "metadata_discovery_only",
+  "note": "Establecer endpoint HTTPS de la Cloud Function anime1vDiscovery tras configurar ANIME1V_BASE_URL y el secreto ANIME1V_API_KEY. No escribir claves aquí."
+}
