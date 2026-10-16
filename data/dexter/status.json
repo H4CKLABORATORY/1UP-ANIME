@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
   "engine": "DexterAnimeSync",
-  "updatedAt": "2026-10-16T02:12:59.261Z",
+  "updatedAt": "2026-10-16T02:14:22.045Z",
   "job": {
-    "id": "sync-730eddf6b973a8fa",
-    "startedAt": "2026-10-16T02:12:59.261Z",
-    "completedAt": "2026-10-16T02:12:59.261Z",
+    "id": "sync-7e46251f9867e8bd",
+    "startedAt": "2026-10-16T02:14:22.045Z",
+    "completedAt": "2026-10-16T02:14:22.045Z",
     "mode": "programada",
     "status": "correcta",
     "counters": {
@@ -39,9 +39,9 @@
       "enabled": true,
       "sourceType": "playback",
       "intervalHours": 3,
-      "lastRunAt": "2026-10-15T22:22:27.011Z",
-      "runAt": "2026-10-16T02:12:59.261Z",
-      "state": "sin_contenido_autorizado",
+      "lastRunAt": "2026-10-16T02:12:59.261Z",
+      "runAt": null,
+      "state": "en_espera",
       "observed": 0,
       "created": 0,
       "playback": 0,
