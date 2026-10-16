@@ -1,17 +1,17 @@
 {
   "schemaVersion": 1,
   "engine": "DexterAnimeSync",
-  "updatedAt": "2026-10-16T17:56:04.277Z",
+  "updatedAt": "2026-10-16T20:57:01.730Z",
   "job": {
-    "id": "sync-cf6e3eccc35d6e0c",
-    "startedAt": "2026-10-16T17:56:04.277Z",
-    "completedAt": "2026-10-16T17:56:04.277Z",
+    "id": "sync-a8b27dccd5799d5d",
+    "startedAt": "2026-10-16T20:57:01.730Z",
+    "completedAt": "2026-10-16T20:57:01.730Z",
     "mode": "programada",
     "status": "correcta",
     "counters": {
-      "animes": 0,
-      "episodesDetected": 0,
-      "episodesNew": 0,
+      "animes": 2,
+      "episodesDetected": 217,
+      "episodesNew": 17,
       "playbackSources": 0,
       "errors": 0
     }
@@ -25,10 +25,10 @@
       "sourceType": "metadata",
       "intervalHours": 6,
       "lastRunAt": "2026-10-16T11:57:47.934Z",
-      "runAt": null,
-      "state": "en_espera",
-      "observed": 0,
-      "created": 0,
+      "runAt": "2026-10-16T20:57:01.730Z",
+      "state": "conectada",
+      "observed": 217,
+      "created": 17,
       "playback": 0,
       "error": null
     },
@@ -40,12 +40,13 @@
       "sourceType": "playback",
       "intervalHours": 3,
       "lastRunAt": "2026-10-16T14:59:58.514Z",
-      "runAt": null,
-      "state": "en_espera",
+      "runAt": "2026-10-16T20:57:01.730Z",
+      "state": "sin_contenido_autorizado",
       "observed": 0,
       "created": 0,
       "playback": 0,
-      "error": null
+      "error": null,
+      "rejected": 0
     },
     {
       "id": "jkanime_external",
@@ -70,9 +71,9 @@
       "sourceType": "embed",
       "intervalHours": 6,
       "lastRunAt": "2026-10-16T11:57:47.934Z",
-      "runAt": null,
-      "state": "en_espera",
-      "observed": 0,
+      "runAt": "2026-10-16T20:57:01.730Z",
+      "state": "conectada",
+      "observed": 96,
       "created": 0,
       "playback": 0,
       "error": null
@@ -105,11 +106,11 @@
     }
   ],
   "errors": [],
-  "historySize": 13,
+  "historySize": 16,
   "records": {
-    "anime": 121,
+    "anime": 123,
     "seasons": 1,
-    "episodes": 208,
+    "episodes": 225,
     "sources": 0
   }
 }
