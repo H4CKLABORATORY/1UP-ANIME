@@ -25,3 +25,13 @@ Basado en el video aportado por el propietario el 15/10/2026: fondo negro grafit
 
 ## Siguiente paso
 Preparar y evaluar capturas visuales reales de iPhone/escritorio y corregir las diferencias respecto al video de referencia. Después migrar los componentes que apruebe el propietario al tema de producción.
+
+## Actualización de la segunda etapa — 16 octubre 2026
+- Vista activa: `preview-kokomi-mobile.html` con el módulo `pages.js` y su estilo `pages.css`.
+- El mapa de 22 páginas tiene rutas (nativas o interiores). Algunas siguen siendo información/estados vacíos reales, no funciones completas; consultar `docs/KOKOMI_FIDELITY_MATRIX.md`.
+- Reproductor: solo usa `data/licensed-media.json`; si no hay fuentes declaradas, indica que no están disponibles. Selector de temporada y episodio soportado para medios configurados.
+- Comprobación automatizada en GitHub Actions: `.github/workflows/kokomi-preview-check.yml`. Capturas en artifacts del workflow.
+- **Diagnóstico corregido:** las cuadrículas de anime heredaban `grid-auto-flow:column`, causando más de 2000 px de ancho móvil. Se cambiaron a filas reales. Calendario y carruseles con desplazamiento interno.
+- **Nuevo orden de portada:** hero, exploración, ranking, actualizaciones, temporada y películas; las promociones y catálogos externos se sitúan después del contenido principal. El orden del DOM también se ajusta para teclado.
+- El navegador de referencia del autor del producto Kokomi permaneció inaccesible (HTTP 502), por lo que no existe comprobación pixel-perfect de todas sus pantallas.
+- Se trata de trabajo en rama, no de un despliegue público; conservar `main` hasta revisión de capturas en iPhone y desktop.
