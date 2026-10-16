@@ -161,10 +161,15 @@ async function fromSnapshot(o){
  // Do not label a trending snapshot as "most popular".
  // If the new popular group has not been generated yet, try the live APIs.
  else if(o.sort==='POPULARITY_DESC')group='popular';
+ // A popular ranking must never silently use trending metadata, even
+ // when a genre/search filter would otherwise merge the snapshot groups.
+ if(group==='popular'&&!Array.isArray(data.groups.popular))return null;
  let items=Array.isArray(data.groups[group])?data.groups[group]:[];
  if(o.search||o.genre||o.format||o.status){
-  const combined=Object.values(data.groups).filter(Array.isArray).flat();
-  const unique=new Map();for(const x of combined)if(x.id)unique.set(x.id,x);
+  // Put the requested ranking's group first, then fill gaps from other
+  // groups without changing the primary order.
+  const combined=[...items,...Object.values(data.groups).filter(Array.isArray).flat()];
+  const unique=new Map();for(const x of combined)if(x.id&&!unique.has(x.id))unique.set(x.id,x);
   items=[...unique.values()].filter(x=>
    (!o.search||x.title.toLowerCase().includes(o.search.toLowerCase()))&&
    (!o.genre||(x.genres||[]).includes(o.genre))&&
