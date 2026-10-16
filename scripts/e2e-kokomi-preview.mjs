@@ -1,0 +1,52 @@
+import {chromium} from 'playwright';
+import {createServer} from 'node:http';
+import {readFile} from 'node:fs/promises';
+import {resolve,extname,sep} from 'node:path';
+const ROOT=resolve('.'),port=8789,base='http://127.0.0.1:'+port+'/';
+const types={'.html':'text/html','.js':'text/javascript','.css':'text/css','.json':'application/json','.svg':'image/svg+xml','.png':'image/png'};
+const server=createServer(async(req,res)=>{
+ try{const name=decodeURIComponent(new URL(req.url,base).pathname);const filename=resolve(ROOT,'.'+name);
+ if(!filename.startsWith(ROOT+sep))throw Error('Path');const data=await readFile(filename);
+ res.writeHead(200,{'Content-Type':types[extname(filename)]||'application/octet-stream'});res.end(data);
+ }catch{res.writeHead(404);res.end('Not Found')}
+});
+await new Promise(ok=>server.listen(port,'127.0.0.1',ok));
+let browser,failed=0;
+const check=async(label,fn)=>{try{await fn();console.log('PASS '+label)}catch(e){failed++;console.error('FAIL '+label+': '+e.message)}};
+try{
+ browser=await chromium.launch({headless:true,args:['--no-sandbox']});
+ for(const env of [{label:'mobile',width:390,height:844,mobile:true},{label:'desktop',width:1366,height:768,mobile:false}]){
+ const context=await browser.newContext({viewport:{width:env.width,height:env.height},isMobile:env.mobile,hasTouch:env.mobile,reducedMotion:'reduce'});
+ await context.route('**/*',r=>r.request().url().startsWith(base)?r.continue():r.abort());
+ const page=await context.newPage(),errors=[];page.on('pageerror',e=>errors.push(e.message));
+ await check(env.label+' homepage',async()=>{await page.goto(base+'preview-kokomi-mobile.html',{waitUntil:'domcontentloaded'});await page.locator('#km-open').waitFor();await page.locator('#trending-rail .anime-card').first().waitFor({timeout:14000})});
+ await check(env.label+' drawer navigation',async()=>{
+ await page.locator('#km-open').click();await page.locator('#km-drawer:not([hidden])').waitFor();
+ await page.locator('#km-drawer a[data-km-view="upcoming"]').click();
+ await page.locator('#km-extra-root:not([hidden])').waitFor({timeout:8000});
+ if(await page.locator('#km-drawer').isVisible())throw Error('drawer stayed open')});
+ await check(env.label+' interior routes',async()=>{
+ for(const route of ['blog','profile','notifications','settings','contact','trailers','404']){
+ await page.goto(base+'preview-kokomi-mobile.html#km/'+route,{waitUntil:'domcontentloaded'});
+ await page.locator('#km-extra-root:not([hidden]) .km-page-heading h1').waitFor({timeout:8000});
+ }
+ });
+ await check(env.label+' settings local storage',async()=>{
+ await page.goto(base+'preview-kokomi-mobile.html#km/settings',{waitUntil:'domcontentloaded'});
+ await page.locator('#km-preferences input[name="compact"]').check();
+ await page.locator('#km-preferences button[type="submit"]').click();
+ const value=await page.evaluate(()=>JSON.parse(localStorage.getItem('oneup_kokomi_preferences_v1')||'{}').compact);
+ if(!value)throw Error('preference not saved');
+ });
+ await check(env.label+' no horizontal overflow or script errors',async()=>{
+ const excess=await page.evaluate(()=>document.documentElement.scrollWidth-window.innerWidth);
+ if(excess>12)throw Error('overflow '+excess);
+ if(errors.length)throw Error(errors.slice(0,2).join('; '));
+ });
+ await page.goto(base+'preview-kokomi-mobile.html',{waitUntil:'domcontentloaded'});
+ await page.locator('#trending-rail .anime-card').first().waitFor({timeout:14000});
+ await page.screenshot({path:'e2e-kokomi-'+env.label+'.png',fullPage:true,animations:'disabled'});
+ await context.close();
+ }
+}finally{await browser?.close();await new Promise(ok=>server.close(ok))}
+if(failed)process.exitCode=1;
