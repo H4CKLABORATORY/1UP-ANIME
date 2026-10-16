@@ -57,7 +57,7 @@ Archivo de ejemplo: `infra/nginx/oneup-media-origin.conf.example`. Por defecto, 
 
 ## Estado pendiente del logo
 
-PR #22 mantiene preparada la firma MP4 de 3,2 s con sonido y poster, pero el video original todavía no está subido a GitHub. No fusionar esa rama hasta comprobar los tres binarios y pasar `scripts/verify-video-logo.mjs`. El logo anterior seguirá visible hasta entonces.
+**ACTUALIZACIÓN 2026-10-16:** la firma original MP4 con audio AAC, el fotograma JPG y el icono PNG ya se transfirieron a `assets/` mediante una ejecución de GitHub Actions con verificación SHA-256. El video y el botón de sonido se integraron en `main` mediante PR #24; PR #22 se cerró como sustituido. En la cabecera, la animación se reproduce en silencio automáticamente; el sonido se activa al tocar ♫.
 
 ## Continuidad
 
