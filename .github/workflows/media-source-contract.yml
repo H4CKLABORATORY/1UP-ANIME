@@ -1,0 +1,31 @@
+name: 1UP media source contract
+on:
+  pull_request:
+    paths:
+      - "scripts/media-source-contract.mjs"
+      - "scripts/dexter-anime-sync.mjs"
+      - "scripts/refresh-airing.mjs"
+      - "scripts/refresh-catalog.mjs"
+      - "scripts/test-media-source-contract.mjs"
+      - "data/licensed-media.json"
+      - ".github/workflows/media-source-contract.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  media-contract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Check syntax
+        run: |
+          node --check scripts/media-source-contract.mjs
+          node --check scripts/dexter-anime-sync.mjs
+          node --check scripts/test-media-source-contract.mjs
+          node --check scripts/refresh-airing.mjs
+          node --check scripts/refresh-catalog.mjs
+      - name: Validate source contract and manifest
+        run: node scripts/test-media-source-contract.mjs
