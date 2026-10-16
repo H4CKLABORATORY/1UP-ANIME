@@ -76,3 +76,10 @@ Al concluir cada trabajo agregar:
 - Pendiente / limitaciones:
 - Próxima tarea concreta:
 ```
+
+### 2026-10-15 — Referencia visual Kokomi móvil
+- **Archivos:** `preview-kokomi.html`, `themes/kokomi-studio/mobile-reference.css`, `themes/kokomi-studio/mobile-reference.js`, `docs/KOKOMI_REFERENCE_2026.md`.
+- **Hecho:** capa visual negra/turquesa y lista 2-columnas móvil; top numerado, menú lateral de navegación, solo en la vista previa de rama `design/kokomi-mobile-reference`.
+- **Fuente:** video vertical de 27 segundos enviado por propietario + ficha pública de plantilla comercial Kokomi #520462; implementación propia, sin código/medios propietarios.
+- **Probado:** prototipo ZIP separado en Chromium con JS sin errores, búsqueda y menú. **NO probada todavía la vista de GitHub con los datos reales ni Safari iPhone físico.**
+- **Próximo:** comparar captura del tema de rama con video, asegurar que no hay regresiones en búsqueda/perfiles/fichas; aprobar PR antes de fusionar a main.
