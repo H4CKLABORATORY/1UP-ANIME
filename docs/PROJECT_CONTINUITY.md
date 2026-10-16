@@ -101,3 +101,16 @@ Al concluir cada trabajo agregar:
 - Importante: el navegador automatizado bloquea imágenes externas para resultados deterministas, por eso muestra arte de respaldo.
 - PENDIENTE: QA Safari iPhone real, contraste pixel por pixel con una demo original accesible, funcionalidad de noticias/notificaciones/contacto avanzados, sincronización en servidor y control de calidad de reproducción.
 - PR #14 sigue en borrador; producción `main` intacta.
+
+
+### 2026-10-16 — Reproductor Kokomi y comentarios dentro del episodio
+- Rama/PR: `design/kokomi-mobile-reference-2026-10-15` / [#14](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/14). **No publicado en `main`.**
+- Archivos modificados: `preview-kokomi-mobile.html`, `themes/kokomi-mobile-preview/pages.js`, `pages.css`, `watch-comments.js` (nuevo), `watch-comments.css` (nuevo), `scripts/e2e-kokomi-preview.mjs`.
+- Implementado: área de conversación justo bajo el reproductor, selección de hilo por episodio y temporada, pseudónimo temporal, lectura/reportes/publicación reutilizando `OneUpSocialBackend` **solo cuando Firebase está activado**. No se inventan comentarios ni videos.
+- Temporadas: la temporada 1 mantiene el hilo de episodio convencional. Las posteriores reservan bloques numéricos de 1000 para no mezclar conversaciones. El soporte actual alcanza 9 temporadas y 999 episodios por temporada; requiere migración planificada para casos mayores.
+- Reproductor: `sourcesFrom` exige `rights: "authorized"`; YouTube oficial se incrusta solo después de pulsar; videos y iframes anteriores se paran/retiran al navegar o cambiar de servidor. La navegación desde rutas interiores vuelve a una vista nativa visible.
+- Corregido estado vacío: caja visual completa en desktop y botón de ficha sin recorte en móvil.
+- E2E: prueba con catálogo local y manifiesto ficticio *inyectado en Chromium*, que no se publicó en el JSON real. Se verifican comentarios sin Firebase, selector de temporadas, servidores, click-to-load del embed y navegación de regreso. La ejecución [38886000746](https://github.com/H4CKLABORATORY/1UP-ANIME/actions/runs/38886000746) reportó **success** antes del refinamiento visual posterior; nuevas pruebas deben revisarse para el commit más reciente.
+- Capturas: artefactos del workflow `ONEUP Kokomi Visual Acceptance` (hero, ranking, ficha y reproductor en 390px/1366px). En CI se bloquean imágenes remotas intencionadamente; no confundir fondos de respaldo con contenido real.
+- Pendiente: activar Firebase por el propietario y comprobar conversaciones reales, Safari físico, pruebas de video/HLS con medios autorizados reales, fidelidad de interiores a Kokomi cuando la demo vuelva a estar accesible, y completar las páginas que aún son informativas.
+- Siguiente tarea concreta: validar las últimas pruebas de tamaño del reproductor, comparar capturas y perfeccionar ficha móvil/episodios; después preparar entorno de preview HTTPS de la rama, sin fusionar `main` hasta aprobación.
