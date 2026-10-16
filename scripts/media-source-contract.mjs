@@ -76,10 +76,21 @@ function normalizeOne(source, item, position) {
     (new URL(src).pathname.endsWith('.m3u8') ? 'application/vnd.apple.mpegurl' :
       new URL(src).pathname.endsWith('.webm') ? 'video/webm' : 'video/mp4'),80);
   if (!VIDEO_MIMES.has(mime)) return {reason:'formato_de_video_no_admitido'};
+  const tracks=Array.isArray(source.tracks)?source.tracks.slice(0,8).map(track=>{
+    if(!track||typeof track!=='object')return null;
+    const url=subtitleUrl(track.url||track.src);
+    const language=text(track.lang,15);
+    if(!url||!/^[a-z]{2,3}(?:-[A-Za-z0-9]{2,8})?$/.test(language))return null;
+    return {url,lang:language,label:text(track.label||language,35)};
+  }).filter(Boolean):[];
+  const defaultSubtitle=subtitleUrl(source.subtitles_es||item.subtitles_es);
+  if(defaultSubtitle&&!tracks.some(track=>track.lang==='es')){
+    tracks.unshift({url:defaultSubtitle,lang:'es',label:'Español'});
+  }
   return {value:{
     ...common,mode:'direct_media',provider:'licensed_library',
     mime,src,videoId:null,embedUrl:null,
-    subtitleUrl:subtitleUrl(source.subtitles_es || item.subtitles_es)
+    subtitleUrl:defaultSubtitle,tracks:tracks.slice(0,8)
   }};
 }
 
