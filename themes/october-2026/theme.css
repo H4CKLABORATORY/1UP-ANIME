@@ -370,3 +370,29 @@ body.oneup-october{
  .oneup-october .marquee div{animation:none!important}
  .oneup-october .anime-card,.oneup-october .cta{transition:none!important}
 }
+
+/* Mobile accessibility fix: keep the opt-in sound control in the hero's
+   natural flow, above the same touch layer as the existing CTAs. */
+.oneup-october .oct-sound-wrap{
+ position:relative;z-index:12;
+ display:flex;align-items:center;justify-content:flex-start;
+ margin:12px 0 0;
+ pointer-events:auto;
+}
+.oneup-october .oct-sound-wrap .oct-event-control{
+ position:relative!important;inset:auto!important;
+ bottom:auto!important;right:auto!important;
+ display:inline-flex;flex:0 0 auto;
+ width:auto;max-width:100%;
+ min-height:37px;padding:8px 13px;
+ box-shadow:none;backdrop-filter:none;
+ background:#15231ee5;
+ pointer-events:auto!important;touch-action:manipulation;
+}
+@media(max-width:780px){
+ .oneup-october .oct-sound-wrap{margin-top:13px;margin-bottom:8px;z-index:13}
+ .oneup-october .oct-sound-wrap .oct-event-control{
+  bottom:auto!important;right:auto!important;
+  font-size:12px;
+ }
+}
