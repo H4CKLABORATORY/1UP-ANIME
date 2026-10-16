@@ -124,3 +124,14 @@ Al concluir cada trabajo agregar:
 - Estado real: el manifiesto público `data/licensed-media.json` continúa vacío, por lo tanto no existe reproducción de episodios reales. GitHub Pages sigue siendo hosting estático.
 - Logo sonoro MP4: PR #22 de código aún abierto como borrador, activos MP4/JPG/PNG pendientes de subida a `assets/` por limitación de transferencia binaria desde el conector. No afirmar que está publicado.
 - Próxima tarea: comprobar resultado de despliegue GitHub Pages, agregar primer episodio con permiso si existe, probar reproducción real en Safari/Android y cerrar subida del logo original.
+
+
+### 2026-10-16 — Logo animado y firma sonora originales publicados desde PR #24
+- **El propietario eligió como identidad oficial** el video original `1UP_ANIME_INTRO_FIRMA_3SEG.mp4` (3,2 s, H.264 y AAC), no un diseño PNG alternativo.
+- El ZIP `1UP_ANIME_LOGO_MP4_SONIDO_PARA_GITHUB.zip` se transferió directamente desde la sesión a GitHub Actions utilizando un enlace temporal, y el workflow verificó SHA-256 de ZIP y archivos originales antes de guardar tres binarios en `assets/`.
+- Publicado vía [PR #24](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/24), merge `e4a8ef9d85a0bf762c88ff23502e062d6b2cbfd6` sobre el `main` actualizado. [PR #22](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/22) cerrado como reemplazado, sin fusionar conflictos.
+- Activos: `assets/1up-anime-intro-firma-3seg.mp4` (1.626.365 bytes), `assets/1up-anime-logo-poster.jpg` (182.083 bytes), `assets/1up-anime-app-icon-512.png` (192.439 bytes).
+- Integración en `index.html` y `preview-kokomi-mobile.html`: logo animado sin audio automático, botón ♫ para escuchar la firma tras pulsar, fotograma original en menú móvil, nuevo favicon e icono PWA. Con movimiento reducido se usa imagen estática. En modo offline no se fuerza descarga del MP4.
+- CSS/JS: `themes/kokomi-mobile-preview/brand-signature.{css,js}`; validación `scripts/verify-video-logo.mjs`. `sw.js` incrementa su versión; cachea icono/fotograma, no el MP4 completo.
+- Seis suites de GitHub Actions en verde en commit de release: logo MP4, Kokomi móvil/escritorio, navegación, interfaz, HLS y contrato de caché/catálogo.
+- Todo conserva el motor de streaming y los límites de fuentes existentes; `data/licensed-media.json` sigue sin episodios.
