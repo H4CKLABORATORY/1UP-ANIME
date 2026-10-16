@@ -52,6 +52,28 @@
       "requiresCredentials": false,
       "source": "data/airing.json",
       "capability": "Insertar tráilers públicos de YouTube; no episodios"
+    },
+    {
+      "id": "animeonline_castellano_external",
+      "displayName": "AnimeOnline — Castellano (catálogo externo)",
+      "enabled": false,
+      "type": "external_links",
+      "mode": "external_only",
+      "syncIntervalHours": 24,
+      "requiresCredentials": false,
+      "source": "data/external-providers.json",
+      "capability": "Enlace a categoría proporcionada por usuario; acceso remoto no confirmado; sin permiso de inserción verificado"
+    },
+    {
+      "id": "iqiyi_anime_external",
+      "displayName": "iQIYI — Anime (catálogo oficial externo)",
+      "enabled": false,
+      "type": "external_links",
+      "mode": "external_only",
+      "syncIntervalHours": 24,
+      "requiresCredentials": false,
+      "source": "data/external-providers.json",
+      "capability": "Enlace al catálogo oficial; reproducción disponible solamente en iQIYI; inserción no autorizada"
     }
   ],
   "externalIntegrations": [
@@ -66,6 +88,18 @@
       "displayName": "1UP Comunidad",
       "status": "needs_configuration",
       "reason": "Falta proyecto Firebase configurado, App Check y despliegue de backend."
+    },
+    {
+      "id": "iqiyi_video_embed",
+      "displayName": "iQIYI — Servidores de reproducción",
+      "status": "requires_permission",
+      "reason": "No se confirmó licencia de inserción; condiciones de iQIYI restringen reproducir/embeber contenido fuera de su servicio."
+    },
+    {
+      "id": "animeonline_video_embed",
+      "displayName": "AnimeOnline — Servidores de reproducción",
+      "status": "requires_permission",
+      "reason": "La categoría enlazada no respondió al análisis; no se verificaron URLs de iframe autorizadas."
     }
   ]
 }
