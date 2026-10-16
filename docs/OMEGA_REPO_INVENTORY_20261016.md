@@ -1,11 +1,11 @@
 # 1UP Anime — inventario completo de rutas Git, 2026-10-16
 
-**Procedencia:** API GitHub `/git/trees/main?recursive=1`, 187 entradas, sin truncamiento al consultarse. **Este inventario contiene rutas, tamaños y hashes: no implica que cada recurso cargue correctamente en producción ni que todas las ramas estén incluidas.**
+**Procedencia:** API GitHub `/git/trees/main?recursive=1`, 194 entradas, sin truncamiento al consultarse. **Este inventario contiene rutas, tamaños y hashes: no implica que cada recurso cargue correctamente en producción ni que todas las ramas estén incluidas.**
 
 - Repositorio: https://github.com/H4CKLABORATORY/1UP-ANIME
-- Fuente operativa: `main` (snapshot observado con commit `c7517070d91817051ce7b3fe1208f2fb74ebebce`).
+- Fuente operativa: `main` (snapshot observado con commit `0f5df57560a3a7f5391b47ef4dca643889364a9e`).
 - Total entradas: 194. Directorios: 28; archivos: 166.
-- **Peligro documentado:** `index.html` referencia algunos activos de marca inexistentes en el árbol de este snapshot. Revisar antes de introducir cambios.
+- **Actualización observada:** el logo original en MP4, poster JPG, icono PNG y brand-signature CSS/JS entraron a main mediante commit `e4a8ef9d`; comprobar su despliegue y licencia de esos recursos.
 
 | Ruta exacta | Tamaño bytes/Tipo | SHA abreviado |
 |---|---:|---|
