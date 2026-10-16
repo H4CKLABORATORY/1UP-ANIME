@@ -59,3 +59,11 @@
 
 ## Regla de continuidad
 Leer \`AGENTS.md\`, \`docs/PROJECT_CONTINUITY.md\` y este documento; continuar sobre rama \`design/kokomi-mobile-reference-2026-10-15\` y PR #14, sin sobrescribir la app real.
+
+
+## Resultado verificado de la prueba del 16/10/2026
+- Captura móvil de referencia de usuario: `f_04.jpg` (ranking en dos columnas).
+- Capturas de la rama: `e2e-kokomi-mobile-hero.png`, `e2e-kokomi-mobile-ranking.png`, y equivalentes desktop, como artefactos de CI.
+- Pruebas de navegación, modo móvil/escritorio, configuraciones, errores JS, desbordamiento horizontal y número de columnas pasaron en https://github.com/H4CKLABORATORY/1UP-ANIME/actions/runs/38850097111 .
+- Diferencias presentes: piezas gráficas originales no iguales a los recursos comerciales, gran parte de la navegación interior solo se verificó contra requisitos funcionales y no por capturas de referencia; Safari no probado. El catálogo conserva su fuente de datos externa.
+- **La similitud no está certificada como exacta**, pero el patrón de ranking móvil de dos columnas ya coincide estructuralmente con la grabación.
