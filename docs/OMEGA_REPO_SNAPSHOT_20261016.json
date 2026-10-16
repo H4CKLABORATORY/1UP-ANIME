@@ -1,0 +1,1339 @@
+{
+  "as_of": "2026-10-16",
+  "branch": "main",
+  "commit": "0f5df57560a3a7f5391b47ef4dca643889364a9e",
+  "truncated": false,
+  "count": 194,
+  "tree": [
+    {
+      "path": ".agents",
+      "type": "tree",
+      "sha": "78020ea59d51cd995522dce0926ead8abb2bbddc",
+      "category": "Otro"
+    },
+    {
+      "path": ".agents/skills",
+      "type": "tree",
+      "sha": "b50b026fc4301a3d8585c94f4470ff3c0e9ce7ed",
+      "category": "Skill de proyecto"
+    },
+    {
+      "path": ".agents/skills/anime-art-direction",
+      "type": "tree",
+      "sha": "7a62beb84143b37ebcdeb988bc4ccfa66452859f",
+      "category": "Skill de proyecto"
+    },
+    {
+      "path": ".agents/skills/anime-art-direction/SKILL.md",
+      "type": "blob",
+      "size": 2487,
+      "sha": "8966c4972f37d419141b47c6ccd8d244236d65cd",
+      "category": "Skill de proyecto"
+    },
+    {
+      "path": ".agents/skills/anime-catalog",
+      "type": "tree",
+      "sha": "43807f032679743ae79ba29b3a4c1848af5e184e",
+      "category": "Skill de proyecto"
+    },
+    {
+      "path": ".agents/skills/anime-catalog/SKILL.md",
+      "type": "blob",
+      "size": 2322,
+      "sha": "e15df288075d61bd2458cc8d0224ed06507bb734",
+      "category": "Skill de proyecto"
+    },
+    {
+      "path": ".agents/skills/oneup-espanol",
+      "type": "tree",
+      "sha": "7778f77bac7bd7d58cc28d0537104533e7173121",
+      "category": "Skill de proyecto"
+    },
+    {
+      "path": ".agents/skills/oneup-espanol/SKILL.md",
+      "type": "blob",
+      "size": 2429,
+      "sha": "302330335bfba1128706dfd95269551817cabcd3",
+      "category": "Skill de proyecto"
+    },
+    {
+      "path": ".github",
+      "type": "tree",
+      "sha": "ab441887c3c2d64e7c2f514ba3c47b1f186b0d00",
+      "category": "Otro"
+    },
+    {
+      "path": ".github/dependabot.yml",
+      "type": "blob",
+      "size": 519,
+      "sha": "ee69a0049246f536e1db5621f14b19256e42927e",
+      "category": "Otro"
+    },
+    {
+      "path": ".github/workflows",
+      "type": "tree",
+      "sha": "9c2fcb5957c84b5c0aec43dd5199464af0db4ae3",
+      "category": "Otro"
+    },
+    {
+      "path": ".github/workflows/app-icons.yml",
+      "type": "blob",
+      "size": 928,
+      "sha": "9e035fef38f195a10664de2a19bae4a6f5e1553f",
+      "category": "CI/CD"
+    },
+    {
+      "path": ".github/workflows/browser-acceptance.yml",
+      "type": "blob",
+      "size": 1734,
+      "sha": "286ccec4bf0049f81e14fe982fbdffdfc663392f",
+      "category": "CI/CD"
+    },
+    {
+      "path": ".github/workflows/codex-cache-catalog-check.yml",
+      "type": "blob",
+      "size": 1280,
+      "sha": "a458ff1b164ad60d23c84337236b32586b1691e5",
+      "category": "CI/CD"
+    },
+    {
+      "path": ".github/workflows/dexter-anime-sync.yml",
+      "type": "blob",
+      "size": 1470,
+      "sha": "6560d55c4f27319e20a20cd38c4813f267db4175",
+      "category": "CI/CD"
+    },
+    {
+      "path": ".github/workflows/firebase-deploy.yml",
+      "type": "blob",
+      "size": 3245,
+      "sha": "875937d91323ee7e5a87825228b2eb3cbf255129",
+      "category": "CI/CD"
+    },
+    {
+      "path": ".github/workflows/hls-compatibility.yml",
+      "type": "blob",
+      "size": 744,
+      "sha": "4b133183e4bf4084c1a1cf16d12e0e9051fd7180",
+      "category": "CI/CD"
+    },
+    {
+      "path": ".github/workflows/jkanime-v2-adapter.yml",
+      "type": "blob",
+      "size": 1080,
+      "sha": "bf949851d22e360e154cac2da41ef088b219ac82",
+      "category": "CI/CD"
+    },
+    {
+      "path": ".github/workflows/kokomi-preview-check.yml",
+      "type": "blob",
+      "size": 1719,
+      "sha": "5267e83223aea7b74aa6aa683d5bffca8bcb4c36",
+      "category": "CI/CD"
+    },
+    {
+      "path": ".github/workflows/media-source-contract.yml",
+      "type": "blob",
+      "size": 1010,
+      "sha": "8e08328681cc87cceb3e62edfd7d1fccdefcecf3",
+      "category": "CI/CD"
+    },
+    {
+      "path": ".github/workflows/oneup-guard.yml",
+      "type": "blob",
+      "size": 2734,
+      "sha": "8c7b5ac6ac52d19fb6d49fdc9ffc5ec5ee46dd6a",
+      "category": "CI/CD"
+    },
+    {
+      "path": ".github/workflows/oneup-revert-proposal.yml",
+      "type": "blob",
+      "size": 2023,
+      "sha": "2f9c67b7e150f1baa45b534be163b08fe53d393e",
+      "category": "CI/CD"
+    },
+    {
+      "path": ".github/workflows/refresh-airing.yml",
+      "type": "blob",
+      "size": 827,
+      "sha": "5db5b25d4e6bc2653aedb1d5dfbe9cb1353efafa",
+      "category": "CI/CD"
+    },
+    {
+      "path": ".github/workflows/refresh-catalog.yml",
+      "type": "blob",
+      "size": 1388,
+      "sha": "1d40bdc90493787587294396a9bedb13d3132bd9",
+      "category": "CI/CD"
+    },
+    {
+      "path": ".github/workflows/supabase-optional-check.yml",
+      "type": "blob",
+      "size": 855,
+      "sha": "f16e4474ee19d7367c385a9c5cd4b207987dccaf",
+      "category": "CI/CD"
+    },
+    {
+      "path": ".github/workflows/ui-quality.yml",
+      "type": "blob",
+      "size": 2306,
+      "sha": "4258fea25bc647ab702f7f3278b0e9a338a70e6c",
+      "category": "CI/CD"
+    },
+    {
+      "path": ".github/workflows/video-logo-asset-check.yml",
+      "type": "blob",
+      "size": 593,
+      "sha": "44e2773dcdf485f09c966404ca753e178ff395c7",
+      "category": "CI/CD"
+    },
+    {
+      "path": ".gitignore",
+      "type": "blob",
+      "size": 35,
+      "sha": "a7c66f6e8f86ca1bb8ee8bf737ff76fd3fdfb2e9",
+      "category": "Otro"
+    },
+    {
+      "path": ".nojekyll",
+      "type": "blob",
+      "size": 0,
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "category": "Otro"
+    },
+    {
+      "path": "AGENTS.md",
+      "type": "blob",
+      "size": 2639,
+      "sha": "572a91639d9cc7a700c607334b939d00be9956c7",
+      "category": "Otro"
+    },
+    {
+      "path": "FIREBASE_COMUNIDAD_SETUP.md",
+      "type": "blob",
+      "size": 3033,
+      "sha": "d86b0319e38a8b4184ea92e4c0e9375d28fb2669",
+      "category": "Otro"
+    },
+    {
+      "path": "GOOGLE_LOGIN_SETUP.md",
+      "type": "blob",
+      "size": 1963,
+      "sha": "4fa2175fd5c7eb9d52121358f4945231a297869d",
+      "category": "Otro"
+    },
+    {
+      "path": "MEDIOS_AUTORIZADOS.md",
+      "type": "blob",
+      "size": 5670,
+      "sha": "7704cb069ac5a7b0e28e2add73a20ce215c041c7",
+      "category": "Otro"
+    },
+    {
+      "path": "README.md",
+      "type": "blob",
+      "size": 4273,
+      "sha": "b38f3b393def7b163996b3ceb499a7bb0722eab5",
+      "category": "Otro"
+    },
+    {
+      "path": "SPANISH_SYNOPSES.md",
+      "type": "blob",
+      "size": 1434,
+      "sha": "b316521866176cee491a20364fd949b439c99fd0",
+      "category": "Otro"
+    },
+    {
+      "path": "airing-ui.css",
+      "type": "blob",
+      "size": 5127,
+      "sha": "4568cae16d2f3c4ab4916c4eae6dd0eba640739a",
+      "category": "Estilo"
+    },
+    {
+      "path": "airing-ui.js",
+      "type": "blob",
+      "size": 12533,
+      "sha": "0fca77b2af7f97ea72f18cb6584310e41d96aef8",
+      "category": "JavaScript"
+    },
+    {
+      "path": "app.js",
+      "type": "blob",
+      "size": 17936,
+      "sha": "41faee9acb98a1347f7bf8ece7e537ce25d4933c",
+      "category": "JavaScript"
+    },
+    {
+      "path": "assets",
+      "type": "tree",
+      "sha": "9f8568f8ccf717281db1edb9ef2811b5a19ac075",
+      "category": "Otro"
+    },
+    {
+      "path": "assets/1up-anime-app-icon-512.png",
+      "type": "blob",
+      "size": 192439,
+      "sha": "701aae8e5f5f6bbeda3e875a9cf659877187e685",
+      "category": "Asset"
+    },
+    {
+      "path": "assets/1up-anime-intro-firma-3seg.mp4",
+      "type": "blob",
+      "size": 1626365,
+      "sha": "6a3e22d764fba80fb6b46288a7e1955646bd1977",
+      "category": "Asset"
+    },
+    {
+      "path": "assets/1up-anime-logo-poster.jpg",
+      "type": "blob",
+      "size": 182083,
+      "sha": "3d063cc58b2467775059527689b4ecae9206458d",
+      "category": "Asset"
+    },
+    {
+      "path": "assets/icon-180.png",
+      "type": "blob",
+      "size": 19628,
+      "sha": "865e7996f2dc989d190e20ae6bc7737b426f904a",
+      "category": "Asset"
+    },
+    {
+      "path": "assets/icon-192.png",
+      "type": "blob",
+      "size": 21266,
+      "sha": "66a3c2ed0bd2438642a8ece6da992da136176b50",
+      "category": "Asset"
+    },
+    {
+      "path": "assets/icon-512.png",
+      "type": "blob",
+      "size": 70724,
+      "sha": "75931b63d125b1864df5c4dc68f907515e109f0f",
+      "category": "Asset"
+    },
+    {
+      "path": "assets/icon.svg",
+      "type": "blob",
+      "size": 1353,
+      "sha": "7314582d2dff413246d70b7ac46c2279e1f577e1",
+      "category": "Asset"
+    },
+    {
+      "path": "assets/oneup-crest.svg",
+      "type": "blob",
+      "size": 3514,
+      "sha": "b5fda9eaf63c79a16dd67de79df39947f78d45a5",
+      "category": "Asset"
+    },
+    {
+      "path": "assets/oneup-mascot.svg",
+      "type": "blob",
+      "size": 3126,
+      "sha": "cac5272270d15841572f8fe9ca7ca9652e55c19f",
+      "category": "Asset"
+    },
+    {
+      "path": "auth-config.js",
+      "type": "blob",
+      "size": 386,
+      "sha": "1a3adc56335aa93027b09604b0c7a090721d1f17",
+      "category": "JavaScript"
+    },
+    {
+      "path": "auth-google.js",
+      "type": "blob",
+      "size": 2250,
+      "sha": "600a53e28018a054df7fac7419c8579cd99b8761",
+      "category": "JavaScript"
+    },
+    {
+      "path": "auth.js",
+      "type": "blob",
+      "size": 5160,
+      "sha": "398720dccadaad86ea2d490998ccda98031bcde3",
+      "category": "JavaScript"
+    },
+    {
+      "path": "brand-v2.css",
+      "type": "blob",
+      "size": 7265,
+      "sha": "c2b6a66ab69c37ec288f284b722ce2748f3f0f09",
+      "category": "Estilo"
+    },
+    {
+      "path": "catalog-plus.js",
+      "type": "blob",
+      "size": 10628,
+      "sha": "156e10d83c927c03b5b89ef8f982983e795ea714",
+      "category": "JavaScript"
+    },
+    {
+      "path": "community.css",
+      "type": "blob",
+      "size": 11407,
+      "sha": "10145441d05041374c8ea0d6a994f6e584a816c8",
+      "category": "Estilo"
+    },
+    {
+      "path": "community.js",
+      "type": "blob",
+      "size": 18040,
+      "sha": "3b4a3693922702e8a4246b358980d82576974851",
+      "category": "JavaScript"
+    },
+    {
+      "path": "comunidad.html",
+      "type": "blob",
+      "size": 8530,
+      "sha": "b25a98ed46c89152e20abe069cfe8960be2b430b",
+      "category": "Página"
+    },
+    {
+      "path": "config",
+      "type": "tree",
+      "sha": "7a966c316c51a240c0d0321523ded490ab8c9057",
+      "category": "Otro"
+    },
+    {
+      "path": "config/dexter-providers.json",
+      "type": "blob",
+      "size": 3772,
+      "sha": "64d4cf6079ac672e83e30f337103ff601d23061d",
+      "category": "JSON"
+    },
+    {
+      "path": "data",
+      "type": "tree",
+      "sha": "81ae686a30317d05d3c9e0abe7a8d4478b4364c2",
+      "category": "Otro"
+    },
+    {
+      "path": "data/airing.json",
+      "type": "blob",
+      "size": 450692,
+      "sha": "bc05ccc096834d97eb14faa49a8139c628ef87eb",
+      "category": "Datos/config"
+    },
+    {
+      "path": "data/catalog.json",
+      "type": "blob",
+      "size": 223644,
+      "sha": "5eb4af5c14b88d968c6f61ecd2ec7659e32ae8f2",
+      "category": "Datos/config"
+    },
+    {
+      "path": "data/dexter",
+      "type": "tree",
+      "sha": "5f9983ce1c901b7f8cf08c7cc955f42ab632376f",
+      "category": "Datos/config"
+    },
+    {
+      "path": "data/dexter/history.json",
+      "type": "blob",
+      "size": 2634,
+      "sha": "976f73876912840209578c1ad8b6992481fe2df6",
+      "category": "Datos/config"
+    },
+    {
+      "path": "data/dexter/records.json",
+      "type": "blob",
+      "size": 224460,
+      "sha": "c7ed6325118a29f99f1afa845cb2a1cf4aec1aa2",
+      "category": "Datos/config"
+    },
+    {
+      "path": "data/dexter/status.json",
+      "type": "blob",
+      "size": 3259,
+      "sha": "ff7a7183ac1984f19ece52ce01d921f248a9d710",
+      "category": "Datos/config"
+    },
+    {
+      "path": "data/external-providers.json",
+      "type": "blob",
+      "size": 1816,
+      "sha": "bcf9dc2d0ddd012aa36a1a20ff185be82f4aecb4",
+      "category": "Datos/config"
+    },
+    {
+      "path": "data/guard",
+      "type": "tree",
+      "sha": "38f8c99a5b90fd123fadbbbc8b420029414568c3",
+      "category": "Datos/config"
+    },
+    {
+      "path": "data/guard/history.json",
+      "type": "blob",
+      "size": 851,
+      "sha": "a72705bf9801cbf26194b064916ad444fc8a3d6b",
+      "category": "Datos/config"
+    },
+    {
+      "path": "data/guard/status.json",
+      "type": "blob",
+      "size": 8554,
+      "sha": "896664d547721aa1c274ec40f1d76f7784103e3b",
+      "category": "Datos/config"
+    },
+    {
+      "path": "data/guild-license.json",
+      "type": "blob",
+      "size": 1613,
+      "sha": "52a67631d2ecc6a9bff0def713bdb24ea71308d0",
+      "category": "Datos/config"
+    },
+    {
+      "path": "data/licensed-media.json",
+      "type": "blob",
+      "size": 153,
+      "sha": "ec3fd56798f97ee4082071a4a7a1412da7025844",
+      "category": "Datos/config"
+    },
+    {
+      "path": "data/sinopsis-editoriales-es.json",
+      "type": "blob",
+      "size": 614,
+      "sha": "b91f7a99635bcb7c2c2dc8fddae68b54ff195751",
+      "category": "Datos/config"
+    },
+    {
+      "path": "data/translations-es.json",
+      "type": "blob",
+      "size": 153302,
+      "sha": "b7828c6b3281b70b22894fe7876ebe967d05bf71",
+      "category": "Datos/config"
+    },
+    {
+      "path": "design-plus.css",
+      "type": "blob",
+      "size": 7808,
+      "sha": "f0082e4e9efe3381e784dfea3fa831f4ce8cb389",
+      "category": "Estilo"
+    },
+    {
+      "path": "docs",
+      "type": "tree",
+      "sha": "97ed00e85c0a376cd7c5b25a75c537e86d3cc657",
+      "category": "Otro"
+    },
+    {
+      "path": "docs/ART_DIRECTION_CINEMATIC_2026.md",
+      "type": "blob",
+      "size": 6586,
+      "sha": "25fd9df44ab680a769baa59735d8e3cac849cbf0",
+      "category": "Documentación"
+    },
+    {
+      "path": "docs/CODEX_OMEGA_SWARM_MISSION.md",
+      "type": "blob",
+      "size": 10962,
+      "sha": "73c2cf99c5a72519d509056777f645bc48299daa",
+      "category": "Documentación"
+    },
+    {
+      "path": "docs/ENGINE_LISA_FUENTES.md",
+      "type": "blob",
+      "size": 3595,
+      "sha": "59a6b3a23347b9eacaac50be3abdd4b37f3e04d6",
+      "category": "Documentación"
+    },
+    {
+      "path": "docs/FREE_STREAMING_ARCHITECTURE.md",
+      "type": "blob",
+      "size": 3324,
+      "sha": "b4b87b03137af4e7b8e22c7f8224e9826bd9959b",
+      "category": "Documentación"
+    },
+    {
+      "path": "docs/HLS_COMPATIBILIDAD.md",
+      "type": "blob",
+      "size": 2932,
+      "sha": "e50ef9f352f0b752a7bb0423820689d10dd64864",
+      "category": "Documentación"
+    },
+    {
+      "path": "docs/INTEGRACION_STREAMING_1UP_2026.md",
+      "type": "blob",
+      "size": 5741,
+      "sha": "81e9399740c8950c5907c0685fff83f5e9f1a67d",
+      "category": "Documentación"
+    },
+    {
+      "path": "docs/KOKOMI_FIDELITY_MATRIX.md",
+      "type": "blob",
+      "size": 7288,
+      "sha": "76c292a65052585b128fb1a06855b01799f4c3d7",
+      "category": "Documentación"
+    },
+    {
+      "path": "docs/OMEGA_AUDIT_20261016.md",
+      "type": "blob",
+      "size": 4346,
+      "sha": "03a00a97a438a6f5e47158fb086b1b8a46db8503",
+      "category": "Documentación"
+    },
+    {
+      "path": "docs/OMEGA_SWARM_BOARD.md",
+      "type": "blob",
+      "size": 7765,
+      "sha": "025ade26b99eec78b7b2ed7035e739de9d1afd6e",
+      "category": "Documentación"
+    },
+    {
+      "path": "docs/ONEUP_SELF_HEALING.md",
+      "type": "blob",
+      "size": 4008,
+      "sha": "593fa36b408bd54ca9d30e16ad256abdefeb467f",
+      "category": "Documentación"
+    },
+    {
+      "path": "docs/PROJECT_CONTINUITY.md",
+      "type": "blob",
+      "size": 16337,
+      "sha": "60928c5f53b584d0357010d614a9217b6ade7cd5",
+      "category": "Documentación"
+    },
+    {
+      "path": "docs/PROJECT_DECISIONS.md",
+      "type": "blob",
+      "size": 5469,
+      "sha": "796bc8787bfd23cc55077319f8da43df097fd374",
+      "category": "Documentación"
+    },
+    {
+      "path": "docs/STREAMING_IMPLEMENTATION.md",
+      "type": "blob",
+      "size": 4908,
+      "sha": "fac26e57150f7bb126499b03f177ecfb17d0096d",
+      "category": "Documentación"
+    },
+    {
+      "path": "docs/SUPABASE_COMUNIDAD.md",
+      "type": "blob",
+      "size": 5471,
+      "sha": "a70c561e899cad4eea310756f434c4d01072183e",
+      "category": "Documentación"
+    },
+    {
+      "path": "episode-comments.css",
+      "type": "blob",
+      "size": 3469,
+      "sha": "ea6105d015a238cea2614ef4522549daf46782f5",
+      "category": "Estilo"
+    },
+    {
+      "path": "episode-comments.js",
+      "type": "blob",
+      "size": 8063,
+      "sha": "b5be09f39a686fdb8aa62a2df6f852bf474373bc",
+      "category": "JavaScript"
+    },
+    {
+      "path": "episode-player.js",
+      "type": "blob",
+      "size": 17441,
+      "sha": "6bdbd1695b52f6f579aa8d05530c4e8c73e497b2",
+      "category": "JavaScript"
+    },
+    {
+      "path": "examples",
+      "type": "tree",
+      "sha": "fe59efcebf0559d38bb2c5dcbd617f6addf99e14",
+      "category": "Otro"
+    },
+    {
+      "path": "examples/licensed-media.example.json",
+      "type": "blob",
+      "size": 1373,
+      "sha": "a4618e878c347b76c337209359a2b1997d99b9e4",
+      "category": "JSON"
+    },
+    {
+      "path": "experience.css",
+      "type": "blob",
+      "size": 19571,
+      "sha": "a45fd1e0adda653fa7c660e26b15a1c15cf3e3d5",
+      "category": "Estilo"
+    },
+    {
+      "path": "experience.js",
+      "type": "blob",
+      "size": 10938,
+      "sha": "99bd9110820f9345f13e846d0fdf92f7eaf52757",
+      "category": "JavaScript"
+    },
+    {
+      "path": "external-providers.css",
+      "type": "blob",
+      "size": 6112,
+      "sha": "1d35ee0fe242992fb24a05a50376f3f09bc7b600",
+      "category": "Estilo"
+    },
+    {
+      "path": "external-providers.js",
+      "type": "blob",
+      "size": 5203,
+      "sha": "4972c0e2cd940cbe58034c6353202ee3937eae6e",
+      "category": "JavaScript"
+    },
+    {
+      "path": "firebase-config.js",
+      "type": "blob",
+      "size": 229,
+      "sha": "757904ca0cf2d8662f1fa5273eec2de9c4e1fab2",
+      "category": "JavaScript"
+    },
+    {
+      "path": "firebase.json",
+      "type": "blob",
+      "size": 365,
+      "sha": "57bf5eb173d102af9353dc68963e601f162ef44d",
+      "category": "JSON"
+    },
+    {
+      "path": "firestore.indexes.json",
+      "type": "blob",
+      "size": 1189,
+      "sha": "2b4ad57a57218344ce88183988fc836f8c585ae4",
+      "category": "JSON"
+    },
+    {
+      "path": "firestore.rules",
+      "type": "blob",
+      "size": 1816,
+      "sha": "9f56e46f35017705a80e9e9e9cdb6aacf31c2525",
+      "category": "Otro"
+    },
+    {
+      "path": "functions",
+      "type": "tree",
+      "sha": "1d14da3397b3164d429f7853571f83e7654dbb2f",
+      "category": "Otro"
+    },
+    {
+      "path": "functions/index.js",
+      "type": "blob",
+      "size": 19991,
+      "sha": "a01f4cef3de9b05fbb528b771b57d8607beb3840",
+      "category": "Firebase Cloud Functions"
+    },
+    {
+      "path": "functions/package.json",
+      "type": "blob",
+      "size": 508,
+      "sha": "8f58f830f3a3b90ed898f199165bb0ecb36a1caa",
+      "category": "Firebase Cloud Functions"
+    },
+    {
+      "path": "gremio.html",
+      "type": "blob",
+      "size": 9075,
+      "sha": "b925c0b760f44a95f5e9c62a6bb78124cd459b5d",
+      "category": "Página"
+    },
+    {
+      "path": "hls-adapter.js",
+      "type": "blob",
+      "size": 3327,
+      "sha": "f2c7c964473323026b2132bf71b420c04339da82",
+      "category": "JavaScript"
+    },
+    {
+      "path": "index.html",
+      "type": "blob",
+      "size": 13545,
+      "sha": "3746e832ace4bf44ea7da7cbde647ac48e05e3a7",
+      "category": "Página"
+    },
+    {
+      "path": "infra",
+      "type": "tree",
+      "sha": "b70fbd59ac335708c98cdb93a70c3e2b297a1ca3",
+      "category": "Otro"
+    },
+    {
+      "path": "infra/nginx",
+      "type": "tree",
+      "sha": "da5fdaec594272e6b813e35eef141290a30e6462",
+      "category": "Infraestructura ejemplo"
+    },
+    {
+      "path": "infra/nginx/oneup-media-origin.conf.example",
+      "type": "blob",
+      "size": 2192,
+      "sha": "89c6b9cdb0bebc76667801bd190549183de575c6",
+      "category": "Infraestructura ejemplo"
+    },
+    {
+      "path": "integrations",
+      "type": "tree",
+      "sha": "1dde32b2d4ccfb0215960c64afb7b6df3a4cc0c5",
+      "category": "Otro"
+    },
+    {
+      "path": "integrations/jkanime-v2",
+      "type": "tree",
+      "sha": "959ed17db166c4827949da24c291b5ebf0fd734f",
+      "category": "Integración"
+    },
+    {
+      "path": "integrations/jkanime-v2/check-api.mjs",
+      "type": "blob",
+      "size": 889,
+      "sha": "63bdfe86c356e2273ffdc0c9171f2012f1da44c5",
+      "category": "Integración"
+    },
+    {
+      "path": "integrations/jkanime-v2/discover-metadata.mjs",
+      "type": "blob",
+      "size": 2472,
+      "sha": "bc3fc82f18b107ae797de843a81ce6a94222e143",
+      "category": "Integración"
+    },
+    {
+      "path": "integrations/jkanime-v2/package.json",
+      "type": "blob",
+      "size": 423,
+      "sha": "29b6817e7d19218a1b40cde8989cc1b4c115f720",
+      "category": "Integración"
+    },
+    {
+      "path": "manifest.webmanifest",
+      "type": "blob",
+      "size": 680,
+      "sha": "600dc97550800a9f8bc552498ba353eddc334a2f",
+      "category": "Otro"
+    },
+    {
+      "path": "moderacion.css",
+      "type": "blob",
+      "size": 1429,
+      "sha": "00b8ca7d0f3d3768bd8ba2c8d43affe2923bd967",
+      "category": "Estilo"
+    },
+    {
+      "path": "moderacion.html",
+      "type": "blob",
+      "size": 2391,
+      "sha": "7e9dc5a80bf63809457ddb181e026df5f89057c2",
+      "category": "Página"
+    },
+    {
+      "path": "moderacion.js",
+      "type": "blob",
+      "size": 6722,
+      "sha": "3dabd260a39cf243b7ee4a2b2f890029fc989146",
+      "category": "JavaScript"
+    },
+    {
+      "path": "motion.css",
+      "type": "blob",
+      "size": 6781,
+      "sha": "042a1b44c95d35632877970a8eba640066825173",
+      "category": "Estilo"
+    },
+    {
+      "path": "motion.js",
+      "type": "blob",
+      "size": 2169,
+      "sha": "3ad3dc5e1ada628b4a180730639d5b615593956b",
+      "category": "JavaScript"
+    },
+    {
+      "path": "motor.css",
+      "type": "blob",
+      "size": 3798,
+      "sha": "591f42c539760104e59dab928f4496f7d8b73142",
+      "category": "Estilo"
+    },
+    {
+      "path": "motor.html",
+      "type": "blob",
+      "size": 4959,
+      "sha": "b9474f4fa666d995e974131486d005d931eeed84",
+      "category": "Página"
+    },
+    {
+      "path": "motor.js",
+      "type": "blob",
+      "size": 5645,
+      "sha": "95b200bab6d8d760e0241ca659c0e99588aa012b",
+      "category": "JavaScript"
+    },
+    {
+      "path": "player.css",
+      "type": "blob",
+      "size": 7167,
+      "sha": "3ddc7f8ef084ecacbaedb6f1a58de99ff50ca085",
+      "category": "Estilo"
+    },
+    {
+      "path": "preview-kokomi-mobile.html",
+      "type": "blob",
+      "size": 13374,
+      "sha": "38367e77f53fb7958c4552bf1e03602dac4a12eb",
+      "category": "Página"
+    },
+    {
+      "path": "preview-kokomi.html",
+      "type": "blob",
+      "size": 12526,
+      "sha": "dad2936eca44f3601934d0960828a85e9ddd8cb6",
+      "category": "Página"
+    },
+    {
+      "path": "preview-october.html",
+      "type": "blob",
+      "size": 12374,
+      "sha": "eb2ae230b7070444ec676715bc3af815d982e921",
+      "category": "Página"
+    },
+    {
+      "path": "robots.txt",
+      "type": "blob",
+      "size": 23,
+      "sha": "c2a49f4fb82f19ffa9089fcf8630e5a2870d3feb",
+      "category": "Otro"
+    },
+    {
+      "path": "scripts",
+      "type": "tree",
+      "sha": "b78207c92e1f6104b4410c0076a1454163eae667",
+      "category": "Otro"
+    },
+    {
+      "path": "scripts/build-icons.py",
+      "type": "blob",
+      "size": 884,
+      "sha": "fd4a39a9a565b57cbd057a8be6ba214eb79e73ef",
+      "category": "Script/QA"
+    },
+    {
+      "path": "scripts/check-guard.mjs",
+      "type": "blob",
+      "size": 1255,
+      "sha": "587e419c22603938f1e3dd2f2eb0ed17fa7a4b42",
+      "category": "Script/QA"
+    },
+    {
+      "path": "scripts/check-hls-browser.mjs",
+      "type": "blob",
+      "size": 5043,
+      "sha": "1ea1cb1c94747d3efcb13c9cca441d27020858d1",
+      "category": "Script/QA"
+    },
+    {
+      "path": "scripts/check-resilience.mjs",
+      "type": "blob",
+      "size": 3614,
+      "sha": "d95c686508b2c7a4662ab84a132fca423bbd0e6d",
+      "category": "Script/QA"
+    },
+    {
+      "path": "scripts/check-supabase-option.mjs",
+      "type": "blob",
+      "size": 3237,
+      "sha": "6c6c0881ada03641ce630cbdf2da6009f663a859",
+      "category": "Script/QA"
+    },
+    {
+      "path": "scripts/check-ui.mjs",
+      "type": "blob",
+      "size": 7961,
+      "sha": "dc691fb99fcdc1ea4b4a0a66d6273c284e3c4614",
+      "category": "Script/QA"
+    },
+    {
+      "path": "scripts/dexter-anime-sync.mjs",
+      "type": "blob",
+      "size": 13519,
+      "sha": "7be4a1cd117b06a87c455ce0cb3337291108f0df",
+      "category": "Script/QA"
+    },
+    {
+      "path": "scripts/e2e-browser.mjs",
+      "type": "blob",
+      "size": 20541,
+      "sha": "aa7165c61f8137c66107c6f9adc694743a376e14",
+      "category": "Script/QA"
+    },
+    {
+      "path": "scripts/e2e-kokomi-preview.mjs",
+      "type": "blob",
+      "size": 15511,
+      "sha": "9c68e53f518a8a9fc76b765751384648ec9eb8bd",
+      "category": "Script/QA"
+    },
+    {
+      "path": "scripts/e2e-player-languages.mjs",
+      "type": "blob",
+      "size": 5349,
+      "sha": "d3d94bf4c77d587ea91e4ed7424d5360530506ea",
+      "category": "Script/QA"
+    },
+    {
+      "path": "scripts/guard-alert.mjs",
+      "type": "blob",
+      "size": 1770,
+      "sha": "de1b1e64b82ab0ec33e6cf3221300f8634e074ee",
+      "category": "Script/QA"
+    },
+    {
+      "path": "scripts/media-source-contract.mjs",
+      "type": "blob",
+      "size": 4956,
+      "sha": "4aa0f8b233832c487d70d1e5b02ee313e5062101",
+      "category": "Script/QA"
+    },
+    {
+      "path": "scripts/oneup-guard.mjs",
+      "type": "blob",
+      "size": 11126,
+      "sha": "8f55dd6d1959e53ffdc41dd584624e6b5cc42c58",
+      "category": "Script/QA"
+    },
+    {
+      "path": "scripts/oneup-safe-push.sh",
+      "type": "blob",
+      "size": 1177,
+      "sha": "95945d5a6a392887b0efbe3bdf8f90b6c63b6d06",
+      "category": "Script/QA"
+    },
+    {
+      "path": "scripts/refresh-airing.mjs",
+      "type": "blob",
+      "size": 5926,
+      "sha": "5bfd25f301ba93ddad9f1856b1679de490c7780f",
+      "category": "Script/QA"
+    },
+    {
+      "path": "scripts/refresh-catalog.mjs",
+      "type": "blob",
+      "size": 3079,
+      "sha": "4c98759a90711166d99b3ddba234dbcfa80fb111",
+      "category": "Script/QA"
+    },
+    {
+      "path": "scripts/test-cache-catalog.mjs",
+      "type": "blob",
+      "size": 5206,
+      "sha": "d51d97a6704c298ed17a1f7bd016a47122e271f5",
+      "category": "Script/QA"
+    },
+    {
+      "path": "scripts/test-episode-comments.mjs",
+      "type": "blob",
+      "size": 3520,
+      "sha": "dfef7783f976bec1c9c7f4070f7d30eb12b633ac",
+      "category": "Script/QA"
+    },
+    {
+      "path": "scripts/test-episode-player.mjs",
+      "type": "blob",
+      "size": 9870,
+      "sha": "2e952def58bb2afdb7726f3576e257380c3fdb79",
+      "category": "Script/QA"
+    },
+    {
+      "path": "scripts/test-media-source-contract.mjs",
+      "type": "blob",
+      "size": 5508,
+      "sha": "37877a57bd91fb42594ee87d0c6adf0660426717",
+      "category": "Script/QA"
+    },
+    {
+      "path": "scripts/test-navigation-race.mjs",
+      "type": "blob",
+      "size": 2665,
+      "sha": "a93ff9bda0178222ddc4257f0eee7ccd7f098713",
+      "category": "Script/QA"
+    },
+    {
+      "path": "scripts/test-safe-push.sh",
+      "type": "blob",
+      "size": 1766,
+      "sha": "63a1ff5694892b7e2ba68bb1e6ebc8e622b73504",
+      "category": "Script/QA"
+    },
+    {
+      "path": "scripts/translate-catalog.py",
+      "type": "blob",
+      "size": 6897,
+      "sha": "cdb06a65c2b3064d288b2e0a165c88e5f6361431",
+      "category": "Script/QA"
+    },
+    {
+      "path": "scripts/verify-video-logo.mjs",
+      "type": "blob",
+      "size": 1131,
+      "sha": "e772341e988ab419546667a70a68b62441d7d5b2",
+      "category": "Script/QA"
+    },
+    {
+      "path": "scripts/video_a_subtitulos.py",
+      "type": "blob",
+      "size": 4875,
+      "sha": "7d3410d3dd38fc788e4664fee19eda80794ae91c",
+      "category": "Script/QA"
+    },
+    {
+      "path": "skills",
+      "type": "tree",
+      "sha": "3c7cae883dda3d8a5c3510b21b429bd9e1c5515f",
+      "category": "Otro"
+    },
+    {
+      "path": "skills/oneup-motion-director",
+      "type": "tree",
+      "sha": "7da0cf151a7b3fa71b3750fd8d479a997a72ddf6",
+      "category": "Otro"
+    },
+    {
+      "path": "skills/oneup-motion-director/SKILL.md",
+      "type": "blob",
+      "size": 3489,
+      "sha": "b505fb74c0a8e2fa209a631959f4a79e15e3f1a7",
+      "category": "Otro"
+    },
+    {
+      "path": "social-backend.js",
+      "type": "blob",
+      "size": 10605,
+      "sha": "df2df3f1f444aa1226cb70738c127a2205d30375",
+      "category": "JavaScript"
+    },
+    {
+      "path": "social-config.js",
+      "type": "blob",
+      "size": 499,
+      "sha": "9951d305df127468cedb4dbf5abd33c5e7025f04",
+      "category": "JavaScript"
+    },
+    {
+      "path": "sonic.js",
+      "type": "blob",
+      "size": 4331,
+      "sha": "14361ac808a0e6aa415aef041d2a604c0c96b8d8",
+      "category": "JavaScript"
+    },
+    {
+      "path": "spotlight.css",
+      "type": "blob",
+      "size": 11354,
+      "sha": "6d50d3857a8a6348984de24b4ba5d3351414b6a4",
+      "category": "Estilo"
+    },
+    {
+      "path": "storage.rules",
+      "type": "blob",
+      "size": 1008,
+      "sha": "2faef14083ff8af4204628b38138d9820d1f972d",
+      "category": "Otro"
+    },
+    {
+      "path": "studio.css",
+      "type": "blob",
+      "size": 21015,
+      "sha": "9a42bd7a9d5c665cf2209edc800f24bdd45a04dc",
+      "category": "Estilo"
+    },
+    {
+      "path": "studio.html",
+      "type": "blob",
+      "size": 11217,
+      "sha": "6237a8d71d03d4bc03710aaeccd8fa48409da4aa",
+      "category": "Página"
+    },
+    {
+      "path": "studio.js",
+      "type": "blob",
+      "size": 47086,
+      "sha": "c06571002ee1d588b3f09ea86db02f5033f95685",
+      "category": "JavaScript"
+    },
+    {
+      "path": "styles.css",
+      "type": "blob",
+      "size": 14691,
+      "sha": "2a8c5edc04e5d619fad2b3ae49d7c35dd4e0e3bc",
+      "category": "Estilo"
+    },
+    {
+      "path": "supabase-config.js",
+      "type": "blob",
+      "size": 212,
+      "sha": "2f45dc852ea68fc91dc766c49071b1dcbab656cb",
+      "category": "JavaScript"
+    },
+    {
+      "path": "supabase-episode-backend.js",
+      "type": "blob",
+      "size": 6334,
+      "sha": "3b4adf77779190ed0a2dea0437eac16b43aba408",
+      "category": "JavaScript"
+    },
+    {
+      "path": "supabase",
+      "type": "tree",
+      "sha": "be040724afe007ee484f1837ce8f0fbbd18d88d8",
+      "category": "Otro"
+    },
+    {
+      "path": "supabase/sql",
+      "type": "tree",
+      "sha": "93bdc768434f0770c6ae11e7d240c1a45db2efdf",
+      "category": "Supabase"
+    },
+    {
+      "path": "supabase/sql/oneup_community_optional.sql",
+      "type": "blob",
+      "size": 8078,
+      "sha": "cca63fe3b3fd13d852fa77d282dfb560c2eba830",
+      "category": "Supabase"
+    },
+    {
+      "path": "sw.js",
+      "type": "blob",
+      "size": 4384,
+      "sha": "f1487087391fe88403a8af632463b3cb51c90d78",
+      "category": "JavaScript"
+    },
+    {
+      "path": "themes",
+      "type": "tree",
+      "sha": "732e06c031897d8602711d039e0fa21f05d66889",
+      "category": "Otro"
+    },
+    {
+      "path": "themes/kokomi-mobile-preview",
+      "type": "tree",
+      "sha": "de82b8243a0d4ca4ad01c21803a09abc02255b33",
+      "category": "Tema/diseño"
+    },
+    {
+      "path": "themes/kokomi-mobile-preview/README.md",
+      "type": "blob",
+      "size": 5203,
+      "sha": "a8e49a94668ba50b98d6471045918aaf95312714",
+      "category": "Tema/diseño"
+    },
+    {
+      "path": "themes/kokomi-mobile-preview/brand-signature.css",
+      "type": "blob",
+      "size": 2962,
+      "sha": "2eefe648fd74faf3ca961d0b17c0737d77f942f5",
+      "category": "Tema/diseño"
+    },
+    {
+      "path": "themes/kokomi-mobile-preview/brand-signature.js",
+      "type": "blob",
+      "size": 5323,
+      "sha": "9b11a3477c9950251a6926843240bdfffb1d4915",
+      "category": "Tema/diseño"
+    },
+    {
+      "path": "themes/kokomi-mobile-preview/pages.css",
+      "type": "blob",
+      "size": 13773,
+      "sha": "ab1b8bd73ee31d26a43bd6e75909101c44233514",
+      "category": "Tema/diseño"
+    },
+    {
+      "path": "themes/kokomi-mobile-preview/pages.js",
+      "type": "blob",
+      "size": 18706,
+      "sha": "b4da51c5735ef2c20f9269a885b3c859a658383b",
+      "category": "Tema/diseño"
+    },
+    {
+      "path": "themes/kokomi-mobile-preview/theme.css",
+      "type": "blob",
+      "size": 13771,
+      "sha": "746f222751746c2d4fc75fb5b5af87c85ce4c6da",
+      "category": "Tema/diseño"
+    },
+    {
+      "path": "themes/kokomi-mobile-preview/theme.js",
+      "type": "blob",
+      "size": 7745,
+      "sha": "be6be92364aca93f57f058c06bb0e326bdb0b731",
+      "category": "Tema/diseño"
+    },
+    {
+      "path": "themes/kokomi-mobile-preview/watch-comments.css",
+      "type": "blob",
+      "size": 3973,
+      "sha": "cdc02991c8f5f8e09e585b71395ebcc17825df1a",
+      "category": "Tema/diseño"
+    },
+    {
+      "path": "themes/kokomi-mobile-preview/watch-comments.js",
+      "type": "blob",
+      "size": 7275,
+      "sha": "e04d498883396a39199c01c15480377022bda0aa",
+      "category": "Tema/diseño"
+    },
+    {
+      "path": "themes/kokomi-studio",
+      "type": "tree",
+      "sha": "c7e45ef5806f6e6de04f42f8ccd5a644ab806e69",
+      "category": "Tema/diseño"
+    },
+    {
+      "path": "themes/kokomi-studio/README.md",
+      "type": "blob",
+      "size": 2837,
+      "sha": "7666b5ca113fe00ac475790545dfe104cbefd56e",
+      "category": "Tema/diseño"
+    },
+    {
+      "path": "themes/kokomi-studio/theme.css",
+      "type": "blob",
+      "size": 21806,
+      "sha": "e0da781853097473eb8ec2ca1f432e04f4b19557",
+      "category": "Tema/diseño"
+    },
+    {
+      "path": "themes/kokomi-studio/theme.js",
+      "type": "blob",
+      "size": 6687,
+      "sha": "6c01ab63b35085fdb24b8ec8dad3384826700672",
+      "category": "Tema/diseño"
+    },
+    {
+      "path": "themes/october-2026",
+      "type": "tree",
+      "sha": "7c78961c998565330127a624e1ce2aef50076fd6",
+      "category": "Tema/diseño"
+    },
+    {
+      "path": "themes/october-2026/README.md",
+      "type": "blob",
+      "size": 2853,
+      "sha": "7aee9552b0cb887850e40ce8f9d4c5bae4f48a40",
+      "category": "Tema/diseño"
+    },
+    {
+      "path": "themes/october-2026/arcane-seal.svg",
+      "type": "blob",
+      "size": 1521,
+      "sha": "32408f7e894f513cbdf173badfb1ed0a5e473bb3",
+      "category": "Tema/diseño"
+    },
+    {
+      "path": "themes/october-2026/theme.css",
+      "type": "blob",
+      "size": 19223,
+      "sha": "c700f69f9453084e5afcf200f7e7db8897c0cfa9",
+      "category": "Tema/diseño"
+    },
+    {
+      "path": "themes/october-2026/theme.js",
+      "type": "blob",
+      "size": 11590,
+      "sha": "d23ba9813914a57fa0c69e67cee02e1e1e5fbe1f",
+      "category": "Tema/diseño"
+    }
+  ]
+}
