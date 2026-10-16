@@ -240,7 +240,10 @@ function init(){
  const line=$('.limited-tag');
  if(line)line.textContent='OCTUBRE 2026 · ESPECIAL HALLOWEEN';
  const anchor=$('#home-screen .marquee');
- if(anchor)anchor.insertAdjacentHTML('afterend',featureHTML());
+ if(anchor){
+  const editorialEnd=$('#oneup-studio-airing')||anchor;
+  editorialEnd.insertAdjacentHTML('afterend',featureHTML());
+ }
  audioControl();
  activateEditorialMotion();
  activateParallax();
