@@ -98,7 +98,12 @@ function audioControl(){
   visibleAudioLabel(btn);
   if(audioEnabled)void playSting();
  });
- document.body.appendChild(btn);
+ const row=document.createElement('div');
+ row.className='oct-sound-wrap';
+ row.appendChild(btn);
+ const actions=$('.hero .hero-actions');
+ if(actions)actions.after(row);
+ else $('.hero-copy')?.appendChild(row);
 }
 async function fetchFeature(){
  const q='query { Page(page:1,perPage:10){ media(search:"Black Clover",type:ANIME,sort:[START_DATE_DESC]){id idMal isAdult format seasonYear startDate{year}title{english romaji} coverImage{extraLarge large} bannerImage description(asHtml:false) episodes averageScore genres } } }';
