@@ -1,76 +1,9 @@
 {
-  "updated": "2026-10-15T22:51:37.439Z",
+  "updated": "2026-10-16T03:33:26.411Z",
   "source": "AniList public GraphQL metadata",
-  "windowStart": 1791906688,
-  "windowEnd": 1792882288,
+  "windowStart": 1791923595,
+  "windowEnd": 1792899195,
   "airing": [
-    {
-      "id": "mal-63489",
-      "mal_id": 63489,
-      "ani_id": 207809,
-      "title": "Red River",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx207809-cpS7CAyjN7iP.jpg",
-      "banner": "",
-      "description": "After a mysterious hand drags her beneath a puddle, modern Japanese teenager Yuri awakens in the Hittite Empire of the 14th century BCE. Thrust into a deadly struggle for the throne, she joins Prince Kail to battle assassins, outwit royal conspiracies, and survive a world at war. As her exploits earn her renown as the goddess Ishtar, Yuri must choose between her old life and an uncertain future. (Source: Crunchyroll)",
-      "year": 2026,
-      "startDate": "2026-07-08",
-      "format": "TV",
-      "episodes": 24,
-      "averageScore": 61,
-      "status": "RELEASING",
-      "genres": [
-        "Action",
-        "Adventure",
-        "Drama",
-        "Fantasy",
-        "Romance"
-      ],
-      "siteUrl": "https://anilist.co/anime/207809",
-      "trailer": {
-        "site": "youtube",
-        "id": "qpFcQ1Bek08"
-      },
-      "next": {
-        "at": 1792514100,
-        "episode": 16
-      },
-      "airingAt": 1791909300,
-      "episode": 15,
-      "scheduleId": 418950,
-      "description_es": "Después de una mano misteriosa la arrastra debajo de un charco, moderno adolescente japonés Yuri despierta en el imperio hitita del siglo 14 AC. Entró en una lucha mortal por el trono, se une al Príncipe Kail para combatir a asesinos, superar conspiraciones reales y sobrevivir a un mundo en guerra. Mientras sus hazañas ganan su renombre como la diosa Ishtar, Yuri debe elegir entre su vida vieja y un futuro incierto. (Fuente: Crunchyroll)"
-    },
-    {
-      "id": "mal-59415",
-      "mal_id": 59415,
-      "ani_id": 179876,
-      "title": "DARK MACHINE THE ANIMATION",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx179876-Wg62CAzp5WQ1.jpg",
-      "banner": "",
-      "description": "Following his grandfather’s will to “seek out the Senki,” the protagonist Kairi visits Golden Valley, a special Dark Machine economic zone. There, he meets a mysterious girl named Rudra. Dragged into becoming a Dark Machine player by Rudra, Kairi’s talent gradually blossoms over the course of many intense battles. (Source: Fuji Creative) Note: Part of the \"DARK MACHINE\" Web3 cross-media project where the story of the Game and its anime adaptation intertwine.",
-      "year": 2026,
-      "startDate": "2026-10-14",
-      "format": "TV",
-      "episodes": 11,
-      "averageScore": 51,
-      "status": "RELEASING",
-      "genres": [
-        "Mecha",
-        "Sci-Fi"
-      ],
-      "siteUrl": "https://anilist.co/anime/179876",
-      "trailer": {
-        "site": "youtube",
-        "id": "Tvvs_SlUYgA"
-      },
-      "next": {
-        "at": 1792514700,
-        "episode": 2
-      },
-      "airingAt": 1791909900,
-      "episode": 1,
-      "scheduleId": 419634,
-      "description_es": "Siguiendo la voluntad de su abuelo de “buscar el Senki”, el protagonista Kairi visita Golden Valley, una zona económica especial de la máquina oscura. Allí, conoce a una chica misteriosa llamada Rudra. Se convirtió en un jugador de la máquina oscura por Rudra, el talento de Kairi florece gradualmente en el curso de muchas batallas intensas. (Fuente: Fuji Creative) Nota: Parte del proyecto \"DARK MACHINE\" Web3 cross-media donde se entrelazan la historia del juego y su adaptación de anime."
-    },
     {
       "id": "al-218008",
       "mal_id": null,
@@ -917,8 +850,8 @@
       "siteUrl": "https://anilist.co/anime/217577",
       "trailer": null,
       "next": {
-        "at": 1792111800,
-        "episode": 3
+        "at": 1792716600,
+        "episode": 4
       },
       "airingAt": 1792111800,
       "episode": 3,
@@ -951,8 +884,8 @@
         "id": "4HJNiZV0HJ4"
       },
       "next": {
-        "at": 1792119600,
-        "episode": 11
+        "at": 1792724400,
+        "episode": 12
       },
       "airingAt": 1792119600,
       "episode": 11,
@@ -3371,7 +3304,7 @@
       "airingAt": 1792418400,
       "episode": 9,
       "scheduleId": 419856,
-      "description_es": "La destrucción se desploma al final de la Guerra de la Sangre Mil Años entre los Reapers del Alma y las Quincias... mientras la muerte del Rey del Alma refleja el colapso de los Tres Mundos, las distorsiones y los presagios de destrucción comienzan a aparecer en todos los reinos. Quince batallas surgieron a lo largo de la Wahr Welt entre los 13 escuadrones de la Guardia de la Corte y la Guardia Real. Ichigo aprende sobre las verdaderas intenciones de Uryuu y renueva su determinación de proteger el mundo juntos, como amigos que confían entre sí. Yhwach ha superado incluso su propia habilidad, el Todopoderoso... La feroz batalla por la supervivencia de la aplicación Tres Mundos"
+      "description_es": "La destrucción se desploma al final de la Guerra de la Sangre Mil Años entre los Reapers del Alma y las Quincias... mientras la muerte del Rey del Alma refleja el colapso de los Tres Mundos, las distorsiones y los presagios de destrucción comienzan a aparecer en todos los reinos. En todo el Wahr Welt surgieron batallas entre los 13 escuadrones de la Guardia de la Corte y la Guardia Real. Ichigo aprende sobre las verdaderas intenciones de Uryuu y renueva su determinación de proteger el mundo juntos"
     },
     {
       "id": "mal-54344",
@@ -4848,8 +4781,8 @@
       "siteUrl": "https://anilist.co/anime/217577",
       "trailer": null,
       "next": {
-        "at": 1792111800,
-        "episode": 3
+        "at": 1792716600,
+        "episode": 4
       },
       "airingAt": 1792716600,
       "episode": 4,
@@ -4882,8 +4815,8 @@
         "id": "4HJNiZV0HJ4"
       },
       "next": {
-        "at": 1792119600,
-        "episode": 11
+        "at": 1792724400,
+        "episode": 12
       },
       "airingAt": 1792724400,
       "episode": 12,
@@ -6194,6 +6127,214 @@
       "episode": 4,
       "scheduleId": 422357,
       "description_es": "La historia se centra en la vida diaria de un perro de mapache que no está bien con él y un zorro malicioso que le gusta burlar al perro de mapache. Los dos son amigos cercanos que viven juntos en una montaña. Sus otros amigos incluyen un lobo, un oso, un conejo y aves. (Fuente: Anime News Network)"
+    },
+    {
+      "id": "mal-60534",
+      "mal_id": 60534,
+      "ani_id": 185646,
+      "title": "Koupen-chan",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx185646-2eGmsnaSHiLC.jpg",
+      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/185646-69FyAu3rfhEC.jpg",
+      "description": "The story of the series follows the everyday adventures of Koupen-chan and his friends as they enjoy the little things in life. (Source: Crunchyroll News, edited)",
+      "year": 2025,
+      "startDate": "2025-04-06",
+      "format": "TV_SHORT",
+      "episodes": 0,
+      "averageScore": 69,
+      "status": "RELEASING",
+      "genres": [
+        "Slice of Life"
+      ],
+      "siteUrl": "https://anilist.co/anime/185646",
+      "trailer": {
+        "site": "youtube",
+        "id": "L4wurjkd0JM"
+      },
+      "next": {
+        "at": 1792278000,
+        "episode": 81
+      },
+      "airingAt": 1792882800,
+      "episode": 82,
+      "scheduleId": 412318,
+      "description_es": "La historia de la serie sigue las aventuras cotidianas de Koupen-chan y sus amigos mientras disfrutan de las pequeñas cosas en la vida. (Fuente: Crunchyroll News, editado)"
+    },
+    {
+      "id": "mal-63042",
+      "mal_id": 63042,
+      "ani_id": 202957,
+      "title": "Star Detective Precure!",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx202957-fxZGgJTvwXzP.jpg",
+      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/202957-B9U0hNv2Dqap.jpg",
+      "description": "Anna Akechi is a second-year junior high student living in Makoto Mirai Town. On her 14th birthday, she has a chance encounter with a fairy named Pochitan, and a magical pendant caused her to travel back in time from 2027 to 1999! In the Makoto Mirai Town 28 years in the past, Anna meets Mikuru Kobayashi, a girl her age who wants to become a great detective. Meanwhile, people in town are in trouble as their prized possessions are being stolen from under their noses - the cause being a group of Phantom Thieves. To stop them, Anna and Mikuru turn into Precures! Maybe if they solve these mysteries, Anna can find her way back to her own time? (Source: Official Website, translated)",
+      "year": 2026,
+      "startDate": "2026-02-01",
+      "format": "TV",
+      "episodes": 51,
+      "averageScore": 76,
+      "status": "RELEASING",
+      "genres": [
+        "Mahou Shoujo",
+        "Mystery"
+      ],
+      "siteUrl": "https://anilist.co/anime/202957",
+      "trailer": {
+        "site": "youtube",
+        "id": "qjozo1fh7OI"
+      },
+      "next": {
+        "at": 1792279800,
+        "episode": 38
+      },
+      "airingAt": 1792884600,
+      "episode": 39,
+      "scheduleId": 411679,
+      "description_es": "Anna Akechi es una estudiante de segundo año que vive en la ciudad de Makoto Mirai. En su 14o cumpleaños, tiene un encuentro casual con un hada llamado Pochitan, y un colgante mágico la hizo viajar de nuevo en el tiempo de 2027 a 1999! En la ciudad de Makoto Mirai 28 años en el pasado, Anna se encuentra con Mikuru Kobayashi, una chica de su edad que quiere convertirse en una gran detective. Mientras tanto, la gente en la ciudad está en problemas ya que sus posesiones apreciadas están siendo robadas bajo sus narices - la causa es un grupo de ladrones Fantasma. Para detenerlos, Anna y Mikuru se convierten en Precures! Tal vez si resuelven estos misterios"
+    },
+    {
+      "id": "al-216860",
+      "mal_id": null,
+      "ani_id": 216860,
+      "title": "Punirunes Puni 4",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx216860-ghfSopHbPVNa.png",
+      "banner": "",
+      "description": "Fourth season of Punirunes .",
+      "year": 2026,
+      "startDate": "2026-10-04",
+      "format": "TV_SHORT",
+      "episodes": 0,
+      "averageScore": 0,
+      "status": "RELEASING",
+      "genres": [
+        "Slice of Life"
+      ],
+      "siteUrl": "https://anilist.co/anime/216860",
+      "trailer": null,
+      "next": {
+        "at": 1792282560,
+        "episode": 3
+      },
+      "airingAt": 1792887360,
+      "episode": 4,
+      "scheduleId": 420093,
+      "description_es": "Cuarta temporada de Punirunes ."
+    },
+    {
+      "id": "mal-63352",
+      "mal_id": 63352,
+      "ani_id": 206523,
+      "title": "Onegai AiPri",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx206523-2IaJCk4R7i63.jpg",
+      "banner": "",
+      "description": "The latest entry in the Pretty Series franchise and a new chapter in the AiPri series. Note: Relations are provisional and will be updated when more info is announced.",
+      "year": 2026,
+      "startDate": "2026-04-05",
+      "format": "TV",
+      "episodes": 0,
+      "averageScore": 54,
+      "status": "RELEASING",
+      "genres": [
+        "Music"
+      ],
+      "siteUrl": "https://anilist.co/anime/206523",
+      "trailer": {
+        "site": "youtube",
+        "id": "j5MgjyhhUBc"
+      },
+      "next": {
+        "at": 1792283400,
+        "episode": 29
+      },
+      "airingAt": 1792888200,
+      "episode": 30,
+      "scheduleId": 410158,
+      "description_es": "La última entrada en la franquicia Pretty Series y un nuevo capítulo en la serie AiPri. Nota: Las relaciones son provisionales y se actualizarán cuando se anuncie más información."
+    },
+    {
+      "id": "mal-64211",
+      "mal_id": 64211,
+      "ani_id": 217787,
+      "title": "Pop Pap Polters",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b217787-NHLlgGiqy59P.jpg",
+      "banner": "",
+      "description": "",
+      "year": 2026,
+      "startDate": "2026-10-04",
+      "format": "TV_SHORT",
+      "episodes": 0,
+      "averageScore": 0,
+      "status": "RELEASING",
+      "genres": [
+        "Slice of Life"
+      ],
+      "siteUrl": "https://anilist.co/anime/217787",
+      "trailer": null,
+      "next": {
+        "at": 1792285200,
+        "episode": 3
+      },
+      "airingAt": 1792890000,
+      "episode": 4,
+      "scheduleId": 422177
+    },
+    {
+      "id": "al-155723",
+      "mal_id": null,
+      "ani_id": 155723,
+      "title": "Wushen Zhuzai: Da Wei Pian",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx155723-hM261Imc5yfd.png",
+      "banner": "",
+      "description": "The second season of Wushen Zhuzai .",
+      "year": 2022,
+      "startDate": "2022-10-16",
+      "format": "ONA",
+      "episodes": 448,
+      "averageScore": 66,
+      "status": "RELEASING",
+      "genres": [
+        "Action",
+        "Fantasy"
+      ],
+      "siteUrl": "https://anilist.co/anime/155723",
+      "trailer": null,
+      "next": {
+        "at": 1792288800,
+        "episode": 425
+      },
+      "airingAt": 1792893600,
+      "episode": 427,
+      "scheduleId": 408372,
+      "description_es": "La segunda temporada de Wushen Zhuzai."
+    },
+    {
+      "id": "mal-51039",
+      "mal_id": 51039,
+      "ani_id": 196613,
+      "title": "Dou Po Cangqiong: Nian Fan 4",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx196613-20kz65bVsHl7.jpg",
+      "banner": "",
+      "description": "The eighth season of Dou Po Cangqiong. Note: Episodes 158 to 219.",
+      "year": 2025,
+      "startDate": "2025-08-03",
+      "format": "ONA",
+      "episodes": 62,
+      "averageScore": 75,
+      "status": "RELEASING",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Fantasy"
+      ],
+      "siteUrl": "https://anilist.co/anime/196613",
+      "trailer": null,
+      "next": {
+        "at": 1792288800,
+        "episode": 57
+      },
+      "airingAt": 1792893600,
+      "episode": 58,
+      "scheduleId": 417555,
+      "description_es": "La octava temporada de Dou Po Cangqiong. Nota: Episodios 158 a 219."
     }
   ],
   "seasonal": {
@@ -6719,8 +6860,8 @@
         "siteUrl": "https://anilist.co/anime/217577",
         "trailer": null,
         "next": {
-          "at": 1792111800,
-          "episode": 3
+          "at": 1792716600,
+          "episode": 4
         },
         "description_es": "Mazenchu está en una escuela donde todo tipo de comida puede vivir su juventud y formar amistades, rivalidades y romances amargos. (Fuente: Anime News Network)"
       },
