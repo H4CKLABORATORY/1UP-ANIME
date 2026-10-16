@@ -158,6 +158,9 @@ async function fromSnapshot(o){
  if(o.status==='RELEASING')group='season';
  else if(o.format==='MOVIE')group='movies';
  else if(o.sort==='START_DATE_DESC')group='recent';
+ // Do not label a trending snapshot as "most popular".
+ // If the new popular group has not been generated yet, try the live APIs.
+ else if(o.sort==='POPULARITY_DESC')group='popular';
  let items=Array.isArray(data.groups[group])?data.groups[group]:[];
  if(o.search||o.genre||o.format||o.status){
   const combined=Object.values(data.groups).filter(Array.isArray).flat();
