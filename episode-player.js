@@ -7,6 +7,11 @@
 const MAX_SERVERS=7;
 let requestId=0,activeAnime='',selectedEpisode=1,episodeCount=1;
 let mediaByEpisode=new Map(),playerRoot=null;
+let disposeActiveVideo=null;
+function closeVideo(){
+ if(typeof disposeActiveVideo==='function')disposeActiveVideo();
+ disposeActiveVideo=null;
+}
 
 const escapeHtml=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const safeNumber=(value,fallback=1)=>{const n=Number(value);return Number.isInteger(n)&&n>=1&&n<=9999?n:fallback};
@@ -29,12 +34,17 @@ function safeEmbedUrl(raw){
  if(h==='archive.org'&&new RegExp('^/embed/[a-zA-Z0-9_.-]+$').test(p))return 'https://archive.org'+p;
  return '';
 }
-function sourceOf(source,index){
+function sourceOf(source,index,inheritedRights){
  if(!source||typeof source!=='object')return null;
+ // A URL does not itself establish authorization; the catalog editor must declare rights.
+ if(!['owned','authorized'].includes(String(source.rights||inheritedRights||'').toLowerCase()))return null;
  const label=String(source.name||source.label||'Servidor '+(index+1)).slice(0,45);
  const lang=String(source.language||'No especificado').slice(0,35);
  const quality=String(source.quality||'No especificada').slice(0,35);
- const embed=safeEmbedUrl(source.embed||source.iframe||((source.type==='embed'||source.kind==='embed')?source.url:''));
+ const officialYouTube=source.mode==='official_embed'&&source.provider==='youtube'&&
+  /^[A-Za-z0-9_-]{11}$/.test(source.videoId||'')?
+   'https://www.youtube-nocookie.com/embed/'+source.videoId:'';
+ const embed=safeEmbedUrl(officialYouTube||source.embed||source.embedUrl||source.iframe||((source.type==='embed'||source.kind==='embed')?source.url:''));
  if(embed)return {kind:'embed',url:embed,label,lang,quality};
  const u=safeUrl(source.src||((source.type!=='embed'&&source.kind!=='embed')?source.url:''));
  if(!u)return null;
@@ -45,7 +55,7 @@ function sourceOf(source,index){
 }
 function configuredSources(item){
  const raw=Array.isArray(item.sources)?item.sources:[{name:'Servidor 1',src:item.src,mime:item.mime}];
- return Array.from({length:MAX_SERVERS},(_,i)=>sourceOf(raw[i],i));
+ return Array.from({length:MAX_SERVERS},(_,i)=>sourceOf(raw[i],i,item.rights));
 }
 async function configuredEpisodes(id){
  const ctrl=new AbortController(),timer=setTimeout(()=>ctrl.abort(),6500);
@@ -80,6 +90,8 @@ function updateEpisodeSelect(){
  if(input)input.value=String(selectedEpisode);
 }
 function showVideo(slot){
+ // Release prior MediaSource buffers before replacing DOM (critical on iPhone).
+ closeVideo();
  const stage=playerRoot.querySelector('#oneup-playback-display');
  const status=playerRoot.querySelector('#oneup-player-message');
  stage.replaceChildren();
@@ -106,8 +118,10 @@ function showVideo(slot){
   const video=document.createElement('video');
   video.controls=true;video.playsInline=true;video.preload='metadata';
   video.setAttribute('aria-label','Episodio '+selectedEpisode+' desde '+slot.label);
-  const source=document.createElement('source');source.src=slot.url;source.type=slot.mime;
-  video.appendChild(source);
+  if(slot.mime!=='application/vnd.apple.mpegurl'){
+   const source=document.createElement('source');source.src=slot.url;source.type=slot.mime;
+   video.appendChild(source);
+  }
   const caption=mediaByEpisode.get(selectedEpisode)?.captions;
   if(caption){
    const track=document.createElement('track');
@@ -119,6 +133,16 @@ function showVideo(slot){
   video.addEventListener('error',()=>{if(video.isConnected)status.textContent='No se pudo reproducir. Selecciona otro servidor disponible.'});
   stage.appendChild(video);
   status.textContent='Fuente seleccionada: '+slot.label+' · '+slot.lang+' · '+slot.quality;
+  if(slot.mime==='application/vnd.apple.mpegurl'){
+   if(!window.OneUpHLS?.attach){
+    status.textContent='El módulo HLS no está disponible. Prueba otro servidor.';
+   }else{
+    disposeActiveVideo=window.OneUpHLS.attach(video,slot.url,{
+     onStatus:message=>{if(video.isConnected)status.textContent=message},
+     onError:message=>{if(video.isConnected)status.textContent=message+' Selecciona otra fuente.'}
+    });
+   }
+  }
  }
 }
 function renderSources(preferred=0){
@@ -185,6 +209,7 @@ document.addEventListener('oneup-episode-selected',e=>{
  if(d?.animeId===activeAnime&&Number(d.episode)!==selectedEpisode)chooseEpisode(Number(d.episode),false);
 });
 document.addEventListener('oneup-anime-closed',()=>{
+ closeVideo();
  ++requestId;activeAnime='';playerRoot=null;mediaByEpisode=new Map();
 });
 window.OneUpEpisodePlayer={show};
