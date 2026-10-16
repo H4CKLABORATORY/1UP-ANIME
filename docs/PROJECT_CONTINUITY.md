@@ -93,3 +93,12 @@ Al concluir cada trabajo agregar:
 - Pruebas del motor, contrato, HLS, navegador de idiomas y navegación general; evidencia final de CI en PR de este ciclo. Ningún fixture se incorpora al manifiesto público.
 - Siguen pendientes medios reales, backend, Safari físico, comparación visual completa y aprobación de producción. La arquitectura no convierte metadatos en videos ni declara terminado el catálogo reproducible.
 - Resultado local de este ciclo: PASS UI149, resiliencia, contrato, HLS, Supabase opcional, navegación4, idiomas navegador4, preview Kokomi18 (390/1366) y recorridos generales36 (390/1360). Captura móvil del reproductor revisada: controles dentro del ancho y estado sin medios explícito; no equivale a fidelidad visual certificada.
+
+### 2026-10-16 — recuperación de marca y decisiones anteriores
+- Petición: incorporar el logo elegido y el trabajo de conversaciones anteriores sin confundir versiones. No existe acceso directo a otros chats; se revisaron repositorio, ramas, historial GitHub y archivos accesibles. Tres agentes reales investigaron procedencia, diseño y continuidad; QA validó implementación.
+- Nuevo registro `docs/PROJECT_DECISIONS.md`: identifica fuentes verificables, marca vigente, recursos históricos y material faltante. AGENTS enlaza el registro para próximas sesiones.
+- `assets/oneup-crest.svg` es la marca vigente (8ded1d8/be252a9), ya derivada en iconos PWA. No se encontró evidencia suficiente de que sea el adjunto favorito de otro chat. No se diseñó ni sustituyó el logo ni se regeneraron iconos.
+- Corrección en preview Kokomi: emblema visible en cabecera móvil y menú lateral; espaciado responsive y enlace de inicio accesible. Se preservan diseño, temas, audio optativo, reproductor y rutas existentes.
+- Rama `design/brand-continuity-20261016`, dependiente de PR18; sin merge ni producción. Prueba de logo en 320/375/390/1366 y suite Kokomi en CI; resultado final adjunto al PR.
+- Pendiente: recibir original/descripción o ubicación del logo elegido para identificarlo con certeza. ZIP Nebula de otra conversación tampoco está disponible; no recrearlo ni reemplazar main por memoria.
+- Verificación local final: 22/22 pruebas Kokomi PASS (incluye 4 casos de branding 320/375/390/1366, HTTP200/naturalWidth SVG, sin solapamiento, drawer→inicio), UI149 y resiliencia PASS; sintaxis y diff check correctos. Ocho capturas de marca generadas para artefactos CI.

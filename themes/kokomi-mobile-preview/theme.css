@@ -70,6 +70,10 @@ body.kokomi-mobile-reference{
  overflow:auto;transform:translateX(0);animation:km-in .22s ease-out}
 .km-drawer-head{height:70px;display:flex;align-items:center;justify-content:space-between;padding:14px 16px;
  border-bottom:1px solid #33353e;font:900 27px 'Barlow Condensed',sans-serif}
+.km-drawer-brand{display:flex;align-items:center;gap:8px;color:inherit;text-decoration:none;
+ min-width:0;font-size:23px;white-space:nowrap}
+.km-drawer-brand img{width:38px;height:38px;object-fit:contain;flex-shrink:0}
+.km-drawer-brand:focus-visible{outline:2px solid #8adfd4;outline-offset:4px}
 .km-drawer-head b{color:#91a5ff}.km-drawer button{font:750 13px 'Outfit',sans-serif}
 .km-drawer-close{background:#31323b;color:white;border:0;padding:8px 11px;border-radius:3px}
 .km-nav{display:grid;gap:7px;padding:12px}
@@ -105,10 +109,12 @@ body.kokomi-mobile-reference{
 }
 @media(max-width:780px){
  .kokomi-mobile-reference .header{height:54px}
- .kokomi-mobile-reference .header-inner{padding:0 11px}
+ .kokomi-mobile-reference .header-inner{width:calc(100% - 22px);padding:0;gap:6px}
  .kokomi-mobile-reference .brand-name{font-size:23px}
- .kokomi-mobile-reference .brand-symbol{display:none}
- .kokomi-mobile-reference .account-button{min-height:32px}
+ .kokomi-mobile-reference .brand-symbol{display:block;width:32px;height:32px;object-fit:contain;flex-shrink:0}
+ .kokomi-mobile-reference .header-right{gap:6px;min-width:0;flex-shrink:0}
+ .kokomi-mobile-reference .account-button{min-height:32px;padding-inline:8px;gap:6px;min-width:0}
+ .kokomi-mobile-reference #auth-label{max-width:50px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
  .kokomi-mobile-reference .hero{height:345px;min-height:0}
  .kokomi-mobile-reference .hero-poster{background-position:60% center}
  .kokomi-mobile-reference .hero-grid{padding:13px 0 42px}

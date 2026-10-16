@@ -15,6 +15,42 @@ let browser,failed=0;
 const check=async(label,fn)=>{try{await fn();console.log('PASS '+label)}catch(e){failed++;console.error('FAIL '+label+': '+e.message)}};
 try{
  browser=await chromium.launch({headless:true,args:['--no-sandbox']});
+ // Focused brand continuity checks; reuse the full journeys below only twice.
+ // The existing crest is a repository asset, not a claim of owner-approved identity.
+ for(const width of [320,375,390,1366]){
+  const context=await browser.newContext({viewport:{width,height:844},isMobile:width<600,hasTouch:width<600,reducedMotion:'reduce'});
+  await context.route('**/*',r=>r.request().url().startsWith(base)?r.continue():r.abort());
+  const page=await context.newPage();
+  const crestResponses=[];
+  page.on('response',response=>{if(new URL(response.url()).pathname.endsWith('/assets/oneup-crest.svg'))crestResponses.push(response.status())});
+  try{await check('brand '+width+' existing crest loads and stays visible in header and drawer',async()=>{
+   await page.goto(base+'preview-kokomi-mobile.html',{waitUntil:'domcontentloaded'});
+   await page.locator('#km-open').waitFor();
+   const verifyLogo=async(selector)=>{
+    const logo=page.locator(selector);await logo.waitFor({state:'visible'});
+    await logo.evaluate(image=>image.decode());
+    const state=await logo.evaluate(image=>{const box=image.getBoundingClientRect();return {complete:image.complete,naturalWidth:image.naturalWidth,path:new URL(image.currentSrc).pathname,x:box.x,y:box.y,width:box.width,height:box.height,viewport:innerWidth}});
+    if(!state.complete||!state.naturalWidth||!state.path.endsWith('/assets/oneup-crest.svg'))throw Error('Existing crest failed to load: '+JSON.stringify(state));
+    if(state.width<24||state.height<24||state.x<0||state.x+state.width>state.viewport)throw Error('Crest not visible within viewport: '+JSON.stringify(state));
+   };
+   await verifyLogo('.header .brand-symbol');
+   if(!crestResponses.includes(200)||crestResponses.some(status=>status>=400))throw Error('Crest network response failed: '+crestResponses.join(','));
+   const overlaps=await page.evaluate(()=>{const brand=document.querySelector('.header .brand').getBoundingClientRect();return ['#km-open','.header-right'].some(selector=>{const box=document.querySelector(selector).getBoundingClientRect();return box.width>0&&box.left<brand.right&&box.right>brand.left&&box.top<brand.bottom&&box.bottom>brand.top})});
+   if(overlaps)throw Error('Brand overlaps header controls');
+   const overflow=await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth);
+   if(overflow>12)throw Error('Brand viewport overflow '+overflow);
+   await page.screenshot({path:'e2e-kokomi-brand-'+width+'-header.png',animations:'disabled'});
+   await page.locator('#km-open').click();
+   await page.locator('#km-drawer:not([hidden])').waitFor();
+   await verifyLogo('#km-drawer .km-drawer-brand img');
+   await page.screenshot({path:'e2e-kokomi-brand-'+width+'-drawer.png',animations:'disabled'});
+   const drawerBrand=page.locator('#km-drawer .km-drawer-brand');
+   if(await drawerBrand.getAttribute('href')!=='#inicio')throw Error('Drawer brand is not linked to home');
+   await drawerBrand.click();
+   if(await page.locator('#km-drawer').isVisible())throw Error('Drawer brand failed to close navigation');
+   await page.locator('#home-screen:not([hidden])').waitFor();
+  })}finally{await context.close()}
+ }
  for(const env of [{label:'mobile',width:390,height:844,mobile:true},{label:'desktop',width:1366,height:768,mobile:false}]){
  const context=await browser.newContext({viewport:{width:env.width,height:env.height},isMobile:env.mobile,hasTouch:env.mobile,reducedMotion:'reduce'});
  await context.route('**/*',r=>r.request().url().startsWith(base)?r.continue():r.abort());

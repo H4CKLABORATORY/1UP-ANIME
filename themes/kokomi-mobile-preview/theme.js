@@ -49,7 +49,8 @@ document.addEventListener('DOMContentLoaded',()=>{
   ['▤','Películas','peliculas'],['▣','Actualizados','recientes'],['◴','En emisión','temporada'],
   ['⌛','Próximamente','programacion'],['☆','Mi lista','milista']
  ];
- drawer.innerHTML='<div class="km-drawer-head"><strong>1UP <b>ANIME</b></strong>'+
+ drawer.innerHTML='<div class="km-drawer-head"><a class="km-drawer-brand" href="#inicio" data-route="inicio">'+
+  '<img src="./assets/oneup-crest.svg" width="38" height="38" alt=""><span>1UP <b>ANIME</b></span></a>'+
   '<button class="km-drawer-close" type="button" id="km-close" aria-label="Cerrar menú">✕</button></div>'+
   '<nav class="km-nav">'+links.map(([icon,label,route])=>
    '<button type="button" data-route="'+route+'"><span aria-hidden="true">'+icon+'</span>'+label+'</button>'
@@ -85,6 +86,7 @@ document.addEventListener('DOMContentLoaded',()=>{
  }
  toggle.addEventListener('click',()=>drawer.hidden?openMenu():closeMenu());
  qs('#km-close').addEventListener('click',()=>closeMenu());
+ drawer.querySelector('.km-drawer-brand').addEventListener('click',()=>closeMenu(false));
  backdrop.addEventListener('click',()=>closeMenu());
  drawer.querySelector('.km-nav').addEventListener('click',e=>{
    if(e.target.closest('button[data-route],a[data-km-view]'))closeMenu(false);

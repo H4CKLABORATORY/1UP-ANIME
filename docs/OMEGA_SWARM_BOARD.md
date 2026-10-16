@@ -47,3 +47,8 @@ Cada ejecución agrega bajo esta línea: fecha, ID, estado anterior→nuevo, age
 - Documentación de arquitectura en `docs/FREE_STREAMING_ARCHITECTURE.md`; matriz Kokomi preservada desde PR14 con actualización histórica.
 - Streaming real sigue BLOCKED: manifiesto vacío, sin CDN ni backend contratados/configurados. Pruebas con fixtures explícitos aislados. Próximo paso: material propio/autorizado con verificación de derechos, CORS y Safari físico; revisión visual antes de publicar.
 - Evidencia local: idiomas4 + preview18 + general36 PASS; UI149 y suites Node PASS. Motor HLS con fixture: se verifica attach/cleanup, no una transmisión real. CI remoto se adjunta al PR y no se presume aprobado por estas pruebas locales.
+
+### 2026-10-16 — marca y decisiones recuperadas
+- SW-01 RUNNING→REVIEW en `design/brand-continuity-20261016`, dependiente PR18. Diseño restaura emblema existente móvil/drawer; QA verifica tamaños, carga real de SVG y controles sin solaparse. CORE consolida decisiones con procedencia; investigadores solo lectura, sin conflictos.
+- `docs/PROJECT_DECISIONS.md` distingue marca vigente, legado, aprobación no acreditada y adjuntos/chats inaccesibles. No se generó una marca sustitutiva ni se atribuyó aprobación al crest por existir en main.
+- Logo exacto de otro chat y ZIP Nebula siguen BLOCKED por archivo/identificación ausentes. Diseño general conserva decisiones anteriores ya registradas; sin prometer lectura de conversaciones no accesibles.
