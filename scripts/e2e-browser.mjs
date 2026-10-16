@@ -187,6 +187,19 @@ try{
    const action=page.locator('#oneup-embed-play');
    await action.waitFor({timeout:6500});
    if(await page.locator('#oneup-embed-frame iframe').count())throw Error('Third-party iframe must not load before user interaction');
+   if(device.mobile){
+    const hit=await page.evaluate(()=>{
+     const selectors=['#oneup-embed-play','.oneup-embed-stage','#oneup-player-content','#oneup-player-section','#anime-dialog','#oneup-player-section .oneup-detail-section>p'];
+     return selectors.map(query=>{
+      const el=document.querySelector(query);
+      if(!el)return {query,missing:true};
+      const r=el.getBoundingClientRect(),cs=getComputedStyle(el);
+      const cx=r.left+r.width/2,cy=r.top+r.height/2,hit=document.elementFromPoint(cx,cy);
+      return {query,rect:{x:r.x,y:r.y,width:r.width,height:r.height},position:cs.position,zIndex:cs.zIndex,display:cs.display,pointerEvents:cs.pointerEvents,hit:hit?.tagName+'.'+String(hit?.className||'').slice(0,50),dialogScroll:document.querySelector('#anime-dialog')?.scrollTop};
+     });
+    });
+    console.log('ONEUP MOBILE EMBED HIT TEST:',JSON.stringify(hit));
+   }
    await action.click({timeout:6500});
    await page.locator('#oneup-embed-frame iframe').waitFor({timeout:5000});
    const src=await page.locator('#oneup-embed-frame iframe').getAttribute('src');
