@@ -56,3 +56,40 @@ Ejemplo: para un episodio autorizado, usa las fuentes `{ name: "Servidor princip
 En iPhone, Safari ofrece reproducción HLS nativa cuando el proveedor admite el navegador y los permisos necesarios. La página no descifra DRM ni copia emisiones de otro servicio.
 
 Existen extractores no oficiales de JKAnime que recuperan enlaces a otros servidores. Eso no acredita autorización para redistribuir ni incrustar tales transmisiones. Los enlaces a las páginas originales del sitio pueden abrirse fuera de 1UP Anime.
+
+## Proveedores externos (iQIYI, AnimeOnline) y reproductores integrables
+
+- La página principal de 1UP incluye dos **catálogos externos**, configurados en `data/external-providers.json`: AnimeOnline (castellano) e iQIYI (catálogo oficial internacional). La página exacta de AnimeOnline no se pudo verificar. iQIYI restringe la reproducción/inserción de videos fuera de su servicio sin permiso específico.
+- Ambos enlaces se abren en la web del proveedor, no son espejos, retransmisiones ni promesas de reproducción dentro de 1UP.
+- Un tercer modo de reproducción ya admite **iframe oficial de YouTube** al pulsar el visitante el botón. Úsalo solo con contenidos que tengan permisos para esta distribución; el proveedor puede impedir inserción o reproducción.
+- El servidor propio admite MP4, WebM y HLS; la interfaz distingue fuentes autorizadas de catálogos externos.
+
+### Ejemplo de un episodio de tercero con permiso
+
+En `data/licensed-media.json`, una serie cuyo ID corresponda al catálogo de anime puede declarar este ejemplo ficticio (reemplazar los IDs y agregar solo un video real cuyo titular permite insertar):
+
+```json
+{
+  "version": 1,
+  "entries": {
+    "mal-12345": {
+      "episodes": [{
+        "title": "Episodio 1",
+        "sources": [{
+          "mode": "official_embed",
+          "provider": "youtube",
+          "rights": "authorized",
+          "videoId": "12345678901",
+          "name": "YouTube oficial",
+          "language": "es",
+          "quality": "HD (dependiente del proveedor)"
+        }]
+      }]
+    }
+  }
+}
+```
+
+El ID `12345678901` es ilustrativo; no representa un episodio de anime real. La cadena `rights: authorized` es una declaración del editor del catálogo, NO un verificador automático de derechos. No se permite inferir autorización a partir de enlaces públicos, extractores ni archivos de terceros.
+
+Un botón de reproducción de YouTube se cargará con dominio `youtube-nocookie.com` solo tras interacción, y siempre habrá un enlace para abrir el video en YouTube. No hay licencia ni API de reproducción integrada de iQIYI configurada, por lo que nunca se inventarán URL de streams.
