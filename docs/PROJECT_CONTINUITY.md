@@ -84,3 +84,10 @@ Al concluir cada trabajo agregar:
 - Implementado: menú lateral accesible, búsqueda conectada al formulario existente, hero compacto, cuadrículas responsivas y números de ranking; conserva la app `studio.js` y su catálogo.
 - Verificación: se contrastaron selectores y delegación de eventos con el código principal. Navegación visual en Safari real y despliegue no probados; aún no pasar a producción.
 - Próxima tarea: publicar la rama en un entorno de pruebas separado, comparar capturas en 390px y escritorio con video de referencia, ajustar y comprobar flujos de usuario antes de aprobar un merge.
+
+### 2026-10-16 — Extensión de 22 rutas Kokomi (en rama experimental)
+- Nuevos archivos: `themes/kokomi-mobile-preview/pages.js`, `pages.css`, `scripts/e2e-kokomi-preview.mjs`, workflow y matriz `docs/KOKOMI_FIDELITY_MATRIX.md`.
+- Añadido en `preview-kokomi-mobile.html`: páginas interiores de series y películas, reproducción por fuentes autorizadas, selección de temporada/episodio en medios declarados, artículos originales, contacto informativo, perfil, avisos, configuración y 404. Reutiliza `studio.js` para las rutas originales.
+- Corregido cierre de drawer, navegación de regreso a inicio y filtrado de estrenos futuros para no anunciar como próximos otros títulos del catálogo.
+- Prueba realizada: validación de sintaxis JavaScript en el momento de crear `pages.js`; las pruebas reales de Chromium quedaron **configuradas**, no se puede afirmar que hayan pasado hasta revisar GitHub Actions.
+- Falta: comparar capturas, completar interior del reproductor/comentarios, confirmar rutas en Safari, revisar ejecución CI, validar fidelity desktop (demo 502).
