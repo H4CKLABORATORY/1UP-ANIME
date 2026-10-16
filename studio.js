@@ -376,12 +376,26 @@ function mediaSources(item){
  if(!item || typeof item!=='object')return [];
  const raw=Array.isArray(item.sources)&&item.sources.length?item.sources:[{name:'Fuente principal',src:item.src,mime:item.mime}];
  const supported=['video/mp4','video/webm','application/vnd.apple.mpegurl'];
- return raw.filter(source=>source&&mediaFileUrl(source.src||source.url)).slice(0,8).map((source,i)=>{
+ return raw.slice(0,8).map((source,i)=>{
+  if(!source||typeof source!=='object')return null;
+  const name=String(source.name||source.label||'Servidor '+(i+1)).slice(0,45);
+  const language=String(source.language||item.language||'No especificado').slice(0,35);
+  const quality=String(source.quality||item.quality||'No especificada').slice(0,35);
+  // Explicitly approved provider iframe. Public YouTube is the only built-in
+  // embedded third-party host; this does not auto-discover anime episodes.
+  if(source.mode==='official_embed'&&source.provider==='youtube'&&
+     source.rights==='authorized'&&/^[\w-]{11}$/.test(source.videoId||'')){
+   const videoId=source.videoId;
+   return {name,language,quality,kind:'official_embed',provider:'youtube',videoId,
+    src:'https://www.youtube-nocookie.com/embed/'+videoId,
+    watchUrl:'https://www.youtube.com/watch?v='+videoId};
+  }
   const url=mediaFileUrl(source.src||source.url);
+  if(!url)return null;
   const guess=url.split('?')[0].endsWith('.m3u8')?'application/vnd.apple.mpegurl':'video/mp4';
   const type=supported.includes(source.mime)?source.mime:guess;
-  return {src:url,name:String(source.name||source.label||'Servidor '+(i+1)).slice(0,45),mime:type,language:String(source.language||item.language||'No especificado').slice(0,35),quality:String(source.quality||item.quality||'No especificada').slice(0,35)};
- });
+  return {src:url,name,kind:'video',mime:type,language,quality};
+ }).filter(Boolean);
 }
 function playbackEpisode(id,episodes,index,serverIndex=0,tried=[]){
  const item=episodes[index];if(!item)return;
@@ -390,6 +404,36 @@ function playbackEpisode(id,episodes,index,serverIndex=0,tried=[]){
  const activeSource=sources[serverIndex]||sources[0];
  if(!activeSource){host.textContent='No hay fuentes autorizadas para este episodio.';return}
  const caption=mediaFileUrl(item.subtitles_es||'');
+ if(activeSource.kind==='official_embed'){
+  const choiceHtml=sources.length>1?
+   '<div class="oneup-server-selector" aria-label="Fuentes de reproducción"><strong>ELEGIR SERVIDOR</strong>'+
+   sources.map((source,i)=>'<button type="button" class="oneup-server-choice'+(source===activeSource?' active':'')+'" data-licensed-server="'+i+'" aria-pressed="'+String(source===activeSource)+'">'+esc(source.name)+'</button>').join('')+'</div>':'';
+  host.innerHTML=choiceHtml+
+   '<div class="oneup-playback-stage oneup-embed-stage"><button type="button" id="oneup-embed-play" aria-label="Cargar reproductor externo oficial">'+
+   '<span class="oneup-embed-play-icon">▷</span><strong>ABRIR REPRODUCTOR</strong></button>'+
+   '<div id="oneup-embed-frame" hidden></div></div>'+
+   '<p class="oneup-playback-hint">Reproductor oficial de '+esc(activeSource.provider)+' · '+esc(activeSource.name)+'</p>'+
+   '<p class="oneup-player-state" role="status" aria-live="polite">Fuente externa autorizada declarada. Se cargará únicamente cuando pulses reproducir.</p>'+
+   '<a class="oneup-embed-external" target="_blank" rel="noopener noreferrer" href="'+esc(activeSource.watchUrl)+'">Abrir directamente en YouTube ↗</a>';
+  const action=host.querySelector('#oneup-embed-play');
+  const frame=host.querySelector('#oneup-embed-frame');
+  action.addEventListener('click',()=>{
+   const iframe=document.createElement('iframe');
+   iframe.title='Reproductor externo: '+activeSource.name;
+   iframe.loading='eager';iframe.allowFullscreen=true;
+   iframe.referrerPolicy='strict-origin-when-cross-origin';
+   iframe.allow='encrypted-media; picture-in-picture; autoplay; fullscreen';
+   iframe.src=activeSource.src;
+   frame.hidden=false;frame.append(iframe);action.hidden=true;
+   host.querySelector('.oneup-player-state').textContent=
+    'Reproductor externo cargado. El proveedor determina si este video está disponible.';
+  });
+  host.querySelectorAll('[data-licensed-server]').forEach(button=>button.addEventListener('click',()=>{
+   playbackEpisode(id,episodes,index,Number(button.dataset.licensedServer));
+  }));
+  return;
+ }
+
  const sourceChoices=sources.length>1?
   '<div class="oneup-server-selector" aria-label="Cambiar servidor autorizado"><strong>SELECCIONAR SERVIDOR</strong>'+
   sources.map((source,i)=>'<button type="button" class="oneup-server-choice'+(source===activeSource?' active':'')+'" data-licensed-server="'+i+'" aria-pressed="'+String(source===activeSource)+'">'+esc(source.name)+'</button>').join('')+'</div>':'';
