@@ -125,3 +125,33 @@ body.kokomi-mobile-reference .km-watch-no-media .km-no-media p{max-width:470px;l
   min-height:285px;height:auto;padding:24px 16px;
  }
 }
+
+
+/* Watch heading: the actual show has priority over a generic page label. */
+body.kokomi-mobile-reference .km-watch-heading{
+ padding:5px 0 17px;margin-bottom:18px;border-bottom:1px solid #333844
+}
+body.kokomi-mobile-reference .km-watch-topline{
+ display:flex;align-items:center;gap:18px;flex-wrap:wrap;
+ margin-bottom:12px
+}
+body.kokomi-mobile-reference .km-watch-topline a{
+ font:800 10px 'Outfit',sans-serif;color:#a8bcff;
+ text-decoration:none;border:1px solid #444f6a;padding:8px 12px;border-radius:3px
+}
+body.kokomi-mobile-reference .km-watch-topline a:hover{background:#1e2c4c;color:#fff}
+body.kokomi-mobile-reference .km-watch-heading h1{
+ font:900 clamp(29px,3.7vw,52px)/1.03 'Barlow Condensed',Impact,sans-serif;
+ text-transform:uppercase;letter-spacing:.01em;max-width:1050px;
+ margin:0 0 12px;overflow-wrap:anywhere;
+ display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;overflow:hidden
+}
+body.kokomi-mobile-reference .km-watch-subtitle{display:flex;gap:10px;flex-wrap:wrap}
+body.kokomi-mobile-reference .km-watch-subtitle span{
+ color:#b1c0d1;font:800 10px 'Outfit',sans-serif;letter-spacing:.06em
+}
+@media(max-width:780px){
+ body.kokomi-mobile-reference .km-watch-heading h1{font-size:clamp(29px,7.5vw,37px)}
+ body.kokomi-mobile-reference .km-watch-topline{gap:9px}
+ body.kokomi-mobile-reference .km-watch-subtitle{gap:8px}
+}
