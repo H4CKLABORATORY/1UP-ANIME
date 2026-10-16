@@ -59,3 +59,21 @@
 #oneup-player-content .oneup-player-state{
  position:relative;z-index:0;
 }
+
+/* Episode-first player: seven independently configurable slots on mobile and desktop. */
+.oneup-watch-panel .oneup-watch-title{display:flex;justify-content:space-between;align-items:flex-start;gap:14px;flex-wrap:wrap}
+.oneup-watch-panel .oneup-watch-title h3{margin:6px 0 12px}
+.oneup-watch-counter{font-size:10px;font-weight:800;color:#ccd9fa;background:#1c2945;border-radius:25px;border:1px solid #7893c46e;padding:8px 12px}
+.oneup-watch-controls{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:4px 0 20px}
+.oneup-watch-controls label{font-size:12px;color:#dbe5ff;font-weight:800}
+.oneup-watch-controls select,.oneup-watch-controls input{min-height:44px;color:#f5f7ff;background:#18233c;border:1px solid #889fc87d;border-radius:8px;font-size:13px;padding:10px}
+.oneup-watch-controls .oneup-watch-jump{display:flex;gap:8px;align-items:center}
+.oneup-watch-jump input{max-width:95px}
+#oneup-now-watching{font-size:15px;line-height:1.5;margin:0 0 11px;color:#f3f7ff}
+.oneup-watch-panel .oneup-server-selector{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;padding:13px}
+.oneup-watch-panel .oneup-server-selector>strong{grid-column:1/-1;font-size:11px;margin:0}
+.oneup-watch-panel .oneup-server-choice{width:100%;min-width:0;min-height:43px;line-height:1.35;overflow-wrap:anywhere}
+.oneup-watch-panel .oneup-server-choice:disabled{opacity:.46;cursor:not-allowed}
+#oneup-playback-display iframe{display:block;width:100%;height:100%;border:0;background:#000}
+.oneup-player-placeholder{display:grid;place-items:center;min-height:100%;height:100%;color:#b7c5e0;font-size:13px;line-height:1.7;text-align:center;padding:24px}
+@media(max-width:650px){.oneup-watch-panel .oneup-server-selector{grid-template-columns:repeat(2,minmax(0,1fr))}.oneup-watch-panel .oneup-watch-controls{align-items:stretch;flex-direction:column}.oneup-watch-panel .oneup-watch-controls select{width:100%}}
