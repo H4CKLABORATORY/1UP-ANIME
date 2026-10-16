@@ -7,6 +7,35 @@
 document.addEventListener('DOMContentLoaded',()=>{
  const body=document.body, header=document.querySelector('.header-inner');
  if(!header||!body.classList.contains('kokomi-mobile-reference'))return;
+ // Use physical layout width too: mobile emulation can expose a CSS media
+ // viewport wider than the visible screen when legacy rails overflow.
+ function fitAnimeRails(){
+   const docWidth=document.documentElement.clientWidth||window.innerWidth;
+   const visualWidth=window.visualViewport?.width||docWidth;
+   const width=Math.min(docWidth,visualWidth);
+   const count=width<=780?2:width<=1100?4:5;
+   for(const el of document.querySelectorAll('#trending-rail,#season-rail,#recent-rail,#movies-rail,#browse-grid')){
+     el.style.setProperty('grid-template-columns','repeat('+count+',minmax(0,1fr))','important');
+     el.style.setProperty('grid-auto-flow','row','important');
+     el.style.setProperty('grid-auto-columns','minmax(0,1fr)','important');
+   }
+ }
+ fitAnimeRails();
+ window.addEventListener('resize',fitAnimeRails,{passive:true});
+ window.visualViewport?.addEventListener('resize',fitAnimeRails,{passive:true});
+ // If the remote poster host is unavailable, show a branded poster rather
+ // than the browser's broken-image icon or overflowing alt text.
+ document.addEventListener('error',e=>{
+   const img=e.target;
+   if(!(img instanceof HTMLImageElement)||!img.matches('.anime-art img,.km-poster-art img'))return;
+   img.style.display='none';
+   const frame=img.parentElement;
+   if(frame&&!frame.querySelector('.km-poster-fallback')){
+     const fallback=document.createElement('span');fallback.className='km-poster-fallback';
+     fallback.textContent='1UP ANIME';frame.prepend(fallback);
+   }
+ },true);
+ 
  const toggle=document.createElement('button');
  toggle.type='button';toggle.className='km-menu-toggle';toggle.id='km-open';
  toggle.setAttribute('aria-label','Abrir menú');toggle.setAttribute('aria-controls','km-drawer');
