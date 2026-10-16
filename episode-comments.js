@@ -6,7 +6,8 @@
 const $=q=>document.querySelector(q);
 const escape=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 let activeAnime=null,episode=1,stop=null,requestSerial=0;
-const api=()=>window.OneUpSocialBackend;
+const api=()=>window.OneUpSupabaseEpisodeBackend?.enabled()
+ ? window.OneUpSupabaseEpisodeBackend : window.OneUpSocialBackend;
 function message(text){const s=$('#oneup-comment-state');if(s)s.textContent=text}
 function textOf(t){const d=document.createElement('div');d.textContent=String(t??'');return d.textContent}
 function alias(){
@@ -38,6 +39,20 @@ function subscribe(){
  .then(cleanup=>{if(token===requestSerial)stop=cleanup;else if(typeof cleanup==='function')cleanup()})
  .catch(e=>{if(token!==requestSerial)return;target.innerHTML='<p class="oneup-no-comments">'+escape(api().maskError(e))+'</p>'});
 }
+function setSelectorEpisode(number){
+ const select=$('#oneup-comment-episode');
+ if(!select)return;
+ select.querySelector('[data-extra-episode]')?.remove();
+ if(!Array.from(select.options).some(x=>Number(x.value)===number)){
+  const extra=document.createElement('option');
+  extra.value=String(number);
+  extra.textContent='Episodio '+number;
+  extra.dataset.extraEpisode='true';
+  select.appendChild(extra);
+ }
+ select.value=String(number);
+ const input=$('#oneup-episode-number');if(input)input.value=String(number);
+}
 function draw(anime){
  if(!anime?.id)return;
  activeAnime=anime.id;
@@ -56,12 +71,12 @@ function draw(anime){
  '<div class="oneup-comment-submit"><small>Los mensajes son públicos. Hay límites contra spam y se puede reportar contenido.</small>'+
  '<button id="oneup-send-comment" class="cta primary" type="submit">Publicar comentario</button></div>'+
  '<p id="oneup-comment-state" role="status" aria-live="polite"></p></form>';
- const selector=$('#oneup-comment-episode');selector.addEventListener('change',()=>{episode=Number(selector.value)||1;const custom=$('#oneup-episode-number');if(custom)custom.value=episode;subscribe()});
- $('#oneup-episode-number')?.addEventListener('change',e=>{episode=Math.min(max,Math.max(1,Number(e.target.value)||1));selector.value=String(episode);subscribe()});
+ const selector=$('#oneup-comment-episode');selector.addEventListener('change',()=>{episode=Number(selector.value)||1;const custom=$('#oneup-episode-number');if(custom)custom.value=episode;subscribe();document.dispatchEvent(new CustomEvent('oneup-episode-selected',{detail:{animeId:activeAnime,episode}}))});
+ $('#oneup-episode-number')?.addEventListener('change',e=>{episode=Math.min(max,Math.max(1,Number(e.target.value)||1));setSelectorEpisode(episode);subscribe();document.dispatchEvent(new CustomEvent('oneup-episode-selected',{detail:{animeId:activeAnime,episode}}))});
  $('#oneup-guest-comment-form').addEventListener('submit',async e=>{
   e.preventDefault();
   const button=$('#oneup-send-comment'),name=$('#oneup-guest-name').value.trim(),body=$('#oneup-guest-text').value.trim();
-  if(!api()?.enabled()){message('Para publicar, primero debe activarse Firebase de 1UP Anime.');return}
+  if(!api()?.enabled()){message('Para publicar, primero debe activarse el servidor de comentarios.');return}
   button.disabled=true;message('Publicando comentario…');saveAlias(name);
   try{await api().sendEpisodeComment(activeAnime,episode,name,body);$('#oneup-guest-text').value='';message('Comentario publicado.');}
   catch(error){message(api().maskError(error))}
@@ -76,6 +91,15 @@ function draw(anime){
  });
  subscribe();
 }
+document.addEventListener('oneup-episode-selected',e=>{
+ const selection=e.detail;
+ if(!activeAnime||selection?.animeId!==activeAnime)return;
+ const n=Number(selection.episode);
+ if(!Number.isInteger(n)||n<1||n>9999||n===episode)return;
+ episode=n;
+ setSelectorEpisode(n);
+ subscribe();
+});
 document.addEventListener('oneup-anime-opened',e=>draw(e.detail));
 document.addEventListener('oneup-anime-closed',unsubscribe);
 window.OneUpEpisodeComments={show:draw,close:unsubscribe};

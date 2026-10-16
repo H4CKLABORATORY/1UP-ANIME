@@ -25,7 +25,12 @@ async function get(vars){
   const ctrl=new AbortController(),timer=setTimeout(()=>ctrl.abort(),16000);
   try{
    const r=await fetch(endpoint,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({query,variables:vars}),signal:ctrl.signal});
-   if(r.status===429){await timeout(2500*attempt);continue}
+   if(r.status===429){
+    const seconds=Number(r.headers.get('Retry-After'));
+    const delay=Number.isFinite(seconds)&&seconds>0
+      ? Math.min(65000,Math.ceil(seconds*1000)):10000*attempt;
+    await timeout(delay);continue;
+   }
    if(!r.ok)throw Error('AniList HTTP '+r.status);
    const json=await r.json();if(json.errors?.length)throw Error(json.errors[0].message);
    const list=(json.data?.Page?.media||[]).map(norm);

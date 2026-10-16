@@ -1,0 +1,28 @@
+name: 1UP HLS browser compatibility
+on:
+  pull_request:
+    paths:
+      - "hls-adapter.js"
+      - "episode-player.js"
+      - "index.html"
+      - "sw.js"
+      - "scripts/check-hls-browser.mjs"
+      - ".github/workflows/hls-compatibility.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  hls-browser:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Verify JavaScript syntax
+        run: |
+          node --check hls-adapter.js
+          node --check episode-player.js
+          node --check scripts/check-hls-browser.mjs
+      - name: Run HLS regression checks
+        run: node scripts/check-hls-browser.mjs
