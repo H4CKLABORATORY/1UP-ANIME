@@ -6,7 +6,8 @@
 const $=q=>document.querySelector(q);
 const escape=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 let activeAnime=null,episode=1,stop=null,requestSerial=0;
-const api=()=>window.OneUpSocialBackend;
+const api=()=>window.OneUpSupabaseEpisodeBackend?.enabled()
+ ? window.OneUpSupabaseEpisodeBackend : window.OneUpSocialBackend;
 function message(text){const s=$('#oneup-comment-state');if(s)s.textContent=text}
 function textOf(t){const d=document.createElement('div');d.textContent=String(t??'');return d.textContent}
 function alias(){
@@ -61,7 +62,7 @@ function draw(anime){
  $('#oneup-guest-comment-form').addEventListener('submit',async e=>{
   e.preventDefault();
   const button=$('#oneup-send-comment'),name=$('#oneup-guest-name').value.trim(),body=$('#oneup-guest-text').value.trim();
-  if(!api()?.enabled()){message('Para publicar, primero debe activarse Firebase de 1UP Anime.');return}
+  if(!api()?.enabled()){message('Para publicar, primero debe activarse el servidor de comentarios.');return}
   button.disabled=true;message('Publicando comentario…');saveAlias(name);
   try{await api().sendEpisodeComment(activeAnime,episode,name,body);$('#oneup-guest-text').value='';message('Comentario publicado.');}
   catch(error){message(api().maskError(error))}
