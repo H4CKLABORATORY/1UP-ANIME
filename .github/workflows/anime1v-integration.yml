@@ -1,0 +1,36 @@
+name: Anime1v metadata integration check
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'functions/anime1v-adapter.js'
+      - 'functions/index.js'
+      - 'anime1v-discovery.js'
+      - 'anime1v-discovery.css'
+      - 'data/anime1v-config.json'
+      - 'scripts/test-anime1v-integration.mjs'
+      - '.github/workflows/anime1v-integration.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  adapter:
+    runs-on: ubuntu-latest
+    timeout-minutes: 7
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify syntax
+        run: |
+          node --check functions/anime1v-adapter.js
+          node --check functions/index.js
+          node --check anime1v-discovery.js
+          node --check scripts/test-anime1v-integration.mjs
+      - name: Adapter unit tests
+        run: node scripts/test-anime1v-integration.mjs
+      - name: Existing player regression
+        run: |
+          node scripts/test-episode-player.mjs
+          node scripts/test-media-source-contract.mjs
