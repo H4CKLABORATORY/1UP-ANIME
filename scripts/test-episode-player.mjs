@@ -7,6 +7,7 @@ class Element {
  constructor(tag='div'){this.tag=tag;this.children=[];this.dataset={};this.isConnected=true;this.classList={toggle(){}};this.attributes={};this.pauseCalls=0;this.loadCalls=0;}
  appendChild(node){this.children.push(node);return node;}
  append(...nodes){this.children.push(...nodes);}
+ after(){}
  replaceChildren(){this.children=[];}
  setAttribute(key,value){this.attributes[key]=value;}
  removeAttribute(key){delete this.attributes[key];if(key==='src')this.src='';}
@@ -108,6 +109,15 @@ for(const subtitles_es of ['./media/../secret.vtt','./media/%2e%2e/secret.vtt','
  const select=c.nodes.get('#oneup-watch-language');
  assert(!select.innerHTML.includes('value="latino"'),'Unspecified Spanish region must not become Latino');
  assert(select.innerHTML.includes('value="other"'));
+}
+
+// External subtitle files do not add captions inside a provider's iframe.
+{
+ const c=setup('video/mp4',{sources:[{mode:'official_embed',provider:'youtube',videoId:'abcdefghijk',language:'ja',subtitles_es:'./media/sub.vtt'}]});
+ await c.window.OneUpEpisodePlayer.show({id:'al-1'});
+ const select=c.nodes.get('#oneup-watch-language');
+ assert(select.innerHTML.includes('value="original"'));
+ assert(!select.innerHTML.includes('value="sub"'),'Iframe cannot use a local WebVTT file');
 }
 
 // Identical episode numbers in different seasons must not overwrite each other.

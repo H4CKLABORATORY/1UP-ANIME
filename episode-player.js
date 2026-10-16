@@ -62,7 +62,8 @@ function sourceOf(source,index,item){
   /^[A-Za-z0-9_-]{11}$/.test(source.videoId||'')?
    'https://www.youtube-nocookie.com/embed/'+source.videoId:'';
  const embed=safeEmbedUrl(officialYouTube||source.embed||source.embedUrl||source.iframe||((source.type==='embed'||source.kind==='embed')?source.url:''));
- if(embed)return {kind:'embed',url:embed,label,lang,quality,captions};
+ // A third-party iframe cannot consume our external WebVTT tracks.
+ if(embed)return {kind:'embed',url:embed,label,lang,quality,captions:''};
  const u=safeUrl(source.src||((source.type!=='embed'&&source.kind!=='embed')?source.url:''));
  if(!u)return null;
  const supported={'video/mp4':1,'video/webm':1,'application/vnd.apple.mpegurl':1};
