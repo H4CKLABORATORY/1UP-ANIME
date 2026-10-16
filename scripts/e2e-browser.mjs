@@ -38,9 +38,17 @@ try{
   const errors=[];
   page.on('pageerror',error=>errors.push(error.message));
   async function touchTab(route){
- const box=await page.locator('.mobile-navigation [data-route="'+route+'"]').boundingBox();
- if(!box)throw new Error('Mobile tab '+route+' has no tappable rectangle');
- await page.touchscreen.tap(box.x+box.width/2,box.y+box.height/2);
+ // Kokomi uses a mobile drawer; older standalone campaign pages may retain
+ // bottom navigation. Exercise whichever control is actually visible.
+ const legacy=page.locator('.mobile-navigation [data-route="'+route+'"]');
+ const rect=await legacy.boundingBox();
+ if(rect){await page.touchscreen.tap(rect.x+rect.width/2,rect.y+rect.height/2);return}
+ const menu=page.locator('#km-open');
+ if(!(await menu.isVisible()))throw new Error('No mobile navigation for '+route);
+ await menu.click();
+ const link=page.locator('#km-drawer [data-route="'+route+'"]').first();
+ await link.click();
+ await page.locator('#km-drawer').waitFor({state:'hidden',timeout:6500});
 }
   await test(device.name+' loads homepage and local anime snapshot',async()=>{
    await page.goto(base,{waitUntil:'domcontentloaded'});
@@ -113,8 +121,15 @@ try{
   await test(device.name+' search and anime catalogue',async()=>{
    if(device.mobile)await touchTab('inicio');
    else await page.locator('.desktop-links [data-route="inicio"]').click();
-   await page.locator('#search-input').fill('Naruto');
-   await page.locator('#search-form button[type="submit"]').click();
+   // Search field is intentionally inside a collapsible overlay in Kokomi.
+   if(await page.locator('#search-input').isVisible()){
+    await page.locator('#search-input').fill('Naruto');
+    await page.locator('#search-form button[type="submit"]').click();
+   }else{
+    await page.locator('#header-search').click();
+    await page.locator('#km-search-input').fill('Naruto');
+    await page.locator('#km-search-pop button[type="submit"]').click();
+   }
    await page.locator('#browse-screen:not([hidden])').waitFor({timeout:9000});
    const heading=await page.locator('#browse-title').innerText();
    if(!heading.trim())throw new Error('Search route rendered no heading');

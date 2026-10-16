@@ -12,6 +12,7 @@ const query=[
 ].join(' ');
 const sets={
  trending:{sort:['TRENDING_DESC']},
+ popular:{sort:['POPULARITY_DESC']},
  season:{sort:['TRENDING_DESC'],status:'RELEASING'},
  recent:{sort:['START_DATE_DESC']},
  movies:{sort:['POPULARITY_DESC'],format:'MOVIE'}

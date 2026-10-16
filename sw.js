@@ -1,6 +1,9 @@
 /* ONE UP - mobile PWA offline-first shell, update-aware.
    External providers and video URLs are NEVER mirrored by this worker. */
-const CACHE='oneup-stream-integrated-v18-20261015';
+// CacheStorage is origin-wide: GitHub Pages apps on the same domain share it.
+// Restrict cleanup to caches that belong to this 1UP Anime service worker.
+const CACHE_PREFIX='oneup-stream-integrated-';
+const CACHE=CACHE_PREFIX+'v20-kokomi-live-20261016';
 const SHELL=[
  './','./index.html','./studio.css','./studio.js','./spotlight.css',
  './motion.css','./motion.js','./brand-v2.css','./player.css','./auth.js',
@@ -11,6 +14,9 @@ const SHELL=[
  './community.js','./community.css','./social-backend.js','./social-config.js',
  './hls-adapter.js','./episode-player.js','./supabase-config.js','./supabase-episode-backend.js','./episode-comments.js','./episode-comments.css',
  './themes/kokomi-studio/theme.css','./themes/kokomi-studio/theme.js',
+ './themes/kokomi-mobile-preview/theme.css','./themes/kokomi-mobile-preview/theme.js',
+ './themes/kokomi-mobile-preview/pages.css','./themes/kokomi-mobile-preview/pages.js',
+ './themes/kokomi-mobile-preview/watch-comments.css','./themes/kokomi-mobile-preview/watch-comments.js',
  './themes/october-2026/theme.css','./themes/october-2026/theme.js',
  './themes/october-2026/arcane-seal.svg','./preview-kokomi.html','./external-providers.js','./data/external-providers.json','./external-providers.css','./motor.html','./motor.js','./motor.css',
  './moderacion.html','./moderacion.js','./moderacion.css',
@@ -28,14 +34,14 @@ self.addEventListener('install',event=>{
  }).then(()=>self.skipWaiting()));
 });
 self.addEventListener('activate',event=>{
- event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key!==CACHE).map(key=>caches.delete(key)))).then(()=>self.clients.claim()));
+ event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key.startsWith(CACHE_PREFIX)&&key!==CACHE).map(key=>caches.delete(key)))).then(()=>self.clients.claim()));
 });
 self.addEventListener('fetch',event=>{
  if(event.request.method!=='GET')return;
  const url=new URL(event.request.url);
  const scope=new URL(self.registration.scope);
  if(url.origin!==scope.origin || !url.pathname.startsWith(scope.pathname))return;
- const offline=()=>caches.match(event.request).then(hit=>hit || (event.request.mode==='navigate'?caches.match('./index.html'):Response.error()));
+ const offline=()=>caches.open(CACHE).then(async cache=>(await cache.match(event.request)) || (event.request.mode==='navigate'?await cache.match('./index.html'):Response.error()));
  if(event.request.mode==='navigate'){
   event.respondWith(fetch(event.request,{cache:'no-cache'}).then(response=>{
    if(response.ok)caches.open(CACHE).then(cache=>cache.put(event.request,response.clone())).catch(()=>{});
@@ -54,5 +60,5 @@ self.addEventListener('fetch',event=>{
   }).catch(offline));
   return;
  }
- event.respondWith(caches.match(event.request).then(hit=>hit||fetch(event.request)));
+ event.respondWith(caches.open(CACHE).then(cache=>cache.match(event.request)).then(hit=>hit||fetch(event.request)));
 });

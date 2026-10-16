@@ -30,3 +30,4 @@ Estas reglas se aplican a cualquier agente (Codex, Work u otro) que edite este r
 
 ## Continuidad entre sesiones (leer después de este archivo)
 - **[docs/PROJECT_CONTINUITY.md](docs/PROJECT_CONTINUITY.md)** es la bitácora y hoja de ruta activa. Leerla antes de modificar código; tras cada cambio actualizar su bitácora, pruebas y próxima tarea. No reconstruir desde cero, no sobrescribir la rama principal con una demo separada.
+- **[docs/PROJECT_DECISIONS.md](docs/PROJECT_DECISIONS.md)** registra procedencia de marca y decisiones recuperadas. No afirmar acceso a otros chats ni identificar un logo como aprobado sin evidencia. La marca vigente se preserva mientras falta el original mencionado por el propietario.

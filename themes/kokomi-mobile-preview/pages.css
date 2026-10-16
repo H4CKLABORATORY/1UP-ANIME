@@ -1,0 +1,164 @@
+/* 1UP Anime / original Kokomi-reference interior theme.
+   This CSS loads only on preview-kokomi-mobile.html.
+*/
+.kokomi-mobile-reference .km-extra-root[hidden]{display:none!important}
+.kokomi-mobile-reference .km-extra-root{background:#101116;min-height:74vh;color:#eeeef3;padding-bottom:90px}
+.kokomi-mobile-reference .km-page-inner{max-width:1350px;margin:0 auto;padding:28px clamp(14px,3.3vw,44px)}
+.kokomi-mobile-reference .km-eyebrow{font:800 11px 'Barlow Condensed',sans-serif;color:#68e4d3;letter-spacing:.16em}
+.kokomi-mobile-reference .km-page-heading{padding:18px 0 28px;border-bottom:1px solid #34353d;margin-bottom:24px}
+.kokomi-mobile-reference .km-page-heading h1{font:900 clamp(35px,5.3vw,68px)/.96 'Barlow Condensed',Impact,sans-serif;text-transform:uppercase;letter-spacing:.004em;margin:13px 0 9px}
+.kokomi-mobile-reference .km-page-heading p{max-width:800px;font:400 14px/1.65 'Outfit',sans-serif;color:#aeb3c1}
+.kokomi-mobile-reference .km-gallery{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:14px 13px}
+.kokomi-mobile-reference .km-poster{text-decoration:none;color:inherit;display:block;min-width:0}
+.kokomi-mobile-reference .km-poster-art{position:relative;aspect-ratio:2/3;overflow:hidden;background:linear-gradient(145deg,#283244,#211f2b)}
+.kokomi-mobile-reference .km-poster-art img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .35s cubic-bezier(.2,.7,.25,1),filter .3s}
+.kokomi-mobile-reference .km-poster:hover img,.kokomi-mobile-reference .km-poster:focus-visible img{transform:scale(1.065);filter:saturate(1.2)}
+.kokomi-mobile-reference .km-poster-index{position:absolute;top:0;left:0;min-width:25px;padding:4px 7px;background:#ec2446;font:900 17px/1 'Barlow Condensed',sans-serif}
+.kokomi-mobile-reference .km-poster>b{display:block;font-size:12px;margin-top:7px;white-space:nowrap;text-overflow:ellipsis;overflow:hidden}
+.kokomi-mobile-reference .km-poster>small{color:#a0a4b2;font-size:10px}
+.kokomi-mobile-reference .km-art-empty{padding:14px;font:900 18px 'Barlow Condensed',sans-serif;display:block}
+.kokomi-mobile-reference .km-detail-banner{background-color:#1a1a26;background-size:cover;background-position:center;min-height:420px;display:flex;align-items:flex-end;border-bottom:1px solid #30313a}
+.kokomi-mobile-reference .km-detail-inner{padding:clamp(26px,4vw,60px);width:100%;max-width:850px}
+.kokomi-mobile-reference .km-detail-inner h1{font:900 clamp(40px,6vw,86px)/.98 'Barlow Condensed',sans-serif;margin:17px 0;text-transform:uppercase}
+.kokomi-mobile-reference .km-detail-inner p{max-width:690px;line-height:1.65;font-size:13px;color:#d0d1df;max-height:220px;overflow:auto}
+.kokomi-mobile-reference .km-detail-meta,.kokomi-mobile-reference .km-tags{display:flex;gap:9px;flex-wrap:wrap;margin:10px 0}
+.kokomi-mobile-reference .km-detail-meta span,.kokomi-mobile-reference .km-tags span{border:1px solid #ffffff28;padding:5px 8px;font-size:11px;background:#11131b9c}
+.kokomi-mobile-reference .km-tags span{border-color:#40c2b64a;color:#a4ecdc}
+.kokomi-mobile-reference .km-action-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin:21px 0}
+.kokomi-mobile-reference .km-main-button,.kokomi-mobile-reference .km-second-button,.kokomi-mobile-reference .km-source-link{border:1px solid #6a90ff;display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;min-height:41px;border-radius:3px;cursor:pointer;text-decoration:none;font:800 12px 'Outfit',sans-serif;letter-spacing:.035em}
+.kokomi-mobile-reference .km-main-button{background:#517afa;color:white;border-color:#517afa}
+.kokomi-mobile-reference .km-main-button:hover{background:#7394ff}
+.kokomi-mobile-reference .km-second-button{background:#262937;color:#f2f4ff;border-color:#555766}
+.kokomi-mobile-reference .km-source-link{color:#cfdeff;background:#161c2b;border-color:#464a6a}
+.kokomi-mobile-reference .km-main-button:focus-visible,.kokomi-mobile-reference .km-second-button:focus-visible,.kokomi-mobile-reference .km-source-link:focus-visible{outline:2px solid #55efd4;outline-offset:3px}
+.kokomi-mobile-reference .km-block{padding:25px 6px;border-bottom:1px solid #32333c}
+.kokomi-mobile-reference .km-block h2{font:900 30px 'Barlow Condensed',sans-serif}
+.kokomi-mobile-reference .km-block p{font-size:13px;line-height:1.7;color:#b8bbc8}
+.kokomi-mobile-reference .km-watch-layout{display:grid;grid-template-columns:minmax(0,2fr) minmax(250px,1fr);gap:19px}
+.kokomi-mobile-reference .km-watch-layout>aside{background:#1c1d24;padding:19px;align-self:start;border:1px solid #333541}
+.kokomi-mobile-reference .km-video-holder{aspect-ratio:16/9;background:#050507;border:1px solid #34353b;overflow:hidden}
+.kokomi-mobile-reference .km-play-stage{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.kokomi-mobile-reference .km-play-stage video,.kokomi-mobile-reference .km-play-stage iframe{width:100%;height:100%;object-fit:contain;border:0;background:#000}
+.kokomi-mobile-reference .km-embed-wrap{width:100%;height:100%}
+.kokomi-mobile-reference .km-play-stage #km-player-status{margin:0;padding:5px 10px;background:#111118;font-size:11px;align-self:stretch}
+.kokomi-mobile-reference .km-no-media{padding:30px 15px;min-height:180px;display:flex;gap:9px;align-items:center;justify-content:center;flex-direction:column;text-align:center;background:#171921;color:#d4d8e5}
+.kokomi-mobile-reference .km-no-media>span{font-size:35px;color:#77bef7}
+.kokomi-mobile-reference .km-no-media p{font-size:12px;color:#aaadb7;max-width:470px}
+.kokomi-mobile-reference .km-episode-list>b{display:block;font:900 17px 'Barlow Condensed',sans-serif;margin-bottom:12px}
+.kokomi-mobile-reference .km-episode-buttons{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-bottom:22px}
+.kokomi-mobile-reference .km-episode-buttons button,.kokomi-mobile-reference .km-server-list button{background:#2c2e38;color:#dadfea;border:1px solid #444651;border-radius:3px;cursor:pointer;padding:9px;font:800 12px 'Outfit',sans-serif}
+.kokomi-mobile-reference .km-episode-buttons button.active,.kokomi-mobile-reference .km-server-list button.active{background:#527ff6;border-color:#527ff6;color:white}
+.kokomi-mobile-reference .km-server-list{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.kokomi-mobile-reference .km-server-list button small{color:inherit;opacity:.8}
+.kokomi-mobile-reference .km-muted{display:block;color:#a7aaba;font-size:12px;line-height:1.6;margin:10px 0}
+.kokomi-mobile-reference .km-rows{display:grid;gap:10px;max-width:900px}
+.kokomi-mobile-reference .km-row{display:flex;gap:13px;align-items:center;background:#191a22;padding:10px;color:inherit;text-decoration:none;border:1px solid #333540}
+.kokomi-mobile-reference .km-row:hover{background:#222638}
+.kokomi-mobile-reference .km-row>img{width:56px;height:75px;object-fit:cover}
+.kokomi-mobile-reference .km-row>span:nth-child(2){flex:1}
+.kokomi-mobile-reference .km-row strong{display:block;font-size:13px}
+.kokomi-mobile-reference .km-row small{display:block;color:#a1a7b6;margin-top:5px}
+.kokomi-mobile-reference .km-posts{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.kokomi-mobile-reference .km-post{display:block;color:inherit;text-decoration:none;background:#1b1d26;border-top:3px solid #5780ef;padding:25px;min-height:190px}
+.kokomi-mobile-reference .km-post>span{font-size:11px;letter-spacing:.1em;color:#61e1cc}
+.kokomi-mobile-reference .km-post h2{font:850 28px 'Barlow Condensed',sans-serif;line-height:1.1}
+.kokomi-mobile-reference .km-post p{color:#afb4c5;font-size:12px}
+.kokomi-mobile-reference .km-article{background:#1b1d26;padding:25px;max-width:870px;line-height:1.9;margin-bottom:18px}
+.kokomi-mobile-reference .km-profile-panel{display:flex;gap:20px;align-items:center;background:#1d1f29;border:1px solid #353946;padding:25px;margin-bottom:25px}
+.kokomi-mobile-reference .km-avatar{display:grid;place-items:center;background:linear-gradient(145deg,#528be9,#9d50df);border-radius:50%;width:96px;height:96px;font-weight:900;font-size:22px}
+.kokomi-mobile-reference .km-profile-panel p{color:#aeb4bf;font-size:12px}
+.kokomi-mobile-reference .km-preferences{max-width:650px;background:#1c1e26;border:1px solid #383b44;padding:25px}
+.kokomi-mobile-reference .km-preferences label{display:flex;justify-content:space-between;align-items:center;padding:14px 0;border-bottom:1px solid #393b45;font-size:13px}
+.kokomi-mobile-reference .km-preferences input{width:21px;height:21px;accent-color:#557eff}
+.kokomi-mobile-reference .km-preferences button{margin-top:18px}
+.kokomi-mobile-reference .km-nav-title{font:900 12px 'Outfit',sans-serif;color:#96a0b2;padding:22px 12px 5px}
+.kokomi-mobile-reference .km-nav a.active{background:#3a4152;color:white}
+.kokomi-mobile-reference.km-quiet .hero-poster,.kokomi-mobile-reference.km-quiet .anime-card *,.kokomi-mobile-reference.km-quiet .km-poster img{animation:none!important;transition:none!important}
+.kokomi-mobile-reference.km-compact .km-page-inner{padding-top:12px}
+.kokomi-mobile-reference.km-compact .km-gallery{gap:8px}
+.kokomi-mobile-reference.km-no-halloween .limited-tag{display:none!important}
+@media(max-width:1100px){.kokomi-mobile-reference .km-gallery{grid-template-columns:repeat(4,minmax(0,1fr))}.kokomi-mobile-reference .km-posts{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:780px){
+ .kokomi-mobile-reference .km-page-inner{padding:17px 12px}
+ .kokomi-mobile-reference .km-page-heading{padding:12px 0 18px}
+ .kokomi-mobile-reference .km-page-heading h1{font-size:34px}
+ .kokomi-mobile-reference .km-gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 10px}
+ .kokomi-mobile-reference .km-watch-layout{grid-template-columns:1fr}
+ .kokomi-mobile-reference .km-detail-banner{min-height:370px;align-items:flex-end;background-position:center}
+ .kokomi-mobile-reference .km-detail-inner{padding:18px}
+ .kokomi-mobile-reference .km-detail-inner h1{font-size:39px}
+ .kokomi-mobile-reference .km-detail-inner p{font-size:12px;max-height:155px}
+ .kokomi-mobile-reference .km-action-row{gap:8px}
+ .kokomi-mobile-reference .km-posts{grid-template-columns:1fr}
+ .kokomi-mobile-reference .km-profile-panel{align-items:flex-start;padding:16px}
+ .kokomi-mobile-reference .km-avatar{width:65px;height:65px;font-size:15px;flex:none}
+}
+@media(prefers-reduced-motion:reduce){.kokomi-mobile-reference .km-poster-art img{transition:none!important}}
+
+
+/* When no source exists, the entire player stage stays intentional.
+   The old min-height-only placeholder left a large unused black area on
+   desktop and clipped its CTA on phones. */
+body.kokomi-mobile-reference .km-watch-no-media{
+ position:relative;isolation:isolate;
+ background:radial-gradient(circle at 50% 40%,#343b647c,#11151e 58%,#0c0f17);
+}
+body.kokomi-mobile-reference .km-watch-no-media::before{
+ content:"1UP";pointer-events:none;position:absolute;left:50%;top:50%;
+ transform:translate(-50%,-50%) rotate(-12deg);
+ font:900 clamp(120px,22vw,380px)/1 'Barlow Condensed',Impact,sans-serif;
+ color:#abbcff0e;z-index:0;
+}
+body.kokomi-mobile-reference .km-watch-no-media>.km-no-media{
+ position:relative;z-index:1;box-sizing:border-box;
+ width:100%;height:100%;min-height:100%;
+ padding:clamp(18px,3vw,45px);
+ background:transparent;
+}
+body.kokomi-mobile-reference .km-watch-no-media .km-no-media strong{font-size:clamp(14px,2vw,20px)}
+body.kokomi-mobile-reference .km-watch-no-media .km-no-media p{max-width:470px;line-height:1.6}
+@media(max-width:780px){
+ body.kokomi-mobile-reference .km-watch-no-media{
+  aspect-ratio:auto;min-height:285px;height:auto;overflow:visible;
+ }
+ body.kokomi-mobile-reference .km-watch-no-media>.km-no-media{
+  min-height:285px;height:auto;padding:24px 16px;
+ }
+}
+
+
+/* Watch heading: the actual show has priority over a generic page label. */
+body.kokomi-mobile-reference .km-watch-heading{
+ padding:5px 0 17px;margin-bottom:18px;border-bottom:1px solid #333844
+}
+body.kokomi-mobile-reference .km-watch-topline{
+ display:flex;align-items:center;gap:18px;flex-wrap:wrap;
+ margin-bottom:12px
+}
+body.kokomi-mobile-reference .km-watch-topline a{
+ font:800 10px 'Outfit',sans-serif;color:#a8bcff;
+ text-decoration:none;border:1px solid #444f6a;padding:8px 12px;border-radius:3px
+}
+body.kokomi-mobile-reference .km-watch-topline a:hover{background:#1e2c4c;color:#fff}
+body.kokomi-mobile-reference .km-watch-heading h1{
+ font:900 clamp(29px,3.7vw,52px)/1.03 'Barlow Condensed',Impact,sans-serif;
+ text-transform:uppercase;letter-spacing:.01em;max-width:1050px;
+ margin:0 0 12px;overflow-wrap:anywhere;
+ display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;overflow:hidden
+}
+body.kokomi-mobile-reference .km-watch-subtitle{display:flex;gap:10px;flex-wrap:wrap}
+body.kokomi-mobile-reference .km-watch-subtitle span{
+ color:#b1c0d1;font:800 10px 'Outfit',sans-serif;letter-spacing:.06em
+}
+@media(max-width:780px){
+ body.kokomi-mobile-reference .km-watch-heading h1{font-size:clamp(29px,7.5vw,37px)}
+ body.kokomi-mobile-reference .km-watch-topline{gap:9px}
+ body.kokomi-mobile-reference .km-watch-subtitle{gap:8px}
+}
+
+/* The preview delegates playback to the same engine as the public detail dialog. */
+.kokomi-mobile-reference .km-watch-layout.km-shared-player{grid-template-columns:minmax(0,1fr)}
+.kokomi-mobile-reference #km-player-section{min-width:0;padding:0}
+.kokomi-mobile-reference #km-player-section .oneup-watch-panel{background:#171820;border:1px solid #333541;border-radius:12px;padding:18px}
+.kokomi-mobile-reference .km-season-control{display:flex;align-items:center;gap:12px;margin:0 0 20px;font-weight:700;flex-wrap:wrap}
+.kokomi-mobile-reference .km-season-control select{min-height:44px;padding:10px;background:#1c1d24;color:#fff;border:1px solid #535561;border-radius:8px}

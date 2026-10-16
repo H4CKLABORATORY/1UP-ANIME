@@ -46,7 +46,10 @@ jobs:
       - name: Install Chromium and required OS libraries
         run: npx playwright install --with-deps chromium
       - name: Run real iPhone-width and desktop user journeys
-        run: node scripts/e2e-browser.mjs
+        run: |
+          node scripts/test-episode-comments.mjs
+          node scripts/e2e-player-languages.mjs
+          node scripts/e2e-browser.mjs
       - name: Keep browser screenshots for review
         if: always()
         uses: actions/upload-artifact@v4

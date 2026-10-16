@@ -5,7 +5,7 @@
 'use strict';
 const $=q=>document.querySelector(q);
 const escape=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-let activeAnime=null,episode=1,stop=null,requestSerial=0;
+let activeAnime=null,episode=1,stop=null,requestSerial=0,viewSerial=0;
 const api=()=>window.OneUpSupabaseEpisodeBackend?.enabled()
  ? window.OneUpSupabaseEpisodeBackend : window.OneUpSocialBackend;
 function message(text){const s=$('#oneup-comment-state');if(s)s.textContent=text}
@@ -55,6 +55,7 @@ function setSelectorEpisode(number){
 }
 function draw(anime){
  if(!anime?.id)return;
+ viewSerial++;
  activeAnime=anime.id;
  episode=1;unsubscribe();
  const root=$('#oneup-comments-section');if(!root)return;
@@ -77,18 +78,21 @@ function draw(anime){
   e.preventDefault();
   const button=$('#oneup-send-comment'),name=$('#oneup-guest-name').value.trim(),body=$('#oneup-guest-text').value.trim();
   if(!api()?.enabled()){message('Para publicar, primero debe activarse el servidor de comentarios.');return}
+  const token=viewSerial,backend=api(),animeId=activeAnime,selectedEpisode=episode;
   button.disabled=true;message('Publicando comentario…');saveAlias(name);
-  try{await api().sendEpisodeComment(activeAnime,episode,name,body);$('#oneup-guest-text').value='';message('Comentario publicado.');}
-  catch(error){message(api().maskError(error))}
+  try{await backend.sendEpisodeComment(animeId,selectedEpisode,name,body);if(token!==viewSerial)return;$('#oneup-guest-text').value='';message('Comentario publicado.');}
+  catch(error){if(token===viewSerial)message(backend.maskError(error))}
   finally{button.disabled=false}
  });
- root.addEventListener('click',async e=>{
+ // Replace delegation on the persistent root when a new detail view is drawn.
+ root.onclick=async e=>{
   const button=e.target.closest('[data-report-comment]');if(!button)return;
   if(!api()?.enabled())return;
   if(!confirm('¿Reportar este comentario para revisión?'))return;
-  try{await api().report('episodeComment',activeAnime+'_ep_'+episode+'/'+button.dataset.reportComment,'Contenido inapropiado');message('Reporte enviado a moderación.')}
-  catch(error){message(api().maskError(error))}
- });
+  const token=viewSerial,backend=api();
+  try{await backend.report('episodeComment',activeAnime+'_ep_'+episode+'/'+button.dataset.reportComment,'Contenido inapropiado');if(token===viewSerial)message('Reporte enviado a moderación.')}
+  catch(error){if(token===viewSerial)message(backend.maskError(error))}
+ };
  subscribe();
 }
 document.addEventListener('oneup-episode-selected',e=>{
@@ -101,6 +105,7 @@ document.addEventListener('oneup-episode-selected',e=>{
  subscribe();
 });
 document.addEventListener('oneup-anime-opened',e=>draw(e.detail));
-document.addEventListener('oneup-anime-closed',unsubscribe);
-window.OneUpEpisodeComments={show:draw,close:unsubscribe};
+function close(){viewSerial++;unsubscribe()}
+document.addEventListener('oneup-anime-closed',close);
+window.OneUpEpisodeComments={show:draw,close};
 })();
