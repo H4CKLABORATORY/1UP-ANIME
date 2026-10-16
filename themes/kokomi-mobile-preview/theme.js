@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded',()=>{
  qs('#km-close').addEventListener('click',()=>closeMenu());
  backdrop.addEventListener('click',()=>closeMenu());
  drawer.querySelector('.km-nav').addEventListener('click',e=>{
-   if(e.target.closest('button[data-route]'))closeMenu(false);
+   if(e.target.closest('button[data-route],a[data-km-view]'))closeMenu(false);
  });
  document.addEventListener('keydown',e=>{
    if(e.key==='Escape'){closeMenu();closeSearch()}
