@@ -190,3 +190,16 @@ body.kokomi-mobile-reference .airing-rail{
  body.kokomi-mobile-reference .oneup-studio-airing-more{order:3}
  body.kokomi-mobile-reference .schedule-rail{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
+
+
+/* Offline-friendly artwork fallback for external poster image failures. */
+body.kokomi-mobile-reference .km-poster-fallback{
+ display:flex;align-items:flex-end;justify-content:flex-start;
+ position:absolute;inset:0;padding:15px;color:#d9e5ff;
+ font:900 clamp(22px,5vw,38px)/.87 'Barlow Condensed',Impact,sans-serif;
+ letter-spacing:.04em;text-shadow:0 2px 12px #0008;
+ background:radial-gradient(circle at 70% 20%,#514cc65e,transparent 45%),
+ linear-gradient(155deg,#17273d,#2c203b 65%,#090f16);
+}
+body.kokomi-mobile-reference .anime-card .anime-art,
+body.kokomi-mobile-reference .km-poster-art{position:relative;overflow:hidden}
