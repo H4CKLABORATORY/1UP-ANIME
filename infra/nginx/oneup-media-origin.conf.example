@@ -20,10 +20,13 @@ server {
     add_header X-Content-Type-Options nosniff always;
     add_header Referrer-Policy strict-origin-when-cross-origin always;
 
+    # Add /srv/oneup-status/healthz as a regular file if health checks are needed.
+    # Unlike an Nginx 'return', serving a file reaches the access-control phase.
     location = /healthz {
         access_log off;
+        root /srv/oneup-status;
         default_type text/plain;
-        return 200 "healthy\n";
+        try_files /healthz =404;
     }
     location ^~ /media/ {
         # /media/foo.m3u8 maps to /srv/oneup-media/foo.m3u8
