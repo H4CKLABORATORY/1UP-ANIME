@@ -61,7 +61,7 @@ function detailPage(a,movie){
  const official=(a.streaming||[]).filter(x=>uri(x.url)).slice(0,5).map(x=>'<a class="km-source-link" href="'+esc(uri(x.url))+'" target="_blank" rel="noopener noreferrer">↗ '+esc(x.name)+'</a>').join('');
  return '<div class="km-detail-banner" style="'+(art?'background-image:linear-gradient(90deg,#111118 7%,#121219bb 65%,#08080ac7),url(&quot;'+esc(art)+'&quot;)':'')+'"><div class="km-detail-inner"><span class="km-eyebrow">'+(movie?'PELÍCULA':'SERIE')+' / 1UP ANIME</span><h1>'+esc(a.title)+'</h1><div class="km-detail-meta"><span>★ '+esc(String(a.averageScore?Math.round(a.averageScore)/10:'—'))+'</span><span>'+esc(a.year||'Año desconocido')+'</span><span>'+esc(movie?'Película':String(a.episodes||'—')+' episodios declarados')+'</span></div><div class="km-tags">'+list+'</div><p>'+esc((a.description_es||a.description||'Sin sinopsis disponible.').slice(0,900))+'</p><div class="km-action-row">'+mediaButton+'<button data-km-open="'+esc(a.id)+'" class="km-second-button">＋ ABRIR FICHA COMPLETA</button></div></div></div><section class="km-block"><h2>Disponibilidad y fuentes</h2><p>El motor integrado solo reproduce archivos o incrustaciones autorizadas declaradas en el manifiesto. Los sitios externos conservan su propia reproducción.</p><div class="km-action-row">'+(official||'<span class="km-muted">No hay plataformas registradas para este título.</span>')+'</div></section>';
 }
-function errorPage(msg){return heading('No encontrado',msg||'La página o el anime solicitado no existe.')+'<a class="km-main-button" href="#inicio">← VOLVER AL INICIO</a>'}
+function errorPage(msg){return heading('No encontrado',msg||'La página o el anime solicitado no existe.')+'<button class="km-main-button" data-route="inicio">← VOLVER AL INICIO</button>'}
 async function mediaManifest(){
  if(licensed)return licensed;
  try{const res=await fetch('./data/licensed-media.json',{cache:'no-cache'});if(!res.ok)throw Error('Sin manifiesto');const obj=await res.json();licensed=obj?.entries||{}}
@@ -82,8 +82,10 @@ function playerFrame(a,movie,entry){
  if(!ep.length)return detailPage(a,movie)+'<section class="km-block"><h2>Reproductor integrado</h2><div class="km-no-media"><span>▷</span><strong>Sin fuentes integradas configuradas</strong><p>Esta serie no dispone de episodios autorizados en nuestro manifiesto. No simulamos reproducciones inexistentes.</p></div><button class="km-second-button" data-km-open="'+esc(a.id)+'">Ver ficha y comentarios</button></section>';
  activeEpisode=Math.min(activeEpisode,ep.length-1);const episode=ep[activeEpisode];
  const servers=sourcesFrom(episode);
- const buttons=ep.map((x,i)=>'<button data-km-episode="'+i+'" class="'+(i===activeEpisode?'active':'')+'">'+esc(String(x.number||i+1))+'</button>').join('');
- const select='<div class="km-episode-list"><b>Temporada 1 · Episodios disponibles</b><div class="km-episode-buttons">'+buttons+'</div></div>';
+ const currentSeason=Number(episode.season)||1;const seasons=[...new Set(ep.map(x=>Number(x.season)||1))].sort((a,b)=>a-b);
+ const buttons=ep.map((x,i)=>({x,i})).filter(item=>(Number(item.x.season)||1)===currentSeason).map(item=>'<button data-km-episode="'+item.i+'" class="'+(item.i===activeEpisode?'active':'')+'">'+esc(String(item.x.number||item.i+1))+'</button>').join('');
+ const seasonOptions=seasons.map(x=>'<option value="'+x+'" '+(x===currentSeason?'selected':'')+'>Temporada '+x+'</option>').join('');
+ const select='<div class="km-episode-list"><label for="km-season-select">Temporadas disponibles</label><select id="km-season-select">'+seasonOptions+'</select><b>Episodios disponibles</b><div class="km-episode-buttons">'+buttons+'</div></div>';
  const serverMarkup=servers.length?'<div class="km-server-list">'+servers.map((s,i)=>'<button type="button" data-km-server="'+i+'" class="'+(i===0?'active':'')+'">'+esc(s.name)+' <small>'+esc(s.language)+'</small></button>').join('')+'</div>':'';
  const player='<div id="km-play-stage" class="km-play-stage"></div>';
  return heading(movie?'Reproducir película':'Reproducir episodio',a.title)+'<div class="km-watch-layout"><div><div class="km-video-holder">'+player+'</div>'+serverMarkup+'<p class="km-muted">Solo fuentes de video declaradas y autorizadas. La compatibilidad HLS depende del navegador.</p></div><aside>'+select+'<button class="km-second-button" data-km-open="'+esc(a.id)+'">Abrir comentarios y ficha ↗</button></aside></div>';
@@ -107,7 +109,7 @@ function getLocalPref(){try{return JSON.parse(localStorage.getItem(prefsKey)||'{
 function content(route,id){
  const p=getLocalPref();
  if(route==='upcoming'||route==='coming-soon'){
- const data=getIdList('upcoming').filter(x=>x.status==='NOT_YET_RELEASED'||route==='upcoming'||x.year>=2026);
+ const data=(Array.isArray(group.upcoming)&&group.upcoming.length?group.upcoming:all.filter(x=>x.status==='NOT_YET_RELEASED')).filter(x=>x.status==='NOT_YET_RELEASED'||Array.isArray(group.upcoming)&&group.upcoming.some(y=>y.id===x.id));
  return gallery(route==='upcoming'?'Próximos estrenos':'Muy pronto','Títulos anunciados según la copia del catálogo; comprueba fechas con el distribuidor.',data.slice(0,45))
  }
  if(route==='trailers'){
@@ -157,6 +159,7 @@ function startup(){
  window.addEventListener('hashchange',render);
  document.addEventListener('click',e=>{
  const open=e.target.closest('[data-km-open]');if(open){e.preventDefault();window.OneUpCatalog?.open?.(open.dataset.kmOpen);return}
+ const seasonPick=e.target.closest('#km-season-select');if(seasonPick&&activeId)return;
  const ep=e.target.closest('[data-km-episode]');if(ep&&activeId){
    activeEpisode=Number(ep.dataset.kmEpisode);const a=info(activeId);
    setPage(playerFrame(a,activeRoute==='movie-play',licensed[a.id]),activeRoute);mountPlayer(a);return;
@@ -168,6 +171,15 @@ function startup(){
  }
  if(e.target.closest('#km-auth-open')){const auth=$('#auth-open');if(auth)auth.click();return}
  const mainRoute=e.target.closest('[data-route]');if(mainRoute&&!root.hidden){root.hidden=true;activeRoute='';}
+ });
+ document.addEventListener('change',e=>{
+ if(e.target.id==='km-season-select'&&activeId){
+   const episodes=licensed?.[activeId]?.episodes||[];
+   const found=episodes.findIndex(x=>(Number(x.season)||1)===Number(e.target.value));
+   if(found<0)return;
+   activeEpisode=found;const a=info(activeId);
+   setPage(playerFrame(a,activeRoute==='movie-play',licensed[activeId]),activeRoute);mountPlayer(a);
+ }
  });
  document.addEventListener('submit',e=>{
  if(e.target.id==='km-preferences'){
