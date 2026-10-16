@@ -157,3 +157,36 @@ body.kokomi-mobile-reference .wrap{min-width:0}
 @media (max-width:780px){
  body.kokomi-mobile-reference .card-rail{grid-template-columns:repeat(2,minmax(0,1fr))!important}
 }
+
+
+/* Keep old calendar carousels inside the actual phone viewport.
+   Prevent a long list of episode covers or an auto-sized flex child from
+   changing the document layout viewport; scrolling remains within the rail. */
+html:has(body.kokomi-mobile-reference),
+body.kokomi-mobile-reference{max-width:100%;overflow-x:clip}
+body.kokomi-mobile-reference .oneup-studio-airing,
+body.kokomi-mobile-reference .oneup-studio-airing-inner,
+body.kokomi-mobile-reference .oneup-airing-dashboard,
+body.kokomi-mobile-reference .airing-category,
+body.kokomi-mobile-reference .airing-premieres,
+body.kokomi-mobile-reference .schedule-preview,
+body.kokomi-mobile-reference .schedule-rail,
+body.kokomi-mobile-reference .oneup-studio-trailers{
+ box-sizing:border-box;max-width:100%;min-width:0;
+}
+body.kokomi-mobile-reference .oneup-studio-airing-inner{width:100%;overflow:hidden;flex-wrap:wrap}
+body.kokomi-mobile-reference .oneup-studio-airing-items{
+ display:flex;flex:1 1 220px;width:100%;max-width:100%;min-width:0;
+ overflow-x:auto;overflow-y:hidden;overscroll-behavior-x:contain;
+}
+body.kokomi-mobile-reference .oneup-studio-airing-item{flex:0 0 200px}
+body.kokomi-mobile-reference .airing-rail{
+ width:100%;max-width:100%;min-width:0;
+ overflow-x:auto;overflow-y:hidden;overscroll-behavior-x:contain;
+}
+@media(max-width:780px){
+ body.kokomi-mobile-reference .oneup-studio-airing-inner{padding:12px;gap:10px}
+ body.kokomi-mobile-reference .oneup-studio-airing-items{order:2;flex:1 1 100%}
+ body.kokomi-mobile-reference .oneup-studio-airing-more{order:3}
+ body.kokomi-mobile-reference .schedule-rail{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
