@@ -396,3 +396,27 @@ body.oneup-october{
   font-size:12px;
  }
 }
+
+/* Authentic catalogue metadata; avoids generic fake episode availability. */
+.oneup-october .oct-feature-metadata{
+ display:flex;align-items:center;flex-wrap:wrap;
+ gap:6px;margin:0 0 18px;
+ font:800 11px/1.25 'Barlow Condensed',Impact,sans-serif;
+ letter-spacing:.12em;
+}
+.oneup-october .oct-feature-metadata:empty{display:none}
+.oneup-october .oct-feature-metadata>span{
+ color:#d1e3d2;background:#233d346b;
+ border:1px solid #b6dbb349;border-radius:2px;
+ padding:6px 9px;
+}
+.oneup-october .oct-event-art{
+ transform:translate3d(var(--oct-shift-x,0px),var(--oct-shift-y,0px),0);
+ transition:transform .28s cubic-bezier(.16,1,.3,1);
+}
+@media(hover:none),(pointer:coarse){
+ .oneup-october .oct-event-art{transform:none;transition:none}
+}
+@media(prefers-reduced-motion:reduce){
+ .oneup-october .oct-event-art{transform:none!important;transition:none!important}
+}
