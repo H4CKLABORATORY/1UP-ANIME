@@ -98,6 +98,42 @@ try{
    const episodes=(await page.locator('#motor-episodes').innerText()).replace(/[,. ]/g,'');
    if(!Number(episodes))throw new Error('Published engine episode count missing');
   });
+  await test(device.name+' October cinematic preview loads without changing production',async()=>{
+   await page.goto(base+'preview-october.html',{waitUntil:'domcontentloaded'});
+   await page.locator('body.oneup-october .oct-event').waitFor({timeout:9000});
+   const label=await page.locator('.limited-tag').innerText();
+   if(!/OCTUBRE|HALLOWEEN/.test(label))throw Error('October event identity missing');
+   const frame=await page.locator('.oct-event-frame').count();
+   if(!frame)throw Error('Original October editorial artwork missing');
+   const theme=await page.evaluate(()=>getComputedStyle(document.body).getPropertyValue('--oct-main').trim());
+   if(!theme)throw Error('Theme stylesheet was not applied');
+   const overflow=await page.evaluate(()=>document.documentElement.scrollWidth-window.innerWidth);
+   if(overflow>12)throw Error('Mobile theme causes '+overflow+'px horizontal overflow');
+  });
+  await test(device.name+' seasonal sound is opt-in and does not block navigation',async()=>{
+   const sound=page.locator('#oct-audio-control');
+   await sound.waitFor({timeout:5000});
+   if(await sound.getAttribute('aria-pressed')!=='false')throw Error('Sound must start off');
+   await sound.click({timeout:6500});
+   if(await sound.getAttribute('aria-pressed')!=='true')throw Error('Sound toggle did not activate');
+   await sound.click({timeout:6500});
+   if(await sound.getAttribute('aria-pressed')!=='false')throw Error('Sound toggle did not mute');
+   if(device.mobile)await touchTab('temporada');
+   else await page.locator('.desktop-links [data-route="temporada"]').click();
+   await page.locator('#browse-screen:not([hidden])').waitFor({timeout:6500});
+  });
+  await test(device.name+' October preview retains anime details',async()=>{
+   if(device.mobile)await touchTab('inicio');
+   else await page.locator('.desktop-links [data-route="inicio"]').click();
+   await page.locator('#hero-detail').click({timeout:9000});
+   await page.locator('#anime-dialog[open] #detail-anime-name').waitFor({timeout:6500});
+   const button=page.locator('#anime-close'),rect=await button.boundingBox();
+   if(!rect)throw Error('The close button is not visible');
+   if(device.mobile)await page.touchscreen.tap(rect.x+rect.width/2,rect.y+rect.height/2);
+   else await button.click();
+   await page.waitForFunction(()=>!document.querySelector('#anime-dialog')?.open,null,{timeout:3500});
+  });
+  try{await page.screenshot({path:'e2e-october-'+device.name+'.png',fullPage:true,animations:'disabled'})}catch{}
   await test(device.name+' has no uncaught JavaScript errors',async()=>{
    if(errors.length)throw new Error(errors.join(' | '));
   });
