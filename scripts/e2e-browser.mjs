@@ -49,6 +49,20 @@ try{
    if(!title.trim())throw new Error('Hero title is blank');
    if(await page.locator('#trending-rail [data-details]').count()<3)throw new Error('Missing anime cards');
   });
+  await test(device.name+' third-party catalog links render and stay external',async()=>{
+   await page.locator('#oneup-provider-open').count(); // No synthetic player is required.
+   const area=page.locator('#oneup-external-directory');
+   await area.waitFor({timeout:7000});
+   const entries=area.locator('.oneup-provider-card');
+   if(await entries.count()!==2)throw new Error('Expected two external anime providers');
+   const links=await entries.locator('a.oneup-provider-open').evaluateAll(nodes=>nodes.map(a=>({
+    href:a.href,target:a.target,rel:a.rel
+   })));
+   if(!links.some(x=>new URL(x.href).hostname==='www.iq.com'))throw new Error('iQIYI link not present');
+   if(!links.some(x=>new URL(x.href).hostname==='ww3.animeonline.ninja'))throw new Error('Castellano provider missing');
+   if(!links.every(x=>x.target==='_blank'&&x.rel.includes('noopener')))throw new Error('External links must be separate and safe');
+   if(!await area.getByText('NO REPRODUCCIÓN INTEGRADA').count())throw new Error('Playback is wrongly implied');
+  });
   await test(device.name+' anime detail, poster and episode discussion',async()=>{
    await page.locator('#hero-detail').click();
    await page.locator('#anime-dialog[open] #detail-anime-name').waitFor({timeout:9000});
@@ -111,6 +125,11 @@ try{
    if(!theme)throw Error('Theme stylesheet was not applied');
    const overflow=await page.evaluate(()=>document.documentElement.scrollWidth-window.innerWidth);
    if(overflow>12)throw Error('Mobile theme causes '+overflow+'px horizontal overflow');
+  });
+  await test(device.name+' preview keeps iQIYI and Castellano without visual overflow',async()=>{
+   await page.locator('#oneup-external-directory .oneup-provider-card').first().waitFor({timeout:6500});
+   const overflow=await page.evaluate(()=>document.documentElement.scrollWidth-window.innerWidth);
+   if(overflow>12)throw new Error('Third-party section causes horizontal overflow: '+overflow);
   });
   await test(device.name+' seasonal sound is opt-in and does not block navigation',async()=>{
    const sound=page.locator('#oct-audio-control');
