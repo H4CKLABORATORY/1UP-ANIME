@@ -31,6 +31,46 @@ try{
  await page.locator('#km-extra-root:not([hidden]) .km-page-heading h1').waitFor({timeout:8000});
  }
  });
+
+ await check(env.label+' integrated episode discussion without fake media',async()=>{
+  await page.goto(base+'preview-kokomi-mobile.html',{waitUntil:'domcontentloaded'});
+  await page.locator('#trending-rail [data-details]').first().waitFor({timeout:13000});
+  const id=await page.locator('#trending-rail [data-details]').first().getAttribute('data-details');
+  if(!id)throw Error('No catalogue identifier');
+  await page.goto(base+'preview-kokomi-mobile.html#km/series-play/'+id,{waitUntil:'domcontentloaded'});
+  await page.locator('#km-watch-comment-form').waitFor({timeout:9000});
+  if(!await page.locator('#km-watch-comment-list').getByText('Firebase').count())throw Error('Disconnected backend not disclosed');
+  if(!await page.locator('.km-watch-no-media').count())throw Error('Unavailable video was not disclosed');
+  const selected=await page.locator('#km-watch-select option').count();
+  if(selected<1)throw Error('Missing episode selector');
+  await page.evaluate(()=>location.hash='#inicio');
+  await page.locator('#home-screen:not([hidden])').waitFor({timeout:6500});
+ });
+ await check(env.label+' playable mock fixture changes season and server without real streaming',async()=>{
+  const tester=await context.newPage();
+  const first=await page.locator('#trending-rail [data-details]').first().getAttribute('data-details');
+  await tester.route('**/data/licensed-media.json',route=>route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({
+   entries:{[first]:{episodes:[
+    {season:1,number:1,title:'Prueba uno',sources:[
+      {rights:'authorized',name:'Video directo de prueba',src:'https://media.example.invalid/demo.mp4',mime:'video/mp4'},
+      {rights:'authorized',name:'Video externo de prueba',mode:'official_embed',provider:'youtube',videoId:'12345678901'}
+    ]},
+    {season:2,number:1,title:'Prueba dos',sources:[
+      {rights:'authorized',name:'Segundo servidor de prueba',src:'https://media.example.invalid/two.mp4',mime:'video/mp4'}
+    ]}
+   ]}}
+  })}));
+  try{
+   await tester.goto(base+'preview-kokomi-mobile.html#km/series-play/'+first,{waitUntil:'domcontentloaded'});
+   await tester.locator('#km-watch-comment-form').waitFor({timeout:11000});
+   if(await tester.locator('[data-km-server]').count()!==2)throw Error('Server selector missing');
+   await tester.locator('[data-km-server="1"]').click();
+   if(!await tester.locator('#km-play-stage iframe').count())throw Error('Video embed selector did not work');
+   await tester.locator('#km-season-select').selectOption('2');
+   if(!await tester.locator('#km-watch-select option').getByText('T2 · Episodio 1').count())throw Error('Comment season did not update');
+   if(!await tester.locator('#km-play-stage video').count())throw Error('Season changed but video was not re-rendered');
+  }finally{await tester.close()}
+ });
  await check(env.label+' settings local storage',async()=>{
  await page.goto(base+'preview-kokomi-mobile.html#km/settings',{waitUntil:'domcontentloaded'});
  await page.locator('#km-preferences input[name="compact"]').check();
