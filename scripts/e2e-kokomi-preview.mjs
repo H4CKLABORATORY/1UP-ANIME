@@ -65,6 +65,8 @@ try{
    await tester.locator('#km-watch-comment-form').waitFor({timeout:11000});
    if(await tester.locator('[data-km-server]').count()!==2)throw Error('Server selector missing');
    await tester.locator('[data-km-server="1"]').click();
+   if(await tester.locator('#km-play-stage iframe').count())throw Error('Embed loaded without user consent');
+   await tester.locator('#km-embed-open').click();
    if(!await tester.locator('#km-play-stage iframe').count())throw Error('Video embed selector did not work');
    await tester.locator('#km-season-select').selectOption('2');
    if(!await tester.locator('#km-watch-select option').getByText('T2 · Episodio 1').count())throw Error('Comment season did not update');
@@ -100,6 +102,14 @@ try{
    if(columns!==expected)throw Error('Expected '+expected+' columns, found '+columns);
  });
  await page.screenshot({path:'e2e-kokomi-'+env.label+'-ranking.png',animations:'disabled'});
+ const animeId=await page.locator('#trending-rail [data-details]').first().getAttribute('data-details');
+ await page.goto(base+'preview-kokomi-mobile.html#km/series/'+animeId,{waitUntil:'domcontentloaded'});
+ await page.locator('.km-detail-banner').waitFor({timeout:9000});
+ await page.screenshot({path:'e2e-kokomi-'+env.label+'-detail.png',animations:'disabled'});
+ await page.goto(base+'preview-kokomi-mobile.html#km/series-play/'+animeId,{waitUntil:'domcontentloaded'});
+ await page.locator('#km-watch-comment-form').waitFor({timeout:9000});
+ await page.screenshot({path:'e2e-kokomi-'+env.label+'-watch.png',animations:'disabled'});
+
  await context.close();
  }
 }finally{await browser?.close();await new Promise(ok=>server.close(ok))}
