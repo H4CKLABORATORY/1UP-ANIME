@@ -84,9 +84,20 @@ function sourcesFrom(ep){
  return {name:s.name||'Servidor',kind:'video',link,mime,language:s.language||ep.language||'',quality:s.quality||'',subtitles:uri(ep.subtitles_es||'')};
  }).filter(Boolean).slice(0,8)
 }
+function watchHeading(a,movie){
+ const detailPath=movie?'movie-single':'series';
+ return '<header class="km-watch-heading">'+
+  '<div class="km-watch-topline"><a href="#km/'+detailPath+'/'+encodeURIComponent(a.id)+'">← VOLVER A LA FICHA</a>'+
+  '<span class="km-eyebrow">1UP ANIME / '+(movie?'VER PELÍCULA':'VER EPISODIO')+'</span></div>'+
+  '<h1 title="'+esc(a.title)+'">'+esc(a.title)+'</h1>'+
+  '<div class="km-watch-subtitle">'+
+  '<span>'+(movie?'PELÍCULA':'SERIE')+'</span><span>'+esc(String(a.year||'AÑO NO DISPONIBLE'))+'</span>'+
+  '<span>★ '+esc(String(a.averageScore?Math.round(a.averageScore)/10:'—'))+'</span>'+
+  '</div></header>';
+}
 function playerFrame(a,movie,entry){
  const ep=entry?.episodes||[];
- if(!ep.length)return heading(movie?'Reproducir película':'Reproducir episodio',a.title)+
+ if(!ep.length)return watchHeading(a,movie)+
  '<div class="km-video-holder km-watch-no-media"><div class="km-no-media"><span>▷</span><strong>Sin fuentes integradas configuradas</strong>'+
  '<p>Aún no se han configurado episodios reproducibles para esta serie.</p>'+
  '<button class="km-second-button" data-km-open="'+esc(a.id)+'">Ver ficha completa ↗</button></div></div>'+
@@ -99,7 +110,7 @@ function playerFrame(a,movie,entry){
  const select='<div class="km-episode-list"><label for="km-season-select">Temporadas disponibles</label><select id="km-season-select">'+seasonOptions+'</select><b>Episodios disponibles</b><div class="km-episode-buttons">'+buttons+'</div></div>';
  const serverMarkup=servers.length?'<div class="km-server-list">'+servers.map((s,i)=>'<button type="button" data-km-server="'+i+'" class="'+(i===0?'active':'')+'">'+esc(s.name)+' <small>'+esc(s.language)+'</small></button>').join('')+'</div>':'';
  const player='<div id="km-play-stage" class="km-play-stage"></div>';
- return heading(movie?'Reproducir película':'Reproducir episodio',a.title)+'<div class="km-watch-layout"><div><div class="km-video-holder">'+player+'</div>'+serverMarkup+'<p class="km-muted">Fuentes autorizadas únicamente. MP4/WebM y HLS cuando el navegador lo admita.</p></div><aside>'+select+'<button class="km-second-button" data-km-open="'+esc(a.id)+'">Abrir ficha del anime ↗</button></aside></div><div id="km-watch-community"></div>';
+ return watchHeading(a,movie)+'<div class="km-watch-layout"><div><div class="km-video-holder">'+player+'</div>'+serverMarkup+'<p class="km-muted">Fuentes autorizadas únicamente. MP4/WebM y HLS cuando el navegador lo admita.</p></div><aside>'+select+'<button class="km-second-button" data-km-open="'+esc(a.id)+'">Abrir ficha del anime ↗</button></aside></div><div id="km-watch-community"></div>';
 }
 function mountPlayer(a){
  const episodes=licensed?.[a.id]?.episodes||[];const ep=episodes[activeEpisode];
