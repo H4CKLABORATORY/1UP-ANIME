@@ -6,12 +6,19 @@ const API='https://graphql.anilist.co';
 const pause=ms=>new Promise(resolve=>setTimeout(resolve,ms));
 let last=0;
 async function call(query,variables){
- const gap=Math.max(0,1800-(Date.now()-last));if(gap)await pause(gap);
+ // AniList currently documents a temporary 30 requests/minute cap.
+ const gap=Math.max(0,2300-(Date.now()-last));if(gap)await pause(gap);
  for(let trial=0;trial<3;trial++){
   last=Date.now();const ctrl=new AbortController(),timer=setTimeout(()=>ctrl.abort(),14500);
   try{
    const res=await fetch(API,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({query,variables}),signal:ctrl.signal});
-   if(res.status===429){await pause((trial+2)*3400);continue}
+   if(res.status===429){
+    const retrySeconds=Number(res.headers.get('Retry-After'));
+    const retryMs=Number.isFinite(retrySeconds)&&retrySeconds>0
+      ? Math.min(65000,Math.ceil(retrySeconds*1000))
+      : 10000*(trial+1);
+    await pause(retryMs);continue;
+   }
    if(!res.ok)throw Error('AniList HTTP '+res.status);
    const json=await res.json();if(json.errors?.length)throw Error(JSON.stringify(json.errors));
    return json.data;
