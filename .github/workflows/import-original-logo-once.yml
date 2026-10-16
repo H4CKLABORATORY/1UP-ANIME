@@ -1,0 +1,52 @@
+name: Import original 1UP logo media
+on:
+  push:
+    branches:
+      - feature/brand-signature-video-20261016
+    paths:
+      - .github/workflows/import-original-logo-once.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  original-logo:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Download exact original logo package
+        env:
+          PACKAGE_URL: "https://at.adobe.com/hyNx9Lbxe6IrmX24"
+        run: |
+          set -euo pipefail
+          curl --fail --location --retry 2 --connect-timeout 15 --max-time 130 \
+            -H 'Accept: application/zip,application/octet-stream,*/*' \
+            "$PACKAGE_URL" -o /tmp/1up-logo-original.zip
+          printf '%s  %s\n' \
+            'e269748ae31e87611d515e09bbd9655502d8d02379cda11be6ec59ee2716191c' \
+            '/tmp/1up-logo-original.zip' | sha256sum --check
+          unzip -q /tmp/1up-logo-original.zip 'assets/*' -d /tmp/oneup-original
+          install -m 644 /tmp/oneup-original/assets/1up-anime-intro-firma-3seg.mp4 assets/
+          install -m 644 /tmp/oneup-original/assets/1up-anime-logo-poster.jpg assets/
+          install -m 644 /tmp/oneup-original/assets/1up-anime-app-icon-512.png assets/
+          printf '%s\n' \
+            '37b482d810e088dbcf6fd4dc09fb98f43bfc74c459340eafe2a2f765ab384816  assets/1up-anime-intro-firma-3seg.mp4' \
+            'c88b55421a23e68794c37cf30f52d91ebee0280e4d96d4088b615489c91537b9  assets/1up-anime-logo-poster.jpg' \
+            '8626328793c63d43a1585efeff44a3502d2756a1360c5761b02c5d4a67bd6920  assets/1up-anime-app-icon-512.png' \
+            | sha256sum --check
+          node scripts/verify-video-logo.mjs
+      - name: Commit only the verified original logo binaries
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/1up-anime-intro-firma-3seg.mp4 assets/1up-anime-logo-poster.jpg assets/1up-anime-app-icon-512.png
+          if ! git diff --cached --quiet; then
+            git commit -m "assets: add verified original MP4 logo with AAC signature"
+            git push origin HEAD:feature/brand-signature-video-20261016
+          fi
