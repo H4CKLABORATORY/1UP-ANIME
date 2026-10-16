@@ -213,6 +213,40 @@ try{
    if(link!=='https://www.youtube.com/watch?v=12345678901')throw Error('Official provider fallback is absent');
    await page.unroute('**/data/licensed-media.json');
   });
+  await test(device.name+' new studio layout preserves anime catalogue and original streaming UI',async()=>{
+   await page.goto(base+'preview-kokomi.html',{waitUntil:'domcontentloaded'});
+   await page.locator('body.oneup-kokomi.oneup-october .oct-event').waitFor({timeout:10000});
+   await page.locator('#trending-rail [data-details]').first().waitFor({timeout:10000});
+   if(await page.locator('#oneup-studio-dock .studio-dock-item').count()!==4)throw Error('Missing new quick access navigation');
+   await page.locator('#oneup-studio-airing .oneup-studio-airing-items, #oneup-studio-airing-items').first().waitFor({timeout:5000});
+   const accent=await page.evaluate(()=>getComputedStyle(document.body).getPropertyValue('--kp-accent').trim());
+   if(!accent)throw Error('Studio styling is not active');
+   const overflow=await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth);
+   if(overflow>12)throw Error('Studio layout exceeds viewport by '+overflow+'px');
+  });
+  await test(device.name+' new studio navigation opens season without breaking buttons',async()=>{
+   await page.locator('#oneup-studio-dock [data-route="temporada"]').click({timeout:8000});
+   await page.locator('#browse-screen:not([hidden])').waitFor({timeout:7500});
+   if(device.mobile)await touchTab('inicio');
+   else await page.locator('.desktop-links [data-route="inicio"]').click();
+   await page.locator('#hero-detail').click({timeout:8000});
+   await page.locator('#anime-dialog[open] #detail-anime-name').waitFor({timeout:7000});
+   const close=page.locator('#anime-close');
+   if(device.mobile){
+    const box=await close.boundingBox();
+    if(!box)throw Error('Studio detail close not visible');
+    await page.touchscreen.tap(box.x+box.width/2,box.y+box.height/2);
+   }else await close.click();
+   await page.waitForFunction(()=>!document.querySelector('#anime-dialog')?.open,null,{timeout:4500});
+  });
+  await test(device.name+' real upcoming schedule is distinguishable from playable episodes',async()=>{
+   await page.locator('#oneup-studio-airing').waitFor({timeout:6500});
+   const hint=await page.locator('.oneup-studio-airing-label small').innerText();
+   if(!/no enlaces de reproducción/i.test(hint))throw Error('Airing data is misrepresented as streaming availability');
+   const view=await page.locator('.oneup-studio-airing-items').innerText();
+   if(!view.trim())throw Error('Upcoming schedule has no display or fallback');
+  });
+  try{await page.screenshot({path:'e2e-kokomi-'+device.name+'.png',fullPage:true,animations:'disabled'})}catch{}
   await test(device.name+' has no uncaught JavaScript errors',async()=>{
    if(errors.length)throw new Error(errors.join(' | '));
   });
