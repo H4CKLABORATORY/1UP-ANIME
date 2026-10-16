@@ -104,16 +104,34 @@ function showVideo(slot){
   return;
  }
  if(slot.kind==='embed'){
-  const iframe=document.createElement('iframe');
-  iframe.src=slot.url;
-  iframe.title='Reproductor autorizado · '+slot.label+' · Episodio '+selectedEpisode;
-  iframe.loading='lazy';
-  iframe.referrerPolicy='strict-origin-when-cross-origin';
-  iframe.setAttribute('sandbox','allow-scripts allow-same-origin allow-presentation allow-popups');
-  iframe.allow='autoplay; encrypted-media; fullscreen; picture-in-picture';
-  iframe.allowFullscreen=true;
-  stage.appendChild(iframe);
-  status.textContent='Reproductor externo: '+slot.label+'. Su disponibilidad depende del proveedor.';
+  // Require an explicit click before a third party receives requests or cookies.
+  const wrapper=document.createElement('div');wrapper.className='oneup-embed-stage';
+  const action=document.createElement('button');action.id='oneup-embed-play';action.type='button';
+  action.setAttribute('aria-label','Abrir reproductor externo oficial');
+  const icon=document.createElement('span');icon.className='oneup-embed-play-icon';icon.textContent='▷';
+  const words=document.createElement('strong');words.textContent='ABRIR REPRODUCTOR';
+  action.append(icon,words);
+  const frame=document.createElement('div');frame.id='oneup-embed-frame';frame.hidden=true;
+  wrapper.append(action,frame);stage.appendChild(wrapper);
+  const link=document.createElement('a');link.className='oneup-embed-external';
+  const yt=slot.url.match(/^https:\/\/www\.youtube-nocookie\.com\/embed\/([A-Za-z0-9_-]{11})$/);
+  link.href=yt?'https://www.youtube.com/watch?v='+yt[1]:slot.url;
+  link.target='_blank';link.rel='noopener noreferrer';link.textContent='Abrir en el proveedor oficial ↗';
+  stage.appendChild(link);
+  action.addEventListener('click',()=>{
+   if(!stage.isConnected)return;
+   const iframe=document.createElement('iframe');
+   iframe.src=slot.url;
+   iframe.title='Reproductor autorizado · '+slot.label+' · Episodio '+selectedEpisode;
+   iframe.loading='eager';
+   iframe.referrerPolicy='strict-origin-when-cross-origin';
+   iframe.setAttribute('sandbox','allow-scripts allow-same-origin allow-presentation allow-popups');
+   iframe.allow='autoplay; encrypted-media; fullscreen; picture-in-picture';
+   iframe.allowFullscreen=true;
+   frame.hidden=false;frame.appendChild(iframe);action.hidden=true;
+   status.textContent='Reproductor externo abierto: '+slot.label+'. Su disponibilidad depende del proveedor.';
+  },{once:true});
+  status.textContent='Reproductor oficial configurado. Pulsa abrir para conectar con el proveedor.';
  }else{
   const video=document.createElement('video');
   video.controls=true;video.playsInline=true;video.preload='metadata';
