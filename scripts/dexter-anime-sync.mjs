@@ -6,6 +6,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import crypto from 'node:crypto';
 import {pathToFileURL} from 'node:url';
+import {normalizeEpisodeSources, validAnimeId} from './media-source-contract.mjs';
 
 const SUPPORTED=new Set(['anilist_schedule','licensed_library','jkanime_external','youtube_trailers']);
 const fileOf={
@@ -161,28 +162,33 @@ export async function syncDexter({root=process.cwd(),now=new Date(),force=false,
     const entries=data.entries||{};
     if(!entries||typeof entries!=='object'||Array.isArray(entries))throw Error('Biblioteca inválida.');
     for(const key of [...by.sources.keys()])if(by.sources.get(key).providerId==='licensed_library')by.sources.delete(key);
+    status.rejected=0;
     for(const [animeId,record] of Object.entries(entries)){
-     if(!/^(mal|al)-\d+$/.test(animeId))continue;
-     const episodes=Array.isArray(record.episodes)?record.episodes:[];
+     if(!validAnimeId(animeId))continue;
+     // A licensed title may not appear in the public broadcast schedule.
+     if(!touchAnime({id:animeId,title:record?.title||'Anime autorizado'}))continue;
+     const episodes=Array.isArray(record?.episodes)?record.episodes:[];
      for(const [index,item] of episodes.entries()){
-      const all=Array.isArray(item.sources)&&item.sources.length?item.sources:
-        [{name:'Servidor principal',src:item.src,mime:item.mime,language:item.language,quality:item.quality}];
+      const checked=normalizeEpisodeSources(item);
+      status.rejected+=checked.rejected.length;
+      if(!checked.sources.length)continue;
       const old=by.episodes.get(animeId+':ep:'+(item.episode||item.number||index+1));
       const ep=fromVideoEpisode(animeId,item,index,stamp,old);
       if(!ep)continue;
       const valid=[];
-      for(const [sourceIndex,source] of all.entries()){
-       const url=yesURL(source?.src||source?.url);
-       if(!url)continue;
-       const mime=safeText(source.mime||(url.split('?')[0].endsWith('.m3u8')?'application/vnd.apple.mpegurl':'video/mp4'),80);
-       if(!['video/mp4','video/webm','application/vnd.apple.mpegurl'].includes(mime))continue;
-       const sid='licensed_library:'+ep.id+':'+hash(url);
-       by.sources.set(sid,{id:sid,episodeId:ep.id,providerId:id,mode:'self_hosted',
-         status:'configurada_sin_verificar',name:safeText(source.name||'Servidor '+(sourceIndex+1),65),
-         language:safeText(source.language||item.language||'No especificado',40),
-         quality:safeText(source.quality||item.quality||'No especificada',40),
-         mime,src:url,subtitleUrl:yesURL(item.subtitles_es)||null,
-         lastSeenAt:stamp});
+      for(const source of checked.sources){
+       const identity=source.src||source.embedUrl;
+       const sid='licensed_library:'+ep.id+':'+hash(identity);
+       by.sources.set(sid,{
+        id:sid,episodeId:ep.id,providerId:id,
+        mode:source.mode==='official_embed'?'official_embed':'self_hosted',
+        status:'configurada_sin_verificar',name:source.name,
+        language:source.language,quality:source.quality,
+        mime:source.mime,src:source.src,
+        provider:source.provider,videoId:source.videoId,embedUrl:source.embedUrl,
+        declaredRights:source.rights,
+        subtitleUrl:source.subtitleUrl,lastSeenAt:stamp
+       });
        valid.push(sid);
        status.playback++;
       }
