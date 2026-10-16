@@ -1,0 +1,22 @@
+name: 1UP Video Logo Assets
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'assets/1up-anime-intro-firma-3seg.mp4'
+      - 'assets/1up-anime-logo-poster.jpg'
+      - 'assets/1up-anime-app-icon-512.png'
+      - 'scripts/verify-video-logo.mjs'
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify original film, embedded AAC audio and logo frame
+        run: node scripts/verify-video-logo.mjs

@@ -3,7 +3,7 @@ import {createServer} from 'node:http';
 import {readFile} from 'node:fs/promises';
 import {resolve,extname,sep} from 'node:path';
 const ROOT=resolve('.'),port=8789,base='http://127.0.0.1:'+port+'/';
-const types={'.html':'text/html','.js':'text/javascript','.css':'text/css','.json':'application/json','.svg':'image/svg+xml','.png':'image/png'};
+const types={'.html':'text/html','.js':'text/javascript','.css':'text/css','.json':'application/json','.svg':'image/svg+xml','.png':'image/png','.jpg':'image/jpeg','.mp4':'video/mp4'};
 const server=createServer(async(req,res)=>{
  try{const name=decodeURIComponent(new URL(req.url,base).pathname);const filename=resolve(ROOT,'.'+name);
  if(!filename.startsWith(ROOT+sep))throw Error('Path');const data=await readFile(filename);
@@ -16,25 +16,27 @@ const check=async(label,fn)=>{try{await fn();console.log('PASS '+label)}catch(e)
 try{
  browser=await chromium.launch({headless:true,args:['--no-sandbox']});
  // Focused brand continuity checks; reuse the full journeys below only twice.
- // The existing crest is a repository asset, not a claim of owner-approved identity.
+ // The owner's original video signature is the primary brand, not the old crest.
  for(const width of [320,375,390,1366]){
   const context=await browser.newContext({viewport:{width,height:844},isMobile:width<600,hasTouch:width<600,reducedMotion:'reduce'});
   await context.route('**/*',r=>r.request().url().startsWith(base)?r.continue():r.abort());
   const page=await context.newPage();
-  const crestResponses=[];
-  page.on('response',response=>{if(new URL(response.url()).pathname.endsWith('/assets/oneup-crest.svg'))crestResponses.push(response.status())});
-  try{await check('brand '+width+' existing crest loads and stays visible in header and drawer',async()=>{
+  try{await check('brand '+width+' real MP4 poster appears in header and drawer',async()=>{
    await page.goto(base+'preview-kokomi-mobile.html',{waitUntil:'domcontentloaded'});
    await page.locator('#km-open').waitFor();
+   await page.locator('body.oneup-video-brand-enabled').waitFor({timeout:9000});
    const verifyLogo=async(selector)=>{
     const logo=page.locator(selector);await logo.waitFor({state:'visible'});
     await logo.evaluate(image=>image.decode());
-    const state=await logo.evaluate(image=>{const box=image.getBoundingClientRect();return {complete:image.complete,naturalWidth:image.naturalWidth,path:new URL(image.currentSrc).pathname,x:box.x,y:box.y,width:box.width,height:box.height,viewport:innerWidth}});
-    if(!state.complete||!state.naturalWidth||!state.path.endsWith('/assets/oneup-crest.svg'))throw Error('Existing crest failed to load: '+JSON.stringify(state));
-    if(state.width<24||state.height<24||state.x<0||state.x+state.width>state.viewport)throw Error('Crest not visible within viewport: '+JSON.stringify(state));
+    const state=await logo.evaluate(image=>{
+      const box=image.getBoundingClientRect();
+      return {complete:image.complete,naturalWidth:image.naturalWidth,path:new URL(image.currentSrc).pathname,x:box.x,y:box.y,width:box.width,height:box.height,viewport:innerWidth}
+    });
+    if(!state.complete||!state.naturalWidth||!state.path.endsWith('/assets/1up-anime-logo-poster.jpg'))throw Error('Owner logo poster failed to load: '+JSON.stringify(state));
+    if(state.width<24||state.height<24||state.x<0||state.x+state.width>state.viewport)throw Error('Video poster outside viewport: '+JSON.stringify(state));
    };
-   await verifyLogo('.header .brand-symbol');
-   if(!crestResponses.includes(200)||crestResponses.some(status=>status>=400))throw Error('Crest network response failed: '+crestResponses.join(','));
+   await verifyLogo('.header .oneup-motion-logo');
+   if(await page.locator('.header .brand-symbol').isVisible())throw Error('Legacy logo visible instead of original');
    const overlaps=await page.evaluate(()=>{const brand=document.querySelector('.header .brand').getBoundingClientRect();return ['#km-open','.header-right'].some(selector=>{const box=document.querySelector(selector).getBoundingClientRect();return box.width>0&&box.left<brand.right&&box.right>brand.left&&box.top<brand.bottom&&box.bottom>brand.top})});
    if(overlaps)throw Error('Brand overlaps header controls');
    const overflow=await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth);
@@ -42,7 +44,7 @@ try{
    await page.screenshot({path:'e2e-kokomi-brand-'+width+'-header.png',animations:'disabled'});
    await page.locator('#km-open').click();
    await page.locator('#km-drawer:not([hidden])').waitFor();
-   await verifyLogo('#km-drawer .km-drawer-brand img');
+   await verifyLogo('#km-drawer .km-drawer-brand .oneup-drawer-logo');
    await page.screenshot({path:'e2e-kokomi-brand-'+width+'-drawer.png',animations:'disabled'});
    const drawerBrand=page.locator('#km-drawer .km-drawer-brand');
    if(await drawerBrand.getAttribute('href')!=='#inicio')throw Error('Drawer brand is not linked to home');
@@ -51,6 +53,24 @@ try{
    await page.locator('#home-screen:not([hidden])').waitFor();
   })}finally{await context.close()}
  }
+
+ await check('brand video auto-mutes and allows sound after a tap',async()=>{
+  const context=await browser.newContext({viewport:{width:390,height:844},isMobile:true,hasTouch:true,reducedMotion:'no-preference'});
+  await context.route('**/*',r=>r.request().url().startsWith(base)?r.continue():r.abort());
+  try{
+   const page=await context.newPage();
+   await page.goto(base+'index.html',{waitUntil:'domcontentloaded'});
+   const video=page.locator('.header video.oneup-motion-logo');
+   await video.waitFor({state:'visible',timeout:9000});
+   const auto=await video.evaluate(el=>({muted:el.muted,autoplay:el.autoplay,loop:el.loop,playsInline:el.playsInline}));
+   if(!auto.muted||!auto.autoplay||!auto.loop||!auto.playsInline)throw Error('Header video must loop silently to satisfy iOS autoplay policy');
+   await page.locator('.oneup-signature-trigger').click();
+   await page.locator('#oneup-signature-dialog[open]').waitFor({timeout:5500});
+   if(await page.locator('.oneup-signature-video').evaluate(el=>el.muted))throw Error('Sound preview was muted after user interaction');
+   await page.locator('.oneup-signature-close').click();
+   if(await page.locator('#oneup-signature-dialog').evaluate(el=>el.open))throw Error('Sound dialog failed to close');
+  }finally{await context.close()}
+ });
  for(const env of [{label:'mobile',width:390,height:844,mobile:true},{label:'desktop',width:1366,height:768,mobile:false}]){
  const context=await browser.newContext({viewport:{width:env.width,height:env.height},isMobile:env.mobile,hasTouch:env.mobile,reducedMotion:'reduce'});
  await context.route('**/*',r=>r.request().url().startsWith(base)?r.continue():r.abort());
