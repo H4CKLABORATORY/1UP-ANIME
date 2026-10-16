@@ -1,0 +1,152 @@
+/* 1UP EXTERNAL WORLDS — editorial motion design, not a fake video player. */
+.oneup-external-directory{
+ margin-top:40px;margin-bottom:65px;
+ position:relative;isolation:isolate;
+}
+.oneup-provider-title{
+ display:flex;align-items:end;justify-content:space-between;
+ gap:25px;padding:0 0 22px;margin-bottom:5px;
+ border-bottom:1px solid #a0baba51;
+}
+.oneup-provider-title h2{
+ font:900 clamp(38px,5vw,65px)/.9 'Barlow Condensed',Impact,sans-serif;
+ letter-spacing:-.012em;text-transform:uppercase;
+ margin:8px 0 1px;color:#f3f3f4;
+}
+.oneup-provider-title h2 em{font-style:normal;color:#b5e4d7}
+.oneup-provider-title>p{font-size:11px;line-height:1.6;max-width:350px;margin:0;color:#afbaca}
+.oneup-provider-grid{
+ display:grid;grid-template-columns:1fr 1fr;
+ gap:16px;margin-top:19px;
+}
+.oneup-provider-card{
+ position:relative;min-height:310px;
+ padding:0;
+ display:grid;grid-template-columns:40% 1fr;
+ background:#101820;
+ border:1px solid #dcebe53b;
+ clip-path:polygon(0 0,96% 0,100% 8%,100% 100%,4% 100%,0 92%);
+ overflow:hidden;isolation:isolate;
+ box-shadow:0 22px 50px #00000048;
+ transition:transform .26s cubic-bezier(.2,.8,.2,1);
+}
+.oneup-provider-card:hover{transform:translateY(-5px)}
+.oneup-provider-card::after{
+ content:"";position:absolute;inset:0;pointer-events:none;z-index:2;
+ background:linear-gradient(120deg,transparent 38%,#efffff0a 53%,transparent 64%);
+ opacity:0;transition:opacity .3s;
+}
+.oneup-provider-card:hover::after{opacity:1}
+.oneup-provider-card.castellano{
+ background:linear-gradient(118deg,#0b1d26,#171e29 65%,#0b1117);
+}
+.oneup-provider-card.iqiyi{
+ background:linear-gradient(118deg,#122223,#172325 65%,#11181c);
+}
+.oneup-provider-visual{
+ position:relative;display:flex;align-items:center;justify-content:center;
+ min-height:305px;overflow:hidden;isolation:isolate;
+ border-right:1px solid #ffffff16;
+}
+.oneup-provider-visual::before{
+ content:"";position:absolute;inset:-16%;
+ background:repeating-linear-gradient(117deg,transparent 0 30px,#dce5ed13 31px,#dce5ed13 32px,transparent 33px 65px);
+ transform:rotate(-8deg);
+ opacity:.52;pointer-events:none;
+}
+.oneup-provider-card.castellano .oneup-provider-visual{
+ background:radial-gradient(circle at 45% 39%,#65b8c984,transparent 56%),linear-gradient(130deg,#183042,#121e28);
+}
+.oneup-provider-card.iqiyi .oneup-provider-visual{
+ background:radial-gradient(circle at 40% 49%,#81b15b84,transparent 58%),linear-gradient(150deg,#203727,#152725);
+}
+.oneup-provider-visual::after{
+ content:"";position:absolute;left:0;top:-12%;
+ width:130%;height:145%;z-index:-1;
+ border:1px solid #ffffff48;border-radius:50%;
+ transform:translateX(-15%) rotate(-15deg);
+ box-shadow:0 0 0 21px #ffffff0d,0 0 0 48px #ffffff0a;
+ opacity:.6;transition:transform .6s cubic-bezier(.2,.8,.2,1);
+}
+.oneup-provider-card:hover .oneup-provider-visual::after{transform:translateX(-8%) rotate(4deg)}
+.oneup-provider-glyph{
+ font:900 clamp(65px,9vw,150px)/.8 'Barlow Condensed',Impact,sans-serif;
+ letter-spacing:-.06em;color:#eff8f4;
+ text-shadow:0 12px 28px #000c;
+ transform:rotate(-8deg);z-index:1;
+ transition:transform .45s cubic-bezier(.2,.8,.2,1);
+}
+.oneup-provider-card:hover .oneup-provider-glyph{transform:rotate(-3deg) scale(1.04)}
+.oneup-provider-number{
+ position:absolute;top:14px;left:17px;z-index:2;
+ font:900 17px 'Barlow Condensed',Impact,sans-serif;
+ color:#e6e9ed;letter-spacing:.12em
+}
+.oneup-provider-swoosh{
+ position:absolute;width:140%;height:15px;background:#efeeee;
+ top:70%;left:-20%;transform:rotate(-33deg);
+ opacity:.07;pointer-events:none;
+}
+.oneup-provider-copy{
+ position:relative;z-index:3;padding:25px 24px 27px;
+ display:flex;flex-direction:column;align-items:flex-start;
+ min-width:0;justify-content:center;
+}
+.oneup-provider-kicker{
+ color:#a2dcce;letter-spacing:.15em;
+ font:900 12px 'Barlow Condensed',Impact,sans-serif;
+ text-transform:uppercase;
+}
+.oneup-provider-kicker b{color:#efab78;font-size:17px;font-weight:600;margin-left:6px}
+.oneup-provider-copy h3{
+ margin:12px 0;
+ font:900 clamp(32px,3.6vw,50px)/.94 'Barlow Condensed',Impact,sans-serif;
+ letter-spacing:.01em;color:#f9f7f4;
+}
+.oneup-provider-copy p{
+ color:#becbd0;font-size:11px;line-height:1.65;
+ max-width:350px;margin:0 0 20px;
+}
+.oneup-provider-open{
+ background:#bde4d1;color:#091718;min-height:42px;
+ padding:10px 15px;text-decoration:none;
+ display:flex;justify-content:space-between;align-items:center;gap:10px;
+ font:900 13px 'Barlow Condensed',Impact,sans-serif;
+ text-transform:uppercase;letter-spacing:.08em;
+ clip-path:polygon(0 0,95% 0,100% 25%,100% 100%,0 100%);
+ transition:background .2s,filter .2s;
+}
+.oneup-provider-open:hover,.oneup-provider-open:focus-visible{background:#edf8d9;filter:brightness(1.05)}
+.oneup-provider-open:focus-visible{outline:3px solid #f3cfa9;outline-offset:3px}
+.oneup-provider-open span{font-size:17px}
+.oneup-provider-status{
+ display:block;font:700 9px/1.5 'Outfit',system-ui,sans-serif;
+ text-transform:uppercase;letter-spacing:.07em;
+ color:#8c9a9e;margin-top:12px;
+}
+@media(max-width:1140px){
+ .oneup-provider-grid{grid-template-columns:1fr}
+ .oneup-provider-card{min-height:265px;grid-template-columns:32% 1fr}
+ .oneup-provider-visual{min-height:265px}
+ .oneup-provider-glyph{font-size:clamp(90px,12vw,140px)}
+}
+@media(max-width:720px){
+ .oneup-provider-title{display:block}
+ .oneup-provider-title>p{margin:14px 0 0}
+ .oneup-provider-card{grid-template-columns:32% 1fr;min-height:245px}
+ .oneup-provider-visual{min-height:245px}
+ .oneup-provider-copy{padding:18px 15px}
+ .oneup-provider-copy h3{font-size:clamp(28px,6.3vw,40px)}
+ .oneup-provider-glyph{font-size:clamp(60px,13vw,95px)}
+ .oneup-provider-open{font-size:12px;min-height:39px}
+ .oneup-provider-copy p{font-size:10px;margin-bottom:12px}
+ .oneup-provider-status{font-size:8px;letter-spacing:0}
+}
+@media(max-width:370px){
+ .oneup-provider-card{grid-template-columns:29% 1fr}
+ .oneup-provider-copy h3{font-size:26px}
+}
+@media(prefers-reduced-motion:reduce){
+ .oneup-provider-card,.oneup-provider-glyph,.oneup-provider-visual::after,.oneup-provider-open{transition:none!important}
+ .oneup-provider-card:hover{transform:none!important}
+}
