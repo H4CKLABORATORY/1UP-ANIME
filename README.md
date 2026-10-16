@@ -44,3 +44,14 @@ No hay registro de usuarios ni anuncios ni analíticas propias. Se usan datos p�
 5. Probar inicio de sesión en Safari y modo PWA; los flujos popup/redirect pueden requerir ajustes según el dominio.
 
 **Nota:** Autenticación Google NO sincroniza favoritos; para sincronización se necesitaría base de datos con reglas de seguridad. Nunca publicar credenciales privadas en GitHub.
+
+
+## Reproducción opcional de episodios autorizados
+
+El motor multimedia de 1UP ANIME incluye un selector con **hasta siete posiciones por episodio**. Admite MP4/WebM por HTTPS, HLS nativo en Safari y hls.js en navegadores compatibles, e incrustaciones expresamente permitidas que solo se activan tras pulsar. El selector de episodio sincroniza su número con los comentarios.
+
+**No hay episodios alojados ni fuentes reales configuradas**: `data/licensed-media.json` tiene `entries: {}`. Los botones sin fuente permanecen deshabilitados. Añadir una dirección o indicar `rights: "authorized"` no sustituye una licencia comprobable.
+
+Los módulos principales son `episode-player.js`, `hls-adapter.js`, `scripts/media-source-contract.mjs` y `scripts/dexter-anime-sync.mjs`. Consulta `docs/INTEGRACION_STREAMING_1UP_2026.md`.
+
+El backend opcional Supabase para comentarios/progreso está preparado pero **desactivado** en `supabase-config.js`; Firebase sigue como opción existente y no se ha migrado ningún dato. No se han contratado servidores, dominios ni servicios externos.
