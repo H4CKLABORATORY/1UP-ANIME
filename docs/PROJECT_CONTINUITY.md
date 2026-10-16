@@ -64,6 +64,7 @@ Prueba automatizada del prototipo: navegación de 23 rutas, favoritos y comentar
 - Validar reproducción y autenticación en Safari de iPhone y escritorio.
 
 ## Bitácora
+- **2026-10-15 — integración de módulos de reproducción:** rama `feature/oneup-stream-platform-integration-20261015` a partir de `main`. Se conectó un reproductor por episodio con hasta siete posiciones declaradas, HLS nativo/MSE, conversación sincronizada, contrato del motor de fuentes y backend opcional de Supabase (desactivado). Se conservaron los CSS de diseño y compatibilidad Safari. Se añadieron comprobaciones de navegador, HLS, fuentes y backend. **Sin videos reales, sin migración de usuarios, sin modificación de `main`**. Revisar la PR y resultados de GitHub Actions. Guía: `docs/INTEGRACION_STREAMING_1UP_2026.md`.
 - **2026-10-15:** Identificado repositorio real `H4CKLABORATORY/1UP-ANIME`; se decidió no sobreescribirlo con un prototipo estático más simple. Creada guía de continuidad para empezar siguientes turnos por el último estado; prototipo visual independiente probado. **Sin cambios desplegados en estética de producción.**
 
 ## Formato de actualización recomendado
