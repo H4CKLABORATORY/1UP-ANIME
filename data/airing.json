@@ -1,8 +1,8 @@
 {
-  "updated": "2026-10-16T09:34:42.774Z",
+  "updated": "2026-10-16T15:33:47.225Z",
   "source": "AniList public GraphQL metadata",
-  "windowStart": 1791945268,
-  "windowEnd": 1792920868,
+  "windowStart": 1791966812,
+  "windowEnd": 1792942412,
   "airing": [
     {
       "id": "mal-52480",
@@ -16,7 +16,7 @@
       "startDate": "2026-10-07",
       "format": "TV",
       "episodes": 13,
-      "averageScore": 72,
+      "averageScore": 71,
       "status": "RELEASING",
       "genres": [
         "Comedy",
@@ -117,7 +117,7 @@
       "startDate": "2026-10-07",
       "format": "TV",
       "episodes": 0,
-      "averageScore": 67,
+      "averageScore": 68,
       "status": "RELEASING",
       "genres": [
         "Adventure",
@@ -279,7 +279,7 @@
       "startDate": "2026-10-08",
       "format": "TV",
       "episodes": 0,
-      "averageScore": 70,
+      "averageScore": 69,
       "status": "RELEASING",
       "genres": [
         "Action",
@@ -795,8 +795,8 @@
         "id": "dUSYa-7rKpM"
       },
       "next": {
-        "at": 1792143600,
-        "episode": 3
+        "at": 1792748400,
+        "episode": 4
       },
       "airingAt": 1792143600,
       "episode": 3,
@@ -828,13 +828,44 @@
         "id": "_c_hMehCORQ"
       },
       "next": {
-        "at": 1792144500,
-        "episode": 153
+        "at": 1792749300,
+        "episode": 154
       },
       "airingAt": 1792144500,
       "episode": 153,
       "scheduleId": 421005,
       "description_es": "Un nuevo sueño y aventura en todo el mundo Pokémon se desarrolla en una nueva serie Pokémon siguiendo a una chica llamada Liko y un chico llamado Roy."
+    },
+    {
+      "id": "mal-51768",
+      "mal_id": 51768,
+      "ani_id": 146004,
+      "title": "Watame Did Borderline Nothing Wrong",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx146004-hH08KAB1yHlN.png",
+      "banner": "",
+      "description": "A series of comedic YouTube shorts airing every Friday on Watame's YouTube channel. Notes: - Episodes 1-21 (Series 1) were originally released in a vertical format, later rereleased widescreen in 8 compilation videos. - Contains special episode \"Best Girl？！スペシャル回！！！\"",
+      "year": 2022,
+      "startDate": "2022-01-07",
+      "format": "ONA",
+      "episodes": 0,
+      "averageScore": 69,
+      "status": "RELEASING",
+      "genres": [
+        "Comedy",
+        "Slice of Life"
+      ],
+      "siteUrl": "https://anilist.co/anime/146004",
+      "trailer": {
+        "site": "youtube",
+        "id": "c3DcpEy3xd8"
+      },
+      "next": {
+        "at": 1792749600,
+        "episode": 85
+      },
+      "airingAt": 1792144800,
+      "episode": 84,
+      "scheduleId": 422658
     },
     {
       "id": "mal-64848",
@@ -857,8 +888,8 @@
       "siteUrl": "https://anilist.co/anime/208367",
       "trailer": null,
       "next": {
-        "at": 1792152000,
-        "episode": 2
+        "at": 1792756800,
+        "episode": 3
       },
       "airingAt": 1792152000,
       "episode": 2,
@@ -889,8 +920,8 @@
         "id": "4QafpDIgjS4"
       },
       "next": {
-        "at": 1792153560,
-        "episode": 3
+        "at": 1792758360,
+        "episode": 4
       },
       "airingAt": 1792153560,
       "episode": 3,
@@ -921,8 +952,8 @@
         "id": "NNHxQJgZdbQ"
       },
       "next": {
-        "at": 1792157400,
-        "episode": 2
+        "at": 1792762200,
+        "episode": 3
       },
       "airingAt": 1792157400,
       "episode": 2,
@@ -953,8 +984,8 @@
         "id": "YvNvvUeCztE"
       },
       "next": {
-        "at": 1792159200,
-        "episode": 3
+        "at": 1792764000,
+        "episode": 4
       },
       "airingAt": 1792159200,
       "episode": 3,
@@ -985,8 +1016,8 @@
         "id": "Ex9LrBK-7hk"
       },
       "next": {
-        "at": 1792161000,
-        "episode": 2
+        "at": 1792765800,
+        "episode": 3
       },
       "airingAt": 1792161000,
       "episode": 2,
@@ -1018,8 +1049,8 @@
         "id": "upBWYExYoYc"
       },
       "next": {
-        "at": 1792161000,
-        "episode": 3
+        "at": 1792765800,
+        "episode": 4
       },
       "airingAt": 1792161000,
       "episode": 3,
@@ -1051,8 +1082,8 @@
         "id": "P927_ZvgUUg"
       },
       "next": {
-        "at": 1792162800,
-        "episode": 15
+        "at": 1792767600,
+        "episode": 16
       },
       "airingAt": 1792162800,
       "episode": 15,
@@ -1585,7 +1616,7 @@
       "airingAt": 1792238400,
       "episode": 3,
       "scheduleId": 419826,
-      "description_es": "Romelia y su partido tienen éxito en derrotar al Rey demonio Zelgis, aunque la carga imprudente del príncipe Henri los obliga a una batalla agotadora. Después, Romelia se marca \"peso muerto\" por no luchar directamente, y el Príncipe unilateralmente rompe su compromiso. Denegado un lugar en las celebraciones de la victoria, Romelia vuelve a casa, sólo para ser conocido con indiferencia fría de su familia y sociedad. Sin embargo, se niega a romper. Ella ya ha puesto sus ojos en el camino que está por delante. (Fuente: Crunchyroll) Nota: Romelia War Chronicle fue transmitido 2 días antes de la emisión de televisión en A"
+      "description_es": "Romelia y su partido tienen éxito en derrotar al Rey demonio Zelgis, aunque la carga imprudente del príncipe Henri los obliga a una batalla agotadora. Después, Romelia se marca \"peso muerto\" por no luchar directamente, y el Príncipe unilateralmente rompe su compromiso. Denegado un lugar en las celebraciones de la victoria, Romelia vuelve a casa, sólo para ser conocido con fría indiferencia de su familia y sociedad. Sin embargo, se niega a romper. Ella ya tiene"
     },
     {
       "id": "mal-61153",
@@ -1659,7 +1690,7 @@
       "ani_id": 195604,
       "title": "Black Clover Season 2",
       "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx195604-tSZcfKbVqSEG.jpg",
-      "banner": "",
+      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/195604-lQpCzTziSA17.jpg",
       "description": "As tyranny engulfs the Clover Kingdom, Asta and the Magic Knights launch a desperate raid on the Spade Kingdom to rescue their squad captains from the Dark Triad. But their mission leads them into a brutal battle against forces beyond anything they’ve ever faced. Now, Asta must rise above impossible odds to protect his friends and honor the promise he made to Yuno. (Source: Crunchyroll)",
       "year": 2026,
       "startDate": "2026-10-03",
@@ -3047,7 +3078,7 @@
       "airingAt": 1792413000,
       "episode": 3,
       "scheduleId": 420067,
-      "description_es": "Hazme una poción de amor. Y con esa sola frase, la Buena Bruja del amor secreto del lago sobre el desgarrador Sir Harij termina en un desgarro. Aún así, cuando promete ayudarla a reunir los ingredientes, Rose está emocionada por la oportunidad de mirar a un hombre con el que normalmente nunca podría interactuar. Ella aprende a jactar su corazón por sus conversaciones usuales inclinadas... pero ¿qué va a hacer cuando aparece inexplicablemente en su puerta con bre"
+      "description_es": "Hazme una poción de amor. Y con esa sola frase, la Buena Bruja del amor secreto del lago sobre el desgarrador Sir Harij termina en un desgarro. Aún así, cuando promete ayudarla a reunir los ingredientes, Rose está emocionada por la oportunidad de mirar a un hombre con el que normalmente nunca podría interactuar. Ella aprende a jactar su corazón por sus conversaciones habituales inclinadas... pero ¿qué va a hacer cuando aparece inexplicablemente en su puerta con pan y un frasco de mantequilla de manzana? (Fuente: Yen Press)"
     },
     {
       "id": "mal-63712",
@@ -3083,7 +3114,7 @@
       "airingAt": 1792414800,
       "episode": 4,
       "scheduleId": 422213,
-      "description_es": "La naturaleza altruista del trabajador de oficina Akira Yagami generalmente le consigue el extremo corto del palo. Cuando muere después de salvar a un niño del tráfico entrante... ¿reencarna en otro mundo como un duende? Normalmente, los duendes sólo viven durante siete días, pero los nuevos poderes de Akira le permiten desafiar el período de vida normal de la especie... ¡y son la clave de su camino para convertirse en el más fuerte de todos los tiempos! (Fuente: Yen Press) Nota: Tensei Goblin Dakedo Sitsumon Aru?"
+      "description_es": "La naturaleza altruista del trabajador de oficina Akira Yagami generalmente le consigue el extremo corto del palo. Cuando muere después de salvar a un niño del tráfico entrante... ¿reencarna en otro mundo como un duende? Normalmente, los duendes sólo viven durante siete días, pero los nuevos poderes de Akira le permiten desafiar la vida normal de la especie... ¡y son la clave de su camino para convertirse en el más fuerte de todos los tiempos! (Fuente: Yen Press) Nota: Tensei Goblin Dakedo Sitsumon Aru? está transmitiendo 1 semana antes de la emisión de televisión en ABEMA y Primer Video comenzando con el episodio 2 el 5 de octubre de 2026"
     },
     {
       "id": "mal-63098",
@@ -3636,7 +3667,7 @@
       "airingAt": 1792501200,
       "episode": 3,
       "scheduleId": 420418,
-      "description_es": "Sato-san es la flor inalcanzable de la clase. Ella siempre tiene frío y curtimiento con compañeros de clase, pero sólo sé que es muy linda cuando sonríe, incluso si no es mucho de fotógrafo. Oshio-kun es amistoso y animado, pero sólo sé que trabaja en el café de su familia después de la escuela. Hace un gran trabajo con la cuenta SNS de la cafetería, y su mala sonrisa hace que mi corazón se salte un latido! Inocentes y dulces, pero a veces frustrantes, esta es una historia de 120% pura y fluida sobre dos personas enamoradas por primera vez."
+      "description_es": "Sato-san es la flor inalcanzable de la clase. Siempre tiene frío y rito con compañeros de clase, pero sólo sé que es muy linda cuando sonríe, incluso si no es mucho fotógrafo. Oshio-kun es amistoso y animado, pero sólo sé que trabaja en el café de su familia después de la escuela. Hace un gran trabajo con la cuenta SNS de la cafetería, y su mala sonrisa hace que mi corazón salte un latido! Innocente y dulce, pero a veces frustrante, esto es un"
     },
     {
       "id": "mal-62696",
@@ -3682,7 +3713,7 @@
       "startDate": "2026-10-06",
       "format": "TV",
       "episodes": 0,
-      "averageScore": 49,
+      "averageScore": 48,
       "status": "RELEASING",
       "genres": [
         "Action",
@@ -3973,7 +4004,7 @@
       "startDate": "2026-10-07",
       "format": "TV",
       "episodes": 13,
-      "averageScore": 72,
+      "averageScore": 71,
       "status": "RELEASING",
       "genres": [
         "Comedy",
@@ -4102,7 +4133,7 @@
       "startDate": "2026-10-07",
       "format": "TV",
       "episodes": 0,
-      "averageScore": 67,
+      "averageScore": 68,
       "status": "RELEASING",
       "genres": [
         "Adventure",
@@ -4264,7 +4295,7 @@
       "startDate": "2026-10-08",
       "format": "TV",
       "episodes": 0,
-      "averageScore": 70,
+      "averageScore": 69,
       "status": "RELEASING",
       "genres": [
         "Action",
@@ -4726,8 +4757,8 @@
         "id": "dUSYa-7rKpM"
       },
       "next": {
-        "at": 1792143600,
-        "episode": 3
+        "at": 1792748400,
+        "episode": 4
       },
       "airingAt": 1792748400,
       "episode": 4,
@@ -4759,8 +4790,8 @@
         "id": "_c_hMehCORQ"
       },
       "next": {
-        "at": 1792144500,
-        "episode": 153
+        "at": 1792749300,
+        "episode": 154
       },
       "airingAt": 1792749300,
       "episode": 154,
@@ -4801,6 +4832,37 @@
       "description_es": "Bird Kazami, con el objetivo de convertirse en un profesional Blader, se encuentra con el ex campeón Ekusu Kurosu, también conocido como 'Kamen X', y forma un equipo para que puedan apuntar al \"top\" de la X Tower. Pero lo que les espera es una batalla espectacular que nadie ha visto antes. El \"X\" aún invisible. El super acelerado (Xtreme) Beyblade corre a través de una nueva era! (Fuente: sitio web oficial)"
     },
     {
+      "id": "mal-51768",
+      "mal_id": 51768,
+      "ani_id": 146004,
+      "title": "Watame Did Borderline Nothing Wrong",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx146004-hH08KAB1yHlN.png",
+      "banner": "",
+      "description": "A series of comedic YouTube shorts airing every Friday on Watame's YouTube channel. Notes: - Episodes 1-21 (Series 1) were originally released in a vertical format, later rereleased widescreen in 8 compilation videos. - Contains special episode \"Best Girl？！スペシャル回！！！\"",
+      "year": 2022,
+      "startDate": "2022-01-07",
+      "format": "ONA",
+      "episodes": 0,
+      "averageScore": 69,
+      "status": "RELEASING",
+      "genres": [
+        "Comedy",
+        "Slice of Life"
+      ],
+      "siteUrl": "https://anilist.co/anime/146004",
+      "trailer": {
+        "site": "youtube",
+        "id": "c3DcpEy3xd8"
+      },
+      "next": {
+        "at": 1792749600,
+        "episode": 85
+      },
+      "airingAt": 1792749600,
+      "episode": 85,
+      "scheduleId": 422659
+    },
+    {
       "id": "mal-64848",
       "mal_id": 64848,
       "ani_id": 208367,
@@ -4821,8 +4883,8 @@
       "siteUrl": "https://anilist.co/anime/208367",
       "trailer": null,
       "next": {
-        "at": 1792152000,
-        "episode": 2
+        "at": 1792756800,
+        "episode": 3
       },
       "airingAt": 1792756800,
       "episode": 3,
@@ -4853,8 +4915,8 @@
         "id": "4QafpDIgjS4"
       },
       "next": {
-        "at": 1792153560,
-        "episode": 3
+        "at": 1792758360,
+        "episode": 4
       },
       "airingAt": 1792758360,
       "episode": 4,
@@ -4885,8 +4947,8 @@
         "id": "NNHxQJgZdbQ"
       },
       "next": {
-        "at": 1792157400,
-        "episode": 2
+        "at": 1792762200,
+        "episode": 3
       },
       "airingAt": 1792762200,
       "episode": 3,
@@ -4917,8 +4979,8 @@
         "id": "YvNvvUeCztE"
       },
       "next": {
-        "at": 1792159200,
-        "episode": 3
+        "at": 1792764000,
+        "episode": 4
       },
       "airingAt": 1792764000,
       "episode": 4,
@@ -4949,8 +5011,8 @@
         "id": "Ex9LrBK-7hk"
       },
       "next": {
-        "at": 1792161000,
-        "episode": 2
+        "at": 1792765800,
+        "episode": 3
       },
       "airingAt": 1792765800,
       "episode": 3,
@@ -4982,8 +5044,8 @@
         "id": "upBWYExYoYc"
       },
       "next": {
-        "at": 1792161000,
-        "episode": 3
+        "at": 1792765800,
+        "episode": 4
       },
       "airingAt": 1792765800,
       "episode": 4,
@@ -5015,8 +5077,8 @@
         "id": "P927_ZvgUUg"
       },
       "next": {
-        "at": 1792162800,
-        "episode": 15
+        "at": 1792767600,
+        "episode": 16
       },
       "airingAt": 1792767600,
       "episode": 16,
@@ -5549,7 +5611,7 @@
       "airingAt": 1792843200,
       "episode": 4,
       "scheduleId": 419827,
-      "description_es": "Romelia y su partido tienen éxito en derrotar al Rey demonio Zelgis, aunque la carga imprudente del príncipe Henri los obliga a una batalla agotadora. Después, Romelia se marca \"peso muerto\" por no luchar directamente, y el Príncipe unilateralmente rompe su compromiso. Denegado un lugar en las celebraciones de la victoria, Romelia vuelve a casa, sólo para ser conocido con indiferencia fría de su familia y sociedad. Sin embargo, se niega a romper. Ella ya ha puesto sus ojos en el camino que está por delante. (Fuente: Crunchyroll) Nota: Romelia War Chronicle fue transmitido 2 días antes de la emisión de televisión en A"
+      "description_es": "Romelia y su partido tienen éxito en derrotar al Rey demonio Zelgis, aunque la carga imprudente del príncipe Henri los obliga a una batalla agotadora. Después, Romelia se marca \"peso muerto\" por no luchar directamente, y el Príncipe unilateralmente rompe su compromiso. Denegado un lugar en las celebraciones de la victoria, Romelia vuelve a casa, sólo para ser conocido con fría indiferencia de su familia y sociedad. Sin embargo, se niega a romper. Ella ya tiene"
     },
     {
       "id": "mal-61153",
@@ -5623,7 +5685,7 @@
       "ani_id": 195604,
       "title": "Black Clover Season 2",
       "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx195604-tSZcfKbVqSEG.jpg",
-      "banner": "",
+      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/195604-lQpCzTziSA17.jpg",
       "description": "As tyranny engulfs the Clover Kingdom, Asta and the Magic Knights launch a desperate raid on the Spade Kingdom to rescue their squad captains from the Dark Triad. But their mission leads them into a brutal battle against forces beyond anything they’ve ever faced. Now, Asta must rise above impossible odds to protect his friends and honor the promise he made to Yuno. (Source: Crunchyroll)",
       "year": 2026,
       "startDate": "2026-10-03",
@@ -6367,6 +6429,492 @@
       "episode": 2855,
       "scheduleId": 394995,
       "description_es": "El personaje principal es una madre llamada Sazae-san. Vive en una casa con su marido, su hijo, sus hermanos y sus padres. El espectáculo es el último programa familiar y tiende a seguir los temas tradicionales. Piense en este espectáculo como el equivalente japonés a \"The Partridge Family\" y obtendrá una buena sensación para la atmósfera de este show. No esperes ver cosas como violencia, juramento, acción kung-fu o chicas mágicas. Las parcelas son más como \"Hoy, Sazae-san va al nuevo centro comercial y se pierde\". Tales trazados \"boring\" y el arte simplista son a menudo un desvío a las audiencias no japonesas, pero la mayoría"
+    },
+    {
+      "id": "mal-61440",
+      "mal_id": 61440,
+      "ani_id": 190054,
+      "title": "My Happy Marriage Special Episodes",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx190054-8h0AuqQjwcCL.png",
+      "banner": "",
+      "description": "As their big day draws closer, Miyo and Kiyoka feel their love deepening. And when Miyo attends a cooking class with Hazuki, she meets an old classmate! (Source: Netflix Anime)",
+      "year": 2026,
+      "startDate": "2026-10-25",
+      "format": "SPECIAL",
+      "episodes": 3,
+      "averageScore": 0,
+      "status": "NOT_YET_RELEASED",
+      "genres": [
+        "Drama",
+        "Romance",
+        "Supernatural"
+      ],
+      "siteUrl": "https://anilist.co/anime/190054",
+      "trailer": {
+        "site": "youtube",
+        "id": "SZc3Lp1_iS4"
+      },
+      "next": {
+        "at": 1792922400,
+        "episode": 1
+      },
+      "airingAt": 1792922400,
+      "episode": 1,
+      "scheduleId": 419076
+    },
+    {
+      "id": "mal-61440",
+      "mal_id": 61440,
+      "ani_id": 190054,
+      "title": "My Happy Marriage Special Episodes",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx190054-8h0AuqQjwcCL.png",
+      "banner": "",
+      "description": "As their big day draws closer, Miyo and Kiyoka feel their love deepening. And when Miyo attends a cooking class with Hazuki, she meets an old classmate! (Source: Netflix Anime)",
+      "year": 2026,
+      "startDate": "2026-10-25",
+      "format": "SPECIAL",
+      "episodes": 3,
+      "averageScore": 0,
+      "status": "NOT_YET_RELEASED",
+      "genres": [
+        "Drama",
+        "Romance",
+        "Supernatural"
+      ],
+      "siteUrl": "https://anilist.co/anime/190054",
+      "trailer": {
+        "site": "youtube",
+        "id": "SZc3Lp1_iS4"
+      },
+      "next": {
+        "at": 1792922400,
+        "episode": 1
+      },
+      "airingAt": 1792924200,
+      "episode": 2,
+      "scheduleId": 419077
+    },
+    {
+      "id": "mal-61440",
+      "mal_id": 61440,
+      "ani_id": 190054,
+      "title": "My Happy Marriage Special Episodes",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx190054-8h0AuqQjwcCL.png",
+      "banner": "",
+      "description": "As their big day draws closer, Miyo and Kiyoka feel their love deepening. And when Miyo attends a cooking class with Hazuki, she meets an old classmate! (Source: Netflix Anime)",
+      "year": 2026,
+      "startDate": "2026-10-25",
+      "format": "SPECIAL",
+      "episodes": 3,
+      "averageScore": 0,
+      "status": "NOT_YET_RELEASED",
+      "genres": [
+        "Drama",
+        "Romance",
+        "Supernatural"
+      ],
+      "siteUrl": "https://anilist.co/anime/190054",
+      "trailer": {
+        "site": "youtube",
+        "id": "SZc3Lp1_iS4"
+      },
+      "next": {
+        "at": 1792922400,
+        "episode": 1
+      },
+      "airingAt": 1792926000,
+      "episode": 3,
+      "scheduleId": 419078
+    },
+    {
+      "id": "mal-64867",
+      "mal_id": 64867,
+      "ani_id": 215835,
+      "title": "Umayuru: Full Gate!",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx215835-B0seSw93V5qM.png",
+      "banner": "",
+      "description": "\"Umayuru\" is a short anime series featuring pint-sized Uma Musume! This time, it’s a \"Full-Gate\" three-minute race where *all* the Uma Musume take to the track! A super-sized, laid-back gathering with everyone!",
+      "year": 2026,
+      "startDate": "2026-09-27",
+      "format": "ONA",
+      "episodes": 26,
+      "averageScore": 65,
+      "status": "RELEASING",
+      "genres": [
+        "Comedy",
+        "Slice of Life"
+      ],
+      "siteUrl": "https://anilist.co/anime/215835",
+      "trailer": {
+        "site": "youtube",
+        "id": "rUHYbwZDVVI"
+      },
+      "next": {
+        "at": 1792324800,
+        "episode": 4
+      },
+      "airingAt": 1792929600,
+      "episode": 5,
+      "scheduleId": 422504,
+      "description_es": "\"Umayuru\" es una serie corta de animes que ofrece un musgo de Uma tamaño pint! Esta vez, es una carrera de tres minutos \"Full-Gate\" donde *all* el Uma Musume to the track! ¡Una reunión súper grande y relajada con todos!"
+    },
+    {
+      "id": "mal-60948",
+      "mal_id": 60948,
+      "ani_id": 186541,
+      "title": "Reborn as a Space Mercenary: I Woke Up Piloting the Strongest Starship!",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx186541-caYpLsLmbCh7.jpg",
+      "banner": "",
+      "description": "Sato Takahiro was an ordinary office worker and hobbyist gamer until the day he woke up on a spaceship–one that strangely resembled a craft from a favorite space-shooter game. With a decked-out ship, a crew full of babes, and a fantastic universe to explore, he's going to make the most of his good luck and create the life he's always dreamed of! (Source: Seven Seas Entertainment)",
+      "year": 2026,
+      "startDate": "2026-10-04",
+      "format": "TV",
+      "episodes": 13,
+      "averageScore": 68,
+      "status": "RELEASING",
+      "genres": [
+        "Action",
+        "Comedy",
+        "Drama",
+        "Mecha",
+        "Romance",
+        "Sci-Fi"
+      ],
+      "siteUrl": "https://anilist.co/anime/186541",
+      "trailer": {
+        "site": "youtube",
+        "id": "Z9ofT53sz2U"
+      },
+      "next": {
+        "at": 1792326600,
+        "episode": 3
+      },
+      "airingAt": 1792931400,
+      "episode": 4,
+      "scheduleId": 419790,
+      "description_es": "Sato Takahiro era un trabajador de oficina ordinario y aficionado al juego hasta el día en que se despertó en una nave espacial – una que extrañamente se parecía a una nave de un juego favorito de tiro espacial. Con un barco desguace, una tripulación llena de chicas, y un universo fantástico para explorar, él va a aprovechar al máximo su buena suerte y crear la vida que siempre ha soñado con! (Fuente: Seven Seas Entertainment)"
+    },
+    {
+      "id": "mal-62907",
+      "mal_id": 62907,
+      "ani_id": 202079,
+      "title": "Uncle's Obsession with Cute Things",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx202079-nwBpDUms0Bab.png",
+      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/202079-oeULOdC1R1AR.jpg",
+      "description": "By day, Mitsutaka Oji is the handsome, dependable boss everyone admires. By night, he dotes on his favorite mascot, Pugtaro, and indulges his secret obsession with all things cute! He's kept his double life hidden for years—but one unexpected encounter turns everything upside down and forces Oji to face his feelings head-on! (Source: Crunchyroll)",
+      "year": 2026,
+      "startDate": "2026-10-04",
+      "format": "TV",
+      "episodes": 12,
+      "averageScore": 60,
+      "status": "RELEASING",
+      "genres": [
+        "Comedy",
+        "Slice of Life"
+      ],
+      "siteUrl": "https://anilist.co/anime/202079",
+      "trailer": {
+        "site": "youtube",
+        "id": "YKgjylmYeoA"
+      },
+      "next": {
+        "at": 1792328400,
+        "episode": 3
+      },
+      "airingAt": 1792933200,
+      "episode": 4,
+      "scheduleId": 418252,
+      "description_es": "Al día, Mitsutaka Oji es el guapo y confiable jefe que todos admiran. Por la noche, hace su mascota favorita, Pugtaro, y complace su obsesión secreta con todas las cosas lindas! Ha mantenido su doble vida escondida durante años, pero un encuentro inesperado lo vuelve todo al revés y obliga a Oji a enfrentar sus sentimientos. (Fuente: Crunchyroll)"
+    },
+    {
+      "id": "mal-63667",
+      "mal_id": 63667,
+      "ani_id": 209032,
+      "title": "Magical Sisters LuluttoLilly Part 2",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx209032-R0gP5IFdk7Vd.jpg",
+      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/209032-hpYi0dlKkagd.jpg",
+      "description": "The second half of Mahou no Shimai LuluttoLilly.",
+      "year": 2026,
+      "startDate": "2026-10-04",
+      "format": "TV",
+      "episodes": 0,
+      "averageScore": 57,
+      "status": "RELEASING",
+      "genres": [
+        "Mahou Shoujo",
+        "Music"
+      ],
+      "siteUrl": "https://anilist.co/anime/209032",
+      "trailer": {
+        "site": "youtube",
+        "id": "rwUPmzMpECo"
+      },
+      "next": {
+        "at": 1792330200,
+        "episode": 3
+      },
+      "airingAt": 1792935000,
+      "episode": 4,
+      "scheduleId": 419240,
+      "description_es": "La segunda mitad de Mahou no Shimai LuluttoLilly."
+    },
+    {
+      "id": "mal-63751",
+      "mal_id": 63751,
+      "ani_id": 209499,
+      "title": "TANK CHAIR",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx209499-S0sWFrCpft85.jpg",
+      "banner": "",
+      "description": "Shizuka takes on the most dangerous of assassin jobs, but she's not the one doing the killing. Rather, it's her brother, Nagi, a strong assassin who took a bullet to protect his sister, leaving him in a comatose state and having to use a wheelchair. However, Shizuka has figured out the key to waking her brother up: he must be faced with killing intent! Thus begins a violent journey of recovery, battling the most dangerous foes! (Source: Kodansha USA)",
+      "year": 2026,
+      "startDate": "2026-10-04",
+      "format": "TV",
+      "episodes": 0,
+      "averageScore": 61,
+      "status": "RELEASING",
+      "genres": [
+        "Action",
+        "Sci-Fi"
+      ],
+      "siteUrl": "https://anilist.co/anime/209499",
+      "trailer": {
+        "site": "youtube",
+        "id": "ihAvU833DHA"
+      },
+      "next": {
+        "at": 1792332000,
+        "episode": 3
+      },
+      "airingAt": 1792936800,
+      "episode": 4,
+      "scheduleId": 422115,
+      "description_es": "Shizuka se ocupa de los trabajos más peligrosos de los asesinos, pero ella no es la que hace el asesinato. Más bien, es su hermano, Nagi, un asesino fuerte que tomó una bala para proteger a su hermana, dejarlo en estado en coma y tener que usar una silla de ruedas. Sin embargo, Shizuka ha descubierto la clave para despertar a su hermano: ¡debe enfrentarse con la intención de matar! Así comienza un viaje violento de recuperación, luchando contra los enemigos más peligrosos! (Fuente: Kodansha USA)"
+    },
+    {
+      "id": "mal-63367",
+      "mal_id": 63367,
+      "ani_id": 206814,
+      "title": "Dragon Ball Super: Beerus",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx206814-PVVzRbf1IQpe.jpg",
+      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/206814-ARuwrZJAGONN.jpg",
+      "description": "Several years have passed since the fierce battle against Majin Buu, and Earth has finally regained a brief moment of peace. At the same time, Beerus, the God of Destruction, awakens from his long, deep sleep. Even Kai and Supreme Kai, aware of Beerus's overwhelming power to destroy entire planets, watch his awakening with great fear… Meanwhile, Beerus hears rumors of a Saiyan who defeated Frieza—and suddenly appears before Goku. Targeted by Beerus, the strongest being in the universe, Earth is in grave danger. Thus begins an earth-shattering cosmic battle between the God of Destruction and Goku and his alliesa—a conflict that will shake the entire universe. (Source: Official Site) Note: “Enhanced” edition of Dragon Ball Super, featuring a large volume of newly added and redrawn cuts, a reconstructed narrative, and updated visuals for a more immersive and faithful representation of Akira Toriyama’s original manga.",
+      "year": 2026,
+      "startDate": "2026-10-11",
+      "format": "TV",
+      "episodes": 0,
+      "averageScore": 81,
+      "status": "RELEASING",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Sci-Fi"
+      ],
+      "siteUrl": "https://anilist.co/anime/206814",
+      "trailer": {
+        "site": "youtube",
+        "id": "CFgEL7ei8VE"
+      },
+      "next": {
+        "at": 1792332960,
+        "episode": 2
+      },
+      "airingAt": 1792937760,
+      "episode": 3,
+      "scheduleId": 419191,
+      "description_es": "Han pasado varios años desde la feroz batalla contra Majin Buu, y la Tierra finalmente ha recuperado un breve momento de paz. Al mismo tiempo, Beerus, el Dios de la Destrucción, despierta de su sueño largo y profundo. Incluso Kai y el Supremo Kai, consciente del abrumador poder de Beerus para destruir planetas enteros, ver su despertar con gran miedo... Mientras tanto, Beerus escucha rumores de un Saiyan que venció a Frieza y de repente aparece ante Goku. Atacada por Beerus, el ser más fuerte del universo, la Tierra está en grave peligro. Así comienza una batalla cósmica que rompe la tierra entre el Dios de la Destrucción y Go"
+    },
+    {
+      "id": "mal-60601",
+      "mal_id": 60601,
+      "ani_id": 185756,
+      "title": "As a Reincarnated Aristocrat, I'll Use My Appraisal Skill to Rise in the World Season 3",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx185756-xPCl0RyQ7fXD.jpg",
+      "banner": "",
+      "description": "The third season of Tensei Kizoku, Kantei Skill de Nariagaru . Note: On September 4, 2026, it was announced that GeyeG Pictures would take over the production from studio MOTHER while keeping the same staff.",
+      "year": 2026,
+      "startDate": "2026-09-27",
+      "format": "TV",
+      "episodes": 0,
+      "averageScore": 70,
+      "status": "RELEASING",
+      "genres": [
+        "Adventure",
+        "Fantasy"
+      ],
+      "siteUrl": "https://anilist.co/anime/185756",
+      "trailer": {
+        "site": "youtube",
+        "id": "8_Lxr7vO9l0"
+      },
+      "next": {
+        "at": 1792333800,
+        "episode": 4
+      },
+      "airingAt": 1792938600,
+      "episode": 5,
+      "scheduleId": 419229,
+      "description_es": "La tercera temporada de Tensei Kizoku, Kantei Skill de Nariagaru . Nota: El 4 de septiembre de 2026, se anunció que GeyeG Pictures tomaría la producción del estudio MOTHER manteniendo el mismo personal."
+    },
+    {
+      "id": "mal-63292",
+      "mal_id": 63292,
+      "ani_id": 205896,
+      "title": "Full Clearing Another World under a Goddess with Zero Believers",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx205896-ElrV8oVAsuax.jpg",
+      "banner": "",
+      "description": "RPG player Makoto Takatsuki is hurled into another world with awful skills and stats. But he soon meets a goddess named Noah, who asks him to become her 1st believer in return for blessings. (Source: J-Novel Club)",
+      "year": 2026,
+      "startDate": "2026-10-11",
+      "format": "TV",
+      "episodes": 0,
+      "averageScore": 63,
+      "status": "RELEASING",
+      "genres": [
+        "Adventure",
+        "Fantasy"
+      ],
+      "siteUrl": "https://anilist.co/anime/205896",
+      "trailer": {
+        "site": "youtube",
+        "id": "qlMB8vSpLzc"
+      },
+      "next": {
+        "at": 1792333800,
+        "episode": 2
+      },
+      "airingAt": 1792938600,
+      "episode": 3,
+      "scheduleId": 419251,
+      "description_es": "El jugador de RPG Makoto Takatsuki es lanzado en otro mundo con terribles habilidades y estadísticas. Pero pronto se encuentra con una diosa llamada Noé, que le pide que se convierta en su primer creyente a cambio de bendiciones. (Fuente: J-Novel Club)"
+    },
+    {
+      "id": "mal-62753",
+      "mal_id": 62753,
+      "ani_id": 200455,
+      "title": "Even Though I'm a Super Timid Noble Girl, I Accepted the Bet From My Cunning Fiancé",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx200455-P3XStRQMJ7Di.png",
+      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/200455-rlIXyuk0jHE3.jpg",
+      "description": "I was reborn as a villainous daughter in a reverse harem otome game. After being sick with a high fever at the age of 10, Pia Rockwell suddenly remembered her past life as a university student in Japan. But far from going down the villainess route, all this super timid girl wants is to finally use her knowledge from when she was a grad student studying to get her doctorate in paleontology. Her ultimate goal is to become a commoner, excavate fossils, build a museum and then become a curator. So in order to escape the villainess route and avoid being deported by her fiancé during the graduation ball, Pia decides to avoid the upcoming hurt and heartache and asks to break off her engagement to Rufus, the Prime Minister's son. But will her cunning fiancé let her go that easily?",
+      "year": 2026,
+      "startDate": "2026-10-04",
+      "format": "TV",
+      "episodes": 12,
+      "averageScore": 67,
+      "status": "RELEASING",
+      "genres": [
+        "Comedy",
+        "Fantasy",
+        "Romance"
+      ],
+      "siteUrl": "https://anilist.co/anime/200455",
+      "trailer": {
+        "site": "youtube",
+        "id": "e41RGxVwJRs"
+      },
+      "next": {
+        "at": 1792333800,
+        "episode": 3
+      },
+      "airingAt": 1792938600,
+      "episode": 4,
+      "scheduleId": 419613,
+      "description_es": "Renací como una hija villana en un juego de harem otome inverso. Después de enfermarse con fiebre alta a los 10 años, Pia Rockwell de repente recordó su vida pasada como estudiante universitaria en Japón. Pero lejos de ir por la ruta del villano, todo lo que esta chica súper tímida quiere es finalmente utilizar su conocimiento de cuando era una estudiante de posgrado que estudiaba para obtener su doctorado en paleontología. Su objetivo final es convertirse en un común, excavar fósiles, construir un museo y luego convertirse en un curador. Así que para escapar de la ruta del villano y evitar ser deportado por su prometido durante la graduación"
+    },
+    {
+      "id": "mal-64340",
+      "mal_id": 64340,
+      "ani_id": 212888,
+      "title": "Overgeared",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx212888-NhyvqPt5aIuJ.jpg",
+      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/212888-ZsnNegBCKXQq.jpg",
+      "description": "Sin Yeong-U (a.k.a. Grid), an unlucky man in life and a low-level player in the popular VR game “Satisfy,” finds a powerful item that earns him a rare legendary class title: “Pagma’s Successor.” He’s now a skilled blacksmith who can forge unique weapons and equip the game’s most powerful gear. Grid resolves to use his new abilities to achieve fame and fortune, but as his very existence begins to stir up trouble in Satisfy, he realizes that life as a legend may be more than he bargained for…. (Source: Tapas, edited) Note: Tempal: Item no Chikara is streaming a week in advance of the TV broadcast on Prime Video and Crunchyroll beginning September 27th, 2026. Regular broadcasting began on October 2nd, 2026.",
+      "year": 2026,
+      "startDate": "2026-09-27",
+      "format": "ONA",
+      "episodes": 12,
+      "averageScore": 75,
+      "status": "RELEASING",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Comedy",
+        "Fantasy"
+      ],
+      "siteUrl": "https://anilist.co/anime/212888",
+      "trailer": {
+        "site": "youtube",
+        "id": "e1Km0FqUZl0"
+      },
+      "next": {
+        "at": 1792333800,
+        "episode": 4
+      },
+      "airingAt": 1792938600,
+      "episode": 5,
+      "scheduleId": 419898,
+      "description_es": "Sin Yeong-U (a.k.a. Grid), un hombre desafortunado en la vida y un jugador de bajo nivel en el popular juego VR “Satisfy”, encuentra un poderoso artículo que le gana un raro título legendario de clase: “El Sucesor de Pagma”. Ahora es un herrero experto que puede forjar armas únicas y equipar el equipo más poderoso del juego. Grid resuelve usar sus nuevas habilidades para alcanzar la fama y la fortuna, pero cuando su propia existencia comienza a provocar problemas en Satisfeo, se da cuenta de que la vida es una"
+    },
+    {
+      "id": "mal-62590",
+      "mal_id": 62590,
+      "ani_id": 199426,
+      "title": "HOTEL INHUMANS Season 2",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx199426-0nBgTV9BrcJn.jpg",
+      "banner": "",
+      "description": "The second season of Hotel Inhumans .",
+      "year": 2026,
+      "startDate": "2026-10-04",
+      "format": "TV",
+      "episodes": 13,
+      "averageScore": 58,
+      "status": "RELEASING",
+      "genres": [
+        "Action",
+        "Drama"
+      ],
+      "siteUrl": "https://anilist.co/anime/199426",
+      "trailer": null,
+      "next": {
+        "at": 1792334700,
+        "episode": 3
+      },
+      "airingAt": 1792939500,
+      "episode": 4,
+      "scheduleId": 422102,
+      "description_es": "La segunda temporada de Hotel Inhumans ."
+    },
+    {
+      "id": "mal-63753",
+      "mal_id": 63753,
+      "ani_id": 209463,
+      "title": "From Far Away",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx209463-Yxk2q10RXgg8.jpg",
+      "banner": "",
+      "description": "On her way home from school one day, Noriko is unexpectedly plunged into a strange and extraordinary fantasy world. Her troubles compound exponentially when she is rescued and befriended by a handsome young man by the name of Izark. He may be brave and courageous, but inside Izark lurks the darkest evil imaginable. And according to an ancient prophecy, Noriko possesses the power to unleash that evil. Now, inexorably bound together, these two unlikely allies must navigate a world both wondrous and hostile. (Source: VIZ Media)",
+      "year": 2026,
+      "startDate": "2026-10-05",
+      "format": "TV",
+      "episodes": 0,
+      "averageScore": 63,
+      "status": "RELEASING",
+      "genres": [
+        "Adventure",
+        "Fantasy",
+        "Romance"
+      ],
+      "siteUrl": "https://anilist.co/anime/209463",
+      "trailer": {
+        "site": "youtube",
+        "id": "dLRKywRu3iM"
+      },
+      "next": {
+        "at": 1792335600,
+        "episode": 3
+      },
+      "airingAt": 1792940400,
+      "episode": 4,
+      "scheduleId": 417500,
+      "description_es": "En su camino a casa desde la escuela un día, Noriko se sumergió inesperadamente en un extraño y extraordinario mundo de fantasía. Sus problemas se complican exponencialmente cuando es rescatada y amigada por un joven guapo por el nombre de Izark. Puede ser valiente y valiente, pero dentro de Izark se esconde el mal más oscuro imaginable. Y según una profecía antigua, Noriko posee el poder de desencadenar ese mal. Ahora, inexorablemente unidos, estos dos aliados improbables deben navegar por un mundo maravilloso y hostil. (Fuente: VIZ Media)"
     }
   ],
   "seasonal": {
@@ -6751,8 +7299,8 @@
           "id": "YvNvvUeCztE"
         },
         "next": {
-          "at": 1792159200,
-          "episode": 3
+          "at": 1792764000,
+          "episode": 4
         },
         "description_es": "Después de la rebelión del clan Shi, las cosas finalmente se han asentado, y Maomao ha vuelto a su antigua vida como farmacéutico en el distrito de placer. Un día, provocado por un desayuno servido en la Casa Verdigris, Maomao siente una anomalía y comienza a investigar su verdadera naturaleza. Mientras tanto, Jinshi, que ha revelado su verdadera identidad como el hermano imperial y ha comenzado a enfrentar sus pesadas responsabilidades, está profundamente preocupado por la fina"
       },
@@ -6781,8 +7329,8 @@
           "id": "upBWYExYoYc"
         },
         "next": {
-          "at": 1792161000,
-          "episode": 3
+          "at": 1792765800,
+          "episode": 4
         },
         "description_es": "Después de luchar en Kioto y Nerima, los estudiantes de la Academia Rasetsu se han hecho más fuertes. Pero Yaoroshi deja la academia para unirse a la Brigada Oni por su \"erración total del Momotaro\". Cuando Shiki se da cuenta de que también apuntan a los no combatientes, se pone después de Yaoroshi para traerlo de vuelta. Mientras tanto, en Nikko, hay una instalación de investigación para experimentos horribles en la antigua Kegon Falls... (Fuente: REMOW)"
       },
@@ -6810,8 +7358,8 @@
           "id": "4QafpDIgjS4"
         },
         "next": {
-          "at": 1792153560,
-          "episode": 3
+          "at": 1792758360,
+          "episode": 4
         },
         "description_es": "La historia de Aoki Denshou Welsh &quot; Shedar sigue a Welsh, un adolescente del país que ama cocinar, y a Shedar, un joven príncipe que está destinado a ser rey un día. Cuando los dos jóvenes con vidas muy diferentes son lanzados juntos por un encuentro casual, las ruedas del destino comienzan a girar, y pronto deben trabajar juntos para traer un futuro pacífico al detener un cruel déspota de conquistar el mundo. (Fuente: Crunchyroll)"
       },
@@ -6867,8 +7415,8 @@
           "id": "dUSYa-7rKpM"
         },
         "next": {
-          "at": 1792143600,
-          "episode": 3
+          "at": 1792748400,
+          "episode": 4
         },
         "description_es": "Kadokawa anunció el 9 de junio de 2025 que el libro de fotos Pan Dorobou (Bread Thief) de Keiko Shibata tendrá una adaptación de anime. El anuncio no reveló el formato del anime. Los libros de fotos se centran en un pedazo de pan que también roba pan de panaderías en la ciudad. (Fuente: Anime News Network)"
       },
@@ -6903,7 +7451,7 @@
         "ani_id": 195604,
         "title": "Black Clover Season 2",
         "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx195604-tSZcfKbVqSEG.jpg",
-        "banner": "",
+        "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/195604-lQpCzTziSA17.jpg",
         "description": "As tyranny engulfs the Clover Kingdom, Asta and the Magic Knights launch a desperate raid on the Spade Kingdom to rescue their squad captains from the Dark Triad. But their mission leads them into a brutal battle against forces beyond anything they’ve ever faced. Now, Asta must rise above impossible odds to protect his friends and honor the promise he made to Yuno. (Source: Crunchyroll)",
         "year": 2026,
         "startDate": "2026-10-03",
@@ -7017,7 +7565,7 @@
           "at": 1792238400,
           "episode": 3
         },
-        "description_es": "Romelia y su partido tienen éxito en derrotar al Rey demonio Zelgis, aunque la carga imprudente del príncipe Henri los obliga a una batalla agotadora. Después, Romelia se marca \"peso muerto\" por no luchar directamente, y el Príncipe unilateralmente rompe su compromiso. Denegado un lugar en las celebraciones de la victoria, Romelia vuelve a casa, sólo para ser conocido con indiferencia fría de su familia y sociedad. Sin embargo, se niega a romper. Ella ya ha puesto sus ojos en el camino que está por delante. (Fuente: Crunchyroll) Nota: Romelia War Chronicle fue transmitido 2 días antes de la emisión de televisión en A"
+        "description_es": "Romelia y su partido tienen éxito en derrotar al Rey demonio Zelgis, aunque la carga imprudente del príncipe Henri los obliga a una batalla agotadora. Después, Romelia se marca \"peso muerto\" por no luchar directamente, y el Príncipe unilateralmente rompe su compromiso. Denegado un lugar en las celebraciones de la victoria, Romelia vuelve a casa, sólo para ser conocido con fría indiferencia de su familia y sociedad. Sin embargo, se niega a romper. Ella ya tiene"
       },
       {
         "id": "mal-62524",
@@ -7673,7 +8221,7 @@
           "at": 1792413000,
           "episode": 3
         },
-        "description_es": "Hazme una poción de amor. Y con esa sola frase, la Buena Bruja del amor secreto del lago sobre el desgarrador Sir Harij termina en un desgarro. Aún así, cuando promete ayudarla a reunir los ingredientes, Rose está emocionada por la oportunidad de mirar a un hombre con el que normalmente nunca podría interactuar. Ella aprende a jactar su corazón por sus conversaciones usuales inclinadas... pero ¿qué va a hacer cuando aparece inexplicablemente en su puerta con bre"
+        "description_es": "Hazme una poción de amor. Y con esa sola frase, la Buena Bruja del amor secreto del lago sobre el desgarrador Sir Harij termina en un desgarro. Aún así, cuando promete ayudarla a reunir los ingredientes, Rose está emocionada por la oportunidad de mirar a un hombre con el que normalmente nunca podría interactuar. Ella aprende a jactar su corazón por sus conversaciones habituales inclinadas... pero ¿qué va a hacer cuando aparece inexplicablemente en su puerta con pan y un frasco de mantequilla de manzana? (Fuente: Yen Press)"
       },
       {
         "id": "mal-63509",
@@ -7767,7 +8315,7 @@
           "at": 1792414800,
           "episode": 4
         },
-        "description_es": "La naturaleza altruista del trabajador de oficina Akira Yagami generalmente le consigue el extremo corto del palo. Cuando muere después de salvar a un niño del tráfico entrante... ¿reencarna en otro mundo como un duende? Normalmente, los duendes sólo viven durante siete días, pero los nuevos poderes de Akira le permiten desafiar el período de vida normal de la especie... ¡y son la clave de su camino para convertirse en el más fuerte de todos los tiempos! (Fuente: Yen Press) Nota: Tensei Goblin Dakedo Sitsumon Aru?"
+        "description_es": "La naturaleza altruista del trabajador de oficina Akira Yagami generalmente le consigue el extremo corto del palo. Cuando muere después de salvar a un niño del tráfico entrante... ¿reencarna en otro mundo como un duende? Normalmente, los duendes sólo viven durante siete días, pero los nuevos poderes de Akira le permiten desafiar la vida normal de la especie... ¡y son la clave de su camino para convertirse en el más fuerte de todos los tiempos! (Fuente: Yen Press) Nota: Tensei Goblin Dakedo Sitsumon Aru? está transmitiendo 1 semana antes de la emisión de televisión en ABEMA y Primer Video comenzando con el episodio 2 el 5 de octubre de 2026"
       },
       {
         "id": "mal-64131",
@@ -7998,7 +8546,7 @@
           "at": 1792501200,
           "episode": 3
         },
-        "description_es": "Sato-san es la flor inalcanzable de la clase. Ella siempre tiene frío y curtimiento con compañeros de clase, pero sólo sé que es muy linda cuando sonríe, incluso si no es mucho de fotógrafo. Oshio-kun es amistoso y animado, pero sólo sé que trabaja en el café de su familia después de la escuela. Hace un gran trabajo con la cuenta SNS de la cafetería, y su mala sonrisa hace que mi corazón se salte un latido! Inocentes y dulces, pero a veces frustrantes, esta es una historia de 120% pura y fluida sobre dos personas enamoradas por primera vez."
+        "description_es": "Sato-san es la flor inalcanzable de la clase. Siempre tiene frío y rito con compañeros de clase, pero sólo sé que es muy linda cuando sonríe, incluso si no es mucho fotógrafo. Oshio-kun es amistoso y animado, pero sólo sé que trabaja en el café de su familia después de la escuela. Hace un gran trabajo con la cuenta SNS de la cafetería, y su mala sonrisa hace que mi corazón salte un latido! Innocente y dulce, pero a veces frustrante, esto es un"
       },
       {
         "id": "mal-54344",
@@ -8072,7 +8620,7 @@
         "startDate": "2026-10-06",
         "format": "TV",
         "episodes": 0,
-        "averageScore": 49,
+        "averageScore": 48,
         "status": "RELEASING",
         "genres": [
           "Action",
@@ -8132,7 +8680,7 @@
         "startDate": "2026-10-07",
         "format": "TV",
         "episodes": 13,
-        "averageScore": 72,
+        "averageScore": 71,
         "status": "RELEASING",
         "genres": [
           "Comedy",
@@ -8224,7 +8772,7 @@
         "startDate": "2026-10-07",
         "format": "TV",
         "episodes": 0,
-        "averageScore": 67,
+        "averageScore": 68,
         "status": "RELEASING",
         "genres": [
           "Adventure",
@@ -8255,7 +8803,7 @@
         "startDate": "2026-10-08",
         "format": "TV",
         "episodes": 0,
-        "averageScore": 70,
+        "averageScore": 69,
         "status": "RELEASING",
         "genres": [
           "Action",
@@ -8354,8 +8902,8 @@
           "id": "Ex9LrBK-7hk"
         },
         "next": {
-          "at": 1792161000,
-          "episode": 2
+          "at": 1792765800,
+          "episode": 3
         },
         "description_es": "En la superficie, Satoko lo tiene todo, es hermosa, la hija de un noble, y a una edad temprana para el matrimonio. Desafortunadamente, ella también está bastante enferma y sólo tiene un corto tiempo para vivir. Antes de que pueda conseguir un matrimonio que redimirá su valor en los ojos de su familia, se encuentra el blanco del misterioso asesino Shinpei, y sus planes están en peligro. ¡Para salvarse, hace una propuesta desesperada de matrimonio! Cuando c"
       },
@@ -8439,8 +8987,8 @@
           "id": "NNHxQJgZdbQ"
         },
         "next": {
-          "at": 1792157400,
-          "episode": 2
+          "at": 1792762200,
+          "episode": 3
         },
         "description_es": "Esta es una historia de cuatro chicas que viven en el \"Dark Side\" de Academy City. En la Ciudad de la Academia donde el \"ESP\" ha sido reconocido como una ciencia general. Detrás de la paz, hay una organización Dark Side que realiza misiones que no pueden hacerse públicas. \"ITEM\" es una unidad de élite compuesta por cuatro niñas. Takitsubo Rikou es capaz de leer y rastrear los campos AIM emitidos por aquellos con capacidades. Frenda Seivelun, que destaca en combate utilizando explosivos y trampas. Kinuhata Saiai, que puede manipular el nitrógeno a voluntad y juega un papel defensivo. Y uno de los 7 Espers que Academy City está orgulloso de: Mugino Shiz"
       },
@@ -8519,8 +9067,8 @@
         "siteUrl": "https://anilist.co/anime/208367",
         "trailer": null,
         "next": {
-          "at": 1792152000,
-          "episode": 2
+          "at": 1792756800,
+          "episode": 3
         },
         "description_es": "Secuela de Duel Masters LOST: Boukyaku no Taiyou."
       },
