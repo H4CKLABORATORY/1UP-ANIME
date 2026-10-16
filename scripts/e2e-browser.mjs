@@ -48,7 +48,7 @@ try{
  await menu.click();
  const link=page.locator('#km-drawer [data-route="'+route+'"]').first();
  await link.click();
- await page.locator('#km-drawer[hidden]').waitFor({timeout:6500});
+ await page.locator('#km-drawer').waitFor({state:'hidden',timeout:6500});
 }
   await test(device.name+' loads homepage and local anime snapshot',async()=>{
    await page.goto(base,{waitUntil:'domcontentloaded'});
