@@ -26,6 +26,17 @@ const seven=normalizeEpisodeSources({rights:'authorized',subtitles_es:'./media/s
 assert.equal(seven.sources.length,7);
 assert.equal(seven.rejected.length,2);
 assert.equal(seven.sources[0].subtitleUrl,'./media/show.es.vtt');
+assert.equal(seven.sources[0].tracks[0].lang,'es');
+const multilingual=normalizeEpisodeSources({rights:'owned',sources:[{
+ src:'https://media.example.com/movie.mp4',
+ tracks:[
+  {lang:'es',label:'Español',url:'./media/film.es.vtt'},
+  {lang:'en',label:'English',url:'https://media.example.com/film.en.vtt'},
+  {lang:'xx?',url:'javascript:alert(1)'}
+ ]
+}]});
+assert.equal(multilingual.sources[0].tracks.length,2);
+assert.deepEqual(multilingual.sources[0].tracks.map(t=>t.lang),['es','en']);
 const hls=normalizeEpisodeSources({rights:'owned',sources:[
  {name:'Original',src:'https://media.example.com/master.m3u8'}]});
 assert.equal(hls.sources[0].mime,'application/vnd.apple.mpegurl');
