@@ -1,0 +1,40 @@
+name: ONEUP Kokomi Visual Acceptance
+on:
+  workflow_dispatch:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'preview-kokomi-mobile.html'
+      - 'themes/kokomi-mobile-preview/**'
+      - 'scripts/e2e-kokomi-preview.mjs'
+      - '.github/workflows/kokomi-preview-check.yml'
+permissions:
+  contents: read
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify script syntax
+        run: |
+          node --check themes/kokomi-mobile-preview/theme.js
+          node --check themes/kokomi-mobile-preview/pages.js
+          node --check scripts/e2e-kokomi-preview.mjs
+      - name: Install Playwright
+        run: |
+          npm install --no-save --ignore-scripts --no-audit --no-fund playwright@1.56.1
+          npx playwright install --with-deps chromium
+      - name: Browser checks and screenshots
+        run: node scripts/e2e-kokomi-preview.mjs
+      - name: Store screenshot evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokomi-1up-browser-evidence
+          path: e2e-kokomi-*.png
+          retention-days: 14
+          if-no-files-found: ignore
