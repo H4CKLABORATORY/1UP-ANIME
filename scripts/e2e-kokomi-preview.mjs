@@ -54,6 +54,11 @@ try{
  await check(env.label+' homepage width',async()=>{if(diagnostic.scroll>env.width+12||diagnostic.vw>env.width+12)throw Error('Homepage horizontal overflow '+JSON.stringify(diagnostic.oversized.slice(0,7)))});
  await page.screenshot({path:'e2e-kokomi-'+env.label+'-hero.png',animations:'disabled'});
  await page.locator('#trending-rail').scrollIntoViewIfNeeded();
+ await check(env.label+' exact poster column count',async()=>{
+   const columns=await page.locator('#trending-rail').evaluate(el=>getComputedStyle(el).gridTemplateColumns.split(/\\s+/).length);
+   const expected=env.mobile?2:5;
+   if(columns!==expected)throw Error('Expected '+expected+' columns, found '+columns);
+ });
  await page.screenshot({path:'e2e-kokomi-'+env.label+'-ranking.png',animations:'disabled'});
  await context.close();
  }
