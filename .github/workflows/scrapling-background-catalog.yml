@@ -1,0 +1,41 @@
+name: ONEUP private Scrapling catalog snapshot
+on:
+  schedule:
+    - cron: '43 9 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: oneup-scrapling-catalog
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    if: >-
+      github.ref == 'refs/heads/main' &&
+      vars.SCRAPLING_SOURCE_APPROVED == '1' &&
+      vars.SCRAPLING_AUTOMATION_ENABLED == '1'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Run offline safety and snapshot checks
+        run: python -m unittest discover -s render/scrapling-metadata -p 'test_*.py' -v
+      - name: Install reviewed scraping parser
+        run: python -m pip install --disable-pip-version-check -r render/scrapling-metadata/requirements.txt
+      - name: Refresh permitted catalog metadata once
+        env:
+          SCRAPLING_SOURCE_APPROVED: ${{ vars.SCRAPLING_SOURCE_APPROVED }}
+          SCRAPLING_AUTOMATION_ENABLED: ${{ vars.SCRAPLING_AUTOMATION_ENABLED }}
+          SCRAPLING_AUTOMATION_TOKEN: ${{ secrets.SCRAPLING_AUTOMATION_TOKEN }}
+        run: python render/scrapling-metadata/snapshot.py
+      - name: Commit only when source metadata changed
+        run: bash scripts/oneup-safe-push.sh 'Refresh optional approved anime metadata' data/scrapling-discovery.json
