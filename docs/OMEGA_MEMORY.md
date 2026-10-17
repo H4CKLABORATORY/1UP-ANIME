@@ -53,3 +53,10 @@ Excluir secretos, datos personales irrelevantes, suposiciones no etiquetadas, pr
 - Cambio: PR borrador #38, servicio Python opcional de metadatos detrás de `X-API-Key` privado y deshabilitado por defecto. No contiene credenciales reales ni reproduce videos.
 - Pruebas: 3 offline PASS + sintaxis Python; no Scrapling instalado en entorno local por DNS, pendiente CI y validación con sitio real.
 - Siguiente: revisar permisos/robots, pin de dependencia, CI y hosting Python de costo cero; backend como intermediario, nunca token en el navegador.
+
+### 2026-10-17 — Actualización en segundo plano sin UI, rama PR #38
+- Petición: que Scrapling actualice información pública de anime automáticamente sin pestañas o botones en el sitio.
+- Se añadieron `render/scrapling-metadata/snapshot.py`, `test_snapshot.py` y `.github/workflows/scrapling-background-catalog.yml` a la rama existente de PR #38, preservando la API con clave y el catálogo AniList.
+- El flujo está desactivado por defecto; tras merge y validación de derechos/robots requiere `SCRAPLING_SOURCE_APPROVED=1`, `SCRAPLING_AUTOMATION_ENABLED=1`, y el secreto `SCRAPLING_AUTOMATION_TOKEN` de 32+ caracteres. Correrá diariamente, con una sola descarga permitida y máximo 24 títulos/enlaces.
+- Fuente JS/Python en repo público y JSON publicado no son invisibles ni técnicamente secretos; no incluye clave en el navegador, ningún endpoint nuevo ni extracción de video.
+- GitHub Actions: la prueba `ONEUP Scrapling metadata safety` de la rama al incorporar el workflow de fondo terminó success. No se ejecutó el extractor real ni se implementó todavía la mezcla con UI; próxima verificación CI final y permisos de la fuente.
