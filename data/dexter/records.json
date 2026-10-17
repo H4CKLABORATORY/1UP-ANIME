@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-17T14:51:46.116Z",
+  "updatedAt": "2026-10-17T17:49:25.729Z",
   "anime": [
     {
       "id": "al-155723",
@@ -502,7 +502,10 @@
         "platform": "youtube",
         "id": "uC13b3_8riU",
         "mode": "embed_al_hacer_clic"
-      }
+      },
+      "externalLinks": [
+        "https://jkanime.net/tsuihou-sareta-tensei-juukishi-wa-game-chishiki-de-musou-suru/"
+      ]
     },
     {
       "id": "mal-59787",

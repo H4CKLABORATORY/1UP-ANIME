@@ -2,6 +2,15 @@
   "schemaVersion": 1,
   "items": [
     {
+      "providerId": "jkanime_external",
+      "at": "2026-10-17T17:49:25.729Z",
+      "result": "success",
+      "observed": 5,
+      "created": 0,
+      "playback": 0,
+      "detail": "conectada"
+    },
+    {
       "providerId": "anilist_schedule",
       "at": "2026-10-17T14:51:46.116Z",
       "result": "success",
