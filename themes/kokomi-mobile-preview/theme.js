@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded',()=>{
   ['⌛','Próximamente','programacion'],['☆','Mi lista','milista']
  ];
  drawer.innerHTML='<div class="km-drawer-head"><a class="km-drawer-brand" href="#inicio" data-route="inicio">'+
-  '<img src="./assets/oneup-crest.svg" width="38" height="38" alt=""><span>1UP <b>ANIME</b></span></a>'+
+  '<img src="./assets/oneup-header-letters.png" class="oneup-drawer-textmark" width="162" height="54" alt="1UP ANIME"></a>'+
   '<button class="km-drawer-close" type="button" id="km-close" aria-label="Cerrar menú">✕</button></div>'+
   '<nav class="km-nav">'+links.map(([icon,label,route])=>
    '<button type="button" data-route="'+route+'"><span aria-hidden="true">'+icon+'</span>'+label+'</button>'
