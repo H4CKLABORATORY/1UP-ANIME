@@ -31,7 +31,9 @@ try{
    const expected=width<600?'/assets/oneup-intro-portrait-9x16.mp4':'/assets/1up-anime-intro-firma-3seg.mp4';
    if(!source.endsWith(expected))throw Error('Wrong intro aspect: '+source);
    const openingRatio=await gate.evaluate(el=>{
-    const video=el.querySelector('video'),rect=video.getBoundingClientRect();
+    const video=el.querySelector('video');
+    const visible=video.hidden?el.querySelector('.oneup-opening-poster'):video;
+    const rect=visible.getBoundingClientRect();
     return {width:rect.width,height:rect.height,viewport:innerWidth};
    });
    if(width<600&&(openingRatio.width<width-2||openingRatio.height<844-2))
