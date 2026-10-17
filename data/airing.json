@@ -1,101 +1,9 @@
 {
-  "updated": "2026-10-17T15:29:11.066Z",
+  "updated": "2026-10-17T21:28:32.034Z",
   "source": "AniList public GraphQL metadata",
-  "windowStart": 1792052936,
-  "windowEnd": 1793028536,
+  "windowStart": 1792074498,
+  "windowEnd": 1793050098,
   "airing": [
-    {
-      "id": "mal-65095",
-      "mal_id": 65095,
-      "ani_id": 217624,
-      "title": "PetitCure: Precure Fairies Season 4",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx217624-Cwkze5dZ5txL.jpg",
-      "banner": "",
-      "description": "Fourth season of PetitCure: Precure Fairies.",
-      "year": 2026,
-      "startDate": "2026-10-01",
-      "format": "ONA",
-      "episodes": 0,
-      "averageScore": 0,
-      "status": "RELEASING",
-      "genres": [
-        "Fantasy",
-        "Slice of Life"
-      ],
-      "siteUrl": "https://anilist.co/anime/217624",
-      "trailer": null,
-      "next": {
-        "at": 1792661400,
-        "episode": 4
-      },
-      "airingAt": 1792056600,
-      "episode": 3,
-      "scheduleId": 421764,
-      "description_es": "Cuarta temporada de PetitCure: Ferias precarias."
-    },
-    {
-      "id": "mal-63396",
-      "mal_id": 63396,
-      "ani_id": 207084,
-      "title": "Playing Sister",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b207084-5ERIoIDjU76C.jpg",
-      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/207084-QJoOYEulEDz5.jpg",
-      "description": "In the distant future, on the outskirts left behind by the rapid concentration of advanced science and technology in urban areas, lies a remote mountain village known as Kagami Village. “Behave yourself, or a Double will come for you.” Such old folklore still lingers in this village. Akane Higure, a middle school student living in Kagami Village, has been eagerly awaiting the return of her older sister, Sui Higure, who is finally being discharged from the hospital after a year. However, not long after her sister comes home, Akane receives a single phone call. “The girl at home with you… isn’t your sister.”",
-      "year": 2026,
-      "startDate": "2026-01-31",
-      "format": "ONA",
-      "episodes": 3,
-      "averageScore": 67,
-      "status": "RELEASING",
-      "genres": [
-        "Mystery",
-        "Psychological",
-        "Supernatural",
-        "Thriller"
-      ],
-      "siteUrl": "https://anilist.co/anime/207084",
-      "trailer": {
-        "site": "youtube",
-        "id": "Asmti3OS0W0"
-      },
-      "next": null,
-      "airingAt": 1792058400,
-      "episode": 2,
-      "scheduleId": 422552,
-      "description_es": "En un futuro lejano, en las afueras que quedan atrás por la rápida concentración de ciencia y tecnología avanzadas en las zonas urbanas, se encuentra una remota aldea de montaña conocida como Kagami Village. “Cógete, o vendrá un doble por ti.” Ese viejo folclore sigue en este pueblo. Akane Higure, estudiante de secundaria que vive en Kagami Village, ha estado esperando ansiosamente el regreso de su hermana mayor, Sui Higure, quien finalmente está siendo destituido del hospital después de un año. Sin embargo, no mucho después de que su hermana vuelva a casa, Akane recibe una sola llamada telefónica. “La chica en casa contigo... no es"
-    },
-    {
-      "id": "mal-63337",
-      "mal_id": 63337,
-      "ani_id": 206401,
-      "title": "FX Fighter Kurumi-chan",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx206401-8cAebkI0i8BA.png",
-      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/206401-Nsf3QKwKxDra.jpg",
-      "description": "University student Kurumi Fukuga has finally fulfilled her long-held desire of starting foreign exchange (FX) trading, motivated by recouping the 20 million yen her late mother lost in trading. \"I'll easily make it back,\" she thought, but the world she enters can become heaven or hell in an instant. Unrealized losses, loss-cutting, unstoppable fluctuations… but she still wants to buy, sell and make money! With fellow FX addicts Mochiko, Mebuki and Yasuko along for the ride, the market heats up! Joy, despair, joy, despair — this is an endearing, yet slightly risky money game. Can Kurumi and her friends survive this turbulent world? (Source: Crunchyroll)",
-      "year": 2026,
-      "startDate": "2026-10-01",
-      "format": "TV",
-      "episodes": 12,
-      "averageScore": 68,
-      "status": "RELEASING",
-      "genres": [
-        "Drama",
-        "Slice of Life"
-      ],
-      "siteUrl": "https://anilist.co/anime/206401",
-      "trailer": {
-        "site": "youtube",
-        "id": "7rxIZ3z0S4s"
-      },
-      "next": {
-        "at": 1792672200,
-        "episode": 4
-      },
-      "airingAt": 1792067400,
-      "episode": 3,
-      "scheduleId": 419082,
-      "description_es": "La estudiante universitaria Kurumi Fukuga finalmente ha cumplido su deseo de iniciar el comercio de divisas (FX), motivado por recuperar los 20 millones de yenes que su madre falleció en el comercio. \"Lo recuperaré fácilmente,\" pensó, pero el mundo en el que entra puede convertirse en el cielo o el infierno en un instante. Pérdidas no realizadas, fluctuaciones descompuestas, imparables... ¡pero todavía quiere comprar, vender y hacer dinero! Con los adictos FX Mochiko, Mebuki an"
-    },
     {
       "id": "mal-61227",
       "mal_id": 61227,
@@ -1580,8 +1488,8 @@
         "id": "VTRVLnzhl90"
       },
       "next": {
-        "at": 1792251000,
-        "episode": 3
+        "at": 1792855800,
+        "episode": 4
       },
       "airingAt": 1792251000,
       "episode": 3,
@@ -1613,8 +1521,8 @@
         "id": "dbe8esPSfYI"
       },
       "next": {
-        "at": 1792252560,
-        "episode": 3
+        "at": 1792857360,
+        "episode": 4
       },
       "airingAt": 1792252560,
       "episode": 3,
@@ -1646,8 +1554,8 @@
         "id": "kXqx3rFSkxc"
       },
       "next": {
-        "at": 1792254600,
-        "episode": 3
+        "at": 1792859400,
+        "episode": 4
       },
       "airingAt": 1792254600,
       "episode": 3,
@@ -5576,8 +5484,8 @@
         "id": "VTRVLnzhl90"
       },
       "next": {
-        "at": 1792251000,
-        "episode": 3
+        "at": 1792855800,
+        "episode": 4
       },
       "airingAt": 1792855800,
       "episode": 4,
@@ -5609,8 +5517,8 @@
         "id": "dbe8esPSfYI"
       },
       "next": {
-        "at": 1792252560,
-        "episode": 3
+        "at": 1792857360,
+        "episode": 4
       },
       "airingAt": 1792857360,
       "episode": 4,
@@ -5642,8 +5550,8 @@
         "id": "kXqx3rFSkxc"
       },
       "next": {
-        "at": 1792254600,
-        "episode": 3
+        "at": 1792859400,
+        "episode": 4
       },
       "airingAt": 1792859400,
       "episode": 4,
@@ -6948,6 +6856,40 @@
       "episode": 10,
       "scheduleId": 419857,
       "description_es": "La destrucción se desploma al final de la Guerra de la Sangre Mil Años entre los Reapers del Alma y las Quincias... mientras la muerte del Rey del Alma refleja el colapso de los Tres Mundos, las distorsiones y los presagios de destrucción comienzan a aparecer en todos los reinos. Quince batallas surgieron a lo largo de la Wahr Welt entre los 13 escuadrones de la Guardia de la Corte y la Guardia Real. Ichigo aprende sobre las verdaderas intenciones de Uryuu y renueva su determinación de proteger el mundo juntos, como amigos que confían entre sí. Yhwach ha superado incluso su propia habilidad, el Todopoderoso... La feroz batalla por la supervivencia de la aplicación Tres Mundos"
+    },
+    {
+      "id": "mal-54344",
+      "mal_id": 54344,
+      "ani_id": 160803,
+      "title": "MAGICAL GIRL RAISING PROJECT restart",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx160803-Rcr3IvhE7q9c.png",
+      "banner": "",
+      "description": "Some magical girls fight. Others do not. Chosen by the mysterious Land of Magic, which exists unbeknownst to the rest of the world, magical girls are each granted a unique power. Pechka, whose magic makes food delicious, is forced to take part in a mysterious virtual game together with 16 unfamiliar magical girls, each with her own distinctive personality. It was supposed to be a safe training exercise designed to improve their magical abilities. But instead, it marks the beginning of a carefully orchestrated nightmare - a forbidden trial. A new Magical Girl Raising Project has begun. (Source: OceanVeil)",
+      "year": 2026,
+      "startDate": "2026-10-06",
+      "format": "TV",
+      "episodes": 0,
+      "averageScore": 59,
+      "status": "RELEASING",
+      "genres": [
+        "Action",
+        "Fantasy",
+        "Mahou Shoujo",
+        "Thriller"
+      ],
+      "siteUrl": "https://anilist.co/anime/160803",
+      "trailer": {
+        "site": "youtube",
+        "id": "34ubb-j0kbI"
+      },
+      "next": {
+        "at": 1792429200,
+        "episode": 3
+      },
+      "airingAt": 1793034000,
+      "episode": 4,
+      "scheduleId": 418905,
+      "description_es": "Algunas chicas mágicas pelean. Otros no. Elegido por la misteriosa Tierra de la Magia, que existe poco conocida por el resto del mundo, las chicas mágicas cada una tienen un poder único. Pechka, cuya magia hace deliciosa la comida, se ve obligada a participar en un misterioso juego virtual junto con 16 chicas mágicas desconocidas, cada una con su propia personalidad distintiva. Se suponía que era un ejercicio de entrenamiento seguro diseñado para mejorar sus habilidades mágicas. Pero en cambio, marca el comienzo de una pesadilla cuidadosamente orquestada - un juicio prohibido. Ha comenzado un nuevo proyecto de Raising Girl Magical. (Fuente:"
     }
   ],
   "seasonal": {
@@ -7855,8 +7797,8 @@
           "id": "VTRVLnzhl90"
         },
         "next": {
-          "at": 1792251000,
-          "episode": 3
+          "at": 1792855800,
+          "episode": 4
         },
         "description_es": "Esta es la Academia Fujinasu, una escuela secundaria privada con estudiantes de primer nivel ubicados en las afueras de la ciudad. High School 1er año Ume Mizunoe tiene excelentes calificaciones en la clase de idioma japonés y ha recibido múltiples premios literarios. Sin embargo, sus calificaciones terribles en las ciencias están afectando su capacidad de avanzar en un grado. Para evitar repetir un año, se convierte en miembro del consejo estudiantil para mejorar su posición académica. Sin embargo, en el estudio"
       },
@@ -7946,8 +7888,8 @@
           "id": "kXqx3rFSkxc"
         },
         "next": {
-          "at": 1792254600,
-          "episode": 3
+          "at": 1792859400,
+          "episode": 4
         },
         "description_es": "Si hay una cosa que nunca puedes tener suficiente en un mundo de espadas y brujería estilo RPG, ¡es puntos mágicos! Si estás alimentando hechizos, técnicas o mostrando una habilidad increíble, tienes que gastar esos puntos para hacer daño real. ¿Y si te escapas? La Cuaresma es parte de la fiesta de llegada conocida como los \"Skypiercers\", y gracias a su regalo único, puede prestar enormes cantidades de magia a otros. ¿Sin MP? ¡No hay problema con la Cuaresma! Excepto ahora que sus compañeros se han convertido en héroes formidables (gracias a su habilidad), su utilidad es cuestionada. Salió del grupo, la Cuaresma es"
       },
@@ -7976,8 +7918,8 @@
           "id": "dbe8esPSfYI"
         },
         "next": {
-          "at": 1792252560,
-          "episode": 3
+          "at": 1792857360,
+          "episode": 4
         },
         "description_es": "La tercera temporada de Ranma 1/2 (2024) ."
       },
