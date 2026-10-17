@@ -152,3 +152,12 @@ Al concluir cada trabajo agregar:
 - Se retiró la carga del módulo `brand-signature.js/css` de las páginas: la película ya no se muestra dentro de la cabecera, que conserva la navegación y la marca estática.
 - `sw.js` versión de cache actualizada con CSS/JS de intro; no precachea el MP4.
 - Tests Playwright en `scripts/e2e-kokomi-preview.mjs`, `scripts/e2e-browser.mjs`; **confirmar los resultados CI antes de la publicación**, no inferir éxito.
+
+
+### 2026-10-16 — Actualización final solicitada: intro de entrada sin controles
+- El propietario pidió eliminar "Omitir intro" y el botón de sonido. Se publicó via [PR #28](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/28), commit merge `f7ec6741840aead976993a3826ee92b1198c3c57`.
+- Al entrar por primera vez en la sesión aparece el MP4 original a pantalla completa; desaparece automáticamente al terminar. `?intro=1` permite volver a verlo para pruebas.
+- Se intenta audio autoplay inmediatamente, pero Safari/iOS y navegadores con la política de reproducción automática audible pueden rechazarlo. Si lo rechazan, se reproduce sin sonido y la página sigue sin bloquearse. No se puede prometer ni forzar sonido sin gesto del visitante.
+- No hay controles de intro y se retiró el logo animado de dentro de la cabecera. La cabecera conserva navegación y marca estática.
+- Pruebas: cinco workflows en verde para la rama de PR #28 y `ONEUP Browser Acceptance` / `One Up UI Quality` / GitHub Pages en verde tras merge a main.
+- Workspace `Douglas's workspace` confirmado; servicio Render `oneup-anime-discovery` creado (servicio `srv-db9e4lom7kps73d1n7ig`), deploy `dep-db9e4m8m7kps73d1n8pg` en estado live. Por ahora devuelve metadatos Jikan como fallback; la API Anime1v de FxxMorgan no está instalada/configurada en el servidor y no hay streams habilitados. Código de gateway en PR #29 para revisión.
