@@ -52,6 +52,10 @@ try{
 }
   await test(device.name+' loads homepage and local anime snapshot',async()=>{
    await page.goto(base,{waitUntil:'domcontentloaded'});
+   await page.locator('#oneup-opening').waitFor({state:'visible',timeout:4000});
+   if(await page.locator('#oneup-opening-skip,#oneup-opening-sound').count())
+     throw Error('The startup film must not display buttons');
+   await page.locator('#oneup-opening').waitFor({state:'detached',timeout:4500});
    await page.locator('body.oneup-kokomi').waitFor({timeout:4000});
    await page.locator('#oneup-studio-dock .studio-dock-item').first().waitFor({timeout:6000});
    await page.locator('#trending-rail [data-details]').first().waitFor({timeout:15000});
