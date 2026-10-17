@@ -202,3 +202,12 @@ Al concluir cada trabajo agregar:
 - PR #35 contiene la implementación inicial, pero diverge de `main` por tareas automáticas de datos; se preparó rama `release/anime1v-real-discovery-20261017` basada en el `main` más reciente, con los mismos archivos añadidos sin descartar cambios ajenos. Revisar CI de la release y fusionar esa rama tras validación.
 - **Alcance real**: búsqueda/catalogación de anime conectada. Streaming de episodios todavía NO habilitado; la licencia MIT del software no concede derechos sobre obras de terceros, y `data/licensed-media.json` requiere fuentes propias/autorizadas. No declarar reproducciones disponibles sin pruebas reales.
 - La intro Cinematic V3 por capas con AAC original ya se encuentra en `main` (merge `58dd4a4`), pero no hay personajes de anime externos sin autorización. Mantener esa base.
+
+
+### 2026-10-17 — Handoff persistente entre chats y cron de actualización
+- El propietario pidió que, al agotarse el espacio de conversación, se pasara todo a un chat nuevo mediante un «trigger». **No existe control disponible para medir ese espacio, abrir chats nuevos automáticamente o transferir un historial privado entre chats.**
+- La alternativa real implementada en PR de continuidad: `docs/NEW_CHAT_HANDOFF.md` con estado verificable, enlaces, decisiones y prompt listo para otro chat; `scripts/update-new-chat-handoff.mjs` crea un resumen determinista desde la historia Git, el catálogo de medios, las capas de personajes y las propuestas abiertas de GitHub.
+- `.github/workflows/update-new-chat-handoff.yml` actualiza el archivo tras cambios en `main`, cada seis horas o a petición manual. El bot solo crea commit cuando cambia el resumen, evitando bucles de commits vacíos; no guarda claves privadas ni copia chats.
+- `AGENTS.md` ahora exige consultar esta ficha al comenzar una sesión nueva y distinguir la última evidencia del código frente a una ficha antigua.
+- La tarea de ChatGPT **«Continuar 1UP Anime»** existente, id `6ad3b29c7d948191b7a447736883d800`, ya se actualizó para leer el handoff, revisar trabajo real **una vez por hora** y documentar el siguiente paso; no se creó otra tarea duplicada.
+- Este sistema ofrece continuidad recuperable, no trabajo continuo ilimitado. El usuario deberá abrir «Nuevo chat» y pegar el texto del documento cuando desee cambiar de conversación.
