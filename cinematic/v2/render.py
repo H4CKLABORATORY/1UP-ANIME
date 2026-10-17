@@ -83,12 +83,41 @@ def fx(w,h,t,portrait):
   if i%5==0:
    cv2.line(ink,(px,py),(px-2,py+int(5*z)),color,1,cv2.LINE_AA)
  return bloom(ink,.7)
+def authorized_layers():
+ """Only load transparent cutouts with explicit verifiable reuse permission."""
+ folder=ROOT/'cinematic'/'v2'/'characters_authorized'
+ rights=folder/'rights.json'
+ if not rights.exists():return []
+ data=json.loads(rights.read_text(encoding='utf8'))
+ results=[]
+ for item in data.get('layers',[]):
+  if (item.get('permission')!='granted' or item.get('slot') not in ('left','right')
+      or not all(item.get(k) for k in ('license','source_url','credit'))):continue
+  filename=item.get('file','')
+  if '/' in filename or '\\' in filename or filename.startswith('.'):continue
+  target=folder/filename
+  if not target.is_file():continue
+  arr=cv2.cvtColor(np.array(Image.open(target).convert('RGBA')),cv2.COLOR_RGBA2BGRA)
+  if np.all(arr[:,:,3]==255):raise ValueError('Character PNG lacks transparency: '+filename)
+  results.append((item['slot'],arr))
+ return results
+CHARACTERS=authorized_layers()
+
 def render_frame(kind,frame):
  portrait=kind=='mobile';w,h=(720,1280) if portrait else (1280,720)
  t=frame/FPS
  img=backdrop(w,h,t)
  energy=fx(w,h,t,portrait)
  img=np.clip(img.astype(np.float32)+energy.astype(np.float32)*.85,0,255).astype(np.uint8)
+ # Authorized real character cutouts, composed on a separate depth plane.
+ # No AI characters are synthesized when rights-cleared materials are absent.
+ for slot,art in CHARACTERS:
+  side=-1 if slot=='left' else 1
+  dstw=int(w*(.32 if portrait else .20))
+  resized=cv2.resize(art,(dstw,int(dstw*art.shape[0]/art.shape[1])),interpolation=cv2.INTER_AREA)
+  px=w*(.20 if slot=='left' else .80)-dstw/2+math.sin(t*1.7+side)*w*.009
+  py=h*(.27 if portrait else .52)-resized.shape[0]/2+math.cos(t*1.8+side)*h*.008
+  paste(img,resized,px,py,smooth((t-.2)/.7)*(.76 if portrait else .66))
  # Independent chrome layers, camera settle, flashes tied to original audio beats.
  reveal=smooth((t-.34)/.53)
  zoom=1+.10*(1-smooth((t-.46)/.74))
