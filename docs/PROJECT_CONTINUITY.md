@@ -192,3 +192,13 @@ Al concluir cada trabajo agregar:
 - **No declarar V3 MP4 renderizada**, ni Safari físico, ni personajes oficiales integrados, ni intro pública reemplazada. Próximos pasos: CI, revisión visual de capturas, publicar solo vista preview si aprueba, obtener permisos/cutouts reales y después componer y exportar V3 final con AAC original.
 
 - CI aceptada para código V3: [ONEUP Cinematic V3 Preview](https://github.com/H4CKLABORATORY/1UP-ANIME/actions/runs/39049402608), [UI Quality](https://github.com/H4CKLABORATORY/1UP-ANIME/actions/runs/39049402578), [Browser Acceptance](https://github.com/H4CKLABORATORY/1UP-ANIME/actions/runs/39049402645): todas **success**. [GitHub Pages](https://github.com/H4CKLABORATORY/1UP-ANIME/actions/runs/39049559125): **success**. Vista pública de revisión `/preview-cinematic-v3.html`; **la intro del inicio sigue siendo la anterior**.
+
+
+### 2026-10-17 — Intro profesional V2, composición editable sin personajes sintéticos
+- El propietario reiteró una intro de calidad editorial multicapa (similar al proceso de motion design en After Effects) conservando el **logo y el AAC originales** y exportando variantes separadas 9:16 y 16:9.
+- PR #33 **draft**, rama `feature/cinematic-v2-editorial-20261017`. Se agregó `cinematic/v2/render.py`: plasma azul y rojo, vectores orbitales, rayos, partículas con movimiento dependiente de profundidad, máscaras y reflejos del logotipo, impulso sincronizado ~1.12 s, y exportación móvil y desktop con AAC original `-c:a copy`.
+- CI `.github/workflows/oneup-cinematic-v2.yml` construye videos y miniaturas como artefactos sin subirlos a la web; los comprueba con ffprobe y `cmp` del AAC extraído. No inferir resultado mientras se esté ejecutando el workflow.
+- Se registraron referencias auténticas a Luffy, Naruto y Tanjiro en `cinematic/v2/OFFICIAL_ART_REFERENCES.md` pero **las fuentes oficiales consultadas no aportan derecho de reutilización**. No se copiaron las imágenes.
+- Ranuras `left/right` para recortes PNG transparentes, activables únicamente con `cinematic/v2/characters_authorized/rights.json` con permiso explícito documentado. En su ausencia se omiten los personajes, no se sustituyen con IA.
+- Existe un proyecto V2 editable y videos locales probados (`1UP_CINEMATIC_V2` / `1UP_ANIME_INTRO_CINEMATOGRAFICA_V2_EDITABLE.zip`), separados de los renders de CI. El resultado de revisión **no está publicado**. Respetar la preferencia de no reemplazar la intro pública hasta completar revisión visual y material gráfico permitido.
+- No afirmar renderización en Adobe After Effects real: el compositor es Python/OpenCV con JSX AE como referencia de edición, no un archivo .aep validado.

@@ -1,0 +1,20 @@
+{
+  "layers": [
+    {
+      "slot": "left",
+      "file": "left.png",
+      "permission": "pending",
+      "license": "",
+      "source_url": "",
+      "credit": ""
+    },
+    {
+      "slot": "right",
+      "file": "right.png",
+      "permission": "pending",
+      "license": "",
+      "source_url": "",
+      "credit": ""
+    }
+  ]
+}
