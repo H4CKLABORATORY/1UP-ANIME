@@ -3,7 +3,7 @@
 // CacheStorage is origin-wide: GitHub Pages apps on the same domain share it.
 // Restrict cleanup to caches that belong to this 1UP Anime service worker.
 const CACHE_PREFIX='oneup-stream-integrated-';
-const CACHE=CACHE_PREFIX+'v22-video-brand-20261016';
+const CACHE=CACHE_PREFIX+'v23-cinematic-opening-20261016';
 const SHELL=[
  './','./index.html','./studio.css','./studio.js','./spotlight.css',
  './motion.css','./motion.js','./brand-v2.css','./player.css','./auth.js',
@@ -16,7 +16,7 @@ const SHELL=[
  './hls-adapter.js','./episode-player.js','./supabase-config.js','./supabase-episode-backend.js','./episode-comments.js','./episode-comments.css',
  './themes/kokomi-studio/theme.css','./themes/kokomi-studio/theme.js',
  './themes/kokomi-mobile-preview/theme.css','./themes/kokomi-mobile-preview/theme.js',
- './themes/kokomi-mobile-preview/brand-signature.css','./themes/kokomi-mobile-preview/brand-signature.js',
+ './themes/kokomi-mobile-preview/opening.css','./themes/kokomi-mobile-preview/opening.js',
  './themes/kokomi-mobile-preview/pages.css','./themes/kokomi-mobile-preview/pages.js',
  './themes/kokomi-mobile-preview/watch-comments.css','./themes/kokomi-mobile-preview/watch-comments.js',
  './themes/october-2026/theme.css','./themes/october-2026/theme.js',
