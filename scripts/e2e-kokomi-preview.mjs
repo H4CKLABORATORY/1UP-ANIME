@@ -18,86 +18,47 @@ try{
  // Focused brand continuity checks; reuse the full journeys below only twice.
  // The owner's original video signature is the primary brand, not the old crest.
 
- // Original movie signature is a separate first screen, not a header logo.
+ // V3 is a 2.5D multi-layer startup, not the old static-zoom poster.
  for(const width of [320,375,390,1366]){
   const context=await browser.newContext({viewport:{width,height:844},isMobile:width<600,hasTouch:width<600,reducedMotion:'reduce'});
   await context.route('**/*',r=>r.request().url().startsWith(base)?r.continue():r.abort());
   const page=await context.newPage();
-  try{await check('opening '+width+' displays owner intro before homepage',async()=>{
-   await page.goto(base+'index.html?intro=1',{waitUntil:'domcontentloaded'});
-   const gate=page.locator('#oneup-opening');
-   await gate.waitFor({state:'visible',timeout:9000});
-   const source=await page.locator('#oneup-opening-video').getAttribute('src');
-   const expected=width<600?'/assets/oneup-intro-portrait-9x16.mp4':'/assets/1up-anime-intro-firma-3seg.mp4';
-   if(!source.endsWith(expected))throw Error('Wrong intro aspect: '+source);
-   const openingRatio=await gate.evaluate(el=>{
-    const video=el.querySelector('video');
-    const visible=video.hidden?el.querySelector('.oneup-opening-poster'):video;
-    const rect=visible.getBoundingClientRect();
-    return {width:rect.width,height:rect.height,viewport:innerWidth};
-   });
-   if(width<600&&(openingRatio.width<width-2||openingRatio.height<844-2))
-     throw Error('Portrait intro has black bars: '+JSON.stringify(openingRatio));
-   await page.locator('.oneup-opening-poster').evaluate(img=>img.decode());
-   await page.screenshot({path:'e2e-oneup-opening-'+width+'.png',animations:'disabled'});
-   if(await page.locator('.header video.oneup-motion-logo').count())
-     throw Error('Animated logo must not be embedded in header');
-   const headerLogo=page.locator('.header .oneup-textmark');
-   await headerLogo.waitFor({state:'visible'});
-   const loaded=await headerLogo.evaluate(async img=>{
-    await img.decode();return {width:img.naturalWidth,src:new URL(img.currentSrc).pathname};
-   });
-   if(!loaded.width||!loaded.src.endsWith('/assets/oneup-header-letters.png'))
-     throw Error('Original approved header lettering missing');
-   if(await page.locator('#oneup-opening-skip,#oneup-opening-sound').count())
-     throw Error('No intro controls should be visible or present');
-   await gate.waitFor({state:'detached',timeout:4500});
-   await page.locator('#km-open').click();
-   await page.locator('#km-drawer:not([hidden])').waitFor();
-   const drawerBrand=page.locator('#km-drawer .km-drawer-brand');
-   if(await drawerBrand.getAttribute('href')!=='#inicio')throw Error('Menu logo not linked to home');
-   await drawerBrand.click();
-   await page.locator('#km-drawer').waitFor({state:'hidden'});
-   await page.locator('#home-screen:not([hidden])').waitFor();
-   if(await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth)>12)
-     throw Error('Intro caused overflow');
-  })}finally{await context.close()}
- }
- await check('opening tries automatic sound, falls back muted, then opens site',async()=>{
-  const context=await browser.newContext({viewport:{width:390,height:844},isMobile:true,hasTouch:true,reducedMotion:'no-preference'});
-  await context.addInitScript(()=>{
-   // Simulate browser policy: audible autoplay rejects, silent media is allowed.
-   window.__oneupPlayAttempts=[];
-   HTMLMediaElement.prototype.play=function(){
-     window.__oneupPlayAttempts.push(this.muted?'muted':'audible');
-     return this.muted?Promise.resolve():Promise.reject(new DOMException('Gesture required','NotAllowedError'));
-   };
-   HTMLMediaElement.prototype.pause=function(){};
-  });
-  await context.route('**/*',r=>r.request().url().startsWith(base)?r.continue():r.abort());
-  try{
-   const page=await context.newPage();
+  try{await check('V3 production '+width+' uses layers and releases the page',async()=>{
    await page.goto(base+'index.html?intro=1',{waitUntil:'domcontentloaded'});
    const gate=page.locator('#oneup-opening');
    await gate.waitFor({state:'visible'});
-   const tries=await page.evaluate(()=>window.__oneupPlayAttempts);
-   if(tries[0]!=='audible')throw Error('Audio should be requested automatically first: '+tries);
-   await page.waitForFunction(()=>window.__oneupPlayAttempts.includes('muted'));
-   if(await page.locator('#oneup-opening-skip,#oneup-opening-sound').count())
-     throw Error('Controls must not appear in the opening');
-   await page.locator('#oneup-opening-video').dispatchEvent('ended');
-   await gate.waitFor({state:'detached',timeout:3000});
-   await page.goto(base+'index.html',{waitUntil:'domcontentloaded'});
-   await page.locator('#oneup-opening').waitFor({state:'detached',timeout:2500});
-  }finally{await context.close()}
- });
- await check('opening plays with audio if browser permits it',async()=>{
+   const state=await gate.evaluate(el=>({
+    logo:el.querySelector('.logo-main')?.getAttribute('src'),
+    audio:el.querySelector('#original-signature')?.getAttribute('src'),
+    beams:el.querySelectorAll('.energy-column').length,
+    fog:el.querySelectorAll('.scene-fog').length,
+    rings:el.querySelectorAll('.ring').length,
+    particles:el.querySelector('#particles')?.width||0,
+    width:el.getBoundingClientRect().width,viewport:innerWidth
+   }));
+   if(!state.logo?.endsWith('/assets/oneup-header-letters.png')||
+      !state.audio?.endsWith('/assets/1up-anime-intro-firma-3seg.mp4'))
+     throw Error('Owner brand or original AAC source missing: '+JSON.stringify(state));
+   if(state.beams!==2||state.fog!==2||state.rings!==2||state.particles<100)
+     throw Error('V3 effects are missing from public opening: '+JSON.stringify(state));
+   if(state.width<width-2||state.width>width+2)throw Error('Opening not fullscreen: '+JSON.stringify(state));
+   if(await gate.locator('button').count())throw Error('Owner requested no buttons in intro');
+   await page.screenshot({path:'e2e-v3-public-'+width+'.png',animations:'disabled'});
+   await gate.waitFor({state:'detached',timeout:3500});
+   await page.locator('.header .oneup-textmark').evaluate(img=>img.decode());
+   const body=await page.evaluate(()=>({inert:[...document.body.children].some(el=>el.inert),
+    overflowing:document.documentElement.scrollWidth-innerWidth,
+    blocked:document.body.classList.contains('oneup-opening-active')}));
+   if(body.inert||body.blocked||body.overflowing>12)throw Error('Opening did not release page: '+JSON.stringify(body));
+  })}finally{await context.close()}
+ }
+ await check('V3 attempts original AAC and falls back silently if autoplay is blocked',async()=>{
   const context=await browser.newContext({viewport:{width:390,height:844},isMobile:true,hasTouch:true,reducedMotion:'no-preference'});
   await context.addInitScript(()=>{
-   window.__audioChecks=[];
+   window.__introPlays=[];
    HTMLMediaElement.prototype.play=function(){
-    window.__audioChecks.push(this.muted?'muted':'audible');
-    return Promise.resolve();
+    window.__introPlays.push(this.muted?'muted':'audible');
+    return this.muted?Promise.resolve():Promise.reject(new DOMException('Gesture required','NotAllowedError'));
    };
    HTMLMediaElement.prototype.pause=function(){};
   });
@@ -105,16 +66,18 @@ try{
   try{
    const page=await context.newPage();
    await page.goto(base+'index.html?intro=1',{waitUntil:'domcontentloaded'});
-   await page.locator('#oneup-opening').waitFor({state:'visible'});
-   const modes=await page.evaluate(()=>window.__audioChecks);
-   if(modes[0]!=='audible'||modes.includes('muted'))throw Error('Audible playback should be attempted and preserved: '+modes);
-   await page.locator('#oneup-opening-video').dispatchEvent('ended');
+   await page.locator('#cinema.playing').waitFor();
+   await page.waitForFunction(()=>window.__introPlays.includes('muted'));
+   const plays=await page.evaluate(()=>window.__introPlays);
+   if(plays[0]!=='audible')throw Error('Should try original audio first: '+plays);
+   await page.locator('#oneup-opening').waitFor({state:'detached',timeout:6500});
+   await page.goto(base+'index.html',{waitUntil:'domcontentloaded'});
    await page.locator('#oneup-opening').waitFor({state:'detached',timeout:3000});
   }finally{await context.close()}
  });
  await check('Render catalog panel uses live configured URL and labels Jikan fallback',async()=>{
   const context=await browser.newContext({viewport:{width:390,height:844},isMobile:true,hasTouch:true,reducedMotion:'reduce'});
-  await context.addInitScript(()=>{try{sessionStorage.setItem('oneup-opening-seen-v2','yes')}catch{}});
+  await context.addInitScript(()=>{try{sessionStorage.setItem('oneup-v3-opening-seen-v1','yes')}catch{}});
   await context.route('**/*',route=>{
     const u=route.request().url();
     if(u.startsWith(base))return route.continue();
@@ -139,7 +102,7 @@ try{
  });
  for(const env of [{label:'mobile',width:390,height:844,mobile:true},{label:'desktop',width:1366,height:768,mobile:false}]){
  const context=await browser.newContext({viewport:{width:env.width,height:env.height},isMobile:env.mobile,hasTouch:env.mobile,reducedMotion:'reduce'});
- await context.addInitScript(()=>{try{sessionStorage.setItem('oneup-opening-seen-v2','yes')}catch{}});
+ await context.addInitScript(()=>{try{sessionStorage.setItem('oneup-v3-opening-seen-v1','yes')}catch{}});
  await context.route('**/*',r=>r.request().url().startsWith(base)?r.continue():r.abort());
  const page=await context.newPage(),errors=[];page.on('pageerror',e=>errors.push(e.message));
  await check(env.label+' homepage',async()=>{await page.goto(base+'preview-kokomi-mobile.html',{waitUntil:'domcontentloaded'});await page.locator('#km-open').waitFor();await page.locator('#trending-rail .anime-card').first().waitFor({timeout:14000})});
