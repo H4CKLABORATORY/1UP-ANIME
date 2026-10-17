@@ -211,3 +211,12 @@ Al concluir cada trabajo agregar:
 - `AGENTS.md` ahora exige consultar esta ficha al comenzar una sesión nueva y distinguir la última evidencia del código frente a una ficha antigua.
 - La tarea de ChatGPT **«Continuar 1UP Anime»** existente, id `6ad3b29c7d948191b7a447736883d800`, ya se actualizó para leer el handoff, revisar trabajo real **una vez por hora** y documentar el siguiente paso; no se creó otra tarea duplicada.
 - Este sistema ofrece continuidad recuperable, no trabajo continuo ilimitado. El usuario deberá abrir «Nuevo chat» y pegar el texto del documento cuando desee cambiar de conversación.
+
+
+### 2026-10-17 — Propuesta segura Parallel AI + catálogo público Crunchyroll (PR #39)
+- Se revisó el `curl` del propietario para Parallel Extract y se canonizó la fuente como `https://www.crunchyroll.com/es/discover` (sin datos de campaña). Sin petición real a la API.
+- Rama `feature/parallel-crunchyroll-metadata-20261017`, PR borrador [#39](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/39). Archivos nuevos: `render/parallel-crunchyroll/adapter.js`, `run-once.js`, `scripts/test-parallel-crunchyroll.mjs`, `.github/workflows/parallel-crunchyroll-check.yml` y `docs/PARALLEL_CRUNCHYROLL_METADATA.md`.
+- Implementado: cliente Node de solo metadatos, URL/endpoint fijos, normalización restringida a fichas `/series/`, máximo 20 resultados, 256 KiB y timeout 12 s. Sin player/DRM/episodios. No hay rutas HTTP públicas.
+- Seguridad/costo: API key sólo desde entorno privado; rechazo por defecto sin **ambas** aprobaciones explícitas (`PARALLEL_CRUNCHYROLL_APPROVED=1` y `PARALLEL_BILLING_APPROVED=1`). No se usan las credenciales publicadas anteriormente; deben rotarse. No se creó servicio de pago ni se modificó GitHub Pages.
+- Verificación realizada: `node --check` y test offline con mocks PASS en entorno local; GitHub Actions se encontraba `in_progress` al documentar, resultados finales pendientes. No se comprobó contenido real de Crunchyroll por la API ni autorización para distribuirlo.
+- Próxima tarea: confirmar CI, comprobar permiso de acceso a metadatos y precio del proveedor; preservar presupuesto cero; evaluar si es necesario integrarlo como backend tras autorización específica. **No fusionar/desplegar automáticamente.**
