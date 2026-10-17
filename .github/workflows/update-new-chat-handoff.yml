@@ -1,0 +1,49 @@
+name: 1UP Auto Handoff For New Chats
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - 'docs/NEW_CHAT_HANDOFF.md'
+  schedule:
+    - cron: '15 */6 * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: oneup-automatic-chat-handoff
+  cancel-in-progress: false
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 80
+          persist-credentials: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate generator
+        run: |
+          node --check scripts/update-new-chat-handoff.mjs
+          node scripts/update-new-chat-handoff.mjs --check
+      - name: Refresh handoff from real commits, manifests and open PRs
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: H4CKLABORATORY/1UP-ANIME
+        run: node scripts/update-new-chat-handoff.mjs
+      - name: Commit only when project information changed
+        run: |
+          set -euo pipefail
+          git add docs/NEW_CHAT_HANDOFF.md
+          if git diff --cached --quiet; then
+            echo 'Handoff unchanged; no commit required.'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'docs: refresh new-chat handoff'
+          git push origin HEAD:main
