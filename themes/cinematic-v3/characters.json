@@ -1,0 +1,5 @@
+{
+  "version": 1,
+  "layers": [],
+  "note": "Sin imágenes externas. Agregar únicamente PNG auténticos autorizados del propietario dentro de assets/characters_authorized/. Cada capa exige permission: 'owner-authorized:<identificador>'. No usar personajes inventados ni imágenes oficiales sin permiso."
+}
