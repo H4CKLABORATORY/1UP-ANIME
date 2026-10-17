@@ -1,8 +1,8 @@
 {
-  "updated": "2026-10-17T03:31:20.895Z",
+  "updated": "2026-10-17T09:30:02.194Z",
   "source": "AniList public GraphQL metadata",
-  "windowStart": 1792009866,
-  "windowEnd": 1792985466,
+  "windowStart": 1792031388,
+  "windowEnd": 1793006988,
   "airing": [
     {
       "id": "mal-65095",
@@ -45,7 +45,7 @@
       "startDate": "2026-01-31",
       "format": "ONA",
       "episodes": 3,
-      "averageScore": 66,
+      "averageScore": 67,
       "status": "RELEASING",
       "genres": [
         "Mystery",
@@ -173,7 +173,7 @@
       "startDate": "2026-10-16",
       "format": "MOVIE",
       "episodes": 1,
-      "averageScore": 81,
+      "averageScore": 82,
       "status": "FINISHED",
       "genres": [
         "Drama",
@@ -439,7 +439,7 @@
       "airingAt": 1792119600,
       "episode": 11,
       "scheduleId": 419019,
-      "description_es": "Después de que el caso Li Tianchen llegue a su fin, la paz parece volver a Time Photo Studio, hasta que la desaparición de Xia Fei lleve a todos a una red de destino. Con el regreso de Vein y las nuevas habilidades de Qiao Ling, Cheng Xiaoshi y Lu Guang comienzan a descubrir la verdad detrás del misterioso fuego bahati. A medida que la investigación se profundiza, surgen conexiones ocultas entre el caso y los padres de Cheng Xiaoshi. Mientras tanto, Liu Xiao, miembro de un mio"
+      "description_es": "Después de que el caso Li Tianchen llegue a su fin, la paz parece volver a Time Photo Studio, hasta que la desaparición de Xia Fei lleve a todos a una red de destino. Con el regreso de Vein y las nuevas habilidades de Qiao Ling, Cheng Xiaoshi y Lu Guang comienzan a descubrir la verdad detrás del misterioso fuego bahati. A medida que la investigación se profundiza, surgen conexiones ocultas entre el caso y los padres de Cheng Xiaoshi. Mientras tanto, Liu Xiao, miembro de una organización misteriosa, pone en marcha sus propios planes, mientras que la intervención del Inspector Jae introduce nuevas incertidumbres. Como secretos enterrados en el pasado"
     },
     {
       "id": "mal-61469",
@@ -569,7 +569,8 @@
       },
       "airingAt": 1792144800,
       "episode": 84,
-      "scheduleId": 422658
+      "scheduleId": 422658,
+      "description_es": "Una serie de cortos cómicos de YouTube que emiten cada viernes en el canal de YouTube de Watame. Notas: - Episodios 1-21 (Series 1) fueron publicados originalmente en un formato vertical, posteriormente en pantalla ancha liberada en 8 vídeos de compilación. - Contiene episodio especial \"Mejor chica?!"
     },
     {
       "id": "mal-64848",
@@ -612,7 +613,7 @@
       "startDate": "2026-10-02",
       "format": "TV",
       "episodes": 12,
-      "averageScore": 51,
+      "averageScore": 52,
       "status": "RELEASING",
       "genres": [
         "Adventure",
@@ -662,7 +663,7 @@
       "airingAt": 1792157400,
       "episode": 2,
       "scheduleId": 419703,
-      "description_es": "Esta es una historia de cuatro chicas que viven en el \"Dark Side\" de Academy City. En la Ciudad de la Academia donde el \"ESP\" ha sido reconocido como una ciencia general. Detrás de la paz, hay una organización Dark Side que realiza misiones que no pueden hacerse públicas. \"ITEM\" es una unidad de élite compuesta por cuatro niñas. Takitsubo Rikou es capaz de leer y rastrear los campos AIM emitidos por aquellos con capacidades. Frenda Seivelun, que destaca en combate utilizando explosivos y trampas. Kinuhata Saiai, que puede manipular el nitrógeno a voluntad y juega un papel defensivo. Y uno de los 7 Espers que Academy City está orgulloso de: Mugino Shiz"
+      "description_es": "Esta es una historia de cuatro chicas que viven en el \"Dark Side\" de Academy City. En la Ciudad de la Academia donde el \"ESP\" ha sido reconocido como una ciencia general. Detrás de la paz, hay una organización del lado oscuro que realiza misiones que no pueden hacerse públicas. \"ITEM\" es una unidad de élite compuesta por cuatro chicas. Takitsubo Rikou es capaz de leer y rastrear los campos AIM emitidos por aquellos con capacidades. Frenda Seivelun, que destaca en combate utilizando explosivos y t"
     },
     {
       "id": "mal-61987",
@@ -792,7 +793,7 @@
       "airingAt": 1792162800,
       "episode": 15,
       "scheduleId": 421090,
-      "description_es": "El manga se centra en el estudiante de secundaria Ito Hazui. Durante su descanso de primavera al final de su primer año de secundaria, la madre de Ito se vuelve a casar, y Ito se mueve a vivir con su nueva familia, convirtiéndose en Ito Narita. Al llegar a su nueva casa, Ito está sorprendido de saber que ahora tiene cuatro hermanos menores. Ito trata de que ella sea más difícil de llevar con todos los nuevos miembros de su familia, pero el hermano mayor Gen es un poco frío para ella. Sin embargo, bajo su fachada, ocasionalmente muestra su amabilidad. (Fuente: Anime News Network)"
+      "description_es": "El manga se centra en el estudiante de secundaria Ito Hazui. Durante su descanso de primavera al final de su primer año de secundaria, la madre de Ito se vuelve a casar, y Ito se mueve a vivir con su nueva familia, convirtiéndose en Ito Narita. Al llegar a su nueva casa, Ito está conmocionado por saber que ahora tiene cuatro hermanos de paso más jóvenes. Ito trata de que ella sea más difícil de llevar con todos los nuevos miembros de su familia, pero el hermano mayor Gen es un poco frío para ella. Sin embargo, bajo su"
     },
     {
       "id": "mal-59088",
@@ -955,13 +956,13 @@
       "ani_id": 216557,
       "title": "KERORO☆",
       "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx216557-b72dAqbVEDO7.jpg",
-      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/216557-qig0mKuvYRIb.jpg",
+      "banner": "",
       "description": "Sergeant Keroro comes to conquer Earth, only to get captured and stuck living with the Hinata family! (Source: Crunchyroll)",
       "year": 2026,
       "startDate": "2026-10-03",
       "format": "TV",
       "episodes": 0,
-      "averageScore": 56,
+      "averageScore": 57,
       "status": "RELEASING",
       "genres": [
         "Comedy",
@@ -1095,8 +1096,8 @@
         "id": "4iOFqQ1E4Mo"
       },
       "next": {
-        "at": 1792222140,
-        "episode": 3
+        "at": 1792826940,
+        "episode": 4
       },
       "airingAt": 1792222140,
       "episode": 3,
@@ -1124,8 +1125,8 @@
       "siteUrl": "https://anilist.co/anime/966",
       "trailer": null,
       "next": {
-        "at": 1792222200,
-        "episode": 1357
+        "at": 1792827000,
+        "episode": 1358
       },
       "airingAt": 1792222200,
       "episode": 1357,
@@ -1154,8 +1155,8 @@
       "siteUrl": "https://anilist.co/anime/8687",
       "trailer": null,
       "next": {
-        "at": 1792224000,
-        "episode": 937
+        "at": 1792828800,
+        "episode": 938
       },
       "airingAt": 1792224000,
       "episode": 937,
@@ -1187,8 +1188,8 @@
         "id": "iX4N-Z5Hbxw"
       },
       "next": {
-        "at": 1792225800,
-        "episode": 2
+        "at": 1792830600,
+        "episode": 3
       },
       "airingAt": 1792225800,
       "episode": 2,
@@ -1218,8 +1219,8 @@
       "siteUrl": "https://anilist.co/anime/235",
       "trailer": null,
       "next": {
-        "at": 1792227600,
-        "episode": 1217
+        "at": 1792832400,
+        "episode": 1218
       },
       "airingAt": 1792227600,
       "episode": 1217,
@@ -1251,8 +1252,8 @@
         "id": "wk26nTxUzPY"
       },
       "next": {
-        "at": 1792229100,
-        "episode": 3
+        "at": 1792833900,
+        "episode": 4
       },
       "airingAt": 1792229100,
       "episode": 3,
@@ -1320,7 +1321,7 @@
       "airingAt": 1792238400,
       "episode": 3,
       "scheduleId": 419826,
-      "description_es": "Romelia y su partido tienen éxito en derrotar al Rey demonio Zelgis, aunque la carga imprudente del príncipe Henri los obliga a una batalla agotadora. Después, Romelia se marca \"peso muerto\" por no luchar directamente, y el Príncipe unilateralmente rompe su compromiso. Denegado un lugar en las celebraciones de la victoria, Romelia vuelve a casa, sólo para ser conocido con fría indiferencia de su familia y sociedad. Sin embargo, se niega a romper. Ella ya tiene"
+      "description_es": "Romelia y su partido tienen éxito en derrotar al Rey demonio Zelgis, aunque la carga imprudente del príncipe Henri los obliga a una batalla agotadora. Después, Romelia se marca \"peso muerto\" por no luchar directamente, y el Príncipe unilateralmente rompe su compromiso. Denegado un lugar en las celebraciones de la victoria, Romelia vuelve a casa, sólo para ser conocido con fría indiferencia de su familia y sociedad. Sin embargo, se niega a romper. Ella ya ha puesto sus ojos en el camino que está por delante. (Fuente: Crunchyroll) Nota: Romelia War Chronicle fue transmitido 2 días antes de la emisión de televisión en A"
     },
     {
       "id": "mal-61153",
@@ -1434,7 +1435,7 @@
       "startDate": "2026-10-03",
       "format": "TV",
       "episodes": 0,
-      "averageScore": 54,
+      "averageScore": 55,
       "status": "RELEASING",
       "genres": [
         "Action",
@@ -2782,7 +2783,7 @@
       "airingAt": 1792413000,
       "episode": 3,
       "scheduleId": 420067,
-      "description_es": "Hazme una poción de amor. Y con esa sola frase, la Buena Bruja del amor secreto del lago sobre el desgarrador Sir Harij termina en un desgarro. Aún así, cuando promete ayudarla a reunir los ingredientes, Rose está emocionada por la oportunidad de mirar a un hombre con el que normalmente nunca podría interactuar. Ella aprende a jactar su corazón por sus conversaciones habituales inclinadas... pero ¿qué va a hacer cuando aparece inexplicablemente en su puerta con pan y un frasco de mantequilla de manzana? (Fuente: Yen Press)"
+      "description_es": "Hazme una poción de amor. Y con esa sola frase, la Buena Bruja del amor secreto del lago sobre el desgarrador Sir Harij termina en un desgarro. Aún así, cuando promete ayudarla a reunir los ingredientes, Rose está emocionada por la oportunidad de mirar a un hombre con el que normalmente nunca podría interactuar. Ella aprende a jactar su corazón por sus conversaciones usuales inclinadas... pero ¿qué va a hacer cuando aparece inexplicablemente en su puerta con bre"
     },
     {
       "id": "mal-63712",
@@ -3967,7 +3968,7 @@
       "startDate": "2026-10-08",
       "format": "TV",
       "episodes": 0,
-      "averageScore": 49,
+      "averageScore": 50,
       "status": "RELEASING",
       "genres": [
         "Action",
@@ -4401,7 +4402,7 @@
       "airingAt": 1792724400,
       "episode": 12,
       "scheduleId": 419020,
-      "description_es": "Después de que el caso Li Tianchen llegue a su fin, la paz parece volver a Time Photo Studio, hasta que la desaparición de Xia Fei lleve a todos a una red de destino. Con el regreso de Vein y las nuevas habilidades de Qiao Ling, Cheng Xiaoshi y Lu Guang comienzan a descubrir la verdad detrás del misterioso fuego bahati. A medida que la investigación se profundiza, surgen conexiones ocultas entre el caso y los padres de Cheng Xiaoshi. Mientras tanto, Liu Xiao, miembro de un mio"
+      "description_es": "Después de que el caso Li Tianchen llegue a su fin, la paz parece volver a Time Photo Studio, hasta que la desaparición de Xia Fei lleve a todos a una red de destino. Con el regreso de Vein y las nuevas habilidades de Qiao Ling, Cheng Xiaoshi y Lu Guang comienzan a descubrir la verdad detrás del misterioso fuego bahati. A medida que la investigación se profundiza, surgen conexiones ocultas entre el caso y los padres de Cheng Xiaoshi. Mientras tanto, Liu Xiao, miembro de una organización misteriosa, pone en marcha sus propios planes, mientras que la intervención del Inspector Jae introduce nuevas incertidumbres. Como secretos enterrados en el pasado"
     },
     {
       "id": "mal-61469",
@@ -4564,7 +4565,8 @@
       },
       "airingAt": 1792749600,
       "episode": 85,
-      "scheduleId": 422659
+      "scheduleId": 422659,
+      "description_es": "Una serie de cortos cómicos de YouTube que emiten cada viernes en el canal de YouTube de Watame. Notas: - Episodios 1-21 (Series 1) fueron publicados originalmente en un formato vertical, posteriormente en pantalla ancha liberada en 8 vídeos de compilación. - Contiene episodio especial \"Mejor chica?!"
     },
     {
       "id": "mal-64848",
@@ -4607,7 +4609,7 @@
       "startDate": "2026-10-02",
       "format": "TV",
       "episodes": 12,
-      "averageScore": 51,
+      "averageScore": 52,
       "status": "RELEASING",
       "genres": [
         "Adventure",
@@ -4657,7 +4659,7 @@
       "airingAt": 1792762200,
       "episode": 3,
       "scheduleId": 419704,
-      "description_es": "Esta es una historia de cuatro chicas que viven en el \"Dark Side\" de Academy City. En la Ciudad de la Academia donde el \"ESP\" ha sido reconocido como una ciencia general. Detrás de la paz, hay una organización Dark Side que realiza misiones que no pueden hacerse públicas. \"ITEM\" es una unidad de élite compuesta por cuatro niñas. Takitsubo Rikou es capaz de leer y rastrear los campos AIM emitidos por aquellos con capacidades. Frenda Seivelun, que destaca en combate utilizando explosivos y trampas. Kinuhata Saiai, que puede manipular el nitrógeno a voluntad y juega un papel defensivo. Y uno de los 7 Espers que Academy City está orgulloso de: Mugino Shiz"
+      "description_es": "Esta es una historia de cuatro chicas que viven en el \"Dark Side\" de Academy City. En la Ciudad de la Academia donde el \"ESP\" ha sido reconocido como una ciencia general. Detrás de la paz, hay una organización del lado oscuro que realiza misiones que no pueden hacerse públicas. \"ITEM\" es una unidad de élite compuesta por cuatro chicas. Takitsubo Rikou es capaz de leer y rastrear los campos AIM emitidos por aquellos con capacidades. Frenda Seivelun, que destaca en combate utilizando explosivos y t"
     },
     {
       "id": "mal-61987",
@@ -4787,7 +4789,7 @@
       "airingAt": 1792767600,
       "episode": 16,
       "scheduleId": 421091,
-      "description_es": "El manga se centra en el estudiante de secundaria Ito Hazui. Durante su descanso de primavera al final de su primer año de secundaria, la madre de Ito se vuelve a casar, y Ito se mueve a vivir con su nueva familia, convirtiéndose en Ito Narita. Al llegar a su nueva casa, Ito está sorprendido de saber que ahora tiene cuatro hermanos menores. Ito trata de que ella sea más difícil de llevar con todos los nuevos miembros de su familia, pero el hermano mayor Gen es un poco frío para ella. Sin embargo, bajo su fachada, ocasionalmente muestra su amabilidad. (Fuente: Anime News Network)"
+      "description_es": "El manga se centra en el estudiante de secundaria Ito Hazui. Durante su descanso de primavera al final de su primer año de secundaria, la madre de Ito se vuelve a casar, y Ito se mueve a vivir con su nueva familia, convirtiéndose en Ito Narita. Al llegar a su nueva casa, Ito está conmocionado por saber que ahora tiene cuatro hermanos de paso más jóvenes. Ito trata de que ella sea más difícil de llevar con todos los nuevos miembros de su familia, pero el hermano mayor Gen es un poco frío para ella. Sin embargo, bajo su"
     },
     {
       "id": "mal-59088",
@@ -4950,13 +4952,13 @@
       "ani_id": 216557,
       "title": "KERORO☆",
       "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx216557-b72dAqbVEDO7.jpg",
-      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/216557-qig0mKuvYRIb.jpg",
+      "banner": "",
       "description": "Sergeant Keroro comes to conquer Earth, only to get captured and stuck living with the Hinata family! (Source: Crunchyroll)",
       "year": 2026,
       "startDate": "2026-10-03",
       "format": "TV",
       "episodes": 0,
-      "averageScore": 56,
+      "averageScore": 57,
       "status": "RELEASING",
       "genres": [
         "Comedy",
@@ -5090,8 +5092,8 @@
         "id": "4iOFqQ1E4Mo"
       },
       "next": {
-        "at": 1792222140,
-        "episode": 3
+        "at": 1792826940,
+        "episode": 4
       },
       "airingAt": 1792826940,
       "episode": 4,
@@ -5119,8 +5121,8 @@
       "siteUrl": "https://anilist.co/anime/966",
       "trailer": null,
       "next": {
-        "at": 1792222200,
-        "episode": 1357
+        "at": 1792827000,
+        "episode": 1358
       },
       "airingAt": 1792827000,
       "episode": 1358,
@@ -5149,8 +5151,8 @@
       "siteUrl": "https://anilist.co/anime/8687",
       "trailer": null,
       "next": {
-        "at": 1792224000,
-        "episode": 937
+        "at": 1792828800,
+        "episode": 938
       },
       "airingAt": 1792828800,
       "episode": 938,
@@ -5182,8 +5184,8 @@
         "id": "iX4N-Z5Hbxw"
       },
       "next": {
-        "at": 1792225800,
-        "episode": 2
+        "at": 1792830600,
+        "episode": 3
       },
       "airingAt": 1792830600,
       "episode": 3,
@@ -5213,8 +5215,8 @@
       "siteUrl": "https://anilist.co/anime/235",
       "trailer": null,
       "next": {
-        "at": 1792227600,
-        "episode": 1217
+        "at": 1792832400,
+        "episode": 1218
       },
       "airingAt": 1792832400,
       "episode": 1218,
@@ -5246,8 +5248,8 @@
         "id": "wk26nTxUzPY"
       },
       "next": {
-        "at": 1792229100,
-        "episode": 3
+        "at": 1792833900,
+        "episode": 4
       },
       "airingAt": 1792833900,
       "episode": 4,
@@ -5315,7 +5317,7 @@
       "airingAt": 1792843200,
       "episode": 4,
       "scheduleId": 419827,
-      "description_es": "Romelia y su partido tienen éxito en derrotar al Rey demonio Zelgis, aunque la carga imprudente del príncipe Henri los obliga a una batalla agotadora. Después, Romelia se marca \"peso muerto\" por no luchar directamente, y el Príncipe unilateralmente rompe su compromiso. Denegado un lugar en las celebraciones de la victoria, Romelia vuelve a casa, sólo para ser conocido con fría indiferencia de su familia y sociedad. Sin embargo, se niega a romper. Ella ya tiene"
+      "description_es": "Romelia y su partido tienen éxito en derrotar al Rey demonio Zelgis, aunque la carga imprudente del príncipe Henri los obliga a una batalla agotadora. Después, Romelia se marca \"peso muerto\" por no luchar directamente, y el Príncipe unilateralmente rompe su compromiso. Denegado un lugar en las celebraciones de la victoria, Romelia vuelve a casa, sólo para ser conocido con fría indiferencia de su familia y sociedad. Sin embargo, se niega a romper. Ella ya ha puesto sus ojos en el camino que está por delante. (Fuente: Crunchyroll) Nota: Romelia War Chronicle fue transmitido 2 días antes de la emisión de televisión en A"
     },
     {
       "id": "mal-61153",
@@ -5429,7 +5431,7 @@
       "startDate": "2026-10-03",
       "format": "TV",
       "episodes": 0,
-      "averageScore": 54,
+      "averageScore": 55,
       "status": "RELEASING",
       "genres": [
         "Action",
@@ -6164,7 +6166,8 @@
       },
       "airingAt": 1792922400,
       "episode": 1,
-      "scheduleId": 419076
+      "scheduleId": 419076,
+      "description_es": "Mientras su gran día se acerca, Miyo y Kiyoka sienten su amor profundizando. Y cuando Miyo asiste a una clase de cocina con Hazuki, ¡conoce a una vieja compañera de clase! (Fuente: Anime Netflix)"
     },
     {
       "id": "mal-61440",
@@ -6196,7 +6199,8 @@
       },
       "airingAt": 1792924200,
       "episode": 2,
-      "scheduleId": 419077
+      "scheduleId": 419077,
+      "description_es": "Mientras su gran día se acerca, Miyo y Kiyoka sienten su amor profundizando. Y cuando Miyo asiste a una clase de cocina con Hazuki, ¡conoce a una vieja compañera de clase! (Fuente: Anime Netflix)"
     },
     {
       "id": "mal-61440",
@@ -6228,7 +6232,8 @@
       },
       "airingAt": 1792926000,
       "episode": 3,
-      "scheduleId": 419078
+      "scheduleId": 419078,
+      "description_es": "Mientras su gran día se acerca, Miyo y Kiyoka sienten su amor profundizando. Y cuando Miyo asiste a una clase de cocina con Hazuki, ¡conoce a una vieja compañera de clase! (Fuente: Anime Netflix)"
     },
     {
       "id": "mal-64867",
@@ -7240,7 +7245,7 @@
         "startDate": "2026-10-02",
         "format": "TV",
         "episodes": 12,
-        "averageScore": 51,
+        "averageScore": 52,
         "status": "RELEASING",
         "genres": [
           "Adventure",
@@ -7459,7 +7464,7 @@
           "at": 1792238400,
           "episode": 3
         },
-        "description_es": "Romelia y su partido tienen éxito en derrotar al Rey demonio Zelgis, aunque la carga imprudente del príncipe Henri los obliga a una batalla agotadora. Después, Romelia se marca \"peso muerto\" por no luchar directamente, y el Príncipe unilateralmente rompe su compromiso. Denegado un lugar en las celebraciones de la victoria, Romelia vuelve a casa, sólo para ser conocido con fría indiferencia de su familia y sociedad. Sin embargo, se niega a romper. Ella ya tiene"
+        "description_es": "Romelia y su partido tienen éxito en derrotar al Rey demonio Zelgis, aunque la carga imprudente del príncipe Henri los obliga a una batalla agotadora. Después, Romelia se marca \"peso muerto\" por no luchar directamente, y el Príncipe unilateralmente rompe su compromiso. Denegado un lugar en las celebraciones de la victoria, Romelia vuelve a casa, sólo para ser conocido con fría indiferencia de su familia y sociedad. Sin embargo, se niega a romper. Ella ya ha puesto sus ojos en el camino que está por delante. (Fuente: Crunchyroll) Nota: Romelia War Chronicle fue transmitido 2 días antes de la emisión de televisión en A"
       },
       {
         "id": "mal-62524",
@@ -7548,8 +7553,8 @@
           "id": "wk26nTxUzPY"
         },
         "next": {
-          "at": 1792229100,
-          "episode": 3
+          "at": 1792833900,
+          "episode": 4
         },
         "description_es": "En el corazón de un continente de ocho reinos se encuentra el Reino Marronnier. Su general, Baribara, tiene siete hijos, cada uno con un regalo único y servir como comandante caballero. Heridos por una única causa noble de rescatar heroicamente a una princesa algún día, los hermanos se establecieron como embajadores de buena voluntad a los siete reinos vecinos. ¿Qué encuentros, pruebas y destinos les esperan en estas tierras desconocidas? (Fuente: Amazon Prime Video)"
       },
@@ -7565,7 +7570,7 @@
         "startDate": "2026-10-03",
         "format": "TV",
         "episodes": 0,
-        "averageScore": 54,
+        "averageScore": 55,
         "status": "RELEASING",
         "genres": [
           "Action",
@@ -7588,13 +7593,13 @@
         "ani_id": 216557,
         "title": "KERORO☆",
         "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx216557-b72dAqbVEDO7.jpg",
-        "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/216557-qig0mKuvYRIb.jpg",
+        "banner": "",
         "description": "Sergeant Keroro comes to conquer Earth, only to get captured and stuck living with the Hinata family! (Source: Crunchyroll)",
         "year": 2026,
         "startDate": "2026-10-03",
         "format": "TV",
         "episodes": 0,
-        "averageScore": 56,
+        "averageScore": 57,
         "status": "RELEASING",
         "genres": [
           "Comedy",
@@ -7632,8 +7637,8 @@
           "id": "4iOFqQ1E4Mo"
         },
         "next": {
-          "at": 1792222140,
-          "episode": 3
+          "at": 1792826940,
+          "episode": 4
         }
       },
       {
@@ -8115,7 +8120,7 @@
           "at": 1792413000,
           "episode": 3
         },
-        "description_es": "Hazme una poción de amor. Y con esa sola frase, la Buena Bruja del amor secreto del lago sobre el desgarrador Sir Harij termina en un desgarro. Aún así, cuando promete ayudarla a reunir los ingredientes, Rose está emocionada por la oportunidad de mirar a un hombre con el que normalmente nunca podría interactuar. Ella aprende a jactar su corazón por sus conversaciones habituales inclinadas... pero ¿qué va a hacer cuando aparece inexplicablemente en su puerta con pan y un frasco de mantequilla de manzana? (Fuente: Yen Press)"
+        "description_es": "Hazme una poción de amor. Y con esa sola frase, la Buena Bruja del amor secreto del lago sobre el desgarrador Sir Harij termina en un desgarro. Aún así, cuando promete ayudarla a reunir los ingredientes, Rose está emocionada por la oportunidad de mirar a un hombre con el que normalmente nunca podría interactuar. Ella aprende a jactar su corazón por sus conversaciones usuales inclinadas... pero ¿qué va a hacer cuando aparece inexplicablemente en su puerta con bre"
       },
       {
         "id": "mal-63509",
@@ -8755,7 +8760,7 @@
         "startDate": "2026-10-08",
         "format": "TV",
         "episodes": 0,
-        "averageScore": 49,
+        "averageScore": 50,
         "status": "RELEASING",
         "genres": [
           "Action",
@@ -8843,7 +8848,7 @@
         "startDate": "2026-10-09",
         "format": "MOVIE",
         "episodes": 1,
-        "averageScore": 64,
+        "averageScore": 66,
         "status": "FINISHED",
         "genres": [
           "Mystery",
@@ -8884,7 +8889,7 @@
           "at": 1792762200,
           "episode": 3
         },
-        "description_es": "Esta es una historia de cuatro chicas que viven en el \"Dark Side\" de Academy City. En la Ciudad de la Academia donde el \"ESP\" ha sido reconocido como una ciencia general. Detrás de la paz, hay una organización Dark Side que realiza misiones que no pueden hacerse públicas. \"ITEM\" es una unidad de élite compuesta por cuatro niñas. Takitsubo Rikou es capaz de leer y rastrear los campos AIM emitidos por aquellos con capacidades. Frenda Seivelun, que destaca en combate utilizando explosivos y trampas. Kinuhata Saiai, que puede manipular el nitrógeno a voluntad y juega un papel defensivo. Y uno de los 7 Espers que Academy City está orgulloso de: Mugino Shiz"
+        "description_es": "Esta es una historia de cuatro chicas que viven en el \"Dark Side\" de Academy City. En la Ciudad de la Academia donde el \"ESP\" ha sido reconocido como una ciencia general. Detrás de la paz, hay una organización del lado oscuro que realiza misiones que no pueden hacerse públicas. \"ITEM\" es una unidad de élite compuesta por cuatro chicas. Takitsubo Rikou es capaz de leer y rastrear los campos AIM emitidos por aquellos con capacidades. Frenda Seivelun, que destaca en combate utilizando explosivos y t"
       },
       {
         "id": "mal-39168",
@@ -8991,8 +8996,8 @@
           "id": "iX4N-Z5Hbxw"
         },
         "next": {
-          "at": 1792225800,
-          "episode": 2
+          "at": 1792830600,
+          "episode": 3
         },
         "description_es": "\"La máscara\" da poder a cualquiera que la use. A veces, eso significa una posibilidad interminable, o una tragedia inimaginable... Perú, alumno del legendario fabricante de máscaras Gaston Roux, se hace controlado por el “Mask del Dios Guerrero”, y mata involuntariamente a sus amigos, e incluso a su propio maestro. Para evitar que este tipo de tragedia vuelva a ocurrir, Perú jura destruir todas las máscaras de Gaston que se extienden por todo el mundo. Frente a los pecados que ha cometido, se embarca en su viaje. Conocer a nuevos amigos y enfrentar a poderosos enemigos. El chico continúa. Hasta el día que puede expiar por hola"
       },
