@@ -3,7 +3,7 @@
 // CacheStorage is origin-wide: GitHub Pages apps on the same domain share it.
 // Restrict cleanup to caches that belong to this 1UP Anime service worker.
 const CACHE_PREFIX='oneup-stream-integrated-';
-const CACHE=CACHE_PREFIX+'v26-iphone-modal-dismiss-20261017';
+const CACHE=CACHE_PREFIX+'v27-live-cinematic-v3-20261017';
 const SHELL=[
  './','./index.html','./studio.css','./studio.js','./spotlight.css',
  './motion.css','./motion.js','./brand-v2.css','./player.css','./auth.js',
@@ -19,6 +19,7 @@ const SHELL=[
  './themes/kokomi-studio/theme.css','./themes/kokomi-studio/theme.js',
  './themes/kokomi-mobile-preview/theme.css','./themes/kokomi-mobile-preview/theme.js',
  './themes/kokomi-mobile-preview/opening.css','./themes/kokomi-mobile-preview/opening.js',
+ './themes/cinematic-v3/production.css','./themes/cinematic-v3/studio.js','./themes/cinematic-v3/opening-controller.js',
  './themes/kokomi-mobile-preview/official-textmark.css',
  './themes/kokomi-mobile-preview/pages.css','./themes/kokomi-mobile-preview/pages.js',
  './themes/kokomi-mobile-preview/watch-comments.css','./themes/kokomi-mobile-preview/watch-comments.js',
