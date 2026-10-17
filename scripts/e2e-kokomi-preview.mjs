@@ -17,72 +17,62 @@ try{
  browser=await chromium.launch({headless:true,args:['--no-sandbox']});
  // Focused brand continuity checks; reuse the full journeys below only twice.
  // The owner's original video signature is the primary brand, not the old crest.
+
+ // Original movie signature is a separate first screen, not a header logo.
  for(const width of [320,375,390,1366]){
   const context=await browser.newContext({viewport:{width,height:844},isMobile:width<600,hasTouch:width<600,reducedMotion:'reduce'});
   await context.route('**/*',r=>r.request().url().startsWith(base)?r.continue():r.abort());
   const page=await context.newPage();
-  try{await check('brand '+width+' real MP4 poster appears in header and drawer',async()=>{
-   await page.goto(base+'preview-kokomi-mobile.html',{waitUntil:'domcontentloaded'});
-   await page.locator('#km-open').waitFor();
-   await page.locator('body.oneup-video-brand-enabled').waitFor({timeout:9000});
-   const verifyLogo=async(selector)=>{
-    const logo=page.locator(selector);await logo.waitFor({state:'visible'});
-    await logo.evaluate(image=>image.decode());
-    const state=await logo.evaluate(image=>{
-      const box=image.getBoundingClientRect();
-      return {complete:image.complete,naturalWidth:image.naturalWidth,path:new URL(image.currentSrc).pathname,x:box.x,y:box.y,width:box.width,height:box.height,viewport:innerWidth}
-    });
-    if(!state.complete||!state.naturalWidth||!state.path.endsWith('/assets/1up-anime-logo-poster.jpg'))throw Error('Owner logo poster failed to load: '+JSON.stringify(state));
-    if(state.width<24||state.height<24||state.x<0||state.x+state.width>state.viewport)throw Error('Video poster outside viewport: '+JSON.stringify(state));
-   };
-   await verifyLogo('.header .oneup-motion-logo');
-   if(await page.locator('.header .brand-symbol').isVisible())throw Error('Legacy logo visible instead of original');
-   const overlaps=await page.evaluate(()=>{const brand=document.querySelector('.header .brand').getBoundingClientRect();return ['#km-open','.header-right'].some(selector=>{const box=document.querySelector(selector).getBoundingClientRect();return box.width>0&&box.left<brand.right&&box.right>brand.left&&box.top<brand.bottom&&box.bottom>brand.top})});
-   if(overlaps)throw Error('Brand overlaps header controls');
-   const overflow=await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth);
-   if(overflow>12)throw Error('Brand viewport overflow '+overflow);
-   await page.screenshot({path:'e2e-kokomi-brand-'+width+'-header.png',animations:'disabled'});
+  try{await check('opening '+width+' displays owner intro before homepage',async()=>{
+   await page.goto(base+'index.html?intro=1',{waitUntil:'domcontentloaded'});
+   const gate=page.locator('#oneup-opening');
+   await gate.waitFor({state:'visible',timeout:9000});
+   const source=await page.locator('#oneup-opening-video').getAttribute('src');
+   if(!source.endsWith('/assets/1up-anime-intro-firma-3seg.mp4'))
+     throw Error('Original logo film not wired into opening');
+   await page.locator('.oneup-opening-poster').evaluate(img=>img.decode());
+   await page.screenshot({path:'e2e-oneup-opening-'+width+'.png',animations:'disabled'});
+   if(await page.locator('.header video.oneup-motion-logo').count())
+     throw Error('Animated logo must not be embedded in header');
+   await page.locator('#oneup-opening-skip').click();
+   await gate.waitFor({state:'detached',timeout:4000});
    await page.locator('#km-open').click();
    await page.locator('#km-drawer:not([hidden])').waitFor();
-   await verifyLogo('#km-drawer .km-drawer-brand .oneup-drawer-logo');
-   await page.screenshot({path:'e2e-kokomi-brand-'+width+'-drawer.png',animations:'disabled'});
    const drawerBrand=page.locator('#km-drawer .km-drawer-brand');
-   if(await drawerBrand.getAttribute('href')!=='#inicio')throw Error('Drawer brand is not linked to home');
+   if(await drawerBrand.getAttribute('href')!=='#inicio')throw Error('Menu logo not linked to home');
    await drawerBrand.click();
-   if(await page.locator('#km-drawer').isVisible())throw Error('Drawer brand failed to close navigation');
+   await page.locator('#km-drawer').waitFor({state:'hidden'});
    await page.locator('#home-screen:not([hidden])').waitFor();
+   if(await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth)>12)
+     throw Error('Intro caused overflow');
   })}finally{await context.close()}
  }
-
- await check('brand video auto-mutes and allows sound after a tap',async()=>{
+ await check('opening audio after tap and once per session',async()=>{
   const context=await browser.newContext({viewport:{width:390,height:844},isMobile:true,hasTouch:true,reducedMotion:'no-preference'});
+  // Test the browser gesture and state machine without relying on CI's MP4 decoder.
+  await context.addInitScript(()=>{
+    HTMLMediaElement.prototype.play=function(){return Promise.resolve()};
+    HTMLMediaElement.prototype.pause=function(){};
+  });
   await context.route('**/*',r=>r.request().url().startsWith(base)?r.continue():r.abort());
   try{
    const page=await context.newPage();
+   await page.goto(base+'index.html?intro=1',{waitUntil:'domcontentloaded'});
+   await page.locator('#oneup-opening').waitFor({state:'visible'});
+   const video=page.locator('#oneup-opening-video');
+   const initial=await video.evaluate(el=>({muted:el.muted,autoplay:el.autoplay,playsInline:el.playsInline}));
+   if(!initial.muted||!initial.autoplay||!initial.playsInline)throw Error('Autoplay should be muted on iPhone');
+   await page.locator('#oneup-opening-sound').click();
+   if(await video.evaluate(el=>el.muted))throw Error('User gesture did not enable original audio');
+   await video.dispatchEvent('ended');
+   await page.locator('#oneup-opening').waitFor({state:'detached',timeout:3000});
    await page.goto(base+'index.html',{waitUntil:'domcontentloaded'});
-   // CI Chromium may lack an MP4 codec. The production component correctly
-   // falls back to the owner's poster when decoding fails.
-   const logo=page.locator('.header .oneup-motion-logo');
-   await logo.waitFor({state:'visible',timeout:9000});
-   const auto=await logo.evaluate(el=>({
-    tag:el.tagName,muted:el.muted,autoplay:el.autoplay,loop:el.loop,
-    playsInline:el.playsInline,src:el.currentSrc||el.src
-   }));
-   if(auto.tag==='VIDEO'){
-    if(!auto.muted||!auto.autoplay||!auto.loop||!auto.playsInline)
-      throw Error('Header video must loop silently to satisfy iOS autoplay policy');
-   }else if(auto.tag==='IMG'){
-    if(!auto.src.includes('1up-anime-logo-poster.jpg'))throw Error('Fallback is not the owner poster');
-   }else throw Error('No valid owner branding fallback');
-   await page.locator('.oneup-signature-trigger').click();
-   await page.locator('#oneup-signature-dialog[open]').waitFor({timeout:5500});
-   if(await page.locator('.oneup-signature-video').evaluate(el=>el.muted))throw Error('Sound preview was muted after user interaction');
-   await page.locator('.oneup-signature-close').click();
-   if(await page.locator('#oneup-signature-dialog').evaluate(el=>el.open))throw Error('Sound dialog failed to close');
+   await page.locator('#oneup-opening').waitFor({state:'detached',timeout:3000});
   }finally{await context.close()}
  });
  for(const env of [{label:'mobile',width:390,height:844,mobile:true},{label:'desktop',width:1366,height:768,mobile:false}]){
  const context=await browser.newContext({viewport:{width:env.width,height:env.height},isMobile:env.mobile,hasTouch:env.mobile,reducedMotion:'reduce'});
+ await context.addInitScript(()=>{try{sessionStorage.setItem('oneup-opening-seen-v1','yes')}catch{}});
  await context.route('**/*',r=>r.request().url().startsWith(base)?r.continue():r.abort());
  const page=await context.newPage(),errors=[];page.on('pageerror',e=>errors.push(e.message));
  await check(env.label+' homepage',async()=>{await page.goto(base+'preview-kokomi-mobile.html',{waitUntil:'domcontentloaded'});await page.locator('#km-open').waitFor();await page.locator('#trending-rail .anime-card').first().waitFor({timeout:14000})});
