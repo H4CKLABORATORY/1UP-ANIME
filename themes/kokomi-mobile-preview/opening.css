@@ -1,0 +1,42 @@
+/* First-screen movie signature. Fully covers the site until completed/skipped. */
+#oneup-opening{
+ position:fixed;inset:0;z-index:2147483000;display:grid;
+ grid-template-rows:1fr auto;align-items:center;justify-items:center;
+ box-sizing:border-box;min-width:0;width:100%;max-width:100vw;
+ min-height:100dvh;background:#020306;color:#eaf0ff;
+ overflow:hidden;isolation:isolate;
+ font-family:Outfit,system-ui,-apple-system,sans-serif;
+ opacity:1;transition:opacity .42s ease;
+}
+#oneup-opening[hidden]{display:none!important}
+#oneup-opening.oneup-opening-out{opacity:0;pointer-events:none}
+#oneup-opening .oneup-opening-stage{position:relative;align-self:center;
+ display:grid;place-items:center;width:100vw;min-width:0;max-width:100%;
+ padding:20px;box-sizing:border-box;overflow:hidden}
+#oneup-opening video,#oneup-opening .oneup-opening-poster{
+ display:block;width:min(98vw,980px);height:auto;max-height:min(70dvh,650px);
+ aspect-ratio:16/9;object-fit:contain;border:0;background:transparent}
+#oneup-opening video[hidden],#oneup-opening img[hidden]{display:none!important}
+#oneup-opening .oneup-opening-actions{
+ display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:12px;
+ width:100%;padding:20px 20px max(22px,env(safe-area-inset-bottom));
+ box-sizing:border-box;
+}
+#oneup-opening button{border-radius:4px;padding:12px 20px;
+ font:700 13px/1.3 Outfit,system-ui,sans-serif;letter-spacing:.02em;
+ border:1px solid #889bc2;background:#222b42;color:#fff;
+ min-height:46px;cursor:pointer;transition:background-color .2s}
+#oneup-opening button:hover{background:#405276}
+#oneup-opening button:focus-visible{outline:3px solid #c2f6fc;outline-offset:3px}
+#oneup-opening .oneup-opening-skip{background:transparent;color:#c5cfe4}
+#oneup-opening button[hidden]{display:none!important}
+#oneup-opening button:disabled{opacity:.7;cursor:default}
+@media (max-width:600px){
+ #oneup-opening .oneup-opening-stage{padding:8px}
+ #oneup-opening video,#oneup-opening .oneup-opening-poster{width:100%;max-height:65dvh}
+ #oneup-opening .oneup-opening-actions{padding-inline:12px;gap:8px}
+}
+@media(prefers-reduced-motion:reduce){
+ #oneup-opening{transition:none}
+ #oneup-opening .oneup-opening-poster{max-height:60dvh}
+}
