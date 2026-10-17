@@ -50,8 +50,8 @@ body.oneup-editorial-pro :is(.icon-button, .account-button) {
 
 /* The selected anime owns the hero; copy is readable on bright posters. */
 body.oneup-editorial-pro .hero {
-  height: clamp(500px, 45vw, 690px);
-  min-height: 0;
+  height: auto;
+  min-height: clamp(620px, 54vw, 760px);
   background: #151c29;
   border-bottom: 1px solid var(--pro-border);
 }
@@ -67,8 +67,10 @@ body.oneup-editorial-pro .hero-darken {
     linear-gradient(90deg, #080b12f7 0%, #0b0e19c9 34%, #0b0e1928 88%);
 }
 body.oneup-editorial-pro .hero-grid {
+  height: auto;
+  min-height: clamp(620px, 54vw, 760px);
   align-items: flex-end;
-  padding: 48px 0 69px;
+  padding: 110px 0 69px;
 }
 body.oneup-editorial-pro .hero-copy { width: min(780px, 85%); max-width: 780px; }
 body.oneup-editorial-pro .hero .eyebrow {
@@ -78,7 +80,7 @@ body.oneup-editorial-pro .hero .eyebrow {
   font-size: 11px;
 }
 body.oneup-editorial-pro .hero h1 {
-  font: 900 clamp(58px, 6.1vw, 100px)/.9 'Barlow Condensed', Impact, sans-serif;
+  font: 900 clamp(52px, 5.35vw, 82px)/.92 'Barlow Condensed', Impact, sans-serif;
   letter-spacing: -.012em;
   text-wrap: balance;
   max-width: 750px;
@@ -306,13 +308,13 @@ body.oneup-editorial-pro .km-nav :is(button, a).active {
 @media (max-width:780px) {
   body.oneup-editorial-pro .header { height: 64px; }
   body.oneup-editorial-pro .header-inner { width: calc(100% - 24px); }
-  body.oneup-editorial-pro .hero { height: 440px; }
+  body.oneup-editorial-pro .hero { height: auto; min-height: 510px; }
   body.oneup-editorial-pro .hero-poster { background-position: 61% center; }
   body.oneup-editorial-pro .hero-darken {
     background: linear-gradient(0deg, #0a0d14 1%, #0a0d14a6 37%, #10152221 78%),
       linear-gradient(90deg, #0b111bd8, transparent 92%);
   }
-  body.oneup-editorial-pro .hero-grid { padding: 14px 0 45px; }
+  body.oneup-editorial-pro .hero-grid { height: auto; min-height: 510px; padding: 92px 0 45px; }
   body.oneup-editorial-pro .hero-copy { width: 100%; max-width: 390px; }
   body.oneup-editorial-pro .hero .eyebrow { font-size: 9px; letter-spacing: .12em; }
   body.oneup-editorial-pro .hero h1 {
@@ -360,7 +362,7 @@ body.oneup-editorial-pro .km-nav :is(button, a).active {
   ) { font-size: 16px; }
 }
 @media (max-width:350px) {
-  body.oneup-editorial-pro .hero { height: 465px; }
+  body.oneup-editorial-pro .hero { min-height: 530px; }
   body.oneup-editorial-pro .hero h1 { font-size: 39px; }
   body.oneup-editorial-pro .hero-actions .cta { padding-inline: 9px; }
 }
