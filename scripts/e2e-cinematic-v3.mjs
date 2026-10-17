@@ -53,7 +53,7 @@ try{
   });
   await check(spec.name+' replay keeps cinematic layers reusable',async()=>{
    await page.locator('#replay').waitFor({state:'visible'});
-   await page.waitForTimeout(3500);
+   await page.waitForFunction(()=>document.querySelector('#replay')?.disabled===false,{timeout:6500});
    await page.locator('#replay').click();
    await page.locator('#cinema.playing').waitFor({timeout:3000});
    if(errors.length)throw Error('Runtime errors '+errors);
