@@ -142,3 +142,13 @@ Al concluir cada trabajo agregar:
 - La integración de información está desactivada hasta configurar una URL HTTPS real de Cloud Function, servidor Anime1v y clave secreta. La API key nunca aparece en JS público.
 - No se conectaron /episode, /resolve ni /download porque no se han acreditado fuentes autorizadas. data/licensed-media.json sigue con entries vacío; no afirmar que hay anime reproducible.
 - Mantener diseño Kokomi, logo original animado y reproductor actual. Revisar CI y realizar prueba real una vez exista backend.
+
+
+### 2026-10-16 — Intro cinematográfica independiente antes del sitio
+- El propietario corrigió el comportamiento: el logo original MP4 con sonido debe aparecer **a pantalla completa antes de la página**, como entrada de una plataforma audiovisual, no reproduciéndose dentro del encabezado.
+- Nueva rama `feature/netflix-style-opening-20261016`: `themes/kokomi-mobile-preview/opening.js/css`; `index.html` y `preview-kokomi-mobile.html` muestran presentación previa de `assets/1up-anime-intro-firma-3seg.mp4` de 3,2 s.
+- El autoplay es silenciado debido a restricciones iOS; tocar «Reproducir con sonido» reinicia el video con audio original. Hay «Omitir intro», salida al finalizar, fallback de poster y tiempo máximo por fallos.
+- Una vez por sesión de navegador, sin volver a mostrarla con cada recarga; query `?intro=1` reproduce la entrada para probarla de nuevo. `prefers-reduced-motion` muestra poster y entra rápidamente.
+- Se retiró la carga del módulo `brand-signature.js/css` de las páginas: la película ya no se muestra dentro de la cabecera, que conserva la navegación y la marca estática.
+- `sw.js` versión de cache actualizada con CSS/JS de intro; no precachea el MP4.
+- Tests Playwright en `scripts/e2e-kokomi-preview.mjs`, `scripts/e2e-browser.mjs`; **confirmar los resultados CI antes de la publicación**, no inferir éxito.
