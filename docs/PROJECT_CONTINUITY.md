@@ -211,3 +211,19 @@ Al concluir cada trabajo agregar:
 - `AGENTS.md` ahora exige consultar esta ficha al comenzar una sesión nueva y distinguir la última evidencia del código frente a una ficha antigua.
 - La tarea de ChatGPT **«Continuar 1UP Anime»** existente, id `6ad3b29c7d948191b7a447736883d800`, ya se actualizó para leer el handoff, revisar trabajo real **una vez por hora** y documentar el siguiente paso; no se creó otra tarea duplicada.
 - Este sistema ofrece continuidad recuperable, no trabajo continuo ilimitado. El usuario deberá abrir «Nuevo chat» y pegar el texto del documento cuando desee cambiar de conversación.
+
+
+### 2026-10-17 — Scrapling protegido, propuesta aislada PR #38
+- Alcance: se añadió en rama `feature/scrapling-private-metadata-20261017` un servidor opcional Python para metadatos públicos, sin tocar frontend, Anime1v o Render existente. PR borrador: https://github.com/H4CKLABORATORY/1UP-ANIME/pull/38 .
+- Archivos: `render/scrapling-metadata/server.py`, `requirements.txt`, `test_server.py`, `.github/workflows/scrapling-metadata-check.yml`, `docs/SCRAPLING_PROTECTED_METADATA.md`.
+- Seguridad: servicio cerrado por defecto; token privado de 32+ caracteres, comparación constante, host fuente fijo, límite por minuto, caché, sólo títulos y enlaces; sin endpoints de video o claves incrustadas.
+- Pruebas ejecutadas: `python -m py_compile` y tres tests unitarios con respuestas simuladas, PASS local. Instalación real de Scrapling no verificada debido a falta de acceso del entorno al índice de paquetes; CI de GitHub pendiente de inspección.
+- Pendiente: comprobar licencia/robots y autorización de fuente; ejecutar test de integración con Scrapling instalado, comprobar CI y capacidad gratuita de Python, conectar backend sin exponer token, validar Safari antes de publicar. No fusionar ni desplegar automáticamente.
+
+
+### 2026-10-17 — Worker privado Scrapling de catálogo, PR #38 ampliado
+- Petición: mantener la extracción de metadatos en segundo plano sin mostrar ninguna pantalla de scraper en la web.
+- Adición reversible a rama `feature/scrapling-private-metadata-20261017`: `render/scrapling-metadata/snapshot.py` y `test_snapshot.py`, `.github/workflows/scrapling-background-catalog.yml`; se amplió `docs/SCRAPLING_PROTECTED_METADATA.md`.
+- Diseño: GitHub Actions diario a las 09:43 UTC; no correrá hasta el merge y las variables de aprobación `SCRAPLING_SOURCE_APPROVED=1` y `SCRAPLING_AUTOMATION_ENABLED=1` más secreto `SCRAPLING_AUTOMATION_TOKEN` configurado por el propietario. Cierre seguro si no hay `robots.txt` legible o éste prohíbe consultar la portada; máximo una página y 24 nombres/URLs, sin episodios ni medios. Guardado atómico en `data/scrapling-discovery.json` y commit solo cuando cambia; no se pisa catálogo principal.
+- Verificación: CI para tests sin red `ONEUP Scrapling metadata safety` pasó con SHA `56dbaee882a398b0fbc9a6639d8f1804fa993df6` antes de estos cambios de documentación. Todavía no se comprobó extracción real, política robots, publicación ni integración frontend. No autorizado crear cargos o recursos de servidor nuevos.
+- Limitación de visibilidad: sin botón ni consola pública; código y snapshot en el repositorio público siguen siendo accesibles por GitHub/URL. Password real solo en secretos. Siguiente: CI de rama actual, revisión de permisos de la fuente, configuración del secreto con aprobación y fusión deliberada de PR #38. No se ha habilitado automatización de scraping en producción.

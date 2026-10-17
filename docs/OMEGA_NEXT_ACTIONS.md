@@ -14,3 +14,7 @@ Restricción: presupuesto $0, no compras/deploy destructivo sin permiso; no conv
 
 
 - [x] PR #31: reparar X del diálogo Overgeared en Safari móvil; CI Chromium 390px/desktop en verde. **Pendiente** confirmación tras GitHub Pages y en iPhone físico.
+
+- [ ] **Scrapling opcional PR #38:** revisar pruebas de GitHub Actions, permiso de extracción de metadatos del proveedor y dependencias Python; no desplegar ni activar hasta aprobación de fuente. Nunca colocar `SCRAPLING_API_TOKEN` en JS público ni confundir títulos con episodios disponibles. [PR](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/38).
+
+- [ ] **Scrapling sin UI — extensión PR #38:** revisión de fuente y `robots.txt` aún pendiente; el nuevo trabajo programado de GitHub Actions guarda un snapshot de hasta 24 metadatos a diario solo tras permisos explícitos, token privado y fusión de PR. El archivo no alimenta todavía las tarjetas públicas y el código permanece visible en GitHub público. [Manual y límites](SCRAPLING_PROTECTED_METADATA.md).

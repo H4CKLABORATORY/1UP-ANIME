@@ -1,0 +1,2 @@
+# Compatible with Python 3.11+. Pin a reviewed patch version at deployment.
+scrapling[fetchers]>=0.4.15,<1

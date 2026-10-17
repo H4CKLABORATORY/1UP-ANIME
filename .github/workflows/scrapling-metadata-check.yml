@@ -1,0 +1,21 @@
+name: ONEUP Scrapling metadata safety
+on:
+  push:
+    branches:
+      - 'feature/scrapling-private-metadata-*'
+  pull_request:
+    paths:
+      - 'render/scrapling-metadata/**'
+      - '.github/workflows/scrapling-metadata-check.yml'
+jobs:
+  offline-contract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate Python syntax
+        run: python -m py_compile render/scrapling-metadata/server.py render/scrapling-metadata/test_server.py
+      - name: Run offline security and response tests
+        run: python -m unittest discover -s render/scrapling-metadata -p 'test_*.py' -v
