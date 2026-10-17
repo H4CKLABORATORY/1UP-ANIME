@@ -109,6 +109,45 @@ try{
    }else await page.locator('#anime-close').click({timeout:6500});
    await page.waitForFunction(()=>!document.querySelector('#anime-dialog')?.open,null,{timeout:3500});
   });
+  await test(device.name+' Overgeared dialog X closes without reopening or ghost taps',async()=>{
+   // Reproduce the anime in the user's Safari screen recording, independently
+   // of which cards happen to be loaded in the latest local catalog snapshot.
+   await page.evaluate(()=>{
+    const anime=window.OneUpCatalog.get('mal-21') || window.OneUpCatalog.get('mal-64340');
+    if(!anime)throw Error('Test catalog empty');
+    window.OneUpCatalog.register([{...anime,id:'mal-64340',title:'Overgeared',episodes:12}]);
+   });
+   for(let attempt=0;attempt<3;attempt++){
+    await page.evaluate(()=>window.OneUpCatalog.open('mal-64340'));
+    await page.locator('#anime-dialog[open] #detail-anime-name').getByText('Overgeared').waitFor();
+    const target=await page.locator('#anime-close').evaluate(button=>{
+     const box=button.getBoundingClientRect();
+     const elem=document.elementFromPoint(box.x+box.width/2,box.y+box.height/2);
+     return {
+      parent:button.parentElement?.id,
+      width:box.width,height:box.height,
+      hit:elem===button||button.contains(elem),
+      id:elem?.id||'',html:elem?.outerHTML?.slice(0,100)||''
+     };
+    });
+    if(target.parent!=='anime-dialog')throw Error('Close X was reparented into poster content');
+    if(target.width<44||target.height<44||!target.hit)
+     throw Error('X hit target blocked on '+device.name+': '+JSON.stringify(target));
+    if(device.mobile){
+     const b=await page.locator('#anime-close').boundingBox();
+     await page.touchscreen.tap(b.x+b.width/2,b.y+b.height/2);
+    }else await page.locator('#anime-close').click();
+    await page.locator('#anime-dialog').waitFor({state:'hidden',timeout:3200});
+    await page.waitForTimeout(500);
+    if(await page.locator('#anime-dialog').evaluate(el=>el.open))
+     throw Error('Closing the X caused the detail modal to reopen');
+    const closedId=await page.evaluate(()=>window.OneUpCatalog.active());
+    if(closedId!==null)throw Error('Active anime state not cleared after X');
+   }
+   await page.evaluate(()=>window.OneUpCatalog.open('mal-64340'));
+   await page.keyboard.press('Escape');
+   await page.locator('#anime-dialog').waitFor({state:'hidden',timeout:3200});
+  });
   // Isolate later navigation checks even when a modal-close assertion fails.
   await page.evaluate(()=>document.querySelector('#anime-dialog')?.close()).catch(()=>{});
   await test(device.name+' calendar navigation',async()=>{

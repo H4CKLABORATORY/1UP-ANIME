@@ -172,3 +172,13 @@ Al concluir cada trabajo agregar:
 - `data/anime1v-config.json` activa el servicio público Render `https://oneup-anime-discovery.onrender.com/anime1vDiscovery` para **metadatos de búsqueda Jikan fallback**. El backend FxxMorgan upstream no está configurado; `anime1v-discovery.js` muestra el origen real y nunca afirma que haya streaming. Se guardan en este PR la copia del gateway Node `render/anime1v-gateway.js` y smoke tests.
 - El sitio sigue siendo GitHub Pages para frontend con Render free para búsqueda; el manifiesto de reproducción autorizada sigue vacío. **No declarar que los episodios de anime están disponibles para ver.**
 - Validación: workflow de assets genera 9:16 con checksum y audio AAC; Playwright compara 320,375,390 y 1366 px, revisa identidad del header y respuesta mock de Render; workflow de publicación valida el endpoint /health real. Registrar resultados finales antes de fusionar.
+
+
+### 2026-10-17 — Reparación cierre iOS de ficha de anime Overgeared
+- La grabación y captura enviadas por el propietario muestran que el diálogo de Overgeared se cierra al tocar X pero se puede reabrir inesperadamente tras el toque, dando sensación de bloqueo.
+- PR #31, rama `fix/iphone-detail-close-20261017`, modifica `index.html`, `studio.js`, `spotlight.css`, `sw.js` y `scripts/e2e-browser.mjs`.
+- La X es ahora el primer hijo **estable** del `<dialog>`, ya no se mueve a `.oneup-detail-content` cuando cambia el anime. Área táctil sticky 48 × 48 px, `touch-action: manipulation`.
+- `pointerdown` de respaldo solo cierra si otra capa capturó exactamente las coordenadas de X; al tocar el botón se cierra mediante `click` nativo. Bloqueo de clics fantasma de tarjeta por 450 ms; al salir se limpia `state.active`.
+- Regresión Chromium Playwright de 390 px móvil y escritorio: Overgeared abierto/cerrado 3 veces, X visible e identificada por `elementFromPoint`, diálogo permanece cerrado, estado activo se limpia, Escape sigue funcionando.
+- CI para SHA de implementación `ecf627f`: `ONEUP Browser Acceptance`, `One Up UI Quality`, `ONEUP Codex Cache and Catalog Regression` y `1UP HLS browser compatibility` **success**. Esto no equivale a validación en Safari físico; el video del usuario documenta el defecto anterior.
+- Versión de cache PWA `v26-iphone-modal-dismiss-20261017` para recibir actualización. Comprobar GitHub Pages tras merge y que Safari refresque.

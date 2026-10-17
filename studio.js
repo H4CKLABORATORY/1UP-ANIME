@@ -554,12 +554,9 @@ function detail(id){
   '<section class="oneup-detail-section"><h3>MI ENLACE PERSONAL</h3><div class="detail-actions"><input id="custom-url" type="url" aria-label="Enlace personal del anime" placeholder="https://..." value="'+esc(item.externalUrl||'')+'"><button type="button" id="save-url" class="cta outline">Guardar</button></div></section>'+
   recommendations+
  '</div>';
- const closeControl=$('#anime-close');
- const modal=$('#anime-dialog');
- if(closeControl&&closeControl.parentElement!==modal)modal.appendChild(closeControl);
+ // Keep the close button outside regenerated anime detail markup.
+ // Re-parenting it into the poster/cover grid broke hit-testing in iOS Safari.
  $('#anime-dialog-body').innerHTML=detailUI;
- const detailContent=$('#anime-dialog-body .oneup-detail-content');
- if(detailContent&&closeControl)detailContent.appendChild(closeControl);
  const bg=safe(a.banner||a.image);
  const scene=$('#oneup-detail-art');
  if(scene&&bg)scene.style.backgroundImage='url("'+bg.replace(/["\\]/g,'')+'")';
@@ -609,7 +606,12 @@ function init(){
   const g=e.target.closest('[data-genre]');if(g){state.filters.genre=g.dataset.genre;go(g.dataset.genre?'genero':'catalogo');return}
   const s=e.target.closest('[data-save]');if(s){const id=s.dataset.save;toggle(id);if($('#anime-dialog').open&&state.active===id){const button=$('#anime-dialog [data-save]');if(button)button.textContent=isFav(id)?'✓ Guardado':'＋ Añadir a mi lista'}return}
   const pick=e.target.closest('[data-feature]');if(pick){const anime=state.entries.get(pick.dataset.feature);if(anime)hero(anime,true);return}
-  const d=e.target.closest('[data-details]');if(d){detail(d.dataset.details);return}
+  const d=e.target.closest('[data-details]');
+  if(d){
+   // Block delayed Safari ghost click that would immediately reopen the dialog.
+   if(performance.now()-lastDetailDismissed<450){e.preventDefault();return}
+   detail(d.dataset.details);return
+  }
   const ep=e.target.closest('[data-episode]');if(ep){changeEp(Number(ep.dataset.episode))}
  });
 
@@ -638,18 +640,31 @@ function init(){
  $('#browse-next').addEventListener('click',()=>!state.loading&&state.next&&browse(state.view,state.page+1,true));
  $('#browse-controls').addEventListener('change',e=>{const keys={'filter-genre':'genre','filter-format':'format','filter-status':'status','filter-sort':'sort'};if(keys[e.target.id]){state.filters[keys[e.target.id]]=e.target.value;browse('catalogo')}});
  $('#browse-controls').addEventListener('click',e=>{if(e.target.id==='filter-reset'){state.filters={genre:'',format:'',status:'',sort:'POPULARITY_DESC'};browse('catalogo')}});
- $('#anime-close').addEventListener('click',()=>$('#anime-dialog').close());
- // iOS tap fallback: this dialog capture receives taps even if a painted cover
- // unexpectedly intercepts the visible close button's pointer target.
+ let lastDetailDismissed=-10000;
+ const closeAnime=(event)=>{
+  if(event){event.preventDefault();event.stopPropagation()}
+  const modal=$('#anime-dialog');
+  if(!modal?.open)return;
+  lastDetailDismissed=performance.now();
+  modal.close();
+ };
+ $('#anime-close').addEventListener('click',closeAnime);
+ // iOS fallback applies only when another element intercepts the X's
+ // screen coordinates, not a normal tap on the button itself.
+ // Closing on the button's pointerdown allowed click-through to a card.
  $('#anime-dialog').addEventListener('pointerdown',e=>{
-  const dialog=$('#anime-dialog'),button=$('#anime-close');
-  if(!dialog?.open||!button)return;
-  const r=button.getBoundingClientRect(),pad=7;
-  if(e.clientX>=r.left-pad&&e.clientX<=r.right+pad&&e.clientY>=r.top-pad&&e.clientY<=r.bottom+pad){
-   e.preventDefault();e.stopPropagation();dialog.close();
-  }
+  const button=$('#anime-close'),modal=$('#anime-dialog');
+  if(!modal?.open||!button||button.contains(e.target))return;
+  const r=button.getBoundingClientRect(),pad=5;
+  if(e.clientX<r.left-pad||e.clientX>r.right+pad||
+     e.clientY<r.top-pad||e.clientY>r.bottom+pad)return;
+  e.preventDefault();e.stopPropagation();closeAnime();
  },true);
- $('#anime-dialog').addEventListener('close',()=>document.dispatchEvent(new Event('oneup-anime-closed')));
+ $('#anime-dialog').addEventListener('close',()=>{
+  lastDetailDismissed=performance.now();
+  state.active=null;
+  document.dispatchEvent(new Event('oneup-anime-closed'));
+ });
  $('#anime-dialog').addEventListener('click',e=>{
   if(e.target===$('#anime-dialog'))$('#anime-dialog').close();
   if(e.target.id==='save-url')saveUrl();
