@@ -211,3 +211,13 @@ Al concluir cada trabajo agregar:
 - `AGENTS.md` ahora exige consultar esta ficha al comenzar una sesión nueva y distinguir la última evidencia del código frente a una ficha antigua.
 - La tarea de ChatGPT **«Continuar 1UP Anime»** existente, id `6ad3b29c7d948191b7a447736883d800`, ya se actualizó para leer el handoff, revisar trabajo real **una vez por hora** y documentar el siguiente paso; no se creó otra tarea duplicada.
 - Este sistema ofrece continuidad recuperable, no trabajo continuo ilimitado. El usuario deberá abrir «Nuevo chat» y pegar el texto del documento cuando desee cambiar de conversación.
+
+
+### 2026-10-17 — Editorial Pro: pulido cinematográfico de la vista Kokomi (rama de revisión)
+- Requerimiento: calidad de plataforma de anime profesional, código abierto aprovechable con licencia y UI original que no sea un clon exacto de otros servicios.
+- Se examinó la cascada `studio.css`, `spotlight.css`, `brand-v2.css`, `themes/kokomi-studio/theme.css`, `themes/kokomi-mobile-preview/theme.css/pages.css`, `themes/october-2026/theme.css` y `preview-kokomi-mobile.html`. Ya existe un motor de datos/rutas y 22 interiores: no rehacer ni sustituir.
+- Rama `design/oneup-editorial-pro-preview-20261017`, basada en main. Nuevo `themes/kokomi-mobile-preview/editorial-pro.css` con estilos originales opt-in, se activa solo en preview; `index.html` y los servicios de video **no modificados**.
+- Se elevaron jerarquía tipográfica, legibilidad del hero, marcos de pósters, consistencia de tarjetas/botones y navegación, controls de 44 px, foco visible y comportamiento táctil/movimiento reducido; solo transformaciones/opacity discretas en hover de puntero fino.
+- Añadido `scripts/e2e-editorial-pro.mjs` con servidor local y Chromium 320/390/1366 y capturas; ampliado `.github/workflows/kokomi-preview-check.yml` para ejecutarlo junto a regresiones existentes. Comprobar resultados de CI antes de declarar aprobado.
+- Referencias: WCAG 2.2 2.4.11/2.5.8 (https://www.w3.org/WAI/standards-guidelines/wcag/new-in-22/) y web.dev CLS (https://web.dev/articles/optimize-cls/). Código y diseño escritos para 1UP Anime, sin copiar HTML/CSS comercial ni arte no autorizado.
+- Faltan evaluación visual humana de capturas, ejecución CI concluida, Safari físico y autorización de publicación. **No se fusionó ni desplegó** la variante.

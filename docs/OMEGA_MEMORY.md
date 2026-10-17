@@ -46,3 +46,10 @@ Al terminar avances reales, añadir al final:
 - Limitaciones y siguientes pasos:
 ```
 Excluir secretos, datos personales irrelevantes, suposiciones no etiquetadas, promesas de segundo plano y contenido sin autorización.
+
+### 2026-10-17 — 1UP Editorial Pro, avance de diseño aislado
+- Pedido: estética profesional coherente; investigar patrones UX y mejorar la página sin rediseños infantiles/indiscriminados.
+- Evidencia: se revisaron AGENTS, handoff, dirección artística y los temas Kokomi/Octubre. Se encontraron varias capas CSS vigentes; una nueva variante solo se acopla a `preview-kokomi-mobile.html`, sin cambiar `index.html`, datos o reproductor.
+- Cambios: `themes/kokomi-mobile-preview/editorial-pro.css`, clase de activación en preview y `scripts/e2e-editorial-pro.mjs`; CI de Kokomi extendido. Paleta editorial propia, poster framing, espaciado, CTA, mobile input 16px, foco visible y reduced-motion.
+- Pruebas locales: validación estructural preliminar del código; las verificaciones Chromium/CI del branch se deben consultar antes de afirmar PASS. Safari real y aprobación visual aún pendientes.
+- Próximo paso: revisar capturas de 320/390/1366 y CI, corregir hallazgos y presentar antes/después; no fusionar sin QA y aprobación.

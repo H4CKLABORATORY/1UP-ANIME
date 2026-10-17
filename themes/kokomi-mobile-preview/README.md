@@ -43,3 +43,11 @@ Preparar y evaluar capturas visuales reales de iPhone/escritorio y corregir las 
 - Los comentarios conservan el identificador de hilo preexistente y envían al motor temporada y número original, sin usar el hilo codificado como número de episodio.
 - Prueba Chromium a 390 y 1366 px: navegación, estados sin video, siete posiciones, selección de fuente/temporada, consentimiento de embed, sincronización bidireccional de episodio/comentarios y retirada del reproductor al salir. Las fuentes de prueba están aisladas; no acreditan reproducción pública real ni Safari.
 - El backend histórico de comentarios usa namespaces de temporada limitados a 9 y episodios hasta 999 para temporadas posteriores a la primera; ampliar ese contrato queda pendiente antes de admitir catálogos que superen esos rangos.
+
+
+## Editorial Pro — variante original para revisión visual (17 octubre 2026)
+- **Sin tocar producción:** la variante se activa únicamente mediante `body.oneup-editorial-pro` en `preview-kokomi-mobile.html` y `themes/kokomi-mobile-preview/editorial-pro.css`. `index.html` no carga esta capa.
+- Prioridad visual: titular y arte protagonista, botón primario rojo 1UP, base obsidiana, tarjetas 3:4, microjerarquía de etiquetas, una sola familia de acentos por vista y estados táctiles/teclado coherentes.
+- Funciones: mantiene la navegación, el catálogo y motor de episodios existentes sin inventar reproducción. No se importó CSS comercial ni imágenes de otros sitios; diseño propio inspirado en patrones generales de interfaz editorial.
+- Validación propuesta: `node scripts/e2e-editorial-pro.mjs` comprueba 320/390/1366 px, focus/CTA, ratio, overflow y modo de movimiento reducido, generando capturas `e2e-editorial-pro-*.png` en CI.
+- Requiere comparar capturas antes/después en móvil/escritorio y confirmación del propietario antes de portarlo a `index.html`. Safari iPhone físico pendiente.
