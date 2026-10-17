@@ -46,3 +46,9 @@ Al terminar avances reales, añadir al final:
 - Limitaciones y siguientes pasos:
 ```
 Excluir secretos, datos personales irrelevantes, suposiciones no etiquetadas, promesas de segundo plano y contenido sin autorización.
+
+### 2026-10-17 — Parallel Extract para metadatos públicos Crunchyroll, PR #39
+- El propietario aportó ejemplo de `POST /v1/extract` contra `https://www.crunchyroll.com/es/discover`; se quitaron parámetros publicitarios de la URL fija.
+- PR borrador [#39](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/39): adaptador opcional solo servidor, token `PARALLEL_API_KEY` privado, dos flags explícitos de aprobación (fuente y posibles costos). No activado, sin nuevas claves en GitHub y sin despliegue.
+- Verificación: sintaxis JS y test con respuestas simuladas PASS local. GitHub CI iniciado; comprobar conclusión antes de merge. Pruebas contra Parallel/Crunchyroll reales NO ejecutadas, presupuesto cero preservado.
+- Próxima acción: revisar CI, términos y precio por URL, confirmar opciones gratuitas; mantener Anime1v/Jikan y el reproductor actual sin cambios.

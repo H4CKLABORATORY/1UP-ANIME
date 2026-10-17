@@ -1,0 +1,22 @@
+name: ONEUP Parallel Crunchyroll metadata safety
+on:
+  push:
+    branches:
+      - 'feature/parallel-crunchyroll-metadata-*'
+  pull_request:
+    paths:
+      - 'render/parallel-crunchyroll/**'
+      - 'scripts/test-parallel-crunchyroll.mjs'
+      - '.github/workflows/parallel-crunchyroll-check.yml'
+jobs:
+  offline-contract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate syntax
+        run: node --check render/parallel-crunchyroll/adapter.js && node --check render/parallel-crunchyroll/run-once.js
+      - name: Run offline contract tests (no API key or network request)
+        run: node scripts/test-parallel-crunchyroll.mjs

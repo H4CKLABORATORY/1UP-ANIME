@@ -14,3 +14,5 @@ Restricción: presupuesto $0, no compras/deploy destructivo sin permiso; no conv
 
 
 - [x] PR #31: reparar X del diálogo Overgeared en Safari móvil; CI Chromium 390px/desktop en verde. **Pendiente** confirmación tras GitHub Pages y en iPhone físico.
+
+- [ ] **Parallel AI + Crunchyroll PR #39:** validar GitHub Actions y revisión de términos/costo antes de integrar el módulo opcional de metadatos `render/parallel-crunchyroll/adapter.js`; ninguna API key en cliente, ninguna consulta programada y ningún video de Crunchyroll. En PR borrador, desactivado por defecto. [PR](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/39).
