@@ -12,6 +12,7 @@ const LIMIT=640*1024;
 const WINDOW=60*1000,MAX_RPM=18;
 const buckets=new Map(),cache=new Map();
 let animeClient=null;
+let lastSource='jikan_fallback';
 function json(res,status,value){
  res.writeHead(status,{
   'Content-Type':'application/json; charset=utf-8',
@@ -58,11 +59,22 @@ async function lookup(kind,params){
  const hit=cache.get(key);
  if(hit&&hit.expires>Date.now())return hit.value;
  let data;
- if(process.env.ANIME1V_BASE_URL&&process.env.ANIME1V_API_KEY){
-  animeClient ||=buildClient({baseUrl:process.env.ANIME1V_BASE_URL,apiKey:process.env.ANIME1V_API_KEY});
-  data=await animeClient.query(kind,params);
- }else{
-  // Jikan is metadata only and needs no private API key; label it accurately.
+ // The restricted Anime1v runtime currently offers AnimeAV1 metadata only;
+ // every other provider retains the Jikan fallback. Never mislabel the source.
+ const anime1vReady=!!(process.env.ANIME1V_BASE_URL&&process.env.ANIME1V_API_KEY);
+ const anime1vProvider=!params.provider||['animeav1','animeav1.com'].includes(params.provider);
+ if(anime1vReady&&anime1vProvider){
+  try{
+   animeClient ||=buildClient({baseUrl:process.env.ANIME1V_BASE_URL,apiKey:process.env.ANIME1V_API_KEY});
+   const upstream=await animeClient.query(kind,params);
+   if(Array.isArray(upstream?.results)&&upstream.results.length)data=upstream;
+  }catch(error){
+   console.warn('Anime1v metadata unavailable; using Jikan fallback:',String(error?.message||'unavailable').slice(0,130));
+  }
+ }
+ if(!data){
+  // Public Jikan metadata fallback when upstream is down, has no results,
+  // or doesn't support the requested provider. This is NOT streaming.
   const u=new URL(kind==='search'?'https://api.jikan.moe/v4/anime':'https://api.jikan.moe/v4/top/anime');
   u.searchParams.set('limit','24');u.searchParams.set('sfw','true');
   if(kind==='search')u.searchParams.set('q',params.q);
@@ -72,6 +84,7 @@ async function lookup(kind,params){
   }
   data=normalizeJikan(await limitedJSON(u),kind);
  }
+ lastSource=data.source==='anime1v'?'anime1v':'jikan_fallback';
  if(cache.size>100)cache.clear();
  cache.set(key,{value:data,expires:Date.now()+180000});
  return data;
@@ -85,7 +98,7 @@ const server=http.createServer(async(req,res)=>{
  if(req.method!=='GET'){json(res,405,{error:'Método no permitido'});return}
  let u;try{u=new URL(req.url,'http://localhost')}catch{return json(res,400,{error:'URL no válida'})}
  if(u.pathname==='/health'){
-  json(res,200,{ok:true,service:'1UP metadata gateway',upstream:process.env.ANIME1V_BASE_URL?'anime1v':'jikan_fallback',streaming:false});return;
+  json(res,200,{ok:true,service:'1UP metadata gateway',upstream:process.env.ANIME1V_BASE_URL?'anime1v':'jikan_fallback',lastSource,streaming:false});return;
  }
  if(u.pathname!=='/anime1vDiscovery')return json(res,404,{error:'Ruta inexistente'});
  const key=String(req.headers['x-forwarded-for']||req.socket.remoteAddress||'unknown').split(',')[0].slice(0,70);
