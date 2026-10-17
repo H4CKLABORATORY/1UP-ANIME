@@ -9,8 +9,9 @@ const root=document.querySelector('#cinema');
 const canvas=document.querySelector('#particles');
 const media=document.querySelector('#original-signature');
 const replay=document.querySelector('#replay');
+const isOpening=root?.dataset.mode==='opening';
 const status=document.querySelector('#audio-status');
-if(!root||!canvas||!media||!replay)return;
+if(!root||!canvas||!media||(!replay&&!isOpening))return;
 const ctx=canvas.getContext('2d',{alpha:true});
 const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
 let width=innerWidth,height=innerHeight,dpr=1,particles=[],start=0,raf=0,playing=false,once=0;
@@ -122,12 +123,14 @@ function tick(now){
  raf=requestAnimationFrame(tick);
 }
 function stop(){
+ if(!playing)return;
  playing=false;cancelAnimationFrame(raf);
  root.classList.remove('playing');
  root.classList.add('finished');
  drawFrame(DURATION);
  try{media.pause()}catch{}
- replay.disabled=false;
+ if(replay)replay.disabled=false;
+ if(isOpening)root.dispatchEvent(new CustomEvent('oneup-opening-finished',{bubbles:true}));
 }
 function startScene(){
  cancelAnimationFrame(raf);
@@ -139,7 +142,7 @@ function startScene(){
  root.classList.add('playing');
  start=performance.now();
  raf=requestAnimationFrame(tick);
- replay.disabled=true;
+ if(replay)replay.disabled=true;
  if(reduced){
   status.textContent='Movimiento reducido: se conserva el logotipo estático.';
   setTimeout(stop,900);return;
@@ -179,7 +182,8 @@ async function loadAllowedCharacters(){
 window.addEventListener('resize',resize,{passive:true});
 media.addEventListener('ended',stop);
 media.addEventListener('error',()=>{audioFallback=true;status.textContent='Audio no disponible; permanece la vista visual.'});
-replay.addEventListener('click',startScene);
+if(replay)replay.addEventListener('click',startScene);
+if(isOpening)root.addEventListener('oneup-opening-stop',stop);
 resize();
 void loadAllowedCharacters();
 startScene();
