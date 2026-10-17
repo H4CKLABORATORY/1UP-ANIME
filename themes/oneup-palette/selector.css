@@ -1,0 +1,282 @@
+/*
+ * ONEUP PALETTE — Original black/emerald + violet themes for 1UP Anime.
+ * Scoped to explicit themes: selecting "Original" restores the site's
+ * existing Kokomi/October styles without overriding their appearance.
+ * No Crunchyroll/TemplateMonster CSS, fonts or graphic assets copied.
+ */
+:root[data-oneup-theme="esmeralda"] {
+  --oneup-pal-bg: #080e0d;
+  --oneup-pal-card: #101d1a;
+  --oneup-pal-raised: #152620;
+  --oneup-pal-ink: #f4fff8;
+  --oneup-pal-muted: #b6d0c4;
+  --oneup-pal-line: #5fac8b54;
+  --oneup-pal-accent: #7aeeab;
+  --oneup-pal-active: #38ca83;
+  --oneup-pal-soft: #44c78a26;
+  --oneup-pal-on: #04110c;
+  --oneup-pal-highlight: #a2ffd0;
+  --oneup-pal-glow: #35b47c24;
+  color-scheme: dark;
+}
+:root[data-oneup-theme="violeta"] {
+  --oneup-pal-bg: #0d0b17;
+  --oneup-pal-card: #171429;
+  --oneup-pal-raised: #211d37;
+  --oneup-pal-ink: #faf7ff;
+  --oneup-pal-muted: #cdc4e3;
+  --oneup-pal-line: #8a79cb65;
+  --oneup-pal-accent: #c9b2ff;
+  --oneup-pal-active: #a78af0;
+  --oneup-pal-soft: #8e77df30;
+  --oneup-pal-on: #150c29;
+  --oneup-pal-highlight: #dfd0ff;
+  --oneup-pal-glow: #8a6fd52e;
+  color-scheme: dark;
+}
+:root[data-oneup-theme="original"] { color-scheme: dark; }
+
+/* A real control in the desktop header and full-sized choices in mobile menu. */
+.oneup-theme-control { position: relative; flex: 0 0 auto; }
+.oneup-theme-trigger {
+  display: grid !important;
+  place-items: center;
+  min-width: 44px;
+  min-height: 44px;
+  width: 44px;
+  padding: 8px;
+  border-radius: 8px;
+  background: #1b242d;
+  border: 1px solid #8fa19f66;
+}
+.oneup-theme-trigger svg { width: 21px; height: 21px; }
+.oneup-theme-trigger[aria-expanded="true"] { outline: 2px solid #9df5be; outline-offset: 2px; }
+.oneup-theme-panel[hidden] { display: none !important; }
+.oneup-theme-panel {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 12px);
+  z-index: 150;
+  width: min(270px, calc(100vw - 18px));
+  padding: 13px;
+  border-radius: 12px;
+  background: #121a20;
+  border: 1px solid #9eb9b152;
+  box-shadow: 0 25px 65px #000c;
+  color: #f7f9ff;
+}
+.oneup-theme-heading {
+  margin: 1px 8px 12px;
+  color: #e3eaf4;
+  font: 800 13px/1.3 'Outfit', system-ui, sans-serif;
+  letter-spacing: .01em;
+}
+.oneup-theme-option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  min-height: 45px;
+  margin: 4px 0;
+  padding: 9px 10px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  text-align: left;
+  color: #e7edf5;
+  background: #ffffff09;
+  font: 700 13px/1.3 'Outfit', system-ui, sans-serif;
+  transition: background .18s ease, border-color .18s ease;
+}
+.oneup-theme-option:hover,
+.oneup-theme-option:focus-visible {
+  background: #ffffff19;
+  border-color: #b9d8ee7d;
+}
+.oneup-theme-option:focus-visible { outline: 2px solid #a5edcf; outline-offset: 2px; }
+.oneup-theme-option[aria-pressed="true"] { background: #5edba924; border-color: #9af3c39c; color: #fff; }
+.oneup-theme-swatch {
+  flex: 0 0 19px;
+  width: 19px;
+  height: 19px;
+  border-radius: 50%;
+  background: var(--swatch);
+  border: 3px solid #162022;
+  box-shadow: 0 0 0 1px #f5f9ff80;
+}
+.oneup-theme-label { flex: 1; }
+.oneup-theme-check { opacity: 0; color: #abf6c8; font-weight: 900; }
+.oneup-theme-option[aria-pressed="true"] .oneup-theme-check { opacity: 1; }
+.oneup-theme-drawer {
+  margin: 9px 12px 13px;
+  padding: 13px 9px 9px;
+  border: 1px solid #718b805a;
+  background: #10191d;
+  border-radius: 9px;
+}
+.oneup-theme-drawer .oneup-theme-heading { font-size: 13px; color: #dce7ea; }
+.oneup-theme-drawer .oneup-theme-option { min-height: 47px; font-size: 13px; }
+@media(max-width:780px) {
+  .oneup-theme-control { display: none !important; }
+}
+@media(min-width:781px) {
+  .oneup-theme-drawer { display: none; }
+}
+
+/* Palette overrides apply only when a visitor explicitly chooses one.
+   The "Original" option therefore remains a genuine original-theme mode. */
+:root[data-oneup-theme="esmeralda"] body.kokomi-mobile-reference,
+:root[data-oneup-theme="violeta"] body.kokomi-mobile-reference {
+  --bg: var(--oneup-pal-bg);
+  --surf: var(--oneup-pal-card);
+  --panel: var(--oneup-pal-raised);
+  --ink: var(--oneup-pal-ink);
+  --muted: var(--oneup-pal-muted);
+  --orange: var(--oneup-pal-accent);
+  --orange2: var(--oneup-pal-active);
+  --cream: var(--oneup-pal-ink);
+  --km-bg: var(--oneup-pal-bg);
+  --km-panel: var(--oneup-pal-card);
+  --km-ink: var(--oneup-pal-ink);
+  --km-muted: var(--oneup-pal-muted);
+  --km-turquoise: var(--oneup-pal-accent);
+  --km-red: var(--oneup-pal-active);
+  --km-blue: var(--oneup-pal-accent);
+  --kp-bg: var(--oneup-pal-bg);
+  --kp-panel: var(--oneup-pal-card);
+  --kp-ink: var(--oneup-pal-ink);
+  --kp-muted: var(--oneup-pal-muted);
+  --kp-accent: var(--oneup-pal-accent);
+  --kp-secondary: var(--oneup-pal-active);
+  --oct-main: var(--oneup-pal-accent);
+  --oct-red: var(--oneup-pal-active);
+  background: radial-gradient(ellipse at 87% 5%, var(--oneup-pal-glow), transparent 43%), var(--oneup-pal-bg);
+  color: var(--oneup-pal-ink);
+}
+
+/* Distinct title, gallery and actions—not an imitation of another platform. */
+:root[data-oneup-theme="esmeralda"] body.kokomi-mobile-reference .header,
+:root[data-oneup-theme="violeta"] body.kokomi-mobile-reference .header {
+  background: #080e13f0;
+  border-color: var(--oneup-pal-line);
+}
+:root[data-oneup-theme="esmeralda"] body.kokomi-mobile-reference .desktop-links,
+:root[data-oneup-theme="violeta"] body.kokomi-mobile-reference .desktop-links {
+  background: var(--oneup-pal-card);
+  border-color: var(--oneup-pal-line);
+}
+:root[data-oneup-theme="esmeralda"] body.kokomi-mobile-reference .desktop-links :is(button,a):is(.active,:hover),
+:root[data-oneup-theme="violeta"] body.kokomi-mobile-reference .desktop-links :is(button,a):is(.active,:hover) {
+  color: var(--oneup-pal-ink);
+  background: var(--oneup-pal-soft);
+}
+:root[data-oneup-theme="esmeralda"] body.kokomi-mobile-reference .hero,
+:root[data-oneup-theme="violeta"] body.kokomi-mobile-reference .hero {
+  background: var(--oneup-pal-bg);
+  border-bottom: 1px solid var(--oneup-pal-line);
+}
+:root[data-oneup-theme="esmeralda"] body.kokomi-mobile-reference .hero-darken,
+:root[data-oneup-theme="violeta"] body.kokomi-mobile-reference .hero-darken {
+  background: linear-gradient(0deg, var(--oneup-pal-bg), transparent 66%),
+    linear-gradient(90deg, #05090de8, #060c10c0 45%, #070b1161 100%);
+}
+:root[data-oneup-theme="esmeralda"] body.kokomi-mobile-reference .hero .eyebrow,
+:root[data-oneup-theme="violeta"] body.kokomi-mobile-reference .hero .eyebrow {
+  color: var(--oneup-pal-highlight);
+}
+:root[data-oneup-theme="esmeralda"] body.kokomi-mobile-reference .hero h1 span,
+:root[data-oneup-theme="violeta"] body.kokomi-mobile-reference .hero h1 span {
+  background: none;
+  color: var(--oneup-pal-ink);
+  -webkit-text-fill-color: var(--oneup-pal-ink);
+}
+:root[data-oneup-theme="esmeralda"] body.kokomi-mobile-reference .hero-description,
+:root[data-oneup-theme="violeta"] body.kokomi-mobile-reference .hero-description {
+  color: #e7f2ed;
+  text-shadow: 0 1px 12px #0009;
+}
+:root[data-oneup-theme="esmeralda"] body.kokomi-mobile-reference :is(.cta.primary,.searchbar button,.km-main-button),
+:root[data-oneup-theme="violeta"] body.kokomi-mobile-reference :is(.cta.primary,.searchbar button,.km-main-button) {
+  background: linear-gradient(110deg, var(--oneup-pal-accent), var(--oneup-pal-active));
+  color: var(--oneup-pal-on);
+  border-color: var(--oneup-pal-accent);
+  box-shadow: 0 10px 30px var(--oneup-pal-glow);
+}
+:root[data-oneup-theme="esmeralda"] body.kokomi-mobile-reference :is(.cta.outline,.hero-pick,.genre-pills button),
+:root[data-oneup-theme="violeta"] body.kokomi-mobile-reference :is(.cta.outline,.hero-pick,.genre-pills button) {
+  color: var(--oneup-pal-ink);
+  background: #111b1cd4;
+  border-color: var(--oneup-pal-line);
+}
+:root[data-oneup-theme="esmeralda"] body.kokomi-mobile-reference :is(.hero-pick.active,.genre-pills button.active),
+:root[data-oneup-theme="violeta"] body.kokomi-mobile-reference :is(.hero-pick.active,.genre-pills button.active) {
+  color: var(--oneup-pal-highlight);
+  background: var(--oneup-pal-soft);
+  border-color: var(--oneup-pal-accent);
+}
+:root[data-oneup-theme="esmeralda"] body.kokomi-mobile-reference :is(.section-heading h2::before,.signal),
+:root[data-oneup-theme="violeta"] body.kokomi-mobile-reference :is(.section-heading h2::before,.signal) {
+  background: var(--oneup-pal-active);
+}
+:root[data-oneup-theme="esmeralda"] body.kokomi-mobile-reference :is(.section-heading h2 em,.section-more,.micro,.schedule-time,.km-eyebrow),
+:root[data-oneup-theme="violeta"] body.kokomi-mobile-reference :is(.section-heading h2 em,.section-more,.micro,.schedule-time,.km-eyebrow) {
+  color: var(--oneup-pal-highlight);
+}
+:root[data-oneup-theme="esmeralda"] body.kokomi-mobile-reference :is(.anime-card,.schedule-item,.oneup-watch-panel),
+:root[data-oneup-theme="violeta"] body.kokomi-mobile-reference :is(.anime-card,.schedule-item,.oneup-watch-panel) {
+  background: var(--oneup-pal-card);
+  border-color: var(--oneup-pal-line);
+}
+:root[data-oneup-theme="esmeralda"] body.kokomi-mobile-reference .anime-card .card-info,
+:root[data-oneup-theme="violeta"] body.kokomi-mobile-reference .anime-card .card-info {
+  background: var(--oneup-pal-card);
+}
+:root[data-oneup-theme="esmeralda"] body.kokomi-mobile-reference :is(.anime-card .card-name,.km-detail-inner h1),
+:root[data-oneup-theme="violeta"] body.kokomi-mobile-reference :is(.anime-card .card-name,.km-detail-inner h1) {
+  color: var(--oneup-pal-ink);
+}
+:root[data-oneup-theme="esmeralda"] body.kokomi-mobile-reference .anime-card:hover,
+:root[data-oneup-theme="violeta"] body.kokomi-mobile-reference .anime-card:hover {
+  border-color: var(--oneup-pal-accent);
+}
+:root[data-oneup-theme="esmeralda"] body.kokomi-mobile-reference :is(.anime-save.saved,.km-rank),
+:root[data-oneup-theme="violeta"] body.kokomi-mobile-reference :is(.anime-save.saved,.km-rank) {
+  color: var(--oneup-pal-on);
+  background: var(--oneup-pal-accent);
+  border-color: var(--oneup-pal-accent);
+}
+:root[data-oneup-theme="esmeralda"] body.kokomi-mobile-reference :is(.km-detail-banner,.km-extra-root,.browse-screen,.km-watch-no-media),
+:root[data-oneup-theme="violeta"] body.kokomi-mobile-reference :is(.km-detail-banner,.km-extra-root,.browse-screen,.km-watch-no-media) {
+  background-color: var(--oneup-pal-bg);
+}
+:root[data-oneup-theme="esmeralda"] body.kokomi-mobile-reference .km-drawer,
+:root[data-oneup-theme="violeta"] body.kokomi-mobile-reference .km-drawer {
+  background: var(--oneup-pal-card);
+  border-color: var(--oneup-pal-line);
+}
+:root[data-oneup-theme="esmeralda"] body.kokomi-mobile-reference .km-nav :is(button,a).active,
+:root[data-oneup-theme="violeta"] body.kokomi-mobile-reference .km-nav :is(button,a).active {
+  background: var(--oneup-pal-soft);
+  border-color: var(--oneup-pal-line);
+  color: var(--oneup-pal-ink);
+}
+:root[data-oneup-theme="esmeralda"] body.kokomi-mobile-reference .footer,
+:root[data-oneup-theme="violeta"] body.kokomi-mobile-reference .footer {
+  background: var(--oneup-pal-card);
+  border-color: var(--oneup-pal-line);
+}
+:root[data-oneup-theme="esmeralda"] body.kokomi-mobile-reference :is(button,a,select,input):focus-visible,
+:root[data-oneup-theme="violeta"] body.kokomi-mobile-reference :is(button,a,select,input):focus-visible {
+  outline: 3px solid var(--oneup-pal-highlight);
+  outline-offset: 3px;
+}
+@media(max-width:780px) {
+  :root[data-oneup-theme="esmeralda"] body.kokomi-mobile-reference .hero-darken,
+  :root[data-oneup-theme="violeta"] body.kokomi-mobile-reference .hero-darken {
+    background: linear-gradient(0deg,var(--oneup-pal-bg),transparent 88%),
+      linear-gradient(90deg,#05090dcb,transparent 95%);
+  }
+  .oneup-theme-drawer { padding-bottom: max(10px,env(safe-area-inset-bottom)); }
+}
+@media(prefers-reduced-motion:reduce) {
+  .oneup-theme-option { transition: none; }
+}
