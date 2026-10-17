@@ -1,0 +1,39 @@
+name: 1UP New Chat Handoff QA
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'scripts/update-new-chat-handoff.mjs'
+      - 'docs/NEW_CHAT_HANDOFF.md'
+      - 'AGENTS.md'
+      - '.github/workflows/update-new-chat-handoff.yml'
+      - '.github/workflows/new-chat-handoff-check.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 80
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate script syntax and read-only check
+        run: |
+          node --check scripts/update-new-chat-handoff.mjs
+          node scripts/update-new-chat-handoff.mjs --check
+      - name: Generate safe reusable handoff and verify required details
+        run: |
+          node scripts/update-new-chat-handoff.mjs
+          node --input-type=module -e '
+            import {readFileSync} from "node:fs";
+            const doc=readFileSync("docs/NEW_CHAT_HANDOFF.md","utf8");
+            for(const k of ["## Prompt para pegar en otro chat","AGENTS.md","PROJECT_CONTINUITY.md","No confundir","ChatGPT"])if(!doc.includes(k))throw Error("Missing handoff clause: "+k);
+            if(doc.length<1800||doc.length>18000)throw Error("Unexpected handoff length: "+doc.length);
+            console.log("PASS handoff complete, readable, reproducible, no private transcript");
+          '
