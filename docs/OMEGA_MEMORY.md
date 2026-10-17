@@ -46,3 +46,7 @@ Al terminar avances reales, añadir al final:
 - Limitaciones y siguientes pasos:
 ```
 Excluir secretos, datos personales irrelevantes, suposiciones no etiquetadas, promesas de segundo plano y contenido sin autorización.
+
+
+## 2026-10-17 — Condiciones innegociables de nueva intro
+No reutilizar la portada previa con personajes sintéticos. Mantener el logo metálico 1UP ANIME y la pista sonora AAC original. Animación multipista con capas/máscaras/FX reales, versiones 9:16 y 16:9, sin bandas negras. Personajes solo de recursos originales con derechos comprobados; no inventar ni copiar imágenes oficiales sin permiso. El PR #33 es **revisión**, no despliegue y no debe invalidar las funciones existentes. Registrar pruebas y aprobación antes de fusionar.
