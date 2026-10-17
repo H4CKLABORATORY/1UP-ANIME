@@ -72,6 +72,11 @@ try {
           inputFont:parseFloat(style('.searchbar input').fontSize),
           reducedMotion:matchMedia('(prefers-reduced-motion: reduce)').matches,
           cardTransition:style('[data-editorial-fixture]').transitionDuration,
+          heroTop:document.querySelector('.hero').getBoundingClientRect().top,
+          heroBottom:document.querySelector('.hero').getBoundingClientRect().bottom,
+          headerBottom:document.querySelector('.header').getBoundingClientRect().bottom,
+          // Long titles must remain below the sticky header, even at 320px.
+          longTitle:(()=>{const h=document.querySelector('#hero-title');const old=h.innerHTML;h.textContent='THE APOTHECARY DIARIES SEASON THREE';const rect=h.getBoundingClientRect();h.innerHTML=old;return {top:rect.top,bottom:rect.bottom,height:rect.height};})(),
         };
       });
       assert(data.stylesheetRules > 25, 'Style sheet is missing/unparsed');
@@ -82,6 +87,8 @@ try {
       assert(data.cardWidth > 45 && data.cardRight <= width+14, 'Poster overflows '+JSON.stringify(data));
       assert(data.scroll <= width+14, 'Horizontal viewport overflow '+JSON.stringify(data));
       assert(data.reducedMotion, 'Reduced motion override not active');
+      assert(data.longTitle.top >= data.headerBottom - 2, 'Long title hidden behind sticky header: '+JSON.stringify(data));
+      assert(data.longTitle.bottom <= data.heroBottom - 12, 'Long title clipped at hero bottom: '+JSON.stringify(data));
       if(mobile) assert(data.inputFont >= 16, 'Mobile search input can trigger Safari zoom');
       await page.screenshot({path:'e2e-editorial-pro-'+width+'.png',animations:'disabled',fullPage:false});
       console.log('PASS editorial preview '+width+'px '+JSON.stringify(data));
