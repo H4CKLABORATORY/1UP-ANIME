@@ -9,6 +9,7 @@ on:
       - 'preview-kokomi-mobile.html'
       - 'themes/kokomi-mobile-preview/**'
       - 'scripts/e2e-kokomi-preview.mjs'
+      - 'scripts/e2e-editorial-pro.mjs'
       - 'scripts/e2e-player-languages.mjs'
       - 'scripts/test-episode-player.mjs'
       - '.github/workflows/kokomi-preview-check.yml'
@@ -29,6 +30,7 @@ jobs:
           node --check themes/kokomi-mobile-preview/pages.js
           node --check themes/kokomi-mobile-preview/watch-comments.js
           node --check scripts/e2e-kokomi-preview.mjs
+          node --check scripts/e2e-editorial-pro.mjs
       - name: Install Playwright
         run: |
           npm install --no-save --ignore-scripts --no-audit --no-fund playwright@1.56.1
@@ -40,6 +42,7 @@ jobs:
           node scripts/check-hls-browser.mjs
           node scripts/e2e-player-languages.mjs
           node scripts/e2e-kokomi-preview.mjs
+          node scripts/e2e-editorial-pro.mjs
           node scripts/e2e-browser.mjs
       - name: Store screenshot evidence
         if: always()
