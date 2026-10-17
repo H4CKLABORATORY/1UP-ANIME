@@ -35,18 +35,35 @@
 <script defer src="./themes/kokomi-mobile-preview/pages.js"></script>
 <script defer src="./themes/kokomi-mobile-preview/watch-comments.js"></script>
 <link rel="stylesheet" href="./themes/kokomi-mobile-preview/opening.css">
+<link rel="stylesheet" href="./themes/cinematic-v3/production.css">
 <link rel="stylesheet" href="./themes/kokomi-mobile-preview/official-textmark.css">
-<script defer src="./themes/kokomi-mobile-preview/opening.js"></script>
+<script defer src="./themes/cinematic-v3/opening-controller.js"></script>
+<script defer src="./themes/cinematic-v3/studio.js"></script>
 <link rel="stylesheet" href="./anime1v-discovery.css">
 <script defer src="./anime1v-discovery.js"></script>
 </head><body class="oneup-kokomi kokomi-mobile-reference" data-theme-preview="off">
-<div id="oneup-opening" role="dialog" aria-modal="true" aria-label="Presentación de 1UP Anime">
- <div class="oneup-opening-stage">
-  <video id="oneup-opening-video" src="./assets/1up-anime-intro-firma-3seg.mp4" poster="./assets/1up-anime-logo-poster.jpg"
-   autoplay playsinline preload="auto" aria-label="Introducción animada oficial de 1UP Anime"></video>
-  <img class="oneup-opening-poster" src="./assets/1up-anime-logo-poster.jpg" alt="1UP Anime" hidden>
- </div>
-
+<div id="oneup-opening" role="dialog" aria-modal="true" aria-label="Introducción cinematográfica de 1UP ANIME">
+ <section id="cinema" data-mode="opening" aria-label="Animación de entrada 1UP ANIME">
+  <div class="environment">
+   <div class="ambient ambient-blue"></div><div class="ambient ambient-red"></div>
+   <div class="nebula nebula-a"></div><div class="nebula nebula-b"></div>
+   <div class="energy-column energy-blue"></div><div class="energy-column energy-red"></div>
+   <div class="ring ring-a"></div><div class="ring ring-b"></div>
+   <div class="scene-fog scene-fog-blue"></div><div class="scene-fog scene-fog-red"></div>
+   <canvas id="particles" aria-hidden="true"></canvas>
+   <div class="logo-group" id="brand-3d">
+    <img class="logo-halo" src="./assets/oneup-header-letters.png" alt="" aria-hidden="true">
+    <img class="logo-main" src="./assets/oneup-header-letters.png" alt="1UP ANIME">
+    <div class="light-sweep" aria-hidden="true"></div>
+   </div>
+   <div class="optical-flash" aria-hidden="true"></div>
+   <div class="letterbox-noise" aria-hidden="true"></div>
+  </div>
+  <video id="original-signature" preload="auto" playsinline
+   src="./assets/1up-anime-intro-firma-3seg.mp4" tabindex="-1"
+   aria-hidden="true"></video>
+  <p id="audio-status" class="sr-only" role="status" aria-live="polite"></p>
+ </section>
 </div>
 <svg xmlns="http://www.w3.org/2000/svg" class="svg-sprite" aria-hidden="true">
 <symbol id="ico-search" viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="7"/><path d="m16 16 5 5"/></symbol>
