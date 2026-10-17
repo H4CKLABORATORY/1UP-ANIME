@@ -1,0 +1,58 @@
+name: Import owner vertical art and render portrait intro
+on:
+  push:
+    branches: [release/vertical-intro-render-catalog-20261017]
+    paths:
+      - '.github/workflows/import-portrait-brand-once.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  publish-art:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Download exact owner-approved static logo and vertical poster
+        run: |
+          set -euo pipefail
+          curl --fail --location --retry 3 --max-time 120 \
+            'https://d2ol7oe51mr4n9.cloudfront.net/user_3Jz5awMQu2Bv7YqqFsTP4lGUoUQ/5bb472ac-4367-494f-86ca-6402ef4c3a99.png' \
+            -o assets/oneup-header-letters.png
+          curl --fail --location --retry 3 --max-time 120 \
+            'https://d2ol7oe51mr4n9.cloudfront.net/user_3Jz5awMQu2Bv7YqqFsTP4lGUoUQ/64dc9ae9-7d10-4cde-844e-c69496d172ca.png' \
+            -o assets/oneup-poster-portrait.png
+          printf '%s\n' \
+            'e94b82ce94905eb7088dd5958ae72459c11a2883824407a2ccde9c4c7db92c52  assets/oneup-header-letters.png' \
+            'd44c059f467be9b55a6f8812a0e8b30143b54b3f0feebc0bc828446c5ad10144  assets/oneup-poster-portrait.png' \
+            '37b482d810e088dbcf6fd4dc09fb98f43bfc74c459340eafe2a2f765ab384816  assets/1up-anime-intro-firma-3seg.mp4' \
+            | sha256sum -c -
+      - name: Create 9:16 animated intro with original 1UP soundtrack
+        run: |
+          set -euo pipefail
+          if ! command -v ffmpeg >/dev/null; then
+            sudo apt-get update -qq && sudo apt-get install -y ffmpeg
+          fi
+          ffmpeg -hide_banner -loglevel error -nostdin -y \
+            -loop 1 -framerate 30 -i assets/oneup-poster-portrait.png \
+            -i assets/1up-anime-intro-firma-3seg.mp4 \
+            -filter_complex "[0:v]scale=760:1352:force_original_aspect_ratio=increase,crop=760:1352,zoompan=z='min(zoom+0.00065,1.062)':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':d=1:s=720x1280:fps=30,format=yuv420p,fade=t=in:st=0:d=0.18,fade=t=out:st=2.94:d=0.26[v]" \
+            -map '[v]' -map 1:a:0 -t 3.2 -r 30 \
+            -c:v libx264 -preset veryfast -crf 24 -pix_fmt yuv420p \
+            -c:a aac -b:a 128k -movflags +faststart -shortest \
+            assets/oneup-intro-portrait-9x16.mp4
+          test "$(ffprobe -v error -select_streams v:0 -show_entries stream=width,height -of csv=p=0 assets/oneup-intro-portrait-9x16.mp4)" = '720,1280'
+          test "$(ffprobe -v error -select_streams a:0 -show_entries stream=codec_name -of default=nokey=1:noprint_wrappers=1 assets/oneup-intro-portrait-9x16.mp4)" = 'aac'
+          du -h assets/oneup-intro-portrait-9x16.mp4
+      - name: Commit three verified assets to release branch
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assets/oneup-header-letters.png assets/oneup-poster-portrait.png assets/oneup-intro-portrait-9x16.mp4
+          if ! git diff --cached --quiet; then
+            git commit -m 'brand: import owner artwork and 9x16 AAC cinematic intro'
+            git push origin HEAD:release/vertical-intro-render-catalog-20261017
+          fi
