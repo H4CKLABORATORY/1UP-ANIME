@@ -28,12 +28,27 @@ try{
    const gate=page.locator('#oneup-opening');
    await gate.waitFor({state:'visible',timeout:9000});
    const source=await page.locator('#oneup-opening-video').getAttribute('src');
-   if(!source.endsWith('/assets/1up-anime-intro-firma-3seg.mp4'))
-     throw Error('Original logo film not wired into opening');
+   const expected=width<600?'/assets/oneup-intro-portrait-9x16.mp4':'/assets/1up-anime-intro-firma-3seg.mp4';
+   if(!source.endsWith(expected))throw Error('Wrong intro aspect: '+source);
+   const openingRatio=await gate.evaluate(el=>{
+    const video=el.querySelector('video');
+    const visible=video.hidden?el.querySelector('.oneup-opening-poster'):video;
+    const rect=visible.getBoundingClientRect();
+    return {width:rect.width,height:rect.height,viewport:innerWidth};
+   });
+   if(width<600&&(openingRatio.width<width-2||openingRatio.height<844-2))
+     throw Error('Portrait intro has black bars: '+JSON.stringify(openingRatio));
    await page.locator('.oneup-opening-poster').evaluate(img=>img.decode());
    await page.screenshot({path:'e2e-oneup-opening-'+width+'.png',animations:'disabled'});
    if(await page.locator('.header video.oneup-motion-logo').count())
      throw Error('Animated logo must not be embedded in header');
+   const headerLogo=page.locator('.header .oneup-textmark');
+   await headerLogo.waitFor({state:'visible'});
+   const loaded=await headerLogo.evaluate(async img=>{
+    await img.decode();return {width:img.naturalWidth,src:new URL(img.currentSrc).pathname};
+   });
+   if(!loaded.width||!loaded.src.endsWith('/assets/oneup-header-letters.png'))
+     throw Error('Original approved header lettering missing');
    if(await page.locator('#oneup-opening-skip,#oneup-opening-sound').count())
      throw Error('No intro controls should be visible or present');
    await gate.waitFor({state:'detached',timeout:4500});
@@ -97,9 +112,34 @@ try{
    await page.locator('#oneup-opening').waitFor({state:'detached',timeout:3000});
   }finally{await context.close()}
  });
+ await check('Render catalog panel uses live configured URL and labels Jikan fallback',async()=>{
+  const context=await browser.newContext({viewport:{width:390,height:844},isMobile:true,hasTouch:true,reducedMotion:'reduce'});
+  await context.addInitScript(()=>{try{sessionStorage.setItem('oneup-opening-seen-v2','yes')}catch{}});
+  await context.route('**/*',route=>{
+    const u=route.request().url();
+    if(u.startsWith(base))return route.continue();
+    if(u.startsWith('https://oneup-anime-discovery.onrender.com/anime1vDiscovery'))
+      return route.fulfill({status:200,contentType:'application/json',
+        headers:{'Access-Control-Allow-Origin':base.slice(0,-1)},
+        body:JSON.stringify({source:'jikan',mode:'catalog_only',provider:'Jikan',
+          results:[{title:'One Piece',image:'https://cdn.example.com/poster.jpg',provider:'Jikan'}]})});
+    return route.abort();
+  });
+  try{
+   const page=await context.newPage();
+   await page.goto(base+'index.html',{waitUntil:'domcontentloaded'});
+   await page.locator('#oneup-anime1v-form').waitFor({state:'attached',timeout:9000});
+   await page.evaluate(()=>document.querySelector('.desktop-links [data-route="catalogo"]').click());
+   await page.locator('#oneup-anime1v-query').fill('One Piece');
+   await page.locator('#oneup-anime1v-form button[type="submit"]').click();
+   await page.locator('.oneup-anime1v-item').first().waitFor({timeout:6500});
+   if(!await page.locator('#oneup-discovery-source').getByText('Jikan').count())
+    throw Error('Fallback service falsely advertised itself as Anime1v');
+  }finally{await context.close()}
+ });
  for(const env of [{label:'mobile',width:390,height:844,mobile:true},{label:'desktop',width:1366,height:768,mobile:false}]){
  const context=await browser.newContext({viewport:{width:env.width,height:env.height},isMobile:env.mobile,hasTouch:env.mobile,reducedMotion:'reduce'});
- await context.addInitScript(()=>{try{sessionStorage.setItem('oneup-opening-seen-v1','yes')}catch{}});
+ await context.addInitScript(()=>{try{sessionStorage.setItem('oneup-opening-seen-v2','yes')}catch{}});
  await context.route('**/*',r=>r.request().url().startsWith(base)?r.continue():r.abort());
  const page=await context.newPage(),errors=[];page.on('pageerror',e=>errors.push(e.message));
  await check(env.label+' homepage',async()=>{await page.goto(base+'preview-kokomi-mobile.html',{waitUntil:'domcontentloaded'});await page.locator('#km-open').waitFor();await page.locator('#trending-rail .anime-card').first().waitFor({timeout:14000})});

@@ -1,7 +1,8 @@
 {
   "version": 1,
-  "enabled": false,
-  "endpoint": "",
+  "enabled": true,
+  "endpoint": "https://oneup-anime-discovery.onrender.com/anime1vDiscovery",
   "feature": "metadata_discovery_only",
-  "note": "Establecer endpoint HTTPS de la Cloud Function anime1vDiscovery tras configurar ANIME1V_BASE_URL y el secreto ANIME1V_API_KEY. No escribir claves aquí."
+  "provider_mode": "jikan_fallback",
+  "note": "Servicio Render operativo. Busca metadatos desde Jikan; Anime1v upstream aún requiere API propia y clave. No ofrece reproducción de episodios."
 }

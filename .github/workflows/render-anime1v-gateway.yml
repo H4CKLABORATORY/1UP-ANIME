@@ -1,0 +1,24 @@
+name: Render Anime1v Gateway
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'render/anime1v-gateway.js'
+      - 'scripts/test-render-anime1v.mjs'
+      - '.github/workflows/render-anime1v-gateway.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate and smoke test
+        run: |
+          node --check render/anime1v-gateway.js
+          node scripts/test-render-anime1v.mjs
+          node scripts/test-anime1v-integration.mjs

@@ -25,14 +25,14 @@ async function install(){
  const area=document.createElement('section');area.className='oneup-anime1v';
  area.setAttribute('aria-label','Descubrimiento opcional de anime');
  area.innerHTML='<div class="oneup-anime1v-head"><span class="micro">CONEXIÓN OPCIONAL</span>'+
- '<h2>Explorar con Anime1v</h2><p>Explora información de catálogo sin salir de 1UP ANIME. Los resultados no son fuentes de reproducción.</p></div>'+
+ '<h2>Explorar más animes</h2><p>Consulta información adicional del catálogo sin salir de 1UP ANIME. Los resultados no son fuentes de reproducción.</p></div>'+
  '<form id="oneup-anime1v-form"><input id="oneup-anime1v-query" type="search" minlength="2" maxlength="90" required '+
  'autocomplete="off" placeholder="Nombre del anime" aria-label="Buscar anime con Anime1v">'+
  '<select id="oneup-anime1v-provider" aria-label="Proveedor del catálogo"><option value="animeav1">AnimeAV1</option><option value="animeflv">AnimeFLV</option></select>'+
  '<button type="submit">Buscar ↗</button></form>'+
  '<p id="oneup-anime1v-status" role="status" aria-live="polite"></p>'+
  '<div class="oneup-anime1v-grid" id="oneup-anime1v-results"></div>'+
- '<p class="oneup-anime1v-credit">Datos de búsqueda: <a target="_blank" rel="noopener noreferrer" href="https://github.com/FxxMorgan/anime1v-api">Anime1v API por FxxMorgan</a>. La disponibilidad no implica permiso de retransmisión.</p>';
+ '<p class="oneup-anime1v-credit">Datos informativos de <span id="oneup-discovery-source">Jikan</span>. Si se configura Anime1v, su código es de FxxMorgan. Ningún resultado implica permiso de retransmisión.</p>';
  host.append(area);
  const form=area.querySelector('form'),status=area.querySelector('#oneup-anime1v-status');
  const results=area.querySelector('#oneup-anime1v-results');
@@ -61,6 +61,7 @@ async function install(){
    const data=await response.json();
    if(current!==counter)return;
    const items=Array.isArray(data.results)?data.results.slice(0,30):[];
+   const source=area.querySelector('#oneup-discovery-source');if(source)source.textContent=data.source==='anime1v'?'Anime1v (FxxMorgan)':'Jikan';
    status.textContent=items.length?items.length+' resultados informativos encontrados.':'Sin resultados para esa búsqueda.';
    results.innerHTML=items.map(a=>{
     let safe='';
@@ -70,7 +71,7 @@ async function install(){
      '<strong>'+escapeHtml(a.title)+'</strong><small>'+escapeHtml(a.provider)+'</small>'+ 
      '<button type="button" class="oneup-anime1v-open" data-1up-title="'+escapeHtml(a.title)+'">Buscar ficha en 1UP ↗</button></article>';
    }).join('');
-  }catch(error){if(current===counter)status.textContent='Anime1v no está disponible. Puedes seguir usando el catálogo de 1UP.'}
+  }catch(error){if(current===counter)status.textContent='El servidor de búsqueda no respondió. Puedes seguir usando el catálogo de 1UP.'}
   finally{clearTimeout(timer)}
  });
 }

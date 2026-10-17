@@ -1,0 +1,46 @@
+name: 1UP portrait intro and Render integration
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'assets/oneup-intro-portrait-9x16.mp4'
+      - 'assets/oneup-poster-portrait.png'
+      - 'assets/oneup-header-letters.png'
+      - 'themes/kokomi-mobile-preview/opening.js'
+      - 'themes/kokomi-mobile-preview/opening.css'
+      - 'themes/kokomi-mobile-preview/official-textmark.css'
+      - 'data/anime1v-config.json'
+      - 'scripts/e2e-kokomi-preview.mjs'
+      - '.github/workflows/portrait-release-check.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  media-and-backend:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify actual 9:16 video, original AAC sound and static logo
+        run: |
+          set -euo pipefail
+          if ! command -v ffprobe >/dev/null; then sudo apt-get update -qq && sudo apt-get install -y ffmpeg; fi
+          test "$(ffprobe -v error -select_streams v:0 -show_entries stream=width,height -of csv=p=0 assets/oneup-intro-portrait-9x16.mp4)" = '720,1280'
+          test "$(ffprobe -v error -select_streams a:0 -show_entries stream=codec_name -of default=noprint_wrappers=1:nokey=1 assets/oneup-intro-portrait-9x16.mp4)" = 'aac'
+          test "$(ffprobe -v error -select_streams v:0 -show_entries stream=width,height -of csv=p=0 assets/oneup-header-letters.png)" = '2172,724'
+          test "$(ffprobe -v error -select_streams v:0 -show_entries stream=width,height -of csv=p=0 assets/oneup-poster-portrait.png)" = '941,1672'
+          printf '%s\n' \
+            'e94b82ce94905eb7088dd5958ae72459c11a2883824407a2ccde9c4c7db92c52  assets/oneup-header-letters.png' \
+            'd44c059f467be9b55a6f8812a0e8b30143b54b3f0feebc0bc828446c5ad10144  assets/oneup-poster-portrait.png' \
+            | sha256sum -c -
+          node --check themes/kokomi-mobile-preview/opening.js
+          node --check anime1v-discovery.js
+      - name: Verify public Render gateway health (metadata-only)
+        run: |
+          set -euo pipefail
+          curl --fail --retry 4 --retry-delay 4 --location --max-time 120 \
+            'https://oneup-anime-discovery.onrender.com/health' -o /tmp/oneup-health.json
+          node -e "const h=require('/tmp/oneup-health.json'); if(h.ok!==true||h.streaming!==false||!['jikan_fallback','anime1v'].includes(h.upstream))process.exit(1); console.log('Render online; metadata source:',h.upstream);"

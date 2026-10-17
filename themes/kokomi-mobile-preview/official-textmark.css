@@ -1,0 +1,17 @@
+/* Owner-approved static lettering derived from the 1UP intro. No animation. */
+body.oneup-kokomi .header .brand{display:flex;align-items:center;flex:0 1 166px;min-width:0;max-width:min(40vw,175px)}
+body.oneup-kokomi .header .oneup-textmark{display:block;max-width:100%;width:clamp(104px,29vw,170px);height:auto;max-height:55px;object-fit:contain;filter:drop-shadow(0 1px 6px #3755fa4a)}
+body.oneup-kokomi .header .brand-symbol,
+body.oneup-kokomi .header .brand-name{display:none!important}
+body.oneup-kokomi .km-drawer-brand .oneup-drawer-textmark{
+ display:block;width:clamp(122px,46vw,177px);max-height:60px;height:auto;object-fit:contain
+}
+body.oneup-kokomi .footer-brand .oneup-footer-textmark{display:block;width:150px;max-width:100%;max-height:60px;height:auto;object-fit:contain}
+@media(max-width:440px){
+ body.oneup-kokomi .header .brand{max-width:min(31vw,135px);flex:0 1 135px}
+ body.oneup-kokomi .header .oneup-textmark{width:100%;max-height:50px}
+}
+@media(max-width:345px){
+ body.oneup-kokomi .header .brand{max-width:98px}
+ body.oneup-kokomi .header .oneup-textmark{width:98px}
+}

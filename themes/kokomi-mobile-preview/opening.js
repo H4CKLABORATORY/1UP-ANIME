@@ -9,6 +9,14 @@ const gate=document.getElementById('oneup-opening');
 if(!gate)return;
 const video=gate.querySelector('#oneup-opening-video');
 const poster=gate.querySelector('.oneup-opening-poster');
+// Use an actual 9:16 H.264/AAC asset on portrait phones; no black letterbox.
+const portrait=window.matchMedia?.('(max-width: 780px) and (orientation: portrait)').matches===true;
+if(portrait){
+ gate.classList.add('oneup-opening-portrait');
+ video.src='./assets/oneup-intro-portrait-9x16.mp4';
+ video.poster='./assets/oneup-poster-portrait.png';
+ poster.src='./assets/oneup-poster-portrait.png';
+}
 const reduced=window.matchMedia?.('(prefers-reduced-motion: reduce)').matches===true;
 const replay=new URLSearchParams(location.search).get('intro')==='1';
 let seen=false;
