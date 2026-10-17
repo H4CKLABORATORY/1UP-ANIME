@@ -7,6 +7,8 @@ on:
       - "scripts/e2e-browser.mjs"
       - ".github/workflows/browser-acceptance.yml"
       - "index.html"
+      - "themes/oneup-palette/**"
+      - "scripts/e2e-oneup-palette.mjs"
       - "comunidad.html"
       - "moderacion.html"
       - "studio.js"
@@ -50,6 +52,7 @@ jobs:
           node scripts/test-episode-comments.mjs
           node scripts/e2e-player-languages.mjs
           node scripts/e2e-browser.mjs
+          node scripts/e2e-oneup-palette.mjs
       - name: Keep browser screenshots for review
         if: always()
         uses: actions/upload-artifact@v4
