@@ -105,3 +105,24 @@ html,body{margin:0;height:100%;background:#02030a;overflow:hidden;font-family:sy
  .optical-flash,.light-sweep{display:none}
  .nebula,.ring{opacity:.07}
 }
+
+/* Optional real character cutouts are inert until permission metadata and
+   corresponding owner-authorized transparent PNGs have been supplied. */
+.authorized-character{position:absolute;z-index:4;top:52%;
+  width:clamp(110px,25vw,440px);max-height:70vh;object-fit:contain;
+  filter:drop-shadow(0 16px 26px #000b);opacity:.74;pointer-events:none}
+.authorized-character-0{left:0;transform:translate(-12%,-50%) rotate(-2deg)}
+.authorized-character-1{right:0;transform:translate(12%,-50%) rotate(2deg)}
+#cinema.playing .authorized-character-0{animation:character-left 3.2s ease-out both}
+#cinema.playing .authorized-character-1{animation:character-right 3.2s ease-out both}
+@keyframes character-left{0%{opacity:0;transform:translate(-22%,-42%) scale(.92)}
+ 34%{opacity:.77;transform:translate(-11%,-50%) scale(1)}
+ 100%{opacity:.78;transform:translate(-8%,-53%) scale(1.018)}}
+@keyframes character-right{0%{opacity:0;transform:translate(22%,-46%) scale(.92)}
+ 34%{opacity:.76;transform:translate(12%,-50%) scale(1)}
+ 100%{opacity:.78;transform:translate(8%,-53%) scale(1.018)}}
+@media(orientation:portrait){
+ .authorized-character{top:49%;width:clamp(90px,39vw,300px);
+  max-height:43vh;opacity:.64}
+ .authorized-character-0{left:-12%}.authorized-character-1{right:-12%}
+}
