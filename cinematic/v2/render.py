@@ -15,12 +15,27 @@ OUT.mkdir(exist_ok=True,parents=True)
 FPS,DUR=30,3.2
 COLORS=((245,120,35),(45,48,220)) # BGR cold blue, warm red
 LOGO=cv2.cvtColor(np.array(Image.open(ASSETS/'oneup-header-letters.png').convert('RGBA')),cv2.COLOR_RGBA2BGRA)
-# The original wordmark overlaps the 1UP/ANIME groups horizontally.
-# A naive percentage split sheared the red A beside the blue P.
-# Reference checked against the owner-approved 2172x724 transparent logo.
-assert LOGO.shape[:2]==(724,2172), 'Unexpected logo dimensions; re-inspect manual cutout'
-LEFT=LOGO[38:620,0:865].copy()
-RIGHT=LOGO[38:620,856:2165].copy()
+# Segregate the blue 1UP and red ANIME letters by their original edge
+# colors. Their transparent forms overlap horizontally, so slicing at x=860
+# cuts the blue P and leaves a red A fragment next to it. Two independent
+# color-seed masks preserve both whole shapes and their white chrome centers.
+assert LOGO.shape[:2]==(724,2172), 'Unexpected approved logo dimensions'
+b=LOGO[:,:,0].astype(np.float32)
+g=LOGO[:,:,1].astype(np.float32)
+r=LOGO[:,:,2].astype(np.float32)
+alpha=LOGO[:,:,3]
+blue_seed=(b>r+50)&(b>g+18)&(alpha>120)
+red_seed=(r>b+60)&(r>g+36)&(alpha>120)
+blue_distance=cv2.distanceTransform((~blue_seed).astype(np.uint8),cv2.DIST_L2,5)
+red_distance=cv2.distanceTransform((~red_seed).astype(np.uint8),cv2.DIST_L2,5)
+blue_mask=(blue_distance<red_distance)&(np.arange(LOGO.shape[1])[None,:]<1150)
+def separated_layer(mask):
+ out=LOGO.copy()
+ out[:,:,3]=np.where(mask,alpha,0).astype(np.uint8)
+ yy,xx=np.nonzero(out[:,:,3]>8)
+ return out[yy.min():yy.max()+1,xx.min():xx.max()+1].copy()
+LEFT=separated_layer(blue_mask)
+RIGHT=separated_layer(~blue_mask)
 rng=random.Random(9110)
 PARTICLES=[(rng.random(),rng.random(),rng.uniform(.35,1.8),rng.uniform(.04,.19),
             rng.randrange(1,4),rng.randint(0,1),rng.random()*6) for _ in range(215)]
