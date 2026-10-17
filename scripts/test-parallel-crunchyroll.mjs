@@ -1,0 +1,30 @@
+import assert from 'node:assert/strict';
+import {createRequire} from 'node:module';
+const require = createRequire(import.meta.url);
+const {SOURCE, EXTRACT, safeSeriesUrl, normalizeExtract, extractCrunchyroll} = require('../render/parallel-crunchyroll/adapter.js');
+
+assert.equal(SOURCE, 'https://www.crunchyroll.com/es/discover');
+assert.equal(safeSeriesUrl('https://www.crunchyroll.com/es/series/G12345678/titulo?utm_source=ads'), 'https://www.crunchyroll.com/es/series/G12345678/titulo');
+for (const invalid of ['https://evil.example/series/G12345', 'http://www.crunchyroll.com/series/G12345', 'https://www.crunchyroll.com/watch/G12345', 'https://www.crunchyroll.com:8080/series/G12345']) assert.equal(safeSeriesUrl(invalid), '');
+const result = {results: [{url: SOURCE, excerpts: ['[Mi Anime](https://www.crunchyroll.com/es/series/G12345678/mi-anime) [Link falso](https://evil.example/series/G12345) [Mi Anime](https://www.crunchyroll.com/es/series/G12345678/mi-anime)']}]};
+assert.deepEqual(normalizeExtract(result), [{title: 'Mi Anime', url: 'https://www.crunchyroll.com/es/series/G12345678/mi-anime', provider: 'Crunchyroll'}]);
+assert.deepEqual(normalizeExtract({results: [{url: 'https://malicious.example', excerpts: result.results[0].excerpts}]}), []);
+let called = false;
+await assert.rejects(() => extractCrunchyroll({apiKey: 'local-test-secret-abcdefghijklmnopqrstuvwxyz', fetchImpl: () => {called = true;}}), /desactivada/);
+assert.equal(called, false);
+let posted;
+const fakeFetch = async (url, options) => {
+  posted = {url, options};
+  return new Response(JSON.stringify(result), {status: 200, headers: {'Content-Type': 'application/json'}});
+};
+const data = await extractCrunchyroll({approved: true, billingApproved: true, apiKey: 'local-test-secret-abcdefghijklmnopqrstuvwxyz', fetchImpl: fakeFetch});
+assert.equal(posted.url, EXTRACT);
+assert.equal(posted.options.method, 'POST');
+assert.equal(JSON.parse(posted.options.body).urls[0], SOURCE);
+assert.equal(JSON.parse(posted.options.body).advanced_settings.full_content, false);
+assert.equal(data.streaming, false);
+assert.equal(data.mode, 'catalog_only');
+assert.equal(data.results.length, 1);
+assert.equal(Object.prototype.hasOwnProperty.call(data.results[0], 'player'), false);
+await assert.rejects(() => extractCrunchyroll({approved: true, billingApproved: true, apiKey: 'local-test-secret-abcdefghijklmnopqrstuvwxyz', fetchImpl: async () => new Response('{}', {status: 429})}), /HTTP 429/);
+console.log('PASS: Parallel Crunchyroll metadata adapter; no live API calls');
