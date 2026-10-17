@@ -35,6 +35,7 @@
 <script defer src="./themes/kokomi-mobile-preview/pages.js"></script>
 <script defer src="./themes/kokomi-mobile-preview/watch-comments.js"></script>
 <link rel="stylesheet" href="./themes/kokomi-mobile-preview/opening.css">
+<link rel="stylesheet" href="./themes/kokomi-mobile-preview/official-textmark.css">
 <script defer src="./themes/kokomi-mobile-preview/opening.js"></script>
 <link rel="stylesheet" href="./anime1v-discovery.css">
 <script defer src="./anime1v-discovery.js"></script>
@@ -62,8 +63,7 @@
 <header class="header">
  <div class="header-inner wrap">
   <a href="#inicio" class="brand" data-route="inicio" aria-label="1UP Anime, inicio">
-    <img src="./assets/oneup-crest.svg" class="brand-symbol" alt="">
-    <span class="brand-name">1UP<span>ANIME</span></span>
+    <img src="./assets/oneup-header-letters.png" class="oneup-textmark" alt="1UP ANIME" width="164" height="55">
   </a>
   <nav class="desktop-links" aria-label="Navegación"><button data-route="inicio" class="active">Inicio</button><button data-route="temporada">En emisión</button><button data-route="programacion">Programación</button><button data-route="catalogo">Catálogo</button><button data-route="peliculas">Películas</button><button data-route="milista">Mi lista</button><a class="oneup-link-community" href="./comunidad.html">✦ Comunidad</a></nav>
   <div class="header-right"><button id="header-search" class="icon-button" title="Buscar"><svg><use href="#ico-search"/></svg></button><button id="auth-open" class="account-button"><span class="account-dot">●</span><span id="auth-label">Invitado</span></button></div>
@@ -102,7 +102,7 @@
  </div>
  <section id="browse-screen" class="wrap browse-screen" hidden><div class="browse-intro"><div class="micro" id="browse-eyebrow">EXPLORE / 1UP ANIME</div><h1 id="browse-title">Explorar <em>anime.</em></h1><p id="browse-summary">Descubre nuevas historias.</p></div><div id="browse-controls" class="browse-controls"></div><div id="browse-status" class="browse-status"></div><div id="browse-grid" class="poster-grid"></div><div class="pagination"><button id="browse-next" class="cta outline" hidden>Cargar más ↓</button></div></section>
 </main>
-<footer class="footer wrap"><div class="footer-brand"><img src="./assets/oneup-crest.svg" alt=""><span>1UP ANIME</span></div><div><p>Tu siguiente vida es anime. Catálogo informativo, favoritos y programación.</p><p>Datos: AniList y Jikan. Los enlaces externos pertenecen a sus plataformas. 1UP Anime no redistribuye episodios de terceros; reproduce únicamente fuentes autorizadas.</p></div><small>© 2026 1UP Anime · <a href="./motor.html">Motor de contenido</a> · <a href="./gremio.html" title="Licencia narrativa de autoridad del Gremio en Nébula">Licencia del gremio</a></small></footer>
+<footer class="footer wrap"><div class="footer-brand"><img src="./assets/oneup-header-letters.png" alt="1UP ANIME" class="oneup-footer-textmark"></div><div><p>Tu siguiente vida es anime. Catálogo informativo, favoritos y programación.</p><p>Datos: AniList y Jikan. Los enlaces externos pertenecen a sus plataformas. 1UP Anime no redistribuye episodios de terceros; reproduce únicamente fuentes autorizadas.</p></div><small>© 2026 1UP Anime · <a href="./motor.html">Motor de contenido</a> · <a href="./gremio.html" title="Licencia narrativa de autoridad del Gremio en Nébula">Licencia del gremio</a></small></footer>
 <nav class="mobile-navigation"><button data-route="inicio" class="active"><b>⌂</b>Inicio</button><button data-route="temporada"><b>◉</b>Temporada</button><button data-route="catalogo"><b>▦</b>Catálogo</button><button data-route="programacion"><b>◷</b>Emisión</button><button data-route="milista"><b>♡</b>Mi lista</button><a href="./comunidad.html"><b>✦</b>Plaza</a></nav>
 <dialog id="anime-dialog" class="anime-dialog"><div id="anime-dialog-body"></div><button type="button" class="dialog-close" id="anime-close" aria-label="Cerrar ficha del anime">✕</button></dialog>
 <dialog id="auth-dialog" class="auth-dialog"><button class="dialog-close" id="auth-close" aria-label="Cerrar">✕</button><div class="auth-panel"><img src="./assets/oneup-crest.svg" alt=""><div class="micro">TU UNIVERSO, A TU MANERA</div><h2>BIENVENIDO A <em>1UP.</em></h2><p>Inicia sesión cuando quieras o explora sin cuenta. Nunca es obligatorio registrarse.</p><button id="google-login" class="google-login"><span class="google-g">G</span> Continuar con Google</button><button id="guest-login" class="guest-login">Continuar como invitado</button><button id="auth-signout" class="guest-login" hidden>Cerrar sesión de Google</button><p id="auth-message" class="auth-message" role="status"></p><small>El acceso con Google requiere configurar Firebase para este dominio. El modo invitado funciona sin conexión de cuentas.</small></div></dialog>
