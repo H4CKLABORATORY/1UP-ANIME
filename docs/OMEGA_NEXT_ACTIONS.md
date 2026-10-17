@@ -14,3 +14,12 @@ Restricción: presupuesto $0, no compras/deploy destructivo sin permiso; no conv
 
 
 - [x] PR #31: reparar X del diálogo Overgeared en Safari móvil; CI Chromium 390px/desktop en verde. **Pendiente** confirmación tras GitHub Pages y en iPhone físico.
+
+
+## Introducción V2 — trabajo en curso 2026-10-17
+- [x] Auditar MP4 original, logo y audio; entregar versiones locales de revisión con AAC preservado.
+- [x] Crear compositor editable V2 y etapa de render/QA en PR #33.
+- [x] Investigar referencias visuales oficiales; **licencia para nueva intro aún no obtenida**.
+- [ ] Obtener 2 PNG de personajes auténticos con permiso de transformación/publicación y documentar la autorización.
+- [ ] Revisión de versión cinemática final por el propietario (móvil + escritorio).
+- [ ] Validación real en Safari iPhone y luego PR final para sustituir en producción (no merge del draft por adelantado).
