@@ -1,8 +1,8 @@
 {
-  "updated": "2026-10-17T09:30:02.194Z",
+  "updated": "2026-10-17T15:29:11.066Z",
   "source": "AniList public GraphQL metadata",
-  "windowStart": 1792031388,
-  "windowEnd": 1793006988,
+  "windowStart": 1792052936,
+  "windowEnd": 1793028536,
   "airing": [
     {
       "id": "mal-65095",
@@ -645,7 +645,7 @@
       "startDate": "2026-10-09",
       "format": "TV",
       "episodes": 0,
-      "averageScore": 69,
+      "averageScore": 70,
       "status": "RELEASING",
       "genres": [
         "Action",
@@ -1282,8 +1282,8 @@
       "siteUrl": "https://anilist.co/anime/213356",
       "trailer": null,
       "next": {
-        "at": 1792231200,
-        "episode": 18
+        "at": 1792836000,
+        "episode": 19
       },
       "airingAt": 1792231200,
       "episode": 18,
@@ -1315,8 +1315,8 @@
         "id": "PxXPcoo8uGM"
       },
       "next": {
-        "at": 1792238400,
-        "episode": 3
+        "at": 1792843200,
+        "episode": 4
       },
       "airingAt": 1792238400,
       "episode": 3,
@@ -1348,8 +1348,8 @@
         "id": "9oBywQ403ZA"
       },
       "next": {
-        "at": 1792242000,
-        "episode": 4
+        "at": 1792846800,
+        "episode": 5
       },
       "airingAt": 1792242000,
       "episode": 4,
@@ -1381,8 +1381,8 @@
         "id": "LyDMSUR6_Q8"
       },
       "next": {
-        "at": 1792243800,
-        "episode": 4
+        "at": 1792848600,
+        "episode": 5
       },
       "airingAt": 1792243800,
       "episode": 4,
@@ -1415,8 +1415,8 @@
         "id": "4MYo8FfiXMA"
       },
       "next": {
-        "at": 1792245600,
-        "episode": 3
+        "at": 1792850400,
+        "episode": 4
       },
       "airingAt": 1792245600,
       "episode": 3,
@@ -1447,8 +1447,8 @@
         "id": "JqjXaJysS5w"
       },
       "next": {
-        "at": 1792247400,
-        "episode": 3
+        "at": 1792852200,
+        "episode": 4
       },
       "airingAt": 1792247400,
       "episode": 3,
@@ -1482,8 +1482,8 @@
         "id": "_0kVb8-uRSI"
       },
       "next": {
-        "at": 1792247400,
-        "episode": 3
+        "at": 1792852200,
+        "episode": 4
       },
       "airingAt": 1792247400,
       "episode": 3,
@@ -1512,8 +1512,8 @@
       "siteUrl": "https://anilist.co/anime/203473",
       "trailer": null,
       "next": {
-        "at": 1792248300,
-        "episode": 2
+        "at": 1792853100,
+        "episode": 3
       },
       "airingAt": 1792248300,
       "episode": 2,
@@ -1547,8 +1547,8 @@
         "id": "XqrBfyUNYZs"
       },
       "next": {
-        "at": 1792249200,
-        "episode": 4
+        "at": 1792854000,
+        "episode": 5
       },
       "airingAt": 1792249200,
       "episode": 4,
@@ -3584,7 +3584,7 @@
       "startDate": "2026-10-14",
       "format": "TV",
       "episodes": 11,
-      "averageScore": 51,
+      "averageScore": 52,
       "status": "RELEASING",
       "genres": [
         "Mecha",
@@ -4641,7 +4641,7 @@
       "startDate": "2026-10-09",
       "format": "TV",
       "episodes": 0,
-      "averageScore": 69,
+      "averageScore": 70,
       "status": "RELEASING",
       "genres": [
         "Action",
@@ -5278,8 +5278,8 @@
       "siteUrl": "https://anilist.co/anime/213356",
       "trailer": null,
       "next": {
-        "at": 1792231200,
-        "episode": 18
+        "at": 1792836000,
+        "episode": 19
       },
       "airingAt": 1792836000,
       "episode": 19,
@@ -5311,8 +5311,8 @@
         "id": "PxXPcoo8uGM"
       },
       "next": {
-        "at": 1792238400,
-        "episode": 3
+        "at": 1792843200,
+        "episode": 4
       },
       "airingAt": 1792843200,
       "episode": 4,
@@ -5344,8 +5344,8 @@
         "id": "9oBywQ403ZA"
       },
       "next": {
-        "at": 1792242000,
-        "episode": 4
+        "at": 1792846800,
+        "episode": 5
       },
       "airingAt": 1792846800,
       "episode": 5,
@@ -5377,8 +5377,8 @@
         "id": "LyDMSUR6_Q8"
       },
       "next": {
-        "at": 1792243800,
-        "episode": 4
+        "at": 1792848600,
+        "episode": 5
       },
       "airingAt": 1792848600,
       "episode": 5,
@@ -5411,8 +5411,8 @@
         "id": "4MYo8FfiXMA"
       },
       "next": {
-        "at": 1792245600,
-        "episode": 3
+        "at": 1792850400,
+        "episode": 4
       },
       "airingAt": 1792850400,
       "episode": 4,
@@ -5443,8 +5443,8 @@
         "id": "JqjXaJysS5w"
       },
       "next": {
-        "at": 1792247400,
-        "episode": 3
+        "at": 1792852200,
+        "episode": 4
       },
       "airingAt": 1792852200,
       "episode": 4,
@@ -5478,8 +5478,8 @@
         "id": "_0kVb8-uRSI"
       },
       "next": {
-        "at": 1792247400,
-        "episode": 3
+        "at": 1792852200,
+        "episode": 4
       },
       "airingAt": 1792852200,
       "episode": 4,
@@ -5508,8 +5508,8 @@
       "siteUrl": "https://anilist.co/anime/203473",
       "trailer": null,
       "next": {
-        "at": 1792248300,
-        "episode": 2
+        "at": 1792853100,
+        "episode": 3
       },
       "airingAt": 1792853100,
       "episode": 3,
@@ -5543,8 +5543,8 @@
         "id": "XqrBfyUNYZs"
       },
       "next": {
-        "at": 1792249200,
-        "episode": 4
+        "at": 1792854000,
+        "episode": 5
       },
       "airingAt": 1792854000,
       "episode": 5,
@@ -6814,6 +6814,140 @@
       "airingAt": 1792980000,
       "episode": 7,
       "scheduleId": 419733
+    },
+    {
+      "id": "mal-63409",
+      "mal_id": 63409,
+      "ani_id": 207191,
+      "title": "Hello, I am a Witch and my Crush Wants me to Make a Love Potion!",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx207191-VgkIzfH92WoZ.jpg",
+      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/207191-xYgpkCDnXc5m.jpg",
+      "description": "“Make me a love potion.” And with that single sentence, the Good Witch of the Lake’s secret crush on the dashing Sir Harij ends in heartbreak. Still, when he promises to help her gather the ingredients, Rose is thrilled at the chance to gaze upon a man she’d normally never get to interact with. She learns to brace her pounding heart for their usual stilted conversations…but what is she to do when he inexplicably shows up at her doorstep with bread and a jar of apple butter? (Source: Yen Press)",
+      "year": 2026,
+      "startDate": "2026-10-05",
+      "format": "TV",
+      "episodes": 12,
+      "averageScore": 71,
+      "status": "RELEASING",
+      "genres": [
+        "Fantasy",
+        "Romance"
+      ],
+      "siteUrl": "https://anilist.co/anime/207191",
+      "trailer": {
+        "site": "youtube",
+        "id": "hGRtocAh3iw"
+      },
+      "next": {
+        "at": 1792413000,
+        "episode": 3
+      },
+      "airingAt": 1793017800,
+      "episode": 4,
+      "scheduleId": 420068,
+      "description_es": "Hazme una poción de amor. Y con esa sola frase, la Buena Bruja del amor secreto del lago sobre el desgarrador Sir Harij termina en un desgarro. Aún así, cuando promete ayudarla a reunir los ingredientes, Rose está emocionada por la oportunidad de mirar a un hombre con el que normalmente nunca podría interactuar. Ella aprende a jactar su corazón por sus conversaciones usuales inclinadas... pero ¿qué va a hacer cuando aparece inexplicablemente en su puerta con bre"
+    },
+    {
+      "id": "mal-63712",
+      "mal_id": 63712,
+      "ani_id": 209219,
+      "title": "So What's Wrong with Getting Reborn as a Goblin?",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx209219-3yhKlRx0LX3p.jpg",
+      "banner": "",
+      "description": "Office worker Akira Yagami’s altruistic nature usually gets him the short end of the stick. When he dies after saving a kid from oncoming traffic...he reincarnates in another world as a goblin?! Normally, goblins only live for seven days, but Akira’s newfound powers let him defy the species’ normal life span...and are the key to his path to becoming the strongest goblin ever! (Source: Yen Press) Note: Tensei Goblin Dakedo Shitsumon Aru? is streaming 1 week in advance of the TV broadcast on ABEMA and Prime Video beginning with episode 2 on October 5th, 2026",
+      "year": 2026,
+      "startDate": "2026-10-05",
+      "format": "ONA",
+      "episodes": 0,
+      "averageScore": 66,
+      "status": "RELEASING",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Comedy",
+        "Drama",
+        "Fantasy",
+        "Romance"
+      ],
+      "siteUrl": "https://anilist.co/anime/209219",
+      "trailer": {
+        "site": "youtube",
+        "id": "ynr8tFWrK4c"
+      },
+      "next": {
+        "at": 1792414800,
+        "episode": 4
+      },
+      "airingAt": 1793019600,
+      "episode": 5,
+      "scheduleId": 422214,
+      "description_es": "La naturaleza altruista del trabajador de oficina Akira Yagami generalmente le consigue el extremo corto del palo. Cuando muere después de salvar a un niño del tráfico entrante... ¿reencarna en otro mundo como un duende? Normalmente, los duendes sólo viven durante siete días, pero los nuevos poderes de Akira le permiten desafiar la vida normal de la especie... ¡y son la clave de su camino para convertirse en el más fuerte de todos los tiempos! (Fuente: Yen Press) Nota: Tensei Goblin Dakedo Sitsumon Aru? está transmitiendo 1 semana antes de la emisión de televisión en ABEMA y Primer Video comenzando con el episodio 2 el 5 de octubre de 2026"
+    },
+    {
+      "id": "mal-63098",
+      "mal_id": 63098,
+      "ani_id": 204011,
+      "title": "PSYREN",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx204011-j45RZoqYbdZK.jpg",
+      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/204011-hBOwte9MzykA.jpg",
+      "description": "One day, high schooler Ageha Yoshina picks up a mysterious “red phone card” left behind in a public telephone booth. A few days later, his childhood friend and classmate, Sakurako Amamiya—who possessed the same card—suddenly vanishes without a trace. In search of her, Ageha finds himself drawn into the rumors surrounding a nationwide string of mysterious disappearances, said to be the work of a secret organization known only as “Psyren.” When he accesses the group, a deadly game begins—one that will change his fate forever. (Source: PSYЯEN Official Site)",
+      "year": 2026,
+      "startDate": "2026-10-05",
+      "format": "TV",
+      "episodes": 0,
+      "averageScore": 69,
+      "status": "RELEASING",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Sci-Fi"
+      ],
+      "siteUrl": "https://anilist.co/anime/204011",
+      "trailer": {
+        "site": "youtube",
+        "id": "fmUpSXFbSK0"
+      },
+      "next": {
+        "at": 1792418400,
+        "episode": 3
+      },
+      "airingAt": 1793023200,
+      "episode": 4,
+      "scheduleId": 419766,
+      "description_es": "Un día, la secundaria Ageha Yoshina recoge una misteriosa “tarjeta de teléfono roja” que queda atrás en una cabina telefónica pública. Unos días más tarde, su amigo de la infancia y compañero de clase, Sakurako Amamiya, que poseía la misma carta, desaparecen sin dejar rastro. En busca de ella, Ageha se encuentra dibujado en los rumores que rodean una cadena nacional de misteriosas desapariciones, dijo ser el trabajo de una organización secreta conocida sólo como “Psyren”. Cuando accede al grupo, comienza un juego mortal, uno que cambiará su destino para siempre. (Fuente: Sitio Oficial de PSYhován)"
+    },
+    {
+      "id": "mal-60636",
+      "mal_id": 60636,
+      "ani_id": 185874,
+      "title": "BLEACH: Thousand-Year Blood War - The Calamity",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx185874-aU3e6tBT6wwA.jpg",
+      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/185874-IdGyh1EBG91I.jpg",
+      "description": "Destruction looms at the end of the Thousand-Year Blood War between the Soul Reapers and Quincies… as the death of the Soul King mirrors the collapse of the Three Worlds, distortions and omens of destruction start to appear in all realms. Fierce battles erupt throughout the Wahr Welt between the Thirteen Court Guard Squads and the Royal Guard. Ichigo learns about Uryuu's true intentions and renews his determination to protect the world together, as friends who trust each other. Yhwach has surpassed even his own ability, The Almighty... The fierce battle for the survival of the Three Worlds approaches its end. Beyond the chaos of calamity, what lies in wait—despair or hope? (Source: VIZ Media, edited)",
+      "year": 2026,
+      "startDate": "2026-07-25",
+      "format": "TV",
+      "episodes": 10,
+      "averageScore": 89,
+      "status": "RELEASING",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Supernatural"
+      ],
+      "siteUrl": "https://anilist.co/anime/185874",
+      "trailer": {
+        "site": "youtube",
+        "id": "IJONbpfIlUg"
+      },
+      "next": {
+        "at": 1792418400,
+        "episode": 9
+      },
+      "airingAt": 1793023200,
+      "episode": 10,
+      "scheduleId": 419857,
+      "description_es": "La destrucción se desploma al final de la Guerra de la Sangre Mil Años entre los Reapers del Alma y las Quincias... mientras la muerte del Rey del Alma refleja el colapso de los Tres Mundos, las distorsiones y los presagios de destrucción comienzan a aparecer en todos los reinos. Quince batallas surgieron a lo largo de la Wahr Welt entre los 13 escuadrones de la Guardia de la Corte y la Guardia Real. Ichigo aprende sobre las verdaderas intenciones de Uryuu y renueva su determinación de proteger el mundo juntos, como amigos que confían entre sí. Yhwach ha superado incluso su propia habilidad, el Todopoderoso... La feroz batalla por la supervivencia de la aplicación Tres Mundos"
     }
   ],
   "seasonal": {
@@ -6877,8 +7011,8 @@
           "id": "LyDMSUR6_Q8"
         },
         "next": {
-          "at": 1792243800,
-          "episode": 4
+          "at": 1792848600,
+          "episode": 5
         },
         "description_es": "¡La segunda temporada de Yasei no el último jefe ga Arawareta!"
       },
@@ -6969,8 +7103,8 @@
           "id": "XqrBfyUNYZs"
         },
         "next": {
-          "at": 1792249200,
-          "episode": 4
+          "at": 1792854000,
+          "episode": 5
         },
         "description_es": "Pocos títulos son más venerados entre los erizos-(ahem) conocedores de videojuegos eróticos japoneses-que Magical Explorer. Un día, nuestro héroe amante de la mugre se despierta para encontrar que ha sido reencarnado en el cuerpo del protagonista de la lancha del juego! O más bien, su mejor amigo, Kousuke Takioto. Pero con su inigualable conocimiento de Magical Explorer y las habilidades de Kousuke poco ortodoxas (una bufanda que se duplica como un puño?), nuestro héroe promete convertir el perdedor más desafortunado en su más poderoso corazón. En este mundo, nada está fuera de alcance cuando tienes el know-how! (Fuente: Yen Press"
       },
@@ -7370,8 +7504,8 @@
           "id": "4MYo8FfiXMA"
         },
         "next": {
-          "at": 1792245600,
-          "episode": 3
+          "at": 1792850400,
+          "episode": 4
         },
         "description_es": "A medida que la tiranía envuelve el Reino de Clover, Asta y los Caballeros Mágicos lanzan una redada desesperada en el Reino de Spade para rescatar a sus capitanes de la Tribu Oscura. Pero su misión los lleva a una batalla brutal contra las fuerzas más allá de cualquier cosa que hayan enfrentado. Ahora, Asta debe elevarse por encima de las probabilidades imposibles de proteger a sus amigos y honrar la promesa que hizo a Yuno. (Fuente: Crunchyroll)"
       },
@@ -7431,8 +7565,8 @@
           "id": "9oBywQ403ZA"
         },
         "next": {
-          "at": 1792242000,
-          "episode": 4
+          "at": 1792846800,
+          "episode": 5
         },
         "description_es": "Fia siempre soñó con convertirse en un caballero. Nacida en una familia de caballeros, es la menos talentosa entre ellos, pero todavía se aferra a su esperanza y trenes con todo lo que tiene. Cuando llega el día para que mate a un pequeño demonio y pruebe su valor, termina cara a cara con un dragón en su lugar! Una herida mortal hace que su vida parpadee ante sus ojos... y de repente recuerda su vida anterior, cuando ella era un poderoso santo en una era pasada que venció al Rey demonio. Esa vida terminó en dolor debido a quién era, haciendo que su miedo se convierta en un santo de nuevo. Ahora que la magia de su anterior"
       },
@@ -7461,8 +7595,8 @@
           "id": "PxXPcoo8uGM"
         },
         "next": {
-          "at": 1792238400,
-          "episode": 3
+          "at": 1792843200,
+          "episode": 4
         },
         "description_es": "Romelia y su partido tienen éxito en derrotar al Rey demonio Zelgis, aunque la carga imprudente del príncipe Henri los obliga a una batalla agotadora. Después, Romelia se marca \"peso muerto\" por no luchar directamente, y el Príncipe unilateralmente rompe su compromiso. Denegado un lugar en las celebraciones de la victoria, Romelia vuelve a casa, sólo para ser conocido con fría indiferencia de su familia y sociedad. Sin embargo, se niega a romper. Ella ya ha puesto sus ojos en el camino que está por delante. (Fuente: Crunchyroll) Nota: Romelia War Chronicle fue transmitido 2 días antes de la emisión de televisión en A"
       },
@@ -7493,8 +7627,8 @@
           "id": "_0kVb8-uRSI"
         },
         "next": {
-          "at": 1792247400,
-          "episode": 3
+          "at": 1792852200,
+          "episode": 4
         },
         "description_es": "Puede ser una ciudad arruinada devastada por zombis, pero para Aki y sus amigos, ¡es increíble! Habiendo crecido sólo escuchando historias del viejo mundo y el misterioso brote que borró a la humanidad, se pone con sus amigos de la infancia en busca de su padre desaparecido. Las cosas se convierten rápidamente en una lucha por la supervivencia fuera de la seguridad de su pequeño pueblo, sin embargo nunca se han sentido más vivos. (Fuente: Crunchyroll)"
       },
@@ -7582,8 +7716,8 @@
           "id": "JqjXaJysS5w"
         },
         "next": {
-          "at": 1792247400,
-          "episode": 3
+          "at": 1792852200,
+          "episode": 4
         },
         "description_es": "Akira vive una vida pacífica con su hermana mayor Haruka y su madre, que dirige un café. Sin embargo, la familia alberga un secreto — Haruka ha heredado un poder de su padre llamado \"Engine\", y esconde ese poder de otros. Akira, por otro lado, no ha heredado el poder de su padre, y tiene un complejo de inferioridad. En medio de esto, acontecimientos extraños comienzan a suceder alrededor del mundo. (Fuente: Anime News Network)"
       },
@@ -8874,7 +9008,7 @@
         "startDate": "2026-10-09",
         "format": "TV",
         "episodes": 0,
-        "averageScore": 69,
+        "averageScore": 70,
         "status": "RELEASING",
         "genres": [
           "Action",
@@ -9023,8 +9157,8 @@
         "siteUrl": "https://anilist.co/anime/203473",
         "trailer": null,
         "next": {
-          "at": 1792248300,
-          "episode": 2
+          "at": 1792853100,
+          "episode": 3
         },
         "description_es": "Las leyendas urbanas cobran vida... Todos han oído una leyenda urbana antes, pero pocos han llegado cara a cara con uno. Estos fenómenos están en todas partes, existentes en las sombras de la realidad. Cada vez más de ellos han estado apareciendo a raíz del niño sin rostro visto por todo Japón. Si la ves o una de las leyendas urbanas que trae, ora al chico en la capucha roja te encuentra antes de que sea demasiado tarde. Usted no tendrá una oportunidad por su cuenta. Pero con su ayuda, puedes vivir para ver otro día... (Fuente: Yen Press)"
       },
