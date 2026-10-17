@@ -14,3 +14,5 @@ Restricción: presupuesto $0, no compras/deploy destructivo sin permiso; no conv
 
 
 - [x] PR #31: reparar X del diálogo Overgeared en Safari móvil; CI Chromium 390px/desktop en verde. **Pendiente** confirmación tras GitHub Pages y en iPhone físico.
+
+- [ ] **Editorial Pro — revisar variante visual:** rama `design/oneup-editorial-pro-preview-20261017`, CSS opt-in y screenshot QA 320/390/1366, mantener `index.html` intacto; confirmar los resultados CI y aprobar composición antes de publicar. No copiar recursos propietarios de streaming.
