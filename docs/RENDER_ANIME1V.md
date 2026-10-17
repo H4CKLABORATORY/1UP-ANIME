@@ -20,3 +20,9 @@ Restart or deploy the service after any environment changes.
 Running the service does NOT deploy FxxMorgan's upstream program. To enable real Anime1v metadata (instead of Jikan fallback), deploy a separately authorized Anime1v source and configure ANIME1V_BASE_URL and ANIME1V_API_KEY as Render env vars. Check license and upstream terms. The software MIT license does not grant streaming rights to episodes hosted by third parties.
 Firebase functions are optional in this route; the standalone Render service replaces the discovery gateway for public metadata.
 Never claim actual episodes playable just because the discovery service is online.
+
+## Actualización 17/10/2026 — Fuente Anime1v conectada
+- La instancia `oneup-anime1v-metadata` ya existe en Render y ejecuta el código de FxxMorgan **sólo para metadatos**. El gateway `oneup-anime-discovery` ya tiene configuradas las variables privadas para acceder al servicio autenticado.
+- La búsqueda de Naruto en GitHub Actions devolvió `source: anime1v` y 17 entradas; si Anime1v no devuelve datos, el gateway muestra el origen Jikan auténtico.
+- `https://oneup-anime1v-metadata.onrender.com/health` identifica el servidor sin publicar ninguna clave. No exponer ni añadir endpoints de streaming sin licencias de distribución.
+- Historial anterior de esta guía documenta el despliegue original sólo con respaldo Jikan. Esta actualización sustituye ese estado; sigue sin haber MP4/HLS de episodios aportados por Anime1v.

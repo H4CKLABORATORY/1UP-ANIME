@@ -3,6 +3,6 @@
   "enabled": true,
   "endpoint": "https://oneup-anime-discovery.onrender.com/anime1vDiscovery",
   "feature": "metadata_discovery_only",
-  "provider_mode": "jikan_fallback",
-  "note": "Servicio Render operativo. Busca metadatos desde Jikan; Anime1v upstream aún requiere API propia y clave. No ofrece reproducción de episodios."
+  "provider_mode": "anime1v_with_jikan_fallback",
+  "note": "Anime1v de FxxMorgan conectado en Render para búsqueda/catálogo con autenticación privada. Los resultados sin coincidencias o errores provienen de Jikan y se identifican como tales. No contiene MP4/HLS de episodios."
 }

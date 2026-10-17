@@ -34,3 +34,8 @@ Esta implementación no despliega la instancia API ni el proyecto Firebase. No a
 
 ## Continuidad
 Conservar diseño Kokomi de Codex y logo MP4. Ver AGENTS.md y docs/PROJECT_CONTINUITY.md; registrar el estado real antes de fusionar o desplegar.
+
+## Actualización 17/10/2026 — Backend Anime1v real
+- Se ha instalado una versión restringida del módulo de búsqueda/catalogación del repositorio FxxMorgan en Render. El gateway del sitio usa la URL y una clave privada desde su entorno, no desde el frontend.
+- La prueba pública de Naruto devolvió `source: anime1v` y 17 resultados: [acción verificada](https://github.com/H4CKLABORATORY/1UP-ANIME/actions/runs/39055363500).
+- No están habilitados `episode`, `resolve`, `download` ni `image-proxy` del upstream. El motor MP4/HLS de 1UP sigue funcionando con fuentes propias/autorizadas cuando se configuren.
