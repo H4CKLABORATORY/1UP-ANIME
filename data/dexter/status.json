@@ -1,17 +1,17 @@
 {
   "schemaVersion": 1,
   "engine": "DexterAnimeSync",
-  "updatedAt": "2026-10-17T05:53:52.740Z",
+  "updatedAt": "2026-10-17T08:54:26.396Z",
   "job": {
-    "id": "sync-f258aadabb4f1006",
-    "startedAt": "2026-10-17T05:53:52.740Z",
-    "completedAt": "2026-10-17T05:53:52.740Z",
+    "id": "sync-9d6621949079e97c",
+    "startedAt": "2026-10-17T08:54:26.396Z",
+    "completedAt": "2026-10-17T08:54:26.396Z",
     "mode": "programada",
     "status": "correcta",
     "counters": {
       "animes": 0,
-      "episodesDetected": 214,
-      "episodesNew": 6,
+      "episodesDetected": 0,
+      "episodesNew": 0,
       "playbackSources": 0,
       "errors": 0
     }
@@ -24,11 +24,11 @@
       "enabled": true,
       "sourceType": "metadata",
       "intervalHours": 6,
-      "lastRunAt": "2026-10-16T20:57:01.730Z",
-      "runAt": "2026-10-17T05:53:52.740Z",
-      "state": "conectada",
-      "observed": 214,
-      "created": 6,
+      "lastRunAt": "2026-10-17T05:53:52.740Z",
+      "runAt": null,
+      "state": "en_espera",
+      "observed": 0,
+      "created": 0,
       "playback": 0,
       "error": null
     },
@@ -40,12 +40,13 @@
       "sourceType": "playback",
       "intervalHours": 3,
       "lastRunAt": "2026-10-17T02:57:01.425Z",
-      "runAt": null,
-      "state": "en_espera",
+      "runAt": "2026-10-17T08:54:26.396Z",
+      "state": "sin_contenido_autorizado",
       "observed": 0,
       "created": 0,
       "playback": 0,
-      "error": null
+      "error": null,
+      "rejected": 0
     },
     {
       "id": "jkanime_external",
@@ -69,10 +70,10 @@
       "enabled": true,
       "sourceType": "embed",
       "intervalHours": 6,
-      "lastRunAt": "2026-10-16T20:57:01.730Z",
-      "runAt": "2026-10-17T05:53:52.740Z",
-      "state": "conectada",
-      "observed": 96,
+      "lastRunAt": "2026-10-17T05:53:52.740Z",
+      "runAt": null,
+      "state": "en_espera",
+      "observed": 0,
       "created": 0,
       "playback": 0,
       "error": null
@@ -105,7 +106,7 @@
     }
   ],
   "errors": [],
-  "historySize": 20,
+  "historySize": 21,
   "records": {
     "anime": 123,
     "seasons": 1,
