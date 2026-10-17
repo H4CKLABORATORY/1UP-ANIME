@@ -1,0 +1,53 @@
+name: 1UP Cinematic V2 review renders
+on:
+  workflow_dispatch:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'cinematic/v2/**'
+      - '.github/workflows/oneup-cinematic-v2.yml'
+permissions:
+  contents: read
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 22
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install rendering tools
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y ffmpeg
+          python -m pip install --disable-pip-version-check numpy pillow opencv-python-headless
+      - name: Check authorized assets
+        run: |
+          test -f assets/oneup-header-letters.png
+          test -f assets/1up-anime-intro-firma-3seg.mp4
+          python -m py_compile cinematic/v2/render.py
+          ffprobe -v error -select_streams a:0 -show_entries stream=codec_name -of csv=p=0 assets/1up-anime-intro-firma-3seg.mp4 | grep -qx aac
+      - name: Render portrait and landscape independently
+        run: python cinematic/v2/render.py mobile desktop
+      - name: Verify codecs, dimensions, timing, identical source audio
+        run: |
+          set -euo pipefail
+          mkdir -p output/cinematic-v2/previews
+          ffmpeg -hide_banner -loglevel error -y -i assets/1up-anime-intro-firma-3seg.mp4 -map 0:a:0 -c:a copy -f adts /tmp/original.aac
+          for kind in mobile desktop; do
+            if [ "$kind" = mobile ]; then WIDTH=1080; HEIGHT=1920; else WIDTH=1920; HEIGHT=1080; fi
+            FILE="output/cinematic-v2/1UP_ANIME_EDITORIAL_V2_${kind}_${WIDTH}x${HEIGHT}.mp4"
+            test -s "$FILE"
+            test "$(ffprobe -v error -select_streams v:0 -show_entries stream=width,height -of csv=p=0 "$FILE")" = "$WIDTH,$HEIGHT"
+            test "$(ffprobe -v error -show_entries format=duration -of csv=p=0 "$FILE" | cut -d. -f1)" = 3
+            ffmpeg -hide_banner -loglevel error -y -i "$FILE" -map 0:a:0 -c:a copy -f adts "/tmp/${kind}.aac"
+            cmp /tmp/original.aac "/tmp/${kind}.aac"
+            ffmpeg -hide_banner -loglevel error -y -ss 1.25 -i "$FILE" -frames:v 1 "output/cinematic-v2/previews/${kind}-impact.jpg"
+          done
+          echo 'PASS: original audio stream preserved byte-for-byte'
+      - uses: actions/upload-artifact@v4
+        with:
+          name: 1UP-CINEMATIC-V2-REVIEW
+          path: output/cinematic-v2
+          retention-days: 15
