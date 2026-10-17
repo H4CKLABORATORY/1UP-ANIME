@@ -34,8 +34,9 @@ try{
    await page.screenshot({path:'e2e-oneup-opening-'+width+'.png',animations:'disabled'});
    if(await page.locator('.header video.oneup-motion-logo').count())
      throw Error('Animated logo must not be embedded in header');
-   await page.locator('#oneup-opening-skip').click();
-   await gate.waitFor({state:'detached',timeout:4000});
+   if(await page.locator('#oneup-opening-skip,#oneup-opening-sound').count())
+     throw Error('No intro controls should be visible or present');
+   await gate.waitFor({state:'detached',timeout:4500});
    await page.locator('#km-open').click();
    await page.locator('#km-drawer:not([hidden])').waitFor();
    const drawerBrand=page.locator('#km-drawer .km-drawer-brand');
@@ -47,26 +48,52 @@ try{
      throw Error('Intro caused overflow');
   })}finally{await context.close()}
  }
- await check('opening audio after tap and once per session',async()=>{
+ await check('opening tries automatic sound, falls back muted, then opens site',async()=>{
   const context=await browser.newContext({viewport:{width:390,height:844},isMobile:true,hasTouch:true,reducedMotion:'no-preference'});
-  // Test the browser gesture and state machine without relying on CI's MP4 decoder.
   await context.addInitScript(()=>{
-    HTMLMediaElement.prototype.play=function(){return Promise.resolve()};
-    HTMLMediaElement.prototype.pause=function(){};
+   // Simulate browser policy: audible autoplay rejects, silent media is allowed.
+   window.__oneupPlayAttempts=[];
+   HTMLMediaElement.prototype.play=function(){
+     window.__oneupPlayAttempts.push(this.muted?'muted':'audible');
+     return this.muted?Promise.resolve():Promise.reject(new DOMException('Gesture required','NotAllowedError'));
+   };
+   HTMLMediaElement.prototype.pause=function(){};
+  });
+  await context.route('**/*',r=>r.request().url().startsWith(base)?r.continue():r.abort());
+  try{
+   const page=await context.newPage();
+   await page.goto(base+'index.html?intro=1',{waitUntil:'domcontentloaded'});
+   const gate=page.locator('#oneup-opening');
+   await gate.waitFor({state:'visible'});
+   const tries=await page.evaluate(()=>window.__oneupPlayAttempts);
+   if(tries[0]!=='audible')throw Error('Audio should be requested automatically first: '+tries);
+   await page.waitForFunction(()=>window.__oneupPlayAttempts.includes('muted'));
+   if(await page.locator('#oneup-opening-skip,#oneup-opening-sound').count())
+     throw Error('Controls must not appear in the opening');
+   await page.locator('#oneup-opening-video').dispatchEvent('ended');
+   await gate.waitFor({state:'detached',timeout:3000});
+   await page.goto(base+'index.html',{waitUntil:'domcontentloaded'});
+   await page.locator('#oneup-opening').waitFor({state:'detached',timeout:2500});
+  }finally{await context.close()}
+ });
+ await check('opening plays with audio if browser permits it',async()=>{
+  const context=await browser.newContext({viewport:{width:390,height:844},isMobile:true,hasTouch:true,reducedMotion:'no-preference'});
+  await context.addInitScript(()=>{
+   window.__audioChecks=[];
+   HTMLMediaElement.prototype.play=function(){
+    window.__audioChecks.push(this.muted?'muted':'audible');
+    return Promise.resolve();
+   };
+   HTMLMediaElement.prototype.pause=function(){};
   });
   await context.route('**/*',r=>r.request().url().startsWith(base)?r.continue():r.abort());
   try{
    const page=await context.newPage();
    await page.goto(base+'index.html?intro=1',{waitUntil:'domcontentloaded'});
    await page.locator('#oneup-opening').waitFor({state:'visible'});
-   const video=page.locator('#oneup-opening-video');
-   const initial=await video.evaluate(el=>({muted:el.muted,autoplay:el.autoplay,playsInline:el.playsInline}));
-   if(!initial.muted||!initial.autoplay||!initial.playsInline)throw Error('Autoplay should be muted on iPhone');
-   await page.locator('#oneup-opening-sound').click();
-   if(await video.evaluate(el=>el.muted))throw Error('User gesture did not enable original audio');
-   await video.dispatchEvent('ended');
-   await page.locator('#oneup-opening').waitFor({state:'detached',timeout:3000});
-   await page.goto(base+'index.html',{waitUntil:'domcontentloaded'});
+   const modes=await page.evaluate(()=>window.__audioChecks);
+   if(modes[0]!=='audible'||modes.includes('muted'))throw Error('Audible playback should be attempted and preserved: '+modes);
+   await page.locator('#oneup-opening-video').dispatchEvent('ended');
    await page.locator('#oneup-opening').waitFor({state:'detached',timeout:3000});
   }finally{await context.close()}
  });
