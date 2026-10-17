@@ -52,6 +52,10 @@ try{
 }
   await test(device.name+' loads homepage and local anime snapshot',async()=>{
    await page.goto(base,{waitUntil:'domcontentloaded'});
+   await page.locator('#oneup-opening').waitFor({state:'visible',timeout:4000});
+   const skipIntro=page.locator('#oneup-opening-skip');
+   if(await skipIntro.isVisible())await skipIntro.click();
+   await page.locator('#oneup-opening').waitFor({state:'detached',timeout:4000});
    await page.locator('body.oneup-kokomi').waitFor({timeout:4000});
    await page.locator('#oneup-studio-dock .studio-dock-item').first().waitFor({timeout:6000});
    await page.locator('#trending-rail [data-details]').first().waitFor({timeout:15000});
