@@ -3,20 +3,23 @@
 // CacheStorage is origin-wide: GitHub Pages apps on the same domain share it.
 // Restrict cleanup to caches that belong to this 1UP Anime service worker.
 const CACHE_PREFIX='oneup-stream-integrated-';
-const CACHE=CACHE_PREFIX+'v24-autoplay-intro-20261016';
+const CACHE=CACHE_PREFIX+'v25-portrait-brand-live-catalog-20261017';
 const SHELL=[
  './','./index.html','./studio.css','./studio.js','./spotlight.css',
  './motion.css','./motion.js','./brand-v2.css','./player.css','./auth.js',
  './auth-config.js','./manifest.webmanifest','./assets/oneup-crest.svg',
  './assets/icon-180.png','./assets/icon-192.png','./assets/icon-512.png',
  './assets/1up-anime-logo-poster.jpg','./assets/1up-anime-app-icon-512.png',
+ './assets/oneup-header-letters.png','./assets/oneup-poster-portrait.png',
  './data/catalog.json','./data/translations-es.json','./data/licensed-media.json',
+ './data/anime1v-config.json','./anime1v-discovery.js','./anime1v-discovery.css',
  './data/airing.json','./airing-ui.js','./airing-ui.css','./comunidad.html',
  './community.js','./community.css','./social-backend.js','./social-config.js',
  './hls-adapter.js','./episode-player.js','./supabase-config.js','./supabase-episode-backend.js','./episode-comments.js','./episode-comments.css',
  './themes/kokomi-studio/theme.css','./themes/kokomi-studio/theme.js',
  './themes/kokomi-mobile-preview/theme.css','./themes/kokomi-mobile-preview/theme.js',
  './themes/kokomi-mobile-preview/opening.css','./themes/kokomi-mobile-preview/opening.js',
+ './themes/kokomi-mobile-preview/official-textmark.css',
  './themes/kokomi-mobile-preview/pages.css','./themes/kokomi-mobile-preview/pages.js',
  './themes/kokomi-mobile-preview/watch-comments.css','./themes/kokomi-mobile-preview/watch-comments.js',
  './themes/october-2026/theme.css','./themes/october-2026/theme.js',
