@@ -1,38 +1,65 @@
 # 1UP ANIME — handoff para un nuevo chat
 
-> Documento de continuidad del proyecto, no copia de mensajes privados. Se actualizará automáticamente mediante `scripts/update-new-chat-handoff.mjs` después de fusionarse esta propuesta.
+> Estado derivado de archivos y commits del repositorio. No copia conversaciones privadas, no abre chats y no detecta límites de contexto.
 
-## Enlaces
-- Web: https://h4cklaboratory.github.io/1UP-ANIME/
-- Repositorio: https://github.com/H4CKLABORATORY/1UP-ANIME
-- Instrucciones y prioridades: [AGENTS.md](../AGENTS.md)
-- Progreso real: [PROJECT_CONTINUITY.md](PROJECT_CONTINUITY.md)
-- Próximas acciones: [OMEGA_NEXT_ACTIONS.md](OMEGA_NEXT_ACTIONS.md)
-- Estudio Cinematic V3: [CINEMATIC_V3_STUDIO.md](CINEMATIC_V3_STUDIO.md)
-- Anime1v en Render: [ANIME1V_METADATA_RUNTIME.md](ANIME1V_METADATA_RUNTIME.md)
-- Revisar [PRs](https://github.com/H4CKLABORATORY/1UP-ANIME/pulls) y [Actions](https://github.com/H4CKLABORATORY/1UP-ANIME/actions) antes de afirmar estado.
+## Enlaces de trabajo
+- Sitio: https://h4cklaboratory.github.io/1UP-ANIME/
+- GitHub: https://github.com/H4CKLABORATORY/1UP-ANIME
+- Instrucciones: [AGENTS.md](../AGENTS.md)
+- Historial de decisiones y desarrollo: [PROJECT_CONTINUITY.md](PROJECT_CONTINUITY.md)
+- Próximas tareas: [OMEGA_NEXT_ACTIONS.md](OMEGA_NEXT_ACTIONS.md)
+- Estudio de motion: [CINEMATIC_V3_STUDIO.md](CINEMATIC_V3_STUDIO.md)
+- Render y Anime1v: [ANIME1V_METADATA_RUNTIME.md](ANIME1V_METADATA_RUNTIME.md)
+- Pull requests: https://github.com/H4CKLABORATORY/1UP-ANIME/pulls
+- Pruebas: https://github.com/H4CKLABORATORY/1UP-ANIME/actions
 
-## Decisiones del propietario
-- El diseño Kokomi de Codex es la base preferida.
-- El logo de la cabecera debe mostrar solo las letras cromadas «1UP ANIME», sin animación.
-- La intro va a pantalla completa **antes** de entrar, 9:16 en móvil y 16:9 escritorio, con el **sonido original** del MP4 de 3,2 segundos. Sin botón para omitir. Safari puede bloquear el audio automático.
-- Cinematic V3 está en `preview-cinematic-v3.html`, como estudio animado por capas y con la firma AAC original; **no** es un MP4 final publicado ni contiene personajes de anime ajenos sin derechos.
-- Presupuesto objetivo cero, experiencia móvil, español y catálogo sin publicidad engañosa.
-- Anime1v de FxxMorgan ya está conectado como **búsqueda de metadatos** en Render; no equivale a episodios en streaming. `data/licensed-media.json` sigue vacío y requiere fuentes autorizadas.
-- No emplear imágenes generadas con IA haciendo pasar personajes por fotogramas oficiales.
+## Identidad y alcance permanente
+- 1UP ANIME, interfaz en español, presupuesto objetivo cero. Preservar Kokomi de Codex y compatibilidad iPhone.
+- Logo de letras estático en header: assets/oneup-header-letters.png; intro antes de la web con audio original AAC de 3,2 s.
+- Formatos 9:16 móvil y 16:9 escritorio; el audio de inicio puede ser bloqueado por Safari sin gesto del visitante.
+- La versión Cinematic V3 es una vista de estudio multicapa; no afirmar que ya sea un nuevo MP4 final publicado.
+- Para personajes, usar solo imágenes originales con permiso o material aportado y autorizado; no generar caras fingiendo ser fotogramas reales.
+- No confundir el catálogo de Anime1v con episodios reproducibles ni su licencia MIT con derechos de distribución de anime.
 
-## Estado al crear este archivo
-- HEAD inspeccionado: `5e9f65b8dffa464f4639192ced67d5955b18adc7` — release de búsqueda Anime1v real como metadatos.
-- Intro Cinematic V3: vista pública de estudio independiente; exportación final con recursos autorizados pendiente.
-- Runtime Anime1v: consultas reales probadas; continuar validando estado de Render y evitar afirmar videos disponibles.
-- Automatización «Continuar 1UP Anime»: **una vez por hora**, ya existe.
-- Siguiente tarea: mejorar composición multicapa sin inventar personajes y probar visualmente antes de reemplazar la intro publicada; inspeccionar si hay un trabajo más urgente ya documentado en OMEGA_NEXT_ACTIONS.
+## Estado detectado ahora
+- Último commit de aplicación encontrado: 909550e072c2c2c619614dbc4a37ee949d8aa571
+- Descubrimiento Anime1v configurado en frontend: sí, verificar la respuesta real en Render
+- Código runtime de metadatos Anime1v en repositorio: sí
+- Entradas de obras multimedia en data/licensed-media.json: 0
+- Capas de personajes autorizados declaradas en Cinematic V3: 0
+- Safari físico: no dar por verificado salvo prueba real con evidencia.
 
-## Prompt listo para pegar en un nuevo chat
+## Últimos commits relevantes
+- 909550e07 — Release: preserve 1UP Anime context for new chat handoffs
+- 6a5d7bc5a — test: verify new chat handoff builds from repo without secrets or previous conversation
+- a425089c7 — docs: record real handoff automation and explicit limitations of cross-chat trigger
+- e85d31b56 — docs(agents): require repo handoff in new chats; distinguish cron from context detection
+- 2cd8ede55 — ci: refresh cross-chat continuity on main changes and every six hours
 
-> Continúa el proyecto **1UP ANIME** en https://github.com/H4CKLABORATORY/1UP-ANIME. **Antes de editar lee directamente** AGENTS.md, docs/NEW_CHAT_HANDOFF.md, docs/PROJECT_CONTINUITY.md y docs/OMEGA_NEXT_ACTIONS.md. Revisa commits, PR abiertos, GitHub Actions y despliegues existentes. No empieces desde cero ni pierdas las preferencias: Kokomi/Codex, letras cromadas en cabecera, intro original 9:16/16:9 antes de la página con firma sonora, edición cinematográfica multicapa, iPhone y presupuesto cero. Anime1v está conectado para **metadatos**, pero no autoriza episodios de terceros. Ejecuta un cambio pequeño y verificable, documenta SHA/PR/pruebas y deja el siguiente paso preparado. Si no puedes actuar, informa qué acceso, archivo o autorización falta sin inventar resultados.
+## PR abiertos (consultar cambios antes de desarrollar)
+- [#33](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/33) V2 · intro cinemática 1UP ANIME editable con AAC original (revisión)
+- [#20](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/20) 1UP Anime · completar Codex: caché PWA aislada y ranking popular veraz
+- [#19](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/19) Restore mobile brand visibility and record verified project decisions
+- [#18](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/18) Prioritize integrated free viewing: shared Kokomi player, languages and seasons
+- [#15](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/15) [Codex handoff] DEXTER OMEGA SWARM — coordinación y misión 1UP Anime
+- [#14](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/14) Kokomi 1UP Anime · diseño + 22 vistas + reproductor y comentarios integrados (preview)
+- [#13](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/13) Diseño móvil 1UP Anime inspirado en referencia Kokomi
+- [#11](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/11) Preparar Supabase opcional para comentarios por episodio y progreso
+- [#10](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/10) Reproductor HLS compatible con Safari iPhone, Chrome y Firefox
+- [#9](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/9) Preparar 1UP ANIME para Webflow MCP y Webflow Cloud sin migración
+- [#8](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/8) DexterAnimeSync: motor de fuentes validadas (hasta 7 por episodio)
+- [#7](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/7) 1UP Anime: siete servidores por episodio y comentarios sincronizados
 
-## Disparadores disponibles
-- GitHub Actions puede regenerar este documento tras cambios de `main`, cada seis horas y manualmente.
-- ChatGPT ya tiene una tarea programada cada hora para consultar el estado y continuar trabajo verificable.
-- **No es posible detectar cuántos tokens quedan ni crear un nuevo chat automáticamente.** Cuando sea necesario, abrir un nuevo chat y pegar el prompt de arriba; el agente leerá los archivos actualizados.
+## Próxima tarea por prioridad
+1. Leer AGENTS.md, esta ficha, PROJECT_CONTINUITY.md y OMEGA_NEXT_ACTIONS.md; confirmar HEAD y CI.
+2. Perfeccionar Cinematic V3 por capas y conservar audio original; no sustituir la intro publicada sin QA y autorización de personajes.
+3. Comprobar el estado real de Anime1v en Render y los flujos existentes; no atribuir reproducción de episodios a un catálogo.
+4. Realizar una tarea concreta y verificable, registrar PR, tests y siguiente acción. No duplicar trabajo ya fusionado.
+
+## Prompt para pegar en otro chat
+Continúa el proyecto 1UP ANIME desde https://github.com/H4CKLABORATORY/1UP-ANIME. Antes de editar lee AGENTS.md, docs/NEW_CHAT_HANDOFF.md, docs/PROJECT_CONTINUITY.md y docs/OMEGA_NEXT_ACTIONS.md directamente en GitHub. No empieces de cero. Comprueba el último commit, propuestas y pruebas; conserva Kokomi, el logo de letras y audio original. Trabaja una tarea real pendiente, verifica el cambio y actualiza la bitácora. No afirmes que Cine V3 sea un MP4 final ni que Anime1v habilite streaming sin fuentes autorizadas. Si falta acceso, especifica el bloqueo y deja el siguiente paso.
+
+## Activación y límites
+- GitHub Actions actualiza esta ficha al cambiar main, cada seis horas o manualmente.
+- La tarea ChatGPT Continuar 1UP Anime ya está programada cada hora; no se crea otra tarea igual.
+- Ninguna de esas funciones abre una conversación nueva ni detecta espacio agotado: el usuario puede abrir Nuevo chat y pegar el prompt anterior.
