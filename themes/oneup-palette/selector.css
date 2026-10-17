@@ -213,8 +213,10 @@
   background: var(--oneup-pal-soft);
   border-color: var(--oneup-pal-accent);
 }
-:root[data-oneup-theme="esmeralda"] body.kokomi-mobile-reference :is(.section-heading h2::before,.signal),
-:root[data-oneup-theme="violeta"] body.kokomi-mobile-reference :is(.section-heading h2::before,.signal) {
+:root[data-oneup-theme="esmeralda"] body.kokomi-mobile-reference .section-heading h2::before,
+:root[data-oneup-theme="violeta"] body.kokomi-mobile-reference .section-heading h2::before,
+:root[data-oneup-theme="esmeralda"] body.kokomi-mobile-reference .signal,
+:root[data-oneup-theme="violeta"] body.kokomi-mobile-reference .signal {
   background: var(--oneup-pal-active);
 }
 :root[data-oneup-theme="esmeralda"] body.kokomi-mobile-reference :is(.section-heading h2 em,.section-more,.micro,.schedule-time,.km-eyebrow),
