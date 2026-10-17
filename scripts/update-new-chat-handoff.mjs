@@ -18,6 +18,8 @@ const totalMedia=Object.keys(media.entries||{}).length;
 const totalCharacters=Array.isArray(characters.layers)?characters.layers.length:0;
 const activeGateway=config.enabled===true&&String(config.endpoint||'').startsWith('https://');
 const runtime=existsSync('render/anime1v-source/server.js');
+// Avoid mistaking scheduled data/health/docs commits for application code changes.
+const appCommit=git(['log','-1','--format=%H','--','index.html','studio.js','themes/cinematic-v3/','themes/kokomi-mobile-preview/','render/anime1v-source/']);
 const logs=git(['log','-n','60','--format=%H%x09%s']).split('\n')
  .filter(Boolean).map(line=>{const p=line.split('\t');return{sha:p[0],subject:p.slice(1).join(' ')};})
  .filter(c=>!/^docs: (?:automatic|refresh) new-chat handoff/i.test(c.subject)).slice(0,5);
@@ -60,7 +62,7 @@ const rows=[
  '- No confundir el catálogo de Anime1v con episodios reproducibles ni su licencia MIT con derechos de distribución de anime.',
  '',
  '## Estado detectado ahora',
- '- Último commit de aplicación encontrado: '+(logs[0]?.sha||'revisar historial de GitHub'),
+ '- Último commit que modificó rutas clave de aplicación: '+(appCommit||'revisar historial de GitHub'),
  '- Descubrimiento Anime1v configurado en frontend: '+(activeGateway?'sí, verificar la respuesta real en Render':'no'),
  '- Código runtime de metadatos Anime1v en repositorio: '+(runtime?'sí':'no'),
  '- Entradas de obras multimedia en data/licensed-media.json: '+totalMedia,
