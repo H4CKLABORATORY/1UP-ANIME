@@ -1,0 +1,35 @@
+name: 1UP Anime1v restricted runtime
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'render/anime1v-source/**'
+      - 'scripts/test-anime1v-restricted.mjs'
+      - '.github/workflows/anime1v-restricted-runtime.yml'
+  push:
+    branches: [feature/anime1v-metadata-runtime-20261017]
+    paths:
+      - 'render/anime1v-source/**'
+      - 'scripts/test-anime1v-restricted.mjs'
+      - '.github/workflows/anime1v-restricted-runtime.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate metadata-only server
+        run: |
+          node --check render/anime1v-source/server.js
+          node scripts/test-anime1v-restricted.mjs
+      - name: Verify pinned Anime1v installation
+        run: |
+          bash render/anime1v-source/build.sh
+          node -e "const s=require('./render/anime1v-source/upstream/src/services/animeav1.service.js'); if(typeof s.searchAnime!=='function'||typeof s.getCatalog!=='function')process.exit(1)"
+          node scripts/test-anime1v-integration.mjs
