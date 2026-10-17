@@ -211,3 +211,11 @@ Al concluir cada trabajo agregar:
 - `AGENTS.md` ahora exige consultar esta ficha al comenzar una sesión nueva y distinguir la última evidencia del código frente a una ficha antigua.
 - La tarea de ChatGPT **«Continuar 1UP Anime»** existente, id `6ad3b29c7d948191b7a447736883d800`, ya se actualizó para leer el handoff, revisar trabajo real **una vez por hora** y documentar el siguiente paso; no se creó otra tarea duplicada.
 - Este sistema ofrece continuidad recuperable, no trabajo continuo ilimitado. El usuario deberá abrir «Nuevo chat» y pegar el texto del documento cuando desee cambiar de conversación.
+
+
+### 2026-10-17 — Scrapling protegido, propuesta aislada PR #38
+- Alcance: se añadió en rama `feature/scrapling-private-metadata-20261017` un servidor opcional Python para metadatos públicos, sin tocar frontend, Anime1v o Render existente. PR borrador: https://github.com/H4CKLABORATORY/1UP-ANIME/pull/38 .
+- Archivos: `render/scrapling-metadata/server.py`, `requirements.txt`, `test_server.py`, `.github/workflows/scrapling-metadata-check.yml`, `docs/SCRAPLING_PROTECTED_METADATA.md`.
+- Seguridad: servicio cerrado por defecto; token privado de 32+ caracteres, comparación constante, host fuente fijo, límite por minuto, caché, sólo títulos y enlaces; sin endpoints de video o claves incrustadas.
+- Pruebas ejecutadas: `python -m py_compile` y tres tests unitarios con respuestas simuladas, PASS local. Instalación real de Scrapling no verificada debido a falta de acceso del entorno al índice de paquetes; CI de GitHub pendiente de inspección.
+- Pendiente: comprobar licencia/robots y autorización de fuente; ejecutar test de integración con Scrapling instalado, comprobar CI y capacidad gratuita de Python, conectar backend sin exponer token, validar Safari antes de publicar. No fusionar ni desplegar automáticamente.
