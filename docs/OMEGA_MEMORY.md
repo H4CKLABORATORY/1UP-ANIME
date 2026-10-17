@@ -46,3 +46,10 @@ Al terminar avances reales, añadir al final:
 - Limitaciones y siguientes pasos:
 ```
 Excluir secretos, datos personales irrelevantes, suposiciones no etiquetadas, promesas de segundo plano y contenido sin autorización.
+
+### 2026-10-17 — Propuesta Scrapling protegida
+- Pedido: añadir Scrapling con contraseña al proyecto de anime.
+- Estado previo: existe buscador Anime1v/Jikan por Node/Render; no se encontró Scrapling integrado en main.
+- Cambio: PR borrador #38, servicio Python opcional de metadatos detrás de `X-API-Key` privado y deshabilitado por defecto. No contiene credenciales reales ni reproduce videos.
+- Pruebas: 3 offline PASS + sintaxis Python; no Scrapling instalado en entorno local por DNS, pendiente CI y validación con sitio real.
+- Siguiente: revisar permisos/robots, pin de dependencia, CI y hosting Python de costo cero; backend como intermediario, nunca token en el navegador.
