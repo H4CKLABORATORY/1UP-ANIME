@@ -15,9 +15,12 @@ OUT.mkdir(exist_ok=True,parents=True)
 FPS,DUR=30,3.2
 COLORS=((245,120,35),(45,48,220)) # BGR cold blue, warm red
 LOGO=cv2.cvtColor(np.array(Image.open(ASSETS/'oneup-header-letters.png').convert('RGBA')),cv2.COLOR_RGBA2BGRA)
-SPLIT=int(LOGO.shape[1]*.43)
-LEFT=LOGO[:,:SPLIT].copy()
-RIGHT=LOGO[:,SPLIT:].copy()
+# The original wordmark overlaps the 1UP/ANIME groups horizontally.
+# A naive percentage split sheared the red A beside the blue P.
+# Reference checked against the owner-approved 2172x724 transparent logo.
+assert LOGO.shape[:2]==(724,2172), 'Unexpected logo dimensions; re-inspect manual cutout'
+LEFT=LOGO[38:620,0:865].copy()
+RIGHT=LOGO[38:620,856:2165].copy()
 rng=random.Random(9110)
 PARTICLES=[(rng.random(),rng.random(),rng.uniform(.35,1.8),rng.uniform(.04,.19),
             rng.randrange(1,4),rng.randint(0,1),rng.random()*6) for _ in range(215)]
