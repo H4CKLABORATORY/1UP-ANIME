@@ -24,3 +24,17 @@
 ## Limitations
 
 Live HTML selectors have **not been validated** on JKAnime, and the source may refuse access. The service must not attempt to bypass access controls. It returns **metadata only**, not episodes or video rights. Its upstream library BSD-3-Clause license covers code, not third-party content. No claims of zero hosting cost or completed deployment are made.
+
+## Modo invisible para visitantes: recopilador programado (propuesto, no desplegado)
+
+La petición del propietario es que Scrapling **no aparezca en el menú, ni como botón ni en el frontend**. Para ello se añadió `render/scrapling-metadata/snapshot.py` y el workflow `.github/workflows/scrapling-background-catalog.yml`. No hay interfaz administrativa pública ni rutas de vídeo.
+
+- **Ejecución:** una vez al día (09:43 UTC) desde GitHub Actions, **solo después de fusionar la PR** y de que el propietario configure las dos variables de aprobación y el secreto. No depende de ChatGPT ni puede ocultarse a quien tenga acceso al repositorio.
+- **Parámetros privados:** desde GitHub → Settings → Secrets and variables → Actions, configurar `SCRAPLING_AUTOMATION_TOKEN` como *secret* aleatorio de 32+ caracteres; en *variables*, `SCRAPLING_SOURCE_APPROVED=1` únicamente si se ha confirmado permiso de extracción, y `SCRAPLING_AUTOMATION_ENABLED=1` cuando realmente se desea activar. Sin cualquiera de ellos, la ejecución no consulta la fuente.
+- **Control de permisos:** tras las aprobaciones, revisa `https://jkanime.net/robots.txt` en cada ejecución. Si no puede descargar el archivo o la política prohíbe la ruta, aborta sin consultar la página. No utiliza navegador oculto, evasión de CAPTCHA/DRM ni proxies rotatorios.
+- **Resultado:** máximo 24 títulos y enlaces públicos de la portada, sin descripciones copiadas, episodios ni URLs de vídeo; el snapshot se guarda en `data/scrapling-discovery.json` **solo si cambió**. Reutiliza `scripts/oneup-safe-push.sh` para no sobrescribir cambios ajenos. No reemplaza `data/catalog.json`, ya actualizado mediante AniList/Jikan.
+- **Visibilidad real:** el nuevo JSON no aparece en la navegación del sitio; sin embargo, tanto el código como el JSON son descubribles en un repositorio público y, si GitHub Pages los publica, también son accesibles por URL. Para que el código *tampoco sea público*, debe moverse a un repositorio privado/servidor privado; no basta una contraseña colocada en el frontend.
+- **No se ha activado** ni validado el acceso en directo a JKAnime. La verificación solo cubre contrato y seguridad sin red. Hay que confirmar también las condiciones de uso y la política robots; actualmente no se pudo verificar esa política de forma independiente.
+- **Pruebas offline:** `python -m unittest discover -s render/scrapling-metadata -p 'test_*.py' -v`, incluyendo rechazo sin clave, denegación por robots, normalización sin medios, escritura atómica y ausencia de commits cuando no cambian los datos.
+
+**No confundir:** títulos y enlaces de catálogo no habilitan reproductores ni permisos de distribución. Este módulo ofrece datos opcionales para un posterior cruce con el catálogo AniList; todavía no está conectado a tarjetas de frontend.
