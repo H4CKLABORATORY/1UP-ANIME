@@ -213,12 +213,13 @@ function refreshFav(){
  if(state.featured)$('#hero-save').innerHTML=isFav(state.featured.id)?'<svg><use href="#ico-check"/></svg> Guardado':'<svg><use href="#ico-plus"/></svg> Guardar anime';
 }
 function card(a){
- const pic=a.image?'<img loading="lazy" referrerpolicy="no-referrer" src="'+esc(a.image)+'" alt="Póster de '+esc(a.title)+'">':'<div class="placeholder-art"><strong>'+esc(a.title.slice(0,27))+'</strong></div>';
- return '<article class="anime-card"><div class="anime-art" data-details="'+esc(a.id)+'" role="button" tabindex="0">'+pic+'<div class="art-shade"></div><span class="rating"><b>★</b> '+(a.averageScore?(a.averageScore/10).toFixed(1):'—')+'</span></div><button class="anime-save'+(isFav(a.id)?' saved':'')+'" data-save="'+esc(a.id)+'">'+(isFav(a.id)?'✓':'＋')+'</button><div class="card-info"><button class="card-name" data-details="'+esc(a.id)+'">'+esc(a.title)+'</button><div class="card-sub"><span>'+esc(String(a.year||'Anime'))+'</span><span class="card-type">'+esc(formats[a.format]||a.format||'Serie')+'</span></div></div></article>';
+ const pic=a.image?'<img data-depth="far" loading="lazy" referrerpolicy="no-referrer" src="'+esc(a.image)+'" alt="Póster de '+esc(a.title)+'">':'<div class="placeholder-art"><strong>'+esc(a.title.slice(0,27))+'</strong></div>';
+ return '<article class="anime-card depth-scene"><div class="anime-art" data-details="'+esc(a.id)+'" role="button" tabindex="0">'+pic+'<div class="art-shade anime-card-shine" data-depth="mid"></div><span class="rating" data-depth="front"><b>★</b> '+(a.averageScore?(a.averageScore/10).toFixed(1):'—')+'</span></div><button class="anime-save'+(isFav(a.id)?' saved':'')+'" data-save="'+esc(a.id)+'">'+(isFav(a.id)?'✓':'＋')+'</button><div class="card-info" data-depth="front"><button class="card-name" data-details="'+esc(a.id)+'">'+esc(a.title)+'</button><div class="card-sub"><span>'+esc(String(a.year||'Anime'))+'</span><span class="card-type">'+esc(formats[a.format]||a.format||'Serie')+'</span></div></div></article>';
 }
 function paint(selector,data,source=''){
  const e=$(selector);if(!e)return;
  e.innerHTML=(source==='sample'?'<div class="error">Mostrando ejemplos guardados: el servicio de datos no responde. Inténtalo más tarde.</div>':'')+(data.length?data.map(card).join(''):'<div class="empty">No encontramos títulos con esos filtros.</div>');
+ if (typeof CardDepthEngine !== 'undefined') CardDepthEngine.refresh();
 }
 function hero(a, chosen=false){
  if(!a)return;
