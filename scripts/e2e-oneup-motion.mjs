@@ -72,6 +72,8 @@ try{
    await page.locator('#anime-close').click();
    await page.waitForFunction(()=>!document.querySelector('#anime-dialog').open,{timeout:4000});
 
+   // 450 ms iOS ghost-click guard is intentional; wait before a deliberate reopen.
+   await page.waitForTimeout(520);
    // Native Escape must always close immediately and restore the application.
    await page.locator('#trending-rail [data-details]').first().click();
    await page.locator('#anime-dialog').waitFor({state:'visible'});
