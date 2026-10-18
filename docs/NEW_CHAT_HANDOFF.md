@@ -22,7 +22,7 @@
 - No confundir el catálogo de Anime1v con episodios reproducibles ni su licencia MIT con derechos de distribución de anime.
 
 ## Estado detectado ahora
-- Último commit de aplicación encontrado: 909550e072c2c2c619614dbc4a37ee949d8aa571
+- Último commit de aplicación encontrado: 72c40f5c0705006190fa71c045e5a5ca651d1b10
 - Descubrimiento Anime1v configurado en frontend: sí, verificar la respuesta real en Render
 - Código runtime de metadatos Anime1v en repositorio: sí
 - Entradas de obras multimedia en data/licensed-media.json: 0
@@ -30,13 +30,16 @@
 - Safari físico: no dar por verificado salvo prueba real con evidencia.
 
 ## Últimos commits relevantes
-- 909550e07 — Release: preserve 1UP Anime context for new chat handoffs
-- 6a5d7bc5a — test: verify new chat handoff builds from repo without secrets or previous conversation
-- a425089c7 — docs: record real handoff automation and explicit limitations of cross-chat trigger
-- e85d31b56 — docs(agents): require repo handoff in new chats; distinguish cron from context detection
-- 2cd8ede55 — ci: refresh cross-chat continuity on main changes and every six hours
+- 72c40f5c0 — Release: 1UP Anime emerald and violet theme picker with offline-safe PWA
+- 0625155c0 — Sync authorized anime episode metadata and source statuses
+- eb6d09c34 — ONEUP health snapshot (no application changes)
+- e73f8a24c — Update live anime airing calendar
+- 3c5d91931 — Sync authorized anime episode metadata and source statuses
 
 ## PR abiertos (consultar cambios antes de desarrollar)
+- [#40](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/40) Diseño 1UP Editorial Pro: pulido cinematográfico original (solo preview)
+- [#39](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/39) Parallel AI: lectura opcional y segura del catálogo público de Crunchyroll
+- [#38](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/38) Scrapling privado: metadatos automáticos sin interfaz pública (aprobación obligatoria)
 - [#33](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/33) V2 · intro cinemática 1UP ANIME editable con AAC original (revisión)
 - [#20](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/20) 1UP Anime · completar Codex: caché PWA aislada y ranking popular veraz
 - [#19](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/19) Restore mobile brand visibility and record verified project decisions
@@ -46,9 +49,6 @@
 - [#13](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/13) Diseño móvil 1UP Anime inspirado en referencia Kokomi
 - [#11](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/11) Preparar Supabase opcional para comentarios por episodio y progreso
 - [#10](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/10) Reproductor HLS compatible con Safari iPhone, Chrome y Firefox
-- [#9](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/9) Preparar 1UP ANIME para Webflow MCP y Webflow Cloud sin migración
-- [#8](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/8) DexterAnimeSync: motor de fuentes validadas (hasta 7 por episodio)
-- [#7](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/7) 1UP Anime: siete servidores por episodio y comentarios sincronizados
 
 ## Próxima tarea por prioridad
 1. Leer AGENTS.md, esta ficha, PROJECT_CONTINUITY.md y OMEGA_NEXT_ACTIONS.md; confirmar HEAD y CI.
