@@ -1,0 +1,32 @@
+.depth-toggle-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  color: #9ca3af;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.depth-toggle-btn:hover {
+  border-color: rgba(16,185,129,0.4);
+  color: #ffffff;
+}
+
+.depth-toggle-btn.active {
+  background: rgba(16,185,129,0.15);
+  border-color: #10b981;
+  color: #10b981;
+  box-shadow: 0 0 16px rgba(16,185,129,0.25);
+}
+
+.depth-toggle-btn svg {
+  transition: transform 0.3s ease;
+}
+.depth-toggle-btn.active svg {
+  transform: rotate(-8deg) scale(1.1);
+}
