@@ -24,3 +24,8 @@ dialog{max-width:min(610px,calc(100vw - 20px));border:1px solid #8fa9d664;border
 .c-clip-mode .c-card-buttons{margin-top:auto}
 @media(max-width:760px){.c-clip-mode .c-feed{max-height:calc(100dvh - 135px)}.c-clip-mode .c-feed-card{min-height:65vh}.c-clip-mode .c-media video{height:min(58vh,550px)}}
 @media(prefers-reduced-motion:reduce){.c-clip-mode .c-feed{scroll-snap-type:none}}
+
+/* Community reply media preview: local-only until server moderation is implemented. */
+#reply-media-preview img{max-width:100%;max-height:240px;object-fit:contain;border-radius:12px;border:1px solid #8198c9}
+#reply-media-preview{padding:10px;background:#0a1020;border-radius:12px}
+#reply-media-state{font-size:12px;color:#cbd8ff;line-height:1.5}
