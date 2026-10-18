@@ -1,8 +1,126 @@
 {
-  "updated": "2026-10-17T08:46:39.858Z",
+  "updated": "2026-10-18T08:46:51.001Z",
   "source": "AniList public GraphQL",
   "groups": {
     "trending": [
+      {
+        "id": "mal-61967",
+        "mal_id": 61967,
+        "title": "Black Clover Season 2",
+        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx195604-tSZcfKbVqSEG.jpg",
+        "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/195604-lQpCzTziSA17.jpg",
+        "description": "As tyranny engulfs the Clover Kingdom, Asta and the Magic Knights launch a desperate raid on the Spade Kingdom to rescue their squad captains from the Dark Triad. But their mission leads them into a brutal battle against forces beyond anything they’ve ever faced. Now, Asta must rise above impossible odds to protect his friends and honor the promise he made to Yuno.\n\n(Source: Crunchyroll)",
+        "averageScore": 86,
+        "year": 2026,
+        "genres": [
+          "Action",
+          "Adventure",
+          "Comedy",
+          "Fantasy"
+        ],
+        "format": "TV",
+        "episodes": 0,
+        "status": "RELEASING",
+        "siteUrl": "https://anilist.co/anime/195604",
+        "streaming": [
+          {
+            "name": "Crunchyroll",
+            "url": "https://www.crunchyroll.com/series/GRE50KV36/black-clover"
+          },
+          {
+            "name": "Bilibili TV",
+            "url": "https://www.bilibili.tv/en/media/2432940"
+          },
+          {
+            "name": "iQ",
+            "url": "https://www.iq.com/album/qchxviq611"
+          }
+        ],
+        "next": {
+          "at": 1792850400,
+          "episode": 4
+        },
+        "source": "snapshot",
+        "description_es": "A medida que la tiranía envuelve el Reino de Clover, Asta y los Caballeros Mágicos lanzan una redada desesperada en el Reino de Spade para rescatar a sus capitanes de la Tribu Oscura. Pero su misión los lleva a una batalla brutal contra las fuerzas más allá de cualquier cosa que hayan enfrentado. Ahora, Asta debe elevarse por encima de las probabilidades imposibles de proteger a sus amigos y honrar la promesa que hizo a Yuno. (Fuente: Crunchyroll)"
+      },
+      {
+        "id": "mal-61578",
+        "mal_id": 61578,
+        "title": "Even the Student Council Has Its Holes!",
+        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx191656-xFHtxM8SUTdU.png",
+        "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/191656-JQILdzh3FQxN.jpg",
+        "description": "This is Fujinasu Academy, a private high school with top-achieving students located on the outskirts of town.\n\nHigh School 1st-Year Ume Mizunoe has excellent grades in Japanese language class and has received multiple literary awards.\nHowever, his terrible grades in the sciences are affecting his ability to move up a grade. To avoid repeating a year, he becomes a member of the student council to improve his academic standing.\n\nHowever, in the stu",
+        "averageScore": 73,
+        "year": 2026,
+        "genres": [
+          "Comedy",
+          "Ecchi",
+          "Slice of Life"
+        ],
+        "format": "TV",
+        "episodes": 12,
+        "status": "RELEASING",
+        "siteUrl": "https://anilist.co/anime/191656",
+        "streaming": [
+          {
+            "name": "OceanVeil",
+            "url": "https://oceanveil.net/anime_titles/542"
+          },
+          {
+            "name": "Bilibili TV",
+            "url": "https://www.bilibili.tv/en/media/2433041"
+          },
+          {
+            "name": "iQ",
+            "url": "https://www.iq.com/album/28ki6pjn6a1"
+          }
+        ],
+        "next": {
+          "at": 1792855800,
+          "episode": 4
+        },
+        "source": "snapshot",
+        "description_es": "Esta es la Academia Fujinasu, una escuela secundaria privada con estudiantes de primer nivel ubicados en las afueras de la ciudad. High School 1er año Ume Mizunoe tiene excelentes calificaciones en la clase de idioma japonés y ha recibido múltiples premios literarios. Sin embargo, sus calificaciones terribles en las ciencias están afectando su capacidad de avanzar en un grado. Para evitar repetir un año, se convierte en miembro del consejo estudiantil para mejorar su posición académica. Sin embargo, en el estudio"
+      },
+      {
+        "id": "mal-62922",
+        "mal_id": 62922,
+        "title": "Magic Repo Man: Dumped by My Party, I’ll Cash In With a Cute Support Fairy to Become the Strongest!",
+        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx202250-mpm2cvr92Au2.jpg",
+        "banner": "",
+        "description": "If there's one thing you can never have enough of in a world of RPG-style swords and sorcery, it's magic points! Whether you're fueling spells, techniques, or showing off an incredible ability, you've gotta spend those points to do real damage. But what if you run out?\n\nLent is part of the up-and-coming party known as the “Skypiercers,” and thanks to his unique Gift, he can loan massive amounts of magic to others. No MP? No problem with Lent arou",
+        "averageScore": 60,
+        "year": 2026,
+        "genres": [
+          "Action",
+          "Adventure",
+          "Fantasy"
+        ],
+        "format": "TV",
+        "episodes": 0,
+        "status": "RELEASING",
+        "siteUrl": "https://anilist.co/anime/202250",
+        "streaming": [
+          {
+            "name": "Crunchyroll",
+            "url": "https://www.crunchyroll.com/series/GT00385867/magic-repo-man-dumped-by-my-party-ill-cash-in-with-a-cute-support-fairy-to-become-the-strongest"
+          },
+          {
+            "name": "Bilibili TV",
+            "url": "https://www.bilibili.tv/en/media/2432615"
+          },
+          {
+            "name": "YouTube",
+            "url": "https://www.youtube.com/playlist?list=PLAzayY4fPdjw"
+          }
+        ],
+        "next": {
+          "at": 1792859400,
+          "episode": 4
+        },
+        "source": "snapshot",
+        "description_es": "Si hay una cosa que nunca puedes tener suficiente en un mundo de espadas y brujería estilo RPG, ¡es puntos mágicos! Si estás alimentando hechizos, técnicas o mostrando una habilidad increíble, tienes que gastar esos puntos para hacer daño real. ¿Y si te escapas? La Cuaresma es parte de la fiesta de llegada conocida como los \"Skypiercers\", y gracias a su regalo único, puede prestar enormes cantidades de magia a otros. ¿Sin MP? No hay problema con Lent arou"
+      },
       {
         "id": "mal-61987",
         "mal_id": 61987,
@@ -36,69 +154,6 @@
         },
         "source": "snapshot",
         "description_es": "Después de la rebelión del clan Shi, las cosas finalmente se han asentado, y Maomao ha vuelto a su antigua vida como farmacéutico en el distrito de placer. Un día, provocado por un desayuno servido en la Casa Verdigris, Maomao siente una anomalía y comienza a investigar su verdadera naturaleza. Mientras tanto, Jinshi, que ha revelado su verdadera identidad como el hermano imperial y ha comenzado a enfrentar sus pesadas responsabilidades, está profundamente preocupado por la fina"
-      },
-      {
-        "id": "mal-63293",
-        "mal_id": 63293,
-        "title": "Firefly Wedding",
-        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx205909-DM0fAzNQulod.jpg",
-        "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/205909-hGeuFYrdhf9S.jpg",
-        "description": "On the surface, Satoko has it all—she’s beautiful, the daughter of a nobleman, and at a prime age for marriage. Unfortunately, she is also quite ill and only has a short time left to live. Before she can secure a marriage that will redeem her worth in her family’s eyes, she finds herself the target of the mysterious assassin Shinpei, and her plans are put in jeopardy. In order to save herself, she makes a desperate proposal—of marriage! When it c",
-        "averageScore": 75,
-        "year": 2026,
-        "genres": [
-          "Drama",
-          "Romance"
-        ],
-        "format": "TV",
-        "episodes": 12,
-        "status": "RELEASING",
-        "siteUrl": "https://anilist.co/anime/205909",
-        "streaming": [
-          {
-            "name": "Crunchyroll",
-            "url": "https://www.crunchyroll.com/series/GT00383999"
-          }
-        ],
-        "next": {
-          "at": 1792765800,
-          "episode": 3
-        },
-        "source": "snapshot",
-        "description_es": "En la superficie, Satoko lo tiene todo, es hermosa, la hija de un noble, y a una edad temprana para el matrimonio. Desafortunadamente, ella también está bastante enferma y sólo tiene un corto tiempo para vivir. Antes de que pueda conseguir un matrimonio que redimirá su valor en los ojos de su familia, se encuentra el blanco del misterioso asesino Shinpei, y sus planes están en peligro. ¡Para salvarse, hace una propuesta desesperada de matrimonio! Cuando c"
-      },
-      {
-        "id": "mal-61469",
-        "mal_id": 61469,
-        "title": "STEEL BALL RUN JoJo's Bizarre Adventure 2nd - 3rd STAGE",
-        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx210482-P1VNKbqdJ6Zj.jpg",
-        "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/210482-pYAD0IbzNbgS.jpg",
-        "description": "In the 2nd STAGE, a desert crossing spanning roughly 750 miles- the land that Johnny Joestar and Gyro Zeppeli must challenge, is home to the area that is feared as the \"Devil's Palm.\" In 1875, a threat lurking in said desert wiped out a cavalry of 26 people, eliciting fear from the local native people. As ominous incidents begin to unfold, they are forced to realize that this race is far more than a mere competition. The two press forward, where ",
-        "averageScore": 85,
-        "year": 2026,
-        "genres": [
-          "Action",
-          "Adventure",
-          "Drama",
-          "Mystery",
-          "Supernatural"
-        ],
-        "format": "ONA",
-        "episodes": 11,
-        "status": "RELEASING",
-        "siteUrl": "https://anilist.co/anime/210482",
-        "streaming": [
-          {
-            "name": "Netflix",
-            "url": "https://www.netflix.com/title/82116553"
-          }
-        ],
-        "next": {
-          "at": 1792742400,
-          "episode": 5
-        },
-        "source": "snapshot",
-        "description_es": "En la 2a ETAPA, un cruce desértico que recorre aproximadamente 750 millas- la tierra que Johnny Joestar y Gyro Zeppeli deben desafiar, es el hogar de la zona que se teme como la palma del Diablo. En 1875, una amenaza que acechaba en dicho desierto borró una caballería de 26 personas, provocando temor de los nativos locales. A medida que los incidentes ominosos comienzan a desarrollarse, se ven obligados a darse cuenta de que esta carrera es mucho más que una mera competencia. Las dos prensas hacia adelante, donde"
       },
       {
         "id": "mal-21",
@@ -158,82 +213,37 @@
         "description_es": "Gold Roger era conocido como el Rey Pirata, el ser más fuerte e infame de haber navegado en la Gran Línea. La captura y muerte de Roger por el Gobierno Mundial trajo un cambio en todo el mundo. Sus últimas palabras antes de su muerte revelaron la ubicación del tesoro más grande del mundo, One Piece. Fue esta revelación que trajo consigo la Gran Era de Piratas, hombres que soñaban con encontrar una pieza (que promete una cantidad ilimitada o"
       },
       {
-        "id": "mal-59741",
-        "mal_id": 59741,
-        "title": "The Exiled Heavy Knight Knows How to Game the System",
-        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx180136-gtMTCRlOD4OE.jpg",
-        "banner": "",
-        "description": "Born into a prestigious family of master swordsmen, Elymas Edvaughn’s future shatters when he awakens the so-called “defective” Heavy Knight class. Disowned and cast out, he regains memories of another life—and realizes this world mirrors a VR game he once mastered. Armed with knowledge no one else possesses, he sets out to rewrite his fate and prove the strength of the “weakest” class.\n\n(Source: Crunchyroll)",
+        "id": "mal-56733",
+        "mal_id": 56733,
+        "title": "Magical Explorer",
+        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx169581-UlAviVH36Hxi.png",
+        "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/169581-cdooqY7Jqy3x.jpg",
+        "description": "Few titles are more revered among horndogs-(ahem) connoisseurs of Japanese erotic video games-than Magical Explorer. One day, our smut-loving hero wakes up to find he has been reincarnated into the body of the game’s dreamboat protagonist! Or rather, his hapless comic-relief best friend, Kousuke Takioto. But with his unparalleled knowledge of Magical Explorer and Kousuke’s unorthodox abilities (a scarf that doubles as a fist?), our hero vows to t",
         "averageScore": 68,
         "year": 2026,
         "genres": [
           "Action",
-          "Fantasy"
+          "Adventure",
+          "Ecchi",
+          "Fantasy",
+          "Romance"
         ],
-        "format": "TV",
-        "episodes": 26,
+        "format": "ONA",
+        "episodes": 13,
         "status": "RELEASING",
-        "siteUrl": "https://anilist.co/anime/180136",
+        "siteUrl": "https://anilist.co/anime/169581",
         "streaming": [
           {
             "name": "Crunchyroll",
-            "url": "https://www.crunchyroll.com/series/GT00378018/the-exiled-heavy-knight-knows-how-to-game-the-system"
-          },
-          {
-            "name": "YouTube",
-            "url": "https://www.youtube.com/playlist?list=PLwLSw1_eDZl3yq1oZEC8iNCwgMsg0NmIZ"
-          },
-          {
-            "name": "Bilibili TV",
-            "url": "https://www.bilibili.tv/media/2411725"
-          },
-          {
-            "name": "iQ",
-            "url": "https://www.iq.com/album/a5a0t3nwm1"
+            "url": "https://www.crunchyroll.com/series/GT00384003/magical-explorer"
           }
         ],
         "next": {
-          "at": 1792682760,
-          "episode": 17
+          "at": 1792854000,
+          "episode": 5
         },
         "source": "snapshot",
-        "description_es": "Elymas Edvaughn nace en una prestigiosa familia de maestros espadachines, pero su futuro se derrumba cuando despierta la clase de Caballero Pesado, considerada defectuosa. Rechazado y expulsado, recupera recuerdos de una vida anterior y descubre que ese mundo se parece a un videojuego de realidad virtual que conocía muy bien. Gracias a secretos que nadie más posee, decide cambiar su destino y demostrar el verdadero poder de la clase que todos consideran la más débil."
-      },
-      {
-        "id": "mal-59088",
-        "mal_id": 59088,
-        "title": "Tokyo Revengers: War of the Three Titans Arc",
-        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx178083-bg7pg6TCHwtG.jpg",
-        "banner": "",
-        "description": "Sequel to Tokyo Revengers: Tenjiku-hen.",
-        "averageScore": 76,
-        "year": 2026,
-        "genres": [
-          "Action",
-          "Drama",
-          "Romance",
-          "Supernatural"
-        ],
-        "format": "TV",
-        "episodes": 13,
-        "status": "RELEASING",
-        "siteUrl": "https://anilist.co/anime/178083",
-        "streaming": [
-          {
-            "name": "YouTube",
-            "url": "https://www.youtube.com/@animetoman"
-          },
-          {
-            "name": "Hulu",
-            "url": "https://www.hulu.com/series/1a195a35-e19c-4e36-b609-3b1c451f6ce4"
-          }
-        ],
-        "next": {
-          "at": 1792774380,
-          "episode": 4
-        },
-        "source": "snapshot",
-        "description_es": "Secuela de los Revengers de Tokio: Tenjiku-hen."
+        "description_es": "Pocos títulos son más venerados entre los erizos-(ahem) conocedores de videojuegos eróticos japoneses-que Magical Explorer. Un día, nuestro héroe amante de la mugre se despierta para encontrar que ha sido reencarnado en el cuerpo del protagonista de la lancha del juego! O más bien, su mejor amigo, Kousuke Takioto. Pero con su conocimiento inigualable del Explorador Mágico y las habilidades no ortodoxas de Kousuke (una bufanda que se dobla como un puño?), nuestro héroe promete t"
       },
       {
         "id": "mal-34572",
@@ -277,66 +287,222 @@
         "description_es": "En un mundo donde la magia es todo, Asta y Yuno se encuentran abandonados en una iglesia el mismo día. Mientras Yuno está dotado de poderes mágicos excepcionales, Asta es el único en este mundo sin ninguno. A la edad de quince años, ambos reciben grimoires, libros mágicos que amplifican la magia de su titular. Asta es un raro Grimoire de Anti-Magic que niega y repele los hechizos de su oponente. Siendo opuestos pero buenos rivales, Yuno y Asta están listos para t"
       },
       {
-        "id": "mal-64534",
-        "mal_id": 64534,
-        "title": "The Ramparts of Ice Season 2",
-        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx213805-Nokui3uWlIlw.png",
+        "id": "mal-63140",
+        "mal_id": 63140,
+        "title": "A Wild Last Boss Appeared! Season 2",
+        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx204389-jCoFCeTthDMy.jpg",
         "banner": "",
-        "description": "Koyuki, the isolated girl; Miki, the former school idol; Minato, the guy with no concept of personal space; and Youta, the gentle basketball player. Clumsy, frustrating, yet deeply endearing — this coming-of-age ensemble drama of crisscrossing hearts marches on.\n\nAs they grow closer, Koyuki and Minato begin to develop feelings for each other that go beyond mere friendship. Meanwhile, Youta finally confesses to Miki the feelings he's harbored for ",
-        "averageScore": 81,
-        "year": 2026,
-        "genres": [
-          "Comedy",
-          "Drama",
-          "Romance",
-          "Slice of Life"
-        ],
-        "format": "TV",
-        "episodes": 0,
-        "status": "RELEASING",
-        "siteUrl": "https://anilist.co/anime/213805",
-        "streaming": [
-          {
-            "name": "Netflix",
-            "url": "https://www.netflix.com/title/82031882"
-          }
-        ],
-        "next": {
-          "at": 1792680960,
-          "episode": 4
-        },
-        "source": "snapshot",
-        "description_es": "Koyuki, la chica aislada; Miki, el antiguo ídolo escolar; Minato, el tipo sin concepto de espacio personal; y Youta, el amable jugador de baloncesto. Clumsy, frustrante, pero profundamente apasionante — este drama que se acerca a la edad de los corazones cruzados avanza. A medida que se acercan, Koyuki y Minato comienzan a desarrollar sentimientos entre sí que van más allá de la mera amistad. Mientras tanto, Youta finalmente confiesa a Miki los sentimientos por los que ha albergado"
-      },
-      {
-        "id": "mal-61014",
-        "mal_id": 61014,
-        "title": "A Certain Dark Item",
-        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx186742-v7yfbefc8fuO.png",
-        "banner": "",
-        "description": "This is a story of four girls living in the \"Dark Side\" of Academy City.\n\nIn Academy City where \"ESP\" has been recognized as a general science. Behind the peace, there is a Dark Side organization that undertakes missions that cannot be made public.\n\n\"ITEM\" is an elite unit consisting of four girls. Takitsubo Rikou is able to read and track the AIM fields emitted by those with abilities. Frenda Seivelun, who excels in combat using explosives and t",
-        "averageScore": 69,
+        "description": "The second season of Yasei no Last Boss ga Arawareta!",
+        "averageScore": 73,
         "year": 2026,
         "genres": [
           "Action",
-          "Sci-Fi"
+          "Adventure",
+          "Fantasy"
         ],
-        "format": "TV",
+        "format": "ONA",
         "episodes": 0,
         "status": "RELEASING",
-        "siteUrl": "https://anilist.co/anime/186742",
+        "siteUrl": "https://anilist.co/anime/204389",
         "streaming": [
           {
             "name": "Crunchyroll",
-            "url": "https://www.crunchyroll.com/series/GT00383991/a-certain-dark-item"
+            "url": "https://www.crunchyroll.com/series/GT00361955/a-wild-last-boss-appeared"
+          },
+          {
+            "name": "YouTube",
+            "url": "https://www.youtube.com/playlist?list=PLbuF5Onrcu9fs9Jo_IR9nZ7WrulQuDup-"
           }
         ],
         "next": {
-          "at": 1792762200,
+          "at": 1792848600,
+          "episode": 5
+        },
+        "source": "snapshot",
+        "description_es": "¡La segunda temporada de Yasei no el último jefe ga Arawareta!"
+      },
+      {
+        "id": "mal-61153",
+        "mal_id": 61153,
+        "title": "A Tale of the Secret Saint",
+        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx187402-ReKkLwFmMV3q.jpg",
+        "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/187402-bRt4OO90jcmt.jpg",
+        "description": "Fia always dreamed of becoming a knight. Born into a family of knights, she’s the least talented among them, but she still clutches to her hope and trains with everything she has. When the day comes for her to slay a small demon and prove her worth, she ends up face to face with a dragon instead! A deadly injury makes her life flash before her eyes…and she suddenly remembers her former life, when she was a powerful Saint in a bygone era who defea",
+        "averageScore": 68,
+        "year": 2026,
+        "genres": [
+          "Action",
+          "Adventure",
+          "Fantasy"
+        ],
+        "format": "ONA",
+        "episodes": 0,
+        "status": "RELEASING",
+        "siteUrl": "https://anilist.co/anime/187402",
+        "streaming": [
+          {
+            "name": "Crunchyroll",
+            "url": "https://www.crunchyroll.com/series/GT00371633"
+          },
+          {
+            "name": "Bilibili TV",
+            "url": "https://www.bilibili.tv/en/media/2431959"
+          },
+          {
+            "name": "YouTube",
+            "url": "https://www.youtube.com/playlist?list=PLFsBVQsxttbw"
+          },
+          {
+            "name": "iQ",
+            "url": "https://www.iq.com/album/1tnlbxdm3vt"
+          }
+        ],
+        "next": {
+          "at": 1792846800,
+          "episode": 5
+        },
+        "source": "snapshot",
+        "description_es": "Fia siempre soñó con convertirse en un caballero. Nacida en una familia de caballeros, es la menos talentosa entre ellos, pero todavía se aferra a su esperanza y trenes con todo lo que tiene. Cuando llega el día para que mate a un pequeño demonio y pruebe su valor, termina cara a cara con un dragón en su lugar! Una herida mortal hace que su vida parpadee ante sus ojos... y de repente recuerda su vida anterior, cuando ella era un poderoso santo en una era pasada que defea"
+      },
+      {
+        "id": "mal-63293",
+        "mal_id": 63293,
+        "title": "Firefly Wedding",
+        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx205909-DM0fAzNQulod.jpg",
+        "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/205909-hGeuFYrdhf9S.jpg",
+        "description": "On the surface, Satoko has it all—she’s beautiful, the daughter of a nobleman, and at a prime age for marriage. Unfortunately, she is also quite ill and only has a short time left to live. Before she can secure a marriage that will redeem her worth in her family’s eyes, she finds herself the target of the mysterious assassin Shinpei, and her plans are put in jeopardy. In order to save herself, she makes a desperate proposal—of marriage! When it c",
+        "averageScore": 75,
+        "year": 2026,
+        "genres": [
+          "Drama",
+          "Romance"
+        ],
+        "format": "TV",
+        "episodes": 12,
+        "status": "RELEASING",
+        "siteUrl": "https://anilist.co/anime/205909",
+        "streaming": [
+          {
+            "name": "Crunchyroll",
+            "url": "https://www.crunchyroll.com/series/GT00383999"
+          }
+        ],
+        "next": {
+          "at": 1792765800,
           "episode": 3
         },
         "source": "snapshot",
-        "description_es": "Esta es una historia de cuatro chicas que viven en el \"Dark Side\" de Academy City. En la Ciudad de la Academia donde el \"ESP\" ha sido reconocido como una ciencia general. Detrás de la paz, hay una organización del lado oscuro que realiza misiones que no pueden hacerse públicas. \"ITEM\" es una unidad de élite compuesta por cuatro chicas. Takitsubo Rikou es capaz de leer y rastrear los campos AIM emitidos por aquellos con capacidades. Frenda Seivelun, que destaca en combate utilizando explosivos y t"
+        "description_es": "En la superficie, Satoko lo tiene todo, es hermosa, la hija de un noble, y a una edad temprana para el matrimonio. Desafortunadamente, ella también está bastante enferma y sólo tiene un corto tiempo para vivir. Antes de que pueda conseguir un matrimonio que redimirá su valor en los ojos de su familia, se encuentra el blanco del misterioso asesino Shinpei, y sus planes están en peligro. ¡Para salvarse, hace una propuesta desesperada de matrimonio! Cuando c"
+      },
+      {
+        "id": "mal-59787",
+        "mal_id": 59787,
+        "title": "Romelia War Chronicle",
+        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx180894-o3pz4DWFm3je.png",
+        "banner": "",
+        "description": "Romelia and her party succeed in defeating the Demon King Zelgis, though Prince Henri’s reckless charge forces them into a grueling battle. In the aftermath, Romelia is branded \"dead weight\" for not fighting directly, and the Prince unilaterally breaks off their engagement. Denied a place in the victory celebrations, Romelia returns home, only to be met with cold indifference from her family and society. Yet, she refuses to break. She has already",
+        "averageScore": 69,
+        "year": 2026,
+        "genres": [
+          "Adventure",
+          "Drama",
+          "Fantasy"
+        ],
+        "format": "ONA",
+        "episodes": 0,
+        "status": "RELEASING",
+        "siteUrl": "https://anilist.co/anime/180894",
+        "streaming": [
+          {
+            "name": "YouTube",
+            "url": "https://www.youtube.com/@anime.romeliasenki"
+          },
+          {
+            "name": "Crunchyroll",
+            "url": "https://www.crunchyroll.com/series/GT00384007/romelia-war-chronicle"
+          }
+        ],
+        "next": {
+          "at": 1792843200,
+          "episode": 4
+        },
+        "source": "snapshot",
+        "description_es": "Romelia y su partido tienen éxito en derrotar al Rey demonio Zelgis, aunque la carga imprudente del príncipe Henri los obliga a una batalla agotadora. Después, Romelia se marca \"peso muerto\" por no luchar directamente, y el Príncipe unilateralmente rompe su compromiso. Denegado un lugar en las celebraciones de la victoria, Romelia vuelve a casa, sólo para ser conocido con indiferencia fría de su familia y sociedad. Sin embargo, se niega a romper. Ella ya tiene"
+      },
+      {
+        "id": "mal-61469",
+        "mal_id": 61469,
+        "title": "STEEL BALL RUN JoJo's Bizarre Adventure 2nd - 3rd STAGE",
+        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx210482-P1VNKbqdJ6Zj.jpg",
+        "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/210482-pYAD0IbzNbgS.jpg",
+        "description": "In the 2nd STAGE, a desert crossing spanning roughly 750 miles- the land that Johnny Joestar and Gyro Zeppeli must challenge, is home to the area that is feared as the \"Devil's Palm.\" In 1875, a threat lurking in said desert wiped out a cavalry of 26 people, eliciting fear from the local native people. As ominous incidents begin to unfold, they are forced to realize that this race is far more than a mere competition. The two press forward, where ",
+        "averageScore": 85,
+        "year": 2026,
+        "genres": [
+          "Action",
+          "Adventure",
+          "Drama",
+          "Mystery",
+          "Supernatural"
+        ],
+        "format": "ONA",
+        "episodes": 11,
+        "status": "RELEASING",
+        "siteUrl": "https://anilist.co/anime/210482",
+        "streaming": [
+          {
+            "name": "Netflix",
+            "url": "https://www.netflix.com/title/82116553"
+          }
+        ],
+        "next": {
+          "at": 1792742400,
+          "episode": 5
+        },
+        "source": "snapshot",
+        "description_es": "En la 2a ETAPA, un cruce desértico que recorre aproximadamente 750 millas- la tierra que Johnny Joestar y Gyro Zeppeli deben desafiar, es el hogar de la zona que se teme como la palma del Diablo. En 1875, una amenaza que acechaba en dicho desierto borró una caballería de 26 personas, provocando temor de los nativos locales. A medida que los incidentes ominosos comienzan a desarrollarse, se ven obligados a darse cuenta de que esta carrera es mucho más que una mera competencia. Las dos prensas hacia adelante, donde"
+      },
+      {
+        "id": "mal-59741",
+        "mal_id": 59741,
+        "title": "The Exiled Heavy Knight Knows How to Game the System",
+        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx180136-gtMTCRlOD4OE.jpg",
+        "banner": "",
+        "description": "Born into a prestigious family of master swordsmen, Elymas Edvaughn’s future shatters when he awakens the so-called “defective” Heavy Knight class. Disowned and cast out, he regains memories of another life—and realizes this world mirrors a VR game he once mastered. Armed with knowledge no one else possesses, he sets out to rewrite his fate and prove the strength of the “weakest” class.\n\n(Source: Crunchyroll)",
+        "averageScore": 68,
+        "year": 2026,
+        "genres": [
+          "Action",
+          "Fantasy"
+        ],
+        "format": "TV",
+        "episodes": 26,
+        "status": "RELEASING",
+        "siteUrl": "https://anilist.co/anime/180136",
+        "streaming": [
+          {
+            "name": "Crunchyroll",
+            "url": "https://www.crunchyroll.com/series/GT00378018/the-exiled-heavy-knight-knows-how-to-game-the-system"
+          },
+          {
+            "name": "YouTube",
+            "url": "https://www.youtube.com/playlist?list=PLwLSw1_eDZl3yq1oZEC8iNCwgMsg0NmIZ"
+          },
+          {
+            "name": "Bilibili TV",
+            "url": "https://www.bilibili.tv/media/2411725"
+          },
+          {
+            "name": "iQ",
+            "url": "https://www.iq.com/album/a5a0t3nwm1"
+          }
+        ],
+        "next": {
+          "at": 1792682760,
+          "episode": 17
+        },
+        "source": "snapshot",
+        "description_es": "Elymas Edvaughn nace en una prestigiosa familia de maestros espadachines, pero su futuro se derrumba cuando despierta la clase de Caballero Pesado, considerada defectuosa. Rechazado y expulsado, recupera recuerdos de una vida anterior y descubre que ese mundo se parece a un videojuego de realidad virtual que conocía muy bien. Gracias a secretos que nadie más posee, decide cambiar su destino y demostrar el verdadero poder de la clase que todos consideran la más débil."
       },
       {
         "id": "mal-269",
@@ -391,91 +557,35 @@
         "description_es": "Ichigo Kurosaki es un estudiante de secundaria bastante normal, aparte del hecho de que tiene la capacidad de ver fantasmas. Esta habilidad nunca impactó su vida de una manera importante hasta el día en que se encuentra con el Shinigami Kuchiki Rukia, que lo salva y la vida de su familia de un Hollow, un espíritu corrupto que devora las almas humanas. Herido durante la lucha contra el Hollow, Rukia elige la única opción disponible para derrotar al monstruo y pasa su pow Shinigami"
       },
       {
-        "id": "mal-63181",
-        "mal_id": 63181,
-        "title": "TOUGEN ANKI: Nikko Kegon Falls Arc",
-        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx204650-cAQOzQ84Lwk8.png",
-        "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/204650-MpownoVlYv69.jpg",
-        "description": "After battling in Kyoto and Nerima, the Rasetsu Academy students have grown stronger. But Yaoroshi leaves the academy to join the Oni Brigade for their \"the total eradication of the Momotaro.\"\n\nWhen Shiki realizes that they also target noncombatants, he sets out after Yaoroshi to bring him back. Meanwhile in Nikko, there's a research facility for horrific experiments atop the old Kegon Falls…\n\n(Source: REMOW)",
-        "averageScore": 71,
+        "id": "mal-63801",
+        "mal_id": 63801,
+        "title": "Ranma1/2 (2024) Season 3",
+        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx209872-RBeVPqwejHFp.jpg",
+        "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/209872-Qczb4k9Mw0pq.jpg",
+        "description": "The third season of Ranma 1/2 (2024).",
+        "averageScore": 77,
         "year": 2026,
         "genres": [
           "Action",
-          "Mystery",
-          "Supernatural"
-        ],
-        "format": "TV",
-        "episodes": 12,
-        "status": "RELEASING",
-        "siteUrl": "https://anilist.co/anime/204650",
-        "streaming": [
-          {
-            "name": "YouTube",
-            "url": "https://www.youtube.com/@tougen_anki"
-          },
-          {
-            "name": "Crunchyroll",
-            "url": "https://www.crunchyroll.com/series/GP5HJ84D2/tougen-anki"
-          },
-          {
-            "name": "Bilibili TV",
-            "url": "https://www.bilibili.tv/en/media/2431878"
-          },
-          {
-            "name": "Amazon Prime Video",
-            "url": "https://www.amazon.com/dp/B0FCM3YGCQ"
-          },
-          {
-            "name": "Netflix",
-            "url": "https://www.netflix.com/title/81969861"
-          }
-        ],
-        "next": {
-          "at": 1792765800,
-          "episode": 4
-        },
-        "source": "snapshot",
-        "description_es": "Después de luchar en Kioto y Nerima, los estudiantes de la Academia Rasetsu se han hecho más fuertes. Pero Yaoroshi deja la academia para unirse a la Brigada Oni por su \"erración total del Momotaro\". Cuando Shiki se da cuenta de que también apuntan a los no combatientes, se pone después de Yaoroshi para traerlo de vuelta. Mientras tanto, en Nikko, hay una instalación de investigación para experimentos horribles en la antigua Kegon Falls... (Fuente: REMOW)"
-      },
-      {
-        "id": "mal-63431",
-        "mal_id": 63431,
-        "title": "The Laid-Off Cheat-Granting Mage Enjoys a Second Lease on Life",
-        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b207329-6VPeZIDfF4Sr.png",
-        "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/207329-9IqRSKIsM3TC.jpg",
-        "description": "Rein, an enchanter, is suddenly expelled from his guild one day. But instead of despairing, he declares, “Now I can do anything!” and begins reclaiming the massive number of enhancement points he once poured into his guildmates’ gear, setting off on a brand-new path as an adventurer.\nGathering around him are people carrying wounds that don’t fade easily: a genius adventurer who shut her heart after her party was slaughtered, a warrior who lost he",
-        "averageScore": 74,
-        "year": 2026,
-        "genres": [
-          "Adventure",
           "Comedy",
-          "Fantasy",
-          "Slice of Life"
+          "Romance"
         ],
         "format": "TV",
         "episodes": 0,
         "status": "RELEASING",
-        "siteUrl": "https://anilist.co/anime/207329",
+        "siteUrl": "https://anilist.co/anime/209872",
         "streaming": [
           {
-            "name": "Crunchyroll",
-            "url": "https://www.crunchyroll.com/series/GT00384016/"
-          },
-          {
-            "name": "YouTube",
-            "url": "https://www.youtube.com/playlist?list=PLcCDyXGi-y_w"
-          },
-          {
-            "name": "Bilibili TV",
-            "url": "https://www.bilibili.tv/en/media/2432178"
+            "name": "Netflix",
+            "url": "https://www.netflix.com/title/81171925"
           }
         ],
         "next": {
-          "at": 1792508400,
-          "episode": 3
+          "at": 1792857360,
+          "episode": 4
         },
         "source": "snapshot",
-        "description_es": "Rein, un encantador, es expulsado de su gremio un día. Pero en lugar de desesperar, declara, “¡Ahora puedo hacer cualquier cosa!” y comienza a reclamar el enorme número de puntos de mejora que una vez vierte en el equipo de sus compañeros, a partir de un nuevo camino como aventurero. Reunirse a su alrededor son personas que llevan heridas que no se desvanecen fácilmente: un genio aventurero que cerró su corazón después de que su partido fue masacrado, un guerrero que perdió"
+        "description_es": "La tercera temporada de Ranma 1/2 (2024)."
       },
       {
         "id": "mal-59193",
@@ -521,6 +631,105 @@
         "next": null,
         "source": "snapshot",
         "description_es": "La tercera temporada de Mushoku Tensei: Isekai Ittara Honki Dasu."
+      },
+      {
+        "id": "mal-59088",
+        "mal_id": 59088,
+        "title": "Tokyo Revengers: War of the Three Titans Arc",
+        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx178083-bg7pg6TCHwtG.jpg",
+        "banner": "",
+        "description": "Sequel to Tokyo Revengers: Tenjiku-hen.",
+        "averageScore": 76,
+        "year": 2026,
+        "genres": [
+          "Action",
+          "Drama",
+          "Romance",
+          "Supernatural"
+        ],
+        "format": "TV",
+        "episodes": 13,
+        "status": "RELEASING",
+        "siteUrl": "https://anilist.co/anime/178083",
+        "streaming": [
+          {
+            "name": "YouTube",
+            "url": "https://www.youtube.com/@animetoman"
+          },
+          {
+            "name": "Hulu",
+            "url": "https://www.hulu.com/series/1a195a35-e19c-4e36-b609-3b1c451f6ce4"
+          }
+        ],
+        "next": {
+          "at": 1792774380,
+          "episode": 4
+        },
+        "source": "snapshot",
+        "description_es": "Secuela de los Revengers de Tokio: Tenjiku-hen."
+      },
+      {
+        "id": "mal-61999",
+        "mal_id": 61999,
+        "title": "The Vermilion Mask",
+        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx195571-fvj7u5GI7BRT.jpg",
+        "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/195571-UkdB06UpyL8k.jpg",
+        "description": "\"The Mask” gives power to anyone who wears it.\n\nAt times, that means endless possibility, or unimaginable tragedy…\n\nPeru, pupil of the legendary mask maker Gaston Roux, becomes controlled by the “Mask of the Warrior God,” and unintentionally kills his friends, and even his own master.\n\nIn order to prevent this type of tragedy from reoccurring, Peru swears to destroy all of Gaston’s masks that are spread around the world. Confronting the sins that",
+        "averageScore": 68,
+        "year": 2026,
+        "genres": [
+          "Action",
+          "Drama",
+          "Supernatural"
+        ],
+        "format": "TV",
+        "episodes": 0,
+        "status": "RELEASING",
+        "siteUrl": "https://anilist.co/anime/195571",
+        "streaming": [
+          {
+            "name": "Crunchyroll",
+            "url": "https://www.crunchyroll.com/watch/GE00384363JAJP"
+          }
+        ],
+        "next": {
+          "at": 1792830600,
+          "episode": 3
+        },
+        "source": "snapshot",
+        "description_es": "\"La máscara\" da poder a cualquiera que la use. A veces, eso significa una posibilidad interminable, o una tragedia inimaginable... Perú, alumno del legendario fabricante de máscaras Gaston Roux, se hace controlado por el “Mask del Dios Guerrero”, y mata involuntariamente a sus amigos, e incluso a su propio maestro. Para evitar que este tipo de tragedia vuelva a ocurrir, Perú jura destruir todas las máscaras de Gaston que se extienden por todo el mundo. Frente a los pecados que"
+      },
+      {
+        "id": "mal-64534",
+        "mal_id": 64534,
+        "title": "The Ramparts of Ice Season 2",
+        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx213805-Nokui3uWlIlw.png",
+        "banner": "",
+        "description": "Koyuki, the isolated girl; Miki, the former school idol; Minato, the guy with no concept of personal space; and Youta, the gentle basketball player. Clumsy, frustrating, yet deeply endearing — this coming-of-age ensemble drama of crisscrossing hearts marches on.\n\nAs they grow closer, Koyuki and Minato begin to develop feelings for each other that go beyond mere friendship. Meanwhile, Youta finally confesses to Miki the feelings he's harbored for ",
+        "averageScore": 81,
+        "year": 2026,
+        "genres": [
+          "Comedy",
+          "Drama",
+          "Romance",
+          "Slice of Life"
+        ],
+        "format": "TV",
+        "episodes": 0,
+        "status": "RELEASING",
+        "siteUrl": "https://anilist.co/anime/213805",
+        "streaming": [
+          {
+            "name": "Netflix",
+            "url": "https://www.netflix.com/title/82031882"
+          }
+        ],
+        "next": {
+          "at": 1792680960,
+          "episode": 4
+        },
+        "source": "snapshot",
+        "description_es": "Koyuki, la chica aislada; Miki, el antiguo ídolo escolar; Minato, el tipo sin concepto de espacio personal; y Youta, el amable jugador de baloncesto. Clumsy, frustrante, pero profundamente apasionante — este drama que se acerca a la edad de los corazones cruzados avanza. A medida que se acercan, Koyuki y Minato comienzan a desarrollar sentimientos entre sí que van más allá de la mera amistad. Mientras tanto, Youta finalmente confiesa a Miki los sentimientos por los que ha albergado"
       },
       {
         "id": "mal-61316",
@@ -571,51 +780,6 @@
         "description_es": "En la batalla mortal en Priestella, Subaru y sus aliados surgieron victoriosos, pero a gran costo. Mientras Subaru busca una manera de salvar a Rem, Crusch y Julius, aprende de una \"mujer sabia\", Shaula, una persona que todo lo ve para poseer toda forma de conocimiento, que reside en la Watchtower de Pleiades. Subaru y su tripulación deben desafiar a las dunas de Auguria sin explotar para recuperar lo que se perdió. (Fuente: Crunchyroll) Nota: Lucca Comics & Games pre-screened epis"
       },
       {
-        "id": "mal-59970",
-        "mal_id": 59970,
-        "title": "That Time I Got Reincarnated as a Slime Season 4",
-        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx182205-q2AeO1owuQbO.jpg",
-        "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/182205-fRUoKv6f2JAq.jpg",
-        "description": "Demon Lord Rimuru's dream of creating an alliance between humans and monsters takes a step closer to being realized. As Tempest continues to prosper, Granville Rozzo and his granddaughter, Maribel Rozzo, clash with Demon Lord Rimuru over their plan to protect mankind by ruling over them. Meanwhile, in El Dorado, Demon Lord Leon works toward goals of his own. The awakening of a new Hero draws near!\n\n(Source: Crunchyroll News)",
-        "averageScore": 83,
-        "year": 2026,
-        "genres": [
-          "Action",
-          "Adventure",
-          "Comedy",
-          "Fantasy"
-        ],
-        "format": "TV",
-        "episodes": 24,
-        "status": "FINISHED",
-        "siteUrl": "https://anilist.co/anime/182205",
-        "streaming": [
-          {
-            "name": "Crunchyroll",
-            "url": "https://www.crunchyroll.com/series/GYZJ43JMR/that-time-i-got-reincarnated-as-a-slime"
-          },
-          {
-            "name": "iQ",
-            "url": "https://www.iq.com/album/jkfiu4aeb5"
-          },
-          {
-            "name": "YouTube",
-            "url": "https://www.youtube.com/playlist?list=PLwLSw1_eDZl3_YNRvXA7O89pNPsj1WIkb"
-          },
-          {
-            "name": "Bilibili TV",
-            "url": "https://www.bilibili.tv/en/media/2342192"
-          },
-          {
-            "name": "Netflix",
-            "url": "https://www.netflix.com/title/81028712"
-          }
-        ],
-        "next": null,
-        "source": "snapshot",
-        "description_es": "El sueño del Demonio Lord Rimuru de crear una alianza entre humanos y monstruos lleva un paso más cerca de ser realizado. Mientras Tempest continúa prosperando, Granville Rozzo y su nieta, Maribel Rozzo, chocan con el Señor demonio Rimuru sobre su plan de proteger a la humanidad gobernando sobre ellos. Mientras tanto, en El Dorado, el Demonio Lord León trabaja hacia metas propias. ¡El despertar de un nuevo héroe se acerca! (Fuente: Crunchyroll News)"
-      },
-      {
         "id": "mal-64340",
         "mal_id": 64340,
         "title": "Overgeared",
@@ -646,53 +810,6 @@
         },
         "source": "snapshot",
         "description_es": "Sin Yeong-U (a.k.a. Grid), un hombre desafortunado en la vida y un jugador de bajo nivel en el popular juego VR “Satisfy”, encuentra un poderoso artículo que le gana un raro título legendario de clase: “El Sucesor de Pagma”. Ahora es un herrero experto que puede forjar armas únicas y equipar el equipo más poderoso del juego. Grid resuelve usar sus nuevas habilidades para alcanzar la fama y la fortuna, pero cuando su propia existencia comienza a provocar problemas en Satisfeo, se da cuenta de que la vida es una"
-      },
-      {
-        "id": "mal-53913",
-        "mal_id": 53913,
-        "title": "Reincarnated as a Sword Season 2",
-        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx159042-GGFwlDskc5vR.png",
-        "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/159042-X0mqyaUFBkms.jpg",
-        "description": "The second season of Tensei Shitara Ken Deshita.\nNote: Each episode was streamed one week in advance of the TV broadcast starting on October 1, 2026 on Abema. Regular broadcasting began on October 8, 2026.",
-        "averageScore": 75,
-        "year": 2026,
-        "genres": [
-          "Action",
-          "Adventure",
-          "Fantasy"
-        ],
-        "format": "ONA",
-        "episodes": 12,
-        "status": "RELEASING",
-        "siteUrl": "https://anilist.co/anime/159042",
-        "streaming": [
-          {
-            "name": "HIDIVE",
-            "url": "https://www.hidive.com/season/39506"
-          },
-          {
-            "name": "Amazon Prime Video",
-            "url": "https://www.amazon.com/gp/video/detail/B0HLCHQS6T"
-          },
-          {
-            "name": "iQ",
-            "url": "https://www.iq.com/album/1v4ebkyoz21"
-          },
-          {
-            "name": "YouTube",
-            "url": "https://www.youtube.com/playlist?list=PLcSpWjb7H0lk"
-          },
-          {
-            "name": "Bilibili TV",
-            "url": "https://www.bilibili.tv/en/media/2432099"
-          }
-        ],
-        "next": {
-          "at": 1792596600,
-          "episode": 4
-        },
-        "source": "snapshot",
-        "description_es": "La segunda temporada de Tensei Mierda Ken Deshita. Nota: Cada episodio fue transmitido una semana antes de la emisión de televisión a partir del 1 de octubre de 2026 en Abema. La radiodifusión regular comenzó el 8 de octubre de 2026."
       },
       {
         "id": "mal-1735",
@@ -742,69 +859,13 @@
         "description_es": "Naruto: Shippuuden es la continuación de la serie original de televisión animada Naruto. La historia gira alrededor de un Uzumaki Naruto mayor y ligeramente más maduro y su búsqueda para salvar a su amigo Uchiha Sasuke de las garras de la serpiente como Shinobi, Orochimaru. Después de 2 años y medio Naruto finalmente regresa a su pueblo de Konoha, y se pone sobre poner sus ambiciones a trabajar, aunque no será fácil, ya que ha acumulado algunos (más peligroso) en"
       },
       {
-        "id": "mal-11061",
-        "mal_id": 11061,
-        "title": "Hunter x Hunter (2011)",
-        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx11061-y5gsT1hoHuHw.png",
-        "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/11061-8WkkTZ6duKpq.jpg",
-        "description": "A Hunter is one who travels the world doing all sorts of dangerous tasks. From capturing criminals to searching deep within uncharted lands for any lost treasures. Gon is a young boy whose father disappeared long ago, being a Hunter. He believes if he could also follow his father's path, he could one day reunite with him.\nAfter becoming 12, Gon leaves his home and takes on the task of entering the Hunter exam, notorious for its low success rate a",
-        "averageScore": 89,
-        "year": 2011,
-        "genres": [
-          "Action",
-          "Adventure",
-          "Fantasy"
-        ],
-        "format": "TV",
-        "episodes": 148,
-        "status": "FINISHED",
-        "siteUrl": "https://anilist.co/anime/11061",
-        "streaming": [
-          {
-            "name": "Hulu",
-            "url": "https://www.hulu.com/hunter-x-hunter"
-          },
-          {
-            "name": "Netflix",
-            "url": "https://www.netflix.com/title/70300472"
-          },
-          {
-            "name": "Tubi TV",
-            "url": "https://tubitv.com/series/1627/hunter_x_hunter"
-          },
-          {
-            "name": "Bilibili",
-            "url": "https://www.bilibili.tv/en/play/37603"
-          },
-          {
-            "name": "YouTube",
-            "url": "https://youtube.com/playlist?list=PLwLSw1_eDZl2SdSro00Nvg38MQUf-5ZL8"
-          },
-          {
-            "name": "Hoopla",
-            "url": "https://www.hoopladigital.com/series/hunter-x-hunter-dubbed/11834349593"
-          },
-          {
-            "name": "Hoopla",
-            "url": "https://www.hoopladigital.com/series/hunter-x-hunter-subbed/11834349354"
-          },
-          {
-            "name": "Amazon Prime Video",
-            "url": "https://www.amazon.com/Hunter-Japanese-English-Subs/dp/B0B5X87G1P"
-          }
-        ],
-        "next": null,
-        "source": "snapshot",
-        "description_es": "Un Hunter es quien viaja por el mundo haciendo todo tipo de tareas peligrosas. Desde la captura de criminales hasta la búsqueda profunda dentro de tierras inexploradas por cualquier tesoro perdido. Gon es un niño cuyo padre desapareció hace mucho tiempo, siendo un cazador. Cree que si también pudiera seguir el camino de su padre, un día podría reunirse con él. Después de convertirse en 12, Gon deja su casa y se ocupa de la tarea de entrar en el examen Hunter, notorio por su bajo índice de éxito"
-      },
-      {
-        "id": "mal-61967",
-        "mal_id": 61967,
-        "title": "Black Clover Season 2",
-        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx195604-tSZcfKbVqSEG.jpg",
-        "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/195604-lQpCzTziSA17.jpg",
-        "description": "As tyranny engulfs the Clover Kingdom, Asta and the Magic Knights launch a desperate raid on the Spade Kingdom to rescue their squad captains from the Dark Triad. But their mission leads them into a brutal battle against forces beyond anything they’ve ever faced. Now, Asta must rise above impossible odds to protect his friends and honor the promise he made to Yuno.\n\n(Source: Crunchyroll)",
-        "averageScore": 86,
+        "id": "mal-59970",
+        "mal_id": 59970,
+        "title": "That Time I Got Reincarnated as a Slime Season 4",
+        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx182205-q2AeO1owuQbO.jpg",
+        "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/182205-fRUoKv6f2JAq.jpg",
+        "description": "Demon Lord Rimuru's dream of creating an alliance between humans and monsters takes a step closer to being realized. As Tempest continues to prosper, Granville Rozzo and his granddaughter, Maribel Rozzo, clash with Demon Lord Rimuru over their plan to protect mankind by ruling over them. Meanwhile, in El Dorado, Demon Lord Leon works toward goals of his own. The awakening of a new Hero draws near!\n\n(Source: Crunchyroll News)",
+        "averageScore": 83,
         "year": 2026,
         "genres": [
           "Action",
@@ -813,169 +874,65 @@
           "Fantasy"
         ],
         "format": "TV",
-        "episodes": 0,
-        "status": "RELEASING",
-        "siteUrl": "https://anilist.co/anime/195604",
+        "episodes": 24,
+        "status": "FINISHED",
+        "siteUrl": "https://anilist.co/anime/182205",
         "streaming": [
           {
             "name": "Crunchyroll",
-            "url": "https://www.crunchyroll.com/series/GRE50KV36/black-clover"
-          },
-          {
-            "name": "Bilibili TV",
-            "url": "https://www.bilibili.tv/en/media/2432940"
+            "url": "https://www.crunchyroll.com/series/GYZJ43JMR/that-time-i-got-reincarnated-as-a-slime"
           },
           {
             "name": "iQ",
-            "url": "https://www.iq.com/album/qchxviq611"
-          }
-        ],
-        "next": {
-          "at": 1792245600,
-          "episode": 3
-        },
-        "source": "snapshot",
-        "description_es": "A medida que la tiranía envuelve el Reino de Clover, Asta y los Caballeros Mágicos lanzan una redada desesperada en el Reino de Spade para rescatar a sus capitanes de la Tribu Oscura. Pero su misión los lleva a una batalla brutal contra las fuerzas más allá de cualquier cosa que hayan enfrentado. Ahora, Asta debe elevarse por encima de las probabilidades imposibles de proteger a sus amigos y honrar la promesa que hizo a Yuno. (Fuente: Crunchyroll)"
-      },
-      {
-        "id": "mal-63061",
-        "mal_id": 63061,
-        "title": "Please Excuse My Younger Brothers",
-        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx203490-YQXiymUiDQNA.jpg",
-        "banner": "",
-        "description": "The manga centers on high school student Ito Hazui. During her spring break at the end of her first year of high school, Ito's mother remarries, and Ito moves to live with her new family, becoming Ito Narita. Upon arriving at her new house, Ito is shocked to learn she now has four younger step-brothers. Ito tries her hardest to get along with all of the new members of her family, but the eldest brother Gen is a bit cold to her. However, under his",
-        "averageScore": 69,
-        "year": 2026,
-        "genres": [
-          "Comedy",
-          "Romance",
-          "Slice of Life"
-        ],
-        "format": "TV",
-        "episodes": 24,
-        "status": "RELEASING",
-        "siteUrl": "https://anilist.co/anime/203490",
-        "streaming": [
+            "url": "https://www.iq.com/album/jkfiu4aeb5"
+          },
           {
-            "name": "Crunchyroll",
-            "url": "https://www.crunchyroll.com/series/GT00371926/"
-          }
-        ],
-        "next": {
-          "at": 1792767600,
-          "episode": 16
-        },
-        "source": "snapshot",
-        "description_es": "El manga se centra en el estudiante de secundaria Ito Hazui. Durante su descanso de primavera al final de su primer año de secundaria, la madre de Ito se vuelve a casar, y Ito se mueve a vivir con su nueva familia, convirtiéndose en Ito Narita. Al llegar a su nueva casa, Ito está conmocionado por saber que ahora tiene cuatro hermanos de paso más jóvenes. Ito trata de que ella sea más difícil de llevar con todos los nuevos miembros de su familia, pero el hermano mayor Gen es un poco frío para ella. Sin embargo, bajo su"
-      },
-      {
-        "id": "mal-54492",
-        "mal_id": 54492,
-        "title": "The Apothecary Diaries",
-        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx161645-QLbzHXiYRgV2.jpg",
-        "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/161645-oqzTZYIvviWI.jpg",
-        "description": "Maomao lived a peaceful life with her apothecary father. Until one day, she’s sold as a lowly servant to the emperor’s palace. But she wasn’t meant for a compliant life among royalty. So when imperial heirs fall ill, she decides to step in and find a cure! This catches the eye of Jinshi, a handsome palace official who promotes her. Now, she’s making a name for herself solving medical mysteries!\n\n(Source: Crunchyroll)",
-        "averageScore": 88,
-        "year": 2023,
-        "genres": [
-          "Drama",
-          "Mystery"
-        ],
-        "format": "TV",
-        "episodes": 24,
-        "status": "FINISHED",
-        "siteUrl": "https://anilist.co/anime/161645",
-        "streaming": [
+            "name": "YouTube",
+            "url": "https://www.youtube.com/playlist?list=PLwLSw1_eDZl3_YNRvXA7O89pNPsj1WIkb"
+          },
           {
-            "name": "Crunchyroll",
-            "url": "https://www.crunchyroll.com/series/G3KHEVDJ7/the-apothecary-diaries"
+            "name": "Bilibili TV",
+            "url": "https://www.bilibili.tv/en/media/2342192"
           },
           {
             "name": "Netflix",
-            "url": "https://www.netflix.com/title/81712068"
-          },
-          {
-            "name": "Hulu",
-            "url": "https://www.hulu.com/series/the-apothecary-diaries-d7b5390e-b8cb-4cc3-ba7c-7ed570355d7d"
+            "url": "https://www.netflix.com/title/81028712"
           }
         ],
         "next": null,
         "source": "snapshot",
-        "description_es": "Maomao vivió una vida pacífica con su padre apothecary. Hasta un día, se vende como una sirvienta humilde al palacio del emperador. Pero no estaba destinada a una vida digna entre la realeza. Así que cuando los herederos imperiales se enferman, ella decide entrar y encontrar una cura! Esto atrapa el ojo de Jinshi, un apuesto oficial del palacio que la promueve. ¡Ahora, está haciendo un nombre para ella misma resolviendo misterios médicos! (Fuente: Crunchyroll)"
+        "description_es": "El sueño del Demonio Lord Rimuru de crear una alianza entre humanos y monstruos lleva un paso más cerca de ser realizado. Mientras Tempest continúa prosperando, Granville Rozzo y su nieta, Maribel Rozzo, chocan con el Señor demonio Rimuru sobre su plan de proteger a la humanidad gobernando sobre ellos. Mientras tanto, en El Dorado, el Demonio Lord León trabaja hacia metas propias. ¡El despertar de un nuevo héroe se acerca! (Fuente: Crunchyroll News)"
       },
       {
-        "id": "mal-61578",
-        "mal_id": 61578,
-        "title": "Even the Student Council Has Its Holes!",
-        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx191656-xFHtxM8SUTdU.png",
-        "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/191656-JQILdzh3FQxN.jpg",
-        "description": "This is Fujinasu Academy, a private high school with top-achieving students located on the outskirts of town.\n\nHigh School 1st-Year Ume Mizunoe has excellent grades in Japanese language class and has received multiple literary awards.\nHowever, his terrible grades in the sciences are affecting his ability to move up a grade. To avoid repeating a year, he becomes a member of the student council to improve his academic standing.\n\nHowever, in the stu",
-        "averageScore": 73,
+        "id": "mal-61323",
+        "mal_id": 61323,
+        "title": "Blue Box Season 2",
+        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx189123-0secXELIhkIW.jpg",
+        "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/189123-s2oirY2r1Svy.jpg",
+        "description": "The second season of Ao no Hako.\n",
+        "averageScore": 81,
         "year": 2026,
         "genres": [
-          "Comedy",
-          "Ecchi",
-          "Slice of Life"
+          "Romance",
+          "Slice of Life",
+          "Sports"
         ],
         "format": "TV",
         "episodes": 12,
         "status": "RELEASING",
-        "siteUrl": "https://anilist.co/anime/191656",
+        "siteUrl": "https://anilist.co/anime/189123",
         "streaming": [
           {
-            "name": "OceanVeil",
-            "url": "https://oceanveil.net/anime_titles/542"
-          },
-          {
-            "name": "Bilibili TV",
-            "url": "https://www.bilibili.tv/en/media/2433041"
-          },
-          {
-            "name": "iQ",
-            "url": "https://www.iq.com/album/28ki6pjn6a1"
+            "name": "Netflix",
+            "url": "https://www.netflix.com/title/81663323"
           }
         ],
         "next": {
-          "at": 1792251000,
-          "episode": 3
+          "at": 1792913400,
+          "episode": 4
         },
         "source": "snapshot",
-        "description_es": "Esta es la Academia Fujinasu, una escuela secundaria privada con estudiantes de primer nivel ubicados en las afueras de la ciudad. High School 1er año Ume Mizunoe tiene excelentes calificaciones en la clase de idioma japonés y ha recibido múltiples premios literarios. Sin embargo, sus calificaciones terribles en las ciencias están afectando su capacidad de avanzar en un grado. Para evitar repetir un año, se convierte en miembro del consejo estudiantil para mejorar su posición académica. Sin embargo, en el estudio"
-      },
-      {
-        "id": "mal-64254",
-        "mal_id": 64254,
-        "title": "The Iceblade Sorcerer Shall Rule the World II",
-        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx212503-sXBpRZr96c4e.jpg",
-        "banner": "",
-        "description": "Once dismissed as the sole ordinary student at the elite Arnold Academy of Sorcery, Ray White—secretly, the Iceblade Sorcerer—has finally earned his place. With a new school year comes a new challenge: The Magicks War, a grand competition pitting teams from rival schools against each other. But an ominous shadow looms over Ray and his friends as the other grand sorcerers plot their next moves.\n\n(Source: Crunchyroll)",
-        "averageScore": 67,
-        "year": 2026,
-        "genres": [
-          "Action",
-          "Adventure",
-          "Fantasy"
-        ],
-        "format": "TV",
-        "episodes": 0,
-        "status": "RELEASING",
-        "siteUrl": "https://anilist.co/anime/212503",
-        "streaming": [
-          {
-            "name": "Crunchyroll",
-            "url": "https://www.crunchyroll.com/series/GDKHZEP21/the-iceblade-sorcerer-shall-rule-the-world"
-          },
-          {
-            "name": "Bilibili TV",
-            "url": "https://www.bilibili.tv/en/media/2432333"
-          }
-        ],
-        "next": {
-          "at": 1792686480,
-          "episode": 3
-        },
-        "source": "snapshot",
-        "description_es": "Una vez despedido como el único estudiante ordinario de la élite Arnold Academy of Sorcery, Ray White — secretamente, el Hechicero de Iceblade— finalmente ha ganado su lugar. Con un nuevo año escolar surge un nuevo desafío: La Guerra de los Magos, una gran competencia que enfrenta equipos de escuelas rivales entre sí. Pero una sombra ominosa sobre Ray y sus amigos mientras los otros grandes hechiceros trazan sus próximos movimientos. (Fuente: Crunchyroll)"
+        "description_es": "La segunda temporada de Ao no Hako."
       }
     ],
     "popular": [
@@ -2020,6 +1977,124 @@
     ],
     "season": [
       {
+        "id": "mal-61967",
+        "mal_id": 61967,
+        "title": "Black Clover Season 2",
+        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx195604-tSZcfKbVqSEG.jpg",
+        "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/195604-lQpCzTziSA17.jpg",
+        "description": "As tyranny engulfs the Clover Kingdom, Asta and the Magic Knights launch a desperate raid on the Spade Kingdom to rescue their squad captains from the Dark Triad. But their mission leads them into a brutal battle against forces beyond anything they’ve ever faced. Now, Asta must rise above impossible odds to protect his friends and honor the promise he made to Yuno.\n\n(Source: Crunchyroll)",
+        "averageScore": 86,
+        "year": 2026,
+        "genres": [
+          "Action",
+          "Adventure",
+          "Comedy",
+          "Fantasy"
+        ],
+        "format": "TV",
+        "episodes": 0,
+        "status": "RELEASING",
+        "siteUrl": "https://anilist.co/anime/195604",
+        "streaming": [
+          {
+            "name": "Crunchyroll",
+            "url": "https://www.crunchyroll.com/series/GRE50KV36/black-clover"
+          },
+          {
+            "name": "Bilibili TV",
+            "url": "https://www.bilibili.tv/en/media/2432940"
+          },
+          {
+            "name": "iQ",
+            "url": "https://www.iq.com/album/qchxviq611"
+          }
+        ],
+        "next": {
+          "at": 1792850400,
+          "episode": 4
+        },
+        "source": "snapshot",
+        "description_es": "A medida que la tiranía envuelve el Reino de Clover, Asta y los Caballeros Mágicos lanzan una redada desesperada en el Reino de Spade para rescatar a sus capitanes de la Tribu Oscura. Pero su misión los lleva a una batalla brutal contra las fuerzas más allá de cualquier cosa que hayan enfrentado. Ahora, Asta debe elevarse por encima de las probabilidades imposibles de proteger a sus amigos y honrar la promesa que hizo a Yuno. (Fuente: Crunchyroll)"
+      },
+      {
+        "id": "mal-61578",
+        "mal_id": 61578,
+        "title": "Even the Student Council Has Its Holes!",
+        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx191656-xFHtxM8SUTdU.png",
+        "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/191656-JQILdzh3FQxN.jpg",
+        "description": "This is Fujinasu Academy, a private high school with top-achieving students located on the outskirts of town.\n\nHigh School 1st-Year Ume Mizunoe has excellent grades in Japanese language class and has received multiple literary awards.\nHowever, his terrible grades in the sciences are affecting his ability to move up a grade. To avoid repeating a year, he becomes a member of the student council to improve his academic standing.\n\nHowever, in the stu",
+        "averageScore": 73,
+        "year": 2026,
+        "genres": [
+          "Comedy",
+          "Ecchi",
+          "Slice of Life"
+        ],
+        "format": "TV",
+        "episodes": 12,
+        "status": "RELEASING",
+        "siteUrl": "https://anilist.co/anime/191656",
+        "streaming": [
+          {
+            "name": "OceanVeil",
+            "url": "https://oceanveil.net/anime_titles/542"
+          },
+          {
+            "name": "Bilibili TV",
+            "url": "https://www.bilibili.tv/en/media/2433041"
+          },
+          {
+            "name": "iQ",
+            "url": "https://www.iq.com/album/28ki6pjn6a1"
+          }
+        ],
+        "next": {
+          "at": 1792855800,
+          "episode": 4
+        },
+        "source": "snapshot",
+        "description_es": "Esta es la Academia Fujinasu, una escuela secundaria privada con estudiantes de primer nivel ubicados en las afueras de la ciudad. High School 1er año Ume Mizunoe tiene excelentes calificaciones en la clase de idioma japonés y ha recibido múltiples premios literarios. Sin embargo, sus calificaciones terribles en las ciencias están afectando su capacidad de avanzar en un grado. Para evitar repetir un año, se convierte en miembro del consejo estudiantil para mejorar su posición académica. Sin embargo, en el estudio"
+      },
+      {
+        "id": "mal-62922",
+        "mal_id": 62922,
+        "title": "Magic Repo Man: Dumped by My Party, I’ll Cash In With a Cute Support Fairy to Become the Strongest!",
+        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx202250-mpm2cvr92Au2.jpg",
+        "banner": "",
+        "description": "If there's one thing you can never have enough of in a world of RPG-style swords and sorcery, it's magic points! Whether you're fueling spells, techniques, or showing off an incredible ability, you've gotta spend those points to do real damage. But what if you run out?\n\nLent is part of the up-and-coming party known as the “Skypiercers,” and thanks to his unique Gift, he can loan massive amounts of magic to others. No MP? No problem with Lent arou",
+        "averageScore": 60,
+        "year": 2026,
+        "genres": [
+          "Action",
+          "Adventure",
+          "Fantasy"
+        ],
+        "format": "TV",
+        "episodes": 0,
+        "status": "RELEASING",
+        "siteUrl": "https://anilist.co/anime/202250",
+        "streaming": [
+          {
+            "name": "Crunchyroll",
+            "url": "https://www.crunchyroll.com/series/GT00385867/magic-repo-man-dumped-by-my-party-ill-cash-in-with-a-cute-support-fairy-to-become-the-strongest"
+          },
+          {
+            "name": "Bilibili TV",
+            "url": "https://www.bilibili.tv/en/media/2432615"
+          },
+          {
+            "name": "YouTube",
+            "url": "https://www.youtube.com/playlist?list=PLAzayY4fPdjw"
+          }
+        ],
+        "next": {
+          "at": 1792859400,
+          "episode": 4
+        },
+        "source": "snapshot",
+        "description_es": "Si hay una cosa que nunca puedes tener suficiente en un mundo de espadas y brujería estilo RPG, ¡es puntos mágicos! Si estás alimentando hechizos, técnicas o mostrando una habilidad increíble, tienes que gastar esos puntos para hacer daño real. ¿Y si te escapas? La Cuaresma es parte de la fiesta de llegada conocida como los \"Skypiercers\", y gracias a su regalo único, puede prestar enormes cantidades de magia a otros. ¿Sin MP? No hay problema con Lent arou"
+      },
+      {
         "id": "mal-61987",
         "mal_id": 61987,
         "title": "The Apothecary Diaries Season 3",
@@ -2052,69 +2127,6 @@
         },
         "source": "snapshot",
         "description_es": "Después de la rebelión del clan Shi, las cosas finalmente se han asentado, y Maomao ha vuelto a su antigua vida como farmacéutico en el distrito de placer. Un día, provocado por un desayuno servido en la Casa Verdigris, Maomao siente una anomalía y comienza a investigar su verdadera naturaleza. Mientras tanto, Jinshi, que ha revelado su verdadera identidad como el hermano imperial y ha comenzado a enfrentar sus pesadas responsabilidades, está profundamente preocupado por la fina"
-      },
-      {
-        "id": "mal-63293",
-        "mal_id": 63293,
-        "title": "Firefly Wedding",
-        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx205909-DM0fAzNQulod.jpg",
-        "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/205909-hGeuFYrdhf9S.jpg",
-        "description": "On the surface, Satoko has it all—she’s beautiful, the daughter of a nobleman, and at a prime age for marriage. Unfortunately, she is also quite ill and only has a short time left to live. Before she can secure a marriage that will redeem her worth in her family’s eyes, she finds herself the target of the mysterious assassin Shinpei, and her plans are put in jeopardy. In order to save herself, she makes a desperate proposal—of marriage! When it c",
-        "averageScore": 75,
-        "year": 2026,
-        "genres": [
-          "Drama",
-          "Romance"
-        ],
-        "format": "TV",
-        "episodes": 12,
-        "status": "RELEASING",
-        "siteUrl": "https://anilist.co/anime/205909",
-        "streaming": [
-          {
-            "name": "Crunchyroll",
-            "url": "https://www.crunchyroll.com/series/GT00383999"
-          }
-        ],
-        "next": {
-          "at": 1792765800,
-          "episode": 3
-        },
-        "source": "snapshot",
-        "description_es": "En la superficie, Satoko lo tiene todo, es hermosa, la hija de un noble, y a una edad temprana para el matrimonio. Desafortunadamente, ella también está bastante enferma y sólo tiene un corto tiempo para vivir. Antes de que pueda conseguir un matrimonio que redimirá su valor en los ojos de su familia, se encuentra el blanco del misterioso asesino Shinpei, y sus planes están en peligro. ¡Para salvarse, hace una propuesta desesperada de matrimonio! Cuando c"
-      },
-      {
-        "id": "mal-61469",
-        "mal_id": 61469,
-        "title": "STEEL BALL RUN JoJo's Bizarre Adventure 2nd - 3rd STAGE",
-        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx210482-P1VNKbqdJ6Zj.jpg",
-        "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/210482-pYAD0IbzNbgS.jpg",
-        "description": "In the 2nd STAGE, a desert crossing spanning roughly 750 miles- the land that Johnny Joestar and Gyro Zeppeli must challenge, is home to the area that is feared as the \"Devil's Palm.\" In 1875, a threat lurking in said desert wiped out a cavalry of 26 people, eliciting fear from the local native people. As ominous incidents begin to unfold, they are forced to realize that this race is far more than a mere competition. The two press forward, where ",
-        "averageScore": 85,
-        "year": 2026,
-        "genres": [
-          "Action",
-          "Adventure",
-          "Drama",
-          "Mystery",
-          "Supernatural"
-        ],
-        "format": "ONA",
-        "episodes": 11,
-        "status": "RELEASING",
-        "siteUrl": "https://anilist.co/anime/210482",
-        "streaming": [
-          {
-            "name": "Netflix",
-            "url": "https://www.netflix.com/title/82116553"
-          }
-        ],
-        "next": {
-          "at": 1792742400,
-          "episode": 5
-        },
-        "source": "snapshot",
-        "description_es": "En la 2a ETAPA, un cruce desértico que recorre aproximadamente 750 millas- la tierra que Johnny Joestar y Gyro Zeppeli deben desafiar, es el hogar de la zona que se teme como la palma del Diablo. En 1875, una amenaza que acechaba en dicho desierto borró una caballería de 26 personas, provocando temor de los nativos locales. A medida que los incidentes ominosos comienzan a desarrollarse, se ven obligados a darse cuenta de que esta carrera es mucho más que una mera competencia. Las dos prensas hacia adelante, donde"
       },
       {
         "id": "mal-21",
@@ -2174,6 +2186,215 @@
         "description_es": "Gold Roger era conocido como el Rey Pirata, el ser más fuerte e infame de haber navegado en la Gran Línea. La captura y muerte de Roger por el Gobierno Mundial trajo un cambio en todo el mundo. Sus últimas palabras antes de su muerte revelaron la ubicación del tesoro más grande del mundo, One Piece. Fue esta revelación que trajo consigo la Gran Era de Piratas, hombres que soñaban con encontrar una pieza (que promete una cantidad ilimitada o"
       },
       {
+        "id": "mal-56733",
+        "mal_id": 56733,
+        "title": "Magical Explorer",
+        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx169581-UlAviVH36Hxi.png",
+        "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/169581-cdooqY7Jqy3x.jpg",
+        "description": "Few titles are more revered among horndogs-(ahem) connoisseurs of Japanese erotic video games-than Magical Explorer. One day, our smut-loving hero wakes up to find he has been reincarnated into the body of the game’s dreamboat protagonist! Or rather, his hapless comic-relief best friend, Kousuke Takioto. But with his unparalleled knowledge of Magical Explorer and Kousuke’s unorthodox abilities (a scarf that doubles as a fist?), our hero vows to t",
+        "averageScore": 68,
+        "year": 2026,
+        "genres": [
+          "Action",
+          "Adventure",
+          "Ecchi",
+          "Fantasy",
+          "Romance"
+        ],
+        "format": "ONA",
+        "episodes": 13,
+        "status": "RELEASING",
+        "siteUrl": "https://anilist.co/anime/169581",
+        "streaming": [
+          {
+            "name": "Crunchyroll",
+            "url": "https://www.crunchyroll.com/series/GT00384003/magical-explorer"
+          }
+        ],
+        "next": {
+          "at": 1792854000,
+          "episode": 5
+        },
+        "source": "snapshot",
+        "description_es": "Pocos títulos son más venerados entre los erizos-(ahem) conocedores de videojuegos eróticos japoneses-que Magical Explorer. Un día, nuestro héroe amante de la mugre se despierta para encontrar que ha sido reencarnado en el cuerpo del protagonista de la lancha del juego! O más bien, su mejor amigo, Kousuke Takioto. Pero con su conocimiento inigualable del Explorador Mágico y las habilidades no ortodoxas de Kousuke (una bufanda que se dobla como un puño?), nuestro héroe promete t"
+      },
+      {
+        "id": "mal-63140",
+        "mal_id": 63140,
+        "title": "A Wild Last Boss Appeared! Season 2",
+        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx204389-jCoFCeTthDMy.jpg",
+        "banner": "",
+        "description": "The second season of Yasei no Last Boss ga Arawareta!",
+        "averageScore": 73,
+        "year": 2026,
+        "genres": [
+          "Action",
+          "Adventure",
+          "Fantasy"
+        ],
+        "format": "ONA",
+        "episodes": 0,
+        "status": "RELEASING",
+        "siteUrl": "https://anilist.co/anime/204389",
+        "streaming": [
+          {
+            "name": "Crunchyroll",
+            "url": "https://www.crunchyroll.com/series/GT00361955/a-wild-last-boss-appeared"
+          },
+          {
+            "name": "YouTube",
+            "url": "https://www.youtube.com/playlist?list=PLbuF5Onrcu9fs9Jo_IR9nZ7WrulQuDup-"
+          }
+        ],
+        "next": {
+          "at": 1792848600,
+          "episode": 5
+        },
+        "source": "snapshot",
+        "description_es": "¡La segunda temporada de Yasei no el último jefe ga Arawareta!"
+      },
+      {
+        "id": "mal-61153",
+        "mal_id": 61153,
+        "title": "A Tale of the Secret Saint",
+        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx187402-ReKkLwFmMV3q.jpg",
+        "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/187402-bRt4OO90jcmt.jpg",
+        "description": "Fia always dreamed of becoming a knight. Born into a family of knights, she’s the least talented among them, but she still clutches to her hope and trains with everything she has. When the day comes for her to slay a small demon and prove her worth, she ends up face to face with a dragon instead! A deadly injury makes her life flash before her eyes…and she suddenly remembers her former life, when she was a powerful Saint in a bygone era who defea",
+        "averageScore": 68,
+        "year": 2026,
+        "genres": [
+          "Action",
+          "Adventure",
+          "Fantasy"
+        ],
+        "format": "ONA",
+        "episodes": 0,
+        "status": "RELEASING",
+        "siteUrl": "https://anilist.co/anime/187402",
+        "streaming": [
+          {
+            "name": "Crunchyroll",
+            "url": "https://www.crunchyroll.com/series/GT00371633"
+          },
+          {
+            "name": "Bilibili TV",
+            "url": "https://www.bilibili.tv/en/media/2431959"
+          },
+          {
+            "name": "YouTube",
+            "url": "https://www.youtube.com/playlist?list=PLFsBVQsxttbw"
+          },
+          {
+            "name": "iQ",
+            "url": "https://www.iq.com/album/1tnlbxdm3vt"
+          }
+        ],
+        "next": {
+          "at": 1792846800,
+          "episode": 5
+        },
+        "source": "snapshot",
+        "description_es": "Fia siempre soñó con convertirse en un caballero. Nacida en una familia de caballeros, es la menos talentosa entre ellos, pero todavía se aferra a su esperanza y trenes con todo lo que tiene. Cuando llega el día para que mate a un pequeño demonio y pruebe su valor, termina cara a cara con un dragón en su lugar! Una herida mortal hace que su vida parpadee ante sus ojos... y de repente recuerda su vida anterior, cuando ella era un poderoso santo en una era pasada que defea"
+      },
+      {
+        "id": "mal-63293",
+        "mal_id": 63293,
+        "title": "Firefly Wedding",
+        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx205909-DM0fAzNQulod.jpg",
+        "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/205909-hGeuFYrdhf9S.jpg",
+        "description": "On the surface, Satoko has it all—she’s beautiful, the daughter of a nobleman, and at a prime age for marriage. Unfortunately, she is also quite ill and only has a short time left to live. Before she can secure a marriage that will redeem her worth in her family’s eyes, she finds herself the target of the mysterious assassin Shinpei, and her plans are put in jeopardy. In order to save herself, she makes a desperate proposal—of marriage! When it c",
+        "averageScore": 75,
+        "year": 2026,
+        "genres": [
+          "Drama",
+          "Romance"
+        ],
+        "format": "TV",
+        "episodes": 12,
+        "status": "RELEASING",
+        "siteUrl": "https://anilist.co/anime/205909",
+        "streaming": [
+          {
+            "name": "Crunchyroll",
+            "url": "https://www.crunchyroll.com/series/GT00383999"
+          }
+        ],
+        "next": {
+          "at": 1792765800,
+          "episode": 3
+        },
+        "source": "snapshot",
+        "description_es": "En la superficie, Satoko lo tiene todo, es hermosa, la hija de un noble, y a una edad temprana para el matrimonio. Desafortunadamente, ella también está bastante enferma y sólo tiene un corto tiempo para vivir. Antes de que pueda conseguir un matrimonio que redimirá su valor en los ojos de su familia, se encuentra el blanco del misterioso asesino Shinpei, y sus planes están en peligro. ¡Para salvarse, hace una propuesta desesperada de matrimonio! Cuando c"
+      },
+      {
+        "id": "mal-59787",
+        "mal_id": 59787,
+        "title": "Romelia War Chronicle",
+        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx180894-o3pz4DWFm3je.png",
+        "banner": "",
+        "description": "Romelia and her party succeed in defeating the Demon King Zelgis, though Prince Henri’s reckless charge forces them into a grueling battle. In the aftermath, Romelia is branded \"dead weight\" for not fighting directly, and the Prince unilaterally breaks off their engagement. Denied a place in the victory celebrations, Romelia returns home, only to be met with cold indifference from her family and society. Yet, she refuses to break. She has already",
+        "averageScore": 69,
+        "year": 2026,
+        "genres": [
+          "Adventure",
+          "Drama",
+          "Fantasy"
+        ],
+        "format": "ONA",
+        "episodes": 0,
+        "status": "RELEASING",
+        "siteUrl": "https://anilist.co/anime/180894",
+        "streaming": [
+          {
+            "name": "YouTube",
+            "url": "https://www.youtube.com/@anime.romeliasenki"
+          },
+          {
+            "name": "Crunchyroll",
+            "url": "https://www.crunchyroll.com/series/GT00384007/romelia-war-chronicle"
+          }
+        ],
+        "next": {
+          "at": 1792843200,
+          "episode": 4
+        },
+        "source": "snapshot",
+        "description_es": "Romelia y su partido tienen éxito en derrotar al Rey demonio Zelgis, aunque la carga imprudente del príncipe Henri los obliga a una batalla agotadora. Después, Romelia se marca \"peso muerto\" por no luchar directamente, y el Príncipe unilateralmente rompe su compromiso. Denegado un lugar en las celebraciones de la victoria, Romelia vuelve a casa, sólo para ser conocido con indiferencia fría de su familia y sociedad. Sin embargo, se niega a romper. Ella ya tiene"
+      },
+      {
+        "id": "mal-61469",
+        "mal_id": 61469,
+        "title": "STEEL BALL RUN JoJo's Bizarre Adventure 2nd - 3rd STAGE",
+        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx210482-P1VNKbqdJ6Zj.jpg",
+        "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/210482-pYAD0IbzNbgS.jpg",
+        "description": "In the 2nd STAGE, a desert crossing spanning roughly 750 miles- the land that Johnny Joestar and Gyro Zeppeli must challenge, is home to the area that is feared as the \"Devil's Palm.\" In 1875, a threat lurking in said desert wiped out a cavalry of 26 people, eliciting fear from the local native people. As ominous incidents begin to unfold, they are forced to realize that this race is far more than a mere competition. The two press forward, where ",
+        "averageScore": 85,
+        "year": 2026,
+        "genres": [
+          "Action",
+          "Adventure",
+          "Drama",
+          "Mystery",
+          "Supernatural"
+        ],
+        "format": "ONA",
+        "episodes": 11,
+        "status": "RELEASING",
+        "siteUrl": "https://anilist.co/anime/210482",
+        "streaming": [
+          {
+            "name": "Netflix",
+            "url": "https://www.netflix.com/title/82116553"
+          }
+        ],
+        "next": {
+          "at": 1792742400,
+          "episode": 5
+        },
+        "source": "snapshot",
+        "description_es": "En la 2a ETAPA, un cruce desértico que recorre aproximadamente 750 millas- la tierra que Johnny Joestar y Gyro Zeppeli deben desafiar, es el hogar de la zona que se teme como la palma del Diablo. En 1875, una amenaza que acechaba en dicho desierto borró una caballería de 26 personas, provocando temor de los nativos locales. A medida que los incidentes ominosos comienzan a desarrollarse, se ven obligados a darse cuenta de que esta carrera es mucho más que una mera competencia. Las dos prensas hacia adelante, donde"
+      },
+      {
         "id": "mal-59741",
         "mal_id": 59741,
         "title": "The Exiled Heavy Knight Knows How to Game the System",
@@ -2216,6 +2437,37 @@
         "description_es": "Elymas Edvaughn nace en una prestigiosa familia de maestros espadachines, pero su futuro se derrumba cuando despierta la clase de Caballero Pesado, considerada defectuosa. Rechazado y expulsado, recupera recuerdos de una vida anterior y descubre que ese mundo se parece a un videojuego de realidad virtual que conocía muy bien. Gracias a secretos que nadie más posee, decide cambiar su destino y demostrar el verdadero poder de la clase que todos consideran la más débil."
       },
       {
+        "id": "mal-63801",
+        "mal_id": 63801,
+        "title": "Ranma1/2 (2024) Season 3",
+        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx209872-RBeVPqwejHFp.jpg",
+        "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/209872-Qczb4k9Mw0pq.jpg",
+        "description": "The third season of Ranma 1/2 (2024).",
+        "averageScore": 77,
+        "year": 2026,
+        "genres": [
+          "Action",
+          "Comedy",
+          "Romance"
+        ],
+        "format": "TV",
+        "episodes": 0,
+        "status": "RELEASING",
+        "siteUrl": "https://anilist.co/anime/209872",
+        "streaming": [
+          {
+            "name": "Netflix",
+            "url": "https://www.netflix.com/title/81171925"
+          }
+        ],
+        "next": {
+          "at": 1792857360,
+          "episode": 4
+        },
+        "source": "snapshot",
+        "description_es": "La tercera temporada de Ranma 1/2 (2024)."
+      },
+      {
         "id": "mal-59088",
         "mal_id": 59088,
         "title": "Tokyo Revengers: War of the Three Titans Arc",
@@ -2252,6 +2504,37 @@
         "description_es": "Secuela de los Revengers de Tokio: Tenjiku-hen."
       },
       {
+        "id": "mal-61999",
+        "mal_id": 61999,
+        "title": "The Vermilion Mask",
+        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx195571-fvj7u5GI7BRT.jpg",
+        "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/195571-UkdB06UpyL8k.jpg",
+        "description": "\"The Mask” gives power to anyone who wears it.\n\nAt times, that means endless possibility, or unimaginable tragedy…\n\nPeru, pupil of the legendary mask maker Gaston Roux, becomes controlled by the “Mask of the Warrior God,” and unintentionally kills his friends, and even his own master.\n\nIn order to prevent this type of tragedy from reoccurring, Peru swears to destroy all of Gaston’s masks that are spread around the world. Confronting the sins that",
+        "averageScore": 68,
+        "year": 2026,
+        "genres": [
+          "Action",
+          "Drama",
+          "Supernatural"
+        ],
+        "format": "TV",
+        "episodes": 0,
+        "status": "RELEASING",
+        "siteUrl": "https://anilist.co/anime/195571",
+        "streaming": [
+          {
+            "name": "Crunchyroll",
+            "url": "https://www.crunchyroll.com/watch/GE00384363JAJP"
+          }
+        ],
+        "next": {
+          "at": 1792830600,
+          "episode": 3
+        },
+        "source": "snapshot",
+        "description_es": "\"La máscara\" da poder a cualquiera que la use. A veces, eso significa una posibilidad interminable, o una tragedia inimaginable... Perú, alumno del legendario fabricante de máscaras Gaston Roux, se hace controlado por el “Mask del Dios Guerrero”, y mata involuntariamente a sus amigos, e incluso a su propio maestro. Para evitar que este tipo de tragedia vuelva a ocurrir, Perú jura destruir todas las máscaras de Gaston que se extienden por todo el mundo. Frente a los pecados que"
+      },
+      {
         "id": "mal-64534",
         "mal_id": 64534,
         "title": "The Ramparts of Ice Season 2",
@@ -2284,81 +2567,100 @@
         "description_es": "Koyuki, la chica aislada; Miki, el antiguo ídolo escolar; Minato, el tipo sin concepto de espacio personal; y Youta, el amable jugador de baloncesto. Clumsy, frustrante, pero profundamente apasionante — este drama que se acerca a la edad de los corazones cruzados avanza. A medida que se acercan, Koyuki y Minato comienzan a desarrollar sentimientos entre sí que van más allá de la mera amistad. Mientras tanto, Youta finalmente confiesa a Miki los sentimientos por los que ha albergado"
       },
       {
-        "id": "mal-61014",
-        "mal_id": 61014,
-        "title": "A Certain Dark Item",
-        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx186742-v7yfbefc8fuO.png",
-        "banner": "",
-        "description": "This is a story of four girls living in the \"Dark Side\" of Academy City.\n\nIn Academy City where \"ESP\" has been recognized as a general science. Behind the peace, there is a Dark Side organization that undertakes missions that cannot be made public.\n\n\"ITEM\" is an elite unit consisting of four girls. Takitsubo Rikou is able to read and track the AIM fields emitted by those with abilities. Frenda Seivelun, who excels in combat using explosives and t",
-        "averageScore": 69,
+        "id": "mal-64340",
+        "mal_id": 64340,
+        "title": "Overgeared",
+        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx212888-NhyvqPt5aIuJ.jpg",
+        "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/212888-ZsnNegBCKXQq.jpg",
+        "description": "Sin Yeong-U (a.k.a. Grid), an unlucky man in life and a low-level player in the popular VR game “Satisfy,” finds a powerful item that earns him a rare legendary class title: “Pagma’s Successor.” He’s now a skilled blacksmith who can forge unique weapons and equip the game’s most powerful gear. Grid resolves to use his new abilities to achieve fame and fortune, but as his very existence begins to stir up trouble in Satisfy, he realizes that life a",
+        "averageScore": 75,
         "year": 2026,
         "genres": [
           "Action",
-          "Sci-Fi"
+          "Adventure",
+          "Comedy",
+          "Fantasy"
         ],
-        "format": "TV",
-        "episodes": 0,
+        "format": "ONA",
+        "episodes": 12,
         "status": "RELEASING",
-        "siteUrl": "https://anilist.co/anime/186742",
+        "siteUrl": "https://anilist.co/anime/212888",
         "streaming": [
           {
             "name": "Crunchyroll",
-            "url": "https://www.crunchyroll.com/series/GT00383991/a-certain-dark-item"
+            "url": "https://www.crunchyroll.com/series/GT00384004"
           }
         ],
         "next": {
-          "at": 1792762200,
-          "episode": 3
+          "at": 1792333800,
+          "episode": 4
         },
         "source": "snapshot",
-        "description_es": "Esta es una historia de cuatro chicas que viven en el \"Dark Side\" de Academy City. En la Ciudad de la Academia donde el \"ESP\" ha sido reconocido como una ciencia general. Detrás de la paz, hay una organización del lado oscuro que realiza misiones que no pueden hacerse públicas. \"ITEM\" es una unidad de élite compuesta por cuatro chicas. Takitsubo Rikou es capaz de leer y rastrear los campos AIM emitidos por aquellos con capacidades. Frenda Seivelun, que destaca en combate utilizando explosivos y t"
+        "description_es": "Sin Yeong-U (a.k.a. Grid), un hombre desafortunado en la vida y un jugador de bajo nivel en el popular juego VR “Satisfy”, encuentra un poderoso artículo que le gana un raro título legendario de clase: “El Sucesor de Pagma”. Ahora es un herrero experto que puede forjar armas únicas y equipar el equipo más poderoso del juego. Grid resuelve usar sus nuevas habilidades para alcanzar la fama y la fortuna, pero cuando su propia existencia comienza a provocar problemas en Satisfeo, se da cuenta de que la vida es una"
       },
       {
-        "id": "mal-63181",
-        "mal_id": 63181,
-        "title": "TOUGEN ANKI: Nikko Kegon Falls Arc",
-        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx204650-cAQOzQ84Lwk8.png",
-        "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/204650-MpownoVlYv69.jpg",
-        "description": "After battling in Kyoto and Nerima, the Rasetsu Academy students have grown stronger. But Yaoroshi leaves the academy to join the Oni Brigade for their \"the total eradication of the Momotaro.\"\n\nWhen Shiki realizes that they also target noncombatants, he sets out after Yaoroshi to bring him back. Meanwhile in Nikko, there's a research facility for horrific experiments atop the old Kegon Falls…\n\n(Source: REMOW)",
-        "averageScore": 71,
+        "id": "mal-61323",
+        "mal_id": 61323,
+        "title": "Blue Box Season 2",
+        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx189123-0secXELIhkIW.jpg",
+        "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/189123-s2oirY2r1Svy.jpg",
+        "description": "The second season of Ao no Hako.\n",
+        "averageScore": 81,
+        "year": 2026,
+        "genres": [
+          "Romance",
+          "Slice of Life",
+          "Sports"
+        ],
+        "format": "TV",
+        "episodes": 12,
+        "status": "RELEASING",
+        "siteUrl": "https://anilist.co/anime/189123",
+        "streaming": [
+          {
+            "name": "Netflix",
+            "url": "https://www.netflix.com/title/81663323"
+          }
+        ],
+        "next": {
+          "at": 1792913400,
+          "episode": 4
+        },
+        "source": "snapshot",
+        "description_es": "La segunda temporada de Ao no Hako."
+      },
+      {
+        "id": "mal-62524",
+        "mal_id": 62524,
+        "title": "#I'm Looking For a Zombie",
+        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx199007-8R1HsnflnHJE.jpg",
+        "banner": "",
+        "description": "It may be a ruined city ravaged by zombies, but to Aki and her friends, it’s amazing! Having grown up only hearing stories of the old world and the mysterious outbreak that wiped out humanity, she sets off with her childhood friends in search of her missing father. Things quickly become a fight for survival outside the safety of their small village, yet they’ve never felt more alive.\n\n(Source: Crunchyroll)",
+        "averageScore": 60,
         "year": 2026,
         "genres": [
           "Action",
+          "Comedy",
+          "Horror",
           "Mystery",
           "Supernatural"
         ],
         "format": "TV",
         "episodes": 12,
         "status": "RELEASING",
-        "siteUrl": "https://anilist.co/anime/204650",
+        "siteUrl": "https://anilist.co/anime/199007",
         "streaming": [
           {
-            "name": "YouTube",
-            "url": "https://www.youtube.com/@tougen_anki"
-          },
-          {
             "name": "Crunchyroll",
-            "url": "https://www.crunchyroll.com/series/GP5HJ84D2/tougen-anki"
-          },
-          {
-            "name": "Bilibili TV",
-            "url": "https://www.bilibili.tv/en/media/2431878"
-          },
-          {
-            "name": "Amazon Prime Video",
-            "url": "https://www.amazon.com/dp/B0FCM3YGCQ"
-          },
-          {
-            "name": "Netflix",
-            "url": "https://www.netflix.com/title/81969861"
+            "url": "https://www.crunchyroll.com/series/GT00383996/im-looking-for-a-zombie"
           }
         ],
         "next": {
-          "at": 1792765800,
+          "at": 1792852200,
           "episode": 4
         },
         "source": "snapshot",
-        "description_es": "Después de luchar en Kioto y Nerima, los estudiantes de la Academia Rasetsu se han hecho más fuertes. Pero Yaoroshi deja la academia para unirse a la Brigada Oni por su \"erración total del Momotaro\". Cuando Shiki se da cuenta de que también apuntan a los no combatientes, se pone después de Yaoroshi para traerlo de vuelta. Mientras tanto, en Nikko, hay una instalación de investigación para experimentos horribles en la antigua Kegon Falls... (Fuente: REMOW)"
+        "description_es": "Puede ser una ciudad arruinada devastada por zombis, pero para Aki y sus amigos, ¡es increíble! Habiendo crecido sólo escuchando historias del viejo mundo y el misterioso brote que borró a la humanidad, se pone con sus amigos de la infancia en busca de su padre desaparecido. Las cosas se convierten rápidamente en una lucha por la supervivencia fuera de la seguridad de su pequeño pueblo, sin embargo nunca se han sentido más vivos. (Fuente: Crunchyroll)"
       },
       {
         "id": "mal-63431",
@@ -2401,36 +2703,109 @@
         "description_es": "Rein, un encantador, es expulsado de su gremio un día. Pero en lugar de desesperar, declara, “¡Ahora puedo hacer cualquier cosa!” y comienza a reclamar el enorme número de puntos de mejora que una vez vierte en el equipo de sus compañeros, a partir de un nuevo camino como aventurero. Reunirse a su alrededor son personas que llevan heridas que no se desvanecen fácilmente: un genio aventurero que cerró su corazón después de que su partido fue masacrado, un guerrero que perdió"
       },
       {
-        "id": "mal-64340",
-        "mal_id": 64340,
-        "title": "Overgeared",
-        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx212888-NhyvqPt5aIuJ.jpg",
-        "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/212888-ZsnNegBCKXQq.jpg",
-        "description": "Sin Yeong-U (a.k.a. Grid), an unlucky man in life and a low-level player in the popular VR game “Satisfy,” finds a powerful item that earns him a rare legendary class title: “Pagma’s Successor.” He’s now a skilled blacksmith who can forge unique weapons and equip the game’s most powerful gear. Grid resolves to use his new abilities to achieve fame and fortune, but as his very existence begins to stir up trouble in Satisfy, he realizes that life a",
-        "averageScore": 75,
+        "id": "mal-60636",
+        "mal_id": 60636,
+        "title": "BLEACH: Thousand-Year Blood War - The Calamity",
+        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx185874-aU3e6tBT6wwA.jpg",
+        "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/185874-IdGyh1EBG91I.jpg",
+        "description": "Destruction looms at the end of the Thousand-Year Blood War between the Soul Reapers and Quincies… as the death of the Soul King mirrors the collapse of the Three Worlds, distortions and omens of destruction start to appear in all realms. \n\nFierce battles erupt throughout the Wahr Welt between the Thirteen Court Guard Squads and the Royal Guard. Ichigo learns about Uryuu's true intentions and renews his determination to protect the world together",
+        "averageScore": 89,
         "year": 2026,
         "genres": [
           "Action",
           "Adventure",
-          "Comedy",
-          "Fantasy"
+          "Supernatural"
         ],
-        "format": "ONA",
-        "episodes": 12,
+        "format": "TV",
+        "episodes": 10,
         "status": "RELEASING",
-        "siteUrl": "https://anilist.co/anime/212888",
+        "siteUrl": "https://anilist.co/anime/185874",
         "streaming": [
           {
-            "name": "Crunchyroll",
-            "url": "https://www.crunchyroll.com/series/GT00384004"
+            "name": "YouTube",
+            "url": "https://youtube.com/@official_bleach"
+          },
+          {
+            "name": "Hulu",
+            "url": "https://www.hulu.com/series/bleach-thousand-year-blood-war-02a3c8c0-4f1d-4610-bbb4-5b8e9468d7b1"
+          },
+          {
+            "name": "Disney Plus",
+            "url": "https://www.disneyplus.com/series/bleach-thousand-year-blood-war/4Afet1Q421gy"
           }
         ],
         "next": {
-          "at": 1792333800,
-          "episode": 4
+          "at": 1792418400,
+          "episode": 9
         },
         "source": "snapshot",
-        "description_es": "Sin Yeong-U (a.k.a. Grid), un hombre desafortunado en la vida y un jugador de bajo nivel en el popular juego VR “Satisfy”, encuentra un poderoso artículo que le gana un raro título legendario de clase: “El Sucesor de Pagma”. Ahora es un herrero experto que puede forjar armas únicas y equipar el equipo más poderoso del juego. Grid resuelve usar sus nuevas habilidades para alcanzar la fama y la fortuna, pero cuando su propia existencia comienza a provocar problemas en Satisfeo, se da cuenta de que la vida es una"
+        "description_es": "La destrucción se desploma al final de la Guerra de la Sangre Mil Años entre los Reapers del Alma y las Quincias... mientras la muerte del Rey del Alma refleja el colapso de los Tres Mundos, las distorsiones y los presagios de destrucción comienzan a aparecer en todos los reinos. Quince batallas surgieron a lo largo de la Wahr Welt entre los 13 escuadrones de la Guardia de la Corte y la Guardia Real. Ichigo aprende sobre las verdaderas intenciones de Uryuu y renueva su determinación de proteger el mundo juntos"
+      },
+      {
+        "id": "mal-64254",
+        "mal_id": 64254,
+        "title": "The Iceblade Sorcerer Shall Rule the World II",
+        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx212503-sXBpRZr96c4e.jpg",
+        "banner": "",
+        "description": "Once dismissed as the sole ordinary student at the elite Arnold Academy of Sorcery, Ray White—secretly, the Iceblade Sorcerer—has finally earned his place. With a new school year comes a new challenge: The Magicks War, a grand competition pitting teams from rival schools against each other. But an ominous shadow looms over Ray and his friends as the other grand sorcerers plot their next moves.\n\n(Source: Crunchyroll)",
+        "averageScore": 67,
+        "year": 2026,
+        "genres": [
+          "Action",
+          "Adventure",
+          "Fantasy"
+        ],
+        "format": "TV",
+        "episodes": 0,
+        "status": "RELEASING",
+        "siteUrl": "https://anilist.co/anime/212503",
+        "streaming": [
+          {
+            "name": "Crunchyroll",
+            "url": "https://www.crunchyroll.com/series/GDKHZEP21/the-iceblade-sorcerer-shall-rule-the-world"
+          },
+          {
+            "name": "Bilibili TV",
+            "url": "https://www.bilibili.tv/en/media/2432333"
+          }
+        ],
+        "next": {
+          "at": 1792686480,
+          "episode": 3
+        },
+        "source": "snapshot",
+        "description_es": "Una vez despedido como el único estudiante ordinario de la élite Arnold Academy of Sorcery, Ray White — secretamente, el Hechicero de Iceblade— finalmente ha ganado su lugar. Con un nuevo año escolar surge un nuevo desafío: La Guerra de los Magos, una gran competencia que enfrenta equipos de escuelas rivales entre sí. Pero una sombra ominosa sobre Ray y sus amigos mientras los otros grandes hechiceros trazan sus próximos movimientos. (Fuente: Crunchyroll)"
+      },
+      {
+        "id": "mal-63053",
+        "mal_id": 63053,
+        "title": "HORROR COLLECTOR",
+        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b203473-pzyaqV432Qko.jpg",
+        "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/203473-KCGlCZL2ApjB.jpg",
+        "description": "Urban legends come to life…Everyone’s heard an urban legend before, but few have ever come face-to-face with one. These phenomena are everywhere, existing in the shadows of reality. More and more of them have been appearing in the wake of the faceless kid sighted all over Japan. If you see her or one of the urban legends she brings―pray the boy in the red hood finds you before it’s too late. You won’t stand a chance on your own. But with his help",
+        "averageScore": 50,
+        "year": 2026,
+        "genres": [
+          "Horror",
+          "Mystery",
+          "Supernatural"
+        ],
+        "format": "TV",
+        "episodes": 12,
+        "status": "RELEASING",
+        "siteUrl": "https://anilist.co/anime/203473",
+        "streaming": [
+          {
+            "name": "Crunchyroll",
+            "url": "https://www.crunchyroll.com/series/GT00383993"
+          }
+        ],
+        "next": {
+          "at": 1792853100,
+          "episode": 3
+        },
+        "source": "snapshot",
+        "description_es": "Las leyendas urbanas cobran vida... Todos han oído una leyenda urbana antes, pero pocos han llegado cara a cara con uno. Estos fenómenos están en todas partes, existentes en las sombras de la realidad. Cada vez más de ellos han estado apareciendo a raíz del niño sin rostro visto por todo Japón. Si la ves o una de las leyendas urbanas que trae, ora al chico en la capucha roja te encuentra antes de que sea demasiado tarde. Usted no tendrá una oportunidad por su cuenta. Pero con su ayuda"
       },
       {
         "id": "mal-53913",
@@ -2478,422 +2853,6 @@
         },
         "source": "snapshot",
         "description_es": "La segunda temporada de Tensei Mierda Ken Deshita. Nota: Cada episodio fue transmitido una semana antes de la emisión de televisión a partir del 1 de octubre de 2026 en Abema. La radiodifusión regular comenzó el 8 de octubre de 2026."
-      },
-      {
-        "id": "mal-61967",
-        "mal_id": 61967,
-        "title": "Black Clover Season 2",
-        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx195604-tSZcfKbVqSEG.jpg",
-        "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/195604-lQpCzTziSA17.jpg",
-        "description": "As tyranny engulfs the Clover Kingdom, Asta and the Magic Knights launch a desperate raid on the Spade Kingdom to rescue their squad captains from the Dark Triad. But their mission leads them into a brutal battle against forces beyond anything they’ve ever faced. Now, Asta must rise above impossible odds to protect his friends and honor the promise he made to Yuno.\n\n(Source: Crunchyroll)",
-        "averageScore": 86,
-        "year": 2026,
-        "genres": [
-          "Action",
-          "Adventure",
-          "Comedy",
-          "Fantasy"
-        ],
-        "format": "TV",
-        "episodes": 0,
-        "status": "RELEASING",
-        "siteUrl": "https://anilist.co/anime/195604",
-        "streaming": [
-          {
-            "name": "Crunchyroll",
-            "url": "https://www.crunchyroll.com/series/GRE50KV36/black-clover"
-          },
-          {
-            "name": "Bilibili TV",
-            "url": "https://www.bilibili.tv/en/media/2432940"
-          },
-          {
-            "name": "iQ",
-            "url": "https://www.iq.com/album/qchxviq611"
-          }
-        ],
-        "next": {
-          "at": 1792245600,
-          "episode": 3
-        },
-        "source": "snapshot",
-        "description_es": "A medida que la tiranía envuelve el Reino de Clover, Asta y los Caballeros Mágicos lanzan una redada desesperada en el Reino de Spade para rescatar a sus capitanes de la Tribu Oscura. Pero su misión los lleva a una batalla brutal contra las fuerzas más allá de cualquier cosa que hayan enfrentado. Ahora, Asta debe elevarse por encima de las probabilidades imposibles de proteger a sus amigos y honrar la promesa que hizo a Yuno. (Fuente: Crunchyroll)"
-      },
-      {
-        "id": "mal-63061",
-        "mal_id": 63061,
-        "title": "Please Excuse My Younger Brothers",
-        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx203490-YQXiymUiDQNA.jpg",
-        "banner": "",
-        "description": "The manga centers on high school student Ito Hazui. During her spring break at the end of her first year of high school, Ito's mother remarries, and Ito moves to live with her new family, becoming Ito Narita. Upon arriving at her new house, Ito is shocked to learn she now has four younger step-brothers. Ito tries her hardest to get along with all of the new members of her family, but the eldest brother Gen is a bit cold to her. However, under his",
-        "averageScore": 69,
-        "year": 2026,
-        "genres": [
-          "Comedy",
-          "Romance",
-          "Slice of Life"
-        ],
-        "format": "TV",
-        "episodes": 24,
-        "status": "RELEASING",
-        "siteUrl": "https://anilist.co/anime/203490",
-        "streaming": [
-          {
-            "name": "Crunchyroll",
-            "url": "https://www.crunchyroll.com/series/GT00371926/"
-          }
-        ],
-        "next": {
-          "at": 1792767600,
-          "episode": 16
-        },
-        "source": "snapshot",
-        "description_es": "El manga se centra en el estudiante de secundaria Ito Hazui. Durante su descanso de primavera al final de su primer año de secundaria, la madre de Ito se vuelve a casar, y Ito se mueve a vivir con su nueva familia, convirtiéndose en Ito Narita. Al llegar a su nueva casa, Ito está conmocionado por saber que ahora tiene cuatro hermanos de paso más jóvenes. Ito trata de que ella sea más difícil de llevar con todos los nuevos miembros de su familia, pero el hermano mayor Gen es un poco frío para ella. Sin embargo, bajo su"
-      },
-      {
-        "id": "mal-61578",
-        "mal_id": 61578,
-        "title": "Even the Student Council Has Its Holes!",
-        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx191656-xFHtxM8SUTdU.png",
-        "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/191656-JQILdzh3FQxN.jpg",
-        "description": "This is Fujinasu Academy, a private high school with top-achieving students located on the outskirts of town.\n\nHigh School 1st-Year Ume Mizunoe has excellent grades in Japanese language class and has received multiple literary awards.\nHowever, his terrible grades in the sciences are affecting his ability to move up a grade. To avoid repeating a year, he becomes a member of the student council to improve his academic standing.\n\nHowever, in the stu",
-        "averageScore": 73,
-        "year": 2026,
-        "genres": [
-          "Comedy",
-          "Ecchi",
-          "Slice of Life"
-        ],
-        "format": "TV",
-        "episodes": 12,
-        "status": "RELEASING",
-        "siteUrl": "https://anilist.co/anime/191656",
-        "streaming": [
-          {
-            "name": "OceanVeil",
-            "url": "https://oceanveil.net/anime_titles/542"
-          },
-          {
-            "name": "Bilibili TV",
-            "url": "https://www.bilibili.tv/en/media/2433041"
-          },
-          {
-            "name": "iQ",
-            "url": "https://www.iq.com/album/28ki6pjn6a1"
-          }
-        ],
-        "next": {
-          "at": 1792251000,
-          "episode": 3
-        },
-        "source": "snapshot",
-        "description_es": "Esta es la Academia Fujinasu, una escuela secundaria privada con estudiantes de primer nivel ubicados en las afueras de la ciudad. High School 1er año Ume Mizunoe tiene excelentes calificaciones en la clase de idioma japonés y ha recibido múltiples premios literarios. Sin embargo, sus calificaciones terribles en las ciencias están afectando su capacidad de avanzar en un grado. Para evitar repetir un año, se convierte en miembro del consejo estudiantil para mejorar su posición académica. Sin embargo, en el estudio"
-      },
-      {
-        "id": "mal-64254",
-        "mal_id": 64254,
-        "title": "The Iceblade Sorcerer Shall Rule the World II",
-        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx212503-sXBpRZr96c4e.jpg",
-        "banner": "",
-        "description": "Once dismissed as the sole ordinary student at the elite Arnold Academy of Sorcery, Ray White—secretly, the Iceblade Sorcerer—has finally earned his place. With a new school year comes a new challenge: The Magicks War, a grand competition pitting teams from rival schools against each other. But an ominous shadow looms over Ray and his friends as the other grand sorcerers plot their next moves.\n\n(Source: Crunchyroll)",
-        "averageScore": 67,
-        "year": 2026,
-        "genres": [
-          "Action",
-          "Adventure",
-          "Fantasy"
-        ],
-        "format": "TV",
-        "episodes": 0,
-        "status": "RELEASING",
-        "siteUrl": "https://anilist.co/anime/212503",
-        "streaming": [
-          {
-            "name": "Crunchyroll",
-            "url": "https://www.crunchyroll.com/series/GDKHZEP21/the-iceblade-sorcerer-shall-rule-the-world"
-          },
-          {
-            "name": "Bilibili TV",
-            "url": "https://www.bilibili.tv/en/media/2432333"
-          }
-        ],
-        "next": {
-          "at": 1792686480,
-          "episode": 3
-        },
-        "source": "snapshot",
-        "description_es": "Una vez despedido como el único estudiante ordinario de la élite Arnold Academy of Sorcery, Ray White — secretamente, el Hechicero de Iceblade— finalmente ha ganado su lugar. Con un nuevo año escolar surge un nuevo desafío: La Guerra de los Magos, una gran competencia que enfrenta equipos de escuelas rivales entre sí. Pero una sombra ominosa sobre Ray y sus amigos mientras los otros grandes hechiceros trazan sus próximos movimientos. (Fuente: Crunchyroll)"
-      },
-      {
-        "id": "mal-64084",
-        "mal_id": 64084,
-        "title": "The World's Strongest Witch",
-        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx211778-0MXK5HqVFBYH.jpg",
-        "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/211778-ZbXEhqfFkj62.jpg",
-        "description": "After using her SSS-Rank skill, Internet, to crush her former family’s ambitions, Lorna is free to travel the world. Her next stop is the port town of Aquas, where she hopes to see the sights and chow down on some fresh seafood. But when she arrives, the place is on the brink of destruction thanks to a certain Weekly Quest… Good thing Lorna has the gods on her side!\n\n(Source: Crunchyroll)",
-        "averageScore": 68,
-        "year": 2026,
-        "genres": [
-          "Action",
-          "Comedy",
-          "Fantasy"
-        ],
-        "format": "TV",
-        "episodes": 0,
-        "status": "RELEASING",
-        "siteUrl": "https://anilist.co/anime/211778",
-        "streaming": [
-          {
-            "name": "Crunchyroll",
-            "url": "https://www.crunchyroll.com/series/GT00384009/the-worlds-strongest-witch"
-          },
-          {
-            "name": "Bilibili TV",
-            "url": "https://www.bilibili.tv/en/media/2432827"
-          },
-          {
-            "name": "YouTube",
-            "url": "https://www.youtube.com/playlist?list=PLLJ_VmZxSJuY"
-          }
-        ],
-        "next": {
-          "at": 1792587600,
-          "episode": 3
-        },
-        "source": "snapshot",
-        "description_es": "Después de usar su habilidad SSS-Rank, Internet, para aplastar las ambiciones de su antigua familia, Lorna es libre de viajar por el mundo. Su próxima parada es la ciudad portuaria de Aquas, donde espera ver los lugares de interés y disfrutar de algunos mariscos frescos. Pero cuando llega, el lugar está al borde de la destrucción gracias a una cierta misión semanal... ¡Qué bueno que Lorna tenga los dioses de su lado! (Fuente: Crunchyroll)"
-      },
-      {
-        "id": "mal-63337",
-        "mal_id": 63337,
-        "title": "FX Fighter Kurumi-chan",
-        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx206401-8cAebkI0i8BA.png",
-        "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/206401-Nsf3QKwKxDra.jpg",
-        "description": "University student Kurumi Fukuga has finally fulfilled her long-held desire of starting foreign exchange (FX) trading, motivated by recouping the 20 million yen her late mother lost in trading. \"I'll easily make it back,\" she thought, but the world she enters can become heaven or hell in an instant. Unrealized losses, loss-cutting, unstoppable fluctuations… but she still wants to buy, sell and make money! With fellow FX addicts Mochiko, Mebuki an",
-        "averageScore": 68,
-        "year": 2026,
-        "genres": [
-          "Drama",
-          "Slice of Life"
-        ],
-        "format": "TV",
-        "episodes": 12,
-        "status": "RELEASING",
-        "siteUrl": "https://anilist.co/anime/206401",
-        "streaming": [
-          {
-            "name": "Crunchyroll",
-            "url": "https://crunchyroll.com/series/GT00384001/fx-fighter-kurumi-chan"
-          },
-          {
-            "name": "YouTube",
-            "url": "https://www.youtube.com/playlist?list=PLTQxh5nM9A2w"
-          }
-        ],
-        "next": {
-          "at": 1792672200,
-          "episode": 4
-        },
-        "source": "snapshot",
-        "description_es": "La estudiante universitaria Kurumi Fukuga finalmente ha cumplido su deseo de iniciar el comercio de divisas (FX), motivado por recuperar los 20 millones de yenes que su madre falleció en el comercio. \"Lo recuperaré fácilmente,\" pensó, pero el mundo en el que entra puede convertirse en el cielo o el infierno en un instante. Pérdidas no realizadas, fluctuaciones descompuestas, imparables... ¡pero todavía quiere comprar, vender y hacer dinero! Con los adictos FX Mochiko, Mebuki an"
-      },
-      {
-        "id": "mal-63292",
-        "mal_id": 63292,
-        "title": "Full Clearing Another World under a Goddess with Zero Believers",
-        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx205896-ElrV8oVAsuax.jpg",
-        "banner": "",
-        "description": "RPG player Makoto Takatsuki is hurled into another world with awful skills and stats. But he soon meets a goddess named Noah, who asks him to become her 1st believer in return for blessings.\n\n(Source: J-Novel Club)",
-        "averageScore": 63,
-        "year": 2026,
-        "genres": [
-          "Adventure",
-          "Fantasy"
-        ],
-        "format": "TV",
-        "episodes": 0,
-        "status": "RELEASING",
-        "siteUrl": "https://anilist.co/anime/205896",
-        "streaming": [
-          {
-            "name": "Crunchyroll",
-            "url": "https://www.crunchyroll.com/series/GT00383992/full-clearing-another-world-under-a-goddess-with-zero-believers"
-          }
-        ],
-        "next": {
-          "at": 1792333800,
-          "episode": 2
-        },
-        "source": "snapshot",
-        "description_es": "El jugador de RPG Makoto Takatsuki es lanzado en otro mundo con terribles habilidades y estadísticas. Pero pronto se encuentra con una diosa llamada Noé, que le pide que se convierta en su primer creyente a cambio de bendiciones. (Fuente: J-Novel Club)"
-      },
-      {
-        "id": "mal-61323",
-        "mal_id": 61323,
-        "title": "Blue Box Season 2",
-        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx189123-0secXELIhkIW.jpg",
-        "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/189123-s2oirY2r1Svy.jpg",
-        "description": "The second season of Ao no Hako.\n",
-        "averageScore": 81,
-        "year": 2026,
-        "genres": [
-          "Romance",
-          "Slice of Life",
-          "Sports"
-        ],
-        "format": "TV",
-        "episodes": 12,
-        "status": "RELEASING",
-        "siteUrl": "https://anilist.co/anime/189123",
-        "streaming": [
-          {
-            "name": "Netflix",
-            "url": "https://www.netflix.com/title/81663323"
-          }
-        ],
-        "next": {
-          "at": 1792308600,
-          "episode": 3
-        },
-        "source": "snapshot",
-        "description_es": "La segunda temporada de Ao no Hako."
-      },
-      {
-        "id": "mal-57612",
-        "mal_id": 57612,
-        "title": "A Returner's Magic Should be Special Season 2",
-        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx172192-W7P5xEUaxF3y.jpg",
-        "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/172192-jibcmb7wdbzk.jpg",
-        "description": "In a land dominated by the formidable Shadow Worlds, most of humanity has been destroyed. To rescue their planet from impending doom, six brave heroes fight a perilous battle…and fail. But there’s a glimpse of hope when Desir, one of the last mages, is suddenly sent back in time 13 years! Now armed with knowledge of the grim future, can he alter the course of history and save the world?\n\n(Source: Crunchyroll)",
-        "averageScore": 69,
-        "year": 2026,
-        "genres": [
-          "Action",
-          "Adventure",
-          "Fantasy"
-        ],
-        "format": "TV",
-        "episodes": 0,
-        "status": "RELEASING",
-        "siteUrl": "https://anilist.co/anime/172192",
-        "streaming": [
-          {
-            "name": "Crunchyroll",
-            "url": "https://www.crunchyroll.com/series/GEXH3W207/a-returners-magic-should-be-special"
-          },
-          {
-            "name": "Bilibili TV",
-            "url": "https://www.bilibili.tv/en/media/2432495"
-          }
-        ],
-        "next": {
-          "at": 1792597500,
-          "episode": 3
-        },
-        "source": "snapshot",
-        "description_es": "En una tierra dominada por los formidables Mundos Sombríos, la mayoría de la humanidad ha sido destruida. Para rescatar a su planeta de la muerte inminente, seis héroes valientes luchan una batalla peligrosa... y fracasan. Pero hay una mirada de esperanza cuando Desir, una de las últimas magras, es de repente enviado en el tiempo 13 años! Ahora armado con conocimiento del futuro sombrío, ¿puede alterar el curso de la historia y salvar el mundo? (Fuente: Crunchyroll)"
-      },
-      {
-        "id": "mal-63409",
-        "mal_id": 63409,
-        "title": "Hello, I am a Witch and my Crush Wants me to Make a Love Potion!",
-        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx207191-VgkIzfH92WoZ.jpg",
-        "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/207191-xYgpkCDnXc5m.jpg",
-        "description": "“Make me a love potion.”\n\nAnd with that single sentence, the Good Witch of the Lake’s secret crush on the dashing Sir Harij ends in heartbreak. Still, when he promises to help her gather the ingredients, Rose is thrilled at the chance to gaze upon a man she’d normally never get to interact with. She learns to brace her pounding heart for their usual stilted conversations…but what is she to do when he inexplicably shows up at her doorstep with bre",
-        "averageScore": 71,
-        "year": 2026,
-        "genres": [
-          "Fantasy",
-          "Romance"
-        ],
-        "format": "TV",
-        "episodes": 12,
-        "status": "RELEASING",
-        "siteUrl": "https://anilist.co/anime/207191",
-        "streaming": [
-          {
-            "name": "Crunchyroll",
-            "url": "https://www.crunchyroll.com/series/GT00378072/hello-i-am-a-witch-and-my-crush-wants-me-to-make-a-love-potion"
-          }
-        ],
-        "next": {
-          "at": 1792413000,
-          "episode": 3
-        },
-        "source": "snapshot",
-        "description_es": "Hazme una poción de amor. Y con esa sola frase, la Buena Bruja del amor secreto del lago sobre el desgarrador Sir Harij termina en un desgarro. Aún así, cuando promete ayudarla a reunir los ingredientes, Rose está emocionada por la oportunidad de mirar a un hombre con el que normalmente nunca podría interactuar. Ella aprende a jactar su corazón por sus conversaciones usuales inclinadas... pero ¿qué va a hacer cuando aparece inexplicablemente en su puerta con bre"
-      },
-      {
-        "id": "mal-63754",
-        "mal_id": 63754,
-        "title": "The Cold Sato-san is Only Sweet to Me",
-        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx209502-C81oN8M4Smlo.jpg",
-        "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/209502-TATgyznMxQOe.jpg",
-        "description": "Sato-san is the unattainable flower of the class. She is always cold and curt with classmates, but only I know she's actually very cute when she smiles, even if she's not much of a photographer.\n\nOshio-kun is friendly and lively, but only I know he works at his family's cafe after school. He does a great job with the cafe's SNS account, and his mischievous smile makes my heart skip a beat!\n\nInnocent and sweet, but sometimes frustrating, this is a",
-        "averageScore": 68,
-        "year": 2026,
-        "genres": [
-          "Comedy",
-          "Romance"
-        ],
-        "format": "TV",
-        "episodes": 12,
-        "status": "RELEASING",
-        "siteUrl": "https://anilist.co/anime/209502",
-        "streaming": [
-          {
-            "name": "Crunchyroll",
-            "url": "https://www.crunchyroll.com/series/GT00384014/the-cold-sato-san-is-only-sweet-to-me"
-          },
-          {
-            "name": "Bilibili TV",
-            "url": "https://www.bilibili.tv/en/media/2433556"
-          }
-        ],
-        "next": {
-          "at": 1792501200,
-          "episode": 3
-        },
-        "source": "snapshot",
-        "description_es": "Sato-san es la flor inalcanzable de la clase. Siempre tiene frío y rito con compañeros de clase, pero sólo sé que es muy linda cuando sonríe, incluso si no es mucho fotógrafo. Oshio-kun es amistoso y animado, pero sólo sé que trabaja en el café de su familia después de la escuela. Hace un gran trabajo con la cuenta SNS de la cafetería, y su mala sonrisa hace que mi corazón salte un latido! Innocente y dulce, pero a veces frustrante, esto es un"
-      },
-      {
-        "id": "mal-63382",
-        "mal_id": 63382,
-        "title": "Nia Liston: The Merciless Maiden",
-        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx206949-4HYI3YuP0eLI.png",
-        "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/206949-c5hfhixdgvy5.jpg",
-        "description": "A great hero lies undefeated on her deathbed, regretting that she never found a foe who could take her down. She never intended to meet her fate anywhere other than on the battlefield, and her peaceful demise has her wishing desperately that things could have been different... But when she suddenly comes to in the body of the young, frail Nia Liston, she’s got an all-new fight ahead of her. Nia is a sickly child, meaning she has a long way to go ",
-        "averageScore": 75,
-        "year": 2026,
-        "genres": [
-          "Action",
-          "Fantasy"
-        ],
-        "format": "TV",
-        "episodes": 25,
-        "status": "RELEASING",
-        "siteUrl": "https://anilist.co/anime/206949",
-        "streaming": [
-          {
-            "name": "HIDIVE",
-            "url": "https://www.hidive.com/season/39540"
-          },
-          {
-            "name": "Bilibili TV",
-            "url": "https://www.bilibili.tv/en/media/2433665"
-          },
-          {
-            "name": "iQ",
-            "url": "https://www.iq.com/album/tvod2397yt"
-          }
-        ],
-        "next": {
-          "at": 1792499160,
-          "episode": 3
-        },
-        "source": "snapshot",
-        "description_es": "Un gran héroe está invicto en su lecho de muerte, lamentando que nunca haya encontrado a un enemigo que pudiera derribarla. Ella nunca quiso encontrar su destino en otro lugar que en el campo de batalla, y su pacífica desaparición tiene su deseo desesperadamente de que las cosas podrían haber sido diferentes... Pero cuando de repente viene al cuerpo de la joven y frágil Nia Liston, tiene una nueva lucha por delante de ella. Nia es una niña enferma, lo que significa que tiene un largo camino por recorrer"
       }
     ],
     "recent": [
