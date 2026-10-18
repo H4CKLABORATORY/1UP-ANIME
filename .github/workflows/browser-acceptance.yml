@@ -46,9 +46,9 @@ jobs:
         with:
           node-version: "22"
       - name: Install isolated test runner
-        run: npm install --no-save --no-audit --no-fund --ignore-scripts playwright@1.56.1
+        run: npm install --no-save --no-audit --no-fund --ignore-scripts playwright@1.56.1 && npx --no-install playwright --version
       - name: Install Chromium and required OS libraries
-        run: npx playwright install --with-deps chromium
+        run: ./node_modules/.bin/playwright install --with-deps chromium
       - name: Run real iPhone-width and desktop user journeys
         run: |
           node scripts/test-episode-comments.mjs
