@@ -220,3 +220,13 @@ Al concluir cada trabajo agregar:
 - Implementado: CSS original en `themes/oneup-palette/selector.css` con tema **Esmeralda** predeterminado, **Original** reversible y **Violeta**; JS `selector.js` con allowlist de IDs, preferencia local, 2 grupos accesibles sincronizados (cabecera PC y cajón móvil) y sin credenciales/API externas. `index.html` carga ambas capas; `sw.js` cambió versión v28 y precachea recursos manteniendo aislamiento de caché.
 - QA añadido `scripts/e2e-oneup-palette.mjs`, integrado en `.github/workflows/browser-acceptance.yml`: prueba Playwright 320/390/1366, estado/ARIA, selección, persistencia, restauración, CSS aplicado, anchura y screenshots. Estado CI debe revalidarse para último SHA antes de afirmar PASS, Safari físico aún no probado.
 - `docs/ONEUP_COLOR_THEMES.md` recoge uso, privacidad y criterios release. Próximo paso: confirmar tests, hacer merge seguro si procede y verificar GitHub Pages; la web no debe anunciarse actualizada hasta constatar el despliegue real.
+
+
+### 2026-10-17 — ONEUP Motion: transiciones de ventanas, navegación y fichas
+- Petición: llevar al nivel profesional el movimiento de ventanas, menús, fichas y navegación en la web pública, conservando temas negro/verde y el diseño propio.
+- Referencias de ingeniería: principios de View Transitions de MDN (https://developer.mozilla.org/en-US/docs/Web/API/View_Transition_API), reducción de movimiento y uso de `opacity`/`transform`. No se ha utilizado código, animaciones comerciales o activos privados de Crunchyroll.
+- Rama `feature/oneup-premium-window-motion-20261017`, basada en main actualizado tras PR #41.
+- Implementación: `themes/oneup-motion/windows.css` añade ritmo coherente: fichas y diálogo de sesión (270 ms), menú lateral (235–270 ms), buscador y selector de colores (170 ms), velos y respuestas hover táctiles discretas. `windows.js` expone `OneUpMotion.enter` para rutas y páginas interiores, y `closeDialog` de 165 ms con liberación de modal al terminar, cancelación segura y `prefers-reduced-motion`/`km-quiet`. Se preservan `Escape`, foco y eventos nativos.
+- Integración mínima en `index.html`, `studio.js` (ruta y cierre de ficha), `pages.js` (pantallas interiores) y `sw.js` (versión v29 precache). No se modificó el motor de catálogo, seguridad, reproductor ni fuentes multimedia.
+- QA: `scripts/e2e-oneup-motion.mjs` integrado en `ONEUP Browser Acceptance`, prueba apertura/cierre, Escape, menú, búsqueda, hash interiores, viewport, y modo reducido a 390 y 1366 px. **Confirmar CI del SHA final antes de afirmar resultado o publicar.**
+- Pendiente: evaluar capturas, revisar CI, asegurar ausencia de regresiones en iPhone y GitHub Pages. No atribuir prueba Safari físico hasta disponer de evidencia.
