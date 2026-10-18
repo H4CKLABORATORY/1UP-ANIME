@@ -46,3 +46,10 @@ Al terminar avances reales, añadir al final:
 - Limitaciones y siguientes pasos:
 ```
 Excluir secretos, datos personales irrelevantes, suposiciones no etiquetadas, promesas de segundo plano y contenido sin autorización.
+
+### 2026-10-17 — Temas públicos Esmeralda / Original / Violeta, PR #41
+- Pedido del propietario: actualizar la web con cada mejora técnica y ofrecer diseño negro/verde inspirado en buenos patrones de plataformas de anime, con cambio de temas. Inspiración no significa acceso al código privado de Crunchyroll.
+- Rama `feature/oneup-green-theme-picker-20261017`, PR [#41](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/41). Capa original `themes/oneup-palette/selector.css/js` integrada en `index.html`, modo Esmeralda por defecto, otros dos estilos, ajuste Safari móvil (selector en menú), preferencia local y ARIA.
+- `sw.js` nueva versión v28 precachea la función sin limpiar cachés de otros proyectos. No modifica jugadores, contenido, auth ni derechos.
+- Pruebas: `scripts/e2e-oneup-palette.mjs` en CI Browser Acceptance, verifica 320/390/1366, persistencia, modo Original, accesibilidad y layout. No atribuir PASS hasta comprobar conclusión del workflow.
+- Antes de declarar entrega: CI y merge PR #41, GitHub Pages success, archivos desplegados 200, Safari físico pendiente. Guía: `docs/ONEUP_COLOR_THEMES.md`.
