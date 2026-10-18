@@ -56,6 +56,7 @@ function setPage(markup,route){
  document.querySelectorAll('.km-nav [data-route],.km-nav [data-km-view]').forEach(n=>{
  n.classList.toggle('active',n.dataset.kmView===route)
  });
+ window.OneUpMotion?.enter?.(root,'interior');
 }
 function richList(data){return '<div class="km-rows">'+data.map(a=>'<a class="km-row" href="'+animeUrl(a)+'">'+(uri(a.image)?'<img src="'+esc(uri(a.image))+'" loading="lazy" alt="">':'')+'<span><strong>'+esc(a.title)+'</strong><small>'+esc(String(a.format||'TV')+' · '+String(a.year||''))+'</small></span><span aria-hidden="true">↗</span></a>').join('')+'</div>'}
 function detailPage(a,movie){
