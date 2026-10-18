@@ -307,6 +307,8 @@ function go(route){
  $$('[data-route]').forEach(b=>b.classList.toggle('active',b.dataset.route===route));
  window.scrollTo({top:0,behavior:'instant'});try{history.replaceState(null,'','#'+route)}catch{}
  if(route==='milista')showSaved();else if(route==='programacion')showSchedule();else if(route!=='inicio')browse(route);
+ // A nonblocking visual transition; routing and data loading stay synchronous.
+ window.OneUpMotion?.enter?.(route==='inicio'?$('#home-screen'):$('#browse-screen'));
 }
 function heading(h,sub,tag){$('#browse-title').innerHTML=h;$('#browse-summary').textContent=sub;$('#browse-eyebrow').textContent=tag}
 function showSaved(){
@@ -646,7 +648,7 @@ function init(){
   const modal=$('#anime-dialog');
   if(!modal?.open)return;
   lastDetailDismissed=performance.now();
-  modal.close();
+  if(!window.OneUpMotion?.closeDialog?.(modal))modal.close();
  };
  $('#anime-close').addEventListener('click',closeAnime);
  // iOS fallback applies only when another element intercepts the X's
@@ -666,7 +668,7 @@ function init(){
   document.dispatchEvent(new Event('oneup-anime-closed'));
  });
  $('#anime-dialog').addEventListener('click',e=>{
-  if(e.target===$('#anime-dialog'))$('#anime-dialog').close();
+  if(e.target===$('#anime-dialog'))closeAnime(e);
   if(e.target.id==='save-url')saveUrl();
   const btn=e.target.closest('[data-synopsis-original]');
   if(btn){

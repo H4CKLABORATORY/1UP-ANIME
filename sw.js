@@ -3,7 +3,7 @@
 // CacheStorage is origin-wide: GitHub Pages apps on the same domain share it.
 // Restrict cleanup to caches that belong to this 1UP Anime service worker.
 const CACHE_PREFIX='oneup-stream-integrated-';
-const CACHE=CACHE_PREFIX+'v28-green-palette-20261017';
+const CACHE=CACHE_PREFIX+'v29-premium-motion-20261017';
 const SHELL=[
  './','./index.html','./studio.css','./studio.js','./spotlight.css',
  './motion.css','./motion.js','./brand-v2.css','./player.css','./auth.js',
@@ -25,6 +25,7 @@ const SHELL=[
  './themes/kokomi-mobile-preview/watch-comments.css','./themes/kokomi-mobile-preview/watch-comments.js',
  './themes/october-2026/theme.css','./themes/october-2026/theme.js',
  './themes/oneup-palette/selector.css','./themes/oneup-palette/selector.js',
+ './themes/oneup-motion/windows.css','./themes/oneup-motion/windows.js',
  './themes/october-2026/arcane-seal.svg','./preview-kokomi.html','./external-providers.js','./data/external-providers.json','./external-providers.css','./motor.html','./motor.js','./motor.css',
  './moderacion.html','./moderacion.js','./moderacion.css',
  './data/dexter/status.json','./data/dexter/history.json','./data/guard/status.json',

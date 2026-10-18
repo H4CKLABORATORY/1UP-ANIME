@@ -1,0 +1,111 @@
+/*
+ * 1UP Anime / Motion System — original transitions for native screens,
+ * dialogs, menus and theme popovers. Inspired by general streaming UX,
+ * not a copy of any third-party application's private code or animation.
+ * Keep movement short (160–290 ms) and GPU-friendly (opacity/transform).
+ */
+:root {
+  --oneup-motion-fast: 170ms;
+  --oneup-motion-medium: 270ms;
+  --oneup-motion-curve: cubic-bezier(.22, 1, .36, 1);
+  --oneup-motion-veil: #03050bd9;
+}
+@keyframes oneup-sheet-in {
+  from { opacity: .3; transform: translate3d(0, 14px, 0) scale(.985); }
+  to { opacity: 1; transform: translate3d(0, 0, 0) scale(1); }
+}
+@keyframes oneup-drawer-in {
+  from { opacity: .72; transform: translate3d(-24px, 0, 0); }
+  to { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+@keyframes oneup-veil-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes oneup-pop-in {
+  from { opacity: 0; transform: translate3d(0, -9px, 0) scale(.98); }
+  to { opacity: 1; transform: translate3d(0, 0, 0) scale(1); }
+}
+
+/* Existing native dialogs keep their close button, focus and Escape semantics.
+   Never animate display or use fixed delays to enable interaction. */
+body.oneup-kokomi :is(#anime-dialog, #auth-dialog)[open] {
+  animation: oneup-sheet-in var(--oneup-motion-medium) var(--oneup-motion-curve) both;
+  transform-origin: 50% 36%;
+}
+body.oneup-kokomi :is(#anime-dialog, #auth-dialog)[open]::backdrop {
+  animation: oneup-veil-in var(--oneup-motion-medium) ease-out both;
+}
+body.oneup-kokomi .anime-dialog::backdrop,
+body.oneup-kokomi .auth-dialog::backdrop {
+  background: var(--oneup-motion-veil);
+  backdrop-filter: blur(8px);
+}
+
+/* Mobile navigation is anchored to the edge: no scaling the page behind it. */
+body.kokomi-mobile-reference .km-drawer:not([hidden]) {
+  animation: oneup-drawer-in var(--oneup-motion-medium) var(--oneup-motion-curve) both;
+}
+body.kokomi-mobile-reference .km-overlay:not([hidden]) {
+  animation: oneup-veil-in 210ms ease-out both;
+}
+body.kokomi-mobile-reference .km-search-pop:not([hidden]),
+body.oneup-kokomi .oneup-theme-panel:not([hidden]) {
+  animation: oneup-pop-in var(--oneup-motion-fast) var(--oneup-motion-curve) both;
+}
+body.oneup-kokomi :is(.dialog-close, .oneup-theme-trigger, #km-close) {
+  transition: background-color 180ms ease, border-color 180ms ease, color 180ms ease;
+}
+body.oneup-kokomi :is(.dialog-close, .oneup-theme-trigger, #km-close):focus-visible {
+  outline: 3px solid var(--oneup-pal-highlight, #d5e4ff);
+  outline-offset: 3px;
+}
+@media (hover: hover) and (pointer: fine) {
+  body.oneup-kokomi .anime-card {
+    transition: transform 260ms var(--oneup-motion-curve),
+      border-color 230ms ease, box-shadow 260ms ease;
+  }
+  body.oneup-kokomi .anime-card:hover {
+    transform: translate3d(0, -3px, 0);
+  }
+}
+@media (pointer: coarse) {
+  body.oneup-kokomi .anime-card:hover { transform: none; }
+  body.oneup-kokomi :is(.cta, .km-main-button, .oneup-theme-option, .km-nav button):active {
+    transform: scale(.987);
+  }
+}
+@media (max-width: 780px) {
+  body.oneup-kokomi #anime-dialog[open] {
+    animation-duration: 220ms;
+    transform-origin: center bottom;
+  }
+  body.kokomi-mobile-reference .km-drawer:not([hidden]) {
+    animation-duration: 235ms;
+  }
+}
+
+/* A user's explicit reduced-motion preference takes priority everywhere. */
+@media (prefers-reduced-motion: reduce) {
+  body.oneup-kokomi :is(#anime-dialog, #auth-dialog)[open],
+  body.oneup-kokomi :is(#anime-dialog, #auth-dialog)[open]::backdrop,
+  body.kokomi-mobile-reference .km-drawer:not([hidden]),
+  body.kokomi-mobile-reference .km-overlay:not([hidden]),
+  body.kokomi-mobile-reference .km-search-pop:not([hidden]),
+  body.oneup-kokomi .oneup-theme-panel:not([hidden]) {
+    animation: none !important;
+    transform: none !important;
+  }
+  body.oneup-kokomi .anime-card,
+  body.oneup-kokomi :is(.dialog-close, .oneup-theme-trigger, #km-close) {
+    transition: none !important;
+  }
+}
+body.km-quiet.oneup-kokomi :is(#anime-dialog, #auth-dialog)[open],
+body.km-quiet.oneup-kokomi :is(#anime-dialog, #auth-dialog)[open]::backdrop,
+body.km-quiet.kokomi-mobile-reference .km-drawer:not([hidden]),
+body.km-quiet.kokomi-mobile-reference .km-overlay:not([hidden]),
+body.km-quiet.kokomi-mobile-reference .km-search-pop:not([hidden]) {
+  animation: none !important;
+  transform: none !important;
+}
