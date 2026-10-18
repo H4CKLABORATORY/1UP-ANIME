@@ -6,7 +6,7 @@ Aplicación web progresiva independiente de anime, optimizada para celulares y e
 
 ## Publicación
 
-En GitHub, abre **Settings > Pages**, elige **Deploy from a branch**, selecciona **main** y **/(root)** y guarda los cambios. Dirección prevista: https://h4cklaboratory.github.io/1UP-ANIME/
+En GitHub, abre **Settings > Pages** y selecciona **GitHub Actions** como fuente. El workflow `.github/workflows/deploy-pages.yml` publica automáticamente tras los cambios en `main`. Comprueba el run correspondiente antes de afirmar que producción está actualizada. Dirección prevista: https://h4cklaboratory.github.io/1UP-ANIME/
 
 ## PWA
 
