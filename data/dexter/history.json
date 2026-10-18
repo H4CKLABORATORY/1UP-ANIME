@@ -2,6 +2,15 @@
   "schemaVersion": 1,
   "items": [
     {
+      "providerId": "licensed_library",
+      "at": "2026-10-18T08:54:42.347Z",
+      "result": "success",
+      "observed": 0,
+      "created": 0,
+      "playback": 0,
+      "detail": "sin_contenido_autorizado"
+    },
+    {
       "providerId": "jkanime_external",
       "at": "2026-10-18T05:53:46.582Z",
       "result": "success",
