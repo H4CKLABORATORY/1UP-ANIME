@@ -211,3 +211,12 @@ Al concluir cada trabajo agregar:
 - `AGENTS.md` ahora exige consultar esta ficha al comenzar una sesión nueva y distinguir la última evidencia del código frente a una ficha antigua.
 - La tarea de ChatGPT **«Continuar 1UP Anime»** existente, id `6ad3b29c7d948191b7a447736883d800`, ya se actualizó para leer el handoff, revisar trabajo real **una vez por hora** y documentar el siguiente paso; no se creó otra tarea duplicada.
 - Este sistema ofrece continuidad recuperable, no trabajo continuo ilimitado. El usuario deberá abrir «Nuevo chat» y pegar el texto del documento cuando desee cambiar de conversación.
+
+
+### 2026-10-17 — Tema negro y verde + selector de temas en sitio público, PR #41
+- Solicitud explícita: evolucionar la página con cada mejora verificada, preferir negro/verde y permitir elegir otros estilos. Referencias a Crunchyroll limitadas a patrones públicos de navegación/editorial; el `curl` aportado antes era extracción de **metadatos**, no su código privado.
+- Revisado `AGENTS.md`, handoff, módulos CSS Kokomi/Octubre, cabecera pública, SW y PR #40 (otra propuesta solo preview). Esta nueva tarea no sobrescribe PR #40 ni sustituye fondos/arte.
+- Rama `feature/oneup-green-theme-picker-20261017`, PR [#41](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/41).
+- Implementado: CSS original en `themes/oneup-palette/selector.css` con tema **Esmeralda** predeterminado, **Original** reversible y **Violeta**; JS `selector.js` con allowlist de IDs, preferencia local, 2 grupos accesibles sincronizados (cabecera PC y cajón móvil) y sin credenciales/API externas. `index.html` carga ambas capas; `sw.js` cambió versión v28 y precachea recursos manteniendo aislamiento de caché.
+- QA añadido `scripts/e2e-oneup-palette.mjs`, integrado en `.github/workflows/browser-acceptance.yml`: prueba Playwright 320/390/1366, estado/ARIA, selección, persistencia, restauración, CSS aplicado, anchura y screenshots. Estado CI debe revalidarse para último SHA antes de afirmar PASS, Safari físico aún no probado.
+- `docs/ONEUP_COLOR_THEMES.md` recoge uso, privacidad y criterios release. Próximo paso: confirmar tests, hacer merge seguro si procede y verificar GitHub Pages; la web no debe anunciarse actualizada hasta constatar el despliegue real.
