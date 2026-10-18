@@ -1,0 +1,21 @@
+.depth-scene {
+  position: relative;
+  perspective: 1000px;
+  overflow: hidden;
+}
+
+[data-depth] {
+  transition: transform 0.12s ease-out;
+  will-change: transform;
+}
+
+[data-depth="far"]   { transform: translate3d(0,0,0); filter: blur(1px) brightness(0.9); }
+[data-depth="mid"]   { transform: translate3d(0,0,0); }
+[data-depth="near"]  { transform: translate3d(0,0,0); }
+[data-depth="front"] { transform: translate3d(0,0,0); z-index: 5; }
+
+.depth-off [data-depth] {
+  transform: none !important;
+  filter: none !important;
+  transition: filter 0.3s ease;
+}
