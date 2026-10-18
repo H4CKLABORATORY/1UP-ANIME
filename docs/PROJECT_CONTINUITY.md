@@ -230,3 +230,11 @@ Al concluir cada trabajo agregar:
 - Integración mínima en `index.html`, `studio.js` (ruta y cierre de ficha), `pages.js` (pantallas interiores) y `sw.js` (versión v29 precache). No se modificó el motor de catálogo, seguridad, reproductor ni fuentes multimedia.
 - QA: `scripts/e2e-oneup-motion.mjs` integrado en `ONEUP Browser Acceptance`, prueba apertura/cierre, Escape, menú, búsqueda, hash interiores, viewport, y modo reducido a 390 y 1366 px. **Confirmar CI del SHA final antes de afirmar resultado o publicar.**
 - Pendiente: evaluar capturas, revisar CI, asegurar ausencia de regresiones en iPhone y GitHub Pages. No atribuir prueba Safari físico hasta disponer de evidencia.
+
+
+### 2026-10-17 — Publicación comprobada en GitHub de ONEUP Motion (PR #42)
+- PR [#42](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/42) fusionado a `main` mediante squash: commit `0296c3429ff1f936a26e3684b5db4cd85f2ef3c4`. Archivos de `themes/oneup-motion/windows.js/css`, referencia desde `index.html` y precaché PWA v29 confirmados por lectura independiente de `main`.
+- Cinco suites del HEAD `89da7f6c8437e739ff8c625fd6d9a22cc1d8fad5` aprobaron: ONEUP Browser Acceptance (run 39082604468), ONEUP Kokomi Visual Acceptance (39082604507), One Up UI Quality (39082604284), 1UP HLS browser compatibility (39082604399) y ONEUP Codex Cache and Catalog Regression (39082604556).
+- Browser Acceptance ejercitó cuatro variantes: 390px y 1366px con y sin `prefers-reduced-motion`; abrir/cerrar ficha, Escape, drawer/buscador móvil, navegación interna y overflow. También mantuvo pruebas anteriores del selector de temas Esmeralda/Original/Violeta.
+- Primer CI fallido detectó un falso positivo del test por intentar reabrir una ficha durante la protección antitoques fantasma (450 ms). Se corrigió **solo el test** para respetar el intervalo (520 ms), se mantuvo la protección del iPhone y se obtuvo CI completo verde.
+- **NO VALIDADO EN VIVO:** la herramienta de navegación al dominio Pages no permitió obtener respuesta, y el contenedor no tiene salida de red para comprobar HTTP 200 de `https://h4cklaboratory.github.io/1UP-ANIME/`. No afirmar que el deploy público fue comprobado ni que Safari físico fue probado. Próximo: verificar despliegue Pages y prueba real de Safari; después pulir transiciones compartidas entre tarjetas y fichas sin efectos pesados.
