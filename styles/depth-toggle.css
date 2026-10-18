@@ -1,32 +1,36 @@
+.depth-toggle-btn[hidden] { display: none !important; }
 .depth-toggle-btn {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 8px 16px;
+  justify-content: center;
+  gap: 6px;
+  width: auto;
+  max-width: max-content;
+  margin: 9px 21px 4px;
+  padding: 6px 10px;
   border-radius: 999px;
   background: rgba(255,255,255,0.06);
   border: 1px solid rgba(255,255,255,0.12);
   color: #9ca3af;
-  font-size: 14px;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.2;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
 }
 
 .depth-toggle-btn:hover {
-  border-color: rgba(16,185,129,0.4);
+  border-color: var(--oneup-pal-accent, #10b981);
   color: #ffffff;
 }
 
 .depth-toggle-btn.active {
-  background: rgba(16,185,129,0.15);
-  border-color: #10b981;
-  color: #10b981;
-  box-shadow: 0 0 16px rgba(16,185,129,0.25);
+  background: var(--oneup-pal-soft, rgba(16,185,129,0.15));
+  border-color: var(--oneup-pal-accent, #10b981);
+  color: var(--oneup-pal-accent, #10b981);
+  box-shadow: 0 0 12px var(--oneup-pal-glow, rgba(16,185,129,0.25));
 }
 
-.depth-toggle-btn svg {
-  transition: transform 0.3s ease;
-}
-.depth-toggle-btn.active svg {
-  transform: rotate(-8deg) scale(1.1);
-}
+.depth-toggle-btn svg { width: 15px; height: 15px; transition: transform 0.3s ease; }
+.depth-toggle-btn.active svg { transform: rotate(-8deg) scale(1.1); }
+.depth-toggle-btn:focus-visible { outline: 2px solid var(--oneup-pal-accent, #10b981); outline-offset: 2px; }

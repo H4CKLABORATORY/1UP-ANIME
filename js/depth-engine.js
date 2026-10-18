@@ -1,6 +1,6 @@
 const DepthEngine = (() => {
   const STORAGE_KEY = "oneup-depth-mode";
-  let enabled = localStorage.getItem(STORAGE_KEY) !== "off";
+  let enabled = localStorage.getItem(STORAGE_KEY) === "on";
   let targetX = 0, targetY = 0;
 
   const depthFactors = { far: 6, mid: 14, near: 24, front: 36 };
