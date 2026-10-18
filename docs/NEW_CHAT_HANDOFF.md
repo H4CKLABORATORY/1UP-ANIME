@@ -22,7 +22,7 @@
 - No confundir el catálogo de Anime1v con episodios reproducibles ni su licencia MIT con derechos de distribución de anime.
 
 ## Estado detectado ahora
-- Último commit de aplicación encontrado: fe9a9ae4e9638e8c26bfa4a2e94ac6ae0c92184b
+- Último commit de aplicación encontrado: 8b4e2c8156dc706b0f3a91a59467d2260f91e8da
 - Descubrimiento Anime1v configurado en frontend: sí, verificar la respuesta real en Render
 - Código runtime de metadatos Anime1v en repositorio: sí
 - Entradas de obras multimedia en data/licensed-media.json: 0
@@ -30,11 +30,11 @@
 - Safari físico: no dar por verificado salvo prueba real con evidencia.
 
 ## Últimos commits relevantes
-- fe9a9ae4e — docs: record PR42 merged SHA and five passing motion regression suites; Pages pending live check
-- 0296c3429 — Release: premium ONEUP screen, dialog and drawer motion
-- 72c40f5c0 — Release: 1UP Anime emerald and violet theme picker with offline-safe PWA
-- 0625155c0 — Sync authorized anime episode metadata and source statuses
-- eb6d09c34 — ONEUP health snapshot (no application changes)
+- 8b4e2c815 — Merge pull request #43 from H4CKLABORATORY/feature/depth-mode-ui
+- b1acb65da — Sync authorized anime episode metadata and source statuses
+- 0a700c109 — fix: eliminar sintaxis escapada invalida de verificacion Playwright
+- afc4b05e9 — fix: alinear Playwright y Chromium en browser acceptance
+- 685743152 — fix: alinear Playwright y Chromium en browser acceptance
 
 ## PR abiertos (consultar cambios antes de desarrollar)
 - [#40](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/40) Diseño 1UP Editorial Pro: pulido cinematográfico original (solo preview)
