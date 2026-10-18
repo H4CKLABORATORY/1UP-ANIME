@@ -1,230 +1,9 @@
 {
-  "updated": "2026-10-18T15:28:38.036Z",
+  "updated": "2026-10-18T21:29:17.659Z",
   "source": "AniList public GraphQL metadata",
-  "windowStart": 1792139304,
-  "windowEnd": 1793114904,
+  "windowStart": 1792160943,
+  "windowEnd": 1793136543,
   "airing": [
-    {
-      "id": "mal-62039",
-      "mal_id": 62039,
-      "ani_id": 194207,
-      "title": "Pan Dorobou",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx194207-7n4M6jOwLdcF.jpg",
-      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/194207-6yQitDZ3uOi5.jpg",
-      "description": "Kadokawa announced on June 9th, 2025 that Keiko Shibata's Pan Dorobou (Bread Thief) picture book will have an anime adaptation. The announcement did not reveal the anime's format. The picture books center on a piece of bread that also steals bread from bakeries in the city. (Source: Anime News Network)",
-      "year": 2026,
-      "startDate": "2026-10-02",
-      "format": "TV_SHORT",
-      "episodes": 0,
-      "averageScore": 0,
-      "status": "RELEASING",
-      "genres": [
-        "Comedy"
-      ],
-      "siteUrl": "https://anilist.co/anime/194207",
-      "trailer": {
-        "site": "youtube",
-        "id": "dUSYa-7rKpM"
-      },
-      "next": {
-        "at": 1792748400,
-        "episode": 4
-      },
-      "airingAt": 1792143600,
-      "episode": 3,
-      "scheduleId": 420230,
-      "description_es": "Kadokawa anunció el 9 de junio de 2025 que el libro de fotos Pan Dorobou (Bread Thief) de Keiko Shibata tendrá una adaptación de anime. El anuncio no reveló el formato del anime. Los libros de fotos se centran en un pedazo de pan que también roba pan de panaderías en la ciudad. (Fuente: Anime News Network)"
-    },
-    {
-      "id": "mal-53876",
-      "mal_id": 53876,
-      "ani_id": 158871,
-      "title": "Pokémon Horizons: The Series",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx158871-GBM9AMDfDRSu.jpg",
-      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/158871-PtipBrtn93hB.jpg",
-      "description": "A new dream and adventure set throughout the entire Pokémon world unfolds in a brand new Pokémon-series following a girl named Liko and a boy named Roy.",
-      "year": 2023,
-      "startDate": "2023-04-14",
-      "format": "TV",
-      "episodes": 0,
-      "averageScore": 73,
-      "status": "RELEASING",
-      "genres": [
-        "Action",
-        "Adventure",
-        "Fantasy"
-      ],
-      "siteUrl": "https://anilist.co/anime/158871",
-      "trailer": {
-        "site": "youtube",
-        "id": "_c_hMehCORQ"
-      },
-      "next": {
-        "at": 1792749300,
-        "episode": 154
-      },
-      "airingAt": 1792144500,
-      "episode": 153,
-      "scheduleId": 421005,
-      "description_es": "Un nuevo sueño y aventura en todo el mundo Pokémon se desarrolla en una nueva serie Pokémon siguiendo a una chica llamada Liko y un chico llamado Roy."
-    },
-    {
-      "id": "mal-51768",
-      "mal_id": 51768,
-      "ani_id": 146004,
-      "title": "Watame Did Borderline Nothing Wrong",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx146004-hH08KAB1yHlN.png",
-      "banner": "",
-      "description": "A series of comedic YouTube shorts airing every Friday on Watame's YouTube channel. Notes: - Episodes 1-21 (Series 1) were originally released in a vertical format, later rereleased widescreen in 8 compilation videos. - Contains special episode \"Best Girl？！スペシャル回！！！\"",
-      "year": 2022,
-      "startDate": "2022-01-07",
-      "format": "ONA",
-      "episodes": 0,
-      "averageScore": 69,
-      "status": "RELEASING",
-      "genres": [
-        "Comedy",
-        "Slice of Life"
-      ],
-      "siteUrl": "https://anilist.co/anime/146004",
-      "trailer": {
-        "site": "youtube",
-        "id": "c3DcpEy3xd8"
-      },
-      "next": {
-        "at": 1792749600,
-        "episode": 85
-      },
-      "airingAt": 1792144800,
-      "episode": 84,
-      "scheduleId": 422658,
-      "description_es": "Una serie de cortos cómicos de YouTube que emiten cada viernes en el canal de YouTube de Watame. Notas: - Episodios 1-21 (Series 1) fueron publicados originalmente en un formato vertical, posteriormente en pantalla ancha liberada en 8 vídeos de compilación. - Contiene episodio especial \"Mejor chica?!"
-    },
-    {
-      "id": "mal-64848",
-      "mal_id": 64848,
-      "ani_id": 208367,
-      "title": "Duel Masters LOST: Danzai no Shounen",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx208367-qWKRaOpokGoG.jpg",
-      "banner": "",
-      "description": "Sequel to Duel Masters LOST: Boukyaku no Taiyou .",
-      "year": 2026,
-      "startDate": "2026-10-09",
-      "format": "ONA",
-      "episodes": 4,
-      "averageScore": 0,
-      "status": "RELEASING",
-      "genres": [
-        "Adventure",
-        "Supernatural"
-      ],
-      "siteUrl": "https://anilist.co/anime/208367",
-      "trailer": null,
-      "next": {
-        "at": 1792756800,
-        "episode": 3
-      },
-      "airingAt": 1792152000,
-      "episode": 2,
-      "scheduleId": 419661,
-      "description_es": "Secuela de Duel Masters LOST: Boukyaku no Taiyou."
-    },
-    {
-      "id": "mal-65009",
-      "mal_id": 65009,
-      "ani_id": 216895,
-      "title": "Welsh & Shedar",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx216895-Ofx4FSKFa4CQ.jpg",
-      "banner": "",
-      "description": "The story of Aoki Denshou Welsh & Shedar follows Welsh, a teenage boy from the country who loves to cook, and Shedar, a young prince who is destined to become king one day. When the two young men with very different lives are thrown together by a chance encounter, the wheels of fate begin to turn, and soon they must work together to bring about a peaceful future by stopping a cruel despot from conquering the world. (Source: Crunchyroll)",
-      "year": 2026,
-      "startDate": "2026-10-02",
-      "format": "TV",
-      "episodes": 12,
-      "averageScore": 52,
-      "status": "RELEASING",
-      "genres": [
-        "Adventure",
-        "Fantasy"
-      ],
-      "siteUrl": "https://anilist.co/anime/216895",
-      "trailer": {
-        "site": "youtube",
-        "id": "4QafpDIgjS4"
-      },
-      "next": {
-        "at": 1792758360,
-        "episode": 4
-      },
-      "airingAt": 1792153560,
-      "episode": 3,
-      "scheduleId": 420190,
-      "description_es": "La historia de Aoki Denshou Welsh &quot; Shedar sigue a Welsh, un adolescente del país que ama cocinar, y a Shedar, un joven príncipe que está destinado a ser rey un día. Cuando los dos jóvenes con vidas muy diferentes son lanzados juntos por un encuentro casual, las ruedas del destino comienzan a girar, y pronto deben trabajar juntos para traer un futuro pacífico al detener un cruel déspota de conquistar el mundo. (Fuente: Crunchyroll)"
-    },
-    {
-      "id": "mal-61014",
-      "mal_id": 61014,
-      "ani_id": 186742,
-      "title": "A Certain Dark Item",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx186742-v7yfbefc8fuO.png",
-      "banner": "",
-      "description": "This is a story of four girls living in the \"Dark Side\" of Academy City. In Academy City where \"ESP\" has been recognized as a general science. Behind the peace, there is a Dark Side organization that undertakes missions that cannot be made public. \"ITEM\" is an elite unit consisting of four girls. Takitsubo Rikou is able to read and track the AIM fields emitted by those with abilities. Frenda Seivelun, who excels in combat using explosives and traps. Kinuhata Saiai, who can manipulate nitrogen at will and plays a defensive role. And one of the 7 Espers that Academy City is proud of: Mugino Shizuri. They live freely in the darkness of the Academy City, and quietly set their sights on their target...! This is a story of encounter, friendship, and darkness that eventually leads to a terrible incident! (Source: Kadokawa, translated)",
-      "year": 2026,
-      "startDate": "2026-10-09",
-      "format": "TV",
-      "episodes": 0,
-      "averageScore": 70,
-      "status": "RELEASING",
-      "genres": [
-        "Action",
-        "Sci-Fi"
-      ],
-      "siteUrl": "https://anilist.co/anime/186742",
-      "trailer": {
-        "site": "youtube",
-        "id": "NNHxQJgZdbQ"
-      },
-      "next": {
-        "at": 1792762200,
-        "episode": 3
-      },
-      "airingAt": 1792157400,
-      "episode": 2,
-      "scheduleId": 419703,
-      "description_es": "Esta es una historia de cuatro chicas que viven en el \"Dark Side\" de Academy City. En la Ciudad de la Academia donde el \"ESP\" ha sido reconocido como una ciencia general. Detrás de la paz, hay una organización Dark Side que realiza misiones que no pueden hacerse públicas. \"ITEM\" es una unidad de élite compuesta por cuatro niñas. Takitsubo Rikou es capaz de leer y rastrear los campos AIM emitidos por aquellos con capacidades. Frenda Seivelun, que destaca en combate utilizando explosivos y trampas. Kinuhata Saiai, que puede manipular el nitrógeno a voluntad y juega un papel defensivo. Y uno de los 7 Espers que Academy City está orgulloso de: Mugino Shiz"
-    },
-    {
-      "id": "mal-61987",
-      "mal_id": 61987,
-      "ani_id": 195516,
-      "title": "The Apothecary Diaries Season 3",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx195516-MJpUZlOberqH.jpg",
-      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/195516-B5M0cPaQbQXI.jpg",
-      "description": "In the aftermath of the Shi Clan’s rebellion, things have finally settled down, and Maomao has returned to her old life as a pharmacist in the pleasure district. One day, triggered by a breakfast served at the Verdigris House, Maomao senses an anomaly and begins investigating its true nature. Meanwhile, Jinshi, who has revealed his true identity as the Imperial brother and begun to face his heavy responsibilities, is deeply troubled by the final message left by Loulan: a warning of an impending \"disaster that will strike the nation.\" To make matters worse, rumors of a mysterious shrine maiden who deceives the people begin to spread, casting a dark shadow over the country of Li once again. From the depths of the inner court to the city streets, and across foreign borders—the world grows wider, and the stakes even higher for Maomao and Jinshi. (Source: Crunchyroll)",
-      "year": 2026,
-      "startDate": "2026-10-02",
-      "format": "TV",
-      "episodes": 12,
-      "averageScore": 85,
-      "status": "RELEASING",
-      "genres": [
-        "Drama",
-        "Mystery"
-      ],
-      "siteUrl": "https://anilist.co/anime/195516",
-      "trailer": {
-        "site": "youtube",
-        "id": "YvNvvUeCztE"
-      },
-      "next": {
-        "at": 1792764000,
-        "episode": 4
-      },
-      "airingAt": 1792159200,
-      "episode": 3,
-      "scheduleId": 418783,
-      "description_es": "Después de la rebelión del clan Shi, las cosas finalmente se han asentado, y Maomao ha vuelto a su antigua vida como farmacéutico en el distrito de placer. Un día, provocado por un desayuno servido en la Casa Verdigris, Maomao siente una anomalía y comienza a investigar su verdadera naturaleza. Mientras tanto, Jinshi, que ha revelado su verdadera identidad como el hermano imperial y ha comenzado a enfrentar sus pesadas responsabilidades, está profundamente preocupado por la fina"
-    },
     {
       "id": "mal-63293",
       "mal_id": 63293,
@@ -2083,8 +1862,8 @@
         "id": "2zhlC9mffas"
       },
       "next": {
-        "at": 1792339200,
-        "episode": 3
+        "at": 1793548800,
+        "episode": 4
       },
       "airingAt": 1792339200,
       "episode": 3,
@@ -2116,8 +1895,8 @@
         "id": "E-stx_wwVSs"
       },
       "next": {
-        "at": 1792339500,
-        "episode": 3
+        "at": 1792944300,
+        "episode": 4
       },
       "airingAt": 1792339500,
       "episode": 3,
@@ -2146,8 +1925,8 @@
       "siteUrl": "https://anilist.co/anime/217782",
       "trailer": null,
       "next": {
-        "at": 1792340220,
-        "episode": 3
+        "at": 1792945020,
+        "episode": 4
       },
       "airingAt": 1792340220,
       "episode": 3,
@@ -2180,8 +1959,8 @@
         "id": "-YCols5lYow"
       },
       "next": {
-        "at": 1792340400,
-        "episode": 3
+        "at": 1792945200,
+        "episode": 4
       },
       "airingAt": 1792340400,
       "episode": 3,
@@ -2211,8 +1990,8 @@
       "siteUrl": "https://anilist.co/anime/218217",
       "trailer": null,
       "next": {
-        "at": 1792346400,
-        "episode": 3
+        "at": 1792951200,
+        "episode": 4
       },
       "airingAt": 1792346400,
       "episode": 3,
@@ -2280,6 +2059,36 @@
       "airingAt": 1792375200,
       "episode": 5,
       "scheduleId": 419731
+    },
+    {
+      "id": "mal-65119",
+      "mal_id": 65119,
+      "ani_id": 218532,
+      "title": "Maomao no Hitorigoto 3rd Season",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx218532-I1GCprJrJ5sm.png",
+      "banner": "",
+      "description": "Chibi shorts to Kusuriya no Hitorigoto 3rd Season released on the TOHO animation YouTube channel. Note: Episode count begins at 49.",
+      "year": 2026,
+      "startDate": "2026-10-05",
+      "format": "ONA",
+      "episodes": 0,
+      "averageScore": 0,
+      "status": "RELEASING",
+      "genres": [
+        "Comedy"
+      ],
+      "siteUrl": "https://anilist.co/anime/218532",
+      "trailer": {
+        "site": "youtube",
+        "id": "FuGZ0Cl8YMY"
+      },
+      "next": {
+        "at": 1792378800,
+        "episode": 3
+      },
+      "airingAt": 1792378800,
+      "episode": 3,
+      "scheduleId": 422693
     },
     {
       "id": "mal-63409",
@@ -6178,8 +5987,8 @@
         "id": "E-stx_wwVSs"
       },
       "next": {
-        "at": 1792339500,
-        "episode": 3
+        "at": 1792944300,
+        "episode": 4
       },
       "airingAt": 1792944300,
       "episode": 4,
@@ -6208,8 +6017,8 @@
       "siteUrl": "https://anilist.co/anime/217782",
       "trailer": null,
       "next": {
-        "at": 1792340220,
-        "episode": 3
+        "at": 1792945020,
+        "episode": 4
       },
       "airingAt": 1792945020,
       "episode": 4,
@@ -6242,8 +6051,8 @@
         "id": "-YCols5lYow"
       },
       "next": {
-        "at": 1792340400,
-        "episode": 3
+        "at": 1792945200,
+        "episode": 4
       },
       "airingAt": 1792945200,
       "episode": 4,
@@ -6273,8 +6082,8 @@
       "siteUrl": "https://anilist.co/anime/218217",
       "trailer": null,
       "next": {
-        "at": 1792346400,
-        "episode": 3
+        "at": 1792951200,
+        "episode": 4
       },
       "airingAt": 1792951200,
       "episode": 4,
@@ -6342,6 +6151,36 @@
       "airingAt": 1792980000,
       "episode": 7,
       "scheduleId": 419733
+    },
+    {
+      "id": "mal-65119",
+      "mal_id": 65119,
+      "ani_id": 218532,
+      "title": "Maomao no Hitorigoto 3rd Season",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx218532-I1GCprJrJ5sm.png",
+      "banner": "",
+      "description": "Chibi shorts to Kusuriya no Hitorigoto 3rd Season released on the TOHO animation YouTube channel. Note: Episode count begins at 49.",
+      "year": 2026,
+      "startDate": "2026-10-05",
+      "format": "ONA",
+      "episodes": 0,
+      "averageScore": 0,
+      "status": "RELEASING",
+      "genres": [
+        "Comedy"
+      ],
+      "siteUrl": "https://anilist.co/anime/218532",
+      "trailer": {
+        "site": "youtube",
+        "id": "FuGZ0Cl8YMY"
+      },
+      "next": {
+        "at": 1792378800,
+        "episode": 3
+      },
+      "airingAt": 1792983600,
+      "episode": 4,
+      "scheduleId": 422694
     },
     {
       "id": "mal-63409",
@@ -6796,6 +6635,73 @@
       "episode": 4,
       "scheduleId": 420255,
       "description_es": "Rein, un encantador, es expulsado de su gremio un día. Pero en lugar de desesperar, declara, “¡Ahora puedo hacer cualquier cosa!” y comienza a reclamar el enorme número de puntos de mejora que una vez vierte en el equipo de sus compañeros, a partir de un nuevo camino como aventurero. Reunirse a su alrededor son personas que llevan heridas que no se desvanecen fácilmente: un genio aventurero que cerró su corazón después de que su partido fue masacrado, un guerrero que perdió"
+    },
+    {
+      "id": "mal-63489",
+      "mal_id": 63489,
+      "ani_id": 207809,
+      "title": "Red River",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx207809-cpS7CAyjN7iP.jpg",
+      "banner": "",
+      "description": "After a mysterious hand drags her beneath a puddle, modern Japanese teenager Yuri awakens in the Hittite Empire of the 14th century BCE. Thrust into a deadly struggle for the throne, she joins Prince Kail to battle assassins, outwit royal conspiracies, and survive a world at war. As her exploits earn her renown as the goddess Ishtar, Yuri must choose between her old life and an uncertain future. (Source: Crunchyroll)",
+      "year": 2026,
+      "startDate": "2026-07-08",
+      "format": "TV",
+      "episodes": 24,
+      "averageScore": 61,
+      "status": "RELEASING",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Drama",
+        "Fantasy",
+        "Romance"
+      ],
+      "siteUrl": "https://anilist.co/anime/207809",
+      "trailer": {
+        "site": "youtube",
+        "id": "qpFcQ1Bek08"
+      },
+      "next": {
+        "at": 1792514100,
+        "episode": 16
+      },
+      "airingAt": 1793118900,
+      "episode": 17,
+      "scheduleId": 418952,
+      "description_es": "Después de una mano misteriosa la arrastra debajo de un charco, moderno adolescente japonés Yuri despierta en el imperio hitita del siglo 14 AC. Entró en una lucha mortal por el trono, se une al Príncipe Kail para combatir a asesinos, superar conspiraciones reales y sobrevivir a un mundo en guerra. Mientras sus hazañas ganan su renombre como la diosa Ishtar, Yuri debe elegir entre su vida vieja y un futuro incierto. (Fuente: Crunchyroll)"
+    },
+    {
+      "id": "mal-59415",
+      "mal_id": 59415,
+      "ani_id": 179876,
+      "title": "DARK MACHINE THE ANIMATION",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx179876-Wg62CAzp5WQ1.jpg",
+      "banner": "",
+      "description": "Following his grandfather’s will to “seek out the Senki,” the protagonist Kairi visits Golden Valley, a special Dark Machine economic zone. There, he meets a mysterious girl named Rudra. Dragged into becoming a Dark Machine player by Rudra, Kairi’s talent gradually blossoms over the course of many intense battles. (Source: Fuji Creative) Note: Part of the \"DARK MACHINE\" Web3 cross-media project where the story of the Game and its anime adaptation intertwine.",
+      "year": 2026,
+      "startDate": "2026-10-14",
+      "format": "TV",
+      "episodes": 11,
+      "averageScore": 53,
+      "status": "RELEASING",
+      "genres": [
+        "Mecha",
+        "Sci-Fi"
+      ],
+      "siteUrl": "https://anilist.co/anime/179876",
+      "trailer": {
+        "site": "youtube",
+        "id": "Tvvs_SlUYgA"
+      },
+      "next": {
+        "at": 1792514700,
+        "episode": 2
+      },
+      "airingAt": 1793119500,
+      "episode": 3,
+      "scheduleId": 419636,
+      "description_es": "Siguiendo la voluntad de su abuelo de “buscar el Senki”, el protagonista Kairi visita Golden Valley, una zona económica especial de la máquina oscura. Allí, conoce a una chica misteriosa llamada Rudra. Se convirtió en un jugador de la máquina oscura por Rudra, el talento de Kairi florece gradualmente en el curso de muchas batallas intensas. (Fuente: Fuji Creative) Nota: Parte del proyecto \"DARK MACHINE\" Web3 cross-media donde se entrelazan la historia del juego y su adaptación de anime."
     }
   ],
   "seasonal": {
@@ -7325,30 +7231,6 @@
           "episode": 4
         },
         "description_es": "Mazenchu está en una escuela donde todo tipo de comida puede vivir su juventud y formar amistades, rivalidades y romances amargos. (Fuente: Anime News Network)"
-      },
-      {
-        "id": "mal-65119",
-        "mal_id": 65119,
-        "ani_id": 218532,
-        "title": "Maomao no Hitorigoto 3rd Season",
-        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx218532-I1GCprJrJ5sm.png",
-        "banner": "",
-        "description": "Chibi shorts to Kusuriya no Hitorigoto 3rd Season released on the TOHO animation YouTube channel.",
-        "year": 2026,
-        "startDate": "2026-10-02",
-        "format": "ONA",
-        "episodes": 12,
-        "averageScore": 0,
-        "status": "RELEASING",
-        "genres": [
-          "Comedy"
-        ],
-        "siteUrl": "https://anilist.co/anime/218532",
-        "trailer": {
-          "site": "youtube",
-          "id": "FuGZ0Cl8YMY"
-        },
-        "next": null
       },
       {
         "id": "mal-61967",
@@ -8154,8 +8036,8 @@
           "id": "-YCols5lYow"
         },
         "next": {
-          "at": 1792340400,
-          "episode": 3
+          "at": 1792945200,
+          "episode": 4
         },
         "description_es": "Amona es un llamador oscuro con poderes demoníacos. Roni es un sacerdote devota que está demasiado tenso. Por todos los derechos, deben odiarse. En lugar de eso, terminan acelerando su arco de enemigos a amantes con un stand de una noche que de alguna manera insiste en convertirse en un evento recurrente. Ahora deben ocultar su nave de situación del resto del partido mientras niegan su creciente atracción entre sí, mientras tratan con un imp que está demasiado invertido en su vida amorosa. (Fuente: HIDIVE)"
       },
@@ -8247,8 +8129,8 @@
           "id": "E-stx_wwVSs"
         },
         "next": {
-          "at": 1792339500,
-          "episode": 3
+          "at": 1792944300,
+          "episode": 4
         },
         "description_es": "Por primera vez en mi vida, tengo una novia. Pero su amiga me tienta con un cuerpo tan seductor... ¿Qué harías si el amigo de tu novia viniera a ti así? (Fuente: Yanmaga, traducido)"
       },
@@ -8277,8 +8159,8 @@
           "id": "2zhlC9mffas"
         },
         "next": {
-          "at": 1792339200,
-          "episode": 3
+          "at": 1793548800,
+          "episode": 4
         },
         "description_es": "¿Y si pudiera controlar la realidad con un cursor del ratón? Un día durante la clase, Takumi, un otaku, nota que el cursor del ratón ha salido de la pantalla. Panicked, pide a su amigo de la infancia Mone, sentado junto a él, para echar un vistazo, sólo para ser cepillado... Una vez que Takumi se da cuenta de que podía controlarlo él mismo, utiliza el cursor del ratón — visible sólo para él— para deslizarlo entre la ropa de Mone y empieza a hacer clic... Aquí está Japón (probablemente) primer nuevo género de romcom, \"Haciendo clic en Away en un Gyaru Who's Mean a Otakus con un cursor Mouse\"! (Fuente: Sitio Oficial) Nota: Episodio 1 recibe"
       },
@@ -8334,8 +8216,8 @@
         "siteUrl": "https://anilist.co/anime/217782",
         "trailer": null,
         "next": {
-          "at": 1792340220,
-          "episode": 3
+          "at": 1792945020,
+          "episode": 4
         },
         "description_es": "Un mini anime semanal mostrado con cada episodio de Kanojo no Tomodachi exclusivamente en la transmisión AT-X del anime de TV y en línea en OceanVeil."
       },
@@ -8362,8 +8244,8 @@
         "siteUrl": "https://anilist.co/anime/218217",
         "trailer": null,
         "next": {
-          "at": 1792346400,
-          "episode": 3
+          "at": 1792951200,
+          "episode": 4
         },
         "description_es": "Un mini anime semanal mostrado con cada episodio de Dark Summoner a Dekiteiru exclusivamente en la transmisión AT-X del anime de TV y en línea en Abema."
       },
@@ -8393,6 +8275,33 @@
         "next": {
           "at": 1792375200,
           "episode": 5
+        }
+      },
+      {
+        "id": "mal-65119",
+        "mal_id": 65119,
+        "ani_id": 218532,
+        "title": "Maomao no Hitorigoto 3rd Season",
+        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx218532-I1GCprJrJ5sm.png",
+        "banner": "",
+        "description": "Chibi shorts to Kusuriya no Hitorigoto 3rd Season released on the TOHO animation YouTube channel. Note: Episode count begins at 49.",
+        "year": 2026,
+        "startDate": "2026-10-05",
+        "format": "ONA",
+        "episodes": 0,
+        "averageScore": 0,
+        "status": "RELEASING",
+        "genres": [
+          "Comedy"
+        ],
+        "siteUrl": "https://anilist.co/anime/218532",
+        "trailer": {
+          "site": "youtube",
+          "id": "FuGZ0Cl8YMY"
+        },
+        "next": {
+          "at": 1792378800,
+          "episode": 3
         }
       },
       {
