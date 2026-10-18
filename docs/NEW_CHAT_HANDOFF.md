@@ -22,7 +22,7 @@
 - No confundir el catálogo de Anime1v con episodios reproducibles ni su licencia MIT con derechos de distribución de anime.
 
 ## Estado detectado ahora
-- Último commit de aplicación encontrado: 904b424bc0e9dd7e5f243464359ee8bd72fefbbb
+- Último commit de aplicación encontrado: 6509c3ccfdedf3df0d59d92c49fb087161e3e8b7
 - Descubrimiento Anime1v configurado en frontend: sí, verificar la respuesta real en Render
 - Código runtime de metadatos Anime1v en repositorio: sí
 - Entradas de obras multimedia en data/licensed-media.json: 0
@@ -30,13 +30,15 @@
 - Safari físico: no dar por verificado salvo prueba real con evidencia.
 
 ## Últimos commits relevantes
+- 6509c3ccf — Sync authorized anime episode metadata and source statuses
+- 1b3f9f9b8 — ONEUP health snapshot (no application changes)
 - 904b424bc — feat: move depth toggle to sidebar, rename to 3D, default off
 - ae493989c — Update live anime airing calendar
 - 72a94fe7c — chore: trigger pages redeploy
-- 9e6c8c434 — Sync authorized anime episode metadata and source statuses
-- 46cbb2377 — ONEUP health snapshot (no application changes)
 
 ## PR abiertos (consultar cambios antes de desarrollar)
+- [#45](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/45) WIP: guarded comment image/GIF preview and anime detail UX audit
+- [#44](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/44) Audit: release readiness baseline and Depth Mode regression coverage
 - [#40](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/40) Diseño 1UP Editorial Pro: pulido cinematográfico original (solo preview)
 - [#39](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/39) Parallel AI: lectura opcional y segura del catálogo público de Crunchyroll
 - [#38](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/38) Scrapling privado: metadatos automáticos sin interfaz pública (aprobación obligatoria)
@@ -47,8 +49,6 @@
 - [#15](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/15) [Codex handoff] DEXTER OMEGA SWARM — coordinación y misión 1UP Anime
 - [#14](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/14) Kokomi 1UP Anime · diseño + 22 vistas + reproductor y comentarios integrados (preview)
 - [#13](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/13) Diseño móvil 1UP Anime inspirado en referencia Kokomi
-- [#11](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/11) Preparar Supabase opcional para comentarios por episodio y progreso
-- [#10](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/10) Reproductor HLS compatible con Safari iPhone, Chrome y Firefox
 
 ## Próxima tarea por prioridad
 1. Leer AGENTS.md, esta ficha, PROJECT_CONTINUITY.md y OMEGA_NEXT_ACTIONS.md; confirmar HEAD y CI.
