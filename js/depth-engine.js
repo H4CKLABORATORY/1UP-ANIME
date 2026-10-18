@@ -24,6 +24,7 @@ const DepthEngine = (() => {
 
   function render() {
     document.querySelectorAll("[data-depth]").forEach(el => {
+      if (el.closest(".anime-card")) return;
       const layer = el.dataset.depth;
       const factor = depthFactors[layer] || 10;
       const x = -targetX * factor;
