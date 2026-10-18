@@ -1,0 +1,28 @@
+name: Depth mode Playwright
+on:
+  push:
+    branches: [feature/depth-mode-ui]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+jobs:
+  depth-mode:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: package-lock.json
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - run: npm run test:depth
+      - name: Upload Playwright report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: depth-mode-playwright-report
+          path: playwright-report/
+          if-no-files-found: ignore
