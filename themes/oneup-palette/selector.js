@@ -120,8 +120,11 @@
     }
     setTheme(active(), false);
   }
-  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', mount, { once: true });
-  else mount();
+  // Deferred scripts execute while readyState is often 'interactive'. Wait for
+  // DOMContentLoaded so the existing Kokomi menu's listener creates its drawer
+  // before we insert the mobile palette options.
+  if (document.readyState === 'complete') mount();
+  else document.addEventListener('DOMContentLoaded', mount, { once: true });
   // Only an allowlisted palette identifier; no remote calls or user content.
   window.OneUpPalette = Object.freeze({ get: active, set: setTheme });
 })();
