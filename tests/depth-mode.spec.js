@@ -11,13 +11,24 @@ for (const viewport of [{ width: 1920, height: 1080 }, { width: 390, height: 844
     page.on('pageerror', error => errors.push(`pageerror: ${error.message}`));
 
     try {
-      await page.addInitScript(() => localStorage.setItem('oneup-depth-mode', 'off'));
+      await page.addInitScript(() => localStorage.removeItem('oneup-depth-mode'));
       await page.goto('/', { waitUntil: 'domcontentloaded' });
       const toggle = page.locator('#depth-toggle');
+      await expect(page.locator('.header-right #depth-toggle')).toHaveCount(0);
+      await page.locator('#km-open').click();
       await expect(toggle).toBeVisible();
+      await expect(page.locator('#km-drawer .oneup-theme-drawer')).toBeVisible();
+      await expect(toggle).toHaveText('3D');
+      await expect(toggle).toHaveAttribute('aria-pressed', 'false');
+      expect(await page.evaluate(() => localStorage.getItem('oneup-depth-mode'))).toBeNull();
       await expect(page.locator('body')).toHaveClass(/depth-off/);
       await toggle.click();
       await expect(toggle).toHaveClass(/active/);
+      await expect(toggle).toHaveAttribute('aria-pressed', 'true');
+      await page.reload({ waitUntil: 'domcontentloaded' });
+      await page.locator('#km-open').click();
+      await expect(toggle).toHaveClass(/active/);
+      await expect(page.locator('body')).not.toHaveClass(/depth-off/);
       await expect(page.locator('body')).not.toHaveClass(/depth-off/);
 
       const card = page.locator('.anime-card:has([data-depth])').first();
@@ -38,6 +49,10 @@ for (const viewport of [{ width: 1920, height: 1080 }, { width: 390, height: 844
       await toggle.click();
       await expect(page.locator('body')).toHaveClass(/depth-off/);
       await expect(toggle).not.toHaveClass(/active/);
+      await page.reload({ waitUntil: 'domcontentloaded' });
+      await page.locator('#km-open').click();
+      await expect(toggle).toHaveAttribute('aria-pressed', 'false');
+      await expect(page.locator('body')).toHaveClass(/depth-off/);
       await page.waitForTimeout(150);
       const offTransforms = await page.locator('[data-depth]').evaluateAll(elements =>
         elements.map(el => ({ transform: el.style.transform, card: Boolean(el.closest('.anime-card')) }))

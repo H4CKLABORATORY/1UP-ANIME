@@ -238,3 +238,12 @@ Al concluir cada trabajo agregar:
 - Browser Acceptance ejercitó cuatro variantes: 390px y 1366px con y sin `prefers-reduced-motion`; abrir/cerrar ficha, Escape, drawer/buscador móvil, navegación interna y overflow. También mantuvo pruebas anteriores del selector de temas Esmeralda/Original/Violeta.
 - Primer CI fallido detectó un falso positivo del test por intentar reabrir una ficha durante la protección antitoques fantasma (450 ms). Se corrigió **solo el test** para respetar el intervalo (520 ms), se mantuvo la protección del iPhone y se obtuvo CI completo verde.
 - **NO VALIDADO EN VIVO:** la herramienta de navegación al dominio Pages no permitió obtener respuesta, y el contenedor no tiene salida de red para comprobar HTTP 200 de `https://h4cklaboratory.github.io/1UP-ANIME/`. No afirmar que el deploy público fue comprobado ni que Safari físico fue probado. Próximo: verificar despliegue Pages y prueba real de Safari; después pulir transiciones compartidas entre tarjetas y fichas sin efectos pesados.
+
+
+## Bitácora — auditoría de lanzamiento (2026-10-18)
+- Rama: `audit/release-readiness-20261018`, base `0198e207bf48dea21a9138c85a7d029e34ec4a0f`.
+- Informe: `docs/RELEASE_AUDIT_20261018.md`. Estado: auditoría remota inicial, NO certificación de lanzamiento.
+- Corregida la prueba Playwright Depth Mode para abrir el menú lateral, comprobar OFF sin preferencia y persistencia al recargar; ejecución pendiente.
+- README: corregidas instrucciones Pages para usar GitHub Actions.
+- Sin secretos añadidos, sin cambios a fuentes de reproducción, sin merge, sin despliegue.
+- Pendiente: ejecutar Playwright/Node en entorno con dependencias, revisar backend y media E2E, comprobar licencias y servicios externos.
