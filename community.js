@@ -167,9 +167,43 @@ function startReplies(postId){
   $('#reply-list').innerHTML=comments.length?comments.map(x=>'<article class="c-reply"><strong>'+esc(x.displayName||'Fan')+' '+badge(x)+'</strong><p>'+esc(x.text)+'</p><small>'+niceDate(x.createdAt)+'</small></article>').join(''):'<div class="c-empty">Nadie ha comentado esta publicación todavía.</div>';
  },e=>status('#reply-state',e)).then(off=>repliesStop=off).catch(e=>status('#reply-state',errorText(e)));
 }
+const REPLY_MEDIA_MAX=5*1024*1024;
+const REPLY_MEDIA_TYPES=new Set(['image/jpeg','image/png','image/webp','image/gif']);
+let replyPreviewUrl=null;
+function clearReplyPreview(){
+ if(replyPreviewUrl){URL.revokeObjectURL(replyPreviewUrl);replyPreviewUrl=null}
+ const preview=$('#reply-media-preview');if(preview){preview.replaceChildren();preview.hidden=true}
+}
+function validateReplyMedia(file){
+ if(!file)return '';
+ if(!REPLY_MEDIA_TYPES.has(file.type))return 'Formato no permitido: utiliza JPG, PNG, WebP o GIF.';
+ if(file.size>REPLY_MEDIA_MAX)return 'El archivo excede el límite de 5 MB.';
+ if(file.size===0)return 'El archivo está vacío.';
+ return '';
+}
+function previewReplyMedia(){
+ clearReplyPreview();
+ const file=$('#reply-media')?.files?.[0],state=$('#reply-media-state');
+ if(!state)return;
+ const error=validateReplyMedia(file);
+ if(error){state.textContent=error;return}
+ if(!file){state.textContent='';return}
+ replyPreviewUrl=URL.createObjectURL(file);
+ const img=document.createElement('img');
+ img.src=replyPreviewUrl;img.alt='Vista previa del archivo antes de publicar';img.loading='lazy';
+ $('#reply-media-preview').replaceChildren(img);$('#reply-media-preview').hidden=false;
+ state.textContent='Vista previa local. El envío multimedia requiere un flujo de moderación configurado.';
+}
 async function reply(e){
  e.preventDefault();if(!activePost||!await requireAccount())return;
- const text=$('#reply-text').value.trim(),btn=$('#reply-form button');btn.disabled=true;
+ const text=$('#reply-text').value.trim(),btn=$('#reply-form button');
+ const file=$('#reply-media')?.files?.[0];
+ if(file){
+  const error=validateReplyMedia(file);
+  status('#reply-media-state',error||'No se puede publicar el archivo: falta integrar almacenamiento y revisión de imágenes/GIFs en el backend de moderación. El comentario no se envió.');
+  return;
+ }
+ btn.disabled=true;
  try{await backend().replyToPost(activePost,text);$('#reply-text').value='';status('#reply-state','Respuesta publicada.')}
  catch(e){status('#reply-state',errorText(e))}
  finally{btn.disabled=false}
@@ -267,6 +301,8 @@ async function init(){
  $('#c-reply-close').addEventListener('click',()=>$('#c-reply-dialog').close());
  $('#c-reply-dialog').addEventListener('close',()=>{if(repliesStop){repliesStop();repliesStop=null}});
  $('#reply-form').addEventListener('submit',reply);
+ $('#reply-media').addEventListener('change',previewReplyMedia);
+ $('#c-reply-dialog').addEventListener('close',()=>{clearReplyPreview();$('#reply-media').value='';status('#reply-media-state','')});
  $('#profile-form').addEventListener('submit',saveProfile);
  $('#verification-form').addEventListener('submit',verify);
  const id=new URLSearchParams(location.search).get('post');

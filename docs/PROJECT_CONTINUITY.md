@@ -238,3 +238,13 @@ Al concluir cada trabajo agregar:
 - Browser Acceptance ejercitó cuatro variantes: 390px y 1366px con y sin `prefers-reduced-motion`; abrir/cerrar ficha, Escape, drawer/buscador móvil, navegación interna y overflow. También mantuvo pruebas anteriores del selector de temas Esmeralda/Original/Violeta.
 - Primer CI fallido detectó un falso positivo del test por intentar reabrir una ficha durante la protección antitoques fantasma (450 ms). Se corrigió **solo el test** para respetar el intervalo (520 ms), se mantuvo la protección del iPhone y se obtuvo CI completo verde.
 - **NO VALIDADO EN VIVO:** la herramienta de navegación al dominio Pages no permitió obtener respuesta, y el contenedor no tiene salida de red para comprobar HTTP 200 de `https://h4cklaboratory.github.io/1UP-ANIME/`. No afirmar que el deploy público fue comprobado ni que Safari físico fue probado. Próximo: verificar despliegue Pages y prueba real de Safari; después pulir transiciones compartidas entre tarjetas y fichas sin efectos pesados.
+
+
+## 2026-10-18 — Inicio UX detalle completo y comentarios multimedia
+- Rama `feature/full-anime-detail-media-comments-20261018` basada en `main` `0198e207bf48dea21a9138c85a7d029e34ec4a0f`.
+- Inspeccionados `index.html`, `studio.js`, `data/catalog.json`, `data/airing.json`, `episode-player.js`, `episode-comments.js`, `comunidad.html`, `community.js`, `moderacion.js`, `firestore.rules`, `social-backend.js` y `functions/index.js`.
+- El detalle existente depende de `#anime-dialog` y `showModal()`, con varias rutas de cierre y ciclo de vida del reproductor. **Cambio a página completa pendiente**: requiere migración coordinada de navegación/history, vistas, eventos, reproducción y restauración del scroll; no se ha alterado el modal para evitar romperlo a medias.
+- Los comentarios de comunidad usan `replyCommunityPost` y Firestore. La función de backend publica texto directamente como `status:'visible'`; no existe flujo de moderación multimedia de respuestas. **No se conectó upload multimedia** para impedir publicación sin revisión. Se añadió selector local JPG/PNG/WebP/GIF, vista previa con revocación de ObjectURL, límite 5 MB, mensajes de error y bloqueo explícito del envío con archivo. El envío solo texto conserva la ruta anterior.
+- No se encontró encuesta dentro del flujo `community.js` de respuestas; no se eliminó otra funcionalidad de preguntas/publicaciones.
+- Firebase/App Check no configurados; subida, aprobación, miniaturas públicas y E2E de multimedia: **BLOQUEADOS**.
+- No se ejecutó Playwright ni pruebas reales de navegador; cambios pendientes de QA y backend. No se tocó scraping ni `data/licensed-media.json`.
