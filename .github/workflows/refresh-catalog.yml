@@ -30,7 +30,7 @@ jobs:
       - name: Fetch anime catalog from AniList
         run: node scripts/refresh-catalog.mjs
       - name: Setup Python for offline Spanish translation
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v7
         with:
           python-version: "3.11"
       - name: Install open source translation engine
