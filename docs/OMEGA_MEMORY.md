@@ -65,3 +65,9 @@ Excluir secretos, datos personales irrelevantes, suposiciones no etiquetadas, pr
 - Rama `feature/official-crunchyroll-links-20261018`: módulo `official-watch.js/css`, UI en calendario/ficha, verificaciones de URLs oficiales y filtrado de `externalLinks` AniList en refresco programado.
 - Mantener **dos opciones distintas**: reproducir en 1UP (solo con fuentes válidas y autorizadas en `data/licensed-media.json`) y abrir en el sitio oficial de Crunchyroll. Nunca presentar link externo como permiso de retransmisión ni afirmar que hay capítulos cuando el manifiesto está vacío.
 - No fusionar automáticamente ramas con cambios simultáneos en `index.html`/`sw.js` (PR #46 contador online).
+
+### 2026-10-18 — Pulido sitio completo PR #48
+- Fotografía real de iPhone mostró logo recargado y demasiado pequeño, modal con grandes vacíos y X sobredimensionada. Se revisó el DOM/CSS/JS reales antes de actuar.
+- PR [#48](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/48) crea `assets/oneup-crest-mark.svg` y `ui-quality.css`; modifica modal, perfiles, headers, tipografía para títulos largos y botón de profundidad (el botón antes quedaba dentro del drawer oculto).
+- Pruebas reales Chromium y capturas de acceso en GitHub Actions; un segundo render mostró ventana compacta y centrada tras arreglar su altura. No llamar a Chromium Safari ni certificar una prueba en iPhone físico.
+- Registrar siguientes revisiones en `docs/SITE_QUALITY_AUDIT_20261018.md`; no sobreescribir la identidad actual ni inventar disponibilidad de login Google/video.

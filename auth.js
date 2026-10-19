@@ -50,39 +50,94 @@ async function restoreVerifiedGoogle(){
   }
  }catch(e){console.warn('Firebase authentication unavailable',e?.message)}
 }
-function storedProfiles(){try{const p=JSON.parse(localStorage.getItem('oneup_profiles_v1')||'[]');return Array.isArray(p)?p.filter(x=>x&&x.id&&x.name):[]}catch{return []}}
+function storedProfiles(){
+ try{
+  const profiles=JSON.parse(localStorage.getItem('oneup_profiles_v1')||'[]');
+  return Array.isArray(profiles)?profiles.filter(p=>p&&typeof p.id==='string'&&typeof p.name==='string'&&p.name.trim()).slice(0,6):[];
+ }catch{return []}
+}
+function googleConfigured(){
+ const c=window.ONEUP_FIREBASE_CONFIG;
+ return Boolean(c?.apiKey&&c?.projectId&&c?.authDomain);
+}
 function render(){
- const label=$('#auth-label');if(label)label.textContent=(current.name||'Invitado').slice(0,17);
- const out=$('#auth-signout');if(out)out.hidden=current.kind!=='google';
+ const label=$('#auth-label');
+ if(label)label.textContent=(current.name||'Invitado').slice(0,17);
+ const signout=$('#auth-signout');
+ if(signout)signout.hidden=current.kind!=='google';
+ const googleButton=$('#google-login');
+ if(googleButton){
+  const configured=googleConfigured();
+  googleButton.disabled=!configured;
+  googleButton.title=configured?'Continuar con Google':'El acceso con Google está pendiente de configuración';
+  const caption=$('#auth-google-label');
+  if(caption)caption.textContent=configured?'Continuar con Google':'Google · próximamente';
+ }
+ const help=$('#auth-service-note');
+ if(help)help.textContent=googleConfigured()
+  ?'También puedes entrar sin registrarte. Tus listas locales se guardan solo en este dispositivo.'
+  :'Google estará disponible cuando se configure el acceso. Puedes continuar como invitado sin esperar.';
+}
+function refreshProfiles(){
+ const details=$('#auth-profiles'),select=$('#auth-profile-select');
+ if(!details||!select)return;
+ const profiles=storedProfiles();
+ const keep=select.value;
+ select.replaceChildren();
+ for(const profile of profiles){
+  const option=document.createElement('option');
+  option.value=profile.id;option.textContent=profile.name.slice(0,50);
+  select.append(option);
+ }
+ if(profiles.some(profile=>profile.id===keep))select.value=keep;
+ details.hidden=profiles.length===0;
+ if(!profiles.length)details.open=false;
 }
 function init(){
- read();render();restoreVerifiedGoogle();
+ read();render();void restoreVerifiedGoogle();
  const dialog=$('#auth-dialog'),open=$('#auth-open');
  if(!dialog||!open)return;
- open.addEventListener('click',()=>{render();$('#auth-message').textContent='';if(!dialog.open)dialog.showModal()});
- $('#auth-close').addEventListener('click',()=>dialog.close());
- dialog.addEventListener('click',e=>{if(e.target===dialog)dialog.close()});
- $('#guest-login').addEventListener('click',()=>{guest();render();dialog.close()});
- $('#auth-signout').addEventListener('click',async()=>{
-   try{if(firebaseAuth){const mod=await import('https://www.gstatic.com/firebasejs/11.10.0/firebase-auth.js');await mod.signOut(firebaseAuth)}}catch{}
-   guest();render();dialog.close();
+ const message=$('#auth-message'),close=$('#auth-close');
+ const show=()=>{
+  render();refreshProfiles();
+  if(message)message.textContent='';
+  if(!dialog.open)dialog.showModal();
+  close?.focus({preventScroll:true});
+ };
+ open.addEventListener('click',show);
+ close?.addEventListener('click',()=>dialog.close());
+ dialog.addEventListener('click',event=>{if(event.target===dialog)dialog.close()});
+ $('#guest-login')?.addEventListener('click',()=>{
+  guest();render();dialog.close();
  });
- $('#google-login').addEventListener('click',async()=>{
-  const b=$('#google-login');b.disabled=true;$('#auth-message').textContent='Conectando con Google…';
-  const response=await google();b.disabled=false;$('#auth-message').textContent=response.ok?'Sesión iniciada correctamente.':response.message;
-  if(response.ok){render();dialog.close()}
+ $('#auth-profile-enter')?.addEventListener('click',()=>{
+  const id=$('#auth-profile-select')?.value;
+  const profile=storedProfiles().find(entry=>entry.id===id);
+  if(!profile){if(message)message.textContent='Selecciona un perfil guardado válido.';return}
+  local(profile.id,profile.name);render();dialog.close();
  });
- if(storedProfiles().length){
-  const el=document.createElement('button');el.type='button';el.id='existing-profiles';el.className='guest-login';el.textContent='Usar perfil guardado en este dispositivo';
-  $('#guest-login').after(el);
-  el.addEventListener('click',()=>{
-   const profiles=storedProfiles();
-   const names=profiles.map((p,i)=>(i+1)+'. '+p.name).join('\n');
-   const answer=prompt('Selecciona el número de tu perfil:\n'+names,'1');
-   const p=profiles[Number(answer)-1];if(!p)return;
-   local(p.id,p.name);render();dialog.close();
-  });
- }
+ $('#auth-signout')?.addEventListener('click',async()=>{
+  try{
+   if(firebaseAuth){
+    const mod=await import('https://www.gstatic.com/firebasejs/11.10.0/firebase-auth.js');
+    await mod.signOut(firebaseAuth);
+   }
+  }catch(error){console.warn('Google sign-out failed',error?.message)}
+  guest();render();dialog.close();
+ });
+ $('#google-login')?.addEventListener('click',async()=>{
+  const button=$('#google-login');
+  if(!googleConfigured()||!button||button.disabled)return;
+  button.disabled=true;
+  if(message)message.textContent='Conectando con Google…';
+  try{
+   const response=await google();
+   if(message)message.textContent=response.ok?'Sesión iniciada correctamente.':response.message;
+   if(response.ok){render();dialog.close()}
+  }finally{
+   render();
+  }
+ });
  emit();
 }
 window.OneUpAuth={guest,local,google,get,onChange};

@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="52 0 408 425" role="img" aria-labelledby="name desc">
+<title id="name">1UP Anime — Emblema nítido sin minitexto</title><desc id="desc">Emblema de 1UP Anime en formato vectorial para tamaños pequeños.</desc>
+<defs>
+ <linearGradient id="silver" x1="0" y1="0" x2=".8" y2="1"><stop stop-color="#fff"/><stop offset=".22" stop-color="#b3c7f3"/><stop offset=".52" stop-color="#4d689f"/><stop offset=".75" stop-color="#eef5ff"/><stop offset="1" stop-color="#53659c"/></linearGradient>
+ <linearGradient id="blade" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#a2d5ff"/><stop offset=".34" stop-color="#536ffe"/><stop offset=".69" stop-color="#a85ded"/><stop offset="1" stop-color="#292d80"/></linearGradient>
+ <linearGradient id="black" x1=".1" y1="0" x2=".9" y2="1"><stop stop-color="#252644"/><stop offset=".6" stop-color="#090c1e"/><stop offset="1" stop-color="#22243f"/></linearGradient>
+ <radialGradient id="light"><stop stop-color="#9da4ff" stop-opacity=".65"/><stop offset=".4" stop-color="#5363e8" stop-opacity=".25"/><stop offset="1" stop-color="#3d40bc" stop-opacity="0"/></radialGradient>
+ <filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="8"/></filter>
+ <filter id="shadow" x="-20%" y="-20%" width="140%" height="160%"><feDropShadow dx="0" dy="9" stdDeviation="9" flood-color="#01030e" flood-opacity=".85"/></filter>
+</defs>
+<circle cx="256" cy="217" r="190" fill="url(#light)" opacity=".6"/>
+<circle cx="256" cy="218" r="159" fill="none" stroke="url(#blade)" stroke-width="5" opacity=".78"/>
+<circle cx="256" cy="218" r="142" fill="none" stroke="#759bff" stroke-width="2" stroke-dasharray="2 17" opacity=".65"/>
+<path d="M256 12 279 87 256 112 233 87zM101 134 150 154 158 181 124 191zM411 134 362 154 354 181 388 191zM64 302 143 286 160 300 105 332zM448 302 369 286 352 300 407 332z" fill="url(#blade)" stroke="#0a0e2a" stroke-width="5"/>
+<g filter="url(#shadow)">
+ <path d="M158 113 198 169 207 130 255 47 304 130 313 169 354 113 393 190 351 285 304 344 256 397 208 344 161 285 119 190z" fill="url(#black)" stroke="url(#silver)" stroke-width="9" stroke-linejoin="round"/>
+ <path d="m157 134 38 57 25-36 36-77 36 77 25 36 38-57 22 57-36 88-85 94-85-94-36-88Z" fill="none" stroke="url(#blade)" stroke-width="11" stroke-linejoin="round"/>
+ <path d="m256 81 22 70-8 121 27 21-41 61-41-61 27-21-8-121z" fill="url(#silver)" stroke="#070a20" stroke-width="8"/>
+ <path d="M174 186 206 205 206 266Q207 322 256 354Q305 322 306 266L306 205 338 186 347 283Q332 348 256 395Q180 348 165 283Z" fill="url(#silver)" stroke="#080d2e" stroke-width="9" stroke-linejoin="round"/>
+ <path d="M194 210 206 217 204 263Q204 301 240 331" fill="none" stroke="#b6caff" stroke-width="5" opacity=".85"/>
+ <path d="m256 348 18 31-18 33-18-33z" fill="url(#blade)" stroke="#bccafe" stroke-width="5"/>
+</g>
+<path d="m256 320 8 23 26 8-26 8-8 24-8-24-26-8 26-8z" fill="#c3dcff" filter="url(#glow)" opacity=".95"/>
+<path d="m256 320 8 23 26 8-26 8-8 24-8-24-26-8 26-8z" fill="#f6faff"/>
+</svg>

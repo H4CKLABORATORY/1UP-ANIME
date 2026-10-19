@@ -1,20 +1,20 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const btn = document.getElementById("depth-toggle");
-  if (!btn) return;
-
-  // The Kokomi drawer and palette section are mounted dynamically.
-  const drawer = document.getElementById("km-drawer");
-  const palette = drawer?.querySelector(".oneup-theme-drawer");
-  if (palette) palette.before(btn);
-  else if (drawer) drawer.append(btn);
-  btn.hidden = !drawer;
-
-  function sync(isOn) {
-    btn.classList.toggle("active", isOn);
-    btn.setAttribute("aria-pressed", String(isOn));
-    btn.title = isOn ? "Desactivar modo profundidad" : "Activar modo profundidad";
-  }
-
-  sync(DepthEngine.isEnabled());
-  btn.addEventListener("click", () => sync(DepthEngine.toggle()));
+/* 1UP: the depth switch must remain accessible on desktop and iPhone.
+ * Never move it inside the mobile drawer: the drawer starts hidden,
+ * sometimes mounts after DOMContentLoaded, and made the switch inaccessible.
+ */
+document.addEventListener('DOMContentLoaded',()=>{
+ const button=document.getElementById('depth-toggle');
+ if(!button||typeof DepthEngine==='undefined')return;
+ button.hidden=false;
+ button.removeAttribute('inert');
+ button.setAttribute('aria-label','Activar modo profundidad');
+ function sync(enabled){
+  button.classList.toggle('active',enabled);
+  button.setAttribute('aria-pressed',String(enabled));
+  button.title=enabled?'Desactivar modo profundidad':'Activar modo profundidad';
+  button.setAttribute('aria-label',button.title);
+ }
+ sync(DepthEngine.isEnabled());
+ button.addEventListener('click',()=>sync(DepthEngine.toggle()));
+ document.addEventListener('depth-mode-changed',event=>sync(Boolean(event.detail?.enabled)));
 });
