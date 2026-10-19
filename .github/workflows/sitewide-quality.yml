@@ -1,0 +1,58 @@
+name: ONEUP Sitewide Quality
+on:
+  pull_request:
+    paths:
+      - 'index.html'
+      - 'studio.html'
+      - 'comunidad.html'
+      - 'motor.html'
+      - 'moderacion.html'
+      - 'gremio.html'
+      - 'auth.js'
+      - 'ui-quality.css'
+      - 'assets/oneup-crest-mark.svg'
+      - 'js/depth-toggle-button.js'
+      - 'sw.js'
+      - 'tests/site-quality.spec.js'
+      - '.github/workflows/sitewide-quality.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'ui-quality.css'
+      - 'auth.js'
+      - 'js/depth-toggle-button.js'
+      - 'tests/site-quality.spec.js'
+      - '.github/workflows/sitewide-quality.yml'
+permissions:
+  contents: read
+jobs:
+  site-quality:
+    runs-on: ubuntu-latest
+    timeout-minutes: 16
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check scripts
+        run: |
+          node --check auth.js
+          node --check js/depth-toggle-button.js
+          node --check tests/site-quality.spec.js
+          node scripts/check-ui.mjs
+      - name: Install test dependencies
+        run: npm install --no-audit --no-fund --ignore-scripts
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Verify mobile and desktop site UX
+        run: npx playwright test tests/site-quality.spec.js --workers=2
+      - name: Upload browser screenshots when checks fail
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: oneup-sitewide-quality-failure
+          path: |
+            playwright-report/
+            test-results/
+          retention-days: 7
+          if-no-files-found: ignore
