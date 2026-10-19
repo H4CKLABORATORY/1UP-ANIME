@@ -22,7 +22,7 @@
 - No confundir el catálogo de Anime1v con episodios reproducibles ni su licencia MIT con derechos de distribución de anime.
 
 ## Estado detectado ahora
-- Último commit de aplicación encontrado: 732fa8931b282e59d40d41b59c778003133c1c2e
+- Último commit de aplicación encontrado: 4e3eb1f3c4584825a91ee317c85066191ce221c5
 - Descubrimiento Anime1v configurado en frontend: sí, verificar la respuesta real en Render
 - Código runtime de metadatos Anime1v en repositorio: sí
 - Entradas de obras multimedia en data/licensed-media.json: 0
@@ -30,14 +30,13 @@
 - Safari físico: no dar por verificado salvo prueba real con evidencia.
 
 ## Últimos commits relevantes
+- 4e3eb1f3c — 1UP Anime: cinematic daily anime premieres with premium carousel controls
 - 732fa8931 — feat: final 1UP Anime editorial UI, modern discovery and safe PWA
 - b6bb90df7 — feat: enlaces oficiales por episodio en 1UP Anime (PR #59)
 - 15ef982c2 — test: validate 1UP anime franchise feature on mobile and desktop
 - 38c3f430d — feat: 1UP anime franchise explorer with AniList and Jikan fallback
-- aa40e517e — Refresh anime catalog and automatic Spanish synopses
 
 ## PR abiertos (consultar cambios antes de desarrollar)
-- [#58](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/58) 1UP Anime: portada cinematográfica de estrenos diarios y botones premium
 - [#54](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/54) 1UP Anime: primer episodio oficial TMS y técnicas educativas de r/node
 - [#51](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/51) 1UP Anime: lector manga y publicación automática de medios autorizados
 - [#50](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/50) Documentar MAL Updater como referencia para seguimiento de 1UP Anime
@@ -49,6 +48,7 @@
 - [#38](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/38) Scrapling privado: metadatos automáticos sin interfaz pública (aprobación obligatoria)
 - [#33](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/33) V2 · intro cinemática 1UP ANIME editable con AAC original (revisión)
 - [#20](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/20) 1UP Anime · completar Codex: caché PWA aislada y ranking popular veraz
+- [#19](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/19) Restore mobile brand visibility and record verified project decisions
 
 ## Próxima tarea por prioridad
 1. Leer AGENTS.md, esta ficha, PROJECT_CONTINUITY.md y OMEGA_NEXT_ACTIONS.md; confirmar HEAD y CI.
