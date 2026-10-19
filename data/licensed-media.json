@@ -1,5 +1,31 @@
 {
   "version": 1,
-  "description": "Contenido propio o con autorización expresa de distribución. No incluye episodios de terceros.",
-  "entries": {}
+  "description": "Contenidos incrustados desde el reproductor oficial de terceros que permiten integracion. No aloja, copia ni retransmite archivos de video; reproduccion sujeta a disponibilidad, territorio y ajustes del editor del video.",
+  "entries": {
+    "mal-27947": {
+      "title": "Lupin III (2015) / Part IV",
+      "provider": "Anime! on TMS Official Channel",
+      "sourcePage": "https://tmsanime.com/anime-on-tms-official-channel",
+      "rightsNote": "TMS publica este episodio completo en su canal oficial de YouTube. Utilizar solo el reproductor incrustado permitido por YouTube y el editor; no existe licencia para descargar/republicar el video.",
+      "episodes": [
+        {
+          "season": 1,
+          "number": 1,
+          "title": "The Wedding of Lupin III",
+          "language": "en",
+          "sources": [
+            {
+              "mode": "official_embed",
+              "provider": "youtube",
+              "videoId": "K8LrLO_omys",
+              "name": "Anime! on TMS · YouTube oficial",
+              "language": "en",
+              "quality": "Segun YouTube",
+              "rights": "authorized"
+            }
+          ]
+        }
+      ]
+    }
+  }
 }
