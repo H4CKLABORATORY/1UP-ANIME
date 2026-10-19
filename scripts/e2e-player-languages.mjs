@@ -36,6 +36,16 @@ for(const [language,slot] of [['latino',0],['castellano',1],['sub',2],['original
  if(language==='sub')assert.equal(await page.locator('#oneup-playback-display track').getAttribute('src'),'./media/fixture.vtt');
 }
 await select.selectOption('sub');
+const subtitleFont=page.locator('.oneup-subtitle-studio [data-subtitle="font"]');
+await subtitleFont.waitFor({timeout:3000});
+assert.equal(await subtitleFont.inputValue(),'bangers','Bangers must be the default anime font');
+await subtitleFont.selectOption('arial');
+assert.equal(await page.evaluate(()=>JSON.parse(localStorage.getItem('oneup.subtitle.studio.v1')).font),'arial');
+assert.match(await page.locator('.oneup-subtitle-overlay').evaluate(el=>getComputedStyle(el).fontFamily),/Arial/);
+await page.locator('.oneup-subtitle-studio [data-subtitle="theme"]').selectOption('neon');
+assert.equal(await page.locator('.oneup-subtitle-overlay').getAttribute('data-subtitle-theme'),'neon');
+await page.locator('.oneup-subtitle-studio [data-subtitle="lang"]').selectOption('es');
+assert.match(await page.locator('.oneup-subtitle-notice').innerText(),/Español|subtítulos/i);
 await page.screenshot({path:'e2e-player-languages-'+width+'.png',fullPage:true,animations:'disabled'});
 await page.locator('#oneup-watch-episode').selectOption('2');
 assert.equal(await page.locator('[data-server-slot]:enabled').count(),0);
