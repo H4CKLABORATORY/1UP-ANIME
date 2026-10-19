@@ -112,3 +112,9 @@ Excluir secretos, datos personales irrelevantes, suposiciones no etiquetadas, pr
 - Investigación portátil en `docs/CRUNCHYROLL_API_GITHUB_RESEARCH_20261019.md` (https://github.com/topics/crunchyroll-api): estructuras y UX de `crunchyroll-rs`, `HarshitKumar9030/crunchyroll-api`, `crunchyroll-docs`, `Crunchyroll-Filter`; no usar descargadores, tokens/cookies, mecanismos DRM ni endpoints no autorizados para llenar el reproductor de 1UP.
 - Rama `feature/official-crunchyroll-episode-links-20261019`: seis enlaces editoriales públicos del anime Black Clover original (`mal-34572`), E1–E6, abiertos exclusivamente en Crunchyroll con consentimiento al hacer clic. `official-watch.js` valida dominio/URL y enlaza el episodio exacto al cambiar selector; `official-watch.css` contiene estilos adaptativos y `tests/official-watch.test.mjs` pruebas de seguridad. No atribuir esos capítulos a la nueva temporada `mal-61967`. La página 1UP no retransmite dichos videos ni declara que sean gratuitos.
 - Integración de lector Crunchyroll NO instalada; fuentes reales de reproducción siguen separadas en `data/licensed-media.json`. Verificar PR/CI/Pages/Safari antes de declarar activo.
+
+### 2026-10-19 — Cierre editorial gradual
+- CSS/JS original para interfaz modernizada, navegación de acceso rápido y fecha/títulos únicos del catálogo. Sin copia de repositorios archivados.
+- Rama de entrega feature/oneup-editorial-finale-20261019, pruebas Chromium 390/1366, HLS, temas y calidad; no sustituye configuración backend.
+- Se integran los enlaces oficiales nuevos de otro commit en sw.js, preservando el resto de funciones y la licencia de reproducción.
+- Leer docs/ONEUP_RELEASE_CLOSURE_20261019.md. Google OAuth, comunidad remota y episodios autorizados aún necesitan configuración; Safari físico pendiente.

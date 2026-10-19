@@ -173,6 +173,7 @@ function startup(){
  const priority=node=>{
   if(node.matches('.hero'))return 0;
   if(node.matches('.explore-section'))return 1;
+  if(node.matches('.oneup-finale-deck'))return 1.5; // Shortcut deck remains above galleries.
   if(node.querySelector?.('#trending-rail'))return 2;
   if(node.querySelector?.('#recent-rail'))return 3;
   if(node.querySelector?.('#season-rail'))return 4;
