@@ -22,7 +22,7 @@ function normalizeForStudio(a){
  description_es:a.description_es||'',image:a.image||'',banner:a.banner||'',year:a.year||'',
  format:a.format||'TV',averageScore:a.averageScore||0,episodes:a.episodes||0,genres:a.genres||[],
  status:a.status||'',next:a.next||null,startDate:a.startDate||null,trailer:a.trailer||null,
- siteUrl:a.siteUrl||'',streaming:[],source:'airing'};
+ siteUrl:a.siteUrl||'',streaming:Array.isArray(a.streaming)?a.streaming:[],source:'airing'};
 }
 function remember(a){
  if(!a?.id)return;
@@ -36,9 +36,12 @@ function animeCard(a,mode){
   '<span class="airing-date">'+esc(formatPremiere(a.startDate))+'</span>'+
   (a.trailer?' <span class="airing-with-trailer">▷ Tráiler</span>':''):
   '<span class="airing-date">'+esc(formatTime(a.airingAt))+' · Episodio '+esc(a.episode||'?')+'</span>';
- return '<button class="airing-anime" type="button" data-airing-anime="'+esc(a.id)+'" aria-label="Ver información de '+esc(findTitle(a))+'">'+
+ const platform=window.OneUpOfficialWatch?.get(a);
+ const external=platform?.url?
+  '<a class="airing-official-cta" href="'+esc(platform.url)+'" target="_blank" rel="noopener noreferrer" aria-label="Ver '+esc(findTitle(a))+' en Crunchyroll">Crunchyroll ↗</a>':'';
+ return '<article class="airing-anime-card"><button class="airing-anime" type="button" data-airing-anime="'+esc(a.id)+'" aria-label="Ver información de '+esc(findTitle(a))+'">'+
  '<span class="airing-cover">'+image+'</span><span class="airing-meta">'+
- '<strong>'+esc(findTitle(a))+'</strong>'+sub+'</span></button>';
+ '<strong>'+esc(findTitle(a))+'</strong>'+sub+'</span></button>'+external+'</article>';
 }
 function renderShelf(id,items,mode){
  const target=$('#'+id);if(!target)return;
@@ -103,7 +106,7 @@ function insertLayout(){
 }
 async function fallbackLive(){
  const now=Math.floor(Date.now()/1000);
- const q='query($from:Int,$to:Int){Page(page:1,perPage:50){airingSchedules(airingAt_greater:$from,airingAt_lesser:$to,sort:TIME){id episode airingAt media{id idMal type isAdult format title{romaji english}coverImage{large}bannerImage status episodes genres seasonYear}}}}';
+ const q='query($from:Int,$to:Int){Page(page:1,perPage:50){airingSchedules(airingAt_greater:$from,airingAt_lesser:$to,sort:TIME){id episode airingAt media{id idMal type isAdult format title{romaji english}coverImage{large}bannerImage status episodes genres seasonYear externalLinks{site url type}}}}}';
  const ctrl=new AbortController(),timer=setTimeout(()=>ctrl.abort(),8500);
  try{
   const res=await fetch('https://graphql.anilist.co',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify({query:q,variables:{from:now-48*3600,to:now+72*3600}}),signal:ctrl.signal});
@@ -114,7 +117,7 @@ async function fallbackLive(){
    mal_id:x.media.idMal,ani_id:x.media.id,title:x.media.title?.english||x.media.title?.romaji,
    image:x.media.coverImage?.large,banner:x.media.bannerImage,format:x.media.format,
    year:x.media.seasonYear,episodes:x.media.episodes,genres:x.media.genres,
-   episode:x.episode,airingAt:x.airingAt,status:x.media.status
+   episode:x.episode,airingAt:x.airingAt,status:x.media.status,streaming:(x.media.externalLinks||[]).filter(l=>l.type==='STREAMING'&&/crunchyroll/i.test(l.site||'')).map(l=>({name:l.site,url:l.url})).filter(l=>window.OneUpOfficialWatch?.safeSeriesUrl(l.url))
   }));
   return entries.length?{airing:entries,seasonal:{entries:[]},updated:new Date().toISOString()}:null;
  }finally{clearTimeout(timer)}
