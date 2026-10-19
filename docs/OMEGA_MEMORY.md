@@ -60,3 +60,11 @@ Excluir secretos, datos personales irrelevantes, suposiciones no etiquetadas, pr
 - Rama `feature/oneup-premium-window-motion-20261017`: `themes/oneup-motion/windows.css/js`; entrada de páginas desde `studio.js` y `pages.js`; animación de apertura y salida de ficha; deslizamiento de drawer, search y temas; PWA v29.
 - Requisito invariable: rutas rápidas, modal nativo cerrable por Escape, foco y `prefers-reduced-motion`/modo silencioso. No ocultar resultados de fallos; correr Playwright en CI para 390/1366 y reducción.
 - Próximo: comprobar CI, corregir regressiones si las hay y fusionar sólo cuando las pruebas estén verdes; luego verificar GitHub Pages.
+
+
+## Módulo de presencia opcional — 2026-10-18
+- Rama: `feature/oneup-live-presence-counter-20261018`.
+- El contador público de personas «en línea» solicitado se implementó como **conexiones activas** vía canal Supabase Realtime Presence compartido por inicio y comunidad. No confundir con personas únicas; no usar cifras sin datos.
+- Configuración separada en `presence-config.js` para no habilitar inadvertidamente otros adaptadores Supabase de 1UP. No se conocen proyecto ni claves públicos conectados; no publicar secretos.
+- Diseño de píldora verde, móvil adaptado, compatibilidad modo offline con placeholder `—`.
+- Pendiente: aprobación/fusión del PR, puesta en marcha de Realtime y prueba física iPhone, registrar CI y despliegue de verdad.
