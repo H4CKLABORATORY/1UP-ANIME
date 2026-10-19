@@ -3,7 +3,7 @@
  * Native dialogs, safe areas, responsive controls and coherent focus styles.
  */
 :root{--oneup-ux-accent:var(--oneup-pal-accent,#8fefc1)}
-html{scroll-padding-top:92px}
+html{scroll-padding-top:92px;overflow-x:clip}
 body{min-width:0}
 body,main,section{min-width:0}
 a,button,select,input,textarea{touch-action:manipulation}
