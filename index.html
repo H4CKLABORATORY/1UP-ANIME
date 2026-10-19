@@ -50,6 +50,7 @@
 <link rel="stylesheet" href="styles/depth-system.css">
 <link rel="stylesheet" href="styles/depth-toggle.css">
 <link rel="stylesheet" href="styles/anime-card-depth.css">
+<link rel="stylesheet" href="./ui-quality.css">
 </head><body class="oneup-kokomi kokomi-mobile-reference" data-theme-preview="off">
 <div id="oneup-opening" role="dialog" aria-modal="true" aria-label="Introducción cinematográfica de 1UP ANIME">
  <section id="cinema" data-mode="opening" aria-label="Animación de entrada 1UP ANIME">
@@ -132,7 +133,26 @@
 <button id="depth-toggle" class="depth-toggle-btn" type="button" aria-label="Modo 3D" aria-pressed="false" title="Activar modo profundidad" hidden><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="12" height="12" rx="2"/><rect x="9" y="9" width="12" height="12" rx="2"/></svg><span>3D</span></button>
 <nav class="mobile-navigation"><button data-route="inicio" class="active"><b>⌂</b>Inicio</button><button data-route="temporada"><b>◉</b>Temporada</button><button data-route="catalogo"><b>▦</b>Catálogo</button><button data-route="programacion"><b>◷</b>Emisión</button><button data-route="milista"><b>♡</b>Mi lista</button><a href="./comunidad.html"><b>✦</b>Plaza</a></nav>
 <dialog id="anime-dialog" class="anime-dialog"><button type="button" class="dialog-close" id="anime-close" aria-label="Cerrar ficha del anime">✕</button><div id="anime-dialog-body"></div></dialog>
-<dialog id="auth-dialog" class="auth-dialog"><button class="dialog-close" id="auth-close" aria-label="Cerrar">✕</button><div class="auth-panel"><img src="./assets/oneup-crest.svg" alt=""><div class="micro">TU UNIVERSO, A TU MANERA</div><h2>BIENVENIDO A <em>1UP.</em></h2><p>Inicia sesión cuando quieras o explora sin cuenta. Nunca es obligatorio registrarse.</p><button id="google-login" class="google-login"><span class="google-g">G</span> Continuar con Google</button><button id="guest-login" class="guest-login">Continuar como invitado</button><button id="auth-signout" class="guest-login" hidden>Cerrar sesión de Google</button><p id="auth-message" class="auth-message" role="status"></p><small>El acceso con Google requiere configurar Firebase para este dominio. El modo invitado funciona sin conexión de cuentas.</small></div></dialog>
+<dialog id="auth-dialog" class="auth-dialog" aria-labelledby="auth-title" aria-describedby="auth-description">
+ <button class="dialog-close" id="auth-close" type="button" aria-label="Cerrar ventana de acceso">✕</button>
+ <div class="auth-panel">
+  <div class="auth-brand"><img class="auth-crest" src="./assets/oneup-crest-mark.svg" width="128" height="135" alt=""><span class="auth-wordmark">1UP <strong>ANIME</strong></span></div>
+  <div class="micro auth-kicker">TU UNIVERSO, A TU MANERA</div>
+  <h2 id="auth-title" class="auth-title">BIENVENIDO A <em>1UP.</em></h2>
+  <p id="auth-description" class="auth-copy">Descubre anime a tu ritmo. Entra como invitado o continúa con tu perfil guardado.</p>
+  <div class="auth-actions">
+   <button id="google-login" class="google-login" type="button"><span class="google-g" aria-hidden="true">G</span><span id="auth-google-label">Continuar con Google</span></button>
+   <button id="guest-login" class="guest-login" type="button">Continuar como invitado</button>
+   <button id="auth-signout" class="guest-login" type="button" hidden>Cerrar sesión de Google</button>
+  </div>
+  <details id="auth-profiles" class="auth-profiles" hidden>
+   <summary>Usar perfil guardado en este dispositivo</summary>
+   <div class="auth-profile-controls"><select id="auth-profile-select" aria-label="Perfil guardado"></select><button id="auth-profile-enter" type="button">Entrar</button></div>
+  </details>
+  <p id="auth-message" class="auth-message" role="status" aria-live="polite"></p>
+  <small id="auth-service-note" class="auth-help">Puedes explorar como invitado sin crear una cuenta.</small>
+ </div>
+</dialog>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 <div id="startup" class="startup" hidden><div class="startup-mark"><img src="./assets/oneup-crest.svg" alt=""><strong>ONE <em>UP</em></strong><span>A N I M E</span></div></div>
 <script src="js/depth-engine.js"></script>
