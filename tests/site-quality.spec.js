@@ -50,6 +50,7 @@ for(const device of screens){
    });
    expect(hit,'Close X is blocked by dialog artwork').toBe(true);
    await checkNoOverflow(page,device.name+' with modal');
+   if(device.name==='iPhone')await page.screenshot({path:'qa-auth-iPhone.png',animations:'disabled'});
    await close.click({timeout:6000});
    await expect(page.locator('#auth-dialog')).not.toBeVisible();
    await page.locator('#auth-open').click();
@@ -88,6 +89,7 @@ for(const device of [{name:'mobile',width:390,height:844},{name:'desktop',width:
     await page.goto(pathname,{waitUntil:'domcontentloaded',timeout:25000});
     await page.waitForTimeout(450);
     await checkNoOverflow(page,device.name+' '+pathname);
+    if(device.name==='mobile'&&pathname==='/comunidad.html')await page.screenshot({path:'qa-comunidad-iPhone.png',animations:'disabled'});
     const cssLoaded=await page.evaluate(()=>Array.from(document.styleSheets).some(s=>s.href?.includes('ui-quality.css')));
     expect(cssLoaded,pathname+' missing polish stylesheet').toBe(true);
    }
