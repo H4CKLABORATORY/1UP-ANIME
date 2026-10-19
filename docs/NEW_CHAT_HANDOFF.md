@@ -22,7 +22,7 @@
 - No confundir el catálogo de Anime1v con episodios reproducibles ni su licencia MIT con derechos de distribución de anime.
 
 ## Estado detectado ahora
-- Último commit de aplicación encontrado: 4e3eb1f3c4584825a91ee317c85066191ce221c5
+- Último commit de aplicación encontrado: 3430308e0447226ac64e82c89e1f65bf08315ccb
 - Descubrimiento Anime1v configurado en frontend: sí, verificar la respuesta real en Render
 - Código runtime de metadatos Anime1v en repositorio: sí
 - Entradas de obras multimedia en data/licensed-media.json: 0
@@ -30,11 +30,11 @@
 - Safari físico: no dar por verificado salvo prueba real con evidencia.
 
 ## Últimos commits relevantes
+- 3430308e0 — Sync authorized anime episode metadata and source statuses
+- 64bf639e6 — ONEUP health snapshot (no application changes)
 - 4e3eb1f3c — 1UP Anime: cinematic daily anime premieres with premium carousel controls
 - 732fa8931 — feat: final 1UP Anime editorial UI, modern discovery and safe PWA
 - b6bb90df7 — feat: enlaces oficiales por episodio en 1UP Anime (PR #59)
-- 15ef982c2 — test: validate 1UP anime franchise feature on mobile and desktop
-- 38c3f430d — feat: 1UP anime franchise explorer with AniList and Jikan fallback
 
 ## PR abiertos (consultar cambios antes de desarrollar)
 - [#54](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/54) 1UP Anime: primer episodio oficial TMS y técnicas educativas de r/node
