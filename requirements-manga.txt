@@ -1,0 +1,3 @@
+# Herramienta EXTERNA opcional de consola, no se ejecuta en GitHub Pages.
+# Proyecto upstream pre-alpha; revisar dependencias y condiciones de cada fuente.
+manga-scraper==0.12
