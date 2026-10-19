@@ -8,6 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="./studio.css">
+<link rel="stylesheet" href="./presence-counter.css">
 <link rel="stylesheet" href="./motion.css">
 <link rel="stylesheet" href="./spotlight.css">
 <link rel="stylesheet" href="./player.css">
@@ -17,6 +18,7 @@
 <link rel="stylesheet" href="./external-providers.css">
 <link rel="stylesheet" href="./themes/kokomi-studio/theme.css">
 <link rel="stylesheet" href="./themes/october-2026/theme.css">
+<script defer src="./presence-config.js"></script><script defer src="./presence-counter.js"></script>
 <script defer src="./auth-config.js"></script><script defer src="./social-config.js"></script>
 <script defer src="./social-backend.js"></script>
 <script defer src="./supabase-config.js"></script><script defer src="./supabase-episode-backend.js"></script>
@@ -90,7 +92,7 @@
     <img src="./assets/oneup-header-letters.png" class="oneup-textmark" alt="1UP ANIME" width="164" height="55">
   </a>
   <nav class="desktop-links" aria-label="Navegación"><button data-route="inicio" class="active">Inicio</button><button data-route="temporada">En emisión</button><button data-route="programacion">Programación</button><button data-route="catalogo">Catálogo</button><button data-route="peliculas">Películas</button><button data-route="milista">Mi lista</button><a class="oneup-link-community" href="./comunidad.html">✦ Comunidad</a></nav>
-  <div class="header-right"><button id="header-search" class="icon-button" title="Buscar"><svg><use href="#ico-search"/></svg></button><button id="auth-open" class="account-button"><span class="account-dot">●</span><span id="auth-label">Invitado</span></button></div>
+  <div class="header-right"><span class="oneup-presence-pill" data-oneup-presence data-state="unavailable" role="status" aria-label="Conexiones en línea pendientes"><span class="oneup-presence-dot" aria-hidden="true"></span><span class="oneup-presence-text"><span class="oneup-presence-kicker">COMUNIDAD 1UP</span><span class="oneup-presence-label">EN LÍNEA</span></span><output class="oneup-presence-count" data-oneup-presence-count aria-live="off">—</output></span><button id="header-search" class="icon-button" title="Buscar"><svg><use href="#ico-search"/></svg></button><button id="auth-open" class="account-button"><span class="account-dot">●</span><span id="auth-label">Invitado</span></button></div>
  </div>
 </header>
 <main>
