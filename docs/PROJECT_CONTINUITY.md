@@ -253,3 +253,9 @@ Al concluir cada trabajo agregar:
 - `ui-quality.css` se carga al final en portada, studio, comunidad, motor, moderación y gremio, sin deshacer CSS histórico. Nueva caché PWA `v31`; selector de perfiles locales dentro del modal sustituye `prompt()`. Google queda claramente no disponible mientras Firebase no esté conectado.
 - Verificación: workflow `ONEUP Sitewide Quality` con capturas Chromium 390 px; segunda inspección visual detectó que `inset:0` estiraba modal vacío, corregido con `height:fit-content`; pruebas de modal compacto, perfiles, 320/390/768/1440 y páginas internas en verde. `Depth mode Playwright` también recuperó PASS en viewport móvil y desktop al eliminar dependencia del drawer. El resto de CI debe reconfirmarse en el HEAD final antes de merge.
 - Limitaciones / riesgos: no se han probado clics ni scroll en Safari físico; Firebase y la reproducción real continúan sin activar; es una fase de calidad y no certificado de sitio completamente terminado. Auditoría y pendientes en [SITE_QUALITY_AUDIT_20261018.md](SITE_QUALITY_AUDIT_20261018.md).
+
+### 2026-10-19 — integración de Puppeteer en CI (PR en revisión)
+- Se incorpora como `devDependency` `puppeteer@25.14.0` (no en scripts del frontend), sin tocar catálogo, reproductor ni SW.
+- `scripts/puppeteer-site-audit.mjs` ejecuta Chrome Headless Shell contra sitio localhost: portada, comunidad, motor, moderación y gremio en ancho móvil y desktop; verifica aperturas/cierre de modal de acceso e invitado, overflow, errores JS, genera capturas y JSON. Todas las peticiones externas son bloqueadas.
+- `.github/workflows/puppeteer-quality.yml` instala dependencias sin scripts de npm, descarga Chrome compatible expresamente, lanza tests y sube evidencias. No es un proceso permanente ni un servicio de GitHub Pages.
+- Revisar CI del PR y solo fusionar si funciona; instalación real no confirmada hasta ver el workflow en verde. Manual: [PUPPETEER_QA.md](PUPPETEER_QA.md).
