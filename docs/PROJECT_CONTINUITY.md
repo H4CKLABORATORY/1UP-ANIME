@@ -246,3 +246,5 @@ Al concluir cada trabajo agregar:
 - Backend diseñado con **Supabase Realtime Presence**, canal global `oneup_anime_global_presence`; contará conexiones activas por pestaña y actualiza al recibir eventos del servidor. El sistema se auto-desregistra al ocultar/abandonar cuando es posible. Ninguna analítica ficticia.
 - Archivos: `presence-counter.js`, `presence-counter.css`, `presence-config.js`, `docs/ONLINE_PRESENCE.md`, pruebas y workflow; versión de caché incrementada en `sw.js`.
 - **Pendiente:** proyecto Realtime público y clave publishable reales del titular (no hay proyecto conectado en este trabajo); mientras tanto mostrar `—`, no un número simulado. Falta prueba conectada en dos dispositivos y Safari físico. No fusionar sin pruebas de CI y decisión de activación.
+
+- PR de implementación: [#46](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/46). El workflow `ONEUP Online Presence QA` terminó en `success` para el primer HEAD; ejecución con servicio remoto y Safari físico siguen pendientes.
