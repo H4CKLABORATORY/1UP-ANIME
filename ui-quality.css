@@ -188,3 +188,20 @@ a,button,select,input,textarea{touch-action:manipulation}
  .c-card,.c-feed-card,.c-media{min-width:0;max-width:100%}
  .c-hero{min-width:0}
 }
+
+
+/* Long Japanese series names must not engulf the entire hero on a phone.
+   JS sets data-title-size from the real title length, no truncated titles. */
+#hero-title{max-width:100%;overflow-wrap:break-word;text-wrap:balance}
+@media(max-width:780px){
+ #hero-title[data-title-size="long"]{font-size:clamp(38px,9.5vw,51px)!important;line-height:.98}
+ #hero-title[data-title-size="extra-long"]{font-size:clamp(32px,8.4vw,44px)!important;line-height:1}
+ .hero.has-long-title{height:auto;min-height:760px}
+ .hero.has-long-title .hero-grid{min-height:760px;height:auto;padding-top:52px;padding-bottom:72px}
+ .hero.has-long-title .hero-copy{max-width:100%;min-width:0}
+ .hero.has-long-title .hero-art-card{opacity:.2}
+}
+@media(max-width:380px){
+ .hero.has-long-title{min-height:810px}
+ .hero.has-long-title .hero-grid{min-height:810px}
+}
