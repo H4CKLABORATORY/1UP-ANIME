@@ -1,12 +1,12 @@
 {
-  "updated": "2026-10-19T04:26:25+00:00",
+  "updated": "2026-10-19T04:29:27+00:00",
   "status": "ok",
   "source": {
     "name": "Wikipedia: 2026 in anime",
     "url": "https://en.wikipedia.org/wiki/2026_in_anime",
     "attribution": "Contribuidores de Wikipedia, CC BY-SA; verificar condiciones de reutilización."
   },
-  "count": 314,
+  "count": 317,
   "items": [
     {
       "title": "Labyrinth",
@@ -45,22 +45,22 @@
       "sourceUrl": "https://en.wikipedia.org/wiki/Girls_und_Panzer:_Motto_Love_Love_Sakusen_Desu!_–_Act_2"
     },
     {
-      "title": "A-1 Pictures Psyde Kick Studio",
+      "title": "The Keeper of the Camphor Tree",
       "format": "Película",
       "year": 2026,
-      "release": "The Keeper of the Camphor Tree",
-      "studio": "Tomohiko Itō",
+      "release": "January 30",
+      "studio": "A-1 Pictures Psyde Kick Studio",
       "episodes": null,
-      "sourceUrl": "https://en.wikipedia.org/wiki/A-1_Pictures"
+      "sourceUrl": "https://en.wikipedia.org/wiki/Kusunoki_no_Bannin"
     },
     {
-      "title": "Sunrise",
+      "title": "Mobile Suit Gundam Hathaway: The Sorcery of Nymph Circe",
       "format": "Película",
       "year": 2026,
-      "release": "Mobile Suit Gundam Hathaway: The Sorcery of Nymph Circe",
-      "studio": "Shūkō Murase",
+      "release": "January 30",
+      "studio": "Sunrise",
       "episodes": null,
-      "sourceUrl": "https://en.wikipedia.org/wiki/Sunrise_(studio)"
+      "sourceUrl": "https://en.wikipedia.org/wiki/Mobile_Suit_Gundam:_Hathaway's_Flash"
     },
     {
       "title": "Gintama: Yoshiwara in Flames",
@@ -72,13 +72,13 @@
       "sourceUrl": "https://en.wikipedia.org/wiki/Gintama"
     },
     {
-      "title": "Shin-Ei Animation",
+      "title": "The Dangers in My Heart: The Movie",
       "format": "Película",
       "year": 2026,
-      "release": "The Dangers in My Heart: The Movie",
-      "studio": "Hiroaki Akagi (Chief) Chen Dali",
+      "release": "February 13",
+      "studio": "Shin-Ei Animation",
       "episodes": null,
-      "sourceUrl": "https://en.wikipedia.org/wiki/Shin-Ei_Animation"
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Dangers_in_My_Heart"
     },
     {
       "title": "Be Forever Yamato: Rebel 3199 : Part 5: The Incandescent Galactic War",
@@ -99,13 +99,13 @@
       "sourceUrl": "https://en.wikipedia.org/wiki/Doraemon:_New_Nobita_and_the_Castle_of_the_Undersea_Devil"
     },
     {
-      "title": "Eight Bit",
+      "title": "That Time I Got Reincarnated as a Slime the Movie: Tears of the Azure Sea",
       "format": "Película",
       "year": 2026,
-      "release": "That Time I Got Reincarnated as a Slime the Movie: Tears of the Azure Sea",
-      "studio": "Yasuhito Kikuchi",
+      "release": "February 27",
+      "studio": "Eight Bit",
       "episodes": null,
-      "sourceUrl": "https://en.wikipedia.org/wiki/Eight_Bit_(studio)"
+      "sourceUrl": "https://en.wikipedia.org/wiki/That_Time_I_Got_Reincarnated_as_a_Slime_the_Movie:_Tears_of_the_Azure_Sea"
     },
     {
       "title": "A New Dawn",
@@ -117,13 +117,13 @@
       "sourceUrl": "https://en.wikipedia.org/wiki/A_New_Dawn_(film)"
     },
     {
-      "title": "P.A. Works Actas",
+      "title": "Girls und Panzer: Motto Love Love Sakusen Desu! – Act 3",
       "format": "Película",
       "year": 2026,
-      "release": "Girls und Panzer: Motto Love Love Sakusen Desu! – Act 3",
-      "studio": "Masami Shimoda",
+      "release": "March 6",
+      "studio": "P.A. Works Actas",
       "episodes": null,
-      "sourceUrl": "https://en.wikipedia.org/wiki/P.A._Works"
+      "sourceUrl": "https://en.wikipedia.org/wiki/Girls_und_Panzer:_Motto_Love_Love_Sakusen_Desu!_–_Act_3"
     },
     {
       "title": "Paris ni Saku Étoile",
@@ -162,6 +162,15 @@
       "sourceUrl": "https://en.wikipedia.org/wiki/Detective_Conan:_Fallen_Angel_of_the_Highway"
     },
     {
+      "title": "Girls und Panzer: Motto Love Love Sakusen Desu! – Act 4",
+      "format": "Película",
+      "year": 2026,
+      "release": "April 10",
+      "studio": "P.A. Works Actas",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Girls_und_Panzer:_Motto_Love_Love_Sakusen_Desu!_–_Act_4"
+    },
+    {
       "title": "Sound! Euphonium: The Final Movie – Part 1",
       "format": "Película",
       "year": 2026,
@@ -178,6 +187,15 @@
       "studio": "Sublimation",
       "episodes": null,
       "sourceUrl": "https://en.wikipedia.org/wiki/Love_Live!_Hasunosora_Girls'_High_School_Idol_Club"
+    },
+    {
+      "title": "The Irregular at Magic High School: The Movie – Yotsuba Succession Arc",
+      "format": "Película",
+      "year": 2026,
+      "release": "May 8",
+      "studio": "Eight Bit",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Irregular_at_Magic_High_School"
     },
     {
       "title": "Mononoke the Movie: The Curse of the Serpent",
@@ -207,13 +225,13 @@
       "sourceUrl": "https://en.wikipedia.org/wiki/Playing_Death_Games_to_Put_Food_on_the_Table"
     },
     {
-      "title": "Polygon Pictures",
+      "title": "Unanswered//butterfly: Sword Art Online",
       "format": "Película",
       "year": 2026,
-      "release": "Unanswered//butterfly: Sword Art Online",
-      "studio": "Tadahiro “Tady” Yoshihira",
+      "release": "July 10",
+      "studio": "Polygon Pictures",
       "episodes": null,
-      "sourceUrl": "https://en.wikipedia.org/wiki/Polygon_Pictures"
+      "sourceUrl": "https://en.wikipedia.org/wiki/Sword_Art_Online#Films"
     },
     {
       "title": "You, Fireworks, and Our Promise",
@@ -297,13 +315,13 @@
       "sourceUrl": "https://en.wikipedia.org/wiki/To_You_in_the_Beyond"
     },
     {
-      "title": "Actas",
+      "title": "Girls und Panzer das Finale: Part 5",
       "format": "Película",
       "year": 2026,
-      "release": "Girls und Panzer das Finale: Part 5",
-      "studio": "Tsutomu Mizushima",
+      "release": "October 9",
+      "studio": "Actas",
       "episodes": null,
-      "sourceUrl": "https://en.wikipedia.org/wiki/Actas"
+      "sourceUrl": "https://en.wikipedia.org/wiki/Girls_und_Panzer_das_Finale:_Part_5"
     },
     {
       "title": "BanG Dream! Ave Mujica Prima Aurora",
@@ -315,13 +333,13 @@
       "sourceUrl": "https://en.wikipedia.org/wiki/BanG_Dream!_Ave_Mujica_Prima_Aurora"
     },
     {
-      "title": "CloverWorks",
+      "title": "Rascal Does Not Dream of a Dear Friend",
       "format": "Película",
       "year": 2026,
-      "release": "Rascal Does Not Dream of a Dear Friend",
-      "studio": "Sōichi Masui",
+      "release": "October 16",
+      "studio": "CloverWorks",
       "episodes": null,
-      "sourceUrl": "https://en.wikipedia.org/wiki/CloverWorks"
+      "sourceUrl": "https://en.wikipedia.org/wiki/Rascal_Does_Not_Dream_of_a_Dear_Friend"
     },
     {
       "title": "Made in Abyss: Mezameru Shinpi",
@@ -331,6 +349,15 @@
       "studio": "Kinema Citrus",
       "episodes": null,
       "sourceUrl": "https://en.wikipedia.org/wiki/Made_in_Abyss:_Mezameru_Shinpi"
+    },
+    {
+      "title": "Maebashi Witches Emoemories: Blooming Witches",
+      "format": "Película",
+      "year": 2026,
+      "release": "October 23",
+      "studio": "Sunrise",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Maebashi_Witches"
     },
     {
       "title": "Grotesqqque",
@@ -360,13 +387,13 @@
       "sourceUrl": "https://en.wikipedia.org/wiki/Armored_Trooper_VOTOMS"
     },
     {
-      "title": "Ufotable",
+      "title": "Witch on the Holy Night",
       "format": "Película",
       "year": 2026,
-      "release": "Witch on the Holy Night",
-      "studio": "Masashi Takeuchi",
+      "release": "November 20",
+      "studio": "Ufotable",
       "episodes": null,
-      "sourceUrl": "https://en.wikipedia.org/wiki/Ufotable"
+      "sourceUrl": "https://en.wikipedia.org/wiki/Witch_on_the_Holy_Night"
     },
     {
       "title": "Takopi's Original Sin: Thank You, See You Tomorrow",
