@@ -1,134 +1,9 @@
 {
-  "updated": "2026-10-19T09:39:38.483Z",
+  "updated": "2026-10-19T15:38:37.591Z",
   "source": "AniList public GraphQL metadata",
-  "windowStart": 1792204764,
-  "windowEnd": 1793180364,
+  "windowStart": 1792226303,
+  "windowEnd": 1793201903,
   "airing": [
-    {
-      "id": "mal-63901",
-      "mal_id": 63901,
-      "ani_id": 209709,
-      "title": "Sirotan",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx209709-Wz8BKL1fm5MC.png",
-      "banner": "",
-      "description": "",
-      "year": 2026,
-      "startDate": "2026-10-03",
-      "format": "TV",
-      "episodes": 0,
-      "averageScore": 0,
-      "status": "RELEASING",
-      "genres": [],
-      "siteUrl": "https://anilist.co/anime/209709",
-      "streaming": [],
-      "trailer": {
-        "site": "youtube",
-        "id": "4iOFqQ1E4Mo"
-      },
-      "next": {
-        "at": 1792826940,
-        "episode": 4
-      },
-      "airingAt": 1792222140,
-      "episode": 3,
-      "scheduleId": 421815
-    },
-    {
-      "id": "mal-966",
-      "mal_id": 966,
-      "ani_id": 966,
-      "title": "Shin Chan",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b966-QUCdKAk4ls9J.jpg",
-      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/966-J5CwLLTBs4OO.jpg",
-      "description": "Crayon Shin-chan follows the wacky antics and adventures of five-year-old Shinnosuke \"Shin\" Nohara and his parents, neighbors, and friends and is set in Kasukabe, Saitama Prefecture, Japan. Many of the jokes in the series stem from Shin-chan's occasionally weird, unnatural and inappropriate use of language, as well as from his inappropriate behavior. A typical gag involves Shin-chan confounding his parents by using the wrong phrase for the occasion; for example, saying \"Welcome back!\" instead of \"I am back!\" when he comes home. During the beginning of the series, the TV show was mostly based on the storyline in the original manga. As the show progressed, more and more episodes became anime-original.",
-      "year": 1992,
-      "startDate": "1992-04-13",
-      "format": "TV",
-      "episodes": 0,
-      "averageScore": 77,
-      "status": "RELEASING",
-      "genres": [
-        "Comedy",
-        "Ecchi",
-        "Slice of Life"
-      ],
-      "siteUrl": "https://anilist.co/anime/966",
-      "streaming": [],
-      "trailer": null,
-      "next": {
-        "at": 1792827000,
-        "episode": 1358
-      },
-      "airingAt": 1792222200,
-      "episode": 1357,
-      "scheduleId": 409442,
-      "description_es": "Crayon Shin-chan sigue los locos anticos y aventuras de Shinnosuke, de cinco años, \"Shin\" Nohara y sus padres, vecinos y amigos, y se encuentra en Kasukabe, Prefectura de Saitama, Japón. Muchas de las bromas de la serie provienen del uso extraño, antinatural e inapropiado del lenguaje de Shin-chan, así como de su comportamiento inapropiado. Una mordaza típica involucra a Shin-chan confundiendo a sus padres usando la frase equivocada para la ocasión; por ejemplo, diciendo \"¡Bienvenido!\" en lugar de \"Estoy de vuelta!\" cuando él vuelve. Durante el comienzo de la serie, el programa de televisión se basaba principalmente en o"
-    },
-    {
-      "id": "mal-8687",
-      "mal_id": 8687,
-      "ani_id": 8687,
-      "title": "Doraemon (2005)",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b8687-bBnJMGnih4PT.jpg",
-      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/8687-aa3QbJjGfy3B.jpg",
-      "description": "A new Doraemon series produced by the same team as the 1979 series (in association with Studio Pierrot) with new voice actors and staff and updated character designs.",
-      "year": 2005,
-      "startDate": "2005-04-15",
-      "format": "TV",
-      "episodes": 0,
-      "averageScore": 77,
-      "status": "RELEASING",
-      "genres": [
-        "Adventure",
-        "Comedy",
-        "Sci-Fi"
-      ],
-      "siteUrl": "https://anilist.co/anime/8687",
-      "streaming": [],
-      "trailer": null,
-      "next": {
-        "at": 1792828800,
-        "episode": 938
-      },
-      "airingAt": 1792224000,
-      "episode": 937,
-      "scheduleId": 380065,
-      "description_es": "Una nueva serie Doraemon producida por el mismo equipo que la serie 1979 (en asociación con Studio Pierrot) con nuevos actores de voz y personal y diseños de caracteres actualizados."
-    },
-    {
-      "id": "mal-61999",
-      "mal_id": 61999,
-      "ani_id": 195571,
-      "title": "The Vermilion Mask",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx195571-fvj7u5GI7BRT.jpg",
-      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/195571-UkdB06UpyL8k.jpg",
-      "description": "\"The Mask” gives power to anyone who wears it. At times, that means endless possibility, or unimaginable tragedy… Peru, pupil of the legendary mask maker Gaston Roux, becomes controlled by the “Mask of the Warrior God,” and unintentionally kills his friends, and even his own master. In order to prevent this type of tragedy from reoccurring, Peru swears to destroy all of Gaston’s masks that are spread around the world. Confronting the sins that he has committed, he embarks on his voyage. Meeting new friends, then confronting powerful foes. The boy continues on. Until the day he can atone for his sins against his master. (Source: The Vermillion Mask English Site)",
-      "year": 2026,
-      "startDate": "2026-10-10",
-      "format": "TV",
-      "episodes": 0,
-      "averageScore": 68,
-      "status": "RELEASING",
-      "genres": [
-        "Action",
-        "Drama",
-        "Supernatural"
-      ],
-      "siteUrl": "https://anilist.co/anime/195571",
-      "streaming": [],
-      "trailer": {
-        "site": "youtube",
-        "id": "iX4N-Z5Hbxw"
-      },
-      "next": {
-        "at": 1792830600,
-        "episode": 3
-      },
-      "airingAt": 1792225800,
-      "episode": 2,
-      "scheduleId": 422489,
-      "description_es": "\"La máscara\" da poder a cualquiera que la use. A veces, eso significa una posibilidad interminable, o una tragedia inimaginable... Perú, alumno del legendario fabricante de máscaras Gaston Roux, se hace controlado por el “Mask del Dios Guerrero”, y mata involuntariamente a sus amigos, e incluso a su propio maestro. Para evitar que este tipo de tragedia vuelva a ocurrir, Perú jura destruir todas las máscaras de Gaston que se extienden por todo el mundo. Frente a los pecados que ha cometido, se embarca en su viaje. Conocer a nuevos amigos y enfrentar a poderosos enemigos. El chico continúa. Hasta el día que puede expiar por hola"
-    },
     {
       "id": "mal-235",
       "mal_id": 235,
@@ -1902,8 +1777,8 @@
         "id": "hGRtocAh3iw"
       },
       "next": {
-        "at": 1792413000,
-        "episode": 3
+        "at": 1793017800,
+        "episode": 4
       },
       "airingAt": 1792413000,
       "episode": 3,
@@ -1944,8 +1819,8 @@
         "id": "ynr8tFWrK4c"
       },
       "next": {
-        "at": 1792414800,
-        "episode": 4
+        "at": 1793019600,
+        "episode": 5
       },
       "airingAt": 1792414800,
       "episode": 4,
@@ -1983,8 +1858,8 @@
         "id": "fmUpSXFbSK0"
       },
       "next": {
-        "at": 1792418400,
-        "episode": 3
+        "at": 1793023200,
+        "episode": 4
       },
       "airingAt": 1792418400,
       "episode": 3,
@@ -2017,12 +1892,12 @@
         "id": "IJONbpfIlUg"
       },
       "next": {
-        "at": 1792418400,
-        "episode": 9
+        "at": 1793026800,
+        "episode": 10
       },
-      "airingAt": 1792418400,
+      "airingAt": 1792422000,
       "episode": 9,
-      "scheduleId": 419856,
+      "scheduleId": 422729,
       "description_es": "La destrucción se desploma al final de la Guerra de la Sangre Mil Años entre los Reapers del Alma y las Quincias... mientras la muerte del Rey del Alma refleja el colapso de los Tres Mundos, las distorsiones y los presagios de destrucción comienzan a aparecer en todos los reinos. Quince batallas surgieron a lo largo de la Wahr Welt entre los 13 escuadrones de la Guardia de la Corte y la Guardia Real. Ichigo aprende sobre las verdaderas intenciones de Uryuu y renueva su determinación de proteger el mundo juntos, como amigos que confían entre sí. Yhwach ha superado incluso su propia habilidad, el Todopoderoso... La feroz batalla por la supervivencia de la aplicación Tres Mundos"
     },
     {
@@ -2773,7 +2648,7 @@
       "startDate": "2026-10-14",
       "format": "TV",
       "episodes": 11,
-      "averageScore": 53,
+      "averageScore": 52,
       "status": "RELEASING",
       "genres": [
         "Mecha",
@@ -3227,7 +3102,7 @@
       "startDate": "2026-10-08",
       "format": "TV",
       "episodes": 0,
-      "averageScore": 70,
+      "averageScore": 69,
       "status": "RELEASING",
       "genres": [
         "Action",
@@ -3535,7 +3410,7 @@
       "startDate": "2026-07-03",
       "format": "TV",
       "episodes": 26,
-      "averageScore": 67,
+      "averageScore": 68,
       "status": "RELEASING",
       "genres": [
         "Action",
@@ -6358,8 +6233,8 @@
         "id": "hGRtocAh3iw"
       },
       "next": {
-        "at": 1792413000,
-        "episode": 3
+        "at": 1793017800,
+        "episode": 4
       },
       "airingAt": 1793017800,
       "episode": 4,
@@ -6400,8 +6275,8 @@
         "id": "ynr8tFWrK4c"
       },
       "next": {
-        "at": 1792414800,
-        "episode": 4
+        "at": 1793019600,
+        "episode": 5
       },
       "airingAt": 1793019600,
       "episode": 5,
@@ -6439,8 +6314,8 @@
         "id": "fmUpSXFbSK0"
       },
       "next": {
-        "at": 1792418400,
-        "episode": 3
+        "at": 1793023200,
+        "episode": 4
       },
       "airingAt": 1793023200,
       "episode": 4,
@@ -6473,12 +6348,12 @@
         "id": "IJONbpfIlUg"
       },
       "next": {
-        "at": 1792418400,
-        "episode": 9
+        "at": 1793026800,
+        "episode": 10
       },
-      "airingAt": 1793023200,
+      "airingAt": 1793026800,
       "episode": 10,
-      "scheduleId": 419857,
+      "scheduleId": 422730,
       "description_es": "La destrucción se desploma al final de la Guerra de la Sangre Mil Años entre los Reapers del Alma y las Quincias... mientras la muerte del Rey del Alma refleja el colapso de los Tres Mundos, las distorsiones y los presagios de destrucción comienzan a aparecer en todos los reinos. Quince batallas surgieron a lo largo de la Wahr Welt entre los 13 escuadrones de la Guardia de la Corte y la Guardia Real. Ichigo aprende sobre las verdaderas intenciones de Uryuu y renueva su determinación de proteger el mundo juntos, como amigos que confían entre sí. Yhwach ha superado incluso su propia habilidad, el Todopoderoso... La feroz batalla por la supervivencia de la aplicación Tres Mundos"
     },
     {
@@ -6889,7 +6764,7 @@
       "startDate": "2026-10-14",
       "format": "TV",
       "episodes": 11,
-      "averageScore": 53,
+      "averageScore": 52,
       "status": "RELEASING",
       "genres": [
         "Mecha",
@@ -7038,6 +6913,331 @@
       "episode": 7,
       "scheduleId": 421467,
       "description_es": "Hace diez años, después de tres días consecutivos de luna de sangre, fantasmas, dioses, ojos heterocromáticos y cuentos extraños llegaron uno tras otro. El misterio y el enigma descendieron sobre el mundo humano. El terror y la desesperación vagaron por la tierra. Como humanos, ¿debemos arrodillarnos en sumisión, llorar amargamente, o dibujar nuestras espadas? Esta es una nueva era, y esta era — pertenece a lo extraordinario! Al abrir la puerta a lo extraordinario, Su Bai encontró un nuevo mundo... (Fuente: Tencent, traducido)"
+    },
+    {
+      "id": "mal-52480",
+      "mal_id": 52480,
+      "ani_id": 152677,
+      "title": "The Detective Is Already Dead Season 2",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx152677-gtJbgjE94lCN.png",
+      "banner": "",
+      "description": "After thwarting a hijacking with beautiful, silver-haired detective Siesta, Kimihiko leads a life of globe-trotting and crime-solving—until Siesta dies. A year later, a new case will open old wounds as it threads murder, conspiracy, and his dead partner! (Source: Crunchyroll)",
+      "year": 2026,
+      "startDate": "2026-10-07",
+      "format": "TV",
+      "episodes": 13,
+      "averageScore": 72,
+      "status": "RELEASING",
+      "genres": [
+        "Comedy",
+        "Drama",
+        "Mystery",
+        "Romance",
+        "Supernatural"
+      ],
+      "siteUrl": "https://anilist.co/anime/152677",
+      "streaming": [],
+      "trailer": {
+        "site": "youtube",
+        "id": "8AnNxEp733c"
+      },
+      "next": {
+        "at": 1792585800,
+        "episode": 3
+      },
+      "airingAt": 1793190600,
+      "episode": 4,
+      "scheduleId": 422058,
+      "description_es": "Después de frustrar un secuestro con el hermoso detective de pelo plateado Siesta, Kimihiko conduce una vida de ataque mundial y resolución del crimen hasta que Siesta muera. Un año más tarde, un nuevo caso abrirá viejas heridas mientras roza asesinato, conspiración y su compañero muerto! (Fuente: Crunchyroll)"
+    },
+    {
+      "id": "al-217282",
+      "mal_id": null,
+      "ani_id": 217282,
+      "title": "GelPiyo 2",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx217282-fRAAhF2b5eIr.png",
+      "banner": "",
+      "description": "Second season of GelPiyo .",
+      "year": 2026,
+      "startDate": "2026-10-21",
+      "format": "TV_SHORT",
+      "episodes": 0,
+      "averageScore": 0,
+      "status": "NOT_YET_RELEASED",
+      "genres": [
+        "Comedy"
+      ],
+      "siteUrl": "https://anilist.co/anime/217282",
+      "streaming": [],
+      "trailer": null,
+      "next": {
+        "at": 1792587240,
+        "episode": 1
+      },
+      "airingAt": 1793192040,
+      "episode": 2,
+      "scheduleId": 420789,
+      "description_es": "Segunda temporada de GelPiyo."
+    },
+    {
+      "id": "mal-64084",
+      "mal_id": 64084,
+      "ani_id": 211778,
+      "title": "The World's Strongest Witch",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx211778-0MXK5HqVFBYH.jpg",
+      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/211778-ZbXEhqfFkj62.jpg",
+      "description": "After using her SSS-Rank skill, Internet, to crush her former family’s ambitions, Lorna is free to travel the world. Her next stop is the port town of Aquas, where she hopes to see the sights and chow down on some fresh seafood. But when she arrives, the place is on the brink of destruction thanks to a certain Weekly Quest… Good thing Lorna has the gods on her side! (Source: Crunchyroll)",
+      "year": 2026,
+      "startDate": "2026-10-07",
+      "format": "TV",
+      "episodes": 0,
+      "averageScore": 69,
+      "status": "RELEASING",
+      "genres": [
+        "Action",
+        "Comedy",
+        "Fantasy"
+      ],
+      "siteUrl": "https://anilist.co/anime/211778",
+      "streaming": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00384009/the-worlds-strongest-witch"
+        }
+      ],
+      "trailer": {
+        "site": "youtube",
+        "id": "snJZD9vxfHY"
+      },
+      "next": {
+        "at": 1792587600,
+        "episode": 3
+      },
+      "airingAt": 1793192400,
+      "episode": 4,
+      "scheduleId": 420155,
+      "description_es": "Después de usar su habilidad SSS-Rank, Internet, para aplastar las ambiciones de su antigua familia, Lorna es libre de viajar por el mundo. Su próxima parada es la ciudad portuaria de Aquas, donde espera ver los lugares de interés y disfrutar de algunos mariscos frescos. Pero cuando llega, el lugar está al borde de la destrucción gracias a una cierta misión semanal... ¡Qué bueno que Lorna tenga los dioses de su lado! (Fuente: Crunchyroll)"
+    },
+    {
+      "id": "mal-58518",
+      "mal_id": 58518,
+      "ani_id": 176314,
+      "title": "Sasaki and Peeps Season 2",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx176314-lpvca6vjmkeO.jpg",
+      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/176314-nj2hmqbGQ9HJ.jpg",
+      "description": "The second season of Sasaki to Pii-chan .",
+      "year": 2026,
+      "startDate": "2026-10-07",
+      "format": "TV",
+      "episodes": 12,
+      "averageScore": 68,
+      "status": "RELEASING",
+      "genres": [
+        "Comedy",
+        "Fantasy",
+        "Mahou Shoujo"
+      ],
+      "siteUrl": "https://anilist.co/anime/176314",
+      "streaming": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/G5PHNM935/sasaki-and-peeps"
+        }
+      ],
+      "trailer": {
+        "site": "youtube",
+        "id": "gY0hpk9E7p8"
+      },
+      "next": {
+        "at": 1792587600,
+        "episode": 3
+      },
+      "airingAt": 1793192400,
+      "episode": 4,
+      "scheduleId": 422251,
+      "description_es": "La segunda temporada de Sasaki a Pii-chan."
+    },
+    {
+      "id": "mal-59204",
+      "mal_id": 59204,
+      "ani_id": 178868,
+      "title": "Magic Knight Rayearth (2026)",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx178868-mfp0HIHNJNAm.jpg",
+      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/178868-l7VyM7j7LRtH.jpg",
+      "description": "Hikaru Shidou, Umi Ryuuzaki, and Fuu Hououji aren't from Cephiro. While on a school field trip to the Tokyo Tower, the three girls' minds are on anything but different worlds filled with magic and wonder. That is, until Princess Emeraude, the Pillar of Cephiro, cries out for the Magic Knights to save her world--and that just happens to be those three! (Source: Crunchyroll)",
+      "year": 2026,
+      "startDate": "2026-10-07",
+      "format": "TV",
+      "episodes": 0,
+      "averageScore": 68,
+      "status": "RELEASING",
+      "genres": [
+        "Adventure",
+        "Fantasy",
+        "Mahou Shoujo",
+        "Mecha"
+      ],
+      "siteUrl": "https://anilist.co/anime/178868",
+      "streaming": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00383994/magic-knight-rayearth-2026"
+        }
+      ],
+      "trailer": {
+        "site": "youtube",
+        "id": "67GqhfLw3ys"
+      },
+      "next": {
+        "at": 1792593960,
+        "episode": 3
+      },
+      "airingAt": 1793198760,
+      "episode": 4,
+      "scheduleId": 417273,
+      "description_es": "Hikaru Shidou, Umi Ryuuzaki, y Fuu Hououji no son de Cephiro. Mientras que en un viaje de campo escolar a la Torre de Tokio, las mentes de las tres chicas están en cualquier cosa excepto mundos diferentes llenos de magia y maravilla. Es decir, hasta que la Princesa Esmeraude, el Pilar de Cephiro, clama por los Caballeros Mágicos para salvar su mundo, ¡y eso resulta que son esos tres! (Fuente: Crunchyroll)"
+    },
+    {
+      "id": "mal-62534",
+      "mal_id": 62534,
+      "ani_id": 199068,
+      "title": "The Prince of Tennis II U-17 WORLD CUP: Final Member Selection Match",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx199068-2afNaytl50Ko.png",
+      "banner": "",
+      "description": "Old rivalries reignite as Team Japan players face off to earn spots in the lineup for the World Cup final. (Source: Crunchyroll News)",
+      "year": 2026,
+      "startDate": "2026-10-01",
+      "format": "TV",
+      "episodes": 0,
+      "averageScore": 53,
+      "status": "RELEASING",
+      "genres": [
+        "Action",
+        "Comedy",
+        "Sports"
+      ],
+      "siteUrl": "https://anilist.co/anime/199068",
+      "streaming": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/G65VP3106/the-prince-of-tennis-ii"
+        }
+      ],
+      "trailer": {
+        "site": "youtube",
+        "id": "bsNeADDQFD4"
+      },
+      "next": {
+        "at": 1792594800,
+        "episode": 4
+      },
+      "airingAt": 1793199600,
+      "episode": 5,
+      "scheduleId": 419602,
+      "description_es": "Las viejas rivalidades reinan cuando los jugadores del equipo Japón se enfrentan para ganar puntos en la alineación para la final de la Copa Mundial. (Fuente: Crunchyroll News)"
+    },
+    {
+      "id": "mal-60598",
+      "mal_id": 60598,
+      "ani_id": 168085,
+      "title": "Dali Si Rizhi 3",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx168085-hPOOODUADp7D.png",
+      "banner": "",
+      "description": "The third seasons of Dali Si Rizhi .",
+      "year": 2026,
+      "startDate": "2026-10-15",
+      "format": "ONA",
+      "episodes": 0,
+      "averageScore": 0,
+      "status": "RELEASING",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Comedy"
+      ],
+      "siteUrl": "https://anilist.co/anime/168085",
+      "streaming": [],
+      "trailer": null,
+      "next": {
+        "at": 1792594800,
+        "episode": 2
+      },
+      "airingAt": 1793199600,
+      "episode": 3,
+      "scheduleId": 421452,
+      "description_es": "Las terceras temporadas de Dali Si Rizhi."
+    },
+    {
+      "id": "mal-53913",
+      "mal_id": 53913,
+      "ani_id": 159042,
+      "title": "Reincarnated as a Sword Season 2",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx159042-GGFwlDskc5vR.png",
+      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/159042-X0mqyaUFBkms.jpg",
+      "description": "The second season of Tensei Shitara Ken Deshita . Note: Each episode was streamed one week in advance of the TV broadcast starting on October 1, 2026 on Abema. Regular broadcasting began on October 8, 2026.",
+      "year": 2026,
+      "startDate": "2026-10-01",
+      "format": "ONA",
+      "episodes": 12,
+      "averageScore": 75,
+      "status": "RELEASING",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Fantasy"
+      ],
+      "siteUrl": "https://anilist.co/anime/159042",
+      "streaming": [],
+      "trailer": {
+        "site": "youtube",
+        "id": "kbtRqqa2GyA"
+      },
+      "next": {
+        "at": 1792596600,
+        "episode": 4
+      },
+      "airingAt": 1793201400,
+      "episode": 5,
+      "scheduleId": 418797,
+      "description_es": "La segunda temporada de Tensei Mierda Ken Deshita. Nota: Cada episodio fue transmitido una semana antes de la emisión de televisión a partir del 1 de octubre de 2026 en Abema. La radiodifusión regular comenzó el 8 de octubre de 2026."
+    },
+    {
+      "id": "mal-64344",
+      "mal_id": 64344,
+      "ani_id": 213068,
+      "title": "Dandivine",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx213068-aFSedkY5bQ4m.png",
+      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/213068-EQba2gbIKAy5.jpg",
+      "description": "The story takes place 20 years after the robot Dandivine defeated the mysterious Aposdoll. The world is now in peace. However, toy manufacturer Kasuga, who relied on its toys of merchandise of Dandivine, has fallen into decline. Thus, Kasuga's president Genjuro Shijima prayed for Dandivine's revival, and the Aposdoll suddenly returned. High school student Gekiha Shijima gets an invitation from his uncle Yusaku Kuroiwa, the former main pilot of Dandivine, to pilot the giant robot himself. (Source: Anime News Network)",
+      "year": 2026,
+      "startDate": "2026-10-08",
+      "format": "TV",
+      "episodes": 0,
+      "averageScore": 50,
+      "status": "RELEASING",
+      "genres": [
+        "Action",
+        "Mecha"
+      ],
+      "siteUrl": "https://anilist.co/anime/213068",
+      "streaming": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00385792/dandivine"
+        }
+      ],
+      "trailer": {
+        "site": "youtube",
+        "id": "ihJfkOT_0wU"
+      },
+      "next": {
+        "at": 1792596600,
+        "episode": 3
+      },
+      "airingAt": 1793201400,
+      "episode": 4,
+      "scheduleId": 419815,
+      "description_es": "La historia tiene lugar 20 años después de que el robot Dandivine derrotara al misterioso Aposdoll. El mundo está ahora en paz. Sin embargo, el fabricante de juguetes Kasuga, que dependía de sus juguetes de mercadería de Dandivine, ha caído en declive. Así, el presidente de Kasuga, Genjuro Shijima, oró por el renacimiento de Dandivine, y el Aposdoll de repente regresó. El estudiante de secundaria Gekiha Shijima recibe una invitación de su tío Yusaku Kuroiwa, el ex piloto principal de Dandivine, para pilotar el robot gigante mismo. (Fuente: Anime News Network)"
     }
   ],
   "seasonal": {
@@ -8486,8 +8686,8 @@
           "id": "hGRtocAh3iw"
         },
         "next": {
-          "at": 1792413000,
-          "episode": 3
+          "at": 1793017800,
+          "episode": 4
         },
         "description_es": "Hazme una poción de amor. Y con esa sola frase, la Buena Bruja del amor secreto del lago sobre el desgarrador Sir Harij termina en la ruptura del corazón. Sin embargo, cuando promete ayudarla a reunir los ingredientes, Rose está emocionada por la oportunidad de mirar a un hombre con el que normalmente nunca podría interactuar. Ella aprende a jactar su corazón por sus conversaciones usuales inclinadas... pero ¿qué va a hacer cuando aparece inexplicablemente en su puerta con pan y un frasco de mantequilla de manzana? (Fuente: Yen Press)"
       },
@@ -8554,8 +8754,8 @@
           "id": "fmUpSXFbSK0"
         },
         "next": {
-          "at": 1792418400,
-          "episode": 3
+          "at": 1793023200,
+          "episode": 4
         },
         "description_es": "Un día, la secundaria Ageha Yoshina recoge una misteriosa “tarjeta de teléfono roja” que queda atrás en una cabina telefónica pública. Unos días más tarde, su amigo de la infancia y compañero de clase, Sakurako Amamiya, que poseía la misma carta, desaparecen sin dejar rastro. En busca de ella, Ageha se encuentra dibujado en los rumores que rodean una cadena nacional de misteriosas desapariciones, dijo ser el trabajo de una organización secreta conocida sólo como “Psyren”. Cuando accede al grupo, comienza un juego mortal, uno que cambiará su destino para siempre. (Fuente: Sitio Oficial de PSYhován)"
       },
@@ -8593,8 +8793,8 @@
           "id": "ynr8tFWrK4c"
         },
         "next": {
-          "at": 1792414800,
-          "episode": 4
+          "at": 1793019600,
+          "episode": 5
         },
         "description_es": "La naturaleza altruista del trabajador de oficina Akira Yagami generalmente le consigue el extremo corto del palo. Cuando muere después de salvar a un niño del tráfico entrante... ¿reencarna en otro mundo como un duende? Normalmente, los duendes sólo viven durante siete días, pero los nuevos poderes de Akira le permiten desafiar la vida normal de la especie... ¡y son la clave de su camino para convertirse en el más fuerte de todos los tiempos! (Fuente: Yen Press) Nota: Tensei Goblin Dakedo Sitsumon Aru? está transmitiendo 1 semana antes de la emisión de televisión en ABEMA y Primer Video comenzando con el episodio 2 el 5 de octubre de 2026"
       },
@@ -9169,7 +9369,7 @@
         "startDate": "2026-10-08",
         "format": "TV",
         "episodes": 0,
-        "averageScore": 70,
+        "averageScore": 69,
         "status": "RELEASING",
         "genres": [
           "Action",
