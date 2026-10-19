@@ -208,14 +208,10 @@ try{
    const overflow=await page.evaluate(()=>document.documentElement.scrollWidth-window.innerWidth);
    if(overflow>12)throw new Error('Third-party section causes horizontal overflow: '+overflow);
   });
-  await test(device.name+' seasonal sound is opt-in and does not block navigation',async()=>{
-   const sound=page.locator('#oct-audio-control');
-   await sound.waitFor({timeout:5000});
-   if(await sound.getAttribute('aria-pressed')!=='false')throw Error('Sound must start off');
-   await sound.click({timeout:6500});
-   if(await sound.getAttribute('aria-pressed')!=='true')throw Error('Sound toggle did not activate');
-   await sound.click({timeout:6500});
-   if(await sound.getAttribute('aria-pressed')!=='false')throw Error('Sound toggle did not mute');
+  await test(device.name+' automatic intro does not expose a sound toggle and navigation works',async()=>{
+   if(await page.locator('#oct-audio-control').count())throw Error('The removed seasonal sound option is visible');
+   const source=await page.locator('#original-signature').getAttribute('src');
+   if(!source?.includes('1up-anime-intro-firma-3seg.mp4'))throw Error('Original automatic intro is missing');
    if(device.mobile)await touchTab('temporada');
    else await page.locator('.desktop-links [data-route="temporada"]').click();
    await page.locator('#browse-screen:not([hidden])').waitFor({timeout:6500});
