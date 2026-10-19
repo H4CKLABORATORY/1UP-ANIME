@@ -2,9 +2,11 @@
   "name": "oneup-anime",
   "private": true,
   "scripts": {
-    "test:depth": "playwright test tests/depth-mode.spec.js"
+    "test:depth": "playwright test tests/depth-mode.spec.js",
+    "test:puppeteer": "node scripts/puppeteer-site-audit.mjs"
   },
   "devDependencies": {
-    "@playwright/test": "1.56.1"
+    "@playwright/test": "1.56.1",
+    "puppeteer": "25.14.0"
   }
 }
