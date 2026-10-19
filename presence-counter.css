@@ -1,0 +1,49 @@
+/* 1UP Anime — módulo independiente, inspirado en badges de estado tipo radar. */
+.oneup-presence-pill{
+  --presence-green:#77edaa;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:6px 12px;
+  min-height:42px;
+  border:1px solid #4ca87559;
+  border-radius:999px;
+  background:linear-gradient(130deg,#193d30de,#0d1b1ae8);
+  box-shadow:inset 0 1px 0 #b6ffd017,0 0 16px #44cc7a0d;
+  color:#e6ffed;
+  white-space:nowrap;
+  vertical-align:middle;
+  flex-shrink:0;
+  font-family:var(--font,'Outfit',system-ui,sans-serif);
+}
+.oneup-presence-dot{
+  flex:0 0 auto;
+  width:8px;height:8px;
+  border-radius:50%;
+  background:var(--presence-green);
+  box-shadow:0 0 0 3px #56e38c20,0 0 11px #65ff9f85;
+}
+.oneup-presence-text{display:flex;flex-direction:column;gap:2px;line-height:1.08}
+.oneup-presence-kicker{font-size:8px;letter-spacing:1.35px;font-weight:850;color:#abd5bc}
+.oneup-presence-label{font-size:10px;letter-spacing:.8px;font-weight:900;color:#e4ffe9}
+.oneup-presence-count{font-size:17px;line-height:1;font-weight:900;font-variant-numeric:tabular-nums;min-width:17px;text-align:right;color:var(--presence-green)}
+.oneup-presence-pill[data-state="unavailable"] .oneup-presence-dot{background:#879e91;box-shadow:none}
+.oneup-presence-pill[data-state="unavailable"] .oneup-presence-count{color:#a8b9ac}
+.oneup-presence-pill[data-state="unavailable"]{border-color:#899c8338}
+@media(max-width:1150px){
+  .header .oneup-presence-pill{padding:6px 9px;gap:6px}
+  .header .oneup-presence-kicker{display:none}
+}
+@media(max-width:680px){
+  .oneup-presence-pill{min-height:35px;padding:5px 9px;gap:6px}
+  .oneup-presence-dot{width:7px;height:7px}
+  .oneup-presence-kicker{display:none}
+  .oneup-presence-label{font-size:9px;letter-spacing:.15px}
+  .oneup-presence-count{font-size:13px}
+  .header .header-right{gap:6px}
+  .c-header .oneup-presence-text{display:none}
+  .c-header .oneup-presence-pill{padding-inline:9px}
+}
+@media(prefers-reduced-motion:reduce){
+  .oneup-presence-pill,.oneup-presence-dot{animation:none!important;transition:none!important}
+}
