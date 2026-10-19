@@ -75,3 +75,11 @@ Excluir secretos, datos personales irrelevantes, suposiciones no etiquetadas, pr
 ### 2026-10-19 — automatización de navegador Puppeteer
 - Integración aislada en herramientas de desarrollo: `puppeteer@25.14.0`, script `scripts/puppeteer-site-audit.mjs` y workflow `ONEUP Puppeteer Browser QA`; no agregar Puppeteer a la carga de Safari/usuarios ni exponer un navegador público.
 - Revisión local automatizada (sin APIs externas), generación de capturas/JSON y verificación de UI básica. En `docs/PUPPETEER_QA.md` se explica funcionamiento y límites. No afirmar QA aprobado antes de CI.
+
+
+### 2026-10-19 — Laboratorio educativo de scraping
+- Petición: extraer metadatos educativos de anime, conservando presupuesto cero y el diseño existente.
+- Rama feature/educational-anime-scraper-20261019. Fuente Wikipedia (una página con verificación robots.txt), fallback AniList etiquetado como API.
+- Se añadieron scraper Python, fixtures/tests, workflow diario, snapshot JSON y nueva interfaz responsive. Se añadió enlace desde footer.
+- Solo datos factuales: título, fecha, formato, estudio, episodios informados y fuente; sin extraer videos ni credenciales.
+- PR #52. CI Python, primera extracción real en Actions, Pages y Safari físico requieren verificación.

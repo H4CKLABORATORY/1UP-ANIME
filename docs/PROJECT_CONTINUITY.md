@@ -259,3 +259,11 @@ Al concluir cada trabajo agregar:
 - `scripts/puppeteer-site-audit.mjs` ejecuta Chrome Headless Shell contra sitio localhost: portada, comunidad, motor, moderación y gremio en ancho móvil y desktop; verifica aperturas/cierre de modal de acceso e invitado, overflow, errores JS, genera capturas y JSON. Todas las peticiones externas son bloqueadas.
 - `.github/workflows/puppeteer-quality.yml` instala dependencias sin scripts de npm, descarga Chrome compatible expresamente, lanza tests y sube evidencias. No es un proceso permanente ni un servicio de GitHub Pages.
 - Revisar CI del PR y solo fusionar si funciona; instalación real no confirmada hasta ver el workflow en verde. Manual: [PUPPETEER_QA.md](PUPPETEER_QA.md).
+
+
+### 2026-10-19 — Laboratorio educativo de scraping
+- Petición: extraer metadatos educativos de anime, conservando presupuesto cero y el diseño existente.
+- Rama feature/educational-anime-scraper-20261019. Fuente Wikipedia (una página con verificación robots.txt), fallback AniList etiquetado como API.
+- Se añadieron scraper Python, fixtures/tests, workflow diario, snapshot JSON y nueva interfaz responsive. Se añadió enlace desde footer.
+- Solo datos factuales: título, fecha, formato, estudio, episodios informados y fuente; sin extraer videos ni credenciales.
+- PR #52. CI Python, primera extracción real en Actions, Pages y Safari físico requieren verificación.

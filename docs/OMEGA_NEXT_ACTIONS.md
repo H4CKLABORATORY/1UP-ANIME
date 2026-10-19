@@ -25,3 +25,5 @@ Restricción: presupuesto $0, no compras/deploy destructivo sin permiso; no conv
 - [ ] **PR #48 — Auditoría web y acceso iPhone:** revisar el último HEAD de [PR #48](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/48), confirmar `ONEUP Sitewide Quality`, `Depth mode Playwright`, `ONEUP Browser Acceptance` y regresión HLS/catálogo, fusionar si pasan, verificar Pages y luego probar Safari físico. Capturas/registro: [auditoría](SITE_QUALITY_AUDIT_20261018.md). Pendiente validar Google/Firebase real y fuentes multimedia con licencia; no considerar completo solo por tener diseño funcional.
 
 - [ ] **Puppeteer Browser QA:** comprobar el workflow `ONEUP Puppeteer Browser QA` en PR de rama `feature/puppeteer-qa-integration-20261019`; corregir fallos reales de instalación/runtime, revisar `artifacts/puppeteer/report.json` y fusionar solo si el QA está verde. Ver [PUPPETEER_QA.md](PUPPETEER_QA.md). No confundir Chrome Headless con Safari físico, ni automatización de pruebas con servidor permanente.
+
+- [ ] **Scraping educativo:** verificar CI, JSON real, Page y Safari, sin conectar a episodios no autorizados.
