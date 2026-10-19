@@ -22,7 +22,7 @@
 - No confundir el catálogo de Anime1v con episodios reproducibles ni su licencia MIT con derechos de distribución de anime.
 
 ## Estado detectado ahora
-- Último commit de aplicación encontrado: c5b235addd884e04e24d9db363bf6e0b6c7bc48d
+- Último commit de aplicación encontrado: 9b80d2a8ab5ae31ff09c21cd3bd1ae4d75bdeb6b
 - Descubrimiento Anime1v configurado en frontend: sí, verificar la respuesta real en Render
 - Código runtime de metadatos Anime1v en repositorio: sí
 - Entradas de obras multimedia en data/licensed-media.json: 0
@@ -30,13 +30,14 @@
 - Safari físico: no dar por verificado salvo prueba real con evidencia.
 
 ## Últimos commits relevantes
+- 9b80d2a8a — feat: show verified Crunchyroll links alongside 1UP watch options
+- 764310271 — Sync authorized anime episode metadata and source statuses
+- 012d294fe — ONEUP health snapshot (no application changes)
 - c5b235add — Sync authorized anime episode metadata and source statuses
 - 390267953 — ONEUP health snapshot (no application changes)
-- 4c731ed17 — Update live anime airing calendar
-- 9c6860208 — Sync authorized anime episode metadata and source statuses
-- 6509c3ccf — Sync authorized anime episode metadata and source statuses
 
 ## PR abiertos (consultar cambios antes de desarrollar)
+- [#46](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/46) 1UP Anime: contador de conexiones en línea para portada y comunidad
 - [#45](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/45) WIP: guarded comment image/GIF preview and anime detail UX audit
 - [#44](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/44) Audit: release readiness baseline and Depth Mode regression coverage
 - [#40](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/40) Diseño 1UP Editorial Pro: pulido cinematográfico original (solo preview)
@@ -48,7 +49,6 @@
 - [#18](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/18) Prioritize integrated free viewing: shared Kokomi player, languages and seasons
 - [#15](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/15) [Codex handoff] DEXTER OMEGA SWARM — coordinación y misión 1UP Anime
 - [#14](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/14) Kokomi 1UP Anime · diseño + 22 vistas + reproductor y comentarios integrados (preview)
-- [#13](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/13) Diseño móvil 1UP Anime inspirado en referencia Kokomi
 
 ## Próxima tarea por prioridad
 1. Leer AGENTS.md, esta ficha, PROJECT_CONTINUITY.md y OMEGA_NEXT_ACTIONS.md; confirmar HEAD y CI.
