@@ -164,3 +164,27 @@ a,button,select,input,textarea{touch-action:manipulation}
 @media(prefers-reduced-motion:reduce){
  #auth-dialog :is(button,a),#auth-dialog .auth-panel{animation:none!important;transition:none!important}
 }
+
+
+/* Shared interior pages: keep navigation and action bars inside the phone. */
+.c-layout,.c-main,.c-panel,.oneup-motor,.c-feed,.c-hero,.c-header{min-width:0}
+.c-header :is(a,button){touch-action:manipulation}
+.c-header .c-brand{flex-shrink:1;min-width:0}
+.c-header .c-brand img{flex-shrink:0}
+.c-header nav{min-width:0}
+@media(max-width:760px){
+ .c-header .header-row{padding-block:9px;flex-wrap:wrap;gap:8px 12px}
+ .c-header .c-brand{font-size:clamp(20px,6.5vw,27px)}
+ .c-header .c-brand img{width:38px;height:38px}
+ .c-header nav{
+   order:3;display:flex;width:100%;max-width:100%;min-width:0;
+   justify-content:flex-start;gap:14px;overflow-x:auto;
+   overscroll-behavior-inline:contain;scrollbar-width:none;
+ }
+ .c-header nav :is(a,button){white-space:nowrap;min-height:36px;flex-shrink:0}
+ .c-header .c-outline{flex-shrink:0;margin-left:auto}
+ .c-container{width:calc(100% - 28px)}
+ .c-layout{grid-template-columns:minmax(0,1fr)}
+ .c-card,.c-feed-card,.c-media{min-width:0;max-width:100%}
+ .c-hero{min-width:0}
+}
