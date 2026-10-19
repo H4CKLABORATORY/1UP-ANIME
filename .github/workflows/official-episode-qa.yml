@@ -1,0 +1,48 @@
+name: ONEUP Official Complete Episode QA
+on:
+  workflow_dispatch:
+  pull_request:
+    branches: [main]
+    paths:
+      - "data/licensed-media.json"
+      - "official-episode-feature.js"
+      - "official-episode-feature.css"
+      - "scripts/e2e-official-episode.mjs"
+      - "tests/official-episode.test.mjs"
+      - ".github/workflows/official-episode-qa.yml"
+      - "index.html"
+      - "sw.js"
+  push:
+    branches: [main]
+    paths:
+      - "data/licensed-media.json"
+      - "official-episode-feature.js"
+      - "official-episode-feature.css"
+      - "scripts/e2e-official-episode.mjs"
+      - "tests/official-episode.test.mjs"
+      - ".github/workflows/official-episode-qa.yml"
+permissions:
+  contents: read
+jobs:
+  contract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: |
+          node --check official-episode-feature.js
+          node --test tests/official-episode.test.mjs
+          node scripts/test-media-source-contract.mjs
+          node scripts/test-episode-player.mjs
+  browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 14
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: npm install --no-audit --no-fund --ignore-scripts && npx playwright install --with-deps chromium
+      - run: node scripts/e2e-official-episode.mjs
