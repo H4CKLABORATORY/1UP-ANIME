@@ -63,3 +63,5 @@ El backend opcional Supabase para comentarios/progreso está preparado pero **de
 - Para fuentes multimedia permitidas, Subtitle Studio permite elegir las pistas WebVTT español/inglés presentes, Bangers por defecto (SIL OFL), Arial, Moderna y Arcade, 4 efectos y tamaño.
 - El script scripts/generate-authorized-subtitles.py permite transcribir un archivo local autorizado y crear archivos es/en si faster-whisper y modelos Argos están disponibles. No inventa subtítulos ni descarga video.
 - Ver ios/README.md, docs/AUTO_SUBTITLE_PIPELINE_20261019.md y docs/IOS_MULTIAGENT_WORKSTREAMS_20261019.md. La app no está firmada ni publicada en App Store; data/licensed-media.json sigue con entries vacío.
+
+**Privacidad y soporte de iOS:** [política de privacidad](privacy.html) y [guía App Store](ios/APPSTORE_SUBMISSION.md).
