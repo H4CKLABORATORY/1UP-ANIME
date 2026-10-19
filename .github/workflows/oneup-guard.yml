@@ -38,7 +38,7 @@ jobs:
           node --check scripts/oneup-guard.mjs
           node scripts/check-ui.mjs
       - name: Archive pre-checkpoint state
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: oneup-before-guard-${{ github.run_number }}
           retention-days: 21
@@ -68,7 +68,7 @@ jobs:
       - name: Validate guard report
         run: node scripts/check-guard.mjs
       - name: Upload health report and evidence
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         if: always()
         with:
           name: oneup-health-${{ github.run_number }}
