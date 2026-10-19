@@ -1,0 +1,34 @@
+name: ONEUP Anime Franchise Explorer
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'franchise-explorer.mjs'
+      - 'franchise-explorer.css'
+      - 'tests/franchise-explorer.test.mjs'
+      - '.github/workflows/franchise-explorer.yml'
+      - 'index.html'
+      - 'sw.js'
+  push:
+    branches: [main]
+    paths:
+      - 'franchise-explorer.mjs'
+      - 'franchise-explorer.css'
+      - 'tests/franchise-explorer.test.mjs'
+      - '.github/workflows/franchise-explorer.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  franchise:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verificar sintaxis
+        run: node --check franchise-explorer.mjs
+      - name: Pruebas sin red de franquicias
+        run: node --test tests/franchise-explorer.test.mjs

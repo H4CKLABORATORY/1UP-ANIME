@@ -3,10 +3,10 @@
 // CacheStorage is origin-wide: GitHub Pages apps on the same domain share it.
 // Restrict cleanup to caches that belong to this 1UP Anime service worker.
 const CACHE_PREFIX='oneup-stream-integrated-';
-const CACHE=CACHE_PREFIX+'v32-anime-alias-search-20261019';
+const CACHE=CACHE_PREFIX+'v33-franchise-api-20261019';
 const SHELL=[
  './','./index.html','./studio.css','./studio.js','./anime-title-search.js','./spotlight.css',
- './ui-quality.css','./assets/oneup-crest-mark.svg','./motion.css','./motion.js','./official-watch.js','./official-watch.css','./brand-v2.css','./player.css','./auth.js',
+ './franchise-explorer.mjs','./franchise-explorer.css','./ui-quality.css','./assets/oneup-crest-mark.svg','./motion.css','./motion.js','./official-watch.js','./official-watch.css','./brand-v2.css','./player.css','./auth.js',
  './auth-config.js','./manifest.webmanifest','./assets/oneup-crest.svg',
  './assets/icon-180.png','./assets/icon-192.png','./assets/icon-512.png',
  './assets/1up-anime-logo-poster.jpg','./assets/1up-anime-app-icon-512.png',
@@ -60,7 +60,7 @@ self.addEventListener('fetch',event=>{
  }
  // Network-first for site code, styling, manifest and localized metadata.
  // Browser cache can otherwise display an outdated English UI after PWA upgrades.
- if(/\.(?:js|css|svg|webmanifest)$/.test(url.pathname) ||
+ if(/\.(?:mjs|js|css|svg|webmanifest)$/.test(url.pathname) ||
     /\/data\/(?:catalog|translations-es|licensed-media|airing|external-providers|guild-license)\.json$/.test(url.pathname) ||
     /\/data\/(?:guard|dexter)\/(?:status|history)\.json$/.test(url.pathname)){
   event.respondWith(fetch(event.request,{cache:'no-cache'}).then(response=>{

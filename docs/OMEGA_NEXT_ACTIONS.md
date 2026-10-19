@@ -29,3 +29,5 @@ Restricción: presupuesto $0, no compras/deploy destructivo sin permiso; no conv
 - [ ] Scraping educativo: comprobar refresco real Wikipedia, snapshot, despliegue y Safari físico.
 
 - [ ] **Integración anime-scraper / alias multilingües:** ejecutar pruebas de `anime-title-search.js`, revisar PR de rama `feature/anime-scraper-metadata-search-20261019`, y comprobar GitHub Actions Puppeteer, Browser Acceptance y refresh de AniList tras merge. No alterar sin revisión PR #51 (medios autorizados) ni PR #52 (scraping metadata educativo). Detalles en [ANIME_SCRAPER_GITHUB_RESEARCH_20261019.md](ANIME_SCRAPER_GITHUB_RESEARCH_20261019.md).
+
+- [ ] **API de franquicias:** verificar módulo franchise-explorer, CI, relaciones y respaldo Jikan, despliegue Pages y Safari físico.

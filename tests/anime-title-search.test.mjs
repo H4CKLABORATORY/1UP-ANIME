@@ -50,7 +50,7 @@ test('el sitio carga los alias antes del catálogo y conserva el reproductor',()
  assert.ok(studio.includes('licensed-media.json'));
  const sw=read('sw.js');
  assert.ok(sw.includes("'./anime-title-search.js'"));
- assert.ok(sw.includes('v32-anime-alias-search-20261019'));
+ assert.match(sw, /const CACHE=CACHE_PREFIX\+'v[0-9]+-[a-z0-9-]+';/);
 });
 test('el refresco conserva claves MyAnimeList/AniList y obtiene sinónimos públicos',()=>{
  const script=read('scripts/refresh-catalog.mjs');
