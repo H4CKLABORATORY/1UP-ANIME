@@ -1,342 +1,9 @@
 {
-  "updated": "2026-10-19T15:38:37.591Z",
+  "updated": "2026-10-19T21:33:54.700Z",
   "source": "AniList public GraphQL metadata",
-  "windowStart": 1792226303,
-  "windowEnd": 1793201903,
+  "windowStart": 1792247620,
+  "windowEnd": 1793223220,
   "airing": [
-    {
-      "id": "mal-235",
-      "mal_id": 235,
-      "ani_id": 235,
-      "title": "Detective Conan",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx235-MyYT7K3chBdO.jpg",
-      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/235-MTmiz0uB0fMd.jpg",
-      "description": "Kudo Shinichi is a seventeen year-old high school detective whom people call the \"Modern Sherlock Holmes.\" However, one night after a date with his childhood sweetheart, Ran, Shinichi witnessed an illegal trade and, caught off his guard, was knocked unconscious and fed a drug that was supposed to kill him... but he woke up and found himself shrunken to a seven year-old. In order to track down the men who did this to him, Shinichi hid his identity and lived with Ran, whose father happened to be a hopeless detective, and with that came a series of murders and mysteries that he must solve. (Source: Anime News Network) Note: - Includes Keisatsu Gakkou-hen - Wild Police Story in episodes 1029, 1038, 1042, 1061 - Episodes 11, 52, 76, 118, 162, 184, 208, 342, 356, 449, 452, 487, 488, 489, 490, 515, 516, 521, 522, 651, 734, 804, 805, 927, 928, 1187 aired with a runtime of ~50 minutes as opposed to the standard 25 minute long episode. - Episodes 96, 129, 174, 219, 263, 304, 383, 479 aired with a runtime of ~90 minutes as opposed to the standard 25 minute long episode. - Episode 345, 425 aired with a runtime of ~115 minutes as opposed to the standard 25 minute long episode.",
-      "year": 1996,
-      "startDate": "1996-01-08",
-      "format": "TV",
-      "episodes": 0,
-      "averageScore": 82,
-      "status": "RELEASING",
-      "genres": [
-        "Adventure",
-        "Comedy",
-        "Mystery",
-        "Psychological"
-      ],
-      "siteUrl": "https://anilist.co/anime/235",
-      "streaming": [],
-      "trailer": null,
-      "next": {
-        "at": 1792832400,
-        "episode": 1218
-      },
-      "airingAt": 1792227600,
-      "episode": 1217,
-      "scheduleId": 420735,
-      "description_es": "Kudo Shinichi es un detective de secundaria de diecisiete años a quien la gente llama \"Modern Sherlock Holmes\". Sin embargo, una noche después de una cita con su novia de la infancia, Ran, Shinichi fue testigo de un comercio ilegal y, atrapado de su guardia, fue noqueado inconsciente y alimentado una droga que se suponía que lo mataría... pero se despertó y se encontró a sí mismo hundido a un niño de siete años. Para localizar a los hombres que le hicieron esto, Shinichi escondió su identidad y vivió con Ran, cuyo padre fue un detective sin esperanza, y con eso llegó una serie de asesinatos y misterios que él debe resolver. (Sourc)"
-    },
-    {
-      "id": "mal-64326",
-      "mal_id": 64326,
-      "ani_id": 212799,
-      "title": "The Seven Knights of the Marronnier Kingdom",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx212799-n7WDdic7IL1z.png",
-      "banner": "",
-      "description": "At the heart of a continent of eight kingdoms lies the Marronnier Kingdom. Its general, Baribara, has seven sons, each with a unique gift and serving as a knight commander. Bound by a single noble cause of heroically rescuing a princess someday, the brothers set out as goodwill ambassadors to the seven neighboring kingdoms. What encounters, trials, and destinies await them in these unknown lands? (Source: Amazon Prime Video)",
-      "year": 2026,
-      "startDate": "2026-10-03",
-      "format": "TV",
-      "episodes": 20,
-      "averageScore": 63,
-      "status": "RELEASING",
-      "genres": [
-        "Comedy",
-        "Fantasy",
-        "Romance"
-      ],
-      "siteUrl": "https://anilist.co/anime/212799",
-      "streaming": [],
-      "trailer": {
-        "site": "youtube",
-        "id": "wk26nTxUzPY"
-      },
-      "next": {
-        "at": 1792833900,
-        "episode": 4
-      },
-      "airingAt": 1792229100,
-      "episode": 3,
-      "scheduleId": 421839,
-      "description_es": "En el corazón de un continente de ocho reinos se encuentra el Reino Marronnier. Su general, Baribara, tiene siete hijos, cada uno con un regalo único y servir como comandante caballero. Heridos por una única causa noble de rescatar heroicamente a una princesa algún día, los hermanos se establecieron como embajadores de buena voluntad a los siete reinos vecinos. ¿Qué encuentros, pruebas y destinos les esperan en estas tierras desconocidas? (Fuente: Amazon Prime Video)"
-    },
-    {
-      "id": "mal-64398",
-      "mal_id": 64398,
-      "ani_id": 213356,
-      "title": "Beyond Time's Gaze 2",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx213356-nYFTX2yeMBd5.jpg",
-      "banner": "",
-      "description": "Second season of Guangyin Zhi Wai .",
-      "year": 2026,
-      "startDate": "2026-06-20",
-      "format": "ONA",
-      "episodes": 52,
-      "averageScore": 68,
-      "status": "RELEASING",
-      "genres": [
-        "Action",
-        "Adventure",
-        "Fantasy"
-      ],
-      "siteUrl": "https://anilist.co/anime/213356",
-      "streaming": [],
-      "trailer": null,
-      "next": {
-        "at": 1792836000,
-        "episode": 19
-      },
-      "airingAt": 1792231200,
-      "episode": 18,
-      "scheduleId": 415796,
-      "description_es": "Segunda temporada de Guangyin Zhi Wai."
-    },
-    {
-      "id": "mal-59787",
-      "mal_id": 59787,
-      "ani_id": 180894,
-      "title": "Romelia War Chronicle",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx180894-o3pz4DWFm3je.png",
-      "banner": "",
-      "description": "Romelia and her party succeed in defeating the Demon King Zelgis, though Prince Henri’s reckless charge forces them into a grueling battle. In the aftermath, Romelia is branded \"dead weight\" for not fighting directly, and the Prince unilaterally breaks off their engagement. Denied a place in the victory celebrations, Romelia returns home, only to be met with cold indifference from her family and society. Yet, she refuses to break. She has already set her sights on the path that lies ahead. (Source: Crunchyroll) Note: Romelia War Chronicle was streamed 2 days in advance of the TV broadcast on AnimeTimes, U-NEXT, and Netflix beginning October 3, 2026. Regular broadcasting began on October 5, 2026.",
-      "year": 2026,
-      "startDate": "2026-10-03",
-      "format": "ONA",
-      "episodes": 0,
-      "averageScore": 70,
-      "status": "RELEASING",
-      "genres": [
-        "Adventure",
-        "Drama",
-        "Fantasy"
-      ],
-      "siteUrl": "https://anilist.co/anime/180894",
-      "streaming": [
-        {
-          "name": "Crunchyroll",
-          "url": "https://www.crunchyroll.com/series/GT00384007/romelia-war-chronicle"
-        }
-      ],
-      "trailer": {
-        "site": "youtube",
-        "id": "PxXPcoo8uGM"
-      },
-      "next": {
-        "at": 1792843200,
-        "episode": 4
-      },
-      "airingAt": 1792238400,
-      "episode": 3,
-      "scheduleId": 419826,
-      "description_es": "Romelia y su partido tienen éxito en derrotar al Rey demonio Zelgis, aunque la carga imprudente del príncipe Henri los obliga a una batalla agotadora. Después, Romelia se marca \"peso muerto\" por no luchar directamente, y el Príncipe unilateralmente rompe su compromiso. Denegado un lugar en las celebraciones de la victoria, Romelia vuelve a casa, sólo para ser conocido con indiferencia fría de su familia y sociedad. Sin embargo, se niega a romper. Ella ya ha puesto sus ojos en el camino que está por delante. (Fuente: Crunchyroll) Nota: Romelia War Chronicle fue transmitido 2 días antes de la emisión de televisión en A"
-    },
-    {
-      "id": "mal-61153",
-      "mal_id": 61153,
-      "ani_id": 187402,
-      "title": "A Tale of the Secret Saint",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx187402-ReKkLwFmMV3q.jpg",
-      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/187402-bRt4OO90jcmt.jpg",
-      "description": "Fia always dreamed of becoming a knight. Born into a family of knights, she’s the least talented among them, but she still clutches to her hope and trains with everything she has. When the day comes for her to slay a small demon and prove her worth, she ends up face to face with a dragon instead! A deadly injury makes her life flash before her eyes…and she suddenly remembers her former life, when she was a powerful Saint in a bygone era who defeated the Demon King. That life ended in pain because of who she was, making her fear ever becoming a Saint again. Now that the magic from her previous life has been rekindled, she may become a more powerful knight than she ever dreamed–if only she can survive long enough! (Source: Seven Seas Entertainment) Note: The series streamed a week in advance on ABEMA, Prime Video, and Crunchyroll starting with episode 2 released alongside episode 1.",
-      "year": 2026,
-      "startDate": "2026-10-03",
-      "format": "ONA",
-      "episodes": 0,
-      "averageScore": 68,
-      "status": "RELEASING",
-      "genres": [
-        "Action",
-        "Adventure",
-        "Fantasy"
-      ],
-      "siteUrl": "https://anilist.co/anime/187402",
-      "streaming": [
-        {
-          "name": "Crunchyroll",
-          "url": "https://www.crunchyroll.com/series/GT00371633"
-        }
-      ],
-      "trailer": {
-        "site": "youtube",
-        "id": "9oBywQ403ZA"
-      },
-      "next": {
-        "at": 1792846800,
-        "episode": 5
-      },
-      "airingAt": 1792242000,
-      "episode": 4,
-      "scheduleId": 421884,
-      "description_es": "Fia siempre soñó con convertirse en un caballero. Nacida en una familia de caballeros, es la menos talentosa entre ellos, pero todavía se aferra a su esperanza y trenes con todo lo que tiene. Cuando llega el día para que mate a un pequeño demonio y pruebe su valor, termina cara a cara con un dragón en su lugar! Una herida mortal hace que su vida parpadee ante sus ojos... y de repente recuerda su vida anterior, cuando ella era un poderoso santo en una era pasada que defea"
-    },
-    {
-      "id": "mal-63140",
-      "mal_id": 63140,
-      "ani_id": 204389,
-      "title": "A Wild Last Boss Appeared! Season 2",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx204389-jCoFCeTthDMy.jpg",
-      "banner": "",
-      "description": "The second season of Yasei no Last Boss ga Arawareta!",
-      "year": 2026,
-      "startDate": "2026-09-26",
-      "format": "ONA",
-      "episodes": 0,
-      "averageScore": 73,
-      "status": "RELEASING",
-      "genres": [
-        "Action",
-        "Adventure",
-        "Fantasy"
-      ],
-      "siteUrl": "https://anilist.co/anime/204389",
-      "streaming": [
-        {
-          "name": "Crunchyroll",
-          "url": "https://www.crunchyroll.com/series/GT00361955/a-wild-last-boss-appeared"
-        }
-      ],
-      "trailer": {
-        "site": "youtube",
-        "id": "LyDMSUR6_Q8"
-      },
-      "next": {
-        "at": 1792848600,
-        "episode": 5
-      },
-      "airingAt": 1792243800,
-      "episode": 4,
-      "scheduleId": 420143,
-      "description_es": "¡La segunda temporada de Yasei no el último jefe ga Arawareta!"
-    },
-    {
-      "id": "mal-61967",
-      "mal_id": 61967,
-      "ani_id": 195604,
-      "title": "Black Clover Season 2",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx195604-tSZcfKbVqSEG.jpg",
-      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/195604-lQpCzTziSA17.jpg",
-      "description": "As tyranny engulfs the Clover Kingdom, Asta and the Magic Knights launch a desperate raid on the Spade Kingdom to rescue their squad captains from the Dark Triad. But their mission leads them into a brutal battle against forces beyond anything they’ve ever faced. Now, Asta must rise above impossible odds to protect his friends and honor the promise he made to Yuno. (Source: Crunchyroll)",
-      "year": 2026,
-      "startDate": "2026-10-03",
-      "format": "TV",
-      "episodes": 0,
-      "averageScore": 87,
-      "status": "RELEASING",
-      "genres": [
-        "Action",
-        "Adventure",
-        "Comedy",
-        "Fantasy"
-      ],
-      "siteUrl": "https://anilist.co/anime/195604",
-      "streaming": [
-        {
-          "name": "Crunchyroll",
-          "url": "https://www.crunchyroll.com/series/GRE50KV36/black-clover"
-        }
-      ],
-      "trailer": {
-        "site": "youtube",
-        "id": "4MYo8FfiXMA"
-      },
-      "next": {
-        "at": 1792850400,
-        "episode": 4
-      },
-      "airingAt": 1792245600,
-      "episode": 3,
-      "scheduleId": 419552,
-      "description_es": "A medida que la tiranía envuelve el Reino de Clover, Asta y los Caballeros Mágicos lanzan una redada desesperada en el Reino de Spade para rescatar a sus capitanes de la Tribu Oscura. Pero su misión los lleva a una batalla brutal contra las fuerzas más allá de cualquier cosa que hayan enfrentado. Ahora, Asta debe elevarse por encima de las probabilidades imposibles de proteger a sus amigos y honrar la promesa que hizo a Yuno. (Fuente: Crunchyroll)"
-    },
-    {
-      "id": "mal-63764",
-      "mal_id": 63764,
-      "ani_id": 209562,
-      "title": "VERTEX FORCE",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx209562-kQQbTKDuql9p.jpg",
-      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/209562-dvyIvOOVgDNp.jpg",
-      "description": "Akira lives a peaceful life with his older sister Haruka and his mother, who runs a cafe. The family however harbors a secret — Haruka has inherited a power from her father called \"Engine,\" and she hides that power from others. Akira on the other hand has not inherited his father's power, and he has an inferiority complex about it. Amidst this, strange events start happening around the world. (Source: Anime News Network)",
-      "year": 2026,
-      "startDate": "2026-10-03",
-      "format": "TV",
-      "episodes": 0,
-      "averageScore": 54,
-      "status": "RELEASING",
-      "genres": [
-        "Action",
-        "Mecha"
-      ],
-      "siteUrl": "https://anilist.co/anime/209562",
-      "streaming": [
-        {
-          "name": "Crunchyroll",
-          "url": "https://www.crunchyroll.com/series/GT00365619/vertex-force"
-        }
-      ],
-      "trailer": {
-        "site": "youtube",
-        "id": "JqjXaJysS5w"
-      },
-      "next": {
-        "at": 1792852200,
-        "episode": 4
-      },
-      "airingAt": 1792247400,
-      "episode": 3,
-      "scheduleId": 419802,
-      "description_es": "Akira vive una vida pacífica con su hermana mayor Haruka y su madre, que dirige un café. Sin embargo, la familia alberga un secreto — Haruka ha heredado un poder de su padre llamado \"Engine\", y esconde ese poder de otros. Akira, por otro lado, no ha heredado el poder de su padre, y tiene un complejo de inferioridad. En medio de esto, acontecimientos extraños comienzan a suceder alrededor del mundo. (Fuente: Anime News Network)"
-    },
-    {
-      "id": "mal-62524",
-      "mal_id": 62524,
-      "ani_id": 199007,
-      "title": "#I'm Looking For a Zombie",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx199007-8R1HsnflnHJE.jpg",
-      "banner": "",
-      "description": "It may be a ruined city ravaged by zombies, but to Aki and her friends, it’s amazing! Having grown up only hearing stories of the old world and the mysterious outbreak that wiped out humanity, she sets off with her childhood friends in search of her missing father. Things quickly become a fight for survival outside the safety of their small village, yet they’ve never felt more alive. (Source: Crunchyroll)",
-      "year": 2026,
-      "startDate": "2026-10-03",
-      "format": "TV",
-      "episodes": 12,
-      "averageScore": 60,
-      "status": "RELEASING",
-      "genres": [
-        "Action",
-        "Comedy",
-        "Horror",
-        "Mystery",
-        "Supernatural"
-      ],
-      "siteUrl": "https://anilist.co/anime/199007",
-      "streaming": [
-        {
-          "name": "Crunchyroll",
-          "url": "https://www.crunchyroll.com/series/GT00383996/im-looking-for-a-zombie"
-        }
-      ],
-      "trailer": {
-        "site": "youtube",
-        "id": "_0kVb8-uRSI"
-      },
-      "next": {
-        "at": 1792852200,
-        "episode": 4
-      },
-      "airingAt": 1792247400,
-      "episode": 3,
-      "scheduleId": 420130,
-      "description_es": "Puede ser una ciudad arruinada devastada por zombis, pero para Aki y sus amigos, ¡es increíble! Habiendo crecido sólo escuchando historias del viejo mundo y el misterioso brote que borró a la humanidad, se pone con sus amigos de la infancia en busca de su padre desaparecido. Las cosas se convierten rápidamente en una lucha por la supervivencia fuera de la seguridad de su pequeño pueblo, sin embargo nunca se han sentido más vivos. (Fuente: Crunchyroll)"
-    },
     {
       "id": "mal-63053",
       "mal_id": 63053,
@@ -1927,8 +1594,8 @@
         "id": "34ubb-j0kbI"
       },
       "next": {
-        "at": 1792429200,
-        "episode": 3
+        "at": 1793034000,
+        "episode": 4
       },
       "airingAt": 1792429200,
       "episode": 3,
@@ -4500,7 +4167,7 @@
       "year": 2026,
       "startDate": "2026-10-03",
       "format": "ONA",
-      "episodes": 0,
+      "episodes": 24,
       "averageScore": 70,
       "status": "RELEASING",
       "genres": [
@@ -6383,8 +6050,8 @@
         "id": "34ubb-j0kbI"
       },
       "next": {
-        "at": 1792429200,
-        "episode": 3
+        "at": 1793034000,
+        "episode": 4
       },
       "airingAt": 1793034000,
       "episode": 4,
@@ -7238,6 +6905,45 @@
       "episode": 4,
       "scheduleId": 419815,
       "description_es": "La historia tiene lugar 20 años después de que el robot Dandivine derrotara al misterioso Aposdoll. El mundo está ahora en paz. Sin embargo, el fabricante de juguetes Kasuga, que dependía de sus juguetes de mercadería de Dandivine, ha caído en declive. Así, el presidente de Kasuga, Genjuro Shijima, oró por el renacimiento de Dandivine, y el Aposdoll de repente regresó. El estudiante de secundaria Gekiha Shijima recibe una invitación de su tío Yusaku Kuroiwa, el ex piloto principal de Dandivine, para pilotar el robot gigante mismo. (Fuente: Anime News Network)"
+    },
+    {
+      "id": "mal-57612",
+      "mal_id": 57612,
+      "ani_id": 172192,
+      "title": "A Returner's Magic Should be Special Season 2",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx172192-W7P5xEUaxF3y.jpg",
+      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/172192-jibcmb7wdbzk.jpg",
+      "description": "In a land dominated by the formidable Shadow Worlds, most of humanity has been destroyed. To rescue their planet from impending doom, six brave heroes fight a perilous battle…and fail. But there’s a glimpse of hope when Desir, one of the last mages, is suddenly sent back in time 13 years! Now armed with knowledge of the grim future, can he alter the course of history and save the world? (Source: Crunchyroll)",
+      "year": 2026,
+      "startDate": "2026-10-08",
+      "format": "TV",
+      "episodes": 0,
+      "averageScore": 69,
+      "status": "RELEASING",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Fantasy"
+      ],
+      "siteUrl": "https://anilist.co/anime/172192",
+      "streaming": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GEXH3W207/a-returners-magic-should-be-special"
+        }
+      ],
+      "trailer": {
+        "site": "youtube",
+        "id": "YBWOrQCB9r0"
+      },
+      "next": {
+        "at": 1792597500,
+        "episode": 3
+      },
+      "airingAt": 1793202300,
+      "episode": 4,
+      "scheduleId": 420119,
+      "description_es": "En una tierra dominada por los formidables Mundos Sombríos, la mayoría de la humanidad ha sido destruida. Para rescatar a su planeta de la muerte inminente, seis héroes valientes luchan una batalla peligrosa... y fracasan. Pero hay una mirada de esperanza cuando Desir, una de las últimas magras, es de repente enviado en el tiempo 13 años! Ahora armado con conocimiento del futuro sombrío, ¿puede alterar el curso de la historia y salvar el mundo? (Fuente: Crunchyroll)"
     }
   ],
   "seasonal": {
@@ -7942,7 +7648,7 @@
         "year": 2026,
         "startDate": "2026-10-03",
         "format": "ONA",
-        "episodes": 0,
+        "episodes": 24,
         "averageScore": 70,
         "status": "RELEASING",
         "genres": [
@@ -9103,8 +8809,8 @@
           "id": "34ubb-j0kbI"
         },
         "next": {
-          "at": 1792429200,
-          "episode": 3
+          "at": 1793034000,
+          "episode": 4
         },
         "description_es": "Algunas chicas mágicas pelean. Otros no. Elegido por la misteriosa Tierra de la Magia, que existe poco conocida por el resto del mundo, las chicas mágicas cada una tienen un poder único. Pechka, cuya magia hace deliciosa la comida, se ve obligada a participar en un misterioso juego virtual junto con 16 chicas mágicas desconocidas, cada una con su propia personalidad distintiva. Se suponía que era un ejercicio de entrenamiento seguro diseñado para mejorar sus habilidades mágicas. Pero en cambio, marca el comienzo de una pesadilla cuidadosamente orquestada - un juicio prohibido. Ha comenzado un nuevo proyecto de Raising Girl Magical. (Fuente:"
       },
