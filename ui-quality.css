@@ -21,7 +21,7 @@ a,button,select,input,textarea{touch-action:manipulation}
 #auth-dialog.auth-dialog{
  position:fixed;inset:0;margin:auto;
  width:min(510px,calc(100% - 28px));max-width:510px;
- max-height:min(88dvh,760px);height:auto;min-height:0;
+ max-height:min(88dvh,760px);height:fit-content!important;min-height:0!important;
  padding:0;overflow-y:auto;overflow-x:hidden;
  border:1px solid color-mix(in srgb,var(--oneup-ux-accent) 33%,#4e4060);
  border-radius:23px;
