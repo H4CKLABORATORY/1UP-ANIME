@@ -60,3 +60,8 @@ Excluir secretos, datos personales irrelevantes, suposiciones no etiquetadas, pr
 - Rama `feature/oneup-premium-window-motion-20261017`: `themes/oneup-motion/windows.css/js`; entrada de páginas desde `studio.js` y `pages.js`; animación de apertura y salida de ficha; deslizamiento de drawer, search y temas; PWA v29.
 - Requisito invariable: rutas rápidas, modal nativo cerrable por Escape, foco y `prefers-reduced-motion`/modo silencioso. No ocultar resultados de fallos; correr Playwright en CI para 390/1366 y reducción.
 - Próximo: comprobar CI, corregir regressiones si las hay y fusionar sólo cuando las pruebas estén verdes; luego verificar GitHub Pages.
+
+### 2026-10-18 — destino Crunchyroll opcional para temporadas
+- Rama `feature/official-crunchyroll-links-20261018`: módulo `official-watch.js/css`, UI en calendario/ficha, verificaciones de URLs oficiales y filtrado de `externalLinks` AniList en refresco programado.
+- Mantener **dos opciones distintas**: reproducir en 1UP (solo con fuentes válidas y autorizadas en `data/licensed-media.json`) y abrir en el sitio oficial de Crunchyroll. Nunca presentar link externo como permiso de retransmisión ni afirmar que hay capítulos cuando el manifiesto está vacío.
+- No fusionar automáticamente ramas con cambios simultáneos en `index.html`/`sw.js` (PR #46 contador online).
