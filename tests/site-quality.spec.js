@@ -49,6 +49,12 @@ for(const device of screens){
      return found===el||el.contains(found);
    });
    expect(hit,'Close X is blocked by dialog artwork').toBe(true);
+   const modalGeometry=await page.locator('#auth-dialog').evaluate(el=>({
+     height:el.getBoundingClientRect().height,
+     viewport:window.innerHeight,
+     styleHeight:getComputedStyle(el).height
+   }));
+   expect(modalGeometry.height,device.name+' login dialog fills the screen with empty space').toBeLessThan(Math.min(760,device.height*.9));
    await checkNoOverflow(page,device.name+' with modal');
    if(device.name==='iPhone')await page.screenshot({path:'qa-auth-iPhone.png',animations:'disabled'});
    await close.click({timeout:6000});
