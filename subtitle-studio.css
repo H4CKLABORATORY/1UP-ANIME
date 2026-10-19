@@ -1,0 +1,18 @@
+/* 1UP Subtitle Studio. Bangers OFL via Google Fonts; fallback Impact.
+   Custom text overlay for WebVTT/visible inline mode; native fullscreen may differ. */
+.oneup-subtitle-studio{border:1px solid #4b765b;background:#0b1915;border-radius:13px;margin-top:12px;padding:13px;color:#f5fff6;display:grid;gap:12px}
+.oneup-subtitle-toolbar{display:flex;align-items:center;justify-content:space-between}
+.oneup-subtitle-heading{font:800 12px/1.3 'Outfit',system-ui;letter-spacing:.12em;color:#9bffd0}
+.oneup-subtitle-controls{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.oneup-subtitle-label{display:flex;flex-direction:column;gap:6px;font:700 11px/1.35 'Outfit',system-ui;color:#b7d9c7}
+.oneup-subtitle-label select,.oneup-subtitle-label input{width:100%;min-width:0;color:#e9fff1;background:#182a23;border:1px solid #4a7761;border-radius:9px;min-height:40px;padding:6px 8px}
+.oneup-subtitle-label input[type=range]{accent-color:#7aeeab;padding:0}
+.oneup-subtitle-notice{margin:0;color:#adc6b6;font:500 11px/1.5 'Outfit',sans-serif}
+#oneup-playback-display{position:relative}
+.oneup-subtitle-overlay{position:absolute;bottom:clamp(46px,9%,95px);left:3%;right:3%;max-width:94%;margin:auto;text-align:center;z-index:8;pointer-events:none;white-space:pre-line;overflow-wrap:break-word;line-height:1.22;font-size:clamp(17px,calc(2.5vw * var(--oneup-caption-scale,1)),35px);font-weight:900;color:#fff;text-shadow:-2px -2px 0 #0b1010,2px -2px 0 #0b1010,-2px 2px 0 #0b1010,2px 2px 0 #0b1010,0 4px 12px #000}
+.oneup-subtitle-overlay[hidden]{display:none!important}
+.oneup-subtitle-overlay[data-subtitle-theme="neon"]{color:#a2ffd0;-webkit-text-stroke:1px #022b18;text-shadow:0 0 10px #45ffad,0 0 22px #21bf88,2px 3px 0 #00150a}
+.oneup-subtitle-overlay[data-subtitle-theme="gold"]{color:#ffe8a1;-webkit-text-stroke:1.2px #4b2600;text-shadow:0 2px 0 #603b16,0 3px 10px #ffb940,0 5px 20px #000}
+.oneup-subtitle-overlay[data-subtitle-theme="arcade"]{color:#fff;-webkit-text-stroke:1.5px #4324a6;text-shadow:3px 3px 0 #bf35dc,-3px 3px 0 #12baff,0 5px 16px #000}
+@media(max-width:750px){.oneup-subtitle-controls{grid-template-columns:repeat(2,minmax(0,1fr))}.oneup-subtitle-overlay{bottom:20%;font-size:clamp(17px,calc(5vw * var(--oneup-caption-scale,1)),28px)}}
+@media(prefers-reduced-motion:reduce){.oneup-subtitle-overlay{animation:none}}
