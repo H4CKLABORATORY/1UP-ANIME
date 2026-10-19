@@ -19,7 +19,7 @@ for(const asset of ['./studio.css','./motion.css','./spotlight.css','./studio.js
  assert(html.includes(asset.replace('./','')),'Asset not linked: '+asset);
 }
 assert(!html.includes('Entrar con sonido'),'Legacy audio login gate still present');
-assert(js.includes('function hero(a, chosen=false)'),'Selected artwork hero not implemented');
+assert(/function hero\(a, chosen=false(?:, persist=chosen)?\)/.test(js),'Selected artwork hero not implemented');
 assert(js.includes('hero(a,true)'),'Clicking anime must update selected hero');
 assert(js.includes('oneup-detail-cover'),'Hero artwork missing from modal');
 assert(js.includes('oneup-synopsis-text'),'Full anime synopsis is missing');

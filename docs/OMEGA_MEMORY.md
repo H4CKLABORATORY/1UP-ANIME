@@ -118,3 +118,8 @@ Excluir secretos, datos personales irrelevantes, suposiciones no etiquetadas, pr
 - Rama de entrega feature/oneup-editorial-finale-20261019, pruebas Chromium 390/1366, HLS, temas y calidad; no sustituye configuración backend.
 - Se integran los enlaces oficiales nuevos de otro commit en sw.js, preservando el resto de funciones y la licencia de reproducción.
 - Leer docs/ONEUP_RELEASE_CLOSURE_20261019.md. Google OAuth, comunidad remota y episodios autorizados aún necesitan configuración; Safari físico pendiente.
+
+### 2026-10-19 — hero 1UP de estrenos y controles premium
+- Portada profesional basada en la grabación de referencia: botones Ver detalles/Mi lista/Crunchyroll (enlace oficial), fondo cinematográfico, flechas, barras de progreso, pausa y swipe. Código original `premiere-ranking.js`, `premiere-hero.js`, `premiere-hero.css`; reaprovecha AniList y la identidad 1UP.
+- Priorización verificable de emisiones locales de hoy y próximos episodios, sin prometer video distribuible; fecha del snapshot visible. Nunca confundir calendario con biblioteca autorizada. Ver [PREMIERES_HERO_20261019.md](PREMIERES_HERO_20261019.md).
+- Antes de publicar revisar el PR, Node+Playwright en móvil/desktop, Puppeteer general, regresión y despliegue; no declarar Safari físico aprobado.

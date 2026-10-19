@@ -221,10 +221,10 @@ function paint(selector,data,source=''){
  e.innerHTML=(source==='sample'?'<div class="error">Mostrando ejemplos guardados: el servicio de datos no responde. Inténtalo más tarde.</div>':'')+(data.length?data.map(card).join(''):'<div class="empty">No encontramos títulos con esos filtros.</div>');
  if (typeof CardDepthEngine !== 'undefined') CardDepthEngine.refresh();
 }
-function hero(a, chosen=false){
+function hero(a, chosen=false, persist=chosen){
  if(!a)return;
  if(!chosen&&state.selectedId&&state.selectedId!==a.id)return;
- if(chosen){
+ if(chosen&&persist){
   state.selectedId=a.id;
   try{sessionStorage.setItem('oneup_last_selected_anime',a.id)}catch{}
  }
@@ -290,7 +290,7 @@ async function loadHome(){
   const d=await fetchCatalog(o);
   state.home[k]=d.items;
   paint(target,d.items,d.source);
-  if(k==='trending'){
+  if(k==='trending'&& !window.OneUpPremiereHero?.isReady?.()){
    const remembered=(()=>{try{return sessionStorage.getItem('oneup_last_selected_anime')}catch{return null}})();
    const restored=remembered?state.entries.get(remembered):null;
    if(restored)hero(restored,true);
@@ -603,6 +603,13 @@ function splash(){
 window.OneUpCatalog={
  register(items){for(const a of items||[]){if(a?.id)state.entries.set(a.id,a)}},
  open(id){detail(id)},
+ feature(id){
+  const anime=state.entries.get(id);
+  if(!anime)return false;
+  state.selectedId=null; // carousel rotation does not overwrite user's saved choice
+  hero(anime,true,false);
+  return true;
+ },
  active(){return state.active},
  get(id){return state.entries.get(id)}
 };
