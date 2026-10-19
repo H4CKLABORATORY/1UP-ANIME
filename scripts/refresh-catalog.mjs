@@ -5,7 +5,7 @@ const endpoint='https://graphql.anilist.co';
 const query=[
 'query($sort:[MediaSort],$status:MediaStatus,$format:MediaFormat){',
 'Page(page:1,perPage:24){media(type:ANIME,isAdult:false,sort:$sort,status:$status,format:$format){',
-'id idMal title{english romaji} description(asHtml:false) coverImage{extraLarge large} bannerImage',
+'id idMal title{english romaji native} synonyms description(asHtml:false) coverImage{extraLarge large} bannerImage',
 'averageScore episodes format status seasonYear startDate{year} genres siteUrl',
 'nextAiringEpisode{episode airingAt} externalLinks{site url type}',
 '}}}'
@@ -18,8 +18,21 @@ const sets={
  movies:{sort:['POPULARITY_DESC'],format:'MOVIE'}
 };
 const timeout=ms=>new Promise(r=>setTimeout(r,ms));
+function titleAliases(m){
+ const list=[m.title?.english,m.title?.romaji,m.title?.native,...(Array.isArray(m.synonyms)?m.synonyms:[])];
+ const seen=new Set(),result=[];
+ for(const raw of list){
+  if(typeof raw!=='string')continue;
+  const value=raw.trim().slice(0,150);
+  const key=value.normalize('NFKC').toLocaleLowerCase('es');
+  if(!value||seen.has(key))continue;
+  seen.add(key);result.push(value);
+  if(result.length>=16)break;
+ }
+ return result;
+}
 function norm(m){
- return {id:m.idMal?'mal-'+m.idMal:'al-'+m.id,mal_id:m.idMal||null,title:m.title?.english||m.title?.romaji||'Anime',image:m.coverImage?.extraLarge||m.coverImage?.large||'',banner:m.bannerImage||'',description:String(m.description||'').replace(/<[^>]*>/g,'').slice(0,450),averageScore:m.averageScore||0,year:m.seasonYear||m.startDate?.year||'',genres:m.genres||[],format:m.format||'TV',episodes:m.episodes||0,status:m.status||'',siteUrl:m.siteUrl||'',streaming:(m.externalLinks||[]).filter(x=>x.type==='STREAMING'&&/^https:\/\//.test(x.url||'')).map(x=>({name:x.site,url:x.url})),next:m.nextAiringEpisode?{at:m.nextAiringEpisode.airingAt,episode:m.nextAiringEpisode.episode}:null,source:'snapshot'};
+ return {id:m.idMal?'mal-'+m.idMal:'al-'+m.id,mal_id:m.idMal||null,title:m.title?.english||m.title?.romaji||'Anime',title_romaji:m.title?.romaji||'',title_native:m.title?.native||'',aliases:titleAliases(m),image:m.coverImage?.extraLarge||m.coverImage?.large||'',banner:m.bannerImage||'',description:String(m.description||'').replace(/<[^>]*>/g,'').slice(0,450),averageScore:m.averageScore||0,year:m.seasonYear||m.startDate?.year||'',genres:m.genres||[],format:m.format||'TV',episodes:m.episodes||0,status:m.status||'',siteUrl:m.siteUrl||'',streaming:(m.externalLinks||[]).filter(x=>x.type==='STREAMING'&&/^https:\/\//.test(x.url||'')).map(x=>({name:x.site,url:x.url})),next:m.nextAiringEpisode?{at:m.nextAiringEpisode.airingAt,episode:m.nextAiringEpisode.episode}:null,source:'snapshot'};
 }
 async function get(vars){
  for(let attempt=1;attempt<=3;attempt++){
