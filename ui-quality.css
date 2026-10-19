@@ -1,0 +1,166 @@
+/* 1UP ANIME — quality layer.
+ * Loaded last to reconcile existing design/themes without replacing Kokomi.
+ * Native dialogs, safe areas, responsive controls and coherent focus styles.
+ */
+:root{--oneup-ux-accent:var(--oneup-pal-accent,#8fefc1)}
+html{scroll-padding-top:92px}
+body{min-width:0}
+body,main,section{min-width:0}
+a,button,select,input,textarea{touch-action:manipulation}
+:where(button,a,input,select,textarea,summary):focus-visible{
+ outline:2px solid var(--oneup-ux-accent);outline-offset:3px;
+}
+:where(button,a)[disabled],:where(button,a)[aria-disabled="true"]{cursor:not-allowed}
+:where(img,video,iframe){max-width:100%}
+:where(.poster-grid,.card-rail,.airing-rail,.oneup-provider-grid,.oneup-detail-lower){min-width:0}
+:where(.header-right,.header-inner,.footer,.c-header .header-row){min-width:0}
+:where(.toast){max-width:calc(100vw - 28px);text-align:center}
+
+/* This layout deliberately avoids applying the illustration blur to live text.
+   The 1UP shield is pure SVG. Its wordmark is HTML and stays readable at 320px. */
+#auth-dialog.auth-dialog{
+ position:fixed;inset:0;margin:auto;
+ width:min(510px,calc(100% - 28px));max-width:510px;
+ max-height:min(88dvh,760px);height:auto;min-height:0;
+ padding:0;overflow-y:auto;overflow-x:hidden;
+ border:1px solid color-mix(in srgb,var(--oneup-ux-accent) 33%,#4e4060);
+ border-radius:23px;
+ background:radial-gradient(circle at 50% 4%,#28382d36,transparent 36%),#15111c;
+ box-shadow:0 32px 90px #000b,0 0 0 1px #ffffff08 inset;
+ color:#f8f4fb;overscroll-behavior:contain;
+ scrollbar-width:thin;scrollbar-color:#9fbcad70 transparent;
+}
+#auth-dialog.auth-dialog::backdrop{background:#020609d8;backdrop-filter:blur(8px)}
+#auth-dialog .auth-panel{
+ text-align:center;
+ padding:22px clamp(19px,5vw,34px) 24px;
+ display:flex;flex-direction:column;align-items:stretch;
+ gap:0;
+}
+#auth-dialog .dialog-close{
+ position:sticky;top:12px;right:12px;float:none;display:grid;place-items:center;
+ margin:12px 12px -56px auto;z-index:10;
+ width:44px;height:44px;padding:0;min-width:44px;
+ border-radius:13px;border:1px solid #ffffff35;
+ color:#fff;background:#292434;box-shadow:0 6px 18px #0006;
+ font-size:21px;line-height:1;transform:none;
+ touch-action:manipulation;
+}
+#auth-dialog .dialog-close:hover{background:#393044;border-color:var(--oneup-ux-accent)}
+#auth-dialog .dialog-close:focus-visible{outline:2px solid var(--oneup-ux-accent);outline-offset:2px;box-shadow:0 0 0 5px #7aeeab17}
+#auth-dialog .auth-brand{display:flex;flex-direction:column;align-items:center;gap:0;margin:0 auto 16px;min-height:0}
+#auth-dialog .auth-crest{
+ display:block;width:clamp(102px,23vw,128px);height:clamp(107px,25vw,135px);
+ margin:0;object-fit:contain;border:0;border-radius:0;
+ filter:drop-shadow(0 7px 11px #02081576);background:none;
+}
+#auth-dialog .auth-wordmark{
+ display:inline-flex;gap:7px;align-items:baseline;justify-content:center;
+ margin-top:-2px;color:#eaf4ff;
+ font:900 15px/1.1 var(--display,'Barlow Condensed',sans-serif);
+ letter-spacing:.06em;text-transform:uppercase;
+}
+#auth-dialog .auth-wordmark strong{font-size:11px;letter-spacing:.23em;color:var(--oneup-ux-accent)}
+#auth-dialog .auth-kicker{
+ color:var(--oneup-ux-accent);font-size:10px;letter-spacing:.14em;
+ line-height:1.5;font-weight:800;margin:0 0 10px;
+}
+#auth-dialog h2.auth-title{
+ color:#f8f5fa;font:900 clamp(39px,8.6vw,61px)/.95 var(--display,'Barlow Condensed',sans-serif);
+ letter-spacing:.012em;margin:0 auto 13px;max-width:100%;text-wrap:balance;
+}
+#auth-dialog h2.auth-title em{display:block;color:var(--oneup-ux-accent);font-style:normal;margin-top:6px}
+#auth-dialog p.auth-copy{max-width:380px;margin:0 auto 15px;font-size:13px;line-height:1.55;color:#d3c8d6}
+#auth-dialog .auth-actions{display:grid;gap:9px;margin:0;width:100%}
+#auth-dialog .auth-actions :is(.google-login,.guest-login){
+ display:flex;gap:11px;align-items:center;justify-content:center;
+ width:100%;min-height:50px;margin:0;
+ padding:10px 12px;border-radius:12px;
+ font-family:var(--font,'Outfit',sans-serif);font-size:13px;font-weight:800;
+ line-height:1.25;transition:background .16s,border-color .16s,transform .16s;
+}
+#auth-dialog .auth-actions .google-login{background:#fff;color:#182027;border:1px solid #fff}
+#auth-dialog .auth-actions .google-login:disabled{
+ background:#b6b8c0;color:#363740;border-color:#9b9daa;
+ cursor:not-allowed;opacity:1;
+}
+#auth-dialog .auth-actions .guest-login{color:#eefbf4;background:#20362c;border:1px solid #73d8a477}
+#auth-dialog .auth-actions .guest-login:hover{background:#2b4837;border-color:var(--oneup-ux-accent)}
+#auth-dialog .google-g{color:#4285f4;font-size:22px;font-weight:900;margin:0;line-height:1}
+#auth-dialog .auth-profiles{
+ margin:11px 0 0;padding:10px 12px;
+ border:1px solid #ffffff24;border-radius:12px;background:#ffffff06;
+}
+#auth-dialog .auth-profiles summary{
+ cursor:pointer;text-align:left;font-weight:750;font-size:12px;
+ padding:4px;color:#e3efe6;
+}
+#auth-dialog .auth-profile-controls{display:grid;grid-template-columns:1fr auto;gap:9px;margin-top:10px}
+#auth-dialog .auth-profile-controls select{
+ display:block;min-width:0;width:100%;max-width:100%;min-height:45px;
+ padding:9px 10px;border-radius:9px;
+ color:#eafcf2;background:#192922;border:1px solid #89bf9b77;
+ font:600 13px/1.2 var(--font,'Outfit',sans-serif);
+}
+#auth-dialog .auth-profile-controls button{
+ min-height:45px;border-radius:9px;padding:8px 12px;
+ background:var(--oneup-ux-accent);color:#07160f;font-weight:850;
+ border:0;font-size:12px;
+}
+#auth-dialog #auth-message{
+ margin:10px auto 0!important;min-height:0!important;
+ padding:0;max-width:400px;font-size:12px;line-height:1.5;
+ color:#edcf93!important;
+}
+#auth-dialog #auth-message:empty{display:none}
+#auth-dialog .auth-help{
+ display:block;font-size:11px;line-height:1.45;
+ color:#b7adbe;max-width:380px;margin:14px auto 0;
+}
+#auth-dialog .auth-help strong{color:#cfe9d8}
+#auth-dialog [hidden]{display:none!important}
+#auth-dialog :where(.auth-actions button):active{transform:scale(.99)}
+
+/* Modals should remain usable if iPhone rotates or Safari keyboard changes height. */
+@media(max-height:670px){
+ #auth-dialog.auth-dialog{max-height:calc(100dvh - 16px)}
+ #auth-dialog .auth-panel{padding-top:15px;padding-bottom:17px}
+ #auth-dialog .auth-brand{margin-bottom:8px}
+ #auth-dialog .auth-crest{width:78px;height:84px}
+ #auth-dialog h2.auth-title{font-size:clamp(32px,6vw,46px)}
+}
+@media(max-width:390px){
+ #auth-dialog.auth-dialog{width:calc(100% - 22px);border-radius:18px;max-height:calc(100dvh - 24px)}
+ #auth-dialog .auth-panel{padding:18px 16px 20px}
+ #auth-dialog .auth-brand{margin-bottom:12px}
+ #auth-dialog .auth-crest{width:100px;height:105px}
+ #auth-dialog h2.auth-title{font-size:clamp(37px,11vw,47px)}
+ #auth-dialog .auth-actions :is(.google-login,.guest-login){min-height:48px}
+ #auth-dialog .auth-profile-controls{grid-template-columns:1fr}
+}
+@media(min-width:781px){
+ .mobile-navigation{display:none}
+}
+@media(max-width:780px){
+ body.oneup-kokomi .mobile-navigation{padding-bottom:calc(8px + env(safe-area-inset-bottom));}
+ body.oneup-kokomi .mobile-navigation :is(button,a){min-width:0;min-height:43px;touch-action:manipulation}
+ .header-right :is(button,.account-button){flex-shrink:0}
+ .header .header-inner{gap:10px}
+ .footer{padding-bottom:calc(82px + env(safe-area-inset-bottom))}
+ .oneup-detail-cover,.oneup-detail-lower{min-width:0;overflow-wrap:anywhere}
+ #anime-dialog.anime-dialog{max-width:calc(100vw - 16px)}
+}
+@media(max-width:350px){.header .header-right{gap:5px}.header #auth-label{max-width:70px;overflow:hidden;text-overflow:ellipsis}}
+/* A stable, visible control fixes the depth-toggle race when the drawer is mounted late. */
+#depth-toggle.depth-toggle-btn:not([hidden]){
+ position:fixed;bottom:calc(20px + env(safe-area-inset-bottom));right:17px;z-index:84;
+ margin:0;padding:10px 12px;min-height:43px;
+ color:var(--oneup-ux-accent);background:#0c211aee;border:1px solid #82d7aa7b;
+ box-shadow:0 9px 28px #0009;backdrop-filter:blur(9px);
+}
+@media(max-width:780px){
+ #depth-toggle.depth-toggle-btn:not([hidden]){bottom:calc(91px + env(safe-area-inset-bottom));right:14px}
+}
+@media(prefers-reduced-motion:reduce){
+ #auth-dialog :is(button,a),#auth-dialog .auth-panel{animation:none!important;transition:none!important}
+}
