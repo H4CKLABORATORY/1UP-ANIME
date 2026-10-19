@@ -1,141 +1,9 @@
 {
-  "updated": "2026-10-18T21:29:17.659Z",
+  "updated": "2026-10-19T03:30:29.869Z",
   "source": "AniList public GraphQL metadata",
-  "windowStart": 1792160943,
-  "windowEnd": 1793136543,
+  "windowStart": 1792182615,
+  "windowEnd": 1793158215,
   "airing": [
-    {
-      "id": "mal-63293",
-      "mal_id": 63293,
-      "ani_id": 205909,
-      "title": "Firefly Wedding",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx205909-DM0fAzNQulod.jpg",
-      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/205909-hGeuFYrdhf9S.jpg",
-      "description": "On the surface, Satoko has it all—she’s beautiful, the daughter of a nobleman, and at a prime age for marriage. Unfortunately, she is also quite ill and only has a short time left to live. Before she can secure a marriage that will redeem her worth in her family’s eyes, she finds herself the target of the mysterious assassin Shinpei, and her plans are put in jeopardy. In order to save herself, she makes a desperate proposal—of marriage! When it comes to love, however, Shinpei takes “until death do we part” seriously. (Source: VIZ Media)",
-      "year": 2026,
-      "startDate": "2026-10-09",
-      "format": "TV",
-      "episodes": 12,
-      "averageScore": 75,
-      "status": "RELEASING",
-      "genres": [
-        "Drama",
-        "Romance"
-      ],
-      "siteUrl": "https://anilist.co/anime/205909",
-      "trailer": {
-        "site": "youtube",
-        "id": "Ex9LrBK-7hk"
-      },
-      "next": {
-        "at": 1792765800,
-        "episode": 3
-      },
-      "airingAt": 1792161000,
-      "episode": 2,
-      "scheduleId": 418466,
-      "description_es": "En la superficie, Satoko lo tiene todo, es hermosa, la hija de un noble, y a una edad temprana para el matrimonio. Desafortunadamente, ella también está bastante enferma y sólo tiene un corto tiempo para vivir. Antes de que pueda conseguir un matrimonio que redimirá su valor en los ojos de su familia, se encuentra el blanco del misterioso asesino Shinpei, y sus planes están en peligro. ¡Para salvarse, hace una propuesta desesperada de matrimonio! Cuando c"
-    },
-    {
-      "id": "mal-63181",
-      "mal_id": 63181,
-      "ani_id": 204650,
-      "title": "TOUGEN ANKI: Nikko Kegon Falls Arc",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx204650-cAQOzQ84Lwk8.png",
-      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/204650-MpownoVlYv69.jpg",
-      "description": "After battling in Kyoto and Nerima, the Rasetsu Academy students have grown stronger. But Yaoroshi leaves the academy to join the Oni Brigade for their \"the total eradication of the Momotaro.\" When Shiki realizes that they also target noncombatants, he sets out after Yaoroshi to bring him back. Meanwhile in Nikko, there's a research facility for horrific experiments atop the old Kegon Falls… (Source: REMOW)",
-      "year": 2026,
-      "startDate": "2026-10-02",
-      "format": "TV",
-      "episodes": 12,
-      "averageScore": 71,
-      "status": "RELEASING",
-      "genres": [
-        "Action",
-        "Mystery",
-        "Supernatural"
-      ],
-      "siteUrl": "https://anilist.co/anime/204650",
-      "trailer": {
-        "site": "youtube",
-        "id": "upBWYExYoYc"
-      },
-      "next": {
-        "at": 1792765800,
-        "episode": 4
-      },
-      "airingAt": 1792161000,
-      "episode": 3,
-      "scheduleId": 422237,
-      "description_es": "Después de luchar en Kioto y Nerima, los estudiantes de la Academia Rasetsu se han hecho más fuertes. Pero Yaoroshi deja la academia para unirse a la Brigada Oni por su \"erración total del Momotaro\". Cuando Shiki se da cuenta de que también apuntan a los no combatientes, se pone después de Yaoroshi para traerlo de vuelta. Mientras tanto, en Nikko, hay una instalación de investigación para experimentos horribles en la antigua Kegon Falls... (Fuente: REMOW)"
-    },
-    {
-      "id": "mal-63061",
-      "mal_id": 63061,
-      "ani_id": 203490,
-      "title": "Please Excuse My Younger Brothers",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx203490-YQXiymUiDQNA.jpg",
-      "banner": "",
-      "description": "The manga centers on high school student Ito Hazui. During her spring break at the end of her first year of high school, Ito's mother remarries, and Ito moves to live with her new family, becoming Ito Narita. Upon arriving at her new house, Ito is shocked to learn she now has four younger step-brothers. Ito tries her hardest to get along with all of the new members of her family, but the eldest brother Gen is a bit cold to her. However, under his aloof facade, he occasionally shows his kindness. (Source: Anime News Network)",
-      "year": 2026,
-      "startDate": "2026-07-04",
-      "format": "TV",
-      "episodes": 24,
-      "averageScore": 69,
-      "status": "RELEASING",
-      "genres": [
-        "Comedy",
-        "Romance",
-        "Slice of Life"
-      ],
-      "siteUrl": "https://anilist.co/anime/203490",
-      "trailer": {
-        "site": "youtube",
-        "id": "P927_ZvgUUg"
-      },
-      "next": {
-        "at": 1792767600,
-        "episode": 16
-      },
-      "airingAt": 1792162800,
-      "episode": 15,
-      "scheduleId": 421090,
-      "description_es": "El manga se centra en el estudiante de secundaria Ito Hazui. Durante su descanso de primavera al final de su primer año de secundaria, la madre de Ito se vuelve a casar, y Ito se mueve a vivir con su nueva familia, convirtiéndose en Ito Narita. Al llegar a su nueva casa, Ito está sorprendido de saber que ahora tiene cuatro hermanos menores. Ito trata de que ella sea más difícil de llevar con todos los nuevos miembros de su familia, pero el hermano mayor Gen es un poco frío para ella. Sin embargo, bajo su fachada, ocasionalmente muestra su amabilidad. (Fuente: Anime News Network)"
-    },
-    {
-      "id": "mal-59088",
-      "mal_id": 59088,
-      "ani_id": 178083,
-      "title": "Tokyo Revengers: War of the Three Titans Arc",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx178083-bg7pg6TCHwtG.jpg",
-      "banner": "",
-      "description": "Sequel to Tokyo Revengers: Tenjiku-hen .",
-      "year": 2026,
-      "startDate": "2026-10-03",
-      "format": "TV",
-      "episodes": 13,
-      "averageScore": 76,
-      "status": "RELEASING",
-      "genres": [
-        "Action",
-        "Drama",
-        "Romance",
-        "Supernatural"
-      ],
-      "siteUrl": "https://anilist.co/anime/178083",
-      "trailer": {
-        "site": "youtube",
-        "id": "Nm21TTXUkf4"
-      },
-      "next": {
-        "at": 1792774380,
-        "episode": 4
-      },
-      "airingAt": 1792169580,
-      "episode": 3,
-      "scheduleId": 418623,
-      "description_es": "Secuela de los Revengers de Tokio: Tenjiku-hen."
-    },
     {
       "id": "mal-64718",
       "mal_id": 64718,
@@ -155,6 +23,7 @@
         "Fantasy"
       ],
       "siteUrl": "https://anilist.co/anime/214703",
+      "streaming": [],
       "trailer": {
         "site": "youtube",
         "id": "n0na0hTpl1E"
@@ -185,6 +54,7 @@
         "Comedy"
       ],
       "siteUrl": "https://anilist.co/anime/212308",
+      "streaming": [],
       "trailer": {
         "site": "youtube",
         "id": "NGwgoL0TvI8"
@@ -216,6 +86,12 @@
         "Slice of Life"
       ],
       "siteUrl": "https://anilist.co/anime/183231",
+      "streaming": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00374493/rilakkuma"
+        }
+      ],
       "trailer": {
         "site": "youtube",
         "id": "rV-fcFL5vtU"
@@ -247,6 +123,7 @@
         "Fantasy"
       ],
       "siteUrl": "https://anilist.co/anime/214968",
+      "streaming": [],
       "trailer": null,
       "next": {
         "at": 1792801800,
@@ -276,6 +153,12 @@
         "Sci-Fi"
       ],
       "siteUrl": "https://anilist.co/anime/216557",
+      "streaming": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00383995/"
+        }
+      ],
       "trailer": {
         "site": "youtube",
         "id": "iMyre5xXDzE"
@@ -309,6 +192,7 @@
         "Fantasy"
       ],
       "siteUrl": "https://anilist.co/anime/214260",
+      "streaming": [],
       "trailer": null,
       "next": {
         "at": 1792803600,
@@ -340,6 +224,7 @@
         "Romance"
       ],
       "siteUrl": "https://anilist.co/anime/137683",
+      "streaming": [],
       "trailer": null,
       "next": {
         "at": 1792807200,
@@ -369,6 +254,7 @@
         "Fantasy"
       ],
       "siteUrl": "https://anilist.co/anime/199353",
+      "streaming": [],
       "trailer": {
         "site": "youtube",
         "id": "xIa7dMUka-8"
@@ -398,6 +284,7 @@
       "status": "RELEASING",
       "genres": [],
       "siteUrl": "https://anilist.co/anime/209709",
+      "streaming": [],
       "trailer": {
         "site": "youtube",
         "id": "4iOFqQ1E4Mo"
@@ -430,6 +317,7 @@
         "Slice of Life"
       ],
       "siteUrl": "https://anilist.co/anime/966",
+      "streaming": [],
       "trailer": null,
       "next": {
         "at": 1792827000,
@@ -460,6 +348,7 @@
         "Sci-Fi"
       ],
       "siteUrl": "https://anilist.co/anime/8687",
+      "streaming": [],
       "trailer": null,
       "next": {
         "at": 1792828800,
@@ -490,6 +379,7 @@
         "Supernatural"
       ],
       "siteUrl": "https://anilist.co/anime/195571",
+      "streaming": [],
       "trailer": {
         "site": "youtube",
         "id": "iX4N-Z5Hbxw"
@@ -524,6 +414,7 @@
         "Psychological"
       ],
       "siteUrl": "https://anilist.co/anime/235",
+      "streaming": [],
       "trailer": null,
       "next": {
         "at": 1792832400,
@@ -554,6 +445,7 @@
         "Romance"
       ],
       "siteUrl": "https://anilist.co/anime/212799",
+      "streaming": [],
       "trailer": {
         "site": "youtube",
         "id": "wk26nTxUzPY"
@@ -587,6 +479,7 @@
         "Fantasy"
       ],
       "siteUrl": "https://anilist.co/anime/213356",
+      "streaming": [],
       "trailer": null,
       "next": {
         "at": 1792836000,
@@ -617,6 +510,12 @@
         "Fantasy"
       ],
       "siteUrl": "https://anilist.co/anime/180894",
+      "streaming": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00384007/romelia-war-chronicle"
+        }
+      ],
       "trailer": {
         "site": "youtube",
         "id": "PxXPcoo8uGM"
@@ -650,6 +549,12 @@
         "Fantasy"
       ],
       "siteUrl": "https://anilist.co/anime/187402",
+      "streaming": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00371633"
+        }
+      ],
       "trailer": {
         "site": "youtube",
         "id": "9oBywQ403ZA"
@@ -683,6 +588,12 @@
         "Fantasy"
       ],
       "siteUrl": "https://anilist.co/anime/204389",
+      "streaming": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00361955/a-wild-last-boss-appeared"
+        }
+      ],
       "trailer": {
         "site": "youtube",
         "id": "LyDMSUR6_Q8"
@@ -717,6 +628,12 @@
         "Fantasy"
       ],
       "siteUrl": "https://anilist.co/anime/195604",
+      "streaming": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GRE50KV36/black-clover"
+        }
+      ],
       "trailer": {
         "site": "youtube",
         "id": "4MYo8FfiXMA"
@@ -749,6 +666,12 @@
         "Mecha"
       ],
       "siteUrl": "https://anilist.co/anime/209562",
+      "streaming": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00365619/vertex-force"
+        }
+      ],
       "trailer": {
         "site": "youtube",
         "id": "JqjXaJysS5w"
@@ -784,6 +707,12 @@
         "Supernatural"
       ],
       "siteUrl": "https://anilist.co/anime/199007",
+      "streaming": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00383996/im-looking-for-a-zombie"
+        }
+      ],
       "trailer": {
         "site": "youtube",
         "id": "_0kVb8-uRSI"
@@ -817,6 +746,12 @@
         "Supernatural"
       ],
       "siteUrl": "https://anilist.co/anime/203473",
+      "streaming": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00383993"
+        }
+      ],
       "trailer": null,
       "next": {
         "at": 1792853100,
@@ -849,6 +784,12 @@
         "Romance"
       ],
       "siteUrl": "https://anilist.co/anime/169581",
+      "streaming": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00384003/magical-explorer"
+        }
+      ],
       "trailer": {
         "site": "youtube",
         "id": "XqrBfyUNYZs"
@@ -882,6 +823,7 @@
         "Slice of Life"
       ],
       "siteUrl": "https://anilist.co/anime/191656",
+      "streaming": [],
       "trailer": {
         "site": "youtube",
         "id": "VTRVLnzhl90"
@@ -915,6 +857,7 @@
         "Romance"
       ],
       "siteUrl": "https://anilist.co/anime/209872",
+      "streaming": [],
       "trailer": {
         "site": "youtube",
         "id": "dbe8esPSfYI"
@@ -948,6 +891,12 @@
         "Fantasy"
       ],
       "siteUrl": "https://anilist.co/anime/202250",
+      "streaming": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00385867/magic-repo-man-dumped-by-my-party-ill-cash-in-with-a-cute-support-fairy-to-become-the-strongest"
+        }
+      ],
       "trailer": {
         "site": "youtube",
         "id": "kXqx3rFSkxc"
@@ -979,6 +928,7 @@
         "Slice of Life"
       ],
       "siteUrl": "https://anilist.co/anime/204269",
+      "streaming": [],
       "trailer": {
         "site": "youtube",
         "id": "Laf46YXDt68"
@@ -1008,6 +958,7 @@
       "status": "RELEASING",
       "genres": [],
       "siteUrl": "https://anilist.co/anime/213298",
+      "streaming": [],
       "trailer": {
         "site": "youtube",
         "id": "cH7enqqATwE"
@@ -1039,6 +990,7 @@
         "Comedy"
       ],
       "siteUrl": "https://anilist.co/anime/218011",
+      "streaming": [],
       "trailer": {
         "site": "youtube",
         "id": "DO_UchIVN9Y"
@@ -1070,6 +1022,7 @@
         "Slice of Life"
       ],
       "siteUrl": "https://anilist.co/anime/185646",
+      "streaming": [],
       "trailer": {
         "site": "youtube",
         "id": "L4wurjkd0JM"
@@ -1102,6 +1055,12 @@
         "Mystery"
       ],
       "siteUrl": "https://anilist.co/anime/202957",
+      "streaming": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00369409"
+        }
+      ],
       "trailer": {
         "site": "youtube",
         "id": "qjozo1fh7OI"
@@ -1133,6 +1092,7 @@
         "Slice of Life"
       ],
       "siteUrl": "https://anilist.co/anime/216860",
+      "streaming": [],
       "trailer": null,
       "next": {
         "at": 1792887360,
@@ -1161,6 +1121,7 @@
         "Music"
       ],
       "siteUrl": "https://anilist.co/anime/206523",
+      "streaming": [],
       "trailer": {
         "site": "youtube",
         "id": "j5MgjyhhUBc"
@@ -1192,6 +1153,7 @@
         "Slice of Life"
       ],
       "siteUrl": "https://anilist.co/anime/217787",
+      "streaming": [],
       "trailer": null,
       "next": {
         "at": 1792890000,
@@ -1220,6 +1182,7 @@
         "Fantasy"
       ],
       "siteUrl": "https://anilist.co/anime/155723",
+      "streaming": [],
       "trailer": null,
       "next": {
         "at": 1792461600,
@@ -1250,6 +1213,7 @@
         "Fantasy"
       ],
       "siteUrl": "https://anilist.co/anime/196613",
+      "streaming": [],
       "trailer": null,
       "next": {
         "at": 1792893600,
@@ -1280,6 +1244,7 @@
         "Sports"
       ],
       "siteUrl": "https://anilist.co/anime/189123",
+      "streaming": [],
       "trailer": {
         "site": "youtube",
         "id": "hJ6Y8PAOUk8"
@@ -1311,6 +1276,7 @@
         "Sports"
       ],
       "siteUrl": "https://anilist.co/anime/191788",
+      "streaming": [],
       "trailer": {
         "site": "youtube",
         "id": "phKPnPXm74c"
@@ -1344,6 +1310,7 @@
         "Romance"
       ],
       "siteUrl": "https://anilist.co/anime/213657",
+      "streaming": [],
       "trailer": {
         "site": "youtube",
         "id": "059cJjeY19Y"
@@ -1375,6 +1342,12 @@
         "Sports"
       ],
       "siteUrl": "https://anilist.co/anime/213658",
+      "streaming": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GYX0MZ58R/ace-of-the-diamond"
+        }
+      ],
       "trailer": {
         "site": "youtube",
         "id": "kLbI4teuPTc"
@@ -1408,6 +1381,7 @@
         "Comedy"
       ],
       "siteUrl": "https://anilist.co/anime/118123",
+      "streaming": [],
       "trailer": null,
       "next": {
         "at": 1792918800,
@@ -1437,6 +1411,7 @@
         "Slice of Life"
       ],
       "siteUrl": "https://anilist.co/anime/2406",
+      "streaming": [],
       "trailer": null,
       "next": {
         "at": 1792920600,
@@ -1466,6 +1441,7 @@
         "Slice of Life"
       ],
       "siteUrl": "https://anilist.co/anime/215835",
+      "streaming": [],
       "trailer": {
         "site": "youtube",
         "id": "rUHYbwZDVVI"
@@ -1502,6 +1478,12 @@
         "Sci-Fi"
       ],
       "siteUrl": "https://anilist.co/anime/186541",
+      "streaming": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00384006/reborn-as-a-space-mercenary-i-woke-up-piloting-the-strongest-starship"
+        }
+      ],
       "trailer": {
         "site": "youtube",
         "id": "Z9ofT53sz2U"
@@ -1534,6 +1516,12 @@
         "Slice of Life"
       ],
       "siteUrl": "https://anilist.co/anime/202079",
+      "streaming": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00385445/uncles-obsession-with-cute-things"
+        }
+      ],
       "trailer": {
         "site": "youtube",
         "id": "YKgjylmYeoA"
@@ -1566,6 +1554,7 @@
         "Music"
       ],
       "siteUrl": "https://anilist.co/anime/209032",
+      "streaming": [],
       "trailer": {
         "site": "youtube",
         "id": "rwUPmzMpECo"
@@ -1598,6 +1587,7 @@
         "Sci-Fi"
       ],
       "siteUrl": "https://anilist.co/anime/209499",
+      "streaming": [],
       "trailer": {
         "site": "youtube",
         "id": "ihAvU833DHA"
@@ -1631,6 +1621,12 @@
         "Sci-Fi"
       ],
       "siteUrl": "https://anilist.co/anime/206814",
+      "streaming": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00389311/dragon-ball-super-beerus"
+        }
+      ],
       "trailer": {
         "site": "youtube",
         "id": "CFgEL7ei8VE"
@@ -1663,6 +1659,12 @@
         "Fantasy"
       ],
       "siteUrl": "https://anilist.co/anime/185756",
+      "streaming": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GG5H5XQMD/as-a-reincarnated-aristocrat-ill-use-my-appraisal-skill-to-rise-in-the-world"
+        }
+      ],
       "trailer": {
         "site": "youtube",
         "id": "8_Lxr7vO9l0"
@@ -1695,6 +1697,12 @@
         "Fantasy"
       ],
       "siteUrl": "https://anilist.co/anime/205896",
+      "streaming": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00383992/full-clearing-another-world-under-a-goddess-with-zero-believers"
+        }
+      ],
       "trailer": {
         "site": "youtube",
         "id": "qlMB8vSpLzc"
@@ -1728,6 +1736,12 @@
         "Romance"
       ],
       "siteUrl": "https://anilist.co/anime/200455",
+      "streaming": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00365562"
+        }
+      ],
       "trailer": {
         "site": "youtube",
         "id": "e41RGxVwJRs"
@@ -1762,6 +1776,12 @@
         "Fantasy"
       ],
       "siteUrl": "https://anilist.co/anime/212888",
+      "streaming": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00384004"
+        }
+      ],
       "trailer": {
         "site": "youtube",
         "id": "e1Km0FqUZl0"
@@ -1794,6 +1814,12 @@
         "Drama"
       ],
       "siteUrl": "https://anilist.co/anime/199426",
+      "streaming": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GXJHM3G08/hotel-inhumans"
+        }
+      ],
       "trailer": null,
       "next": {
         "at": 1792939500,
@@ -1824,6 +1850,12 @@
         "Romance"
       ],
       "siteUrl": "https://anilist.co/anime/209463",
+      "streaming": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00384000/from-far-away"
+        }
+      ],
       "trailer": {
         "site": "youtube",
         "id": "dLRKywRu3iM"
@@ -1857,6 +1889,7 @@
         "Supernatural"
       ],
       "siteUrl": "https://anilist.co/anime/206774",
+      "streaming": [],
       "trailer": {
         "site": "youtube",
         "id": "2zhlC9mffas"
@@ -1890,6 +1923,7 @@
         "Romance"
       ],
       "siteUrl": "https://anilist.co/anime/211877",
+      "streaming": [],
       "trailer": {
         "site": "youtube",
         "id": "E-stx_wwVSs"
@@ -1923,6 +1957,7 @@
         "Romance"
       ],
       "siteUrl": "https://anilist.co/anime/217782",
+      "streaming": [],
       "trailer": null,
       "next": {
         "at": 1792945020,
@@ -1954,6 +1989,7 @@
         "Romance"
       ],
       "siteUrl": "https://anilist.co/anime/208025",
+      "streaming": [],
       "trailer": {
         "site": "youtube",
         "id": "-YCols5lYow"
@@ -1988,6 +2024,7 @@
         "Romance"
       ],
       "siteUrl": "https://anilist.co/anime/218217",
+      "streaming": [],
       "trailer": null,
       "next": {
         "at": 1792951200,
@@ -2019,10 +2056,16 @@
         "Fantasy"
       ],
       "siteUrl": "https://anilist.co/anime/137653",
+      "streaming": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GKEH2G0MN/renegade-immortal"
+        }
+      ],
       "trailer": null,
       "next": {
-        "at": 1792375200,
-        "episode": 163
+        "at": 1792980000,
+        "episode": 164
       },
       "airingAt": 1792375200,
       "episode": 163,
@@ -2048,13 +2091,14 @@
         "Slice of Life"
       ],
       "siteUrl": "https://anilist.co/anime/214593",
+      "streaming": [],
       "trailer": {
         "site": "youtube",
         "id": "WprfleUJVck"
       },
       "next": {
-        "at": 1792375200,
-        "episode": 5
+        "at": 1792681200,
+        "episode": 6
       },
       "airingAt": 1792375200,
       "episode": 5,
@@ -2078,13 +2122,14 @@
         "Comedy"
       ],
       "siteUrl": "https://anilist.co/anime/218532",
+      "streaming": [],
       "trailer": {
         "site": "youtube",
         "id": "FuGZ0Cl8YMY"
       },
       "next": {
-        "at": 1792378800,
-        "episode": 3
+        "at": 1792983600,
+        "episode": 4
       },
       "airingAt": 1792378800,
       "episode": 3,
@@ -2109,6 +2154,12 @@
         "Romance"
       ],
       "siteUrl": "https://anilist.co/anime/207191",
+      "streaming": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00378072/hello-i-am-a-witch-and-my-crush-wants-me-to-make-a-love-potion"
+        }
+      ],
       "trailer": {
         "site": "youtube",
         "id": "hGRtocAh3iw"
@@ -2145,6 +2196,12 @@
         "Romance"
       ],
       "siteUrl": "https://anilist.co/anime/209219",
+      "streaming": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00384010/so-whats-wrong-with-getting-reborn-as-a-goblin"
+        }
+      ],
       "trailer": {
         "site": "youtube",
         "id": "ynr8tFWrK4c"
@@ -2178,6 +2235,12 @@
         "Sci-Fi"
       ],
       "siteUrl": "https://anilist.co/anime/204011",
+      "streaming": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00371866/psyren"
+        }
+      ],
       "trailer": {
         "site": "youtube",
         "id": "fmUpSXFbSK0"
@@ -2211,6 +2274,7 @@
         "Supernatural"
       ],
       "siteUrl": "https://anilist.co/anime/185874",
+      "streaming": [],
       "trailer": {
         "site": "youtube",
         "id": "IJONbpfIlUg"
@@ -2245,6 +2309,7 @@
         "Thriller"
       ],
       "siteUrl": "https://anilist.co/anime/160803",
+      "streaming": [],
       "trailer": {
         "site": "youtube",
         "id": "34ubb-j0kbI"
@@ -2277,6 +2342,7 @@
         "Fantasy"
       ],
       "siteUrl": "https://anilist.co/anime/155723",
+      "streaming": [],
       "trailer": null,
       "next": {
         "at": 1792461600,
@@ -2307,6 +2373,7 @@
         "Fantasy"
       ],
       "siteUrl": "https://anilist.co/anime/213188",
+      "streaming": [],
       "trailer": null,
       "next": {
         "at": 1792461600,
@@ -2337,6 +2404,7 @@
         "Sci-Fi"
       ],
       "siteUrl": "https://anilist.co/anime/195539",
+      "streaming": [],
       "trailer": {
         "site": "youtube",
         "id": "AtJMSUpG9GQ"
@@ -2370,6 +2438,7 @@
         "Sci-Fi"
       ],
       "siteUrl": "https://anilist.co/anime/195539",
+      "streaming": [],
       "trailer": {
         "site": "youtube",
         "id": "AtJMSUpG9GQ"
@@ -2403,6 +2472,7 @@
         "Sci-Fi"
       ],
       "siteUrl": "https://anilist.co/anime/195539",
+      "streaming": [],
       "trailer": {
         "site": "youtube",
         "id": "AtJMSUpG9GQ"
@@ -2436,6 +2506,7 @@
         "Sci-Fi"
       ],
       "siteUrl": "https://anilist.co/anime/195539",
+      "streaming": [],
       "trailer": {
         "site": "youtube",
         "id": "AtJMSUpG9GQ"
@@ -2469,6 +2540,7 @@
         "Sci-Fi"
       ],
       "siteUrl": "https://anilist.co/anime/195539",
+      "streaming": [],
       "trailer": {
         "site": "youtube",
         "id": "AtJMSUpG9GQ"
@@ -2502,6 +2574,7 @@
         "Sci-Fi"
       ],
       "siteUrl": "https://anilist.co/anime/195539",
+      "streaming": [],
       "trailer": {
         "site": "youtube",
         "id": "AtJMSUpG9GQ"
@@ -2535,6 +2608,7 @@
         "Sci-Fi"
       ],
       "siteUrl": "https://anilist.co/anime/195539",
+      "streaming": [],
       "trailer": {
         "site": "youtube",
         "id": "AtJMSUpG9GQ"
@@ -2568,6 +2642,7 @@
         "Sci-Fi"
       ],
       "siteUrl": "https://anilist.co/anime/195539",
+      "streaming": [],
       "trailer": {
         "site": "youtube",
         "id": "AtJMSUpG9GQ"
@@ -2601,6 +2676,7 @@
         "Sci-Fi"
       ],
       "siteUrl": "https://anilist.co/anime/195539",
+      "streaming": [],
       "trailer": {
         "site": "youtube",
         "id": "AtJMSUpG9GQ"
@@ -2634,6 +2710,7 @@
         "Sci-Fi"
       ],
       "siteUrl": "https://anilist.co/anime/195539",
+      "streaming": [],
       "trailer": {
         "site": "youtube",
         "id": "AtJMSUpG9GQ"
@@ -2666,6 +2743,7 @@
         "Fantasy"
       ],
       "siteUrl": "https://anilist.co/anime/206949",
+      "streaming": [],
       "trailer": {
         "site": "youtube",
         "id": "gxG4vntLtbk"
@@ -2698,6 +2776,12 @@
         "Romance"
       ],
       "siteUrl": "https://anilist.co/anime/209502",
+      "streaming": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00384014/the-cold-sato-san-is-only-sweet-to-me"
+        }
+      ],
       "trailer": {
         "site": "youtube",
         "id": "8XgKVzuLmJw"
@@ -2730,6 +2814,12 @@
         "Slice of Life"
       ],
       "siteUrl": "https://anilist.co/anime/200294",
+      "streaming": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00384013/super-psychic-policeman-chojo"
+        }
+      ],
       "trailer": {
         "site": "youtube",
         "id": "rYpXoCdTNQI"
@@ -2762,6 +2852,12 @@
         "Fantasy"
       ],
       "siteUrl": "https://anilist.co/anime/187990",
+      "streaming": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00385703/battle-spirits-re-zekkai-no-ku"
+        }
+      ],
       "trailer": {
         "site": "youtube",
         "id": "cXd4pKTx2pI"
@@ -2794,6 +2890,12 @@
         "Romance"
       ],
       "siteUrl": "https://anilist.co/anime/198727",
+      "streaming": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00364783/chitose-is-in-the-ramune-bottle"
+        }
+      ],
       "trailer": {
         "site": "youtube",
         "id": "8RHh2AyKRfY"
@@ -2827,6 +2929,7 @@
         "Fantasy"
       ],
       "siteUrl": "https://anilist.co/anime/187316",
+      "streaming": [],
       "trailer": {
         "site": "youtube",
         "id": "m4T9VcBD0vo"
@@ -2861,6 +2964,12 @@
         "Slice of Life"
       ],
       "siteUrl": "https://anilist.co/anime/207329",
+      "streaming": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00384016/"
+        }
+      ],
       "trailer": {
         "site": "youtube",
         "id": "BJXBr_aFF8s"
@@ -2896,6 +3005,12 @@
         "Romance"
       ],
       "siteUrl": "https://anilist.co/anime/207809",
+      "streaming": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00378099/red-river"
+        }
+      ],
       "trailer": {
         "site": "youtube",
         "id": "qpFcQ1Bek08"
@@ -2928,6 +3043,7 @@
         "Sci-Fi"
       ],
       "siteUrl": "https://anilist.co/anime/179876",
+      "streaming": [],
       "trailer": {
         "site": "youtube",
         "id": "Tvvs_SlUYgA"
@@ -2959,6 +3075,7 @@
         "Slice of Life"
       ],
       "siteUrl": "https://anilist.co/anime/204656",
+      "streaming": [],
       "trailer": {
         "site": "youtube",
         "id": "Svh_xgdMWlU"
@@ -2992,6 +3109,7 @@
         "Fantasy"
       ],
       "siteUrl": "https://anilist.co/anime/199409",
+      "streaming": [],
       "trailer": {
         "site": "youtube",
         "id": "sKXK-6uZHjI"
@@ -3024,6 +3142,7 @@
         "Fantasy"
       ],
       "siteUrl": "https://anilist.co/anime/214974",
+      "streaming": [],
       "trailer": null,
       "next": {
         "at": 1792548000,
@@ -3056,6 +3175,7 @@
         "Supernatural"
       ],
       "siteUrl": "https://anilist.co/anime/152677",
+      "streaming": [],
       "trailer": {
         "site": "youtube",
         "id": "8AnNxEp733c"
@@ -3087,6 +3207,7 @@
         "Comedy"
       ],
       "siteUrl": "https://anilist.co/anime/217282",
+      "streaming": [],
       "trailer": null,
       "next": {
         "at": 1792587240,
@@ -3117,6 +3238,12 @@
         "Fantasy"
       ],
       "siteUrl": "https://anilist.co/anime/211778",
+      "streaming": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00384009/the-worlds-strongest-witch"
+        }
+      ],
       "trailer": {
         "site": "youtube",
         "id": "snJZD9vxfHY"
@@ -3150,6 +3277,12 @@
         "Mahou Shoujo"
       ],
       "siteUrl": "https://anilist.co/anime/176314",
+      "streaming": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/G5PHNM935/sasaki-and-peeps"
+        }
+      ],
       "trailer": {
         "site": "youtube",
         "id": "gY0hpk9E7p8"
@@ -3184,6 +3317,12 @@
         "Mecha"
       ],
       "siteUrl": "https://anilist.co/anime/178868",
+      "streaming": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00383994/magic-knight-rayearth-2026"
+        }
+      ],
       "trailer": {
         "site": "youtube",
         "id": "67GqhfLw3ys"
@@ -3217,6 +3356,12 @@
         "Sports"
       ],
       "siteUrl": "https://anilist.co/anime/199068",
+      "streaming": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/G65VP3106/the-prince-of-tennis-ii"
+        }
+      ],
       "trailer": {
         "site": "youtube",
         "id": "bsNeADDQFD4"
@@ -3250,6 +3395,7 @@
         "Comedy"
       ],
       "siteUrl": "https://anilist.co/anime/168085",
+      "streaming": [],
       "trailer": null,
       "next": {
         "at": 1792594800,
@@ -3280,6 +3426,7 @@
         "Fantasy"
       ],
       "siteUrl": "https://anilist.co/anime/159042",
+      "streaming": [],
       "trailer": {
         "site": "youtube",
         "id": "kbtRqqa2GyA"
@@ -3312,6 +3459,12 @@
         "Mecha"
       ],
       "siteUrl": "https://anilist.co/anime/213068",
+      "streaming": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00385792/dandivine"
+        }
+      ],
       "trailer": {
         "site": "youtube",
         "id": "ihJfkOT_0wU"
@@ -3345,6 +3498,12 @@
         "Fantasy"
       ],
       "siteUrl": "https://anilist.co/anime/172192",
+      "streaming": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GEXH3W207/a-returners-magic-should-be-special"
+        }
+      ],
       "trailer": {
         "site": "youtube",
         "id": "YBWOrQCB9r0"
@@ -3377,6 +3536,7 @@
         "Slice of Life"
       ],
       "siteUrl": "https://anilist.co/anime/217624",
+      "streaming": [],
       "trailer": null,
       "next": {
         "at": 1792661400,
@@ -3406,6 +3566,12 @@
         "Slice of Life"
       ],
       "siteUrl": "https://anilist.co/anime/206401",
+      "streaming": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://crunchyroll.com/series/GT00384001/fx-fighter-kurumi-chan"
+        }
+      ],
       "trailer": {
         "site": "youtube",
         "id": "7rxIZ3z0S4s"
@@ -3437,6 +3603,7 @@
         "Comedy"
       ],
       "siteUrl": "https://anilist.co/anime/188034",
+      "streaming": [],
       "trailer": {
         "site": "youtube",
         "id": "AVIDW2dT2AM"
@@ -3471,6 +3638,7 @@
         "Slice of Life"
       ],
       "siteUrl": "https://anilist.co/anime/213805",
+      "streaming": [],
       "trailer": {
         "site": "youtube",
         "id": "VvzeL7UMCE8"
@@ -3507,6 +3675,7 @@
         "Sci-Fi"
       ],
       "siteUrl": "https://anilist.co/anime/160275",
+      "streaming": [],
       "trailer": {
         "site": "youtube",
         "id": "Sy7cLG6XHRY"
@@ -3538,6 +3707,7 @@
         "Slice of Life"
       ],
       "siteUrl": "https://anilist.co/anime/199594",
+      "streaming": [],
       "trailer": {
         "site": "youtube",
         "id": "GixEiC7k9_4"
@@ -3570,13 +3740,14 @@
         "Slice of Life"
       ],
       "siteUrl": "https://anilist.co/anime/214593",
+      "streaming": [],
       "trailer": {
         "site": "youtube",
         "id": "WprfleUJVck"
       },
       "next": {
-        "at": 1792375200,
-        "episode": 5
+        "at": 1792681200,
+        "episode": 6
       },
       "airingAt": 1792681200,
       "episode": 6,
@@ -3601,6 +3772,7 @@
         "Romance"
       ],
       "siteUrl": "https://anilist.co/anime/212144",
+      "streaming": [],
       "trailer": {
         "site": "youtube",
         "id": "vnOrtJ4vRmw"
@@ -3633,6 +3805,12 @@
         "Fantasy"
       ],
       "siteUrl": "https://anilist.co/anime/180136",
+      "streaming": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00378018/the-exiled-heavy-knight-knows-how-to-game-the-system"
+        }
+      ],
       "trailer": {
         "site": "youtube",
         "id": "uC13b3_8riU"
@@ -3666,6 +3844,12 @@
         "Fantasy"
       ],
       "siteUrl": "https://anilist.co/anime/212503",
+      "streaming": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GDKHZEP21/the-iceblade-sorcerer-shall-rule-the-world"
+        }
+      ],
       "trailer": {
         "site": "youtube",
         "id": "oxkxyAcKv2g"
@@ -3697,6 +3881,7 @@
         "Slice of Life"
       ],
       "siteUrl": "https://anilist.co/anime/217577",
+      "streaming": [],
       "trailer": null,
       "next": {
         "at": 1792716600,
@@ -3728,6 +3913,12 @@
         "Thriller"
       ],
       "siteUrl": "https://anilist.co/anime/191832",
+      "streaming": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GP5HJ8E81/link-click"
+        }
+      ],
       "trailer": {
         "site": "youtube",
         "id": "4HJNiZV0HJ4"
@@ -3763,6 +3954,7 @@
         "Supernatural"
       ],
       "siteUrl": "https://anilist.co/anime/210482",
+      "streaming": [],
       "trailer": {
         "site": "youtube",
         "id": "jXtG_lcR9P4"
@@ -3794,6 +3986,7 @@
         "Comedy"
       ],
       "siteUrl": "https://anilist.co/anime/194207",
+      "streaming": [],
       "trailer": {
         "site": "youtube",
         "id": "dUSYa-7rKpM"
@@ -3827,6 +4020,7 @@
         "Fantasy"
       ],
       "siteUrl": "https://anilist.co/anime/158871",
+      "streaming": [],
       "trailer": {
         "site": "youtube",
         "id": "_c_hMehCORQ"
@@ -3860,6 +4054,7 @@
         "Sports"
       ],
       "siteUrl": "https://anilist.co/anime/165159",
+      "streaming": [],
       "trailer": {
         "site": "youtube",
         "id": "SXdTmFshlFs"
@@ -3892,6 +4087,7 @@
         "Slice of Life"
       ],
       "siteUrl": "https://anilist.co/anime/146004",
+      "streaming": [],
       "trailer": {
         "site": "youtube",
         "id": "c3DcpEy3xd8"
@@ -3924,6 +4120,7 @@
         "Supernatural"
       ],
       "siteUrl": "https://anilist.co/anime/208367",
+      "streaming": [],
       "trailer": null,
       "next": {
         "at": 1792756800,
@@ -3953,6 +4150,7 @@
         "Fantasy"
       ],
       "siteUrl": "https://anilist.co/anime/216895",
+      "streaming": [],
       "trailer": {
         "site": "youtube",
         "id": "4QafpDIgjS4"
@@ -3985,6 +4183,12 @@
         "Sci-Fi"
       ],
       "siteUrl": "https://anilist.co/anime/186742",
+      "streaming": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00383991/a-certain-dark-item"
+        }
+      ],
       "trailer": {
         "site": "youtube",
         "id": "NNHxQJgZdbQ"
@@ -4017,6 +4221,12 @@
         "Mystery"
       ],
       "siteUrl": "https://anilist.co/anime/195516",
+      "streaming": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/G3KHEVDJ7/the-apothecary-diaries"
+        }
+      ],
       "trailer": {
         "site": "youtube",
         "id": "YvNvvUeCztE"
@@ -4049,6 +4259,12 @@
         "Romance"
       ],
       "siteUrl": "https://anilist.co/anime/205909",
+      "streaming": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00383999"
+        }
+      ],
       "trailer": {
         "site": "youtube",
         "id": "Ex9LrBK-7hk"
@@ -4082,6 +4298,12 @@
         "Supernatural"
       ],
       "siteUrl": "https://anilist.co/anime/204650",
+      "streaming": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GP5HJ84D2/tougen-anki"
+        }
+      ],
       "trailer": {
         "site": "youtube",
         "id": "upBWYExYoYc"
@@ -4115,6 +4337,12 @@
         "Slice of Life"
       ],
       "siteUrl": "https://anilist.co/anime/203490",
+      "streaming": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00371926/"
+        }
+      ],
       "trailer": {
         "site": "youtube",
         "id": "P927_ZvgUUg"
@@ -4149,6 +4377,7 @@
         "Supernatural"
       ],
       "siteUrl": "https://anilist.co/anime/178083",
+      "streaming": [],
       "trailer": {
         "site": "youtube",
         "id": "Nm21TTXUkf4"
@@ -4181,6 +4410,7 @@
         "Fantasy"
       ],
       "siteUrl": "https://anilist.co/anime/214703",
+      "streaming": [],
       "trailer": {
         "site": "youtube",
         "id": "n0na0hTpl1E"
@@ -4211,6 +4441,7 @@
         "Comedy"
       ],
       "siteUrl": "https://anilist.co/anime/212308",
+      "streaming": [],
       "trailer": {
         "site": "youtube",
         "id": "NGwgoL0TvI8"
@@ -4242,6 +4473,12 @@
         "Slice of Life"
       ],
       "siteUrl": "https://anilist.co/anime/183231",
+      "streaming": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00374493/rilakkuma"
+        }
+      ],
       "trailer": {
         "site": "youtube",
         "id": "rV-fcFL5vtU"
@@ -4273,6 +4510,7 @@
         "Fantasy"
       ],
       "siteUrl": "https://anilist.co/anime/214968",
+      "streaming": [],
       "trailer": null,
       "next": {
         "at": 1792801800,
@@ -4302,6 +4540,12 @@
         "Sci-Fi"
       ],
       "siteUrl": "https://anilist.co/anime/216557",
+      "streaming": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00383995/"
+        }
+      ],
       "trailer": {
         "site": "youtube",
         "id": "iMyre5xXDzE"
@@ -4335,6 +4579,7 @@
         "Fantasy"
       ],
       "siteUrl": "https://anilist.co/anime/214260",
+      "streaming": [],
       "trailer": null,
       "next": {
         "at": 1792803600,
@@ -4366,6 +4611,7 @@
         "Romance"
       ],
       "siteUrl": "https://anilist.co/anime/137683",
+      "streaming": [],
       "trailer": null,
       "next": {
         "at": 1792807200,
@@ -4395,6 +4641,7 @@
         "Fantasy"
       ],
       "siteUrl": "https://anilist.co/anime/199353",
+      "streaming": [],
       "trailer": {
         "site": "youtube",
         "id": "xIa7dMUka-8"
@@ -4424,6 +4671,7 @@
       "status": "RELEASING",
       "genres": [],
       "siteUrl": "https://anilist.co/anime/209709",
+      "streaming": [],
       "trailer": {
         "site": "youtube",
         "id": "4iOFqQ1E4Mo"
@@ -4456,6 +4704,7 @@
         "Slice of Life"
       ],
       "siteUrl": "https://anilist.co/anime/966",
+      "streaming": [],
       "trailer": null,
       "next": {
         "at": 1792827000,
@@ -4486,6 +4735,7 @@
         "Sci-Fi"
       ],
       "siteUrl": "https://anilist.co/anime/8687",
+      "streaming": [],
       "trailer": null,
       "next": {
         "at": 1792828800,
@@ -4516,6 +4766,7 @@
         "Supernatural"
       ],
       "siteUrl": "https://anilist.co/anime/195571",
+      "streaming": [],
       "trailer": {
         "site": "youtube",
         "id": "iX4N-Z5Hbxw"
@@ -4550,6 +4801,7 @@
         "Psychological"
       ],
       "siteUrl": "https://anilist.co/anime/235",
+      "streaming": [],
       "trailer": null,
       "next": {
         "at": 1792832400,
@@ -4580,6 +4832,7 @@
         "Romance"
       ],
       "siteUrl": "https://anilist.co/anime/212799",
+      "streaming": [],
       "trailer": {
         "site": "youtube",
         "id": "wk26nTxUzPY"
@@ -4613,6 +4866,7 @@
         "Fantasy"
       ],
       "siteUrl": "https://anilist.co/anime/213356",
+      "streaming": [],
       "trailer": null,
       "next": {
         "at": 1792836000,
@@ -4643,6 +4897,12 @@
         "Fantasy"
       ],
       "siteUrl": "https://anilist.co/anime/180894",
+      "streaming": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00384007/romelia-war-chronicle"
+        }
+      ],
       "trailer": {
         "site": "youtube",
         "id": "PxXPcoo8uGM"
@@ -4676,6 +4936,12 @@
         "Fantasy"
       ],
       "siteUrl": "https://anilist.co/anime/187402",
+      "streaming": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00371633"
+        }
+      ],
       "trailer": {
         "site": "youtube",
         "id": "9oBywQ403ZA"
@@ -4709,6 +4975,12 @@
         "Fantasy"
       ],
       "siteUrl": "https://anilist.co/anime/204389",
+      "streaming": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00361955/a-wild-last-boss-appeared"
+        }
+      ],
       "trailer": {
         "site": "youtube",
         "id": "LyDMSUR6_Q8"
@@ -4743,6 +5015,12 @@
         "Fantasy"
       ],
       "siteUrl": "https://anilist.co/anime/195604",
+      "streaming": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GRE50KV36/black-clover"
+        }
+      ],
       "trailer": {
         "site": "youtube",
         "id": "4MYo8FfiXMA"
@@ -4775,6 +5053,12 @@
         "Mecha"
       ],
       "siteUrl": "https://anilist.co/anime/209562",
+      "streaming": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00365619/vertex-force"
+        }
+      ],
       "trailer": {
         "site": "youtube",
         "id": "JqjXaJysS5w"
@@ -4810,6 +5094,12 @@
         "Supernatural"
       ],
       "siteUrl": "https://anilist.co/anime/199007",
+      "streaming": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00383996/im-looking-for-a-zombie"
+        }
+      ],
       "trailer": {
         "site": "youtube",
         "id": "_0kVb8-uRSI"
@@ -4843,6 +5133,12 @@
         "Supernatural"
       ],
       "siteUrl": "https://anilist.co/anime/203473",
+      "streaming": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00383993"
+        }
+      ],
       "trailer": null,
       "next": {
         "at": 1792853100,
@@ -4875,6 +5171,12 @@
         "Romance"
       ],
       "siteUrl": "https://anilist.co/anime/169581",
+      "streaming": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00384003/magical-explorer"
+        }
+      ],
       "trailer": {
         "site": "youtube",
         "id": "XqrBfyUNYZs"
@@ -4908,6 +5210,7 @@
         "Slice of Life"
       ],
       "siteUrl": "https://anilist.co/anime/191656",
+      "streaming": [],
       "trailer": {
         "site": "youtube",
         "id": "VTRVLnzhl90"
@@ -4941,6 +5244,7 @@
         "Romance"
       ],
       "siteUrl": "https://anilist.co/anime/209872",
+      "streaming": [],
       "trailer": {
         "site": "youtube",
         "id": "dbe8esPSfYI"
@@ -4974,6 +5278,12 @@
         "Fantasy"
       ],
       "siteUrl": "https://anilist.co/anime/202250",
+      "streaming": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00385867/magic-repo-man-dumped-by-my-party-ill-cash-in-with-a-cute-support-fairy-to-become-the-strongest"
+        }
+      ],
       "trailer": {
         "site": "youtube",
         "id": "kXqx3rFSkxc"
@@ -5005,6 +5315,7 @@
         "Slice of Life"
       ],
       "siteUrl": "https://anilist.co/anime/204269",
+      "streaming": [],
       "trailer": {
         "site": "youtube",
         "id": "Laf46YXDt68"
@@ -5034,6 +5345,7 @@
       "status": "RELEASING",
       "genres": [],
       "siteUrl": "https://anilist.co/anime/213298",
+      "streaming": [],
       "trailer": {
         "site": "youtube",
         "id": "cH7enqqATwE"
@@ -5065,6 +5377,7 @@
         "Comedy"
       ],
       "siteUrl": "https://anilist.co/anime/218011",
+      "streaming": [],
       "trailer": {
         "site": "youtube",
         "id": "DO_UchIVN9Y"
@@ -5096,6 +5409,7 @@
         "Slice of Life"
       ],
       "siteUrl": "https://anilist.co/anime/185646",
+      "streaming": [],
       "trailer": {
         "site": "youtube",
         "id": "L4wurjkd0JM"
@@ -5128,6 +5442,12 @@
         "Mystery"
       ],
       "siteUrl": "https://anilist.co/anime/202957",
+      "streaming": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00369409"
+        }
+      ],
       "trailer": {
         "site": "youtube",
         "id": "qjozo1fh7OI"
@@ -5159,6 +5479,7 @@
         "Slice of Life"
       ],
       "siteUrl": "https://anilist.co/anime/216860",
+      "streaming": [],
       "trailer": null,
       "next": {
         "at": 1792887360,
@@ -5187,6 +5508,7 @@
         "Music"
       ],
       "siteUrl": "https://anilist.co/anime/206523",
+      "streaming": [],
       "trailer": {
         "site": "youtube",
         "id": "j5MgjyhhUBc"
@@ -5218,6 +5540,7 @@
         "Slice of Life"
       ],
       "siteUrl": "https://anilist.co/anime/217787",
+      "streaming": [],
       "trailer": null,
       "next": {
         "at": 1792890000,
@@ -5246,6 +5569,7 @@
         "Fantasy"
       ],
       "siteUrl": "https://anilist.co/anime/155723",
+      "streaming": [],
       "trailer": null,
       "next": {
         "at": 1792461600,
@@ -5276,6 +5600,7 @@
         "Fantasy"
       ],
       "siteUrl": "https://anilist.co/anime/196613",
+      "streaming": [],
       "trailer": null,
       "next": {
         "at": 1792893600,
@@ -5306,6 +5631,7 @@
         "Sports"
       ],
       "siteUrl": "https://anilist.co/anime/189123",
+      "streaming": [],
       "trailer": {
         "site": "youtube",
         "id": "hJ6Y8PAOUk8"
@@ -5337,6 +5663,7 @@
         "Sports"
       ],
       "siteUrl": "https://anilist.co/anime/191788",
+      "streaming": [],
       "trailer": {
         "site": "youtube",
         "id": "phKPnPXm74c"
@@ -5370,6 +5697,7 @@
         "Romance"
       ],
       "siteUrl": "https://anilist.co/anime/213657",
+      "streaming": [],
       "trailer": {
         "site": "youtube",
         "id": "059cJjeY19Y"
@@ -5401,6 +5729,12 @@
         "Sports"
       ],
       "siteUrl": "https://anilist.co/anime/213658",
+      "streaming": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GYX0MZ58R/ace-of-the-diamond"
+        }
+      ],
       "trailer": {
         "site": "youtube",
         "id": "kLbI4teuPTc"
@@ -5434,6 +5768,7 @@
         "Comedy"
       ],
       "siteUrl": "https://anilist.co/anime/118123",
+      "streaming": [],
       "trailer": null,
       "next": {
         "at": 1792918800,
@@ -5463,6 +5798,7 @@
         "Slice of Life"
       ],
       "siteUrl": "https://anilist.co/anime/2406",
+      "streaming": [],
       "trailer": null,
       "next": {
         "at": 1792920600,
@@ -5493,6 +5829,7 @@
         "Supernatural"
       ],
       "siteUrl": "https://anilist.co/anime/190054",
+      "streaming": [],
       "trailer": {
         "site": "youtube",
         "id": "SZc3Lp1_iS4"
@@ -5526,6 +5863,7 @@
         "Supernatural"
       ],
       "siteUrl": "https://anilist.co/anime/190054",
+      "streaming": [],
       "trailer": {
         "site": "youtube",
         "id": "SZc3Lp1_iS4"
@@ -5559,6 +5897,7 @@
         "Supernatural"
       ],
       "siteUrl": "https://anilist.co/anime/190054",
+      "streaming": [],
       "trailer": {
         "site": "youtube",
         "id": "SZc3Lp1_iS4"
@@ -5591,6 +5930,7 @@
         "Slice of Life"
       ],
       "siteUrl": "https://anilist.co/anime/215835",
+      "streaming": [],
       "trailer": {
         "site": "youtube",
         "id": "rUHYbwZDVVI"
@@ -5627,6 +5967,12 @@
         "Sci-Fi"
       ],
       "siteUrl": "https://anilist.co/anime/186541",
+      "streaming": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00384006/reborn-as-a-space-mercenary-i-woke-up-piloting-the-strongest-starship"
+        }
+      ],
       "trailer": {
         "site": "youtube",
         "id": "Z9ofT53sz2U"
@@ -5659,6 +6005,12 @@
         "Slice of Life"
       ],
       "siteUrl": "https://anilist.co/anime/202079",
+      "streaming": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00385445/uncles-obsession-with-cute-things"
+        }
+      ],
       "trailer": {
         "site": "youtube",
         "id": "YKgjylmYeoA"
@@ -5691,6 +6043,7 @@
         "Music"
       ],
       "siteUrl": "https://anilist.co/anime/209032",
+      "streaming": [],
       "trailer": {
         "site": "youtube",
         "id": "rwUPmzMpECo"
@@ -5723,6 +6076,7 @@
         "Sci-Fi"
       ],
       "siteUrl": "https://anilist.co/anime/209499",
+      "streaming": [],
       "trailer": {
         "site": "youtube",
         "id": "ihAvU833DHA"
@@ -5756,6 +6110,12 @@
         "Sci-Fi"
       ],
       "siteUrl": "https://anilist.co/anime/206814",
+      "streaming": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00389311/dragon-ball-super-beerus"
+        }
+      ],
       "trailer": {
         "site": "youtube",
         "id": "CFgEL7ei8VE"
@@ -5788,6 +6148,12 @@
         "Fantasy"
       ],
       "siteUrl": "https://anilist.co/anime/185756",
+      "streaming": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GG5H5XQMD/as-a-reincarnated-aristocrat-ill-use-my-appraisal-skill-to-rise-in-the-world"
+        }
+      ],
       "trailer": {
         "site": "youtube",
         "id": "8_Lxr7vO9l0"
@@ -5820,6 +6186,12 @@
         "Fantasy"
       ],
       "siteUrl": "https://anilist.co/anime/205896",
+      "streaming": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00383992/full-clearing-another-world-under-a-goddess-with-zero-believers"
+        }
+      ],
       "trailer": {
         "site": "youtube",
         "id": "qlMB8vSpLzc"
@@ -5853,6 +6225,12 @@
         "Romance"
       ],
       "siteUrl": "https://anilist.co/anime/200455",
+      "streaming": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00365562"
+        }
+      ],
       "trailer": {
         "site": "youtube",
         "id": "e41RGxVwJRs"
@@ -5887,6 +6265,12 @@
         "Fantasy"
       ],
       "siteUrl": "https://anilist.co/anime/212888",
+      "streaming": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00384004"
+        }
+      ],
       "trailer": {
         "site": "youtube",
         "id": "e1Km0FqUZl0"
@@ -5919,6 +6303,12 @@
         "Drama"
       ],
       "siteUrl": "https://anilist.co/anime/199426",
+      "streaming": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GXJHM3G08/hotel-inhumans"
+        }
+      ],
       "trailer": null,
       "next": {
         "at": 1792939500,
@@ -5949,6 +6339,12 @@
         "Romance"
       ],
       "siteUrl": "https://anilist.co/anime/209463",
+      "streaming": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00384000/from-far-away"
+        }
+      ],
       "trailer": {
         "site": "youtube",
         "id": "dLRKywRu3iM"
@@ -5982,6 +6378,7 @@
         "Romance"
       ],
       "siteUrl": "https://anilist.co/anime/211877",
+      "streaming": [],
       "trailer": {
         "site": "youtube",
         "id": "E-stx_wwVSs"
@@ -6015,6 +6412,7 @@
         "Romance"
       ],
       "siteUrl": "https://anilist.co/anime/217782",
+      "streaming": [],
       "trailer": null,
       "next": {
         "at": 1792945020,
@@ -6046,6 +6444,7 @@
         "Romance"
       ],
       "siteUrl": "https://anilist.co/anime/208025",
+      "streaming": [],
       "trailer": {
         "site": "youtube",
         "id": "-YCols5lYow"
@@ -6080,6 +6479,7 @@
         "Romance"
       ],
       "siteUrl": "https://anilist.co/anime/218217",
+      "streaming": [],
       "trailer": null,
       "next": {
         "at": 1792951200,
@@ -6111,10 +6511,16 @@
         "Fantasy"
       ],
       "siteUrl": "https://anilist.co/anime/137653",
+      "streaming": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GKEH2G0MN/renegade-immortal"
+        }
+      ],
       "trailer": null,
       "next": {
-        "at": 1792375200,
-        "episode": 163
+        "at": 1792980000,
+        "episode": 164
       },
       "airingAt": 1792980000,
       "episode": 164,
@@ -6140,13 +6546,14 @@
         "Slice of Life"
       ],
       "siteUrl": "https://anilist.co/anime/214593",
+      "streaming": [],
       "trailer": {
         "site": "youtube",
         "id": "WprfleUJVck"
       },
       "next": {
-        "at": 1792375200,
-        "episode": 5
+        "at": 1792681200,
+        "episode": 6
       },
       "airingAt": 1792980000,
       "episode": 7,
@@ -6170,13 +6577,14 @@
         "Comedy"
       ],
       "siteUrl": "https://anilist.co/anime/218532",
+      "streaming": [],
       "trailer": {
         "site": "youtube",
         "id": "FuGZ0Cl8YMY"
       },
       "next": {
-        "at": 1792378800,
-        "episode": 3
+        "at": 1792983600,
+        "episode": 4
       },
       "airingAt": 1792983600,
       "episode": 4,
@@ -6201,6 +6609,12 @@
         "Romance"
       ],
       "siteUrl": "https://anilist.co/anime/207191",
+      "streaming": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00378072/hello-i-am-a-witch-and-my-crush-wants-me-to-make-a-love-potion"
+        }
+      ],
       "trailer": {
         "site": "youtube",
         "id": "hGRtocAh3iw"
@@ -6237,6 +6651,12 @@
         "Romance"
       ],
       "siteUrl": "https://anilist.co/anime/209219",
+      "streaming": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00384010/so-whats-wrong-with-getting-reborn-as-a-goblin"
+        }
+      ],
       "trailer": {
         "site": "youtube",
         "id": "ynr8tFWrK4c"
@@ -6270,6 +6690,12 @@
         "Sci-Fi"
       ],
       "siteUrl": "https://anilist.co/anime/204011",
+      "streaming": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00371866/psyren"
+        }
+      ],
       "trailer": {
         "site": "youtube",
         "id": "fmUpSXFbSK0"
@@ -6303,6 +6729,7 @@
         "Supernatural"
       ],
       "siteUrl": "https://anilist.co/anime/185874",
+      "streaming": [],
       "trailer": {
         "site": "youtube",
         "id": "IJONbpfIlUg"
@@ -6337,6 +6764,7 @@
         "Thriller"
       ],
       "siteUrl": "https://anilist.co/anime/160803",
+      "streaming": [],
       "trailer": {
         "site": "youtube",
         "id": "34ubb-j0kbI"
@@ -6369,6 +6797,7 @@
         "Fantasy"
       ],
       "siteUrl": "https://anilist.co/anime/155723",
+      "streaming": [],
       "trailer": null,
       "next": {
         "at": 1792461600,
@@ -6399,6 +6828,7 @@
         "Fantasy"
       ],
       "siteUrl": "https://anilist.co/anime/213188",
+      "streaming": [],
       "trailer": null,
       "next": {
         "at": 1792461600,
@@ -6428,6 +6858,7 @@
         "Fantasy"
       ],
       "siteUrl": "https://anilist.co/anime/206949",
+      "streaming": [],
       "trailer": {
         "site": "youtube",
         "id": "gxG4vntLtbk"
@@ -6460,6 +6891,12 @@
         "Romance"
       ],
       "siteUrl": "https://anilist.co/anime/209502",
+      "streaming": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00384014/the-cold-sato-san-is-only-sweet-to-me"
+        }
+      ],
       "trailer": {
         "site": "youtube",
         "id": "8XgKVzuLmJw"
@@ -6492,6 +6929,12 @@
         "Slice of Life"
       ],
       "siteUrl": "https://anilist.co/anime/200294",
+      "streaming": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00384013/super-psychic-policeman-chojo"
+        }
+      ],
       "trailer": {
         "site": "youtube",
         "id": "rYpXoCdTNQI"
@@ -6524,6 +6967,12 @@
         "Fantasy"
       ],
       "siteUrl": "https://anilist.co/anime/187990",
+      "streaming": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00385703/battle-spirits-re-zekkai-no-ku"
+        }
+      ],
       "trailer": {
         "site": "youtube",
         "id": "cXd4pKTx2pI"
@@ -6556,6 +7005,12 @@
         "Romance"
       ],
       "siteUrl": "https://anilist.co/anime/198727",
+      "streaming": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00364783/chitose-is-in-the-ramune-bottle"
+        }
+      ],
       "trailer": {
         "site": "youtube",
         "id": "8RHh2AyKRfY"
@@ -6589,6 +7044,7 @@
         "Fantasy"
       ],
       "siteUrl": "https://anilist.co/anime/187316",
+      "streaming": [],
       "trailer": {
         "site": "youtube",
         "id": "m4T9VcBD0vo"
@@ -6623,6 +7079,12 @@
         "Slice of Life"
       ],
       "siteUrl": "https://anilist.co/anime/207329",
+      "streaming": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00384016/"
+        }
+      ],
       "trailer": {
         "site": "youtube",
         "id": "BJXBr_aFF8s"
@@ -6658,6 +7120,12 @@
         "Romance"
       ],
       "siteUrl": "https://anilist.co/anime/207809",
+      "streaming": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00378099/red-river"
+        }
+      ],
       "trailer": {
         "site": "youtube",
         "id": "qpFcQ1Bek08"
@@ -6690,6 +7158,7 @@
         "Sci-Fi"
       ],
       "siteUrl": "https://anilist.co/anime/179876",
+      "streaming": [],
       "trailer": {
         "site": "youtube",
         "id": "Tvvs_SlUYgA"
@@ -6702,6 +7171,134 @@
       "episode": 3,
       "scheduleId": 419636,
       "description_es": "Siguiendo la voluntad de su abuelo de “buscar el Senki”, el protagonista Kairi visita Golden Valley, una zona económica especial de la máquina oscura. Allí, conoce a una chica misteriosa llamada Rudra. Se convirtió en un jugador de la máquina oscura por Rudra, el talento de Kairi florece gradualmente en el curso de muchas batallas intensas. (Fuente: Fuji Creative) Nota: Parte del proyecto \"DARK MACHINE\" Web3 cross-media donde se entrelazan la historia del juego y su adaptación de anime."
+    },
+    {
+      "id": "al-218008",
+      "mal_id": null,
+      "ani_id": 218008,
+      "title": "Chibi Godzilla Raids Again Season 4",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b218008-pDrQDUyfAnm6.jpg",
+      "banner": "",
+      "description": "Sequel to Chibi Godzilla no Gyakushuu 3 .",
+      "year": 2026,
+      "startDate": "2026-04-01",
+      "format": "TV_SHORT",
+      "episodes": 0,
+      "averageScore": 0,
+      "status": "RELEASING",
+      "genres": [
+        "Comedy",
+        "Fantasy"
+      ],
+      "siteUrl": "https://anilist.co/anime/218008",
+      "streaming": [],
+      "trailer": {
+        "site": "youtube",
+        "id": "8Q83sSev8fk"
+      },
+      "next": {
+        "at": 1793138760,
+        "episode": 16
+      },
+      "airingAt": 1793138760,
+      "episode": 16,
+      "scheduleId": 422342
+    },
+    {
+      "id": "mal-63151",
+      "mal_id": 63151,
+      "ani_id": 204656,
+      "title": "mofusand",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b204656-KXjxVB4bBhl8.jpg",
+      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/204656-ECYkRJKBxTLj.jpg",
+      "description": "Shark Meow is an orange tabby kitty who wears a shark suit. A little clumsy and always taking things at their own cozy pace, but every day with their best kitty friends — and the rescued baby kitty, Little Meow — is filled with unexpected little mishaps and sweet adventures. A sunny warm spot in the park, the sparkle of the sea, steam rising from freshly roasted sweet potatoes, the fluttery feeling of the first snowfall… These small everyday moments fill their world with warmth and delight. You can’t help but smile and think, “So true!” A soft and snuggly kitty anime that brings joy to everyday moments. (Source: QTORY Channel)",
+      "year": 2026,
+      "startDate": "2025-12-22",
+      "format": "ONA",
+      "episodes": 0,
+      "averageScore": 61,
+      "status": "RELEASING",
+      "genres": [
+        "Slice of Life"
+      ],
+      "siteUrl": "https://anilist.co/anime/204656",
+      "streaming": [],
+      "trailer": {
+        "site": "youtube",
+        "id": "Svh_xgdMWlU"
+      },
+      "next": {
+        "at": 1792537200,
+        "episode": 42
+      },
+      "airingAt": 1793142000,
+      "episode": 43,
+      "scheduleId": 416122,
+      "description_es": "Shark Meow es un gatito de tabby naranja que lleva un traje de tiburón. Un poco torpe y siempre tomando cosas a su propio ritmo acogedor, pero todos los días con sus mejores amigos gatitos — y el gatito salvada, Little Meow— está lleno de pequeños revuelos inesperados y aventuras dulces. Un lugar cálido soleado en el parque, la chispa del mar, el vapor subiendo de las batatas recién asadas, la sensación de la primera nevada... Estos pequeños momentos cotidianos llenan su mundo con calidez y deleite. No puedes evitar sonreír y pensar, “¡Es verdad!” Un pequeño y suave anime que trae alegría a cadada"
+    },
+    {
+      "id": "mal-62248",
+      "mal_id": 62248,
+      "ani_id": 199409,
+      "title": "Yi Nian Yongheng 4",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx199409-tZnVTAQ9P6fY.png",
+      "banner": "",
+      "description": "The fourth and final season of Yi Nian Yongheng .",
+      "year": 2026,
+      "startDate": "2026-07-22",
+      "format": "ONA",
+      "episodes": 46,
+      "averageScore": 64,
+      "status": "RELEASING",
+      "genres": [
+        "Action",
+        "Comedy",
+        "Fantasy"
+      ],
+      "siteUrl": "https://anilist.co/anime/199409",
+      "streaming": [],
+      "trailer": {
+        "site": "youtube",
+        "id": "sKXK-6uZHjI"
+      },
+      "next": {
+        "at": 1792548000,
+        "episode": 16
+      },
+      "airingAt": 1793152800,
+      "episode": 17,
+      "scheduleId": 417916,
+      "description_es": "La cuarta y última temporada de Yi Nian Yongheng."
+    },
+    {
+      "id": "mal-62218",
+      "mal_id": 62218,
+      "ani_id": 214974,
+      "title": "Da Xia Shou Mu Ren",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx214974-fM9q0ki7fCVl.jpg",
+      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/214974-jMZ2CpV2lKip.jpg",
+      "description": "Ten years ago, after three consecutive days of blood moon, ghosts, gods, heterochromatic eyes, and strange tales arrived one after another. Mystery and enigma descended upon the human world. Terror and despair roamed the earth. As humans, should we kneel in submission, weep bitterly, or draw our swords? This is a new era, and this era—belongs to the extraordinary! Pushing open the door to the extraordinary, Su Bai encountered a new world… (Source: Tencent, translated)",
+      "year": 2026,
+      "startDate": "2026-09-30",
+      "format": "ONA",
+      "episodes": 59,
+      "averageScore": 0,
+      "status": "RELEASING",
+      "genres": [
+        "Action",
+        "Fantasy"
+      ],
+      "siteUrl": "https://anilist.co/anime/214974",
+      "streaming": [],
+      "trailer": null,
+      "next": {
+        "at": 1792548000,
+        "episode": 6
+      },
+      "airingAt": 1793152800,
+      "episode": 7,
+      "scheduleId": 421467,
+      "description_es": "Hace diez años, después de tres días consecutivos de luna de sangre, fantasmas, dioses, ojos heterocromáticos y cuentos extraños llegaron uno tras otro. El misterio y el enigma descendieron sobre el mundo humano. El terror y la desesperación vagaron por la tierra. Como humanos, ¿debemos arrodillarnos en sumisión, llorar amargamente, o dibujar nuestras espadas? Esta es una nueva era, y esta era — pertenece a lo extraordinario! Al abrir la puerta a lo extraordinario, Su Bai encontró un nuevo mundo... (Fuente: Tencent, traducido)"
     }
   ],
   "seasonal": {
@@ -6730,6 +7327,7 @@
           "Supernatural"
         ],
         "siteUrl": "https://anilist.co/anime/210482",
+        "streaming": [],
         "trailer": {
           "site": "youtube",
           "id": "jXtG_lcR9P4"
@@ -6760,6 +7358,12 @@
           "Fantasy"
         ],
         "siteUrl": "https://anilist.co/anime/204389",
+        "streaming": [
+          {
+            "name": "Crunchyroll",
+            "url": "https://www.crunchyroll.com/series/GT00361955/a-wild-last-boss-appeared"
+          }
+        ],
         "trailer": {
           "site": "youtube",
           "id": "LyDMSUR6_Q8"
@@ -6791,6 +7395,12 @@
           "Fantasy"
         ],
         "siteUrl": "https://anilist.co/anime/212888",
+        "streaming": [
+          {
+            "name": "Crunchyroll",
+            "url": "https://www.crunchyroll.com/series/GT00384004"
+          }
+        ],
         "trailer": {
           "site": "youtube",
           "id": "e1Km0FqUZl0"
@@ -6820,6 +7430,12 @@
           "Fantasy"
         ],
         "siteUrl": "https://anilist.co/anime/185756",
+        "streaming": [
+          {
+            "name": "Crunchyroll",
+            "url": "https://www.crunchyroll.com/series/GG5H5XQMD/as-a-reincarnated-aristocrat-ill-use-my-appraisal-skill-to-rise-in-the-world"
+          }
+        ],
         "trailer": {
           "site": "youtube",
           "id": "8_Lxr7vO9l0"
@@ -6852,6 +7468,12 @@
           "Romance"
         ],
         "siteUrl": "https://anilist.co/anime/169581",
+        "streaming": [
+          {
+            "name": "Crunchyroll",
+            "url": "https://www.crunchyroll.com/series/GT00384003/magical-explorer"
+          }
+        ],
         "trailer": {
           "site": "youtube",
           "id": "XqrBfyUNYZs"
@@ -6881,6 +7503,7 @@
           "Slice of Life"
         ],
         "siteUrl": "https://anilist.co/anime/215835",
+        "streaming": [],
         "trailer": {
           "site": "youtube",
           "id": "rUHYbwZDVVI"
@@ -6909,6 +7532,7 @@
           "Slice of Life"
         ],
         "siteUrl": "https://anilist.co/anime/207217",
+        "streaming": [],
         "trailer": {
           "site": "youtube",
           "id": "Rya5HXrNeww"
@@ -6936,6 +7560,7 @@
           "Fantasy"
         ],
         "siteUrl": "https://anilist.co/anime/159042",
+        "streaming": [],
         "trailer": {
           "site": "youtube",
           "id": "kbtRqqa2GyA"
@@ -6967,6 +7592,7 @@
           "Slice of Life"
         ],
         "siteUrl": "https://anilist.co/anime/213805",
+        "streaming": [],
         "trailer": {
           "site": "youtube",
           "id": "VvzeL7UMCE8"
@@ -6996,6 +7622,12 @@
           "Slice of Life"
         ],
         "siteUrl": "https://anilist.co/anime/206401",
+        "streaming": [
+          {
+            "name": "Crunchyroll",
+            "url": "https://crunchyroll.com/series/GT00384001/fx-fighter-kurumi-chan"
+          }
+        ],
         "trailer": {
           "site": "youtube",
           "id": "7rxIZ3z0S4s"
@@ -7026,6 +7658,12 @@
           "Sports"
         ],
         "siteUrl": "https://anilist.co/anime/199068",
+        "streaming": [
+          {
+            "name": "Crunchyroll",
+            "url": "https://www.crunchyroll.com/series/G65VP3106/the-prince-of-tennis-ii"
+          }
+        ],
         "trailer": {
           "site": "youtube",
           "id": "bsNeADDQFD4"
@@ -7055,6 +7693,7 @@
           "Slice of Life"
         ],
         "siteUrl": "https://anilist.co/anime/217624",
+        "streaming": [],
         "trailer": null,
         "next": {
           "at": 1792661400,
@@ -7081,6 +7720,12 @@
           "Mystery"
         ],
         "siteUrl": "https://anilist.co/anime/195516",
+        "streaming": [
+          {
+            "name": "Crunchyroll",
+            "url": "https://www.crunchyroll.com/series/G3KHEVDJ7/the-apothecary-diaries"
+          }
+        ],
         "trailer": {
           "site": "youtube",
           "id": "YvNvvUeCztE"
@@ -7111,6 +7756,12 @@
           "Supernatural"
         ],
         "siteUrl": "https://anilist.co/anime/204650",
+        "streaming": [
+          {
+            "name": "Crunchyroll",
+            "url": "https://www.crunchyroll.com/series/GP5HJ84D2/tougen-anki"
+          }
+        ],
         "trailer": {
           "site": "youtube",
           "id": "upBWYExYoYc"
@@ -7140,6 +7791,7 @@
           "Fantasy"
         ],
         "siteUrl": "https://anilist.co/anime/216895",
+        "streaming": [],
         "trailer": {
           "site": "youtube",
           "id": "4QafpDIgjS4"
@@ -7169,6 +7821,7 @@
           "Romance"
         ],
         "siteUrl": "https://anilist.co/anime/212144",
+        "streaming": [],
         "trailer": {
           "site": "youtube",
           "id": "vnOrtJ4vRmw"
@@ -7197,6 +7850,7 @@
           "Comedy"
         ],
         "siteUrl": "https://anilist.co/anime/194207",
+        "streaming": [],
         "trailer": {
           "site": "youtube",
           "id": "dUSYa-7rKpM"
@@ -7225,6 +7879,7 @@
           "Slice of Life"
         ],
         "siteUrl": "https://anilist.co/anime/217577",
+        "streaming": [],
         "trailer": null,
         "next": {
           "at": 1792716600,
@@ -7253,6 +7908,12 @@
           "Fantasy"
         ],
         "siteUrl": "https://anilist.co/anime/195604",
+        "streaming": [
+          {
+            "name": "Crunchyroll",
+            "url": "https://www.crunchyroll.com/series/GRE50KV36/black-clover"
+          }
+        ],
         "trailer": {
           "site": "youtube",
           "id": "4MYo8FfiXMA"
@@ -7284,6 +7945,7 @@
           "Supernatural"
         ],
         "siteUrl": "https://anilist.co/anime/178083",
+        "streaming": [],
         "trailer": {
           "site": "youtube",
           "id": "Nm21TTXUkf4"
@@ -7314,6 +7976,12 @@
           "Fantasy"
         ],
         "siteUrl": "https://anilist.co/anime/187402",
+        "streaming": [
+          {
+            "name": "Crunchyroll",
+            "url": "https://www.crunchyroll.com/series/GT00371633"
+          }
+        ],
         "trailer": {
           "site": "youtube",
           "id": "9oBywQ403ZA"
@@ -7344,6 +8012,12 @@
           "Fantasy"
         ],
         "siteUrl": "https://anilist.co/anime/180894",
+        "streaming": [
+          {
+            "name": "Crunchyroll",
+            "url": "https://www.crunchyroll.com/series/GT00384007/romelia-war-chronicle"
+          }
+        ],
         "trailer": {
           "site": "youtube",
           "id": "PxXPcoo8uGM"
@@ -7376,6 +8050,12 @@
           "Supernatural"
         ],
         "siteUrl": "https://anilist.co/anime/199007",
+        "streaming": [
+          {
+            "name": "Crunchyroll",
+            "url": "https://www.crunchyroll.com/series/GT00383996/im-looking-for-a-zombie"
+          }
+        ],
         "trailer": {
           "site": "youtube",
           "id": "_0kVb8-uRSI"
@@ -7406,6 +8086,7 @@
           "Fantasy"
         ],
         "siteUrl": "https://anilist.co/anime/187316",
+        "streaming": [],
         "trailer": {
           "site": "youtube",
           "id": "m4T9VcBD0vo"
@@ -7436,6 +8117,7 @@
           "Romance"
         ],
         "siteUrl": "https://anilist.co/anime/212799",
+        "streaming": [],
         "trailer": {
           "site": "youtube",
           "id": "wk26nTxUzPY"
@@ -7465,6 +8147,12 @@
           "Mecha"
         ],
         "siteUrl": "https://anilist.co/anime/209562",
+        "streaming": [
+          {
+            "name": "Crunchyroll",
+            "url": "https://www.crunchyroll.com/series/GT00365619/vertex-force"
+          }
+        ],
         "trailer": {
           "site": "youtube",
           "id": "JqjXaJysS5w"
@@ -7494,6 +8182,12 @@
           "Sci-Fi"
         ],
         "siteUrl": "https://anilist.co/anime/216557",
+        "streaming": [
+          {
+            "name": "Crunchyroll",
+            "url": "https://www.crunchyroll.com/series/GT00383995/"
+          }
+        ],
         "trailer": {
           "site": "youtube",
           "id": "iMyre5xXDzE"
@@ -7520,6 +8214,7 @@
         "status": "RELEASING",
         "genres": [],
         "siteUrl": "https://anilist.co/anime/209709",
+        "streaming": [],
         "trailer": {
           "site": "youtube",
           "id": "4iOFqQ1E4Mo"
@@ -7547,6 +8242,7 @@
           "Fantasy"
         ],
         "siteUrl": "https://anilist.co/anime/214968",
+        "streaming": [],
         "trailer": null,
         "next": {
           "at": 1792801800,
@@ -7574,6 +8270,7 @@
           "Sports"
         ],
         "siteUrl": "https://anilist.co/anime/189123",
+        "streaming": [],
         "trailer": {
           "site": "youtube",
           "id": "hJ6Y8PAOUk8"
@@ -7604,6 +8301,7 @@
           "Slice of Life"
         ],
         "siteUrl": "https://anilist.co/anime/191656",
+        "streaming": [],
         "trailer": {
           "site": "youtube",
           "id": "VTRVLnzhl90"
@@ -7632,6 +8330,7 @@
           "Sports"
         ],
         "siteUrl": "https://anilist.co/anime/191788",
+        "streaming": [],
         "trailer": {
           "site": "youtube",
           "id": "phKPnPXm74c"
@@ -7665,6 +8364,12 @@
           "Sci-Fi"
         ],
         "siteUrl": "https://anilist.co/anime/186541",
+        "streaming": [
+          {
+            "name": "Crunchyroll",
+            "url": "https://www.crunchyroll.com/series/GT00384006/reborn-as-a-space-mercenary-i-woke-up-piloting-the-strongest-starship"
+          }
+        ],
         "trailer": {
           "site": "youtube",
           "id": "Z9ofT53sz2U"
@@ -7695,6 +8400,12 @@
           "Fantasy"
         ],
         "siteUrl": "https://anilist.co/anime/202250",
+        "streaming": [
+          {
+            "name": "Crunchyroll",
+            "url": "https://www.crunchyroll.com/series/GT00385867/magic-repo-man-dumped-by-my-party-ill-cash-in-with-a-cute-support-fairy-to-become-the-strongest"
+          }
+        ],
         "trailer": {
           "site": "youtube",
           "id": "kXqx3rFSkxc"
@@ -7725,6 +8436,7 @@
           "Romance"
         ],
         "siteUrl": "https://anilist.co/anime/209872",
+        "streaming": [],
         "trailer": {
           "site": "youtube",
           "id": "dbe8esPSfYI"
@@ -7755,6 +8467,12 @@
           "Romance"
         ],
         "siteUrl": "https://anilist.co/anime/200455",
+        "streaming": [
+          {
+            "name": "Crunchyroll",
+            "url": "https://www.crunchyroll.com/series/GT00365562"
+          }
+        ],
         "trailer": {
           "site": "youtube",
           "id": "e41RGxVwJRs"
@@ -7784,6 +8502,7 @@
           "Sci-Fi"
         ],
         "siteUrl": "https://anilist.co/anime/209499",
+        "streaming": [],
         "trailer": {
           "site": "youtube",
           "id": "ihAvU833DHA"
@@ -7813,6 +8532,12 @@
           "Slice of Life"
         ],
         "siteUrl": "https://anilist.co/anime/202079",
+        "streaming": [
+          {
+            "name": "Crunchyroll",
+            "url": "https://www.crunchyroll.com/series/GT00385445/uncles-obsession-with-cute-things"
+          }
+        ],
         "trailer": {
           "site": "youtube",
           "id": "YKgjylmYeoA"
@@ -7842,6 +8567,12 @@
           "Drama"
         ],
         "siteUrl": "https://anilist.co/anime/199426",
+        "streaming": [
+          {
+            "name": "Crunchyroll",
+            "url": "https://www.crunchyroll.com/series/GXJHM3G08/hotel-inhumans"
+          }
+        ],
         "trailer": null,
         "next": {
           "at": 1792939500,
@@ -7868,6 +8599,7 @@
           "Music"
         ],
         "siteUrl": "https://anilist.co/anime/209032",
+        "streaming": [],
         "trailer": {
           "site": "youtube",
           "id": "rwUPmzMpECo"
@@ -7894,6 +8626,7 @@
         "status": "RELEASING",
         "genres": [],
         "siteUrl": "https://anilist.co/anime/213298",
+        "streaming": [],
         "trailer": {
           "site": "youtube",
           "id": "cH7enqqATwE"
@@ -7922,6 +8655,7 @@
           "Comedy"
         ],
         "siteUrl": "https://anilist.co/anime/218011",
+        "streaming": [],
         "trailer": {
           "site": "youtube",
           "id": "DO_UchIVN9Y"
@@ -7950,6 +8684,7 @@
           "Slice of Life"
         ],
         "siteUrl": "https://anilist.co/anime/216860",
+        "streaming": [],
         "trailer": null,
         "next": {
           "at": 1792887360,
@@ -7975,6 +8710,7 @@
           "Slice of Life"
         ],
         "siteUrl": "https://anilist.co/anime/217787",
+        "streaming": [],
         "trailer": null,
         "next": {
           "at": 1792890000,
@@ -8000,6 +8736,12 @@
           "Romance"
         ],
         "siteUrl": "https://anilist.co/anime/207191",
+        "streaming": [
+          {
+            "name": "Crunchyroll",
+            "url": "https://www.crunchyroll.com/series/GT00378072/hello-i-am-a-witch-and-my-crush-wants-me-to-make-a-love-potion"
+          }
+        ],
         "trailer": {
           "site": "youtube",
           "id": "hGRtocAh3iw"
@@ -8031,6 +8773,7 @@
           "Romance"
         ],
         "siteUrl": "https://anilist.co/anime/208025",
+        "streaming": [],
         "trailer": {
           "site": "youtube",
           "id": "-YCols5lYow"
@@ -8061,6 +8804,12 @@
           "Sci-Fi"
         ],
         "siteUrl": "https://anilist.co/anime/204011",
+        "streaming": [
+          {
+            "name": "Crunchyroll",
+            "url": "https://www.crunchyroll.com/series/GT00371866/psyren"
+          }
+        ],
         "trailer": {
           "site": "youtube",
           "id": "fmUpSXFbSK0"
@@ -8094,6 +8843,12 @@
           "Romance"
         ],
         "siteUrl": "https://anilist.co/anime/209219",
+        "streaming": [
+          {
+            "name": "Crunchyroll",
+            "url": "https://www.crunchyroll.com/series/GT00384010/so-whats-wrong-with-getting-reborn-as-a-goblin"
+          }
+        ],
         "trailer": {
           "site": "youtube",
           "id": "ynr8tFWrK4c"
@@ -8124,6 +8879,7 @@
           "Romance"
         ],
         "siteUrl": "https://anilist.co/anime/211877",
+        "streaming": [],
         "trailer": {
           "site": "youtube",
           "id": "E-stx_wwVSs"
@@ -8154,6 +8910,7 @@
           "Supernatural"
         ],
         "siteUrl": "https://anilist.co/anime/206774",
+        "streaming": [],
         "trailer": {
           "site": "youtube",
           "id": "2zhlC9mffas"
@@ -8184,6 +8941,12 @@
           "Romance"
         ],
         "siteUrl": "https://anilist.co/anime/209463",
+        "streaming": [
+          {
+            "name": "Crunchyroll",
+            "url": "https://www.crunchyroll.com/series/GT00384000/from-far-away"
+          }
+        ],
         "trailer": {
           "site": "youtube",
           "id": "dLRKywRu3iM"
@@ -8214,6 +8977,7 @@
           "Romance"
         ],
         "siteUrl": "https://anilist.co/anime/217782",
+        "streaming": [],
         "trailer": null,
         "next": {
           "at": 1792945020,
@@ -8242,6 +9006,7 @@
           "Romance"
         ],
         "siteUrl": "https://anilist.co/anime/218217",
+        "streaming": [],
         "trailer": null,
         "next": {
           "at": 1792951200,
@@ -8268,13 +9033,14 @@
           "Slice of Life"
         ],
         "siteUrl": "https://anilist.co/anime/214593",
+        "streaming": [],
         "trailer": {
           "site": "youtube",
           "id": "WprfleUJVck"
         },
         "next": {
-          "at": 1792375200,
-          "episode": 5
+          "at": 1792681200,
+          "episode": 6
         }
       },
       {
@@ -8295,13 +9061,14 @@
           "Comedy"
         ],
         "siteUrl": "https://anilist.co/anime/218532",
+        "streaming": [],
         "trailer": {
           "site": "youtube",
           "id": "FuGZ0Cl8YMY"
         },
         "next": {
-          "at": 1792378800,
-          "episode": 3
+          "at": 1792983600,
+          "episode": 4
         }
       },
       {
@@ -8323,6 +9090,7 @@
           "Fantasy"
         ],
         "siteUrl": "https://anilist.co/anime/206949",
+        "streaming": [],
         "trailer": {
           "site": "youtube",
           "id": "gxG4vntLtbk"
@@ -8352,6 +9120,12 @@
           "Romance"
         ],
         "siteUrl": "https://anilist.co/anime/209502",
+        "streaming": [
+          {
+            "name": "Crunchyroll",
+            "url": "https://www.crunchyroll.com/series/GT00384014/the-cold-sato-san-is-only-sweet-to-me"
+          }
+        ],
         "trailer": {
           "site": "youtube",
           "id": "8XgKVzuLmJw"
@@ -8383,6 +9157,7 @@
           "Thriller"
         ],
         "siteUrl": "https://anilist.co/anime/160803",
+        "streaming": [],
         "trailer": {
           "site": "youtube",
           "id": "34ubb-j0kbI"
@@ -8412,6 +9187,12 @@
           "Slice of Life"
         ],
         "siteUrl": "https://anilist.co/anime/200294",
+        "streaming": [
+          {
+            "name": "Crunchyroll",
+            "url": "https://www.crunchyroll.com/series/GT00384013/super-psychic-policeman-chojo"
+          }
+        ],
         "trailer": {
           "site": "youtube",
           "id": "rYpXoCdTNQI"
@@ -8441,6 +9222,12 @@
           "Fantasy"
         ],
         "siteUrl": "https://anilist.co/anime/187990",
+        "streaming": [
+          {
+            "name": "Crunchyroll",
+            "url": "https://www.crunchyroll.com/series/GT00385703/battle-spirits-re-zekkai-no-ku"
+          }
+        ],
         "trailer": {
           "site": "youtube",
           "id": "cXd4pKTx2pI"
@@ -8472,6 +9259,12 @@
           "Slice of Life"
         ],
         "siteUrl": "https://anilist.co/anime/207329",
+        "streaming": [
+          {
+            "name": "Crunchyroll",
+            "url": "https://www.crunchyroll.com/series/GT00384016/"
+          }
+        ],
         "trailer": {
           "site": "youtube",
           "id": "BJXBr_aFF8s"
@@ -8504,6 +9297,7 @@
           "Supernatural"
         ],
         "siteUrl": "https://anilist.co/anime/152677",
+        "streaming": [],
         "trailer": {
           "site": "youtube",
           "id": "8AnNxEp733c"
@@ -8534,6 +9328,12 @@
           "Fantasy"
         ],
         "siteUrl": "https://anilist.co/anime/211778",
+        "streaming": [
+          {
+            "name": "Crunchyroll",
+            "url": "https://www.crunchyroll.com/series/GT00384009/the-worlds-strongest-witch"
+          }
+        ],
         "trailer": {
           "site": "youtube",
           "id": "snJZD9vxfHY"
@@ -8564,6 +9364,12 @@
           "Mahou Shoujo"
         ],
         "siteUrl": "https://anilist.co/anime/176314",
+        "streaming": [
+          {
+            "name": "Crunchyroll",
+            "url": "https://www.crunchyroll.com/series/G5PHNM935/sasaki-and-peeps"
+          }
+        ],
         "trailer": {
           "site": "youtube",
           "id": "gY0hpk9E7p8"
@@ -8595,6 +9401,12 @@
           "Mecha"
         ],
         "siteUrl": "https://anilist.co/anime/178868",
+        "streaming": [
+          {
+            "name": "Crunchyroll",
+            "url": "https://www.crunchyroll.com/series/GT00383994/magic-knight-rayearth-2026"
+          }
+        ],
         "trailer": {
           "site": "youtube",
           "id": "67GqhfLw3ys"
@@ -8625,6 +9437,12 @@
           "Fantasy"
         ],
         "siteUrl": "https://anilist.co/anime/172192",
+        "streaming": [
+          {
+            "name": "Crunchyroll",
+            "url": "https://www.crunchyroll.com/series/GEXH3W207/a-returners-magic-should-be-special"
+          }
+        ],
         "trailer": {
           "site": "youtube",
           "id": "YBWOrQCB9r0"
@@ -8653,6 +9471,7 @@
           "Comedy"
         ],
         "siteUrl": "https://anilist.co/anime/188034",
+        "streaming": [],
         "trailer": {
           "site": "youtube",
           "id": "AVIDW2dT2AM"
@@ -8682,6 +9501,12 @@
           "Mecha"
         ],
         "siteUrl": "https://anilist.co/anime/213068",
+        "streaming": [
+          {
+            "name": "Crunchyroll",
+            "url": "https://www.crunchyroll.com/series/GT00385792/dandivine"
+          }
+        ],
         "trailer": {
           "site": "youtube",
           "id": "ihJfkOT_0wU"
@@ -8711,6 +9536,12 @@
           "Romance"
         ],
         "siteUrl": "https://anilist.co/anime/205909",
+        "streaming": [
+          {
+            "name": "Crunchyroll",
+            "url": "https://www.crunchyroll.com/series/GT00383999"
+          }
+        ],
         "trailer": {
           "site": "youtube",
           "id": "Ex9LrBK-7hk"
@@ -8741,6 +9572,12 @@
           "Fantasy"
         ],
         "siteUrl": "https://anilist.co/anime/212503",
+        "streaming": [
+          {
+            "name": "Crunchyroll",
+            "url": "https://www.crunchyroll.com/series/GDKHZEP21/the-iceblade-sorcerer-shall-rule-the-world"
+          }
+        ],
         "trailer": {
           "site": "youtube",
           "id": "oxkxyAcKv2g"
@@ -8770,6 +9607,12 @@
           "Sci-Fi"
         ],
         "siteUrl": "https://anilist.co/anime/186742",
+        "streaming": [
+          {
+            "name": "Crunchyroll",
+            "url": "https://www.crunchyroll.com/series/GT00383991/a-certain-dark-item"
+          }
+        ],
         "trailer": {
           "site": "youtube",
           "id": "NNHxQJgZdbQ"
@@ -8799,6 +9642,7 @@
           "Romance"
         ],
         "siteUrl": "https://anilist.co/anime/207327",
+        "streaming": [],
         "trailer": {
           "site": "youtube",
           "id": "J2tjySs8UbA"
@@ -8825,6 +9669,7 @@
           "Sports"
         ],
         "siteUrl": "https://anilist.co/anime/202390",
+        "streaming": [],
         "trailer": {
           "site": "youtube",
           "id": "yDRK9-yG9X8"
@@ -8850,6 +9695,7 @@
           "Slice of Life"
         ],
         "siteUrl": "https://anilist.co/anime/199594",
+        "streaming": [],
         "trailer": {
           "site": "youtube",
           "id": "GixEiC7k9_4"
@@ -8879,6 +9725,7 @@
           "Supernatural"
         ],
         "siteUrl": "https://anilist.co/anime/208367",
+        "streaming": [],
         "trailer": null,
         "next": {
           "at": 1792756800,
@@ -8906,6 +9753,7 @@
           "Supernatural"
         ],
         "siteUrl": "https://anilist.co/anime/195571",
+        "streaming": [],
         "trailer": {
           "site": "youtube",
           "id": "iX4N-Z5Hbxw"
@@ -8936,6 +9784,12 @@
           "Supernatural"
         ],
         "siteUrl": "https://anilist.co/anime/203473",
+        "streaming": [
+          {
+            "name": "Crunchyroll",
+            "url": "https://www.crunchyroll.com/series/GT00383993"
+          }
+        ],
         "trailer": null,
         "next": {
           "at": 1792853100,
@@ -8963,6 +9817,12 @@
           "Sci-Fi"
         ],
         "siteUrl": "https://anilist.co/anime/206814",
+        "streaming": [
+          {
+            "name": "Crunchyroll",
+            "url": "https://www.crunchyroll.com/series/GT00389311/dragon-ball-super-beerus"
+          }
+        ],
         "trailer": {
           "site": "youtube",
           "id": "CFgEL7ei8VE"
@@ -8992,6 +9852,12 @@
           "Fantasy"
         ],
         "siteUrl": "https://anilist.co/anime/205896",
+        "streaming": [
+          {
+            "name": "Crunchyroll",
+            "url": "https://www.crunchyroll.com/series/GT00383992/full-clearing-another-world-under-a-goddess-with-zero-believers"
+          }
+        ],
         "trailer": {
           "site": "youtube",
           "id": "qlMB8vSpLzc"
@@ -9022,6 +9888,7 @@
           "Romance"
         ],
         "siteUrl": "https://anilist.co/anime/213657",
+        "streaming": [],
         "trailer": {
           "site": "youtube",
           "id": "059cJjeY19Y"
