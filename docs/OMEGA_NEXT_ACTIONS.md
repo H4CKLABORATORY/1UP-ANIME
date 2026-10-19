@@ -22,3 +22,5 @@ Restricción: presupuesto $0, no compras/deploy destructivo sin permiso; no conv
 
 
 - [ ] **Presencia online 1UP (2026-10-18):** revisar PR de `feature/oneup-live-presence-counter-20261018`; confirmar tests automáticos, verificar responsive iPhone y escritorio, asociar proyecto Supabase Realtime gratuito si existe o crear con consentimiento del propietario, configurar únicamente el `sb_publishable_` público en `presence-config.js`, y comprobar conteos entre sesiones reales. No afirmar contador operativo con `ONEUP_PRESENCE_CONFIG=null`.
+
+- Referencia para la tarea de presencia: PR [#46](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/46), workflow `ONEUP Online Presence QA` aprobado en primera ejecución; revisar estado de CI tras cualquier actualización.
