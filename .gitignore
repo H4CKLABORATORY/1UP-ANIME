@@ -1,3 +1,8 @@
 node_modules/
 e2e-*.png
 artifacts/
+
+ios/OneUpAnime.xcodeproj/
+ios/OneUpAnime/Info.plist
+ios/OneUpAnime/Resources/
+ios/build/
