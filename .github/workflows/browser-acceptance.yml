@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - "scripts/e2e-browser.mjs"
+      - "scripts/e2e-franchise.mjs"
       - ".github/workflows/browser-acceptance.yml"
       - "index.html"
       - "themes/oneup-palette/**"
@@ -54,6 +55,7 @@ jobs:
           node scripts/test-episode-comments.mjs
           node scripts/e2e-player-languages.mjs
           node scripts/e2e-browser.mjs
+          node scripts/e2e-franchise.mjs
           node scripts/e2e-oneup-palette.mjs
           node --check themes/oneup-motion/windows.js
           node --check scripts/e2e-oneup-motion.mjs
