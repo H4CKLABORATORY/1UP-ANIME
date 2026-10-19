@@ -22,7 +22,7 @@
 - No confundir el catálogo de Anime1v con episodios reproducibles ni su licencia MIT con derechos de distribución de anime.
 
 ## Estado detectado ahora
-- Último commit de aplicación encontrado: 6509c3ccfdedf3df0d59d92c49fb087161e3e8b7
+- Último commit de aplicación encontrado: c5b235addd884e04e24d9db363bf6e0b6c7bc48d
 - Descubrimiento Anime1v configurado en frontend: sí, verificar la respuesta real en Render
 - Código runtime de metadatos Anime1v en repositorio: sí
 - Entradas de obras multimedia en data/licensed-media.json: 0
@@ -30,11 +30,11 @@
 - Safari físico: no dar por verificado salvo prueba real con evidencia.
 
 ## Últimos commits relevantes
+- c5b235add — Sync authorized anime episode metadata and source statuses
+- 390267953 — ONEUP health snapshot (no application changes)
+- 4c731ed17 — Update live anime airing calendar
+- 9c6860208 — Sync authorized anime episode metadata and source statuses
 - 6509c3ccf — Sync authorized anime episode metadata and source statuses
-- 1b3f9f9b8 — ONEUP health snapshot (no application changes)
-- 904b424bc — feat: move depth toggle to sidebar, rename to 3D, default off
-- ae493989c — Update live anime airing calendar
-- 72a94fe7c — chore: trigger pages redeploy
 
 ## PR abiertos (consultar cambios antes de desarrollar)
 - [#45](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/45) WIP: guarded comment image/GIF preview and anime detail UX audit
