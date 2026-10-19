@@ -3,7 +3,7 @@
 // CacheStorage is origin-wide: GitHub Pages apps on the same domain share it.
 // Restrict cleanup to caches that belong to this 1UP Anime service worker.
 const CACHE_PREFIX='oneup-stream-integrated-';
-const CACHE=CACHE_PREFIX+'v31-site-quality-20261018';
+const CACHE=CACHE_PREFIX+'v32-manga-library-20261019';
 const SHELL=[
  './','./index.html','./studio.css','./studio.js','./spotlight.css',
  './ui-quality.css','./assets/oneup-crest-mark.svg','./motion.css','./motion.js','./official-watch.js','./official-watch.css','./brand-v2.css','./player.css','./auth.js',
@@ -12,6 +12,7 @@ const SHELL=[
  './assets/1up-anime-logo-poster.jpg','./assets/1up-anime-app-icon-512.png',
  './assets/oneup-header-letters.png','./assets/oneup-poster-portrait.png',
  './data/catalog.json','./data/translations-es.json','./data/licensed-media.json',
+ './manga.html','./data/manga-library.json',
  './data/anime1v-config.json','./anime1v-discovery.js','./anime1v-discovery.css',
  './data/airing.json','./airing-ui.js','./airing-ui.css','./comunidad.html',
  './community.js','./community.css','./social-backend.js','./social-config.js',
@@ -61,7 +62,7 @@ self.addEventListener('fetch',event=>{
  // Network-first for site code, styling, manifest and localized metadata.
  // Browser cache can otherwise display an outdated English UI after PWA upgrades.
  if(/\.(?:js|css|svg|webmanifest)$/.test(url.pathname) ||
-    /\/data\/(?:catalog|translations-es|licensed-media|airing|external-providers|guild-license)\.json$/.test(url.pathname) ||
+    /\/data\/(?:catalog|translations-es|licensed-media|manga-library|airing|external-providers|guild-license)\.json$/.test(url.pathname) ||
     /\/data\/(?:guard|dexter)\/(?:status|history)\.json$/.test(url.pathname)){
   event.respondWith(fetch(event.request,{cache:'no-cache'}).then(response=>{
    if(response.ok)caches.open(CACHE).then(cache=>cache.put(event.request,response.clone())).catch(()=>{});
