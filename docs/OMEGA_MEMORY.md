@@ -99,3 +99,10 @@ Excluir secretos, datos personales irrelevantes, suposiciones no etiquetadas, pr
 - Investigación documentada: `docs/ANIME_SCRAPER_GITHUB_RESEARCH_20261019.md`. Se revisaron ejemplos de anipy-cli (GPL), Senpwai (GPL), curd (GPL), animeflix (AGPL), Aniki (MIT) y otros. **Tomar patrones, no copiar software con licencias incompatibles ni republicar medios ajenos.**
 - Nuevo módulo de búsqueda ligera `anime-title-search.js`, sin acceso a redes. El catálogo de AniList/Jikan y el snapshot guardarán títulos originales, romaji y alias cuando se actualice la API. Tests y flujo CI dedicados; no afectar los PR #51/#52.
 - El estudio de descargas se aplica a bibliotecas propias/autorizadas: orden de archivos, hashes, reintentos, subtítulos y procedencia. No equivale a un permiso para descargar o distribuir capítulos comerciales.
+
+
+### 2026-10-19 — Anime API: franquicias y recomendaciones verificadas
+- Directorio consultado https://github.com/topics/anime-api: descartadas dependencias archivadas y streaming externo, priorizando AniList GraphQL / Jikan REST.
+- Rama feature/anime-api-franchise-discovery-20261019. Nuevo módulo optativo franchise-explorer.mjs/css en fichas, precuelas/secuelas, historias relacionadas y sugerencias basadas en relaciones reales AniList.
+- Respaldo Jikan sólo de relaciones por ID MAL; rechaza ID difuso y filtros de manga/adulto marcados por AniList. Cancela consultas al cerrar, cachea y no toca el reproductor ni manifiesto de video.
+- Verificación requerida: CI tests/franchise-explorer.test.mjs, navegador, despliegue Pages y Safari físico. No se declara el sitio finalizado.

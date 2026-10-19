@@ -274,3 +274,10 @@ Al concluir cada trabajo agregar:
 - AniList/Jikan del navegador y el refresco de snapshot `scripts/refresh-catalog.mjs` conservan nombres alternativos. `sw.js` sube a caché `v32`; no incorpora dependencias ni fuentes de video nuevas. `tests/anime-title-search.test.mjs` y workflow dedicado.
 - **No se instalaron descargadores de terceros ni código GPL/AGPL.** Conceptos como colas, integridad y subtítulos para videos propios/autorizados quedan relacionados al PR #51; evitar descarga/republicación de anime sin permisos.
 - Estado: se requiere CI en cabeza de PR, merge validado, despliegue Pages y refresco real futuro del snapshot; no afirmar alias en JSON antiguo.
+
+
+### 2026-10-19 — Anime API: franquicias y recomendaciones verificadas
+- Directorio consultado https://github.com/topics/anime-api: descartadas dependencias archivadas y streaming externo, priorizando AniList GraphQL / Jikan REST.
+- Rama feature/anime-api-franchise-discovery-20261019. Nuevo módulo optativo franchise-explorer.mjs/css en fichas, precuelas/secuelas, historias relacionadas y sugerencias basadas en relaciones reales AniList.
+- Respaldo Jikan sólo de relaciones por ID MAL; rechaza ID difuso y filtros de manga/adulto marcados por AniList. Cancela consultas al cerrar, cachea y no toca el reproductor ni manifiesto de video.
+- Verificación requerida: CI tests/franchise-explorer.test.mjs, navegador, despliegue Pages y Safari físico. No se declara el sitio finalizado.
