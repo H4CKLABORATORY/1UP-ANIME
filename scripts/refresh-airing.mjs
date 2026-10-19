@@ -26,7 +26,7 @@ async function call(query,variables){
  }
  throw Error('AniList rate-limited after 3 retries');
 }
-const film='id idMal type isAdult format title{romaji english native} coverImage{extraLarge large} bannerImage description(asHtml:false) episodes averageScore status startDate{year month day} season seasonYear trailer{id site thumbnail} siteUrl genres nextAiringEpisode{airingAt episode}';
+const film='id idMal type isAdult format title{romaji english native} coverImage{extraLarge large} bannerImage description(asHtml:false) episodes averageScore status startDate{year month day} season seasonYear trailer{id site thumbnail} siteUrl genres nextAiringEpisode{airingAt episode} externalLinks{site url type}';
 const schedQuery='query($page:Int,$start:Int,$end:Int){Page(page:$page,perPage:50){pageInfo{hasNextPage} airingSchedules(airingAt_greater:$start,airingAt_lesser:$end,sort:TIME){id airingAt episode media{'+film+'}}}}';
 const seasonQuery='query($page:Int,$year:Int,$season:MediaSeason){Page(page:$page,perPage:40){pageInfo{hasNextPage} media(type:ANIME,season:$season,seasonYear:$year,isAdult:false,sort:[START_DATE,POPULARITY_DESC]){'+film+'}}}';
 function norm(m){
@@ -39,6 +39,11 @@ function norm(m){
  (m.startDate.year+'-'+String(m.startDate.month).padStart(2,'0')+'-'+String(m.startDate.day).padStart(2,'0')):null,
  format:m.format||'TV',episodes:m.episodes||0,averageScore:m.averageScore||0,status:m.status||null,
  genres:m.genres||[],siteUrl:m.siteUrl||'',
+ streaming:(m.externalLinks||[]).filter(l=>l.type==='STREAMING'&&/crunchyroll/i.test(l.site||'')).filter(l=>{
+  try{const u=new URL(l.url);return u.protocol==='https:'&&['crunchyroll.com','www.crunchyroll.com'].includes(u.hostname)&&
+   /^\\/(?:[a-z]{2}(?:-[a-z]{2})?\\/)?series\\/[A-Za-z0-9]{8,}(?:\\/[A-Za-z0-9_-]+)?\\/?$/.test(u.pathname)}
+  catch{return false}
+ }).map(l=>({name:'Crunchyroll',url:l.url})).slice(0,1),
  trailer:m.trailer?.site==='youtube'&&/^[\w-]{11}$/.test(m.trailer.id||'')?
  {site:'youtube',id:m.trailer.id}:null,
  next:m.nextAiringEpisode?.airingAt?{at:m.nextAiringEpisode.airingAt,episode:m.nextAiringEpisode.episode}:null};
