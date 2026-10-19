@@ -36,3 +36,7 @@ Restricción: presupuesto $0, no compras/deploy destructivo sin permiso; no conv
 - [ ] Producto completo: Google/Firebase/Supabase aún sin configurar y biblioteca de medios autorizados vacía; no anunciar streaming 100%.
 
 - [ ] **Portada de estrenos 1UP:** revisar PR de rama `feature/oneup-premiere-cinematic-hero-20261019`, comprobar CI `ONEUP Cinematic Premiere Hero QA`, Browser Acceptance, Puppeteer y Depth. Revisar capturas visuales reales 390/1440, rango horario local y botones táctiles; fusionar solo con resultados aprobados y comprobar GitHub Pages. Ver [PREMIERES_HERO_20261019.md](PREMIERES_HERO_20261019.md).
+
+- [ ] **PR #60 iPhone y subtítulos:** revisar CI de SwiftUI simulador, WebVTT, 4 jobs, Browser Acceptance; fusionar solo verde; verificar Pages y Safari físico.
+- [ ] **Distribución App Store:** bundle ID/Team, Xcode archive firmado, capturas, privacidad, clasificación y Apple review. No hay IPA de producción ni TestFlight.
+- [ ] **Episodios y subtítulos nuevos:** aportar materiales/URLs HTTPS con permiso de redistribución y archivos de audio legítimos; revisar salida del modelo y WebVTT ES/EN antes de publicar. Snapshot metadata por sí solo no suministra video.

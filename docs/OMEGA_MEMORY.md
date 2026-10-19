@@ -123,3 +123,10 @@ Excluir secretos, datos personales irrelevantes, suposiciones no etiquetadas, pr
 - Portada profesional basada en la grabación de referencia: botones Ver detalles/Mi lista/Crunchyroll (enlace oficial), fondo cinematográfico, flechas, barras de progreso, pausa y swipe. Código original `premiere-ranking.js`, `premiere-hero.js`, `premiere-hero.css`; reaprovecha AniList y la identidad 1UP.
 - Priorización verificable de emisiones locales de hoy y próximos episodios, sin prometer video distribuible; fecha del snapshot visible. Nunca confundir calendario con biblioteca autorizada. Ver [PREMIERES_HERO_20261019.md](PREMIERES_HERO_20261019.md).
 - Antes de publicar revisar el PR, Node+Playwright en móvil/desktop, Puppeteer general, regresión y despliegue; no declarar Safari físico aprobado.
+
+### 2026-10-19 — iOS nativo, subtítulos estilizados e intro sin control de sonido
+- Entrega PR #60: app SwiftUI nativa en ios/ (búsqueda, catálogo, favoritos, intro AVPlayer, reproductor propio); CI macOS simulator sin firma. No es WebView.
+- Web: removed oct-audio-control y prueba adaptada, conserva reproducción de intro automática a mejor esfuerzo; Safari puede bloquear el audio audible sin gesto.
+- Subtitle Studio Bangers (OFL), Arial/Outfit/Arcade, ES/EN basado en WebVTT reales, estilos, escala, preferencias. Generador local opcional faster-whisper + Argos para videos con derechos; sin extracción ilícita.
+- Cuatro frentes independientes bajo GitHub Actions y documento de responsabilidades. No afirmar múltiples agentes autónomos de código sin tales herramientas.
+- Pendientes: PR CI completo, Pages, prueba Safari físico, Xcode firma/App Store, fuentes episodios realmente autorizadas y servicios de usuario. Sin declarar streaming ni subtítulos automáticos de obras sin archivo.

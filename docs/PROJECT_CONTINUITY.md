@@ -306,3 +306,10 @@ Al concluir cada trabajo agregar:
 - Integración sobre catálogo existente: `premiere-ranking.js`, `premiere-hero.js`, `premiere-hero.css`, `index.html`, `studio.js`, `airing-ui.js`, caché PWA v36. Prioridad de emisiones hoy y temporada; ficha/favoritos y salida Crunchyroll verificada.
 - Calendario de AniList ya existente, sin scrapers ni servidores nuevos; indica hora real de programación, no promete disponibilidad en reproductor. Si no hay información conserva la portada anterior.
 - QA creada: tests Node y Playwright iPhone/desktop en `tests/premiere-hero.*`, workflow propio; documentado en [PREMIERES_HERO_20261019.md](PREMIERES_HERO_20261019.md). **Requiere** CI, inspección visual y deploy de Pages antes de declarar terminado. Safari físico sigue pendiente.
+
+### 2026-10-19 — iOS nativo, subtítulos estilizados e intro sin control de sonido
+- Entrega PR #60: app SwiftUI nativa en ios/ (búsqueda, catálogo, favoritos, intro AVPlayer, reproductor propio); CI macOS simulator sin firma. No es WebView.
+- Web: removed oct-audio-control y prueba adaptada, conserva reproducción de intro automática a mejor esfuerzo; Safari puede bloquear el audio audible sin gesto.
+- Subtitle Studio Bangers (OFL), Arial/Outfit/Arcade, ES/EN basado en WebVTT reales, estilos, escala, preferencias. Generador local opcional faster-whisper + Argos para videos con derechos; sin extracción ilícita.
+- Cuatro frentes independientes bajo GitHub Actions y documento de responsabilidades. No afirmar múltiples agentes autónomos de código sin tales herramientas.
+- Pendientes: PR CI completo, Pages, prueba Safari físico, Xcode firma/App Store, fuentes episodios realmente autorizadas y servicios de usuario. Sin declarar streaming ni subtítulos automáticos de obras sin archivo.
