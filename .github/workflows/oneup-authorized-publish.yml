@@ -1,0 +1,55 @@
+name: ONEUP · publicación editorial autorizada
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'data/media-intake.json'
+      - 'scripts/publish-approved-content.mjs'
+      - 'scripts/media-source-contract.mjs'
+  pull_request:
+    paths:
+      - 'data/media-intake.json'
+      - 'scripts/publish-approved-content.mjs'
+      - 'data/manga-library.json'
+      - 'manga.html'
+      - 'tests/publish-approved-content.test.mjs'
+      - '.github/workflows/oneup-authorized-publish.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: oneup-authorized-publish-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  validate-and-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Node 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate importer
+        run: node --test tests/publish-approved-content.test.mjs
+      - name: Validate intake and build manifests
+        run: node scripts/publish-approved-content.mjs
+      - name: Prevent content modification by PR jobs
+        if: github.event_name == 'pull_request'
+        run: git diff --exit-code -- data/licensed-media.json data/manga-library.json
+      - name: Commit approved manifests on main
+        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+        run: |
+          if ! git diff --quiet -- data/licensed-media.json data/manga-library.json; then
+            git config user.name 'github-actions[bot]'
+            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+            git add data/licensed-media.json data/manga-library.json
+            git commit -m "content: publish declared authorized episodes and manga"
+            git push
+          fi
