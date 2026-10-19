@@ -174,6 +174,7 @@ function startup(){
   if(node.matches('.hero'))return 0;
   if(node.matches('.explore-section'))return 1;
   if(node.matches('.oneup-finale-deck'))return 1.5; // Shortcut deck remains above galleries.
+  if(node.matches('.oneup-official-episode'))return 1.7; // Episode from official TMS channel.
   if(node.querySelector?.('#trending-rail'))return 2;
   if(node.querySelector?.('#recent-rail'))return 3;
   if(node.querySelector?.('#season-rail'))return 4;
