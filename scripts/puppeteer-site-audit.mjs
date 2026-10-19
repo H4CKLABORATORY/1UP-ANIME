@@ -47,6 +47,15 @@ async function check(name,run){
  catch(error){report.failures.push({name,error:String(error?.message||error)});console.error('FAIL '+name+': '+(error?.message||error))}
 }
 function wait(milliseconds){return new Promise(resolve=>setTimeout(resolve,milliseconds))}
+async function waitIntroToFinish(page){
+ // The real 1UP cinematic intro intentionally intercepts taps until finished.
+ // Puppeteer must not mistake an intro click for a working login action.
+ await page.waitForFunction(()=>{
+  const overlay=document.querySelector('#oneup-opening');
+  return !overlay||!overlay.isConnected||overlay.hidden||
+   getComputedStyle(overlay).display==='none';
+ },{timeout:11000});
+}
 
 await mkdir(OUTPUT,{recursive:true});
 const server=serve();
@@ -87,6 +96,7 @@ try{
      pageErrors.length=0;
      const response=await page.goto(origin+route,{waitUntil:'domcontentloaded',timeout:25000});
      assert.equal(response?.status(),200,'Local route must load');
+     if(route==='/index.html')await waitIntroToFinish(page);
      await wait(300);
      const info=await page.evaluate(()=>({
       title:document.title,
@@ -110,6 +120,7 @@ try{
    await check(viewport.name+' guest login and close button',async()=>{
     pageErrors.length=0;
     await page.goto(origin+'/index.html',{waitUntil:'domcontentloaded',timeout:25000});
+    await waitIntroToFinish(page);
     await page.waitForSelector('#auth-open',{visible:true,timeout:15000});
     await page.click('#auth-open');
     await page.waitForSelector('#auth-dialog[open]',{visible:true,timeout:5000});
