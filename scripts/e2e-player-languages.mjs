@@ -48,6 +48,7 @@ await page.locator('.oneup-subtitle-studio [data-subtitle="lang"]').selectOption
 assert.match(await page.locator('.oneup-subtitle-notice').innerText(),/Español|subtítulos/i);
 await page.screenshot({path:'e2e-player-languages-'+width+'.png',fullPage:true,animations:'disabled'});
 await page.locator('#oneup-watch-episode').selectOption('2');
+assert.equal(await page.locator('.oneup-subtitle-studio').count(),0,'Controls must disappear without media');
 assert.equal(await page.locator('[data-server-slot]:enabled').count(),0);
 assert.equal(await select.isDisabled(),true);
 assert.match(await page.locator('#oneup-player-message').innerText(),/Solo se habilitan/);
