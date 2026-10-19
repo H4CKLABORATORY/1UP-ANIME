@@ -1,0 +1,43 @@
+name: ONEUP Multilingual Anime Search QA
+on:
+  pull_request:
+    paths:
+      - 'anime-title-search.js'
+      - 'studio.js'
+      - 'studio.html'
+      - 'index.html'
+      - 'sw.js'
+      - 'scripts/refresh-catalog.mjs'
+      - 'tests/anime-title-search.test.mjs'
+      - '.github/workflows/anime-title-search.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'anime-title-search.js'
+      - 'studio.js'
+      - 'studio.html'
+      - 'index.html'
+      - 'sw.js'
+      - 'scripts/refresh-catalog.mjs'
+      - 'tests/anime-title-search.test.mjs'
+      - '.github/workflows/anime-title-search.yml'
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Syntax and source checks
+        run: |
+          node --check anime-title-search.js
+          node --check studio.js
+          node --check scripts/refresh-catalog.mjs
+          node --check tests/anime-title-search.test.mjs
+      - name: Search tests
+        run: node --test tests/anime-title-search.test.mjs
+      - name: Existing UI contract
+        run: node scripts/check-ui.mjs

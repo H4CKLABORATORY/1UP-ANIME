@@ -27,3 +27,5 @@ Restricción: presupuesto $0, no compras/deploy destructivo sin permiso; no conv
 - [ ] **Puppeteer Browser QA:** comprobar el workflow `ONEUP Puppeteer Browser QA` en PR de rama `feature/puppeteer-qa-integration-20261019`; corregir fallos reales de instalación/runtime, revisar `artifacts/puppeteer/report.json` y fusionar solo si el QA está verde. Ver [PUPPETEER_QA.md](PUPPETEER_QA.md). No confundir Chrome Headless con Safari físico, ni automatización de pruebas con servidor permanente.
 
 - [ ] Scraping educativo: comprobar refresco real Wikipedia, snapshot, despliegue y Safari físico.
+
+- [ ] **Integración anime-scraper / alias multilingües:** ejecutar pruebas de `anime-title-search.js`, revisar PR de rama `feature/anime-scraper-metadata-search-20261019`, y comprobar GitHub Actions Puppeteer, Browser Acceptance y refresh de AniList tras merge. No alterar sin revisión PR #51 (medios autorizados) ni PR #52 (scraping metadata educativo). Detalles en [ANIME_SCRAPER_GITHUB_RESEARCH_20261019.md](ANIME_SCRAPER_GITHUB_RESEARCH_20261019.md).

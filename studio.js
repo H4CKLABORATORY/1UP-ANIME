@@ -86,16 +86,16 @@ const state={entries:new Map(),saved:{},home:{},featured:null,view:'inicio',resu
 function register(data){for(const a of data||[])if(a.id)state.entries.set(a.id,a)}
 function normalizeAni(m){
  const score=Number(m.averageScore)||0;
- return {id:m.idMal?'mal-'+m.idMal:'al-'+m.id,mal_id:m.idMal||null,title:m.title?.english||m.title?.romaji||'Anime',image:safe(m.coverImage?.extraLarge||m.coverImage?.large),banner:safe(m.bannerImage),description:String(m.description||'').replace(/<[^>]+>/g,'').replace(/\n/g,' '),averageScore:score,year:m.seasonYear||m.startDate?.year||'',genres:m.genres||[],format:m.format||'TV',episodes:m.episodes||0,status:m.status||'',siteUrl:safe(m.siteUrl),streaming:(m.externalLinks||[]).filter(x=>x.type==='STREAMING'&&safe(x.url)).map(x=>({name:x.site,url:x.url})),next:m.nextAiringEpisode?{at:m.nextAiringEpisode.airingAt,episode:m.nextAiringEpisode.episode}:null,source:'anilist'};
+ return {id:m.idMal?'mal-'+m.idMal:'al-'+m.id,mal_id:m.idMal||null,title:m.title?.english||m.title?.romaji||'Anime',title_romaji:m.title?.romaji||'',title_native:m.title?.native||'',aliases:window.OneUpAnimeSearch?.collectAliases(m.title,m.synonyms)||[],image:safe(m.coverImage?.extraLarge||m.coverImage?.large),banner:safe(m.bannerImage),description:String(m.description||'').replace(/<[^>]+>/g,'').replace(/\n/g,' '),averageScore:score,year:m.seasonYear||m.startDate?.year||'',genres:m.genres||[],format:m.format||'TV',episodes:m.episodes||0,status:m.status||'',siteUrl:safe(m.siteUrl),streaming:(m.externalLinks||[]).filter(x=>x.type==='STREAMING'&&safe(x.url)).map(x=>({name:x.site,url:x.url})),next:m.nextAiringEpisode?{at:m.nextAiringEpisode.airingAt,episode:m.nextAiringEpisode.episode}:null,source:'anilist'};
 }
 function normalizeJikan(m){
- return {id:'mal-'+m.mal_id,mal_id:m.mal_id,title:m.title_english||m.title||'Anime',image:safe(m.images?.webp?.large_image_url||m.images?.jpg?.large_image_url),banner:'',description:m.synopsis||'',averageScore:m.score?Math.round(m.score*10):0,year:m.year||m.aired?.prop?.from?.year||'',genres:(m.genres||[]).map(x=>x.name),format:m.type==='Movie'?'MOVIE':m.type==='OVA'?'OVA':m.type==='ONA'?'ONA':'TV',episodes:m.episodes||0,status:m.airing?'RELEASING':'FINISHED',siteUrl:safe(m.url),streaming:(m.streaming||[]).filter(x=>safe(x.url)).map(x=>({name:x.name,url:x.url})),next:null,source:'jikan'};
+ return {id:'mal-'+m.mal_id,mal_id:m.mal_id,title:m.title_english||m.title||'Anime',title_romaji:m.title||'',title_native:m.title_japanese||'',aliases:window.OneUpAnimeSearch?.collectAliases({english:m.title_english,romaji:m.title,native:m.title_japanese},[...(m.title_synonyms||[]),...(m.titles||[]).map(x=>x.title)])||[],image:safe(m.images?.webp?.large_image_url||m.images?.jpg?.large_image_url),banner:'',description:m.synopsis||'',averageScore:m.score?Math.round(m.score*10):0,year:m.year||m.aired?.prop?.from?.year||'',genres:(m.genres||[]).map(x=>x.name),format:m.type==='Movie'?'MOVIE':m.type==='OVA'?'OVA':m.type==='ONA'?'ONA':'TV',episodes:m.episodes||0,status:m.airing?'RELEASING':'FINISHED',siteUrl:safe(m.url),streaming:(m.streaming||[]).filter(x=>safe(x.url)).map(x=>({name:x.name,url:x.url})),next:null,source:'jikan'};
 }
 const gql=[
 'query OneUp($page:Int,$perPage:Int,$sort:[MediaSort],$status:MediaStatus,$search:String,$genre:String,$format:MediaFormat){',
 'Page(page:$page,perPage:$perPage){pageInfo{hasNextPage currentPage}',
 'media(type:ANIME,isAdult:false,sort:$sort,status:$status,search:$search,genre:$genre,format:$format){',
-'id idMal title{english romaji} description(asHtml:false) coverImage{extraLarge large} bannerImage',
+'id idMal title{english romaji native} synonyms description(asHtml:false) coverImage{extraLarge large} bannerImage',
 'averageScore episodes format status seasonYear startDate{year} genres siteUrl',
 'nextAiringEpisode{episode airingAt} externalLinks{site url type}',
 '}}}'].join(' ');
@@ -171,7 +171,7 @@ async function fromSnapshot(o){
   const combined=[...items,...Object.values(data.groups).filter(Array.isArray).flat()];
   const unique=new Map();for(const x of combined)if(x.id&&!unique.has(x.id))unique.set(x.id,x);
   items=[...unique.values()].filter(x=>
-   (!o.search||x.title.toLowerCase().includes(o.search.toLowerCase()))&&
+   (!o.search||(window.OneUpAnimeSearch?.matches(x,o.search)??x.title.toLowerCase().includes(o.search.toLowerCase())))&&
    (!o.genre||(x.genres||[]).includes(o.genre))&&
    (!o.format||x.format===o.format)&&
    (!o.status||x.status===o.status)
@@ -190,7 +190,7 @@ async function fetchCatalog(o){
   try{const r=await loader(o);if(r.items.length){register(r.items);cache(o,r);return r}}catch(e){console.warn('1UP provider temporarily unavailable',e?.message)}
  }
  const snapshot=await fromSnapshot(o);if(snapshot){cache(o,snapshot);return snapshot;}
- let items=samples.filter(x=>(!o.search||x.title.toLowerCase().includes(o.search.toLowerCase()))&&(!o.genre||x.genres.includes(o.genre))&&(!o.format||x.format===o.format));
+ let items=samples.filter(x=>(!o.search||(window.OneUpAnimeSearch?.matches(x,o.search)??x.title.toLowerCase().includes(o.search.toLowerCase())))&&(!o.genre||x.genres.includes(o.genre))&&(!o.format||x.format===o.format));
  register(items);
  return {items,next:false,source:'sample'};
 }

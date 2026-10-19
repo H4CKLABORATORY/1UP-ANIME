@@ -94,3 +94,8 @@ Excluir secretos, datos personales irrelevantes, suposiciones no etiquetadas, pr
 - Funciones multimedia originales no tocadas; se mantienen las reglas de fuentes con licencia. Sin gastos ni credenciales.
 - Validación PR #52: fixture Python, Puppeteer, navegador móvil/escritorio, calidad y módulos HLS/links exitosos.
 - Primera extracción real, publicación Pages y Safari físico pendientes de comprobación posterior al cambio main.
+
+### 2026-10-19 — anime-scraper (metadatos, búsqueda y estudio de descargadores)
+- Investigación documentada: `docs/ANIME_SCRAPER_GITHUB_RESEARCH_20261019.md`. Se revisaron ejemplos de anipy-cli (GPL), Senpwai (GPL), curd (GPL), animeflix (AGPL), Aniki (MIT) y otros. **Tomar patrones, no copiar software con licencias incompatibles ni republicar medios ajenos.**
+- Nuevo módulo de búsqueda ligera `anime-title-search.js`, sin acceso a redes. El catálogo de AniList/Jikan y el snapshot guardarán títulos originales, romaji y alias cuando se actualice la API. Tests y flujo CI dedicados; no afectar los PR #51/#52.
+- El estudio de descargas se aplica a bibliotecas propias/autorizadas: orden de archivos, hashes, reintentos, subtítulos y procedencia. No equivale a un permiso para descargar o distribuir capítulos comerciales.
