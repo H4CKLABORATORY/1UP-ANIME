@@ -19,7 +19,7 @@ No hay registro de usuarios ni anuncios ni analíticas propias. Se usan datos p�
 
 ## Intro, perfiles y Halloween
 
-- Intro cinematográfica original en CSS/SVG, dura aproximadamente 3 segundos y se puede saltar. En la misma sesión no se repite tras recargar.
+- Intro cinematográfica original, sin botón de sonido u omitir; intenta sonar al iniciar, con alternativa silenciosa cuando Safari impide audio automático.
 - Selección de hasta seis perfiles, cada uno con avatar, favoritos y episodios por separado, almacenados en `localStorage` del navegador.
 - No son cuentas con contraseña ni sincronizadas entre dispositivos. Si se borran los datos de Safari, se pierden perfiles y progreso.
 - Estética temporal Halloween/anti-magia; contenido y fichas desde Jikan.
@@ -55,3 +55,13 @@ El motor multimedia de 1UP ANIME incluye un selector con **hasta siete posicione
 Los módulos principales son `episode-player.js`, `hls-adapter.js`, `scripts/media-source-contract.mjs` y `scripts/dexter-anime-sync.mjs`. Consulta `docs/INTEGRACION_STREAMING_1UP_2026.md`.
 
 El backend opcional Supabase para comentarios/progreso está preparado pero **desactivado** en `supabase-config.js`; Firebase sigue como opción existente y no se ha migrado ningún dato. No se han contratado servidores, dominios ni servicios externos.
+
+## App iPhone nativa y Subtitle Studio (19 oct 2026)
+
+- Proyecto SwiftUI auténtico en ios/ y workflow de compilación de simulador (sin firmar). La intro usa el propio archivo de firma 1UP y AVPlayer para intentar sonido automáticamente en el lanzamiento nativo.
+- En la web desaparece el botón de sonido de octubre. La intro intenta audio; Safari puede rechazar sonido sin un gesto, y la introducción continúa sin interrumpir al visitante.
+- Para fuentes multimedia permitidas, Subtitle Studio permite elegir las pistas WebVTT español/inglés presentes, Bangers por defecto (SIL OFL), Arial, Moderna y Arcade, 4 efectos y tamaño.
+- El script scripts/generate-authorized-subtitles.py permite transcribir un archivo local autorizado y crear archivos es/en si faster-whisper y modelos Argos están disponibles. No inventa subtítulos ni descarga video.
+- Ver ios/README.md, docs/AUTO_SUBTITLE_PIPELINE_20261019.md y docs/IOS_MULTIAGENT_WORKSTREAMS_20261019.md. La app no está firmada ni publicada en App Store; data/licensed-media.json sigue con entries vacío.
+
+**Privacidad y soporte de iOS:** [política de privacidad](privacy.html) y [guía App Store](ios/APPSTORE_SUBMISSION.md).

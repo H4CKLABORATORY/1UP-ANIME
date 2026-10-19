@@ -121,6 +121,7 @@ function updateEpisodeSelect(){
  if(input)input.value=String(selectedEpisode);
 }
 function showVideo(slot,serverIndex=-1){
+ document.dispatchEvent(new CustomEvent('oneup-video-removed'));
  // Release prior MediaSource buffers before replacing DOM (critical on iPhone).
  closeVideo();
  const stage=playerRoot.querySelector('#oneup-playback-display');
@@ -197,6 +198,7 @@ function showVideo(slot,serverIndex=-1){
   video.addEventListener('playing',()=>{if(video.isConnected)status.textContent='Reproduciendo desde '+slot.label});
   video.addEventListener('error',()=>{if(video.isConnected){status.textContent='No se pudo reproducir esta fuente. Puedes intentar otro servidor.';offerRetry()}});
   stage.appendChild(video);
+  document.dispatchEvent(new CustomEvent('oneup-video-ready',{detail:{video,tracks:slot.tracks||[]}}));
   // Detached media may continue playing/downloading; release direct files too.
   disposeActiveVideo=()=>{
    video.pause();

@@ -1,0 +1,75 @@
+name: 1UP Four-Track Integration QA
+on:
+  workflow_dispatch:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'subtitle-studio.*'
+      - 'episode-player.js'
+      - 'themes/october-2026/theme.js'
+      - 'themes/cinematic-v3/studio.js'
+      - 'scripts/generate-authorized-subtitles.py'
+      - 'tests/subtitle-studio.test.mjs'
+      - 'tests/test_authorized_subtitles.py'
+      - '.github/workflows/four-track-qa.yml'
+      - 'data/licensed-media.json'
+  push:
+    branches: [main]
+    paths:
+      - 'subtitle-studio.*'
+      - 'episode-player.js'
+      - 'themes/october-2026/theme.js'
+      - 'scripts/generate-authorized-subtitles.py'
+      - 'tests/subtitle-studio.test.mjs'
+      - 'tests/test_authorized_subtitles.py'
+permissions:
+  contents: read
+jobs:
+  intro-audio:
+    name: Track A - Cinematic intro
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check intro and no sound toggle
+        run: |
+          node --check themes/october-2026/theme.js
+          node --check themes/cinematic-v3/studio.js
+          node -e "const fs=require('fs'); const s=fs.readFileSync('themes/october-2026/theme.js','utf8'); if(s.includes('oct-audio-control'))process.exit(1);if(!fs.readFileSync('themes/cinematic-v3/studio.js','utf8').includes('media.play()'))process.exit(1)"
+  web-captions:
+    name: Track B - Subtitle player
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: |
+          node --check subtitle-studio.js
+          node --check episode-player.js
+          node --test tests/subtitle-studio.test.mjs
+          node scripts/test-episode-player.mjs
+  speech-pipeline:
+    name: Track C - Educational licensed subtitle generator
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: |
+          python -m py_compile scripts/generate-authorized-subtitles.py
+          python -m unittest discover -s tests -p test_authorized_subtitles.py -v
+  media-contract:
+    name: Track D - Authorized playback contract
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: |
+          node --check scripts/media-source-contract.mjs
+          node scripts/test-media-source-contract.mjs

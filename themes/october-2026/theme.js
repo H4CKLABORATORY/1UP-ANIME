@@ -14,8 +14,7 @@ if(!shouldRun)return;
 const themeRoot='./themes/october-2026/';
 const reduced=window.matchMedia?.('(prefers-reduced-motion: reduce)')?.matches??false;
 const externalLink='https://bclover.jp/';
-let featuredMedia=null,context=null,audioEnabled=false;
-try{audioEnabled=localStorage.getItem('oneup-october-audio')==='on'}catch{}
+let featuredMedia=null;
 const escape=str=>String(str??'').replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;','\'':'&#39;'}[ch]));
 const normalize=m=>({
  id:m.idMal?'mal-'+m.idMal:'al-'+m.id,
@@ -46,67 +45,7 @@ function featureHTML(){
   '</div>'+
  '</section>';
 }
-function visibleAudioLabel(btn){
- btn.setAttribute('aria-pressed',String(audioEnabled));
- btn.setAttribute('aria-label',audioEnabled?'Desactivar sonido de temporada':'Activar sonido de temporada');
- btn.innerHTML='<span class="oct-audio-indicator" aria-hidden="true"></span>'+
-  '<span aria-hidden="true">'+(audioEnabled?'SONIDO ACTIVADO':'ACTIVAR SONIDO')+'</span>';
-}
-async function playSting(){
- const Audio=window.AudioContext||window.webkitAudioContext;
- if(!Audio||!audioEnabled)return;
- try{
-  if(!context)context=new Audio();
-  if(context.state==='suspended')await context.resume();
-  const ctx=context,start=ctx.currentTime+.008;
-  const master=ctx.createGain();
-  master.gain.setValueAtTime(.0001,start);
-  master.gain.linearRampToValueAtTime(.065,start+.075);
-  master.gain.exponentialRampToValueAtTime(.0001,start+.92);
-  master.connect(ctx.destination);
-  const notes=[{f:196,len:.63,t:0,v:.27},{f:392,len:.46,t:.08,v:.21},{f:588,len:.53,t:.18,v:.09}];
-  for(const n of notes){
-   const oscillator=ctx.createOscillator(),envelope=ctx.createGain();
-   oscillator.type='sine';
-   oscillator.frequency.setValueAtTime(n.f,start+n.t);
-   oscillator.frequency.exponentialRampToValueAtTime(n.f*.996,start+n.t+n.len);
-   envelope.gain.setValueAtTime(.0001,start+n.t);
-   envelope.gain.linearRampToValueAtTime(n.v,start+n.t+.025);
-   envelope.gain.exponentialRampToValueAtTime(.0001,start+n.t+n.len);
-   oscillator.connect(envelope);envelope.connect(master);
-   oscillator.start(start+n.t);oscillator.stop(start+n.t+n.len+.02);
-  }
-  // Deterministic filtered wind: no copyrighted or downloaded sound sample.
-  const frames=Math.floor(ctx.sampleRate*.31);
-  const buffer=ctx.createBuffer(1,frames,ctx.sampleRate);
-  const channel=buffer.getChannelData(0);
-  let seed=90731;
-  for(let i=0;i<frames;i++){seed=(seed*1664525+1013904223)>>>0;channel[i]=(seed/2147483647-1)*.19}
-  const wind=ctx.createBufferSource();wind.buffer=buffer;
-  const filter=ctx.createBiquadFilter();filter.type='lowpass';filter.frequency.value=920;
-  const gain=ctx.createGain();gain.gain.value=.08;
-  wind.connect(filter);filter.connect(gain);gain.connect(master);
-  wind.start(start);wind.stop(start+.31);
- }catch(error){console.info('1UP: el navegador ha restringido el sonido.',error?.message)}
-}
-function audioControl(){
- const btn=document.createElement('button');
- btn.type='button';btn.className='oct-event-control';btn.id='oct-audio-control';
- visibleAudioLabel(btn);
- btn.addEventListener('click',()=>{
-  audioEnabled=!audioEnabled;
-  try{localStorage.setItem('oneup-october-audio',audioEnabled?'on':'off')}catch{}
-  visibleAudioLabel(btn);
-  if(audioEnabled)void playSting();
- });
- const row=document.createElement('div');
- row.className='oct-sound-wrap';
- row.appendChild(btn);
- const actions=$('.hero .hero-actions');
- if(actions)actions.after(row);
- else $('.hero-copy')?.appendChild(row);
-}
-
+// Intro is automatic; no season sound option or extra synthesizer is displayed.
 function showFeaturedAnime(anime){
  if(!anime||!/black\s*clover/i.test(anime.title||''))return;
  featuredMedia=anime;
@@ -244,10 +183,9 @@ function init(){
   const editorialEnd=$('#oneup-studio-airing')||anchor;
   editorialEnd.insertAdjacentHTML('afterend',featureHTML());
  }
- audioControl();
  activateEditorialMotion();
  activateParallax();
- // No automatic sound on load: iPhone requires an eligible user gesture.
+ // The original cinema intro attempts audio automatically. Safari may deny it.
  void fetchFeature();
 }
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});
