@@ -18,6 +18,6 @@ El script prepara la tipografía Bangers (licencia SIL OFL), la intro MP4 de 1UP
 
 No hay IPA firmada, TestFlight ni publicación en App Store. Xcode y la cuenta de distribución son tareas independientes de GitHub Pages. Esta app ofrece valor nativo (SwiftUI, favoritos locales, AVPlayer) y no introduce código de terceros sin licencia.
 
-La biblioteca multimedia actual no tiene episodios con derechos configurados. No se muestran capítulos falsos. WebVTT se puede seleccionar solo para medios con pistas reales. Para subtítulos HLS nativos el sistema AVPlayer conserva el comportamiento de iOS, que no permite asegurar que el efecto visual personalizado aparezca en pantalla completa.
+Las fuentes configuradas incluyen el episodio 1 de LUPIN THE 3rd PART 4 desde el canal oficial TMS mediante YouTube, que se abre externamente en iOS; no se aloja ningún video de terceros. No se muestran capítulos falsos. WebVTT se puede seleccionar solo para medios con pistas reales. Para subtítulos HLS nativos el sistema AVPlayer conserva el comportamiento de iOS, que no permite asegurar que el efecto visual personalizado aparezca en pantalla completa.
 
 Safari web no puede garantizar audio automático audible en la primera visita; en la app nativa el audio AVPlayer se intenta al abrir. Revisa las preferencias de audio y accesibilidad de cada dispositivo.

@@ -86,10 +86,21 @@ struct OneUpVideoSource: Decodable, Identifiable {
     let language:String?
     let quality:String?
     let tracks:[OneUpSubtitleTrack]?
-    var id:String{(src ?? "")+(name ?? "")}
+    let mode:String?
+    let provider:String?
+    let videoId:String?
+    var id:String{(src ?? videoId ?? "")+(name ?? "")}
     func authorizedURL(inherited:String?) -> URL? {
         guard ["owned","authorized"].contains((rights ?? inherited ?? "").lowercased()) else{return nil}
         return OneUpAnime.https(src)
+    }
+    func officialWatchURL(inherited:String?) -> URL? {
+        guard ["owned","authorized"].contains((rights ?? inherited ?? "").lowercased()),
+              mode == "official_embed", provider == "youtube",
+              let videoId, videoId.range(of:"^[A-Za-z0-9_-]{11}$",options:.regularExpression) != nil else {
+            return nil
+        }
+        return URL(string:"https://www.youtube.com/watch?v="+videoId)
     }
 }
 struct OneUpSubtitleTrack: Decodable, Identifiable {
@@ -116,7 +127,7 @@ struct OneUpSubtitleTrack: Decodable, Identifiable {
             guard (response as? HTTPURLResponse)?.statusCode==200 else{throw URLError(.badServerResponse)}
             let file=try JSONDecoder().decode(OneUpMediaDocument.self,from:data)
             episodes=(file.entries[id]?.episodes ?? []).filter { e in
-                (e.sources ?? []).contains{$0.authorizedURL(inherited:e.rights) != nil}
+                (e.sources ?? []).contains{ $0.authorizedURL(inherited:e.rights) != nil || $0.officialWatchURL(inherited:e.rights) != nil }
             }.sorted{$0.episodeNumber<$1.episodeNumber}
             message=episodes.isEmpty ? "Este título no tiene episodios autorizados dentro de 1UP Anime." : "\(episodes.count) episodios disponibles"
         } catch {message="No se pudo verificar la biblioteca de episodios."}

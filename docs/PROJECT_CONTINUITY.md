@@ -313,3 +313,9 @@ Al concluir cada trabajo agregar:
 - Subtitle Studio Bangers (OFL), Arial/Outfit/Arcade, ES/EN basado en WebVTT reales, estilos, escala, preferencias. Generador local opcional faster-whisper + Argos para videos con derechos; sin extracción ilícita.
 - Cuatro frentes independientes bajo GitHub Actions y documento de responsabilidades. No afirmar múltiples agentes autónomos de código sin tales herramientas.
 - Pendientes: PR CI completo, Pages, prueba Safari físico, Xcode firma/App Store, fuentes episodios realmente autorizadas y servicios de usuario. Sin declarar streaming ni subtítulos automáticos de obras sin archivo.
+
+### 2026-10-19 — Primer episodio de canal oficial en 1UP
+- TMS (https://tmsanime.com/anime-on-tms-official-channel) enlaza episodios completos de LUPIN THE 3rd PART 4; EP01 inglés en https://www.youtube.com/watch?v=K8LrLO_omys.
+- Rama feature/release-official-episode-qa-20261019 integra mal-27947 E1 mediante official_embed de YouTube-nocookie, sin descargar ni retransmitir video.
+- Portada muestra botón a ficha y enlace externo, con prioridad Kokomi 1.7; ID exacto para reproductor de 1UP. No extiende esta disponibilidad a todo el catálogo.
+- Pendientes: pruebas, despliegue, permiso de iframe y disponibilidad regional en Safari físico. Cuando iframe esté bloqueado queda enlace al YouTube oficial.

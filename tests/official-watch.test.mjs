@@ -57,7 +57,9 @@ test('la UI conserva el player integrado y no anida botones con enlaces externos
  assert.match(airing,/airing-official-cta/);
  assert.match(airing,/streaming:Array\.isArray\(a\.streaming\)/);
  assert.match(read('episode-player.js'),/OneUpEpisodePlayer/);
- assert.match(read('data/licensed-media.json'),/"entries":\s*\{\s*\}/);
+ const library=JSON.parse(read('data/licensed-media.json'));
+ assert.equal(library.version,1);
+ assert.ok(library.entries && typeof library.entries==='object' && !Array.isArray(library.entries));
 });
 test('el refresco programado solicitará enlaces de AniList sin videos ni claves',()=>{
  const script=read('scripts/refresh-airing.mjs');
