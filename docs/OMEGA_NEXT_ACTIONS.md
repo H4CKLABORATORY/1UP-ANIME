@@ -19,3 +19,6 @@ Restricción: presupuesto $0, no compras/deploy destructivo sin permiso; no conv
 
 
 - [ ] **Motion profesional 1UP:** revisar PR de rama `feature/oneup-premium-window-motion-20261017`, prueba `scripts/e2e-oneup-motion.mjs`, aceptación navegador, render de modal/menú/rutas en móvil y desktop con y sin reducción. Fusionar sólo si CI y compatibilidad están correctos, comprobar main y despliegue real de GitHub Pages. Sin copiar estilos comerciales protegidos.
+
+
+- [ ] **Presencia online 1UP (2026-10-18):** revisar PR de `feature/oneup-live-presence-counter-20261018`; confirmar tests automáticos, verificar responsive iPhone y escritorio, asociar proyecto Supabase Realtime gratuito si existe o crear con consentimiento del propietario, configurar únicamente el `sb_publishable_` público en `presence-config.js`, y comprobar conteos entre sesiones reales. No afirmar contador operativo con `ONEUP_PRESENCE_CONFIG=null`.
