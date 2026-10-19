@@ -267,3 +267,12 @@ Al concluir cada trabajo agregar:
 - Funciones multimedia originales no tocadas; se mantienen las reglas de fuentes con licencia. Sin gastos ni credenciales.
 - Validación PR #52: fixture Python, Puppeteer, navegador móvil/escritorio, calidad y módulos HLS/links exitosos.
 - Primera extracción real, publicación Pages y Safari físico pendientes de comprobación posterior al cambio main.
+
+
+### 2026-10-19 — Reddit Node scraping y primer embed editorial TMS
+- Pedido: aprender Reddit r/node zy1skm, reutilizar técnicas de scraping educativo y acercar reproducción legal de anime en 1UP.
+- Investigación: `docs/REDDIT_NODE_SCRAPING_Y_FUENTES_OFICIALES_20261019.md`, distingue Axios/Fetch + Cheerio/BeautifulSoup de Puppeteer/Playwright para DOM dinámico y APIs permitidas; scraping de metadatos NO habilita copiar streams.
+- Branch: `feature/official-tms-episode-scraping-notes-20261019`. Media: `data/licensed-media.json` añade `mal-27947`, Lupin III Part IV capítulo 1, fuente exclusiva mediante YouTube embed oficial TMS (`K8LrLO_omys`, inglés), sin alojar archivos. El player existente ya proporciona enlace alternativo al proveedor cuando el iframe falle.
+- Control: `scripts/test-official-episode-library.mjs` y `.github/workflows/official-episode-library.yml` validan esquema, identidad, fuentes y regresión Node sin depender de archivos audiovisuales. No afirmar CI PASS hasta ver ejecución.
+- Estado: SOLO CAMBIOS EN RAMA/PR hasta merge/deploy y QA; no se pudo clonar en entorno local por DNS bloqueado. Quedan pendientes reproductor real de YouTube, restricciones regionales, controles de inserción, prueba Safari físico y GitHub Pages. Nueva fuente no equivale a derechos para descarga/distribución.
+- Próximo: revisar GitHub Actions y enlaces reales; publicar solo con CI verde, confirmar Pages, y luego ampliar episodios/canales oficiales donde puedan embeberse.
