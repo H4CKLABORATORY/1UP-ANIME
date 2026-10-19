@@ -1,0 +1,49 @@
+name: ONEUP Editorial Finale QA
+on:
+  workflow_dispatch:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'index.html'
+      - 'oneup-finale.css'
+      - 'oneup-finale.js'
+      - 'tests/oneup-finale.test.mjs'
+      - 'scripts/e2e-oneup-finale.mjs'
+      - '.github/workflows/editorial-finale.yml'
+      - 'sw.js'
+  push:
+    branches: [main]
+    paths:
+      - 'oneup-finale.css'
+      - 'oneup-finale.js'
+      - 'tests/oneup-finale.test.mjs'
+      - 'scripts/e2e-oneup-finale.mjs'
+      - '.github/workflows/editorial-finale.yml'
+permissions:
+  contents: read
+jobs:
+  editorial:
+    runs-on: ubuntu-latest
+    timeout-minutes: 14
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validación sintáctica y contractual
+        run: |
+          node --check oneup-finale.js
+          node --check scripts/e2e-oneup-finale.mjs
+          node --test tests/oneup-finale.test.mjs
+      - name: Dependencias del navegador
+        run: npm install --no-audit --no-fund --ignore-scripts && npx playwright install --with-deps chromium
+      - name: Capturas y recorridos móvil y escritorio
+        run: node scripts/e2e-oneup-finale.mjs
+      - name: Guardar evidencia visual
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: oneup-editorial-finale-qa
+          path: e2e-finale-*.png
+          retention-days: 7
+          if-no-files-found: ignore

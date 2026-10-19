@@ -25,6 +25,7 @@
 <script defer src="./episode-comments.js"></script>
 <script defer src="./auth.js"></script><script defer src="./anime-title-search.js"></script><script defer src="./studio.js"></script>
 <script type="module" src="./franchise-explorer.mjs"></script>
+<script defer src="./oneup-finale.js"></script>
 <script defer src="./hls-adapter.js"></script><script defer src="./episode-player.js"></script>
 <script defer src="./motion.js"></script>
 <script defer src="./official-watch.js"></script>
@@ -53,6 +54,7 @@
 <link rel="stylesheet" href="styles/depth-toggle.css">
 <link rel="stylesheet" href="styles/anime-card-depth.css">
 <link rel="stylesheet" href="./ui-quality.css">
+<link rel="stylesheet" href="./oneup-finale.css">
 </head><body class="oneup-kokomi kokomi-mobile-reference" data-theme-preview="off">
 <div id="oneup-opening" role="dialog" aria-modal="true" aria-label="Introducción cinematográfica de 1UP ANIME">
  <section id="cinema" data-mode="opening" aria-label="Animación de entrada 1UP ANIME">
@@ -114,6 +116,19 @@
    <div class="hero-art-card"><div class="hero-art-emblem"><img id="hero-feature-cover" src="./assets/oneup-crest.svg" alt="Póster del anime seleccionado"></div><div class="hero-art-caption"><span>ANIME SELECCIONADO</span><b id="hero-feature-title">TU SIGUIENTE HISTORIA</b><small id="hero-feature-caption">EXPLORA UNA HISTORIA</small></div></div>
    </div>
    <div class="hero-bottom wrap"><span>01 / 1UP UNIVERSE</span><span>DESLIZA PARA DESCUBRIR ↓</span></div>
+  </section>
+  <section id="oneup-finale-deck" class="oneup-finale-deck" aria-label="Accesos rápidos para descubrir anime">
+    <div class="oneup-finale-intro">
+      <span class="oneup-finale-overline">ENCUENTRA TU PRÓXIMA HISTORIA</span>
+      <h2>Tu universo, a un toque.</h2>
+      <p class="oneup-finale-source" data-finale-status role="status" aria-live="polite">Consultando la última selección del catálogo…</p>
+    </div>
+    <div class="oneup-finale-actions">
+      <button type="button" class="oneup-finale-action" data-route="catalogo"><span class="glyph" aria-hidden="true">▦</span><strong>Todo el catálogo</strong></button>
+      <button type="button" class="oneup-finale-action" data-route="temporada"><span class="glyph" aria-hidden="true">✦</span><strong>En emisión</strong></button>
+      <button type="button" class="oneup-finale-action" data-route="programacion"><span class="glyph" aria-hidden="true">◷</span><strong>Calendario</strong></button>
+      <button type="button" class="oneup-finale-action" data-route="milista"><span class="glyph" aria-hidden="true">♡</span><strong>Mi lista</strong></button>
+    </div>
   </section>
   <section class="marquee" aria-hidden="true"><div>✦ NUEVA VIDA ✦ NUEVO ANIME ✦ 1UP ORIGINAL ✦ TU HISTORIA CONTINÚA ✦ SUBE DE NIVEL ✦ NUEVA VIDA ✦ NUEVO ANIME ✦ 1UP ORIGINAL ✦ TU HISTORIA CONTINÚA ✦ SUBE DE NIVEL</div></section>
   <section class="wrap explore-section">

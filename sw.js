@@ -3,10 +3,10 @@
 // CacheStorage is origin-wide: GitHub Pages apps on the same domain share it.
 // Restrict cleanup to caches that belong to this 1UP Anime service worker.
 const CACHE_PREFIX='oneup-stream-integrated-';
-const CACHE=CACHE_PREFIX+'v34-verified-episode-links-20261019';
+const CACHE=CACHE_PREFIX+'v35-editorial-and-verified-links-20261019';
 const SHELL=[
  './','./index.html','./studio.css','./studio.js','./anime-title-search.js','./spotlight.css',
- './franchise-explorer.mjs','./franchise-explorer.css','./ui-quality.css','./assets/oneup-crest-mark.svg','./motion.css','./motion.js','./official-watch.js','./official-watch.css','./brand-v2.css','./player.css','./auth.js',
+ './franchise-explorer.mjs','./franchise-explorer.css','./oneup-finale.css','./oneup-finale.js','./ui-quality.css','./assets/oneup-crest-mark.svg','./motion.css','./motion.js','./official-watch.js','./official-watch.css','./brand-v2.css','./player.css','./auth.js',
  './auth-config.js','./manifest.webmanifest','./assets/oneup-crest.svg',
  './assets/icon-180.png','./assets/icon-192.png','./assets/icon-512.png',
  './assets/1up-anime-logo-poster.jpg','./assets/1up-anime-app-icon-512.png',

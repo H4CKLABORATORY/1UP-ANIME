@@ -294,3 +294,9 @@ Al concluir cada trabajo agregar:
 - Documentación de investigación y riesgos `docs/CRUNCHYROLL_API_GITHUB_RESEARCH_20261019.md`. Las API comunitarias no acreditan una licencia de video. No se copia archivo, stream ni credencial y no se añade servicio privado al sitio.
 - Estado inicial: código en rama; CI/merge/publicación/Safari por verificar. El acceso real puede requerir cuenta, suscripción, región y disponibilidad del proveedor. No afirmar video integrado ni gratis.
 - Próxima tarea: revisar CI ONEUP Official Watch Links, controles visuales móvil, fusionar solo si pasan las pruebas y confirmar despliegue.
+
+### 2026-10-19 — Cierre editorial gradual
+- CSS/JS original para interfaz modernizada, navegación de acceso rápido y fecha/títulos únicos del catálogo. Sin copia de repositorios archivados.
+- Rama de entrega feature/oneup-editorial-finale-20261019, pruebas Chromium 390/1366, HLS, temas y calidad; no sustituye configuración backend.
+- Se integran los enlaces oficiales nuevos de otro commit en sw.js, preservando el resto de funciones y la licencia de reproducción.
+- Leer docs/ONEUP_RELEASE_CLOSURE_20261019.md. Google OAuth, comunidad remota y episodios autorizados aún necesitan configuración; Safari físico pendiente.

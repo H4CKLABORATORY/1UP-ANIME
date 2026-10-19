@@ -1,0 +1,278 @@
+/*
+ * 1UP EDITORIAL FINALE — diseño original inspirado por patrones generales
+ * de catálogos open source, sin copiar código, logotipos ni ilustraciones ajenas.
+ * Esmeralda y Violeta reciben pulido. El tema "Original" queda intacto.
+ * Propósito: contraste, jerarquía, tarjetas limpias, lectura y navegación móvil.
+ */
+:root[data-oneup-theme="esmeralda"] body.oneup-kokomi,
+:root[data-oneup-theme="violeta"] body.oneup-kokomi {
+  --finish-bg:var(--oneup-pal-bg,#080f0d);
+  --finish-surface:var(--oneup-pal-card,#10201a);
+  --finish-raised:var(--oneup-pal-raised,#172b23);
+  --finish-accent:var(--oneup-pal-accent,#7aeeab);
+  --finish-ink:var(--oneup-pal-ink,#f5fff8);
+  --finish-muted:var(--oneup-pal-muted,#b6cfc2);
+  --finish-line:var(--oneup-pal-line,#76c49a40);
+  --finish-soft:var(--oneup-pal-soft,#2cd28620);
+  --finish-on:var(--oneup-pal-on,#05130b);
+  --finish-shadow:0 24px 75px #0008;
+  background:
+    radial-gradient(ellipse at 88% 15%,var(--finish-soft),transparent 29%),
+    linear-gradient(180deg,#09110fee,var(--finish-bg) 47%,#080d11);
+  color:var(--finish-ink);
+}
+:root[data-oneup-theme="esmeralda"] :root:not([data-oneup-theme="original"]) body.oneup-kokomi .app-sheen,
+:root[data-oneup-theme="violeta"] :root:not([data-oneup-theme="original"]) body.oneup-kokomi .app-sheen {opacity:.45;pointer-events:none}
+:root:not([data-oneup-theme="original"]) body.oneup-kokomi .header {
+  background:color-mix(in srgb,var(--finish-bg,#090e12) 88%,transparent);
+  border-bottom:1px solid var(--finish-line,#ffffff30);
+  -webkit-backdrop-filter:blur(20px) saturate(145%);
+  backdrop-filter:blur(20px) saturate(145%);
+}
+:root:not([data-oneup-theme="original"]) body.oneup-kokomi .header-inner {gap:clamp(8px,2vw,24px)}
+:root:not([data-oneup-theme="original"]) body.oneup-kokomi .desktop-links{border-radius:999px;padding:5px;background:color-mix(in srgb,var(--finish-surface,#131b1b) 90%,transparent);border:1px solid var(--finish-line,#ffffff30);gap:3px}
+:root:not([data-oneup-theme="original"]) body.oneup-kokomi .desktop-links button,
+:root:not([data-oneup-theme="original"]) body.oneup-kokomi .desktop-links a {min-height:37px;border-radius:999px;padding:10px 15px;font-size:12px;letter-spacing:.01em}
+:root:not([data-oneup-theme="original"]) body.oneup-kokomi .desktop-links button.active{background:var(--finish-soft,#244d35);color:var(--finish-ink,#fff)}
+:root:not([data-oneup-theme="original"]) body.oneup-kokomi .desktop-links button.active::after{display:none}
+:root:not([data-oneup-theme="original"]) body.oneup-kokomi .header-right :is(.account-button,.icon-button){
+  border-radius:12px;min-height:44px;border:1px solid var(--finish-line,#ffffff30);
+  background:var(--finish-surface,#1a2428);
+}
+:root:not([data-oneup-theme="original"]) body.oneup-kokomi :is(.account-button,.icon-button,.cta,.searchbar button):focus-visible{
+ outline:3px solid var(--finish-accent,#83f7be);outline-offset:3px
+}
+
+/* Portada editorial: arte real del catálogo, énfasis en información legible. */
+:root:not([data-oneup-theme="original"]) body.oneup-kokomi .hero{
+ min-height:620px;height:clamp(620px,76svh,790px);
+ background:var(--finish-bg,#081112);border-bottom:1px solid var(--finish-line,#ffffff30);
+}
+:root:not([data-oneup-theme="original"]) body.oneup-kokomi .hero-poster{
+ opacity:.84;background-position:74% 38%;filter:brightness(.86) saturate(1.08) contrast(1.02);
+ transform:none;animation:none;
+}
+:root:not([data-oneup-theme="original"]) body.oneup-kokomi .hero-darken{
+ background:
+   linear-gradient(90deg,#050c0efc 2%,#07110ef2 28%,#081511a6 60%,#09171532 100%),
+   linear-gradient(0deg,var(--finish-bg,#080d0d) 0%,transparent 35%,#03090d57 100%);
+}
+:root:not([data-oneup-theme="original"]) body.oneup-kokomi .hero-lines{opacity:.12;mix-blend-mode:screen}
+:root:not([data-oneup-theme="original"]) body.oneup-kokomi .hero-floating{opacity:.10}
+:root:not([data-oneup-theme="original"]) body.oneup-kokomi .hero-grid{gap:clamp(20px,4vw,55px)}
+:root:not([data-oneup-theme="original"]) body.oneup-kokomi .hero-copy{max-width:min(730px,65%)}
+:root:not([data-oneup-theme="original"]) body.oneup-kokomi .hero h1{
+ font-family:'Barlow Condensed',Impact,sans-serif;
+ text-wrap:balance;letter-spacing:-.015em;
+ line-height:.88;text-shadow:0 12px 28px #0009;
+}
+:root:not([data-oneup-theme="original"]) body.oneup-kokomi .hero h1 span{
+ color:var(--finish-accent,#89efb0);
+ background:none;-webkit-text-fill-color:currentColor;
+}
+:root:not([data-oneup-theme="original"]) body.oneup-kokomi .hero-description{
+ color:#edf4f0;font-size:clamp(13px,1.25vw,16px);
+ max-width:560px;line-height:1.62;display:-webkit-box;
+ -webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;
+ text-shadow:0 2px 14px #000c;
+}
+:root:not([data-oneup-theme="original"]) body.oneup-kokomi .limited-tag{
+ border:1px solid var(--finish-line,#ffffff50);border-radius:999px;
+ background:color-mix(in srgb,var(--finish-surface,#09191c) 65%,transparent);
+ color:var(--finish-accent,#91f3ba);letter-spacing:.16em;
+}
+:root:not([data-oneup-theme="original"]) body.oneup-kokomi .hero-badges span{
+ border-radius:99px;border-color:var(--finish-line,#ffffff4a);
+ background:#050e11a8;color:#edf8f2;
+}
+:root:not([data-oneup-theme="original"]) body.oneup-kokomi .hero-actions .cta{border-radius:12px;min-height:49px;padding:12px 22px}
+:root:not([data-oneup-theme="original"]) body.oneup-kokomi .hero-actions .primary,
+:root:not([data-oneup-theme="original"]) body.oneup-kokomi .cta.primary {
+ background:linear-gradient(115deg,var(--finish-accent,#7aeeab),var(--oneup-pal-active,#38ca83));
+ color:var(--finish-on,#07130a);
+ box-shadow:0 10px 35px var(--finish-soft,#42e7a033);
+ border:1px solid var(--finish-accent,#7aeeab);
+}
+:root:not([data-oneup-theme="original"]) body.oneup-kokomi .hero-actions .outline,
+:root:not([data-oneup-theme="original"]) body.oneup-kokomi .cta.outline {
+ color:var(--finish-ink,#fff);border:1px solid var(--finish-line,#ffffff44);
+ background:color-mix(in srgb,var(--finish-raised,#15231d) 75%,transparent);
+}
+:root:not([data-oneup-theme="original"]) body.oneup-kokomi .hero-art-card{
+ border-radius:18px;transform:rotate(2deg);
+ border:1px solid var(--finish-line,#ffffff60);
+ background:var(--finish-raised,#172620);
+ box-shadow:0 34px 100px #000a,0 0 55px var(--finish-soft,#9affb011);
+ animation:none;max-width:280px;
+}
+:root:not([data-oneup-theme="original"]) body.oneup-kokomi .hero-art-emblem{border-radius:11px;min-height:270px}
+:root:not([data-oneup-theme="original"]) body.oneup-kokomi .hero-art-emblem img{object-fit:cover}
+:root:not([data-oneup-theme="original"]) body.oneup-kokomi .hero-pick{
+ border-radius:10px;border-color:var(--finish-line,#ffffff33);
+ background:color-mix(in srgb,var(--finish-raised,#192521) 88%,transparent);
+}
+:root:not([data-oneup-theme="original"]) body.oneup-kokomi .hero-pick.active{border-color:var(--finish-accent,#8effbc)}
+
+/* Exploración, navegación y estado sin métricas inventadas. */
+:root:not([data-oneup-theme="original"]) body.oneup-kokomi .explore-section{margin-top:clamp(25px,5vw,56px)}
+:root:not([data-oneup-theme="original"]) body.oneup-kokomi .explore-top h2,
+:root:not([data-oneup-theme="original"]) body.oneup-kokomi .section-heading h2{letter-spacing:-.02em}
+:root:not([data-oneup-theme="original"]) body.oneup-kokomi .searchbar{
+ border:1px solid var(--finish-line,#ffffff38);
+ background:var(--finish-raised,#182b22);border-radius:14px;overflow:hidden;
+ box-shadow:0 10px 40px #0003;
+}
+:root:not([data-oneup-theme="original"]) body.oneup-kokomi .searchbar input{color:var(--finish-ink,#fff);min-width:0}
+:root:not([data-oneup-theme="original"]) body.oneup-kokomi .searchbar input::placeholder{color:var(--finish-muted,#c3d5c8);opacity:.8}
+:root:not([data-oneup-theme="original"]) body.oneup-kokomi .searchbar button{
+ border-radius:10px;margin:4px;background:var(--finish-accent,#7aeeab);
+ color:var(--finish-on,#052014);
+}
+:root:not([data-oneup-theme="original"]) body.oneup-kokomi .genre-pills button{
+ border-radius:99px;min-height:38px;
+ border:1px solid var(--finish-line,#ffffff30);
+ background:var(--finish-surface,#18241f);
+ color:var(--finish-muted,#d6ddd8);
+}
+:root:not([data-oneup-theme="original"]) body.oneup-kokomi .genre-pills button:hover,
+:root:not([data-oneup-theme="original"]) body.oneup-kokomi .genre-pills button.active{
+ border-color:var(--finish-accent,#7aeeab);
+ color:var(--finish-accent,#7aeeab);
+}
+.oneup-finale-deck{
+ width:min(1380px,calc(100% - 96px));
+ margin:24px auto 6px;padding:16px;
+ border:1px solid var(--finish-line,#ffffff2f);
+ background:
+  linear-gradient(120deg,var(--finish-soft,#275c3c32),transparent 60%),
+  var(--finish-surface,#14201c);
+ border-radius:19px;
+ display:grid;grid-template-columns:minmax(230px,.83fr) minmax(0,1.9fr);
+ gap:16px;align-items:center;
+ box-shadow:0 16px 45px #0004;
+}
+.oneup-finale-overline{display:block;color:var(--finish-accent,#90ffba);font:800 10px/1.6 'Outfit',sans-serif;letter-spacing:.19em}
+.oneup-finale-deck h2{font:850 clamp(20px,2.2vw,28px)/1.04 'Barlow Condensed',Impact,sans-serif;letter-spacing:.02em;margin:6px 0 9px}
+.oneup-finale-source{color:var(--finish-muted,#bfd4c6);font-size:11px;line-height:1.5;margin:0;max-width:380px}
+.oneup-finale-actions{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+.oneup-finale-action{
+ min-width:0;min-height:92px;padding:14px 10px;display:flex;flex-direction:column;
+ align-items:flex-start;justify-content:center;gap:8px;
+ border:1px solid var(--finish-line,#ffffff35);border-radius:13px;
+ background:var(--finish-raised,#213229);color:var(--finish-ink,#fff);
+ text-align:left;transition:transform .2s ease,border-color .2s ease,background .2s ease;
+}
+.oneup-finale-action .glyph{font-size:20px;line-height:1;color:var(--finish-accent,#8efab7)}
+.oneup-finale-action strong{font-size:11px;font-weight:800;letter-spacing:.015em;line-height:1.25}
+.oneup-finale-action:hover{transform:translateY(-2px);border-color:var(--finish-accent,#84ffaa);background:var(--finish-soft,#23563a)}
+.oneup-finale-action:focus-visible{outline:3px solid var(--finish-accent,#8effc4);outline-offset:3px}
+.oneup-finale-action[aria-current="page"]{border-color:var(--finish-accent,#81faab)}
+
+/* Las tarjetas son fichas de catálogo, no botones de reproducción engañosos. */
+:root:not([data-oneup-theme="original"]) body.oneup-kokomi .section{margin-top:clamp(44px,5vw,72px)}
+:root:not([data-oneup-theme="original"]) body.oneup-kokomi .section-heading{gap:12px}
+:root:not([data-oneup-theme="original"]) body.oneup-kokomi .section-more{
+ border:1px solid var(--finish-line,#ffffff32);border-radius:99px;
+ background:var(--finish-surface,#14231e);padding:9px 14px;
+ color:var(--finish-accent,#9efbb9);
+}
+:root:not([data-oneup-theme="original"]) body.oneup-kokomi .anime-card{
+ border-radius:16px;border:1px solid var(--finish-line,#ffffff2b);
+ overflow:hidden;background:var(--finish-surface,#142520);
+ box-shadow:0 8px 32px #0004;
+ transition:border-color .23s ease,transform .23s ease,box-shadow .23s ease;
+}
+:root:not([data-oneup-theme="original"]) body.oneup-kokomi .anime-card:hover,
+:root:not([data-oneup-theme="original"]) body.oneup-kokomi .anime-card:focus-within{
+ border-color:var(--finish-accent,#90ffc2);
+ transform:translateY(-3px);
+ box-shadow:var(--finish-shadow,0 24px 70px #0009);
+}
+:root:not([data-oneup-theme="original"]) body.oneup-kokomi .anime-card .anime-art{background:var(--finish-raised,#1c2c21)}
+:root:not([data-oneup-theme="original"]) body.oneup-kokomi .anime-card .anime-art img{
+ object-fit:cover;filter:none;transition:transform .3s ease;
+}
+:root:not([data-oneup-theme="original"]) body.oneup-kokomi .anime-card:hover .anime-art img{transform:scale(1.035)}
+:root:not([data-oneup-theme="original"]) body.oneup-kokomi .anime-card .card-info{
+ min-height:89px;padding:12px;
+ background:linear-gradient(160deg,var(--finish-surface,#182720),var(--finish-raised,#1b2924));
+}
+:root:not([data-oneup-theme="original"]) body.oneup-kokomi .anime-card .card-name{font-weight:800;line-height:1.35;color:var(--finish-ink,#fff)}
+:root:not([data-oneup-theme="original"]) body.oneup-kokomi .anime-card .card-type{color:var(--finish-muted,#cbd8d0);background:var(--finish-soft,#275e3e)}
+:root:not([data-oneup-theme="original"]) body.oneup-kokomi .anime-card .rating{border-radius:9px}
+:root:not([data-oneup-theme="original"]) body.oneup-kokomi .anime-card .rating b{color:var(--finish-accent,#aaffcc)}
+:root:not([data-oneup-theme="original"]) body.oneup-kokomi .anime-save{border-radius:11px;min-height:37px;min-width:37px}
+:root:not([data-oneup-theme="original"]) body.oneup-kokomi .anime-save.saved{color:var(--finish-on,#07170c);background:var(--finish-accent,#94ffc0)}
+:root:not([data-oneup-theme="original"]) body.oneup-kokomi .season-banner,
+:root:not([data-oneup-theme="original"]) body.oneup-kokomi .community-note{
+ border:1px solid var(--finish-line,#ffffff33);border-radius:20px;
+ box-shadow:0 14px 48px #0003;overflow:hidden;
+}
+:root:not([data-oneup-theme="original"]) body.oneup-kokomi .schedule-item{
+ border-radius:12px;border:1px solid var(--finish-line,#ffffff33);
+ background:var(--finish-surface,#182522);
+}
+:root:not([data-oneup-theme="original"]) body.oneup-kokomi .browse-controls select,
+:root:not([data-oneup-theme="original"]) body.oneup-kokomi .browse-controls button{
+ border:1px solid var(--finish-line,#ffffff42);border-radius:10px;
+ background:var(--finish-raised,#1d2d25);color:var(--finish-ink,#fff);
+ min-height:44px;
+}
+:root:not([data-oneup-theme="original"]) body.oneup-kokomi .footer{border-top:1px solid var(--finish-line,#ffffff22);color:var(--finish-muted,#bccdc0)}
+:root:not([data-oneup-theme="original"]) body.oneup-kokomi .footer a{color:var(--finish-accent,#aafcba)}
+
+/* Modal: preservar click/tap del botón de cerrar y el reproductor existente. */
+:root:not([data-oneup-theme="original"]) body.oneup-kokomi #anime-dialog.anime-dialog{
+ border:1px solid var(--finish-line,#ffffff4c);
+ border-radius:17px;box-shadow:0 30px 105px #000c;
+}
+:root:not([data-oneup-theme="original"]) body.oneup-kokomi #anime-dialog .oneup-detail-lower{background:var(--finish-bg,#101b17)}
+:root:not([data-oneup-theme="original"]) body.oneup-kokomi #anime-dialog .oneup-detail-section h3{letter-spacing:.015em}
+:root:not([data-oneup-theme="original"]) body.oneup-kokomi #anime-dialog .oneup-genre-tag{
+ background:var(--finish-soft,#2a563b40);
+ border:1px solid var(--finish-line,#ffffff32);
+ color:var(--finish-ink,#fff);border-radius:99px;
+}
+:root:not([data-oneup-theme="original"]) body.oneup-kokomi #anime-dialog .oneup-franchise-tile{border-radius:13px}
+:root:not([data-oneup-theme="original"]) body.oneup-kokomi #anime-close{z-index:150;min-width:44px;min-height:44px}
+:root:not([data-oneup-theme="original"]) body.oneup-kokomi #auth-dialog{border-radius:16px}
+
+/* Móvil sin barras laterales, sin superposiciones sobre menú o X. */
+@media(max-width:1120px){
+ .oneup-finale-deck{grid-template-columns:1fr;gap:12px}
+ :root:not([data-oneup-theme="original"]) body.oneup-kokomi .desktop-links button,:root:not([data-oneup-theme="original"]) body.oneup-kokomi .desktop-links a{padding-inline:10px}
+}
+@media(max-width:780px){
+ :root:not([data-oneup-theme="original"]) body.oneup-kokomi .header{min-height:56px}
+ :root:not([data-oneup-theme="original"]) body.oneup-kokomi .hero{min-height:630px;height:auto}
+ :root:not([data-oneup-theme="original"]) body.oneup-kokomi .hero-grid{min-height:630px;height:auto}
+ :root:not([data-oneup-theme="original"]) body.oneup-kokomi .hero-copy{max-width:100%;min-width:0}
+ :root:not([data-oneup-theme="original"]) body.oneup-kokomi .hero-poster{background-position:66% center;filter:brightness(.65) saturate(1.05)}
+ :root:not([data-oneup-theme="original"]) body.oneup-kokomi .hero-darken{background:linear-gradient(0deg,var(--finish-bg,#09100d) 1%,#06100db8 45%,#04110b77 90%),linear-gradient(90deg,#03110bb8,#07141015)}
+ :root:not([data-oneup-theme="original"]) body.oneup-kokomi .hero-art-card{opacity:.18;filter:saturate(.7);pointer-events:none}
+ :root:not([data-oneup-theme="original"]) body.oneup-kokomi .hero-actions{gap:9px}
+ :root:not([data-oneup-theme="original"]) body.oneup-kokomi .hero-actions .cta{min-height:46px;padding-inline:14px}
+ :root:not([data-oneup-theme="original"]) body.oneup-kokomi .hero-description{font-size:13px;max-width:570px}
+ :root:not([data-oneup-theme="original"]) body.oneup-kokomi .hero-picks{position:relative;z-index:5}
+ :root:not([data-oneup-theme="original"]) body.oneup-kokomi .explore-section{margin-top:26px}
+ .oneup-finale-deck{width:calc(100% - 28px);margin-top:18px;padding:13px;gap:14px;border-radius:15px}
+ .oneup-finale-actions{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+ .oneup-finale-action{min-height:66px;gap:8px;flex-direction:row;align-items:center;justify-content:flex-start}
+ .oneup-finale-action .glyph{font-size:18px}
+ :root:not([data-oneup-theme="original"]) body.oneup-kokomi .anime-card .card-info{padding:10px;min-height:84px}
+ :root:not([data-oneup-theme="original"]) body.oneup-kokomi .section-more{min-height:40px}
+ :root:not([data-oneup-theme="original"]) body.oneup-kokomi .section{margin-top:38px}
+ :root:not([data-oneup-theme="original"]) body.oneup-kokomi .footer{padding-bottom:calc(88px + env(safe-area-inset-bottom))}
+}
+@media(max-width:380px){
+ .oneup-finale-deck h2{font-size:21px}
+ .oneup-finale-action{padding:10px 9px}
+ .oneup-finale-action strong{font-size:10px}
+}
+@media(prefers-reduced-motion:reduce){
+ :root:not([data-oneup-theme="original"]) body.oneup-kokomi .anime-card,
+ :root:not([data-oneup-theme="original"]) body.oneup-kokomi .anime-card img,
+ .oneup-finale-action{transition:none!important;animation:none!important}
+ :root:not([data-oneup-theme="original"]) body.oneup-kokomi .anime-card:hover,
+ .oneup-finale-action:hover{transform:none!important}
+}
