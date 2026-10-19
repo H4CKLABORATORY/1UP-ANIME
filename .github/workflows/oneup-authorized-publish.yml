@@ -19,6 +19,7 @@ on:
 
 permissions:
   contents: write
+  pages: write
 
 concurrency:
   group: oneup-authorized-publish-${{ github.ref }}
@@ -45,6 +46,7 @@ jobs:
         if: github.event_name != 'pull_request'
         run: node scripts/publish-approved-content.mjs
       - name: Commit approved manifests on main
+        id: publish
         if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
         run: |
           if ! git diff --quiet -- data/licensed-media.json data/manga-library.json; then
@@ -53,4 +55,12 @@ jobs:
             git add data/licensed-media.json data/manga-library.json
             git commit -m "content: publish declared authorized episodes and manga"
             git push
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=false" >> "$GITHUB_OUTPUT"
           fi
+      - name: Request Pages build after bot commit
+        if: steps.publish.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api -X POST "repos/${{ github.repository }}/pages/builds"
