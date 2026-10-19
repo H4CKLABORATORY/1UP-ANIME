@@ -71,3 +71,7 @@ Excluir secretos, datos personales irrelevantes, suposiciones no etiquetadas, pr
 - PR [#48](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/48) crea `assets/oneup-crest-mark.svg` y `ui-quality.css`; modifica modal, perfiles, headers, tipografía para títulos largos y botón de profundidad (el botón antes quedaba dentro del drawer oculto).
 - Pruebas reales Chromium y capturas de acceso en GitHub Actions; un segundo render mostró ventana compacta y centrada tras arreglar su altura. No llamar a Chromium Safari ni certificar una prueba en iPhone físico.
 - Registrar siguientes revisiones en `docs/SITE_QUALITY_AUDIT_20261018.md`; no sobreescribir la identidad actual ni inventar disponibilidad de login Google/video.
+
+### 2026-10-19 — automatización de navegador Puppeteer
+- Integración aislada en herramientas de desarrollo: `puppeteer@25.14.0`, script `scripts/puppeteer-site-audit.mjs` y workflow `ONEUP Puppeteer Browser QA`; no agregar Puppeteer a la carga de Safari/usuarios ni exponer un navegador público.
+- Revisión local automatizada (sin APIs externas), generación de capturas/JSON y verificación de UI básica. En `docs/PUPPETEER_QA.md` se explica funcionamiento y límites. No afirmar QA aprobado antes de CI.
