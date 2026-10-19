@@ -231,7 +231,13 @@ function hero(a, chosen=false){
  state.featured=a;
  const parts=(a.title||'Anime').trim().split(/\s+/);
  const first=parts.length>2?parts.slice(0,2).join(' '):parts.slice(0,1).join(' '),rest=parts.length>2?parts.slice(2).join(' '):parts.slice(1).join(' ');
- $('#hero-title').innerHTML=esc(first).toUpperCase()+(rest?'<br><span>'+esc(rest).toUpperCase()+'</span>':'');
+ const heroTitle=$('#hero-title');
+ if(heroTitle){
+  const length=Array.from(a.title||'').length;
+  heroTitle.dataset.titleSize=length>67?'extra-long':length>38?'long':'normal';
+  heroTitle.innerHTML=esc(first).toUpperCase()+(rest?'<br><span>'+esc(rest).toUpperCase()+'</span>':'');
+  document.querySelector('.hero')?.classList.toggle('has-long-title',length>38);
+ }
  $('#hero-description').textContent=a.source==='sample'
   ?'El catálogo se está recuperando. Consulta la ficha para ver los datos disponibles.'
   :(chosenSynopsis(a)||'Sinopsis aún no disponible para este anime.').slice(0,245);
