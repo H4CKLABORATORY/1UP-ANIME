@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="es"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#090d0e">
+<meta name="description" content="Laboratorio educativo de extracción de metadatos de anime con fuentes verificables.">
+<title>Laboratorio de scraping | 1UP Anime</title>
+<link rel="icon" href="./assets/1up-anime-app-icon-512.png" type="image/png">
+<link rel="stylesheet" href="./scraping-lab.css"><script defer src="./scraping-lab.js"></script>
+</head><body>
+<header class="bar"><a class="brand" href="./index.html" aria-label="Regresar a 1UP Anime"><img src="./assets/oneup-header-letters.png" alt="1UP ANIME"></a><a class="back" href="./index.html">← Volver al inicio</a></header>
+<main class="wrap">
+<div class="eyebrow">1UP ANIME / MOTOR DE DATOS</div>
+<h1>Laboratorio de <em>scraping.</em></h1>
+<p class="lead">Extracción educativa de datos públicos de anime: películas, series y producciones OVA/ONA. Cada ficha indica su fuente. Sin descargar episodios ni extraer reproductores.</p>
+<section class="metrics" aria-label="Resumen de extracción">
+<div><strong id="total">—</strong><span>fichas registradas</span></div>
+<div><strong id="movies">—</strong><span>películas</span></div>
+<div><strong id="series">—</strong><span>series TV</span></div>
+<div><strong id="updated">Pendiente</strong><span>última actualización</span></div>
+</section>
+<section class="catalog" aria-label="Resultados del scraping">
+<div class="heading"><div><div class="eyebrow">OBSERVATORIO · 2026</div><h2>Registros <em>extraídos.</em></h2></div><a id="source-link" href="https://en.wikipedia.org/wiki/2026_in_anime" target="_blank" rel="noopener noreferrer">Ver fuente ↗</a></div>
+<p id="status" role="status" aria-live="polite">Cargando fuentes…</p>
+<div class="filters"><label for="query">Buscar en el observatorio<input type="search" id="query" placeholder="Título o estudio" autocomplete="off"></label>
+<label for="format">Formato<select id="format"><option value="all">Todos</option><option value="TV">Series TV</option><option value="Película">Películas</option><option value="OVA">OVA</option><option value="ONA">ONA</option></select></label></div>
+<div id="results" class="results"></div>
+</section>
+<p class="explain"><b>¿Cómo funciona?</b> Un script Python utiliza urllib y BeautifulSoup, comprueba robots.txt, lee una página de estrenos y guarda JSON mediante GitHub Actions. Si la extracción falla, se conserva la copia anterior; también existe un respaldo de AniList identificado como API. No aloja videos ni descarga episodios.</p>
+</main>
+<footer><span>1UP Anime · Proyecto educativo independiente</span><a href="./index.html">Inicio</a><a href="https://en.wikipedia.org/wiki/2026_in_anime" target="_blank" rel="noopener noreferrer">Fuente y atribución (Wikipedia)</a></footer>
+</body></html>

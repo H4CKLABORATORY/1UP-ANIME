@@ -86,3 +86,11 @@ Excluir secretos, datos personales irrelevantes, suposiciones no etiquetadas, pr
 - **Directriz de calidad:** diseño cinematográfico original 1UP, nivel profesional móvil/escritorio, Kokomi elegido, negro/verde con temas opcionales, ventanas/motion accesibles, iPhone PWA, español, presupuesto inicial cero, audio y logo originales sin autocargar sonido contra políticas Safari. Mantener selector/configuración de fuentes según arquitectura vigente y nunca exponer secretos en interfaz.
 - **Prioridades técnicas repetidas del propietario:** progreso real, continuar viendo, filtros, catálogo/estrenos fiables, acceso opcional, perfiles/comunidad, reproductor robusto para fuentes con derechos, corrección del logo/modales/funciones, QA visual completo y despliegue confirmado. Verificar las prioridades antes de actuar porque pueden cambiar en otro chat.
 - No almacenar aquí detalles privados de conversaciones, claves ni datos personales. Mantener este índice actualizado cuando se integren nuevas investigaciones, sin afirmar que cubre literalmente todo lo dicho en todos los chats.
+
+
+### 2026-10-19 — Scraping educativo (publicación)
+- Módulo Python + BeautifulSoup de una sola página Wikipedia 2026, robots.txt, JSON factual de estrenos y actualización diaria GitHub Actions.
+- Interfaz scraping-lab.html con filtros, atribución y respaldo AniList etiquetado como API.
+- Funciones multimedia originales no tocadas; se mantienen las reglas de fuentes con licencia. Sin gastos ni credenciales.
+- Validación PR #52: fixture Python, Puppeteer, navegador móvil/escritorio, calidad y módulos HLS/links exitosos.
+- Primera extracción real, publicación Pages y Safari físico pendientes de comprobación posterior al cambio main.

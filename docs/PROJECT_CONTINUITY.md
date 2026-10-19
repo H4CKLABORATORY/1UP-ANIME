@@ -259,3 +259,11 @@ Al concluir cada trabajo agregar:
 - `scripts/puppeteer-site-audit.mjs` ejecuta Chrome Headless Shell contra sitio localhost: portada, comunidad, motor, moderación y gremio en ancho móvil y desktop; verifica aperturas/cierre de modal de acceso e invitado, overflow, errores JS, genera capturas y JSON. Todas las peticiones externas son bloqueadas.
 - `.github/workflows/puppeteer-quality.yml` instala dependencias sin scripts de npm, descarga Chrome compatible expresamente, lanza tests y sube evidencias. No es un proceso permanente ni un servicio de GitHub Pages.
 - Revisar CI del PR y solo fusionar si funciona; instalación real no confirmada hasta ver el workflow en verde. Manual: [PUPPETEER_QA.md](PUPPETEER_QA.md).
+
+
+### 2026-10-19 — Scraping educativo (publicación)
+- Módulo Python + BeautifulSoup de una sola página Wikipedia 2026, robots.txt, JSON factual de estrenos y actualización diaria GitHub Actions.
+- Interfaz scraping-lab.html con filtros, atribución y respaldo AniList etiquetado como API.
+- Funciones multimedia originales no tocadas; se mantienen las reglas de fuentes con licencia. Sin gastos ni credenciales.
+- Validación PR #52: fixture Python, Puppeteer, navegador móvil/escritorio, calidad y módulos HLS/links exitosos.
+- Primera extracción real, publicación Pages y Safari físico pendientes de comprobación posterior al cambio main.

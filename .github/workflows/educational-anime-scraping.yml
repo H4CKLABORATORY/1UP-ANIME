@@ -1,0 +1,58 @@
+name: ONEUP Educational Anime Scraping
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '31 9 * * *'
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/scrape-encyclopedia-anime.py'
+      - 'tests/fixtures/encyclopedia-anime.html'
+      - 'tests/test_educational_scraper.py'
+      - '.github/workflows/educational-anime-scraping.yml'
+  pull_request:
+    paths:
+      - 'scripts/scrape-encyclopedia-anime.py'
+      - 'tests/fixtures/encyclopedia-anime.html'
+      - 'tests/test_educational_scraper.py'
+      - '.github/workflows/educational-anime-scraping.yml'
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install --disable-pip-version-check 'beautifulsoup4>=4.12,<5'
+      - name: Pruebas aisladas sin red
+        run: python -m unittest discover -s tests -p 'test_educational_scraper.py' -v
+      - name: Test de extracción HTML de muestra
+        run: |
+          python scripts/scrape-encyclopedia-anime.py --input tests/fixtures/encyclopedia-anime.html --output /tmp/oneup-scraping-fixture.json
+          python -m json.tool /tmp/oneup-scraping-fixture.json >/dev/null
+  refresh:
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    needs: validate
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    permissions:
+      contents: write
+    concurrency:
+      group: oneup-educational-scraping
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install --disable-pip-version-check 'beautifulsoup4>=4.12,<5'
+      - name: Extraer una página pública respetando robots.txt
+        run: python scripts/scrape-encyclopedia-anime.py
+      - name: Verificar salida
+        run: python -m json.tool data/encyclopedia-anime.json >/dev/null
+      - name: Publicar sólo snapshot
+        run: bash scripts/oneup-safe-push.sh 'Update educational anime metadata from Wikipedia' data/encyclopedia-anime.json
