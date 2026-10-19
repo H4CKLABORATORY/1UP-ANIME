@@ -27,3 +27,11 @@
  .oneup-official-watch-actions .cta{flex:1;text-align:center}
 }
 @media(prefers-reduced-motion:reduce){.airing-official-cta{transition:none}}
+
+/* Enlaces verificados por episodio, siempre externos y opcionales. */
+.oneup-official-episode{display:flex;flex-direction:column;align-items:flex-start;gap:5px;margin-top:12px}
+.oneup-official-episode:empty{display:none}
+.oneup-official-episode-link{display:inline-flex;justify-content:center;align-items:center;min-height:42px;padding:9px 12px;border:1px solid #91e1aa;border-radius:9px;color:#eaffef;background:#226041;font-size:12px;font-weight:800;line-height:1.3;text-decoration:none}
+.oneup-official-episode-link:hover,.oneup-official-episode-link:focus-visible{background:#348759;border-color:#b9ffda;outline-offset:2px}
+.oneup-official-episode small{font-size:11px;color:#b5cbbe;max-width:430px;line-height:1.4}
+@media(max-width:760px){.oneup-official-episode,.oneup-official-episode-link{width:100%}.oneup-official-episode-link{text-align:center}}
