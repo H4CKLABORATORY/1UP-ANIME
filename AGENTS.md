@@ -46,3 +46,17 @@ La skill [`.agents/skills/omega-ingenio-memoria/SKILL.md`](.agents/skills/omega-
 - La automatización ChatGPT «Continuar 1UP Anime» ya existe con revisión horaria. **No crear tareas recurrentes duplicadas** ni afirmar actividad continua.
 - La apertura de un nuevo chat y el traspaso del historial privado no pueden activarse al agotarse el contexto. El usuario abre «Nuevo chat» y pega el prompt del handoff; el nuevo agente reconstruye el estado desde GitHub, nunca desde suposiciones.
 - Si el nuevo chat descubre discrepancias entre el handoff y `main`, la evidencia del código, CI y despliegues recientes tiene prioridad. Actualizar la ficha antes de cerrar cambios materiales.
+
+
+## Frase de reanudación entre chats — «empieza con las mejoras» (2026-10-19)
+
+Si el propietario escribe **«empieza con las mejoras»** (con cualquier uso de mayúsculas/minúsculas) y no especifica otro proyecto, continuar **1UP Anime** desde el estado real más reciente, sin comenzar otra web ni repetir trabajos ya integrados. Si el mensaje indica explícitamente otro proyecto, respetar ese contexto en vez de forzar 1UP.
+
+Protocolo obligatorio cuando haya acceso al repositorio:
+1. Leer `AGENTS.md`, `docs/NEW_CHAT_HANDOFF.md`, `docs/PROJECT_CONTINUITY.md`, `docs/OMEGA_MEMORY.md`, `docs/OMEGA_NEXT_ACTIONS.md`, `docs/PROJECT_DECISIONS.md`, y documentación específica de la tarea; contrastar con `main`, ramas, PR, commits, CI y despliegue actuales. El handoff es una instantánea y puede estar desactualizado.
+2. Recuperar, cuando estén accesibles, investigaciones de conversaciones anteriores y de GitHub. En especial: MAL Updater (PR [#50](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/50), documento `docs/MAL_UPDATER_REFERENCIA_20261019.md` en su rama, aún no necesariamente fusionado), APIs oficiales MyAnimeList/AniList, seguimiento de episodios/scrobbling y continuar viendo; Anime1v para metadatos; Jikan/AniList; Puppeteer para QA; Apify (guía pública de extracción) y artículo de Ben-John Okezie sobre scraping como referencias educativas para fuentes permitidas. La documentación y permisos actuales prevalecen sobre antiguos relatos.
+3. Elegir la siguiente mejora verificable siguiendo las prioridades vigentes y el pedido concreto del propietario: interfaz profesional Kokomi/1UP, original, español, iPhone/Safari + PC, presupuesto objetivo USD 0, temas y motion optimizados, búsqueda y calendario, reproducción solo autorizada, progreso de usuario, comunidad, seguridad y QA. Nunca degradar funciones existentes ni confundir metadatos con disponibilidad de episodios.
+4. Investigar lo necesario, implementar en la base actual, ejecutar las pruebas disponibles y revisar cambios; usar rama y PR en cambios sensibles. Documentar archivos modificados, resultados reales, commit/PR, pendientes y siguiente acción en las bitácoras de continuidad. No atribuir despliegues o pruebas no verificadas.
+5. No asumir memoria completa de chats externos: consultar fuentes accesibles. No guardar secretos, tokens/API privadas, datos personales o transcripciones privadas en el repositorio público. No copiar código protegido, explotar sistemas externos ni reproducir contenido sin permiso. No prometer actividad infinita o autónoma fuera de herramientas programadas reales.
+
+Esta frase es una **preferencia y protocolo portable del proyecto**, no un cambio de límites o memoria interna de ChatGPT, ni un disparador que ejecuta trabajo sin que exista un nuevo turno o tarea programada.
