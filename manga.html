@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#07100d"><meta name="description" content="Biblioteca de manga autorizada de 1UP Anime">
+<title>Manga · 1UP Anime</title>
+<link rel="icon" href="./assets/1up-anime-app-icon-512.png">
+<style>
+:root{color-scheme:dark;font-family:system-ui,-apple-system,Segoe UI,Arial,sans-serif;background:#07100d;color:#eef9f3}
+*{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(circle at 70% -20%,#154536,#07100d 56%)}
+header{position:sticky;top:0;z-index:4;background:#07100de9;backdrop-filter:blur(14px);border-bottom:1px solid #ffffff1d}
+.head{max-width:1420px;margin:auto;min-height:73px;display:flex;align-items:center;gap:22px;padding:12px 4vw}
+.brand{font-weight:950;letter-spacing:.05em;font-size:1.25rem;color:#d3ffe5;text-decoration:none}.brand span{color:#69f8a6}
+nav{margin-left:auto;display:flex;gap:10px}nav a{color:#bfd3c9;text-decoration:none;padding:10px 13px;border-radius:10px}nav a:hover,nav a:focus-visible{background:#244d38}
+main{max-width:1420px;margin:auto;padding:40px 4vw 85px}.eyebrow{letter-spacing:.2em;color:#8bf0b1;font-size:.8rem;text-transform:uppercase;font-weight:800}
+h1{font-size:clamp(2.3rem,6vw,4rem);letter-spacing:-.065em;margin:8px 0 6px}.lead{color:#aec4b7;max-width:680px;line-height:1.6}
+#search{max-width:550px;width:100%;background:#12231d;border:1px solid #456252;padding:15px 18px;color:white;border-radius:12px;font:inherit;margin:20px 0 25px}
+#series{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:20px}
+.series{background:linear-gradient(160deg,#163028,#0d1813);border:1px solid #315441;border-radius:16px;padding:13px;text-align:left;color:inherit;cursor:pointer;min-height:280px}
+.series:hover,.series:focus-visible{border-color:#80e7a6;transform:translateY(-2px)}
+.series img,.cover-placeholder{width:100%;aspect-ratio:3/3.7;object-fit:cover;background:#1e3d31;border-radius:11px;display:grid;place-items:center;color:#97d8b1;font-size:2.8rem}
+.series strong{display:block;margin:13px 4px 4px;font-size:1.08rem}.series small{display:block;color:#afcabb;margin:0 4px 8px}
+.empty{border:1px dashed #567b64;border-radius:15px;padding:26px;color:#bdd8c6;line-height:1.6}
+#reader{margin-top:35px;border:1px solid #335540;border-radius:17px;background:#101b16;overflow:hidden}#reader[hidden]{display:none}
+.reader-bar{display:flex;gap:12px;align-items:center;padding:16px;flex-wrap:wrap;border-bottom:1px solid #34563e}
+.reader-bar h2{font-size:1.15rem;margin:0;flex:1 1 250px}
+button,select,.view-original{border:1px solid #47735a;border-radius:10px;background:#183f2c;color:#e8fff0;padding:11px 14px;font:inherit}
+button{cursor:pointer}button:disabled{opacity:.4;cursor:not-allowed}button:hover:not(:disabled){background:#24583d}
+select{max-width:min(100%,330px)}.view-original{text-decoration:none;display:inline-block}.view-original:hover{background:#24583d}
+#pdf{width:100%;height:78vh;min-height:470px;border:0;background:#fff}#notice{color:#bdcfc5;font-size:.9rem;padding:15px;margin:0;line-height:1.5}
+footer{text-align:center;color:#91ad9c;padding:25px}
+@media(max-width:650px){main{padding-top:22px}.head{min-height:62px}nav a{font-size:.85rem;padding:7px}#series{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.series{min-height:0;padding:8px}.series strong{font-size:.95rem}.reader-bar{padding:12px}#pdf{height:65vh;min-height:370px}}
+@media(prefers-reduced-motion:no-preference){.series{transition:transform .18s,border-color .18s}}
+</style>
+</head>
+<body>
+<header><div class="head"><a class="brand" href="./index.html">1<span>UP</span> ANIME</a><nav aria-label="Secciones"><a href="./index.html">Anime</a><a href="./comunidad.html">Comunidad</a></nav></div></header>
+<main>
+<p class="eyebrow">1UP Biblioteca</p><h1>Manga</h1>
+<p class="lead">Lee capítulos de manga publicados con permiso. Los PDF se abren en un lector integrado cuando el navegador y el alojamiento lo permiten.</p>
+<label for="search">Buscar en la biblioteca</label><div><input id="search" type="search" placeholder="Busca por título…" autocomplete="off"></div>
+<p id="status" role="status" aria-live="polite">Cargando biblioteca…</p>
+<div id="series" aria-label="Series disponibles"></div>
+<section id="reader" hidden aria-label="Lector de manga">
+ <div class="reader-bar"><h2 id="read-title"></h2><select id="chapters" aria-label="Seleccionar capítulo"></select><button id="prev" type="button" aria-label="Capítulo anterior">←</button><button id="next" type="button" aria-label="Capítulo siguiente">→</button><a id="open" class="view-original" target="_blank" rel="noopener noreferrer">Abrir PDF ↗</a><button id="close" type="button">Cerrar</button></div>
+ <iframe id="pdf" title="Capítulo de manga" loading="lazy" referrerpolicy="no-referrer"></iframe>
+ <p id="notice">Si el visor PDF integrado no funciona en tu iPhone, pulsa «Abrir PDF». También puedes guardarlo para leerlo en Archivos.</p>
+</section>
+</main><footer>1UP Anime · Biblioteca independiente · Solo publicaciones autorizadas</footer>
+<script>
+(()=>{
+'use strict';
+const $=id=>document.getElementById(id);
+let catalog=[],selected=null,chapterIndex=0;
+function secure(url,extension){
+ try{const p=new URL(String(url));return p.protocol==='https:'&&!p.username&&!p.password&&p.hostname.includes('.')&&!/^(?:\d{1,3}\.){3}\d{1,3}$/.test(p.hostname)&&(!extension||p.pathname.toLowerCase().endsWith(extension))?p.href:null}catch{return null}
+}
+const text=(value,max=170)=>String(value??'').slice(0,max);
+function showChapter(){
+ if(!selected)return;
+ const c=selected.chapters[chapterIndex],url=secure(c.pdfUrl,'.pdf');
+ if(!url)return;
+ $('read-title').textContent=text(selected.title)+' · '+text(c.title,90);
+ $('chapters').value=String(chapterIndex);
+ $('prev').disabled=chapterIndex<=0;
+ $('next').disabled=chapterIndex>=selected.chapters.length-1;
+ $('open').href=url;
+ $('pdf').src=url;
+ $('pdf').title=text(selected.title)+' · capítulo '+c.number;
+}
+function openSeries(series){
+ if(!series.chapters.length)return;
+ selected=series;chapterIndex=0;$('reader').hidden=false;
+ const menu=$('chapters');menu.replaceChildren();
+ series.chapters.forEach((c,i)=>{const opt=document.createElement('option');opt.value=String(i);opt.textContent='Cap. '+c.number+' · '+text(c.title,60);menu.append(opt)});
+ showChapter();$('reader').scrollIntoView({behavior:'auto',block:'start'});
+}
+function render(filter=''){
+ const root=$('series');root.replaceChildren();
+ const items=catalog.filter(s=>s.title.toLocaleLowerCase().includes(filter.toLocaleLowerCase()));
+ $('status').textContent=items.length?items.length+' manga disponible(s)':'No hay manga para mostrar todavía.';
+ if(!items.length){const p=document.createElement('p');p.className='empty';p.textContent=catalog.length?'Prueba con otro título.':'La biblioteca se llenará cuando se publiquen capítulos propios o autorizados. No se muestran capítulos inventados.';root.append(p);return;}
+ items.forEach(s=>{
+  const button=document.createElement('button');button.className='series';button.type='button';
+  const img=secure(s.coverUrl);if(img){const cover=document.createElement('img');cover.src=img;cover.alt='Portada de '+text(s.title);cover.loading='lazy';button.append(cover);}
+  else{const placeholder=document.createElement('span');placeholder.className='cover-placeholder';placeholder.textContent='1UP';button.append(placeholder);}
+  const title=document.createElement('strong');title.textContent=text(s.title);
+  const count=document.createElement('small');count.textContent=s.chapters.length+' capítulos';button.append(title,count);
+  button.addEventListener('click',()=>openSeries(s));root.append(button);
+ });
+}
+$('chapters').addEventListener('change',e=>{chapterIndex=Number(e.target.value)||0;showChapter()});
+$('prev').addEventListener('click',()=>{if(chapterIndex>0){chapterIndex--;showChapter()}});
+$('next').addEventListener('click',()=>{if(selected&&chapterIndex<selected.chapters.length-1){chapterIndex++;showChapter()}});
+$('close').addEventListener('click',()=>{$('reader').hidden=true;$('pdf').removeAttribute('src');selected=null});
+$('search').addEventListener('input',e=>render(e.target.value));
+fetch('./data/manga-library.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error();return r.json()}).then(data=>{
+ catalog=(Array.isArray(data.series)?data.series:[]).filter(s=>typeof s.title==='string'&&Array.isArray(s.chapters)).map(s=>({...s,chapters:s.chapters.filter(c=>secure(c.pdfUrl,'.pdf'))})).filter(s=>s.chapters.length);
+ render();
+}).catch(()=>{$('status').textContent='No se pudo cargar la biblioteca. Intenta recargar.'});
+})();
+</script>
+</body></html>
