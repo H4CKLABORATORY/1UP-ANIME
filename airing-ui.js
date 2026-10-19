@@ -152,7 +152,10 @@ async function load(){
  }catch(e){
   try{calendar=await fallbackLive()}catch{}
  }
- if(calendar)display();
+ if(calendar){
+  display();
+  document.dispatchEvent(new CustomEvent('oneup-airing-ready',{detail:calendar}));
+ }
  else{
   for(const id of ['airing-today','airing-yesterday','airing-upcoming','airing-season']){
    const element=$('#'+id);if(element)element.innerHTML='<p class="airing-empty">El calendario todavía no está disponible. Vuelve a intentarlo cuando termine la actualización de AniList.</p>';

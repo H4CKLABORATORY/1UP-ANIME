@@ -1,0 +1,62 @@
+name: ONEUP Cinematic Premiere Hero QA
+on:
+  pull_request:
+    paths:
+      - 'premiere-*.js'
+      - 'premiere-hero.css'
+      - 'studio.js'
+      - 'airing-ui.js'
+      - 'index.html'
+      - 'sw.js'
+      - 'tests/premiere-*.mjs'
+      - 'tests/premiere-*.spec.js'
+      - '.github/workflows/premiere-hero.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'premiere-*.js'
+      - 'premiere-hero.css'
+      - 'studio.js'
+      - 'airing-ui.js'
+      - 'index.html'
+      - 'sw.js'
+      - 'tests/premiere-*.mjs'
+      - 'tests/premiere-*.spec.js'
+      - '.github/workflows/premiere-hero.yml'
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 16
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify source syntax
+        run: |
+          node --check premiere-ranking.js
+          node --check premiere-hero.js
+          node --check studio.js
+          node --check airing-ui.js
+          node scripts/check-ui.mjs
+      - name: Schedule and component contracts
+        run: node --test tests/premiere-hero.test.mjs
+      - name: Install Playwright
+        run: npm install --ignore-scripts --no-audit --no-fund
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Test slider on iPhone and desktop
+        run: npx playwright test tests/premiere-hero.spec.js --workers=1
+      - name: Preserve actual browser screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: oneup-cinematic-premiere-review
+          path: |
+            qa-premieres-*.png
+            playwright-report/
+            test-results/
+          if-no-files-found: ignore
+          retention-days: 7

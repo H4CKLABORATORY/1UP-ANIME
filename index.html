@@ -30,6 +30,7 @@
 <script defer src="./motion.js"></script>
 <script defer src="./official-watch.js"></script>
 <script defer src="./airing-ui.js"></script>
+<script defer src="./premiere-ranking.js"></script><script defer src="./premiere-hero.js"></script>
 <script defer src="./external-providers.js"></script>
 <script defer src="./themes/kokomi-studio/theme.js"></script>
 <script defer src="./themes/october-2026/theme.js"></script>
@@ -55,6 +56,7 @@
 <link rel="stylesheet" href="styles/anime-card-depth.css">
 <link rel="stylesheet" href="./ui-quality.css">
 <link rel="stylesheet" href="./oneup-finale.css">
+<link rel="stylesheet" href="./premiere-hero.css">
 </head><body class="oneup-kokomi kokomi-mobile-reference" data-theme-preview="off">
 <div id="oneup-opening" role="dialog" aria-modal="true" aria-label="Introducción cinematográfica de 1UP ANIME">
  <section id="cinema" data-mode="opening" aria-label="Animación de entrada 1UP ANIME">
@@ -111,7 +113,10 @@
     <h1 id="hero-title">TU SIGUIENTE<br><span>VIDA ES ANIME.</span></h1>
     <p id="hero-description" class="hero-description">Una nueva forma de explorar, descubrir y organizar tu anime favorito. Tu universo. Tu nivel.</p>
     <div id="hero-badges" class="hero-badges"><span>ESTRENOS</span><span>TENDENCIAS</span><span>MI LISTA</span></div>
-    <div class="hero-actions"><button id="hero-detail" class="cta primary"><svg><use href="#ico-arrow"/></svg> Ver información</button><button id="hero-save" class="cta outline"><svg><use href="#ico-plus"/></svg> Guardar anime</button></div><div class="hero-picks" id="hero-picks" aria-label="Elegir anime destacado"></div>
+    <div class="premiere-kicker" id="premiere-status" role="status" aria-live="off" hidden>EN EMISIÓN</div>
+    <div class="hero-actions"><button id="hero-detail" class="cta primary" type="button"><svg><use href="#ico-arrow"/></svg> Ver detalles</button><button id="hero-save" class="cta outline" type="button"><svg><use href="#ico-plus"/></svg> Mi lista</button><a id="hero-crunchyroll" class="premiere-provider" href="#" target="_blank" rel="noopener noreferrer" hidden>Crunchyroll ↗</a></div>
+    <p class="premiere-source-note" id="premiere-source-note" hidden></p>
+    <div id="premiere-controls" class="premiere-controls" role="group" aria-label="Cambiar anime destacado" hidden><button id="premiere-prev" class="premiere-arrow" type="button" aria-label="Anime anterior">‹</button><div id="premiere-progress" class="premiere-progress" role="group" aria-label="Animes en emisión destacados"></div><button id="premiere-next" class="premiere-arrow" type="button" aria-label="Anime siguiente">›</button></div><div class="hero-picks" id="hero-picks" aria-label="Elegir anime destacado"></div>
    </div>
    <div class="hero-art-card"><div class="hero-art-emblem"><img id="hero-feature-cover" src="./assets/oneup-crest.svg" alt="Póster del anime seleccionado"></div><div class="hero-art-caption"><span>ANIME SELECCIONADO</span><b id="hero-feature-title">TU SIGUIENTE HISTORIA</b><small id="hero-feature-caption">EXPLORA UNA HISTORIA</small></div></div>
    </div>

@@ -300,3 +300,9 @@ Al concluir cada trabajo agregar:
 - Rama de entrega feature/oneup-editorial-finale-20261019, pruebas Chromium 390/1366, HLS, temas y calidad; no sustituye configuración backend.
 - Se integran los enlaces oficiales nuevos de otro commit en sw.js, preservando el resto de funciones y la licencia de reproducción.
 - Leer docs/ONEUP_RELEASE_CLOSURE_20261019.md. Google OAuth, comunidad remota y episodios autorizados aún necesitan configuración; Safari físico pendiente.
+
+### 2026-10-19 — portada cinematográfica dinámica de emisiones (rama de revisión)
+- A partir de la grabación móvil aportada por el propietario, se construyó un carrusel original con estética verde/cristal y controles táctiles; referencia funcional, no clon de marca/código.
+- Integración sobre catálogo existente: `premiere-ranking.js`, `premiere-hero.js`, `premiere-hero.css`, `index.html`, `studio.js`, `airing-ui.js`, caché PWA v36. Prioridad de emisiones hoy y temporada; ficha/favoritos y salida Crunchyroll verificada.
+- Calendario de AniList ya existente, sin scrapers ni servidores nuevos; indica hora real de programación, no promete disponibilidad en reproductor. Si no hay información conserva la portada anterior.
+- QA creada: tests Node y Playwright iPhone/desktop en `tests/premiere-hero.*`, workflow propio; documentado en [PREMIERES_HERO_20261019.md](PREMIERES_HERO_20261019.md). **Requiere** CI, inspección visual y deploy de Pages antes de declarar terminado. Safari físico sigue pendiente.
