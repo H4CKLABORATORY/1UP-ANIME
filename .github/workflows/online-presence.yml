@@ -1,0 +1,32 @@
+name: ONEUP Online Presence QA
+on:
+  pull_request:
+    paths:
+      - 'index.html'
+      - 'comunidad.html'
+      - 'presence-*'
+      - 'sw.js'
+      - 'tests/presence-counter.test.mjs'
+      - '.github/workflows/online-presence.yml'
+  push:
+    paths:
+      - 'index.html'
+      - 'comunidad.html'
+      - 'presence-*'
+      - 'sw.js'
+      - 'tests/presence-counter.test.mjs'
+      - '.github/workflows/online-presence.yml'
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Comprobar sintaxis JavaScript
+        run: node --check presence-counter.js
+      - name: Validar integración de presencia
+        run: node --test tests/presence-counter.test.mjs
