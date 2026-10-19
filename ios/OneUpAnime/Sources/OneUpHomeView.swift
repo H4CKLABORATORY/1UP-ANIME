@@ -148,6 +148,15 @@ struct OneUpAnimeDetailView: View {
                                     .frame(maxWidth:.infinity,alignment:.leading)
                                     .background(surface,in:RoundedRectangle(cornerRadius:12))
                             }
+                        } else if let official=source.officialWatchURL(inherited:episode.rights) {
+                            Link(destination:official) {
+                                Label("Episodio \(episode.episodeNumber) · \(source.name ?? "YouTube oficial") ↗",
+                                      systemImage:"play.rectangle")
+                                    .foregroundStyle(emerald).padding(14)
+                                    .frame(maxWidth:.infinity,alignment:.leading)
+                                    .background(surface,in:RoundedRectangle(cornerRadius:12))
+                            }
+                            .accessibilityHint("Reproducción en el canal oficial de YouTube; subtítulos controlados por YouTube")
                         }
                     }
                 }
