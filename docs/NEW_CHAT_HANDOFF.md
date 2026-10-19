@@ -22,7 +22,7 @@
 - No confundir el catálogo de Anime1v con episodios reproducibles ni su licencia MIT con derechos de distribución de anime.
 
 ## Estado detectado ahora
-- Último commit de aplicación encontrado: 9b80d2a8ab5ae31ff09c21cd3bd1ae4d75bdeb6b
+- Último commit de aplicación encontrado: 3e08480608386eeb0a61e8be47bf0b4069a836f4
 - Descubrimiento Anime1v configurado en frontend: sí, verificar la respuesta real en Render
 - Código runtime de metadatos Anime1v en repositorio: sí
 - Entradas de obras multimedia en data/licensed-media.json: 0
@@ -30,11 +30,11 @@
 - Safari físico: no dar por verificado salvo prueba real con evidencia.
 
 ## Últimos commits relevantes
+- 3e0848060 — Polish 1UP Anime mobile UX, auth modal, site headers and depth controls
+- c91bd024d — Update live anime airing calendar
+- 17935bc65 — Update live anime airing calendar
 - 9b80d2a8a — feat: show verified Crunchyroll links alongside 1UP watch options
 - 764310271 — Sync authorized anime episode metadata and source statuses
-- 012d294fe — ONEUP health snapshot (no application changes)
-- c5b235add — Sync authorized anime episode metadata and source statuses
-- 390267953 — ONEUP health snapshot (no application changes)
 
 ## PR abiertos (consultar cambios antes de desarrollar)
 - [#46](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/46) 1UP Anime: contador de conexiones en línea para portada y comunidad
