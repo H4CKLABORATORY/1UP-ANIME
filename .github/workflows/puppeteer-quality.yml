@@ -1,0 +1,65 @@
+name: ONEUP Puppeteer Browser QA
+
+on:
+  workflow_dispatch:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'package.json'
+      - 'scripts/puppeteer-site-audit.mjs'
+      - '.github/workflows/puppeteer-quality.yml'
+      - 'index.html'
+      - 'auth.js'
+      - 'ui-quality.css'
+      - 'comunidad.html'
+      - 'motor.html'
+      - 'moderacion.html'
+      - 'gremio.html'
+  push:
+    branches: [main]
+    paths:
+      - 'package.json'
+      - 'scripts/puppeteer-site-audit.mjs'
+      - '.github/workflows/puppeteer-quality.yml'
+      - 'index.html'
+      - 'auth.js'
+      - 'ui-quality.css'
+      - 'comunidad.html'
+      - 'motor.html'
+      - 'moderacion.html'
+      - 'gremio.html'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: oneup-puppeteer-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  puppeteer:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate Puppeteer script
+        run: node --check scripts/puppeteer-site-audit.mjs
+      - name: Install dependencies without third-party postinstall scripts
+        env:
+          PUPPETEER_SKIP_DOWNLOAD: '1'
+        run: npm install --no-audit --no-fund --ignore-scripts
+      - name: Install compatible Chrome Headless Shell
+        run: npx puppeteer browsers install chrome-headless-shell
+      - name: Inspect mobile and desktop in Puppeteer
+        run: npm run test:puppeteer
+      - name: Save screenshot evidence and machine-readable report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: oneup-puppeteer-visual-audit
+          path: artifacts/puppeteer/
+          retention-days: 7
+          if-no-files-found: warn
