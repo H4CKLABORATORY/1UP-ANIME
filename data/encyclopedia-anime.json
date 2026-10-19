@@ -1,11 +1,2838 @@
 {
-  "updated": null,
-  "status": "pending-first-run",
+  "updated": "2026-10-19T04:26:25+00:00",
+  "status": "ok",
   "source": {
     "name": "Wikipedia: 2026 in anime",
     "url": "https://en.wikipedia.org/wiki/2026_in_anime",
-    "attribution": "Contribuidores de Wikipedia, CC BY-SA"
+    "attribution": "Contribuidores de Wikipedia, CC BY-SA; verificar condiciones de reutilización."
   },
-  "count": 0,
-  "items": []
+  "count": 314,
+  "items": [
+    {
+      "title": "Labyrinth",
+      "format": "Película",
+      "year": 2026,
+      "release": "January 1",
+      "studio": "Sanzigen",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Labyrinth_(2026_film)"
+    },
+    {
+      "title": "All You Need Is Kill",
+      "format": "Película",
+      "year": 2026,
+      "release": "January 9",
+      "studio": "Studio 4°C",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/All_You_Need_Is_Kill_(film)"
+    },
+    {
+      "title": "Cosmic Princess Kaguya!",
+      "format": "Película",
+      "year": 2026,
+      "release": "January 22",
+      "studio": "Studio Colorido Studio Chromato",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Cosmic_Princess_Kaguya!"
+    },
+    {
+      "title": "Girls und Panzer: Motto Love Love Sakusen Desu! – Act 2",
+      "format": "Película",
+      "year": 2026,
+      "release": "January 30",
+      "studio": "P.A. Works Actas",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Girls_und_Panzer:_Motto_Love_Love_Sakusen_Desu!_–_Act_2"
+    },
+    {
+      "title": "A-1 Pictures Psyde Kick Studio",
+      "format": "Película",
+      "year": 2026,
+      "release": "The Keeper of the Camphor Tree",
+      "studio": "Tomohiko Itō",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/A-1_Pictures"
+    },
+    {
+      "title": "Sunrise",
+      "format": "Película",
+      "year": 2026,
+      "release": "Mobile Suit Gundam Hathaway: The Sorcery of Nymph Circe",
+      "studio": "Shūkō Murase",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Sunrise_(studio)"
+    },
+    {
+      "title": "Gintama: Yoshiwara in Flames",
+      "format": "Película",
+      "year": 2026,
+      "release": "February 13",
+      "studio": "Bandai Namco Pictures",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Gintama"
+    },
+    {
+      "title": "Shin-Ei Animation",
+      "format": "Película",
+      "year": 2026,
+      "release": "The Dangers in My Heart: The Movie",
+      "studio": "Hiroaki Akagi (Chief) Chen Dali",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Shin-Ei_Animation"
+    },
+    {
+      "title": "Be Forever Yamato: Rebel 3199 : Part 5: The Incandescent Galactic War",
+      "format": "Película",
+      "year": 2026,
+      "release": "February 20",
+      "studio": "Satelight",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Be_Forever_Yamato:_Rebel_3199"
+    },
+    {
+      "title": "Doraemon: New Nobita and the Castle of the Undersea Devil",
+      "format": "Película",
+      "year": 2026,
+      "release": "February 27",
+      "studio": "Shin-Ei Animation",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Doraemon:_New_Nobita_and_the_Castle_of_the_Undersea_Devil"
+    },
+    {
+      "title": "Eight Bit",
+      "format": "Película",
+      "year": 2026,
+      "release": "That Time I Got Reincarnated as a Slime the Movie: Tears of the Azure Sea",
+      "studio": "Yasuhito Kikuchi",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Eight_Bit_(studio)"
+    },
+    {
+      "title": "A New Dawn",
+      "format": "Película",
+      "year": 2026,
+      "release": "March 6",
+      "studio": "Asmik Ace Studio Outrigger Miyu Productions",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/A_New_Dawn_(film)"
+    },
+    {
+      "title": "P.A. Works Actas",
+      "format": "Película",
+      "year": 2026,
+      "release": "Girls und Panzer: Motto Love Love Sakusen Desu! – Act 3",
+      "studio": "Masami Shimoda",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/P.A._Works"
+    },
+    {
+      "title": "Paris ni Saku Étoile",
+      "format": "Película",
+      "year": 2026,
+      "release": "March 13",
+      "studio": "Arvo Animation",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Paris_ni_Saku_Étoile"
+    },
+    {
+      "title": "Assassination Classroom the Movie: Our Time",
+      "format": "Película",
+      "year": 2026,
+      "release": "March 20",
+      "studio": "Lerche",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Assassination_Classroom_the_Movie:_Our_Time"
+    },
+    {
+      "title": "Chimney Town: Frozen in Time",
+      "format": "Película",
+      "year": 2026,
+      "release": "March 27",
+      "studio": "Studio 4°C",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Poupelle_of_Chimney_Town"
+    },
+    {
+      "title": "Detective Conan: Fallen Angel of the Highway",
+      "format": "Película",
+      "year": 2026,
+      "release": "April 10",
+      "studio": "TMS Entertainment",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Detective_Conan:_Fallen_Angel_of_the_Highway"
+    },
+    {
+      "title": "Sound! Euphonium: The Final Movie – Part 1",
+      "format": "Película",
+      "year": 2026,
+      "release": "April 24",
+      "studio": "Kyoto Animation",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Sound!_Euphonium"
+    },
+    {
+      "title": "Love Live! Hasunosora Girls' High School Idol Club Bloom Garden Party",
+      "format": "Película",
+      "year": 2026,
+      "release": "May 8",
+      "studio": "Sublimation",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Love_Live!_Hasunosora_Girls'_High_School_Idol_Club"
+    },
+    {
+      "title": "Mononoke the Movie: The Curse of the Serpent",
+      "format": "Película",
+      "year": 2026,
+      "release": "May 29",
+      "studio": "Studio Kafka EOTA",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Mononoke_the_Movie:_The_Curse_of_the_Serpent"
+    },
+    {
+      "title": "New Theatrical Movie Keroro Gunsō: Upon Revival, Immediately Facing the Threat of Earth's Destruction!",
+      "format": "Película",
+      "year": 2026,
+      "release": "June 26",
+      "studio": "Bandai Namco Pictures",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/New_Theatrical_Movie_Keroro_Gunsō:_Upon_Revival,_Immediately_Facing_the_Threat_of_Earth's_Destruction!"
+    },
+    {
+      "title": "Shiboyugi: Playing Death Games to Put Food on the Table – 44: Cloudy Beach",
+      "format": "Película",
+      "year": 2026,
+      "release": "July 10",
+      "studio": "Studio Deen",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Playing_Death_Games_to_Put_Food_on_the_Table"
+    },
+    {
+      "title": "Polygon Pictures",
+      "format": "Película",
+      "year": 2026,
+      "release": "Unanswered//butterfly: Sword Art Online",
+      "studio": "Tadahiro “Tady” Yoshihira",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Polygon_Pictures"
+    },
+    {
+      "title": "You, Fireworks, and Our Promise",
+      "format": "Película",
+      "year": 2026,
+      "release": "July 17",
+      "studio": "SynergySP The Answer Studio",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/You,_Fireworks,_and_Our_Promise"
+    },
+    {
+      "title": "Chiikawa the Movie: The Secret of the Mermaid Island",
+      "format": "Película",
+      "year": 2026,
+      "release": "July 24",
+      "studio": "Cypic QTORY [ ja ]",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Chiikawa_the_Movie:_The_Secret_of_the_Mermaid_Island"
+    },
+    {
+      "title": "Crayon Shin-chan the Movie: Spooky! My Yokai Vacation",
+      "format": "Película",
+      "year": 2026,
+      "release": "July 31",
+      "studio": "Shin-Ei Animation",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Crayon_Shin-chan_the_Movie:_Spooky!_My_Yokai_Vacation"
+    },
+    {
+      "title": "The Ribbon Hero",
+      "format": "Película",
+      "year": 2026,
+      "release": "August 8",
+      "studio": "Outline",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Ribbon_Hero"
+    },
+    {
+      "title": "Puella Magi Madoka Magica: Walpurgisnacht: Rising",
+      "format": "Película",
+      "year": 2026,
+      "release": "August 28",
+      "studio": "Shaft",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Puella_Magi_Madoka_Magica_(film_series)"
+    },
+    {
+      "title": "Sekiro: No Defeat",
+      "format": "Película",
+      "year": 2026,
+      "release": "September 4",
+      "studio": "Qzil.la",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Sekiro:_No_Defeat"
+    },
+    {
+      "title": "Sound! Euphonium: The Final Movie – Part 2",
+      "format": "Película",
+      "year": 2026,
+      "release": "September 11",
+      "studio": "Kyoto Animation",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Sound!_Euphonium"
+    },
+    {
+      "title": "We Are Aliens",
+      "format": "Película",
+      "year": 2026,
+      "release": "September 25",
+      "studio": "Toho Next",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/We_Are_Aliens"
+    },
+    {
+      "title": "To You in the Beyond",
+      "format": "Película",
+      "year": 2026,
+      "release": "October 9",
+      "studio": "TMS Entertainment",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/To_You_in_the_Beyond"
+    },
+    {
+      "title": "Actas",
+      "format": "Película",
+      "year": 2026,
+      "release": "Girls und Panzer das Finale: Part 5",
+      "studio": "Tsutomu Mizushima",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Actas"
+    },
+    {
+      "title": "BanG Dream! Ave Mujica Prima Aurora",
+      "format": "Película",
+      "year": 2026,
+      "release": "October 16",
+      "studio": "Nichicaline",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/BanG_Dream!_Ave_Mujica_Prima_Aurora"
+    },
+    {
+      "title": "CloverWorks",
+      "format": "Película",
+      "year": 2026,
+      "release": "Rascal Does Not Dream of a Dear Friend",
+      "studio": "Sōichi Masui",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/CloverWorks"
+    },
+    {
+      "title": "Made in Abyss: Mezameru Shinpi",
+      "format": "Película",
+      "year": 2026,
+      "release": "October 23",
+      "studio": "Kinema Citrus",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Made_in_Abyss:_Mezameru_Shinpi"
+    },
+    {
+      "title": "Grotesqqque",
+      "format": "Película",
+      "year": 2026,
+      "release": "November 6",
+      "studio": "CloverWorks",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Grotesqqque"
+    },
+    {
+      "title": "Expelled from Paradise: Resonance from the Heart",
+      "format": "Película",
+      "year": 2026,
+      "release": "November 13",
+      "studio": "Toei Animation",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Expelled_from_Paradise:_Resonance_from_the_Heart"
+    },
+    {
+      "title": "Armored Trooper VOTOMS: Die Graue Hexe Part 1",
+      "format": "Película",
+      "year": 2026,
+      "release": "November 20",
+      "studio": "Sunrise",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Armored_Trooper_VOTOMS"
+    },
+    {
+      "title": "Ufotable",
+      "format": "Película",
+      "year": 2026,
+      "release": "Witch on the Holy Night",
+      "studio": "Masashi Takeuchi",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Ufotable"
+    },
+    {
+      "title": "Takopi's Original Sin: Thank You, See You Tomorrow",
+      "format": "Película",
+      "year": 2026,
+      "release": "November 27",
+      "studio": "Enishiya",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Takopi's_Original_Sin:_Thank_You,_See_You_Tomorrow"
+    },
+    {
+      "title": "The Apothecary Diaries: The Late Lady's Treasure",
+      "format": "Película",
+      "year": 2026,
+      "release": "December 11",
+      "studio": "Toho Animation Studio",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Apothecary_Diaries:_The_Late_Lady's_Treasure"
+    },
+    {
+      "title": "Fate/strange Fake",
+      "format": "TV",
+      "year": 2026,
+      "release": "January 3 – March 28",
+      "studio": "A-1 Pictures",
+      "episodes": 13,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Fate/strange_Fake"
+    },
+    {
+      "title": "Sentenced to Be a Hero",
+      "format": "TV",
+      "year": 2026,
+      "release": "January 3 – March 26",
+      "studio": "Studio Kai",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Sentenced_to_Be_a_Hero"
+    },
+    {
+      "title": "Hana-Kimi (season 1)",
+      "format": "TV",
+      "year": 2026,
+      "release": "January 4 – March 22",
+      "studio": "Signal.MD",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Hana-Kimi"
+    },
+    {
+      "title": "Ichigo Aika: Strawberry Elegy",
+      "format": "TV",
+      "year": 2026,
+      "release": "January 4 – March 23",
+      "studio": "Studio Hōkiboshi",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Ichigo_Aika"
+    },
+    {
+      "title": "Jack-of-All-Trades, Party of None",
+      "format": "TV",
+      "year": 2026,
+      "release": "January 4 – March 18",
+      "studio": "animation studio42",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Jack-of-All-Trades,_Party_of_None"
+    },
+    {
+      "title": "Journal with Witch",
+      "format": "TV",
+      "year": 2026,
+      "release": "January 4 – March 29",
+      "studio": "Shuka",
+      "episodes": 13,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Journal_with_Witch"
+    },
+    {
+      "title": "Kunon the Sorcerer Can See",
+      "format": "TV",
+      "year": 2026,
+      "release": "January 4 – March 22",
+      "studio": "Platinum Vision",
+      "episodes": 13,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Kunon_the_Sorcerer_Can_See"
+    },
+    {
+      "title": "MF Ghost (season 3)",
+      "format": "TV",
+      "year": 2026,
+      "release": "January 4 – March 29",
+      "studio": "Felix Film",
+      "episodes": 13,
+      "sourceUrl": "https://en.wikipedia.org/wiki/MF_Ghost"
+    },
+    {
+      "title": "Tamon's B-Side",
+      "format": "TV",
+      "year": 2026,
+      "release": "January 4 – March 29",
+      "studio": "J.C.Staff",
+      "episodes": 13,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Tamon's_B-Side"
+    },
+    {
+      "title": "The Daily Life of a Part-time Torturer",
+      "format": "TV",
+      "year": 2026,
+      "release": "January 4 – March 23",
+      "studio": "Diomedéa",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Daily_Life_of_a_Part-time_Torturer"
+    },
+    {
+      "title": "Golden Kamuy (season 5)",
+      "format": "TV",
+      "year": 2026,
+      "release": "January 5 – March 30",
+      "studio": "Brain's Base",
+      "episodes": 13,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Golden_Kamuy"
+    },
+    {
+      "title": "My Hero Academia: Vigilantes (season 2)",
+      "format": "TV",
+      "year": 2026,
+      "release": "January 5 – March 30",
+      "studio": "Bones Film",
+      "episodes": 13,
+      "sourceUrl": "https://en.wikipedia.org/wiki/My_Hero_Academia:_Vigilantes"
+    },
+    {
+      "title": "Wash It All Away",
+      "format": "TV",
+      "year": 2026,
+      "release": "January 5 – March 23",
+      "studio": "Okuruto Noboru",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Wash_It_All_Away_(manga)"
+    },
+    {
+      "title": "I'll Live a Long Life to Dote on My Favorite Stepbrother!",
+      "format": "TV",
+      "year": 2026,
+      "release": "January 6 – March 24",
+      "studio": "Imagica Infos Imageworks Studio",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/I'll_Live_a_Long_Life_to_Dote_on_My_Favorite_Stepbrother!"
+    },
+    {
+      "title": "Isekai Office Worker: The Other World's Books Depend on the Bean Counter",
+      "format": "TV",
+      "year": 2026,
+      "release": "January 6 – March 24",
+      "studio": "Studio Deen",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Other_World's_Books_Depend_on_the_Bean_Counter"
+    },
+    {
+      "title": "There Was a Cute Girl in the Hero's Party, So I Tried Confessing to Her",
+      "format": "TV",
+      "year": 2026,
+      "release": "January 6 – March 31",
+      "studio": "Gekkou",
+      "episodes": 13,
+      "sourceUrl": "https://en.wikipedia.org/wiki/There_Was_a_Cute_Girl_in_the_Hero's_Party,_So_I_Tried_Confessing_to_Her"
+    },
+    {
+      "title": "Tune In to the Midnight Heart",
+      "format": "TV",
+      "year": 2026,
+      "release": "January 6 – March 24",
+      "studio": "Gekkou",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Tune_In_to_the_Midnight_Heart"
+    },
+    {
+      "title": "Yoroi-Shinden Samurai Troopers (part 1)",
+      "format": "TV",
+      "year": 2026,
+      "release": "January 6 – March 24",
+      "studio": "Sunrise",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Yoroi-Shinden_Samurai_Troopers"
+    },
+    {
+      "title": "You Can't Be in a Rom-Com with Your Childhood Friends!",
+      "format": "TV",
+      "year": 2026,
+      "release": "January 6 – March 24",
+      "studio": "Tezuka Productions",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/You_Can't_Be_in_a_Rom-Com_with_Your_Childhood_Friends!"
+    },
+    {
+      "title": "A Gentle Noble's Vacation Recommendation",
+      "format": "TV",
+      "year": 2026,
+      "release": "January 7 – March 26",
+      "studio": "SynergySP",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/A_Gentle_Noble's_Vacation_Recommendation"
+    },
+    {
+      "title": "An Adventurer's Daily Grind at Age 29",
+      "format": "TV",
+      "year": 2026,
+      "release": "January 7 – March 25",
+      "studio": "Hornets",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/An_Adventurer's_Daily_Grind_at_Age_29"
+    },
+    {
+      "title": "Hell Teacher: Jigoku Sensei Nube (part 2)",
+      "format": "TV",
+      "year": 2026,
+      "release": "January 7 – March 25",
+      "studio": "Studio Kai",
+      "episodes": 13,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Hell_Teacher:_Jigoku_Sensei_Nube"
+    },
+    {
+      "title": "Shiboyugi: Playing Death Games to Put Food on the Table",
+      "format": "TV",
+      "year": 2026,
+      "release": "January 7 – March 18",
+      "studio": "Studio Deen",
+      "episodes": 11,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Playing_Death_Games_to_Put_Food_on_the_Table"
+    },
+    {
+      "title": "The Case Book of Arne",
+      "format": "TV",
+      "year": 2026,
+      "release": "January 7 – March 25",
+      "studio": "Silver Link",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Case_Book_of_Arne"
+    },
+    {
+      "title": "The Darwin Incident",
+      "format": "TV",
+      "year": 2026,
+      "release": "January 7 – April 1",
+      "studio": "Bellnox Films",
+      "episodes": 13,
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Darwin_Incident"
+    },
+    {
+      "title": "The Demon King's Daughter Is Too Kind!!",
+      "format": "TV",
+      "year": 2026,
+      "release": "January 7 – March 25",
+      "studio": "EMT Squared",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Daughter_of_the_Demon_Lord_Is_Too_Kind!"
+    },
+    {
+      "title": "Chained Soldier (season 2)",
+      "format": "TV",
+      "year": 2026,
+      "release": "January 8 – March 26",
+      "studio": "Passione Hayabusa Film",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Chained_Soldier"
+    },
+    {
+      "title": "Noble Reincarnation: Born Blessed, So I'll Obtain Ultimate Power",
+      "format": "TV",
+      "year": 2026,
+      "release": "January 8 – March 26",
+      "studio": "CompTown",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Noble_Reincarnation"
+    },
+    {
+      "title": "The Holy Grail of Eris",
+      "format": "TV",
+      "year": 2026,
+      "release": "January 8 – March 26",
+      "studio": "Ashi Productions",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Holy_Grail_of_Eris"
+    },
+    {
+      "title": "The Invisible Man and His Soon-to-Be Wife",
+      "format": "TV",
+      "year": 2026,
+      "release": "January 8 – March 26",
+      "studio": "Project No.9",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Invisible_Man_and_His_Soon-to-Be_Wife"
+    },
+    {
+      "title": "Anyway, I'm Falling in Love with You (season 2)",
+      "format": "TV",
+      "year": 2026,
+      "release": "January 9 – March 27",
+      "studio": "Typhoon Graphics",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Anyway,_I'm_Falling_in_Love_with_You"
+    },
+    {
+      "title": "Champignon Witch",
+      "format": "TV",
+      "year": 2026,
+      "release": "January 9 – March 20",
+      "studio": "Typhoon Graphics Qzil.la",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Champignon_Witch"
+    },
+    {
+      "title": "High School! Kimengumi",
+      "format": "TV",
+      "year": 2026,
+      "release": "January 9 – March 27",
+      "studio": "Seven",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/High_School!_Kimengumi"
+    },
+    {
+      "title": "Jujutsu Kaisen (season 3)",
+      "format": "TV",
+      "year": 2026,
+      "release": "January 9 – March 27",
+      "studio": "MAPPA",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Jujutsu_Kaisen_(TV_series)"
+    },
+    {
+      "title": "Roll Over and Die",
+      "format": "TV",
+      "year": 2026,
+      "release": "January 9 – March 27",
+      "studio": "A.C.G.T",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Roll_Over_and_Die"
+    },
+    {
+      "title": "Dark Moon: The Blood Altar",
+      "format": "TV",
+      "year": 2026,
+      "release": "January 10 – March 28",
+      "studio": "Troyca",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Dark_Moon:_The_Blood_Altar"
+    },
+    {
+      "title": "Dead Account",
+      "format": "TV",
+      "year": 2026,
+      "release": "January 10 – March 28",
+      "studio": "SynergySP",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Dead_Account"
+    },
+    {
+      "title": "Does It Count If You Lose Your Virginity to an Android?",
+      "format": "TV",
+      "year": 2026,
+      "release": "January 10 – February 28",
+      "studio": "Nyan Pollution-ω-",
+      "episodes": 8,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Does_It_Count_If_You_Lose_Your_Virginity_to_an_Android%3F"
+    },
+    {
+      "title": "Easygoing Territory Defense by the Optimistic Lord: Production Magic Turns a Nameless Village into the Strongest Fortified City",
+      "format": "TV",
+      "year": 2026,
+      "release": "January 10 – March 28",
+      "studio": "NAZ",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Easygoing_Territory_Defense_by_the_Optimistic_Lord"
+    },
+    {
+      "title": "Fire Force (season 3, part 2)",
+      "format": "TV",
+      "year": 2026,
+      "release": "January 10 – April 4",
+      "studio": "David Production",
+      "episodes": 13,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Fire_Force"
+    },
+    {
+      "title": "Hell Mode: The Hardcore Gamer Dominates in Another World with Garbage Balancing (season 1)",
+      "format": "TV",
+      "year": 2026,
+      "release": "January 10 – March 28",
+      "studio": "Yokohama Animation Laboratory",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Hell_Mode"
+    },
+    {
+      "title": "Reincarnated as a Dragon Hatchling",
+      "format": "TV",
+      "year": 2026,
+      "release": "January 10 – March 28",
+      "studio": "Felix Film Ga-Crew",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Reincarnated_as_a_Dragon_Hatchling"
+    },
+    {
+      "title": "Trigun Stargaze",
+      "format": "TV",
+      "year": 2026,
+      "release": "January 10 – March 28",
+      "studio": "Orange",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Trigun_Stampede"
+    },
+    {
+      "title": "You Don't Know Gunma Yet: Reiwa Version",
+      "format": "TV",
+      "year": 2026,
+      "release": "January 10 – March 14",
+      "studio": "Imagica Infos Imageworks Studio",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/You_Don't_Know_Gunma_Yet"
+    },
+    {
+      "title": "A Misanthrope Teaches a Class for Demi-Humans",
+      "format": "TV",
+      "year": 2026,
+      "release": "January 11 – April 5",
+      "studio": "Asread",
+      "episodes": 13,
+      "sourceUrl": "https://en.wikipedia.org/wiki/A_Misanthrope_Teaches_a_Class_for_Demi-Humans"
+    },
+    {
+      "title": "Hell's Paradise (season 2)",
+      "format": "TV",
+      "year": 2026,
+      "release": "January 11 – March 29",
+      "studio": "MAPPA",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Hell's_Paradise_(TV_series)"
+    },
+    {
+      "title": "Oedo Fire Slayer: The Legend of Phoenix",
+      "format": "TV",
+      "year": 2026,
+      "release": "January 11 – April 5",
+      "studio": "SynergySP",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Ushūboro_Tobigumi"
+    },
+    {
+      "title": "In the Clear Moonlit Dusk",
+      "format": "TV",
+      "year": 2026,
+      "release": "January 11 – March 29",
+      "studio": "East Fish Studio Atelier Peuplier",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/In_the_Clear_Moonlit_Dusk"
+    },
+    {
+      "title": "Kaya-chan Isn't Scary",
+      "format": "TV",
+      "year": 2026,
+      "release": "January 11 – March 29",
+      "studio": "East Fish Studio",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Kaya-chan_Isn't_Scary"
+    },
+    {
+      "title": "Scum of the Brave",
+      "format": "TV",
+      "year": 2026,
+      "release": "January 11 – June 28",
+      "studio": "OLM",
+      "episodes": 24,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Scum_of_the_Brave"
+    },
+    {
+      "title": "The Villainess Is Adored by the Prince of the Neighbor Kingdom",
+      "format": "TV",
+      "year": 2026,
+      "release": "January 11 – March 29",
+      "studio": "Studio Deen",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Villainess_Is_Adored_by_the_Prince_of_the_Neighbor_Kingdom"
+    },
+    {
+      "title": "You and I Are Polar Opposites (season 1)",
+      "format": "TV",
+      "year": 2026,
+      "release": "January 11 – March 29",
+      "studio": "Lapin Track",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/You_and_I_Are_Polar_Opposites"
+    },
+    {
+      "title": "'Tis Time for \"Torture,\" Princess (season 2)",
+      "format": "TV",
+      "year": 2026,
+      "release": "January 12 – March 30",
+      "studio": "Pine Jam",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/'Tis_Time_for_\"Torture,\"_Princess"
+    },
+    {
+      "title": "Oshi no Ko (season 3)",
+      "format": "TV",
+      "year": 2026,
+      "release": "January 14 – March 25",
+      "studio": "Doga Kobo",
+      "episodes": 11,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Oshi_no_Ko_(TV_series)"
+    },
+    {
+      "title": "Frieren: Beyond Journey's End (season 2)",
+      "format": "TV",
+      "year": 2026,
+      "release": "January 16 – March 27",
+      "studio": "Madhouse",
+      "episodes": 10,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Frieren_(TV_series)"
+    },
+    {
+      "title": "Medalist (season 2)",
+      "format": "TV",
+      "year": 2026,
+      "release": "January 25 – March 22",
+      "studio": "ENGI",
+      "episodes": 9,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Medalist_(manga)"
+    },
+    {
+      "title": "Star Detective Precure!",
+      "format": "TV",
+      "year": 2026,
+      "release": "February 1 –",
+      "studio": "Toei Animation",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Star_Detective_Precure!"
+    },
+    {
+      "title": "Rooster Fighter",
+      "format": "TV",
+      "year": 2026,
+      "release": "March 15 – May 31",
+      "studio": "Sanzigen",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Rooster_Fighter"
+    },
+    {
+      "title": "Agents of the Four Seasons: Dance of Spring",
+      "format": "TV",
+      "year": 2026,
+      "release": "March 29 – June 28",
+      "studio": "Wit Studio",
+      "episodes": 14,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Agents_of_the_Four_Seasons"
+    },
+    {
+      "title": "Classroom of the Elite (season 4)",
+      "format": "TV",
+      "year": 2026,
+      "release": "April 1 – June 24",
+      "studio": "Lerche",
+      "episodes": 16,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Classroom_of_the_Elite_(TV_series)"
+    },
+    {
+      "title": "Dorohedoro (season 2)",
+      "format": "TV",
+      "year": 2026,
+      "release": "April 1 – May 27",
+      "studio": "MAPPA",
+      "episodes": 11,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Dorohedoro"
+    },
+    {
+      "title": "Go for It, Nakamura!",
+      "format": "TV",
+      "year": 2026,
+      "release": "April 1 – June 17",
+      "studio": "Drive",
+      "episodes": 13,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Go_for_It,_Nakamura!"
+    },
+    {
+      "title": "Reborn as a Vending Machine, I Now Wander the Dungeon (season 3)",
+      "format": "TV",
+      "year": 2026,
+      "release": "April 1 – June 24",
+      "studio": "Studio Gokumi AXsiZ",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Reborn_as_a_Vending_Machine,_I_Now_Wander_the_Dungeon"
+    },
+    {
+      "title": "The Beginning After the End (season 2)",
+      "format": "TV",
+      "year": 2026,
+      "release": "April 1 – June 17",
+      "studio": "Studio A-Cat",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Beginning_After_the_End"
+    },
+    {
+      "title": "Always a Catch!",
+      "format": "TV",
+      "year": 2026,
+      "release": "April 2 – June 18",
+      "studio": "Troyca",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Always_a_Catch!"
+    },
+    {
+      "title": "Dr. Stone: Science Future (part 3)",
+      "format": "TV",
+      "year": 2026,
+      "release": "April 2 – June 25",
+      "studio": "TMS Entertainment",
+      "episodes": 13,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Dr._Stone_season_4"
+    },
+    {
+      "title": "Kirio Fan Club",
+      "format": "TV",
+      "year": 2026,
+      "release": "April 2 – June 18",
+      "studio": "Satelight",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Kirio_Fan_Club"
+    },
+    {
+      "title": "The Ramparts of Ice (season 1)",
+      "format": "TV",
+      "year": 2026,
+      "release": "April 2 – July 2",
+      "studio": "Studio Kai",
+      "episodes": 14,
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Ramparts_of_Ice"
+    },
+    {
+      "title": "Haibara's Teenage New Game+",
+      "format": "TV",
+      "year": 2026,
+      "release": "April 3 – June 19",
+      "studio": "Studio Comet",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Haibara's_Teenage_New_Game+"
+    },
+    {
+      "title": "Killed Again, Mr. Detective?",
+      "format": "TV",
+      "year": 2026,
+      "release": "April 3 – June 19",
+      "studio": "Liden Films",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Killed_Again,_Mr._Detective%3F"
+    },
+    {
+      "title": "Monster Eater",
+      "format": "TV",
+      "year": 2026,
+      "release": "April 3 – June 19",
+      "studio": "Imagica Infos Imageworks Studio",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Monster_Eater"
+    },
+    {
+      "title": "Petals of Reincarnation",
+      "format": "TV",
+      "year": 2026,
+      "release": "April 3 – June 26",
+      "studio": "Benten Film",
+      "episodes": 13,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Petals_of_Reincarnation"
+    },
+    {
+      "title": "Snowball Earth",
+      "format": "TV",
+      "year": 2026,
+      "release": "April 3 – June 26",
+      "studio": "Studio Kai",
+      "episodes": 13,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Snowball_Earth_(manga)"
+    },
+    {
+      "title": "That Time I Got Reincarnated as a Slime ( season 4 , part 1)",
+      "format": "TV",
+      "year": 2026,
+      "release": "April 3 – June 26",
+      "studio": "Eight Bit",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/That_Time_I_Got_Reincarnated_as_a_Slime_(TV_series)"
+    },
+    {
+      "title": "The Angel Next Door Spoils Me Rotten (season 2)",
+      "format": "TV",
+      "year": 2026,
+      "release": "April 3 – June 19",
+      "studio": "Project No.9",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Angel_Next_Door_Spoils_Me_Rotten"
+    },
+    {
+      "title": "Akane-banashi",
+      "format": "TV",
+      "year": 2026,
+      "release": "April 4 – June 20",
+      "studio": "Zexcs",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Akane-banashi"
+    },
+    {
+      "title": "Ascendance of a Bookworm: Adopted Daughter of an Archduke",
+      "format": "TV",
+      "year": 2026,
+      "release": "April 4 – October 3",
+      "studio": "Wit Studio",
+      "episodes": 24,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Ascendance_of_a_Bookworm"
+    },
+    {
+      "title": "Daemons of the Shadow Realm",
+      "format": "TV",
+      "year": 2026,
+      "release": "April 4 – September 19",
+      "studio": "Bones Film",
+      "episodes": 24,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Daemons_of_the_Shadow_Realm"
+    },
+    {
+      "title": "Mao",
+      "format": "TV",
+      "year": 2026,
+      "release": "April 4 – September 26",
+      "studio": "Sunrise",
+      "episodes": 26,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Mao_(manga)"
+    },
+    {
+      "title": "The Strongest Job Is Apparently Not a Hero or a Sage, but an Appraiser (Provisional)!",
+      "format": "TV",
+      "year": 2026,
+      "release": "April 4 – June 20",
+      "studio": "Studio Flad",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Strongest_Job_Is_Apparently_Not_a_Hero_or_a_Sage,_but_an_Appraiser_(Provisional)!"
+    },
+    {
+      "title": "Welcome to Demon School! Iruma-kun (season 4)",
+      "format": "TV",
+      "year": 2026,
+      "release": "April 4 – September 27",
+      "studio": "BN Pictures",
+      "episodes": 24,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Welcome_to_Demon_School!_Iruma-kun"
+    },
+    {
+      "title": "Ace of Diamond Act II (season 2, part 1)",
+      "format": "TV",
+      "year": 2026,
+      "release": "April 5 – June 28",
+      "studio": "OLM",
+      "episodes": 13,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Ace_of_Diamond"
+    },
+    {
+      "title": "Kusunoki's Garden of Gods",
+      "format": "TV",
+      "year": 2026,
+      "release": "April 5 – June 21",
+      "studio": "Juvenage",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Kusunoki's_Garden_of_Gods"
+    },
+    {
+      "title": "Magical Sisters LuluttoLilly (part 1)",
+      "format": "TV",
+      "year": 2026,
+      "release": "April 5 – June 21",
+      "studio": "Studio Pierrot",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Magical_Sisters_LuluttoLilly"
+    },
+    {
+      "title": "Mistress Kanan Is Devilishly Easy",
+      "format": "TV",
+      "year": 2026,
+      "release": "April 5 – June 21",
+      "studio": "Studio Kai",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Mistress_Kanan_Is_Devilishly_Easy"
+    },
+    {
+      "title": "Needy Girl Overdose",
+      "format": "TV",
+      "year": 2026,
+      "release": "April 5 – June 28",
+      "studio": "Yostar Pictures",
+      "episodes": 13,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Needy_Streamer_Overload"
+    },
+    {
+      "title": "One Piece: Elbaph",
+      "format": "TV",
+      "year": 2026,
+      "release": "April 5 –",
+      "studio": "Toei Animation",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/One_Piece_season_22"
+    },
+    {
+      "title": "The Food Diary of Miss Maid",
+      "format": "TV",
+      "year": 2026,
+      "release": "April 5 – June 21",
+      "studio": "EMT Squared Magic Bus",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Food_Diary_of_Miss_Maid"
+    },
+    {
+      "title": "An Observation Log of My Fiancée Who Calls Herself a Villainess",
+      "format": "TV",
+      "year": 2026,
+      "release": "April 6 – June 22",
+      "studio": "Ashi Productions",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/An_Observation_Log_of_My_Fiancée_Who_Calls_Herself_a_Villainess"
+    },
+    {
+      "title": "Do You Like Big Girls?",
+      "format": "TV",
+      "year": 2026,
+      "release": "April 6 – June 22",
+      "studio": "Studio Hōkiboshi",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Do_You_Like_Big_Girls%3F"
+    },
+    {
+      "title": "Farming Life in Another World (season 2)",
+      "format": "TV",
+      "year": 2026,
+      "release": "April 6 – June 22",
+      "studio": "Zero-G",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Farming_Life_in_Another_World"
+    },
+    {
+      "title": "Ghost Concert: Missing Songs",
+      "format": "TV",
+      "year": 2026,
+      "release": "April 6 – June 22",
+      "studio": "ENGI",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Ghost_Concert"
+    },
+    {
+      "title": "Ingoku Danchi: Deviant’s Apartment Complex",
+      "format": "TV",
+      "year": 2026,
+      "release": "April 6 – June 22",
+      "studio": "Elias",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Ingoku_Danchi"
+    },
+    {
+      "title": "Marika's Love Meter Malfunction",
+      "format": "TV",
+      "year": 2026,
+      "release": "April 6 – June 8",
+      "studio": "Studio Leo",
+      "episodes": 8,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Marika's_Love_Meter_Malfunction"
+    },
+    {
+      "title": "The Klutzy Class Monitor and the Girl with the Short Skirt",
+      "format": "TV",
+      "year": 2026,
+      "release": "April 6 – June 22",
+      "studio": "Zero-G",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Klutzy_Class_Monitor_and_the_Girl_with_the_Short_Skirt"
+    },
+    {
+      "title": "Witch Hat Atelier",
+      "format": "TV",
+      "year": 2026,
+      "release": "April 6 – June 22",
+      "studio": "Bug Films",
+      "episodes": 13,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Witch_Hat_Atelier"
+    },
+    {
+      "title": "Beyond Twilight",
+      "format": "TV",
+      "year": 2026,
+      "release": "April 7 – June 23",
+      "studio": "Imagica Infos Imageworks Studio",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Beyond_Twilight_(manga)"
+    },
+    {
+      "title": "Even a Replica Can Fall in Love",
+      "format": "TV",
+      "year": 2026,
+      "release": "April 7 – June 30",
+      "studio": "Voil",
+      "episodes": 13,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Even_a_Replica_Can_Fall_in_Love"
+    },
+    {
+      "title": "I Made Friends with the Second Prettiest Girl in My Class",
+      "format": "TV",
+      "year": 2026,
+      "release": "April 7 – June 23",
+      "studio": "Connect",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/I_Made_Friends_with_the_Second_Prettiest_Girl_in_My_Class"
+    },
+    {
+      "title": "Liar Game",
+      "format": "TV",
+      "year": 2026,
+      "release": "April 7 – September 29",
+      "studio": "Madhouse",
+      "episodes": 26,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Liar_Game"
+    },
+    {
+      "title": "Marriagetoxin",
+      "format": "TV",
+      "year": 2026,
+      "release": "April 7 – June 30",
+      "studio": "Bones Film",
+      "episodes": 13,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Marriagetoxin"
+    },
+    {
+      "title": "Nippon Sangoku: The Three Nations of the Crimson Sun",
+      "format": "TV",
+      "year": 2026,
+      "release": "April 7 – June 21",
+      "studio": "Studio Kafka",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Nippon_Sangoku"
+    },
+    {
+      "title": "The Most Heretical Last Boss Queen: From Villainess to Savior (season 2)",
+      "format": "TV",
+      "year": 2026,
+      "release": "April 7 – June 23",
+      "studio": "OLM Team Yoshioka",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Most_Heretical_Last_Boss_Queen"
+    },
+    {
+      "title": "Eren the Southpaw",
+      "format": "TV",
+      "year": 2026,
+      "release": "April 8 – July 1",
+      "studio": "Signal.MD Production I.G",
+      "episodes": 13,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Eren_the_Southpaw"
+    },
+    {
+      "title": "Gals Can't Be Kind to Otaku!?",
+      "format": "TV",
+      "year": 2026,
+      "release": "April 8 – June 24",
+      "studio": "TMS Entertainment",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Gals_Can't_Be_Kind_to_Otaku!%3F"
+    },
+    {
+      "title": "My Ribdiculous Reincarnation",
+      "format": "TV",
+      "year": 2026,
+      "release": "April 8 – June 24",
+      "studio": "Qzil.la S.o.K",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/My_Ribdiculous_Reincarnation"
+    },
+    {
+      "title": "Pardon the Intrusion, I'm Home!",
+      "format": "TV",
+      "year": 2026,
+      "release": "April 8 – June 24",
+      "studio": "Tatsunoko Production",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Pardon_the_Intrusion,_I'm_Home!"
+    },
+    {
+      "title": "Re:Zero − Starting Life in Another World ( season 4 , part 1)",
+      "format": "TV",
+      "year": 2026,
+      "release": "April 8 – June 17",
+      "studio": "White Fox",
+      "episodes": 11,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Re:Zero_(TV_series)"
+    },
+    {
+      "title": "Kujima: Why Sing, When You Can Warble?",
+      "format": "TV",
+      "year": 2026,
+      "release": "April 9 – June 25",
+      "studio": "Studio Hibari",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Kujima:_Why_Sing,_When_You_Can_Warble%3F"
+    },
+    {
+      "title": "The Warrior Princess and the Barbaric King",
+      "format": "TV",
+      "year": 2026,
+      "release": "April 9 – June 25",
+      "studio": "Jumondou",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Warrior_Princess_and_the_Barbaric_King"
+    },
+    {
+      "title": "A Hundred Scenes of Awajima",
+      "format": "TV",
+      "year": 2026,
+      "release": "April 10 – June 26",
+      "studio": "Madhouse",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/A_Hundred_Scenes_of_Awajima"
+    },
+    {
+      "title": "Drops of God",
+      "format": "TV",
+      "year": 2026,
+      "release": "April 10 – September 18",
+      "studio": "Satelight",
+      "episodes": 24,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Drops_of_God"
+    },
+    {
+      "title": "Botan Kamiina Fully Blossoms When Drunk",
+      "format": "TV",
+      "year": 2026,
+      "release": "April 11 – June 27",
+      "studio": "Soigne",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Botan_Kamiina_Fully_Blossoms_When_Drunk"
+    },
+    {
+      "title": "Fist of the North Star",
+      "format": "TV",
+      "year": 2026,
+      "release": "April 11 – June 27",
+      "studio": "TMS Entertainment",
+      "episodes": 14,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Fist_of_the_North_Star"
+    },
+    {
+      "title": "Kill Blue",
+      "format": "TV",
+      "year": 2026,
+      "release": "April 11 – June 27",
+      "studio": "Cue",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Kill_Blue"
+    },
+    {
+      "title": "Rent-A-Girlfriend (season 5)",
+      "format": "TV",
+      "year": 2026,
+      "release": "April 11 – June 27",
+      "studio": "TMS Entertainment",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Rent-A-Girlfriend_(2020_TV_series)"
+    },
+    {
+      "title": "Yowayowa Sensei",
+      "format": "TV",
+      "year": 2026,
+      "release": "April 11 – June 27",
+      "studio": "Brain's Base",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Yowayowa_Sensei"
+    },
+    {
+      "title": "Ichijyoma Mankitsu Gurashi!",
+      "format": "TV",
+      "year": 2026,
+      "release": "April 12 – June 21",
+      "studio": "PRA",
+      "episodes": 11,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Ichijyoma_Mankitsu_Gurashi!"
+    },
+    {
+      "title": "Mission: Yozakura Family (season 2, part 1)",
+      "format": "TV",
+      "year": 2026,
+      "release": "April 12 – June 28",
+      "studio": "Silver Link",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Mission:_Yozakura_Family"
+    },
+    {
+      "title": "Odekake Kozame (season 2)",
+      "format": "TV",
+      "year": 2026,
+      "release": "April 12 –",
+      "studio": "ENGI",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Odekake_Kozame"
+    },
+    {
+      "title": "Shō 3 Ashibe QQ Goma-chan",
+      "format": "TV",
+      "year": 2026,
+      "release": "April 12 –",
+      "studio": "DLE",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Shōnen_Ashibe"
+    },
+    {
+      "title": "The Classroom of a Black Cat and a Witch",
+      "format": "TV",
+      "year": 2026,
+      "release": "April 12 – September 20",
+      "studio": "Liden Films",
+      "episodes": 24,
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Classroom_of_a_Black_Cat_and_a_Witch"
+    },
+    {
+      "title": "Wistoria: Wand and Sword (season 2)",
+      "format": "TV",
+      "year": 2026,
+      "release": "April 12 – June 28",
+      "studio": "Actas BN Pictures",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Wistoria:_Wand_and_Sword"
+    },
+    {
+      "title": "I Want to End This Love Game",
+      "format": "TV",
+      "year": 2026,
+      "release": "April 14 – June 30",
+      "studio": "Felix Film",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/I_Want_to_End_This_Love_Game"
+    },
+    {
+      "title": "The Oblivious Saint Can't Contain Her Power",
+      "format": "TV",
+      "year": 2026,
+      "release": "June 30 – September 15",
+      "studio": "Magic Bus Picante Circus",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Oblivious_Saint_Can't_Contain_Her_Power"
+    },
+    {
+      "title": "Heroine? Saint? No, I'm an All-Works Maid (and Proud of It)!",
+      "format": "TV",
+      "year": 2026,
+      "release": "July 1 – September 16",
+      "studio": "EMT Squared",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Heroine%3F_Saint%3F_No,_I'm_an_All-Works_Maid_(and_Proud_of_It)!"
+    },
+    {
+      "title": "BanG Dream! Yume∞Mita",
+      "format": "TV",
+      "year": 2026,
+      "release": "July 2 – September 10",
+      "studio": "Nichicaline",
+      "episodes": 13,
+      "sourceUrl": "https://en.wikipedia.org/wiki/BanG_Dream!_Yume∞Mita"
+    },
+    {
+      "title": "Bungo Stray Dogs Wan! (season 2)",
+      "format": "TV",
+      "year": 2026,
+      "release": "July 2 – September 17",
+      "studio": "Bones Film Nomad",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Bungo_Stray_Dogs"
+    },
+    {
+      "title": "Dara-san of Reiwa",
+      "format": "TV",
+      "year": 2026,
+      "release": "July 2 – September 24",
+      "studio": "Asahi Production ′",
+      "episodes": 13,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Dara-san_of_Reiwa"
+    },
+    {
+      "title": "From Overshadowed to Overpowered: Second Reincarnation of a Talentless Sage",
+      "format": "TV",
+      "year": 2026,
+      "release": "July 2 – September 17",
+      "studio": "EMT Squared",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/From_Overshadowed_to_Overpowered"
+    },
+    {
+      "title": "Hana-Kimi (season 2)",
+      "format": "TV",
+      "year": 2026,
+      "release": "July 2 – September 24",
+      "studio": "Signal.MD",
+      "episodes": 13,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Hana-Kimi"
+    },
+    {
+      "title": "The Villager of Level 999",
+      "format": "TV",
+      "year": 2026,
+      "release": "July 2 – September 17",
+      "studio": "Brain's Base",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Villager_of_Level_999"
+    },
+    {
+      "title": "The World Is Dancing",
+      "format": "TV",
+      "year": 2026,
+      "release": "July 2 – September 24",
+      "studio": "Cypic",
+      "episodes": 13,
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_World_Is_Dancing"
+    },
+    {
+      "title": "Chainsmoker Cat",
+      "format": "TV",
+      "year": 2026,
+      "release": "July 3 – September 25",
+      "studio": "Bibury Animation Studios",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Chainsmoker_Cat"
+    },
+    {
+      "title": "Draw This, Then Die!",
+      "format": "TV",
+      "year": 2026,
+      "release": "July 3 – September 25",
+      "studio": "Shin-Ei Animation",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Draw_This,_Then_Die!"
+    },
+    {
+      "title": "Kaiju Girl Caramelise",
+      "format": "TV",
+      "year": 2026,
+      "release": "July 3 – September 18",
+      "studio": "Liden Films",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Kaiju_Girl_Caramelise"
+    },
+    {
+      "title": "That Time I Got Reincarnated as a Slime ( season 4 , part 2)",
+      "format": "TV",
+      "year": 2026,
+      "release": "July 3 – September 25",
+      "studio": "Eight Bit",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/That_Time_I_Got_Reincarnated_as_a_Slime_(TV_series)"
+    },
+    {
+      "title": "The Exiled Heavy Knight Knows How to Game the System",
+      "format": "TV",
+      "year": 2026,
+      "release": "July 3 –",
+      "studio": "GoHands",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Exiled_Heavy_Knight_Knows_How_to_Game_the_System"
+    },
+    {
+      "title": "Black Torch",
+      "format": "TV",
+      "year": 2026,
+      "release": "July 4 – September 19",
+      "studio": "100studio",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Black_Torch"
+    },
+    {
+      "title": "Hell Mode: The Hardcore Gamer Dominates in Another World with Garbage Balancing (season 2)",
+      "format": "TV",
+      "year": 2026,
+      "release": "July 4 – September 26",
+      "studio": "Yokohama Animation Laboratory",
+      "episodes": 13,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Hell_Mode"
+    },
+    {
+      "title": "Jaadugar: A Witch in Mongolia",
+      "format": "TV",
+      "year": 2026,
+      "release": "July 4 – September 12",
+      "studio": "Science Saru",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Jaadugar:_A_Witch_in_Mongolia"
+    },
+    {
+      "title": "Kamui: He's Behind You",
+      "format": "TV",
+      "year": 2026,
+      "release": "July 4 – September 19",
+      "studio": "Zero-G ZG-R",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Kamui:_He's_Behind_You"
+    },
+    {
+      "title": "Mushoku Tensei: Jobless Reincarnation ( season 3 , part 1)",
+      "format": "TV",
+      "year": 2026,
+      "release": "July 4 – September 28",
+      "studio": "Studio Bind",
+      "episodes": 14,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Mushoku_Tensei_(TV_series)"
+    },
+    {
+      "title": "Please Excuse My Younger Brothers",
+      "format": "TV",
+      "year": 2026,
+      "release": "July 4 –",
+      "studio": "Lay-duce",
+      "episodes": 24,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Please_Excuse_My_Younger_Brothers"
+    },
+    {
+      "title": "Recommendations from Iwamoto-senpai",
+      "format": "TV",
+      "year": 2026,
+      "release": "July 4 – September 19",
+      "studio": "Studio Deen",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Recommendations_from_Iwamoto-senpai"
+    },
+    {
+      "title": "Skeleton Knight in Another World (season 2)",
+      "format": "TV",
+      "year": 2026,
+      "release": "July 4 – September 21",
+      "studio": "Aura Studio",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Skeleton_Knight_in_Another_World"
+    },
+    {
+      "title": "The Cat and the Dragon",
+      "format": "TV",
+      "year": 2026,
+      "release": "July 4 – September 19",
+      "studio": "OLM",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Cat_and_the_Dragon"
+    },
+    {
+      "title": "Grow Up Show: Sunflower Circus",
+      "format": "TV",
+      "year": 2026,
+      "release": "July 5 – September 27",
+      "studio": "A-1 Pictures Psyde Kick Studio",
+      "episodes": 13,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Grow_Up_Show"
+    },
+    {
+      "title": "Iron Wok Jan",
+      "format": "TV",
+      "year": 2026,
+      "release": "July 5 – September 20",
+      "studio": "Troyca",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Iron_Wok_Jan"
+    },
+    {
+      "title": "Let's Go Kaikigumi",
+      "format": "TV",
+      "year": 2026,
+      "release": "July 5 – September 27",
+      "studio": "C-Station",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Let's_Go_Kaikigumi"
+    },
+    {
+      "title": "Magical Girl Lyrical Nanoha Exceeds Gun Blaze Vengeance",
+      "format": "TV",
+      "year": 2026,
+      "release": "July 5 – September 20",
+      "studio": "Seven Arcs",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Magical_Girl_Lyrical_Nanoha_Exceeds_Gun_Blaze_Vengeance"
+    },
+    {
+      "title": "Magilumiere Magical Girls Inc. (season 2)",
+      "format": "TV",
+      "year": 2026,
+      "release": "July 5 – September 27",
+      "studio": "J.C.Staff",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Magilumiere_Magical_Girls_Inc."
+    },
+    {
+      "title": "One Piece: Heroines",
+      "format": "TV",
+      "year": 2026,
+      "release": "July 5",
+      "studio": "Toei Animation",
+      "episodes": 1,
+      "sourceUrl": "https://en.wikipedia.org/wiki/One_Piece:_Heroines"
+    },
+    {
+      "title": "Rich Girl Caretaker: I'm Secretly the Caregiver of the Most Popular Girl in This Rich Kid School",
+      "format": "TV",
+      "year": 2026,
+      "release": "July 5 – September 20",
+      "studio": "Brain's Base",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Rich_Girl_Caretaker"
+    },
+    {
+      "title": "Sparks of Tomorrow",
+      "format": "TV",
+      "year": 2026,
+      "release": "July 5 – September 27",
+      "studio": "Kyoto Animation",
+      "episodes": 13,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Sparks_of_Tomorrow"
+    },
+    {
+      "title": "The 100 Girlfriends Who Really, Really, Really, Really, Really Love You (season 3)",
+      "format": "TV",
+      "year": 2026,
+      "release": "July 5 – September 20",
+      "studio": "Bibury Animation Studios",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_100_Girlfriends_Who_Really,_Really,_Really,_Really,_Really_Love_You"
+    },
+    {
+      "title": "The Duke's Son Claims He Won't Love Me yet Showers Me with Adoration",
+      "format": "TV",
+      "year": 2026,
+      "release": "July 5 – September 20",
+      "studio": "Zero-G Grass",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Duke's_Son_Claims_He_Won't_Love_Me_yet_Showers_Me_with_Adoration"
+    },
+    {
+      "title": "The Ogre's Bride",
+      "format": "TV",
+      "year": 2026,
+      "release": "July 5 – September 20",
+      "studio": "Colored Pencil Animation Japan",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Ogre's_Bride"
+    },
+    {
+      "title": "The World's Strongest Rearguard",
+      "format": "TV",
+      "year": 2026,
+      "release": "July 5 – September 20",
+      "studio": "Maho Film",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_World's_Strongest_Rearguard"
+    },
+    {
+      "title": "You and I Are Polar Opposites (season 2)",
+      "format": "TV",
+      "year": 2026,
+      "release": "July 5 – October 4",
+      "studio": "Lapin Track",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/You_and_I_Are_Polar_Opposites"
+    },
+    {
+      "title": "A Livid Lady's Guide to Getting Even: How I Crushed My Homeland with My Mighty Grimoires",
+      "format": "TV",
+      "year": 2026,
+      "release": "July 6 – September 21",
+      "studio": "Studio Comet",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/A_Livid_Lady's_Guide_to_Getting_Even"
+    },
+    {
+      "title": "Azur Lane: Slow Ahead! (season 2)",
+      "format": "TV",
+      "year": 2026,
+      "release": "July 6 – September 21",
+      "studio": "Candy Box",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Azur_Lane:_Slow_Ahead!"
+    },
+    {
+      "title": "Goodbye, Lara",
+      "format": "TV",
+      "year": 2026,
+      "release": "July 6 – September 21",
+      "studio": "Kinema Citrus",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Goodbye,_Lara"
+    },
+    {
+      "title": "Honō no Tōkyūjo: Dodge Danko",
+      "format": "TV",
+      "year": 2026,
+      "release": "July 6 – September 21",
+      "studio": "Cue",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Honō_no_Tōkyūjo:_Dodge_Danko"
+    },
+    {
+      "title": "I Became a Legend After My 10 Year-Long Last Stand",
+      "format": "TV",
+      "year": 2026,
+      "release": "July 6 – September 21",
+      "studio": "Gekkou",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/I_Became_a_Legend_After_My_10_Year-Long_Last_Stand"
+    },
+    {
+      "title": "Love Unseen Beneath the Clear Night Sky",
+      "format": "TV",
+      "year": 2026,
+      "release": "July 6 – September 21",
+      "studio": "Makaria",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Love_Unseen_Beneath_the_Clear_Night_Sky"
+    },
+    {
+      "title": "Oh Boy, Was I Wrong About Her",
+      "format": "TV",
+      "year": 2026,
+      "release": "July 6 – September 21",
+      "studio": "Project No.9",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Oh_Boy,_Was_I_Wrong_About_Her"
+    },
+    {
+      "title": "The Forsaken Saintess and Her Foodie Roadtrip in Another World",
+      "format": "TV",
+      "year": 2026,
+      "release": "July 6 – September 21",
+      "studio": "EMT Squared",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Forsaken_Saintess_and_Her_Foodie_Roadtrip_in_Another_World"
+    },
+    {
+      "title": "The Insipid Prince's Furtive Grab for the Throne",
+      "format": "TV",
+      "year": 2026,
+      "release": "July 6 – September 21",
+      "studio": "Maho Film",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Insipid_Prince's_Furtive_Grab_for_the_Throne"
+    },
+    {
+      "title": "Grand Blue Dreaming (season 3)",
+      "format": "TV",
+      "year": 2026,
+      "release": "July 7 – September 22",
+      "studio": "Zero-G Saber Works",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Grand_Blue_Dreaming"
+    },
+    {
+      "title": "I Want to Love You Till Your Dying Day",
+      "format": "TV",
+      "year": 2026,
+      "release": "July 7 – September 29",
+      "studio": "Roll2",
+      "episodes": 13,
+      "sourceUrl": "https://en.wikipedia.org/wiki/I_Want_to_Love_You_Till_Your_Dying_Day"
+    },
+    {
+      "title": "Saved by the Ice Cold Prince's Embrace",
+      "format": "TV",
+      "year": 2026,
+      "release": "July 7 – September 22",
+      "studio": "Imagica Infos Imageworks Studio",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Saved_by_the_Ice_Cold_Prince's_Embrace"
+    },
+    {
+      "title": "The Ghost in the Shell",
+      "format": "TV",
+      "year": 2026,
+      "release": "July 7 – September 8",
+      "studio": "Science Saru",
+      "episodes": 10,
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Ghost_in_the_Shell_(2026_TV_series)"
+    },
+    {
+      "title": "Yoroi-Shinden Samurai Troopers (part 2)",
+      "format": "TV",
+      "year": 2026,
+      "release": "July 7 – September 22",
+      "studio": "Sunrise",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Yoroi-Shinden_Samurai_Troopers"
+    },
+    {
+      "title": "Young Ladies Don't Play Fighting Games",
+      "format": "TV",
+      "year": 2026,
+      "release": "July 7 – September 22",
+      "studio": "Diomedéa",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Young_Ladies_Don't_Play_Fighting_Games"
+    },
+    {
+      "title": "Clevatess (season 2)",
+      "format": "TV",
+      "year": 2026,
+      "release": "July 8 – September 30",
+      "studio": "Lay-duce",
+      "episodes": 13,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Clevatess"
+    },
+    {
+      "title": "From Old Country Bumpkin to Master Swordsman (season 2)",
+      "format": "TV",
+      "year": 2026,
+      "release": "July 8 – September 23",
+      "studio": "Passione Hayabusa Film",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/From_Old_Country_Bumpkin_to_Master_Swordsman"
+    },
+    {
+      "title": "My Stepmother and Stepsisters Aren't Wicked",
+      "format": "TV",
+      "year": 2026,
+      "release": "July 8 – September 26",
+      "studio": "Newon",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/My_Stepmother_and_Stepsisters_Aren't_Wicked"
+    },
+    {
+      "title": "Perfect Addiction",
+      "format": "TV",
+      "year": 2026,
+      "release": "July 8 – September 23",
+      "studio": "Imagica Infos Imageworks Studio",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Perfect_Addiction"
+    },
+    {
+      "title": "Red River",
+      "format": "TV",
+      "year": 2026,
+      "release": "July 8 –",
+      "studio": "Tatsunoko Production",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Red_River_(manga)"
+    },
+    {
+      "title": "Trapped in a Dating Sim: The World of Otome Games Is Tough for Mobs (season 2)",
+      "format": "TV",
+      "year": 2026,
+      "release": "July 8 – September 23",
+      "studio": "ENGI",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Trapped_in_a_Dating_Sim:_The_World_of_Otome_Games_Is_Tough_for_Mobs"
+    },
+    {
+      "title": "Victoria of Many Faces",
+      "format": "TV",
+      "year": 2026,
+      "release": "July 8 – September 2",
+      "studio": "Studio Deen",
+      "episodes": 9,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Victoria_of_Many_Faces"
+    },
+    {
+      "title": "Yōjo Senki: Saga of Tanya the Evil (season 2)",
+      "format": "TV",
+      "year": 2026,
+      "release": "July 8 – September 23",
+      "studio": "NUT",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Saga_of_Tanya_the_Evil"
+    },
+    {
+      "title": "Mebius Dust",
+      "format": "TV",
+      "year": 2026,
+      "release": "July 9 – September 24",
+      "studio": "Doga Kobo",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Mebius_Dust"
+    },
+    {
+      "title": "Smoking Behind the Supermarket with You",
+      "format": "TV",
+      "year": 2026,
+      "release": "July 9 – September 25",
+      "studio": "Asahi Production",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Smoking_Behind_the_Supermarket_with_You"
+    },
+    {
+      "title": "Thunder 3",
+      "format": "TV",
+      "year": 2026,
+      "release": "July 9 – October 1",
+      "studio": "Unend",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Thunder_3_(manga)"
+    },
+    {
+      "title": "The Frontier Lord Begins with Zero Subjects",
+      "format": "TV",
+      "year": 2026,
+      "release": "July 10 – September 25",
+      "studio": "animation studio42",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Frontier_Lord_Begins_with_Zero_Subjects"
+    },
+    {
+      "title": "Hanaori-san Still Wants to Fight in the Next Life",
+      "format": "TV",
+      "year": 2026,
+      "release": "July 12 – September 26",
+      "studio": "Liden Films",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Hanaori-san_Still_Wants_to_Fight_in_the_Next_Life"
+    },
+    {
+      "title": "Though I Am an Inept Villainess (part 1)",
+      "format": "TV",
+      "year": 2026,
+      "release": "July 12 – September 20",
+      "studio": "Doga Kobo",
+      "episodes": 11,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Though_I_Am_an_Inept_Villainess"
+    },
+    {
+      "title": "The Elusive Samurai (season 2)",
+      "format": "TV",
+      "year": 2026,
+      "release": "July 17 – October 2",
+      "studio": "CloverWorks",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Elusive_Samurai"
+    },
+    {
+      "title": "Bleach: Thousand-Year Blood War (part 4)",
+      "format": "TV",
+      "year": 2026,
+      "release": "July 25 –",
+      "studio": "Pierrot Films",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Bleach:_Thousand-Year_Blood_War"
+    },
+    {
+      "title": "Re:Zero − Starting Life in Another World ( season 4 , part 2)",
+      "format": "TV",
+      "year": 2026,
+      "release": "August 12 – September 30",
+      "studio": "White Fox",
+      "episodes": 8,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Re:Zero_(TV_series)"
+    },
+    {
+      "title": "As a Reincarnated Aristocrat, I'll Use My Appraisal Skill to Rise in the World (season 3)",
+      "format": "TV",
+      "year": 2026,
+      "release": "September 27 –",
+      "studio": "GeyeG Pictures",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/As_a_Reincarnated_Aristocrat,_I'll_Use_My_Appraisal_Skill_to_Rise_in_the_World"
+    },
+    {
+      "title": "FX Fighter Kurumi-chan",
+      "format": "TV",
+      "year": 2026,
+      "release": "October 1 –",
+      "studio": "Passione",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/FX_Fighter_Kurumi-chan"
+    },
+    {
+      "title": "The Prince of Tennis II: U-17 World Cup Finals Members Decisive Match",
+      "format": "TV",
+      "year": 2026,
+      "release": "October 1 –",
+      "studio": "M.S.C",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Prince_of_Tennis_II"
+    },
+    {
+      "title": "The Ramparts of Ice (season 2)",
+      "format": "TV",
+      "year": 2026,
+      "release": "October 1 –",
+      "studio": "Studio Kai",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Ramparts_of_Ice"
+    },
+    {
+      "title": "Overgeared",
+      "format": "TV",
+      "year": 2026,
+      "release": "October 2 –",
+      "studio": "J.C.Staff",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Overgeared"
+    },
+    {
+      "title": "The Apothecary Diaries (season 3, part 1)",
+      "format": "TV",
+      "year": 2026,
+      "release": "October 2 –",
+      "studio": "OLM",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Apothecary_Diaries_(TV_series)"
+    },
+    {
+      "title": "Tougen Anki: Nikko Kegon Falls Arc",
+      "format": "TV",
+      "year": 2026,
+      "release": "October 2 –",
+      "studio": "Studio Hibari",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Tougen_Anki"
+    },
+    {
+      "title": "Welsh & Shedar",
+      "format": "TV",
+      "year": 2026,
+      "release": "October 2 –",
+      "studio": "Studio Massket",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Welsh_&_Shedar"
+    },
+    {
+      "title": "With Vengeance, Sincerely, Your Broken Saintess (season 2)",
+      "format": "TV",
+      "year": 2026,
+      "release": "October 2 –",
+      "studio": "Imagica Infos Imageworks Studio",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/With_Vengeance,_Sincerely,_Your_Broken_Saintess"
+    },
+    {
+      "title": "A Tale of the Secret Saint",
+      "format": "TV",
+      "year": 2026,
+      "release": "October 3 –",
+      "studio": "Felix Film",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/A_Tale_of_the_Secret_Saint"
+    },
+    {
+      "title": "A Wild Last Boss Appeared! (season 2)",
+      "format": "TV",
+      "year": 2026,
+      "release": "October 3 –",
+      "studio": "Wao World",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/A_Wild_Last_Boss_Appeared!"
+    },
+    {
+      "title": "Black Clover (season 2)",
+      "format": "TV",
+      "year": 2026,
+      "release": "October 3 –",
+      "studio": "Studio Pierrot",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Black_Clover_(TV_series)"
+    },
+    {
+      "title": "I'm Looking for Zombies",
+      "format": "TV",
+      "year": 2026,
+      "release": "October 3 –",
+      "studio": "Studio Comet",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/I'm_Looking_for_Zombies"
+    },
+    {
+      "title": "Sirotan",
+      "format": "TV",
+      "year": 2026,
+      "release": "October 3 –",
+      "studio": "Lesprit",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Sirotan"
+    },
+    {
+      "title": "Sgt. Frog☆",
+      "format": "TV",
+      "year": 2026,
+      "release": "October 3 –",
+      "studio": "BN Pictures",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Sgt._Frog_(2026_TV_series)"
+    },
+    {
+      "title": "Suikoden: The Anime",
+      "format": "TV",
+      "year": 2026,
+      "release": "October 3 –",
+      "studio": "Konami Animation",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Suikoden:_The_Anime"
+    },
+    {
+      "title": "The Seven Knights of the Marronnier Kingdom",
+      "format": "TV",
+      "year": 2026,
+      "release": "October 3 –",
+      "studio": "J.C.Staff",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Seven_Knights_of_the_Marronnier_Kingdom"
+    },
+    {
+      "title": "Tokyo Revengers: War of the Three Titans Arc",
+      "format": "TV",
+      "year": 2026,
+      "release": "October 3 –",
+      "studio": "Liden Films",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Tokyo_Revengers"
+    },
+    {
+      "title": "Vertex Force",
+      "format": "TV",
+      "year": 2026,
+      "release": "October 3 –",
+      "studio": "SMDE",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Vertex_Force"
+    },
+    {
+      "title": "Aoashi (season 2)",
+      "format": "TV",
+      "year": 2026,
+      "release": "October 4 –",
+      "studio": "TMS Entertainment",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Aoashi"
+    },
+    {
+      "title": "Blue Box (season 2)",
+      "format": "TV",
+      "year": 2026,
+      "release": "October 4 –",
+      "studio": "Electric Circus",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Blue_Box_(manga)"
+    },
+    {
+      "title": "Even the Student Council Has Its Holes!",
+      "format": "TV",
+      "year": 2026,
+      "release": "October 4 –",
+      "studio": "Passione",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Even_the_Student_Council_Has_Its_Holes!"
+    },
+    {
+      "title": "Even Though I'm a Super Timid Noble Girl, I Accepted the Bet from My Cunning Fiancé",
+      "format": "TV",
+      "year": 2026,
+      "release": "October 4 –",
+      "studio": "Jumondou",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Even_Though_I'm_a_Super_Timid_Noble_Girl,_I_Accepted_the_Bet_from_My_Cunning_Fiancé"
+    },
+    {
+      "title": "Hotel Inhumans (season 2)",
+      "format": "TV",
+      "year": 2026,
+      "release": "October 4 –",
+      "studio": "Bridge Aisle",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Hotel_Inhumans"
+    },
+    {
+      "title": "Magic Repo Man",
+      "format": "TV",
+      "year": 2026,
+      "release": "October 4 –",
+      "studio": "SynergySP",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Magic_Repo_Man"
+    },
+    {
+      "title": "Magical Explorer",
+      "format": "TV",
+      "year": 2026,
+      "release": "October 4 –",
+      "studio": "White Fox",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Magical_Explorer"
+    },
+    {
+      "title": "Magical Sisters LuluttoLilly (part 2)",
+      "format": "TV",
+      "year": 2026,
+      "release": "October 4 –",
+      "studio": "Studio Pierrot",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Magical_Sisters_LuluttoLilly"
+    },
+    {
+      "title": "Ranma ½ (season 3)",
+      "format": "TV",
+      "year": 2026,
+      "release": "October 4 –",
+      "studio": "MAPPA",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Ranma_½_(2024_TV_series)"
+    },
+    {
+      "title": "Reborn as a Space Mercenary: I Woke Up Piloting the Strongest Starship!",
+      "format": "TV",
+      "year": 2026,
+      "release": "October 4 –",
+      "studio": "Studio A-Cat",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Reborn_as_a_Space_Mercenary"
+    },
+    {
+      "title": "Tank Chair",
+      "format": "TV",
+      "year": 2026,
+      "release": "October 4 –",
+      "studio": "Polygon Pictures",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Tank_Chair"
+    },
+    {
+      "title": "Tanuki to Kitsune",
+      "format": "TV",
+      "year": 2026,
+      "release": "October 4 –",
+      "studio": "Akatsuki Media Studio",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Tanuki_to_Kitsune"
+    },
+    {
+      "title": "Uncle's Obsession with Cute Things",
+      "format": "TV",
+      "year": 2026,
+      "release": "October 4 –",
+      "studio": "Liden Films",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Uncle's_Obsession_with_Cute_Things"
+    },
+    {
+      "title": "From Far Away",
+      "format": "TV",
+      "year": 2026,
+      "release": "October 5 –",
+      "studio": "Studio Deen",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/From_Far_Away"
+    },
+    {
+      "title": "Hello, I am a Witch, and My Crush Wants Me to Make a Love Potion!",
+      "format": "TV",
+      "year": 2026,
+      "release": "October 5 –",
+      "studio": "Diomedéa",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Hello,_I_am_a_Witch,_and_My_Crush_Wants_Me_to_Make_a_Love_Potion!"
+    },
+    {
+      "title": "I'm Dating a Dark Summoner",
+      "format": "TV",
+      "year": 2026,
+      "release": "October 5 –",
+      "studio": "AtoriE",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/I'm_Dating_a_Dark_Summoner"
+    },
+    {
+      "title": "My Girlfriend's Friend",
+      "format": "TV",
+      "year": 2026,
+      "release": "October 5 –",
+      "studio": "Quad",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/My_Girlfriend's_Friend"
+    },
+    {
+      "title": "Psyren",
+      "format": "TV",
+      "year": 2026,
+      "release": "October 5 –",
+      "studio": "Satelight",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Psyren"
+    },
+    {
+      "title": "Romelia War Chronicle",
+      "format": "TV",
+      "year": 2026,
+      "release": "October 5 –",
+      "studio": "Atra",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Romelia_War_Chronicle"
+    },
+    {
+      "title": "So What's Wrong with Getting Reborn as a Goblin?",
+      "format": "TV",
+      "year": 2026,
+      "release": "October 5 –",
+      "studio": "Bakkka",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/So_What's_Wrong_with_Getting_Reborn_as_a_Goblin%3F"
+    },
+    {
+      "title": "The Lonely Snow Widow and the Cursed Ring",
+      "format": "TV",
+      "year": 2026,
+      "release": "October 5 –",
+      "studio": "Studio Hōkiboshi",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Shy_Snow_Woman_and_the_Cursed_Ring"
+    },
+    {
+      "title": "Battle Spirits [Re] Zekkai no Kū",
+      "format": "TV",
+      "year": 2026,
+      "release": "October 6 –",
+      "studio": "BN Pictures",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Battle_Spirits"
+    },
+    {
+      "title": "Magical Girl Raising Project: Restart",
+      "format": "TV",
+      "year": 2026,
+      "release": "October 6 –",
+      "studio": "SynergySP",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Magical_Girl_Raising_Project:_Restart"
+    },
+    {
+      "title": "Nia Liston: The Merciless Maiden",
+      "format": "TV",
+      "year": 2026,
+      "release": "October 6 –",
+      "studio": "Konami Animation",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Nia_Liston:_The_Merciless_Maiden"
+    },
+    {
+      "title": "Super Psychic Policeman Chojo",
+      "format": "TV",
+      "year": 2026,
+      "release": "October 6 –",
+      "studio": "Arvo Animation",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Super_Psychic_Policeman_Chojo"
+    },
+    {
+      "title": "The Cold Sato-san Is Only Sweet to Me",
+      "format": "TV",
+      "year": 2026,
+      "release": "October 6 –",
+      "studio": "Tezuka Productions",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Cold_Sato-san_Is_Only_Sweet_to_Me"
+    },
+    {
+      "title": "Magic Knight Rayearth",
+      "format": "TV",
+      "year": 2026,
+      "release": "October 7 –",
+      "studio": "E&H Production",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Magic_Knight_Rayearth_(2026_TV_series)"
+    },
+    {
+      "title": "Sasaki and Peeps (season 2)",
+      "format": "TV",
+      "year": 2026,
+      "release": "October 7 –",
+      "studio": "Silver Link",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Sasaki_and_Peeps"
+    },
+    {
+      "title": "The Detective Is Already Dead (season 2)",
+      "format": "TV",
+      "year": 2026,
+      "release": "October 7 –",
+      "studio": "ENGI",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Detective_Is_Already_Dead"
+    },
+    {
+      "title": "The Laid-Off Cheat-Granting Mage Enjoys a Second Lease on Life",
+      "format": "TV",
+      "year": 2026,
+      "release": "October 7 –",
+      "studio": "P.A. Works",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Laid-Off_Cheat-Granting_Mage_Enjoys_a_Second_Lease_on_Life"
+    },
+    {
+      "title": "The World's Strongest Witch",
+      "format": "TV",
+      "year": 2026,
+      "release": "October 7 –",
+      "studio": "Bridge Aisle",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_World's_Strongest_Witch"
+    },
+    {
+      "title": "A Returner's Magic Should Be Special (season 2)",
+      "format": "TV",
+      "year": 2026,
+      "release": "October 8 –",
+      "studio": "Arvo Animation",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/A_Returner's_Magic_Should_Be_Special"
+    },
+    {
+      "title": "Dandivine",
+      "format": "TV",
+      "year": 2026,
+      "release": "October 8 –",
+      "studio": "Liden Films Kayac Animation",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Dandivine"
+    },
+    {
+      "title": "Reincarnated as a Sword (season 2)",
+      "format": "TV",
+      "year": 2026,
+      "release": "October 8 –",
+      "studio": "C2C",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Reincarnated_as_a_Sword"
+    },
+    {
+      "title": "The Iceblade Sorcerer Shall Rule the World (season 2)",
+      "format": "TV",
+      "year": 2026,
+      "release": "October 8 –",
+      "studio": "Zero-G",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Iceblade_Sorcerer_Shall_Rule_the_World"
+    },
+    {
+      "title": "Firefly Wedding",
+      "format": "TV",
+      "year": 2026,
+      "release": "October 9 –",
+      "studio": "David Production",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Firefly_Wedding"
+    },
+    {
+      "title": "Tetsuryō! Meet with Tetsudō Musume",
+      "format": "TV",
+      "year": 2026,
+      "release": "October 9 –",
+      "studio": "East Fish Studio",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Tetsuryō!_Meet_with_Tetsudō_Musume"
+    },
+    {
+      "title": "A Certain Dark Item",
+      "format": "TV",
+      "year": 2026,
+      "release": "October 10 –",
+      "studio": "J.C.Staff",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/A_Certain_Dark_Item"
+    },
+    {
+      "title": "Horror Collector",
+      "format": "TV",
+      "year": 2026,
+      "release": "October 10 –",
+      "studio": "Studio Palette",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Horror_Collector"
+    },
+    {
+      "title": "The Vermilion Mask (part 1)",
+      "format": "TV",
+      "year": 2026,
+      "release": "October 10 –",
+      "studio": "100studio",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Vermilion_Mask"
+    },
+    {
+      "title": "Ace of Diamond Act II (season 2, part 2)",
+      "format": "TV",
+      "year": 2026,
+      "release": "October 11 –",
+      "studio": "OLM",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Ace_of_Diamond"
+    },
+    {
+      "title": "Dragon Ball Super: Beerus",
+      "format": "TV",
+      "year": 2026,
+      "release": "October 11 –",
+      "studio": "Toei Animation",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Dragon_Ball_Super:_Beerus"
+    },
+    {
+      "title": "Full Clearing Another World Under a Goddess with Zero Believers",
+      "format": "TV",
+      "year": 2026,
+      "release": "October 11 –",
+      "studio": "Hornets",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Full_Clearing_Another_World_Under_a_Goddess_with_Zero_Believers"
+    },
+    {
+      "title": "Mission: Yozakura Family (season 2, part 2)",
+      "format": "TV",
+      "year": 2026,
+      "release": "October 11 –",
+      "studio": "Silver Link",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Mission:_Yozakura_Family"
+    },
+    {
+      "title": "Chitose Is in the Ramune Bottle (part 2)",
+      "format": "TV",
+      "year": 2026,
+      "release": "October 13 –",
+      "studio": "Feel",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Chitose_Is_in_the_Ramune_Bottle"
+    },
+    {
+      "title": "Dark Machine: The Animation",
+      "format": "TV",
+      "year": 2026,
+      "release": "October 14 –",
+      "studio": "Production +h.",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Dark_Machine:_The_Animation"
+    },
+    {
+      "title": "My Happy Marriage (special)",
+      "format": "TV",
+      "year": 2026,
+      "release": "October 25",
+      "studio": "Kinema Citrus",
+      "episodes": 3,
+      "sourceUrl": "https://en.wikipedia.org/wiki/My_Happy_Marriage"
+    },
+    {
+      "title": "The Idolmaster Million Live!",
+      "format": "OVA",
+      "year": 2026,
+      "release": "March 27",
+      "studio": "Shirogumi",
+      "episodes": 1,
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Idolmaster_Million_Live!"
+    },
+    {
+      "title": "Love Through a Prism",
+      "format": "ONA",
+      "year": 2026,
+      "release": "January 15",
+      "studio": "Wit Studio",
+      "episodes": 20,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Love_Through_a_Prism"
+    },
+    {
+      "title": "Baki-Dou",
+      "format": "ONA",
+      "year": 2026,
+      "release": "February 26 – June 18",
+      "studio": "TMS Entertainment",
+      "episodes": 25,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Baki_the_Grappler"
+    },
+    {
+      "title": "Beastars (season 3, part 2)",
+      "format": "ONA",
+      "year": 2026,
+      "release": "March 7",
+      "studio": "Orange",
+      "episodes": 12,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Beastars"
+    },
+    {
+      "title": "Steel Ball Run: JoJo's Bizarre Adventure",
+      "format": "ONA",
+      "year": 2026,
+      "release": "March 19 –",
+      "studio": "David Production",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Steel_Ball_Run:_JoJo's_Bizarre_Adventure"
+    },
+    {
+      "title": "Dandelion",
+      "format": "ONA",
+      "year": 2026,
+      "release": "April 16",
+      "studio": "NAZ",
+      "episodes": 7,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Dandelion_(manga)"
+    },
+    {
+      "title": "Cyborg 009: Nemesis",
+      "format": "ONA",
+      "year": 2026,
+      "release": "July 19",
+      "studio": "Arect",
+      "episodes": 3,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Cyborg_009"
+    },
+    {
+      "title": "Star Wars: Visions Presents – The Ninth Jedi",
+      "format": "ONA",
+      "year": 2026,
+      "release": "August 5",
+      "studio": "Production I.G",
+      "episodes": 8,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Star_Wars:_Visions_Presents_–_The_Ninth_Jedi"
+    },
+    {
+      "title": "Kaiju No. 8 Narumi's Weekday",
+      "format": "ONA",
+      "year": 2026,
+      "release": "September 5 – September 26",
+      "studio": "Production I.G",
+      "episodes": 4,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Kaiju_No._8"
+    },
+    {
+      "title": "Umayuru: Full Gate!",
+      "format": "ONA",
+      "year": 2026,
+      "release": "September 27 –",
+      "studio": "AtoriE",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Umamusume:_Pretty_Derby_(TV_series)"
+    },
+    {
+      "title": "Cyberpunk: Edgerunners 2",
+      "format": "ONA",
+      "year": 2026,
+      "release": "October 20",
+      "studio": "Trigger",
+      "episodes": 10,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Cyberpunk:_Edgerunners_2"
+    },
+    {
+      "title": "Devils' Crest",
+      "format": "ONA",
+      "year": 2026,
+      "release": "November 6 –",
+      "studio": "Production I.G",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Devils'_Crest"
+    },
+    {
+      "title": "Fool Night",
+      "format": "ONA",
+      "year": 2026,
+      "release": "November 26",
+      "studio": "Sunrise Shaft",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Fool_Night"
+    },
+    {
+      "title": "Disney Twisted-Wonderland: The Animation (season 2)",
+      "format": "ONA",
+      "year": 2026,
+      "release": "December",
+      "studio": "Yumeta Company Graphinica",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Disney_Twisted-Wonderland:_The_Animation"
+    }
+  ]
 }
