@@ -1,273 +1,9 @@
 {
-  "updated": "2026-10-19T03:35:09.552Z",
+  "updated": "2026-10-19T09:39:38.483Z",
   "source": "AniList public GraphQL metadata",
-  "windowStart": 1792182895,
-  "windowEnd": 1793158495,
+  "windowStart": 1792204764,
+  "windowEnd": 1793180364,
   "airing": [
-    {
-      "id": "mal-64718",
-      "mal_id": 64718,
-      "ani_id": 214703,
-      "title": "Ghost Meets Gal!",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx214703-iXoaVH6UkiZd.png",
-      "banner": "",
-      "description": "",
-      "year": 2026,
-      "startDate": "2026-09-05",
-      "format": "TV_SHORT",
-      "episodes": 0,
-      "averageScore": 52,
-      "status": "RELEASING",
-      "genres": [
-        "Comedy",
-        "Fantasy"
-      ],
-      "siteUrl": "https://anilist.co/anime/214703",
-      "streaming": [],
-      "trailer": {
-        "site": "youtube",
-        "id": "n0na0hTpl1E"
-      },
-      "next": {
-        "at": 1792796400,
-        "episode": 8
-      },
-      "airingAt": 1792191600,
-      "episode": 7,
-      "scheduleId": 419757
-    },
-    {
-      "id": "mal-64210",
-      "mal_id": 64210,
-      "ani_id": 212308,
-      "title": "Pan no Akachan (TV)",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx212308-HUdh20Djd7cm.jpg",
-      "banner": "",
-      "description": "",
-      "year": 2026,
-      "startDate": "2026-07-04",
-      "format": "TV_SHORT",
-      "episodes": 0,
-      "averageScore": 0,
-      "status": "RELEASING",
-      "genres": [
-        "Comedy"
-      ],
-      "siteUrl": "https://anilist.co/anime/212308",
-      "streaming": [],
-      "trailer": {
-        "site": "youtube",
-        "id": "NGwgoL0TvI8"
-      },
-      "next": {
-        "at": 1792798200,
-        "episode": 17
-      },
-      "airingAt": 1792193400,
-      "episode": 16,
-      "scheduleId": 420277
-    },
-    {
-      "id": "mal-60153",
-      "mal_id": 60153,
-      "ani_id": 183231,
-      "title": "RILAKKUMA",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b183231-z7SgjmXZBcoX.png",
-      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/183231-JFjTqQe3rPCw.jpg",
-      "description": "Everyday life gets a cozy twist with the laid-back Rilakkuma. Gentle moments of friendship, change, and small joys unfold, turning ordinary moments into something quietly magical—one soft, comforting day at a time. It's a moment that will make your heart feel lighter and lighter. No matter where you are or what you're doing, Rilakkuma will be by your side. An exciting new story begins! Experience the stress-free world of Rilakkuma, the relaxed bear who makes being lazy look effortless! (Source: Crunchyroll, Rilakkuma Anime Site, translated)",
-      "year": 2026,
-      "startDate": "2026-04-04",
-      "format": "TV_SHORT",
-      "episodes": 0,
-      "averageScore": 62,
-      "status": "RELEASING",
-      "genres": [
-        "Fantasy",
-        "Slice of Life"
-      ],
-      "siteUrl": "https://anilist.co/anime/183231",
-      "streaming": [
-        {
-          "name": "Crunchyroll",
-          "url": "https://www.crunchyroll.com/series/GT00374493/rilakkuma"
-        }
-      ],
-      "trailer": {
-        "site": "youtube",
-        "id": "rV-fcFL5vtU"
-      },
-      "next": {
-        "at": 1792801560,
-        "episode": 29
-      },
-      "airingAt": 1792196760,
-      "episode": 28,
-      "scheduleId": 421152,
-      "description_es": "Cada día la vida recibe un toque acogedor con el relajado Rilakkuma. Los momentos suaves de amistad, cambio y las pequeñas alegrías se desarrollan, convirtiendo los momentos ordinarios en algo silenciosamente mágico — un día suave y reconfortante a la vez. Es un momento que hará que su corazón se sienta más ligero y más ligero. No importa dónde estés o lo que estés haciendo, Rilakkuma estará a tu lado. ¡Una nueva historia emocionante comienza! ¡Experimente el mundo libre de estrés de Rilakkuma, el oso relajado que hace ser perezoso sin esfuerzo! (Fuente: Crunchyroll, Rilakkuma Anime Site, traducido)"
-    },
-    {
-      "id": "mal-64789",
-      "mal_id": 64789,
-      "ani_id": 214968,
-      "title": "Nezumi-kun no Chokki (TV) 2nd Season",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx214968-rrPSP2nKF40C.jpg",
-      "banner": "",
-      "description": "Second season of Nezumi-kun no Chokki (TV)",
-      "year": 2026,
-      "startDate": "2026-10-03",
-      "format": "TV_SHORT",
-      "episodes": 0,
-      "averageScore": 0,
-      "status": "RELEASING",
-      "genres": [
-        "Fantasy"
-      ],
-      "siteUrl": "https://anilist.co/anime/214968",
-      "streaming": [],
-      "trailer": null,
-      "next": {
-        "at": 1792801800,
-        "episode": 4
-      },
-      "airingAt": 1792197000,
-      "episode": 3,
-      "scheduleId": 418611,
-      "description_es": "Segunda temporada de Nezumi-kun no Chokki (TV)"
-    },
-    {
-      "id": "mal-63157",
-      "mal_id": 63157,
-      "ani_id": 216557,
-      "title": "KERORO☆",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx216557-b72dAqbVEDO7.jpg",
-      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/216557-FdbwnWM2oskW.jpg",
-      "description": "Sergeant Keroro comes to conquer Earth, only to get captured and stuck living with the Hinata family! (Source: Crunchyroll)",
-      "year": 2026,
-      "startDate": "2026-10-03",
-      "format": "TV",
-      "episodes": 0,
-      "averageScore": 57,
-      "status": "RELEASING",
-      "genres": [
-        "Comedy",
-        "Sci-Fi"
-      ],
-      "siteUrl": "https://anilist.co/anime/216557",
-      "streaming": [
-        {
-          "name": "Crunchyroll",
-          "url": "https://www.crunchyroll.com/series/GT00383995/"
-        }
-      ],
-      "trailer": {
-        "site": "youtube",
-        "id": "iMyre5xXDzE"
-      },
-      "next": {
-        "at": 1792801800,
-        "episode": 4
-      },
-      "airingAt": 1792197000,
-      "episode": 3,
-      "scheduleId": 419527,
-      "description_es": "¡El sargento Keroro viene a conquistar la Tierra, sólo para ser capturado y atrapado viviendo con la familia Hinata! (Fuente: Crunchyroll)"
-    },
-    {
-      "id": "mal-61619",
-      "mal_id": 61619,
-      "ani_id": 214260,
-      "title": "A Good Day to Ascend",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx214260-m2fg5OwduwSt.jpg",
-      "banner": "",
-      "description": "In the chaotic times, demons and monsters roam freely, and treacherous officials are in power. With the invasion of the Netherworld, both humans and Netherworld beings wreak havoc on the mortal world, and the wild gods who work for the Netherworld bully the common people. Enraged, Xu Ying, a snake-catcher, rebels and commits the sin of killing a god, and also takes out an incompetent court official. Hunted down by the two realms, his fleeing begins... (Source: iQ)",
-      "year": 2026,
-      "startDate": "2026-07-18",
-      "format": "ONA",
-      "episodes": 30,
-      "averageScore": 0,
-      "status": "RELEASING",
-      "genres": [
-        "Action",
-        "Adventure",
-        "Fantasy"
-      ],
-      "siteUrl": "https://anilist.co/anime/214260",
-      "streaming": [],
-      "trailer": null,
-      "next": {
-        "at": 1792803600,
-        "episode": 17
-      },
-      "airingAt": 1792198800,
-      "episode": 16,
-      "scheduleId": 417665,
-      "description_es": "En los tiempos caóticos, demonios y monstruos andan libremente, y funcionarios traicioneros están en el poder. Con la invasión del Netherworld, los seres humanos y el Netherworld causaron estragos en el mundo mortal, y los dioses salvajes que trabajan para el Netherworld intimidan al pueblo común. Enfurecido, Xu Ying, un cazador de serpientes, rebelde y comete el pecado de matar a un dios, y también saca a un funcionario de la corte incompetente. Cazado por los dos reinos, su huida comienza... (Fuente: iQ)"
-    },
-    {
-      "id": "mal-51836",
-      "mal_id": 51836,
-      "ani_id": 137683,
-      "title": "Soul Land 2: The Peerless Tang Clan",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx137683-IMuvIECdZNBh.png",
-      "banner": "",
-      "description": "The Tang Sect in a turbulent world. There is nothing but martial spirit here. Ten thousand years after the founding of the Tang Sect, it is in relative decline. An extremely talented man was born. Can the new Shrek Seven Monsters revive the Tang Sect and bring it back to glory? A soul beast of over one million years old; Electrolux who can pick stars; The new soul utensil system that led to the decline of the Tang Sect... A lot of secrets are to be revealed. Can the secret weapons of the Tang Sect be sharp again? Can the Tang Sect regain its former glory? (Source: WeTV)",
-      "year": 2023,
-      "startDate": "2023-06-24",
-      "format": "ONA",
-      "episodes": 182,
-      "averageScore": 77,
-      "status": "RELEASING",
-      "genres": [
-        "Action",
-        "Adventure",
-        "Fantasy",
-        "Romance"
-      ],
-      "siteUrl": "https://anilist.co/anime/137683",
-      "streaming": [],
-      "trailer": null,
-      "next": {
-        "at": 1792807200,
-        "episode": 176
-      },
-      "airingAt": 1792202400,
-      "episode": 175,
-      "scheduleId": 414711,
-      "description_es": "El Tang Sect en un mundo turbulento. Aquí no hay nada más que espíritu marcial. Diez mil años después de la fundación del Tang Sect, está en declive relativo. Nació un hombre extremadamente talentoso. ¿Pueden los nuevos Monstruos Shrek revivir el Tang Sect y traerlo de vuelta a la gloria? Una bestia de alma de más de un millón de años; Electrolux que puede elegir estrellas; El nuevo sistema de utensilios de alma que llevó al declive del Tang Sect... Hay que revelar muchos secretos. ¿Pueden volver a afilarse las armas secretas del Tang Sect? ¿Puede el Tang Sect recuperar su antigua gloria? (Fuente: WeTV)"
-    },
-    {
-      "id": "mal-60597",
-      "mal_id": 60597,
-      "ani_id": 199353,
-      "title": "Dawang Raoming 3",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx199353-S2jczHjCWHGL.png",
-      "banner": "",
-      "description": "The third season of Dawang Raoming .",
-      "year": 2026,
-      "startDate": "2026-10-03",
-      "format": "ONA",
-      "episodes": 12,
-      "averageScore": 66,
-      "status": "RELEASING",
-      "genres": [
-        "Action",
-        "Fantasy"
-      ],
-      "siteUrl": "https://anilist.co/anime/199353",
-      "streaming": [],
-      "trailer": {
-        "site": "youtube",
-        "id": "xIa7dMUka-8"
-      },
-      "next": {
-        "at": 1792807200,
-        "episode": 6
-      },
-      "airingAt": 1792202400,
-      "episode": 5,
-      "scheduleId": 421873,
-      "description_es": "La tercera temporada de Dawang Raoming."
-    },
     {
       "id": "mal-63901",
       "mal_id": 63901,
@@ -391,7 +127,7 @@
       "airingAt": 1792225800,
       "episode": 2,
       "scheduleId": 422489,
-      "description_es": "\"La máscara\" da poder a cualquiera que la use. A veces, eso significa una posibilidad interminable, o una tragedia inimaginable... Perú, alumno del legendario fabricante de máscaras Gaston Roux, se hace controlado por el “Mask del Dios Guerrero”, y mata involuntariamente a sus amigos, e incluso a su propio maestro. Para evitar que este tipo de tragedia vuelva a ocurrir, Perú jura destruir todas las máscaras de Gaston que se extienden por todo el mundo. Frente a los pecados que"
+      "description_es": "\"La máscara\" da poder a cualquiera que la use. A veces, eso significa una posibilidad interminable, o una tragedia inimaginable... Perú, alumno del legendario fabricante de máscaras Gaston Roux, se hace controlado por el “Mask del Dios Guerrero”, y mata involuntariamente a sus amigos, e incluso a su propio maestro. Para evitar que este tipo de tragedia vuelva a ocurrir, Perú jura destruir todas las máscaras de Gaston que se extienden por todo el mundo. Frente a los pecados que ha cometido, se embarca en su viaje. Conocer a nuevos amigos y enfrentar a poderosos enemigos. El chico continúa. Hasta el día que puede expiar por hola"
     },
     {
       "id": "mal-235",
@@ -527,7 +263,7 @@
       "airingAt": 1792238400,
       "episode": 3,
       "scheduleId": 419826,
-      "description_es": "Romelia y su partido tienen éxito en derrotar al Rey demonio Zelgis, aunque la carga imprudente del príncipe Henri los obliga a una batalla agotadora. Después, Romelia se marca \"peso muerto\" por no luchar directamente, y el Príncipe unilateralmente rompe su compromiso. Denegado un lugar en las celebraciones de la victoria, Romelia vuelve a casa, sólo para ser conocido con indiferencia fría de su familia y sociedad. Sin embargo, se niega a romper. Ella ya tiene"
+      "description_es": "Romelia y su partido tienen éxito en derrotar al Rey demonio Zelgis, aunque la carga imprudente del príncipe Henri los obliga a una batalla agotadora. Después, Romelia se marca \"peso muerto\" por no luchar directamente, y el Príncipe unilateralmente rompe su compromiso. Denegado un lugar en las celebraciones de la victoria, Romelia vuelve a casa, sólo para ser conocido con indiferencia fría de su familia y sociedad. Sin embargo, se niega a romper. Ella ya ha puesto sus ojos en el camino que está por delante. (Fuente: Crunchyroll) Nota: Romelia War Chronicle fue transmitido 2 días antes de la emisión de televisión en A"
     },
     {
       "id": "mal-61153",
@@ -619,7 +355,7 @@
       "startDate": "2026-10-03",
       "format": "TV",
       "episodes": 0,
-      "averageScore": 86,
+      "averageScore": 87,
       "status": "RELEASING",
       "genres": [
         "Action",
@@ -738,7 +474,7 @@
       "startDate": "2026-10-10",
       "format": "TV",
       "episodes": 12,
-      "averageScore": 50,
+      "averageScore": 49,
       "status": "RELEASING",
       "genres": [
         "Horror",
@@ -760,7 +496,7 @@
       "airingAt": 1792248300,
       "episode": 2,
       "scheduleId": 420241,
-      "description_es": "Las leyendas urbanas cobran vida... Todos han oído una leyenda urbana antes, pero pocos han llegado cara a cara con uno. Estos fenómenos están en todas partes, existentes en las sombras de la realidad. Cada vez más de ellos han estado apareciendo a raíz del niño sin rostro visto por todo Japón. Si la ves o una de las leyendas urbanas que trae, ora al chico en la capucha roja te encuentra antes de que sea demasiado tarde. Usted no tendrá una oportunidad por su cuenta. Pero con su ayuda"
+      "description_es": "Las leyendas urbanas cobran vida... Todos han oído una leyenda urbana antes, pero pocos han llegado cara a cara con uno. Estos fenómenos están en todas partes, existentes en las sombras de la realidad. Cada vez más de ellos han estado apareciendo a raíz del niño sin rostro visto por todo Japón. Si la ves o una de las leyendas urbanas que trae, ora al chico en la capucha roja te encuentra antes de que sea demasiado tarde. Usted no tendrá una oportunidad por su cuenta. Pero con su ayuda, puedes vivir para ver otro día... (Fuente: Yen Press)"
     },
     {
       "id": "mal-56733",
@@ -869,7 +605,7 @@
       "airingAt": 1792252560,
       "episode": 3,
       "scheduleId": 417716,
-      "description_es": "La tercera temporada de Ranma 1/2 (2024)."
+      "description_es": "La tercera temporada de Ranma 1/2 (2024) ."
     },
     {
       "id": "mal-62922",
@@ -1115,7 +851,7 @@
       "startDate": "2026-04-05",
       "format": "TV",
       "episodes": 0,
-      "averageScore": 54,
+      "averageScore": 55,
       "status": "RELEASING",
       "genres": [
         "Music"
@@ -1336,7 +1072,7 @@
       "startDate": "2026-10-11",
       "format": "TV",
       "episodes": 0,
-      "averageScore": 74,
+      "averageScore": 75,
       "status": "RELEASING",
       "genres": [
         "Sports"
@@ -1580,7 +1316,7 @@
       "startDate": "2026-10-04",
       "format": "TV",
       "episodes": 0,
-      "averageScore": 60,
+      "averageScore": 61,
       "status": "RELEASING",
       "genres": [
         "Action",
@@ -1599,7 +1335,7 @@
       "airingAt": 1792332000,
       "episode": 3,
       "scheduleId": 422114,
-      "description_es": "Shizuka se ocupa de los trabajos más peligrosos de los asesinos, pero ella no es la que hace el asesinato. Más bien, es su hermano, Nagi, un asesino fuerte que tomó una bala para proteger a su hermana, dejarlo en estado en coma y tener que usar una silla de ruedas. Sin embargo, Shizuka ha descubierto la clave para despertar a su hermano: ¡debe enfrentarse con la intención de matar! Así comienza un viaje violento de recuperación, luchando contra los enemigos más peligrosos! (Fuente: Kodansha USA)"
+      "description_es": "Shizuka se ocupa de los trabajos más peligrosos de los asesinos, pero ella no es la que hace el asesinato. Más bien, es su hermano, Nagi, un asesino fuerte que tomó una bala para proteger a su hermana, dejarlo en estado en coma y tener que usar una silla de ruedas. Sin embargo, Shizuka ha descubierto la clave para despertar a su hermano: ¡debe enfrentarse con la intención de matar! Así comienza un viaje violento de recuperación, luchando contra los enemigos más peligrosos! (Fuente: Kodansha"
     },
     {
       "id": "mal-63367",
@@ -1638,7 +1374,7 @@
       "airingAt": 1792332960,
       "episode": 2,
       "scheduleId": 419190,
-      "description_es": "Han pasado varios años desde la feroz batalla contra Majin Buu, y la Tierra finalmente ha recuperado un breve momento de paz. Al mismo tiempo, Beerus, el Dios de la Destrucción, despierta de su sueño largo y profundo. Incluso Kai y el Supremo Kai, consciente del abrumador poder de Beerus para destruir planetas enteros, ver su despertar con gran miedo... Mientras tanto, Beerus escucha rumores de un Saiyan que venció a Frieza y de repente aparece ante Goku. Atacada por Beerus, el ser más fuerte del universo, la Tierra está en grave peligro. Así comienza una batalla cósmica que rompe la tierra entre el Dios de la Destrucción y Go"
+      "description_es": "Han pasado varios años desde la feroz batalla contra Majin Buu, y la Tierra finalmente ha recuperado un breve momento de paz. Al mismo tiempo, Beerus, el Dios de la Destrucción, despierta de su sueño largo y profundo. Incluso Kai y el Supremo Kai, consciente del abrumador poder de Beerus para destruir planetas enteros, ver su despertar con gran miedo... Mientras tanto, Beerus escucha rumores de un Saiyan que venció a Frieza y de repente aparece ante Goku. Meta de cerveza"
     },
     {
       "id": "mal-60601",
@@ -1676,7 +1412,7 @@
       "airingAt": 1792333800,
       "episode": 4,
       "scheduleId": 419228,
-      "description_es": "La tercera temporada de Tensei Kizoku, Kantei Skill de Nariagaru . Nota: El 4 de septiembre de 2026, se anunció que GeyeG Pictures tomaría la producción del estudio MOTHER manteniendo el mismo personal."
+      "description_es": "La tercera temporada de Tensei Kizoku, Kantei Skill de Nariagaru. Nota: El 4 de septiembre de 2026, se anunció que GeyeG Pictures tomaría la producción del estudio MOTHER manteniendo el mismo personal."
     },
     {
       "id": "mal-63292",
@@ -1690,7 +1426,7 @@
       "startDate": "2026-10-11",
       "format": "TV",
       "episodes": 0,
-      "averageScore": 63,
+      "averageScore": 64,
       "status": "RELEASING",
       "genres": [
         "Adventure",
@@ -1753,7 +1489,7 @@
       "airingAt": 1792333800,
       "episode": 3,
       "scheduleId": 419612,
-      "description_es": "Renací como una hija villana en un juego de harem otome inverso. Después de enfermarse con fiebre alta a los 10 años, Pia Rockwell de repente recordó su vida pasada como estudiante universitaria en Japón. Pero lejos de ir por la ruta del villano, todo lo que esta chica súper tímida quiere es finalmente utilizar su conocimiento de cuando era una estudiante de posgrado que estudiaba para obtener su doctorado en paleontología. Su objetivo final es convertirse en un común, excavar fósiles, construir un museo y luego convertirse en un curador. Así que para escapar de la ruta del villano y evitar ser deportado por su prometido durante la graduación"
+      "description_es": "Renací como una hija villana en un juego de harem otome inverso. Después de enfermarse con fiebre alta a los 10 años, Pia Rockwell de repente recordó su vida pasada como estudiante universitaria en Japón. Pero lejos de ir por la ruta del villano, todo lo que esta chica súper tímida quiere es finalmente utilizar su conocimiento de cuando era una estudiante de posgrado que estudiaba para obtener su doctorado en paleontología. Su objetivo final es llegar a ser más común, excavar fos"
     },
     {
       "id": "mal-64340",
@@ -1767,7 +1503,7 @@
       "startDate": "2026-09-27",
       "format": "ONA",
       "episodes": 12,
-      "averageScore": 75,
+      "averageScore": 76,
       "status": "RELEASING",
       "genres": [
         "Action",
@@ -1881,7 +1617,7 @@
       "startDate": "2026-10-05",
       "format": "TV_SHORT",
       "episodes": 8,
-      "averageScore": 51,
+      "averageScore": 50,
       "status": "RELEASING",
       "genres": [
         "Ecchi",
@@ -2001,7 +1737,7 @@
       "airingAt": 1792340400,
       "episode": 3,
       "scheduleId": 419203,
-      "description_es": "Amona es un llamador oscuro con poderes demoníacos. Roni es un sacerdote devota que está demasiado tenso. Por todos los derechos, deben odiarse. En lugar de eso, terminan acelerando su arco de enemigos a amantes con un stand de una noche que de alguna manera insiste en convertirse en un evento recurrente. Ahora deben ocultar su nave de situación del resto del partido mientras niegan su creciente atracción entre sí, mientras tratan con un imp que está demasiado invertido en su vida amorosa. (Fuente: HIDIVE)"
+      "description_es": "Amona es un llamador oscuro con poderes demoníacos. Roni es un sacerdote devota que está demasiado tenso. Por todos los derechos, deben odiarse. En lugar de eso, terminan acelerando su arco de enemigos a amantes con un stand de una noche que de alguna manera insiste en convertirse en un evento recurrente. Ahora deben ocultar su nave de situación del resto del partido mientras niegan su creciente atracción entre sí, todo mientras se trata de un imp que está demasiado invertido en"
     },
     {
       "id": "mal-65169",
@@ -2133,7 +1869,8 @@
       },
       "airingAt": 1792378800,
       "episode": 3,
-      "scheduleId": 422693
+      "scheduleId": 422693,
+      "description_es": "Chibi shorts to Kusuriya no Hitorigoto 3rd Season lanzado en el canal de animación TOHO YouTube. Nota: El conteo de Episodio comienza a las 49."
     },
     {
       "id": "mal-63409",
@@ -2286,7 +2023,7 @@
       "airingAt": 1792418400,
       "episode": 9,
       "scheduleId": 419856,
-      "description_es": "La destrucción se desploma al final de la Guerra de la Sangre Mil Años entre los Reapers del Alma y las Quincias... mientras la muerte del Rey del Alma refleja el colapso de los Tres Mundos, las distorsiones y los presagios de destrucción comienzan a aparecer en todos los reinos. Quince batallas surgieron a lo largo de la Wahr Welt entre los 13 escuadrones de la Guardia de la Corte y la Guardia Real. Ichigo aprende sobre las verdaderas intenciones de Uryuu y renueva su determinación de proteger el mundo juntos"
+      "description_es": "La destrucción se desploma al final de la Guerra de la Sangre Mil Años entre los Reapers del Alma y las Quincias... mientras la muerte del Rey del Alma refleja el colapso de los Tres Mundos, las distorsiones y los presagios de destrucción comienzan a aparecer en todos los reinos. Quince batallas surgieron a lo largo de la Wahr Welt entre los 13 escuadrones de la Guardia de la Corte y la Guardia Real. Ichigo aprende sobre las verdaderas intenciones de Uryuu y renueva su determinación de proteger el mundo juntos, como amigos que confían entre sí. Yhwach ha superado incluso su propia habilidad, el Todopoderoso... La feroz batalla por la supervivencia de la aplicación Tres Mundos"
     },
     {
       "id": "mal-54344",
@@ -2883,7 +2620,7 @@
       "startDate": "2026-10-13",
       "format": "TV",
       "episodes": 11,
-      "averageScore": 75,
+      "averageScore": 76,
       "status": "RELEASING",
       "genres": [
         "Comedy",
@@ -2981,7 +2718,7 @@
       "airingAt": 1792508400,
       "episode": 3,
       "scheduleId": 420254,
-      "description_es": "Rein, un encantador, es expulsado de su gremio un día. Pero en lugar de desesperar, declara, “¡Ahora puedo hacer cualquier cosa!” y comienza a reclamar el enorme número de puntos de mejora que una vez vierte en el equipo de sus compañeros, a partir de un nuevo camino como aventurero. Reunirse a su alrededor son personas que llevan heridas que no se desvanecen fácilmente: un genio aventurero que cerró su corazón después de que su partido fue masacrado, un guerrero que perdió"
+      "description_es": "Rein, un encantador, es expulsado de su gremio un día. Pero en lugar de desesperar, declara, “¡Ahora puedo hacer cualquier cosa!” y comienza a reclamar el enorme número de puntos de mejora que una vez vierte en el equipo de sus compañeros, a partir de un nuevo camino como aventurero. Reunirse a su alrededor son personas que llevan heridas que no se desvanecen fácilmente: un genio aventurero que cerró su corazón después de que su partido fue masacrado, un guerrero que perdió a su familia, y un asesino criado de la infancia para matar. Sin embargo Rein nunca rechaza sus pasados o sus cicatrices – los acepta a todos con brillante, hetero"
     },
     {
       "id": "mal-63489",
@@ -4533,7 +4270,7 @@
       "startDate": "2026-10-03",
       "format": "TV",
       "episodes": 0,
-      "averageScore": 57,
+      "averageScore": 58,
       "status": "RELEASING",
       "genres": [
         "Comedy",
@@ -4778,7 +4515,7 @@
       "airingAt": 1792830600,
       "episode": 3,
       "scheduleId": 422490,
-      "description_es": "\"La máscara\" da poder a cualquiera que la use. A veces, eso significa una posibilidad interminable, o una tragedia inimaginable... Perú, alumno del legendario fabricante de máscaras Gaston Roux, se hace controlado por el “Mask del Dios Guerrero”, y mata involuntariamente a sus amigos, e incluso a su propio maestro. Para evitar que este tipo de tragedia vuelva a ocurrir, Perú jura destruir todas las máscaras de Gaston que se extienden por todo el mundo. Frente a los pecados que"
+      "description_es": "\"La máscara\" da poder a cualquiera que la use. A veces, eso significa una posibilidad interminable, o una tragedia inimaginable... Perú, alumno del legendario fabricante de máscaras Gaston Roux, se hace controlado por el “Mask del Dios Guerrero”, y mata involuntariamente a sus amigos, e incluso a su propio maestro. Para evitar que este tipo de tragedia vuelva a ocurrir, Perú jura destruir todas las máscaras de Gaston que se extienden por todo el mundo. Frente a los pecados que ha cometido, se embarca en su viaje. Conocer a nuevos amigos y enfrentar a poderosos enemigos. El chico continúa. Hasta el día que puede expiar por hola"
     },
     {
       "id": "mal-235",
@@ -4914,7 +4651,7 @@
       "airingAt": 1792843200,
       "episode": 4,
       "scheduleId": 419827,
-      "description_es": "Romelia y su partido tienen éxito en derrotar al Rey demonio Zelgis, aunque la carga imprudente del príncipe Henri los obliga a una batalla agotadora. Después, Romelia se marca \"peso muerto\" por no luchar directamente, y el Príncipe unilateralmente rompe su compromiso. Denegado un lugar en las celebraciones de la victoria, Romelia vuelve a casa, sólo para ser conocido con indiferencia fría de su familia y sociedad. Sin embargo, se niega a romper. Ella ya tiene"
+      "description_es": "Romelia y su partido tienen éxito en derrotar al Rey demonio Zelgis, aunque la carga imprudente del príncipe Henri los obliga a una batalla agotadora. Después, Romelia se marca \"peso muerto\" por no luchar directamente, y el Príncipe unilateralmente rompe su compromiso. Denegado un lugar en las celebraciones de la victoria, Romelia vuelve a casa, sólo para ser conocido con indiferencia fría de su familia y sociedad. Sin embargo, se niega a romper. Ella ya ha puesto sus ojos en el camino que está por delante. (Fuente: Crunchyroll) Nota: Romelia War Chronicle fue transmitido 2 días antes de la emisión de televisión en A"
     },
     {
       "id": "mal-61153",
@@ -5006,7 +4743,7 @@
       "startDate": "2026-10-03",
       "format": "TV",
       "episodes": 0,
-      "averageScore": 86,
+      "averageScore": 87,
       "status": "RELEASING",
       "genres": [
         "Action",
@@ -5125,7 +4862,7 @@
       "startDate": "2026-10-10",
       "format": "TV",
       "episodes": 12,
-      "averageScore": 50,
+      "averageScore": 49,
       "status": "RELEASING",
       "genres": [
         "Horror",
@@ -5147,7 +4884,7 @@
       "airingAt": 1792853100,
       "episode": 3,
       "scheduleId": 420242,
-      "description_es": "Las leyendas urbanas cobran vida... Todos han oído una leyenda urbana antes, pero pocos han llegado cara a cara con uno. Estos fenómenos están en todas partes, existentes en las sombras de la realidad. Cada vez más de ellos han estado apareciendo a raíz del niño sin rostro visto por todo Japón. Si la ves o una de las leyendas urbanas que trae, ora al chico en la capucha roja te encuentra antes de que sea demasiado tarde. Usted no tendrá una oportunidad por su cuenta. Pero con su ayuda"
+      "description_es": "Las leyendas urbanas cobran vida... Todos han oído una leyenda urbana antes, pero pocos han llegado cara a cara con uno. Estos fenómenos están en todas partes, existentes en las sombras de la realidad. Cada vez más de ellos han estado apareciendo a raíz del niño sin rostro visto por todo Japón. Si la ves o una de las leyendas urbanas que trae, ora al chico en la capucha roja te encuentra antes de que sea demasiado tarde. Usted no tendrá una oportunidad por su cuenta. Pero con su ayuda, puedes vivir para ver otro día... (Fuente: Yen Press)"
     },
     {
       "id": "mal-56733",
@@ -5256,7 +4993,7 @@
       "airingAt": 1792857360,
       "episode": 4,
       "scheduleId": 417717,
-      "description_es": "La tercera temporada de Ranma 1/2 (2024)."
+      "description_es": "La tercera temporada de Ranma 1/2 (2024) ."
     },
     {
       "id": "mal-62922",
@@ -5502,7 +5239,7 @@
       "startDate": "2026-04-05",
       "format": "TV",
       "episodes": 0,
-      "averageScore": 54,
+      "averageScore": 55,
       "status": "RELEASING",
       "genres": [
         "Music"
@@ -5723,7 +5460,7 @@
       "startDate": "2026-10-11",
       "format": "TV",
       "episodes": 0,
-      "averageScore": 74,
+      "averageScore": 75,
       "status": "RELEASING",
       "genres": [
         "Sports"
@@ -6069,7 +5806,7 @@
       "startDate": "2026-10-04",
       "format": "TV",
       "episodes": 0,
-      "averageScore": 60,
+      "averageScore": 61,
       "status": "RELEASING",
       "genres": [
         "Action",
@@ -6088,7 +5825,7 @@
       "airingAt": 1792936800,
       "episode": 4,
       "scheduleId": 422115,
-      "description_es": "Shizuka se ocupa de los trabajos más peligrosos de los asesinos, pero ella no es la que hace el asesinato. Más bien, es su hermano, Nagi, un asesino fuerte que tomó una bala para proteger a su hermana, dejarlo en estado en coma y tener que usar una silla de ruedas. Sin embargo, Shizuka ha descubierto la clave para despertar a su hermano: ¡debe enfrentarse con la intención de matar! Así comienza un viaje violento de recuperación, luchando contra los enemigos más peligrosos! (Fuente: Kodansha USA)"
+      "description_es": "Shizuka se ocupa de los trabajos más peligrosos de los asesinos, pero ella no es la que hace el asesinato. Más bien, es su hermano, Nagi, un asesino fuerte que tomó una bala para proteger a su hermana, dejarlo en estado en coma y tener que usar una silla de ruedas. Sin embargo, Shizuka ha descubierto la clave para despertar a su hermano: ¡debe enfrentarse con la intención de matar! Así comienza un viaje violento de recuperación, luchando contra los enemigos más peligrosos! (Fuente: Kodansha"
     },
     {
       "id": "mal-63367",
@@ -6127,7 +5864,7 @@
       "airingAt": 1792937760,
       "episode": 3,
       "scheduleId": 419191,
-      "description_es": "Han pasado varios años desde la feroz batalla contra Majin Buu, y la Tierra finalmente ha recuperado un breve momento de paz. Al mismo tiempo, Beerus, el Dios de la Destrucción, despierta de su sueño largo y profundo. Incluso Kai y el Supremo Kai, consciente del abrumador poder de Beerus para destruir planetas enteros, ver su despertar con gran miedo... Mientras tanto, Beerus escucha rumores de un Saiyan que venció a Frieza y de repente aparece ante Goku. Atacada por Beerus, el ser más fuerte del universo, la Tierra está en grave peligro. Así comienza una batalla cósmica que rompe la tierra entre el Dios de la Destrucción y Go"
+      "description_es": "Han pasado varios años desde la feroz batalla contra Majin Buu, y la Tierra finalmente ha recuperado un breve momento de paz. Al mismo tiempo, Beerus, el Dios de la Destrucción, despierta de su sueño largo y profundo. Incluso Kai y el Supremo Kai, consciente del abrumador poder de Beerus para destruir planetas enteros, ver su despertar con gran miedo... Mientras tanto, Beerus escucha rumores de un Saiyan que venció a Frieza y de repente aparece ante Goku. Meta de cerveza"
     },
     {
       "id": "mal-60601",
@@ -6165,7 +5902,7 @@
       "airingAt": 1792938600,
       "episode": 5,
       "scheduleId": 419229,
-      "description_es": "La tercera temporada de Tensei Kizoku, Kantei Skill de Nariagaru . Nota: El 4 de septiembre de 2026, se anunció que GeyeG Pictures tomaría la producción del estudio MOTHER manteniendo el mismo personal."
+      "description_es": "La tercera temporada de Tensei Kizoku, Kantei Skill de Nariagaru. Nota: El 4 de septiembre de 2026, se anunció que GeyeG Pictures tomaría la producción del estudio MOTHER manteniendo el mismo personal."
     },
     {
       "id": "mal-63292",
@@ -6179,7 +5916,7 @@
       "startDate": "2026-10-11",
       "format": "TV",
       "episodes": 0,
-      "averageScore": 63,
+      "averageScore": 64,
       "status": "RELEASING",
       "genres": [
         "Adventure",
@@ -6242,7 +5979,7 @@
       "airingAt": 1792938600,
       "episode": 4,
       "scheduleId": 419613,
-      "description_es": "Renací como una hija villana en un juego de harem otome inverso. Después de enfermarse con fiebre alta a los 10 años, Pia Rockwell de repente recordó su vida pasada como estudiante universitaria en Japón. Pero lejos de ir por la ruta del villano, todo lo que esta chica súper tímida quiere es finalmente utilizar su conocimiento de cuando era una estudiante de posgrado que estudiaba para obtener su doctorado en paleontología. Su objetivo final es convertirse en un común, excavar fósiles, construir un museo y luego convertirse en un curador. Así que para escapar de la ruta del villano y evitar ser deportado por su prometido durante la graduación"
+      "description_es": "Renací como una hija villana en un juego de harem otome inverso. Después de enfermarse con fiebre alta a los 10 años, Pia Rockwell de repente recordó su vida pasada como estudiante universitaria en Japón. Pero lejos de ir por la ruta del villano, todo lo que esta chica súper tímida quiere es finalmente utilizar su conocimiento de cuando era una estudiante de posgrado que estudiaba para obtener su doctorado en paleontología. Su objetivo final es llegar a ser más común, excavar fos"
     },
     {
       "id": "mal-64340",
@@ -6256,7 +5993,7 @@
       "startDate": "2026-09-27",
       "format": "ONA",
       "episodes": 12,
-      "averageScore": 75,
+      "averageScore": 76,
       "status": "RELEASING",
       "genres": [
         "Action",
@@ -6456,7 +6193,7 @@
       "airingAt": 1792945200,
       "episode": 4,
       "scheduleId": 419204,
-      "description_es": "Amona es un llamador oscuro con poderes demoníacos. Roni es un sacerdote devota que está demasiado tenso. Por todos los derechos, deben odiarse. En lugar de eso, terminan acelerando su arco de enemigos a amantes con un stand de una noche que de alguna manera insiste en convertirse en un evento recurrente. Ahora deben ocultar su nave de situación del resto del partido mientras niegan su creciente atracción entre sí, mientras tratan con un imp que está demasiado invertido en su vida amorosa. (Fuente: HIDIVE)"
+      "description_es": "Amona es un llamador oscuro con poderes demoníacos. Roni es un sacerdote devota que está demasiado tenso. Por todos los derechos, deben odiarse. En lugar de eso, terminan acelerando su arco de enemigos a amantes con un stand de una noche que de alguna manera insiste en convertirse en un evento recurrente. Ahora deben ocultar su nave de situación del resto del partido mientras niegan su creciente atracción entre sí, todo mientras se trata de un imp que está demasiado invertido en"
     },
     {
       "id": "mal-65169",
@@ -6588,7 +6325,8 @@
       },
       "airingAt": 1792983600,
       "episode": 4,
-      "scheduleId": 422694
+      "scheduleId": 422694,
+      "description_es": "Chibi shorts to Kusuriya no Hitorigoto 3rd Season lanzado en el canal de animación TOHO YouTube. Nota: El conteo de Episodio comienza a las 49."
     },
     {
       "id": "mal-63409",
@@ -6741,7 +6479,7 @@
       "airingAt": 1793023200,
       "episode": 10,
       "scheduleId": 419857,
-      "description_es": "La destrucción se desploma al final de la Guerra de la Sangre Mil Años entre los Reapers del Alma y las Quincias... mientras la muerte del Rey del Alma refleja el colapso de los Tres Mundos, las distorsiones y los presagios de destrucción comienzan a aparecer en todos los reinos. Quince batallas surgieron a lo largo de la Wahr Welt entre los 13 escuadrones de la Guardia de la Corte y la Guardia Real. Ichigo aprende sobre las verdaderas intenciones de Uryuu y renueva su determinación de proteger el mundo juntos"
+      "description_es": "La destrucción se desploma al final de la Guerra de la Sangre Mil Años entre los Reapers del Alma y las Quincias... mientras la muerte del Rey del Alma refleja el colapso de los Tres Mundos, las distorsiones y los presagios de destrucción comienzan a aparecer en todos los reinos. Quince batallas surgieron a lo largo de la Wahr Welt entre los 13 escuadrones de la Guardia de la Corte y la Guardia Real. Ichigo aprende sobre las verdaderas intenciones de Uryuu y renueva su determinación de proteger el mundo juntos, como amigos que confían entre sí. Yhwach ha superado incluso su propia habilidad, el Todopoderoso... La feroz batalla por la supervivencia de la aplicación Tres Mundos"
     },
     {
       "id": "mal-54344",
@@ -6998,7 +6736,7 @@
       "startDate": "2026-10-13",
       "format": "TV",
       "episodes": 11,
-      "averageScore": 75,
+      "averageScore": 76,
       "status": "RELEASING",
       "genres": [
         "Comedy",
@@ -7096,7 +6834,7 @@
       "airingAt": 1793113200,
       "episode": 4,
       "scheduleId": 420255,
-      "description_es": "Rein, un encantador, es expulsado de su gremio un día. Pero en lugar de desesperar, declara, “¡Ahora puedo hacer cualquier cosa!” y comienza a reclamar el enorme número de puntos de mejora que una vez vierte en el equipo de sus compañeros, a partir de un nuevo camino como aventurero. Reunirse a su alrededor son personas que llevan heridas que no se desvanecen fácilmente: un genio aventurero que cerró su corazón después de que su partido fue masacrado, un guerrero que perdió"
+      "description_es": "Rein, un encantador, es expulsado de su gremio un día. Pero en lugar de desesperar, declara, “¡Ahora puedo hacer cualquier cosa!” y comienza a reclamar el enorme número de puntos de mejora que una vez vierte en el equipo de sus compañeros, a partir de un nuevo camino como aventurero. Reunirse a su alrededor son personas que llevan heridas que no se desvanecen fácilmente: un genio aventurero que cerró su corazón después de que su partido fue masacrado, un guerrero que perdió a su familia, y un asesino criado de la infancia para matar. Sin embargo Rein nunca rechaza sus pasados o sus cicatrices – los acepta a todos con brillante, hetero"
     },
     {
       "id": "mal-63489",
@@ -7202,7 +6940,8 @@
       },
       "airingAt": 1793138760,
       "episode": 16,
-      "scheduleId": 422342
+      "scheduleId": 422342,
+      "description_es": "Secuela de Chibi Godzilla no Gyakushuu 3 ."
     },
     {
       "id": "mal-63151",
@@ -7386,7 +7125,7 @@
         "startDate": "2026-09-27",
         "format": "ONA",
         "episodes": 12,
-        "averageScore": 75,
+        "averageScore": 76,
         "status": "RELEASING",
         "genres": [
           "Action",
@@ -7444,7 +7183,7 @@
           "at": 1792938600,
           "episode": 5
         },
-        "description_es": "La tercera temporada de Tensei Kizoku, Kantei Skill de Nariagaru . Nota: El 4 de septiembre de 2026, se anunció que GeyeG Pictures tomaría la producción del estudio MOTHER manteniendo el mismo personal."
+        "description_es": "La tercera temporada de Tensei Kizoku, Kantei Skill de Nariagaru. Nota: El 4 de septiembre de 2026, se anunció que GeyeG Pictures tomaría la producción del estudio MOTHER manteniendo el mismo personal."
       },
       {
         "id": "mal-56733",
@@ -7899,7 +7638,7 @@
         "startDate": "2026-10-03",
         "format": "TV",
         "episodes": 0,
-        "averageScore": 86,
+        "averageScore": 87,
         "status": "RELEASING",
         "genres": [
           "Action",
@@ -8026,7 +7765,7 @@
           "at": 1792843200,
           "episode": 4
         },
-        "description_es": "Romelia y su partido tienen éxito en derrotar al Rey demonio Zelgis, aunque la carga imprudente del príncipe Henri los obliga a una batalla agotadora. Después, Romelia se marca \"peso muerto\" por no luchar directamente, y el Príncipe unilateralmente rompe su compromiso. Denegado un lugar en las celebraciones de la victoria, Romelia vuelve a casa, sólo para ser conocido con indiferencia fría de su familia y sociedad. Sin embargo, se niega a romper. Ella ya tiene"
+        "description_es": "Romelia y su partido tienen éxito en derrotar al Rey demonio Zelgis, aunque la carga imprudente del príncipe Henri los obliga a una batalla agotadora. Después, Romelia se marca \"peso muerto\" por no luchar directamente, y el Príncipe unilateralmente rompe su compromiso. Denegado un lugar en las celebraciones de la victoria, Romelia vuelve a casa, sólo para ser conocido con indiferencia fría de su familia y sociedad. Sin embargo, se niega a romper. Ella ya ha puesto sus ojos en el camino que está por delante. (Fuente: Crunchyroll) Nota: Romelia War Chronicle fue transmitido 2 días antes de la emisión de televisión en A"
       },
       {
         "id": "mal-62524",
@@ -8175,7 +7914,7 @@
         "startDate": "2026-10-03",
         "format": "TV",
         "episodes": 0,
-        "averageScore": 57,
+        "averageScore": 58,
         "status": "RELEASING",
         "genres": [
           "Comedy",
@@ -8445,7 +8184,7 @@
           "at": 1792857360,
           "episode": 4
         },
-        "description_es": "La tercera temporada de Ranma 1/2 (2024)."
+        "description_es": "La tercera temporada de Ranma 1/2 (2024) ."
       },
       {
         "id": "mal-62753",
@@ -8481,7 +8220,7 @@
           "at": 1792938600,
           "episode": 4
         },
-        "description_es": "Renací como una hija villana en un juego de harem otome inverso. Después de enfermarse con fiebre alta a los 10 años, Pia Rockwell de repente recordó su vida pasada como estudiante universitaria en Japón. Pero lejos de ir por la ruta del villano, todo lo que esta chica súper tímida quiere es finalmente utilizar su conocimiento de cuando era una estudiante de posgrado que estudiaba para obtener su doctorado en paleontología. Su objetivo final es convertirse en un común, excavar fósiles, construir un museo y luego convertirse en un curador. Así que para escapar de la ruta del villano y evitar ser deportado por su prometido durante la graduación"
+        "description_es": "Renací como una hija villana en un juego de harem otome inverso. Después de enfermarse con fiebre alta a los 10 años, Pia Rockwell de repente recordó su vida pasada como estudiante universitaria en Japón. Pero lejos de ir por la ruta del villano, todo lo que esta chica súper tímida quiere es finalmente utilizar su conocimiento de cuando era una estudiante de posgrado que estudiaba para obtener su doctorado en paleontología. Su objetivo final es llegar a ser más común, excavar fos"
       },
       {
         "id": "mal-63751",
@@ -8495,7 +8234,7 @@
         "startDate": "2026-10-04",
         "format": "TV",
         "episodes": 0,
-        "averageScore": 60,
+        "averageScore": 61,
         "status": "RELEASING",
         "genres": [
           "Action",
@@ -8511,7 +8250,7 @@
           "at": 1792936800,
           "episode": 4
         },
-        "description_es": "Shizuka se ocupa de los trabajos más peligrosos de los asesinos, pero ella no es la que hace el asesinato. Más bien, es su hermano, Nagi, un asesino fuerte que tomó una bala para proteger a su hermana, dejarlo en estado en coma y tener que usar una silla de ruedas. Sin embargo, Shizuka ha descubierto la clave para despertar a su hermano: ¡debe enfrentarse con la intención de matar! Así comienza un viaje violento de recuperación, luchando contra los enemigos más peligrosos! (Fuente: Kodansha USA)"
+        "description_es": "Shizuka se ocupa de los trabajos más peligrosos de los asesinos, pero ella no es la que hace el asesinato. Más bien, es su hermano, Nagi, un asesino fuerte que tomó una bala para proteger a su hermana, dejarlo en estado en coma y tener que usar una silla de ruedas. Sin embargo, Shizuka ha descubierto la clave para despertar a su hermano: ¡debe enfrentarse con la intención de matar! Así comienza un viaje violento de recuperación, luchando contra los enemigos más peligrosos! (Fuente: Kodansha"
       },
       {
         "id": "mal-62907",
@@ -8782,7 +8521,7 @@
           "at": 1792945200,
           "episode": 4
         },
-        "description_es": "Amona es un llamador oscuro con poderes demoníacos. Roni es un sacerdote devota que está demasiado tenso. Por todos los derechos, deben odiarse. En lugar de eso, terminan acelerando su arco de enemigos a amantes con un stand de una noche que de alguna manera insiste en convertirse en un evento recurrente. Ahora deben ocultar su nave de situación del resto del partido mientras niegan su creciente atracción entre sí, mientras tratan con un imp que está demasiado invertido en su vida amorosa. (Fuente: HIDIVE)"
+        "description_es": "Amona es un llamador oscuro con poderes demoníacos. Roni es un sacerdote devota que está demasiado tenso. Por todos los derechos, deben odiarse. En lugar de eso, terminan acelerando su arco de enemigos a amantes con un stand de una noche que de alguna manera insiste en convertirse en un evento recurrente. Ahora deben ocultar su nave de situación del resto del partido mientras niegan su creciente atracción entre sí, todo mientras se trata de un imp que está demasiado invertido en"
       },
       {
         "id": "mal-63098",
@@ -8902,7 +8641,7 @@
         "startDate": "2026-10-05",
         "format": "TV_SHORT",
         "episodes": 8,
-        "averageScore": 51,
+        "averageScore": 50,
         "status": "RELEASING",
         "genres": [
           "Ecchi",
@@ -9015,6 +8754,35 @@
         "description_es": "Un mini anime semanal mostrado con cada episodio de Dark Summoner a Dekiteiru exclusivamente en la transmisión AT-X del anime de TV y en línea en Abema."
       },
       {
+        "id": "mal-65119",
+        "mal_id": 65119,
+        "ani_id": 218532,
+        "title": "Maomao no Hitorigoto 3rd Season",
+        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx218532-I1GCprJrJ5sm.png",
+        "banner": "",
+        "description": "Chibi shorts to Kusuriya no Hitorigoto 3rd Season released on the TOHO animation YouTube channel. Note: Episode count begins at 49.",
+        "year": 2026,
+        "startDate": "2026-10-05",
+        "format": "ONA",
+        "episodes": 0,
+        "averageScore": 0,
+        "status": "RELEASING",
+        "genres": [
+          "Comedy"
+        ],
+        "siteUrl": "https://anilist.co/anime/218532",
+        "streaming": [],
+        "trailer": {
+          "site": "youtube",
+          "id": "FuGZ0Cl8YMY"
+        },
+        "next": {
+          "at": 1792983600,
+          "episode": 4
+        },
+        "description_es": "Chibi shorts to Kusuriya no Hitorigoto 3rd Season lanzado en el canal de animación TOHO YouTube. Nota: El conteo de Episodio comienza a las 49."
+      },
+      {
         "id": "al-214593",
         "mal_id": null,
         "ani_id": 214593,
@@ -9041,34 +8809,6 @@
         "next": {
           "at": 1792681200,
           "episode": 6
-        }
-      },
-      {
-        "id": "mal-65119",
-        "mal_id": 65119,
-        "ani_id": 218532,
-        "title": "Maomao no Hitorigoto 3rd Season",
-        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx218532-I1GCprJrJ5sm.png",
-        "banner": "",
-        "description": "Chibi shorts to Kusuriya no Hitorigoto 3rd Season released on the TOHO animation YouTube channel. Note: Episode count begins at 49.",
-        "year": 2026,
-        "startDate": "2026-10-05",
-        "format": "ONA",
-        "episodes": 0,
-        "averageScore": 0,
-        "status": "RELEASING",
-        "genres": [
-          "Comedy"
-        ],
-        "siteUrl": "https://anilist.co/anime/218532",
-        "streaming": [],
-        "trailer": {
-          "site": "youtube",
-          "id": "FuGZ0Cl8YMY"
-        },
-        "next": {
-          "at": 1792983600,
-          "episode": 4
         }
       },
       {
@@ -9273,7 +9013,7 @@
           "at": 1792508400,
           "episode": 3
         },
-        "description_es": "Rein, un encantador, es expulsado de su gremio un día. Pero en lugar de desesperar, declara, “¡Ahora puedo hacer cualquier cosa!” y comienza a reclamar el enorme número de puntos de mejora que una vez vierte en el equipo de sus compañeros, a partir de un nuevo camino como aventurero. Reunirse a su alrededor son personas que llevan heridas que no se desvanecen fácilmente: un genio aventurero que cerró su corazón después de que su partido fue masacrado, un guerrero que perdió"
+        "description_es": "Rein, un encantador, es expulsado de su gremio un día. Pero en lugar de desesperar, declara, “¡Ahora puedo hacer cualquier cosa!” y comienza a reclamar el enorme número de puntos de mejora que una vez vierte en el equipo de sus compañeros, a partir de un nuevo camino como aventurero. Reunirse a su alrededor son personas que llevan heridas que no se desvanecen fácilmente: un genio aventurero que cerró su corazón después de que su partido fue masacrado, un guerrero que perdió a su familia, y un asesino criado de la infancia para matar. Sin embargo Rein nunca rechaza sus pasados o sus cicatrices – los acepta a todos con brillante, hetero"
       },
       {
         "id": "mal-52480",
@@ -9635,7 +9375,7 @@
         "startDate": "2026-10-09",
         "format": "MOVIE",
         "episodes": 1,
-        "averageScore": 65,
+        "averageScore": 66,
         "status": "FINISHED",
         "genres": [
           "Mystery",
@@ -9762,7 +9502,7 @@
           "at": 1792830600,
           "episode": 3
         },
-        "description_es": "\"La máscara\" da poder a cualquiera que la use. A veces, eso significa una posibilidad interminable, o una tragedia inimaginable... Perú, alumno del legendario fabricante de máscaras Gaston Roux, se hace controlado por el “Mask del Dios Guerrero”, y mata involuntariamente a sus amigos, e incluso a su propio maestro. Para evitar que este tipo de tragedia vuelva a ocurrir, Perú jura destruir todas las máscaras de Gaston que se extienden por todo el mundo. Frente a los pecados que"
+        "description_es": "\"La máscara\" da poder a cualquiera que la use. A veces, eso significa una posibilidad interminable, o una tragedia inimaginable... Perú, alumno del legendario fabricante de máscaras Gaston Roux, se hace controlado por el “Mask del Dios Guerrero”, y mata involuntariamente a sus amigos, e incluso a su propio maestro. Para evitar que este tipo de tragedia vuelva a ocurrir, Perú jura destruir todas las máscaras de Gaston que se extienden por todo el mundo. Frente a los pecados que ha cometido, se embarca en su viaje. Conocer a nuevos amigos y enfrentar a poderosos enemigos. El chico continúa. Hasta el día que puede expiar por hola"
       },
       {
         "id": "mal-63053",
@@ -9776,7 +9516,7 @@
         "startDate": "2026-10-10",
         "format": "TV",
         "episodes": 12,
-        "averageScore": 50,
+        "averageScore": 49,
         "status": "RELEASING",
         "genres": [
           "Horror",
@@ -9795,7 +9535,7 @@
           "at": 1792853100,
           "episode": 3
         },
-        "description_es": "Las leyendas urbanas cobran vida... Todos han oído una leyenda urbana antes, pero pocos han llegado cara a cara con uno. Estos fenómenos están en todas partes, existentes en las sombras de la realidad. Cada vez más de ellos han estado apareciendo a raíz del niño sin rostro visto por todo Japón. Si la ves o una de las leyendas urbanas que trae, ora al chico en la capucha roja te encuentra antes de que sea demasiado tarde. Usted no tendrá una oportunidad por su cuenta. Pero con su ayuda"
+        "description_es": "Las leyendas urbanas cobran vida... Todos han oído una leyenda urbana antes, pero pocos han llegado cara a cara con uno. Estos fenómenos están en todas partes, existentes en las sombras de la realidad. Cada vez más de ellos han estado apareciendo a raíz del niño sin rostro visto por todo Japón. Si la ves o una de las leyendas urbanas que trae, ora al chico en la capucha roja te encuentra antes de que sea demasiado tarde. Usted no tendrá una oportunidad por su cuenta. Pero con su ayuda, puedes vivir para ver otro día... (Fuente: Yen Press)"
       },
       {
         "id": "mal-63367",
@@ -9831,7 +9571,7 @@
           "at": 1792937760,
           "episode": 3
         },
-        "description_es": "Han pasado varios años desde la feroz batalla contra Majin Buu, y la Tierra finalmente ha recuperado un breve momento de paz. Al mismo tiempo, Beerus, el Dios de la Destrucción, despierta de su sueño largo y profundo. Incluso Kai y el Supremo Kai, consciente del abrumador poder de Beerus para destruir planetas enteros, ver su despertar con gran miedo... Mientras tanto, Beerus escucha rumores de un Saiyan que venció a Frieza y de repente aparece ante Goku. Atacada por Beerus, el ser más fuerte del universo, la Tierra está en grave peligro. Así comienza una batalla cósmica que rompe la tierra entre el Dios de la Destrucción y Go"
+        "description_es": "Han pasado varios años desde la feroz batalla contra Majin Buu, y la Tierra finalmente ha recuperado un breve momento de paz. Al mismo tiempo, Beerus, el Dios de la Destrucción, despierta de su sueño largo y profundo. Incluso Kai y el Supremo Kai, consciente del abrumador poder de Beerus para destruir planetas enteros, ver su despertar con gran miedo... Mientras tanto, Beerus escucha rumores de un Saiyan que venció a Frieza y de repente aparece ante Goku. Meta de cerveza"
       },
       {
         "id": "mal-63292",
@@ -9845,7 +9585,7 @@
         "startDate": "2026-10-11",
         "format": "TV",
         "episodes": 0,
-        "averageScore": 63,
+        "averageScore": 64,
         "status": "RELEASING",
         "genres": [
           "Adventure",
