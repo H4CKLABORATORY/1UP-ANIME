@@ -281,3 +281,8 @@ Al concluir cada trabajo agregar:
 - Rama feature/anime-api-franchise-discovery-20261019. Nuevo módulo optativo franchise-explorer.mjs/css en fichas, precuelas/secuelas, historias relacionadas y sugerencias basadas en relaciones reales AniList.
 - Respaldo Jikan sólo de relaciones por ID MAL; rechaza ID difuso y filtros de manga/adulto marcados por AniList. Cancela consultas al cerrar, cachea y no toca el reproductor ni manifiesto de video.
 - Verificación requerida: CI tests/franchise-explorer.test.mjs, navegador, despliegue Pages y Safari físico. No se declara el sitio finalizado.
+
+### 2026-10-19 — QA real del módulo de franquicias
+- Servidores HTTP de navegador reconocen MIME application/javascript para archivos .mjs, antes servían octet-stream e impedían cargar módulos ESM.
+- Nueva prueba scripts/e2e-franchise.mjs abre ficha en Chromium 390/1366 con API AniList simulada, comprueba precuela/secuela/recomendación, filtro Manga/adulto, evita duplicados y navega a la ficha correcta.
+- Ejecutada por ONEUP Browser Acceptance; Chrome emulado no equivale a Safari físico. Verificar CI, PR y despliegue.

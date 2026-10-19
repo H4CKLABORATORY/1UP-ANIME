@@ -8,7 +8,7 @@ import {resolve, extname, sep} from 'node:path';
 import assert from 'node:assert/strict';
 
 const ROOT=resolve('.'), PORT=8795, BASE='http://127.0.0.1:'+PORT+'/';
-const mime={'.html':'text/html','.js':'application/javascript','.css':'text/css','.json':'application/json','.png':'image/png','.jpg':'image/jpeg','.svg':'image/svg+xml','.mp4':'video/mp4','.webmanifest':'application/manifest+json'};
+const mime={'.html':'text/html','.js':'application/javascript','.mjs':'application/javascript','.css':'text/css','.json':'application/json','.png':'image/png','.jpg':'image/jpeg','.svg':'image/svg+xml','.mp4':'video/mp4','.webmanifest':'application/manifest+json'};
 const server=createServer(async(req,res)=>{
  try{
   const pathname=decodeURIComponent(new URL(req.url,BASE).pathname);
