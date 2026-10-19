@@ -41,7 +41,7 @@ function norm(m){
  genres:m.genres||[],siteUrl:m.siteUrl||'',
  streaming:(m.externalLinks||[]).filter(l=>l.type==='STREAMING'&&/crunchyroll/i.test(l.site||'')).filter(l=>{
   try{const u=new URL(l.url);return u.protocol==='https:'&&['crunchyroll.com','www.crunchyroll.com'].includes(u.hostname)&&
-   new RegExp('^/(?:[a-z]{2}(?:-[a-z]{2})?/)?series/[A-Za-z0-9]{8,}(?:/[A-Za-z0-9_-]+)?/?}
+   new RegExp('^/(?:[a-z]{2}(?:-[a-z]{2})?/)?series/[A-Za-z0-9]{8,}(?:/[A-Za-z0-9_-]+)?/?$').test(u.pathname)}
   catch{return false}
  }).map(l=>({name:'Crunchyroll',url:l.url})).slice(0,1),
  trailer:m.trailer?.site==='youtube'&&/^[\w-]{11}$/.test(m.trailer.id||'')?
