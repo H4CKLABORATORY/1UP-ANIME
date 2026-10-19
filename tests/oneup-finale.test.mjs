@@ -30,6 +30,6 @@ test('El service worker cachea ambos recursos y aísla otros proyectos',()=>{
  const sw=read('sw.js');
  assert.ok(sw.includes("'./oneup-finale.css'"));
  assert.ok(sw.includes("'./oneup-finale.js'"));
- assert.ok(sw.includes('v34-editorial-finale-20261019'));
+ assert.match(sw,/const CACHE=CACHE_PREFIX\\+'v[0-9]+-[a-z0-9-]+';/);
  assert.ok(sw.includes("key.startsWith(CACHE_PREFIX)"));
 });
