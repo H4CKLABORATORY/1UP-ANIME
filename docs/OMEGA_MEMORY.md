@@ -94,3 +94,10 @@ Excluir secretos, datos personales irrelevantes, suposiciones no etiquetadas, pr
 - Funciones multimedia originales no tocadas; se mantienen las reglas de fuentes con licencia. Sin gastos ni credenciales.
 - Validación PR #52: fixture Python, Puppeteer, navegador móvil/escritorio, calidad y módulos HLS/links exitosos.
 - Primera extracción real, publicación Pages y Safari físico pendientes de comprobación posterior al cambio main.
+
+
+### 2026-10-19 — Reddit Node y emisión autorizada por reproductor de terceros
+- Hilo educativo: https://www.reddit.com/r/node/comments/zy1skm/i_am_trying_to_scrape_data_from_an_anime_website/; aprender distinción HTML de servidor vs DOM renderizado por JS; Axios/fetch+Cheerio para SSR, Puppeteer/Playwright para CSR, inspección de APIs permitidas; no equivale a permiso de extracción de video.
+- Documentación portable: `docs/REDDIT_NODE_SCRAPING_Y_FUENTES_OFICIALES_20261019.md`. Ya existe scraper educativo Python/Wikipedia `scripts/scrape-encyclopedia-anime.py`; no duplicar. El scraper nunca debe eludir barreras ni acceder a streams sin autorización.
+- Primer episodio **propuesto, no verificado en producción**: TMS `Lupin III Part IV` `mal-27947`, ep. 1, fuente YouTube `K8LrLO_omys` inglés, embed oficial sin descarga, en rama `feature/official-tms-episode-scraping-notes-20261019`. El usuario prioriza empezar a ofrecer anime cuanto antes; replicar estrategia con vídeos de sus respectivos titulares y revisar permiso embed, región y disponibilidad.
+- Suite CI `ONEUP Official Episode Library` valida estructura, pero solo prueba en dispositivo/browser confirmará reproducción efectiva. No confundir iframe YouTube con transmisión o licencia de redistribución propia.
