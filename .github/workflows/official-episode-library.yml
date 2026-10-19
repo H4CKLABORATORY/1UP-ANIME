@@ -1,0 +1,37 @@
+name: ONEUP Official Episode Library
+on:
+  pull_request:
+    paths:
+      - 'data/licensed-media.json'
+      - 'scripts/media-source-contract.mjs'
+      - 'scripts/dexter-anime-sync.mjs'
+      - 'scripts/test-official-episode-library.mjs'
+      - 'scripts/test-media-source-contract.mjs'
+      - 'scripts/test-episode-player.mjs'
+      - '.github/workflows/official-episode-library.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'data/licensed-media.json'
+      - 'scripts/media-source-contract.mjs'
+      - 'scripts/test-official-episode-library.mjs'
+      - '.github/workflows/official-episode-library.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify-official-source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validar contrato editorial y reproducibilidad offline
+        run: |
+          node scripts/test-official-episode-library.mjs
+          node scripts/test-media-source-contract.mjs
+          node scripts/test-episode-player.mjs
