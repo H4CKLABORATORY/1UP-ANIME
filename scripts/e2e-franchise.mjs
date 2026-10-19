@@ -81,7 +81,7 @@ try{
     document.querySelector('#anime-dialog [data-details="mal-101"]').click();
    });
    await page.locator('#detail-anime-name').waitFor({state:'visible'});
-   assert.equal((await page.locator('#detail-anime-name').innerText()).trim(),'Temporada siguiente');
+   assert.equal((await page.locator('#detail-anime-name').textContent()).trim(),'Temporada siguiente');
    assert.equal(pageErrors.length,0,'Errores JS: '+pageErrors.join('; '));
    console.log('PASS franquicia ESM '+width+'px: fuentes, filtros y navegación');
   }finally{await context.close()}
