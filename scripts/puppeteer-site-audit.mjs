@@ -52,8 +52,11 @@ async function waitIntroToFinish(page){
  // Puppeteer must not mistake an intro click for a working login action.
  await page.waitForFunction(()=>{
   const overlay=document.querySelector('#oneup-opening');
-  return !overlay||!overlay.isConnected||overlay.hidden||
+  const cinematicReady=!overlay||!overlay.isConnected||overlay.hidden||
    getComputedStyle(overlay).display==='none';
+  const logo=document.querySelector('#startup');
+  const logoReady=!logo||logo.hidden||getComputedStyle(logo).display==='none';
+  return cinematicReady&&logoReady;
  },{timeout:11000});
 }
 
@@ -81,7 +84,10 @@ try{
   });
   await page.setBypassServiceWorker(true);
   await page.evaluateOnNewDocument(()=>{
-   try{sessionStorage.setItem('oneup-v3-opening-seen-v1','yes')}catch{}
+   try{
+    sessionStorage.setItem('oneup-v3-opening-seen-v1','yes');
+    sessionStorage.setItem('oneup_intro_seen','v5');
+   }catch{}
   });
   await page.setRequestInterception(true);
   page.on('request',request=>{
