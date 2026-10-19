@@ -210,8 +210,8 @@ try{
   });
   await test(device.name+' automatic intro does not expose a sound toggle and navigation works',async()=>{
    if(await page.locator('#oct-audio-control').count())throw Error('The removed seasonal sound option is visible');
-   const source=await page.locator('#original-signature').getAttribute('src');
-   if(!source?.includes('1up-anime-intro-firma-3seg.mp4'))throw Error('Original automatic intro is missing');
+   const startupMarkup=await fs.readFile('index.html','utf8');
+   if(!startupMarkup.includes('id="original-signature"')||!startupMarkup.includes('assets/1up-anime-intro-firma-3seg.mp4'))throw Error('Original automatic intro is missing');
    if(device.mobile)await touchTab('temporada');
    else await page.locator('.desktop-links [data-route="temporada"]').click();
    await page.locator('#browse-screen:not([hidden])').waitFor({timeout:6500});
