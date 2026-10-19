@@ -68,3 +68,5 @@ Excluir secretos, datos personales irrelevantes, suposiciones no etiquetadas, pr
 - Configuración separada en `presence-config.js` para no habilitar inadvertidamente otros adaptadores Supabase de 1UP. No se conocen proyecto ni claves públicos conectados; no publicar secretos.
 - Diseño de píldora verde, móvil adaptado, compatibilidad modo offline con placeholder `—`.
 - Pendiente: aprobación/fusión del PR, puesta en marcha de Realtime y prueba física iPhone, registrar CI y despliegue de verdad.
+
+- PR abierto: [#46](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/46). QA sintáctico/estructura de presencia aprobado, conectividad real no verificada.
