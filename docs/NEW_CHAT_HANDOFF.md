@@ -22,7 +22,7 @@
 - No confundir el catálogo de Anime1v con episodios reproducibles ni su licencia MIT con derechos de distribución de anime.
 
 ## Estado detectado ahora
-- Último commit de aplicación encontrado: cfa99deaa159708c5a86e0a5ea6b6c6c1b08dfb6
+- Último commit de aplicación encontrado: 38c3f430d8137a5f0c1dfe6619c38e6932df714e
 - Descubrimiento Anime1v configurado en frontend: sí, verificar la respuesta real en Render
 - Código runtime de metadatos Anime1v en repositorio: sí
 - Entradas de obras multimedia en data/licensed-media.json: 0
@@ -30,13 +30,14 @@
 - Safari físico: no dar por verificado salvo prueba real con evidencia.
 
 ## Últimos commits relevantes
+- 38c3f430d — feat: 1UP anime franchise explorer with AniList and Jikan fallback
+- aa40e517e — Refresh anime catalog and automatic Spanish synopses
 - cfa99deaa — Improve 1UP Anime multilingual search and archive anime-scraper research
 - e911439ec — Update educational anime metadata from Wikipedia
 - 234137154 — fix: correctly extract anime titles from Wikipedia rowspan tables
-- 030f20652 — Update educational anime metadata from Wikipedia
-- fda5c26ba — feat: publish 1UP educational anime scraper and responsive lab (validated PR #52)
 
 ## PR abiertos (consultar cambios antes de desarrollar)
+- [#54](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/54) 1UP Anime: primer episodio oficial TMS y técnicas educativas de r/node
 - [#51](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/51) 1UP Anime: lector manga y publicación automática de medios autorizados
 - [#50](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/50) Documentar MAL Updater como referencia para seguimiento de 1UP Anime
 - [#46](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/46) 1UP Anime: contador de conexiones en línea para portada y comunidad
@@ -48,7 +49,6 @@
 - [#33](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/33) V2 · intro cinemática 1UP ANIME editable con AAC original (revisión)
 - [#20](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/20) 1UP Anime · completar Codex: caché PWA aislada y ranking popular veraz
 - [#19](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/19) Restore mobile brand visibility and record verified project decisions
-- [#18](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/18) Prioritize integrated free viewing: shared Kokomi player, languages and seasons
 
 ## Próxima tarea por prioridad
 1. Leer AGENTS.md, esta ficha, PROJECT_CONTINUITY.md y OMEGA_NEXT_ACTIONS.md; confirmar HEAD y CI.
