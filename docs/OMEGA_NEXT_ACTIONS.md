@@ -19,3 +19,5 @@ Restricción: presupuesto $0, no compras/deploy destructivo sin permiso; no conv
 
 
 - [ ] **Motion profesional 1UP:** revisar PR de rama `feature/oneup-premium-window-motion-20261017`, prueba `scripts/e2e-oneup-motion.mjs`, aceptación navegador, render de modal/menú/rutas en móvil y desktop con y sin reducción. Fusionar sólo si CI y compatibilidad están correctos, comprobar main y despliegue real de GitHub Pages. Sin copiar estilos comerciales protegidos.
+
+- [ ] **Enlaces oficiales en estrenos:** revisar `feature/official-crunchyroll-links-20261018` y el workflow `ONEUP Official Watch Links`; comparar título y URL, comprobar en iPhone/desktop, fusionar solo con CI aprobado. Revisar conflictos con PR #46 (ambos tocan `index.html` y `sw.js`). Después comprobar redirecciones reales y refresco `data/airing.json` de AniList. Los capítulos internos requieren fuentes y derechos independientes.
