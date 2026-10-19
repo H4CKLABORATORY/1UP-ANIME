@@ -238,3 +238,13 @@ Al concluir cada trabajo agregar:
 - Browser Acceptance ejercitó cuatro variantes: 390px y 1366px con y sin `prefers-reduced-motion`; abrir/cerrar ficha, Escape, drawer/buscador móvil, navegación interna y overflow. También mantuvo pruebas anteriores del selector de temas Esmeralda/Original/Violeta.
 - Primer CI fallido detectó un falso positivo del test por intentar reabrir una ficha durante la protección antitoques fantasma (450 ms). Se corrigió **solo el test** para respetar el intervalo (520 ms), se mantuvo la protección del iPhone y se obtuvo CI completo verde.
 - **NO VALIDADO EN VIVO:** la herramienta de navegación al dominio Pages no permitió obtener respuesta, y el contenedor no tiene salida de red para comprobar HTTP 200 de `https://h4cklaboratory.github.io/1UP-ANIME/`. No afirmar que el deploy público fue comprobado ni que Safari físico fue probado. Próximo: verificar despliegue Pages y prueba real de Safari; después pulir transiciones compartidas entre tarjetas y fichas sin efectos pesados.
+
+
+### 2026-10-18 — indicador público de presencia (rama en revisión)
+- Referencia visual examinada: https://vanzero.haarls.dev/ . Su cifra principal parece mostrar un total de contenido (la suma de secciones), no un contador de usuarios confirmados. Implementación **original** con identidad 1UP.
+- Se agregó un widget visible `EN LÍNEA` en la portada y en `comunidad.html`, con animación estática respetuosa de reducción de movimiento, sin superponer el reproductor y con adaptación al iPhone.
+- Backend diseñado con **Supabase Realtime Presence**, canal global `oneup_anime_global_presence`; contará conexiones activas por pestaña y actualiza al recibir eventos del servidor. El sistema se auto-desregistra al ocultar/abandonar cuando es posible. Ninguna analítica ficticia.
+- Archivos: `presence-counter.js`, `presence-counter.css`, `presence-config.js`, `docs/ONLINE_PRESENCE.md`, pruebas y workflow; versión de caché incrementada en `sw.js`.
+- **Pendiente:** proyecto Realtime público y clave publishable reales del titular (no hay proyecto conectado en este trabajo); mientras tanto mostrar `—`, no un número simulado. Falta prueba conectada en dos dispositivos y Safari físico. No fusionar sin pruebas de CI y decisión de activación.
+
+- PR de implementación: [#46](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/46). El workflow `ONEUP Online Presence QA` terminó en `success` para el primer HEAD; ejecución con servicio remoto y Safari físico siguen pendientes.

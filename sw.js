@@ -3,10 +3,10 @@
 // CacheStorage is origin-wide: GitHub Pages apps on the same domain share it.
 // Restrict cleanup to caches that belong to this 1UP Anime service worker.
 const CACHE_PREFIX='oneup-stream-integrated-';
-const CACHE=CACHE_PREFIX+'v29-premium-motion-20261017';
+const CACHE=CACHE_PREFIX+'v30-online-presence-20261018';
 const SHELL=[
  './','./index.html','./studio.css','./studio.js','./spotlight.css',
- './motion.css','./motion.js','./brand-v2.css','./player.css','./auth.js',
+ './motion.css','./motion.js','./presence-config.js','./presence-counter.js','./presence-counter.css','./brand-v2.css','./player.css','./auth.js',
  './auth-config.js','./manifest.webmanifest','./assets/oneup-crest.svg',
  './assets/icon-180.png','./assets/icon-192.png','./assets/icon-512.png',
  './assets/1up-anime-logo-poster.jpg','./assets/1up-anime-app-icon-512.png',
