@@ -14,10 +14,12 @@ class ScraperTest(unittest.TestCase):
     def test_parse_and_provenance(self):
         html = (ROOT / "tests/fixtures/encyclopedia-anime.html").read_text(encoding="utf-8")
         rows = module.parse_html(html)
-        self.assertEqual(len(rows), 2)
-        self.assertEqual([r["format"] for r in rows], ["Película", "TV"])
-        self.assertEqual(rows[1]["episodes"], 12)
-        self.assertEqual(rows[1]["sourceUrl"], "https://en.wikipedia.org/wiki/Example_series")
+        self.assertEqual(len(rows), 3)
+        self.assertEqual([r["format"] for r in rows], ["Película", "Película", "TV"])
+        self.assertEqual(rows[1]["title"], "Película de continuación")
+        self.assertEqual(rows[1]["release"], "January 9")
+        self.assertEqual(rows[2]["episodes"], 12)
+        self.assertEqual(rows[2]["sourceUrl"], "https://en.wikipedia.org/wiki/Example_series")
 
     def test_duplicate_and_external_link_rejected(self):
         html = '<h3>Films</h3><table class="wikitable"><tr><th>Title</th></tr>'

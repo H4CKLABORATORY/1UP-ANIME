@@ -24,6 +24,39 @@ def clean(value, limit=180):
     return re.sub(r"\s+", " ", str(value or "")).strip()[:limit]
 
 
+def expanded_rows(rows, width):
+    """Reconstituye una tabla con rowspan/colspan antes de leer por índice."""
+    pending = {}
+    for row in rows:
+        direct = iter(row.find_all(["td", "th"], recursive=False))
+        cells, col = [], 0
+        while col < width:
+            if col in pending:
+                cell, left = pending[col]
+                cells.append(cell)
+                if left == 1:
+                    del pending[col]
+                else:
+                    pending[col] = (cell, left - 1)
+                col += 1
+                continue
+            cell = next(direct, None)
+            if cell is None:
+                cells.extend([None] * (width - col))
+                break
+            try:
+                colspan = max(1, min(width - col, int(cell.get("colspan", 1))))
+                rowspan = max(1, min(100, int(cell.get("rowspan", 1))))
+            except (TypeError, ValueError):
+                colspan, rowspan = 1, 1
+            for index in range(colspan):
+                cells.append(cell)
+                if rowspan > 1:
+                    pending[col + index] = (cell, rowspan - 1)
+            col += colspan
+        yield cells
+
+
 def parse_html(html):
     soup = BeautifulSoup(html, "html.parser")
     result, seen = [], set()
@@ -47,9 +80,8 @@ def parse_html(html):
                          if "date" in name or "first run" in name), None)
         studio_idx = next((i for i, name in enumerate(headers) if "studio" in name), None)
         episodes_idx = next((i for i, name in enumerate(headers) if "episodes" in name), None)
-        for row in rows[1:]:
-            cells = row.find_all(["td", "th"], recursive=False)
-            if title_idx >= len(cells):
+        for cells in expanded_rows(rows[1:], len(headers)):
+            if title_idx >= len(cells) or cells[title_idx] is None:
                 continue
             cell = cells[title_idx]
             title = clean(cell.get_text(" ", strip=True), 220)
@@ -65,7 +97,7 @@ def parse_html(html):
             if url.scheme != "https" or url.hostname != "en.wikipedia.org" or not url.path.startswith("/wiki/"):
                 href = SOURCE
             def value(idx, limit=100):
-                return clean(cells[idx].get_text(" ", strip=True), limit) if idx is not None and idx < len(cells) else ""
+                return clean(cells[idx].get_text(" ", strip=True), limit) if idx is not None and idx < len(cells) and cells[idx] is not None else ""
             episode_str = value(episodes_idx, 20)
             count = int(episode_str) if episode_str.isdecimal() and 0 < int(episode_str) < 2000 else None
             result.append({"title": title, "format": kind, "year": 2026,
