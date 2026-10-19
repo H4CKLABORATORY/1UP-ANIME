@@ -267,3 +267,10 @@ Al concluir cada trabajo agregar:
 - Funciones multimedia originales no tocadas; se mantienen las reglas de fuentes con licencia. Sin gastos ni credenciales.
 - Validación PR #52: fixture Python, Puppeteer, navegador móvil/escritorio, calidad y módulos HLS/links exitosos.
 - Primera extracción real, publicación Pages y Safari físico pendientes de comprobación posterior al cambio main.
+
+### 2026-10-19 — revisión GitHub anime-scraper y búsqueda multilingüe (rama de revisión)
+- Pedido: explorar https://github.com/topics/anime-scraper y adaptar ideas de descargadores con fin educativo a 1UP. Revisión de proyectos con distintas licencias en [ANIME_SCRAPER_GITHUB_RESEARCH_20261019.md](ANIME_SCRAPER_GITHUB_RESEARCH_20261019.md).
+- Se añadió `anime-title-search.js`: matching seguro de nombres EN / romaji / japonés / sinónimos, normalización Unicode y límites de alias; carga antes de `studio.js` en `index.html` y `studio.html`.
+- AniList/Jikan del navegador y el refresco de snapshot `scripts/refresh-catalog.mjs` conservan nombres alternativos. `sw.js` sube a caché `v32`; no incorpora dependencias ni fuentes de video nuevas. `tests/anime-title-search.test.mjs` y workflow dedicado.
+- **No se instalaron descargadores de terceros ni código GPL/AGPL.** Conceptos como colas, integridad y subtítulos para videos propios/autorizados quedan relacionados al PR #51; evitar descarga/republicación de anime sin permisos.
+- Estado: se requiere CI en cabeza de PR, merge validado, despliegue Pages y refresco real futuro del snapshot; no afirmar alias en JSON antiguo.
