@@ -38,11 +38,12 @@ jobs:
           node-version: '22'
       - name: Validate importer
         run: node --test tests/publish-approved-content.test.mjs
-      - name: Validate intake and build manifests
-        run: node scripts/publish-approved-content.mjs
-      - name: Prevent content modification by PR jobs
+      - name: Validate intake on pull request (read-only)
         if: github.event_name == 'pull_request'
-        run: git diff --exit-code -- data/licensed-media.json data/manga-library.json
+        run: node scripts/publish-approved-content.mjs --dry-run
+      - name: Build manifest on main
+        if: github.event_name != 'pull_request'
+        run: node scripts/publish-approved-content.mjs
       - name: Commit approved manifests on main
         if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
         run: |
