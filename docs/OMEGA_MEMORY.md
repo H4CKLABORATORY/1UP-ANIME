@@ -106,3 +106,9 @@ Excluir secretos, datos personales irrelevantes, suposiciones no etiquetadas, pr
 - Rama feature/anime-api-franchise-discovery-20261019. Nuevo módulo optativo franchise-explorer.mjs/css en fichas, precuelas/secuelas, historias relacionadas y sugerencias basadas en relaciones reales AniList.
 - Respaldo Jikan sólo de relaciones por ID MAL; rechaza ID difuso y filtros de manga/adulto marcados por AniList. Cancela consultas al cerrar, cachea y no toca el reproductor ni manifiesto de video.
 - Verificación requerida: CI tests/franchise-explorer.test.mjs, navegador, despliegue Pages y Safari físico. No se declara el sitio finalizado.
+
+
+### 2026-10-19 — enlaces exactos Crunchyroll y API comunitarias
+- Investigación portátil en `docs/CRUNCHYROLL_API_GITHUB_RESEARCH_20261019.md` (https://github.com/topics/crunchyroll-api): estructuras y UX de `crunchyroll-rs`, `HarshitKumar9030/crunchyroll-api`, `crunchyroll-docs`, `Crunchyroll-Filter`; no usar descargadores, tokens/cookies, mecanismos DRM ni endpoints no autorizados para llenar el reproductor de 1UP.
+- Rama `feature/official-crunchyroll-episode-links-20261019`: seis enlaces editoriales públicos del anime Black Clover original (`mal-34572`), E1–E6, abiertos exclusivamente en Crunchyroll con consentimiento al hacer clic. `official-watch.js` valida dominio/URL y enlaza el episodio exacto al cambiar selector; `official-watch.css` contiene estilos adaptativos y `tests/official-watch.test.mjs` pruebas de seguridad. No atribuir esos capítulos a la nueva temporada `mal-61967`. La página 1UP no retransmite dichos videos ni declara que sean gratuitos.
+- Integración de lector Crunchyroll NO instalada; fuentes reales de reproducción siguen separadas en `data/licensed-media.json`. Verificar PR/CI/Pages/Safari antes de declarar activo.

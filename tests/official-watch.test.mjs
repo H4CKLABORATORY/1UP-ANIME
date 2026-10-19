@@ -68,3 +68,63 @@ test('el refresco programado solicitará enlaces de AniList sin videos ni claves
  assert.match(service,/official-watch\.js/);
  assert.match(service,/official-watch\.css/);
 });
+
+
+test('capítulos oficiales: rutas exactas y temporada sin equivalencias inventadas',()=>{
+ const expected=[
+  'G69P9MD9Y','G6DQG759R','GX9UQW5X0',
+  'G31UX0X2D','G6XJJ2PMR','G4VUQXMMG'
+ ];
+ expected.forEach((id,i)=>{
+  const entry=official.getEpisode('mal-34572',1,i+1);
+  assert.equal(entry?.provider,'Crunchyroll');
+  assert.equal(entry?.kind,'external_episode');
+  assert.equal(entry?.episode,i+1);
+  assert.equal(new URL(entry.url).pathname.split('/')[2],id);
+ });
+ assert.equal(official.getEpisode('mal-34572',2,1),null,'No confundir temporadas');
+ assert.equal(official.getEpisode('mal-61967',1,1),null,'No atribuir un episodio viejo a nueva temporada');
+ assert.equal(official.getEpisode('mal-34572',1,7),null,'Sin enlace no se debe inventar episodio');
+ assert.equal(official.getEpisode('mal-34572',1,-1),null);
+ assert.equal(official.getEpisode('mal-34572',1,'1.5'),null);
+});
+
+test('seguridad: solo URL canónica Crunchyroll /watch, sin tokens ni hosts ajenos',()=>{
+ const approved='https://www.crunchyroll.com/watch/G69P9MD9Y/asta-and-yuno';
+ assert.equal(official.safeEpisodeUrl(approved),approved);
+ assert.equal(official.safeEpisodeUrl('https://www.crunchyroll.com/es-es/watch/G69P9MD9Y/asta-and-yuno'),
+  'https://www.crunchyroll.com/es-es/watch/G69P9MD9Y/asta-and-yuno');
+ for(const invalid of [
+  'http://www.crunchyroll.com/watch/G69P9MD9Y/asta-and-yuno',
+  'https://www.crunchyroll.com.evil.test/watch/G69P9MD9Y/asta-and-yuno',
+  'https://www.crunchyroll.com/series/GRE50KV36',
+  'https://www.crunchyroll.com/watch/G69P9MD9Y/asta-and-yuno?token=private',
+  'https://www.crunchyroll.com/watch/G69P9MD9Y/asta-and-yuno#secret',
+  'https://u:p@www.crunchyroll.com/watch/G69P9MD9Y',
+  'https://www.crunchyroll.com:8080/watch/G69P9MD9Y',
+  'javascript:alert(1)'
+ ])assert.equal(official.safeEpisodeUrl(invalid),'',invalid);
+});
+
+test('cambio de episodio: actualizar CTA externo y borrar capítulo no verificado',()=>{
+ const listeners=new Map();
+ const target={children:[],replaceChildren(){this.children=[];},append(...items){this.children.push(...items);}};
+ const section={dataset:{animeId:'mal-34572'},querySelector:s=>s==='[data-oneup-official-episode]'?target:null};
+ const document={
+  addEventListener(name,handler){listeners.set(name,handler);},
+  querySelector(s){return s==='#oneup-official-watch'?section:null;},
+  createElement(tag){return {tag,attributes:{},setAttribute(k,v){this.attributes[k]=v;}};}
+ };
+ const window={OneUpCatalog:{active:()=> 'mal-34572'}};
+ vm.runInNewContext(read('official-watch.js'),{URL,document,window},{timeout:2000});
+ const emit=(animeId,season,episode)=>listeners.get('oneup-episode-selected')({detail:{animeId,season,episode}});
+ emit('mal-34572',1,3);
+ assert.equal(target.children[0].tag,'a');
+ assert.match(target.children[0].href,/\/watch\/GX9UQW5X0\//);
+ assert.equal(target.children[0].target,'_blank');
+ assert.equal(target.children[0].rel,'noopener noreferrer');
+ emit('mal-34572',1,7);
+ assert.equal(target.children.length,0,'No inventar enlaces de episodios desconocidos');
+ emit('mal-99999',1,1);
+ assert.equal(target.children.length,0,'No cambiar ficha de un anime por evento ajeno');
+});

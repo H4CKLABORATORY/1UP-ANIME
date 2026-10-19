@@ -286,3 +286,11 @@ Al concluir cada trabajo agregar:
 - Servidores HTTP de navegador reconocen MIME application/javascript para archivos .mjs, antes servían octet-stream e impedían cargar módulos ESM.
 - Nueva prueba scripts/e2e-franchise.mjs abre ficha en Chromium 390/1366 con API AniList simulada, comprueba precuela/secuela/recomendación, filtro Manga/adulto, evita duplicados y navega a la ficha correcta.
 - Ejecutada por ONEUP Browser Acceptance; Chrome emulado no equivale a Safari físico. Verificar CI, PR y despliegue.
+
+
+### 2026-10-19 — Crunchyroll API repositorios y enlaces por capítulo
+- Pedido: revisar `https://github.com/topics/crunchyroll-api` para ofrecer capítulos de anime.
+- Implementación revisable: `feature/official-crunchyroll-episode-links-20261019`. `official-watch.js` añade `safeEpisodeUrl`, `getEpisode`, actualización por evento `oneup-episode-selected` y enlaces públicos verificados solo para Black Clover original `mal-34572` E1–E6, con episodio desconocido oculto. `official-watch.css` crea botón accesible; `sw.js` incrementa PWA; pruebas de regresión `tests/official-watch.test.mjs`.
+- Documentación de investigación y riesgos `docs/CRUNCHYROLL_API_GITHUB_RESEARCH_20261019.md`. Las API comunitarias no acreditan una licencia de video. No se copia archivo, stream ni credencial y no se añade servicio privado al sitio.
+- Estado inicial: código en rama; CI/merge/publicación/Safari por verificar. El acceso real puede requerir cuenta, suscripción, región y disponibilidad del proveedor. No afirmar video integrado ni gratis.
+- Próxima tarea: revisar CI ONEUP Official Watch Links, controles visuales móvil, fusionar solo si pasan las pruebas y confirmar despliegue.
