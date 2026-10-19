@@ -121,6 +121,7 @@ function updateEpisodeSelect(){
  if(input)input.value=String(selectedEpisode);
 }
 function showVideo(slot,serverIndex=-1){
+ document.dispatchEvent(new Event('oneup-video-removed'));
  // Release prior MediaSource buffers before replacing DOM (critical on iPhone).
  closeVideo();
  const stage=playerRoot.querySelector('#oneup-playback-display');

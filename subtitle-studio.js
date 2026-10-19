@@ -113,6 +113,7 @@ function connect(video){
 document.addEventListener('oneup-video-ready',event=>{
  if(event.detail?.video instanceof HTMLVideoElement)connect(event.detail.video);
 });
+document.addEventListener('oneup-video-removed',()=>{dispose()});
 document.addEventListener('oneup-anime-closed',()=>{dispose()});
 window.OneUpSubtitleStudio={validate,read,fonts:Object.keys(FONTS),themes:THEMES.slice()};
 })();
