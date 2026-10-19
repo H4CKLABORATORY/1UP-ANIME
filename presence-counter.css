@@ -47,3 +47,17 @@
 @media(prefers-reduced-motion:reduce){
   .oneup-presence-pill,.oneup-presence-dot{animation:none!important;transition:none!important}
 }
+
+/* Dos filas claras para la navegación de comunidad en iPhone estrecho. */
+@media(max-width:760px){
+  .c-header .header-row{flex-wrap:wrap;justify-content:space-between;gap:7px 9px;padding-block:8px}
+  .c-header .c-brand{order:0;flex-shrink:1;min-width:0;font-size:23px}
+  .c-header .oneup-presence-pill{order:1;margin-left:auto}
+  .c-header #c-login{order:2}
+  .c-header nav{order:3;width:100%;justify-content:space-around;gap:8px}
+}
+@media(max-width:420px){
+  .header .oneup-presence-text{display:none}
+  .header .oneup-presence-pill{padding:5px 8px}
+  .header .oneup-presence-count{min-width:10px}
+}
