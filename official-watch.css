@@ -1,0 +1,29 @@
+/* Destinos verificables, diseño independiente 1UP para estrenos y fichas. */
+.airing-anime-card{display:flex;flex-direction:column;min-width:0;scroll-snap-align:start}
+.airing-anime-card>.airing-anime{width:100%;flex:1;min-height:285px}
+.airing-official-cta{
+ display:flex;align-items:center;justify-content:center;
+ padding:10px 8px;margin-top:6px;min-height:37px;
+ border:1px solid #5fbf8b75;border-radius:8px;
+ background:linear-gradient(130deg,#15402b,#0f2924);
+ color:#b9ffd9;font-size:10px;font-weight:800;text-align:center;
+ text-decoration:none;transition:background .2s,border-color .2s;
+}
+.airing-official-cta:hover,.airing-official-cta:focus-visible{background:#246c44;border-color:#91ffbd}
+.oneup-crunchyroll-cta{border-color:#83b69a!important}
+.oneup-official-watch{
+ display:flex;align-items:center;justify-content:space-between;gap:16px;
+ padding:22px 30px;border:1px solid #7ddd9b40;border-radius:12px;
+ margin:13px 24px;background:linear-gradient(110deg,#112e23,#111525);
+}
+.oneup-official-watch h3{font:900 clamp(21px,3vw,28px)/1 var(--display,system-ui);color:#d2ffdf;margin:0 0 6px}
+.oneup-official-watch p{font-size:11px;line-height:1.6;color:#b5cbbe;margin:0;max-width:530px}
+.oneup-official-watch-actions{display:flex;flex-wrap:wrap;gap:9px;flex-shrink:0}
+.oneup-official-watch-actions .cta{font-size:11px;min-height:40px;white-space:nowrap}
+@media(max-width:760px){
+ .airing-anime-card>.airing-anime{min-height:250px}
+ .oneup-official-watch{flex-direction:column;align-items:stretch;margin:10px 12px;padding:17px;gap:14px}
+ .oneup-official-watch-actions{width:100%}
+ .oneup-official-watch-actions .cta{flex:1;text-align:center}
+}
+@media(prefers-reduced-motion:reduce){.airing-official-cta{transition:none}}
