@@ -71,3 +71,9 @@ Excluir secretos, datos personales irrelevantes, suposiciones no etiquetadas, pr
 - PR [#48](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/48) crea `assets/oneup-crest-mark.svg` y `ui-quality.css`; modifica modal, perfiles, headers, tipografía para títulos largos y botón de profundidad (el botón antes quedaba dentro del drawer oculto).
 - Pruebas reales Chromium y capturas de acceso en GitHub Actions; un segundo render mostró ventana compacta y centrada tras arreglar su altura. No llamar a Chromium Safari ni certificar una prueba en iPhone físico.
 - Registrar siguientes revisiones en `docs/SITE_QUALITY_AUDIT_20261018.md`; no sobreescribir la identidad actual ni inventar disponibilidad de login Google/video.
+
+### 2026-10-19 — Biblioteca manga e importador de contenido autorizado
+- PR [#51](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/51), rama `feature/oneup-manga-licensed-ingest-20261019`, borrador: módulo lector `manga.html`; cola declarativa para fuentes licenciadas; pruebas y workflow editorial.
+- Manga-Scraper (soumik12345) es CLI Python para manga PDF, no extractor de anime en video. Integración preparada como dependencia local opcional; no ejecución de scraping.
+- Reproductor existente preservado. Manifiesto `data/licensed-media.json` con `entries: {}` y `data/manga-library.json` con `series: []`: cero episodios/manga nuevos reproducibles. R2 solo como utilidad bajo configuración del propietario.
+- Nuevo workflow del PR verificó tests Node y `--dry-run` con éxito (run 39198865112); despliegue y Safari real pendientes.
