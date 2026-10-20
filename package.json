@@ -5,7 +5,7 @@
     "test:depth": "playwright test tests/depth-mode.spec.js",
     "test:puppeteer": "node scripts/puppeteer-site-audit.mjs",
     "test:motion-engine": "node --test tests/dexter-motion-engine.test.mjs",
-    "test:motion-studio": "node --test tests/motion-studio.test.mjs",
+    "test:motion-studio": "node --test tests/motion-studio.test.mjs tests/motion-studio-camera.test.mjs",
     "render:motion-studio": "node scripts/render-motion-studio.mjs"
   },
   "devDependencies": {

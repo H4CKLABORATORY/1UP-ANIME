@@ -8,6 +8,7 @@ on:
       - 'scripts/render-motion-studio.mjs'
       - 'scripts/e2e-motion-studio.mjs'
       - 'tests/motion-studio.test.mjs'
+      - 'tests/motion-studio-camera.test.mjs'
       - 'index.html'
       - 'sw.js'
       - '.github/workflows/dexter-motion-studio.yml'
@@ -42,11 +43,12 @@ jobs:
       - name: Syntax and pure scene tests
         run: |
           node --check motion-studio/scene.mjs
+          node --check motion-studio/camera.mjs
           node --check motion-studio/renderer.mjs
           node --check motion-studio/app.mjs
           node --check scripts/render-motion-studio.mjs
           node --check scripts/e2e-motion-studio.mjs
-          node --test tests/motion-studio.test.mjs
+          node --test tests/motion-studio.test.mjs tests/motion-studio-camera.test.mjs
       - name: Install browser and video encoder
         run: |
           npm install --no-save --ignore-scripts --no-audit --no-fund playwright@1.56.1

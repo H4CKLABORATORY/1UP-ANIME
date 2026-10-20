@@ -51,3 +51,6 @@ Restricción: presupuesto $0, no compras/deploy destructivo sin permiso; no conv
 
 - [x] **DEXTER Motion Studio V1 / MP4 Full HD:** PR #65 fusionado; 14 comprobaciones PR exitosas; CI main y Pages success; dos videos 1920x1080/1080x1920, H.264/AAC 30fps 3.2s confirmados en run 39370945223 (artifact 12241376805, expira 2026-11-03). Exportación custom JSON por workflow_dispatch implementada.
 - [ ] **Finalización artística / Safari físico:** revisar MP4, aprobación estética del dueño, verificar en iPhone físico, analizar batería/render y determinar si conviene reemplazar intro de producción. No reemplazar automáticamente.
+
+
+- [ ] **DEXTER Motion Studio V2 (cámara 2.5D):** comprobar PR/CI de feature/dexter-motion-studio-v2-camera-depth-20261020, regresiones Node y Playwright, Pages, pruebas de render H.264/AAC Full HD, contrastar efectos nuevos en iPhone físico. Mantener intro pública estable. Documentación docs/DEXTER_MOTION_STUDIO_V2.md.

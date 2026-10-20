@@ -8,7 +8,7 @@
 <script type="module" src="./motion-studio/app.mjs"></script>
 </head><body>
 <header class="topbar">
-  <a href="./" class="identity"><img src="./assets/oneup-header-letters.png" alt="1UP Anime"><span>/ DEXTER MOTION STUDIO <small>V1 · Edición de escenas</small></span></a>
+  <a href="./" class="identity"><img src="./assets/oneup-header-letters.png" alt="1UP Anime"><span>/ DEXTER MOTION STUDIO <small>V2 · Cinematic Camera</small></span></a>
   <nav aria-label="Navegación del estudio"><a href="./preview-cinematic-v3.html">Vista V3</a><a href="./">← Volver a la web</a></nav>
 </header>
 <main class="workspace">
@@ -24,7 +24,7 @@
       <output id="timecode" for="timeline">0.00 / 3.20 s</output>
     </div>
     <p class="stage-note" id="studio-status" role="status" aria-live="polite">Cargando el logo original…</p>
-    <div class="info-grid"><div><b>01 · Escena editable</b><span>Capas con pétalos, profundidad, iluminación y ritmo.</span></div><div><b>02 · Video horizontal / vertical</b><span>Vista previa adaptable al tamaño elegido.</span></div><div><b>03 · MP4 de estudio</b><span>Renderización Full HD por GitHub Actions con audio original.</span></div></div>
+    <div class="info-grid"><div><b>01 · Escena editable</b><span>Capas con pétalos, perspectiva 2.5D, cámara y ritmo musical.</span></div><div><b>02 · Video horizontal / vertical</b><span>Vista previa adaptable al tamaño elegido.</span></div><div><b>03 · MP4 de estudio</b><span>Renderización Full HD por GitHub Actions con audio original.</span></div></div>
   </section>
   <aside class="editor-panel" aria-label="Controles de la animación">
     <div class="editor-title"><span class="overline">TIMELINE / CONTROLS</span><h2>Diseña tu intro</h2><p>Los cambios se reflejan inmediatamente. Puedes guardar y recuperar tu escena como JSON.</p></div>
@@ -45,6 +45,9 @@
       <div class="slider-line"><label for="petals">Partículas y pétalos <output id="petals-value">52</output></label><input id="petals" name="petals" type="range" min="0" max="90" value="52" step="1"></div>
       <div class="slider-line"><label for="glow">Iluminación <output id="glow-value">72%</output></label><input id="glow" name="glow" type="range" min="0" max="1" value=".72" step=".01"></div>
       <div class="slider-line"><label for="camera">Profundidad / Cámara <output id="camera-value">64%</output></label><input id="camera" name="camera" type="range" min="0" max="1" value=".64" step=".01"></div>
+      <label for="cameraPath">Movimiento cinematográfico</label>
+      <select id="cameraPath" name="cameraPath"><option value="orbit">Órbita 2.5D · Giro de cámara</option><option value="dolly">Dolly · Acercamiento óptico</option><option value="glide">Travelling · Desplazamiento lateral</option></select>
+      <div class="slider-line"><label for="depth">Paralaje multicapa <output id="depth-value">55%</output></label><input id="depth" name="depth" type="range" min="0" max="1" value=".55" step=".01"></div>
       <div class="slider-line"><label for="rhythm">Pulso musical <output id="rhythm-value">70%</output></label><input id="rhythm" name="rhythm" type="range" min="0" max="1" value=".7" step=".01"></div>
     </form>
     <div class="section-title">Exportar / Guardar</div>
