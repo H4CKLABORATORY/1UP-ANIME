@@ -1,0 +1,31 @@
+name: DEXTER Motion Engine Quality
+
+on:
+  pull_request:
+    paths:
+      - 'index.html'
+      - 'sw.js'
+      - 'js/dexter-motion-engine.js'
+      - 'styles/dexter-motion-engine.css'
+      - 'tests/dexter-motion-engine.test.mjs'
+      - 'package.json'
+      - '.github/workflows/dexter-motion-engine.yml'
+  push:
+    branches: ['feature/dexter-motion-engine-20261020']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  motion-engine:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check syntax
+        run: node --check js/dexter-motion-engine.js
+      - name: Run motion regression tests
+        run: node --test tests/dexter-motion-engine.test.mjs

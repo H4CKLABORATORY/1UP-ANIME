@@ -40,3 +40,6 @@ Restricción: presupuesto $0, no compras/deploy destructivo sin permiso; no conv
 - [ ] **PR #60 iPhone y subtítulos:** revisar CI de SwiftUI simulador, WebVTT, 4 jobs, Browser Acceptance; fusionar solo verde; verificar Pages y Safari físico.
 - [ ] **Distribución App Store:** bundle ID/Team, Xcode archive firmado, capturas, privacidad, clasificación y Apple review. No hay IPA de producción ni TestFlight.
 - [ ] **Episodios y subtítulos nuevos:** aportar materiales/URLs HTTPS con permiso de redistribución y archivos de audio legítimos; revisar salida del modelo y WebVTT ES/EN antes de publicar. Snapshot metadata por sí solo no suministra video.
+
+
+- [ ] **DEXTER Motion Engine (2026-10-20):** revisar rama feature/dexter-motion-engine-20261020 y su PR, comprobar workflow de tests Node, QA responsive en navegador y Safari físico, y después aprobar merge/deploy si no hay regresiones. Investigación y límites documentados en docs/DEXTER_MOTION_ENGINE.md.

@@ -1,0 +1,24 @@
+/* DEXTER Motion Engine | isolated artwork lighting layer.
+ * No external dependency and no visual change if JavaScript is disabled. */
+#home-screen .hero-art-card .dme-light {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0;
+  background: radial-gradient(
+    circle 155px at var(--dme-light-x, 50%) var(--dme-light-y, 50%),
+    rgba(155, 255, 215, .22),
+    rgba(130, 186, 255, .075) 48%,
+    transparent 78%
+  );
+  transition: opacity 240ms ease-out;
+}
+@media (hover: hover) and (pointer: fine) {
+  #home-screen .hero-art-card.dme-lit .dme-light { opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce), (pointer: coarse) {
+  #home-screen .hero-art-card .dme-light { display: none !important; }
+}
+body.km-quiet #home-screen .hero-art-card .dme-light { display: none !important; }

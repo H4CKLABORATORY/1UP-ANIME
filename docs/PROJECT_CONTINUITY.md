@@ -313,3 +313,11 @@ Al concluir cada trabajo agregar:
 - Subtitle Studio Bangers (OFL), Arial/Outfit/Arcade, ES/EN basado en WebVTT reales, estilos, escala, preferencias. Generador local opcional faster-whisper + Argos para videos con derechos; sin extracción ilícita.
 - Cuatro frentes independientes bajo GitHub Actions y documento de responsabilidades. No afirmar múltiples agentes autónomos de código sin tales herramientas.
 - Pendientes: PR CI completo, Pages, prueba Safari físico, Xcode firma/App Store, fuentes episodios realmente autorizadas y servicios de usuario. Sin declarar streaming ni subtítulos automáticos de obras sin archivo.
+
+
+### 2026-10-20 — DEXTER Motion Engine: motion ligero y referencias GitHub
+- Rama: feature/dexter-motion-engine-20261020. PR de revisión pendiente de CI.
+- Investigación de Awesome Opus 5.5 Videos, GSAP, Three.js, Motion, Anime.js, Lottie, Auto Animate y Theatre.js: docs/DEXTER_MOTION_ENGINE.md.
+- Implementación propia sin dependencias: revelado por visibilidad de tarjetas/accesos, foco de luz de cursor en arte del héroe, escucha de catálogo dinámico, preferencias de movimiento reducido, ahorro de datos y pestañas en segundo plano.
+- PWA: sw.js + index.html enlazan módulo y hoja de estilo. Prueba automática: node --test tests/dexter-motion-engine.test.mjs.
+- Pendiente real: CI GitHub, contraste visual Playwright en escritorio/móvil, prueba Safari físico, revisión/merge del PR y despliegue confirmado. No se modifica intro pública ni reproduce nuevos episodios.

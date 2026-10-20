@@ -130,3 +130,7 @@ Excluir secretos, datos personales irrelevantes, suposiciones no etiquetadas, pr
 - Subtitle Studio Bangers (OFL), Arial/Outfit/Arcade, ES/EN basado en WebVTT reales, estilos, escala, preferencias. Generador local opcional faster-whisper + Argos para videos con derechos; sin extracción ilícita.
 - Cuatro frentes independientes bajo GitHub Actions y documento de responsabilidades. No afirmar múltiples agentes autónomos de código sin tales herramientas.
 - Pendientes: PR CI completo, Pages, prueba Safari físico, Xcode firma/App Store, fuentes episodios realmente autorizadas y servicios de usuario. Sin declarar streaming ni subtítulos automáticos de obras sin archivo.
+
+
+### 2026-10-20 — DEXTER Motion Engine (rama de revisión)
+Módulo progresivo sin dependencias nuevas (js/dexter-motion-engine.js, styles/dexter-motion-engine.css), basado en patrones de animación de código y referencias abiertas. No reemplaza 1UP opening ni instala Three.js/GSAP/Lottie en producción. Documentación docs/DEXTER_MOTION_ENGINE.md; verificar CI y Safari antes de publicar.
