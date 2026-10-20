@@ -3,7 +3,7 @@ import { createRenderer } from './renderer.mjs';
 const $ = id => document.getElementById(id);
 const canvas = $('motion-canvas');
 const studio = createRenderer(canvas);
-const controls = ['title', 'subtitle', 'tagline', 'duration', 'palette', 'petals', 'glow', 'camera', 'rhythm'];
+const controls = ['title', 'subtitle', 'tagline', 'duration', 'palette', 'petals', 'glow', 'camera', 'cameraPath', 'depth', 'rhythm'];
 let scene = normalizeScene(DEFAULT_SCENE);
 let format = 'landscape';
 let playing = false;
@@ -46,7 +46,7 @@ function play() {
 function syncInputs() {
   for (const key of controls) $(key).value = String(scene[key]);
   $('format').value = format;
-  for (const key of ['duration', 'petals', 'glow', 'camera', 'rhythm']) {
+  for (const key of ['duration', 'petals', 'glow', 'camera', 'depth', 'rhythm']) {
     const value = scene[key];
     $(key + '-value').textContent = key === 'duration' ? value.toFixed(1) + ' s' :
       key === 'petals' ? String(value) : Math.round(value * 100) + '%';

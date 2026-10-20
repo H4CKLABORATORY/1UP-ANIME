@@ -3,10 +3,10 @@
 // CacheStorage is origin-wide: GitHub Pages apps on the same domain share it.
 // Restrict cleanup to caches that belong to this 1UP Anime service worker.
 const CACHE_PREFIX='oneup-stream-integrated-';
-const CACHE=CACHE_PREFIX+'v36-subtitles-ios-foundation-20261019';
+const CACHE=CACHE_PREFIX+'v39-motion-v2-camera-20261020';
 const SHELL=[
  './','./index.html','./studio.css','./studio.js','./anime-title-search.js','./premiere-ranking.js','./premiere-hero.js','./premiere-hero.css','./spotlight.css',
- './dexter-motion-studio.html','./motion-studio/scene.mjs','./motion-studio/renderer.mjs','./motion-studio/app.mjs','./motion-studio/studio.css',
+ './dexter-motion-studio.html','./motion-studio/scene.mjs','./motion-studio/camera.mjs','./motion-studio/renderer.mjs','./motion-studio/app.mjs','./motion-studio/studio.css',
  './js/dexter-motion-engine.js','./styles/dexter-motion-engine.css','./franchise-explorer.mjs','./franchise-explorer.css','./oneup-finale.css','./oneup-finale.js','./ui-quality.css','./assets/oneup-crest-mark.svg','./motion.css','./motion.js','./subtitle-studio.js','./subtitle-studio.css','./official-watch.js','./official-watch.css','./brand-v2.css','./player.css','./auth.js',
  './auth-config.js','./manifest.webmanifest','./assets/oneup-crest.svg',
  './assets/icon-180.png','./assets/icon-192.png','./assets/icon-512.png',

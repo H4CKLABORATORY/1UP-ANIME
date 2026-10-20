@@ -39,6 +39,8 @@ try {
       throw Error('Portrait preview broken: ' + JSON.stringify(result));
     if (result.overflow > 3) throw Error('Mobile page horizontal overflow: ' + JSON.stringify(result));
     await page.locator('#title').fill('HOLA 1UP');
+    await page.locator('#cameraPath').selectOption('dolly');
+    await page.locator('#depth').evaluate(el => { el.value = '.91'; el.dispatchEvent(new Event('input', { bubbles: true })); });
     await page.locator('#glow').evaluate(el => {
       el.value = '.42'; el.dispatchEvent(new Event('input', { bubbles: true }));
     });
@@ -48,7 +50,7 @@ try {
       w: document.querySelector('canvas').width,
       pixel: Array.from(document.querySelector('canvas').getContext('2d').getImageData(15, 15, 1, 1).data)
     }));
-    if (result.scene.title !== 'HOLA 1UP' || result.scene.glow !== .42 || result.rendered !== 1.4 ||
+    if (result.scene.title !== 'HOLA 1UP' || result.scene.glow !== .42 || result.scene.cameraPath !== 'dolly' || result.scene.depth !== .91 || result.rendered !== 1.4 ||
         result.pixel[3] !== 255) throw Error('Canvas editor failed: ' + JSON.stringify(result));
     const exported = await page.evaluate(() =>
       window.DexterMotionStudio.setExportMode('landscape', { duration: 2.5 }, { width: 320, height: 180 }));

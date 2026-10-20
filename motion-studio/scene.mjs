@@ -12,7 +12,7 @@ export const DEFAULT_SCENE = Object.freeze({
   version: 1, title: 'TU SIGUIENTE VIDA', subtitle: 'ES ANIME.',
   tagline: 'UN UNIVERSO. INFINITAS HISTORIAS.',
   duration: 3.2, palette: 'esmeralda', petals: 52, glow: .72,
-  camera: .64, rhythm: .7
+  camera: .64, rhythm: .7, cameraPath: 'orbit', depth: .55
 });
 const number = (value, fallback, min, max) => {
   const n = Number(value);
@@ -32,6 +32,8 @@ export function normalizeScene(input = {}) {
     petals: Math.round(number(input.petals, DEFAULT_SCENE.petals, 0, 90)),
     glow: number(input.glow, DEFAULT_SCENE.glow, 0, 1),
     camera: number(input.camera, DEFAULT_SCENE.camera, 0, 1),
+    cameraPath: ['orbit','dolly','glide'].includes(input.cameraPath) ? input.cameraPath : DEFAULT_SCENE.cameraPath,
+    depth: number(input.depth, DEFAULT_SCENE.depth, 0, 1),
     rhythm: number(input.rhythm, DEFAULT_SCENE.rhythm, 0, 1)
   };
 }
