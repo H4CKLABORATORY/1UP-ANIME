@@ -3,7 +3,8 @@
   "private": true,
   "scripts": {
     "test:depth": "playwright test tests/depth-mode.spec.js",
-    "test:puppeteer": "node scripts/puppeteer-site-audit.mjs"
+    "test:puppeteer": "node scripts/puppeteer-site-audit.mjs",
+    "test:motion-engine": "node --test tests/dexter-motion-engine.test.mjs"
   },
   "devDependencies": {
     "@playwright/test": "1.56.1",

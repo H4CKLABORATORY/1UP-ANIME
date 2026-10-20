@@ -6,7 +6,7 @@ const CACHE_PREFIX='oneup-stream-integrated-';
 const CACHE=CACHE_PREFIX+'v36-subtitles-ios-foundation-20261019';
 const SHELL=[
  './','./index.html','./studio.css','./studio.js','./anime-title-search.js','./premiere-ranking.js','./premiere-hero.js','./premiere-hero.css','./spotlight.css',
- './franchise-explorer.mjs','./franchise-explorer.css','./oneup-finale.css','./oneup-finale.js','./ui-quality.css','./assets/oneup-crest-mark.svg','./motion.css','./motion.js','./subtitle-studio.js','./subtitle-studio.css','./official-watch.js','./official-watch.css','./brand-v2.css','./player.css','./auth.js',
+ './js/dexter-motion-engine.js','./styles/dexter-motion-engine.css','./franchise-explorer.mjs','./franchise-explorer.css','./oneup-finale.css','./oneup-finale.js','./ui-quality.css','./assets/oneup-crest-mark.svg','./motion.css','./motion.js','./subtitle-studio.js','./subtitle-studio.css','./official-watch.js','./official-watch.css','./brand-v2.css','./player.css','./auth.js',
  './auth-config.js','./manifest.webmanifest','./assets/oneup-crest.svg',
  './assets/icon-180.png','./assets/icon-192.png','./assets/icon-512.png',
  './assets/1up-anime-logo-poster.jpg','./assets/1up-anime-app-icon-512.png',
