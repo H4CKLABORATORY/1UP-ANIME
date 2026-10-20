@@ -28,3 +28,12 @@ Mantener referencia: https://github.com/yihui-dev/awesome-opus5-5-videos, https:
 
 ## Checkpoint
 PR, SHA, CI y despliegue se registrarán aquí y en docs/PROJECT_CONTINUITY.md tras verificarse. El comportamiento anterior permanece en el historial de Git y los cambios nuevos se pueden revertir independientemente.
+
+
+## Resultado de publicación y exportación
+- PR [#66](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/66) fusionado en main (squash `665ec5a3`).
+- Todos los 14 workflows del PR: success.
+- Workflow final [DEXTER Motion Studio MP4 / QA](https://github.com/H4CKLABORATORY/1UP-ANIME/actions/runs/39418935821) **success**, [artefacto MP4 16:9 + 9:16](https://github.com/H4CKLABORATORY/1UP-ANIME/actions/runs/39418935821/artifacts/12263426712). Expira 2026-11-03.
+- Registro FFprobe: 1920×1080 / 1080×1920, H.264 + AAC, 30 fps, 3,2 segundos. Peso ZIP 2.856.957 bytes.
+- [GitHub Pages](https://github.com/H4CKLABORATORY/1UP-ANIME/actions/runs/39418935619): deployment successful. Editor en https://h4cklaboratory.github.io/1UP-ANIME/dexter-motion-studio.html.
+- Prueba Safari física y validación visual del propietario pendientes. No se reemplaza intro de producción.

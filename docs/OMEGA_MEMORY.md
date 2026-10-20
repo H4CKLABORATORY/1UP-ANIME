@@ -147,3 +147,6 @@ PR #65 integrado en main. Las pruebas CI y el render GitHub Actions 39370945223 
 
 ### 2026-10-20 — Motion Studio V2 / 2.5D
 Agregado módulo reversible camera.mjs con trayectorias orbit/dolly/glide, perspectiva limitada y control de profundidad por escena. Compatible con exportación V1 y pipeline Full HD sin librerías externas. Documentar resultado CI/PR después de comprobarlo, no anunciar Safari físico probado ni cambiar intro pública sin aprobación.
+
+
+**Resultado V2 comprobado (2026-10-20):** merge de PR #66 `665ec5a3`; 14 workflows PR verdes; Pages success; render dual Full HD 16:9/9:16 con H.264/AAC y 30 FPS success (run 39418935821, artifact 12263426712). Programa ahora con cámara 2.5D configurable y 0 dependencias visuales externas. El intro de producción no fue sustituido. Safari físico pendiente.

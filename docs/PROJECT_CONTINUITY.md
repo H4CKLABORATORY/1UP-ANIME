@@ -347,3 +347,6 @@ Al concluir cada trabajo agregar:
 - Tres trayectorias (orbit, dolly, glide), proyección de pétalos por profundidad, refracción ligera de anillos, barrido óptico, controles cameraPath/depth y compatibilidad retroactiva de escenas JSON V1.
 - No se reemplaza la intro pública ni se agregan bibliotecas pesadas. PWA integra camera.mjs; prueba unitaria y E2E Chromium; exportador de MP4 sigue existente.
 - QA/CI y publicación final deben verificarse antes de declarar completada esta fase. Safari real y aprobación estética pendientes. Ver docs/DEXTER_MOTION_STUDIO_V2.md.
+
+
+**Cierre verificado 2026-10-20 (Motion Studio V2):** PR #66 fusionado en main, squash SHA `665ec5a312b3d3dd4c30648b14e155b8688c55a3`. Los 14 checks del PR dieron SUCCESS, incluyendo DEXTER Motion Studio, Browser Acceptance, Puppeteer, HLS, Depth, editorial y sitewide. Workflow `DEXTER Motion Studio · MP4 / QA` de main: https://github.com/H4CKLABORATORY/1UP-ANIME/actions/runs/39418935821, success. Artifacts 12263426712 (MP4 16:9 + 9:16; ~2.86 MB) y 12263621223 (capturas; ~0.95 MB). FFprobe en log verifica 1920×1080 y 1080×1920, ambos 30 fps 3.2 s, H.264 + AAC original. GitHub Pages: deploy success run 39418935619. Artefactos expiran 2026-11-03. Pendientes: Safari iPhone físico y revisión visual del propietario; intro pública original conservada.

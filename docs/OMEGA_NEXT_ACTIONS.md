@@ -54,3 +54,7 @@ Restricción: presupuesto $0, no compras/deploy destructivo sin permiso; no conv
 
 
 - [ ] **DEXTER Motion Studio V2 (cámara 2.5D):** comprobar PR/CI de feature/dexter-motion-studio-v2-camera-depth-20261020, regresiones Node y Playwright, Pages, pruebas de render H.264/AAC Full HD, contrastar efectos nuevos en iPhone físico. Mantener intro pública estable. Documentación docs/DEXTER_MOTION_STUDIO_V2.md.
+
+
+- [x] **DEXTER Motion Studio V2 implementado y desplegado:** PR #66 merge; 14 checks verdes; Pages success; dos MP4 Full HD de 3.2 s a 30fps con H.264/AAC (run 39418935821, artifact 12263426712, hasta 2026-11-03). La intro pública sigue siendo la actual.
+- [ ] **Motion Studio V2 visual/Safari real:** evaluar el aspecto de las versiones V2 y prueba de iPhone Safari físico; decidir voluntariamente si reemplazar la intro actual. No dar por hecho esa aprobación.
