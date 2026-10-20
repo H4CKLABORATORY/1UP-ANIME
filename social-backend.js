@@ -100,7 +100,7 @@ function subscribeGlobal(cb,onError){
 }
 async function sendGlobal(text){
  const user=await firebaseAccount();
- if(!registered(user))throw Error('Para escribir en el chat global necesitas una cuenta Google.');
+ if(!registered(user))throw Error('Para escribir en el chat global necesitas una cuenta de comunidad migrada.');
  return callable('sendGlobalMessage',{text});
 }
 async function updateProfile({displayName,icon,avatarPath}) {
