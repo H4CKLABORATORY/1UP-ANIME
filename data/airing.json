@@ -1,193 +1,9 @@
 {
-  "updated": "2026-10-19T21:33:54.700Z",
+  "updated": "2026-10-20T03:34:09.018Z",
   "source": "AniList public GraphQL metadata",
-  "windowStart": 1792247620,
-  "windowEnd": 1793223220,
+  "windowStart": 1792269237,
+  "windowEnd": 1793244837,
   "airing": [
-    {
-      "id": "mal-63053",
-      "mal_id": 63053,
-      "ani_id": 203473,
-      "title": "HORROR COLLECTOR",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b203473-pzyaqV432Qko.jpg",
-      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/203473-KCGlCZL2ApjB.jpg",
-      "description": "Urban legends come to life…Everyone’s heard an urban legend before, but few have ever come face-to-face with one. These phenomena are everywhere, existing in the shadows of reality. More and more of them have been appearing in the wake of the faceless kid sighted all over Japan. If you see her or one of the urban legends she brings―pray the boy in the red hood finds you before it’s too late. You won’t stand a chance on your own. But with his help, you may just live to see another day… (Source: Yen Press)",
-      "year": 2026,
-      "startDate": "2026-10-10",
-      "format": "TV",
-      "episodes": 12,
-      "averageScore": 49,
-      "status": "RELEASING",
-      "genres": [
-        "Horror",
-        "Mystery",
-        "Supernatural"
-      ],
-      "siteUrl": "https://anilist.co/anime/203473",
-      "streaming": [
-        {
-          "name": "Crunchyroll",
-          "url": "https://www.crunchyroll.com/series/GT00383993"
-        }
-      ],
-      "trailer": null,
-      "next": {
-        "at": 1792853100,
-        "episode": 3
-      },
-      "airingAt": 1792248300,
-      "episode": 2,
-      "scheduleId": 420241,
-      "description_es": "Las leyendas urbanas cobran vida... Todos han oído una leyenda urbana antes, pero pocos han llegado cara a cara con uno. Estos fenómenos están en todas partes, existentes en las sombras de la realidad. Cada vez más de ellos han estado apareciendo a raíz del niño sin rostro visto por todo Japón. Si la ves o una de las leyendas urbanas que trae, ora al chico en la capucha roja te encuentra antes de que sea demasiado tarde. Usted no tendrá una oportunidad por su cuenta. Pero con su ayuda, puedes vivir para ver otro día... (Fuente: Yen Press)"
-    },
-    {
-      "id": "mal-56733",
-      "mal_id": 56733,
-      "ani_id": 169581,
-      "title": "Magical Explorer",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx169581-UlAviVH36Hxi.png",
-      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/169581-cdooqY7Jqy3x.jpg",
-      "description": "Few titles are more revered among horndogs-(ahem) connoisseurs of Japanese erotic video games-than Magical Explorer. One day, our smut-loving hero wakes up to find he has been reincarnated into the body of the game’s dreamboat protagonist! Or rather, his hapless comic-relief best friend, Kousuke Takioto. But with his unparalleled knowledge of Magical Explorer and Kousuke’s unorthodox abilities (a scarf that doubles as a fist?), our hero vows to turn the game’s unluckiest loser into its mightiest heartthrob. In this world, nothing is out of reach when you’ve got the know-how! (Source: Yen Press) Note: Each episode streamed 1 week early on ABEMA and d anime store. The original TV broadcast started on October 4th, 2026.",
-      "year": 2026,
-      "startDate": "2026-09-27",
-      "format": "ONA",
-      "episodes": 13,
-      "averageScore": 68,
-      "status": "RELEASING",
-      "genres": [
-        "Action",
-        "Adventure",
-        "Ecchi",
-        "Fantasy",
-        "Romance"
-      ],
-      "siteUrl": "https://anilist.co/anime/169581",
-      "streaming": [
-        {
-          "name": "Crunchyroll",
-          "url": "https://www.crunchyroll.com/series/GT00384003/magical-explorer"
-        }
-      ],
-      "trailer": {
-        "site": "youtube",
-        "id": "XqrBfyUNYZs"
-      },
-      "next": {
-        "at": 1792854000,
-        "episode": 5
-      },
-      "airingAt": 1792249200,
-      "episode": 4,
-      "scheduleId": 422395,
-      "description_es": "Pocos títulos son más venerados entre los erizos-(ahem) conocedores de videojuegos eróticos japoneses-que Magical Explorer. Un día, nuestro héroe amante de la mugre se despierta para encontrar que ha sido reencarnado en el cuerpo del protagonista de la lancha del juego! O más bien, su mejor amigo, Kousuke Takioto. Pero con su conocimiento inigualable del Explorador Mágico y las habilidades no ortodoxas de Kousuke (una bufanda que se dobla como un puño?), nuestro héroe promete t"
-    },
-    {
-      "id": "mal-61578",
-      "mal_id": 61578,
-      "ani_id": 191656,
-      "title": "Even the Student Council Has Its Holes!",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx191656-xFHtxM8SUTdU.png",
-      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/191656-JQILdzh3FQxN.jpg",
-      "description": "This is Fujinasu Academy, a private high school with top-achieving students located on the outskirts of town. High School 1st-Year Ume Mizunoe has excellent grades in Japanese language class and has received multiple literary awards. However, his terrible grades in the sciences are affecting his ability to move up a grade. To avoid repeating a year, he becomes a member of the student council to improve his academic standing. However, in the student council, he meets the charismatic yet sullen student council president Kotobuki Hisako, and the scary yet kind and refined treasurer, Arisu Terui. Other members include a cheeky and cute boy, Tan Otori, and Komaro Michinoku, the admin who's like a small abandoned cat. This is the start of a slapstick, heartful, rom-com about a busy student council full of cute, mismatched, and quirky students! (Source: Even the Student Council Has Its Holes! Official Site)",
-      "year": 2026,
-      "startDate": "2026-10-04",
-      "format": "TV",
-      "episodes": 12,
-      "averageScore": 73,
-      "status": "RELEASING",
-      "genres": [
-        "Comedy",
-        "Ecchi",
-        "Slice of Life"
-      ],
-      "siteUrl": "https://anilist.co/anime/191656",
-      "streaming": [],
-      "trailer": {
-        "site": "youtube",
-        "id": "VTRVLnzhl90"
-      },
-      "next": {
-        "at": 1792855800,
-        "episode": 4
-      },
-      "airingAt": 1792251000,
-      "episode": 3,
-      "scheduleId": 418846,
-      "description_es": "Esta es la Academia Fujinasu, una escuela secundaria privada con estudiantes de primer nivel ubicados en las afueras de la ciudad. High School 1er año Ume Mizunoe tiene excelentes calificaciones en la clase de idioma japonés y ha recibido múltiples premios literarios. Sin embargo, sus calificaciones terribles en las ciencias están afectando su capacidad de avanzar en un grado. Para evitar repetir un año, se convierte en miembro del consejo estudiantil para mejorar su posición académica. Sin embargo, en el estudio"
-    },
-    {
-      "id": "mal-63801",
-      "mal_id": 63801,
-      "ani_id": 209872,
-      "title": "Ranma1/2 (2024) Season 3",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx209872-RBeVPqwejHFp.jpg",
-      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/209872-Qczb4k9Mw0pq.jpg",
-      "description": "The third season of Ranma 1/2 (2024) .",
-      "year": 2026,
-      "startDate": "2026-10-04",
-      "format": "TV",
-      "episodes": 0,
-      "averageScore": 77,
-      "status": "RELEASING",
-      "genres": [
-        "Action",
-        "Comedy",
-        "Romance"
-      ],
-      "siteUrl": "https://anilist.co/anime/209872",
-      "streaming": [],
-      "trailer": {
-        "site": "youtube",
-        "id": "dbe8esPSfYI"
-      },
-      "next": {
-        "at": 1792857360,
-        "episode": 4
-      },
-      "airingAt": 1792252560,
-      "episode": 3,
-      "scheduleId": 417716,
-      "description_es": "La tercera temporada de Ranma 1/2 (2024) ."
-    },
-    {
-      "id": "mal-62922",
-      "mal_id": 62922,
-      "ani_id": 202250,
-      "title": "Magic Repo Man: Dumped by My Party, I’ll Cash In With a Cute Support Fairy to Become the Strongest!",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx202250-mpm2cvr92Au2.jpg",
-      "banner": "",
-      "description": "If there's one thing you can never have enough of in a world of RPG-style swords and sorcery, it's magic points! Whether you're fueling spells, techniques, or showing off an incredible ability, you've gotta spend those points to do real damage. But what if you run out? Lent is part of the up-and-coming party known as the “Skypiercers,” and thanks to his unique Gift, he can loan massive amounts of magic to others. No MP? No problem with Lent around! Except, now that his companions have become formidable heroes (thanks to his skill), his usefulness is questioned. Kicked out of the group, Lent is furious…until he discovers a hidden power to his Gift. Now, with his adorably devious fairy partner, he's going to claw back every last scrap of magic from his former party—with interest! (Source: Seven Seas Entertainment)",
-      "year": 2026,
-      "startDate": "2026-10-04",
-      "format": "TV",
-      "episodes": 0,
-      "averageScore": 60,
-      "status": "RELEASING",
-      "genres": [
-        "Action",
-        "Adventure",
-        "Fantasy"
-      ],
-      "siteUrl": "https://anilist.co/anime/202250",
-      "streaming": [
-        {
-          "name": "Crunchyroll",
-          "url": "https://www.crunchyroll.com/series/GT00385867/magic-repo-man-dumped-by-my-party-ill-cash-in-with-a-cute-support-fairy-to-become-the-strongest"
-        }
-      ],
-      "trailer": {
-        "site": "youtube",
-        "id": "kXqx3rFSkxc"
-      },
-      "next": {
-        "at": 1792859400,
-        "episode": 4
-      },
-      "airingAt": 1792254600,
-      "episode": 3,
-      "scheduleId": 419564,
-      "description_es": "Si hay una cosa que nunca puedes tener suficiente en un mundo de espadas y brujería estilo RPG, ¡es puntos mágicos! Si estás alimentando hechizos, técnicas o mostrando una habilidad increíble, tienes que gastar esos puntos para hacer daño real. ¿Y si te escapas? La Cuaresma es parte de la fiesta de llegada conocida como los \"Skypiercers\", y gracias a su regalo único, puede prestar enormes cantidades de magia a otros. ¿Sin MP? No hay problema con Lent arou"
-    },
     {
       "id": "mal-63125",
       "mal_id": 63125,
@@ -463,8 +279,8 @@
       "streaming": [],
       "trailer": null,
       "next": {
-        "at": 1792461600,
-        "episode": 426
+        "at": 1792893600,
+        "episode": 427
       },
       "airingAt": 1792288800,
       "episode": 425,
@@ -1624,8 +1440,8 @@
       "streaming": [],
       "trailer": null,
       "next": {
-        "at": 1792461600,
-        "episode": 426
+        "at": 1792893600,
+        "episode": 427
       },
       "airingAt": 1792461600,
       "episode": 426,
@@ -1655,8 +1471,8 @@
       "streaming": [],
       "trailer": null,
       "next": {
-        "at": 1792461600,
-        "episode": 20
+        "at": 1793066400,
+        "episode": 21
       },
       "airingAt": 1792461600,
       "episode": 20,
@@ -1689,12 +1505,12 @@
         "id": "AtJMSUpG9GQ"
       },
       "next": {
-        "at": 1792479900,
+        "at": 1792479600,
         "episode": 1
       },
-      "airingAt": 1792479900,
+      "airingAt": 1792479600,
       "episode": 1,
-      "scheduleId": 422565,
+      "scheduleId": 422731,
       "description_es": "Cyberpunk: Edgerunners 2 te lleva de vuelta a Night City, donde las vidas se enredan al extremo. Weak, una leyenda de ciberpunk lavada, ahora se ve obligado a vivir sin cromo mientras busca un sentido de propósito en un mundo que lo ha pasado. Mientras tanto, el nómada mortal D se pone en un camino hacia la venganza que lo acerca a secretos de corpo que nunca se pretendía encontrar. A través de esta serie independiente de diez episodios, descubrir una historia de familia, obsesión, legado, y cómo su lente refleja las historias de la gente a su alrededor.. Cuando el mundo está cegado por el espectáculo, qué extremos tienes que ir a"
     },
     {
@@ -1723,12 +1539,12 @@
         "id": "AtJMSUpG9GQ"
       },
       "next": {
-        "at": 1792479900,
+        "at": 1792479600,
         "episode": 1
       },
-      "airingAt": 1792479900,
+      "airingAt": 1792479600,
       "episode": 2,
-      "scheduleId": 422566,
+      "scheduleId": 422732,
       "description_es": "Cyberpunk: Edgerunners 2 te lleva de vuelta a Night City, donde las vidas se enredan al extremo. Weak, una leyenda de ciberpunk lavada, ahora se ve obligado a vivir sin cromo mientras busca un sentido de propósito en un mundo que lo ha pasado. Mientras tanto, el nómada mortal D se pone en un camino hacia la venganza que lo acerca a secretos de corpo que nunca se pretendía encontrar. A través de esta serie independiente de diez episodios, descubrir una historia de familia, obsesión, legado, y cómo su lente refleja las historias de la gente a su alrededor.. Cuando el mundo está cegado por el espectáculo, qué extremos tienes que ir a"
     },
     {
@@ -1757,12 +1573,12 @@
         "id": "AtJMSUpG9GQ"
       },
       "next": {
-        "at": 1792479900,
+        "at": 1792479600,
         "episode": 1
       },
-      "airingAt": 1792479900,
+      "airingAt": 1792479600,
       "episode": 3,
-      "scheduleId": 422567,
+      "scheduleId": 422733,
       "description_es": "Cyberpunk: Edgerunners 2 te lleva de vuelta a Night City, donde las vidas se enredan al extremo. Weak, una leyenda de ciberpunk lavada, ahora se ve obligado a vivir sin cromo mientras busca un sentido de propósito en un mundo que lo ha pasado. Mientras tanto, el nómada mortal D se pone en un camino hacia la venganza que lo acerca a secretos de corpo que nunca se pretendía encontrar. A través de esta serie independiente de diez episodios, descubrir una historia de familia, obsesión, legado, y cómo su lente refleja las historias de la gente a su alrededor.. Cuando el mundo está cegado por el espectáculo, qué extremos tienes que ir a"
     },
     {
@@ -1791,12 +1607,12 @@
         "id": "AtJMSUpG9GQ"
       },
       "next": {
-        "at": 1792479900,
+        "at": 1792479600,
         "episode": 1
       },
-      "airingAt": 1792479900,
+      "airingAt": 1792479600,
       "episode": 4,
-      "scheduleId": 422568,
+      "scheduleId": 422734,
       "description_es": "Cyberpunk: Edgerunners 2 te lleva de vuelta a Night City, donde las vidas se enredan al extremo. Weak, una leyenda de ciberpunk lavada, ahora se ve obligado a vivir sin cromo mientras busca un sentido de propósito en un mundo que lo ha pasado. Mientras tanto, el nómada mortal D se pone en un camino hacia la venganza que lo acerca a secretos de corpo que nunca se pretendía encontrar. A través de esta serie independiente de diez episodios, descubrir una historia de familia, obsesión, legado, y cómo su lente refleja las historias de la gente a su alrededor.. Cuando el mundo está cegado por el espectáculo, qué extremos tienes que ir a"
     },
     {
@@ -1825,12 +1641,12 @@
         "id": "AtJMSUpG9GQ"
       },
       "next": {
-        "at": 1792479900,
+        "at": 1792479600,
         "episode": 1
       },
-      "airingAt": 1792479900,
+      "airingAt": 1792479600,
       "episode": 5,
-      "scheduleId": 422569,
+      "scheduleId": 422735,
       "description_es": "Cyberpunk: Edgerunners 2 te lleva de vuelta a Night City, donde las vidas se enredan al extremo. Weak, una leyenda de ciberpunk lavada, ahora se ve obligado a vivir sin cromo mientras busca un sentido de propósito en un mundo que lo ha pasado. Mientras tanto, el nómada mortal D se pone en un camino hacia la venganza que lo acerca a secretos de corpo que nunca se pretendía encontrar. A través de esta serie independiente de diez episodios, descubrir una historia de familia, obsesión, legado, y cómo su lente refleja las historias de la gente a su alrededor.. Cuando el mundo está cegado por el espectáculo, qué extremos tienes que ir a"
     },
     {
@@ -1859,12 +1675,12 @@
         "id": "AtJMSUpG9GQ"
       },
       "next": {
-        "at": 1792479900,
+        "at": 1792479600,
         "episode": 1
       },
-      "airingAt": 1792479900,
+      "airingAt": 1792479600,
       "episode": 6,
-      "scheduleId": 422570,
+      "scheduleId": 422736,
       "description_es": "Cyberpunk: Edgerunners 2 te lleva de vuelta a Night City, donde las vidas se enredan al extremo. Weak, una leyenda de ciberpunk lavada, ahora se ve obligado a vivir sin cromo mientras busca un sentido de propósito en un mundo que lo ha pasado. Mientras tanto, el nómada mortal D se pone en un camino hacia la venganza que lo acerca a secretos de corpo que nunca se pretendía encontrar. A través de esta serie independiente de diez episodios, descubrir una historia de familia, obsesión, legado, y cómo su lente refleja las historias de la gente a su alrededor.. Cuando el mundo está cegado por el espectáculo, qué extremos tienes que ir a"
     },
     {
@@ -1893,12 +1709,12 @@
         "id": "AtJMSUpG9GQ"
       },
       "next": {
-        "at": 1792479900,
+        "at": 1792479600,
         "episode": 1
       },
-      "airingAt": 1792479900,
+      "airingAt": 1792479600,
       "episode": 7,
-      "scheduleId": 422571,
+      "scheduleId": 422737,
       "description_es": "Cyberpunk: Edgerunners 2 te lleva de vuelta a Night City, donde las vidas se enredan al extremo. Weak, una leyenda de ciberpunk lavada, ahora se ve obligado a vivir sin cromo mientras busca un sentido de propósito en un mundo que lo ha pasado. Mientras tanto, el nómada mortal D se pone en un camino hacia la venganza que lo acerca a secretos de corpo que nunca se pretendía encontrar. A través de esta serie independiente de diez episodios, descubrir una historia de familia, obsesión, legado, y cómo su lente refleja las historias de la gente a su alrededor.. Cuando el mundo está cegado por el espectáculo, qué extremos tienes que ir a"
     },
     {
@@ -1927,12 +1743,12 @@
         "id": "AtJMSUpG9GQ"
       },
       "next": {
-        "at": 1792479900,
+        "at": 1792479600,
         "episode": 1
       },
-      "airingAt": 1792479900,
+      "airingAt": 1792479600,
       "episode": 8,
-      "scheduleId": 422572,
+      "scheduleId": 422738,
       "description_es": "Cyberpunk: Edgerunners 2 te lleva de vuelta a Night City, donde las vidas se enredan al extremo. Weak, una leyenda de ciberpunk lavada, ahora se ve obligado a vivir sin cromo mientras busca un sentido de propósito en un mundo que lo ha pasado. Mientras tanto, el nómada mortal D se pone en un camino hacia la venganza que lo acerca a secretos de corpo que nunca se pretendía encontrar. A través de esta serie independiente de diez episodios, descubrir una historia de familia, obsesión, legado, y cómo su lente refleja las historias de la gente a su alrededor.. Cuando el mundo está cegado por el espectáculo, qué extremos tienes que ir a"
     },
     {
@@ -1961,12 +1777,12 @@
         "id": "AtJMSUpG9GQ"
       },
       "next": {
-        "at": 1792479900,
+        "at": 1792479600,
         "episode": 1
       },
-      "airingAt": 1792479900,
+      "airingAt": 1792479600,
       "episode": 9,
-      "scheduleId": 422573,
+      "scheduleId": 422739,
       "description_es": "Cyberpunk: Edgerunners 2 te lleva de vuelta a Night City, donde las vidas se enredan al extremo. Weak, una leyenda de ciberpunk lavada, ahora se ve obligado a vivir sin cromo mientras busca un sentido de propósito en un mundo que lo ha pasado. Mientras tanto, el nómada mortal D se pone en un camino hacia la venganza que lo acerca a secretos de corpo que nunca se pretendía encontrar. A través de esta serie independiente de diez episodios, descubrir una historia de familia, obsesión, legado, y cómo su lente refleja las historias de la gente a su alrededor.. Cuando el mundo está cegado por el espectáculo, qué extremos tienes que ir a"
     },
     {
@@ -1995,12 +1811,12 @@
         "id": "AtJMSUpG9GQ"
       },
       "next": {
-        "at": 1792479900,
+        "at": 1792479600,
         "episode": 1
       },
-      "airingAt": 1792479900,
+      "airingAt": 1792479600,
       "episode": 10,
-      "scheduleId": 422574,
+      "scheduleId": 422740,
       "description_es": "Cyberpunk: Edgerunners 2 te lleva de vuelta a Night City, donde las vidas se enredan al extremo. Weak, una leyenda de ciberpunk lavada, ahora se ve obligado a vivir sin cromo mientras busca un sentido de propósito en un mundo que lo ha pasado. Mientras tanto, el nómada mortal D se pone en un camino hacia la venganza que lo acerca a secretos de corpo que nunca se pretendía encontrar. A través de esta serie independiente de diez episodios, descubrir una historia de familia, obsesión, legado, y cómo su lente refleja las historias de la gente a su alrededor.. Cuando el mundo está cegado por el espectáculo, qué extremos tienes que ir a"
     },
     {
@@ -4851,8 +4667,8 @@
       "streaming": [],
       "trailer": null,
       "next": {
-        "at": 1792461600,
-        "episode": 426
+        "at": 1792893600,
+        "episode": 427
       },
       "airingAt": 1792893600,
       "episode": 427,
@@ -6080,8 +5896,8 @@
       "streaming": [],
       "trailer": null,
       "next": {
-        "at": 1792461600,
-        "episode": 426
+        "at": 1792893600,
+        "episode": 427
       },
       "airingAt": 1793066400,
       "episode": 428,
@@ -6111,8 +5927,8 @@
       "streaming": [],
       "trailer": null,
       "next": {
-        "at": 1792461600,
-        "episode": 20
+        "at": 1793066400,
+        "episode": 21
       },
       "airingAt": 1793066400,
       "episode": 21,
