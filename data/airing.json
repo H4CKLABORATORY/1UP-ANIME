@@ -1,323 +1,9 @@
 {
-  "updated": "2026-10-20T03:34:09.018Z",
+  "updated": "2026-10-20T09:35:13.039Z",
   "source": "AniList public GraphQL metadata",
-  "windowStart": 1792269237,
-  "windowEnd": 1793244837,
+  "windowStart": 1792290901,
+  "windowEnd": 1793266501,
   "airing": [
-    {
-      "id": "mal-63125",
-      "mal_id": 63125,
-      "ani_id": 204269,
-      "title": "Little Shark's Day Out Season 2",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx204269-fTR4iyVjTHiC.png",
-      "banner": "",
-      "description": "Second season of Odekake Kozame .",
-      "year": 2026,
-      "startDate": "2026-04-12",
-      "format": "TV_SHORT",
-      "episodes": 72,
-      "averageScore": 0,
-      "status": "RELEASING",
-      "genres": [
-        "Slice of Life"
-      ],
-      "siteUrl": "https://anilist.co/anime/204269",
-      "streaming": [],
-      "trailer": {
-        "site": "youtube",
-        "id": "Laf46YXDt68"
-      },
-      "next": {
-        "at": 1792879200,
-        "episode": 29
-      },
-      "airingAt": 1792274400,
-      "episode": 28,
-      "scheduleId": 410605,
-      "description_es": "Segunda temporada de Odekake Kozame."
-    },
-    {
-      "id": "mal-64430",
-      "mal_id": 64430,
-      "ani_id": 213298,
-      "title": "Yuruyuru Zukan",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx213298-ymB1Sw0yDZ0Y.jpg",
-      "banner": "",
-      "description": "Gakken's hugely popular illustrated encyclopedia series, which everyone can enjoy with its laid-back four-panel comics, is finally being adapted into a TV anime! Discover surprising aspects and fun facts about living creatures—full of secrets that will make you say, \"Wow!\" Enjoy this new kind of anime that makes even scary things fun and easy to watch, with its cute art style. (Source: Official Site, translated)",
-      "year": 2026,
-      "startDate": "2026-10-04",
-      "format": "TV_SHORT",
-      "episodes": 0,
-      "averageScore": 0,
-      "status": "RELEASING",
-      "genres": [],
-      "siteUrl": "https://anilist.co/anime/213298",
-      "streaming": [],
-      "trailer": {
-        "site": "youtube",
-        "id": "cH7enqqATwE"
-      },
-      "next": {
-        "at": 1792879200,
-        "episode": 4
-      },
-      "airingAt": 1792274400,
-      "episode": 3,
-      "scheduleId": 422007,
-      "description_es": "La popular y popular serie de enciclopedias ilustradas de Gakken, que todos pueden disfrutar con sus cómics de cuatro paneles, finalmente se está adaptando a un anime de televisión! Descubre aspectos sorprendentes y hechos divertidos sobre los seres vivientes, llenos de secretos que te harán decir: \"¡Wow!\" Disfruta de este nuevo tipo de anime que hace que las cosas aterradoras sean divertidas y fáciles de ver, con su estilo de arte lindo. (Fuente: Sitio oficial, traducido)"
-    },
-    {
-      "id": "mal-64028",
-      "mal_id": 64028,
-      "ani_id": 218011,
-      "title": "Raccoon Dog & Fox",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx218011-dPgr1MlfSuhH.jpg",
-      "banner": "",
-      "description": "The story centers on the daily lives of a raccoon dog who is not quite with it and a mischievous fox who likes to tease the raccoon dog. The two are close friends who live together on a mountain. Their other friends include a wolf, a bear, a rabbit, and birds. (Source: Anime News Network)",
-      "year": 2026,
-      "startDate": "2026-10-04",
-      "format": "TV_SHORT",
-      "episodes": 0,
-      "averageScore": 0,
-      "status": "RELEASING",
-      "genres": [
-        "Comedy"
-      ],
-      "siteUrl": "https://anilist.co/anime/218011",
-      "streaming": [],
-      "trailer": {
-        "site": "youtube",
-        "id": "DO_UchIVN9Y"
-      },
-      "next": {
-        "at": 1792879200,
-        "episode": 4
-      },
-      "airingAt": 1792274400,
-      "episode": 3,
-      "scheduleId": 422356,
-      "description_es": "La historia se centra en la vida diaria de un perro de mapache que no está bien con él y un zorro malicioso que le gusta burlar al perro de mapache. Los dos son amigos cercanos que viven juntos en una montaña. Sus otros amigos incluyen un lobo, un oso, un conejo y aves. (Fuente: Anime News Network)"
-    },
-    {
-      "id": "mal-60534",
-      "mal_id": 60534,
-      "ani_id": 185646,
-      "title": "Koupen-chan",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx185646-2eGmsnaSHiLC.jpg",
-      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/185646-69FyAu3rfhEC.jpg",
-      "description": "The story of the series follows the everyday adventures of Koupen-chan and his friends as they enjoy the little things in life. (Source: Crunchyroll News, edited)",
-      "year": 2025,
-      "startDate": "2025-04-06",
-      "format": "TV_SHORT",
-      "episodes": 0,
-      "averageScore": 69,
-      "status": "RELEASING",
-      "genres": [
-        "Slice of Life"
-      ],
-      "siteUrl": "https://anilist.co/anime/185646",
-      "streaming": [],
-      "trailer": {
-        "site": "youtube",
-        "id": "L4wurjkd0JM"
-      },
-      "next": {
-        "at": 1792882800,
-        "episode": 82
-      },
-      "airingAt": 1792278000,
-      "episode": 81,
-      "scheduleId": 412317,
-      "description_es": "La historia de la serie sigue las aventuras cotidianas de Koupen-chan y sus amigos mientras disfrutan de las pequeñas cosas en la vida. (Fuente: Crunchyroll News, editado)"
-    },
-    {
-      "id": "mal-63042",
-      "mal_id": 63042,
-      "ani_id": 202957,
-      "title": "Star Detective Precure!",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx202957-fxZGgJTvwXzP.jpg",
-      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/202957-B9U0hNv2Dqap.jpg",
-      "description": "Anna Akechi is a second-year junior high student living in Makoto Mirai Town. On her 14th birthday, she has a chance encounter with a fairy named Pochitan, and a magical pendant caused her to travel back in time from 2027 to 1999! In the Makoto Mirai Town 28 years in the past, Anna meets Mikuru Kobayashi, a girl her age who wants to become a great detective. Meanwhile, people in town are in trouble as their prized possessions are being stolen from under their noses - the cause being a group of Phantom Thieves. To stop them, Anna and Mikuru turn into Precures! Maybe if they solve these mysteries, Anna can find her way back to her own time? (Source: Official Website, translated)",
-      "year": 2026,
-      "startDate": "2026-02-01",
-      "format": "TV",
-      "episodes": 51,
-      "averageScore": 76,
-      "status": "RELEASING",
-      "genres": [
-        "Mahou Shoujo",
-        "Mystery"
-      ],
-      "siteUrl": "https://anilist.co/anime/202957",
-      "streaming": [
-        {
-          "name": "Crunchyroll",
-          "url": "https://www.crunchyroll.com/series/GT00369409"
-        }
-      ],
-      "trailer": {
-        "site": "youtube",
-        "id": "qjozo1fh7OI"
-      },
-      "next": {
-        "at": 1792884600,
-        "episode": 39
-      },
-      "airingAt": 1792279800,
-      "episode": 38,
-      "scheduleId": 411678,
-      "description_es": "Anna Akechi es una estudiante de segundo año que vive en la ciudad de Makoto Mirai. En su 14o cumpleaños, tiene un encuentro casual con un hada llamado Pochitan, y un colgante mágico la hizo viajar de nuevo en el tiempo de 2027 a 1999! En la ciudad de Makoto Mirai 28 años en el pasado, Anna se encuentra con Mikuru Kobayashi, una chica de su edad que quiere convertirse en una gran detective. Mientras tanto, la gente en la ciudad está en problemas ya que sus posesiones apreciadas están siendo robadas bajo sus narices - la causa es un grupo de ladrones Fantasma. Para detenerlos, Anna y Mikuru se convierten en Precures! Tal vez si resuelven estos misterios"
-    },
-    {
-      "id": "al-216860",
-      "mal_id": null,
-      "ani_id": 216860,
-      "title": "Punirunes Puni 4",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx216860-ghfSopHbPVNa.png",
-      "banner": "",
-      "description": "Fourth season of Punirunes .",
-      "year": 2026,
-      "startDate": "2026-10-04",
-      "format": "TV_SHORT",
-      "episodes": 0,
-      "averageScore": 0,
-      "status": "RELEASING",
-      "genres": [
-        "Slice of Life"
-      ],
-      "siteUrl": "https://anilist.co/anime/216860",
-      "streaming": [],
-      "trailer": null,
-      "next": {
-        "at": 1792887360,
-        "episode": 4
-      },
-      "airingAt": 1792282560,
-      "episode": 3,
-      "scheduleId": 420092,
-      "description_es": "Cuarta temporada de Punirunes ."
-    },
-    {
-      "id": "mal-63352",
-      "mal_id": 63352,
-      "ani_id": 206523,
-      "title": "Onegai AiPri",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx206523-2IaJCk4R7i63.jpg",
-      "banner": "",
-      "description": "The latest entry in the Pretty Series franchise and a new chapter in the AiPri series. Note: Relations are provisional and will be updated when more info is announced.",
-      "year": 2026,
-      "startDate": "2026-04-05",
-      "format": "TV",
-      "episodes": 0,
-      "averageScore": 55,
-      "status": "RELEASING",
-      "genres": [
-        "Music"
-      ],
-      "siteUrl": "https://anilist.co/anime/206523",
-      "streaming": [],
-      "trailer": {
-        "site": "youtube",
-        "id": "j5MgjyhhUBc"
-      },
-      "next": {
-        "at": 1792888200,
-        "episode": 30
-      },
-      "airingAt": 1792283400,
-      "episode": 29,
-      "scheduleId": 410157,
-      "description_es": "La última entrada en la franquicia Pretty Series y un nuevo capítulo en la serie AiPri. Nota: Las relaciones son provisionales y se actualizarán cuando se anuncie más información."
-    },
-    {
-      "id": "mal-64211",
-      "mal_id": 64211,
-      "ani_id": 217787,
-      "title": "Pop Pap Polters",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b217787-NHLlgGiqy59P.jpg",
-      "banner": "",
-      "description": "",
-      "year": 2026,
-      "startDate": "2026-10-04",
-      "format": "TV_SHORT",
-      "episodes": 0,
-      "averageScore": 0,
-      "status": "RELEASING",
-      "genres": [
-        "Slice of Life"
-      ],
-      "siteUrl": "https://anilist.co/anime/217787",
-      "streaming": [],
-      "trailer": null,
-      "next": {
-        "at": 1792890000,
-        "episode": 4
-      },
-      "airingAt": 1792285200,
-      "episode": 3,
-      "scheduleId": 422176
-    },
-    {
-      "id": "al-155723",
-      "mal_id": null,
-      "ani_id": 155723,
-      "title": "Wushen Zhuzai: Da Wei Pian",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx155723-hM261Imc5yfd.png",
-      "banner": "",
-      "description": "The second season of Wushen Zhuzai .",
-      "year": 2022,
-      "startDate": "2022-10-16",
-      "format": "ONA",
-      "episodes": 448,
-      "averageScore": 66,
-      "status": "RELEASING",
-      "genres": [
-        "Action",
-        "Fantasy"
-      ],
-      "siteUrl": "https://anilist.co/anime/155723",
-      "streaming": [],
-      "trailer": null,
-      "next": {
-        "at": 1792893600,
-        "episode": 427
-      },
-      "airingAt": 1792288800,
-      "episode": 425,
-      "scheduleId": 408370,
-      "description_es": "La segunda temporada de Wushen Zhuzai."
-    },
-    {
-      "id": "mal-51039",
-      "mal_id": 51039,
-      "ani_id": 196613,
-      "title": "Dou Po Cangqiong: Nian Fan 4",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx196613-20kz65bVsHl7.jpg",
-      "banner": "",
-      "description": "The eighth season of Dou Po Cangqiong. Note: Episodes 158 to 219.",
-      "year": 2025,
-      "startDate": "2025-08-03",
-      "format": "ONA",
-      "episodes": 62,
-      "averageScore": 75,
-      "status": "RELEASING",
-      "genres": [
-        "Action",
-        "Adventure",
-        "Fantasy"
-      ],
-      "siteUrl": "https://anilist.co/anime/196613",
-      "streaming": [],
-      "trailer": null,
-      "next": {
-        "at": 1792893600,
-        "episode": 58
-      },
-      "airingAt": 1792288800,
-      "episode": 57,
-      "scheduleId": 417554,
-      "description_es": "La octava temporada de Dou Po Cangqiong. Nota: Episodios 158 a 219."
-    },
     {
       "id": "mal-61323",
       "mal_id": 61323,
@@ -641,7 +327,7 @@
       "startDate": "2026-10-04",
       "format": "TV",
       "episodes": 0,
-      "averageScore": 57,
+      "averageScore": 58,
       "status": "RELEASING",
       "genres": [
         "Mahou Shoujo",
@@ -693,7 +379,7 @@
       "airingAt": 1792332000,
       "episode": 3,
       "scheduleId": 422114,
-      "description_es": "Shizuka se ocupa de los trabajos más peligrosos de los asesinos, pero ella no es la que hace el asesinato. Más bien, es su hermano, Nagi, un asesino fuerte que tomó una bala para proteger a su hermana, dejarlo en estado en coma y tener que usar una silla de ruedas. Sin embargo, Shizuka ha descubierto la clave para despertar a su hermano: ¡debe enfrentarse con la intención de matar! Así comienza un viaje violento de recuperación, luchando contra los enemigos más peligrosos! (Fuente: Kodansha"
+      "description_es": "Shizuka se ocupa de los trabajos más peligrosos de los asesinos, pero ella no es la que hace el asesinato. Más bien, es su hermano, Nagi, un asesino fuerte que tomó una bala para proteger a su hermana, dejarlo en estado en coma y tener que usar una silla de ruedas. Sin embargo, Shizuka ha descubierto la clave para despertar a su hermano: ¡debe enfrentarse con la intención de matar! Así comienza un viaje violento de recuperación, luchando contra los enemigos más peligrosos! (Fuente: Kodansha USA)"
     },
     {
       "id": "mal-63367",
@@ -822,7 +508,7 @@
       "startDate": "2026-10-04",
       "format": "TV",
       "episodes": 12,
-      "averageScore": 67,
+      "averageScore": 66,
       "status": "RELEASING",
       "genres": [
         "Comedy",
@@ -1266,7 +952,7 @@
       "airingAt": 1792413000,
       "episode": 3,
       "scheduleId": 420067,
-      "description_es": "Hazme una poción de amor. Y con esa sola frase, la Buena Bruja del amor secreto del lago sobre el desgarrador Sir Harij termina en la ruptura del corazón. Sin embargo, cuando promete ayudarla a reunir los ingredientes, Rose está emocionada por la oportunidad de mirar a un hombre con el que normalmente nunca podría interactuar. Ella aprende a jactar su corazón por sus conversaciones usuales inclinadas... pero ¿qué va a hacer cuando aparece inexplicablemente en su puerta con pan y un frasco de mantequilla de manzana? (Fuente: Yen Press)"
+      "description_es": "Hazme una poción de amor. Y con esa sola frase, la Buena Bruja del amor secreto del lago sobre el desgarrador Sir Harij termina en la ruptura del corazón. Sin embargo, cuando promete ayudarla a reunir los ingredientes, Rose está emocionada por la oportunidad de mirar a un hombre con el que normalmente nunca podría interactuar. Ella aprende a jactar su corazón por sus conversaciones usuales inclinadas... pero ¿qué va a hacer cuando aparece inexplicablemente en su puerta con bre"
     },
     {
       "id": "mal-63712",
@@ -1308,7 +994,7 @@
       "airingAt": 1792414800,
       "episode": 4,
       "scheduleId": 422213,
-      "description_es": "La naturaleza altruista del trabajador de oficina Akira Yagami generalmente le consigue el extremo corto del palo. Cuando muere después de salvar a un niño del tráfico entrante... ¿reencarna en otro mundo como un duende? Normalmente, los duendes sólo viven durante siete días, pero los nuevos poderes de Akira le permiten desafiar la vida normal de la especie... ¡y son la clave de su camino para convertirse en el más fuerte de todos los tiempos! (Fuente: Yen Press) Nota: Tensei Goblin Dakedo Sitsumon Aru? está transmitiendo 1 semana antes de la emisión de televisión en ABEMA y Primer Video comenzando con el episodio 2 el 5 de octubre de 2026"
+      "description_es": "La naturaleza altruista del trabajador de oficina Akira Yagami generalmente le consigue el extremo corto del palo. Cuando muere después de salvar a un niño del tráfico entrante... ¿reencarna en otro mundo como un duende? Normalmente, los duendes sólo viven durante siete días, pero los nuevos poderes de Akira le permiten desafiar el período de vida normal de la especie... ¡y son la clave de su camino para convertirse en el más fuerte de todos los tiempos! (Fuente: Yen Press) Nota: Tensei Goblin Dakedo Sitsumon Aru?"
     },
     {
       "id": "mal-63098",
@@ -1347,7 +1033,7 @@
       "airingAt": 1792418400,
       "episode": 3,
       "scheduleId": 419765,
-      "description_es": "Un día, la secundaria Ageha Yoshina recoge una misteriosa “tarjeta de teléfono roja” que queda atrás en una cabina telefónica pública. Unos días más tarde, su amigo de la infancia y compañero de clase, Sakurako Amamiya, que poseía la misma carta, desaparecen sin dejar rastro. En busca de ella, Ageha se encuentra dibujado en los rumores que rodean una cadena nacional de misteriosas desapariciones, dijo ser el trabajo de una organización secreta conocida sólo como “Psyren”. Cuando accede al grupo, comienza un juego mortal, uno que cambiará su destino para siempre. (Fuente: Sitio Oficial de PSYhován)"
+      "description_es": "Un día, la secundaria Ageha Yoshina recoge una misteriosa “tarjeta de teléfono roja” que queda atrás en una cabina telefónica pública. Unos días más tarde, su amigo de la infancia y compañero de clase, Sakurako Amamiya, que poseía la misma carta, desaparecen sin dejar rastro. En busca de ella, Ageha se encuentra dibujado en los rumores que rodean una cadena nacional de misteriosas desapariciones, dijo ser el trabajo de una organización secreta conocida sólo como “Psyren”. Cuando él"
     },
     {
       "id": "mal-60636",
@@ -1381,7 +1067,7 @@
       "airingAt": 1792422000,
       "episode": 9,
       "scheduleId": 422729,
-      "description_es": "La destrucción se desploma al final de la Guerra de la Sangre Mil Años entre los Reapers del Alma y las Quincias... mientras la muerte del Rey del Alma refleja el colapso de los Tres Mundos, las distorsiones y los presagios de destrucción comienzan a aparecer en todos los reinos. Quince batallas surgieron a lo largo de la Wahr Welt entre los 13 escuadrones de la Guardia de la Corte y la Guardia Real. Ichigo aprende sobre las verdaderas intenciones de Uryuu y renueva su determinación de proteger el mundo juntos, como amigos que confían entre sí. Yhwach ha superado incluso su propia habilidad, el Todopoderoso... La feroz batalla por la supervivencia de la aplicación Tres Mundos"
+      "description_es": "La destrucción se desploma al final de la Guerra de la Sangre Mil Años entre los Reapers del Alma y las Quincias... mientras la muerte del Rey del Alma refleja el colapso de los Tres Mundos, las distorsiones y los presagios de destrucción comienzan a aparecer en todos los reinos. Quince batallas surgieron a lo largo de la Wahr Welt entre los 13 escuadrones de la Guardia de la Corte y la Guardia Real. Ichigo aprende sobre las verdaderas intenciones de Uryuu y renueva su determinación de proteger el mundo juntos"
     },
     {
       "id": "mal-54344",
@@ -1484,15 +1170,15 @@
       "mal_id": 61990,
       "ani_id": 195539,
       "title": "Cyberpunk: Edgerunners 2",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx195539-t0GQQ9J9qtBW.jpg",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx195539-4LdfmKIHzuxr.png",
       "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/195539-lO5SUdp4SOrq.jpg",
       "description": "Cyberpunk: Edgerunners 2 pulls you back into Night City, where lives become entangled to the extreme. Weak, a washed-up cyberpunk legend, is now forced to live without chrome as he searches for a sense of purpose in a world that’s passed him by. Meanwhile, the deadly nomad D sets out on a path to revenge that brings him close to corpo secrets never meant to be found. Across this ten-episode standalone series, uncover a story of family, obsession, legacy — and how your lens reflects the stories of the people around you.. When the world is blinded by spectacle, what extremes do you have to go to make your story matter? (Source: Cyberpunk: Edgerunners 2 Official Site, Official Twitter)",
       "year": 2026,
       "startDate": "2026-10-20",
       "format": "ONA",
       "episodes": 10,
-      "averageScore": 0,
-      "status": "NOT_YET_RELEASED",
+      "averageScore": 82,
+      "status": "FINISHED",
       "genres": [
         "Action",
         "Drama",
@@ -1504,29 +1190,26 @@
         "site": "youtube",
         "id": "AtJMSUpG9GQ"
       },
-      "next": {
-        "at": 1792479600,
-        "episode": 1
-      },
+      "next": null,
       "airingAt": 1792479600,
       "episode": 1,
-      "scheduleId": 422731,
-      "description_es": "Cyberpunk: Edgerunners 2 te lleva de vuelta a Night City, donde las vidas se enredan al extremo. Weak, una leyenda de ciberpunk lavada, ahora se ve obligado a vivir sin cromo mientras busca un sentido de propósito en un mundo que lo ha pasado. Mientras tanto, el nómada mortal D se pone en un camino hacia la venganza que lo acerca a secretos de corpo que nunca se pretendía encontrar. A través de esta serie independiente de diez episodios, descubrir una historia de familia, obsesión, legado, y cómo su lente refleja las historias de la gente a su alrededor.. Cuando el mundo está cegado por el espectáculo, qué extremos tienes que ir a"
+      "scheduleId": 422752,
+      "description_es": "Cyberpunk: Edgerunners 2 te lleva de vuelta a Night City, donde las vidas se enredan al extremo. Weak, una leyenda de ciberpunk lavada, ahora se ve obligado a vivir sin cromo mientras busca un sentido de propósito en un mundo que lo ha pasado. Mientras tanto, el nómada mortal D se pone en un camino hacia la venganza que lo acerca a secretos de corpo que nunca se pretendía encontrar. A través de esta serie independiente de diez episodios, descubrir una historia de familia, obsesión,"
     },
     {
       "id": "mal-61990",
       "mal_id": 61990,
       "ani_id": 195539,
       "title": "Cyberpunk: Edgerunners 2",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx195539-t0GQQ9J9qtBW.jpg",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx195539-4LdfmKIHzuxr.png",
       "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/195539-lO5SUdp4SOrq.jpg",
       "description": "Cyberpunk: Edgerunners 2 pulls you back into Night City, where lives become entangled to the extreme. Weak, a washed-up cyberpunk legend, is now forced to live without chrome as he searches for a sense of purpose in a world that’s passed him by. Meanwhile, the deadly nomad D sets out on a path to revenge that brings him close to corpo secrets never meant to be found. Across this ten-episode standalone series, uncover a story of family, obsession, legacy — and how your lens reflects the stories of the people around you.. When the world is blinded by spectacle, what extremes do you have to go to make your story matter? (Source: Cyberpunk: Edgerunners 2 Official Site, Official Twitter)",
       "year": 2026,
       "startDate": "2026-10-20",
       "format": "ONA",
       "episodes": 10,
-      "averageScore": 0,
-      "status": "NOT_YET_RELEASED",
+      "averageScore": 82,
+      "status": "FINISHED",
       "genres": [
         "Action",
         "Drama",
@@ -1538,29 +1221,26 @@
         "site": "youtube",
         "id": "AtJMSUpG9GQ"
       },
-      "next": {
-        "at": 1792479600,
-        "episode": 1
-      },
+      "next": null,
       "airingAt": 1792479600,
       "episode": 2,
-      "scheduleId": 422732,
-      "description_es": "Cyberpunk: Edgerunners 2 te lleva de vuelta a Night City, donde las vidas se enredan al extremo. Weak, una leyenda de ciberpunk lavada, ahora se ve obligado a vivir sin cromo mientras busca un sentido de propósito en un mundo que lo ha pasado. Mientras tanto, el nómada mortal D se pone en un camino hacia la venganza que lo acerca a secretos de corpo que nunca se pretendía encontrar. A través de esta serie independiente de diez episodios, descubrir una historia de familia, obsesión, legado, y cómo su lente refleja las historias de la gente a su alrededor.. Cuando el mundo está cegado por el espectáculo, qué extremos tienes que ir a"
+      "scheduleId": 422753,
+      "description_es": "Cyberpunk: Edgerunners 2 te lleva de vuelta a Night City, donde las vidas se enredan al extremo. Weak, una leyenda de ciberpunk lavada, ahora se ve obligado a vivir sin cromo mientras busca un sentido de propósito en un mundo que lo ha pasado. Mientras tanto, el nómada mortal D se pone en un camino hacia la venganza que lo acerca a secretos de corpo que nunca se pretendía encontrar. A través de esta serie independiente de diez episodios, descubrir una historia de familia, obsesión,"
     },
     {
       "id": "mal-61990",
       "mal_id": 61990,
       "ani_id": 195539,
       "title": "Cyberpunk: Edgerunners 2",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx195539-t0GQQ9J9qtBW.jpg",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx195539-4LdfmKIHzuxr.png",
       "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/195539-lO5SUdp4SOrq.jpg",
       "description": "Cyberpunk: Edgerunners 2 pulls you back into Night City, where lives become entangled to the extreme. Weak, a washed-up cyberpunk legend, is now forced to live without chrome as he searches for a sense of purpose in a world that’s passed him by. Meanwhile, the deadly nomad D sets out on a path to revenge that brings him close to corpo secrets never meant to be found. Across this ten-episode standalone series, uncover a story of family, obsession, legacy — and how your lens reflects the stories of the people around you.. When the world is blinded by spectacle, what extremes do you have to go to make your story matter? (Source: Cyberpunk: Edgerunners 2 Official Site, Official Twitter)",
       "year": 2026,
       "startDate": "2026-10-20",
       "format": "ONA",
       "episodes": 10,
-      "averageScore": 0,
-      "status": "NOT_YET_RELEASED",
+      "averageScore": 82,
+      "status": "FINISHED",
       "genres": [
         "Action",
         "Drama",
@@ -1572,29 +1252,26 @@
         "site": "youtube",
         "id": "AtJMSUpG9GQ"
       },
-      "next": {
-        "at": 1792479600,
-        "episode": 1
-      },
+      "next": null,
       "airingAt": 1792479600,
       "episode": 3,
-      "scheduleId": 422733,
-      "description_es": "Cyberpunk: Edgerunners 2 te lleva de vuelta a Night City, donde las vidas se enredan al extremo. Weak, una leyenda de ciberpunk lavada, ahora se ve obligado a vivir sin cromo mientras busca un sentido de propósito en un mundo que lo ha pasado. Mientras tanto, el nómada mortal D se pone en un camino hacia la venganza que lo acerca a secretos de corpo que nunca se pretendía encontrar. A través de esta serie independiente de diez episodios, descubrir una historia de familia, obsesión, legado, y cómo su lente refleja las historias de la gente a su alrededor.. Cuando el mundo está cegado por el espectáculo, qué extremos tienes que ir a"
+      "scheduleId": 422754,
+      "description_es": "Cyberpunk: Edgerunners 2 te lleva de vuelta a Night City, donde las vidas se enredan al extremo. Weak, una leyenda de ciberpunk lavada, ahora se ve obligado a vivir sin cromo mientras busca un sentido de propósito en un mundo que lo ha pasado. Mientras tanto, el nómada mortal D se pone en un camino hacia la venganza que lo acerca a secretos de corpo que nunca se pretendía encontrar. A través de esta serie independiente de diez episodios, descubrir una historia de familia, obsesión,"
     },
     {
       "id": "mal-61990",
       "mal_id": 61990,
       "ani_id": 195539,
       "title": "Cyberpunk: Edgerunners 2",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx195539-t0GQQ9J9qtBW.jpg",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx195539-4LdfmKIHzuxr.png",
       "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/195539-lO5SUdp4SOrq.jpg",
       "description": "Cyberpunk: Edgerunners 2 pulls you back into Night City, where lives become entangled to the extreme. Weak, a washed-up cyberpunk legend, is now forced to live without chrome as he searches for a sense of purpose in a world that’s passed him by. Meanwhile, the deadly nomad D sets out on a path to revenge that brings him close to corpo secrets never meant to be found. Across this ten-episode standalone series, uncover a story of family, obsession, legacy — and how your lens reflects the stories of the people around you.. When the world is blinded by spectacle, what extremes do you have to go to make your story matter? (Source: Cyberpunk: Edgerunners 2 Official Site, Official Twitter)",
       "year": 2026,
       "startDate": "2026-10-20",
       "format": "ONA",
       "episodes": 10,
-      "averageScore": 0,
-      "status": "NOT_YET_RELEASED",
+      "averageScore": 82,
+      "status": "FINISHED",
       "genres": [
         "Action",
         "Drama",
@@ -1606,29 +1283,26 @@
         "site": "youtube",
         "id": "AtJMSUpG9GQ"
       },
-      "next": {
-        "at": 1792479600,
-        "episode": 1
-      },
+      "next": null,
       "airingAt": 1792479600,
       "episode": 4,
-      "scheduleId": 422734,
-      "description_es": "Cyberpunk: Edgerunners 2 te lleva de vuelta a Night City, donde las vidas se enredan al extremo. Weak, una leyenda de ciberpunk lavada, ahora se ve obligado a vivir sin cromo mientras busca un sentido de propósito en un mundo que lo ha pasado. Mientras tanto, el nómada mortal D se pone en un camino hacia la venganza que lo acerca a secretos de corpo que nunca se pretendía encontrar. A través de esta serie independiente de diez episodios, descubrir una historia de familia, obsesión, legado, y cómo su lente refleja las historias de la gente a su alrededor.. Cuando el mundo está cegado por el espectáculo, qué extremos tienes que ir a"
+      "scheduleId": 422755,
+      "description_es": "Cyberpunk: Edgerunners 2 te lleva de vuelta a Night City, donde las vidas se enredan al extremo. Weak, una leyenda de ciberpunk lavada, ahora se ve obligado a vivir sin cromo mientras busca un sentido de propósito en un mundo que lo ha pasado. Mientras tanto, el nómada mortal D se pone en un camino hacia la venganza que lo acerca a secretos de corpo que nunca se pretendía encontrar. A través de esta serie independiente de diez episodios, descubrir una historia de familia, obsesión,"
     },
     {
       "id": "mal-61990",
       "mal_id": 61990,
       "ani_id": 195539,
       "title": "Cyberpunk: Edgerunners 2",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx195539-t0GQQ9J9qtBW.jpg",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx195539-4LdfmKIHzuxr.png",
       "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/195539-lO5SUdp4SOrq.jpg",
       "description": "Cyberpunk: Edgerunners 2 pulls you back into Night City, where lives become entangled to the extreme. Weak, a washed-up cyberpunk legend, is now forced to live without chrome as he searches for a sense of purpose in a world that’s passed him by. Meanwhile, the deadly nomad D sets out on a path to revenge that brings him close to corpo secrets never meant to be found. Across this ten-episode standalone series, uncover a story of family, obsession, legacy — and how your lens reflects the stories of the people around you.. When the world is blinded by spectacle, what extremes do you have to go to make your story matter? (Source: Cyberpunk: Edgerunners 2 Official Site, Official Twitter)",
       "year": 2026,
       "startDate": "2026-10-20",
       "format": "ONA",
       "episodes": 10,
-      "averageScore": 0,
-      "status": "NOT_YET_RELEASED",
+      "averageScore": 82,
+      "status": "FINISHED",
       "genres": [
         "Action",
         "Drama",
@@ -1640,29 +1314,26 @@
         "site": "youtube",
         "id": "AtJMSUpG9GQ"
       },
-      "next": {
-        "at": 1792479600,
-        "episode": 1
-      },
+      "next": null,
       "airingAt": 1792479600,
       "episode": 5,
-      "scheduleId": 422735,
-      "description_es": "Cyberpunk: Edgerunners 2 te lleva de vuelta a Night City, donde las vidas se enredan al extremo. Weak, una leyenda de ciberpunk lavada, ahora se ve obligado a vivir sin cromo mientras busca un sentido de propósito en un mundo que lo ha pasado. Mientras tanto, el nómada mortal D se pone en un camino hacia la venganza que lo acerca a secretos de corpo que nunca se pretendía encontrar. A través de esta serie independiente de diez episodios, descubrir una historia de familia, obsesión, legado, y cómo su lente refleja las historias de la gente a su alrededor.. Cuando el mundo está cegado por el espectáculo, qué extremos tienes que ir a"
+      "scheduleId": 422756,
+      "description_es": "Cyberpunk: Edgerunners 2 te lleva de vuelta a Night City, donde las vidas se enredan al extremo. Weak, una leyenda de ciberpunk lavada, ahora se ve obligado a vivir sin cromo mientras busca un sentido de propósito en un mundo que lo ha pasado. Mientras tanto, el nómada mortal D se pone en un camino hacia la venganza que lo acerca a secretos de corpo que nunca se pretendía encontrar. A través de esta serie independiente de diez episodios, descubrir una historia de familia, obsesión,"
     },
     {
       "id": "mal-61990",
       "mal_id": 61990,
       "ani_id": 195539,
       "title": "Cyberpunk: Edgerunners 2",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx195539-t0GQQ9J9qtBW.jpg",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx195539-4LdfmKIHzuxr.png",
       "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/195539-lO5SUdp4SOrq.jpg",
       "description": "Cyberpunk: Edgerunners 2 pulls you back into Night City, where lives become entangled to the extreme. Weak, a washed-up cyberpunk legend, is now forced to live without chrome as he searches for a sense of purpose in a world that’s passed him by. Meanwhile, the deadly nomad D sets out on a path to revenge that brings him close to corpo secrets never meant to be found. Across this ten-episode standalone series, uncover a story of family, obsession, legacy — and how your lens reflects the stories of the people around you.. When the world is blinded by spectacle, what extremes do you have to go to make your story matter? (Source: Cyberpunk: Edgerunners 2 Official Site, Official Twitter)",
       "year": 2026,
       "startDate": "2026-10-20",
       "format": "ONA",
       "episodes": 10,
-      "averageScore": 0,
-      "status": "NOT_YET_RELEASED",
+      "averageScore": 82,
+      "status": "FINISHED",
       "genres": [
         "Action",
         "Drama",
@@ -1674,29 +1345,26 @@
         "site": "youtube",
         "id": "AtJMSUpG9GQ"
       },
-      "next": {
-        "at": 1792479600,
-        "episode": 1
-      },
+      "next": null,
       "airingAt": 1792479600,
       "episode": 6,
-      "scheduleId": 422736,
-      "description_es": "Cyberpunk: Edgerunners 2 te lleva de vuelta a Night City, donde las vidas se enredan al extremo. Weak, una leyenda de ciberpunk lavada, ahora se ve obligado a vivir sin cromo mientras busca un sentido de propósito en un mundo que lo ha pasado. Mientras tanto, el nómada mortal D se pone en un camino hacia la venganza que lo acerca a secretos de corpo que nunca se pretendía encontrar. A través de esta serie independiente de diez episodios, descubrir una historia de familia, obsesión, legado, y cómo su lente refleja las historias de la gente a su alrededor.. Cuando el mundo está cegado por el espectáculo, qué extremos tienes que ir a"
+      "scheduleId": 422757,
+      "description_es": "Cyberpunk: Edgerunners 2 te lleva de vuelta a Night City, donde las vidas se enredan al extremo. Weak, una leyenda de ciberpunk lavada, ahora se ve obligado a vivir sin cromo mientras busca un sentido de propósito en un mundo que lo ha pasado. Mientras tanto, el nómada mortal D se pone en un camino hacia la venganza que lo acerca a secretos de corpo que nunca se pretendía encontrar. A través de esta serie independiente de diez episodios, descubrir una historia de familia, obsesión,"
     },
     {
       "id": "mal-61990",
       "mal_id": 61990,
       "ani_id": 195539,
       "title": "Cyberpunk: Edgerunners 2",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx195539-t0GQQ9J9qtBW.jpg",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx195539-4LdfmKIHzuxr.png",
       "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/195539-lO5SUdp4SOrq.jpg",
       "description": "Cyberpunk: Edgerunners 2 pulls you back into Night City, where lives become entangled to the extreme. Weak, a washed-up cyberpunk legend, is now forced to live without chrome as he searches for a sense of purpose in a world that’s passed him by. Meanwhile, the deadly nomad D sets out on a path to revenge that brings him close to corpo secrets never meant to be found. Across this ten-episode standalone series, uncover a story of family, obsession, legacy — and how your lens reflects the stories of the people around you.. When the world is blinded by spectacle, what extremes do you have to go to make your story matter? (Source: Cyberpunk: Edgerunners 2 Official Site, Official Twitter)",
       "year": 2026,
       "startDate": "2026-10-20",
       "format": "ONA",
       "episodes": 10,
-      "averageScore": 0,
-      "status": "NOT_YET_RELEASED",
+      "averageScore": 82,
+      "status": "FINISHED",
       "genres": [
         "Action",
         "Drama",
@@ -1708,29 +1376,26 @@
         "site": "youtube",
         "id": "AtJMSUpG9GQ"
       },
-      "next": {
-        "at": 1792479600,
-        "episode": 1
-      },
+      "next": null,
       "airingAt": 1792479600,
       "episode": 7,
-      "scheduleId": 422737,
-      "description_es": "Cyberpunk: Edgerunners 2 te lleva de vuelta a Night City, donde las vidas se enredan al extremo. Weak, una leyenda de ciberpunk lavada, ahora se ve obligado a vivir sin cromo mientras busca un sentido de propósito en un mundo que lo ha pasado. Mientras tanto, el nómada mortal D se pone en un camino hacia la venganza que lo acerca a secretos de corpo que nunca se pretendía encontrar. A través de esta serie independiente de diez episodios, descubrir una historia de familia, obsesión, legado, y cómo su lente refleja las historias de la gente a su alrededor.. Cuando el mundo está cegado por el espectáculo, qué extremos tienes que ir a"
+      "scheduleId": 422758,
+      "description_es": "Cyberpunk: Edgerunners 2 te lleva de vuelta a Night City, donde las vidas se enredan al extremo. Weak, una leyenda de ciberpunk lavada, ahora se ve obligado a vivir sin cromo mientras busca un sentido de propósito en un mundo que lo ha pasado. Mientras tanto, el nómada mortal D se pone en un camino hacia la venganza que lo acerca a secretos de corpo que nunca se pretendía encontrar. A través de esta serie independiente de diez episodios, descubrir una historia de familia, obsesión,"
     },
     {
       "id": "mal-61990",
       "mal_id": 61990,
       "ani_id": 195539,
       "title": "Cyberpunk: Edgerunners 2",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx195539-t0GQQ9J9qtBW.jpg",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx195539-4LdfmKIHzuxr.png",
       "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/195539-lO5SUdp4SOrq.jpg",
       "description": "Cyberpunk: Edgerunners 2 pulls you back into Night City, where lives become entangled to the extreme. Weak, a washed-up cyberpunk legend, is now forced to live without chrome as he searches for a sense of purpose in a world that’s passed him by. Meanwhile, the deadly nomad D sets out on a path to revenge that brings him close to corpo secrets never meant to be found. Across this ten-episode standalone series, uncover a story of family, obsession, legacy — and how your lens reflects the stories of the people around you.. When the world is blinded by spectacle, what extremes do you have to go to make your story matter? (Source: Cyberpunk: Edgerunners 2 Official Site, Official Twitter)",
       "year": 2026,
       "startDate": "2026-10-20",
       "format": "ONA",
       "episodes": 10,
-      "averageScore": 0,
-      "status": "NOT_YET_RELEASED",
+      "averageScore": 82,
+      "status": "FINISHED",
       "genres": [
         "Action",
         "Drama",
@@ -1742,29 +1407,26 @@
         "site": "youtube",
         "id": "AtJMSUpG9GQ"
       },
-      "next": {
-        "at": 1792479600,
-        "episode": 1
-      },
+      "next": null,
       "airingAt": 1792479600,
       "episode": 8,
-      "scheduleId": 422738,
-      "description_es": "Cyberpunk: Edgerunners 2 te lleva de vuelta a Night City, donde las vidas se enredan al extremo. Weak, una leyenda de ciberpunk lavada, ahora se ve obligado a vivir sin cromo mientras busca un sentido de propósito en un mundo que lo ha pasado. Mientras tanto, el nómada mortal D se pone en un camino hacia la venganza que lo acerca a secretos de corpo que nunca se pretendía encontrar. A través de esta serie independiente de diez episodios, descubrir una historia de familia, obsesión, legado, y cómo su lente refleja las historias de la gente a su alrededor.. Cuando el mundo está cegado por el espectáculo, qué extremos tienes que ir a"
+      "scheduleId": 422759,
+      "description_es": "Cyberpunk: Edgerunners 2 te lleva de vuelta a Night City, donde las vidas se enredan al extremo. Weak, una leyenda de ciberpunk lavada, ahora se ve obligado a vivir sin cromo mientras busca un sentido de propósito en un mundo que lo ha pasado. Mientras tanto, el nómada mortal D se pone en un camino hacia la venganza que lo acerca a secretos de corpo que nunca se pretendía encontrar. A través de esta serie independiente de diez episodios, descubrir una historia de familia, obsesión,"
     },
     {
       "id": "mal-61990",
       "mal_id": 61990,
       "ani_id": 195539,
       "title": "Cyberpunk: Edgerunners 2",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx195539-t0GQQ9J9qtBW.jpg",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx195539-4LdfmKIHzuxr.png",
       "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/195539-lO5SUdp4SOrq.jpg",
       "description": "Cyberpunk: Edgerunners 2 pulls you back into Night City, where lives become entangled to the extreme. Weak, a washed-up cyberpunk legend, is now forced to live without chrome as he searches for a sense of purpose in a world that’s passed him by. Meanwhile, the deadly nomad D sets out on a path to revenge that brings him close to corpo secrets never meant to be found. Across this ten-episode standalone series, uncover a story of family, obsession, legacy — and how your lens reflects the stories of the people around you.. When the world is blinded by spectacle, what extremes do you have to go to make your story matter? (Source: Cyberpunk: Edgerunners 2 Official Site, Official Twitter)",
       "year": 2026,
       "startDate": "2026-10-20",
       "format": "ONA",
       "episodes": 10,
-      "averageScore": 0,
-      "status": "NOT_YET_RELEASED",
+      "averageScore": 82,
+      "status": "FINISHED",
       "genres": [
         "Action",
         "Drama",
@@ -1776,29 +1438,26 @@
         "site": "youtube",
         "id": "AtJMSUpG9GQ"
       },
-      "next": {
-        "at": 1792479600,
-        "episode": 1
-      },
+      "next": null,
       "airingAt": 1792479600,
       "episode": 9,
-      "scheduleId": 422739,
-      "description_es": "Cyberpunk: Edgerunners 2 te lleva de vuelta a Night City, donde las vidas se enredan al extremo. Weak, una leyenda de ciberpunk lavada, ahora se ve obligado a vivir sin cromo mientras busca un sentido de propósito en un mundo que lo ha pasado. Mientras tanto, el nómada mortal D se pone en un camino hacia la venganza que lo acerca a secretos de corpo que nunca se pretendía encontrar. A través de esta serie independiente de diez episodios, descubrir una historia de familia, obsesión, legado, y cómo su lente refleja las historias de la gente a su alrededor.. Cuando el mundo está cegado por el espectáculo, qué extremos tienes que ir a"
+      "scheduleId": 422760,
+      "description_es": "Cyberpunk: Edgerunners 2 te lleva de vuelta a Night City, donde las vidas se enredan al extremo. Weak, una leyenda de ciberpunk lavada, ahora se ve obligado a vivir sin cromo mientras busca un sentido de propósito en un mundo que lo ha pasado. Mientras tanto, el nómada mortal D se pone en un camino hacia la venganza que lo acerca a secretos de corpo que nunca se pretendía encontrar. A través de esta serie independiente de diez episodios, descubrir una historia de familia, obsesión,"
     },
     {
       "id": "mal-61990",
       "mal_id": 61990,
       "ani_id": 195539,
       "title": "Cyberpunk: Edgerunners 2",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx195539-t0GQQ9J9qtBW.jpg",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx195539-4LdfmKIHzuxr.png",
       "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/195539-lO5SUdp4SOrq.jpg",
       "description": "Cyberpunk: Edgerunners 2 pulls you back into Night City, where lives become entangled to the extreme. Weak, a washed-up cyberpunk legend, is now forced to live without chrome as he searches for a sense of purpose in a world that’s passed him by. Meanwhile, the deadly nomad D sets out on a path to revenge that brings him close to corpo secrets never meant to be found. Across this ten-episode standalone series, uncover a story of family, obsession, legacy — and how your lens reflects the stories of the people around you.. When the world is blinded by spectacle, what extremes do you have to go to make your story matter? (Source: Cyberpunk: Edgerunners 2 Official Site, Official Twitter)",
       "year": 2026,
       "startDate": "2026-10-20",
       "format": "ONA",
       "episodes": 10,
-      "averageScore": 0,
-      "status": "NOT_YET_RELEASED",
+      "averageScore": 82,
+      "status": "FINISHED",
       "genres": [
         "Action",
         "Drama",
@@ -1810,14 +1469,11 @@
         "site": "youtube",
         "id": "AtJMSUpG9GQ"
       },
-      "next": {
-        "at": 1792479600,
-        "episode": 1
-      },
+      "next": null,
       "airingAt": 1792479600,
       "episode": 10,
-      "scheduleId": 422740,
-      "description_es": "Cyberpunk: Edgerunners 2 te lleva de vuelta a Night City, donde las vidas se enredan al extremo. Weak, una leyenda de ciberpunk lavada, ahora se ve obligado a vivir sin cromo mientras busca un sentido de propósito en un mundo que lo ha pasado. Mientras tanto, el nómada mortal D se pone en un camino hacia la venganza que lo acerca a secretos de corpo que nunca se pretendía encontrar. A través de esta serie independiente de diez episodios, descubrir una historia de familia, obsesión, legado, y cómo su lente refleja las historias de la gente a su alrededor.. Cuando el mundo está cegado por el espectáculo, qué extremos tienes que ir a"
+      "scheduleId": 422761,
+      "description_es": "Cyberpunk: Edgerunners 2 te lleva de vuelta a Night City, donde las vidas se enredan al extremo. Weak, una leyenda de ciberpunk lavada, ahora se ve obligado a vivir sin cromo mientras busca un sentido de propósito en un mundo que lo ha pasado. Mientras tanto, el nómada mortal D se pone en un camino hacia la venganza que lo acerca a secretos de corpo que nunca se pretendía encontrar. A través de esta serie independiente de diez episodios, descubrir una historia de familia, obsesión,"
     },
     {
       "id": "mal-63382",
@@ -2076,7 +1732,7 @@
       "airingAt": 1792508400,
       "episode": 3,
       "scheduleId": 420254,
-      "description_es": "Rein, un encantador, es expulsado de su gremio un día. Pero en lugar de desesperar, declara, “¡Ahora puedo hacer cualquier cosa!” y comienza a reclamar el enorme número de puntos de mejora que una vez vierte en el equipo de sus compañeros, a partir de un nuevo camino como aventurero. Reunirse a su alrededor son personas que llevan heridas que no se desvanecen fácilmente: un genio aventurero que cerró su corazón después de que su partido fue masacrado, un guerrero que perdió a su familia, y un asesino criado de la infancia para matar. Sin embargo Rein nunca rechaza sus pasados o sus cicatrices – los acepta a todos con brillante, hetero"
+      "description_es": "Rein, un encantador, es expulsado de su gremio un día. Pero en lugar de desesperar, declara, “¡Ahora puedo hacer cualquier cosa!” y comienza a reclamar el enorme número de puntos de mejora que una vez vierte en el equipo de sus compañeros, a partir de un nuevo camino como aventurero. Reunirse a su alrededor son personas que llevan heridas que no se desvanecen fácilmente: un genio aventurero que cerró su corazón después de que su partido fue masacrado, un guerrero que perdió"
     },
     {
       "id": "mal-63489",
@@ -3628,7 +3284,7 @@
       "startDate": "2026-10-03",
       "format": "TV",
       "episodes": 0,
-      "averageScore": 58,
+      "averageScore": 57,
       "status": "RELEASING",
       "genres": [
         "Comedy",
@@ -3919,7 +3575,7 @@
       "startDate": "2026-10-03",
       "format": "TV",
       "episodes": 20,
-      "averageScore": 63,
+      "averageScore": 64,
       "status": "RELEASING",
       "genres": [
         "Comedy",
@@ -4048,7 +3704,7 @@
       "airingAt": 1792846800,
       "episode": 5,
       "scheduleId": 421885,
-      "description_es": "Fia siempre soñó con convertirse en un caballero. Nacida en una familia de caballeros, es la menos talentosa entre ellos, pero todavía se aferra a su esperanza y trenes con todo lo que tiene. Cuando llega el día para que mate a un pequeño demonio y pruebe su valor, termina cara a cara con un dragón en su lugar! Una herida mortal hace que su vida parpadee ante sus ojos... y de repente recuerda su vida anterior, cuando ella era un poderoso santo en una era pasada que defea"
+      "description_es": "Fia siempre soñó con convertirse en un caballero. Nacida en una familia de caballeros, es la menos talentosa entre ellos, pero todavía se aferra a su esperanza y trenes con todo lo que tiene. Cuando llega el día para que mate a un pequeño demonio y pruebe su valor, termina cara a cara con un dragón en su lugar! Una herida mortal hace que su vida parpadee ante sus ojos... y de repente recuerda su vida anterior, cuando ella era un poderoso santo en una era pasada que venció al Rey demonio. Esa vida terminó en dolor debido a quién era, haciendo que su miedo se convierta en un santo de nuevo. Ahora que la magia de su anterior"
     },
     {
       "id": "mal-63140",
@@ -4390,7 +4046,7 @@
       "airingAt": 1792859400,
       "episode": 4,
       "scheduleId": 419565,
-      "description_es": "Si hay una cosa que nunca puedes tener suficiente en un mundo de espadas y brujería estilo RPG, ¡es puntos mágicos! Si estás alimentando hechizos, técnicas o mostrando una habilidad increíble, tienes que gastar esos puntos para hacer daño real. ¿Y si te escapas? La Cuaresma es parte de la fiesta de llegada conocida como los \"Skypiercers\", y gracias a su regalo único, puede prestar enormes cantidades de magia a otros. ¿Sin MP? No hay problema con Lent arou"
+      "description_es": "Si hay una cosa que nunca puedes tener suficiente en un mundo de espadas y brujería estilo RPG, ¡es puntos mágicos! Si estás alimentando hechizos, técnicas o mostrando una habilidad increíble, tienes que gastar esos puntos para hacer daño real. ¿Y si te escapas? La Cuaresma es parte de la fiesta de llegada conocida como los \"Skypiercers\", y gracias a su regalo único, puede prestar enormes cantidades de magia a otros. ¿Sin MP? ¡No hay problema con la Cuaresma! Excepto ahora que sus compañeros se han convertido en héroes formidables (gracias a su habilidad), su utilidad es cuestionada. Salió del grupo, la Cuaresma es"
     },
     {
       "id": "mal-63125",
@@ -5131,7 +4787,7 @@
       "startDate": "2026-10-04",
       "format": "TV",
       "episodes": 0,
-      "averageScore": 57,
+      "averageScore": 58,
       "status": "RELEASING",
       "genres": [
         "Mahou Shoujo",
@@ -5183,7 +4839,7 @@
       "airingAt": 1792936800,
       "episode": 4,
       "scheduleId": 422115,
-      "description_es": "Shizuka se ocupa de los trabajos más peligrosos de los asesinos, pero ella no es la que hace el asesinato. Más bien, es su hermano, Nagi, un asesino fuerte que tomó una bala para proteger a su hermana, dejarlo en estado en coma y tener que usar una silla de ruedas. Sin embargo, Shizuka ha descubierto la clave para despertar a su hermano: ¡debe enfrentarse con la intención de matar! Así comienza un viaje violento de recuperación, luchando contra los enemigos más peligrosos! (Fuente: Kodansha"
+      "description_es": "Shizuka se ocupa de los trabajos más peligrosos de los asesinos, pero ella no es la que hace el asesinato. Más bien, es su hermano, Nagi, un asesino fuerte que tomó una bala para proteger a su hermana, dejarlo en estado en coma y tener que usar una silla de ruedas. Sin embargo, Shizuka ha descubierto la clave para despertar a su hermano: ¡debe enfrentarse con la intención de matar! Así comienza un viaje violento de recuperación, luchando contra los enemigos más peligrosos! (Fuente: Kodansha USA)"
     },
     {
       "id": "mal-63367",
@@ -5312,7 +4968,7 @@
       "startDate": "2026-10-04",
       "format": "TV",
       "episodes": 12,
-      "averageScore": 67,
+      "averageScore": 66,
       "status": "RELEASING",
       "genres": [
         "Comedy",
@@ -5722,7 +5378,7 @@
       "airingAt": 1793017800,
       "episode": 4,
       "scheduleId": 420068,
-      "description_es": "Hazme una poción de amor. Y con esa sola frase, la Buena Bruja del amor secreto del lago sobre el desgarrador Sir Harij termina en la ruptura del corazón. Sin embargo, cuando promete ayudarla a reunir los ingredientes, Rose está emocionada por la oportunidad de mirar a un hombre con el que normalmente nunca podría interactuar. Ella aprende a jactar su corazón por sus conversaciones usuales inclinadas... pero ¿qué va a hacer cuando aparece inexplicablemente en su puerta con pan y un frasco de mantequilla de manzana? (Fuente: Yen Press)"
+      "description_es": "Hazme una poción de amor. Y con esa sola frase, la Buena Bruja del amor secreto del lago sobre el desgarrador Sir Harij termina en la ruptura del corazón. Sin embargo, cuando promete ayudarla a reunir los ingredientes, Rose está emocionada por la oportunidad de mirar a un hombre con el que normalmente nunca podría interactuar. Ella aprende a jactar su corazón por sus conversaciones usuales inclinadas... pero ¿qué va a hacer cuando aparece inexplicablemente en su puerta con bre"
     },
     {
       "id": "mal-63712",
@@ -5764,7 +5420,7 @@
       "airingAt": 1793019600,
       "episode": 5,
       "scheduleId": 422214,
-      "description_es": "La naturaleza altruista del trabajador de oficina Akira Yagami generalmente le consigue el extremo corto del palo. Cuando muere después de salvar a un niño del tráfico entrante... ¿reencarna en otro mundo como un duende? Normalmente, los duendes sólo viven durante siete días, pero los nuevos poderes de Akira le permiten desafiar la vida normal de la especie... ¡y son la clave de su camino para convertirse en el más fuerte de todos los tiempos! (Fuente: Yen Press) Nota: Tensei Goblin Dakedo Sitsumon Aru? está transmitiendo 1 semana antes de la emisión de televisión en ABEMA y Primer Video comenzando con el episodio 2 el 5 de octubre de 2026"
+      "description_es": "La naturaleza altruista del trabajador de oficina Akira Yagami generalmente le consigue el extremo corto del palo. Cuando muere después de salvar a un niño del tráfico entrante... ¿reencarna en otro mundo como un duende? Normalmente, los duendes sólo viven durante siete días, pero los nuevos poderes de Akira le permiten desafiar el período de vida normal de la especie... ¡y son la clave de su camino para convertirse en el más fuerte de todos los tiempos! (Fuente: Yen Press) Nota: Tensei Goblin Dakedo Sitsumon Aru?"
     },
     {
       "id": "mal-63098",
@@ -5803,7 +5459,7 @@
       "airingAt": 1793023200,
       "episode": 4,
       "scheduleId": 419766,
-      "description_es": "Un día, la secundaria Ageha Yoshina recoge una misteriosa “tarjeta de teléfono roja” que queda atrás en una cabina telefónica pública. Unos días más tarde, su amigo de la infancia y compañero de clase, Sakurako Amamiya, que poseía la misma carta, desaparecen sin dejar rastro. En busca de ella, Ageha se encuentra dibujado en los rumores que rodean una cadena nacional de misteriosas desapariciones, dijo ser el trabajo de una organización secreta conocida sólo como “Psyren”. Cuando accede al grupo, comienza un juego mortal, uno que cambiará su destino para siempre. (Fuente: Sitio Oficial de PSYhován)"
+      "description_es": "Un día, la secundaria Ageha Yoshina recoge una misteriosa “tarjeta de teléfono roja” que queda atrás en una cabina telefónica pública. Unos días más tarde, su amigo de la infancia y compañero de clase, Sakurako Amamiya, que poseía la misma carta, desaparecen sin dejar rastro. En busca de ella, Ageha se encuentra dibujado en los rumores que rodean una cadena nacional de misteriosas desapariciones, dijo ser el trabajo de una organización secreta conocida sólo como “Psyren”. Cuando él"
     },
     {
       "id": "mal-60636",
@@ -5837,7 +5493,7 @@
       "airingAt": 1793026800,
       "episode": 10,
       "scheduleId": 422730,
-      "description_es": "La destrucción se desploma al final de la Guerra de la Sangre Mil Años entre los Reapers del Alma y las Quincias... mientras la muerte del Rey del Alma refleja el colapso de los Tres Mundos, las distorsiones y los presagios de destrucción comienzan a aparecer en todos los reinos. Quince batallas surgieron a lo largo de la Wahr Welt entre los 13 escuadrones de la Guardia de la Corte y la Guardia Real. Ichigo aprende sobre las verdaderas intenciones de Uryuu y renueva su determinación de proteger el mundo juntos, como amigos que confían entre sí. Yhwach ha superado incluso su propia habilidad, el Todopoderoso... La feroz batalla por la supervivencia de la aplicación Tres Mundos"
+      "description_es": "La destrucción se desploma al final de la Guerra de la Sangre Mil Años entre los Reapers del Alma y las Quincias... mientras la muerte del Rey del Alma refleja el colapso de los Tres Mundos, las distorsiones y los presagios de destrucción comienzan a aparecer en todos los reinos. Quince batallas surgieron a lo largo de la Wahr Welt entre los 13 escuadrones de la Guardia de la Corte y la Guardia Real. Ichigo aprende sobre las verdaderas intenciones de Uryuu y renueva su determinación de proteger el mundo juntos"
     },
     {
       "id": "mal-54344",
@@ -6192,7 +5848,7 @@
       "airingAt": 1793113200,
       "episode": 4,
       "scheduleId": 420255,
-      "description_es": "Rein, un encantador, es expulsado de su gremio un día. Pero en lugar de desesperar, declara, “¡Ahora puedo hacer cualquier cosa!” y comienza a reclamar el enorme número de puntos de mejora que una vez vierte en el equipo de sus compañeros, a partir de un nuevo camino como aventurero. Reunirse a su alrededor son personas que llevan heridas que no se desvanecen fácilmente: un genio aventurero que cerró su corazón después de que su partido fue masacrado, un guerrero que perdió a su familia, y un asesino criado de la infancia para matar. Sin embargo Rein nunca rechaza sus pasados o sus cicatrices – los acepta a todos con brillante, hetero"
+      "description_es": "Rein, un encantador, es expulsado de su gremio un día. Pero en lugar de desesperar, declara, “¡Ahora puedo hacer cualquier cosa!” y comienza a reclamar el enorme número de puntos de mejora que una vez vierte en el equipo de sus compañeros, a partir de un nuevo camino como aventurero. Reunirse a su alrededor son personas que llevan heridas que no se desvanecen fácilmente: un genio aventurero que cerró su corazón después de que su partido fue masacrado, un guerrero que perdió"
     },
     {
       "id": "mal-63489",
@@ -6760,6 +6416,36 @@
       "episode": 4,
       "scheduleId": 420119,
       "description_es": "En una tierra dominada por los formidables Mundos Sombríos, la mayoría de la humanidad ha sido destruida. Para rescatar a su planeta de la muerte inminente, seis héroes valientes luchan una batalla peligrosa... y fracasan. Pero hay una mirada de esperanza cuando Desir, una de las últimas magras, es de repente enviado en el tiempo 13 años! Ahora armado con conocimiento del futuro sombrío, ¿puede alterar el curso de la historia y salvar el mundo? (Fuente: Crunchyroll)"
+    },
+    {
+      "id": "mal-65095",
+      "mal_id": 65095,
+      "ani_id": 217624,
+      "title": "PetitCure: Precure Fairies Season 4",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx217624-Cwkze5dZ5txL.jpg",
+      "banner": "",
+      "description": "Fourth season of PetitCure: Precure Fairies.",
+      "year": 2026,
+      "startDate": "2026-10-01",
+      "format": "ONA",
+      "episodes": 0,
+      "averageScore": 0,
+      "status": "RELEASING",
+      "genres": [
+        "Fantasy",
+        "Slice of Life"
+      ],
+      "siteUrl": "https://anilist.co/anime/217624",
+      "streaming": [],
+      "trailer": null,
+      "next": {
+        "at": 1792661400,
+        "episode": 4
+      },
+      "airingAt": 1793266200,
+      "episode": 5,
+      "scheduleId": 421766,
+      "description_es": "Cuarta temporada de PetitCure: Ferias precarias."
     }
   ],
   "seasonal": {
@@ -7451,7 +7137,7 @@
           "at": 1792846800,
           "episode": 5
         },
-        "description_es": "Fia siempre soñó con convertirse en un caballero. Nacida en una familia de caballeros, es la menos talentosa entre ellos, pero todavía se aferra a su esperanza y trenes con todo lo que tiene. Cuando llega el día para que mate a un pequeño demonio y pruebe su valor, termina cara a cara con un dragón en su lugar! Una herida mortal hace que su vida parpadee ante sus ojos... y de repente recuerda su vida anterior, cuando ella era un poderoso santo en una era pasada que defea"
+        "description_es": "Fia siempre soñó con convertirse en un caballero. Nacida en una familia de caballeros, es la menos talentosa entre ellos, pero todavía se aferra a su esperanza y trenes con todo lo que tiene. Cuando llega el día para que mate a un pequeño demonio y pruebe su valor, termina cara a cara con un dragón en su lugar! Una herida mortal hace que su vida parpadee ante sus ojos... y de repente recuerda su vida anterior, cuando ella era un poderoso santo en una era pasada que venció al Rey demonio. Esa vida terminó en dolor debido a quién era, haciendo que su miedo se convierta en un santo de nuevo. Ahora que la magia de su anterior"
       },
       {
         "id": "mal-59787",
@@ -7570,7 +7256,7 @@
         "startDate": "2026-10-03",
         "format": "TV",
         "episodes": 20,
-        "averageScore": 63,
+        "averageScore": 64,
         "status": "RELEASING",
         "genres": [
           "Comedy",
@@ -7636,7 +7322,7 @@
         "startDate": "2026-10-03",
         "format": "TV",
         "episodes": 0,
-        "averageScore": 58,
+        "averageScore": 57,
         "status": "RELEASING",
         "genres": [
           "Comedy",
@@ -7875,7 +7561,7 @@
           "at": 1792859400,
           "episode": 4
         },
-        "description_es": "Si hay una cosa que nunca puedes tener suficiente en un mundo de espadas y brujería estilo RPG, ¡es puntos mágicos! Si estás alimentando hechizos, técnicas o mostrando una habilidad increíble, tienes que gastar esos puntos para hacer daño real. ¿Y si te escapas? La Cuaresma es parte de la fiesta de llegada conocida como los \"Skypiercers\", y gracias a su regalo único, puede prestar enormes cantidades de magia a otros. ¿Sin MP? No hay problema con Lent arou"
+        "description_es": "Si hay una cosa que nunca puedes tener suficiente en un mundo de espadas y brujería estilo RPG, ¡es puntos mágicos! Si estás alimentando hechizos, técnicas o mostrando una habilidad increíble, tienes que gastar esos puntos para hacer daño real. ¿Y si te escapas? La Cuaresma es parte de la fiesta de llegada conocida como los \"Skypiercers\", y gracias a su regalo único, puede prestar enormes cantidades de magia a otros. ¿Sin MP? ¡No hay problema con la Cuaresma! Excepto ahora que sus compañeros se han convertido en héroes formidables (gracias a su habilidad), su utilidad es cuestionada. Salió del grupo, la Cuaresma es"
       },
       {
         "id": "mal-63801",
@@ -7920,7 +7606,7 @@
         "startDate": "2026-10-04",
         "format": "TV",
         "episodes": 12,
-        "averageScore": 67,
+        "averageScore": 66,
         "status": "RELEASING",
         "genres": [
           "Comedy",
@@ -7972,7 +7658,7 @@
           "at": 1792936800,
           "episode": 4
         },
-        "description_es": "Shizuka se ocupa de los trabajos más peligrosos de los asesinos, pero ella no es la que hace el asesinato. Más bien, es su hermano, Nagi, un asesino fuerte que tomó una bala para proteger a su hermana, dejarlo en estado en coma y tener que usar una silla de ruedas. Sin embargo, Shizuka ha descubierto la clave para despertar a su hermano: ¡debe enfrentarse con la intención de matar! Así comienza un viaje violento de recuperación, luchando contra los enemigos más peligrosos! (Fuente: Kodansha"
+        "description_es": "Shizuka se ocupa de los trabajos más peligrosos de los asesinos, pero ella no es la que hace el asesinato. Más bien, es su hermano, Nagi, un asesino fuerte que tomó una bala para proteger a su hermana, dejarlo en estado en coma y tener que usar una silla de ruedas. Sin embargo, Shizuka ha descubierto la clave para despertar a su hermano: ¡debe enfrentarse con la intención de matar! Así comienza un viaje violento de recuperación, luchando contra los enemigos más peligrosos! (Fuente: Kodansha USA)"
       },
       {
         "id": "mal-62907",
@@ -8053,7 +7739,7 @@
         "startDate": "2026-10-04",
         "format": "TV",
         "episodes": 0,
-        "averageScore": 57,
+        "averageScore": 58,
         "status": "RELEASING",
         "genres": [
           "Mahou Shoujo",
@@ -8211,7 +7897,7 @@
           "at": 1793017800,
           "episode": 4
         },
-        "description_es": "Hazme una poción de amor. Y con esa sola frase, la Buena Bruja del amor secreto del lago sobre el desgarrador Sir Harij termina en la ruptura del corazón. Sin embargo, cuando promete ayudarla a reunir los ingredientes, Rose está emocionada por la oportunidad de mirar a un hombre con el que normalmente nunca podría interactuar. Ella aprende a jactar su corazón por sus conversaciones usuales inclinadas... pero ¿qué va a hacer cuando aparece inexplicablemente en su puerta con pan y un frasco de mantequilla de manzana? (Fuente: Yen Press)"
+        "description_es": "Hazme una poción de amor. Y con esa sola frase, la Buena Bruja del amor secreto del lago sobre el desgarrador Sir Harij termina en la ruptura del corazón. Sin embargo, cuando promete ayudarla a reunir los ingredientes, Rose está emocionada por la oportunidad de mirar a un hombre con el que normalmente nunca podría interactuar. Ella aprende a jactar su corazón por sus conversaciones usuales inclinadas... pero ¿qué va a hacer cuando aparece inexplicablemente en su puerta con bre"
       },
       {
         "id": "mal-63509",
@@ -8279,7 +7965,7 @@
           "at": 1793023200,
           "episode": 4
         },
-        "description_es": "Un día, la secundaria Ageha Yoshina recoge una misteriosa “tarjeta de teléfono roja” que queda atrás en una cabina telefónica pública. Unos días más tarde, su amigo de la infancia y compañero de clase, Sakurako Amamiya, que poseía la misma carta, desaparecen sin dejar rastro. En busca de ella, Ageha se encuentra dibujado en los rumores que rodean una cadena nacional de misteriosas desapariciones, dijo ser el trabajo de una organización secreta conocida sólo como “Psyren”. Cuando accede al grupo, comienza un juego mortal, uno que cambiará su destino para siempre. (Fuente: Sitio Oficial de PSYhován)"
+        "description_es": "Un día, la secundaria Ageha Yoshina recoge una misteriosa “tarjeta de teléfono roja” que queda atrás en una cabina telefónica pública. Unos días más tarde, su amigo de la infancia y compañero de clase, Sakurako Amamiya, que poseía la misma carta, desaparecen sin dejar rastro. En busca de ella, Ageha se encuentra dibujado en los rumores que rodean una cadena nacional de misteriosas desapariciones, dijo ser el trabajo de una organización secreta conocida sólo como “Psyren”. Cuando él"
       },
       {
         "id": "mal-63712",
@@ -8318,7 +8004,7 @@
           "at": 1793019600,
           "episode": 5
         },
-        "description_es": "La naturaleza altruista del trabajador de oficina Akira Yagami generalmente le consigue el extremo corto del palo. Cuando muere después de salvar a un niño del tráfico entrante... ¿reencarna en otro mundo como un duende? Normalmente, los duendes sólo viven durante siete días, pero los nuevos poderes de Akira le permiten desafiar la vida normal de la especie... ¡y son la clave de su camino para convertirse en el más fuerte de todos los tiempos! (Fuente: Yen Press) Nota: Tensei Goblin Dakedo Sitsumon Aru? está transmitiendo 1 semana antes de la emisión de televisión en ABEMA y Primer Video comenzando con el episodio 2 el 5 de octubre de 2026"
+        "description_es": "La naturaleza altruista del trabajador de oficina Akira Yagami generalmente le consigue el extremo corto del palo. Cuando muere después de salvar a un niño del tráfico entrante... ¿reencarna en otro mundo como un duende? Normalmente, los duendes sólo viven durante siete días, pero los nuevos poderes de Akira le permiten desafiar el período de vida normal de la especie... ¡y son la clave de su camino para convertirse en el más fuerte de todos los tiempos! (Fuente: Yen Press) Nota: Tensei Goblin Dakedo Sitsumon Aru?"
       },
       {
         "id": "mal-64131",
@@ -8735,7 +8421,7 @@
           "at": 1792508400,
           "episode": 3
         },
-        "description_es": "Rein, un encantador, es expulsado de su gremio un día. Pero en lugar de desesperar, declara, “¡Ahora puedo hacer cualquier cosa!” y comienza a reclamar el enorme número de puntos de mejora que una vez vierte en el equipo de sus compañeros, a partir de un nuevo camino como aventurero. Reunirse a su alrededor son personas que llevan heridas que no se desvanecen fácilmente: un genio aventurero que cerró su corazón después de que su partido fue masacrado, un guerrero que perdió a su familia, y un asesino criado de la infancia para matar. Sin embargo Rein nunca rechaza sus pasados o sus cicatrices – los acepta a todos con brillante, hetero"
+        "description_es": "Rein, un encantador, es expulsado de su gremio un día. Pero en lugar de desesperar, declara, “¡Ahora puedo hacer cualquier cosa!” y comienza a reclamar el enorme número de puntos de mejora que una vez vierte en el equipo de sus compañeros, a partir de un nuevo camino como aventurero. Reunirse a su alrededor son personas que llevan heridas que no se desvanecen fácilmente: un genio aventurero que cerró su corazón después de que su partido fue masacrado, un guerrero que perdió"
       },
       {
         "id": "mal-52480",
