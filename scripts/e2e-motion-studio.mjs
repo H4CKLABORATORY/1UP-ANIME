@@ -39,7 +39,9 @@ try {
       throw Error('Portrait preview broken: ' + JSON.stringify(result));
     if (result.overflow > 3) throw Error('Mobile page horizontal overflow: ' + JSON.stringify(result));
     await page.locator('#title').fill('HOLA 1UP');
-    await page.locator('#glow').fill('.42');
+    await page.locator('#glow').evaluate(el => {
+      el.value = '.42'; el.dispatchEvent(new Event('input', { bubbles: true }));
+    });
     result = await page.evaluate(() => ({
       scene: window.DexterMotionStudio.getScene(),
       rendered: window.DexterMotionStudio.renderAt(1.4),
