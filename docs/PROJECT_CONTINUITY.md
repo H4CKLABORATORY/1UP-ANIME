@@ -331,3 +331,12 @@ Al concluir cada trabajo agregar:
 - Motor determinista y CLI Playwright + FFmpeg para MP4 Full HD H.264/AAC reutilizando la firma original. Workflow GitHub Actions ejecuta QA, smoke FFmpeg y genera dos MP4 al llegar a main o mediante workflow_dispatch. Documentado en docs/DEXTER_MOTION_STUDIO.md.
 - Se conserva intro publicada y reproductores. Solo un enlace en pie lleva al editor. Caché PWA v38.
 - Estado inicial sin certificar: CI PR, browser screenshots, MP4 smoke y render HD final; Safari físico y decisión estética pendientes.
+
+
+### 2026-10-20 — Cierre verificado: DEXTER Motion Studio y videos HD
+- **PR #65 FUSIONADO** en main (squash b10213c790baa33e1dbf8fd1b17c0d95c3591426). Suite completa de 14 workflows del PR en SUCCESS, incluyendo Chromium responsive, Puppeteer, HLS, Depth, sitewide y smoke H.264 + AAC.
+- Studio publicado por GitHub Pages; build de Pages SUCCESS, run 39370957727, revisión main 1641ad1a. Enlace: https://h4cklaboratory.github.io/1UP-ANIME/dexter-motion-studio.html
+- Exportación HD realmente ejecutada y comprobada con ffprobe: **1920×1080** (16:9), **1080×1920** (9:16), 30 fps, 3,2 segundos, video H.264 y audio AAC del material de marca autorizado.
+- Workflow de exportación SUCCESS: https://github.com/H4CKLABORATORY/1UP-ANIME/actions/runs/39370945223 ; artefacto 12241376805, nombre dexter-motion-studio-h264-aac-16x9-9x16, ~2,38 MB, vence 2026-11-03 (14 días). Capturas de verificación artifact 12241725293.
+- El estudio permite copiar JSON compacto y enviarlo a workflow_dispatch para exportación personalizada desde iPhone sin PC. **No se ha probado** esa ejecución custom en la UI de GitHub con un JSON de usuario; validación de JSON y parser configurados.
+- Próximos puntos no resueltos: aprobación visual del propietario y pruebas Safari iPhone físico; la intro pública actual no fue reemplazada.

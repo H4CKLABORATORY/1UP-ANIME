@@ -49,3 +49,11 @@ Siguiente: corregir CI; inspeccionar browser evidence; fusionar solo con pruebas
 3. Pega lo copiado en el campo scene_json y ejecuta.
 4. Descarga los dos MP4 Full HD del artefacto cuando aparezca en verde.
 No requiere PC, ni almacenar contraseñas en el editor. El campo admite hasta 4096 caracteres y solo acepta datos, no código.
+
+## Entrega CI verificada 2026-10-20
+- PR #65: https://github.com/H4CKLABORATORY/1UP-ANIME/pull/65, integrado main (b10213c7).
+- GitHub Actions MP4: https://github.com/H4CKLABORATORY/1UP-ANIME/actions/runs/39370945223 (SUCCESS).
+- Artifact de dos MP4: https://github.com/H4CKLABORATORY/1UP-ANIME/actions/runs/39370945223/artifacts/12241376805 (2.382.006 bytes, vence 2026-11-03).
+- El log de ffprobe confirmó H.264/AAC; 1920×1080 y 1080×1920; ambos 30 fps, 3,2 s.
+- Pages build success run 39370957727. La vista pública conserva la intro de producción.
+- Resta revisión estética con el propietario, prueba Safari físico y prueba manual del campo scene_json con una escena personalizada. No equivale a entrega de una app de edición iOS nativa.

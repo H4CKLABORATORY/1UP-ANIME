@@ -139,3 +139,7 @@ Módulo progresivo sin dependencias nuevas (js/dexter-motion-engine.js, styles/d
 
 ### 2026-10-20 — DEXTER Motion Studio V1
 Editor independiente dexter-motion-studio.html, motor motion-studio/, CLI scripts/render-motion-studio.mjs, scene JSON, flujo H.264/AAC y pruebas. Conservar intro y logo vigentes, PWA/compatibilidad iPhone, derechos, cero costo. Más detalles docs/DEXTER_MOTION_STUDIO.md.
+
+
+### 2026-10-20 — DEXTER Motion Studio publicado, HD renderizado
+PR #65 integrado en main. Las pruebas CI y el render GitHub Actions 39370945223 terminaron success; ambos MP4 Full HD a 30fps con H.264/AAC están disponibles en el artefacto 12241376805. Pages verde (run 39370957727). Estudio web dexter-motion-studio.html para editar y copiar escenas a GitHub Actions. Pendientes de revisión estética y prueba iPhone Safari físico; la intro publicada sigue siendo la anterior.
