@@ -44,3 +44,6 @@ Restricción: presupuesto $0, no compras/deploy destructivo sin permiso; no conv
 
 - [ ] **DEXTER Motion Engine (2026-10-20):** revisar rama feature/dexter-motion-engine-20261020 y su PR, comprobar workflow de tests Node, QA responsive en navegador y Safari físico, y después aprobar merge/deploy si no hay regresiones. Investigación y límites documentados en docs/DEXTER_MOTION_ENGINE.md.
 - [x] **Motor de movimiento DEXTER:** PR #63 fusionado, 13 checks de PR correctos, `Deploy to GitHub Pages` y pipeline Pages finalizados en success. [ ] Falta QA Safari iPhone físico y revisión de motion visual, sin bloquear uso básico.
+
+
+- [ ] **DEXTER Motion Studio Full HD (2026-10-20):** comprobar CI del PR feature/dexter-cinematic-studio-and-mp4-20261020, Node+Playwright, FFmpeg AAC smoke, artifacts de 16:9 y 9:16 y Safari físico pendiente. Fusionar solo tras verde, comprobar Pages y salida MP4 por push/workflow_dispatch. Ver docs/DEXTER_MOTION_STUDIO.md.

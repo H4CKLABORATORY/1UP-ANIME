@@ -1,0 +1,81 @@
+name: DEXTER Motion Studio · MP4 / QA
+
+on:
+  pull_request:
+    paths:
+      - 'dexter-motion-studio.html'
+      - 'motion-studio/**'
+      - 'scripts/render-motion-studio.mjs'
+      - 'scripts/e2e-motion-studio.mjs'
+      - 'tests/motion-studio.test.mjs'
+      - 'index.html'
+      - 'sw.js'
+      - '.github/workflows/dexter-motion-studio.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'dexter-motion-studio.html'
+      - 'motion-studio/**'
+      - 'scripts/render-motion-studio.mjs'
+      - 'scripts/e2e-motion-studio.mjs'
+      - 'tests/motion-studio.test.mjs'
+      - '.github/workflows/dexter-motion-studio.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  quality-and-render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Syntax and pure scene tests
+        run: |
+          node --check motion-studio/scene.mjs
+          node --check motion-studio/renderer.mjs
+          node --check motion-studio/app.mjs
+          node --check scripts/render-motion-studio.mjs
+          node --check scripts/e2e-motion-studio.mjs
+          node --test tests/motion-studio.test.mjs
+      - name: Install browser and video encoder
+        run: |
+          npm install --no-save --ignore-scripts --no-audit --no-fund playwright@1.56.1
+          npx playwright install --with-deps chromium
+          if ! command -v ffmpeg >/dev/null; then sudo apt-get update && sudo apt-get install -y ffmpeg; fi
+          ffmpeg -version | head -1
+      - name: Visual regression on mobile and desktop
+        run: node scripts/e2e-motion-studio.mjs
+      - name: MP4 encoder integration smoke test (320x180, AAC)
+        run: |
+          node scripts/render-motion-studio.mjs --format landscape --fps 6 --duration 2 --width 320 --height 180 --out artifacts/motion-smoke.mp4
+          test -s artifacts/motion-smoke.mp4
+          ffprobe -v error -select_streams v:0 -show_entries stream=codec_name -of csv=p=0 artifacts/motion-smoke.mp4 | grep -qx h264
+          ffprobe -v error -select_streams a:0 -show_entries stream=codec_name -of csv=p=0 artifacts/motion-smoke.mp4 | grep -qx aac
+      - name: Render final Full HD · 16:9 and 9:16
+        if: github.event_name == 'workflow_dispatch' || (github.event_name == 'push' && github.ref == 'refs/heads/main')
+        run: |
+          node scripts/render-motion-studio.mjs --format landscape --fps 30 --out artifacts/motion-studio/oneup-intro-1920x1080.mp4
+          node scripts/render-motion-studio.mjs --format portrait --fps 30 --out artifacts/motion-studio/oneup-intro-1080x1920.mp4
+          ffprobe -v error -show_entries stream=width,height,codec_name -of default=noprint_wrappers=1 artifacts/motion-studio/oneup-intro-1920x1080.mp4
+          ffprobe -v error -show_entries stream=width,height,codec_name -of default=noprint_wrappers=1 artifacts/motion-studio/oneup-intro-1080x1920.mp4
+      - name: Upload rendered videos
+        if: success() && (github.event_name == 'workflow_dispatch' || (github.event_name == 'push' && github.ref == 'refs/heads/main'))
+        uses: actions/upload-artifact@v4
+        with:
+          name: dexter-motion-studio-h264-aac-16x9-9x16
+          path: artifacts/motion-studio/*.mp4
+          retention-days: 14
+          if-no-files-found: error
+      - name: Upload browser evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: dexter-motion-studio-browser-evidence
+          path: e2e-motion-studio-*.png
+          retention-days: 14
+          if-no-files-found: ignore

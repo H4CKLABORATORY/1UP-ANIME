@@ -135,3 +135,7 @@ Excluir secretos, datos personales irrelevantes, suposiciones no etiquetadas, pr
 ### 2026-10-20 — DEXTER Motion Engine (rama de revisión)
 Módulo progresivo sin dependencias nuevas (js/dexter-motion-engine.js, styles/dexter-motion-engine.css), basado en patrones de animación de código y referencias abiertas. No reemplaza 1UP opening ni instala Three.js/GSAP/Lottie en producción. Documentación docs/DEXTER_MOTION_ENGINE.md; verificar CI y Safari antes de publicar.
 **Resultado confirmado de PR #63 (2026-10-20):** squash-merge a main `0eb710889719cee5b9c3134393fda3db6a885526`; 13 workflows del PR pasaron en verde, Pages reportó deploy correcto de la revisión posterior de main. Motor listo en código de producción; sin verificación Safari física. Próximo paso opcional: pruebas y optimización de efectos en iPhone real y revisión visual.
+
+
+### 2026-10-20 — DEXTER Motion Studio V1
+Editor independiente dexter-motion-studio.html, motor motion-studio/, CLI scripts/render-motion-studio.mjs, scene JSON, flujo H.264/AAC y pruebas. Conservar intro y logo vigentes, PWA/compatibilidad iPhone, derechos, cero costo. Más detalles docs/DEXTER_MOTION_STUDIO.md.
