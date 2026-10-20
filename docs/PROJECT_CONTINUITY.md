@@ -323,3 +323,11 @@ Al concluir cada trabajo agregar:
 - Pendiente real: CI GitHub, contraste visual Playwright en escritorio/móvil, prueba Safari físico, revisión/merge del PR y despliegue confirmado. No se modifica intro pública ni reproduce nuevos episodios.
 
 **Cierre verificado de DEXTER Motion Engine (2026-10-20):** PR #63 fusionado en `main` mediante squash `0eb710889719cee5b9c3134393fda3db6a885526`. Trece workflows del PR en `success` (incluidos browser acceptance, sitewide, Puppeteer, profundidad, hero, HLS y pruebas propias). Workflow `Deploy to GitHub Pages` exitoso; GitHub Pages `pages build and deployment` en `success` para commit posterior de main `705e8068`. Verificación directa de interfaz en Safari físico y capturas manuales finales continúan pendientes; no atribuir reproducción/licencia de capítulos a esta mejora.
+
+
+### 2026-10-20 — DEXTER Motion Studio (editor y exportación)
+- Rama feature/dexter-cinematic-studio-and-mp4-20261020.
+- Editor independiente responsivo con Canvas 2D, logo original, formatos 16:9 y 9:16, pétalos, iluminación, títulos, parámetros editables, timeline, import/export JSON y grabación del navegador sin audio.
+- Motor determinista y CLI Playwright + FFmpeg para MP4 Full HD H.264/AAC reutilizando la firma original. Workflow GitHub Actions ejecuta QA, smoke FFmpeg y genera dos MP4 al llegar a main o mediante workflow_dispatch. Documentado en docs/DEXTER_MOTION_STUDIO.md.
+- Se conserva intro publicada y reproductores. Solo un enlace en pie lleva al editor. Caché PWA v38.
+- Estado inicial sin certificar: CI PR, browser screenshots, MP4 smoke y render HD final; Safari físico y decisión estética pendientes.
