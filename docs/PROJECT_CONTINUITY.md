@@ -340,3 +340,10 @@ Al concluir cada trabajo agregar:
 - Workflow de exportación SUCCESS: https://github.com/H4CKLABORATORY/1UP-ANIME/actions/runs/39370945223 ; artefacto 12241376805, nombre dexter-motion-studio-h264-aac-16x9-9x16, ~2,38 MB, vence 2026-11-03 (14 días). Capturas de verificación artifact 12241725293.
 - El estudio permite copiar JSON compacto y enviarlo a workflow_dispatch para exportación personalizada desde iPhone sin PC. **No se ha probado** esa ejecución custom en la UI de GitHub con un JSON de usuario; validación de JSON y parser configurados.
 - Próximos puntos no resueltos: aprobación visual del propietario y pruebas Safari iPhone físico; la intro pública actual no fue reemplazada.
+
+
+### 2026-10-20 — Motion Studio V2, cámara y profundidad
+- Rama feature/dexter-motion-studio-v2-camera-depth-20261020, tecnología original Canvas2D + camera rig matemático determinista.
+- Tres trayectorias (orbit, dolly, glide), proyección de pétalos por profundidad, refracción ligera de anillos, barrido óptico, controles cameraPath/depth y compatibilidad retroactiva de escenas JSON V1.
+- No se reemplaza la intro pública ni se agregan bibliotecas pesadas. PWA integra camera.mjs; prueba unitaria y E2E Chromium; exportador de MP4 sigue existente.
+- QA/CI y publicación final deben verificarse antes de declarar completada esta fase. Safari real y aprobación estética pendientes. Ver docs/DEXTER_MOTION_STUDIO_V2.md.

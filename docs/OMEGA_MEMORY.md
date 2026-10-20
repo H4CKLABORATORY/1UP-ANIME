@@ -143,3 +143,7 @@ Editor independiente dexter-motion-studio.html, motor motion-studio/, CLI script
 
 ### 2026-10-20 — DEXTER Motion Studio publicado, HD renderizado
 PR #65 integrado en main. Las pruebas CI y el render GitHub Actions 39370945223 terminaron success; ambos MP4 Full HD a 30fps con H.264/AAC están disponibles en el artefacto 12241376805. Pages verde (run 39370957727). Estudio web dexter-motion-studio.html para editar y copiar escenas a GitHub Actions. Pendientes de revisión estética y prueba iPhone Safari físico; la intro publicada sigue siendo la anterior.
+
+
+### 2026-10-20 — Motion Studio V2 / 2.5D
+Agregado módulo reversible camera.mjs con trayectorias orbit/dolly/glide, perspectiva limitada y control de profundidad por escena. Compatible con exportación V1 y pipeline Full HD sin librerías externas. Documentar resultado CI/PR después de comprobarlo, no anunciar Safari físico probado ni cambiar intro pública sin aprobación.
