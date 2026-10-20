@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "project": "H4CKLABORATORY/1UP-ANIME",
+  "task_id": "1up-iphone-player",
+  "objective": "Continuar integración iPhone, subtítulos y medios autorizados desde tareas existentes, sin rehacer la web.",
+  "branch": "feature/hermes-portable-checkpoints-20261020",
+  "status": "planned",
+  "last_observed_commit": null,
+  "last_verified_commit": null,
+  "updated_at": "2026-10-20T04:10:04+00:00",
+  "next_action": "PR #60 de iOS está fusionado en main (6ea1e9d). Inspeccionar diferencias entre main y esta rama, revisar CI y acceso a episodios autorizados, elegir un defecto reproducible y corregirlo en una rama independiente; no repetir la implementación iOS ya integrada.",
+  "completed_steps": [
+    "Existe docs/NEW_CHAT_HANDOFF.md con actualizador de seis horas y bitácoras previas; conservar ese mecanismo.",
+    "AGENTS.md contiene las normas y prioridades del proyecto; no sustituirlas.",
+    "PR #60 de iOS/Subtitle Studio comprobado como merged el 2026-10-19, commit 6ea1e9d8989068d97a481ce056f2270cd2d0eeb9."
+  ],
+  "changed_files": [],
+  "blockers": [
+    "El README de main afirma que data/licensed-media.json contiene 0 fuentes reales configuradas; no anunciar reproducción completa.",
+    "El proyecto iOS requiere compilación/firma y verificación de Safari/iPhone físico para distribución."
+  ],
+  "verification": [],
+  "links": [
+    "https://github.com/H4CKLABORATORY/1UP-ANIME/pull/60",
+    "https://github.com/H4CKLABORATORY/1UP-ANIME/blob/main/docs/NEW_CHAT_HANDOFF.md",
+    "https://github.com/H4CKLABORATORY/1UP-ANIME/blob/main/docs/OMEGA_NEXT_ACTIONS.md"
+  ],
+  "history": [
+    {
+      "at": "2026-10-20T04:10:04+00:00",
+      "event": "Checkpoint transversal inicializado con fuentes documentales, sin pruebas de código atribuidas."
+    },
+    {
+      "at": "2026-10-20T12:00:00Z",
+      "event": "Corrección de referencia obsoleta: PR #60 fusionado; checkpoint se prepara para trabajar en rama no protegida."
+    }
+  ]
+}
