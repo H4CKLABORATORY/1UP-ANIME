@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "engine": "ONEUP SELF HEALING ENGINE",
-  "updatedAt": "2026-10-20T01:50:06.091Z",
+  "updatedAt": "2026-10-20T05:49:26.706Z",
   "site": "https://h4cklaboratory.github.io/1UP-ANIME/",
   "mode": "local_y_publico",
   "verdict": "correcto",
@@ -10,13 +10,13 @@
   "warnings": 0,
   "persistentAlerts": [],
   "requiresManualAction": true,
-  "lastKnownGoodCommit": "75ea5c9dbd4c5e0227879ac9a9416a7f790df27f",
+  "lastKnownGoodCommit": "489da935437c36b9741b91cb7fe34dad4f2164f3",
   "checks": [
     {
       "id": "file:index.html",
       "level": "ok",
       "message": "Validado: Archivo requerido index.html",
-      "bytes": 19782
+      "bytes": 19966
     },
     {
       "id": "file:comunidad.html",
@@ -46,7 +46,7 @@
       "id": "file:sw.js",
       "level": "ok",
       "message": "Validado: Archivo requerido sw.js",
-      "bytes": 5201
+      "bytes": 5414
     },
     {
       "id": "file:auth.js",
@@ -94,7 +94,7 @@
       "id": "file:data/airing.json",
       "level": "ok",
       "message": "Validado: Archivo requerido data/airing.json",
-      "bytes": 472352
+      "bytes": 462122
     },
     {
       "id": "file:data/translations-es.json",
@@ -106,7 +106,7 @@
       "id": "file:data/dexter/records.json",
       "level": "ok",
       "message": "Validado: Archivo requerido data/dexter/records.json",
-      "bytes": 254704
+      "bytes": 255086
     },
     {
       "id": "file:config/dexter-providers.json",
@@ -187,13 +187,13 @@
       "id": "catalog:freshness",
       "level": "ok",
       "message": "Catálogo actualizado",
-      "ageHours": 16.9
+      "ageHours": 20.9
     },
     {
       "id": "airing:entries",
       "level": "ok",
       "message": "Validado: El calendario debe tener al menos 15 emisiones",
-      "entries": 199
+      "entries": 194
     },
     {
       "id": "airing:season",
@@ -204,7 +204,7 @@
       "id": "airing:freshness",
       "level": "ok",
       "message": "Calendario con fecha reciente",
-      "ageHours": 4.3
+      "ageHours": 2.3
     },
     {
       "id": "spanish:pack",
@@ -217,7 +217,7 @@
       "level": "ok",
       "message": "Validado: Registros del motor existentes",
       "anime": 124,
-      "episodes": 262,
+      "episodes": 263,
       "playbackSources": 0
     },
     {
@@ -249,7 +249,7 @@
       "id": "engine:freshness",
       "level": "ok",
       "message": "Sincronización reciente",
-      "ageHours": 1.9,
+      "ageHours": 2.8,
       "status": "correcta"
     },
     {
