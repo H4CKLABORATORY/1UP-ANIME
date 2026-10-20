@@ -33,7 +33,7 @@ test('camera depth perspective is bounded, optical displacement is controllable'
   assert.equal(flat.x, close.x);
 });
 
-test('editor exposes camera controls and renders through one shared engine', () => {
+test('editor exposes camera controls and renders through one shared engine', async () => {
   const fs = await import('node:fs/promises');
   const html = await fs.readFile('dexter-motion-studio.html','utf8');
   const app = await fs.readFile('motion-studio/app.mjs','utf8');
