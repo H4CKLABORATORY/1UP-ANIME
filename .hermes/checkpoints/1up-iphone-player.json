@@ -3,15 +3,16 @@
   "project": "H4CKLABORATORY/1UP-ANIME",
   "task_id": "1up-iphone-player",
   "objective": "Continuar integración iPhone, subtítulos y medios autorizados desde tareas existentes, sin rehacer la web.",
-  "branch": "main",
+  "branch": "feature/hermes-portable-checkpoints-20261020",
   "status": "planned",
   "last_observed_commit": null,
   "last_verified_commit": null,
   "updated_at": "2026-10-20T04:10:04+00:00",
-  "next_action": "Comprobar HEAD, CI y estado del PR #60 (iPhone y subtítulos); cotejar docs/NEW_CHAT_HANDOFF.md y docs/OMEGA_NEXT_ACTIONS.md; validar únicamente los cambios pendientes.",
+  "next_action": "PR #60 de iOS está fusionado en main (6ea1e9d). Inspeccionar diferencias entre main y esta rama, revisar CI y acceso a episodios autorizados, elegir un defecto reproducible y corregirlo en una rama independiente; no repetir la implementación iOS ya integrada.",
   "completed_steps": [
     "Existe docs/NEW_CHAT_HANDOFF.md con actualizador de seis horas y bitácoras previas; conservar ese mecanismo.",
-    "AGENTS.md contiene las normas y prioridades del proyecto; no sustituirlas."
+    "AGENTS.md contiene las normas y prioridades del proyecto; no sustituirlas.",
+    "PR #60 de iOS/Subtitle Studio comprobado como merged el 2026-10-19, commit 6ea1e9d8989068d97a481ce056f2270cd2d0eeb9."
   ],
   "changed_files": [],
   "blockers": [
@@ -28,6 +29,10 @@
     {
       "at": "2026-10-20T04:10:04+00:00",
       "event": "Checkpoint transversal inicializado con fuentes documentales, sin pruebas de código atribuidas."
+    },
+    {
+      "at": "2026-10-20T12:00:00Z",
+      "event": "Corrección de referencia obsoleta: PR #60 fusionado; checkpoint se prepara para trabajar en rama no protegida."
     }
   ]
 }
