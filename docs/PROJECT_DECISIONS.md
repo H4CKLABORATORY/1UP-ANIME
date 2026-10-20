@@ -46,3 +46,7 @@ El propietario confirmó en la conversación del proyecto: «Claro, el diseño q
 **Alcance de esta decisión:** preferencia sobre dirección visual y línea de desarrollo. No identifica un nuevo logo exacto ni concede por sí sola autorización para desplegar cambios incompletos o para afirmar que Safari/Firebase/reproducción real ya funcionan.
 
 **Continuación:** PR #20 `fix/codex-pwa-popularity-20261016`, basado en PR #19: elimina limpieza de cachés ajenas al sitio y corrige la fuente de datos del ranking Top Anime. Revisar CI y mantener la cadena de PRs hasta su integración autorizada.
+
+
+## 2026-10-20 — 1UP Auth aditivo
+Se elige Supabase Auth gestionado + Edge broker + Resend SMTP y Turnstile, sujeto a configuración Free y E2E. No se implementa hash de contraseñas propio. Firebase/Google conserva UID, comunidad y listas; vinculación futura exige prueba de ambas sesiones, nunca email coincidente. Sin borrado de cuentas. Sesión broker solo en memoria, nativa cifrada, TTL corto sin renovación. Detalles y fuentes: docs/ONEUP_AUTH.md.

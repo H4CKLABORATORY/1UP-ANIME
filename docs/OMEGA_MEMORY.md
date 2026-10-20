@@ -150,3 +150,11 @@ Agregado módulo reversible camera.mjs con trayectorias orbit/dolly/glide, persp
 
 
 **Resultado V2 comprobado (2026-10-20):** merge de PR #66 `665ec5a3`; 14 workflows PR verdes; Pages success; render dual Full HD 16:9/9:16 con H.264/AAC y 30 FPS success (run 39418935821, artifact 12263426712). Programa ahora con cámara 2.5D configurable y 0 dependencias visuales externas. El intro de producción no fue sustituido. Safari físico pendiente.
+
+
+### 2026-10-20 — 1UP Auth (feature/1up-auth; PR pendiente)
+- Base observada main 18e56f0. Alta con usuario/contraseña, OTP nativo Supabase de seis dígitos, recuperación con bearer de alcance exclusivo y sesiones opacas de vida corta. Broker Edge Function, tablas cerradas/RLS, límites SQL atómicos, CAPTCHA nativo obligatorio al activar, Resend SMTP.
+- Diálogo existente extendido con panel colapsado; conserva temas, intro, Google/Firebase, perfiles locales y claves de listas. No hay vinculación automática por correo, eliminación ni migración de datos. PR #67 de Firebase independiente, reconciliar auth-config.js al integrar.
+- Verificado localmente: 12 pruebas broker simuladas, flujos UI simulados Edge headless 390/1366 px, 26 regresiones existentes y scripts/check-supabase-option.mjs; sintaxis JS y diff sin errores. No son pruebas de correo ni Safari físico. PostgreSQL real se comprobará en CI.
+- Backend desactivado por defecto. La conexión Supabase devolvió cero proyectos; faltan proyecto Free, dominio con DNS verificado en Resend, SMTP, Turnstile, deploy de función, auditor de configuración y E2E real. No se creó infraestructura ni se fusionó/desplegó este cambio.
+- Evidencia/activación/rollback/migración: docs/ONEUP_AUTH.md; checkpoint .hermes/checkpoints/1up-auth.json. Próximo paso: publicar PR y comprobar CI, después activación externa por titular con el ensayo de correo.

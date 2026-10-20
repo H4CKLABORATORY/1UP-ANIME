@@ -58,3 +58,11 @@ Restricción: presupuesto $0, no compras/deploy destructivo sin permiso; no conv
 
 - [x] **DEXTER Motion Studio V2 implementado y desplegado:** PR #66 merge; 14 checks verdes; Pages success; dos MP4 Full HD de 3.2 s a 30fps con H.264/AAC (run 39418935821, artifact 12263426712, hasta 2026-11-03). La intro pública sigue siendo la actual.
 - [ ] **Motion Studio V2 visual/Safari real:** evaluar el aspecto de las versiones V2 y prueba de iPhone Safari físico; decidir voluntariamente si reemplazar la intro actual. No dar por hecho esa aprobación.
+
+
+### 2026-10-20 — 1UP Auth (feature/1up-auth; PR pendiente)
+- Base observada main 18e56f0. Alta con usuario/contraseña, OTP nativo Supabase de seis dígitos, recuperación con bearer de alcance exclusivo y sesiones opacas de vida corta. Broker Edge Function, tablas cerradas/RLS, límites SQL atómicos, CAPTCHA nativo obligatorio al activar, Resend SMTP.
+- Diálogo existente extendido con panel colapsado; conserva temas, intro, Google/Firebase, perfiles locales y claves de listas. No hay vinculación automática por correo, eliminación ni migración de datos. PR #67 de Firebase independiente, reconciliar auth-config.js al integrar.
+- Verificado localmente: 12 pruebas broker simuladas, flujos UI simulados Edge headless 390/1366 px, 26 regresiones existentes y scripts/check-supabase-option.mjs; sintaxis JS y diff sin errores. No son pruebas de correo ni Safari físico. PostgreSQL real se comprobará en CI.
+- Backend desactivado por defecto. La conexión Supabase devolvió cero proyectos; faltan proyecto Free, dominio con DNS verificado en Resend, SMTP, Turnstile, deploy de función, auditor de configuración y E2E real. No se creó infraestructura ni se fusionó/desplegó este cambio.
+- Evidencia/activación/rollback/migración: docs/ONEUP_AUTH.md; checkpoint .hermes/checkpoints/1up-auth.json. Próximo paso: publicar PR y comprobar CI, después activación externa por titular con el ensayo de correo.

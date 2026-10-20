@@ -1,0 +1,39 @@
+{
+  "blockers": [
+    "No proyecto Supabase ni credenciales SMTP; entrega real y Safari fisico pendientes"
+  ],
+  "branch": "feature/1up-auth",
+  "changed_files": [
+    "docs/ONEUP_AUTH.md"
+  ],
+  "completed_steps": [
+    "Broker Supabase Auth, UI aditiva, migracion gradual documentada, controles y pruebas"
+  ],
+  "history": [
+    {
+      "at": "2026-10-20T23:35:47+00:00",
+      "event": "Checkpoint inicializado (sin pruebas de código)"
+    },
+    {
+      "at": "2026-10-20T23:35:47+00:00",
+      "event": "Avance: in_progress"
+    }
+  ],
+  "last_observed_commit": "18e56f0",
+  "last_verified_commit": null,
+  "links": [],
+  "next_action": "Publicar PR y verificar PostgreSQL y CI; titular configura Supabase Resend y Turnstile",
+  "objective": "Registro, OTP, recuperacion y sesiones seguras conservando Firebase y diseno",
+  "project": "H4CKLABORATORY/1UP-ANIME",
+  "schema_version": 1,
+  "status": "in_progress",
+  "task_id": "1up-auth",
+  "updated_at": "2026-10-20T23:35:47+00:00",
+  "verification": [
+    {
+      "evidence": "node --test tests/oneup-auth.test.mjs; node tests/oneup-auth-browser.mjs (Edge headless 390/1366)",
+      "name": "12 broker tests and 2 viewport simulated browser flows",
+      "result": "passed"
+    }
+  ]
+}

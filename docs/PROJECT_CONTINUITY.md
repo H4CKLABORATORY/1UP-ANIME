@@ -350,3 +350,11 @@ Al concluir cada trabajo agregar:
 
 
 **Cierre verificado 2026-10-20 (Motion Studio V2):** PR #66 fusionado en main, squash SHA `665ec5a312b3d3dd4c30648b14e155b8688c55a3`. Los 14 checks del PR dieron SUCCESS, incluyendo DEXTER Motion Studio, Browser Acceptance, Puppeteer, HLS, Depth, editorial y sitewide. Workflow `DEXTER Motion Studio · MP4 / QA` de main: https://github.com/H4CKLABORATORY/1UP-ANIME/actions/runs/39418935821, success. Artifacts 12263426712 (MP4 16:9 + 9:16; ~2.86 MB) y 12263621223 (capturas; ~0.95 MB). FFprobe en log verifica 1920×1080 y 1080×1920, ambos 30 fps 3.2 s, H.264 + AAC original. GitHub Pages: deploy success run 39418935619. Artefactos expiran 2026-11-03. Pendientes: Safari iPhone físico y revisión visual del propietario; intro pública original conservada.
+
+
+### 2026-10-20 — 1UP Auth (feature/1up-auth; PR pendiente)
+- Base observada main 18e56f0. Alta con usuario/contraseña, OTP nativo Supabase de seis dígitos, recuperación con bearer de alcance exclusivo y sesiones opacas de vida corta. Broker Edge Function, tablas cerradas/RLS, límites SQL atómicos, CAPTCHA nativo obligatorio al activar, Resend SMTP.
+- Diálogo existente extendido con panel colapsado; conserva temas, intro, Google/Firebase, perfiles locales y claves de listas. No hay vinculación automática por correo, eliminación ni migración de datos. PR #67 de Firebase independiente, reconciliar auth-config.js al integrar.
+- Verificado localmente: 12 pruebas broker simuladas, flujos UI simulados Edge headless 390/1366 px, 26 regresiones existentes y scripts/check-supabase-option.mjs; sintaxis JS y diff sin errores. No son pruebas de correo ni Safari físico. PostgreSQL real se comprobará en CI.
+- Backend desactivado por defecto. La conexión Supabase devolvió cero proyectos; faltan proyecto Free, dominio con DNS verificado en Resend, SMTP, Turnstile, deploy de función, auditor de configuración y E2E real. No se creó infraestructura ni se fusionó/desplegó este cambio.
+- Evidencia/activación/rollback/migración: docs/ONEUP_AUTH.md; checkpoint .hermes/checkpoints/1up-auth.json. Próximo paso: publicar PR y comprobar CI, después activación externa por titular con el ensayo de correo.

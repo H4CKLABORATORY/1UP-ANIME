@@ -62,6 +62,8 @@
 <link rel="stylesheet" href="./oneup-finale.css">
 <link rel="stylesheet" href="./premiere-hero.css">
 <link rel="stylesheet" href="./styles/dexter-motion-engine.css">
+<link rel="stylesheet" href="./oneup-auth.css">
+<script defer src="./oneup-auth-client.js"></script>
 </head><body class="oneup-kokomi kokomi-mobile-reference" data-theme-preview="off">
 <div id="oneup-opening" role="dialog" aria-modal="true" aria-label="Introducción cinematográfica de 1UP ANIME">
  <section id="cinema" data-mode="opening" aria-label="Animación de entrada 1UP ANIME">
@@ -175,6 +177,21 @@
   <details id="auth-profiles" class="auth-profiles" hidden>
    <summary>Usar perfil guardado en este dispositivo</summary>
    <div class="auth-profile-controls"><select id="auth-profile-select" aria-label="Perfil guardado"></select><button id="auth-profile-enter" type="button">Entrar</button></div>
+  </details>
+    <details id="oneup-auth-details" class="auth-profiles">
+   <summary>1UP Auth · usuario y contraseña</summary>
+   <form id="oneup-auth-form">
+    <label>Acción<select id="oneup-auth-mode"><option value="login">Iniciar sesión</option><option value="signup">Registrarme</option><option value="verify">Verificar correo / reenviar</option><option value="recover">Recuperar cuenta</option><option value="recover-verify">Introducir código de recuperación</option><option value="password" hidden>Nueva contraseña</option></select></label>
+    <label data-modes="login signup">Nombre de usuario<input id="oneup-auth-username" name="username" autocomplete="username" pattern="[a-zA-Z0-9_]{3,24}" minlength="3" maxlength="24" required></label>
+    <label data-modes="signup verify recover recover-verify" hidden>Correo electrónico<input id="oneup-auth-email" name="email" type="email" autocomplete="email" maxlength="254" disabled></label>
+    <label data-modes="login signup password">Contraseña<input id="oneup-auth-password" name="password" type="password" autocomplete="current-password" maxlength="72" required><small>Al crear o recuperar: al menos 15 caracteres; admite frases únicas (máximo 72 bytes).</small></label>
+    <label data-modes="verify recover-verify" hidden>Código de seis dígitos<input id="oneup-auth-code" name="code" inputmode="numeric" autocomplete="one-time-code" pattern="[0-9]{6}" minlength="6" maxlength="6" disabled></label>
+    <div id="oneup-auth-captcha" aria-label="Comprobación de seguridad"></div>
+    <button id="oneup-auth-submit" class="google-login" type="submit">Entrar</button>
+    <button id="oneup-auth-resend" class="guest-login" type="button" hidden>Reenviar código</button>
+    <p id="oneup-auth-status" role="status" aria-live="polite"></p>
+    <small>Los códigos caducan en 10 minutos. La sesión termina al recargar o al expirar. Google y tus perfiles guardados continúan disponibles.</small>
+   </form>
   </details>
   <p id="auth-message" class="auth-message" role="status" aria-live="polite"></p>
   <small id="auth-service-note" class="auth-help">Puedes explorar como invitado sin crear una cuenta.</small>
