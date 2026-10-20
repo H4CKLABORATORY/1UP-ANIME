@@ -22,7 +22,7 @@
 - No confundir el catálogo de Anime1v con episodios reproducibles ni su licencia MIT con derechos de distribución de anime.
 
 ## Estado detectado ahora
-- Último commit de aplicación encontrado: 4c9b769e40612681eb508987f9f091b84727b6dd
+- Último commit de aplicación encontrado: 6218398152ecb4f72eff56c6264e293ae2b566bb
 - Descubrimiento Anime1v configurado en frontend: sí, verificar la respuesta real en Render
 - Código runtime de metadatos Anime1v en repositorio: sí
 - Entradas de obras multimedia en data/licensed-media.json: 0
@@ -30,11 +30,11 @@
 - Safari físico: no dar por verificado salvo prueba real con evidencia.
 
 ## Últimos commits relevantes
-- 4c9b769e4 — feat(hermes): reuse portable task checkpoints in 1UP Anime
-- 98bbc267b — docs: checkpoint successful Motion Studio V2 deployment and dual Full HD MP4 renders
-- 665ec5a31 — feat(1up): publish DEXTER Motion Studio V2 cinematic depth and camera
-- de0983e3c — Sync authorized anime episode metadata and source statuses
-- e2fa0a6df — Update educational anime metadata from Wikipedia
+- 621839815 — Sync authorized anime episode metadata and source statuses
+- 21c99947b — ONEUP health snapshot (no application changes)
+- b8590a06e — Update live anime airing calendar
+- fe1ad9e72 — Sync authorized anime episode metadata and source statuses
+- f0c1136ff — ONEUP health snapshot (no application changes)
 
 ## PR abiertos (consultar cambios antes de desarrollar)
 - [#61](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/61) 1UP: primer episodio completo desde canal oficial TMS y QA real
