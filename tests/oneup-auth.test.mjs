@@ -6,7 +6,7 @@ const env={ONEUP_ORIGIN:origin,ONEUP_AUTH_READY:'true',SUPABASE_URL:'https://tes
 const user={id:'12345678-1234-1234-1234-123456789012',email:'test@example.com',email_confirmed_at:'2026-10-20T00:00:00Z'};
 const nativeToken='header.'+btoa(JSON.stringify({session_id:user.id}))+'.signature';
 function fixture(){
- let time=Date.now(),otpUsed=false,verified=true,password='A unique nebula phrase!',sessionValid=true;
+ let time=Date.now(),otpUsed=false,verified=true,password='A unique nebula phrase!',sessionValid=true,sessionExists=true;
  const limits=new Map(),sessions=new Map(),calls=[];
  const response=(data,status=200)=>new Response(JSON.stringify(data),{status});
  const fetcher=async(url,opts)=>{
@@ -14,7 +14,7 @@ function fixture(){
   if(u.pathname.endsWith('/rpc/oneup_auth_limit')){
    let l=limits.get(b.p_key);if(!l||l.until<=time)l={n:0,until:time+b.p_seconds*1000};l.n++;limits.set(b.p_key,l);return response(l.n<=b.p_max);
   }
-  if(u.pathname.endsWith('/rpc/oneup_auth_session_live'))return response(sessionValid);
+  if(u.pathname.endsWith('/rpc/oneup_auth_session_live'))return response(sessionExists);
   if(u.pathname.endsWith('/oneup_auth_names'))return response(u.searchParams.get('username')==='eq.missing'?[]:[{user_id:user.id,username:'dexter'}]);
   if(u.pathname.endsWith('/oneup_auth_sessions')){
    if(opts.method==='POST'){sessions.set(b.token_hash,b);return response([b]);}
@@ -40,7 +40,7 @@ function fixture(){
  const handler=createHandler(env,fetcher,()=>time);
  const send=(action,values={},token,headers={})=>handler(new Request('https://test.supabase.co/functions/v1/oneup-auth',{
   method:'POST',headers:{Origin:origin,'Content-Type':'application/json',...(token?{Authorization:'Bearer '+token}:{}),...headers},body:JSON.stringify({action,...values})}));
- return {send,calls,sessions,advance:ms=>{time+=ms;},unverify:()=>{verified=false;},revoke:()=>{sessionValid=false;}};
+ return {send,calls,sessions,advance:ms=>{time+=ms;},unverify:()=>{verified=false;},revoke:()=>{sessionExists=false;}};
 }
 const login={username:'dexter',password:'A unique nebula phrase!',captcha:'test-captcha'};
 test('password policy handles length, repetition, common strings and bcrypt byte limit',()=>{
@@ -90,7 +90,8 @@ test('recovery token cannot access app or logout; password reset consumes it and
  const data=await (await f.send('recover-verify',{email:user.email,code:'123456'})).json();
  assert.equal(data.identity,undefined);assert.equal((await f.send('session',{},data.token)).status,401);
  assert.equal((await f.send('password',{password:'Another unique galaxy phrase!'},access.token)).status,401);
- assert.equal((await f.send('password',{password:'Another unique galaxy phrase!'},data.token)).status,200);
+ const changed=await f.send('password',{password:'Another unique galaxy phrase!'},data.token);
+ assert.equal(changed.status,200);assert.match((await changed.json()).message,/usuario dexter/);
  assert.equal(f.sessions.size,0);
  assert.equal((await f.send('password',{password:'Another unique galaxy phrase!'},data.token)).status,401);
  assert.equal((await f.send('session',{},access.token)).status,401);
@@ -103,7 +104,7 @@ test('expiry enforced server-side; recovery expires in five minutes',async()=>{
 test('logout revokes all app sessions and native provider is revalidated',async()=>{
  const f=fixture(),a=await (await f.send('login',login)).json(),b=await (await f.send('login',login)).json();
  assert.equal((await f.send('logout',{},a.token)).status,200);assert.equal((await f.send('session',{},b.token)).status,401);
- const g=fixture(),c=await (await g.send('login',login)).json();g.revoke();assert.equal((await g.send('session',{},c.token)).status,400);
+ const g=fixture(),c=await (await g.send('login',login)).json();g.revoke();assert.equal((await g.send('session',{},c.token)).status,401);
 });
 test('resend cooldown, normalized email and generic response prevent direct enumeration',async()=>{
  const f=fixture(),a=await f.send('recover',{email:' TEST@EXAMPLE.COM ',captcha:'test'});

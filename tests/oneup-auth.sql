@@ -28,6 +28,25 @@ do $$ declare k text:=repeat('a',64); begin
  if not public.oneup_auth_limit(k,2,600) then raise exception 'expired bucket not reset';end if;
 end $$;
 reset role;
+insert into auth.sessions values('12345678-1234-1234-1234-123456789012','12345678-1234-1234-1234-123456789012',now(),null);
+set role service_role;
+do $$ begin
+ if not public.oneup_auth_session_live('12345678-1234-1234-1234-123456789012','12345678-1234-1234-1234-123456789012') then raise exception 'live session denied';end if;
+ if public.oneup_auth_session_live('12345678-1234-1234-1234-123456789012','22345678-1234-1234-1234-123456789012') then raise exception 'foreign session accepted';end if;
+end $$;
+reset role;
+update auth.sessions set created_at=now()-interval '2 hours';
+set role service_role;
+do $$ begin
+ if public.oneup_auth_session_live('12345678-1234-1234-1234-123456789012','12345678-1234-1234-1234-123456789012') then raise exception 'expired session accepted';end if;
+end $$;
+reset role;
+delete from auth.sessions;
+set role service_role;
+do $$ begin
+ if public.oneup_auth_session_live('12345678-1234-1234-1234-123456789012','12345678-1234-1234-1234-123456789012') then raise exception 'revoked session accepted';end if;
+end $$;
+reset role;
 -- All app tables have RLS; privilege revokes alone are not sufficient.
 do $$ begin
  if (select count(*) from pg_class where relname in ('oneup_auth_names','oneup_auth_sessions','oneup_auth_limits') and relrowsecurity)<>3 then raise exception 'RLS missing';end if;

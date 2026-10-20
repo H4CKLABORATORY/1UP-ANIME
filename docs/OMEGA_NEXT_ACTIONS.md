@@ -60,9 +60,11 @@ Restricción: presupuesto $0, no compras/deploy destructivo sin permiso; no conv
 - [ ] **Motion Studio V2 visual/Safari real:** evaluar el aspecto de las versiones V2 y prueba de iPhone Safari físico; decidir voluntariamente si reemplazar la intro actual. No dar por hecho esa aprobación.
 
 
-### 2026-10-20 — 1UP Auth (feature/1up-auth; PR pendiente)
+### 2026-10-20 — 1UP Auth (feature/1up-auth; PR #68 draft)
 - Base observada main 18e56f0. Alta con usuario/contraseña, OTP nativo Supabase de seis dígitos, recuperación con bearer de alcance exclusivo y sesiones opacas de vida corta. Broker Edge Function, tablas cerradas/RLS, límites SQL atómicos, CAPTCHA nativo obligatorio al activar, Resend SMTP.
 - Diálogo existente extendido con panel colapsado; conserva temas, intro, Google/Firebase, perfiles locales y claves de listas. No hay vinculación automática por correo, eliminación ni migración de datos. PR #67 de Firebase independiente, reconciliar auth-config.js al integrar.
 - Verificado localmente: 12 pruebas broker simuladas, flujos UI simulados Edge headless 390/1366 px, 26 regresiones existentes y scripts/check-supabase-option.mjs; sintaxis JS y diff sin errores. No son pruebas de correo ni Safari físico. PostgreSQL real se comprobará en CI.
 - Backend desactivado por defecto. La conexión Supabase devolvió cero proyectos; faltan proyecto Free, dominio con DNS verificado en Resend, SMTP, Turnstile, deploy de función, auditor de configuración y E2E real. No se creó infraestructura ni se fusionó/desplegó este cambio.
 - Evidencia/activación/rollback/migración: docs/ONEUP_AUTH.md; checkpoint .hermes/checkpoints/1up-auth.json. Próximo paso: publicar PR y comprobar CI, después activación externa por titular con el ensayo de correo.
+
+PR de esta entrega: https://github.com/H4CKLABORATORY/1UP-ANIME/pull/68 . Código publicado inicialmente 40d4bf64, normalización sin cambios semánticos 8ad0bf4f. CI inicial 1UP Auth security SUCCESS (PostgreSQL 17 + broker + Chromium 390/1366): https://github.com/H4CKLABORATORY/1UP-ANIME/actions/runs/39501966897 . Se amplían pruebas de sesión revocada con JWT aún válido, ownership/expiración SQL y recuperación del nombre de usuario tras demostrar correo; verificar CI del siguiente SHA. No hay entrega SMTP real ni despliegue.

@@ -143,6 +143,7 @@ export function createHandler(env, fetcher=fetch, now=()=>Date.now()) {
       }
       if(action==='password') {
         const s=await session(req,'recovery');
+        const identity=await profile(s.user_id);
         // Consume once atomically BEFORE update. Failure requires another recovery OTP.
         const used=await rest('oneup_auth_sessions?token_hash=eq.'+s.hash+'&select=token_hash',null,{method:'DELETE'});
         // DELETE with return=representation is enforced by the API helper below.
@@ -150,7 +151,7 @@ export function createHandler(env, fetcher=fetch, now=()=>Date.now()) {
         await api('/auth/v1/user',{password:b.password},{method:'PUT',token:s.provider});
         await rest('oneup_auth_sessions?user_id=eq.'+s.user_id,null,{method:'DELETE'});
         await api('/auth/v1/logout?scope=global',{}, {token:s.provider});
-        return reply({message:'Contraseña actualizada. Inicia sesión de nuevo.'});
+        return reply({message:'Contraseña actualizada. Inicia sesión con el usuario '+identity.name+'.'});
       }
       const s=await session(req,'access');
       if(action==='logout') {

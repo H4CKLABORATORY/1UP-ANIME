@@ -7,7 +7,8 @@
     "docs/ONEUP_AUTH.md"
   ],
   "completed_steps": [
-    "Broker Supabase Auth, UI aditiva, migracion gradual documentada, controles y pruebas"
+    "Broker Supabase Auth, UI aditiva, migracion gradual documentada, controles y pruebas",
+    "PR 68 draft publicado via conector GitHub; CI inicial Auth/PostgreSQL/Chromium success"
   ],
   "history": [
     {
@@ -17,22 +18,31 @@
     {
       "at": "2026-10-20T23:35:47+00:00",
       "event": "Avance: in_progress"
+    },
+    {
+      "at": "2026-10-20T23:40:08+00:00",
+      "event": "Avance: in_progress"
     }
   ],
-  "last_observed_commit": "18e56f0",
+  "last_observed_commit": "8ad0bf4f884f04d668132de690ac365c7c96060e",
   "last_verified_commit": null,
   "links": [],
-  "next_action": "Publicar PR y verificar PostgreSQL y CI; titular configura Supabase Resend y Turnstile",
+  "next_action": "Revisar PR 68 y CI final; titular configura proyecto Free, dominio Resend, SMTP y Turnstile, auditor y E2E",
   "objective": "Registro, OTP, recuperacion y sesiones seguras conservando Firebase y diseno",
   "project": "H4CKLABORATORY/1UP-ANIME",
   "schema_version": 1,
   "status": "in_progress",
   "task_id": "1up-auth",
-  "updated_at": "2026-10-20T23:35:47+00:00",
+  "updated_at": "2026-10-20T23:40:08+00:00",
   "verification": [
     {
       "evidence": "node --test tests/oneup-auth.test.mjs; node tests/oneup-auth-browser.mjs (Edge headless 390/1366)",
       "name": "12 broker tests and 2 viewport simulated browser flows",
+      "result": "passed"
+    },
+    {
+      "evidence": "https://github.com/H4CKLABORATORY/1UP-ANIME/actions/runs/39501966897",
+      "name": "CI Auth PostgreSQL 17 and Chromium",
       "result": "passed"
     }
   ]
