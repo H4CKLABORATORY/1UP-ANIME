@@ -22,7 +22,7 @@
 - No confundir el catálogo de Anime1v con episodios reproducibles ni su licencia MIT con derechos de distribución de anime.
 
 ## Estado detectado ahora
-- Último commit de aplicación encontrado: 4fbd62f534733976641e10514eb84b414c78d989
+- Último commit de aplicación encontrado: f105140e3a9330dfa4f79efa7545e3fa3d099124
 - Descubrimiento Anime1v configurado en frontend: sí, verificar la respuesta real en Render
 - Código runtime de metadatos Anime1v en repositorio: sí
 - Entradas de obras multimedia en data/licensed-media.json: 0
@@ -30,11 +30,11 @@
 - Safari físico: no dar por verificado salvo prueba real con evidencia.
 
 ## Últimos commits relevantes
+- f105140e3 — Sync authorized anime episode metadata and source statuses
+- 57cbd15dc — ONEUP health snapshot (no application changes)
+- 396d1faae — Update live anime airing calendar
+- a4b216cb8 — Sync authorized anime episode metadata and source statuses
 - 4fbd62f53 — Sync authorized anime episode metadata and source statuses
-- aed43f3e2 — ONEUP health snapshot (no application changes)
-- b1c74fb52 — Update live anime airing calendar
-- d5645a273 — Sync authorized anime episode metadata and source statuses
-- 7976e4c36 — ONEUP health snapshot (no application changes)
 
 ## PR abiertos (consultar cambios antes de desarrollar)
 - [#61](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/61) 1UP: primer episodio completo desde canal oficial TMS y QA real
