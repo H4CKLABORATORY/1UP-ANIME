@@ -360,3 +360,9 @@ Al concluir cada trabajo agregar:
 - Evidencia/activación/rollback/migración: docs/ONEUP_AUTH.md; checkpoint .hermes/checkpoints/1up-auth.json. Próximo paso: publicar PR y comprobar CI, después activación externa por titular con el ensayo de correo.
 
 PR de esta entrega: https://github.com/H4CKLABORATORY/1UP-ANIME/pull/68 . Código publicado inicialmente 40d4bf64, normalización sin cambios semánticos 8ad0bf4f. CI inicial 1UP Auth security SUCCESS (PostgreSQL 17 + broker + Chromium 390/1366): https://github.com/H4CKLABORATORY/1UP-ANIME/actions/runs/39501966897 . Se amplían pruebas de sesión revocada con JWT aún válido, ownership/expiración SQL y recuperación del nombre de usuario tras demostrar correo; verificar CI del siguiente SHA. No hay entrega SMTP real ni despliegue.
+
+
+### 2026-10-20 — Google retirado por instrucción expresa del propietario
+- PR #68: retirados botones y rutas OAuth/restauración Google del acceso principal, antiguo y comunidad. 1UP Auth, invitado y perfiles locales se conservan; no se borraron cuentas, UID, Firebase ni favoritos.
+- La publicación/chat de comunidad sigue pendiente de migración de backend y se informa en pantalla. No reintroducir Google desde PR #67. No se retiraron Google Fonts ni el almacenamiento Firebase histórico: no afirmar desvinculación total de Google.
+- Pruebas: 12 broker tests y chequeo Supabase opcional pasaron; verificar UI móvil/escritorio y CI del nuevo commit. Backend 1UP/SMTP real sigue desactivado.

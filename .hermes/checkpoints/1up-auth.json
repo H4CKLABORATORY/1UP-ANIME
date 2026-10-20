@@ -8,7 +8,8 @@
   ],
   "completed_steps": [
     "Broker Supabase Auth, UI aditiva, migracion gradual documentada, controles y pruebas",
-    "PR 68 draft publicado via conector GitHub; CI inicial Auth/PostgreSQL/Chromium success"
+    "PR 68 draft publicado via conector GitHub; CI inicial Auth/PostgreSQL/Chromium success",
+    "Propietario confirma retirar login Google; UI y rutas OAuth desactivadas, datos conservados"
   ],
   "history": [
     {
@@ -22,18 +23,22 @@
     {
       "at": "2026-10-20T23:40:08+00:00",
       "event": "Avance: in_progress"
+    },
+    {
+      "at": "2026-10-20T23:53:56+00:00",
+      "event": "Avance: in_progress"
     }
   ],
-  "last_observed_commit": "8ad0bf4f884f04d668132de690ac365c7c96060e",
+  "last_observed_commit": "b11e999a12e20eaf24c060c886518b737bf6c949",
   "last_verified_commit": null,
   "links": [],
-  "next_action": "Revisar PR 68 y CI final; titular configura proyecto Free, dominio Resend, SMTP y Turnstile, auditor y E2E",
+  "next_action": "Verificar CI del retiro de Google en PR 68; activar 1UP Auth y migrar comunidad sin borrar datos",
   "objective": "Registro, OTP, recuperacion y sesiones seguras conservando Firebase y diseno",
   "project": "H4CKLABORATORY/1UP-ANIME",
   "schema_version": 1,
   "status": "in_progress",
   "task_id": "1up-auth",
-  "updated_at": "2026-10-20T23:40:08+00:00",
+  "updated_at": "2026-10-20T23:53:56+00:00",
   "verification": [
     {
       "evidence": "node --test tests/oneup-auth.test.mjs; node tests/oneup-auth-browser.mjs (Edge headless 390/1366)",
@@ -43,6 +48,11 @@
     {
       "evidence": "https://github.com/H4CKLABORATORY/1UP-ANIME/actions/runs/39501966897",
       "name": "CI Auth PostgreSQL 17 and Chromium",
+      "result": "passed"
+    },
+    {
+      "evidence": "node tests/oneup-auth-browser.mjs; node --test tests/oneup-auth.test.mjs",
+      "name": "No Google entry point and simulated auth 390/1366",
       "result": "passed"
     }
   ]

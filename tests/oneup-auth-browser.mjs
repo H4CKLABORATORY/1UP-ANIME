@@ -39,6 +39,8 @@ try{
    return route.abort();
   });
   await page.goto(base+'/index.html');
+  assert.equal(await page.locator('#google-login').count(),0);
+  assert.equal(await page.evaluate(()=>typeof window.OneUpAuth.google),'undefined');
   await page.locator('#auth-open').click({force:true});
   await page.locator('#oneup-auth-details summary').click();
   await page.getByText('1UP Auth está pendiente de configuración.',{exact:false}).waitFor();

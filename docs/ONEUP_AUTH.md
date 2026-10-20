@@ -1,3 +1,5 @@
+> Cambio de preferencia confirmado 2026-10-20: el propietario retiró el acceso con Google. Esta decisión sustituye las referencias inferiores a mantener disponible el login Google durante la transición. Botones, OAuth y restauración automática fueron retirados; Firebase, UID y datos históricos se conservan para migración. La comunidad aún no usa sesiones 1UP: su interfaz lo indica. No activar PR #67 para reintroducir Google. Las fuentes de Google Fonts actuales se conservan para mantener el diseño; retirar el proveedor de login no equivale todavía a retirar toda dependencia de infraestructura Google.
+
 # 1UP Auth — implementación y activación
 
 Estado: código para revisión; configuración pública desactivada (`ONEUP_AUTH_CONFIG=null`). No hay proyecto Supabase conectado ni credenciales SMTP, y no se ha comprobado entrega de correo real. No fusionar como un servicio ya operativo. Pages sirve solamente el frontend; la función se despliega aparte.
