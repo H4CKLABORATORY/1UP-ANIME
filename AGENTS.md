@@ -60,3 +60,8 @@ Protocolo obligatorio cuando haya acceso al repositorio:
 5. No asumir memoria completa de chats externos: consultar fuentes accesibles. No guardar secretos, tokens/API privadas, datos personales o transcripciones privadas en el repositorio público. No copiar código protegido, explotar sistemas externos ni reproducir contenido sin permiso. No prometer actividad infinita o autónoma fuera de herramientas programadas reales.
 
 Esta frase es una **preferencia y protocolo portable del proyecto**, no un cambio de límites o memoria interna de ChatGPT, ni un disparador que ejecuta trabajo sin que exista un nuevo turno o tarea programada.
+
+
+## DEXTER HERMES — checkpoint transversal (2026-10-20)
+
+Antes de volver a investigar una tarea en otro chat o agente, consultar `.hermes/checkpoints/*.json` y `tools/hermes/README.md`. Priorizar el `next_action` del checkpoint y leer las bitácoras anteriores solo en las secciones relacionadas; estas reglas **no reemplazan** `docs/NEW_CHAT_HANDOFF.md`, `docs/PROJECT_CONTINUITY.md`, `docs/OMEGA_NEXT_ACTIONS.md` ni las comprobaciones de GitHub/CI actuales. Comparar `HEAD` con `last_observed_commit`: si cambió, revisar el diff incremental. Al terminar o bloquearse, registrar progreso, pruebas y próximo paso mediante `tools/hermes/checkpoint.py advance`. No marcar `last_verified_commit` sin pruebas `passed` y evidencia. Nunca guardar secretos ni fingir autonomía entre sesiones.
