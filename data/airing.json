@@ -1,443 +1,9 @@
 {
-  "updated": "2026-10-20T15:35:52.785Z",
+  "updated": "2026-10-20T21:34:10.386Z",
   "source": "AniList public GraphQL metadata",
-  "windowStart": 1792312540,
-  "windowEnd": 1793288140,
+  "windowStart": 1792334038,
+  "windowEnd": 1793309638,
   "airing": [
-    {
-      "id": "mal-44042",
-      "mal_id": 44042,
-      "ani_id": 118123,
-      "title": "Holo no Graffiti",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx118123-xqn5fYsjKXJU.png",
-      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/118123-BvHyzWd850nZ.jpg",
-      "description": "From unraveling the secrets of opening and closing doors to defusing surprise packages more commonly known as bombs, there is never a dull day at the Hololive Production office! Holo no Graffiti follows an eccentric cast of Virtual YouTubers, also known as \"VTubers,\" going about their absurd yet hilarious daily lives, detailing all their cute moments and mishaps. (Source: MAL Rewrite)",
-      "year": 2019,
-      "startDate": "2019-05-05",
-      "format": "ONA",
-      "episodes": 0,
-      "averageScore": 78,
-      "status": "RELEASING",
-      "genres": [
-        "Action",
-        "Adventure",
-        "Comedy"
-      ],
-      "siteUrl": "https://anilist.co/anime/118123",
-      "streaming": [],
-      "trailer": null,
-      "next": {
-        "at": 1792918800,
-        "episode": 389
-      },
-      "airingAt": 1792314000,
-      "episode": 388,
-      "scheduleId": 416929,
-      "description_es": "¡Desvelar los secretos de abrir y cerrar puertas para desactivar paquetes sorpresa más conocidos como bombas, nunca hay un día aburrido en la oficina de producción Hololive! Holo no Graffiti sigue un elenco excéntrico de YouTubers Virtuales, también conocido como \"VTubers\", pasando por sus absurdas pero hilarantes vidas diarias, detallando todos sus momentos y agitaciones. (Fuente: MAL Rewrite)"
-    },
-    {
-      "id": "mal-2406",
-      "mal_id": 2406,
-      "ani_id": 2406,
-      "title": "Sazae-san",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx2406-nP8NIct9Sci3.jpg",
-      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/2406-ROqXxejQ5bH9.jpg",
-      "description": "The main character is a mother named Sazae-san. She lives in a house with her husband, her kid, her siblings and her parents. The show is the ultimate family program and tends to follow traditional themes. Think of this show as the Japanese equivalent to \"The Partridge Family\" and you'll get a good feel for this show's atmosphere. Don't expect to see things like violence, swearing, kung-fu action or magical girls. The plots are more like \"Today, Sazae-san goes to the new mall and gets lost\". Such \"boring\" plotlines and the simplistic art are often a turn-off to non-Japanese audiences, but most Japanese find the show incredibly good. As a result, it continues to be one of the top ratings grabbers on TV and is one of the few anime that is considered \"acceptable\" by adults.",
-      "year": 1969,
-      "startDate": "1969-10-05",
-      "format": "TV",
-      "episodes": 0,
-      "averageScore": 55,
-      "status": "RELEASING",
-      "genres": [
-        "Comedy",
-        "Slice of Life"
-      ],
-      "siteUrl": "https://anilist.co/anime/2406",
-      "streaming": [],
-      "trailer": null,
-      "next": {
-        "at": 1792920600,
-        "episode": 2855
-      },
-      "airingAt": 1792315800,
-      "episode": 2854,
-      "scheduleId": 394994,
-      "description_es": "El personaje principal es una madre llamada Sazae-san. Vive en una casa con su marido, su hijo, sus hermanos y sus padres. El espectáculo es el último programa familiar y tiende a seguir los temas tradicionales. Piense en este espectáculo como el equivalente japonés a \"The Partridge Family\" y obtendrá una buena sensación para la atmósfera de este show. No esperes ver cosas como violencia, juramento, acción kung-fu o chicas mágicas. Las parcelas son más como \"Hoy, Sazae-san va al nuevo centro comercial y se pierde\". Tales trazados \"boring\" y el arte simplista son a menudo un desvío a las audiencias no japonesas, pero la mayoría"
-    },
-    {
-      "id": "mal-64867",
-      "mal_id": 64867,
-      "ani_id": 215835,
-      "title": "Umayuru: Full Gate!",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx215835-B0seSw93V5qM.png",
-      "banner": "",
-      "description": "\"Umayuru\" is a short anime series featuring pint-sized Uma Musume! This time, it’s a \"Full-Gate\" three-minute race where *all* the Uma Musume take to the track! A super-sized, laid-back gathering with everyone!",
-      "year": 2026,
-      "startDate": "2026-09-27",
-      "format": "ONA",
-      "episodes": 26,
-      "averageScore": 65,
-      "status": "RELEASING",
-      "genres": [
-        "Comedy",
-        "Slice of Life"
-      ],
-      "siteUrl": "https://anilist.co/anime/215835",
-      "streaming": [],
-      "trailer": {
-        "site": "youtube",
-        "id": "rUHYbwZDVVI"
-      },
-      "next": {
-        "at": 1792929600,
-        "episode": 5
-      },
-      "airingAt": 1792324800,
-      "episode": 4,
-      "scheduleId": 422503,
-      "description_es": "\"Umayuru\" es una serie corta de animes que ofrece un musgo de Uma tamaño pint! Esta vez, es una carrera de tres minutos \"Full-Gate\" donde *all* el Uma Musume to the track! ¡Una reunión súper grande y relajada con todos!"
-    },
-    {
-      "id": "mal-60948",
-      "mal_id": 60948,
-      "ani_id": 186541,
-      "title": "Reborn as a Space Mercenary: I Woke Up Piloting the Strongest Starship!",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx186541-caYpLsLmbCh7.jpg",
-      "banner": "",
-      "description": "Sato Takahiro was an ordinary office worker and hobbyist gamer until the day he woke up on a spaceship–one that strangely resembled a craft from a favorite space-shooter game. With a decked-out ship, a crew full of babes, and a fantastic universe to explore, he's going to make the most of his good luck and create the life he's always dreamed of! (Source: Seven Seas Entertainment)",
-      "year": 2026,
-      "startDate": "2026-10-04",
-      "format": "TV",
-      "episodes": 13,
-      "averageScore": 68,
-      "status": "RELEASING",
-      "genres": [
-        "Action",
-        "Comedy",
-        "Drama",
-        "Mecha",
-        "Romance",
-        "Sci-Fi"
-      ],
-      "siteUrl": "https://anilist.co/anime/186541",
-      "streaming": [
-        {
-          "name": "Crunchyroll",
-          "url": "https://www.crunchyroll.com/series/GT00384006/reborn-as-a-space-mercenary-i-woke-up-piloting-the-strongest-starship"
-        }
-      ],
-      "trailer": {
-        "site": "youtube",
-        "id": "Z9ofT53sz2U"
-      },
-      "next": {
-        "at": 1792931400,
-        "episode": 4
-      },
-      "airingAt": 1792326600,
-      "episode": 3,
-      "scheduleId": 419789,
-      "description_es": "Sato Takahiro era un trabajador de oficina ordinario y aficionado al juego hasta el día en que se despertó en una nave espacial – una que extrañamente se parecía a una nave de un juego favorito de tiro espacial. Con un barco desguace, una tripulación llena de chicas, y un universo fantástico para explorar, él va a aprovechar al máximo su buena suerte y crear la vida que siempre ha soñado con! (Fuente: Seven Seas Entertainment)"
-    },
-    {
-      "id": "mal-62907",
-      "mal_id": 62907,
-      "ani_id": 202079,
-      "title": "Uncle's Obsession with Cute Things",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx202079-nwBpDUms0Bab.png",
-      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/202079-oeULOdC1R1AR.jpg",
-      "description": "By day, Mitsutaka Oji is the handsome, dependable boss everyone admires. By night, he dotes on his favorite mascot, Pugtaro, and indulges his secret obsession with all things cute! He's kept his double life hidden for years—but one unexpected encounter turns everything upside down and forces Oji to face his feelings head-on! (Source: Crunchyroll)",
-      "year": 2026,
-      "startDate": "2026-10-04",
-      "format": "TV",
-      "episodes": 12,
-      "averageScore": 60,
-      "status": "RELEASING",
-      "genres": [
-        "Comedy",
-        "Slice of Life"
-      ],
-      "siteUrl": "https://anilist.co/anime/202079",
-      "streaming": [
-        {
-          "name": "Crunchyroll",
-          "url": "https://www.crunchyroll.com/series/GT00385445/uncles-obsession-with-cute-things"
-        }
-      ],
-      "trailer": {
-        "site": "youtube",
-        "id": "YKgjylmYeoA"
-      },
-      "next": {
-        "at": 1792933200,
-        "episode": 4
-      },
-      "airingAt": 1792328400,
-      "episode": 3,
-      "scheduleId": 418251,
-      "description_es": "Al día, Mitsutaka Oji es el guapo y confiable jefe que todos admiran. Por la noche, hace su mascota favorita, Pugtaro, y complace su obsesión secreta con todas las cosas lindas! Ha mantenido su doble vida escondida durante años, pero un encuentro inesperado lo vuelve todo al revés y obliga a Oji a enfrentar sus sentimientos. (Fuente: Crunchyroll)"
-    },
-    {
-      "id": "mal-63667",
-      "mal_id": 63667,
-      "ani_id": 209032,
-      "title": "Magical Sisters LuluttoLilly Part 2",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx209032-R0gP5IFdk7Vd.jpg",
-      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/209032-hpYi0dlKkagd.jpg",
-      "description": "The second half of Mahou no Shimai LuluttoLilly.",
-      "year": 2026,
-      "startDate": "2026-10-04",
-      "format": "TV",
-      "episodes": 0,
-      "averageScore": 58,
-      "status": "RELEASING",
-      "genres": [
-        "Mahou Shoujo",
-        "Music"
-      ],
-      "siteUrl": "https://anilist.co/anime/209032",
-      "streaming": [],
-      "trailer": {
-        "site": "youtube",
-        "id": "rwUPmzMpECo"
-      },
-      "next": {
-        "at": 1792935000,
-        "episode": 4
-      },
-      "airingAt": 1792330200,
-      "episode": 3,
-      "scheduleId": 419239,
-      "description_es": "La segunda mitad de Mahou no Shimai LuluttoLilly."
-    },
-    {
-      "id": "mal-63751",
-      "mal_id": 63751,
-      "ani_id": 209499,
-      "title": "TANK CHAIR",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx209499-S0sWFrCpft85.jpg",
-      "banner": "",
-      "description": "Shizuka takes on the most dangerous of assassin jobs, but she's not the one doing the killing. Rather, it's her brother, Nagi, a strong assassin who took a bullet to protect his sister, leaving him in a comatose state and having to use a wheelchair. However, Shizuka has figured out the key to waking her brother up: he must be faced with killing intent! Thus begins a violent journey of recovery, battling the most dangerous foes! (Source: Kodansha USA)",
-      "year": 2026,
-      "startDate": "2026-10-04",
-      "format": "TV",
-      "episodes": 0,
-      "averageScore": 61,
-      "status": "RELEASING",
-      "genres": [
-        "Action",
-        "Sci-Fi"
-      ],
-      "siteUrl": "https://anilist.co/anime/209499",
-      "streaming": [],
-      "trailer": {
-        "site": "youtube",
-        "id": "ihAvU833DHA"
-      },
-      "next": {
-        "at": 1792936800,
-        "episode": 4
-      },
-      "airingAt": 1792332000,
-      "episode": 3,
-      "scheduleId": 422114,
-      "description_es": "Shizuka se ocupa de los trabajos más peligrosos de los asesinos, pero ella no es la que hace el asesinato. Más bien, es su hermano, Nagi, un asesino fuerte que tomó una bala para proteger a su hermana, dejarlo en estado en coma y tener que usar una silla de ruedas. Sin embargo, Shizuka ha descubierto la clave para despertar a su hermano: ¡debe enfrentarse con la intención de matar! Así comienza un viaje violento de recuperación, luchando contra los enemigos más peligrosos! (Fuente: Kodansha USA)"
-    },
-    {
-      "id": "mal-63367",
-      "mal_id": 63367,
-      "ani_id": 206814,
-      "title": "Dragon Ball Super: Beerus",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx206814-PVVzRbf1IQpe.jpg",
-      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/206814-ARuwrZJAGONN.jpg",
-      "description": "Several years have passed since the fierce battle against Majin Buu, and Earth has finally regained a brief moment of peace. At the same time, Beerus, the God of Destruction, awakens from his long, deep sleep. Even Kai and Supreme Kai, aware of Beerus's overwhelming power to destroy entire planets, watch his awakening with great fear… Meanwhile, Beerus hears rumors of a Saiyan who defeated Frieza—and suddenly appears before Goku. Targeted by Beerus, the strongest being in the universe, Earth is in grave danger. Thus begins an earth-shattering cosmic battle between the God of Destruction and Goku and his alliesa—a conflict that will shake the entire universe. (Source: Official Site) Note: “Enhanced” edition of Dragon Ball Super, featuring a large volume of newly added and redrawn cuts, a reconstructed narrative, and updated visuals for a more immersive and faithful representation of Akira Toriyama’s original manga.",
-      "year": 2026,
-      "startDate": "2026-10-11",
-      "format": "TV",
-      "episodes": 0,
-      "averageScore": 81,
-      "status": "RELEASING",
-      "genres": [
-        "Action",
-        "Adventure",
-        "Sci-Fi"
-      ],
-      "siteUrl": "https://anilist.co/anime/206814",
-      "streaming": [
-        {
-          "name": "Crunchyroll",
-          "url": "https://www.crunchyroll.com/series/GT00389311/dragon-ball-super-beerus"
-        }
-      ],
-      "trailer": {
-        "site": "youtube",
-        "id": "CFgEL7ei8VE"
-      },
-      "next": {
-        "at": 1792937760,
-        "episode": 3
-      },
-      "airingAt": 1792332960,
-      "episode": 2,
-      "scheduleId": 419190,
-      "description_es": "Han pasado varios años desde la feroz batalla contra Majin Buu, y la Tierra finalmente ha recuperado un breve momento de paz. Al mismo tiempo, Beerus, el Dios de la Destrucción, despierta de su sueño largo y profundo. Incluso Kai y el Supremo Kai, consciente del abrumador poder de Beerus para destruir planetas enteros, ver su despertar con gran miedo... Mientras tanto, Beerus escucha rumores de un Saiyan que venció a Frieza y de repente aparece ante Goku. Meta de cerveza"
-    },
-    {
-      "id": "mal-60601",
-      "mal_id": 60601,
-      "ani_id": 185756,
-      "title": "As a Reincarnated Aristocrat, I'll Use My Appraisal Skill to Rise in the World Season 3",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx185756-xPCl0RyQ7fXD.jpg",
-      "banner": "",
-      "description": "The third season of Tensei Kizoku, Kantei Skill de Nariagaru . Note: On September 4, 2026, it was announced that GeyeG Pictures would take over the production from studio MOTHER while keeping the same staff.",
-      "year": 2026,
-      "startDate": "2026-09-27",
-      "format": "TV",
-      "episodes": 0,
-      "averageScore": 70,
-      "status": "RELEASING",
-      "genres": [
-        "Adventure",
-        "Fantasy"
-      ],
-      "siteUrl": "https://anilist.co/anime/185756",
-      "streaming": [
-        {
-          "name": "Crunchyroll",
-          "url": "https://www.crunchyroll.com/series/GG5H5XQMD/as-a-reincarnated-aristocrat-ill-use-my-appraisal-skill-to-rise-in-the-world"
-        }
-      ],
-      "trailer": {
-        "site": "youtube",
-        "id": "8_Lxr7vO9l0"
-      },
-      "next": {
-        "at": 1792938600,
-        "episode": 5
-      },
-      "airingAt": 1792333800,
-      "episode": 4,
-      "scheduleId": 419228,
-      "description_es": "La tercera temporada de Tensei Kizoku, Kantei Skill de Nariagaru. Nota: El 4 de septiembre de 2026, se anunció que GeyeG Pictures tomaría la producción del estudio MOTHER manteniendo el mismo personal."
-    },
-    {
-      "id": "mal-63292",
-      "mal_id": 63292,
-      "ani_id": 205896,
-      "title": "Full Clearing Another World under a Goddess with Zero Believers",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx205896-ElrV8oVAsuax.jpg",
-      "banner": "",
-      "description": "RPG player Makoto Takatsuki is hurled into another world with awful skills and stats. But he soon meets a goddess named Noah, who asks him to become her 1st believer in return for blessings. (Source: J-Novel Club)",
-      "year": 2026,
-      "startDate": "2026-10-11",
-      "format": "TV",
-      "episodes": 0,
-      "averageScore": 64,
-      "status": "RELEASING",
-      "genres": [
-        "Adventure",
-        "Fantasy"
-      ],
-      "siteUrl": "https://anilist.co/anime/205896",
-      "streaming": [
-        {
-          "name": "Crunchyroll",
-          "url": "https://www.crunchyroll.com/series/GT00383992/full-clearing-another-world-under-a-goddess-with-zero-believers"
-        }
-      ],
-      "trailer": {
-        "site": "youtube",
-        "id": "qlMB8vSpLzc"
-      },
-      "next": {
-        "at": 1792938600,
-        "episode": 3
-      },
-      "airingAt": 1792333800,
-      "episode": 2,
-      "scheduleId": 419250,
-      "description_es": "El jugador de RPG Makoto Takatsuki es lanzado en otro mundo con terribles habilidades y estadísticas. Pero pronto se encuentra con una diosa llamada Noé, que le pide que se convierta en su primer creyente a cambio de bendiciones. (Fuente: J-Novel Club)"
-    },
-    {
-      "id": "mal-62753",
-      "mal_id": 62753,
-      "ani_id": 200455,
-      "title": "Even Though I'm a Super Timid Noble Girl, I Accepted the Bet From My Cunning Fiancé",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx200455-P3XStRQMJ7Di.png",
-      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/200455-rlIXyuk0jHE3.jpg",
-      "description": "I was reborn as a villainous daughter in a reverse harem otome game. After being sick with a high fever at the age of 10, Pia Rockwell suddenly remembered her past life as a university student in Japan. But far from going down the villainess route, all this super timid girl wants is to finally use her knowledge from when she was a grad student studying to get her doctorate in paleontology. Her ultimate goal is to become a commoner, excavate fossils, build a museum and then become a curator. So in order to escape the villainess route and avoid being deported by her fiancé during the graduation ball, Pia decides to avoid the upcoming hurt and heartache and asks to break off her engagement to Rufus, the Prime Minister's son. But will her cunning fiancé let her go that easily?",
-      "year": 2026,
-      "startDate": "2026-10-04",
-      "format": "TV",
-      "episodes": 12,
-      "averageScore": 66,
-      "status": "RELEASING",
-      "genres": [
-        "Comedy",
-        "Fantasy",
-        "Romance"
-      ],
-      "siteUrl": "https://anilist.co/anime/200455",
-      "streaming": [
-        {
-          "name": "Crunchyroll",
-          "url": "https://www.crunchyroll.com/series/GT00365562"
-        }
-      ],
-      "trailer": {
-        "site": "youtube",
-        "id": "e41RGxVwJRs"
-      },
-      "next": {
-        "at": 1792938600,
-        "episode": 4
-      },
-      "airingAt": 1792333800,
-      "episode": 3,
-      "scheduleId": 419612,
-      "description_es": "Renací como una hija villana en un juego de harem otome inverso. Después de enfermarse con fiebre alta a los 10 años, Pia Rockwell de repente recordó su vida pasada como estudiante universitaria en Japón. Pero lejos de ir por la ruta del villano, todo lo que esta chica súper tímida quiere es finalmente utilizar su conocimiento de cuando era una estudiante de posgrado que estudiaba para obtener su doctorado en paleontología. Su objetivo final es llegar a ser más común, excavar fos"
-    },
-    {
-      "id": "mal-64340",
-      "mal_id": 64340,
-      "ani_id": 212888,
-      "title": "Overgeared",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx212888-NhyvqPt5aIuJ.jpg",
-      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/212888-ZsnNegBCKXQq.jpg",
-      "description": "Sin Yeong-U (a.k.a. Grid), an unlucky man in life and a low-level player in the popular VR game “Satisfy,” finds a powerful item that earns him a rare legendary class title: “Pagma’s Successor.” He’s now a skilled blacksmith who can forge unique weapons and equip the game’s most powerful gear. Grid resolves to use his new abilities to achieve fame and fortune, but as his very existence begins to stir up trouble in Satisfy, he realizes that life as a legend may be more than he bargained for…. (Source: Tapas, edited) Note: Tempal: Item no Chikara is streaming a week in advance of the TV broadcast on Prime Video and Crunchyroll beginning September 27th, 2026. Regular broadcasting began on October 2nd, 2026.",
-      "year": 2026,
-      "startDate": "2026-09-27",
-      "format": "ONA",
-      "episodes": 12,
-      "averageScore": 76,
-      "status": "RELEASING",
-      "genres": [
-        "Action",
-        "Adventure",
-        "Comedy",
-        "Fantasy"
-      ],
-      "siteUrl": "https://anilist.co/anime/212888",
-      "streaming": [
-        {
-          "name": "Crunchyroll",
-          "url": "https://www.crunchyroll.com/series/GT00384004"
-        }
-      ],
-      "trailer": {
-        "site": "youtube",
-        "id": "e1Km0FqUZl0"
-      },
-      "next": {
-        "at": 1792938600,
-        "episode": 5
-      },
-      "airingAt": 1792333800,
-      "episode": 4,
-      "scheduleId": 419897,
-      "description_es": "Sin Yeong-U (a.k.a. Grid), un hombre desafortunado en la vida y un jugador de bajo nivel en el popular juego VR “Satisfy”, encuentra un poderoso artículo que le gana un raro título legendario de clase: “El Sucesor de Pagma”. Ahora es un herrero experto que puede forjar armas únicas y equipar el equipo más poderoso del juego. Grid resuelve usar sus nuevas habilidades para alcanzar la fama y la fortuna, pero cuando su propia existencia comienza a provocar problemas en Satisfeo, se da cuenta de que la vida es una"
-    },
     {
       "id": "mal-62590",
       "mal_id": 62590,
@@ -1630,8 +1196,8 @@
         "id": "qpFcQ1Bek08"
       },
       "next": {
-        "at": 1792514100,
-        "episode": 16
+        "at": 1793118900,
+        "episode": 17
       },
       "airingAt": 1792514100,
       "episode": 16,
@@ -1663,8 +1229,8 @@
         "id": "Tvvs_SlUYgA"
       },
       "next": {
-        "at": 1792514700,
-        "episode": 2
+        "at": 1793119500,
+        "episode": 3
       },
       "airingAt": 1792514700,
       "episode": 2,
@@ -5746,8 +5312,8 @@
         "id": "qpFcQ1Bek08"
       },
       "next": {
-        "at": 1792514100,
-        "episode": 16
+        "at": 1793118900,
+        "episode": 17
       },
       "airingAt": 1793118900,
       "episode": 17,
@@ -5779,8 +5345,8 @@
         "id": "Tvvs_SlUYgA"
       },
       "next": {
-        "at": 1792514700,
-        "episode": 2
+        "at": 1793119500,
+        "episode": 3
       },
       "airingAt": 1793119500,
       "episode": 3,
@@ -6549,6 +6115,45 @@
       "episode": 18,
       "scheduleId": 417003,
       "description_es": "Elymas Edvaughn nace en una prestigiosa familia de maestros espadachines, pero su futuro se derrumba cuando despierta la clase de Caballero Pesado, considerada defectuosa. Rechazado y expulsado, recupera recuerdos de una vida anterior y descubre que ese mundo se parece a un videojuego de realidad virtual que conocía muy bien. Gracias a secretos que nadie más posee, decide cambiar su destino y demostrar el verdadero poder de la clase que todos consideran la más débil."
+    },
+    {
+      "id": "mal-64254",
+      "mal_id": 64254,
+      "ani_id": 212503,
+      "title": "The Iceblade Sorcerer Shall Rule the World II",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx212503-sXBpRZr96c4e.jpg",
+      "banner": "",
+      "description": "Once dismissed as the sole ordinary student at the elite Arnold Academy of Sorcery, Ray White—secretly, the Iceblade Sorcerer—has finally earned his place. With a new school year comes a new challenge: The Magicks War, a grand competition pitting teams from rival schools against each other. But an ominous shadow looms over Ray and his friends as the other grand sorcerers plot their next moves. (Source: Crunchyroll)",
+      "year": 2026,
+      "startDate": "2026-10-09",
+      "format": "TV",
+      "episodes": 0,
+      "averageScore": 67,
+      "status": "RELEASING",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Fantasy"
+      ],
+      "siteUrl": "https://anilist.co/anime/212503",
+      "streaming": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GDKHZEP21/the-iceblade-sorcerer-shall-rule-the-world"
+        }
+      ],
+      "trailer": {
+        "site": "youtube",
+        "id": "oxkxyAcKv2g"
+      },
+      "next": {
+        "at": 1792686480,
+        "episode": 3
+      },
+      "airingAt": 1793291280,
+      "episode": 4,
+      "scheduleId": 418823,
+      "description_es": "Una vez despedido como el único estudiante ordinario de la élite Arnold Academy of Sorcery, Ray White — secretamente, el Hechicero de Iceblade— finalmente ha ganado su lugar. Con un nuevo año escolar surge un nuevo desafío: La Guerra de los Magos, una gran competencia que enfrenta equipos de escuelas rivales entre sí. Pero una sombra ominosa sobre Ray y sus amigos mientras los otros grandes hechiceros trazan sus próximos movimientos. (Fuente: Crunchyroll)"
     }
   ],
   "seasonal": {
