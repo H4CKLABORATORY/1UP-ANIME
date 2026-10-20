@@ -21,6 +21,11 @@ on:
       - 'tests/motion-studio.test.mjs'
       - '.github/workflows/dexter-motion-studio.yml'
   workflow_dispatch:
+    inputs:
+      scene_json:
+        description: 'Escena JSON compacta del editor (opcional, máximo 4 KB)'
+        required: false
+        type: string
 
 permissions:
   contents: read
@@ -56,11 +61,23 @@ jobs:
           test -s artifacts/motion-smoke.mp4
           ffprobe -v error -select_streams v:0 -show_entries stream=codec_name -of csv=p=0 artifacts/motion-smoke.mp4 | grep -qx h264
           ffprobe -v error -select_streams a:0 -show_entries stream=codec_name -of csv=p=0 artifacts/motion-smoke.mp4 | grep -qx aac
+      - name: Validate optional scene from GitHub Actions
+        if: github.event_name == 'workflow_dispatch'
+        env:
+          SCENE_JSON: ${{ inputs.scene_json }}
+        run: |
+          mkdir -p artifacts/motion-studio
+          if [ -n "$SCENE_JSON" ]; then
+            if [ ${#SCENE_JSON} -gt 4096 ]; then echo 'Scene JSON exceeds 4096 characters' >&2; exit 1; fi
+            printf '%s' "$SCENE_JSON" > artifacts/motion-studio/custom-scene.json
+            node -e 'const s=JSON.parse(require("fs").readFileSync("artifacts/motion-studio/custom-scene.json","utf8"));if(s.version!==1||typeof s.title!=="string")process.exit(1)'
+          fi
       - name: Render final Full HD · 16:9 and 9:16
         if: github.event_name == 'workflow_dispatch' || (github.event_name == 'push' && github.ref == 'refs/heads/main')
         run: |
-          node scripts/render-motion-studio.mjs --format landscape --fps 30 --out artifacts/motion-studio/oneup-intro-1920x1080.mp4
-          node scripts/render-motion-studio.mjs --format portrait --fps 30 --out artifacts/motion-studio/oneup-intro-1080x1920.mp4
+          if [ -s artifacts/motion-studio/custom-scene.json ]; then SCENE=(--scene artifacts/motion-studio/custom-scene.json); else SCENE=(); fi
+          node scripts/render-motion-studio.mjs "${SCENE[@]}" --format landscape --fps 30 --out artifacts/motion-studio/oneup-intro-1920x1080.mp4
+          node scripts/render-motion-studio.mjs "${SCENE[@]}" --format portrait --fps 30 --out artifacts/motion-studio/oneup-intro-1080x1920.mp4
           ffprobe -v error -show_entries stream=width,height,codec_name -of default=noprint_wrappers=1 artifacts/motion-studio/oneup-intro-1920x1080.mp4
           ffprobe -v error -show_entries stream=width,height,codec_name -of default=noprint_wrappers=1 artifacts/motion-studio/oneup-intro-1080x1920.mp4
       - name: Upload rendered videos

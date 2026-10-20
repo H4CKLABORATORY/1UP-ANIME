@@ -44,6 +44,8 @@ test('editor uses original logo and audio workflow; home remains independent', (
   assert.match(home, /dexter-motion-studio\.html/);
   assert.match(html, /motion-studio\/app\.mjs/);
   assert.match(app, /window\.DexterMotionStudio/);
+  assert.match(html, /copy-json/);
+  assert.match(workflow, /scene_json/);
   assert.match(renderer, /assets\/oneup-header-letters\.png/);
   assert.match(workflow, /render-motion-studio\.mjs/);
   assert.match(sw, /dexter-motion-studio\.html/);

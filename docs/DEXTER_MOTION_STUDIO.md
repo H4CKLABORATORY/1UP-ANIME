@@ -41,3 +41,11 @@ Rama inicial: feature/dexter-cinematic-studio-and-mp4-20261020.
 Nuevos: dexter-motion-studio.html, motion-studio/scene.mjs, renderer.mjs, app.mjs, studio.css; scripts/render-motion-studio.mjs, scripts/e2e-motion-studio.mjs; tests/motion-studio.test.mjs; workflow dexter-motion-studio.yml.
 Modificados: index.html, sw.js, package.json, archivos de continuidad.
 Siguiente: corregir CI; inspeccionar browser evidence; fusionar solo con pruebas verdes; comprobar artifacts Full HD; prueba Safari.
+
+
+## Exportación personalizada desde iPhone
+1. En el estudio cambia parámetros y toca «Copiar JSON compacto».
+2. Abre GitHub Actions > DEXTER Motion Studio · MP4 / QA > Run workflow.
+3. Pega lo copiado en el campo scene_json y ejecuta.
+4. Descarga los dos MP4 Full HD del artefacto cuando aparezca en verde.
+No requiere PC, ni almacenar contraseñas en el editor. El campo admite hasta 4096 caracteres y solo acepta datos, no código.

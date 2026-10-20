@@ -138,6 +138,15 @@ $('pause').addEventListener('click', () => { stop(); status('Previsualización p
 $('reset').addEventListener('click', () => { stop(); draw(0); status('Escena reiniciada.'); });
 $('timeline').addEventListener('input', e => { stop(); draw(Number(e.target.value)); });
 $('save').addEventListener('click', exportScene);
+$('copy-json').addEventListener('click', async () => {
+  try {
+    if (!navigator.clipboard?.writeText) throw Error('Clipboard no disponible');
+    await navigator.clipboard.writeText(JSON.stringify({ ...scene, format }));
+    status('JSON compacto copiado. Pégalo en el campo Scene JSON de GitHub Actions para exportar MP4 con audio.');
+  } catch {
+    status('No se pudo copiar automáticamente. Usa Descargar escena JSON.');
+  }
+});
 $('record').addEventListener('click', recordVideo);
 $('import-scene').addEventListener('change', async e => {
   try { await importScene(e.target.files?.[0]); } catch (error) { status(error.message); }
