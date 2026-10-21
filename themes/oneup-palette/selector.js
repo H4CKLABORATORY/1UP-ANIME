@@ -65,7 +65,8 @@
       if (active() === option.id) button.classList.add('is-selected');
       button.addEventListener('click', () => {
         setTheme(option.id);
-        if (className === 'oneup-theme-panel') closePanel();
+        // The selected option becomes hidden; return keyboard focus to its trigger.
+        if (className === 'oneup-theme-panel') closePanel(true);
       });
       group.append(button);
     }
