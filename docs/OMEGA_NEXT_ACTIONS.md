@@ -58,3 +58,10 @@ Restricción: presupuesto $0, no compras/deploy destructivo sin permiso; no conv
 
 - [x] **DEXTER Motion Studio V2 implementado y desplegado:** PR #66 merge; 14 checks verdes; Pages success; dos MP4 Full HD de 3.2 s a 30fps con H.264/AAC (run 39418935821, artifact 12263426712, hasta 2026-11-03). La intro pública sigue siendo la actual.
 - [ ] **Motion Studio V2 visual/Safari real:** evaluar el aspecto de las versiones V2 y prueba de iPhone Safari físico; decidir voluntariamente si reemplazar la intro actual. No dar por hecho esa aprobación.
+
+
+### Mission Control 2026-10-20 — accesibilidad del selector de tema
+- Rama: `fix/oneup-theme-focus-return-20261020` (base `3706f8c4ffb3321631811bbb1db586b30b89feb6`).
+- Cambio: tras elegir un tema en el panel de escritorio, el foco vuelve al botón disparador; regresión añadida a `scripts/e2e-oneup-palette.mjs`.
+- Estado: código en rama, CI Playwright pendiente de ejecución; no fusionado ni desplegado.
+- Next action: comprobar ONEUP Browser Acceptance, revisar diff, solicitar aprobación; no sustituye prueba Safari física.
