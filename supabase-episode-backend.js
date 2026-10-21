@@ -138,12 +138,8 @@ async function saveProgress(animeId,{favorite=false,watched=0}={}){
  },{onConflict:'user_id,anime_id'});
  if(error)throw error;
 }
-async function loginWithGoogle(){
- const supa=await client();
- return supa.auth.signInWithOAuth({provider:'google',options:{
-  redirectTo:global.location?.origin+global.location?.pathname
- }});
-}
+async function loginWithGoogle(){throw Error('Acceso retirado. Utiliza 1UP Auth.');}
+
 global.OneUpSupabaseEpisodeBackend={
  enabled,client,subscribeEpisode,sendEpisodeComment,report,
  loadProgress,saveProgress,loginWithGoogle,maskError,episodeId
