@@ -22,6 +22,11 @@ const logs=git(['log','-n','60','--format=%H%x09%s']).split('\n')
  .filter(Boolean).map(line=>{const p=line.split('\t');return{sha:p[0],subject:p.slice(1).join(' ')};})
  .filter(c=>!/^docs: (?:automatic|refresh) new-chat handoff/i.test(c.subject)).slice(0,5);
 let prs=[];
+let prsVerified=false;
+const previousPrBlock=(read(OUT).split(/^## PR[^\n]*\n/m)[1]||'').split('\n## ')[0];
+const historicalPrs=previousPrBlock.split('\n')
+ .filter(line=>/^- (?:\(histórico, no verificado\) )?\[#\d+\]\(https:\/\/github\.com\/H4CKLABORATORY\/1UP-ANIME\/pull\/\d+\)/.test(line))
+ .map(line=>line.replace(/^- \(histórico, no verificado\) /,'- ')).slice(0,12);
 if(process.env.GITHUB_TOKEN&&process.env.GITHUB_REPOSITORY===REPO){
  try{
   const controller=new AbortController();
@@ -31,7 +36,7 @@ if(process.env.GITHUB_TOKEN&&process.env.GITHUB_REPOSITORY===REPO){
     headers:{Authorization:'Bearer '+process.env.GITHUB_TOKEN,Accept:'application/vnd.github+json'},
     signal:controller.signal
    });
-   if(response.ok)prs=(await response.json()).map(p=>({n:p.number,t:limit(p.title,92)}));
+   if(response.ok){const list=await response.json();if(Array.isArray(list)){prs=list.map(p=>({n:p.number,t:limit(p.title,92)}));prsVerified=true;}}
   }finally{clearTimeout(timer)}
  }catch{ /* GitHub may be unavailable; static links remain valid. */ }
 }
@@ -70,8 +75,10 @@ const rows=[
  '## Últimos commits relevantes',
  ...logs.map(c=>'- '+c.sha.slice(0,9)+' — '+limit(c.subject,120)),
  '',
- '## PR abiertos (consultar cambios antes de desarrollar)',
- ...(prs.length?prs.slice(0,12).map(p=>'- [#'+p.n+'](https://github.com/'+REPO+'/pull/'+p.n+') '+p.t):['- Consultar https://github.com/'+REPO+'/pulls para obtener lista actual (no significa que no haya PRs).']),
+ '## PR '+(prsVerified?'abiertos (verificados por GitHub API)':'(consulta no disponible; instantánea anterior sin verificar)'),
+ ...(prsVerified
+   ?(prs.length?prs.slice(0,12).map(p=>'- [#'+p.n+'](https://github.com/'+REPO+'/pull/'+p.n+') '+p.t):['- GitHub API devolvió 0 PR abiertos.'])
+   :(historicalPrs.length?historicalPrs.map(line=>line.replace(/^- /,'- (histórico, no verificado) ')):['- Consultar https://github.com/'+REPO+'/pulls para obtener lista actual (no significa que no haya PRs).'])),
  '',
  '## Próxima tarea por prioridad',
  '1. Leer AGENTS.md, esta ficha, PROJECT_CONTINUITY.md y OMEGA_NEXT_ACTIONS.md; confirmar HEAD y CI.',
