@@ -4,11 +4,11 @@
   "task_id": "oneup-theme-focus",
   "objective": "Restaurar foco del selector de temas en escritorio",
   "branch": "fix/oneup-theme-focus-return-20261020",
-  "status": "in_progress",
-  "last_observed_commit": "3706f8c4ffb3321631811bbb1db586b30b89feb6",
+  "status": "blocked",
+  "last_observed_commit": "b196792adb70e96075a9d6762281f2587fff2ecb",
   "last_verified_commit": null,
   "updated_at": "2026-10-21T01:28:32Z",
-  "next_action": "Verificar CI Playwright del PR y solicitar revisión, sin fusionar",
+  "next_action": "Crear PR manualmente desde rama fix/oneup-theme-focus-return-20261020 hacia main; luego ejecutar CI ONEUP Browser Acceptance y revisar, sin auto-merge.",
   "completed_steps": [
     "Corregido retorno de foco",
     "Añadida aserción de regresión"
@@ -18,9 +18,21 @@
     "scripts/e2e-oneup-palette.mjs"
   ],
   "blockers": [
-    "CI y Safari físico pendientes"
+    "GitHub PR creation denied by tool safety checks; branch and commits exist.",
+    "Playwright CI no ejecutado en esta iteración; Safari físico no verificado."
   ],
-  "verification": [],
+  "verification": [
+    {
+      "name": "Static source and JSON checks",
+      "result": "passed",
+      "evidence": "Connector read of branch: JS syntax via Function constructor; expected focus change, regression assertion, responsive widths and checkpoint JSON verified. Not Playwright."
+    }
+  ],
   "links": [],
-  "history": []
+  "history": [
+    {
+      "at": "2026-10-21T01:28:32Z",
+      "event": "Rama con corrección y test; validación estática PASS; apertura de PR bloqueada por herramienta."
+    }
+  ]
 }
