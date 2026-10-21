@@ -6,3 +6,6 @@ ios/OneUpAnime.xcodeproj/
 ios/OneUpAnime/Info.plist
 ios/OneUpAnime/Resources/
 ios/build/
+
+# Local private LU memory (never commit conversation histories)
+.dexter-local/
