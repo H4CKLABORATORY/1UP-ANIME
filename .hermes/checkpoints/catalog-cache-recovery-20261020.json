@@ -1,0 +1,37 @@
+{
+  "blockers": [],
+  "branch": "fix/catalog-corrupt-cache-20261020",
+  "changed_files": [
+    "studio.js"
+  ],
+  "completed_steps": [
+    "Dos regresiones fallaron antes del cambio; después pasan 42 tests Node, 152 assertions UI, cuatro carreras de navegación, reproductor y HLS."
+  ],
+  "history": [
+    {
+      "at": "2026-10-21T03:23:03+00:00",
+      "event": "Checkpoint inicializado (sin pruebas de código)"
+    },
+    {
+      "at": "2026-10-21T03:23:03+00:00",
+      "event": "Avance: in_progress"
+    }
+  ],
+  "last_observed_commit": "3706f8c4ffb3321631811bbb1db586b30b89feb6",
+  "last_verified_commit": null,
+  "links": [],
+  "next_action": "Confirmar CI del PR, revisión humana y Safari físico; sin merge automático",
+  "objective": "Evitar bloqueo del catálogo por caché local malformada",
+  "project": "H4CKLABORATORY/1UP-ANIME",
+  "schema_version": 1,
+  "status": "in_progress",
+  "task_id": "catalog-cache-recovery-20261020",
+  "updated_at": "2026-10-21T03:23:03+00:00",
+  "verification": [
+    {
+      "evidence": "node --test tests/*.test.mjs: 42 passed; check-ui:152 assertions; navigation/player/HLS passed",
+      "name": "Node regressions and production checks",
+      "result": "passed"
+    }
+  ]
+}

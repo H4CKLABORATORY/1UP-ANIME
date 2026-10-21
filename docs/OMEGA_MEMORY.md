@@ -150,3 +150,6 @@ Agregado módulo reversible camera.mjs con trayectorias orbit/dolly/glide, persp
 
 
 **Resultado V2 comprobado (2026-10-20):** merge de PR #66 `665ec5a3`; 14 workflows PR verdes; Pages success; render dual Full HD 16:9/9:16 con H.264/AAC y 30 FPS success (run 39418935821, artifact 12263426712). Programa ahora con cámara 2.5D configurable y 0 dependencias visuales externas. El intro de producción no fue sustituido. Safari físico pendiente.
+
+### 2026-10-20 — Recuperación del catálogo ante caché malformada
+Rama `fix/catalog-corrupt-cache-20261020`, base `3706f8c4`. Dos pruebas reprodujeron aceptación de items no iterables/nulos y fechas futuras. `cached()` ahora descarta entradas inválidas y permite snapshot/API sin borrar almacenamiento del usuario. Pruebas: 42 Node PASS, check-ui 152 assertions, caché/ranking, cuatro carreras de navegación, reproductor y HLS PASS. Sin cambios de diseño ni fuentes multimedia. Checkpoint `.hermes/checkpoints/catalog-cache-recovery-20261020.json`. Pendiente CI del PR, revisión humana y Safari físico; no merge/deploy automático.

@@ -135,7 +135,19 @@ async function jikan(options){
  }finally{clearTimeout(timer)}
 }
 function cacheKey(o){return 'oneup_catalog_'+JSON.stringify(o)}
-function cached(o){try{const x=JSON.parse(localStorage.getItem(cacheKey(o))||'null');return x&&x.items?.length&&Date.now()-x.at<3600000*8?x:null}catch{return null}}
+function cached(o){
+ try{
+  const x=JSON.parse(localStorage.getItem(cacheKey(o))||'null');
+  if(!x||!Number.isFinite(x.at))return null;
+  const age=Date.now()-x.at;
+  if(age<0||age>=3600000*8||!Array.isArray(x.items)||!x.items.length)return null;
+  // A malformed entry must fall through to snapshot/API instead of throwing
+  // in register() or card rendering and leaving the entire catalog empty.
+  if(!x.items.every(a=>a&&typeof a==='object'&&typeof a.id==='string'&&a.id&&
+   typeof a.title==='string'&&Array.isArray(a.genres)&&a.genres.every(g=>typeof g==='string')))return null;
+  return x;
+ }catch{return null}
+}
 function cache(o,r){try{localStorage.setItem(cacheKey(o),JSON.stringify({...r,at:Date.now(),items:r.items.slice(0,24)}))}catch{}}
 let snapshotPromise=null;
 async function getSnapshot(){
