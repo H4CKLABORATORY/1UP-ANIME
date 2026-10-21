@@ -77,6 +77,8 @@ try {
         await page.locator('#oneup-theme-trigger').click();
         assert.equal(await page.locator('#oneup-theme-trigger').getAttribute('aria-expanded'), 'true');
         await page.locator('#oneup-theme-panel .oneup-theme-option[data-oneup-theme-option="violeta"]').click();
+        assert.equal(await page.locator("#oneup-theme-trigger").evaluate(el => document.activeElement === el), true,
+          "Theme picker should restore focus to its trigger after a selection");
       }
       assert.equal(await page.evaluate(() => document.documentElement.dataset.oneupTheme), 'violeta');
       assert.equal(await page.evaluate(() => localStorage.getItem('oneup.palette.v1')), 'violeta');
