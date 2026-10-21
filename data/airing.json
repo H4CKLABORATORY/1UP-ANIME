@@ -1,78 +1,9 @@
 {
-  "updated": "2026-10-21T03:34:16.395Z",
+  "updated": "2026-10-21T09:35:57.847Z",
   "source": "AniList public GraphQL metadata",
-  "windowStart": 1792355644,
-  "windowEnd": 1793331244,
+  "windowStart": 1792377346,
+  "windowEnd": 1793352946,
   "airing": [
-    {
-      "id": "mal-55809",
-      "mal_id": 55809,
-      "ani_id": 137653,
-      "title": "Renegade Immortal",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx137653-1wHbCVvABGOr.png",
-      "banner": "",
-      "description": "It tells the story of Wang Lin, an ordinary young man in the countryside, who is moved by his heart and cultivates against immortality. His pursuit is not only for longevity, but also for getting rid of the ants behind it. He firmly believed in human beings and entered the path of cultivation with mediocre qualifications. After experiencing ups and downs, with his wise mind, he gradually reached the pinnacle and became famous in the cultivation world with his own strength. (Source: WeTV)",
-      "year": 2023,
-      "startDate": "2023-09-25",
-      "format": "ONA",
-      "episodes": 180,
-      "averageScore": 82,
-      "status": "RELEASING",
-      "genres": [
-        "Action",
-        "Adventure",
-        "Drama",
-        "Fantasy"
-      ],
-      "siteUrl": "https://anilist.co/anime/137653",
-      "streaming": [
-        {
-          "name": "Crunchyroll",
-          "url": "https://www.crunchyroll.com/series/GKEH2G0MN/renegade-immortal"
-        }
-      ],
-      "trailer": null,
-      "next": {
-        "at": 1792980000,
-        "episode": 164
-      },
-      "airingAt": 1792375200,
-      "episode": 163,
-      "scheduleId": 414221,
-      "description_es": "Cuenta la historia de Wang Lin, un joven común en el campo, que se mueve por su corazón y cultiva contra la inmortalidad. Su búsqueda no es sólo para la longevidad, sino también para deshacerse de las hormigas detrás de ella. Creyó firmemente en los seres humanos y entró en el camino del cultivo con calificaciones mediocres. Después de experimentar altibajos, con su mente sabia, gradualmente llegó al pináculo y se hizo famoso en el mundo de cultivo con su propia fuerza. (Fuente: WeTV)"
-    },
-    {
-      "id": "al-214593",
-      "mal_id": null,
-      "ani_id": 214593,
-      "title": "Yuusanchi! from Yuuhachi",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx214593-WZ0HaPSRae2E.png",
-      "banner": "",
-      "description": "",
-      "year": 2026,
-      "startDate": "2026-10-05",
-      "format": "TV_SHORT",
-      "episodes": 0,
-      "averageScore": 0,
-      "status": "RELEASING",
-      "genres": [
-        "Comedy",
-        "Slice of Life"
-      ],
-      "siteUrl": "https://anilist.co/anime/214593",
-      "streaming": [],
-      "trailer": {
-        "site": "youtube",
-        "id": "WprfleUJVck"
-      },
-      "next": {
-        "at": 1792681200,
-        "episode": 6
-      },
-      "airingAt": 1792375200,
-      "episode": 5,
-      "scheduleId": 419731
-    },
     {
       "id": "mal-65119",
       "mal_id": 65119,
@@ -366,7 +297,7 @@
       "startDate": "2026-10-20",
       "format": "ONA",
       "episodes": 10,
-      "averageScore": 82,
+      "averageScore": 85,
       "status": "FINISHED",
       "genres": [
         "Action",
@@ -397,7 +328,7 @@
       "startDate": "2026-10-20",
       "format": "ONA",
       "episodes": 10,
-      "averageScore": 82,
+      "averageScore": 85,
       "status": "FINISHED",
       "genres": [
         "Action",
@@ -428,7 +359,7 @@
       "startDate": "2026-10-20",
       "format": "ONA",
       "episodes": 10,
-      "averageScore": 82,
+      "averageScore": 85,
       "status": "FINISHED",
       "genres": [
         "Action",
@@ -459,7 +390,7 @@
       "startDate": "2026-10-20",
       "format": "ONA",
       "episodes": 10,
-      "averageScore": 82,
+      "averageScore": 85,
       "status": "FINISHED",
       "genres": [
         "Action",
@@ -490,7 +421,7 @@
       "startDate": "2026-10-20",
       "format": "ONA",
       "episodes": 10,
-      "averageScore": 82,
+      "averageScore": 85,
       "status": "FINISHED",
       "genres": [
         "Action",
@@ -521,7 +452,7 @@
       "startDate": "2026-10-20",
       "format": "ONA",
       "episodes": 10,
-      "averageScore": 82,
+      "averageScore": 85,
       "status": "FINISHED",
       "genres": [
         "Action",
@@ -552,7 +483,7 @@
       "startDate": "2026-10-20",
       "format": "ONA",
       "episodes": 10,
-      "averageScore": 82,
+      "averageScore": 85,
       "status": "FINISHED",
       "genres": [
         "Action",
@@ -583,7 +514,7 @@
       "startDate": "2026-10-20",
       "format": "ONA",
       "episodes": 10,
-      "averageScore": 82,
+      "averageScore": 85,
       "status": "FINISHED",
       "genres": [
         "Action",
@@ -614,7 +545,7 @@
       "startDate": "2026-10-20",
       "format": "ONA",
       "episodes": 10,
-      "averageScore": 82,
+      "averageScore": 85,
       "status": "FINISHED",
       "genres": [
         "Action",
@@ -645,7 +576,7 @@
       "startDate": "2026-10-20",
       "format": "ONA",
       "episodes": 10,
-      "averageScore": 82,
+      "averageScore": 85,
       "status": "FINISHED",
       "genres": [
         "Action",
@@ -695,7 +626,7 @@
       "airingAt": 1792499160,
       "episode": 3,
       "scheduleId": 417798,
-      "description_es": "Un gran héroe está invicto en su lecho de muerte, lamentando que nunca haya encontrado a un enemigo que pudiera derribarla. Nunca quiso encontrar su destino en otro lugar que en el campo de batalla, y su pacífica desaparición tiene su deseo desesperadamente de que las cosas podrían haber sido diferentes... Pero cuando de repente viene al cuerpo de la joven y frágil Nia Liston, tiene una nueva lucha por delante de ella. Nia es una niña enferma, lo que significa que tiene un largo camino para ir antes de que esté en forma de lucha. Ahora que se le ha dado un segundo tiro a la vida, sin embargo, está decidida a conseguir lo que quiere. Va a vivir."
+      "description_es": "Un gran héroe está invicto en su lecho de muerte, lamentando que nunca haya encontrado a un enemigo que pudiera derribarla. Ella nunca quiso encontrar su destino en otro lugar que en el campo de batalla, y su pacífica desaparición tiene su deseo desesperadamente de que las cosas podrían haber sido diferentes... Pero cuando de repente viene al cuerpo de la joven y frágil Nia Liston, tiene una nueva lucha por delante de ella. Nia es una niña enferma, lo que significa que tiene un largo camino por recorrer"
     },
     {
       "id": "mal-63754",
@@ -733,7 +664,7 @@
       "airingAt": 1792501200,
       "episode": 3,
       "scheduleId": 420418,
-      "description_es": "Sato-san es la flor inalcanzable de la clase. Ella siempre tiene frío y curtimiento con compañeros de clase, pero sólo sé que es muy linda cuando sonríe, incluso si no es mucho de fotógrafo. Oshio-kun es amistoso y animado, pero sólo sé que trabaja en el café de su familia después de la escuela. Hace un gran trabajo con la cuenta SNS de la cafetería, y su mala sonrisa hace que mi corazón se salte un latido! Inocentes y dulces, pero a veces frustrantes, esta es una historia de 120% pura y fluida sobre dos personas enamoradas por primera vez."
+      "description_es": "Sato-san es la flor inalcanzable de la clase. Siempre tiene frío y rito con compañeros de clase, pero sólo sé que es muy linda cuando sonríe, incluso si no es mucho fotógrafo. Oshio-kun es amistoso y animado, pero sólo sé que trabaja en el café de su familia después de la escuela. Hace un gran trabajo con la cuenta SNS de la cafetería, y su mala sonrisa hace que mi corazón salte un latido! Innocente y dulce, pero a veces frustrante, esto es un"
     },
     {
       "id": "mal-62696",
@@ -881,7 +812,7 @@
       "airingAt": 1792506600,
       "episode": 3,
       "scheduleId": 422442,
-      "description_es": "Dos jóvenes... el héroe, Riliu, y su mejor amigo Jowy, eran miembros de una brigada juvenil de su nación natal, el Reino de Highland - una poderosa nación militar situada en el noreste de la región de Dunan. Los dos miraron hacia arriba los mismos cielos estrellados, durmieron en la misma tienda, y creyeron en el mismo futuro. Una vez que la pelea terminó, y la noche terminó, sus vidas diarias estaban seguras de volver. Contrariamente a sus esperanzas, los dos chicos se arrastran en el torbellino del destino, guiados por las llamas de la guerra. Los chicos impotentes alcanzaron y captaron un inmenso poder. Como brillan las 108 estrellas"
+      "description_es": "Dos jóvenes... el héroe, Riliu, y su mejor amigo Jowy, eran miembros de una brigada juvenil de su nación natal, el Reino de Highland, una poderosa nación militar situada en el noreste de la región de Dunan. Los dos miraron hacia arriba los mismos cielos estrellados, durmieron en la misma tienda, y creyeron en el mismo futuro. Una vez que la pelea terminó, y la noche terminó, sus vidas diarias estaban seguras de volver. Contrariamente a sus esperanzas, los dos chicos b"
     },
     {
       "id": "mal-63431",
@@ -895,7 +826,7 @@
       "startDate": "2026-10-07",
       "format": "TV",
       "episodes": 0,
-      "averageScore": 74,
+      "averageScore": 73,
       "status": "RELEASING",
       "genres": [
         "Adventure",
@@ -1590,7 +1521,7 @@
       "airingAt": 1792680960,
       "episode": 4,
       "scheduleId": 421726,
-      "description_es": "Koyuki, la chica aislada; Miki, el antiguo ídolo escolar; Minato, el tipo sin concepto de espacio personal; y Youta, el amable jugador de baloncesto. Clumsy, frustrante, pero profundamente apasionante — este drama que se acerca a la edad de los corazones cruzados avanza. A medida que se acercan, Koyuki y Minato comienzan a desarrollar sentimientos entre sí que van más allá de la mera amistad. Mientras tanto, Youta finalmente confiesa a Miki los sentimientos por los que ha albergado"
+      "description_es": "Koyuki, la chica aislada; Miki, el antiguo ídolo escolar; Minato, el tipo sin concepto de espacio personal; y Youta, el amable jugador de baloncesto. Clumsy, frustrante, pero profundamente apasionante — este drama que se acerca a la edad de los corazones cruzados avanza. A medida que se acercan, Koyuki y Minato comienzan a desarrollar sentimientos entre sí que van más allá de la mera amistad. Mientras tanto, Youta finalmente confiesa a Miki los sentimientos que ha albergado durante años. Algunos hablan sus corazones mientras que otros mantienen sus emociones ocultas, causando sus caminos —y sus sentimientos por los demás— a crus continuamente"
     },
     {
       "id": "mal-54250",
@@ -2083,7 +2014,7 @@
       "startDate": "2026-10-02",
       "format": "TV",
       "episodes": 12,
-      "averageScore": 52,
+      "averageScore": 51,
       "status": "RELEASING",
       "genres": [
         "Adventure",
@@ -2798,7 +2729,7 @@
       "startDate": "2026-06-20",
       "format": "ONA",
       "episodes": 52,
-      "averageScore": 68,
+      "averageScore": 69,
       "status": "RELEASING",
       "genres": [
         "Action",
@@ -3235,7 +3166,7 @@
       "airingAt": 1792859400,
       "episode": 4,
       "scheduleId": 419565,
-      "description_es": "Si hay una cosa que nunca puedes tener suficiente en un mundo de espadas y brujería estilo RPG, ¡es puntos mágicos! Si estás alimentando hechizos, técnicas o mostrando una habilidad increíble, tienes que gastar esos puntos para hacer daño real. ¿Y si te escapas? La Cuaresma es parte de la fiesta de llegada conocida como los \"Skypiercers\", y gracias a su regalo único, puede prestar enormes cantidades de magia a otros. ¿Sin MP? ¡No hay problema con la Cuaresma! Excepto ahora que sus compañeros se han convertido en héroes formidables (gracias a su habilidad), su utilidad es cuestionada. Salió del grupo, la Cuaresma es"
+      "description_es": "Si hay una cosa que nunca puedes tener suficiente en un mundo de espadas y brujería estilo RPG, ¡es puntos mágicos! Si estás alimentando hechizos, técnicas o mostrando una increíble habilidad, tienes que gastar esos puntos para hacer daño real. ¿Y si te escapas? La Cuaresma es parte de la fiesta de llegada conocida como los \"Skypiercers\", y gracias a su regalo único, puede prestar enormes cantidades de magia a otros. ¿Sin MP? No hay problema con Lent arou"
     },
     {
       "id": "mal-63125",
@@ -3663,7 +3594,7 @@
       "startDate": "2026-10-11",
       "format": "TV",
       "episodes": 0,
-      "averageScore": 75,
+      "averageScore": 76,
       "status": "RELEASING",
       "genres": [
         "Sports"
@@ -3863,7 +3794,7 @@
       "startDate": "2026-09-27",
       "format": "ONA",
       "episodes": 26,
-      "averageScore": 65,
+      "averageScore": 66,
       "status": "RELEASING",
       "genres": [
         "Comedy",
@@ -3976,7 +3907,7 @@
       "startDate": "2026-10-04",
       "format": "TV",
       "episodes": 0,
-      "averageScore": 58,
+      "averageScore": 57,
       "status": "RELEASING",
       "genres": [
         "Mahou Shoujo",
@@ -4105,7 +4036,7 @@
       "airingAt": 1792938600,
       "episode": 5,
       "scheduleId": 419229,
-      "description_es": "La tercera temporada de Tensei Kizoku, Kantei Skill de Nariagaru. Nota: El 4 de septiembre de 2026, se anunció que GeyeG Pictures tomaría la producción del estudio MOTHER manteniendo el mismo personal."
+      "description_es": "La tercera temporada de Tensei Kizoku, Kantei Skill de Nariagaru . Nota: El 4 de septiembre de 2026, se anunció que GeyeG Pictures tomaría la producción del estudio MOTHER manteniendo el mismo personal."
     },
     {
       "id": "mal-63292",
@@ -4182,7 +4113,7 @@
       "airingAt": 1792938600,
       "episode": 4,
       "scheduleId": 419613,
-      "description_es": "Renací como una hija villana en un juego de harem otome inverso. Después de enfermarse con fiebre alta a los 10 años, Pia Rockwell de repente recordó su vida pasada como estudiante universitaria en Japón. Pero lejos de ir por la ruta del villano, todo lo que esta chica súper tímida quiere es finalmente utilizar su conocimiento de cuando era una estudiante de posgrado que estudiaba para obtener su doctorado en paleontología. Su objetivo final es llegar a ser más común, excavar fos"
+      "description_es": "Renací como una hija villana en un juego de harem otome inverso. Después de enfermarse con fiebre alta a los 10 años, Pia Rockwell de repente recordó su vida pasada como estudiante universitaria en Japón. Pero lejos de ir por la ruta villanosa, todo lo que esta chica súper tímida quiere es finalmente utilizar su conocimiento de cuando era una estudiante de posgrado que estudiaba para obtener su doctorado en paleontología. Su objetivo final es convertirse en un común, excavar fósiles, construir un museo y luego convertirse en un curador. Así que para escapar de la ruta del villano y evitar ser deportado por su prometido durante la graduación"
     },
     {
       "id": "mal-64340",
@@ -4811,7 +4742,7 @@
       "airingAt": 1793103960,
       "episode": 4,
       "scheduleId": 417799,
-      "description_es": "Un gran héroe está invicto en su lecho de muerte, lamentando que nunca haya encontrado a un enemigo que pudiera derribarla. Nunca quiso encontrar su destino en otro lugar que en el campo de batalla, y su pacífica desaparición tiene su deseo desesperadamente de que las cosas podrían haber sido diferentes... Pero cuando de repente viene al cuerpo de la joven y frágil Nia Liston, tiene una nueva lucha por delante de ella. Nia es una niña enferma, lo que significa que tiene un largo camino para ir antes de que esté en forma de lucha. Ahora que se le ha dado un segundo tiro a la vida, sin embargo, está decidida a conseguir lo que quiere. Va a vivir."
+      "description_es": "Un gran héroe está invicto en su lecho de muerte, lamentando que nunca haya encontrado a un enemigo que pudiera derribarla. Ella nunca quiso encontrar su destino en otro lugar que en el campo de batalla, y su pacífica desaparición tiene su deseo desesperadamente de que las cosas podrían haber sido diferentes... Pero cuando de repente viene al cuerpo de la joven y frágil Nia Liston, tiene una nueva lucha por delante de ella. Nia es una niña enferma, lo que significa que tiene un largo camino por recorrer"
     },
     {
       "id": "mal-63754",
@@ -4849,7 +4780,7 @@
       "airingAt": 1793106000,
       "episode": 4,
       "scheduleId": 420419,
-      "description_es": "Sato-san es la flor inalcanzable de la clase. Ella siempre tiene frío y curtimiento con compañeros de clase, pero sólo sé que es muy linda cuando sonríe, incluso si no es mucho de fotógrafo. Oshio-kun es amistoso y animado, pero sólo sé que trabaja en el café de su familia después de la escuela. Hace un gran trabajo con la cuenta SNS de la cafetería, y su mala sonrisa hace que mi corazón se salte un latido! Inocentes y dulces, pero a veces frustrantes, esta es una historia de 120% pura y fluida sobre dos personas enamoradas por primera vez."
+      "description_es": "Sato-san es la flor inalcanzable de la clase. Siempre tiene frío y rito con compañeros de clase, pero sólo sé que es muy linda cuando sonríe, incluso si no es mucho fotógrafo. Oshio-kun es amistoso y animado, pero sólo sé que trabaja en el café de su familia después de la escuela. Hace un gran trabajo con la cuenta SNS de la cafetería, y su mala sonrisa hace que mi corazón salte un latido! Innocente y dulce, pero a veces frustrante, esto es un"
     },
     {
       "id": "mal-62696",
@@ -4997,7 +4928,7 @@
       "airingAt": 1793111400,
       "episode": 4,
       "scheduleId": 422443,
-      "description_es": "Dos jóvenes... el héroe, Riliu, y su mejor amigo Jowy, eran miembros de una brigada juvenil de su nación natal, el Reino de Highland - una poderosa nación militar situada en el noreste de la región de Dunan. Los dos miraron hacia arriba los mismos cielos estrellados, durmieron en la misma tienda, y creyeron en el mismo futuro. Una vez que la pelea terminó, y la noche terminó, sus vidas diarias estaban seguras de volver. Contrariamente a sus esperanzas, los dos chicos se arrastran en el torbellino del destino, guiados por las llamas de la guerra. Los chicos impotentes alcanzaron y captaron un inmenso poder. Como brillan las 108 estrellas"
+      "description_es": "Dos jóvenes... el héroe, Riliu, y su mejor amigo Jowy, eran miembros de una brigada juvenil de su nación natal, el Reino de Highland, una poderosa nación militar situada en el noreste de la región de Dunan. Los dos miraron hacia arriba los mismos cielos estrellados, durmieron en la misma tienda, y creyeron en el mismo futuro. Una vez que la pelea terminó, y la noche terminó, sus vidas diarias estaban seguras de volver. Contrariamente a sus esperanzas, los dos chicos b"
     },
     {
       "id": "mal-63431",
@@ -5011,7 +4942,7 @@
       "startDate": "2026-10-07",
       "format": "TV",
       "episodes": 0,
-      "averageScore": 74,
+      "averageScore": 73,
       "status": "RELEASING",
       "genres": [
         "Adventure",
@@ -5739,7 +5670,7 @@
       "airingAt": 1793285760,
       "episode": 5,
       "scheduleId": 421727,
-      "description_es": "Koyuki, la chica aislada; Miki, el antiguo ídolo escolar; Minato, el tipo sin concepto de espacio personal; y Youta, el amable jugador de baloncesto. Clumsy, frustrante, pero profundamente apasionante — este drama que se acerca a la edad de los corazones cruzados avanza. A medida que se acercan, Koyuki y Minato comienzan a desarrollar sentimientos entre sí que van más allá de la mera amistad. Mientras tanto, Youta finalmente confiesa a Miki los sentimientos por los que ha albergado"
+      "description_es": "Koyuki, la chica aislada; Miki, el antiguo ídolo escolar; Minato, el tipo sin concepto de espacio personal; y Youta, el amable jugador de baloncesto. Clumsy, frustrante, pero profundamente apasionante — este drama que se acerca a la edad de los corazones cruzados avanza. A medida que se acercan, Koyuki y Minato comienzan a desarrollar sentimientos entre sí que van más allá de la mera amistad. Mientras tanto, Youta finalmente confiesa a Miki los sentimientos que ha albergado durante años. Algunos hablan sus corazones mientras que otros mantienen sus emociones ocultas, causando sus caminos —y sus sentimientos por los demás— a crus continuamente"
     },
     {
       "id": "mal-62615",
@@ -5943,6 +5874,73 @@
       "episode": 5,
       "scheduleId": 421793,
       "description_es": "Mazenchu está en una escuela donde todo tipo de comida puede vivir su juventud y formar amistades, rivalidades y romances amargos. (Fuente: Anime News Network)"
+    },
+    {
+      "id": "al-206244",
+      "mal_id": null,
+      "ani_id": 206244,
+      "title": "Luo Xiaohei Zhan Ji: Xue Qian Pian",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx206244-ke6bcfsL40qY.jpg",
+      "banner": "",
+      "description": "The third season of Luo Xiaohei Zhan Ji .",
+      "year": 2026,
+      "startDate": "2026-10-30",
+      "format": "ONA",
+      "episodes": 6,
+      "averageScore": 0,
+      "status": "NOT_YET_RELEASED",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Comedy",
+        "Supernatural"
+      ],
+      "siteUrl": "https://anilist.co/anime/206244",
+      "streaming": [],
+      "trailer": null,
+      "next": {
+        "at": 1793332800,
+        "episode": 1
+      },
+      "airingAt": 1793332800,
+      "episode": 1,
+      "scheduleId": 421372
+    },
+    {
+      "id": "mal-61469",
+      "mal_id": 61469,
+      "ani_id": 210482,
+      "title": "STEEL BALL RUN JoJo's Bizarre Adventure 2nd - 3rd STAGE",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx210482-P1VNKbqdJ6Zj.jpg",
+      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/210482-pYAD0IbzNbgS.jpg",
+      "description": "In the 2nd STAGE, a desert crossing spanning roughly 750 miles- the land that Johnny Joestar and Gyro Zeppeli must challenge, is home to the area that is feared as the \"Devil's Palm.\" In 1875, a threat lurking in said desert wiped out a cavalry of 26 people, eliciting fear from the local native people. As ominous incidents begin to unfold, they are forced to realize that this race is far more than a mere competition. The two press forward, where countless hidden motives collide.. (Source: Warner Bros. Japan Anime, Netflix Anime, edited)",
+      "year": 2026,
+      "startDate": "2026-09-25",
+      "format": "ONA",
+      "episodes": 11,
+      "averageScore": 86,
+      "status": "RELEASING",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Drama",
+        "Mystery",
+        "Supernatural"
+      ],
+      "siteUrl": "https://anilist.co/anime/210482",
+      "streaming": [],
+      "trailer": {
+        "site": "youtube",
+        "id": "jXtG_lcR9P4"
+      },
+      "next": {
+        "at": 1792742400,
+        "episode": 5
+      },
+      "airingAt": 1793347200,
+      "episode": 6,
+      "scheduleId": 420969,
+      "description_es": "En la 2a ETAPA, un cruce desértico que recorre aproximadamente 750 millas- la tierra que Johnny Joestar y Gyro Zeppeli deben desafiar, es el hogar de la zona que se teme como la palma del Diablo. En 1875, una amenaza que acechaba en dicho desierto borró una caballería de 26 personas, provocando temor de los nativos locales. A medida que los incidentes ominosos comienzan a desarrollarse, se ven obligados a darse cuenta de que esta carrera es mucho más que una mera competencia. Las dos prensas hacia adelante, donde"
     }
   ],
   "seasonal": {
@@ -6088,7 +6086,7 @@
           "at": 1792938600,
           "episode": 5
         },
-        "description_es": "La tercera temporada de Tensei Kizoku, Kantei Skill de Nariagaru. Nota: El 4 de septiembre de 2026, se anunció que GeyeG Pictures tomaría la producción del estudio MOTHER manteniendo el mismo personal."
+        "description_es": "La tercera temporada de Tensei Kizoku, Kantei Skill de Nariagaru . Nota: El 4 de septiembre de 2026, se anunció que GeyeG Pictures tomaría la producción del estudio MOTHER manteniendo el mismo personal."
       },
       {
         "id": "mal-56733",
@@ -6140,7 +6138,7 @@
         "startDate": "2026-09-27",
         "format": "ONA",
         "episodes": 26,
-        "averageScore": 65,
+        "averageScore": 66,
         "status": "RELEASING",
         "genres": [
           "Comedy",
@@ -6245,7 +6243,7 @@
           "at": 1792680960,
           "episode": 4
         },
-        "description_es": "Koyuki, la chica aislada; Miki, el antiguo ídolo escolar; Minato, el tipo sin concepto de espacio personal; y Youta, el amable jugador de baloncesto. Clumsy, frustrante, pero profundamente apasionante — este drama que se acerca a la edad de los corazones cruzados avanza. A medida que se acercan, Koyuki y Minato comienzan a desarrollar sentimientos entre sí que van más allá de la mera amistad. Mientras tanto, Youta finalmente confiesa a Miki los sentimientos por los que ha albergado"
+        "description_es": "Koyuki, la chica aislada; Miki, el antiguo ídolo escolar; Minato, el tipo sin concepto de espacio personal; y Youta, el amable jugador de baloncesto. Clumsy, frustrante, pero profundamente apasionante — este drama que se acerca a la edad de los corazones cruzados avanza. A medida que se acercan, Koyuki y Minato comienzan a desarrollar sentimientos entre sí que van más allá de la mera amistad. Mientras tanto, Youta finalmente confiesa a Miki los sentimientos que ha albergado durante años. Algunos hablan sus corazones mientras que otros mantienen sus emociones ocultas, causando sus caminos —y sus sentimientos por los demás— a crus continuamente"
       },
       {
         "id": "mal-63337",
@@ -6428,7 +6426,7 @@
         "startDate": "2026-10-02",
         "format": "TV",
         "episodes": 12,
-        "averageScore": 52,
+        "averageScore": 51,
         "status": "RELEASING",
         "genres": [
           "Adventure",
@@ -6739,7 +6737,7 @@
           "at": 1793111400,
           "episode": 4
         },
-        "description_es": "Dos jóvenes... el héroe, Riliu, y su mejor amigo Jowy, eran miembros de una brigada juvenil de su nación natal, el Reino de Highland - una poderosa nación militar situada en el noreste de la región de Dunan. Los dos miraron hacia arriba los mismos cielos estrellados, durmieron en la misma tienda, y creyeron en el mismo futuro. Una vez que la pelea terminó, y la noche terminó, sus vidas diarias estaban seguras de volver. Contrariamente a sus esperanzas, los dos chicos se arrastran en el torbellino del destino, guiados por las llamas de la guerra. Los chicos impotentes alcanzaron y captaron un inmenso poder. Como brillan las 108 estrellas"
+        "description_es": "Dos jóvenes... el héroe, Riliu, y su mejor amigo Jowy, eran miembros de una brigada juvenil de su nación natal, el Reino de Highland, una poderosa nación militar situada en el noreste de la región de Dunan. Los dos miraron hacia arriba los mismos cielos estrellados, durmieron en la misma tienda, y creyeron en el mismo futuro. Una vez que la pelea terminó, y la noche terminó, sus vidas diarias estaban seguras de volver. Contrariamente a sus esperanzas, los dos chicos b"
       },
       {
         "id": "mal-64326",
@@ -7058,7 +7056,7 @@
           "at": 1792859400,
           "episode": 4
         },
-        "description_es": "Si hay una cosa que nunca puedes tener suficiente en un mundo de espadas y brujería estilo RPG, ¡es puntos mágicos! Si estás alimentando hechizos, técnicas o mostrando una habilidad increíble, tienes que gastar esos puntos para hacer daño real. ¿Y si te escapas? La Cuaresma es parte de la fiesta de llegada conocida como los \"Skypiercers\", y gracias a su regalo único, puede prestar enormes cantidades de magia a otros. ¿Sin MP? ¡No hay problema con la Cuaresma! Excepto ahora que sus compañeros se han convertido en héroes formidables (gracias a su habilidad), su utilidad es cuestionada. Salió del grupo, la Cuaresma es"
+        "description_es": "Si hay una cosa que nunca puedes tener suficiente en un mundo de espadas y brujería estilo RPG, ¡es puntos mágicos! Si estás alimentando hechizos, técnicas o mostrando una increíble habilidad, tienes que gastar esos puntos para hacer daño real. ¿Y si te escapas? La Cuaresma es parte de la fiesta de llegada conocida como los \"Skypiercers\", y gracias a su regalo único, puede prestar enormes cantidades de magia a otros. ¿Sin MP? No hay problema con Lent arou"
       },
       {
         "id": "mal-63801",
@@ -7125,7 +7123,7 @@
           "at": 1792938600,
           "episode": 4
         },
-        "description_es": "Renací como una hija villana en un juego de harem otome inverso. Después de enfermarse con fiebre alta a los 10 años, Pia Rockwell de repente recordó su vida pasada como estudiante universitaria en Japón. Pero lejos de ir por la ruta del villano, todo lo que esta chica súper tímida quiere es finalmente utilizar su conocimiento de cuando era una estudiante de posgrado que estudiaba para obtener su doctorado en paleontología. Su objetivo final es llegar a ser más común, excavar fos"
+        "description_es": "Renací como una hija villana en un juego de harem otome inverso. Después de enfermarse con fiebre alta a los 10 años, Pia Rockwell de repente recordó su vida pasada como estudiante universitaria en Japón. Pero lejos de ir por la ruta villanosa, todo lo que esta chica súper tímida quiere es finalmente utilizar su conocimiento de cuando era una estudiante de posgrado que estudiaba para obtener su doctorado en paleontología. Su objetivo final es convertirse en un común, excavar fósiles, construir un museo y luego convertirse en un curador. Así que para escapar de la ruta del villano y evitar ser deportado por su prometido durante la graduación"
       },
       {
         "id": "mal-63751",
@@ -7236,7 +7234,7 @@
         "startDate": "2026-10-04",
         "format": "TV",
         "episodes": 0,
-        "averageScore": 58,
+        "averageScore": 57,
         "status": "RELEASING",
         "genres": [
           "Mahou Shoujo",
@@ -7630,35 +7628,6 @@
         "description_es": "Un mini anime semanal mostrado con cada episodio de Kanojo no Tomodachi exclusivamente en la transmisión AT-X del anime de TV y en línea en OceanVeil."
       },
       {
-        "id": "mal-65169",
-        "mal_id": 65169,
-        "ani_id": 218217,
-        "title": "JK Dark Summoner to Deki......Dei Nai!?",
-        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx218217-crIGlnQDg0bJ.png",
-        "banner": "",
-        "description": "A weekly mini anime shown with each episode of Dark Summoner to Dekiteiru exclusively on the AT-X broadcast of the TV anime and online on Abema.",
-        "year": 2026,
-        "startDate": "2026-10-05",
-        "format": "TV_SHORT",
-        "episodes": 12,
-        "averageScore": 0,
-        "status": "RELEASING",
-        "genres": [
-          "Comedy",
-          "Ecchi",
-          "Fantasy",
-          "Romance"
-        ],
-        "siteUrl": "https://anilist.co/anime/218217",
-        "streaming": [],
-        "trailer": null,
-        "next": {
-          "at": 1792951200,
-          "episode": 4
-        },
-        "description_es": "Un mini anime semanal mostrado con cada episodio de Dark Summoner a Dekiteiru exclusivamente en la transmisión AT-X del anime de TV y en línea en Abema."
-      },
-      {
         "id": "mal-65119",
         "mal_id": 65119,
         "ani_id": 218532,
@@ -7686,6 +7655,35 @@
           "episode": 4
         },
         "description_es": "Chibi shorts to Kusuriya no Hitorigoto 3rd Season lanzado en el canal de animación TOHO YouTube. Nota: El conteo de Episodio comienza a las 49."
+      },
+      {
+        "id": "mal-65169",
+        "mal_id": 65169,
+        "ani_id": 218217,
+        "title": "JK Dark Summoner to Deki......Dei Nai!?",
+        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx218217-crIGlnQDg0bJ.png",
+        "banner": "",
+        "description": "A weekly mini anime shown with each episode of Dark Summoner to Dekiteiru exclusively on the AT-X broadcast of the TV anime and online on Abema.",
+        "year": 2026,
+        "startDate": "2026-10-05",
+        "format": "TV_SHORT",
+        "episodes": 12,
+        "averageScore": 0,
+        "status": "RELEASING",
+        "genres": [
+          "Comedy",
+          "Ecchi",
+          "Fantasy",
+          "Romance"
+        ],
+        "siteUrl": "https://anilist.co/anime/218217",
+        "streaming": [],
+        "trailer": null,
+        "next": {
+          "at": 1792951200,
+          "episode": 4
+        },
+        "description_es": "Un mini anime semanal mostrado con cada episodio de Dark Summoner a Dekiteiru exclusivamente en la transmisión AT-X del anime de TV y en línea en Abema."
       },
       {
         "id": "al-214593",
@@ -7744,7 +7742,7 @@
           "at": 1793103960,
           "episode": 4
         },
-        "description_es": "Un gran héroe está invicto en su lecho de muerte, lamentando que nunca haya encontrado a un enemigo que pudiera derribarla. Nunca quiso encontrar su destino en otro lugar que en el campo de batalla, y su pacífica desaparición tiene su deseo desesperadamente de que las cosas podrían haber sido diferentes... Pero cuando de repente viene al cuerpo de la joven y frágil Nia Liston, tiene una nueva lucha por delante de ella. Nia es una niña enferma, lo que significa que tiene un largo camino para ir antes de que esté en forma de lucha. Ahora que se le ha dado un segundo tiro a la vida, sin embargo, está decidida a conseguir lo que quiere. Va a vivir."
+        "description_es": "Un gran héroe está invicto en su lecho de muerte, lamentando que nunca haya encontrado a un enemigo que pudiera derribarla. Ella nunca quiso encontrar su destino en otro lugar que en el campo de batalla, y su pacífica desaparición tiene su deseo desesperadamente de que las cosas podrían haber sido diferentes... Pero cuando de repente viene al cuerpo de la joven y frágil Nia Liston, tiene una nueva lucha por delante de ella. Nia es una niña enferma, lo que significa que tiene un largo camino por recorrer"
       },
       {
         "id": "mal-63754",
@@ -7779,7 +7777,7 @@
           "at": 1793106000,
           "episode": 4
         },
-        "description_es": "Sato-san es la flor inalcanzable de la clase. Ella siempre tiene frío y curtimiento con compañeros de clase, pero sólo sé que es muy linda cuando sonríe, incluso si no es mucho de fotógrafo. Oshio-kun es amistoso y animado, pero sólo sé que trabaja en el café de su familia después de la escuela. Hace un gran trabajo con la cuenta SNS de la cafetería, y su mala sonrisa hace que mi corazón se salte un latido! Inocentes y dulces, pero a veces frustrantes, esta es una historia de 120% pura y fluida sobre dos personas enamoradas por primera vez."
+        "description_es": "Sato-san es la flor inalcanzable de la clase. Siempre tiene frío y rito con compañeros de clase, pero sólo sé que es muy linda cuando sonríe, incluso si no es mucho fotógrafo. Oshio-kun es amistoso y animado, pero sólo sé que trabaja en el café de su familia después de la escuela. Hace un gran trabajo con la cuenta SNS de la cafetería, y su mala sonrisa hace que mi corazón salte un latido! Innocente y dulce, pero a veces frustrante, esto es un"
       },
       {
         "id": "mal-54344",
@@ -7895,7 +7893,7 @@
         "startDate": "2026-10-07",
         "format": "TV",
         "episodes": 0,
-        "averageScore": 74,
+        "averageScore": 73,
         "status": "RELEASING",
         "genres": [
           "Adventure",
