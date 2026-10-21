@@ -22,7 +22,7 @@
 - No confundir el catálogo de Anime1v con episodios reproducibles ni su licencia MIT con derechos de distribución de anime.
 
 ## Estado detectado ahora
-- Último commit de aplicación encontrado: 5b5d16f99d2dde29926c602c842e967fc835c3d9
+- Último commit de aplicación encontrado: a902fd2d18ed2167be28a12c33d3f38c139e0bd2
 - Descubrimiento Anime1v configurado en frontend: sí, verificar la respuesta real en Render
 - Código runtime de metadatos Anime1v en repositorio: sí
 - Entradas de obras multimedia en data/licensed-media.json: 0
@@ -30,11 +30,11 @@
 - Safari físico: no dar por verificado salvo prueba real con evidencia.
 
 ## Últimos commits relevantes
-- 5b5d16f99 — Sync authorized anime episode metadata and source statuses
-- d604930dc — Update educational anime metadata from Wikipedia
-- cf61d7e23 — ONEUP health snapshot (no application changes)
-- 977c5a020 — Update live anime airing calendar
-- ba8f5f6d8 — Sync authorized anime episode metadata and source statuses
+- a902fd2d1 — Sync authorized anime episode metadata and source statuses
+- 6a83ba845 — ONEUP health snapshot (no application changes)
+- 978ef1c85 — Update live anime airing calendar
+- 258537c8c — Sync authorized anime episode metadata and source statuses
+- 40ad939ee — ONEUP health snapshot (no application changes)
 
 ## PR abiertos (consultar cambios antes de desarrollar)
 - [#69](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/69) fix: recuperar catálogo ante caché local malformada
