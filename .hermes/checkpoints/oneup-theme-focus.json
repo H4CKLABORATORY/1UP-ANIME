@@ -7,8 +7,8 @@
   "status": "blocked",
   "last_observed_commit": "b196792adb70e96075a9d6762281f2587fff2ecb",
   "last_verified_commit": null,
-  "updated_at": "2026-10-21T01:28:32Z",
-  "next_action": "Crear PR manualmente desde rama fix/oneup-theme-focus-return-20261020 hacia main; luego ejecutar CI ONEUP Browser Acceptance y revisar, sin auto-merge.",
+  "updated_at": "2026-10-21T02:21:48Z",
+  "next_action": "Crear PR borrador manualmente desde fix/oneup-theme-focus-return-20261020 hacia main; después verificar CI Browser Acceptance/Playwright, revisar divergencia con main y pedir revisión. No auto-merge.",
   "completed_steps": [
     "Corregido retorno de foco",
     "Añadida aserción de regresión"
@@ -18,8 +18,9 @@
     "scripts/e2e-oneup-palette.mjs"
   ],
   "blockers": [
-    "GitHub PR creation denied by tool safety checks; branch and commits exist.",
-    "Playwright CI no ejecutado en esta iteración; Safari físico no verificado."
+    "Playwright CI no ejecutado en esta iteración; Safari físico no verificado.",
+    "La creación de PR por conector GitHub fue bloqueada de nuevo por controles de seguridad (dos intentos, incluido payload mínimo) el 2026-10-21. Rama y cambios preservados.",
+    "CI Playwright y Safari físico no verificados en esta iteración."
   ],
   "verification": [
     {
@@ -33,6 +34,10 @@
     {
       "at": "2026-10-21T01:28:32Z",
       "event": "Rama con corrección y test; validación estática PASS; apertura de PR bloqueada por herramienta."
+    },
+    {
+      "at": "2026-10-21T02:21:48Z",
+      "event": "Mission Control: HEAD main 3e444921b7a014d48c7001b1e30baa405c064f3d; PR de corrección no existe; 2 intentos de creación bloqueados por controles de seguridad. Rama intacta, sin merge ni despliegue."
     }
   ]
 }
