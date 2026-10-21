@@ -1,8 +1,8 @@
 {
-  "updated": "2026-10-21T09:35:57.847Z",
+  "updated": "2026-10-21T15:37:14.151Z",
   "source": "AniList public GraphQL metadata",
-  "windowStart": 1792377346,
-  "windowEnd": 1793352946,
+  "windowStart": 1792399031,
+  "windowEnd": 1793374631,
   "airing": [
     {
       "id": "mal-65119",
@@ -8544,5 +8544,8 @@
       }
     ]
   },
-  "warnings": []
+  "warnings": [
+    "schedule: AniList HTTP 403",
+    "season: AniList HTTP 403"
+  ]
 }
