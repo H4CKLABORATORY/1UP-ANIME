@@ -1,0 +1,31 @@
+name: ONEUP Webflow Cloud readiness
+on:
+  pull_request:
+    paths:
+      - "scripts/build-webflow-static.mjs"
+      - "docs/WEBFLOW_MCP_1UP.md"
+      - ".github/workflows/webflow-static-verify.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  static-preview:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Check exporter syntax
+        run: node --check scripts/build-webflow-static.mjs
+      - name: Prepare safe Webflow Cloud static app
+        run: node scripts/build-webflow-static.mjs
+      - name: Verify no backend/source disclosure
+        run: |
+          test -f .webflow-build/index.html
+          test -f .webflow-build/webflow.json
+          test ! -e .webflow-build/functions
+          test ! -e .webflow-build/integrations
+          test ! -e .webflow-build/scripts
+          test ! -e .webflow-build/config
+          node -e "const x=require('./.webflow-build/webflow.json');if(x.cloud.framework!=='static')process.exit(1)"
