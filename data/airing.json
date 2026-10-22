@@ -1,229 +1,9 @@
 {
-  "updated": "2026-10-21T21:34:43.687Z",
+  "updated": "2026-10-22T03:34:26.398Z",
   "source": "AniList public GraphQL metadata",
-  "windowStart": 1792420481,
-  "windowEnd": 1793396081,
+  "windowStart": 1792442044,
+  "windowEnd": 1793417644,
   "airing": [
-    {
-      "id": "mal-65119",
-      "mal_id": 65119,
-      "ani_id": 218532,
-      "title": "Maomao no Hitorigoto 3rd Season",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx218532-I1GCprJrJ5sm.png",
-      "banner": "",
-      "description": "Chibi shorts to Kusuriya no Hitorigoto 3rd Season released on the TOHO animation YouTube channel. Note: Episode count begins at 49.",
-      "year": 2026,
-      "startDate": "2026-10-05",
-      "format": "ONA",
-      "episodes": 0,
-      "averageScore": 0,
-      "status": "RELEASING",
-      "genres": [
-        "Comedy"
-      ],
-      "siteUrl": "https://anilist.co/anime/218532",
-      "streaming": [],
-      "trailer": {
-        "site": "youtube",
-        "id": "FuGZ0Cl8YMY"
-      },
-      "next": {
-        "at": 1792983600,
-        "episode": 4
-      },
-      "airingAt": 1792378800,
-      "episode": 3,
-      "scheduleId": 422693,
-      "description_es": "Chibi shorts to Kusuriya no Hitorigoto 3rd Season lanzado en el canal de animación TOHO YouTube. Nota: El conteo de Episodio comienza a las 49."
-    },
-    {
-      "id": "mal-63409",
-      "mal_id": 63409,
-      "ani_id": 207191,
-      "title": "Hello, I am a Witch and my Crush Wants me to Make a Love Potion!",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx207191-VgkIzfH92WoZ.jpg",
-      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/207191-xYgpkCDnXc5m.jpg",
-      "description": "“Make me a love potion.” And with that single sentence, the Good Witch of the Lake’s secret crush on the dashing Sir Harij ends in heartbreak. Still, when he promises to help her gather the ingredients, Rose is thrilled at the chance to gaze upon a man she’d normally never get to interact with. She learns to brace her pounding heart for their usual stilted conversations…but what is she to do when he inexplicably shows up at her doorstep with bread and a jar of apple butter? (Source: Yen Press)",
-      "year": 2026,
-      "startDate": "2026-10-05",
-      "format": "TV",
-      "episodes": 12,
-      "averageScore": 71,
-      "status": "RELEASING",
-      "genres": [
-        "Fantasy",
-        "Romance"
-      ],
-      "siteUrl": "https://anilist.co/anime/207191",
-      "streaming": [
-        {
-          "name": "Crunchyroll",
-          "url": "https://www.crunchyroll.com/series/GT00378072/hello-i-am-a-witch-and-my-crush-wants-me-to-make-a-love-potion"
-        }
-      ],
-      "trailer": {
-        "site": "youtube",
-        "id": "hGRtocAh3iw"
-      },
-      "next": {
-        "at": 1793017800,
-        "episode": 4
-      },
-      "airingAt": 1792413000,
-      "episode": 3,
-      "scheduleId": 420067,
-      "description_es": "Hazme una poción de amor. Y con esa sola frase, la Buena Bruja del amor secreto del lago sobre el desgarrador Sir Harij termina en la ruptura del corazón. Sin embargo, cuando promete ayudarla a reunir los ingredientes, Rose está emocionada por la oportunidad de mirar a un hombre con el que normalmente nunca podría interactuar. Ella aprende a jactar su corazón por sus conversaciones usuales inclinadas... pero ¿qué va a hacer cuando aparece inexplicablemente en su puerta con bre"
-    },
-    {
-      "id": "mal-63712",
-      "mal_id": 63712,
-      "ani_id": 209219,
-      "title": "So What's Wrong with Getting Reborn as a Goblin?",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx209219-3yhKlRx0LX3p.jpg",
-      "banner": "",
-      "description": "Office worker Akira Yagami’s altruistic nature usually gets him the short end of the stick. When he dies after saving a kid from oncoming traffic...he reincarnates in another world as a goblin?! Normally, goblins only live for seven days, but Akira’s newfound powers let him defy the species’ normal life span...and are the key to his path to becoming the strongest goblin ever! (Source: Yen Press) Note: Tensei Goblin Dakedo Shitsumon Aru? is streaming 1 week in advance of the TV broadcast on ABEMA and Prime Video beginning with episode 2 on October 5th, 2026",
-      "year": 2026,
-      "startDate": "2026-10-05",
-      "format": "ONA",
-      "episodes": 0,
-      "averageScore": 66,
-      "status": "RELEASING",
-      "genres": [
-        "Action",
-        "Adventure",
-        "Comedy",
-        "Drama",
-        "Fantasy",
-        "Romance"
-      ],
-      "siteUrl": "https://anilist.co/anime/209219",
-      "streaming": [
-        {
-          "name": "Crunchyroll",
-          "url": "https://www.crunchyroll.com/series/GT00384010/so-whats-wrong-with-getting-reborn-as-a-goblin"
-        }
-      ],
-      "trailer": {
-        "site": "youtube",
-        "id": "ynr8tFWrK4c"
-      },
-      "next": {
-        "at": 1793019600,
-        "episode": 5
-      },
-      "airingAt": 1792414800,
-      "episode": 4,
-      "scheduleId": 422213,
-      "description_es": "La naturaleza altruista del trabajador de oficina Akira Yagami generalmente le consigue el extremo corto del palo. Cuando muere después de salvar a un niño del tráfico entrante... ¿reencarna en otro mundo como un duende? Normalmente, los duendes sólo viven durante siete días, pero los nuevos poderes de Akira le permiten desafiar el período de vida normal de la especie... ¡y son la clave de su camino para convertirse en el más fuerte de todos los tiempos! (Fuente: Yen Press) Nota: Tensei Goblin Dakedo Sitsumon Aru?"
-    },
-    {
-      "id": "mal-63098",
-      "mal_id": 63098,
-      "ani_id": 204011,
-      "title": "PSYREN",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx204011-j45RZoqYbdZK.jpg",
-      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/204011-hBOwte9MzykA.jpg",
-      "description": "One day, high schooler Ageha Yoshina picks up a mysterious “red phone card” left behind in a public telephone booth. A few days later, his childhood friend and classmate, Sakurako Amamiya—who possessed the same card—suddenly vanishes without a trace. In search of her, Ageha finds himself drawn into the rumors surrounding a nationwide string of mysterious disappearances, said to be the work of a secret organization known only as “Psyren.” When he accesses the group, a deadly game begins—one that will change his fate forever. (Source: PSYЯEN Official Site)",
-      "year": 2026,
-      "startDate": "2026-10-05",
-      "format": "TV",
-      "episodes": 0,
-      "averageScore": 69,
-      "status": "RELEASING",
-      "genres": [
-        "Action",
-        "Adventure",
-        "Sci-Fi"
-      ],
-      "siteUrl": "https://anilist.co/anime/204011",
-      "streaming": [
-        {
-          "name": "Crunchyroll",
-          "url": "https://www.crunchyroll.com/series/GT00371866/psyren"
-        }
-      ],
-      "trailer": {
-        "site": "youtube",
-        "id": "fmUpSXFbSK0"
-      },
-      "next": {
-        "at": 1793023200,
-        "episode": 4
-      },
-      "airingAt": 1792418400,
-      "episode": 3,
-      "scheduleId": 419765,
-      "description_es": "Un día, la secundaria Ageha Yoshina recoge una misteriosa “tarjeta de teléfono roja” que queda atrás en una cabina telefónica pública. Unos días más tarde, su amigo de la infancia y compañero de clase, Sakurako Amamiya, que poseía la misma carta, desaparecen sin dejar rastro. En busca de ella, Ageha se encuentra dibujado en los rumores que rodean una cadena nacional de misteriosas desapariciones, dijo ser el trabajo de una organización secreta conocida sólo como “Psyren”. Cuando él"
-    },
-    {
-      "id": "mal-60636",
-      "mal_id": 60636,
-      "ani_id": 185874,
-      "title": "BLEACH: Thousand-Year Blood War - The Calamity",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx185874-aU3e6tBT6wwA.jpg",
-      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/185874-IdGyh1EBG91I.jpg",
-      "description": "Destruction looms at the end of the Thousand-Year Blood War between the Soul Reapers and Quincies… as the death of the Soul King mirrors the collapse of the Three Worlds, distortions and omens of destruction start to appear in all realms. Fierce battles erupt throughout the Wahr Welt between the Thirteen Court Guard Squads and the Royal Guard. Ichigo learns about Uryuu's true intentions and renews his determination to protect the world together, as friends who trust each other. Yhwach has surpassed even his own ability, The Almighty... The fierce battle for the survival of the Three Worlds approaches its end. Beyond the chaos of calamity, what lies in wait—despair or hope? (Source: VIZ Media, edited)",
-      "year": 2026,
-      "startDate": "2026-07-25",
-      "format": "TV",
-      "episodes": 10,
-      "averageScore": 89,
-      "status": "RELEASING",
-      "genres": [
-        "Action",
-        "Adventure",
-        "Supernatural"
-      ],
-      "siteUrl": "https://anilist.co/anime/185874",
-      "streaming": [],
-      "trailer": {
-        "site": "youtube",
-        "id": "IJONbpfIlUg"
-      },
-      "next": {
-        "at": 1793026800,
-        "episode": 10
-      },
-      "airingAt": 1792422000,
-      "episode": 9,
-      "scheduleId": 422729,
-      "description_es": "La destrucción se desploma al final de la Guerra de la Sangre Mil Años entre los Reapers del Alma y las Quincias... mientras la muerte del Rey del Alma refleja el colapso de los Tres Mundos, las distorsiones y los presagios de destrucción comienzan a aparecer en todos los reinos. Quince batallas surgieron a lo largo de la Wahr Welt entre los 13 escuadrones de la Guardia de la Corte y la Guardia Real. Ichigo aprende sobre las verdaderas intenciones de Uryuu y renueva su determinación de proteger el mundo juntos"
-    },
-    {
-      "id": "mal-54344",
-      "mal_id": 54344,
-      "ani_id": 160803,
-      "title": "MAGICAL GIRL RAISING PROJECT restart",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx160803-Rcr3IvhE7q9c.png",
-      "banner": "",
-      "description": "Some magical girls fight. Others do not. Chosen by the mysterious Land of Magic, which exists unbeknownst to the rest of the world, magical girls are each granted a unique power. Pechka, whose magic makes food delicious, is forced to take part in a mysterious virtual game together with 16 unfamiliar magical girls, each with her own distinctive personality. It was supposed to be a safe training exercise designed to improve their magical abilities. But instead, it marks the beginning of a carefully orchestrated nightmare - a forbidden trial. A new Magical Girl Raising Project has begun. (Source: OceanVeil)",
-      "year": 2026,
-      "startDate": "2026-10-06",
-      "format": "TV",
-      "episodes": 0,
-      "averageScore": 59,
-      "status": "RELEASING",
-      "genres": [
-        "Action",
-        "Fantasy",
-        "Mahou Shoujo",
-        "Thriller"
-      ],
-      "siteUrl": "https://anilist.co/anime/160803",
-      "streaming": [],
-      "trailer": {
-        "site": "youtube",
-        "id": "34ubb-j0kbI"
-      },
-      "next": {
-        "at": 1793034000,
-        "episode": 4
-      },
-      "airingAt": 1792429200,
-      "episode": 3,
-      "scheduleId": 418904,
-      "description_es": "Algunas chicas mágicas pelean. Otros no. Elegido por la misteriosa Tierra de la Magia, que existe poco conocida por el resto del mundo, las chicas mágicas cada una tienen un poder único. Pechka, cuya magia hace deliciosa la comida, se ve obligada a participar en un misterioso juego virtual junto con 16 chicas mágicas desconocidas, cada una con su propia personalidad distintiva. Se suponía que era un ejercicio de entrenamiento seguro diseñado para mejorar sus habilidades mágicas. Pero en cambio, marca el comienzo de una pesadilla cuidadosamente orquestada - un juicio prohibido. Ha comenzado un nuevo proyecto de Raising Girl Magical. (Fuente:"
-    },
     {
       "id": "al-155723",
       "mal_id": null,
@@ -716,7 +496,7 @@
       "startDate": "2026-10-06",
       "format": "TV",
       "episodes": 0,
-      "averageScore": 49,
+      "averageScore": 48,
       "status": "RELEASING",
       "genres": [
         "Action",
@@ -907,7 +687,7 @@
       "startDate": "2026-10-14",
       "format": "TV",
       "episodes": 11,
-      "averageScore": 52,
+      "averageScore": 51,
       "status": "RELEASING",
       "genres": [
         "Mecha",
@@ -1052,8 +832,8 @@
         "id": "8AnNxEp733c"
       },
       "next": {
-        "at": 1792585800,
-        "episode": 3
+        "at": 1793190600,
+        "episode": 4
       },
       "airingAt": 1792585800,
       "episode": 3,
@@ -1073,7 +853,7 @@
       "format": "TV_SHORT",
       "episodes": 0,
       "averageScore": 0,
-      "status": "NOT_YET_RELEASED",
+      "status": "RELEASING",
       "genres": [
         "Comedy"
       ],
@@ -1081,8 +861,8 @@
       "streaming": [],
       "trailer": null,
       "next": {
-        "at": 1792587240,
-        "episode": 1
+        "at": 1793192040,
+        "episode": 2
       },
       "airingAt": 1792587240,
       "episode": 1,
@@ -1120,8 +900,8 @@
         "id": "snJZD9vxfHY"
       },
       "next": {
-        "at": 1792587600,
-        "episode": 3
+        "at": 1793192400,
+        "episode": 4
       },
       "airingAt": 1792587600,
       "episode": 3,
@@ -1159,8 +939,8 @@
         "id": "gY0hpk9E7p8"
       },
       "next": {
-        "at": 1792587600,
-        "episode": 3
+        "at": 1793192400,
+        "episode": 4
       },
       "airingAt": 1792587600,
       "episode": 3,
@@ -1199,8 +979,8 @@
         "id": "67GqhfLw3ys"
       },
       "next": {
-        "at": 1792593960,
-        "episode": 3
+        "at": 1793198760,
+        "episode": 4
       },
       "airingAt": 1792593960,
       "episode": 3,
@@ -1238,8 +1018,8 @@
         "id": "bsNeADDQFD4"
       },
       "next": {
-        "at": 1792594800,
-        "episode": 4
+        "at": 1793199600,
+        "episode": 5
       },
       "airingAt": 1792594800,
       "episode": 4,
@@ -1269,8 +1049,8 @@
       "streaming": [],
       "trailer": null,
       "next": {
-        "at": 1792594800,
-        "episode": 2
+        "at": 1793199600,
+        "episode": 3
       },
       "airingAt": 1792594800,
       "episode": 2,
@@ -1303,8 +1083,8 @@
         "id": "kbtRqqa2GyA"
       },
       "next": {
-        "at": 1792596600,
-        "episode": 4
+        "at": 1793201400,
+        "episode": 5
       },
       "airingAt": 1792596600,
       "episode": 4,
@@ -1341,8 +1121,8 @@
         "id": "ihJfkOT_0wU"
       },
       "next": {
-        "at": 1792596600,
-        "episode": 3
+        "at": 1793201400,
+        "episode": 4
       },
       "airingAt": 1792596600,
       "episode": 3,
@@ -1380,8 +1160,8 @@
         "id": "YBWOrQCB9r0"
       },
       "next": {
-        "at": 1792597500,
-        "episode": 3
+        "at": 1793202300,
+        "episode": 4
       },
       "airingAt": 1792597500,
       "episode": 3,
@@ -2047,7 +1827,7 @@
       "startDate": "2026-10-09",
       "format": "TV",
       "episodes": 0,
-      "averageScore": 70,
+      "averageScore": 69,
       "status": "RELEASING",
       "genres": [
         "Action",
@@ -2473,7 +2253,7 @@
       "startDate": "2023-06-24",
       "format": "ONA",
       "episodes": 182,
-      "averageScore": 77,
+      "averageScore": 76,
       "status": "RELEASING",
       "genres": [
         "Action",
@@ -3827,7 +3607,7 @@
       "startDate": "2026-10-04",
       "format": "TV",
       "episodes": 13,
-      "averageScore": 68,
+      "averageScore": 69,
       "status": "RELEASING",
       "genres": [
         "Action",
@@ -4832,7 +4612,7 @@
       "startDate": "2026-10-06",
       "format": "TV",
       "episodes": 0,
-      "averageScore": 49,
+      "averageScore": 48,
       "status": "RELEASING",
       "genres": [
         "Action",
@@ -5023,7 +4803,7 @@
       "startDate": "2026-10-14",
       "format": "TV",
       "episodes": 11,
-      "averageScore": 52,
+      "averageScore": 51,
       "status": "RELEASING",
       "genres": [
         "Mecha",
@@ -5201,8 +4981,8 @@
         "id": "8AnNxEp733c"
       },
       "next": {
-        "at": 1792585800,
-        "episode": 3
+        "at": 1793190600,
+        "episode": 4
       },
       "airingAt": 1793190600,
       "episode": 4,
@@ -5222,7 +5002,7 @@
       "format": "TV_SHORT",
       "episodes": 0,
       "averageScore": 0,
-      "status": "NOT_YET_RELEASED",
+      "status": "RELEASING",
       "genres": [
         "Comedy"
       ],
@@ -5230,8 +5010,8 @@
       "streaming": [],
       "trailer": null,
       "next": {
-        "at": 1792587240,
-        "episode": 1
+        "at": 1793192040,
+        "episode": 2
       },
       "airingAt": 1793192040,
       "episode": 2,
@@ -5269,8 +5049,8 @@
         "id": "snJZD9vxfHY"
       },
       "next": {
-        "at": 1792587600,
-        "episode": 3
+        "at": 1793192400,
+        "episode": 4
       },
       "airingAt": 1793192400,
       "episode": 4,
@@ -5308,8 +5088,8 @@
         "id": "gY0hpk9E7p8"
       },
       "next": {
-        "at": 1792587600,
-        "episode": 3
+        "at": 1793192400,
+        "episode": 4
       },
       "airingAt": 1793192400,
       "episode": 4,
@@ -5348,8 +5128,8 @@
         "id": "67GqhfLw3ys"
       },
       "next": {
-        "at": 1792593960,
-        "episode": 3
+        "at": 1793198760,
+        "episode": 4
       },
       "airingAt": 1793198760,
       "episode": 4,
@@ -5387,8 +5167,8 @@
         "id": "bsNeADDQFD4"
       },
       "next": {
-        "at": 1792594800,
-        "episode": 4
+        "at": 1793199600,
+        "episode": 5
       },
       "airingAt": 1793199600,
       "episode": 5,
@@ -5418,8 +5198,8 @@
       "streaming": [],
       "trailer": null,
       "next": {
-        "at": 1792594800,
-        "episode": 2
+        "at": 1793199600,
+        "episode": 3
       },
       "airingAt": 1793199600,
       "episode": 3,
@@ -5452,8 +5232,8 @@
         "id": "kbtRqqa2GyA"
       },
       "next": {
-        "at": 1792596600,
-        "episode": 4
+        "at": 1793201400,
+        "episode": 5
       },
       "airingAt": 1793201400,
       "episode": 5,
@@ -5490,8 +5270,8 @@
         "id": "ihJfkOT_0wU"
       },
       "next": {
-        "at": 1792596600,
-        "episode": 3
+        "at": 1793201400,
+        "episode": 4
       },
       "airingAt": 1793201400,
       "episode": 4,
@@ -5529,8 +5309,8 @@
         "id": "YBWOrQCB9r0"
       },
       "next": {
-        "at": 1792597500,
-        "episode": 3
+        "at": 1793202300,
+        "episode": 4
       },
       "airingAt": 1793202300,
       "episode": 4,
@@ -5941,6 +5721,724 @@
       "episode": 6,
       "scheduleId": 420969,
       "description_es": "En la 2a ETAPA, un cruce desértico que recorre aproximadamente 750 millas- la tierra que Johnny Joestar y Gyro Zeppeli deben desafiar, es el hogar de la zona que se teme como la palma del Diablo. En 1875, una amenaza que acechaba en dicho desierto borró una caballería de 26 personas, provocando temor de los nativos locales. A medida que los incidentes ominosos comienzan a desarrollarse, se ven obligados a darse cuenta de que esta carrera es mucho más que una mera competencia. Las dos prensas hacia adelante, donde"
+    },
+    {
+      "id": "mal-62039",
+      "mal_id": 62039,
+      "ani_id": 194207,
+      "title": "Pan Dorobou",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx194207-7n4M6jOwLdcF.jpg",
+      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/194207-6yQitDZ3uOi5.jpg",
+      "description": "Kadokawa announced on June 9th, 2025 that Keiko Shibata's Pan Dorobou (Bread Thief) picture book will have an anime adaptation. The announcement did not reveal the anime's format. The picture books center on a piece of bread that also steals bread from bakeries in the city. (Source: Anime News Network)",
+      "year": 2026,
+      "startDate": "2026-10-02",
+      "format": "TV_SHORT",
+      "episodes": 0,
+      "averageScore": 0,
+      "status": "RELEASING",
+      "genres": [
+        "Comedy"
+      ],
+      "siteUrl": "https://anilist.co/anime/194207",
+      "streaming": [],
+      "trailer": {
+        "site": "youtube",
+        "id": "dUSYa-7rKpM"
+      },
+      "next": {
+        "at": 1792748400,
+        "episode": 4
+      },
+      "airingAt": 1793353200,
+      "episode": 5,
+      "scheduleId": 420232,
+      "description_es": "Kadokawa anunció el 9 de junio de 2025 que el libro de fotos Pan Dorobou (Bread Thief) de Keiko Shibata tendrá una adaptación de anime. El anuncio no reveló el formato del anime. Los libros de fotos se centran en un pedazo de pan que también roba pan de panaderías en la ciudad. (Fuente: Anime News Network)"
+    },
+    {
+      "id": "mal-53876",
+      "mal_id": 53876,
+      "ani_id": 158871,
+      "title": "Pokémon Horizons: The Series",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx158871-GBM9AMDfDRSu.jpg",
+      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/158871-PtipBrtn93hB.jpg",
+      "description": "A new dream and adventure set throughout the entire Pokémon world unfolds in a brand new Pokémon-series following a girl named Liko and a boy named Roy.",
+      "year": 2023,
+      "startDate": "2023-04-14",
+      "format": "TV",
+      "episodes": 0,
+      "averageScore": 73,
+      "status": "RELEASING",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Fantasy"
+      ],
+      "siteUrl": "https://anilist.co/anime/158871",
+      "streaming": [],
+      "trailer": {
+        "site": "youtube",
+        "id": "_c_hMehCORQ"
+      },
+      "next": {
+        "at": 1792749300,
+        "episode": 154
+      },
+      "airingAt": 1793354100,
+      "episode": 155,
+      "scheduleId": 421007,
+      "description_es": "Un nuevo sueño y aventura en todo el mundo Pokémon se desarrolla en una nueva serie Pokémon siguiendo a una chica llamada Liko y un chico llamado Roy."
+    },
+    {
+      "id": "mal-51768",
+      "mal_id": 51768,
+      "ani_id": 146004,
+      "title": "Watame Did Borderline Nothing Wrong",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx146004-hH08KAB1yHlN.png",
+      "banner": "",
+      "description": "A series of comedic YouTube shorts airing every Friday on Watame's YouTube channel. Notes: - Episodes 1-21 (Series 1) were originally released in a vertical format, later rereleased widescreen in 8 compilation videos. - Contains special episode \"Best Girl？！スペシャル回！！！\"",
+      "year": 2022,
+      "startDate": "2022-01-07",
+      "format": "ONA",
+      "episodes": 0,
+      "averageScore": 69,
+      "status": "RELEASING",
+      "genres": [
+        "Comedy",
+        "Slice of Life"
+      ],
+      "siteUrl": "https://anilist.co/anime/146004",
+      "streaming": [],
+      "trailer": {
+        "site": "youtube",
+        "id": "c3DcpEy3xd8"
+      },
+      "next": {
+        "at": 1792749600,
+        "episode": 85
+      },
+      "airingAt": 1793354400,
+      "episode": 86,
+      "scheduleId": 422660,
+      "description_es": "Una serie de cortos cómicos de YouTube que emiten cada viernes en el canal de YouTube de Watame. Notas: - Episodios 1-21 (Series 1) fueron publicados originalmente en un formato vertical, posteriormente en pantalla ancha liberada en 8 vídeos de compilación. - Contiene episodio especial \"Mejor chica?!"
+    },
+    {
+      "id": "mal-64848",
+      "mal_id": 64848,
+      "ani_id": 208367,
+      "title": "Duel Masters LOST: Danzai no Shounen",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx208367-qWKRaOpokGoG.jpg",
+      "banner": "",
+      "description": "Sequel to Duel Masters LOST: Boukyaku no Taiyou .",
+      "year": 2026,
+      "startDate": "2026-10-09",
+      "format": "ONA",
+      "episodes": 4,
+      "averageScore": 0,
+      "status": "RELEASING",
+      "genres": [
+        "Adventure",
+        "Supernatural"
+      ],
+      "siteUrl": "https://anilist.co/anime/208367",
+      "streaming": [],
+      "trailer": null,
+      "next": {
+        "at": 1792756800,
+        "episode": 3
+      },
+      "airingAt": 1793361600,
+      "episode": 4,
+      "scheduleId": 419663,
+      "description_es": "Secuela de Duel Masters LOST: Boukyaku no Taiyou."
+    },
+    {
+      "id": "mal-65009",
+      "mal_id": 65009,
+      "ani_id": 216895,
+      "title": "Welsh & Shedar",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx216895-Ofx4FSKFa4CQ.jpg",
+      "banner": "",
+      "description": "The story of Aoki Denshou Welsh & Shedar follows Welsh, a teenage boy from the country who loves to cook, and Shedar, a young prince who is destined to become king one day. When the two young men with very different lives are thrown together by a chance encounter, the wheels of fate begin to turn, and soon they must work together to bring about a peaceful future by stopping a cruel despot from conquering the world. (Source: Crunchyroll)",
+      "year": 2026,
+      "startDate": "2026-10-02",
+      "format": "TV",
+      "episodes": 12,
+      "averageScore": 51,
+      "status": "RELEASING",
+      "genres": [
+        "Adventure",
+        "Fantasy"
+      ],
+      "siteUrl": "https://anilist.co/anime/216895",
+      "streaming": [],
+      "trailer": {
+        "site": "youtube",
+        "id": "4QafpDIgjS4"
+      },
+      "next": {
+        "at": 1792758360,
+        "episode": 4
+      },
+      "airingAt": 1793363160,
+      "episode": 5,
+      "scheduleId": 420192,
+      "description_es": "La historia de Aoki Denshou Welsh &quot; Shedar sigue a Welsh, un adolescente del país que ama cocinar, y a Shedar, un joven príncipe que está destinado a ser rey un día. Cuando los dos jóvenes con vidas muy diferentes son lanzados juntos por un encuentro casual, las ruedas del destino comienzan a girar, y pronto deben trabajar juntos para traer un futuro pacífico al detener un cruel déspota de conquistar el mundo. (Fuente: Crunchyroll)"
+    },
+    {
+      "id": "mal-61014",
+      "mal_id": 61014,
+      "ani_id": 186742,
+      "title": "A Certain Dark Item",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx186742-v7yfbefc8fuO.png",
+      "banner": "",
+      "description": "This is a story of four girls living in the \"Dark Side\" of Academy City. In Academy City where \"ESP\" has been recognized as a general science. Behind the peace, there is a Dark Side organization that undertakes missions that cannot be made public. \"ITEM\" is an elite unit consisting of four girls. Takitsubo Rikou is able to read and track the AIM fields emitted by those with abilities. Frenda Seivelun, who excels in combat using explosives and traps. Kinuhata Saiai, who can manipulate nitrogen at will and plays a defensive role. And one of the 7 Espers that Academy City is proud of: Mugino Shizuri. They live freely in the darkness of the Academy City, and quietly set their sights on their target...! This is a story of encounter, friendship, and darkness that eventually leads to a terrible incident! (Source: Kadokawa, translated)",
+      "year": 2026,
+      "startDate": "2026-10-09",
+      "format": "TV",
+      "episodes": 0,
+      "averageScore": 69,
+      "status": "RELEASING",
+      "genres": [
+        "Action",
+        "Sci-Fi"
+      ],
+      "siteUrl": "https://anilist.co/anime/186742",
+      "streaming": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00383991/a-certain-dark-item"
+        }
+      ],
+      "trailer": {
+        "site": "youtube",
+        "id": "NNHxQJgZdbQ"
+      },
+      "next": {
+        "at": 1792762200,
+        "episode": 3
+      },
+      "airingAt": 1793367000,
+      "episode": 4,
+      "scheduleId": 419705,
+      "description_es": "Esta es una historia de cuatro chicas que viven en el \"Dark Side\" de Academy City. En la Ciudad de la Academia donde el \"ESP\" ha sido reconocido como una ciencia general. Detrás de la paz, hay una organización Dark Side que realiza misiones que no pueden hacerse públicas. \"ITEM\" es una unidad de élite compuesta por cuatro niñas. Takitsubo Rikou es capaz de leer y rastrear los campos AIM emitidos por aquellos con capacidades. Frenda Seivelun, que destaca en combate utilizando explosivos y trampas. Kinuhata Saiai, que puede manipular el nitrógeno a voluntad y juega un papel defensivo. Y uno de los 7 Espers que Academy City está orgulloso de: Mugino Shiz"
+    },
+    {
+      "id": "mal-61987",
+      "mal_id": 61987,
+      "ani_id": 195516,
+      "title": "The Apothecary Diaries Season 3",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx195516-MJpUZlOberqH.jpg",
+      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/195516-B5M0cPaQbQXI.jpg",
+      "description": "In the aftermath of the Shi Clan’s rebellion, things have finally settled down, and Maomao has returned to her old life as a pharmacist in the pleasure district. One day, triggered by a breakfast served at the Verdigris House, Maomao senses an anomaly and begins investigating its true nature. Meanwhile, Jinshi, who has revealed his true identity as the Imperial brother and begun to face his heavy responsibilities, is deeply troubled by the final message left by Loulan: a warning of an impending \"disaster that will strike the nation.\" To make matters worse, rumors of a mysterious shrine maiden who deceives the people begin to spread, casting a dark shadow over the country of Li once again. From the depths of the inner court to the city streets, and across foreign borders—the world grows wider, and the stakes even higher for Maomao and Jinshi. (Source: Crunchyroll)",
+      "year": 2026,
+      "startDate": "2026-10-02",
+      "format": "TV",
+      "episodes": 12,
+      "averageScore": 85,
+      "status": "RELEASING",
+      "genres": [
+        "Drama",
+        "Mystery"
+      ],
+      "siteUrl": "https://anilist.co/anime/195516",
+      "streaming": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/G3KHEVDJ7/the-apothecary-diaries"
+        }
+      ],
+      "trailer": {
+        "site": "youtube",
+        "id": "YvNvvUeCztE"
+      },
+      "next": {
+        "at": 1792764000,
+        "episode": 4
+      },
+      "airingAt": 1793368800,
+      "episode": 5,
+      "scheduleId": 418785,
+      "description_es": "Después de la rebelión del clan Shi, las cosas finalmente se han asentado, y Maomao ha vuelto a su antigua vida como farmacéutico en el distrito de placer. Un día, provocado por un desayuno servido en la Casa Verdigris, Maomao siente una anomalía y comienza a investigar su verdadera naturaleza. Mientras tanto, Jinshi, que ha revelado su verdadera identidad como el hermano imperial y ha comenzado a enfrentar sus pesadas responsabilidades, está profundamente preocupado por la fina"
+    },
+    {
+      "id": "mal-63293",
+      "mal_id": 63293,
+      "ani_id": 205909,
+      "title": "Firefly Wedding",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx205909-DM0fAzNQulod.jpg",
+      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/205909-hGeuFYrdhf9S.jpg",
+      "description": "On the surface, Satoko has it all—she’s beautiful, the daughter of a nobleman, and at a prime age for marriage. Unfortunately, she is also quite ill and only has a short time left to live. Before she can secure a marriage that will redeem her worth in her family’s eyes, she finds herself the target of the mysterious assassin Shinpei, and her plans are put in jeopardy. In order to save herself, she makes a desperate proposal—of marriage! When it comes to love, however, Shinpei takes “until death do we part” seriously. (Source: VIZ Media)",
+      "year": 2026,
+      "startDate": "2026-10-09",
+      "format": "TV",
+      "episodes": 12,
+      "averageScore": 75,
+      "status": "RELEASING",
+      "genres": [
+        "Drama",
+        "Romance"
+      ],
+      "siteUrl": "https://anilist.co/anime/205909",
+      "streaming": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00383999"
+        }
+      ],
+      "trailer": {
+        "site": "youtube",
+        "id": "Ex9LrBK-7hk"
+      },
+      "next": {
+        "at": 1792765800,
+        "episode": 3
+      },
+      "airingAt": 1793370600,
+      "episode": 4,
+      "scheduleId": 418468,
+      "description_es": "En la superficie, Satoko lo tiene todo, es hermosa, la hija de un noble, y a una edad temprana para el matrimonio. Desafortunadamente, ella también está bastante enferma y sólo tiene un corto tiempo para vivir. Antes de que pueda conseguir un matrimonio que redimirá su valor en los ojos de su familia, se encuentra el blanco del misterioso asesino Shinpei, y sus planes están en peligro. ¡Para salvarse, hace una propuesta desesperada de matrimonio! Cuando c"
+    },
+    {
+      "id": "mal-63181",
+      "mal_id": 63181,
+      "ani_id": 204650,
+      "title": "TOUGEN ANKI: Nikko Kegon Falls Arc",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx204650-cAQOzQ84Lwk8.png",
+      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/204650-MpownoVlYv69.jpg",
+      "description": "After battling in Kyoto and Nerima, the Rasetsu Academy students have grown stronger. But Yaoroshi leaves the academy to join the Oni Brigade for their \"the total eradication of the Momotaro.\" When Shiki realizes that they also target noncombatants, he sets out after Yaoroshi to bring him back. Meanwhile in Nikko, there's a research facility for horrific experiments atop the old Kegon Falls… (Source: REMOW)",
+      "year": 2026,
+      "startDate": "2026-10-02",
+      "format": "TV",
+      "episodes": 12,
+      "averageScore": 71,
+      "status": "RELEASING",
+      "genres": [
+        "Action",
+        "Mystery",
+        "Supernatural"
+      ],
+      "siteUrl": "https://anilist.co/anime/204650",
+      "streaming": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GP5HJ84D2/tougen-anki"
+        }
+      ],
+      "trailer": {
+        "site": "youtube",
+        "id": "upBWYExYoYc"
+      },
+      "next": {
+        "at": 1792765800,
+        "episode": 4
+      },
+      "airingAt": 1793370600,
+      "episode": 5,
+      "scheduleId": 422239,
+      "description_es": "Después de luchar en Kioto y Nerima, los estudiantes de la Academia Rasetsu se han hecho más fuertes. Pero Yaoroshi deja la academia para unirse a la Brigada Oni por su \"erración total del Momotaro\". Cuando Shiki se da cuenta de que también apuntan a los no combatientes, se pone después de Yaoroshi para traerlo de vuelta. Mientras tanto, en Nikko, hay una instalación de investigación para experimentos horribles en la antigua Kegon Falls... (Fuente: REMOW)"
+    },
+    {
+      "id": "mal-63061",
+      "mal_id": 63061,
+      "ani_id": 203490,
+      "title": "Please Excuse My Younger Brothers",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx203490-YQXiymUiDQNA.jpg",
+      "banner": "",
+      "description": "The manga centers on high school student Ito Hazui. During her spring break at the end of her first year of high school, Ito's mother remarries, and Ito moves to live with her new family, becoming Ito Narita. Upon arriving at her new house, Ito is shocked to learn she now has four younger step-brothers. Ito tries her hardest to get along with all of the new members of her family, but the eldest brother Gen is a bit cold to her. However, under his aloof facade, he occasionally shows his kindness. (Source: Anime News Network)",
+      "year": 2026,
+      "startDate": "2026-07-04",
+      "format": "TV",
+      "episodes": 24,
+      "averageScore": 69,
+      "status": "RELEASING",
+      "genres": [
+        "Comedy",
+        "Romance",
+        "Slice of Life"
+      ],
+      "siteUrl": "https://anilist.co/anime/203490",
+      "streaming": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00371926/"
+        }
+      ],
+      "trailer": {
+        "site": "youtube",
+        "id": "P927_ZvgUUg"
+      },
+      "next": {
+        "at": 1792767600,
+        "episode": 16
+      },
+      "airingAt": 1793372400,
+      "episode": 17,
+      "scheduleId": 421092,
+      "description_es": "El manga se centra en el estudiante de secundaria Ito Hazui. Durante su descanso de primavera al final de su primer año de secundaria, la madre de Ito se vuelve a casar, y Ito se mueve a vivir con su nueva familia, convirtiéndose en Ito Narita. Al llegar a su nueva casa, Ito está sorprendido de saber que ahora tiene cuatro hermanos menores. Ito trata de que ella sea más difícil de llevar con todos los nuevos miembros de su familia, pero el hermano mayor Gen es un poco frío para ella. Sin embargo, bajo su fachada, ocasionalmente muestra su amabilidad. (Fuente: Anime News Network)"
+    },
+    {
+      "id": "mal-59088",
+      "mal_id": 59088,
+      "ani_id": 178083,
+      "title": "Tokyo Revengers: War of the Three Titans Arc",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx178083-bg7pg6TCHwtG.jpg",
+      "banner": "",
+      "description": "Sequel to Tokyo Revengers: Tenjiku-hen .",
+      "year": 2026,
+      "startDate": "2026-10-03",
+      "format": "TV",
+      "episodes": 13,
+      "averageScore": 76,
+      "status": "RELEASING",
+      "genres": [
+        "Action",
+        "Drama",
+        "Romance",
+        "Supernatural"
+      ],
+      "siteUrl": "https://anilist.co/anime/178083",
+      "streaming": [],
+      "trailer": {
+        "site": "youtube",
+        "id": "Nm21TTXUkf4"
+      },
+      "next": {
+        "at": 1792774380,
+        "episode": 4
+      },
+      "airingAt": 1793379180,
+      "episode": 5,
+      "scheduleId": 418625,
+      "description_es": "Secuela de los Revengers de Tokio: Tenjiku-hen."
+    },
+    {
+      "id": "mal-64718",
+      "mal_id": 64718,
+      "ani_id": 214703,
+      "title": "Ghost Meets Gal!",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx214703-iXoaVH6UkiZd.png",
+      "banner": "",
+      "description": "",
+      "year": 2026,
+      "startDate": "2026-09-05",
+      "format": "TV_SHORT",
+      "episodes": 0,
+      "averageScore": 52,
+      "status": "RELEASING",
+      "genres": [
+        "Comedy",
+        "Fantasy"
+      ],
+      "siteUrl": "https://anilist.co/anime/214703",
+      "streaming": [],
+      "trailer": {
+        "site": "youtube",
+        "id": "n0na0hTpl1E"
+      },
+      "next": {
+        "at": 1792796400,
+        "episode": 8
+      },
+      "airingAt": 1793401200,
+      "episode": 9,
+      "scheduleId": 419759
+    },
+    {
+      "id": "mal-64210",
+      "mal_id": 64210,
+      "ani_id": 212308,
+      "title": "Pan no Akachan (TV)",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx212308-HUdh20Djd7cm.jpg",
+      "banner": "",
+      "description": "",
+      "year": 2026,
+      "startDate": "2026-07-04",
+      "format": "TV_SHORT",
+      "episodes": 0,
+      "averageScore": 0,
+      "status": "RELEASING",
+      "genres": [
+        "Comedy"
+      ],
+      "siteUrl": "https://anilist.co/anime/212308",
+      "streaming": [],
+      "trailer": {
+        "site": "youtube",
+        "id": "NGwgoL0TvI8"
+      },
+      "next": {
+        "at": 1792798200,
+        "episode": 17
+      },
+      "airingAt": 1793403000,
+      "episode": 18,
+      "scheduleId": 420279
+    },
+    {
+      "id": "mal-60153",
+      "mal_id": 60153,
+      "ani_id": 183231,
+      "title": "RILAKKUMA",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b183231-z7SgjmXZBcoX.png",
+      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/183231-JFjTqQe3rPCw.jpg",
+      "description": "Everyday life gets a cozy twist with the laid-back Rilakkuma. Gentle moments of friendship, change, and small joys unfold, turning ordinary moments into something quietly magical—one soft, comforting day at a time. It's a moment that will make your heart feel lighter and lighter. No matter where you are or what you're doing, Rilakkuma will be by your side. An exciting new story begins! Experience the stress-free world of Rilakkuma, the relaxed bear who makes being lazy look effortless! (Source: Crunchyroll, Rilakkuma Anime Site, translated)",
+      "year": 2026,
+      "startDate": "2026-04-04",
+      "format": "TV_SHORT",
+      "episodes": 0,
+      "averageScore": 62,
+      "status": "RELEASING",
+      "genres": [
+        "Fantasy",
+        "Slice of Life"
+      ],
+      "siteUrl": "https://anilist.co/anime/183231",
+      "streaming": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00374493/rilakkuma"
+        }
+      ],
+      "trailer": {
+        "site": "youtube",
+        "id": "rV-fcFL5vtU"
+      },
+      "next": {
+        "at": 1792801560,
+        "episode": 29
+      },
+      "airingAt": 1793406360,
+      "episode": 30,
+      "scheduleId": 421154,
+      "description_es": "Cada día la vida recibe un toque acogedor con el relajado Rilakkuma. Los momentos suaves de amistad, cambio y las pequeñas alegrías se desarrollan, convirtiendo los momentos ordinarios en algo silenciosamente mágico — un día suave y reconfortante a la vez. Es un momento que hará que su corazón se sienta más ligero y más ligero. No importa dónde estés o lo que estés haciendo, Rilakkuma estará a tu lado. ¡Una nueva historia emocionante comienza! ¡Experimente el mundo libre de estrés de Rilakkuma, el oso relajado que hace ser perezoso sin esfuerzo! (Fuente: Crunchyroll, Rilakkuma Anime Site, traducido)"
+    },
+    {
+      "id": "mal-64789",
+      "mal_id": 64789,
+      "ani_id": 214968,
+      "title": "Nezumi-kun no Chokki (TV) 2nd Season",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx214968-rrPSP2nKF40C.jpg",
+      "banner": "",
+      "description": "Second season of Nezumi-kun no Chokki (TV)",
+      "year": 2026,
+      "startDate": "2026-10-03",
+      "format": "TV_SHORT",
+      "episodes": 0,
+      "averageScore": 0,
+      "status": "RELEASING",
+      "genres": [
+        "Fantasy"
+      ],
+      "siteUrl": "https://anilist.co/anime/214968",
+      "streaming": [],
+      "trailer": null,
+      "next": {
+        "at": 1792801800,
+        "episode": 4
+      },
+      "airingAt": 1793406600,
+      "episode": 5,
+      "scheduleId": 418613,
+      "description_es": "Segunda temporada de Nezumi-kun no Chokki (TV)"
+    },
+    {
+      "id": "mal-63157",
+      "mal_id": 63157,
+      "ani_id": 216557,
+      "title": "KERORO☆",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx216557-b72dAqbVEDO7.jpg",
+      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/216557-FdbwnWM2oskW.jpg",
+      "description": "Sergeant Keroro comes to conquer Earth, only to get captured and stuck living with the Hinata family! (Source: Crunchyroll)",
+      "year": 2026,
+      "startDate": "2026-10-03",
+      "format": "TV",
+      "episodes": 0,
+      "averageScore": 57,
+      "status": "RELEASING",
+      "genres": [
+        "Comedy",
+        "Sci-Fi"
+      ],
+      "siteUrl": "https://anilist.co/anime/216557",
+      "streaming": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00383995/"
+        }
+      ],
+      "trailer": {
+        "site": "youtube",
+        "id": "iMyre5xXDzE"
+      },
+      "next": {
+        "at": 1792801800,
+        "episode": 4
+      },
+      "airingAt": 1793406600,
+      "episode": 5,
+      "scheduleId": 419529,
+      "description_es": "¡El sargento Keroro viene a conquistar la Tierra, sólo para ser capturado y atrapado viviendo con la familia Hinata! (Fuente: Crunchyroll)"
+    },
+    {
+      "id": "mal-61619",
+      "mal_id": 61619,
+      "ani_id": 214260,
+      "title": "A Good Day to Ascend",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx214260-m2fg5OwduwSt.jpg",
+      "banner": "",
+      "description": "In the chaotic times, demons and monsters roam freely, and treacherous officials are in power. With the invasion of the Netherworld, both humans and Netherworld beings wreak havoc on the mortal world, and the wild gods who work for the Netherworld bully the common people. Enraged, Xu Ying, a snake-catcher, rebels and commits the sin of killing a god, and also takes out an incompetent court official. Hunted down by the two realms, his fleeing begins... (Source: iQ)",
+      "year": 2026,
+      "startDate": "2026-07-18",
+      "format": "ONA",
+      "episodes": 30,
+      "averageScore": 0,
+      "status": "RELEASING",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Fantasy"
+      ],
+      "siteUrl": "https://anilist.co/anime/214260",
+      "streaming": [],
+      "trailer": null,
+      "next": {
+        "at": 1792803600,
+        "episode": 17
+      },
+      "airingAt": 1793408400,
+      "episode": 18,
+      "scheduleId": 417667,
+      "description_es": "En los tiempos caóticos, demonios y monstruos andan libremente, y funcionarios traicioneros están en el poder. Con la invasión del Netherworld, los seres humanos y el Netherworld causaron estragos en el mundo mortal, y los dioses salvajes que trabajan para el Netherworld intimidan al pueblo común. Enfurecido, Xu Ying, un cazador de serpientes, rebelde y comete el pecado de matar a un dios, y también saca a un funcionario de la corte incompetente. Cazado por los dos reinos, su huida comienza... (Fuente: iQ)"
+    },
+    {
+      "id": "mal-51836",
+      "mal_id": 51836,
+      "ani_id": 137683,
+      "title": "Soul Land 2: The Peerless Tang Clan",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx137683-IMuvIECdZNBh.png",
+      "banner": "",
+      "description": "The Tang Sect in a turbulent world. There is nothing but martial spirit here. Ten thousand years after the founding of the Tang Sect, it is in relative decline. An extremely talented man was born. Can the new Shrek Seven Monsters revive the Tang Sect and bring it back to glory? A soul beast of over one million years old; Electrolux who can pick stars; The new soul utensil system that led to the decline of the Tang Sect... A lot of secrets are to be revealed. Can the secret weapons of the Tang Sect be sharp again? Can the Tang Sect regain its former glory? (Source: WeTV)",
+      "year": 2023,
+      "startDate": "2023-06-24",
+      "format": "ONA",
+      "episodes": 182,
+      "averageScore": 76,
+      "status": "RELEASING",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Fantasy",
+        "Romance"
+      ],
+      "siteUrl": "https://anilist.co/anime/137683",
+      "streaming": [],
+      "trailer": null,
+      "next": {
+        "at": 1792807200,
+        "episode": 176
+      },
+      "airingAt": 1793412000,
+      "episode": 177,
+      "scheduleId": 414713,
+      "description_es": "El Tang Sect en un mundo turbulento. Aquí no hay nada más que espíritu marcial. Diez mil años después de la fundación del Tang Sect, está en declive relativo. Nació un hombre extremadamente talentoso. ¿Pueden los nuevos Monstruos Shrek revivir el Tang Sect y traerlo de vuelta a la gloria? Una bestia de alma de más de un millón de años; Electrolux que puede elegir estrellas; El nuevo sistema de utensilios de alma que llevó al declive del Tang Sect... Hay que revelar muchos secretos. ¿Pueden volver a afilarse las armas secretas del Tang Sect? ¿Puede el Tang Sect recuperar su antigua gloria? (Fuente: WeTV)"
+    },
+    {
+      "id": "mal-60597",
+      "mal_id": 60597,
+      "ani_id": 199353,
+      "title": "Dawang Raoming 3",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx199353-S2jczHjCWHGL.png",
+      "banner": "",
+      "description": "The third season of Dawang Raoming .",
+      "year": 2026,
+      "startDate": "2026-10-03",
+      "format": "ONA",
+      "episodes": 12,
+      "averageScore": 66,
+      "status": "RELEASING",
+      "genres": [
+        "Action",
+        "Fantasy"
+      ],
+      "siteUrl": "https://anilist.co/anime/199353",
+      "streaming": [],
+      "trailer": {
+        "site": "youtube",
+        "id": "xIa7dMUka-8"
+      },
+      "next": {
+        "at": 1792807200,
+        "episode": 6
+      },
+      "airingAt": 1793412000,
+      "episode": 7,
+      "scheduleId": 421875,
+      "description_es": "La tercera temporada de Dawang Raoming."
+    },
+    {
+      "id": "mal-65209",
+      "mal_id": 65209,
+      "ani_id": 218493,
+      "title": "Wan Sheng Jie: Gubao de Mimi",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx218493-Yn5zm71TmFol.jpg",
+      "banner": "",
+      "description": "Living together means more than rent, chores, haggling, and bickering... now there are even challenges of life and death?! A mysterious old castle is calling. Can everyone from the 1031 block keep that neighborly spirit alive and continue getting along through it all?",
+      "year": 2026,
+      "startDate": "2026-10-31",
+      "format": "SPECIAL",
+      "episodes": 3,
+      "averageScore": 0,
+      "status": "NOT_YET_RELEASED",
+      "genres": [
+        "Comedy",
+        "Fantasy",
+        "Slice of Life"
+      ],
+      "siteUrl": "https://anilist.co/anime/218493",
+      "streaming": [],
+      "trailer": {
+        "site": "youtube",
+        "id": "JN50_XiZv1Y"
+      },
+      "next": {
+        "at": 1793412000,
+        "episode": 1
+      },
+      "airingAt": 1793412000,
+      "episode": 1,
+      "scheduleId": 422681
+    },
+    {
+      "id": "mal-61297",
+      "mal_id": 61297,
+      "ani_id": 188753,
+      "title": "Gekkan! Nanmono Anime",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx188753-Rkuiizca4QFD.png",
+      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/188753-njd1uzJV3jp3.jpg",
+      "description": "A new short anime series based on the characters \"Nandemo Ikimono\" created by illustrator and character designer Yuri Yokomizo. The stories follow the lives of any and all things, from animals and plants to food and objects. The shorts will stream monthly on various social media services such as Twitter, Instagram, YouTube, and TikTok, as well as on ABEMA. (Source: Anime News Network, edited)",
+      "year": 2025,
+      "startDate": "2025-04-30",
+      "format": "ONA",
+      "episodes": 0,
+      "averageScore": 0,
+      "status": "RELEASING",
+      "genres": [
+        "Comedy",
+        "Slice of Life"
+      ],
+      "siteUrl": "https://anilist.co/anime/188753",
+      "streaming": [],
+      "trailer": {
+        "site": "youtube",
+        "id": "MZu8r_l_kVo"
+      },
+      "next": {
+        "at": 1793415600,
+        "episode": 19
+      },
+      "airingAt": 1793415600,
+      "episode": 19,
+      "scheduleId": 415076
     }
   ],
   "seasonal": {
@@ -6208,8 +6706,8 @@
           "id": "kbtRqqa2GyA"
         },
         "next": {
-          "at": 1792596600,
-          "episode": 4
+          "at": 1793201400,
+          "episode": 5
         },
         "description_es": "La segunda temporada de Tensei Mierda Ken Deshita. Nota: Cada episodio fue transmitido una semana antes de la emisión de televisión a partir del 1 de octubre de 2026 en Abema. La radiodifusión regular comenzó el 8 de octubre de 2026."
       },
@@ -6311,8 +6809,8 @@
           "id": "bsNeADDQFD4"
         },
         "next": {
-          "at": 1792594800,
-          "episode": 4
+          "at": 1793199600,
+          "episode": 5
         },
         "description_es": "Las viejas rivalidades reinan cuando los jugadores del equipo Japón se enfrentan para ganar puntos en la alineación para la final de la Copa Mundial. (Fuente: Crunchyroll News)"
       },
@@ -6995,7 +7493,7 @@
         "startDate": "2026-10-04",
         "format": "TV",
         "episodes": 13,
-        "averageScore": 68,
+        "averageScore": 69,
         "status": "RELEASING",
         "genres": [
           "Action",
@@ -7858,7 +8356,7 @@
         "startDate": "2026-10-06",
         "format": "TV",
         "episodes": 0,
-        "averageScore": 49,
+        "averageScore": 48,
         "status": "RELEASING",
         "genres": [
           "Action",
@@ -7946,8 +8444,8 @@
           "id": "8AnNxEp733c"
         },
         "next": {
-          "at": 1792585800,
-          "episode": 3
+          "at": 1793190600,
+          "episode": 4
         },
         "description_es": "Después de frustrar un secuestro con el hermoso detective de pelo plateado Siesta, Kimihiko conduce una vida de ataque mundial y resolución del crimen hasta que Siesta muera. Un año más tarde, un nuevo caso abrirá viejas heridas mientras roza asesinato, conspiración y su compañero muerto! (Fuente: Crunchyroll)"
       },
@@ -7982,8 +8480,8 @@
           "id": "snJZD9vxfHY"
         },
         "next": {
-          "at": 1792587600,
-          "episode": 3
+          "at": 1793192400,
+          "episode": 4
         },
         "description_es": "Después de usar su habilidad SSS-Rank, Internet, para aplastar las ambiciones de su antigua familia, Lorna es libre de viajar por el mundo. Su próxima parada es la ciudad portuaria de Aquas, donde espera ver los lugares de interés y disfrutar de algunos mariscos frescos. Pero cuando llega, el lugar está al borde de la destrucción gracias a una cierta misión semanal... ¡Qué bueno que Lorna tenga los dioses de su lado! (Fuente: Crunchyroll)"
       },
@@ -8018,8 +8516,8 @@
           "id": "gY0hpk9E7p8"
         },
         "next": {
-          "at": 1792587600,
-          "episode": 3
+          "at": 1793192400,
+          "episode": 4
         },
         "description_es": "La segunda temporada de Sasaki a Pii-chan."
       },
@@ -8055,8 +8553,8 @@
           "id": "67GqhfLw3ys"
         },
         "next": {
-          "at": 1792593960,
-          "episode": 3
+          "at": 1793198760,
+          "episode": 4
         },
         "description_es": "Hikaru Shidou, Umi Ryuuzaki, y Fuu Hououji no son de Cephiro. Mientras que en un viaje de campo escolar a la Torre de Tokio, las mentes de las tres chicas están en cualquier cosa excepto mundos diferentes llenos de magia y maravilla. Es decir, hasta que la Princesa Esmeraude, el Pilar de Cephiro, clama por los Caballeros Mágicos para salvar su mundo, ¡y eso resulta que son esos tres! (Fuente: Crunchyroll)"
       },
@@ -8091,8 +8589,8 @@
           "id": "YBWOrQCB9r0"
         },
         "next": {
-          "at": 1792597500,
-          "episode": 3
+          "at": 1793202300,
+          "episode": 4
         },
         "description_es": "En una tierra dominada por los formidables Mundos Sombríos, la mayoría de la humanidad ha sido destruida. Para rescatar a su planeta de la muerte inminente, seis héroes valientes luchan una batalla peligrosa... y fracasan. Pero hay una mirada de esperanza cuando Desir, una de las últimas magras, es de repente enviado en el tiempo 13 años! Ahora armado con conocimiento del futuro sombrío, ¿puede alterar el curso de la historia y salvar el mundo? (Fuente: Crunchyroll)"
       },
@@ -8155,8 +8653,8 @@
           "id": "ihJfkOT_0wU"
         },
         "next": {
-          "at": 1792596600,
-          "episode": 3
+          "at": 1793201400,
+          "episode": 4
         },
         "description_es": "La historia tiene lugar 20 años después de que el robot Dandivine derrotara al misterioso Aposdoll. El mundo está ahora en paz. Sin embargo, el fabricante de juguetes Kasuga, que dependía de sus juguetes de mercadería de Dandivine, ha caído en declive. Así, el presidente de Kasuga, Genjuro Shijima, oró por el renacimiento de Dandivine, y el Aposdoll de repente regresó. El estudiante de secundaria Gekiha Shijima recibe una invitación de su tío Yusaku Kuroiwa, el ex piloto principal de Dandivine, para pilotar el robot gigante mismo. (Fuente: Anime News Network)"
       },
@@ -8243,7 +8741,7 @@
         "startDate": "2026-10-09",
         "format": "TV",
         "episodes": 0,
-        "averageScore": 70,
+        "averageScore": 69,
         "status": "RELEASING",
         "genres": [
           "Action",
@@ -8544,8 +9042,5 @@
       }
     ]
   },
-  "warnings": [
-    "schedule: AniList HTTP 403",
-    "season: AniList HTTP 403"
-  ]
+  "warnings": []
 }
