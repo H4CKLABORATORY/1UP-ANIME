@@ -1,123 +1,9 @@
 {
-  "updated": "2026-10-22T21:33:17.228Z",
+  "updated": "2026-10-23T03:34:52.508Z",
   "source": "AniList public GraphQL metadata",
-  "windowStart": 1792506785,
-  "windowEnd": 1793482385,
+  "windowStart": 1792528478,
+  "windowEnd": 1793504078,
   "airing": [
-    {
-      "id": "mal-63431",
-      "mal_id": 63431,
-      "ani_id": 207329,
-      "title": "The Laid-Off Cheat-Granting Mage Enjoys a Second Lease on Life",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b207329-6VPeZIDfF4Sr.png",
-      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/207329-9IqRSKIsM3TC.jpg",
-      "description": "Rein, an enchanter, is suddenly expelled from his guild one day. But instead of despairing, he declares, “Now I can do anything!” and begins reclaiming the massive number of enhancement points he once poured into his guildmates’ gear, setting off on a brand-new path as an adventurer. Gathering around him are people carrying wounds that don’t fade easily: a genius adventurer who shut her heart after her party was slaughtered, a warrior who lost her family, and an assassin raised from childhood to kill. Yet Rein never rejects their pasts or their scars—he accepts them all with bright, straightforward warmth. The stage is a unique fantasy world where Uzis, slingshots, and even yakuza exist side by side. But in this world, the more people rely on convenient technology, the more their magic weakens, and adventurers grow fragile. Intelligent, vicious monsters roam freely, while in the underworld, outlaws bare their greed and ambition as schemes and betrayals intertwine. In a world where ideals and justice are easily crushed, adventurers fight on with nothing but their magic and their convictions. This is the story of those who have lost their place in the world finding a new way to live. Rein and his companions’ wild, free-spirited second life begins now! (Source: The Laid-Off Cheat-Granting Mage Enjoys a Second Lease on Life Site)",
-      "year": 2026,
-      "startDate": "2026-10-07",
-      "format": "TV",
-      "episodes": 0,
-      "averageScore": 73,
-      "status": "RELEASING",
-      "genres": [
-        "Adventure",
-        "Comedy",
-        "Fantasy",
-        "Slice of Life"
-      ],
-      "siteUrl": "https://anilist.co/anime/207329",
-      "streaming": [
-        {
-          "name": "Crunchyroll",
-          "url": "https://www.crunchyroll.com/series/GT00384016/"
-        }
-      ],
-      "trailer": {
-        "site": "youtube",
-        "id": "BJXBr_aFF8s"
-      },
-      "next": {
-        "at": 1793113200,
-        "episode": 4
-      },
-      "airingAt": 1792508400,
-      "episode": 3,
-      "scheduleId": 420254,
-      "description_es": "Rein, un encantador, es expulsado de su gremio un día. Pero en lugar de desesperar, declara, “¡Ahora puedo hacer cualquier cosa!” y comienza a reclamar el enorme número de puntos de mejora que una vez vierte en el equipo de sus compañeros, a partir de un nuevo camino como aventurero. Reunirse a su alrededor son personas que llevan heridas que no se desvanecen fácilmente: un genio aventurero que cerró su corazón después de que su partido fue masacrado, un guerrero que perdió"
-    },
-    {
-      "id": "mal-63489",
-      "mal_id": 63489,
-      "ani_id": 207809,
-      "title": "Red River",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx207809-cpS7CAyjN7iP.jpg",
-      "banner": "",
-      "description": "After a mysterious hand drags her beneath a puddle, modern Japanese teenager Yuri awakens in the Hittite Empire of the 14th century BCE. Thrust into a deadly struggle for the throne, she joins Prince Kail to battle assassins, outwit royal conspiracies, and survive a world at war. As her exploits earn her renown as the goddess Ishtar, Yuri must choose between her old life and an uncertain future. (Source: Crunchyroll)",
-      "year": 2026,
-      "startDate": "2026-07-08",
-      "format": "TV",
-      "episodes": 24,
-      "averageScore": 62,
-      "status": "RELEASING",
-      "genres": [
-        "Action",
-        "Adventure",
-        "Drama",
-        "Fantasy",
-        "Romance"
-      ],
-      "siteUrl": "https://anilist.co/anime/207809",
-      "streaming": [
-        {
-          "name": "Crunchyroll",
-          "url": "https://www.crunchyroll.com/series/GT00378099/red-river"
-        }
-      ],
-      "trailer": {
-        "site": "youtube",
-        "id": "qpFcQ1Bek08"
-      },
-      "next": {
-        "at": 1793118900,
-        "episode": 17
-      },
-      "airingAt": 1792514100,
-      "episode": 16,
-      "scheduleId": 418951,
-      "description_es": "Después de una mano misteriosa la arrastra debajo de un charco, moderno adolescente japonés Yuri despierta en el imperio hitita del siglo 14 AC. Entró en una lucha mortal por el trono, se une al Príncipe Kail para combatir a asesinos, superar conspiraciones reales y sobrevivir a un mundo en guerra. Mientras sus hazañas ganan su renombre como la diosa Ishtar, Yuri debe elegir entre su vida vieja y un futuro incierto. (Fuente: Crunchyroll)"
-    },
-    {
-      "id": "mal-59415",
-      "mal_id": 59415,
-      "ani_id": 179876,
-      "title": "DARK MACHINE THE ANIMATION",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx179876-Wg62CAzp5WQ1.jpg",
-      "banner": "",
-      "description": "Following his grandfather’s will to “seek out the Senki,” the protagonist Kairi visits Golden Valley, a special Dark Machine economic zone. There, he meets a mysterious girl named Rudra. Dragged into becoming a Dark Machine player by Rudra, Kairi’s talent gradually blossoms over the course of many intense battles. (Source: Fuji Creative) Note: Part of the \"DARK MACHINE\" Web3 cross-media project where the story of the Game and its anime adaptation intertwine.",
-      "year": 2026,
-      "startDate": "2026-10-14",
-      "format": "TV",
-      "episodes": 11,
-      "averageScore": 51,
-      "status": "RELEASING",
-      "genres": [
-        "Mecha",
-        "Sci-Fi"
-      ],
-      "siteUrl": "https://anilist.co/anime/179876",
-      "streaming": [],
-      "trailer": {
-        "site": "youtube",
-        "id": "Tvvs_SlUYgA"
-      },
-      "next": {
-        "at": 1793119500,
-        "episode": 3
-      },
-      "airingAt": 1792514700,
-      "episode": 2,
-      "scheduleId": 419635,
-      "description_es": "Siguiendo la voluntad de su abuelo de “buscar el Senki”, el protagonista Kairi visita Golden Valley, una zona económica especial de la máquina oscura. Allí, conoce a una chica misteriosa llamada Rudra. Se convirtió en un jugador de la máquina oscura por Rudra, el talento de Kairi florece gradualmente en el curso de muchas batallas intensas. (Fuente: Fuji Creative) Nota: Parte del proyecto \"DARK MACHINE\" Web3 cross-media donde se entrelazan la historia del juego y su adaptación de anime."
-    },
     {
       "id": "mal-63151",
       "mal_id": 63151,
@@ -726,7 +612,7 @@
       "format": "MOVIE",
       "episodes": 1,
       "averageScore": 0,
-      "status": "RELEASING",
+      "status": "FINISHED",
       "genres": [
         "Adventure",
         "Drama",
@@ -942,8 +828,8 @@
       "streaming": [],
       "trailer": null,
       "next": {
-        "at": 1792716600,
-        "episode": 4
+        "at": 1793321400,
+        "episode": 5
       },
       "airingAt": 1792716600,
       "episode": 4,
@@ -981,10 +867,7 @@
         "site": "youtube",
         "id": "4HJNiZV0HJ4"
       },
-      "next": {
-        "at": 1792724400,
-        "episode": 12
-      },
+      "next": null,
       "airingAt": 1792724400,
       "episode": 12,
       "scheduleId": 419020,
@@ -1228,7 +1111,7 @@
       "ani_id": 186742,
       "title": "A Certain Dark Item",
       "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx186742-v7yfbefc8fuO.png",
-      "banner": "",
+      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/186742-nZP1PcuUpcGg.jpg",
       "description": "This is a story of four girls living in the \"Dark Side\" of Academy City. In Academy City where \"ESP\" has been recognized as a general science. Behind the peace, there is a Dark Side organization that undertakes missions that cannot be made public. \"ITEM\" is an elite unit consisting of four girls. Takitsubo Rikou is able to read and track the AIM fields emitted by those with abilities. Frenda Seivelun, who excels in combat using explosives and traps. Kinuhata Saiai, who can manipulate nitrogen at will and plays a defensive role. And one of the 7 Espers that Academy City is proud of: Mugino Shizuri. They live freely in the darkness of the Academy City, and quietly set their sights on their target...! This is a story of encounter, friendship, and darkness that eventually leads to a terrible incident! (Source: Kadokawa, translated)",
       "year": 2026,
       "startDate": "2026-10-09",
@@ -5054,8 +4937,8 @@
       "streaming": [],
       "trailer": null,
       "next": {
-        "at": 1792716600,
-        "episode": 4
+        "at": 1793321400,
+        "episode": 5
       },
       "airingAt": 1793321400,
       "episode": 5,
@@ -5298,7 +5181,7 @@
       "ani_id": 186742,
       "title": "A Certain Dark Item",
       "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx186742-v7yfbefc8fuO.png",
-      "banner": "",
+      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/186742-nZP1PcuUpcGg.jpg",
       "description": "This is a story of four girls living in the \"Dark Side\" of Academy City. In Academy City where \"ESP\" has been recognized as a general science. Behind the peace, there is a Dark Side organization that undertakes missions that cannot be made public. \"ITEM\" is an elite unit consisting of four girls. Takitsubo Rikou is able to read and track the AIM fields emitted by those with abilities. Frenda Seivelun, who excels in combat using explosives and traps. Kinuhata Saiai, who can manipulate nitrogen at will and plays a defensive role. And one of the 7 Espers that Academy City is proud of: Mugino Shizuri. They live freely in the darkness of the Academy City, and quietly set their sights on their target...! This is a story of encounter, friendship, and darkness that eventually leads to a terrible incident! (Source: Kadokawa, translated)",
       "year": 2026,
       "startDate": "2026-10-09",
@@ -6491,6 +6374,388 @@
       "episode": 5,
       "scheduleId": 419566,
       "description_es": "Si hay una cosa que nunca puedes tener suficiente en un mundo de espadas y brujería estilo RPG, ¡es puntos mágicos! Si estás alimentando hechizos, técnicas o mostrando una increíble habilidad, tienes que gastar esos puntos para hacer daño real. ¿Y si te escapas? La Cuaresma es parte de la fiesta de llegada conocida como los \"Skypiercers\", y gracias a su regalo único, puede prestar enormes cantidades de magia a otros. ¿Sin MP? ¡No hay problema con la Cuaresma! Excepto ahora que sus compañeros se han convertido en héroes formidables (gracias a su habilidad), su utilidad es cuestionada. Escapada del grupo, Lent es"
+    },
+    {
+      "id": "mal-63125",
+      "mal_id": 63125,
+      "ani_id": 204269,
+      "title": "Little Shark's Day Out Season 2",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx204269-fTR4iyVjTHiC.png",
+      "banner": "",
+      "description": "Second season of Odekake Kozame .",
+      "year": 2026,
+      "startDate": "2026-04-12",
+      "format": "TV_SHORT",
+      "episodes": 72,
+      "averageScore": 0,
+      "status": "RELEASING",
+      "genres": [
+        "Slice of Life"
+      ],
+      "siteUrl": "https://anilist.co/anime/204269",
+      "streaming": [],
+      "trailer": {
+        "site": "youtube",
+        "id": "Laf46YXDt68"
+      },
+      "next": {
+        "at": 1792879200,
+        "episode": 29
+      },
+      "airingAt": 1793484000,
+      "episode": 30,
+      "scheduleId": 410607,
+      "description_es": "Segunda temporada de Odekake Kozame."
+    },
+    {
+      "id": "mal-64430",
+      "mal_id": 64430,
+      "ani_id": 213298,
+      "title": "Yuruyuru Zukan",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx213298-ymB1Sw0yDZ0Y.jpg",
+      "banner": "",
+      "description": "Gakken's hugely popular illustrated encyclopedia series, which everyone can enjoy with its laid-back four-panel comics, is finally being adapted into a TV anime! Discover surprising aspects and fun facts about living creatures—full of secrets that will make you say, \"Wow!\" Enjoy this new kind of anime that makes even scary things fun and easy to watch, with its cute art style. (Source: Official Site, translated)",
+      "year": 2026,
+      "startDate": "2026-10-04",
+      "format": "TV_SHORT",
+      "episodes": 0,
+      "averageScore": 0,
+      "status": "RELEASING",
+      "genres": [],
+      "siteUrl": "https://anilist.co/anime/213298",
+      "streaming": [],
+      "trailer": {
+        "site": "youtube",
+        "id": "cH7enqqATwE"
+      },
+      "next": {
+        "at": 1792879200,
+        "episode": 4
+      },
+      "airingAt": 1793484000,
+      "episode": 5,
+      "scheduleId": 422009,
+      "description_es": "La popular y popular serie de enciclopedias ilustradas de Gakken, que todos pueden disfrutar con sus cómics de cuatro paneles, finalmente se está adaptando a un anime de televisión! Descubre aspectos sorprendentes y hechos divertidos sobre los seres vivientes, llenos de secretos que te harán decir: \"¡Wow!\" Disfruta de este nuevo tipo de anime que hace que las cosas aterradoras sean divertidas y fáciles de ver, con su estilo de arte lindo. (Fuente: Sitio oficial, traducido)"
+    },
+    {
+      "id": "mal-64028",
+      "mal_id": 64028,
+      "ani_id": 218011,
+      "title": "Raccoon Dog & Fox",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx218011-dPgr1MlfSuhH.jpg",
+      "banner": "",
+      "description": "The story centers on the daily lives of a raccoon dog who is not quite with it and a mischievous fox who likes to tease the raccoon dog. The two are close friends who live together on a mountain. Their other friends include a wolf, a bear, a rabbit, and birds. (Source: Anime News Network)",
+      "year": 2026,
+      "startDate": "2026-10-04",
+      "format": "TV_SHORT",
+      "episodes": 0,
+      "averageScore": 0,
+      "status": "RELEASING",
+      "genres": [
+        "Comedy"
+      ],
+      "siteUrl": "https://anilist.co/anime/218011",
+      "streaming": [],
+      "trailer": {
+        "site": "youtube",
+        "id": "DO_UchIVN9Y"
+      },
+      "next": {
+        "at": 1792879200,
+        "episode": 4
+      },
+      "airingAt": 1793484000,
+      "episode": 5,
+      "scheduleId": 422358,
+      "description_es": "La historia se centra en la vida diaria de un perro de mapache que no está bien con él y un zorro malicioso que le gusta burlar al perro de mapache. Los dos son amigos cercanos que viven juntos en una montaña. Sus otros amigos incluyen un lobo, un oso, un conejo y aves. (Fuente: Anime News Network)"
+    },
+    {
+      "id": "mal-60534",
+      "mal_id": 60534,
+      "ani_id": 185646,
+      "title": "Koupen-chan",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx185646-2eGmsnaSHiLC.jpg",
+      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/185646-69FyAu3rfhEC.jpg",
+      "description": "The story of the series follows the everyday adventures of Koupen-chan and his friends as they enjoy the little things in life. (Source: Crunchyroll News, edited)",
+      "year": 2025,
+      "startDate": "2025-04-06",
+      "format": "TV_SHORT",
+      "episodes": 0,
+      "averageScore": 69,
+      "status": "RELEASING",
+      "genres": [
+        "Slice of Life"
+      ],
+      "siteUrl": "https://anilist.co/anime/185646",
+      "streaming": [],
+      "trailer": {
+        "site": "youtube",
+        "id": "L4wurjkd0JM"
+      },
+      "next": {
+        "at": 1792882800,
+        "episode": 82
+      },
+      "airingAt": 1793487600,
+      "episode": 83,
+      "scheduleId": 412319,
+      "description_es": "La historia de la serie sigue las aventuras cotidianas de Koupen-chan y sus amigos mientras disfrutan de las pequeñas cosas en la vida. (Fuente: Crunchyroll News, editado)"
+    },
+    {
+      "id": "mal-63042",
+      "mal_id": 63042,
+      "ani_id": 202957,
+      "title": "Star Detective Precure!",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx202957-fxZGgJTvwXzP.jpg",
+      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/202957-B9U0hNv2Dqap.jpg",
+      "description": "Anna Akechi is a second-year junior high student living in Makoto Mirai Town. On her 14th birthday, she has a chance encounter with a fairy named Pochitan, and a magical pendant caused her to travel back in time from 2027 to 1999! In the Makoto Mirai Town 28 years in the past, Anna meets Mikuru Kobayashi, a girl her age who wants to become a great detective. Meanwhile, people in town are in trouble as their prized possessions are being stolen from under their noses - the cause being a group of Phantom Thieves. To stop them, Anna and Mikuru turn into Precures! Maybe if they solve these mysteries, Anna can find her way back to her own time? (Source: Official Website, translated)",
+      "year": 2026,
+      "startDate": "2026-02-01",
+      "format": "TV",
+      "episodes": 51,
+      "averageScore": 76,
+      "status": "RELEASING",
+      "genres": [
+        "Mahou Shoujo",
+        "Mystery"
+      ],
+      "siteUrl": "https://anilist.co/anime/202957",
+      "streaming": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00369409"
+        }
+      ],
+      "trailer": {
+        "site": "youtube",
+        "id": "qjozo1fh7OI"
+      },
+      "next": {
+        "at": 1792884600,
+        "episode": 39
+      },
+      "airingAt": 1793489400,
+      "episode": 40,
+      "scheduleId": 411680,
+      "description_es": "Anna Akechi es una estudiante de segundo año que vive en la ciudad de Makoto Mirai. En su 14o cumpleaños, tiene un encuentro casual con un hada llamado Pochitan, y un colgante mágico la hizo viajar de nuevo en el tiempo de 2027 a 1999! En la ciudad de Makoto Mirai 28 años en el pasado, Anna se encuentra con Mikuru Kobayashi, una chica de su edad que quiere convertirse en una gran detective. Mientras tanto, la gente en la ciudad está en problemas ya que sus posesiones apreciadas están siendo robadas bajo sus narices - la causa es un grupo de ladrones Fantasma. Para detenerlos, Anna y Mikuru se convierten en Precures! Tal vez si resuelven estos misterios"
+    },
+    {
+      "id": "al-216860",
+      "mal_id": null,
+      "ani_id": 216860,
+      "title": "Punirunes Puni 4",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx216860-ghfSopHbPVNa.png",
+      "banner": "",
+      "description": "Fourth season of Punirunes .",
+      "year": 2026,
+      "startDate": "2026-10-04",
+      "format": "TV_SHORT",
+      "episodes": 0,
+      "averageScore": 0,
+      "status": "RELEASING",
+      "genres": [
+        "Slice of Life"
+      ],
+      "siteUrl": "https://anilist.co/anime/216860",
+      "streaming": [],
+      "trailer": null,
+      "next": {
+        "at": 1792887360,
+        "episode": 4
+      },
+      "airingAt": 1793492160,
+      "episode": 5,
+      "scheduleId": 420094,
+      "description_es": "Cuarta temporada de Punirunes ."
+    },
+    {
+      "id": "mal-63352",
+      "mal_id": 63352,
+      "ani_id": 206523,
+      "title": "Onegai AiPri",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx206523-2IaJCk4R7i63.jpg",
+      "banner": "",
+      "description": "The latest entry in the Pretty Series franchise and a new chapter in the AiPri series. Note: Relations are provisional and will be updated when more info is announced.",
+      "year": 2026,
+      "startDate": "2026-04-05",
+      "format": "TV",
+      "episodes": 0,
+      "averageScore": 55,
+      "status": "RELEASING",
+      "genres": [
+        "Music"
+      ],
+      "siteUrl": "https://anilist.co/anime/206523",
+      "streaming": [],
+      "trailer": {
+        "site": "youtube",
+        "id": "j5MgjyhhUBc"
+      },
+      "next": {
+        "at": 1792888200,
+        "episode": 30
+      },
+      "airingAt": 1793493000,
+      "episode": 31,
+      "scheduleId": 410159,
+      "description_es": "La última entrada en la franquicia Pretty Series y un nuevo capítulo en la serie AiPri. Nota: Las relaciones son provisionales y se actualizarán cuando se anuncie más información."
+    },
+    {
+      "id": "mal-64211",
+      "mal_id": 64211,
+      "ani_id": 217787,
+      "title": "Pop Pap Polters",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b217787-NHLlgGiqy59P.jpg",
+      "banner": "",
+      "description": "",
+      "year": 2026,
+      "startDate": "2026-10-04",
+      "format": "TV_SHORT",
+      "episodes": 0,
+      "averageScore": 0,
+      "status": "RELEASING",
+      "genres": [
+        "Slice of Life"
+      ],
+      "siteUrl": "https://anilist.co/anime/217787",
+      "streaming": [],
+      "trailer": null,
+      "next": {
+        "at": 1792890000,
+        "episode": 4
+      },
+      "airingAt": 1793494800,
+      "episode": 5,
+      "scheduleId": 422178
+    },
+    {
+      "id": "al-155723",
+      "mal_id": null,
+      "ani_id": 155723,
+      "title": "Wushen Zhuzai: Da Wei Pian",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx155723-hM261Imc5yfd.png",
+      "banner": "",
+      "description": "The second season of Wushen Zhuzai .",
+      "year": 2022,
+      "startDate": "2022-10-16",
+      "format": "ONA",
+      "episodes": 448,
+      "averageScore": 66,
+      "status": "RELEASING",
+      "genres": [
+        "Action",
+        "Fantasy"
+      ],
+      "siteUrl": "https://anilist.co/anime/155723",
+      "streaming": [],
+      "trailer": null,
+      "next": {
+        "at": 1792893600,
+        "episode": 427
+      },
+      "airingAt": 1793498400,
+      "episode": 429,
+      "scheduleId": 408374,
+      "description_es": "La segunda temporada de Wushen Zhuzai."
+    },
+    {
+      "id": "mal-51039",
+      "mal_id": 51039,
+      "ani_id": 196613,
+      "title": "Dou Po Cangqiong: Nian Fan 4",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx196613-20kz65bVsHl7.jpg",
+      "banner": "",
+      "description": "The eighth season of Dou Po Cangqiong. Note: Episodes 158 to 219.",
+      "year": 2025,
+      "startDate": "2025-08-03",
+      "format": "ONA",
+      "episodes": 62,
+      "averageScore": 75,
+      "status": "RELEASING",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Fantasy"
+      ],
+      "siteUrl": "https://anilist.co/anime/196613",
+      "streaming": [],
+      "trailer": null,
+      "next": {
+        "at": 1792893600,
+        "episode": 58
+      },
+      "airingAt": 1793498400,
+      "episode": 59,
+      "scheduleId": 417556,
+      "description_es": "La octava temporada de Dou Po Cangqiong. Nota: Episodios 158 a 219."
+    },
+    {
+      "id": "mal-65209",
+      "mal_id": 65209,
+      "ani_id": 218493,
+      "title": "Wan Sheng Jie: Gubao de Mimi",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx218493-Yn5zm71TmFol.jpg",
+      "banner": "",
+      "description": "Living together means more than rent, chores, haggling, and bickering... now there are even challenges of life and death?! A mysterious old castle is calling. Can everyone from the 1031 block keep that neighborly spirit alive and continue getting along through it all?",
+      "year": 2026,
+      "startDate": "2026-10-31",
+      "format": "SPECIAL",
+      "episodes": 3,
+      "averageScore": 0,
+      "status": "NOT_YET_RELEASED",
+      "genres": [
+        "Comedy",
+        "Fantasy",
+        "Slice of Life"
+      ],
+      "siteUrl": "https://anilist.co/anime/218493",
+      "streaming": [],
+      "trailer": {
+        "site": "youtube",
+        "id": "JN50_XiZv1Y"
+      },
+      "next": {
+        "at": 1793412000,
+        "episode": 1
+      },
+      "airingAt": 1793498400,
+      "episode": 2,
+      "scheduleId": 422682,
+      "description_es": "Vivir juntos significa más que el alquiler, las tareas, el atraco y el atraco... ahora hay incluso desafíos de la vida y la muerte?! Un misterioso castillo viejo está llamando. ¿Pueden todos los de la cuadra 1031 mantener vivo a ese espíritu vecino y seguir llevándose a través de todo?"
+    },
+    {
+      "id": "mal-65209",
+      "mal_id": 65209,
+      "ani_id": 218493,
+      "title": "Wan Sheng Jie: Gubao de Mimi",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx218493-Yn5zm71TmFol.jpg",
+      "banner": "",
+      "description": "Living together means more than rent, chores, haggling, and bickering... now there are even challenges of life and death?! A mysterious old castle is calling. Can everyone from the 1031 block keep that neighborly spirit alive and continue getting along through it all?",
+      "year": 2026,
+      "startDate": "2026-10-31",
+      "format": "SPECIAL",
+      "episodes": 3,
+      "averageScore": 0,
+      "status": "NOT_YET_RELEASED",
+      "genres": [
+        "Comedy",
+        "Fantasy",
+        "Slice of Life"
+      ],
+      "siteUrl": "https://anilist.co/anime/218493",
+      "streaming": [],
+      "trailer": {
+        "site": "youtube",
+        "id": "JN50_XiZv1Y"
+      },
+      "next": {
+        "at": 1793412000,
+        "episode": 1
+      },
+      "airingAt": 1793498400,
+      "episode": 3,
+      "scheduleId": 422683,
+      "description_es": "Vivir juntos significa más que el alquiler, las tareas, el atraco y el atraco... ahora hay incluso desafíos de la vida y la muerte?! Un misterioso castillo viejo está llamando. ¿Pueden todos los de la cuadra 1031 mantener vivo a ese espíritu vecino y seguir llevándose a través de todo?"
     }
   ],
   "seasonal": {
@@ -7074,8 +7339,8 @@
         "streaming": [],
         "trailer": null,
         "next": {
-          "at": 1792716600,
-          "episode": 4
+          "at": 1793321400,
+          "episode": 5
         },
         "description_es": "Mazenchu está en una escuela donde todo tipo de comida puede vivir su juventud y formar amistades, rivalidades y romances amargos. (Fuente: Anime News Network)"
       },
@@ -8787,7 +9052,7 @@
         "ani_id": 186742,
         "title": "A Certain Dark Item",
         "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx186742-v7yfbefc8fuO.png",
-        "banner": "",
+        "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/186742-nZP1PcuUpcGg.jpg",
         "description": "This is a story of four girls living in the \"Dark Side\" of Academy City. In Academy City where \"ESP\" has been recognized as a general science. Behind the peace, there is a Dark Side organization that undertakes missions that cannot be made public. \"ITEM\" is an elite unit consisting of four girls. Takitsubo Rikou is able to read and track the AIM fields emitted by those with abilities. Frenda Seivelun, who excels in combat using explosives and traps. Kinuhata Saiai, who can manipulate nitrogen at will and plays a defensive role. And one of the 7 Espers that Academy City is proud of: Mugino Shizuri. They live freely in the darkness of the Academy City, and quietly set their sights on their target...! This is a story of encounter, friendship, and darkness that eventually leads to a terrible incident! (Source: Kadokawa, translated)",
         "year": 2026,
         "startDate": "2026-10-09",
