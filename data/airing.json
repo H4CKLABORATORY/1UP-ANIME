@@ -1,105 +1,9 @@
 {
-  "updated": "2026-10-23T03:34:52.508Z",
+  "updated": "2026-10-23T09:35:42.264Z",
   "source": "AniList public GraphQL metadata",
-  "windowStart": 1792528478,
-  "windowEnd": 1793504078,
+  "windowStart": 1792550128,
+  "windowEnd": 1793525728,
   "airing": [
-    {
-      "id": "mal-63151",
-      "mal_id": 63151,
-      "ani_id": 204656,
-      "title": "mofusand",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b204656-KXjxVB4bBhl8.jpg",
-      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/204656-ECYkRJKBxTLj.jpg",
-      "description": "Shark Meow is an orange tabby kitty who wears a shark suit. A little clumsy and always taking things at their own cozy pace, but every day with their best kitty friends — and the rescued baby kitty, Little Meow — is filled with unexpected little mishaps and sweet adventures. A sunny warm spot in the park, the sparkle of the sea, steam rising from freshly roasted sweet potatoes, the fluttery feeling of the first snowfall… These small everyday moments fill their world with warmth and delight. You can’t help but smile and think, “So true!” A soft and snuggly kitty anime that brings joy to everyday moments. (Source: QTORY Channel)",
-      "year": 2026,
-      "startDate": "2025-12-22",
-      "format": "ONA",
-      "episodes": 0,
-      "averageScore": 61,
-      "status": "RELEASING",
-      "genres": [
-        "Slice of Life"
-      ],
-      "siteUrl": "https://anilist.co/anime/204656",
-      "streaming": [],
-      "trailer": {
-        "site": "youtube",
-        "id": "Svh_xgdMWlU"
-      },
-      "next": {
-        "at": 1793142000,
-        "episode": 43
-      },
-      "airingAt": 1792537200,
-      "episode": 42,
-      "scheduleId": 416121,
-      "description_es": "Shark Meow es un gatito de tabby naranja que lleva un traje de tiburón. Un poco torpe y siempre tomando cosas a su propio ritmo acogedor, pero todos los días con sus mejores amigos gatitos — y el gatito salvada, Little Meow— está lleno de pequeños revuelos inesperados y aventuras dulces. Un lugar cálido soleado en el parque, la chispa del mar, el vapor subiendo de las batatas recién asadas, la sensación de la primera nevada... Estos pequeños momentos cotidianos llenan su mundo con calidez y deleite. No puedes evitar sonreír y pensar, “¡Es verdad!” Un pequeño y suave anime que trae alegría a cadada"
-    },
-    {
-      "id": "mal-62248",
-      "mal_id": 62248,
-      "ani_id": 199409,
-      "title": "Yi Nian Yongheng 4",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx199409-tZnVTAQ9P6fY.png",
-      "banner": "",
-      "description": "The fourth and final season of Yi Nian Yongheng .",
-      "year": 2026,
-      "startDate": "2026-07-22",
-      "format": "ONA",
-      "episodes": 46,
-      "averageScore": 64,
-      "status": "RELEASING",
-      "genres": [
-        "Action",
-        "Comedy",
-        "Fantasy"
-      ],
-      "siteUrl": "https://anilist.co/anime/199409",
-      "streaming": [],
-      "trailer": {
-        "site": "youtube",
-        "id": "sKXK-6uZHjI"
-      },
-      "next": {
-        "at": 1793152800,
-        "episode": 17
-      },
-      "airingAt": 1792548000,
-      "episode": 16,
-      "scheduleId": 417915,
-      "description_es": "La cuarta y última temporada de Yi Nian Yongheng."
-    },
-    {
-      "id": "mal-62218",
-      "mal_id": 62218,
-      "ani_id": 214974,
-      "title": "Da Xia Shou Mu Ren",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx214974-fM9q0ki7fCVl.jpg",
-      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/214974-jMZ2CpV2lKip.jpg",
-      "description": "Ten years ago, after three consecutive days of blood moon, ghosts, gods, heterochromatic eyes, and strange tales arrived one after another. Mystery and enigma descended upon the human world. Terror and despair roamed the earth. As humans, should we kneel in submission, weep bitterly, or draw our swords? This is a new era, and this era—belongs to the extraordinary! Pushing open the door to the extraordinary, Su Bai encountered a new world… (Source: Tencent, translated)",
-      "year": 2026,
-      "startDate": "2026-09-30",
-      "format": "ONA",
-      "episodes": 59,
-      "averageScore": 0,
-      "status": "RELEASING",
-      "genres": [
-        "Action",
-        "Fantasy"
-      ],
-      "siteUrl": "https://anilist.co/anime/214974",
-      "streaming": [],
-      "trailer": null,
-      "next": {
-        "at": 1793152800,
-        "episode": 7
-      },
-      "airingAt": 1792548000,
-      "episode": 6,
-      "scheduleId": 421466,
-      "description_es": "Hace diez años, después de tres días consecutivos de luna de sangre, fantasmas, dioses, ojos heterocromáticos y cuentos extraños llegaron uno tras otro. El misterio y el enigma descendieron sobre el mundo humano. El terror y la desesperación vagaron por la tierra. Como humanos, ¿debemos arrodillarnos en sumisión, llorar amargamente, o dibujar nuestras espadas? Esta es una nueva era, y esta era — pertenece a lo extraordinario! Al abrir la puerta a lo extraordinario, Su Bai encontró un nuevo mundo... (Fuente: Tencent, traducido)"
-    },
     {
       "id": "mal-52480",
       "mal_id": 52480,
@@ -399,7 +303,7 @@
       "startDate": "2026-10-08",
       "format": "TV",
       "episodes": 0,
-      "averageScore": 50,
+      "averageScore": 49,
       "status": "RELEASING",
       "genres": [
         "Action",
@@ -506,7 +410,7 @@
       "startDate": "2026-10-01",
       "format": "TV",
       "episodes": 12,
-      "averageScore": 68,
+      "averageScore": 67,
       "status": "RELEASING",
       "genres": [
         "Drama",
@@ -530,7 +434,7 @@
       "airingAt": 1792672200,
       "episode": 4,
       "scheduleId": 419083,
-      "description_es": "La estudiante universitaria Kurumi Fukuga finalmente ha cumplido su deseo de iniciar el comercio de divisas (FX), motivado por recuperar los 20 millones de yenes que su madre falleció en el comercio. \"Lo recuperaré fácilmente\", pensó, pero el mundo en el que entra puede convertirse en el cielo o el infierno en un instante. Las pérdidas no realizadas, las fluctuaciones descompuestas, imparables... ¡pero todavía quiere comprar, vender y ganar dinero! Con otros adictos FX Mochiko, Mebuki y Yasuko a lo largo de la excursión, el mercado se calienta! Joy, desesperación, alegría, desesperación — este es un juego de dinero entrañable, pero ligeramente arriesgado. Can Kurumi y ella"
+      "description_es": "La estudiante universitaria Kurumi Fukuga finalmente ha cumplido su deseo de iniciar el comercio de divisas (FX), motivado por recuperar los 20 millones de yenes que su madre falleció en el comercio. \"Lo recuperaré fácilmente,\" pensó, pero el mundo en el que entra puede convertirse en el cielo o el infierno en un instante. Pérdidas no realizadas, fluctuaciones descompuestas, imparables... ¡pero todavía quiere comprar, vender y hacer dinero! Con los adictos FX Mochiko, Mebuki an"
     },
     {
       "id": "mal-61227",
@@ -780,7 +684,7 @@
       "startDate": "2026-10-09",
       "format": "TV",
       "episodes": 0,
-      "averageScore": 67,
+      "averageScore": 66,
       "status": "RELEASING",
       "genres": [
         "Action",
@@ -871,7 +775,7 @@
       "airingAt": 1792724400,
       "episode": 12,
       "scheduleId": 419020,
-      "description_es": "Después de que el caso Li Tianchen llegue a su fin, la paz parece volver a Time Photo Studio, hasta que la desaparición de Xia Fei lleve a todos a una red de destino. Con el regreso de Vein y las nuevas habilidades de Qiao Ling, Cheng Xiaoshi y Lu Guang comienzan a descubrir la verdad detrás del misterioso fuego bahati. A medida que la investigación se profundiza, surgen conexiones ocultas entre el caso y los padres de Cheng Xiaoshi. Mientras tanto, Liu Xiao, miembro de una organización misteriosa, pone en marcha sus propios planes, mientras que la intervención del Inspector Jae introduce nuevas incertidumbres. Como secretos enterrados en el pasado"
+      "description_es": "Después de que el caso Li Tianchen llegue a su fin, la paz parece volver a Time Photo Studio, hasta que la desaparición de Xia Fei lleve a todos a una red de destino. Con el regreso de Vein y las nuevas habilidades de Qiao Ling, Cheng Xiaoshi y Lu Guang comienzan a descubrir la verdad detrás del misterioso fuego bahati. A medida que la investigación se profundiza, surgen conexiones ocultas entre el caso y los padres de Cheng Xiaoshi. Mientras tanto, Liu Xiao, miembro de un mio"
     },
     {
       "id": "mal-61469",
@@ -885,7 +789,7 @@
       "startDate": "2026-09-25",
       "format": "ONA",
       "episodes": 11,
-      "averageScore": 86,
+      "averageScore": 85,
       "status": "RELEASING",
       "genres": [
         "Action",
@@ -901,8 +805,8 @@
         "id": "jXtG_lcR9P4"
       },
       "next": {
-        "at": 1792742400,
-        "episode": 5
+        "at": 1793347200,
+        "episode": 6
       },
       "airingAt": 1792742400,
       "episode": 5,
@@ -1084,7 +988,7 @@
       "startDate": "2026-10-02",
       "format": "TV",
       "episodes": 12,
-      "averageScore": 51,
+      "averageScore": 52,
       "status": "RELEASING",
       "genres": [
         "Adventure",
@@ -1344,7 +1248,7 @@
       "startDate": "2026-09-05",
       "format": "TV_SHORT",
       "episodes": 0,
-      "averageScore": 52,
+      "averageScore": 53,
       "status": "RELEASING",
       "genres": [
         "Comedy",
@@ -3068,7 +2972,7 @@
       "airingAt": 1792937760,
       "episode": 3,
       "scheduleId": 419191,
-      "description_es": "Han pasado varios años desde la feroz batalla contra Majin Buu, y la Tierra finalmente ha recuperado un breve momento de paz. Al mismo tiempo, Beerus, el Dios de la Destrucción, despierta de su sueño largo y profundo. Incluso Kai y el Supremo Kai, consciente del abrumador poder de Beerus para destruir planetas enteros, ver su despertar con gran miedo... Mientras tanto, Beerus escucha rumores de un Saiyan que venció a Frieza y de repente aparece ante Goku. Atacada por Beerus, el ser más fuerte del universo, la Tierra está en grave peligro. Así comienza una batalla cósmica que rompe la tierra entre el Dios de la Destrucción y Go"
+      "description_es": "Han pasado varios años desde la feroz batalla contra Majin Buu, y la Tierra finalmente ha recuperado un breve momento de paz. Al mismo tiempo, Beerus, el Dios de la Destrucción, despierta de su sueño largo y profundo. Incluso Kai y el Supremo Kai, consciente del abrumador poder de Beerus para destruir planetas enteros, ver su despertar con gran miedo... Mientras tanto, Beerus escucha rumores de un Saiyan que venció a Frieza y de repente aparece ante Goku. Meta de cerveza"
     },
     {
       "id": "mal-60601",
@@ -3106,7 +3010,7 @@
       "airingAt": 1792938600,
       "episode": 5,
       "scheduleId": 419229,
-      "description_es": "La tercera temporada de Tensei Kizoku, Kantei Skill de Nariagaru. Nota: El 4 de septiembre de 2026, se anunció que GeyeG Pictures tomaría la producción del estudio MOTHER manteniendo el mismo personal."
+      "description_es": "La tercera temporada de Tensei Kizoku, Kantei Skill de Nariagaru . Nota: El 4 de septiembre de 2026, se anunció que GeyeG Pictures tomaría la producción del estudio MOTHER manteniendo el mismo personal."
     },
     {
       "id": "mal-63292",
@@ -3158,7 +3062,7 @@
       "startDate": "2026-10-04",
       "format": "TV",
       "episodes": 12,
-      "averageScore": 67,
+      "averageScore": 66,
       "status": "RELEASING",
       "genres": [
         "Comedy",
@@ -3197,7 +3101,7 @@
       "startDate": "2026-09-27",
       "format": "ONA",
       "episodes": 12,
-      "averageScore": 76,
+      "averageScore": 75,
       "status": "RELEASING",
       "genres": [
         "Action",
@@ -3568,7 +3472,7 @@
       "airingAt": 1793017800,
       "episode": 4,
       "scheduleId": 420068,
-      "description_es": "Hazme una poción de amor. Y con esa sola frase, la Buena Bruja del amor secreto del lago sobre el desgarrador Sir Harij termina en la ruptura del corazón. Sin embargo, cuando promete ayudarla a reunir los ingredientes, Rose está emocionada por la oportunidad de mirar a un hombre con el que normalmente nunca podría interactuar. Ella aprende a jactar su corazón por sus conversaciones usuales inclinadas... pero ¿qué va a hacer cuando aparece inexplicablemente en su puerta con bre"
+      "description_es": "Hazme una poción de amor. Y con esa sola frase, la Buena Bruja del amor secreto del lago sobre el desgarrador Sir Harij termina en un desgarro. Aún así, cuando promete ayudarla a reunir los ingredientes, Rose está emocionada por la oportunidad de mirar a un hombre con el que normalmente nunca podría interactuar. Ella aprende a jactar su corazón por sus conversaciones habituales inclinadas... pero ¿qué va a hacer cuando aparece inexplicablemente en su puerta con pan y un frasco de mantequilla de manzana? (Fuente: Yen Press)"
     },
     {
       "id": "mal-63712",
@@ -4052,7 +3956,7 @@
       "startDate": "2026-07-08",
       "format": "TV",
       "episodes": 24,
-      "averageScore": 62,
+      "averageScore": 61,
       "status": "RELEASING",
       "genres": [
         "Action",
@@ -4542,7 +4446,7 @@
       "startDate": "2026-10-08",
       "format": "TV",
       "episodes": 0,
-      "averageScore": 50,
+      "averageScore": 49,
       "status": "RELEASING",
       "genres": [
         "Action",
@@ -4649,7 +4553,7 @@
       "startDate": "2026-10-01",
       "format": "TV",
       "episodes": 12,
-      "averageScore": 68,
+      "averageScore": 67,
       "status": "RELEASING",
       "genres": [
         "Drama",
@@ -4673,7 +4577,7 @@
       "airingAt": 1793277000,
       "episode": 5,
       "scheduleId": 419084,
-      "description_es": "La estudiante universitaria Kurumi Fukuga finalmente ha cumplido su deseo de iniciar el comercio de divisas (FX), motivado por recuperar los 20 millones de yenes que su madre falleció en el comercio. \"Lo recuperaré fácilmente\", pensó, pero el mundo en el que entra puede convertirse en el cielo o el infierno en un instante. Las pérdidas no realizadas, las fluctuaciones descompuestas, imparables... ¡pero todavía quiere comprar, vender y ganar dinero! Con otros adictos FX Mochiko, Mebuki y Yasuko a lo largo de la excursión, el mercado se calienta! Joy, desesperación, alegría, desesperación — este es un juego de dinero entrañable, pero ligeramente arriesgado. Can Kurumi y ella"
+      "description_es": "La estudiante universitaria Kurumi Fukuga finalmente ha cumplido su deseo de iniciar el comercio de divisas (FX), motivado por recuperar los 20 millones de yenes que su madre falleció en el comercio. \"Lo recuperaré fácilmente,\" pensó, pero el mundo en el que entra puede convertirse en el cielo o el infierno en un instante. Pérdidas no realizadas, fluctuaciones descompuestas, imparables... ¡pero todavía quiere comprar, vender y hacer dinero! Con los adictos FX Mochiko, Mebuki an"
     },
     {
       "id": "mal-61227",
@@ -4889,7 +4793,7 @@
       "startDate": "2026-10-09",
       "format": "TV",
       "episodes": 0,
-      "averageScore": 67,
+      "averageScore": 66,
       "status": "RELEASING",
       "genres": [
         "Action",
@@ -4989,7 +4893,7 @@
       "startDate": "2026-09-25",
       "format": "ONA",
       "episodes": 11,
-      "averageScore": 86,
+      "averageScore": 85,
       "status": "RELEASING",
       "genres": [
         "Action",
@@ -5005,8 +4909,8 @@
         "id": "jXtG_lcR9P4"
       },
       "next": {
-        "at": 1792742400,
-        "episode": 5
+        "at": 1793347200,
+        "episode": 6
       },
       "airingAt": 1793347200,
       "episode": 6,
@@ -5154,7 +5058,7 @@
       "startDate": "2026-10-02",
       "format": "TV",
       "episodes": 12,
-      "averageScore": 51,
+      "averageScore": 52,
       "status": "RELEASING",
       "genres": [
         "Adventure",
@@ -5414,7 +5318,7 @@
       "startDate": "2026-09-05",
       "format": "TV_SHORT",
       "episodes": 0,
-      "averageScore": 52,
+      "averageScore": 53,
       "status": "RELEASING",
       "genres": [
         "Comedy",
@@ -6756,6 +6660,204 @@
       "episode": 3,
       "scheduleId": 422683,
       "description_es": "Vivir juntos significa más que el alquiler, las tareas, el atraco y el atraco... ahora hay incluso desafíos de la vida y la muerte?! Un misterioso castillo viejo está llamando. ¿Pueden todos los de la cuadra 1031 mantener vivo a ese espíritu vecino y seguir llevándose a través de todo?"
+    },
+    {
+      "id": "mal-61323",
+      "mal_id": 61323,
+      "ani_id": 189123,
+      "title": "Blue Box Season 2",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx189123-0secXELIhkIW.jpg",
+      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/189123-s2oirY2r1Svy.jpg",
+      "description": "The second season of Ao no Hako .",
+      "year": 2026,
+      "startDate": "2026-10-04",
+      "format": "TV",
+      "episodes": 12,
+      "averageScore": 81,
+      "status": "RELEASING",
+      "genres": [
+        "Romance",
+        "Slice of Life",
+        "Sports"
+      ],
+      "siteUrl": "https://anilist.co/anime/189123",
+      "streaming": [],
+      "trailer": {
+        "site": "youtube",
+        "id": "hJ6Y8PAOUk8"
+      },
+      "next": {
+        "at": 1792913400,
+        "episode": 4
+      },
+      "airingAt": 1793518200,
+      "episode": 5,
+      "scheduleId": 412160,
+      "description_es": "La segunda temporada de Ao no Hako."
+    },
+    {
+      "id": "mal-61603",
+      "mal_id": 61603,
+      "ani_id": 191788,
+      "title": "Aoashi Season 2",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx191788-XC6F24LdX6a4.jpg",
+      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/191788-tyhsHpXeF26X.jpg",
+      "description": "Aoi Ashito’s game has now earned him a spot on the A team, but he is quickly overwhelmed by his harsh new reality. Surrounded by elite players like Kuribayashi and Akutsu, practices are just as merciless as the matches. In this U-18 Premier League of powerhouse talent, Ashito must evolve or be crushed, if he’s ever to be acknowledged. (Source: Crunchyroll)",
+      "year": 2026,
+      "startDate": "2026-10-04",
+      "format": "TV",
+      "episodes": 24,
+      "averageScore": 79,
+      "status": "RELEASING",
+      "genres": [
+        "Sports"
+      ],
+      "siteUrl": "https://anilist.co/anime/191788",
+      "streaming": [],
+      "trailer": {
+        "site": "youtube",
+        "id": "phKPnPXm74c"
+      },
+      "next": {
+        "at": 1792915200,
+        "episode": 4
+      },
+      "airingAt": 1793520000,
+      "episode": 5,
+      "scheduleId": 421985,
+      "description_es": "El juego de Aoi Ashito ahora le ha ganado un lugar en el equipo A, pero rápidamente está abrumado por su dura nueva realidad. Rodeado de jugadores de élite como Kuribayashi y Akutsu, las prácticas son tan misericordiosos como los partidos. En esta U-18 Premier League de talento de la central eléctrica, Ashito debe evolucionar o ser aplastado, si alguna vez es reconocido. (Fuente: Crunchyroll)"
+    },
+    {
+      "id": "mal-64503",
+      "mal_id": 64503,
+      "ani_id": 213657,
+      "title": "Mission: Yozakura Family Season 2 Part 2",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx213657-ORNXVEBCjXaz.jpg",
+      "banner": "",
+      "description": "The second cour of the second season of Yozakura-san Chi no Daisakusen .",
+      "year": 2026,
+      "startDate": "2026-10-11",
+      "format": "TV",
+      "episodes": 0,
+      "averageScore": 71,
+      "status": "RELEASING",
+      "genres": [
+        "Action",
+        "Comedy",
+        "Romance"
+      ],
+      "siteUrl": "https://anilist.co/anime/213657",
+      "streaming": [],
+      "trailer": {
+        "site": "youtube",
+        "id": "059cJjeY19Y"
+      },
+      "next": {
+        "at": 1792915200,
+        "episode": 3
+      },
+      "airingAt": 1793520000,
+      "episode": 4,
+      "scheduleId": 422226,
+      "description_es": "El segundo cour de la segunda temporada de Yozakura-san Chi no Daisakusen."
+    },
+    {
+      "id": "mal-64505",
+      "mal_id": 64505,
+      "ani_id": 213658,
+      "title": "Ace of the Diamond act II -Second Season-",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx213658-D3BPJaqawLxS.png",
+      "banner": "",
+      "description": "The Seido baseball club has been invited to the spring invitational at the hallowed Koshien Stadium. Sawamura will finally stand on the mound! Standing between Seido and the national title are the winners of last year's summer tournament Komadai Fujimaki and their unstoppable ace Masamune Hongo. Can Seido triumph over Komadai? It's the start of another heated battle in youth baseball! (Source: Crunchyroll)",
+      "year": 2026,
+      "startDate": "2026-10-11",
+      "format": "TV",
+      "episodes": 0,
+      "averageScore": 76,
+      "status": "RELEASING",
+      "genres": [
+        "Sports"
+      ],
+      "siteUrl": "https://anilist.co/anime/213658",
+      "streaming": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GYX0MZ58R/ace-of-the-diamond"
+        }
+      ],
+      "trailer": {
+        "site": "youtube",
+        "id": "kLbI4teuPTc"
+      },
+      "next": {
+        "at": 1792917000,
+        "episode": 3
+      },
+      "airingAt": 1793521800,
+      "episode": 4,
+      "scheduleId": 419578,
+      "description_es": "El club de béisbol Seido ha sido invitado a la invitación de primavera en el sagrado estadio Koshien. ¡Sawamura finalmente estará en el montículo! De pie entre Seido y el título nacional son los ganadores del torneo de verano del año pasado Komadai Fujimaki y su imparable as Masamune Hongo. ¿Puede ser Seido triunfar sobre Komadai? ¡Es el comienzo de otra batalla calentada en el béisbol juvenil! (Fuente: Crunchyroll)"
+    },
+    {
+      "id": "mal-44042",
+      "mal_id": 44042,
+      "ani_id": 118123,
+      "title": "Holo no Graffiti",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx118123-xqn5fYsjKXJU.png",
+      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/118123-BvHyzWd850nZ.jpg",
+      "description": "From unraveling the secrets of opening and closing doors to defusing surprise packages more commonly known as bombs, there is never a dull day at the Hololive Production office! Holo no Graffiti follows an eccentric cast of Virtual YouTubers, also known as \"VTubers,\" going about their absurd yet hilarious daily lives, detailing all their cute moments and mishaps. (Source: MAL Rewrite)",
+      "year": 2019,
+      "startDate": "2019-05-05",
+      "format": "ONA",
+      "episodes": 0,
+      "averageScore": 78,
+      "status": "RELEASING",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Comedy"
+      ],
+      "siteUrl": "https://anilist.co/anime/118123",
+      "streaming": [],
+      "trailer": null,
+      "next": {
+        "at": 1792918800,
+        "episode": 389
+      },
+      "airingAt": 1793523600,
+      "episode": 390,
+      "scheduleId": 416931,
+      "description_es": "¡Desvelar los secretos de abrir y cerrar puertas para desactivar paquetes sorpresa más conocidos como bombas, nunca hay un día aburrido en la oficina de producción Hololive! Holo no Graffiti sigue un elenco excéntrico de YouTubers Virtuales, también conocido como \"VTubers\", pasando por sus absurdas pero hilarantes vidas diarias, detallando todos sus momentos y agitaciones. (Fuente: MAL Rewrite)"
+    },
+    {
+      "id": "mal-2406",
+      "mal_id": 2406,
+      "ani_id": 2406,
+      "title": "Sazae-san",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx2406-nP8NIct9Sci3.jpg",
+      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/2406-ROqXxejQ5bH9.jpg",
+      "description": "The main character is a mother named Sazae-san. She lives in a house with her husband, her kid, her siblings and her parents. The show is the ultimate family program and tends to follow traditional themes. Think of this show as the Japanese equivalent to \"The Partridge Family\" and you'll get a good feel for this show's atmosphere. Don't expect to see things like violence, swearing, kung-fu action or magical girls. The plots are more like \"Today, Sazae-san goes to the new mall and gets lost\". Such \"boring\" plotlines and the simplistic art are often a turn-off to non-Japanese audiences, but most Japanese find the show incredibly good. As a result, it continues to be one of the top ratings grabbers on TV and is one of the few anime that is considered \"acceptable\" by adults.",
+      "year": 1969,
+      "startDate": "1969-10-05",
+      "format": "TV",
+      "episodes": 0,
+      "averageScore": 55,
+      "status": "RELEASING",
+      "genres": [
+        "Comedy",
+        "Slice of Life"
+      ],
+      "siteUrl": "https://anilist.co/anime/2406",
+      "streaming": [],
+      "trailer": null,
+      "next": {
+        "at": 1792920600,
+        "episode": 2855
+      },
+      "airingAt": 1793525400,
+      "episode": 2856,
+      "scheduleId": 394996,
+      "description_es": "El personaje principal es una madre llamada Sazae-san. Vive en una casa con su marido, su hijo, sus hermanos y sus padres. El espectáculo es el último programa familiar y tiende a seguir los temas tradicionales. Piense en este espectáculo como el equivalente japonés a \"The Partridge Family\" y obtendrá una buena sensación para la atmósfera de este show. No esperes ver cosas como violencia, juramento, acción kung-fu o chicas mágicas. Las parcelas son más como \"Hoy, Sazae-san va al nuevo centro comercial y se pierde\". Tales trazados \"boring\" y el arte simplista son a menudo un desvío a las audiencias no japonesas, pero la mayoría"
     }
   ],
   "seasonal": {
@@ -6774,7 +6876,7 @@
         "startDate": "2026-09-25",
         "format": "ONA",
         "episodes": 11,
-        "averageScore": 86,
+        "averageScore": 85,
         "status": "RELEASING",
         "genres": [
           "Action",
@@ -6790,8 +6892,8 @@
           "id": "jXtG_lcR9P4"
         },
         "next": {
-          "at": 1792742400,
-          "episode": 5
+          "at": 1793347200,
+          "episode": 6
         },
         "description_es": "En la 2a ETAPA, un cruce desértico que recorre aproximadamente 750 millas- la tierra que Johnny Joestar y Gyro Zeppeli deben desafiar, es el hogar de la zona que se teme como la palma del Diablo. En 1875, una amenaza que acechaba en dicho desierto borró una caballería de 26 personas, provocando temor de los nativos locales. A medida que los incidentes ominosos comienzan a desarrollarse, se ven obligados a darse cuenta de que esta carrera es mucho más que una mera competencia. Las dos prensas hacia adelante, donde"
       },
@@ -6843,7 +6945,7 @@
         "startDate": "2026-09-27",
         "format": "ONA",
         "episodes": 12,
-        "averageScore": 76,
+        "averageScore": 75,
         "status": "RELEASING",
         "genres": [
           "Action",
@@ -6901,7 +7003,7 @@
           "at": 1792938600,
           "episode": 5
         },
-        "description_es": "La tercera temporada de Tensei Kizoku, Kantei Skill de Nariagaru. Nota: El 4 de septiembre de 2026, se anunció que GeyeG Pictures tomaría la producción del estudio MOTHER manteniendo el mismo personal."
+        "description_es": "La tercera temporada de Tensei Kizoku, Kantei Skill de Nariagaru . Nota: El 4 de septiembre de 2026, se anunció que GeyeG Pictures tomaría la producción del estudio MOTHER manteniendo el mismo personal."
       },
       {
         "id": "mal-56733",
@@ -7072,7 +7174,7 @@
         "startDate": "2026-10-01",
         "format": "TV",
         "episodes": 12,
-        "averageScore": 68,
+        "averageScore": 67,
         "status": "RELEASING",
         "genres": [
           "Drama",
@@ -7093,7 +7195,7 @@
           "at": 1793277000,
           "episode": 5
         },
-        "description_es": "La estudiante universitaria Kurumi Fukuga finalmente ha cumplido su deseo de iniciar el comercio de divisas (FX), motivado por recuperar los 20 millones de yenes que su madre falleció en el comercio. \"Lo recuperaré fácilmente\", pensó, pero el mundo en el que entra puede convertirse en el cielo o el infierno en un instante. Las pérdidas no realizadas, las fluctuaciones descompuestas, imparables... ¡pero todavía quiere comprar, vender y ganar dinero! Con otros adictos FX Mochiko, Mebuki y Yasuko a lo largo de la excursión, el mercado se calienta! Joy, desesperación, alegría, desesperación — este es un juego de dinero entrañable, pero ligeramente arriesgado. Can Kurumi y ella"
+        "description_es": "La estudiante universitaria Kurumi Fukuga finalmente ha cumplido su deseo de iniciar el comercio de divisas (FX), motivado por recuperar los 20 millones de yenes que su madre falleció en el comercio. \"Lo recuperaré fácilmente,\" pensó, pero el mundo en el que entra puede convertirse en el cielo o el infierno en un instante. Pérdidas no realizadas, fluctuaciones descompuestas, imparables... ¡pero todavía quiere comprar, vender y hacer dinero! Con los adictos FX Mochiko, Mebuki an"
       },
       {
         "id": "mal-62534",
@@ -7241,7 +7343,7 @@
         "startDate": "2026-10-02",
         "format": "TV",
         "episodes": 12,
-        "averageScore": 51,
+        "averageScore": 52,
         "status": "RELEASING",
         "genres": [
           "Adventure",
@@ -7916,7 +8018,7 @@
         "startDate": "2026-10-04",
         "format": "TV",
         "episodes": 12,
-        "averageScore": 67,
+        "averageScore": 66,
         "status": "RELEASING",
         "genres": [
           "Comedy",
@@ -8207,7 +8309,7 @@
           "at": 1793017800,
           "episode": 4
         },
-        "description_es": "Hazme una poción de amor. Y con esa sola frase, la Buena Bruja del amor secreto del lago sobre el desgarrador Sir Harij termina en la ruptura del corazón. Sin embargo, cuando promete ayudarla a reunir los ingredientes, Rose está emocionada por la oportunidad de mirar a un hombre con el que normalmente nunca podría interactuar. Ella aprende a jactar su corazón por sus conversaciones usuales inclinadas... pero ¿qué va a hacer cuando aparece inexplicablemente en su puerta con bre"
+        "description_es": "Hazme una poción de amor. Y con esa sola frase, la Buena Bruja del amor secreto del lago sobre el desgarrador Sir Harij termina en un desgarro. Aún así, cuando promete ayudarla a reunir los ingredientes, Rose está emocionada por la oportunidad de mirar a un hombre con el que normalmente nunca podría interactuar. Ella aprende a jactar su corazón por sus conversaciones habituales inclinadas... pero ¿qué va a hacer cuando aparece inexplicablemente en su puerta con pan y un frasco de mantequilla de manzana? (Fuente: Yen Press)"
       },
       {
         "id": "mal-63509",
@@ -8952,7 +9054,7 @@
         "startDate": "2026-10-08",
         "format": "TV",
         "episodes": 0,
-        "averageScore": 50,
+        "averageScore": 49,
         "status": "RELEASING",
         "genres": [
           "Action",
@@ -9022,7 +9124,7 @@
         "startDate": "2026-10-09",
         "format": "TV",
         "episodes": 0,
-        "averageScore": 67,
+        "averageScore": 66,
         "status": "RELEASING",
         "genres": [
           "Action",
@@ -9109,33 +9211,6 @@
         "description_es": "La historia se centra en un chico llamado Kazuki Tsukigase, que se traslada a una escuela secundaria en una isla remota para alejarse de cualquiera que lo conozca. Kazuki descubre que hay una entrada en la isla donde se rumorea que la gente desaparece. Explorando la entrada, se encuentra con una chica inconsciente. Cuando llega después de que Kazuki la lleve a la clínica, no puede dar nada sobre su identidad excepto que se llama Nao, tiene 16 años, y susurra el año 1974. (Fuente: Anime News Network, editado)"
       },
       {
-        "id": "mal-39168",
-        "mal_id": 39168,
-        "ani_id": 202390,
-        "title": "Girls und Panzer: Saishuushou 5",
-        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b202390-XrdgWaUKxDUg.jpg",
-        "banner": "",
-        "description": "The fifth film in the six-part Girls und Panzer: Saishuushou film series.",
-        "year": 2026,
-        "startDate": "2026-10-09",
-        "format": "MOVIE",
-        "episodes": 1,
-        "averageScore": 65,
-        "status": "FINISHED",
-        "genres": [
-          "Action",
-          "Sports"
-        ],
-        "siteUrl": "https://anilist.co/anime/202390",
-        "streaming": [],
-        "trailer": {
-          "site": "youtube",
-          "id": "yDRK9-yG9X8"
-        },
-        "next": null,
-        "description_es": "La quinta película de la serie de películas Saishuushou de seis partes."
-      },
-      {
         "id": "mal-62615",
         "mal_id": 62615,
         "ani_id": 199594,
@@ -9163,6 +9238,33 @@
           "episode": 4
         },
         "description_es": "Misaki ha sentido a menudo el impulso de liberarse de la vida cotidiana y de emprender un viaje lejos. A pesar de que todavía no sabe lo que quiere convertirse, ella desea encontrar algo que realmente pueda ser apasionada. Al comienzo de un nuevo capítulo en un animado campus, se reúne con los miembros del Club de Investigación de Viajes Ferroviarios, conocido como el Club Tetsuryo. Mientras su mundo se desarrolla a lo largo de las líneas ferroviarias, el corazón de Misaki comienza a correr con emoción! A medida que TETSUDOU MUSUME celebra su 20 aniversario, el Tetsuryo Club comienza en un viaje por el mundo donde trabajan las Ferrocarriles"
+      },
+      {
+        "id": "mal-39168",
+        "mal_id": 39168,
+        "ani_id": 202390,
+        "title": "Girls und Panzer: Saishuushou 5",
+        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b202390-XrdgWaUKxDUg.jpg",
+        "banner": "",
+        "description": "The fifth film in the six-part Girls und Panzer: Saishuushou film series.",
+        "year": 2026,
+        "startDate": "2026-10-09",
+        "format": "MOVIE",
+        "episodes": 1,
+        "averageScore": 65,
+        "status": "FINISHED",
+        "genres": [
+          "Action",
+          "Sports"
+        ],
+        "siteUrl": "https://anilist.co/anime/202390",
+        "streaming": [],
+        "trailer": {
+          "site": "youtube",
+          "id": "yDRK9-yG9X8"
+        },
+        "next": null,
+        "description_es": "La quinta película de la serie de películas Saishuushou de seis partes."
       },
       {
         "id": "mal-64848",
@@ -9289,7 +9391,7 @@
           "at": 1792937760,
           "episode": 3
         },
-        "description_es": "Han pasado varios años desde la feroz batalla contra Majin Buu, y la Tierra finalmente ha recuperado un breve momento de paz. Al mismo tiempo, Beerus, el Dios de la Destrucción, despierta de su sueño largo y profundo. Incluso Kai y el Supremo Kai, consciente del abrumador poder de Beerus para destruir planetas enteros, ver su despertar con gran miedo... Mientras tanto, Beerus escucha rumores de un Saiyan que venció a Frieza y de repente aparece ante Goku. Atacada por Beerus, el ser más fuerte del universo, la Tierra está en grave peligro. Así comienza una batalla cósmica que rompe la tierra entre el Dios de la Destrucción y Go"
+        "description_es": "Han pasado varios años desde la feroz batalla contra Majin Buu, y la Tierra finalmente ha recuperado un breve momento de paz. Al mismo tiempo, Beerus, el Dios de la Destrucción, despierta de su sueño largo y profundo. Incluso Kai y el Supremo Kai, consciente del abrumador poder de Beerus para destruir planetas enteros, ver su despertar con gran miedo... Mientras tanto, Beerus escucha rumores de un Saiyan que venció a Frieza y de repente aparece ante Goku. Meta de cerveza"
       },
       {
         "id": "mal-63292",
