@@ -2,6 +2,15 @@
   "schemaVersion": 1,
   "items": [
     {
+      "providerId": "licensed_library",
+      "at": "2026-10-24T20:52:12.115Z",
+      "result": "success",
+      "observed": 0,
+      "created": 0,
+      "playback": 0,
+      "detail": "sin_contenido_autorizado"
+    },
+    {
       "providerId": "anilist_schedule",
       "at": "2026-10-24T14:53:36.120Z",
       "result": "success",
@@ -528,15 +537,6 @@
       "at": "2026-10-20T02:59:25.622Z",
       "result": "success",
       "observed": 95,
-      "created": 0,
-      "playback": 0,
-      "detail": "conectada"
-    },
-    {
-      "providerId": "jkanime_external",
-      "at": "2026-10-19T23:55:08.459Z",
-      "result": "success",
-      "observed": 5,
       "created": 0,
       "playback": 0,
       "detail": "conectada"
