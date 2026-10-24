@@ -1,77 +1,9 @@
 {
-  "updated": "2026-10-24T15:30:29.668Z",
+  "updated": "2026-10-24T21:30:05.356Z",
   "source": "AniList public GraphQL metadata",
-  "windowStart": 1792657815,
-  "windowEnd": 1793633415,
+  "windowStart": 1792679390,
+  "windowEnd": 1793654990,
   "airing": [
-    {
-      "id": "mal-65095",
-      "mal_id": 65095,
-      "ani_id": 217624,
-      "title": "PetitCure: Precure Fairies Season 4",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx217624-Cwkze5dZ5txL.jpg",
-      "banner": "",
-      "description": "Fourth season of PetitCure: Precure Fairies.",
-      "year": 2026,
-      "startDate": "2026-10-01",
-      "format": "ONA",
-      "episodes": 0,
-      "averageScore": 0,
-      "status": "RELEASING",
-      "genres": [
-        "Fantasy",
-        "Slice of Life"
-      ],
-      "siteUrl": "https://anilist.co/anime/217624",
-      "streaming": [],
-      "trailer": null,
-      "next": {
-        "at": 1793266200,
-        "episode": 5
-      },
-      "airingAt": 1792661400,
-      "episode": 4,
-      "scheduleId": 421765,
-      "description_es": "Cuarta temporada de PetitCure: Ferias precarias."
-    },
-    {
-      "id": "mal-63337",
-      "mal_id": 63337,
-      "ani_id": 206401,
-      "title": "FX Fighter Kurumi-chan",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx206401-8cAebkI0i8BA.png",
-      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/206401-Nsf3QKwKxDra.jpg",
-      "description": "University student Kurumi Fukuga has finally fulfilled her long-held desire of starting foreign exchange (FX) trading, motivated by recouping the 20 million yen her late mother lost in trading. \"I'll easily make it back,\" she thought, but the world she enters can become heaven or hell in an instant. Unrealized losses, loss-cutting, unstoppable fluctuations… but she still wants to buy, sell and make money! With fellow FX addicts Mochiko, Mebuki and Yasuko along for the ride, the market heats up! Joy, despair, joy, despair — this is an endearing, yet slightly risky money game. Can Kurumi and her friends survive this turbulent world? (Source: Crunchyroll)",
-      "year": 2026,
-      "startDate": "2026-10-01",
-      "format": "TV",
-      "episodes": 12,
-      "averageScore": 67,
-      "status": "RELEASING",
-      "genres": [
-        "Drama",
-        "Slice of Life"
-      ],
-      "siteUrl": "https://anilist.co/anime/206401",
-      "streaming": [
-        {
-          "name": "Crunchyroll",
-          "url": "https://crunchyroll.com/series/GT00384001/fx-fighter-kurumi-chan"
-        }
-      ],
-      "trailer": {
-        "site": "youtube",
-        "id": "7rxIZ3z0S4s"
-      },
-      "next": {
-        "at": 1793277000,
-        "episode": 5
-      },
-      "airingAt": 1792672200,
-      "episode": 4,
-      "scheduleId": 419083,
-      "description_es": "La estudiante universitaria Kurumi Fukuga finalmente ha cumplido su deseo de iniciar el comercio de divisas (FX), motivado por recuperar los 20 millones de yenes que su madre falleció en el comercio. \"Lo recuperaré fácilmente,\" pensó, pero el mundo en el que entra puede convertirse en el cielo o el infierno en un instante. Pérdidas no realizadas, fluctuaciones descompuestas, imparables... ¡pero todavía quiere comprar, vender y hacer dinero! Con los adictos FX Mochiko, Mebuki an"
-    },
     {
       "id": "mal-61227",
       "mal_id": 61227,
@@ -1262,38 +1194,6 @@
       "description_es": "\"La máscara\" da poder a cualquiera que la use. A veces, eso significa una posibilidad interminable, o una tragedia inimaginable... Perú, alumno del legendario fabricante de máscaras Gaston Roux, se hace controlado por el “Mask del Dios Guerrero”, y mata involuntariamente a sus amigos, e incluso a su propio maestro. Para evitar que este tipo de tragedia vuelva a ocurrir, Perú jura destruir todas las máscaras de Gaston que se extienden por todo el mundo. Frente a los pecados que ha cometido, se embarca en su viaje. Conocer a nuevos amigos y enfrentar a poderosos enemigos. El chico continúa. Hasta el día que puede expiar por hola"
     },
     {
-      "id": "mal-235",
-      "mal_id": 235,
-      "ani_id": 235,
-      "title": "Detective Conan",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx235-MyYT7K3chBdO.jpg",
-      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/235-MTmiz0uB0fMd.jpg",
-      "description": "Kudo Shinichi is a seventeen year-old high school detective whom people call the \"Modern Sherlock Holmes.\" However, one night after a date with his childhood sweetheart, Ran, Shinichi witnessed an illegal trade and, caught off his guard, was knocked unconscious and fed a drug that was supposed to kill him... but he woke up and found himself shrunken to a seven year-old. In order to track down the men who did this to him, Shinichi hid his identity and lived with Ran, whose father happened to be a hopeless detective, and with that came a series of murders and mysteries that he must solve. (Source: Anime News Network) Note: - Includes Keisatsu Gakkou-hen - Wild Police Story in episodes 1029, 1038, 1042, 1061 - Episodes 11, 52, 76, 118, 162, 184, 208, 342, 356, 449, 452, 487, 488, 489, 490, 515, 516, 521, 522, 651, 734, 804, 805, 927, 928, 1187 aired with a runtime of ~50 minutes as opposed to the standard 25 minute long episode. - Episodes 96, 129, 174, 219, 263, 304, 383, 479 aired with a runtime of ~90 minutes as opposed to the standard 25 minute long episode. - Episode 345, 425 aired with a runtime of ~115 minutes as opposed to the standard 25 minute long episode.",
-      "year": 1996,
-      "startDate": "1996-01-08",
-      "format": "TV",
-      "episodes": 0,
-      "averageScore": 82,
-      "status": "RELEASING",
-      "genres": [
-        "Adventure",
-        "Comedy",
-        "Mystery",
-        "Psychological"
-      ],
-      "siteUrl": "https://anilist.co/anime/235",
-      "streaming": [],
-      "trailer": null,
-      "next": {
-        "at": 1793437200,
-        "episode": 1219
-      },
-      "airingAt": 1792832400,
-      "episode": 1218,
-      "scheduleId": 420736,
-      "description_es": "Kudo Shinichi es un detective de secundaria de diecisiete años a quien la gente llama \"Modern Sherlock Holmes\". Sin embargo, una noche después de una cita con su novia de la infancia, Ran, Shinichi fue testigo de un comercio ilegal y, atrapado de su guardia, fue noqueado inconsciente y alimentado una droga que se suponía que lo mataría... pero se despertó y se encontró a sí mismo hundido a un niño de siete años. Para localizar a los hombres que le hicieron esto, Shinichi escondió su identidad y vivió con Ran, cuyo padre fue un detective sin esperanza, y con eso llegó una serie de asesinatos y misterios que él debe resolver. (Sourc)"
-    },
-    {
       "id": "mal-64326",
       "mal_id": 64326,
       "ani_id": 212799,
@@ -1731,8 +1631,8 @@
         "id": "dbe8esPSfYI"
       },
       "next": {
-        "at": 1792857360,
-        "episode": 4
+        "at": 1793462160,
+        "episode": 5
       },
       "airingAt": 1792857360,
       "episode": 4,
@@ -1770,8 +1670,8 @@
         "id": "kXqx3rFSkxc"
       },
       "next": {
-        "at": 1792859400,
-        "episode": 4
+        "at": 1793464200,
+        "episode": 5
       },
       "airingAt": 1792859400,
       "episode": 4,
@@ -5423,11 +5323,11 @@
       "trailer": null,
       "next": {
         "at": 1793437200,
-        "episode": 1219
+        "episode": 1218
       },
       "airingAt": 1793437200,
-      "episode": 1219,
-      "scheduleId": 420737,
+      "episode": 1218,
+      "scheduleId": 422940,
       "description_es": "Kudo Shinichi es un detective de secundaria de diecisiete años a quien la gente llama \"Modern Sherlock Holmes\". Sin embargo, una noche después de una cita con su novia de la infancia, Ran, Shinichi fue testigo de un comercio ilegal y, atrapado de su guardia, fue noqueado inconsciente y alimentado una droga que se suponía que lo mataría... pero se despertó y se encontró a sí mismo hundido a un niño de siete años. Para localizar a los hombres que le hicieron esto, Shinichi escondió su identidad y vivió con Ran, cuyo padre fue un detective sin esperanza, y con eso llegó una serie de asesinatos y misterios que él debe resolver. (Sourc)"
     },
     {
@@ -5868,8 +5768,8 @@
         "id": "dbe8esPSfYI"
       },
       "next": {
-        "at": 1792857360,
-        "episode": 4
+        "at": 1793462160,
+        "episode": 5
       },
       "airingAt": 1793462160,
       "episode": 5,
@@ -5907,8 +5807,8 @@
         "id": "kXqx3rFSkxc"
       },
       "next": {
-        "at": 1792859400,
-        "episode": 4
+        "at": 1793464200,
+        "episode": 5
       },
       "airingAt": 1793464200,
       "episode": 5,
@@ -7327,6 +7227,41 @@
       "episode": 5,
       "scheduleId": 419767,
       "description_es": "Un día, la secundaria Ageha Yoshina recoge una misteriosa “tarjeta de teléfono roja” que queda atrás en una cabina telefónica pública. Unos días más tarde, su amigo de la infancia y compañero de clase, Sakurako Amamiya, que poseía la misma carta, desaparecen sin dejar rastro. En busca de ella, Ageha se encuentra dibujado en los rumores que rodean una cadena nacional de misteriosas desapariciones, dijo que es obra de una organización secreta conocida sólo como “Psyren”. Cuando accede al grupo, comienza un juego mortal, uno que cambiará su destino para siempre. (Fuente: Sitio Oficial de PSYHUEN)"
+    },
+    {
+      "id": "mal-54344",
+      "mal_id": 54344,
+      "ani_id": 160803,
+      "title": "MAGICAL GIRL RAISING PROJECT restart",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx160803-Rcr3IvhE7q9c.png",
+      "banner": "",
+      "description": "Some magical girls fight. Others do not. Chosen by the mysterious Land of Magic, which exists unbeknownst to the rest of the world, magical girls are each granted a unique power. Pechka, whose magic makes food delicious, is forced to take part in a mysterious virtual game together with 16 unfamiliar magical girls, each with her own distinctive personality. It was supposed to be a safe training exercise designed to improve their magical abilities. But instead, it marks the beginning of a carefully orchestrated nightmare - a forbidden trial. A new Magical Girl Raising Project has begun. (Source: OceanVeil)",
+      "year": 2026,
+      "startDate": "2026-10-06",
+      "format": "TV",
+      "episodes": 0,
+      "averageScore": 60,
+      "status": "RELEASING",
+      "genres": [
+        "Action",
+        "Fantasy",
+        "Mahou Shoujo",
+        "Thriller"
+      ],
+      "siteUrl": "https://anilist.co/anime/160803",
+      "streaming": [],
+      "trailer": {
+        "site": "youtube",
+        "id": "34ubb-j0kbI"
+      },
+      "next": {
+        "at": 1793034000,
+        "episode": 4
+      },
+      "airingAt": 1793638800,
+      "episode": 5,
+      "scheduleId": 418906,
+      "description_es": "Algunas chicas mágicas pelean. Otros no. Elegido por la misteriosa Tierra de la Magia, que existe poco conocida por el resto del mundo, las chicas mágicas cada una tienen un poder único. Pechka, cuya magia hace deliciosa la comida, se ve obligada a participar en un misterioso juego virtual junto con 16 chicas mágicas desconocidas, cada una con su propia personalidad distintiva. Se suponía que era un ejercicio de entrenamiento seguro diseñado para mejorar sus habilidades mágicas. Pero en cambio, marca el comienzo de una pesadilla cuidadosamente orquestada - un juicio prohibido. Ha comenzado un nuevo proyecto de Raising Girl Magical. (Fuente:"
     }
   ],
   "seasonal": {
@@ -8439,8 +8374,8 @@
           "id": "kXqx3rFSkxc"
         },
         "next": {
-          "at": 1792859400,
-          "episode": 4
+          "at": 1793464200,
+          "episode": 5
         },
         "description_es": "Si hay una cosa que nunca puedes tener suficiente en un mundo de espadas y brujería estilo RPG, ¡es puntos mágicos! Si estás alimentando hechizos, técnicas o mostrando una increíble habilidad, tienes que gastar esos puntos para hacer daño real. ¿Y si te escapas? La Cuaresma es parte de la fiesta de llegada conocida como los \"Skypiercers\", y gracias a su regalo único, puede prestar enormes cantidades de magia a otros. ¿Sin MP? ¡No hay problema con la Cuaresma! Excepto ahora que sus compañeros se han convertido en héroes formidables (gracias a su habilidad), su utilidad es cuestionada. Escapada del grupo, Lent es"
       },
@@ -8470,8 +8405,8 @@
           "id": "dbe8esPSfYI"
         },
         "next": {
-          "at": 1792857360,
-          "episode": 4
+          "at": 1793462160,
+          "episode": 5
         },
         "description_es": "La tercera temporada de Ranma 1/2 (2024) ."
       },
