@@ -1,8 +1,8 @@
 {
-  "updated": "2026-10-24T03:32:58.865Z",
+  "updated": "2026-10-24T09:31:53.133Z",
   "source": "AniList public GraphQL metadata",
-  "windowStart": 1792614764,
-  "windowEnd": 1793590364,
+  "windowStart": 1792636299,
+  "windowEnd": 1793611899,
   "airing": [
     {
       "id": "mal-65095",
@@ -624,7 +624,7 @@
       "startDate": "2026-10-02",
       "format": "TV",
       "episodes": 12,
-      "averageScore": 52,
+      "averageScore": 51,
       "status": "RELEASING",
       "genres": [
         "Adventure",
@@ -681,7 +681,7 @@
       "airingAt": 1792762200,
       "episode": 3,
       "scheduleId": 419704,
-      "description_es": "Esta es una historia de cuatro chicas que viven en el \"Dark Side\" de Academy City. En la Ciudad de la Academia donde el \"ESP\" ha sido reconocido como una ciencia general. Detrás de la paz, hay una organización Dark Side que realiza misiones que no pueden hacerse públicas. \"ITEM\" es una unidad de élite compuesta por cuatro niñas. Takitsubo Rikou es capaz de leer y rastrear los campos AIM emitidos por aquellos con capacidades. Frenda Seivelun, que destaca en combate utilizando explosivos y trampas. Kinuhata Saiai, que puede manipular el nitrógeno a voluntad y juega un papel defensivo. Y uno de los 7 Espers que Academy City está orgulloso de: Mugino Shiz"
+      "description_es": "Esta es una historia de cuatro chicas que viven en el \"Dark Side\" de Academy City. En la Ciudad de la Academia donde el \"ESP\" ha sido reconocido como una ciencia general. Detrás de la paz, hay una organización del lado oscuro que realiza misiones que no pueden hacerse públicas. \"ITEM\" es una unidad de élite compuesta por cuatro chicas. Takitsubo Rikou es capaz de leer y rastrear los campos AIM emitidos por aquellos con capacidades. Frenda Seivelun, que destaca en combate utilizando explosivos y t"
     },
     {
       "id": "mal-61987",
@@ -771,7 +771,7 @@
       "startDate": "2026-10-02",
       "format": "TV",
       "episodes": 12,
-      "averageScore": 71,
+      "averageScore": 72,
       "status": "RELEASING",
       "genres": [
         "Action",
@@ -835,7 +835,7 @@
       "airingAt": 1792767600,
       "episode": 16,
       "scheduleId": 421091,
-      "description_es": "El manga se centra en el estudiante de secundaria Ito Hazui. Durante su descanso de primavera al final de su primer año de secundaria, la madre de Ito se vuelve a casar, y Ito se mueve a vivir con su nueva familia, convirtiéndose en Ito Narita. Al llegar a su nueva casa, Ito está sorprendido de saber que ahora tiene cuatro hermanos menores. Ito trata de que ella sea más difícil de llevar con todos los nuevos miembros de su familia, pero el hermano mayor Gen es un poco frío para ella. Sin embargo, bajo su fachada, ocasionalmente muestra su amabilidad. (Fuente: Anime News Network)"
+      "description_es": "El manga se centra en el estudiante de secundaria Ito Hazui. Durante su descanso de primavera al final de su primer año de secundaria, la madre de Ito se vuelve a casar, y Ito se mueve a vivir con su nueva familia, convirtiéndose en Ito Narita. Al llegar a su nueva casa, Ito está conmocionado por saber que ahora tiene cuatro hermanos de paso más jóvenes. Ito trata de que ella sea más difícil de llevar con todos los nuevos miembros de su familia, pero el hermano mayor Gen es un poco frío para ella. Sin embargo, bajo su"
     },
     {
       "id": "mal-59088",
@@ -1014,7 +1014,7 @@
       "startDate": "2026-10-03",
       "format": "TV",
       "episodes": 0,
-      "averageScore": 58,
+      "averageScore": 57,
       "status": "RELEASING",
       "genres": [
         "Comedy",
@@ -1115,7 +1115,7 @@
       "startDate": "2026-10-03",
       "format": "ONA",
       "episodes": 12,
-      "averageScore": 66,
+      "averageScore": 67,
       "status": "RELEASING",
       "genres": [
         "Action",
@@ -1158,8 +1158,8 @@
         "id": "4iOFqQ1E4Mo"
       },
       "next": {
-        "at": 1792826940,
-        "episode": 4
+        "at": 1793431740,
+        "episode": 5
       },
       "airingAt": 1792826940,
       "episode": 4,
@@ -1188,8 +1188,8 @@
       "streaming": [],
       "trailer": null,
       "next": {
-        "at": 1792827000,
-        "episode": 1358
+        "at": 1793431800,
+        "episode": 1359
       },
       "airingAt": 1792827000,
       "episode": 1358,
@@ -1219,8 +1219,8 @@
       "streaming": [],
       "trailer": null,
       "next": {
-        "at": 1792828800,
-        "episode": 938
+        "at": 1793433600,
+        "episode": 939
       },
       "airingAt": 1792828800,
       "episode": 938,
@@ -1253,8 +1253,8 @@
         "id": "iX4N-Z5Hbxw"
       },
       "next": {
-        "at": 1792830600,
-        "episode": 3
+        "at": 1793435400,
+        "episode": 4
       },
       "airingAt": 1792830600,
       "episode": 3,
@@ -1285,8 +1285,8 @@
       "streaming": [],
       "trailer": null,
       "next": {
-        "at": 1792832400,
-        "episode": 1218
+        "at": 1793437200,
+        "episode": 1219
       },
       "airingAt": 1792832400,
       "episode": 1218,
@@ -1305,7 +1305,7 @@
       "startDate": "2026-10-03",
       "format": "TV",
       "episodes": 20,
-      "averageScore": 64,
+      "averageScore": 65,
       "status": "RELEASING",
       "genres": [
         "Comedy",
@@ -1319,8 +1319,8 @@
         "id": "wk26nTxUzPY"
       },
       "next": {
-        "at": 1792833900,
-        "episode": 4
+        "at": 1793438700,
+        "episode": 5
       },
       "airingAt": 1792833900,
       "episode": 4,
@@ -2517,7 +2517,7 @@
       "startDate": "2026-10-04",
       "format": "TV",
       "episodes": 0,
-      "averageScore": 58,
+      "averageScore": 59,
       "status": "RELEASING",
       "genres": [
         "Mahou Shoujo",
@@ -2608,7 +2608,7 @@
       "airingAt": 1792937760,
       "episode": 3,
       "scheduleId": 419191,
-      "description_es": "Han pasado varios años desde la feroz batalla contra Majin Buu, y la Tierra finalmente ha recuperado un breve momento de paz. Al mismo tiempo, Beerus, el Dios de la Destrucción, despierta de su sueño largo y profundo. Incluso Kai y el Supremo Kai, consciente del abrumador poder de Beerus para destruir planetas enteros, ver su despertar con gran miedo... Mientras tanto, Beerus escucha rumores de un Saiyan que venció a Frieza y de repente aparece ante Goku. Meta de cerveza"
+      "description_es": "Han pasado varios años desde la feroz batalla contra Majin Buu, y la Tierra finalmente ha recuperado un breve momento de paz. Al mismo tiempo, Beerus, el Dios de la Destrucción, despierta de su sueño largo y profundo. Incluso Kai y el Supremo Kai, consciente del abrumador poder de Beerus para destruir planetas enteros, ver su despertar con gran miedo... Mientras tanto, Beerus escucha rumores de un Saiyan que venció a Frieza y de repente aparece ante Goku. Atacada por Beerus, el ser más fuerte del universo, la Tierra está en grave peligro. Así comienza una batalla cósmica que rompe la tierra entre el Dios de la Destrucción y Go"
     },
     {
       "id": "mal-60601",
@@ -3150,7 +3150,7 @@
       "airingAt": 1793019600,
       "episode": 5,
       "scheduleId": 422214,
-      "description_es": "La naturaleza altruista del trabajador de oficina Akira Yagami generalmente le consigue el extremo corto del palo. Cuando muere después de salvar a un niño del tráfico entrante... ¿reencarna en otro mundo como un duende? Normalmente, los duendes sólo viven durante siete días, pero los nuevos poderes de Akira le permiten desafiar el período de vida normal de la especie... ¡y son la clave de su camino para convertirse en el más fuerte de todos los tiempos! (Fuente: Yen Press) Nota: Tensei Goblin Dakedo Sitsumon Aru?"
+      "description_es": "La naturaleza altruista del trabajador de oficina Akira Yagami generalmente le consigue el extremo corto del palo. Cuando muere después de salvar a un niño del tráfico entrante... ¿reencarna en otro mundo como un duende? Normalmente, los duendes sólo viven durante siete días, pero los nuevos poderes de Akira le permiten desafiar la vida normal de la especie... ¡y son la clave de su camino para convertirse en el más fuerte de todos los tiempos! (Fuente: Yen Press) Nota: Tensei Goblin Dakedo Sitsumon Aru? está transmitiendo 1 semana antes de la emisión de televisión en ABEMA y Primer Video comenzando con el episodio 2 el 5 de octubre de 2026"
     },
     {
       "id": "mal-63098",
@@ -3352,7 +3352,7 @@
       "airingAt": 1793103960,
       "episode": 4,
       "scheduleId": 417799,
-      "description_es": "Un gran héroe está invicto en su lecho de muerte, lamentando que nunca haya encontrado a un enemigo que pudiera derribarla. Ella nunca quiso encontrar su destino en otro lugar que en el campo de batalla, y su pacífica desaparición tiene su deseo desesperadamente de que las cosas podrían haber sido diferentes... Pero cuando de repente viene al cuerpo de la joven y frágil Nia Liston, tiene una nueva lucha por delante de ella. Nia es una niña enferma, lo que significa que tiene un largo camino por recorrer"
+      "description_es": "Un gran héroe está invicto en su lecho de muerte, lamentando que nunca haya encontrado a un enemigo que pudiera derribarla. Ella nunca quiso encontrar su destino en otro lugar que en el campo de batalla, y su pacífica desaparición tiene su deseo desesperadamente de que las cosas podrían haber sido diferentes... Pero cuando de repente viene al cuerpo de la joven y frágil Nia Liston, tiene una nueva lucha por delante de ella. Nia es una niña enferma, lo que significa que tiene un largo camino para ir antes de que esté en forma de lucha. Ahora que se le ha dado un segundo tiro a la vida, sin embargo, está decidida a conseguir lo que quiere. Va a vivir."
     },
     {
       "id": "mal-63754",
@@ -3390,7 +3390,7 @@
       "airingAt": 1793106000,
       "episode": 4,
       "scheduleId": 420419,
-      "description_es": "Sato-san es la flor inalcanzable de la clase. Siempre tiene frío y rito con compañeros de clase, pero sólo sé que es muy linda cuando sonríe, incluso si no es mucho fotógrafo. Oshio-kun es amistoso y animado, pero sólo sé que trabaja en el café de su familia después de la escuela. Hace un gran trabajo con la cuenta SNS de la cafetería, y su mala sonrisa hace que mi corazón salte un latido! Innocente y dulce, pero a veces frustrante, esto es un"
+      "description_es": "Sato-san es la flor inalcanzable de la clase. Siempre tiene frío y rito con compañeros de clase, pero sólo sé que es muy linda cuando sonríe, incluso si no es mucho fotógrafo. Oshio-kun es amistoso y animado, pero sólo sé que trabaja en el café de su familia después de la escuela. Hace un gran trabajo con la cuenta SNS de la cafetería, y su mala sonrisa hace que mi corazón salte un latido! Inocentes y dulces, pero a veces frustrantes, esta es una historia de 120% pura y fluida sobre dos personas que se enamoran por primera vez."
     },
     {
       "id": "mal-62696",
@@ -4694,7 +4694,7 @@
       "startDate": "2026-10-02",
       "format": "TV",
       "episodes": 12,
-      "averageScore": 52,
+      "averageScore": 51,
       "status": "RELEASING",
       "genres": [
         "Adventure",
@@ -4751,7 +4751,7 @@
       "airingAt": 1793367000,
       "episode": 4,
       "scheduleId": 419705,
-      "description_es": "Esta es una historia de cuatro chicas que viven en el \"Dark Side\" de Academy City. En la Ciudad de la Academia donde el \"ESP\" ha sido reconocido como una ciencia general. Detrás de la paz, hay una organización Dark Side que realiza misiones que no pueden hacerse públicas. \"ITEM\" es una unidad de élite compuesta por cuatro niñas. Takitsubo Rikou es capaz de leer y rastrear los campos AIM emitidos por aquellos con capacidades. Frenda Seivelun, que destaca en combate utilizando explosivos y trampas. Kinuhata Saiai, que puede manipular el nitrógeno a voluntad y juega un papel defensivo. Y uno de los 7 Espers que Academy City está orgulloso de: Mugino Shiz"
+      "description_es": "Esta es una historia de cuatro chicas que viven en el \"Dark Side\" de Academy City. En la Ciudad de la Academia donde el \"ESP\" ha sido reconocido como una ciencia general. Detrás de la paz, hay una organización del lado oscuro que realiza misiones que no pueden hacerse públicas. \"ITEM\" es una unidad de élite compuesta por cuatro chicas. Takitsubo Rikou es capaz de leer y rastrear los campos AIM emitidos por aquellos con capacidades. Frenda Seivelun, que destaca en combate utilizando explosivos y t"
     },
     {
       "id": "mal-61987",
@@ -4841,7 +4841,7 @@
       "startDate": "2026-10-02",
       "format": "TV",
       "episodes": 12,
-      "averageScore": 71,
+      "averageScore": 72,
       "status": "RELEASING",
       "genres": [
         "Action",
@@ -4905,7 +4905,7 @@
       "airingAt": 1793372400,
       "episode": 17,
       "scheduleId": 421092,
-      "description_es": "El manga se centra en el estudiante de secundaria Ito Hazui. Durante su descanso de primavera al final de su primer año de secundaria, la madre de Ito se vuelve a casar, y Ito se mueve a vivir con su nueva familia, convirtiéndose en Ito Narita. Al llegar a su nueva casa, Ito está sorprendido de saber que ahora tiene cuatro hermanos menores. Ito trata de que ella sea más difícil de llevar con todos los nuevos miembros de su familia, pero el hermano mayor Gen es un poco frío para ella. Sin embargo, bajo su fachada, ocasionalmente muestra su amabilidad. (Fuente: Anime News Network)"
+      "description_es": "El manga se centra en el estudiante de secundaria Ito Hazui. Durante su descanso de primavera al final de su primer año de secundaria, la madre de Ito se vuelve a casar, y Ito se mueve a vivir con su nueva familia, convirtiéndose en Ito Narita. Al llegar a su nueva casa, Ito está conmocionado por saber que ahora tiene cuatro hermanos de paso más jóvenes. Ito trata de que ella sea más difícil de llevar con todos los nuevos miembros de su familia, pero el hermano mayor Gen es un poco frío para ella. Sin embargo, bajo su"
     },
     {
       "id": "mal-59088",
@@ -5084,7 +5084,7 @@
       "startDate": "2026-10-03",
       "format": "TV",
       "episodes": 0,
-      "averageScore": 58,
+      "averageScore": 57,
       "status": "RELEASING",
       "genres": [
         "Comedy",
@@ -5185,7 +5185,7 @@
       "startDate": "2026-10-03",
       "format": "ONA",
       "episodes": 12,
-      "averageScore": 66,
+      "averageScore": 67,
       "status": "RELEASING",
       "genres": [
         "Action",
@@ -5295,8 +5295,8 @@
         "id": "4iOFqQ1E4Mo"
       },
       "next": {
-        "at": 1792826940,
-        "episode": 4
+        "at": 1793431740,
+        "episode": 5
       },
       "airingAt": 1793431740,
       "episode": 5,
@@ -5325,8 +5325,8 @@
       "streaming": [],
       "trailer": null,
       "next": {
-        "at": 1792827000,
-        "episode": 1358
+        "at": 1793431800,
+        "episode": 1359
       },
       "airingAt": 1793431800,
       "episode": 1359,
@@ -5356,8 +5356,8 @@
       "streaming": [],
       "trailer": null,
       "next": {
-        "at": 1792828800,
-        "episode": 938
+        "at": 1793433600,
+        "episode": 939
       },
       "airingAt": 1793433600,
       "episode": 939,
@@ -5390,8 +5390,8 @@
         "id": "iX4N-Z5Hbxw"
       },
       "next": {
-        "at": 1792830600,
-        "episode": 3
+        "at": 1793435400,
+        "episode": 4
       },
       "airingAt": 1793435400,
       "episode": 4,
@@ -5422,8 +5422,8 @@
       "streaming": [],
       "trailer": null,
       "next": {
-        "at": 1792832400,
-        "episode": 1218
+        "at": 1793437200,
+        "episode": 1219
       },
       "airingAt": 1793437200,
       "episode": 1219,
@@ -5442,7 +5442,7 @@
       "startDate": "2026-10-03",
       "format": "TV",
       "episodes": 20,
-      "averageScore": 64,
+      "averageScore": 65,
       "status": "RELEASING",
       "genres": [
         "Comedy",
@@ -5456,8 +5456,8 @@
         "id": "wk26nTxUzPY"
       },
       "next": {
-        "at": 1792833900,
-        "episode": 4
+        "at": 1793438700,
+        "episode": 5
       },
       "airingAt": 1793438700,
       "episode": 5,
@@ -6620,7 +6620,7 @@
       "startDate": "2026-10-04",
       "format": "TV",
       "episodes": 0,
-      "averageScore": 58,
+      "averageScore": 59,
       "status": "RELEASING",
       "genres": [
         "Mahou Shoujo",
@@ -6711,7 +6711,7 @@
       "airingAt": 1793542560,
       "episode": 4,
       "scheduleId": 419192,
-      "description_es": "Han pasado varios años desde la feroz batalla contra Majin Buu, y la Tierra finalmente ha recuperado un breve momento de paz. Al mismo tiempo, Beerus, el Dios de la Destrucción, despierta de su sueño largo y profundo. Incluso Kai y el Supremo Kai, consciente del abrumador poder de Beerus para destruir planetas enteros, ver su despertar con gran miedo... Mientras tanto, Beerus escucha rumores de un Saiyan que venció a Frieza y de repente aparece ante Goku. Meta de cerveza"
+      "description_es": "Han pasado varios años desde la feroz batalla contra Majin Buu, y la Tierra finalmente ha recuperado un breve momento de paz. Al mismo tiempo, Beerus, el Dios de la Destrucción, despierta de su sueño largo y profundo. Incluso Kai y el Supremo Kai, consciente del abrumador poder de Beerus para destruir planetas enteros, ver su despertar con gran miedo... Mientras tanto, Beerus escucha rumores de un Saiyan que venció a Frieza y de repente aparece ante Goku. Atacada por Beerus, el ser más fuerte del universo, la Tierra está en grave peligro. Así comienza una batalla cósmica que rompe la tierra entre el Dios de la Destrucción y Go"
     },
     {
       "id": "mal-60601",
@@ -7657,7 +7657,7 @@
         "startDate": "2026-10-02",
         "format": "TV",
         "episodes": 12,
-        "averageScore": 71,
+        "averageScore": 72,
         "status": "RELEASING",
         "genres": [
           "Action",
@@ -7693,7 +7693,7 @@
         "startDate": "2026-10-02",
         "format": "TV",
         "episodes": 12,
-        "averageScore": 52,
+        "averageScore": 51,
         "status": "RELEASING",
         "genres": [
           "Adventure",
@@ -8018,7 +8018,7 @@
         "startDate": "2026-10-03",
         "format": "TV",
         "episodes": 20,
-        "averageScore": 64,
+        "averageScore": 65,
         "status": "RELEASING",
         "genres": [
           "Comedy",
@@ -8032,8 +8032,8 @@
           "id": "wk26nTxUzPY"
         },
         "next": {
-          "at": 1792833900,
-          "episode": 4
+          "at": 1793438700,
+          "episode": 5
         },
         "description_es": "En el corazón de un continente de ocho reinos se encuentra el Reino Marronnier. Su general, Baribara, tiene siete hijos, cada uno con un regalo único y servir como comandante caballero. Heridos por una única causa noble de rescatar heroicamente a una princesa algún día, los hermanos se establecieron como embajadores de buena voluntad a los siete reinos vecinos. ¿Qué encuentros, pruebas y destinos les esperan en estas tierras desconocidas? (Fuente: Amazon Prime Video)"
       },
@@ -8084,7 +8084,7 @@
         "startDate": "2026-10-03",
         "format": "TV",
         "episodes": 0,
-        "averageScore": 58,
+        "averageScore": 57,
         "status": "RELEASING",
         "genres": [
           "Comedy",
@@ -8129,8 +8129,8 @@
           "id": "4iOFqQ1E4Mo"
         },
         "next": {
-          "at": 1792826940,
-          "episode": 4
+          "at": 1793431740,
+          "episode": 5
         }
       },
       {
@@ -8501,7 +8501,7 @@
         "startDate": "2026-10-04",
         "format": "TV",
         "episodes": 0,
-        "averageScore": 58,
+        "averageScore": 59,
         "status": "RELEASING",
         "genres": [
           "Mahou Shoujo",
@@ -8766,7 +8766,7 @@
           "at": 1793019600,
           "episode": 5
         },
-        "description_es": "La naturaleza altruista del trabajador de oficina Akira Yagami generalmente le consigue el extremo corto del palo. Cuando muere después de salvar a un niño del tráfico entrante... ¿reencarna en otro mundo como un duende? Normalmente, los duendes sólo viven durante siete días, pero los nuevos poderes de Akira le permiten desafiar el período de vida normal de la especie... ¡y son la clave de su camino para convertirse en el más fuerte de todos los tiempos! (Fuente: Yen Press) Nota: Tensei Goblin Dakedo Sitsumon Aru?"
+        "description_es": "La naturaleza altruista del trabajador de oficina Akira Yagami generalmente le consigue el extremo corto del palo. Cuando muere después de salvar a un niño del tráfico entrante... ¿reencarna en otro mundo como un duende? Normalmente, los duendes sólo viven durante siete días, pero los nuevos poderes de Akira le permiten desafiar la vida normal de la especie... ¡y son la clave de su camino para convertirse en el más fuerte de todos los tiempos! (Fuente: Yen Press) Nota: Tensei Goblin Dakedo Sitsumon Aru? está transmitiendo 1 semana antes de la emisión de televisión en ABEMA y Primer Video comenzando con el episodio 2 el 5 de octubre de 2026"
       },
       {
         "id": "mal-64131",
@@ -8867,34 +8867,6 @@
         "description_es": "En su camino a casa desde la escuela un día, Noriko se sumergió inesperadamente en un extraño y extraordinario mundo de fantasía. Sus problemas se complican exponencialmente cuando es rescatada y amigada por un joven guapo por el nombre de Izark. Puede ser valiente y valiente, pero dentro de Izark se esconde el mal más oscuro imaginable. Y según una profecía antigua, Noriko posee el poder de desencadenar ese mal. Ahora, inexorablemente unidos, estos dos aliados improbables deben navegar por un mundo maravilloso y hostil. (Fuente: VIZ Media)"
       },
       {
-        "id": "mal-65167",
-        "mal_id": 65167,
-        "ani_id": 217782,
-        "title": "My Girlfriend's Friend Mini Anime",
-        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx217782-DV0vODQ68ZRk.png",
-        "banner": "",
-        "description": "A weekly mini anime shown with each episode of Kanojo no Tomodachi exclusively on the AT-X broadcast of the TV anime and online on OceanVeil.",
-        "year": 2026,
-        "startDate": "2026-10-05",
-        "format": "TV_SHORT",
-        "episodes": 12,
-        "averageScore": 0,
-        "status": "RELEASING",
-        "genres": [
-          "Drama",
-          "Ecchi",
-          "Romance"
-        ],
-        "siteUrl": "https://anilist.co/anime/217782",
-        "streaming": [],
-        "trailer": null,
-        "next": {
-          "at": 1792945020,
-          "episode": 4
-        },
-        "description_es": "Un mini anime semanal mostrado con cada episodio de Kanojo no Tomodachi exclusivamente en la transmisión AT-X del anime de TV y en línea en OceanVeil."
-      },
-      {
         "id": "mal-65119",
         "mal_id": 65119,
         "ani_id": 218532,
@@ -8922,6 +8894,34 @@
           "episode": 4
         },
         "description_es": "Chibi shorts to Kusuriya no Hitorigoto 3rd Season lanzado en el canal de animación TOHO YouTube. Nota: El conteo de Episodio comienza a las 49."
+      },
+      {
+        "id": "mal-65167",
+        "mal_id": 65167,
+        "ani_id": 217782,
+        "title": "My Girlfriend's Friend Mini Anime",
+        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx217782-DV0vODQ68ZRk.png",
+        "banner": "",
+        "description": "A weekly mini anime shown with each episode of Kanojo no Tomodachi exclusively on the AT-X broadcast of the TV anime and online on OceanVeil.",
+        "year": 2026,
+        "startDate": "2026-10-05",
+        "format": "TV_SHORT",
+        "episodes": 12,
+        "averageScore": 0,
+        "status": "RELEASING",
+        "genres": [
+          "Drama",
+          "Ecchi",
+          "Romance"
+        ],
+        "siteUrl": "https://anilist.co/anime/217782",
+        "streaming": [],
+        "trailer": null,
+        "next": {
+          "at": 1792945020,
+          "episode": 4
+        },
+        "description_es": "Un mini anime semanal mostrado con cada episodio de Kanojo no Tomodachi exclusivamente en la transmisión AT-X del anime de TV y en línea en OceanVeil."
       },
       {
         "id": "mal-65169",
@@ -9009,7 +9009,7 @@
           "at": 1793103960,
           "episode": 4
         },
-        "description_es": "Un gran héroe está invicto en su lecho de muerte, lamentando que nunca haya encontrado a un enemigo que pudiera derribarla. Ella nunca quiso encontrar su destino en otro lugar que en el campo de batalla, y su pacífica desaparición tiene su deseo desesperadamente de que las cosas podrían haber sido diferentes... Pero cuando de repente viene al cuerpo de la joven y frágil Nia Liston, tiene una nueva lucha por delante de ella. Nia es una niña enferma, lo que significa que tiene un largo camino por recorrer"
+        "description_es": "Un gran héroe está invicto en su lecho de muerte, lamentando que nunca haya encontrado a un enemigo que pudiera derribarla. Ella nunca quiso encontrar su destino en otro lugar que en el campo de batalla, y su pacífica desaparición tiene su deseo desesperadamente de que las cosas podrían haber sido diferentes... Pero cuando de repente viene al cuerpo de la joven y frágil Nia Liston, tiene una nueva lucha por delante de ella. Nia es una niña enferma, lo que significa que tiene un largo camino para ir antes de que esté en forma de lucha. Ahora que se le ha dado un segundo tiro a la vida, sin embargo, está decidida a conseguir lo que quiere. Va a vivir."
       },
       {
         "id": "mal-63754",
@@ -9044,7 +9044,7 @@
           "at": 1793106000,
           "episode": 4
         },
-        "description_es": "Sato-san es la flor inalcanzable de la clase. Siempre tiene frío y rito con compañeros de clase, pero sólo sé que es muy linda cuando sonríe, incluso si no es mucho fotógrafo. Oshio-kun es amistoso y animado, pero sólo sé que trabaja en el café de su familia después de la escuela. Hace un gran trabajo con la cuenta SNS de la cafetería, y su mala sonrisa hace que mi corazón salte un latido! Innocente y dulce, pero a veces frustrante, esto es un"
+        "description_es": "Sato-san es la flor inalcanzable de la clase. Siempre tiene frío y rito con compañeros de clase, pero sólo sé que es muy linda cuando sonríe, incluso si no es mucho fotógrafo. Oshio-kun es amistoso y animado, pero sólo sé que trabaja en el café de su familia después de la escuela. Hace un gran trabajo con la cuenta SNS de la cafetería, y su mala sonrisa hace que mi corazón salte un latido! Inocentes y dulces, pero a veces frustrantes, esta es una historia de 120% pura y fluida sobre dos personas que se enamoran por primera vez."
       },
       {
         "id": "mal-54344",
@@ -9531,7 +9531,7 @@
           "at": 1793367000,
           "episode": 4
         },
-        "description_es": "Esta es una historia de cuatro chicas que viven en el \"Dark Side\" de Academy City. En la Ciudad de la Academia donde el \"ESP\" ha sido reconocido como una ciencia general. Detrás de la paz, hay una organización Dark Side que realiza misiones que no pueden hacerse públicas. \"ITEM\" es una unidad de élite compuesta por cuatro niñas. Takitsubo Rikou es capaz de leer y rastrear los campos AIM emitidos por aquellos con capacidades. Frenda Seivelun, que destaca en combate utilizando explosivos y trampas. Kinuhata Saiai, que puede manipular el nitrógeno a voluntad y juega un papel defensivo. Y uno de los 7 Espers que Academy City está orgulloso de: Mugino Shiz"
+        "description_es": "Esta es una historia de cuatro chicas que viven en el \"Dark Side\" de Academy City. En la Ciudad de la Academia donde el \"ESP\" ha sido reconocido como una ciencia general. Detrás de la paz, hay una organización del lado oscuro que realiza misiones que no pueden hacerse públicas. \"ITEM\" es una unidad de élite compuesta por cuatro chicas. Takitsubo Rikou es capaz de leer y rastrear los campos AIM emitidos por aquellos con capacidades. Frenda Seivelun, que destaca en combate utilizando explosivos y t"
       },
       {
         "id": "mal-63423",
@@ -9669,8 +9669,8 @@
           "id": "iX4N-Z5Hbxw"
         },
         "next": {
-          "at": 1792830600,
-          "episode": 3
+          "at": 1793435400,
+          "episode": 4
         },
         "description_es": "\"La máscara\" da poder a cualquiera que la use. A veces, eso significa una posibilidad interminable, o una tragedia inimaginable... Perú, alumno del legendario fabricante de máscaras Gaston Roux, se hace controlado por el “Mask del Dios Guerrero”, y mata involuntariamente a sus amigos, e incluso a su propio maestro. Para evitar que este tipo de tragedia vuelva a ocurrir, Perú jura destruir todas las máscaras de Gaston que se extienden por todo el mundo. Frente a los pecados que ha cometido, se embarca en su viaje. Conocer a nuevos amigos y enfrentar a poderosos enemigos. El chico continúa. Hasta el día que puede expiar por hola"
       },
@@ -9741,7 +9741,7 @@
           "at": 1792937760,
           "episode": 3
         },
-        "description_es": "Han pasado varios años desde la feroz batalla contra Majin Buu, y la Tierra finalmente ha recuperado un breve momento de paz. Al mismo tiempo, Beerus, el Dios de la Destrucción, despierta de su sueño largo y profundo. Incluso Kai y el Supremo Kai, consciente del abrumador poder de Beerus para destruir planetas enteros, ver su despertar con gran miedo... Mientras tanto, Beerus escucha rumores de un Saiyan que venció a Frieza y de repente aparece ante Goku. Meta de cerveza"
+        "description_es": "Han pasado varios años desde la feroz batalla contra Majin Buu, y la Tierra finalmente ha recuperado un breve momento de paz. Al mismo tiempo, Beerus, el Dios de la Destrucción, despierta de su sueño largo y profundo. Incluso Kai y el Supremo Kai, consciente del abrumador poder de Beerus para destruir planetas enteros, ver su despertar con gran miedo... Mientras tanto, Beerus escucha rumores de un Saiyan que venció a Frieza y de repente aparece ante Goku. Atacada por Beerus, el ser más fuerte del universo, la Tierra está en grave peligro. Así comienza una batalla cósmica que rompe la tierra entre el Dios de la Destrucción y Go"
       },
       {
         "id": "mal-63292",
