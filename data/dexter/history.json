@@ -2,6 +2,15 @@
   "schemaVersion": 1,
   "items": [
     {
+      "providerId": "jkanime_external",
+      "at": "2026-10-24T11:55:35.927Z",
+      "result": "success",
+      "observed": 5,
+      "created": 0,
+      "playback": 0,
+      "detail": "conectada"
+    },
+    {
       "providerId": "licensed_library",
       "at": "2026-10-24T08:57:45.670Z",
       "result": "success",
@@ -531,15 +540,6 @@
       "created": 0,
       "playback": 0,
       "detail": "conectada"
-    },
-    {
-      "providerId": "licensed_library",
-      "at": "2026-10-19T15:07:26.293Z",
-      "result": "success",
-      "observed": 0,
-      "created": 0,
-      "playback": 0,
-      "detail": "sin_contenido_autorizado"
     }
   ]
 }
