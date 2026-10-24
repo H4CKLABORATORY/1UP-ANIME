@@ -1,230 +1,9 @@
 {
-  "updated": "2026-10-23T21:33:30.956Z",
+  "updated": "2026-10-24T03:32:58.865Z",
   "source": "AniList public GraphQL metadata",
-  "windowStart": 1792593196,
-  "windowEnd": 1793568796,
+  "windowStart": 1792614764,
+  "windowEnd": 1793590364,
   "airing": [
-    {
-      "id": "mal-59204",
-      "mal_id": 59204,
-      "ani_id": 178868,
-      "title": "Magic Knight Rayearth (2026)",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx178868-mfp0HIHNJNAm.jpg",
-      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/178868-l7VyM7j7LRtH.jpg",
-      "description": "Hikaru Shidou, Umi Ryuuzaki, and Fuu Hououji aren't from Cephiro. While on a school field trip to the Tokyo Tower, the three girls' minds are on anything but different worlds filled with magic and wonder. That is, until Princess Emeraude, the Pillar of Cephiro, cries out for the Magic Knights to save her world--and that just happens to be those three! (Source: Crunchyroll)",
-      "year": 2026,
-      "startDate": "2026-10-07",
-      "format": "TV",
-      "episodes": 0,
-      "averageScore": 68,
-      "status": "RELEASING",
-      "genres": [
-        "Adventure",
-        "Fantasy",
-        "Mahou Shoujo",
-        "Mecha"
-      ],
-      "siteUrl": "https://anilist.co/anime/178868",
-      "streaming": [
-        {
-          "name": "Crunchyroll",
-          "url": "https://www.crunchyroll.com/series/GT00383994/magic-knight-rayearth-2026"
-        }
-      ],
-      "trailer": {
-        "site": "youtube",
-        "id": "67GqhfLw3ys"
-      },
-      "next": {
-        "at": 1793198760,
-        "episode": 4
-      },
-      "airingAt": 1792593960,
-      "episode": 3,
-      "scheduleId": 417272,
-      "description_es": "Hikaru Shidou, Umi Ryuuzaki, y Fuu Hououji no son de Cephiro. Mientras que en un viaje de campo escolar a la Torre de Tokio, las mentes de las tres chicas están en cualquier cosa excepto mundos diferentes llenos de magia y maravilla. Es decir, hasta que la Princesa Esmeraude, el Pilar de Cephiro, clama por los Caballeros Mágicos para salvar su mundo, ¡y eso resulta que son esos tres! (Fuente: Crunchyroll)"
-    },
-    {
-      "id": "mal-62534",
-      "mal_id": 62534,
-      "ani_id": 199068,
-      "title": "The Prince of Tennis II U-17 WORLD CUP: Final Member Selection Match",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx199068-2afNaytl50Ko.png",
-      "banner": "",
-      "description": "Old rivalries reignite as Team Japan players face off to earn spots in the lineup for the World Cup final. (Source: Crunchyroll News)",
-      "year": 2026,
-      "startDate": "2026-10-01",
-      "format": "TV",
-      "episodes": 0,
-      "averageScore": 53,
-      "status": "RELEASING",
-      "genres": [
-        "Action",
-        "Comedy",
-        "Sports"
-      ],
-      "siteUrl": "https://anilist.co/anime/199068",
-      "streaming": [
-        {
-          "name": "Crunchyroll",
-          "url": "https://www.crunchyroll.com/series/G65VP3106/the-prince-of-tennis-ii"
-        }
-      ],
-      "trailer": {
-        "site": "youtube",
-        "id": "bsNeADDQFD4"
-      },
-      "next": {
-        "at": 1793199600,
-        "episode": 5
-      },
-      "airingAt": 1792594800,
-      "episode": 4,
-      "scheduleId": 419601,
-      "description_es": "Las viejas rivalidades reinan cuando los jugadores del equipo Japón se enfrentan para ganar puntos en la alineación para la final de la Copa Mundial. (Fuente: Crunchyroll News)"
-    },
-    {
-      "id": "mal-60598",
-      "mal_id": 60598,
-      "ani_id": 168085,
-      "title": "Dali Si Rizhi 3",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx168085-hPOOODUADp7D.png",
-      "banner": "",
-      "description": "The third seasons of Dali Si Rizhi .",
-      "year": 2026,
-      "startDate": "2026-10-15",
-      "format": "ONA",
-      "episodes": 0,
-      "averageScore": 0,
-      "status": "RELEASING",
-      "genres": [
-        "Action",
-        "Adventure",
-        "Comedy"
-      ],
-      "siteUrl": "https://anilist.co/anime/168085",
-      "streaming": [],
-      "trailer": null,
-      "next": {
-        "at": 1793199600,
-        "episode": 3
-      },
-      "airingAt": 1792594800,
-      "episode": 2,
-      "scheduleId": 421451,
-      "description_es": "Las terceras temporadas de Dali Si Rizhi."
-    },
-    {
-      "id": "mal-53913",
-      "mal_id": 53913,
-      "ani_id": 159042,
-      "title": "Reincarnated as a Sword Season 2",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx159042-GGFwlDskc5vR.png",
-      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/159042-X0mqyaUFBkms.jpg",
-      "description": "The second season of Tensei Shitara Ken Deshita . Note: Each episode was streamed one week in advance of the TV broadcast starting on October 1, 2026 on Abema. Regular broadcasting began on October 8, 2026.",
-      "year": 2026,
-      "startDate": "2026-10-01",
-      "format": "ONA",
-      "episodes": 12,
-      "averageScore": 75,
-      "status": "RELEASING",
-      "genres": [
-        "Action",
-        "Adventure",
-        "Fantasy"
-      ],
-      "siteUrl": "https://anilist.co/anime/159042",
-      "streaming": [],
-      "trailer": {
-        "site": "youtube",
-        "id": "kbtRqqa2GyA"
-      },
-      "next": {
-        "at": 1793201400,
-        "episode": 5
-      },
-      "airingAt": 1792596600,
-      "episode": 4,
-      "scheduleId": 418796,
-      "description_es": "La segunda temporada de Tensei Mierda Ken Deshita. Nota: Cada episodio fue transmitido una semana antes de la emisión de televisión a partir del 1 de octubre de 2026 en Abema. La radiodifusión regular comenzó el 8 de octubre de 2026."
-    },
-    {
-      "id": "mal-64344",
-      "mal_id": 64344,
-      "ani_id": 213068,
-      "title": "Dandivine",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx213068-aFSedkY5bQ4m.png",
-      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/213068-EQba2gbIKAy5.jpg",
-      "description": "The story takes place 20 years after the robot Dandivine defeated the mysterious Aposdoll. The world is now in peace. However, toy manufacturer Kasuga, who relied on its toys of merchandise of Dandivine, has fallen into decline. Thus, Kasuga's president Genjuro Shijima prayed for Dandivine's revival, and the Aposdoll suddenly returned. High school student Gekiha Shijima gets an invitation from his uncle Yusaku Kuroiwa, the former main pilot of Dandivine, to pilot the giant robot himself. (Source: Anime News Network)",
-      "year": 2026,
-      "startDate": "2026-10-08",
-      "format": "TV",
-      "episodes": 0,
-      "averageScore": 49,
-      "status": "RELEASING",
-      "genres": [
-        "Action",
-        "Mecha"
-      ],
-      "siteUrl": "https://anilist.co/anime/213068",
-      "streaming": [
-        {
-          "name": "Crunchyroll",
-          "url": "https://www.crunchyroll.com/series/GT00385792/dandivine"
-        }
-      ],
-      "trailer": {
-        "site": "youtube",
-        "id": "ihJfkOT_0wU"
-      },
-      "next": {
-        "at": 1793201400,
-        "episode": 4
-      },
-      "airingAt": 1792596600,
-      "episode": 3,
-      "scheduleId": 419814,
-      "description_es": "La historia tiene lugar 20 años después de que el robot Dandivine derrotara al misterioso Aposdoll. El mundo está ahora en paz. Sin embargo, el fabricante de juguetes Kasuga, que dependía de sus juguetes de mercadería de Dandivine, ha caído en declive. Así, el presidente de Kasuga, Genjuro Shijima, oró por el renacimiento de Dandivine, y el Aposdoll de repente regresó. El estudiante de secundaria Gekiha Shijima recibe una invitación de su tío Yusaku Kuroiwa, el ex piloto principal de Dandivine, para pilotar el robot gigante mismo. (Fuente: Anime News Network)"
-    },
-    {
-      "id": "mal-57612",
-      "mal_id": 57612,
-      "ani_id": 172192,
-      "title": "A Returner's Magic Should be Special Season 2",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx172192-W7P5xEUaxF3y.jpg",
-      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/172192-jibcmb7wdbzk.jpg",
-      "description": "In a land dominated by the formidable Shadow Worlds, most of humanity has been destroyed. To rescue their planet from impending doom, six brave heroes fight a perilous battle…and fail. But there’s a glimpse of hope when Desir, one of the last mages, is suddenly sent back in time 13 years! Now armed with knowledge of the grim future, can he alter the course of history and save the world? (Source: Crunchyroll)",
-      "year": 2026,
-      "startDate": "2026-10-08",
-      "format": "TV",
-      "episodes": 0,
-      "averageScore": 69,
-      "status": "RELEASING",
-      "genres": [
-        "Action",
-        "Adventure",
-        "Fantasy"
-      ],
-      "siteUrl": "https://anilist.co/anime/172192",
-      "streaming": [
-        {
-          "name": "Crunchyroll",
-          "url": "https://www.crunchyroll.com/series/GEXH3W207/a-returners-magic-should-be-special"
-        }
-      ],
-      "trailer": {
-        "site": "youtube",
-        "id": "YBWOrQCB9r0"
-      },
-      "next": {
-        "at": 1793202300,
-        "episode": 4
-      },
-      "airingAt": 1792597500,
-      "episode": 3,
-      "scheduleId": 420118,
-      "description_es": "En una tierra dominada por los formidables Mundos Sombríos, la mayoría de la humanidad ha sido destruida. Para rescatar a su planeta de la muerte inminente, seis héroes valientes luchan una batalla peligrosa... y fracasan. Pero hay una mirada de esperanza cuando Desir, una de las últimas magras, es de repente enviado en el tiempo 13 años! Ahora armado con conocimiento del futuro sombrío, ¿puede alterar el curso de la historia y salvar el mundo? (Fuente: Crunchyroll)"
-    },
     {
       "id": "mal-65095",
       "mal_id": 65095,
@@ -601,16 +380,16 @@
       "id": "mal-61607",
       "mal_id": 61607,
       "ani_id": 191832,
-      "title": "Link Click Season 3",
+      "title": "Link Click Season 3 Part 1",
       "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx191832-bsnCaLNVjzEw.png",
-      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/191832-cBWXNPNVhA1s.jpg",
+      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/191832-TKC3kfm43hCc.jpg",
       "description": "After the Li Tianchen case comes to a close, peace appears to return to Time Photo Studio—until the disappearance of Xia Fei draws everyone back into a web of fate. With Vein's return and Qiao Ling's newfound abilities, Cheng Xiaoshi and Lu Guang begin uncovering the truth behind the mysterious Bahati fire. As the investigation deepens, hidden connections emerge between the case and Cheng Xiaoshi's parents. Meanwhile, Liu Xiao, a member of a mysterious organization, sets his own plans in motion, while the intervention of Inspector Jae introduces new uncertainties. As secrets buried in the past resurface, the search for truth becomes more dangerous than ever. (Source: bilibili, translated)",
       "year": 2026,
       "startDate": "2026-08-14",
       "format": "ONA",
-      "episodes": 0,
+      "episodes": 12,
       "averageScore": 85,
-      "status": "RELEASING",
+      "status": "FINISHED",
       "genres": [
         "Drama",
         "Mystery",
@@ -1118,8 +897,8 @@
         "id": "n0na0hTpl1E"
       },
       "next": {
-        "at": 1792796400,
-        "episode": 8
+        "at": 1793401200,
+        "episode": 9
       },
       "airingAt": 1792796400,
       "episode": 8,
@@ -1149,8 +928,8 @@
         "id": "NGwgoL0TvI8"
       },
       "next": {
-        "at": 1792798200,
-        "episode": 17
+        "at": 1793403000,
+        "episode": 18
       },
       "airingAt": 1792798200,
       "episode": 17,
@@ -1186,8 +965,8 @@
         "id": "rV-fcFL5vtU"
       },
       "next": {
-        "at": 1792801560,
-        "episode": 29
+        "at": 1793406360,
+        "episode": 30
       },
       "airingAt": 1792801560,
       "episode": 29,
@@ -1215,8 +994,8 @@
       "streaming": [],
       "trailer": null,
       "next": {
-        "at": 1792801800,
-        "episode": 4
+        "at": 1793406600,
+        "episode": 5
       },
       "airingAt": 1792801800,
       "episode": 4,
@@ -1253,8 +1032,8 @@
         "id": "iMyre5xXDzE"
       },
       "next": {
-        "at": 1792801800,
-        "episode": 4
+        "at": 1793406600,
+        "episode": 5
       },
       "airingAt": 1792801800,
       "episode": 4,
@@ -1284,8 +1063,8 @@
       "streaming": [],
       "trailer": null,
       "next": {
-        "at": 1792803600,
-        "episode": 17
+        "at": 1793408400,
+        "episode": 18
       },
       "airingAt": 1792803600,
       "episode": 17,
@@ -1316,8 +1095,8 @@
       "streaming": [],
       "trailer": null,
       "next": {
-        "at": 1792807200,
-        "episode": 176
+        "at": 1793412000,
+        "episode": 177
       },
       "airingAt": 1792807200,
       "episode": 176,
@@ -1349,8 +1128,8 @@
         "id": "xIa7dMUka-8"
       },
       "next": {
-        "at": 1792807200,
-        "episode": 6
+        "at": 1793412000,
+        "episode": 7
       },
       "airingAt": 1792807200,
       "episode": 6,
@@ -5188,8 +4967,8 @@
         "id": "n0na0hTpl1E"
       },
       "next": {
-        "at": 1792796400,
-        "episode": 8
+        "at": 1793401200,
+        "episode": 9
       },
       "airingAt": 1793401200,
       "episode": 9,
@@ -5219,8 +4998,8 @@
         "id": "NGwgoL0TvI8"
       },
       "next": {
-        "at": 1792798200,
-        "episode": 17
+        "at": 1793403000,
+        "episode": 18
       },
       "airingAt": 1793403000,
       "episode": 18,
@@ -5256,8 +5035,8 @@
         "id": "rV-fcFL5vtU"
       },
       "next": {
-        "at": 1792801560,
-        "episode": 29
+        "at": 1793406360,
+        "episode": 30
       },
       "airingAt": 1793406360,
       "episode": 30,
@@ -5285,8 +5064,8 @@
       "streaming": [],
       "trailer": null,
       "next": {
-        "at": 1792801800,
-        "episode": 4
+        "at": 1793406600,
+        "episode": 5
       },
       "airingAt": 1793406600,
       "episode": 5,
@@ -5323,8 +5102,8 @@
         "id": "iMyre5xXDzE"
       },
       "next": {
-        "at": 1792801800,
-        "episode": 4
+        "at": 1793406600,
+        "episode": 5
       },
       "airingAt": 1793406600,
       "episode": 5,
@@ -5354,8 +5133,8 @@
       "streaming": [],
       "trailer": null,
       "next": {
-        "at": 1792803600,
-        "episode": 17
+        "at": 1793408400,
+        "episode": 18
       },
       "airingAt": 1793408400,
       "episode": 18,
@@ -5386,8 +5165,8 @@
       "streaming": [],
       "trailer": null,
       "next": {
-        "at": 1792807200,
-        "episode": 176
+        "at": 1793412000,
+        "episode": 177
       },
       "airingAt": 1793412000,
       "episode": 177,
@@ -5419,8 +5198,8 @@
         "id": "xIa7dMUka-8"
       },
       "next": {
-        "at": 1792807200,
-        "episode": 6
+        "at": 1793412000,
+        "episode": 7
       },
       "airingAt": 1793412000,
       "episode": 7,
@@ -7328,6 +7107,107 @@
       "episode": 5,
       "scheduleId": 422530,
       "description_es": "Un mini anime semanal mostrado con cada episodio de Dark Summoner a Dekiteiru exclusivamente en la transmisión AT-X del anime de TV y en línea en Abema."
+    },
+    {
+      "id": "mal-55809",
+      "mal_id": 55809,
+      "ani_id": 137653,
+      "title": "Renegade Immortal",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx137653-1wHbCVvABGOr.png",
+      "banner": "",
+      "description": "It tells the story of Wang Lin, an ordinary young man in the countryside, who is moved by his heart and cultivates against immortality. His pursuit is not only for longevity, but also for getting rid of the ants behind it. He firmly believed in human beings and entered the path of cultivation with mediocre qualifications. After experiencing ups and downs, with his wise mind, he gradually reached the pinnacle and became famous in the cultivation world with his own strength. (Source: WeTV)",
+      "year": 2023,
+      "startDate": "2023-09-25",
+      "format": "ONA",
+      "episodes": 180,
+      "averageScore": 82,
+      "status": "RELEASING",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Drama",
+        "Fantasy"
+      ],
+      "siteUrl": "https://anilist.co/anime/137653",
+      "streaming": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GKEH2G0MN/renegade-immortal"
+        }
+      ],
+      "trailer": null,
+      "next": {
+        "at": 1792980000,
+        "episode": 164
+      },
+      "airingAt": 1793584800,
+      "episode": 165,
+      "scheduleId": 414223,
+      "description_es": "Cuenta la historia de Wang Lin, un joven común en el campo, que se mueve por su corazón y cultiva contra la inmortalidad. Su búsqueda no es sólo para la longevidad, sino también para deshacerse de las hormigas detrás de ella. Creyó firmemente en los seres humanos y entró en el camino del cultivo con calificaciones mediocres. Después de experimentar altibajos, con su mente sabia, gradualmente llegó al pináculo y se hizo famoso en el mundo de cultivo con su propia fuerza. (Fuente: WeTV)"
+    },
+    {
+      "id": "al-214593",
+      "mal_id": null,
+      "ani_id": 214593,
+      "title": "Yuusanchi! from Yuuhachi",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx214593-WZ0HaPSRae2E.png",
+      "banner": "",
+      "description": "",
+      "year": 2026,
+      "startDate": "2026-10-05",
+      "format": "TV_SHORT",
+      "episodes": 0,
+      "averageScore": 0,
+      "status": "RELEASING",
+      "genres": [
+        "Comedy",
+        "Slice of Life"
+      ],
+      "siteUrl": "https://anilist.co/anime/214593",
+      "streaming": [],
+      "trailer": {
+        "site": "youtube",
+        "id": "WprfleUJVck"
+      },
+      "next": {
+        "at": 1792980000,
+        "episode": 7
+      },
+      "airingAt": 1793584800,
+      "episode": 9,
+      "scheduleId": 419735
+    },
+    {
+      "id": "mal-65119",
+      "mal_id": 65119,
+      "ani_id": 218532,
+      "title": "Maomao no Hitorigoto 3rd Season",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx218532-I1GCprJrJ5sm.png",
+      "banner": "",
+      "description": "Chibi shorts to Kusuriya no Hitorigoto 3rd Season released on the TOHO animation YouTube channel. Note: Episode count begins at 49.",
+      "year": 2026,
+      "startDate": "2026-10-05",
+      "format": "ONA",
+      "episodes": 0,
+      "averageScore": 0,
+      "status": "RELEASING",
+      "genres": [
+        "Comedy"
+      ],
+      "siteUrl": "https://anilist.co/anime/218532",
+      "streaming": [],
+      "trailer": {
+        "site": "youtube",
+        "id": "FuGZ0Cl8YMY"
+      },
+      "next": {
+        "at": 1792983600,
+        "episode": 4
+      },
+      "airingAt": 1793588400,
+      "episode": 5,
+      "scheduleId": 422695,
+      "description_es": "Chibi shorts to Kusuriya no Hitorigoto 3rd Season lanzado en el canal de animación TOHO YouTube. Nota: El conteo de Episodio comienza a las 49."
     }
   ],
   "seasonal": {
@@ -8222,8 +8102,8 @@
           "id": "iMyre5xXDzE"
         },
         "next": {
-          "at": 1792801800,
-          "episode": 4
+          "at": 1793406600,
+          "episode": 5
         },
         "description_es": "¡El sargento Keroro viene a conquistar la Tierra, sólo para ser capturado y atrapado viviendo con la familia Hinata! (Fuente: Crunchyroll)"
       },
@@ -8274,8 +8154,8 @@
         "streaming": [],
         "trailer": null,
         "next": {
-          "at": 1792801800,
-          "episode": 4
+          "at": 1793406600,
+          "episode": 5
         },
         "description_es": "Segunda temporada de Nezumi-kun no Chokki (TV)"
       },
