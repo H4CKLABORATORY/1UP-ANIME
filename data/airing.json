@@ -1,284 +1,9 @@
 {
-  "updated": "2026-10-24T21:30:05.356Z",
+  "updated": "2026-10-25T03:33:21.216Z",
   "source": "AniList public GraphQL metadata",
-  "windowStart": 1792679390,
-  "windowEnd": 1793654990,
+  "windowStart": 1792701187,
+  "windowEnd": 1793676787,
   "airing": [
-    {
-      "id": "mal-61227",
-      "mal_id": 61227,
-      "ani_id": 188034,
-      "title": "Girls und Panzer: Motto Love Love Sakusen desu!",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx188034-oRwVKBMezOOk.jpg",
-      "banner": "",
-      "description": "A deep dive into the untold daily lives and the inter-school interactions of the Ooarai Girls' team and the other students (along with the colorful characters that surround them) who are wholeheartedly dedicated to the way of the tank! (Source: Official Website, translated) Note: The series had a four-part theatrical pre-screening in Japan starting in December 2025. Regular TV broadcast began in October 2026. • Part 1 releasing theatrically on December 26, 2025. • Part 2 releasing theatrically on January 30, 2026. • Part 3 releasing theatrically on March 6, 2026. • Part 4 releasing theatrically on April 10, 2026.",
-      "year": 2026,
-      "startDate": "2026-10-08",
-      "format": "TV",
-      "episodes": 12,
-      "averageScore": 73,
-      "status": "RELEASING",
-      "genres": [
-        "Comedy"
-      ],
-      "siteUrl": "https://anilist.co/anime/188034",
-      "streaming": [],
-      "trailer": {
-        "site": "youtube",
-        "id": "AVIDW2dT2AM"
-      },
-      "next": {
-        "at": 1793284200,
-        "episode": 4
-      },
-      "airingAt": 1792679400,
-      "episode": 3,
-      "scheduleId": 422408,
-      "description_es": "Una profunda inmersión en la vida cotidiana incalculable y las interacciones entre escuelas del equipo de Ooarai Girls y los demás estudiantes (junto con los personajes coloridos que los rodean) que están totalmente dedicados al camino del tanque! (Fuente: Página Web Oficial, traducido) Nota: La serie tenía un pre-pantalla de cuatro partes en Japón a partir de diciembre de 2025. La televisión regular comenzó en octubre de 2026. • Parte 1 liberando teatralmente el 26 de diciembre de 2025. • Parte 2 liberando teatralmente el 30 de enero de 2026. • Parte 3 liberando teatralmente el 6 de marzo de 2026. • Parte 4 liberando teatricall"
-    },
-    {
-      "id": "mal-64534",
-      "mal_id": 64534,
-      "ani_id": 213805,
-      "title": "The Ramparts of Ice Season 2",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx213805-Nokui3uWlIlw.png",
-      "banner": "",
-      "description": "Koyuki, the isolated girl; Miki, the former school idol; Minato, the guy with no concept of personal space; and Youta, the gentle basketball player. Clumsy, frustrating, yet deeply endearing — this coming-of-age ensemble drama of crisscrossing hearts marches on. As they grow closer, Koyuki and Minato begin to develop feelings for each other that go beyond mere friendship. Meanwhile, Youta finally confesses to Miki the feelings he's harbored for years. Some speak their hearts while others keep their emotions hidden, causing their paths — and their feelings for one another — to continuously cross and pass by… (Source: Netflix)",
-      "year": 2026,
-      "startDate": "2026-10-01",
-      "format": "TV",
-      "episodes": 0,
-      "averageScore": 81,
-      "status": "RELEASING",
-      "genres": [
-        "Comedy",
-        "Drama",
-        "Romance",
-        "Slice of Life"
-      ],
-      "siteUrl": "https://anilist.co/anime/213805",
-      "streaming": [],
-      "trailer": {
-        "site": "youtube",
-        "id": "VvzeL7UMCE8"
-      },
-      "next": {
-        "at": 1793285760,
-        "episode": 5
-      },
-      "airingAt": 1792680960,
-      "episode": 4,
-      "scheduleId": 421726,
-      "description_es": "Koyuki, la chica aislada; Miki, el antiguo ídolo escolar; Minato, el tipo sin concepto de espacio personal; y Youta, el amable jugador de baloncesto. Clumsy, frustrante, pero profundamente apasionante — este drama que se acerca a la edad de los corazones cruzados avanza. A medida que se acercan, Koyuki y Minato comienzan a desarrollar sentimientos entre sí que van más allá de la mera amistad. Mientras tanto, Youta finalmente confiesa a Miki los sentimientos por los que ha albergado"
-    },
-    {
-      "id": "mal-54250",
-      "mal_id": 54250,
-      "ani_id": 160275,
-      "title": "Made in Abyss: Mezameru Shinpi",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx160275-cBOWJpcCGeMq.jpg",
-      "banner": "",
-      "description": "Sequel to Made in Abyss: Retsujitsu no Ougonkyou.",
-      "year": 2026,
-      "startDate": "2026-10-23",
-      "format": "MOVIE",
-      "episodes": 1,
-      "averageScore": 80,
-      "status": "FINISHED",
-      "genres": [
-        "Adventure",
-        "Drama",
-        "Fantasy",
-        "Horror",
-        "Mystery",
-        "Sci-Fi"
-      ],
-      "siteUrl": "https://anilist.co/anime/160275",
-      "streaming": [],
-      "trailer": {
-        "site": "youtube",
-        "id": "Sy7cLG6XHRY"
-      },
-      "next": null,
-      "airingAt": 1792681200,
-      "episode": 1,
-      "scheduleId": 412353,
-      "description_es": "Secuela de Made in Abyss: Retsujitsu no Ougonkyou."
-    },
-    {
-      "id": "mal-62615",
-      "mal_id": 62615,
-      "ani_id": 199594,
-      "title": "TETSURYO! Meet With Tetsudou Musume",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx199594-moYKzlfIH03U.jpg",
-      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/199594-iw8KRAiBp3sO.jpg",
-      "description": "Misaki has often felt the urge to break free from everyday life and set out on a journey somewhere far away. Even though she doesn’t yet know what she wants to become, she longs to find something she can truly be passionate about. At the start of a new chapter on a lively campus, she meets the members of the Railway Travel Research Club—known as the “Tetsuryo Club.” As her world unfolds along the railway lines, Misaki’s heart begins to race with excitement! As TETSUDOU MUSUME celebrates its 20th anniversary, the Tetsuryo Club sets off on a journey through the world where the Railway Girls work, in search of moments of wonder. (Source: Pony Canyon Anime)",
-      "year": 2026,
-      "startDate": "2026-10-09",
-      "format": "TV",
-      "episodes": 12,
-      "averageScore": 58,
-      "status": "RELEASING",
-      "genres": [
-        "Slice of Life"
-      ],
-      "siteUrl": "https://anilist.co/anime/199594",
-      "streaming": [],
-      "trailer": {
-        "site": "youtube",
-        "id": "GixEiC7k9_4"
-      },
-      "next": {
-        "at": 1793286000,
-        "episode": 4
-      },
-      "airingAt": 1792681200,
-      "episode": 3,
-      "scheduleId": 418962,
-      "description_es": "Misaki ha sentido a menudo el impulso de liberarse de la vida cotidiana y de emprender un viaje lejos. A pesar de que todavía no sabe lo que quiere convertirse, ella desea encontrar algo que realmente pueda ser apasionada. Al comienzo de un nuevo capítulo en un animado campus, se reúne con los miembros del Club de Investigación de Viajes Ferroviarios, conocido como el Club Tetsuryo. Mientras su mundo se desarrolla a lo largo de las líneas ferroviarias, el corazón de Misaki comienza a correr con emoción! A medida que TETSUDOU MUSUME celebra su 20 aniversario, el Tetsuryo Club comienza en un viaje por el mundo donde trabajan las Ferrocarriles"
-    },
-    {
-      "id": "al-214593",
-      "mal_id": null,
-      "ani_id": 214593,
-      "title": "Yuusanchi! from Yuuhachi",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx214593-WZ0HaPSRae2E.png",
-      "banner": "",
-      "description": "",
-      "year": 2026,
-      "startDate": "2026-10-05",
-      "format": "TV_SHORT",
-      "episodes": 0,
-      "averageScore": 0,
-      "status": "RELEASING",
-      "genres": [
-        "Comedy",
-        "Slice of Life"
-      ],
-      "siteUrl": "https://anilist.co/anime/214593",
-      "streaming": [],
-      "trailer": {
-        "site": "youtube",
-        "id": "WprfleUJVck"
-      },
-      "next": {
-        "at": 1792980000,
-        "episode": 7
-      },
-      "airingAt": 1792681200,
-      "episode": 6,
-      "scheduleId": 419732
-    },
-    {
-      "id": "mal-64180",
-      "mal_id": 64180,
-      "ani_id": 212144,
-      "title": "With Vengeance, Sincerely, Your Broken Saintess Season 2",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b212144-9qJMcEdy4Xbo.jpg",
-      "banner": "",
-      "description": "The second season of Kizu darake Seijo yori Houfuku wo Komete .",
-      "year": 2026,
-      "startDate": "2026-10-02",
-      "format": "TV_SHORT",
-      "episodes": 0,
-      "averageScore": 56,
-      "status": "RELEASING",
-      "genres": [
-        "Fantasy",
-        "Romance"
-      ],
-      "siteUrl": "https://anilist.co/anime/212144",
-      "streaming": [],
-      "trailer": {
-        "site": "youtube",
-        "id": "vnOrtJ4vRmw"
-      },
-      "next": {
-        "at": 1793286000,
-        "episode": 5
-      },
-      "airingAt": 1792681200,
-      "episode": 4,
-      "scheduleId": 421804,
-      "description_es": "La segunda temporada de Kizu darake Seijo yori Houfuku wo Komete."
-    },
-    {
-      "id": "mal-59741",
-      "mal_id": 59741,
-      "ani_id": 180136,
-      "title": "The Exiled Heavy Knight Knows How to Game the System",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx180136-gtMTCRlOD4OE.jpg",
-      "banner": "",
-      "description": "Born into a prestigious family of master swordsmen, Elymas Edvaughn’s future shatters when he awakens the so-called “defective” Heavy Knight class. Disowned and cast out, he regains memories of another life—and realizes this world mirrors a VR game he once mastered. Armed with knowledge no one else possesses, he sets out to rewrite his fate and prove the strength of the “weakest” class. (Source: Crunchyroll)",
-      "year": 2026,
-      "startDate": "2026-07-03",
-      "format": "TV",
-      "episodes": 26,
-      "averageScore": 67,
-      "status": "RELEASING",
-      "genres": [
-        "Action",
-        "Fantasy"
-      ],
-      "siteUrl": "https://anilist.co/anime/180136",
-      "streaming": [
-        {
-          "name": "Crunchyroll",
-          "url": "https://www.crunchyroll.com/series/GT00378018/the-exiled-heavy-knight-knows-how-to-game-the-system"
-        }
-      ],
-      "trailer": {
-        "site": "youtube",
-        "id": "uC13b3_8riU"
-      },
-      "next": {
-        "at": 1793287560,
-        "episode": 18
-      },
-      "airingAt": 1792682760,
-      "episode": 17,
-      "scheduleId": 417002,
-      "description_es": "Elymas Edvaughn nace en una prestigiosa familia de maestros espadachines, pero su futuro se derrumba cuando despierta la clase de Caballero Pesado, considerada defectuosa. Rechazado y expulsado, recupera recuerdos de una vida anterior y descubre que ese mundo se parece a un videojuego de realidad virtual que conocía muy bien. Gracias a secretos que nadie más posee, decide cambiar su destino y demostrar el verdadero poder de la clase que todos consideran la más débil."
-    },
-    {
-      "id": "mal-64254",
-      "mal_id": 64254,
-      "ani_id": 212503,
-      "title": "The Iceblade Sorcerer Shall Rule the World II",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx212503-sXBpRZr96c4e.jpg",
-      "banner": "",
-      "description": "Once dismissed as the sole ordinary student at the elite Arnold Academy of Sorcery, Ray White—secretly, the Iceblade Sorcerer—has finally earned his place. With a new school year comes a new challenge: The Magicks War, a grand competition pitting teams from rival schools against each other. But an ominous shadow looms over Ray and his friends as the other grand sorcerers plot their next moves. (Source: Crunchyroll)",
-      "year": 2026,
-      "startDate": "2026-10-09",
-      "format": "TV",
-      "episodes": 0,
-      "averageScore": 66,
-      "status": "RELEASING",
-      "genres": [
-        "Action",
-        "Adventure",
-        "Fantasy"
-      ],
-      "siteUrl": "https://anilist.co/anime/212503",
-      "streaming": [
-        {
-          "name": "Crunchyroll",
-          "url": "https://www.crunchyroll.com/series/GDKHZEP21/the-iceblade-sorcerer-shall-rule-the-world"
-        }
-      ],
-      "trailer": {
-        "site": "youtube",
-        "id": "oxkxyAcKv2g"
-      },
-      "next": {
-        "at": 1793291280,
-        "episode": 4
-      },
-      "airingAt": 1792686480,
-      "episode": 3,
-      "scheduleId": 418822,
-      "description_es": "Una vez despedido como el único estudiante ordinario de la élite Arnold Academy of Sorcery, Ray White — secretamente, el Hechicero de Iceblade— finalmente ha ganado su lugar. Con un nuevo año escolar surge un nuevo desafío: La Guerra de los Magos, una gran competencia que enfrenta equipos de escuelas rivales entre sí. Pero una sombra ominosa sobre Ray y sus amigos mientras los otros grandes hechiceros trazan sus próximos movimientos. (Fuente: Crunchyroll)"
-    },
     {
       "id": "mal-65007",
       "mal_id": 65007,
@@ -1702,8 +1427,8 @@
         "id": "Laf46YXDt68"
       },
       "next": {
-        "at": 1792879200,
-        "episode": 29
+        "at": 1793484000,
+        "episode": 30
       },
       "airingAt": 1792879200,
       "episode": 29,
@@ -1732,8 +1457,8 @@
         "id": "cH7enqqATwE"
       },
       "next": {
-        "at": 1792879200,
-        "episode": 4
+        "at": 1793484000,
+        "episode": 5
       },
       "airingAt": 1792879200,
       "episode": 4,
@@ -1764,8 +1489,8 @@
         "id": "DO_UchIVN9Y"
       },
       "next": {
-        "at": 1792879200,
-        "episode": 4
+        "at": 1793484000,
+        "episode": 5
       },
       "airingAt": 1792879200,
       "episode": 4,
@@ -1796,8 +1521,8 @@
         "id": "L4wurjkd0JM"
       },
       "next": {
-        "at": 1792882800,
-        "episode": 82
+        "at": 1793487600,
+        "episode": 83
       },
       "airingAt": 1792882800,
       "episode": 82,
@@ -1834,12 +1559,12 @@
         "id": "qjozo1fh7OI"
       },
       "next": {
-        "at": 1792884600,
-        "episode": 39
+        "at": 1794094200,
+        "episode": 40
       },
       "airingAt": 1792884600,
       "episode": 39,
-      "scheduleId": 411679,
+      "scheduleId": 422986,
       "description_es": "Anna Akechi es una estudiante de segundo año que vive en la ciudad de Makoto Mirai. En su 14o cumpleaños, tiene un encuentro casual con un hada llamado Pochitan, y un colgante mágico la hizo viajar de nuevo en el tiempo de 2027 a 1999! En la ciudad de Makoto Mirai 28 años en el pasado, Anna se encuentra con Mikuru Kobayashi, una chica de su edad que quiere convertirse en una gran detective. Mientras tanto, la gente en la ciudad está en problemas ya que sus posesiones apreciadas están siendo robadas bajo sus narices - la causa es un grupo de ladrones Fantasma. Para detenerlos, Anna y Mikuru se convierten en Precures! Tal vez si resuelven estos misterios"
     },
     {
@@ -1863,8 +1588,8 @@
       "streaming": [],
       "trailer": null,
       "next": {
-        "at": 1792887360,
-        "episode": 4
+        "at": 1793492160,
+        "episode": 5
       },
       "airingAt": 1792887360,
       "episode": 4,
@@ -1895,8 +1620,8 @@
         "id": "j5MgjyhhUBc"
       },
       "next": {
-        "at": 1792888200,
-        "episode": 30
+        "at": 1793493000,
+        "episode": 31
       },
       "airingAt": 1792888200,
       "episode": 30,
@@ -1924,8 +1649,8 @@
       "streaming": [],
       "trailer": null,
       "next": {
-        "at": 1792890000,
-        "episode": 4
+        "at": 1793494800,
+        "episode": 5
       },
       "airingAt": 1792890000,
       "episode": 4,
@@ -1953,8 +1678,8 @@
       "streaming": [],
       "trailer": null,
       "next": {
-        "at": 1792893600,
-        "episode": 427
+        "at": 1793066400,
+        "episode": 428
       },
       "airingAt": 1792893600,
       "episode": 427,
@@ -1984,8 +1709,8 @@
       "streaming": [],
       "trailer": null,
       "next": {
-        "at": 1792893600,
-        "episode": 58
+        "at": 1793498400,
+        "episode": 59
       },
       "airingAt": 1792893600,
       "episode": 58,
@@ -3182,8 +2907,8 @@
       "streaming": [],
       "trailer": null,
       "next": {
-        "at": 1792893600,
-        "episode": 427
+        "at": 1793066400,
+        "episode": 428
       },
       "airingAt": 1793066400,
       "episode": 428,
@@ -5839,8 +5564,8 @@
         "id": "Laf46YXDt68"
       },
       "next": {
-        "at": 1792879200,
-        "episode": 29
+        "at": 1793484000,
+        "episode": 30
       },
       "airingAt": 1793484000,
       "episode": 30,
@@ -5869,8 +5594,8 @@
         "id": "cH7enqqATwE"
       },
       "next": {
-        "at": 1792879200,
-        "episode": 4
+        "at": 1793484000,
+        "episode": 5
       },
       "airingAt": 1793484000,
       "episode": 5,
@@ -5901,8 +5626,8 @@
         "id": "DO_UchIVN9Y"
       },
       "next": {
-        "at": 1792879200,
-        "episode": 4
+        "at": 1793484000,
+        "episode": 5
       },
       "airingAt": 1793484000,
       "episode": 5,
@@ -5933,51 +5658,13 @@
         "id": "L4wurjkd0JM"
       },
       "next": {
-        "at": 1792882800,
-        "episode": 82
+        "at": 1793487600,
+        "episode": 83
       },
       "airingAt": 1793487600,
       "episode": 83,
       "scheduleId": 412319,
       "description_es": "La historia de la serie sigue las aventuras cotidianas de Koupen-chan y sus amigos mientras disfrutan de las pequeñas cosas en la vida. (Fuente: Crunchyroll News, editado)"
-    },
-    {
-      "id": "mal-63042",
-      "mal_id": 63042,
-      "ani_id": 202957,
-      "title": "Star Detective Precure!",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx202957-fxZGgJTvwXzP.jpg",
-      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/202957-B9U0hNv2Dqap.jpg",
-      "description": "Anna Akechi is a second-year junior high student living in Makoto Mirai Town. On her 14th birthday, she has a chance encounter with a fairy named Pochitan, and a magical pendant caused her to travel back in time from 2027 to 1999! In the Makoto Mirai Town 28 years in the past, Anna meets Mikuru Kobayashi, a girl her age who wants to become a great detective. Meanwhile, people in town are in trouble as their prized possessions are being stolen from under their noses - the cause being a group of Phantom Thieves. To stop them, Anna and Mikuru turn into Precures! Maybe if they solve these mysteries, Anna can find her way back to her own time? (Source: Official Website, translated)",
-      "year": 2026,
-      "startDate": "2026-02-01",
-      "format": "TV",
-      "episodes": 51,
-      "averageScore": 76,
-      "status": "RELEASING",
-      "genres": [
-        "Mahou Shoujo",
-        "Mystery"
-      ],
-      "siteUrl": "https://anilist.co/anime/202957",
-      "streaming": [
-        {
-          "name": "Crunchyroll",
-          "url": "https://www.crunchyroll.com/series/GT00369409"
-        }
-      ],
-      "trailer": {
-        "site": "youtube",
-        "id": "qjozo1fh7OI"
-      },
-      "next": {
-        "at": 1792884600,
-        "episode": 39
-      },
-      "airingAt": 1793489400,
-      "episode": 40,
-      "scheduleId": 411680,
-      "description_es": "Anna Akechi es una estudiante de segundo año que vive en la ciudad de Makoto Mirai. En su 14o cumpleaños, tiene un encuentro casual con un hada llamado Pochitan, y un colgante mágico la hizo viajar de nuevo en el tiempo de 2027 a 1999! En la ciudad de Makoto Mirai 28 años en el pasado, Anna se encuentra con Mikuru Kobayashi, una chica de su edad que quiere convertirse en una gran detective. Mientras tanto, la gente en la ciudad está en problemas ya que sus posesiones apreciadas están siendo robadas bajo sus narices - la causa es un grupo de ladrones Fantasma. Para detenerlos, Anna y Mikuru se convierten en Precures! Tal vez si resuelven estos misterios"
     },
     {
       "id": "al-216860",
@@ -6000,8 +5687,8 @@
       "streaming": [],
       "trailer": null,
       "next": {
-        "at": 1792887360,
-        "episode": 4
+        "at": 1793492160,
+        "episode": 5
       },
       "airingAt": 1793492160,
       "episode": 5,
@@ -6032,8 +5719,8 @@
         "id": "j5MgjyhhUBc"
       },
       "next": {
-        "at": 1792888200,
-        "episode": 30
+        "at": 1793493000,
+        "episode": 31
       },
       "airingAt": 1793493000,
       "episode": 31,
@@ -6061,8 +5748,8 @@
       "streaming": [],
       "trailer": null,
       "next": {
-        "at": 1792890000,
-        "episode": 4
+        "at": 1793494800,
+        "episode": 5
       },
       "airingAt": 1793494800,
       "episode": 5,
@@ -6090,8 +5777,8 @@
       "streaming": [],
       "trailer": null,
       "next": {
-        "at": 1792893600,
-        "episode": 427
+        "at": 1793066400,
+        "episode": 428
       },
       "airingAt": 1793498400,
       "episode": 429,
@@ -6121,8 +5808,8 @@
       "streaming": [],
       "trailer": null,
       "next": {
-        "at": 1792893600,
-        "episode": 58
+        "at": 1793498400,
+        "episode": 59
       },
       "airingAt": 1793498400,
       "episode": 59,
@@ -7262,6 +6949,37 @@
       "episode": 5,
       "scheduleId": 418906,
       "description_es": "Algunas chicas mágicas pelean. Otros no. Elegido por la misteriosa Tierra de la Magia, que existe poco conocida por el resto del mundo, las chicas mágicas cada una tienen un poder único. Pechka, cuya magia hace deliciosa la comida, se ve obligada a participar en un misterioso juego virtual junto con 16 chicas mágicas desconocidas, cada una con su propia personalidad distintiva. Se suponía que era un ejercicio de entrenamiento seguro diseñado para mejorar sus habilidades mágicas. Pero en cambio, marca el comienzo de una pesadilla cuidadosamente orquestada - un juicio prohibido. Ha comenzado un nuevo proyecto de Raising Girl Magical. (Fuente:"
+    },
+    {
+      "id": "mal-64388",
+      "mal_id": 64388,
+      "ani_id": 213188,
+      "title": "Jueshi Zhan Hun 2",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx213188-zwmmMVqqUjh8.png",
+      "banner": "",
+      "description": "In the Canglan Continent, strength is determined by martial spirits. Qin Nan, the young master of the Qin family, was originally a useless soul, suffering endless scorn. By chance, he awakened the soul of an ancient war god, thus defying fate. He swept through sect geniuses, overcame powerful enemies and obstacles, encountered a soulmate, used his battle spirit to break all laws, and forged a legend with his blood. From a humble young master, he rose through the ranks to become an invincible supreme celestial being who shakes the nine realms. (Source: IQIYI, translated)",
+      "year": 2026,
+      "startDate": "2026-06-09",
+      "format": "ONA",
+      "episodes": 100,
+      "averageScore": 0,
+      "status": "RELEASING",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Fantasy"
+      ],
+      "siteUrl": "https://anilist.co/anime/213188",
+      "streaming": [],
+      "trailer": null,
+      "next": {
+        "at": 1793066400,
+        "episode": 21
+      },
+      "airingAt": 1793671200,
+      "episode": 22,
+      "scheduleId": 415245,
+      "description_es": "En el Continente Canglan, la fuerza está determinada por espíritus marciales. Qin Nan, el joven maestro de la familia Qin, fue originalmente un alma inútil, sufriendo un desprecio infinito. Por casualidad, despertó el alma de un dios de guerra antiguo, desafiando así el destino. Golpeó por los genios de la secta, superó a los poderosos enemigos y obstáculos, encontró a un alma gemela, usó su espíritu de batalla para romper todas las leyes, y forjó una leyenda con su sangre. De un humilde joven maestro, se levantó por las filas para convertirse en un ser celestial supremo invencible que sacude los nueve reinos. (Fuente: IQIYI, traducido)"
     }
   ],
   "seasonal": {
@@ -8595,8 +8313,8 @@
           "id": "cH7enqqATwE"
         },
         "next": {
-          "at": 1792879200,
-          "episode": 4
+          "at": 1793484000,
+          "episode": 5
         },
         "description_es": "La popular y popular serie de enciclopedias ilustradas de Gakken, que todos pueden disfrutar con sus cómics de cuatro paneles, finalmente se está adaptando a un anime de televisión! Descubre aspectos sorprendentes y hechos divertidos sobre los seres vivientes, llenos de secretos que te harán decir: \"¡Wow!\" Disfruta de este nuevo tipo de anime que hace que las cosas aterradoras sean divertidas y fáciles de ver, con su estilo de arte lindo. (Fuente: Sitio oficial, traducido)"
       },
@@ -8624,8 +8342,8 @@
           "id": "DO_UchIVN9Y"
         },
         "next": {
-          "at": 1792879200,
-          "episode": 4
+          "at": 1793484000,
+          "episode": 5
         },
         "description_es": "La historia se centra en la vida diaria de un perro de mapache que no está bien con él y un zorro malicioso que le gusta burlar al perro de mapache. Los dos son amigos cercanos que viven juntos en una montaña. Sus otros amigos incluyen un lobo, un oso, un conejo y aves. (Fuente: Anime News Network)"
       },
@@ -8650,8 +8368,8 @@
         "streaming": [],
         "trailer": null,
         "next": {
-          "at": 1792887360,
-          "episode": 4
+          "at": 1793492160,
+          "episode": 5
         },
         "description_es": "Cuarta temporada de Punirunes ."
       },
@@ -8676,8 +8394,8 @@
         "streaming": [],
         "trailer": null,
         "next": {
-          "at": 1792890000,
-          "episode": 4
+          "at": 1793494800,
+          "episode": 5
         }
       },
       {
