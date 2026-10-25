@@ -1,82 +1,9 @@
 {
-  "updated": "2026-10-25T09:32:21.008Z",
+  "updated": "2026-10-25T15:30:56.095Z",
   "source": "AniList public GraphQL metadata",
-  "windowStart": 1792722726,
-  "windowEnd": 1793698326,
+  "windowStart": 1792744241,
+  "windowEnd": 1793719841,
   "airing": [
-    {
-      "id": "mal-61607",
-      "mal_id": 61607,
-      "ani_id": 191832,
-      "title": "Link Click Season 3 Part 1",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx191832-bsnCaLNVjzEw.png",
-      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/191832-TKC3kfm43hCc.jpg",
-      "description": "After the Li Tianchen case comes to a close, peace appears to return to Time Photo Studio—until the disappearance of Xia Fei draws everyone back into a web of fate. With Vein's return and Qiao Ling's newfound abilities, Cheng Xiaoshi and Lu Guang begin uncovering the truth behind the mysterious Bahati fire. As the investigation deepens, hidden connections emerge between the case and Cheng Xiaoshi's parents. Meanwhile, Liu Xiao, a member of a mysterious organization, sets his own plans in motion, while the intervention of Inspector Jae introduces new uncertainties. As secrets buried in the past resurface, the search for truth becomes more dangerous than ever. (Source: bilibili, translated)",
-      "year": 2026,
-      "startDate": "2026-08-14",
-      "format": "ONA",
-      "episodes": 12,
-      "averageScore": 85,
-      "status": "FINISHED",
-      "genres": [
-        "Drama",
-        "Mystery",
-        "Supernatural",
-        "Thriller"
-      ],
-      "siteUrl": "https://anilist.co/anime/191832",
-      "streaming": [
-        {
-          "name": "Crunchyroll",
-          "url": "https://www.crunchyroll.com/series/GP5HJ8E81/link-click"
-        }
-      ],
-      "trailer": {
-        "site": "youtube",
-        "id": "4HJNiZV0HJ4"
-      },
-      "next": null,
-      "airingAt": 1792724400,
-      "episode": 12,
-      "scheduleId": 419020,
-      "description_es": "Después de que el caso Li Tianchen llegue a su fin, la paz parece volver a Time Photo Studio, hasta que la desaparición de Xia Fei lleve a todos a una red de destino. Con el regreso de Vein y las nuevas habilidades de Qiao Ling, Cheng Xiaoshi y Lu Guang comienzan a descubrir la verdad detrás del misterioso fuego bahati. A medida que la investigación se profundiza, surgen conexiones ocultas entre el caso y los padres de Cheng Xiaoshi. Mientras tanto, Liu Xiao, miembro de una organización misteriosa, pone en marcha sus propios planes, mientras que la intervención del Inspector Jae introduce nuevas incertidumbres. Como secretos enterrados en el pasado"
-    },
-    {
-      "id": "mal-61469",
-      "mal_id": 61469,
-      "ani_id": 210482,
-      "title": "STEEL BALL RUN JoJo's Bizarre Adventure 2nd - 3rd STAGE",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx210482-P1VNKbqdJ6Zj.jpg",
-      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/210482-pYAD0IbzNbgS.jpg",
-      "description": "In the 2nd STAGE, a desert crossing spanning roughly 750 miles- the land that Johnny Joestar and Gyro Zeppeli must challenge, is home to the area that is feared as the \"Devil's Palm.\" In 1875, a threat lurking in said desert wiped out a cavalry of 26 people, eliciting fear from the local native people. As ominous incidents begin to unfold, they are forced to realize that this race is far more than a mere competition. The two press forward, where countless hidden motives collide.. (Source: Warner Bros. Japan Anime, Netflix Anime, edited)",
-      "year": 2026,
-      "startDate": "2026-09-25",
-      "format": "ONA",
-      "episodes": 11,
-      "averageScore": 86,
-      "status": "RELEASING",
-      "genres": [
-        "Action",
-        "Adventure",
-        "Drama",
-        "Mystery",
-        "Supernatural"
-      ],
-      "siteUrl": "https://anilist.co/anime/210482",
-      "streaming": [],
-      "trailer": {
-        "site": "youtube",
-        "id": "jXtG_lcR9P4"
-      },
-      "next": {
-        "at": 1793347200,
-        "episode": 6
-      },
-      "airingAt": 1792742400,
-      "episode": 5,
-      "scheduleId": 420968,
-      "description_es": "En la 2a ETAPA, un cruce desértico que recorre aproximadamente 750 millas- la tierra que Johnny Joestar y Gyro Zeppeli deben desafiar, es el hogar de la zona que se teme como la palma del Diablo. En 1875, una amenaza que acechaba en dicho desierto borró una caballería de 26 personas, provocando temor de los nativos locales. A medida que los incidentes ominosos comienzan a desarrollarse, se ven obligados a darse cuenta de que esta carrera es mucho más que una mera competencia. Las dos prensas hacia adelante, donde"
-    },
     {
       "id": "mal-62039",
       "mal_id": 62039,
@@ -155,7 +82,7 @@
       "startDate": "2023-10-06",
       "format": "TV",
       "episodes": 0,
-      "averageScore": 64,
+      "averageScore": 65,
       "status": "RELEASING",
       "genres": [
         "Action",
@@ -189,7 +116,7 @@
       "startDate": "2022-01-07",
       "format": "ONA",
       "episodes": 0,
-      "averageScore": 69,
+      "averageScore": 70,
       "status": "RELEASING",
       "genres": [
         "Comedy",
@@ -575,7 +502,7 @@
       "startDate": "2026-04-04",
       "format": "TV_SHORT",
       "episodes": 0,
-      "averageScore": 63,
+      "averageScore": 64,
       "status": "RELEASING",
       "genres": [
         "Fantasy",
@@ -711,7 +638,7 @@
       "startDate": "2023-06-24",
       "format": "ONA",
       "episodes": 182,
-      "averageScore": 76,
+      "averageScore": 77,
       "status": "RELEASING",
       "genres": [
         "Action",
@@ -966,7 +893,7 @@
       "startDate": "2026-10-03",
       "format": "ONA",
       "episodes": 24,
-      "averageScore": 70,
+      "averageScore": 71,
       "status": "RELEASING",
       "genres": [
         "Adventure",
@@ -1005,7 +932,7 @@
       "startDate": "2026-10-03",
       "format": "ONA",
       "episodes": 0,
-      "averageScore": 69,
+      "averageScore": 70,
       "status": "RELEASING",
       "genres": [
         "Action",
@@ -1238,7 +1165,7 @@
       "startDate": "2026-09-27",
       "format": "ONA",
       "episodes": 13,
-      "averageScore": 68,
+      "averageScore": 69,
       "status": "RELEASING",
       "genres": [
         "Action",
@@ -1480,7 +1407,7 @@
       "startDate": "2025-04-06",
       "format": "TV_SHORT",
       "episodes": 0,
-      "averageScore": 69,
+      "averageScore": 70,
       "status": "RELEASING",
       "genres": [
         "Slice of Life"
@@ -1639,7 +1566,7 @@
       "startDate": "2022-10-16",
       "format": "ONA",
       "episodes": 448,
-      "averageScore": 66,
+      "averageScore": 69,
       "status": "RELEASING",
       "genres": [
         "Action",
@@ -1734,7 +1661,7 @@
       "startDate": "2026-10-04",
       "format": "TV",
       "episodes": 24,
-      "averageScore": 79,
+      "averageScore": 80,
       "status": "RELEASING",
       "genres": [
         "Sports"
@@ -1899,7 +1826,7 @@
       "format": "SPECIAL",
       "episodes": 3,
       "averageScore": 0,
-      "status": "NOT_YET_RELEASED",
+      "status": "FINISHED",
       "genres": [
         "Drama",
         "Romance",
@@ -1911,10 +1838,7 @@
         "site": "youtube",
         "id": "SZc3Lp1_iS4"
       },
-      "next": {
-        "at": 1792922400,
-        "episode": 1
-      },
+      "next": null,
       "airingAt": 1792922400,
       "episode": 1,
       "scheduleId": 419076,
@@ -1933,7 +1857,7 @@
       "format": "SPECIAL",
       "episodes": 3,
       "averageScore": 0,
-      "status": "NOT_YET_RELEASED",
+      "status": "FINISHED",
       "genres": [
         "Drama",
         "Romance",
@@ -1945,10 +1869,7 @@
         "site": "youtube",
         "id": "SZc3Lp1_iS4"
       },
-      "next": {
-        "at": 1792922400,
-        "episode": 1
-      },
+      "next": null,
       "airingAt": 1792924200,
       "episode": 2,
       "scheduleId": 419077,
@@ -1967,7 +1888,7 @@
       "format": "SPECIAL",
       "episodes": 3,
       "averageScore": 0,
-      "status": "NOT_YET_RELEASED",
+      "status": "FINISHED",
       "genres": [
         "Drama",
         "Romance",
@@ -1979,10 +1900,7 @@
         "site": "youtube",
         "id": "SZc3Lp1_iS4"
       },
-      "next": {
-        "at": 1792922400,
-        "episode": 1
-      },
+      "next": null,
       "airingAt": 1792926000,
       "episode": 3,
       "scheduleId": 419078,
@@ -2013,8 +1931,8 @@
         "id": "rUHYbwZDVVI"
       },
       "next": {
-        "at": 1792929600,
-        "episode": 5
+        "at": 1793534400,
+        "episode": 6
       },
       "airingAt": 1792929600,
       "episode": 5,
@@ -2055,8 +1973,8 @@
         "id": "Z9ofT53sz2U"
       },
       "next": {
-        "at": 1792931400,
-        "episode": 4
+        "at": 1793536200,
+        "episode": 5
       },
       "airingAt": 1792931400,
       "episode": 4,
@@ -2093,8 +2011,8 @@
         "id": "YKgjylmYeoA"
       },
       "next": {
-        "at": 1792933200,
-        "episode": 4
+        "at": 1793538000,
+        "episode": 5
       },
       "airingAt": 1792933200,
       "episode": 4,
@@ -2126,8 +2044,8 @@
         "id": "rwUPmzMpECo"
       },
       "next": {
-        "at": 1792935000,
-        "episode": 4
+        "at": 1793539800,
+        "episode": 5
       },
       "airingAt": 1792935000,
       "episode": 4,
@@ -2159,8 +2077,8 @@
         "id": "ihAvU833DHA"
       },
       "next": {
-        "at": 1792936800,
-        "episode": 4
+        "at": 1793541600,
+        "episode": 5
       },
       "airingAt": 1792936800,
       "episode": 4,
@@ -2198,8 +2116,8 @@
         "id": "CFgEL7ei8VE"
       },
       "next": {
-        "at": 1792937760,
-        "episode": 3
+        "at": 1793542560,
+        "episode": 4
       },
       "airingAt": 1792937760,
       "episode": 3,
@@ -2236,8 +2154,8 @@
         "id": "8_Lxr7vO9l0"
       },
       "next": {
-        "at": 1792938600,
-        "episode": 5
+        "at": 1793543400,
+        "episode": 6
       },
       "airingAt": 1792938600,
       "episode": 5,
@@ -2274,8 +2192,8 @@
         "id": "qlMB8vSpLzc"
       },
       "next": {
-        "at": 1792938600,
-        "episode": 3
+        "at": 1793543400,
+        "episode": 4
       },
       "airingAt": 1792938600,
       "episode": 3,
@@ -2313,8 +2231,8 @@
         "id": "e41RGxVwJRs"
       },
       "next": {
-        "at": 1792938600,
-        "episode": 4
+        "at": 1793543400,
+        "episode": 5
       },
       "airingAt": 1792938600,
       "episode": 4,
@@ -2353,8 +2271,8 @@
         "id": "e1Km0FqUZl0"
       },
       "next": {
-        "at": 1792938600,
-        "episode": 5
+        "at": 1793543400,
+        "episode": 6
       },
       "airingAt": 1792938600,
       "episode": 5,
@@ -2388,8 +2306,8 @@
       ],
       "trailer": null,
       "next": {
-        "at": 1792939500,
-        "episode": 4
+        "at": 1793544300,
+        "episode": 5
       },
       "airingAt": 1792939500,
       "episode": 4,
@@ -2427,8 +2345,8 @@
         "id": "dLRKywRu3iM"
       },
       "next": {
-        "at": 1792940400,
-        "episode": 4
+        "at": 1793545200,
+        "episode": 5
       },
       "airingAt": 1792940400,
       "episode": 4,
@@ -2579,7 +2497,7 @@
       "startDate": "2023-09-25",
       "format": "ONA",
       "episodes": 180,
-      "averageScore": 82,
+      "averageScore": 83,
       "status": "RELEASING",
       "genres": [
         "Action",
@@ -2833,7 +2751,7 @@
       "startDate": "2026-10-06",
       "format": "TV",
       "episodes": 0,
-      "averageScore": 60,
+      "averageScore": 61,
       "status": "RELEASING",
       "genres": [
         "Action",
@@ -2868,7 +2786,7 @@
       "startDate": "2022-10-16",
       "format": "ONA",
       "episodes": 448,
-      "averageScore": 66,
+      "averageScore": 69,
       "status": "RELEASING",
       "genres": [
         "Action",
@@ -3038,7 +2956,7 @@
       "startDate": "2026-10-06",
       "format": "TV",
       "episodes": 0,
-      "averageScore": 48,
+      "averageScore": 51,
       "status": "RELEASING",
       "genres": [
         "Action",
@@ -3114,7 +3032,7 @@
       "startDate": "2026-10-03",
       "format": "TV",
       "episodes": 23,
-      "averageScore": 59,
+      "averageScore": 60,
       "status": "RELEASING",
       "genres": [
         "Action",
@@ -3229,7 +3147,7 @@
       "startDate": "2026-10-14",
       "format": "TV",
       "episodes": 11,
-      "averageScore": 51,
+      "averageScore": 54,
       "status": "RELEASING",
       "genres": [
         "Mecha",
@@ -3391,7 +3309,7 @@
       "startDate": "2026-10-07",
       "format": "TV",
       "episodes": 13,
-      "averageScore": 71,
+      "averageScore": 72,
       "status": "RELEASING",
       "genres": [
         "Comedy",
@@ -3495,7 +3413,7 @@
       "startDate": "2026-10-07",
       "format": "TV",
       "episodes": 12,
-      "averageScore": 69,
+      "averageScore": 70,
       "status": "RELEASING",
       "genres": [
         "Comedy",
@@ -3534,7 +3452,7 @@
       "startDate": "2026-10-07",
       "format": "TV",
       "episodes": 0,
-      "averageScore": 68,
+      "averageScore": 69,
       "status": "RELEASING",
       "genres": [
         "Adventure",
@@ -3823,7 +3741,7 @@
       "startDate": "2026-10-08",
       "format": "TV",
       "episodes": 12,
-      "averageScore": 73,
+      "averageScore": 74,
       "status": "RELEASING",
       "genres": [
         "Comedy"
@@ -4227,7 +4145,7 @@
       "startDate": "2022-01-07",
       "format": "ONA",
       "episodes": 0,
-      "averageScore": 69,
+      "averageScore": 70,
       "status": "RELEASING",
       "genres": [
         "Comedy",
@@ -4613,7 +4531,7 @@
       "startDate": "2026-04-04",
       "format": "TV_SHORT",
       "episodes": 0,
-      "averageScore": 63,
+      "averageScore": 64,
       "status": "RELEASING",
       "genres": [
         "Fantasy",
@@ -4749,7 +4667,7 @@
       "startDate": "2023-06-24",
       "format": "ONA",
       "episodes": 182,
-      "averageScore": 76,
+      "averageScore": 77,
       "status": "RELEASING",
       "genres": [
         "Action",
@@ -5103,7 +5021,7 @@
       "startDate": "2026-10-03",
       "format": "ONA",
       "episodes": 24,
-      "averageScore": 70,
+      "averageScore": 71,
       "status": "RELEASING",
       "genres": [
         "Adventure",
@@ -5142,7 +5060,7 @@
       "startDate": "2026-10-03",
       "format": "ONA",
       "episodes": 0,
-      "averageScore": 69,
+      "averageScore": 70,
       "status": "RELEASING",
       "genres": [
         "Action",
@@ -5375,7 +5293,7 @@
       "startDate": "2026-09-27",
       "format": "ONA",
       "episodes": 13,
-      "averageScore": 68,
+      "averageScore": 69,
       "status": "RELEASING",
       "genres": [
         "Action",
@@ -5617,7 +5535,7 @@
       "startDate": "2025-04-06",
       "format": "TV_SHORT",
       "episodes": 0,
-      "averageScore": 69,
+      "averageScore": 70,
       "status": "RELEASING",
       "genres": [
         "Slice of Life"
@@ -5738,7 +5656,7 @@
       "startDate": "2022-10-16",
       "format": "ONA",
       "episodes": 448,
-      "averageScore": 66,
+      "averageScore": 69,
       "status": "RELEASING",
       "genres": [
         "Action",
@@ -5901,7 +5819,7 @@
       "startDate": "2026-10-04",
       "format": "TV",
       "episodes": 24,
-      "averageScore": 79,
+      "averageScore": 80,
       "status": "RELEASING",
       "genres": [
         "Sports"
@@ -6078,8 +5996,8 @@
         "id": "rUHYbwZDVVI"
       },
       "next": {
-        "at": 1792929600,
-        "episode": 5
+        "at": 1793534400,
+        "episode": 6
       },
       "airingAt": 1793534400,
       "episode": 6,
@@ -6120,8 +6038,8 @@
         "id": "Z9ofT53sz2U"
       },
       "next": {
-        "at": 1792931400,
-        "episode": 4
+        "at": 1793536200,
+        "episode": 5
       },
       "airingAt": 1793536200,
       "episode": 5,
@@ -6158,8 +6076,8 @@
         "id": "YKgjylmYeoA"
       },
       "next": {
-        "at": 1792933200,
-        "episode": 4
+        "at": 1793538000,
+        "episode": 5
       },
       "airingAt": 1793538000,
       "episode": 5,
@@ -6191,8 +6109,8 @@
         "id": "rwUPmzMpECo"
       },
       "next": {
-        "at": 1792935000,
-        "episode": 4
+        "at": 1793539800,
+        "episode": 5
       },
       "airingAt": 1793539800,
       "episode": 5,
@@ -6224,8 +6142,8 @@
         "id": "ihAvU833DHA"
       },
       "next": {
-        "at": 1792936800,
-        "episode": 4
+        "at": 1793541600,
+        "episode": 5
       },
       "airingAt": 1793541600,
       "episode": 5,
@@ -6263,8 +6181,8 @@
         "id": "CFgEL7ei8VE"
       },
       "next": {
-        "at": 1792937760,
-        "episode": 3
+        "at": 1793542560,
+        "episode": 4
       },
       "airingAt": 1793542560,
       "episode": 4,
@@ -6301,8 +6219,8 @@
         "id": "8_Lxr7vO9l0"
       },
       "next": {
-        "at": 1792938600,
-        "episode": 5
+        "at": 1793543400,
+        "episode": 6
       },
       "airingAt": 1793543400,
       "episode": 6,
@@ -6339,8 +6257,8 @@
         "id": "qlMB8vSpLzc"
       },
       "next": {
-        "at": 1792938600,
-        "episode": 3
+        "at": 1793543400,
+        "episode": 4
       },
       "airingAt": 1793543400,
       "episode": 4,
@@ -6378,8 +6296,8 @@
         "id": "e41RGxVwJRs"
       },
       "next": {
-        "at": 1792938600,
-        "episode": 4
+        "at": 1793543400,
+        "episode": 5
       },
       "airingAt": 1793543400,
       "episode": 5,
@@ -6418,8 +6336,8 @@
         "id": "e1Km0FqUZl0"
       },
       "next": {
-        "at": 1792938600,
-        "episode": 5
+        "at": 1793543400,
+        "episode": 6
       },
       "airingAt": 1793543400,
       "episode": 6,
@@ -6453,8 +6371,8 @@
       ],
       "trailer": null,
       "next": {
-        "at": 1792939500,
-        "episode": 4
+        "at": 1793544300,
+        "episode": 5
       },
       "airingAt": 1793544300,
       "episode": 5,
@@ -6492,8 +6410,8 @@
         "id": "dLRKywRu3iM"
       },
       "next": {
-        "at": 1792940400,
-        "episode": 4
+        "at": 1793545200,
+        "episode": 5
       },
       "airingAt": 1793545200,
       "episode": 5,
@@ -6678,7 +6596,7 @@
       "startDate": "2023-09-25",
       "format": "ONA",
       "episodes": 180,
-      "averageScore": 82,
+      "averageScore": 83,
       "status": "RELEASING",
       "genres": [
         "Action",
@@ -6898,7 +6816,7 @@
       "startDate": "2026-10-06",
       "format": "TV",
       "episodes": 0,
-      "averageScore": 60,
+      "averageScore": 61,
       "status": "RELEASING",
       "genres": [
         "Action",
@@ -6951,6 +6869,265 @@
       "episode": 22,
       "scheduleId": 415245,
       "description_es": "En el Continente Canglan, la fuerza está determinada por espíritus marciales. Qin Nan, el joven maestro de la familia Qin, fue originalmente un alma inútil, sufriendo un desprecio infinito. Por casualidad, despertó el alma de un dios de guerra antiguo, desafiando así el destino. Golpeó por los genios de la secta, superó a los poderosos enemigos y obstáculos, encontró a un alma gemela, usó su espíritu de batalla para romper todas las leyes, y forjó una leyenda con su sangre. De un humilde joven maestro, se levantó por las filas para convertirse en un ser celestial supremo invencible que sacude los nueve reinos. (Fuente: IQIYI, traducido)"
+    },
+    {
+      "id": "mal-63382",
+      "mal_id": 63382,
+      "ani_id": 206949,
+      "title": "Nia Liston: The Merciless Maiden",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx206949-4HYI3YuP0eLI.png",
+      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/206949-c5hfhixdgvy5.jpg",
+      "description": "A great hero lies undefeated on her deathbed, regretting that she never found a foe who could take her down. She never intended to meet her fate anywhere other than on the battlefield, and her peaceful demise has her wishing desperately that things could have been different... But when she suddenly comes to in the body of the young, frail Nia Liston, she’s got an all-new fight ahead of her. Nia is a sickly child, meaning she has a long way to go before she’s in fighting form. Now that she’s been given a second shot at life, however, she’s determined to get what she wants. She’s going to live—and die—for battle this time! Make way for the Merciless Maiden! (Source: J-Novel Club)",
+      "year": 2026,
+      "startDate": "2026-10-06",
+      "format": "TV",
+      "episodes": 25,
+      "averageScore": 76,
+      "status": "RELEASING",
+      "genres": [
+        "Action",
+        "Fantasy"
+      ],
+      "siteUrl": "https://anilist.co/anime/206949",
+      "streaming": [],
+      "trailer": {
+        "site": "youtube",
+        "id": "gxG4vntLtbk"
+      },
+      "next": {
+        "at": 1793103960,
+        "episode": 4
+      },
+      "airingAt": 1793708760,
+      "episode": 5,
+      "scheduleId": 417800,
+      "description_es": "Un gran héroe está invicto en su lecho de muerte, lamentando que nunca haya encontrado a un enemigo que pudiera derribarla. Nunca quiso encontrar su destino en otro lugar que en el campo de batalla, y su pacífica desaparición tiene su deseo desesperadamente de que las cosas podrían haber sido diferentes... Pero cuando de repente viene al cuerpo de la joven y frágil Nia Liston, tiene una nueva lucha por delante de ella. Nia es una niña enferma, lo que significa que tiene un largo camino por recorrer"
+    },
+    {
+      "id": "mal-63754",
+      "mal_id": 63754,
+      "ani_id": 209502,
+      "title": "The Cold Sato-san is Only Sweet to Me",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx209502-C81oN8M4Smlo.jpg",
+      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/209502-TATgyznMxQOe.jpg",
+      "description": "Sato-san is the unattainable flower of the class. She is always cold and curt with classmates, but only I know she's actually very cute when she smiles, even if she's not much of a photographer. Oshio-kun is friendly and lively, but only I know he works at his family's cafe after school. He does a great job with the cafe's SNS account, and his mischievous smile makes my heart skip a beat! Innocent and sweet, but sometimes frustrating, this is a 120%-pure fluffy story about two people falling in love for the first time.",
+      "year": 2026,
+      "startDate": "2026-10-06",
+      "format": "TV",
+      "episodes": 12,
+      "averageScore": 68,
+      "status": "RELEASING",
+      "genres": [
+        "Comedy",
+        "Romance"
+      ],
+      "siteUrl": "https://anilist.co/anime/209502",
+      "streaming": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00384014/the-cold-sato-san-is-only-sweet-to-me"
+        }
+      ],
+      "trailer": {
+        "site": "youtube",
+        "id": "8XgKVzuLmJw"
+      },
+      "next": {
+        "at": 1793106000,
+        "episode": 4
+      },
+      "airingAt": 1793710800,
+      "episode": 5,
+      "scheduleId": 420420,
+      "description_es": "Sato-san es la flor inalcanzable de la clase. Siempre tiene frío y rito con compañeros de clase, pero sólo sé que es muy linda cuando sonríe, incluso si no es mucho fotógrafo. Oshio-kun es amistoso y animado, pero sólo sé que trabaja en el café de su familia después de la escuela. Hace un gran trabajo con la cuenta SNS de la cafetería, y su mala sonrisa hace que mi corazón salte un latido! Inocentes y dulces, pero a veces frustrantes, esta es una historia de 120% pura y fluida sobre dos personas que se enamoran por primera vez."
+    },
+    {
+      "id": "mal-62696",
+      "mal_id": 62696,
+      "ani_id": 200294,
+      "title": "Super Psychic Policeman Chojo",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx200294-E6KIgkFaJOfG.jpg",
+      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/200294-PPEwId1xfGNO.jpg",
+      "description": "The ultimate police duo is here to keep the peace! Rookie officer Nao just joined the force. She’s got a black belt in judo and earned the nickname “Gorilla” for her insane strength. Then there’s her partner Chojo, who wields every psychic power imaginable. But for a guy who can read minds, he still can’t seem to read the room. Now, these two are taking on crime together in Chinjuku. (Source: Crunchyroll)",
+      "year": 2026,
+      "startDate": "2026-10-06",
+      "format": "TV",
+      "episodes": 12,
+      "averageScore": 65,
+      "status": "RELEASING",
+      "genres": [
+        "Comedy",
+        "Slice of Life"
+      ],
+      "siteUrl": "https://anilist.co/anime/200294",
+      "streaming": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00384013/super-psychic-policeman-chojo"
+        }
+      ],
+      "trailer": {
+        "site": "youtube",
+        "id": "rYpXoCdTNQI"
+      },
+      "next": {
+        "at": 1793109600,
+        "episode": 4
+      },
+      "airingAt": 1793714400,
+      "episode": 5,
+      "scheduleId": 418481,
+      "description_es": "¡El último dúo policial está aquí para mantener la paz! El oficial novato Nao acaba de unirse a la fuerza. Tiene un cinturón negro en judo y ganó el apodo \"Gorilla\" por su fuerza loca. Luego está su compañero Chojo, quien controla todo poder psíquico imaginable. Pero para un tipo que puede leer mentes, todavía no puede leer la habitación. Estos dos están cometiendo un crimen juntos en Chinjuku. (Fuente: Crunchyroll)"
+    },
+    {
+      "id": "mal-63818",
+      "mal_id": 63818,
+      "ani_id": 187990,
+      "title": "Battle Spirits [Re] Zekkai No Ku",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx187990-tNyQPmr9TkYi.png",
+      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/187990-iDUZ4BGtmEct.jpg",
+      "description": "Keio 3, Hinomoto, Eito. As the Bakumatsu throws Japan into turmoil, young Kuu Bashin dreams of becoming stronger through Standard Battle Spirits. His world changes when he encounters Ajara Zetsu, a wandering samurai and formidable Eternal Battler pursued by anti-shogunate forces. As the worlds of Standard and Eternal Battle collide, Kuu is pulled into Zetsu’s journey—and sets history in motion. (Source: Crunchyroll)",
+      "year": 2026,
+      "startDate": "2026-10-06",
+      "format": "TV",
+      "episodes": 0,
+      "averageScore": 51,
+      "status": "RELEASING",
+      "genres": [
+        "Action",
+        "Fantasy"
+      ],
+      "siteUrl": "https://anilist.co/anime/187990",
+      "streaming": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00385703/battle-spirits-re-zekkai-no-ku"
+        }
+      ],
+      "trailer": {
+        "site": "youtube",
+        "id": "cXd4pKTx2pI"
+      },
+      "next": {
+        "at": 1793109600,
+        "episode": 4
+      },
+      "airingAt": 1793714400,
+      "episode": 5,
+      "scheduleId": 418976,
+      "description_es": "Keio 3, Hinomoto, Eito. A medida que el Bakumatsu lanza a Japón en agitación, el joven Kuu Bashin sueña con volverse más fuerte a través de los Espíritus de Batalla Estándar. Su mundo cambia cuando se encuentra con Ajara Zetsu, un samurai errante y formidable Batalla Eterna perseguido por fuerzas antihogunadas. Mientras los mundos de la batalla estándar y eterna chocan, Kuu es llevado al viaje de Zetsu, y pone la historia en movimiento. (Fuente: Crunchyroll)"
+    },
+    {
+      "id": "mal-62484",
+      "mal_id": 62484,
+      "ani_id": 198727,
+      "title": "Chitose Is in the Ramune Bottle 2nd Cour",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx198727-BL0JTpg0G8tq.jpg",
+      "banner": "",
+      "description": "The second part of Chitose-kun wa Ramune Bin no Naka .",
+      "year": 2026,
+      "startDate": "2026-10-13",
+      "format": "TV",
+      "episodes": 11,
+      "averageScore": 77,
+      "status": "RELEASING",
+      "genres": [
+        "Comedy",
+        "Romance"
+      ],
+      "siteUrl": "https://anilist.co/anime/198727",
+      "streaming": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00364783/chitose-is-in-the-ramune-bottle"
+        }
+      ],
+      "trailer": {
+        "site": "youtube",
+        "id": "8RHh2AyKRfY"
+      },
+      "next": {
+        "at": 1793109600,
+        "episode": 3
+      },
+      "airingAt": 1793714400,
+      "episode": 4,
+      "scheduleId": 422541,
+      "description_es": "La segunda parte de Chitose-kun wa Ramune Bin no Naka."
+    },
+    {
+      "id": "mal-61140",
+      "mal_id": 61140,
+      "ani_id": 187316,
+      "title": "Gensou Suikoden",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx187316-jucYCojVTjSY.jpg",
+      "banner": "",
+      "description": "Two young boys... the hero, Riliu, and his best friend Jowy, were members of a youth brigade of their home nation, the Highland Kingdom - a powerful military nation located in the north-east of the Dunan region. The two of them looked up at the same starry skies, slept in the same tent, and believed in the same future. Once the fighting was over, and the night ended, their daily lives were sure to return. Contrary to their hopes, the two boys become swept up in the whirlpool of fate, guided by the flames of war. The powerless boys reached for, and grasped immense power. As the 108 stars shine brightly in the murky horizon, the boys step forward, each with their own beliefs for an answer-less question. (Source: Official Website, translated) Note: The first episode aired with a runtime of ~50 minutes as opposed to the standard 24 minute long episode.",
+      "year": 2026,
+      "startDate": "2026-10-03",
+      "format": "TV",
+      "episodes": 23,
+      "averageScore": 60,
+      "status": "RELEASING",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Fantasy"
+      ],
+      "siteUrl": "https://anilist.co/anime/187316",
+      "streaming": [],
+      "trailer": {
+        "site": "youtube",
+        "id": "m4T9VcBD0vo"
+      },
+      "next": {
+        "at": 1793111400,
+        "episode": 4
+      },
+      "airingAt": 1793716200,
+      "episode": 5,
+      "scheduleId": 422444,
+      "description_es": "Dos jóvenes... el héroe, Riliu, y su mejor amigo Jowy, eran miembros de una brigada juvenil de su nación natal, el Reino de Highland, una poderosa nación militar situada en el noreste de la región de Dunan. Los dos miraron hacia arriba los mismos cielos estrellados, durmieron en la misma tienda, y creyeron en el mismo futuro. Una vez que la pelea terminó, y la noche terminó, sus vidas diarias estaban seguras de volver. Contrariamente a sus esperanzas, los dos chicos se arrastran en el torbellino del destino, guiados por las llamas de la guerra. Los chicos impotentes alcanzaron y captaron un inmenso poder. Como brillan las 108 estrellas"
+    },
+    {
+      "id": "mal-63431",
+      "mal_id": 63431,
+      "ani_id": 207329,
+      "title": "The Laid-Off Cheat-Granting Mage Enjoys a Second Lease on Life",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b207329-6VPeZIDfF4Sr.png",
+      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/207329-9IqRSKIsM3TC.jpg",
+      "description": "Rein, an enchanter, is suddenly expelled from his guild one day. But instead of despairing, he declares, “Now I can do anything!” and begins reclaiming the massive number of enhancement points he once poured into his guildmates’ gear, setting off on a brand-new path as an adventurer. Gathering around him are people carrying wounds that don’t fade easily: a genius adventurer who shut her heart after her party was slaughtered, a warrior who lost her family, and an assassin raised from childhood to kill. Yet Rein never rejects their pasts or their scars—he accepts them all with bright, straightforward warmth. The stage is a unique fantasy world where Uzis, slingshots, and even yakuza exist side by side. But in this world, the more people rely on convenient technology, the more their magic weakens, and adventurers grow fragile. Intelligent, vicious monsters roam freely, while in the underworld, outlaws bare their greed and ambition as schemes and betrayals intertwine. In a world where ideals and justice are easily crushed, adventurers fight on with nothing but their magic and their convictions. This is the story of those who have lost their place in the world finding a new way to live. Rein and his companions’ wild, free-spirited second life begins now! (Source: The Laid-Off Cheat-Granting Mage Enjoys a Second Lease on Life Site)",
+      "year": 2026,
+      "startDate": "2026-10-07",
+      "format": "TV",
+      "episodes": 0,
+      "averageScore": 73,
+      "status": "RELEASING",
+      "genres": [
+        "Adventure",
+        "Comedy",
+        "Fantasy",
+        "Slice of Life"
+      ],
+      "siteUrl": "https://anilist.co/anime/207329",
+      "streaming": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00384016/"
+        }
+      ],
+      "trailer": {
+        "site": "youtube",
+        "id": "BJXBr_aFF8s"
+      },
+      "next": {
+        "at": 1793113200,
+        "episode": 4
+      },
+      "airingAt": 1793718000,
+      "episode": 5,
+      "scheduleId": 420256,
+      "description_es": "Rein, un encantador, es expulsado de su gremio un día. Pero en lugar de desesperar, declara, “¡Ahora puedo hacer cualquier cosa!” y comienza a reclamar el enorme número de puntos de mejora que una vez vierte en el equipo de sus compañeros, a partir de un nuevo camino como aventurero. Reunirse a su alrededor son personas que llevan heridas que no se desvanecen fácilmente: un genio aventurero que cerró su corazón después de que su partido fue masacrado, un guerrero que perdió"
     }
   ],
   "seasonal": {
@@ -7058,8 +7235,8 @@
           "id": "e1Km0FqUZl0"
         },
         "next": {
-          "at": 1792938600,
-          "episode": 5
+          "at": 1793543400,
+          "episode": 6
         },
         "description_es": "Sin Yeong-U (a.k.a. Grid), un hombre desafortunado en la vida y un jugador de bajo nivel en el popular juego VR “Satisfy”, encuentra un poderoso artículo que le gana un raro título legendario de clase: “El Sucesor de Pagma”. Ahora es un herrero experto que puede forjar armas únicas y equipar el equipo más poderoso del juego. Grid resuelve usar sus nuevas habilidades para alcanzar la fama y la fortuna, pero cuando su propia existencia comienza a provocar problemas en Satisfeo, se da cuenta de que la vida es una"
       },
@@ -7093,8 +7270,8 @@
           "id": "8_Lxr7vO9l0"
         },
         "next": {
-          "at": 1792938600,
-          "episode": 5
+          "at": 1793543400,
+          "episode": 6
         },
         "description_es": "La tercera temporada de Tensei Kizoku, Kantei Skill de Nariagaru . Nota: El 4 de septiembre de 2026, se anunció que GeyeG Pictures tomaría la producción del estudio MOTHER manteniendo el mismo personal."
       },
@@ -7110,7 +7287,7 @@
         "startDate": "2026-09-27",
         "format": "ONA",
         "episodes": 13,
-        "averageScore": 68,
+        "averageScore": 69,
         "status": "RELEASING",
         "genres": [
           "Action",
@@ -7161,8 +7338,8 @@
           "id": "rUHYbwZDVVI"
         },
         "next": {
-          "at": 1792929600,
-          "episode": 5
+          "at": 1793534400,
+          "episode": 6
         },
         "description_es": "\"Umayuru\" es una serie corta de animes que ofrece un musgo de Uma tamaño pint! Esta vez, es una carrera de tres minutos \"Full-Gate\" donde *all* el Uma Musume to the track! ¡Una reunión súper grande y relajada con todos!"
       },
@@ -7620,7 +7797,7 @@
         "startDate": "2026-10-03",
         "format": "ONA",
         "episodes": 0,
-        "averageScore": 69,
+        "averageScore": 70,
         "status": "RELEASING",
         "genres": [
           "Action",
@@ -7656,7 +7833,7 @@
         "startDate": "2026-10-03",
         "format": "ONA",
         "episodes": 24,
-        "averageScore": 70,
+        "averageScore": 71,
         "status": "RELEASING",
         "genres": [
           "Adventure",
@@ -7730,7 +7907,7 @@
         "startDate": "2026-10-03",
         "format": "TV",
         "episodes": 23,
-        "averageScore": 59,
+        "averageScore": 60,
         "status": "RELEASING",
         "genres": [
           "Action",
@@ -7976,7 +8153,7 @@
         "startDate": "2026-10-04",
         "format": "TV",
         "episodes": 24,
-        "averageScore": 79,
+        "averageScore": 80,
         "status": "RELEASING",
         "genres": [
           "Sports"
@@ -8027,8 +8204,8 @@
           "id": "Z9ofT53sz2U"
         },
         "next": {
-          "at": 1792931400,
-          "episode": 4
+          "at": 1793536200,
+          "episode": 5
         },
         "description_es": "Sato Takahiro era un trabajador de oficina ordinario y aficionado al juego hasta el día en que se despertó en una nave espacial – una que extrañamente se parecía a una nave de un juego favorito de tiro espacial. Con un barco desguace, una tripulación llena de chicas, y un universo fantástico para explorar, él va a aprovechar al máximo su buena suerte y crear la vida que siempre ha soñado con! (Fuente: Seven Seas Entertainment)"
       },
@@ -8130,8 +8307,8 @@
           "id": "e41RGxVwJRs"
         },
         "next": {
-          "at": 1792938600,
-          "episode": 4
+          "at": 1793543400,
+          "episode": 5
         },
         "description_es": "Renací como una hija villana en un juego de harem otome inverso. Después de enfermarse con fiebre alta a los 10 años, Pia Rockwell de repente recordó su vida pasada como estudiante universitaria en Japón. Pero lejos de ir por la ruta villanosa, todo lo que esta chica súper tímida quiere es finalmente utilizar su conocimiento de cuando era una estudiante de posgrado que estudiaba para obtener su doctorado en paleontología. Su objetivo final es convertirse en un común, excavar fósiles, construir un museo y luego convertirse en un curador. Así que para escapar de la ruta del villano y evitar ser deportado por su prometido durante la graduación"
       },
@@ -8160,8 +8337,8 @@
           "id": "ihAvU833DHA"
         },
         "next": {
-          "at": 1792936800,
-          "episode": 4
+          "at": 1793541600,
+          "episode": 5
         },
         "description_es": "Shizuka se ocupa de los trabajos más peligrosos de los asesinos, pero ella no es la que hace el asesinato. Más bien, es su hermano, Nagi, un asesino fuerte que tomó una bala para proteger a su hermana, dejarlo en estado en coma y tener que usar una silla de ruedas. Sin embargo, Shizuka ha descubierto la clave para despertar a su hermano: ¡debe enfrentarse con la intención de matar! Así comienza un viaje violento de recuperación, luchando contra los enemigos más peligrosos! (Fuente: Kodansha USA)"
       },
@@ -8195,8 +8372,8 @@
           "id": "YKgjylmYeoA"
         },
         "next": {
-          "at": 1792933200,
-          "episode": 4
+          "at": 1793538000,
+          "episode": 5
         },
         "description_es": "Al día, Mitsutaka Oji es el guapo y confiable jefe que todos admiran. Por la noche, hace su mascota favorita, Pugtaro, y complace su obsesión secreta con todas las cosas lindas! Ha mantenido su doble vida escondida durante años, pero un encuentro inesperado lo vuelve todo al revés y obliga a Oji a enfrentar sus sentimientos. (Fuente: Crunchyroll)"
       },
@@ -8227,8 +8404,8 @@
         ],
         "trailer": null,
         "next": {
-          "at": 1792939500,
-          "episode": 4
+          "at": 1793544300,
+          "episode": 5
         },
         "description_es": "La segunda temporada de Hotel Inhumans ."
       },
@@ -8257,8 +8434,8 @@
           "id": "rwUPmzMpECo"
         },
         "next": {
-          "at": 1792935000,
-          "episode": 4
+          "at": 1793539800,
+          "episode": 5
         },
         "description_es": "La segunda mitad de Mahou no Shimai LuluttoLilly."
       },
@@ -8604,8 +8781,8 @@
           "id": "dLRKywRu3iM"
         },
         "next": {
-          "at": 1792940400,
-          "episode": 4
+          "at": 1793545200,
+          "episode": 5
         },
         "description_es": "En su camino a casa desde la escuela un día, Noriko se sumergió inesperadamente en un extraño y extraordinario mundo de fantasía. Sus problemas se complican exponencialmente cuando es rescatada y amigada por un joven guapo por el nombre de Izark. Puede ser valiente y valiente, pero dentro de Izark se esconde el mal más oscuro imaginable. Y según una profecía antigua, Noriko posee el poder de desencadenar ese mal. Ahora, inexorablemente unidos, estos dos aliados improbables deben navegar por un mundo maravilloso y hostil. (Fuente: VIZ Media)"
       },
@@ -8801,7 +8978,7 @@
         "startDate": "2026-10-06",
         "format": "TV",
         "episodes": 0,
-        "averageScore": 60,
+        "averageScore": 61,
         "status": "RELEASING",
         "genres": [
           "Action",
@@ -8868,7 +9045,7 @@
         "startDate": "2026-10-06",
         "format": "TV",
         "episodes": 0,
-        "averageScore": 48,
+        "averageScore": 51,
         "status": "RELEASING",
         "genres": [
           "Action",
@@ -8940,7 +9117,7 @@
         "startDate": "2026-10-07",
         "format": "TV",
         "episodes": 13,
-        "averageScore": 71,
+        "averageScore": 72,
         "status": "RELEASING",
         "genres": [
           "Comedy",
@@ -9009,7 +9186,7 @@
         "startDate": "2026-10-07",
         "format": "TV",
         "episodes": 12,
-        "averageScore": 69,
+        "averageScore": 70,
         "status": "RELEASING",
         "genres": [
           "Comedy",
@@ -9045,7 +9222,7 @@
         "startDate": "2026-10-07",
         "format": "TV",
         "episodes": 0,
-        "averageScore": 68,
+        "averageScore": 69,
         "status": "RELEASING",
         "genres": [
           "Adventure",
@@ -9118,7 +9295,7 @@
         "startDate": "2026-10-08",
         "format": "TV",
         "episodes": 12,
-        "averageScore": 73,
+        "averageScore": 74,
         "status": "RELEASING",
         "genres": [
           "Comedy"
@@ -9481,8 +9658,8 @@
           "id": "CFgEL7ei8VE"
         },
         "next": {
-          "at": 1792937760,
-          "episode": 3
+          "at": 1793542560,
+          "episode": 4
         },
         "description_es": "Han pasado varios años desde la feroz batalla contra Majin Buu, y la Tierra finalmente ha recuperado un breve momento de paz. Al mismo tiempo, Beerus, el Dios de la Destrucción, despierta de su sueño largo y profundo. Incluso Kai y el Supremo Kai, consciente del abrumador poder de Beerus para destruir planetas enteros, ver su despertar con gran miedo... Mientras tanto, Beerus escucha rumores de un Saiyan que venció a Frieza y de repente aparece ante Goku. Atacada por Beerus, el ser más fuerte del universo, la Tierra está en grave peligro. Así comienza una batalla cósmica que rompe la tierra entre el Dios de la Destrucción y Go"
       },
@@ -9516,8 +9693,8 @@
           "id": "qlMB8vSpLzc"
         },
         "next": {
-          "at": 1792938600,
-          "episode": 3
+          "at": 1793543400,
+          "episode": 4
         },
         "description_es": "El jugador de RPG Makoto Takatsuki es lanzado en otro mundo con terribles habilidades y estadísticas. Pero pronto se encuentra con una diosa llamada Noé, que le pide que se convierta en su primer creyente a cambio de bendiciones. (Fuente: J-Novel Club)"
       },
