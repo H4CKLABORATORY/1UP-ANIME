@@ -182,7 +182,7 @@ async function showFriends(){
  const box=$('#c-friend-requests'),list=$('#c-friend-list');
  if(!box||!list)return;
  if(!await registered()){
-  box.innerHTML='<p class="c-empty">Inicia sesión con Google para consultar solicitudes de amistad.</p>';list.textContent='';return;
+  box.innerHTML='<p class="c-empty">Las solicitudes de amistad están pendientes de migración a 1UP Auth.</p>';list.textContent='';return;
  }
  try{
   const result=await backend().listFriends();
@@ -194,7 +194,7 @@ async function showFriends(){
 }
 async function loadMyProfile(){
  if(!backend()?.enabled()){status('#profile-state','Configura Firebase para guardar un perfil público.');return}
- if(!await registered()){status('#profile-state','Inicia sesión con Google para editar tu perfil.');return}
+ if(!await registered()){status('#profile-state','La edición del perfil está pendiente de migración a 1UP Auth.');return}
  try{const data=await backend().myProfile();if(data){$('#profile-alias').value=data.displayName||'';selectedAvatar=data.icon||'⚔️';profileIcons()}}
  catch(e){status('#profile-state',errorText(e))}
  await showFriends();
@@ -225,14 +225,7 @@ async function account(){
  }catch{}
  $('#c-auth-dialog').showModal();
 }
-async function google(){
- const button=$('#c-google');button.disabled=true;status('#c-auth-state','Conectando con Google…');
- try{
-  const user=await backend().loginWithGoogle();
-  if(user){$('#c-login').textContent=user.displayName?.slice(0,22)||'Mi cuenta';$('#c-auth-dialog').close();stateMessage('Sesión iniciada. Ya puedes participar en La Plaza, el chat y tu perfil.')}
- }catch(e){status('#c-auth-state',errorText(e))}
- finally{button.disabled=false}
-}
+function openOneup(){location.href='./index.html';}
 async function reportPost(id){
  if(!backend()?.enabled())return;
  const reason=prompt('Motivo del reporte (mínimo 4 caracteres):','Contenido inapropiado');
@@ -256,7 +249,7 @@ async function init(){
  profileIcons();
  document.addEventListener('click',actions);
  $('#c-login').addEventListener('click',account);
- $('#c-google').addEventListener('click',google);
+ $('#c-oneup').addEventListener('click',openOneup);
  $('#c-auth-close').addEventListener('click',()=>$('#c-auth-dialog').close());
  $('#c-compose').addEventListener('click',showComposer);
  $('#c-compose-hero').addEventListener('click',showComposer);

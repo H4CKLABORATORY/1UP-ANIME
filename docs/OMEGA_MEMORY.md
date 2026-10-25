@@ -150,3 +150,19 @@ Agregado módulo reversible camera.mjs con trayectorias orbit/dolly/glide, persp
 
 
 **Resultado V2 comprobado (2026-10-20):** merge de PR #66 `665ec5a3`; 14 workflows PR verdes; Pages success; render dual Full HD 16:9/9:16 con H.264/AAC y 30 FPS success (run 39418935821, artifact 12263426712). Programa ahora con cámara 2.5D configurable y 0 dependencias visuales externas. El intro de producción no fue sustituido. Safari físico pendiente.
+
+
+### 2026-10-20 — 1UP Auth (feature/1up-auth; PR #68 draft)
+- Base observada main 18e56f0. Alta con usuario/contraseña, OTP nativo Supabase de seis dígitos, recuperación con bearer de alcance exclusivo y sesiones opacas de vida corta. Broker Edge Function, tablas cerradas/RLS, límites SQL atómicos, CAPTCHA nativo obligatorio al activar, Resend SMTP.
+- Diálogo existente extendido con panel colapsado; conserva temas, intro, Google/Firebase, perfiles locales y claves de listas. No hay vinculación automática por correo, eliminación ni migración de datos. PR #67 de Firebase independiente, reconciliar auth-config.js al integrar.
+- Verificado localmente: 12 pruebas broker simuladas, flujos UI simulados Edge headless 390/1366 px, 26 regresiones existentes y scripts/check-supabase-option.mjs; sintaxis JS y diff sin errores. No son pruebas de correo ni Safari físico. PostgreSQL real se comprobará en CI.
+- Backend desactivado por defecto. La conexión Supabase devolvió cero proyectos; faltan proyecto Free, dominio con DNS verificado en Resend, SMTP, Turnstile, deploy de función, auditor de configuración y E2E real. No se creó infraestructura ni se fusionó/desplegó este cambio.
+- Evidencia/activación/rollback/migración: docs/ONEUP_AUTH.md; checkpoint .hermes/checkpoints/1up-auth.json. Próximo paso: publicar PR y comprobar CI, después activación externa por titular con el ensayo de correo.
+
+PR de esta entrega: https://github.com/H4CKLABORATORY/1UP-ANIME/pull/68 . Código publicado inicialmente 40d4bf64, normalización sin cambios semánticos 8ad0bf4f. CI inicial 1UP Auth security SUCCESS (PostgreSQL 17 + broker + Chromium 390/1366): https://github.com/H4CKLABORATORY/1UP-ANIME/actions/runs/39501966897 . Se amplían pruebas de sesión revocada con JWT aún válido, ownership/expiración SQL y recuperación del nombre de usuario tras demostrar correo; verificar CI del siguiente SHA. No hay entrega SMTP real ni despliegue.
+
+
+### 2026-10-20 — Google retirado por instrucción expresa del propietario
+- PR #68: retirados botones y rutas OAuth/restauración Google del acceso principal, antiguo y comunidad. 1UP Auth, invitado y perfiles locales se conservan; no se borraron cuentas, UID, Firebase ni favoritos.
+- La publicación/chat de comunidad sigue pendiente de migración de backend y se informa en pantalla. No reintroducir Google desde PR #67. No se retiraron Google Fonts ni el almacenamiento Firebase histórico: no afirmar desvinculación total de Google.
+- Pruebas: 12 broker tests y chequeo Supabase opcional pasaron; verificar UI móvil/escritorio y CI del nuevo commit. Backend 1UP/SMTP real sigue desactivado.
