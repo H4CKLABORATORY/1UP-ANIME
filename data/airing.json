@@ -1,310 +1,9 @@
 {
-  "updated": "2026-10-26T16:04:38.075Z",
+  "updated": "2026-10-26T21:35:30.002Z",
   "source": "AniList public GraphQL metadata",
-  "windowStart": 1792832663,
-  "windowEnd": 1793808263,
+  "windowStart": 1792852518,
+  "windowEnd": 1793828118,
   "airing": [
-    {
-      "id": "mal-64326",
-      "mal_id": 64326,
-      "ani_id": 212799,
-      "title": "The Seven Knights of the Marronnier Kingdom",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx212799-n7WDdic7IL1z.png",
-      "banner": "",
-      "description": "At the heart of a continent of eight kingdoms lies the Marronnier Kingdom. Its general, Baribara, has seven sons, each with a unique gift and serving as a knight commander. Bound by a single noble cause of heroically rescuing a princess someday, the brothers set out as goodwill ambassadors to the seven neighboring kingdoms. What encounters, trials, and destinies await them in these unknown lands? (Source: Amazon Prime Video)",
-      "year": 2026,
-      "startDate": "2026-10-03",
-      "format": "TV",
-      "episodes": 20,
-      "averageScore": 66,
-      "status": "RELEASING",
-      "genres": [
-        "Comedy",
-        "Fantasy",
-        "Romance"
-      ],
-      "siteUrl": "https://anilist.co/anime/212799",
-      "streaming": [],
-      "trailer": {
-        "site": "youtube",
-        "id": "wk26nTxUzPY"
-      },
-      "next": {
-        "at": 1793438700,
-        "episode": 5
-      },
-      "airingAt": 1792833900,
-      "episode": 4,
-      "scheduleId": 421840,
-      "description_es": "En el corazón de un continente de ocho reinos se encuentra el Reino Marronnier. Su general, Baribara, tiene siete hijos, cada uno con un regalo único y servir como comandante caballero. Heridos por una única causa noble de rescatar heroicamente a una princesa algún día, los hermanos se establecieron como embajadores de buena voluntad a los siete reinos vecinos. ¿Qué encuentros, pruebas y destinos les esperan en estas tierras desconocidas? (Fuente: Amazon Prime Video)"
-    },
-    {
-      "id": "mal-64398",
-      "mal_id": 64398,
-      "ani_id": 213356,
-      "title": "Beyond Time's Gaze 2",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx213356-nYFTX2yeMBd5.jpg",
-      "banner": "",
-      "description": "Second season of Guangyin Zhi Wai .",
-      "year": 2026,
-      "startDate": "2026-06-20",
-      "format": "ONA",
-      "episodes": 52,
-      "averageScore": 72,
-      "status": "RELEASING",
-      "genres": [
-        "Action",
-        "Adventure",
-        "Fantasy"
-      ],
-      "siteUrl": "https://anilist.co/anime/213356",
-      "streaming": [],
-      "trailer": null,
-      "next": {
-        "at": 1793440800,
-        "episode": 20
-      },
-      "airingAt": 1792836000,
-      "episode": 19,
-      "scheduleId": 415797,
-      "description_es": "Segunda temporada de Guangyin Zhi Wai."
-    },
-    {
-      "id": "mal-59787",
-      "mal_id": 59787,
-      "ani_id": 180894,
-      "title": "Romelia War Chronicle",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx180894-o3pz4DWFm3je.png",
-      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/180894-NHYBUhwfDZGg.jpg",
-      "description": "Romelia and her party succeed in defeating the Demon King Zelgis, though Prince Henri’s reckless charge forces them into a grueling battle. In the aftermath, Romelia is branded \"dead weight\" for not fighting directly, and the Prince unilaterally breaks off their engagement. Denied a place in the victory celebrations, Romelia returns home, only to be met with cold indifference from her family and society. Yet, she refuses to break. She has already set her sights on the path that lies ahead. (Source: Crunchyroll) Note: Romelia War Chronicle was streamed 2 days in advance of the TV broadcast on AnimeTimes, U-NEXT, and Netflix beginning October 3, 2026. Regular broadcasting began on October 5, 2026.",
-      "year": 2026,
-      "startDate": "2026-10-03",
-      "format": "ONA",
-      "episodes": 24,
-      "averageScore": 71,
-      "status": "RELEASING",
-      "genres": [
-        "Adventure",
-        "Drama",
-        "Fantasy"
-      ],
-      "siteUrl": "https://anilist.co/anime/180894",
-      "streaming": [
-        {
-          "name": "Crunchyroll",
-          "url": "https://www.crunchyroll.com/series/GT00384007/romelia-war-chronicle"
-        }
-      ],
-      "trailer": {
-        "site": "youtube",
-        "id": "PxXPcoo8uGM"
-      },
-      "next": {
-        "at": 1793448000,
-        "episode": 5
-      },
-      "airingAt": 1792843200,
-      "episode": 4,
-      "scheduleId": 419827,
-      "description_es": "Romelia y su partido tienen éxito en derrotar al Rey demonio Zelgis, aunque la carga imprudente del príncipe Henri los obliga a una batalla agotadora. Después, Romelia se marca \"peso muerto\" por no luchar directamente, y el Príncipe unilateralmente rompe su compromiso. Denegado un lugar en las celebraciones de la victoria, Romelia vuelve a casa, sólo para ser conocido con fría indiferencia de su familia y sociedad. Sin embargo, se niega a romper. Ella ya ha puesto sus ojos en el camino que está por delante. (Fuente: Crunchyroll) Nota: Romelia War Chronicle fue transmitido 2 días antes de la emisión de televisión en A"
-    },
-    {
-      "id": "mal-61153",
-      "mal_id": 61153,
-      "ani_id": 187402,
-      "title": "A Tale of the Secret Saint",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx187402-ReKkLwFmMV3q.jpg",
-      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/187402-bRt4OO90jcmt.jpg",
-      "description": "Fia always dreamed of becoming a knight. Born into a family of knights, she’s the least talented among them, but she still clutches to her hope and trains with everything she has. When the day comes for her to slay a small demon and prove her worth, she ends up face to face with a dragon instead! A deadly injury makes her life flash before her eyes…and she suddenly remembers her former life, when she was a powerful Saint in a bygone era who defeated the Demon King. That life ended in pain because of who she was, making her fear ever becoming a Saint again. Now that the magic from her previous life has been rekindled, she may become a more powerful knight than she ever dreamed–if only she can survive long enough! (Source: Seven Seas Entertainment) Note: The series streamed a week in advance on ABEMA, Prime Video, and Crunchyroll starting with episode 2 released alongside episode 1.",
-      "year": 2026,
-      "startDate": "2026-10-03",
-      "format": "ONA",
-      "episodes": 0,
-      "averageScore": 70,
-      "status": "RELEASING",
-      "genres": [
-        "Action",
-        "Adventure",
-        "Fantasy"
-      ],
-      "siteUrl": "https://anilist.co/anime/187402",
-      "streaming": [
-        {
-          "name": "Crunchyroll",
-          "url": "https://www.crunchyroll.com/series/GT00371633"
-        }
-      ],
-      "trailer": {
-        "site": "youtube",
-        "id": "9oBywQ403ZA"
-      },
-      "next": {
-        "at": 1793451600,
-        "episode": 6
-      },
-      "airingAt": 1792846800,
-      "episode": 5,
-      "scheduleId": 421885,
-      "description_es": "Fia siempre soñó con convertirse en un caballero. Nacida en una familia de caballeros, es la menos talentosa entre ellos, pero todavía se aferra a su esperanza y trenes con todo lo que tiene. Cuando llega el día para que mate a un pequeño demonio y pruebe su valor, termina cara a cara con un dragón en su lugar! Una herida mortal hace que su vida parpadee ante sus ojos... y de repente recuerda su vida anterior, cuando era un poderoso santo en una era pasada que venció al Rey demonio. Esa vida terminó con dolor por lo que era, haciendo que su miedo vuelva a ser un santo. Ahora que la magia de su anterior"
-    },
-    {
-      "id": "mal-63140",
-      "mal_id": 63140,
-      "ani_id": 204389,
-      "title": "A Wild Last Boss Appeared! Season 2",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx204389-jCoFCeTthDMy.jpg",
-      "banner": "",
-      "description": "The second season of Yasei no Last Boss ga Arawareta!",
-      "year": 2026,
-      "startDate": "2026-09-26",
-      "format": "ONA",
-      "episodes": 0,
-      "averageScore": 73,
-      "status": "RELEASING",
-      "genres": [
-        "Action",
-        "Adventure",
-        "Fantasy"
-      ],
-      "siteUrl": "https://anilist.co/anime/204389",
-      "streaming": [
-        {
-          "name": "Crunchyroll",
-          "url": "https://www.crunchyroll.com/series/GT00361955/a-wild-last-boss-appeared"
-        }
-      ],
-      "trailer": {
-        "site": "youtube",
-        "id": "LyDMSUR6_Q8"
-      },
-      "next": {
-        "at": 1793453400,
-        "episode": 6
-      },
-      "airingAt": 1792848600,
-      "episode": 5,
-      "scheduleId": 420144,
-      "description_es": "¡La segunda temporada de Yasei no el último jefe ga Arawareta!"
-    },
-    {
-      "id": "mal-61967",
-      "mal_id": 61967,
-      "ani_id": 195604,
-      "title": "Black Clover Season 2",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx195604-tSZcfKbVqSEG.jpg",
-      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/195604-lQpCzTziSA17.jpg",
-      "description": "As tyranny engulfs the Clover Kingdom, Asta and the Magic Knights launch a desperate raid on the Spade Kingdom to rescue their squad captains from the Dark Triad. But their mission leads them into a brutal battle against forces beyond anything they’ve ever faced. Now, Asta must rise above impossible odds to protect his friends and honor the promise he made to Yuno. (Source: Crunchyroll)",
-      "year": 2026,
-      "startDate": "2026-10-03",
-      "format": "TV",
-      "episodes": 0,
-      "averageScore": 87,
-      "status": "RELEASING",
-      "genres": [
-        "Action",
-        "Adventure",
-        "Comedy",
-        "Fantasy"
-      ],
-      "siteUrl": "https://anilist.co/anime/195604",
-      "streaming": [
-        {
-          "name": "Crunchyroll",
-          "url": "https://www.crunchyroll.com/series/GRE50KV36/black-clover"
-        }
-      ],
-      "trailer": {
-        "site": "youtube",
-        "id": "4MYo8FfiXMA"
-      },
-      "next": {
-        "at": 1793455200,
-        "episode": 5
-      },
-      "airingAt": 1792850400,
-      "episode": 4,
-      "scheduleId": 419553,
-      "description_es": "A medida que la tiranía envuelve el Reino de Clover, Asta y los Caballeros Mágicos lanzan una redada desesperada en el Reino de Spade para rescatar a sus capitanes de la Tribu Oscura. Pero su misión los lleva a una batalla brutal contra las fuerzas más allá de cualquier cosa que hayan enfrentado. Ahora, Asta debe elevarse por encima de las probabilidades imposibles de proteger a sus amigos y honrar la promesa que hizo a Yuno. (Fuente: Crunchyroll)"
-    },
-    {
-      "id": "mal-63764",
-      "mal_id": 63764,
-      "ani_id": 209562,
-      "title": "VERTEX FORCE",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx209562-kQQbTKDuql9p.jpg",
-      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/209562-dvyIvOOVgDNp.jpg",
-      "description": "Akira lives a peaceful life with his older sister Haruka and his mother, who runs a cafe. The family however harbors a secret — Haruka has inherited a power from her father called \"Engine,\" and she hides that power from others. Akira on the other hand has not inherited his father's power, and he has an inferiority complex about it. Amidst this, strange events start happening around the world. (Source: Anime News Network)",
-      "year": 2026,
-      "startDate": "2026-10-03",
-      "format": "TV",
-      "episodes": 0,
-      "averageScore": 55,
-      "status": "RELEASING",
-      "genres": [
-        "Action",
-        "Mecha"
-      ],
-      "siteUrl": "https://anilist.co/anime/209562",
-      "streaming": [
-        {
-          "name": "Crunchyroll",
-          "url": "https://www.crunchyroll.com/series/GT00365619/vertex-force"
-        }
-      ],
-      "trailer": {
-        "site": "youtube",
-        "id": "JqjXaJysS5w"
-      },
-      "next": {
-        "at": 1793457000,
-        "episode": 5
-      },
-      "airingAt": 1792852200,
-      "episode": 4,
-      "scheduleId": 419803,
-      "description_es": "Akira vive una vida pacífica con su hermana mayor Haruka y su madre, que dirige un café. Sin embargo, la familia alberga un secreto — Haruka ha heredado un poder de su padre llamado \"Engine\", y esconde ese poder de otros. Akira, por otro lado, no ha heredado el poder de su padre, y tiene un complejo de inferioridad. En medio de esto, acontecimientos extraños comienzan a suceder alrededor del mundo. (Fuente: Anime News Network)"
-    },
-    {
-      "id": "mal-62524",
-      "mal_id": 62524,
-      "ani_id": 199007,
-      "title": "#I'm Looking For a Zombie",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx199007-8R1HsnflnHJE.jpg",
-      "banner": "",
-      "description": "It may be a ruined city ravaged by zombies, but to Aki and her friends, it’s amazing! Having grown up only hearing stories of the old world and the mysterious outbreak that wiped out humanity, she sets off with her childhood friends in search of her missing father. Things quickly become a fight for survival outside the safety of their small village, yet they’ve never felt more alive. (Source: Crunchyroll)",
-      "year": 2026,
-      "startDate": "2026-10-03",
-      "format": "TV",
-      "episodes": 12,
-      "averageScore": 61,
-      "status": "RELEASING",
-      "genres": [
-        "Action",
-        "Comedy",
-        "Horror",
-        "Mystery",
-        "Supernatural"
-      ],
-      "siteUrl": "https://anilist.co/anime/199007",
-      "streaming": [
-        {
-          "name": "Crunchyroll",
-          "url": "https://www.crunchyroll.com/series/GT00383996/im-looking-for-a-zombie"
-        }
-      ],
-      "trailer": {
-        "site": "youtube",
-        "id": "_0kVb8-uRSI"
-      },
-      "next": {
-        "at": 1793457000,
-        "episode": 5
-      },
-      "airingAt": 1792852200,
-      "episode": 4,
-      "scheduleId": 420131,
-      "description_es": "Puede ser una ciudad arruinada devastada por zombis, pero para Aki y sus amigos, ¡es increíble! Habiendo crecido sólo escuchando historias del viejo mundo y el misterioso brote que borró a la humanidad, se pone con sus amigos de la infancia en busca de su padre desaparecido. Las cosas se convierten rápidamente en una lucha por la supervivencia fuera de la seguridad de su pequeño pueblo, sin embargo nunca se han sentido más vivos. (Fuente: Crunchyroll)"
-    },
     {
       "id": "mal-63053",
       "mal_id": 63053,
@@ -1951,8 +1650,8 @@
         "id": "34ubb-j0kbI"
       },
       "next": {
-        "at": 1793034000,
-        "episode": 4
+        "at": 1793638800,
+        "episode": 5
       },
       "airingAt": 1793034000,
       "episode": 4,
@@ -2875,6 +2574,35 @@
       "episode": 5,
       "scheduleId": 421766,
       "description_es": "Cuarta temporada de PetitCure: Ferias precarias."
+    },
+    {
+      "id": "al-218942",
+      "mal_id": null,
+      "ani_id": 218942,
+      "title": "Sylvanian Families: Freya no Colorful Everyday",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b218942-P2vuXzw9knaY.png",
+      "banner": "",
+      "description": "",
+      "year": 2026,
+      "startDate": "2026-10-01",
+      "format": "TV_SHORT",
+      "episodes": 12,
+      "averageScore": 0,
+      "status": "RELEASING",
+      "genres": [
+        "Fantasy",
+        "Slice of Life"
+      ],
+      "siteUrl": "https://anilist.co/anime/218942",
+      "streaming": [],
+      "trailer": null,
+      "next": {
+        "at": 1793269140,
+        "episode": 5
+      },
+      "airingAt": 1793269140,
+      "episode": 5,
+      "scheduleId": 423042
     },
     {
       "id": "mal-63337",
@@ -5982,8 +5710,8 @@
         "id": "34ubb-j0kbI"
       },
       "next": {
-        "at": 1793034000,
-        "episode": 4
+        "at": 1793638800,
+        "episode": 5
       },
       "airingAt": 1793638800,
       "episode": 5,
@@ -7214,6 +6942,32 @@
           "episode": 5
         },
         "description_es": "Cuarta temporada de PetitCure: Ferias precarias."
+      },
+      {
+        "id": "al-218942",
+        "mal_id": null,
+        "ani_id": 218942,
+        "title": "Sylvanian Families: Freya no Colorful Everyday",
+        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b218942-P2vuXzw9knaY.png",
+        "banner": "",
+        "description": "",
+        "year": 2026,
+        "startDate": "2026-10-01",
+        "format": "TV_SHORT",
+        "episodes": 12,
+        "averageScore": 0,
+        "status": "RELEASING",
+        "genres": [
+          "Fantasy",
+          "Slice of Life"
+        ],
+        "siteUrl": "https://anilist.co/anime/218942",
+        "streaming": [],
+        "trailer": null,
+        "next": {
+          "at": 1793269140,
+          "episode": 5
+        }
       },
       {
         "id": "mal-61987",
@@ -8678,8 +8432,8 @@
           "id": "34ubb-j0kbI"
         },
         "next": {
-          "at": 1793034000,
-          "episode": 4
+          "at": 1793638800,
+          "episode": 5
         },
         "description_es": "Algunas chicas mágicas pelean. Otros no. Elegido por la misteriosa Tierra de la Magia, que existe poco conocida por el resto del mundo, las chicas mágicas cada una tienen un poder único. Pechka, cuya magia hace deliciosa la comida, se ve obligada a participar en un misterioso juego virtual junto con 16 chicas mágicas desconocidas, cada una con su propia personalidad distintiva. Se suponía que era un ejercicio de entrenamiento seguro diseñado para mejorar sus habilidades mágicas. Pero en cambio, marca el comienzo de una pesadilla cuidadosamente orquestada - un juicio prohibido. Ha comenzado un nuevo proyecto de Raising Girl Magical. (Fuente:"
       },
@@ -9382,37 +9136,6 @@
           "episode": 4
         },
         "description_es": "El jugador de RPG Makoto Takatsuki es lanzado en otro mundo con terribles habilidades y estadísticas. Pero pronto se encuentra con una diosa llamada Noé, que le pide que se convierta en su primer creyente a cambio de bendiciones. (Fuente: J-Novel Club)"
-      },
-      {
-        "id": "mal-64503",
-        "mal_id": 64503,
-        "ani_id": 213657,
-        "title": "Mission: Yozakura Family Season 2 Part 2",
-        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx213657-ORNXVEBCjXaz.jpg",
-        "banner": "",
-        "description": "The second cour of the second season of Yozakura-san Chi no Daisakusen .",
-        "year": 2026,
-        "startDate": "2026-10-11",
-        "format": "TV",
-        "episodes": 0,
-        "averageScore": 72,
-        "status": "RELEASING",
-        "genres": [
-          "Action",
-          "Comedy",
-          "Romance"
-        ],
-        "siteUrl": "https://anilist.co/anime/213657",
-        "streaming": [],
-        "trailer": {
-          "site": "youtube",
-          "id": "059cJjeY19Y"
-        },
-        "next": {
-          "at": 1793520000,
-          "episode": 4
-        },
-        "description_es": "El segundo cour de la segunda temporada de Yozakura-san Chi no Daisakusen."
       }
     ]
   },
