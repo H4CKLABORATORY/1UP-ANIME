@@ -1,160 +1,9 @@
 {
-  "updated": "2026-10-25T21:29:28.096Z",
+  "updated": "2026-10-26T03:36:21.071Z",
   "source": "AniList public GraphQL metadata",
-  "windowStart": 1792765753,
-  "windowEnd": 1793741353,
+  "windowStart": 1792787767,
+  "windowEnd": 1793763367,
   "airing": [
-    {
-      "id": "mal-63293",
-      "mal_id": 63293,
-      "ani_id": 205909,
-      "title": "Firefly Wedding",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx205909-DM0fAzNQulod.jpg",
-      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/205909-hGeuFYrdhf9S.jpg",
-      "description": "On the surface, Satoko has it all—she’s beautiful, the daughter of a nobleman, and at a prime age for marriage. Unfortunately, she is also quite ill and only has a short time left to live. Before she can secure a marriage that will redeem her worth in her family’s eyes, she finds herself the target of the mysterious assassin Shinpei, and her plans are put in jeopardy. In order to save herself, she makes a desperate proposal—of marriage! When it comes to love, however, Shinpei takes “until death do we part” seriously. (Source: VIZ Media)",
-      "year": 2026,
-      "startDate": "2026-10-09",
-      "format": "TV",
-      "episodes": 12,
-      "averageScore": 75,
-      "status": "RELEASING",
-      "genres": [
-        "Drama",
-        "Romance"
-      ],
-      "siteUrl": "https://anilist.co/anime/205909",
-      "streaming": [
-        {
-          "name": "Crunchyroll",
-          "url": "https://www.crunchyroll.com/series/GT00383999"
-        }
-      ],
-      "trailer": {
-        "site": "youtube",
-        "id": "Ex9LrBK-7hk"
-      },
-      "next": {
-        "at": 1793370600,
-        "episode": 4
-      },
-      "airingAt": 1792765800,
-      "episode": 3,
-      "scheduleId": 418467,
-      "description_es": "En la superficie, Satoko lo tiene todo, es hermosa, la hija de un noble, y a una edad temprana para el matrimonio. Desafortunadamente, ella también está bastante enferma y sólo tiene un corto tiempo para vivir. Antes de que pueda conseguir un matrimonio que redimirá su valor en los ojos de su familia, se encuentra el blanco del misterioso asesino Shinpei, y sus planes están en peligro. ¡Para salvarse, hace una propuesta desesperada de matrimonio! Cuando c"
-    },
-    {
-      "id": "mal-63181",
-      "mal_id": 63181,
-      "ani_id": 204650,
-      "title": "TOUGEN ANKI: Nikko Kegon Falls Arc",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx204650-cAQOzQ84Lwk8.png",
-      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/204650-MpownoVlYv69.jpg",
-      "description": "After battling in Kyoto and Nerima, the Rasetsu Academy students have grown stronger. But Yaoroshi leaves the academy to join the Oni Brigade for their \"the total eradication of the Momotaro.\" When Shiki realizes that they also target noncombatants, he sets out after Yaoroshi to bring him back. Meanwhile in Nikko, there's a research facility for horrific experiments atop the old Kegon Falls… (Source: REMOW)",
-      "year": 2026,
-      "startDate": "2026-10-02",
-      "format": "TV",
-      "episodes": 12,
-      "averageScore": 72,
-      "status": "RELEASING",
-      "genres": [
-        "Action",
-        "Mystery",
-        "Supernatural"
-      ],
-      "siteUrl": "https://anilist.co/anime/204650",
-      "streaming": [
-        {
-          "name": "Crunchyroll",
-          "url": "https://www.crunchyroll.com/series/GP5HJ84D2/tougen-anki"
-        }
-      ],
-      "trailer": {
-        "site": "youtube",
-        "id": "upBWYExYoYc"
-      },
-      "next": {
-        "at": 1793370600,
-        "episode": 5
-      },
-      "airingAt": 1792765800,
-      "episode": 4,
-      "scheduleId": 422238,
-      "description_es": "Después de luchar en Kioto y Nerima, los estudiantes de la Academia Rasetsu se han hecho más fuertes. Pero Yaoroshi deja la academia para unirse a la Brigada Oni por su \"erración total del Momotaro\". Cuando Shiki se da cuenta de que también apuntan a los no combatientes, se pone después de Yaoroshi para traerlo de vuelta. Mientras tanto, en Nikko, hay una instalación de investigación para experimentos horribles en la antigua Kegon Falls... (Fuente: REMOW)"
-    },
-    {
-      "id": "mal-63061",
-      "mal_id": 63061,
-      "ani_id": 203490,
-      "title": "Please Excuse My Younger Brothers",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx203490-YQXiymUiDQNA.jpg",
-      "banner": "",
-      "description": "The manga centers on high school student Ito Hazui. During her spring break at the end of her first year of high school, Ito's mother remarries, and Ito moves to live with her new family, becoming Ito Narita. Upon arriving at her new house, Ito is shocked to learn she now has four younger step-brothers. Ito tries her hardest to get along with all of the new members of her family, but the eldest brother Gen is a bit cold to her. However, under his aloof facade, he occasionally shows his kindness. (Source: Anime News Network)",
-      "year": 2026,
-      "startDate": "2026-07-04",
-      "format": "TV",
-      "episodes": 24,
-      "averageScore": 69,
-      "status": "RELEASING",
-      "genres": [
-        "Comedy",
-        "Romance",
-        "Slice of Life"
-      ],
-      "siteUrl": "https://anilist.co/anime/203490",
-      "streaming": [
-        {
-          "name": "Crunchyroll",
-          "url": "https://www.crunchyroll.com/series/GT00371926/"
-        }
-      ],
-      "trailer": {
-        "site": "youtube",
-        "id": "P927_ZvgUUg"
-      },
-      "next": {
-        "at": 1793372400,
-        "episode": 17
-      },
-      "airingAt": 1792767600,
-      "episode": 16,
-      "scheduleId": 421091,
-      "description_es": "El manga se centra en el estudiante de secundaria Ito Hazui. Durante su descanso de primavera al final de su primer año de secundaria, la madre de Ito se vuelve a casar, y Ito se mueve a vivir con su nueva familia, convirtiéndose en Ito Narita. Al llegar a su nueva casa, Ito está sorprendido de saber que ahora tiene cuatro hermanos menores. Ito trata de que ella sea más difícil de llevar con todos los nuevos miembros de su familia, pero el hermano mayor Gen es un poco frío para ella. Sin embargo, bajo su fachada, ocasionalmente muestra su amabilidad. (Fuente: Anime News Network)"
-    },
-    {
-      "id": "mal-59088",
-      "mal_id": 59088,
-      "ani_id": 178083,
-      "title": "Tokyo Revengers: War of the Three Titans Arc",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx178083-bg7pg6TCHwtG.jpg",
-      "banner": "",
-      "description": "Sequel to Tokyo Revengers: Tenjiku-hen .",
-      "year": 2026,
-      "startDate": "2026-10-03",
-      "format": "TV",
-      "episodes": 13,
-      "averageScore": 76,
-      "status": "RELEASING",
-      "genres": [
-        "Action",
-        "Drama",
-        "Romance",
-        "Supernatural"
-      ],
-      "siteUrl": "https://anilist.co/anime/178083",
-      "streaming": [],
-      "trailer": {
-        "site": "youtube",
-        "id": "Nm21TTXUkf4"
-      },
-      "next": {
-        "at": 1793379180,
-        "episode": 5
-      },
-      "airingAt": 1792774380,
-      "episode": 4,
-      "scheduleId": 418624,
-      "description_es": "Secuela de los Revengers de Tokio: Tenjiku-hen."
-    },
     {
       "id": "mal-64718",
       "mal_id": 64718,
@@ -615,7 +464,7 @@
       "ani_id": 180894,
       "title": "Romelia War Chronicle",
       "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx180894-o3pz4DWFm3je.png",
-      "banner": "",
+      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/180894-NHYBUhwfDZGg.jpg",
       "description": "Romelia and her party succeed in defeating the Demon King Zelgis, though Prince Henri’s reckless charge forces them into a grueling battle. In the aftermath, Romelia is branded \"dead weight\" for not fighting directly, and the Prince unilaterally breaks off their engagement. Denied a place in the victory celebrations, Romelia returns home, only to be met with cold indifference from her family and society. Yet, she refuses to break. She has already set her sights on the path that lies ahead. (Source: Crunchyroll) Note: Romelia War Chronicle was streamed 2 days in advance of the TV broadcast on AnimeTimes, U-NEXT, and Netflix beginning October 3, 2026. Regular broadcasting began on October 5, 2026.",
       "year": 2026,
       "startDate": "2026-10-03",
@@ -2242,8 +2091,8 @@
       ],
       "trailer": null,
       "next": {
-        "at": 1792980000,
-        "episode": 164
+        "at": 1793584800,
+        "episode": 165
       },
       "airingAt": 1792980000,
       "episode": 164,
@@ -2275,8 +2124,8 @@
         "id": "WprfleUJVck"
       },
       "next": {
-        "at": 1792980000,
-        "episode": 7
+        "at": 1793286000,
+        "episode": 8
       },
       "airingAt": 1792980000,
       "episode": 7,
@@ -2306,8 +2155,8 @@
         "id": "FuGZ0Cl8YMY"
       },
       "next": {
-        "at": 1792983600,
-        "episode": 4
+        "at": 1793588400,
+        "episode": 5
       },
       "airingAt": 1792983600,
       "episode": 4,
@@ -3581,8 +3430,8 @@
         "id": "WprfleUJVck"
       },
       "next": {
-        "at": 1792980000,
-        "episode": 7
+        "at": 1793286000,
+        "episode": 8
       },
       "airingAt": 1793286000,
       "episode": 8,
@@ -4743,7 +4592,7 @@
       "ani_id": 180894,
       "title": "Romelia War Chronicle",
       "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx180894-o3pz4DWFm3je.png",
-      "banner": "",
+      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/180894-NHYBUhwfDZGg.jpg",
       "description": "Romelia and her party succeed in defeating the Demon King Zelgis, though Prince Henri’s reckless charge forces them into a grueling battle. In the aftermath, Romelia is branded \"dead weight\" for not fighting directly, and the Prince unilaterally breaks off their engagement. Denied a place in the victory celebrations, Romelia returns home, only to be met with cold indifference from her family and society. Yet, she refuses to break. She has already set her sights on the path that lies ahead. (Source: Crunchyroll) Note: Romelia War Chronicle was streamed 2 days in advance of the TV broadcast on AnimeTimes, U-NEXT, and Netflix beginning October 3, 2026. Regular broadcasting began on October 5, 2026.",
       "year": 2026,
       "startDate": "2026-10-03",
@@ -6307,8 +6156,8 @@
       ],
       "trailer": null,
       "next": {
-        "at": 1792980000,
-        "episode": 164
+        "at": 1793584800,
+        "episode": 165
       },
       "airingAt": 1793584800,
       "episode": 165,
@@ -6340,8 +6189,8 @@
         "id": "WprfleUJVck"
       },
       "next": {
-        "at": 1792980000,
-        "episode": 7
+        "at": 1793286000,
+        "episode": 8
       },
       "airingAt": 1793584800,
       "episode": 9,
@@ -6371,8 +6220,8 @@
         "id": "FuGZ0Cl8YMY"
       },
       "next": {
-        "at": 1792983600,
-        "episode": 4
+        "at": 1793588400,
+        "episode": 5
       },
       "airingAt": 1793588400,
       "episode": 5,
@@ -6896,6 +6745,102 @@
       "episode": 4,
       "scheduleId": 419637,
       "description_es": "Siguiendo la voluntad de su abuelo de “buscar el Senki”, el protagonista Kairi visita Golden Valley, una zona económica especial de la máquina oscura. Allí, conoce a una chica misteriosa llamada Rudra. Se convirtió en un jugador de la máquina oscura por Rudra, el talento de Kairi florece gradualmente en el curso de muchas batallas intensas. (Fuente: Fuji Creative) Nota: Parte del proyecto \"DARK MACHINE\" Web3 cross-media donde se entrelazan la historia del juego y su adaptación de anime."
+    },
+    {
+      "id": "mal-63151",
+      "mal_id": 63151,
+      "ani_id": 204656,
+      "title": "mofusand",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b204656-KXjxVB4bBhl8.jpg",
+      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/204656-ECYkRJKBxTLj.jpg",
+      "description": "Shark Meow is an orange tabby kitty who wears a shark suit. A little clumsy and always taking things at their own cozy pace, but every day with their best kitty friends — and the rescued baby kitty, Little Meow — is filled with unexpected little mishaps and sweet adventures. A sunny warm spot in the park, the sparkle of the sea, steam rising from freshly roasted sweet potatoes, the fluttery feeling of the first snowfall… These small everyday moments fill their world with warmth and delight. You can’t help but smile and think, “So true!” A soft and snuggly kitty anime that brings joy to everyday moments. (Source: QTORY Channel)",
+      "year": 2026,
+      "startDate": "2025-12-22",
+      "format": "ONA",
+      "episodes": 0,
+      "averageScore": 64,
+      "status": "RELEASING",
+      "genres": [
+        "Slice of Life"
+      ],
+      "siteUrl": "https://anilist.co/anime/204656",
+      "streaming": [],
+      "trailer": {
+        "site": "youtube",
+        "id": "Svh_xgdMWlU"
+      },
+      "next": {
+        "at": 1793142000,
+        "episode": 43
+      },
+      "airingAt": 1793746800,
+      "episode": 44,
+      "scheduleId": 416123,
+      "description_es": "Shark Meow es un gatito de tabby naranja que lleva un traje de tiburón. Un poco torpe y siempre tomando cosas a su propio ritmo acogedor, pero todos los días con sus mejores amigos gatitos — y el gatito salvada, Little Meow— está lleno de pequeños revuelos inesperados y aventuras dulces. Un lugar cálido soleado en el parque, la chispa del mar, el vapor subiendo de las batatas recién asadas, la sensación de la primera nevada... Estos pequeños momentos cotidianos llenan su mundo con calidez y deleite. No puedes evitar sonreír y pensar, “¡Es verdad!” Un pequeño y suave anime que trae alegría a cadada"
+    },
+    {
+      "id": "mal-62248",
+      "mal_id": 62248,
+      "ani_id": 199409,
+      "title": "Yi Nian Yongheng 4",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx199409-tZnVTAQ9P6fY.png",
+      "banner": "",
+      "description": "The fourth and final season of Yi Nian Yongheng .",
+      "year": 2026,
+      "startDate": "2026-07-22",
+      "format": "ONA",
+      "episodes": 46,
+      "averageScore": 68,
+      "status": "RELEASING",
+      "genres": [
+        "Action",
+        "Comedy",
+        "Fantasy"
+      ],
+      "siteUrl": "https://anilist.co/anime/199409",
+      "streaming": [],
+      "trailer": {
+        "site": "youtube",
+        "id": "sKXK-6uZHjI"
+      },
+      "next": {
+        "at": 1793152800,
+        "episode": 17
+      },
+      "airingAt": 1793757600,
+      "episode": 18,
+      "scheduleId": 417917,
+      "description_es": "La cuarta y última temporada de Yi Nian Yongheng."
+    },
+    {
+      "id": "mal-62218",
+      "mal_id": 62218,
+      "ani_id": 214974,
+      "title": "Da Xia Shou Mu Ren",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx214974-fM9q0ki7fCVl.jpg",
+      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/214974-jMZ2CpV2lKip.jpg",
+      "description": "Ten years ago, after three consecutive days of blood moon, ghosts, gods, heterochromatic eyes, and strange tales arrived one after another. Mystery and enigma descended upon the human world. Terror and despair roamed the earth. As humans, should we kneel in submission, weep bitterly, or draw our swords? This is a new era, and this era—belongs to the extraordinary! Pushing open the door to the extraordinary, Su Bai encountered a new world… (Source: Tencent, translated)",
+      "year": 2026,
+      "startDate": "2026-09-30",
+      "format": "ONA",
+      "episodes": 59,
+      "averageScore": 0,
+      "status": "RELEASING",
+      "genres": [
+        "Action",
+        "Fantasy"
+      ],
+      "siteUrl": "https://anilist.co/anime/214974",
+      "streaming": [],
+      "trailer": null,
+      "next": {
+        "at": 1793152800,
+        "episode": 7
+      },
+      "airingAt": 1793757600,
+      "episode": 8,
+      "scheduleId": 421468,
+      "description_es": "Hace diez años, después de tres días consecutivos de luna de sangre, fantasmas, dioses, ojos heterocromáticos y cuentos extraños llegaron uno tras otro. El misterio y el enigma descendieron sobre el mundo humano. El terror y la desesperación vagaron por la tierra. Como humanos, ¿debemos arrodillarnos en sumisión, llorar amargamente, o dibujar nuestras espadas? Esta es una nueva era, y esta era — pertenece a lo extraordinario! Al abrir la puerta a lo extraordinario, Su Bai encontró un nuevo mundo... (Fuente: Tencent, traducido)"
     }
   ],
   "seasonal": {
@@ -7595,7 +7540,7 @@
         "ani_id": 180894,
         "title": "Romelia War Chronicle",
         "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx180894-o3pz4DWFm3je.png",
-        "banner": "",
+        "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/180894-NHYBUhwfDZGg.jpg",
         "description": "Romelia and her party succeed in defeating the Demon King Zelgis, though Prince Henri’s reckless charge forces them into a grueling battle. In the aftermath, Romelia is branded \"dead weight\" for not fighting directly, and the Prince unilaterally breaks off their engagement. Denied a place in the victory celebrations, Romelia returns home, only to be met with cold indifference from her family and society. Yet, she refuses to break. She has already set her sights on the path that lies ahead. (Source: Crunchyroll) Note: Romelia War Chronicle was streamed 2 days in advance of the TV broadcast on AnimeTimes, U-NEXT, and Netflix beginning October 3, 2026. Regular broadcasting began on October 5, 2026.",
         "year": 2026,
         "startDate": "2026-10-03",
@@ -8578,8 +8523,8 @@
           "id": "FuGZ0Cl8YMY"
         },
         "next": {
-          "at": 1792983600,
-          "episode": 4
+          "at": 1793588400,
+          "episode": 5
         },
         "description_es": "Chibi shorts to Kusuriya no Hitorigoto 3rd Season lanzado en el canal de animación TOHO YouTube. Nota: El conteo de Episodio comienza a las 49."
       },
@@ -8665,8 +8610,8 @@
           "id": "WprfleUJVck"
         },
         "next": {
-          "at": 1792980000,
-          "episode": 7
+          "at": 1793286000,
+          "episode": 8
         }
       },
       {
