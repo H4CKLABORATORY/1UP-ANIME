@@ -1,146 +1,9 @@
 {
-  "updated": "2026-10-27T09:40:44.458Z",
+  "updated": "2026-10-27T15:47:32.236Z",
   "source": "AniList public GraphQL metadata",
-  "windowStart": 1792896032,
-  "windowEnd": 1793871632,
+  "windowStart": 1792918040,
+  "windowEnd": 1793893640,
   "airing": [
-    {
-      "id": "mal-61323",
-      "mal_id": 61323,
-      "ani_id": 189123,
-      "title": "Blue Box Season 2",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx189123-0secXELIhkIW.jpg",
-      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/189123-s2oirY2r1Svy.jpg",
-      "description": "The second season of Ao no Hako .",
-      "year": 2026,
-      "startDate": "2026-10-04",
-      "format": "TV",
-      "episodes": 12,
-      "averageScore": 81,
-      "status": "RELEASING",
-      "genres": [
-        "Romance",
-        "Slice of Life",
-        "Sports"
-      ],
-      "siteUrl": "https://anilist.co/anime/189123",
-      "streaming": [],
-      "trailer": {
-        "site": "youtube",
-        "id": "hJ6Y8PAOUk8"
-      },
-      "next": {
-        "at": 1794123000,
-        "episode": 5
-      },
-      "airingAt": 1792913400,
-      "episode": 4,
-      "scheduleId": 423027,
-      "description_es": "La segunda temporada de Ao no Hako."
-    },
-    {
-      "id": "mal-61603",
-      "mal_id": 61603,
-      "ani_id": 191788,
-      "title": "Aoashi Season 2",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx191788-XC6F24LdX6a4.jpg",
-      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/191788-tyhsHpXeF26X.jpg",
-      "description": "Aoi Ashito’s game has now earned him a spot on the A team, but he is quickly overwhelmed by his harsh new reality. Surrounded by elite players like Kuribayashi and Akutsu, practices are just as merciless as the matches. In this U-18 Premier League of powerhouse talent, Ashito must evolve or be crushed, if he’s ever to be acknowledged. (Source: Crunchyroll)",
-      "year": 2026,
-      "startDate": "2026-10-04",
-      "format": "TV",
-      "episodes": 24,
-      "averageScore": 80,
-      "status": "RELEASING",
-      "genres": [
-        "Sports"
-      ],
-      "siteUrl": "https://anilist.co/anime/191788",
-      "streaming": [],
-      "trailer": {
-        "site": "youtube",
-        "id": "phKPnPXm74c"
-      },
-      "next": {
-        "at": 1793520000,
-        "episode": 5
-      },
-      "airingAt": 1792915200,
-      "episode": 4,
-      "scheduleId": 421984,
-      "description_es": "El juego de Aoi Ashito ahora le ha ganado un lugar en el equipo A, pero rápidamente está abrumado por su dura nueva realidad. Rodeado de jugadores de élite como Kuribayashi y Akutsu, las prácticas son tan misericordiosos como los partidos. En esta U-18 Premier League de talento de la central eléctrica, Ashito debe evolucionar o ser aplastado, si alguna vez es reconocido. (Fuente: Crunchyroll)"
-    },
-    {
-      "id": "mal-64503",
-      "mal_id": 64503,
-      "ani_id": 213657,
-      "title": "Mission: Yozakura Family Season 2 Part 2",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx213657-ORNXVEBCjXaz.jpg",
-      "banner": "",
-      "description": "The second cour of the second season of Yozakura-san Chi no Daisakusen .",
-      "year": 2026,
-      "startDate": "2026-10-11",
-      "format": "TV",
-      "episodes": 0,
-      "averageScore": 72,
-      "status": "RELEASING",
-      "genres": [
-        "Action",
-        "Comedy",
-        "Romance"
-      ],
-      "siteUrl": "https://anilist.co/anime/213657",
-      "streaming": [],
-      "trailer": {
-        "site": "youtube",
-        "id": "059cJjeY19Y"
-      },
-      "next": {
-        "at": 1793520000,
-        "episode": 4
-      },
-      "airingAt": 1792915200,
-      "episode": 3,
-      "scheduleId": 422225,
-      "description_es": "El segundo cour de la segunda temporada de Yozakura-san Chi no Daisakusen."
-    },
-    {
-      "id": "mal-64505",
-      "mal_id": 64505,
-      "ani_id": 213658,
-      "title": "Ace of the Diamond act II -Second Season-",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx213658-D3BPJaqawLxS.png",
-      "banner": "",
-      "description": "The Seido baseball club has been invited to the spring invitational at the hallowed Koshien Stadium. Sawamura will finally stand on the mound! Standing between Seido and the national title are the winners of last year's summer tournament Komadai Fujimaki and their unstoppable ace Masamune Hongo. Can Seido triumph over Komadai? It's the start of another heated battle in youth baseball! (Source: Crunchyroll)",
-      "year": 2026,
-      "startDate": "2026-10-11",
-      "format": "TV",
-      "episodes": 0,
-      "averageScore": 79,
-      "status": "RELEASING",
-      "genres": [
-        "Sports"
-      ],
-      "siteUrl": "https://anilist.co/anime/213658",
-      "streaming": [
-        {
-          "name": "Crunchyroll",
-          "url": "https://www.crunchyroll.com/series/GYX0MZ58R/ace-of-the-diamond"
-        }
-      ],
-      "trailer": {
-        "site": "youtube",
-        "id": "kLbI4teuPTc"
-      },
-      "next": {
-        "at": 1793521800,
-        "episode": 4
-      },
-      "airingAt": 1792917000,
-      "episode": 3,
-      "scheduleId": 419577,
-      "description_es": "El club de béisbol Seido ha sido invitado a la invitación de primavera en el sagrado estadio Koshien. ¡Sawamura finalmente estará en el montículo! De pie entre Seido y el título nacional son los ganadores del torneo de verano del año pasado Komadai Fujimaki y su imparable as Masamune Hongo. ¿Puede ser Seido triunfar sobre Komadai? ¡Es el comienzo de otra batalla calentada en el béisbol juvenil! (Fuente: Crunchyroll)"
-    },
     {
       "id": "mal-44042",
       "mal_id": 44042,
@@ -915,7 +778,7 @@
       "id": "al-214593",
       "mal_id": null,
       "ani_id": 214593,
-      "title": "Yuusanchi! from Yuuhachi",
+      "title": "YU-SANCHi! from YU-HACHi",
       "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx214593-WZ0HaPSRae2E.png",
       "banner": "",
       "description": "",
@@ -1246,8 +1109,8 @@
         "id": "gxG4vntLtbk"
       },
       "next": {
-        "at": 1793103960,
-        "episode": 4
+        "at": 1793708760,
+        "episode": 5
       },
       "airingAt": 1793103960,
       "episode": 4,
@@ -1284,8 +1147,8 @@
         "id": "8XgKVzuLmJw"
       },
       "next": {
-        "at": 1793106000,
-        "episode": 4
+        "at": 1793710800,
+        "episode": 5
       },
       "airingAt": 1793106000,
       "episode": 4,
@@ -1322,8 +1185,8 @@
         "id": "rYpXoCdTNQI"
       },
       "next": {
-        "at": 1793109600,
-        "episode": 4
+        "at": 1793714400,
+        "episode": 5
       },
       "airingAt": 1793109600,
       "episode": 4,
@@ -1360,8 +1223,8 @@
         "id": "cXd4pKTx2pI"
       },
       "next": {
-        "at": 1793109600,
-        "episode": 4
+        "at": 1793714400,
+        "episode": 5
       },
       "airingAt": 1793109600,
       "episode": 4,
@@ -1398,8 +1261,8 @@
         "id": "8RHh2AyKRfY"
       },
       "next": {
-        "at": 1793109600,
-        "episode": 3
+        "at": 1793714400,
+        "episode": 4
       },
       "airingAt": 1793109600,
       "episode": 3,
@@ -1432,8 +1295,8 @@
         "id": "m4T9VcBD0vo"
       },
       "next": {
-        "at": 1793111400,
-        "episode": 4
+        "at": 1793716200,
+        "episode": 5
       },
       "airingAt": 1793111400,
       "episode": 4,
@@ -1472,8 +1335,8 @@
         "id": "BJXBr_aFF8s"
       },
       "next": {
-        "at": 1793113200,
-        "episode": 4
+        "at": 1793718000,
+        "episode": 5
       },
       "airingAt": 1793113200,
       "episode": 4,
@@ -2247,7 +2110,7 @@
       "id": "al-214593",
       "mal_id": null,
       "ani_id": 214593,
-      "title": "Yuusanchi! from Yuuhachi",
+      "title": "YU-SANCHi! from YU-HACHi",
       "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx214593-WZ0HaPSRae2E.png",
       "banner": "",
       "description": "",
@@ -2580,6 +2443,39 @@
       "episode": 86,
       "scheduleId": 422660,
       "description_es": "Una serie de cortos cómicos de YouTube que emiten cada viernes en el canal de YouTube de Watame. Notas: - Episodios 1-21 (Series 1) fueron publicados originalmente en un formato vertical, posteriormente en pantalla ancha liberada en 8 vídeos de compilación. - Contiene episodio especial \"Mejor chica?!"
+    },
+    {
+      "id": "mal-56566",
+      "mal_id": 56566,
+      "ani_id": 165159,
+      "title": "BEYBLADE X",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx165159-aCFC9Sng7t4M.png",
+      "banner": "",
+      "description": "Bird Kazami, aiming to become a pro Blader, meets former champion Ekusu Kurosu, also known as 'Kamen X', and forms a team so that they can aim for the \"top\" of the X Tower. But what awaits them is a spectacular battle that no one has ever seen before. The yet unseen 'X'. The super accelerated (Xtreme) Beyblade runs through a new era! (Source: Official website)",
+      "year": 2023,
+      "startDate": "2023-10-06",
+      "format": "TV",
+      "episodes": 0,
+      "averageScore": 65,
+      "status": "RELEASING",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Sports"
+      ],
+      "siteUrl": "https://anilist.co/anime/165159",
+      "streaming": [],
+      "trailer": {
+        "site": "youtube",
+        "id": "SXdTmFshlFs"
+      },
+      "next": {
+        "at": 1793354400,
+        "episode": 138
+      },
+      "airingAt": 1793354400,
+      "episode": 138,
+      "scheduleId": 423102
     },
     {
       "id": "mal-64848",
@@ -5006,7 +4902,7 @@
       "id": "al-214593",
       "mal_id": null,
       "ani_id": 214593,
-      "title": "Yuusanchi! from Yuuhachi",
+      "title": "YU-SANCHi! from YU-HACHi",
       "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx214593-WZ0HaPSRae2E.png",
       "banner": "",
       "description": "",
@@ -5237,8 +5133,8 @@
         "id": "gxG4vntLtbk"
       },
       "next": {
-        "at": 1793103960,
-        "episode": 4
+        "at": 1793708760,
+        "episode": 5
       },
       "airingAt": 1793708760,
       "episode": 5,
@@ -5275,8 +5171,8 @@
         "id": "8XgKVzuLmJw"
       },
       "next": {
-        "at": 1793106000,
-        "episode": 4
+        "at": 1793710800,
+        "episode": 5
       },
       "airingAt": 1793710800,
       "episode": 5,
@@ -5313,8 +5209,8 @@
         "id": "rYpXoCdTNQI"
       },
       "next": {
-        "at": 1793109600,
-        "episode": 4
+        "at": 1793714400,
+        "episode": 5
       },
       "airingAt": 1793714400,
       "episode": 5,
@@ -5351,8 +5247,8 @@
         "id": "cXd4pKTx2pI"
       },
       "next": {
-        "at": 1793109600,
-        "episode": 4
+        "at": 1793714400,
+        "episode": 5
       },
       "airingAt": 1793714400,
       "episode": 5,
@@ -5389,8 +5285,8 @@
         "id": "8RHh2AyKRfY"
       },
       "next": {
-        "at": 1793109600,
-        "episode": 3
+        "at": 1793714400,
+        "episode": 4
       },
       "airingAt": 1793714400,
       "episode": 4,
@@ -5423,8 +5319,8 @@
         "id": "m4T9VcBD0vo"
       },
       "next": {
-        "at": 1793111400,
-        "episode": 4
+        "at": 1793716200,
+        "episode": 5
       },
       "airingAt": 1793716200,
       "episode": 5,
@@ -5463,8 +5359,8 @@
         "id": "BJXBr_aFF8s"
       },
       "next": {
-        "at": 1793113200,
-        "episode": 4
+        "at": 1793718000,
+        "episode": 5
       },
       "airingAt": 1793718000,
       "episode": 5,
@@ -6034,6 +5930,311 @@
       "episode": 6,
       "scheduleId": 421767,
       "description_es": "Cuarta temporada de PetitCure: Ferias precarias."
+    },
+    {
+      "id": "al-218942",
+      "mal_id": null,
+      "ani_id": 218942,
+      "title": "Sylvanian Families: Freya no Colorful Everyday",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b218942-P2vuXzw9knaY.png",
+      "banner": "",
+      "description": "",
+      "year": 2026,
+      "startDate": "2026-10-01",
+      "format": "TV_SHORT",
+      "episodes": 12,
+      "averageScore": 0,
+      "status": "RELEASING",
+      "genres": [
+        "Fantasy",
+        "Slice of Life"
+      ],
+      "siteUrl": "https://anilist.co/anime/218942",
+      "streaming": [],
+      "trailer": null,
+      "next": {
+        "at": 1793269140,
+        "episode": 5
+      },
+      "airingAt": 1793873940,
+      "episode": 6,
+      "scheduleId": 423043
+    },
+    {
+      "id": "mal-63337",
+      "mal_id": 63337,
+      "ani_id": 206401,
+      "title": "FX Fighter Kurumi-chan",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx206401-8cAebkI0i8BA.png",
+      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/206401-Nsf3QKwKxDra.jpg",
+      "description": "University student Kurumi Fukuga has finally fulfilled her long-held desire of starting foreign exchange (FX) trading, motivated by recouping the 20 million yen her late mother lost in trading. \"I'll easily make it back,\" she thought, but the world she enters can become heaven or hell in an instant. Unrealized losses, loss-cutting, unstoppable fluctuations… but she still wants to buy, sell and make money! With fellow FX addicts Mochiko, Mebuki and Yasuko along for the ride, the market heats up! Joy, despair, joy, despair — this is an endearing, yet slightly risky money game. Can Kurumi and her friends survive this turbulent world? (Source: Crunchyroll)",
+      "year": 2026,
+      "startDate": "2026-10-01",
+      "format": "TV",
+      "episodes": 12,
+      "averageScore": 67,
+      "status": "RELEASING",
+      "genres": [
+        "Drama",
+        "Slice of Life"
+      ],
+      "siteUrl": "https://anilist.co/anime/206401",
+      "streaming": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://crunchyroll.com/series/GT00384001/fx-fighter-kurumi-chan"
+        }
+      ],
+      "trailer": {
+        "site": "youtube",
+        "id": "7rxIZ3z0S4s"
+      },
+      "next": {
+        "at": 1793277000,
+        "episode": 5
+      },
+      "airingAt": 1793881800,
+      "episode": 6,
+      "scheduleId": 419085,
+      "description_es": "La estudiante universitaria Kurumi Fukuga finalmente ha cumplido su deseo de iniciar el comercio de divisas (FX), motivado por recuperar los 20 millones de yenes que su madre falleció en el comercio. \"Lo recuperaré fácilmente\", pensó, pero el mundo en el que entra puede convertirse en el cielo o el infierno en un instante. Pérdidas no realizadas, fluctuaciones descompuestas, imparables... ¡pero todavía quiere comprar, vender y hacer dinero! Con otros adictos FX Mochiko, Mebuki y Yasuko a lo largo de la excursión, el mercado se calienta! Joy, desesperación, alegría, desesperación — este es un juego de dinero entrañable, pero ligeramente arriesgado. Can Kurumi y ella"
+    },
+    {
+      "id": "mal-61227",
+      "mal_id": 61227,
+      "ani_id": 188034,
+      "title": "Girls und Panzer: Motto Love Love Sakusen desu!",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx188034-oRwVKBMezOOk.jpg",
+      "banner": "",
+      "description": "A deep dive into the untold daily lives and the inter-school interactions of the Ooarai Girls' team and the other students (along with the colorful characters that surround them) who are wholeheartedly dedicated to the way of the tank! (Source: Official Website, translated) Note: The series had a four-part theatrical pre-screening in Japan starting in December 2025. Regular TV broadcast began in October 2026. • Part 1 releasing theatrically on December 26, 2025. • Part 2 releasing theatrically on January 30, 2026. • Part 3 releasing theatrically on March 6, 2026. • Part 4 releasing theatrically on April 10, 2026.",
+      "year": 2026,
+      "startDate": "2026-10-08",
+      "format": "TV",
+      "episodes": 12,
+      "averageScore": 74,
+      "status": "RELEASING",
+      "genres": [
+        "Comedy"
+      ],
+      "siteUrl": "https://anilist.co/anime/188034",
+      "streaming": [],
+      "trailer": {
+        "site": "youtube",
+        "id": "AVIDW2dT2AM"
+      },
+      "next": {
+        "at": 1793284200,
+        "episode": 4
+      },
+      "airingAt": 1793889000,
+      "episode": 5,
+      "scheduleId": 422410,
+      "description_es": "Una profunda inmersión en la vida cotidiana incalculable y las interacciones entre escuelas del equipo de Ooarai Girls y los demás estudiantes (junto con los personajes coloridos que los rodean) que están totalmente dedicados al camino del tanque! (Fuente: Página Web Oficial, traducido) Nota: La serie tenía un pre-pantalla de cuatro partes en Japón a partir de diciembre de 2025. La televisión regular comenzó en octubre de 2026. • Parte 1 liberando teatralmente el 26 de diciembre de 2025. • Parte 2 liberando teatralmente el 30 de enero de 2026. • Parte 3 liberando teatralmente el 6 de marzo de 2026. • Parte 4 liberando teatricall"
+    },
+    {
+      "id": "mal-64534",
+      "mal_id": 64534,
+      "ani_id": 213805,
+      "title": "The Ramparts of Ice Season 2",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx213805-Nokui3uWlIlw.png",
+      "banner": "",
+      "description": "Koyuki, the isolated girl; Miki, the former school idol; Minato, the guy with no concept of personal space; and Youta, the gentle basketball player. Clumsy, frustrating, yet deeply endearing — this coming-of-age ensemble drama of crisscrossing hearts marches on. As they grow closer, Koyuki and Minato begin to develop feelings for each other that go beyond mere friendship. Meanwhile, Youta finally confesses to Miki the feelings he's harbored for years. Some speak their hearts while others keep their emotions hidden, causing their paths — and their feelings for one another — to continuously cross and pass by… (Source: Netflix)",
+      "year": 2026,
+      "startDate": "2026-10-01",
+      "format": "TV",
+      "episodes": 0,
+      "averageScore": 81,
+      "status": "RELEASING",
+      "genres": [
+        "Comedy",
+        "Drama",
+        "Romance",
+        "Slice of Life"
+      ],
+      "siteUrl": "https://anilist.co/anime/213805",
+      "streaming": [],
+      "trailer": {
+        "site": "youtube",
+        "id": "VvzeL7UMCE8"
+      },
+      "next": {
+        "at": 1793285760,
+        "episode": 5
+      },
+      "airingAt": 1793890560,
+      "episode": 6,
+      "scheduleId": 421728,
+      "description_es": "Koyuki, la chica aislada; Miki, el antiguo ídolo escolar; Minato, el tipo sin concepto de espacio personal; y Youta, el amable jugador de baloncesto. Clumsy, frustrante, pero profundamente apasionante — este drama que se acerca a la edad de los corazones cruzados avanza. A medida que se acercan, Koyuki y Minato comienzan a desarrollar sentimientos entre sí que van más allá de la mera amistad. Mientras tanto, Youta finalmente confiesa a Miki los sentimientos por los que ha albergado"
+    },
+    {
+      "id": "mal-59217",
+      "mal_id": 59217,
+      "ani_id": 178972,
+      "title": "GROTESQQQUE",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx178972-THp4trZ9uR9b.jpg",
+      "banner": "",
+      "description": "Anthology movie consisting of three original animation segments: Q1 - ÆLIENS (エリィアンズ) Earth has entered an era of intergalatic exchange. Amidst swirling prejudice and fear of aliens, Elie, an alien girl, arrives as a space goodwill ambassador. She loves Earth's culture and its often absurd daily life, and has teamed up with a civil servant working at the space agency to search for \"friends\". Q2 - Yoroshiku★Shoujo (夜露死駆★少女) GALs TOKYO, a city where morning never comes. Night after night, girls who have lost their place in reality, known as \"Gal P\", gather here. Their goal is to become the winner, the \"Queen\" in a game called \"Queen of Butterfly\" or \"QoB\" for short. Q3 - Nocturne: Kono Grotesque na Yoru ni (ノクターン～このグロテスクな夜に～) A world after humanity has perished. Traveling in a van are Ayame, a pure-blooded vampire, and three girls who survived by being bitten and \"infected\" by her. There, they find a sky full of stars that illuminate the night as brightly as day, and fields of glittering golden grass—even a desolate world looks so beautiful through the eyes of a vampire. They enjoy a simple everyday life in this world left behind. (Souce: Official Website, translated)",
+      "year": 2026,
+      "startDate": "2026-11-06",
+      "format": "MOVIE",
+      "episodes": 3,
+      "averageScore": 0,
+      "status": "NOT_YET_RELEASED",
+      "genres": [
+        "Action",
+        "Comedy",
+        "Drama",
+        "Sci-Fi",
+        "Slice of Life",
+        "Supernatural"
+      ],
+      "siteUrl": "https://anilist.co/anime/178972",
+      "streaming": [],
+      "trailer": {
+        "site": "youtube",
+        "id": "s4dAQP5MlCs"
+      },
+      "next": {
+        "at": 1793890800,
+        "episode": 1
+      },
+      "airingAt": 1793890800,
+      "episode": 1,
+      "scheduleId": 417294
+    },
+    {
+      "id": "mal-62615",
+      "mal_id": 62615,
+      "ani_id": 199594,
+      "title": "TETSURYO! Meet With Tetsudou Musume",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx199594-moYKzlfIH03U.jpg",
+      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/199594-iw8KRAiBp3sO.jpg",
+      "description": "Misaki has often felt the urge to break free from everyday life and set out on a journey somewhere far away. Even though she doesn’t yet know what she wants to become, she longs to find something she can truly be passionate about. At the start of a new chapter on a lively campus, she meets the members of the Railway Travel Research Club—known as the “Tetsuryo Club.” As her world unfolds along the railway lines, Misaki’s heart begins to race with excitement! As TETSUDOU MUSUME celebrates its 20th anniversary, the Tetsuryo Club sets off on a journey through the world where the Railway Girls work, in search of moments of wonder. (Source: Pony Canyon Anime)",
+      "year": 2026,
+      "startDate": "2026-10-09",
+      "format": "TV",
+      "episodes": 12,
+      "averageScore": 60,
+      "status": "RELEASING",
+      "genres": [
+        "Slice of Life"
+      ],
+      "siteUrl": "https://anilist.co/anime/199594",
+      "streaming": [],
+      "trailer": {
+        "site": "youtube",
+        "id": "GixEiC7k9_4"
+      },
+      "next": {
+        "at": 1793286000,
+        "episode": 4
+      },
+      "airingAt": 1793890800,
+      "episode": 5,
+      "scheduleId": 418964,
+      "description_es": "Misaki ha sentido a menudo el impulso de liberarse de la vida cotidiana y de emprender un viaje lejos. A pesar de que todavía no sabe lo que quiere convertirse, ella desea encontrar algo que realmente pueda ser apasionada. Al comienzo de un nuevo capítulo en un animado campus, se reúne con los miembros del Club de Investigación de Viajes Ferroviarios, conocido como el Club Tetsuryo. Mientras su mundo se desarrolla a lo largo de las líneas ferroviarias, el corazón de Misaki comienza a correr con emoción! A medida que TETSUDOU MUSUME celebra su 20 aniversario, el Tetsuryo Club comienza en un viaje por el mundo donde trabajan las Ferrocarriles"
+    },
+    {
+      "id": "al-214593",
+      "mal_id": null,
+      "ani_id": 214593,
+      "title": "YU-SANCHi! from YU-HACHi",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx214593-WZ0HaPSRae2E.png",
+      "banner": "",
+      "description": "",
+      "year": 2026,
+      "startDate": "2026-10-05",
+      "format": "TV_SHORT",
+      "episodes": 0,
+      "averageScore": 0,
+      "status": "RELEASING",
+      "genres": [
+        "Comedy",
+        "Slice of Life"
+      ],
+      "siteUrl": "https://anilist.co/anime/214593",
+      "streaming": [],
+      "trailer": {
+        "site": "youtube",
+        "id": "WprfleUJVck"
+      },
+      "next": {
+        "at": 1793286000,
+        "episode": 8
+      },
+      "airingAt": 1793890800,
+      "episode": 10,
+      "scheduleId": 419736
+    },
+    {
+      "id": "mal-64180",
+      "mal_id": 64180,
+      "ani_id": 212144,
+      "title": "With Vengeance, Sincerely, Your Broken Saintess Season 2",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b212144-9qJMcEdy4Xbo.jpg",
+      "banner": "",
+      "description": "The second season of Kizu darake Seijo yori Houfuku wo Komete .",
+      "year": 2026,
+      "startDate": "2026-10-02",
+      "format": "TV_SHORT",
+      "episodes": 0,
+      "averageScore": 60,
+      "status": "RELEASING",
+      "genres": [
+        "Fantasy",
+        "Romance"
+      ],
+      "siteUrl": "https://anilist.co/anime/212144",
+      "streaming": [],
+      "trailer": {
+        "site": "youtube",
+        "id": "vnOrtJ4vRmw"
+      },
+      "next": {
+        "at": 1793286000,
+        "episode": 5
+      },
+      "airingAt": 1793890800,
+      "episode": 6,
+      "scheduleId": 421806,
+      "description_es": "La segunda temporada de Kizu darake Seijo yori Houfuku wo Komete."
+    },
+    {
+      "id": "mal-59741",
+      "mal_id": 59741,
+      "ani_id": 180136,
+      "title": "The Exiled Heavy Knight Knows How to Game the System",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx180136-gtMTCRlOD4OE.jpg",
+      "banner": "",
+      "description": "Born into a prestigious family of master swordsmen, Elymas Edvaughn’s future shatters when he awakens the so-called “defective” Heavy Knight class. Disowned and cast out, he regains memories of another life—and realizes this world mirrors a VR game he once mastered. Armed with knowledge no one else possesses, he sets out to rewrite his fate and prove the strength of the “weakest” class. (Source: Crunchyroll)",
+      "year": 2026,
+      "startDate": "2026-07-03",
+      "format": "TV",
+      "episodes": 26,
+      "averageScore": 67,
+      "status": "RELEASING",
+      "genres": [
+        "Action",
+        "Fantasy"
+      ],
+      "siteUrl": "https://anilist.co/anime/180136",
+      "streaming": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00378018/the-exiled-heavy-knight-knows-how-to-game-the-system"
+        }
+      ],
+      "trailer": {
+        "site": "youtube",
+        "id": "uC13b3_8riU"
+      },
+      "next": {
+        "at": 1793287560,
+        "episode": 18
+      },
+      "airingAt": 1793892360,
+      "episode": 19,
+      "scheduleId": 417004,
+      "description_es": "Elymas Edvaughn nace en una prestigiosa familia de maestros espadachines, pero su futuro se derrumba cuando despierta la clase de Caballero Pesado, considerada defectuosa. Rechazado y expulsado, recupera recuerdos de una vida anterior y descubre que ese mundo se parece a un videojuego de realidad virtual que conocía muy bien. Gracias a secretos que nadie más posee, decide cambiar su destino y demostrar el verdadero poder de la clase que todos consideran la más débil."
     }
   ],
   "seasonal": {
@@ -6853,8 +7054,8 @@
           "id": "m4T9VcBD0vo"
         },
         "next": {
-          "at": 1793111400,
-          "episode": 4
+          "at": 1793716200,
+          "episode": 5
         },
         "description_es": "Dos jóvenes... el héroe, Riliu, y su mejor amigo Jowy, eran miembros de una brigada juvenil de su nación natal, el Reino de Highland, una poderosa nación militar situada en el noreste de la región de Dunan. Los dos miraron hacia arriba los mismos cielos estrellados, durmieron en la misma tienda, y creyeron en el mismo futuro. Una vez que la pelea terminó, y la noche terminó, sus vidas diarias estaban seguras de volver. Contrariamente a sus esperanzas, los dos chicos se arrastran en el torbellino del destino, guiados por las llamas de la guerra. Los chicos impotentes alcanzaron y captaron un inmenso poder. Como brillan las 108 estrellas"
       },
@@ -7808,7 +8009,7 @@
         "id": "al-214593",
         "mal_id": null,
         "ani_id": 214593,
-        "title": "Yuusanchi! from Yuuhachi",
+        "title": "YU-SANCHi! from YU-HACHi",
         "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx214593-WZ0HaPSRae2E.png",
         "banner": "",
         "description": "",
@@ -7858,8 +8059,8 @@
           "id": "gxG4vntLtbk"
         },
         "next": {
-          "at": 1793103960,
-          "episode": 4
+          "at": 1793708760,
+          "episode": 5
         },
         "description_es": "Un gran héroe está invicto en su lecho de muerte, lamentando que nunca haya encontrado a un enemigo que pudiera derribarla. Ella nunca quiso encontrar su destino en otro lugar que en el campo de batalla, y su pacífica desaparición tiene su deseo desesperadamente de que las cosas podrían haber sido diferentes... Pero cuando de repente viene al cuerpo de la joven y frágil Nia Liston, tiene una nueva lucha por delante de ella. Nia es una niña enferma, lo que significa que tiene un largo camino para ir antes de que esté en forma de lucha. Ahora que se le ha dado un segundo tiro a la vida, sin embargo, está decidida a conseguir lo que quiere. Va a vivir."
       },
@@ -7893,8 +8094,8 @@
           "id": "8XgKVzuLmJw"
         },
         "next": {
-          "at": 1793106000,
-          "episode": 4
+          "at": 1793710800,
+          "episode": 5
         },
         "description_es": "Sato-san es la flor inalcanzable de la clase. Siempre tiene frío y rito con compañeros de clase, pero sólo sé que es muy linda cuando sonríe, incluso si no es mucho fotógrafo. Oshio-kun es amistoso y animado, pero sólo sé que trabaja en el café de su familia después de la escuela. Hace un gran trabajo con la cuenta SNS de la cafetería, y su mala sonrisa hace que mi corazón salte un latido! Inocentes y dulces, pero a veces frustrantes, esta es una historia de 120% pura y fluida sobre dos personas que se enamoran por primera vez."
       },
@@ -7960,8 +8161,8 @@
           "id": "rYpXoCdTNQI"
         },
         "next": {
-          "at": 1793109600,
-          "episode": 4
+          "at": 1793714400,
+          "episode": 5
         },
         "description_es": "¡El último dúo policial está aquí para mantener la paz! El oficial novato Nao acaba de unirse a la fuerza. Tiene un cinturón negro en judo y ganó el apodo \"Gorilla\" por su fuerza loca. Luego está su compañero Chojo, quien controla todo poder psíquico imaginable. Pero para un tipo que puede leer mentes, todavía no puede leer la habitación. Estos dos están cometiendo un crimen juntos en Chinjuku. (Fuente: Crunchyroll)"
       },
@@ -7995,8 +8196,8 @@
           "id": "cXd4pKTx2pI"
         },
         "next": {
-          "at": 1793109600,
-          "episode": 4
+          "at": 1793714400,
+          "episode": 5
         },
         "description_es": "Keio 3, Hinomoto, Eito. A medida que el Bakumatsu lanza a Japón en agitación, el joven Kuu Bashin sueña con volverse más fuerte a través de los Espíritus de Batalla Estándar. Su mundo cambia cuando se encuentra con Ajara Zetsu, un samurai errante y formidable Batalla Eterna perseguido por fuerzas antihogunadas. Mientras los mundos de la batalla estándar y eterna chocan, Kuu es llevado al viaje de Zetsu, y pone la historia en movimiento. (Fuente: Crunchyroll)"
       },
@@ -8032,8 +8233,8 @@
           "id": "BJXBr_aFF8s"
         },
         "next": {
-          "at": 1793113200,
-          "episode": 4
+          "at": 1793718000,
+          "episode": 5
         },
         "description_es": "Rein, un encantador, es expulsado de su gremio un día. Pero en lugar de desesperar, declara, “¡Ahora puedo hacer cualquier cosa!” y comienza a reclamar el enorme número de puntos de mejora que una vez vierte en el equipo de sus compañeros, a partir de un nuevo camino como aventurero. Reunirse a su alrededor son personas que llevan heridas que no se desvanecen fácilmente: un genio aventurero que cerró su corazón después de que su partido fue masacrado, un guerrero que perdió"
       },
