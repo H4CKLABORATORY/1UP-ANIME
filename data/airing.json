@@ -1,193 +1,9 @@
 {
-  "updated": "2026-10-26T21:35:30.002Z",
+  "updated": "2026-10-27T03:36:06.921Z",
   "source": "AniList public GraphQL metadata",
-  "windowStart": 1792852518,
-  "windowEnd": 1793828118,
+  "windowStart": 1792874155,
+  "windowEnd": 1793849755,
   "airing": [
-    {
-      "id": "mal-63053",
-      "mal_id": 63053,
-      "ani_id": 203473,
-      "title": "HORROR COLLECTOR",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b203473-pzyaqV432Qko.jpg",
-      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/203473-KCGlCZL2ApjB.jpg",
-      "description": "Urban legends come to life…Everyone’s heard an urban legend before, but few have ever come face-to-face with one. These phenomena are everywhere, existing in the shadows of reality. More and more of them have been appearing in the wake of the faceless kid sighted all over Japan. If you see her or one of the urban legends she brings―pray the boy in the red hood finds you before it’s too late. You won’t stand a chance on your own. But with his help, you may just live to see another day… (Source: Yen Press)",
-      "year": 2026,
-      "startDate": "2026-10-10",
-      "format": "TV",
-      "episodes": 12,
-      "averageScore": 51,
-      "status": "RELEASING",
-      "genres": [
-        "Horror",
-        "Mystery",
-        "Supernatural"
-      ],
-      "siteUrl": "https://anilist.co/anime/203473",
-      "streaming": [
-        {
-          "name": "Crunchyroll",
-          "url": "https://www.crunchyroll.com/series/GT00383993"
-        }
-      ],
-      "trailer": null,
-      "next": {
-        "at": 1793457900,
-        "episode": 4
-      },
-      "airingAt": 1792853100,
-      "episode": 3,
-      "scheduleId": 420242,
-      "description_es": "Las leyendas urbanas cobran vida... Todos han oído una leyenda urbana antes, pero pocos han llegado cara a cara con uno. Estos fenómenos están en todas partes, existentes en las sombras de la realidad. Cada vez más de ellos han estado apareciendo a raíz del niño sin rostro visto por todo Japón. Si la ves o una de las leyendas urbanas que trae, ora al chico en la capucha roja te encuentra antes de que sea demasiado tarde. Usted no tendrá una oportunidad por su cuenta. Pero con su ayuda, puedes vivir para ver otro día... (Fuente: Yen Press)"
-    },
-    {
-      "id": "mal-56733",
-      "mal_id": 56733,
-      "ani_id": 169581,
-      "title": "Magical Explorer",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx169581-UlAviVH36Hxi.png",
-      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/169581-cdooqY7Jqy3x.jpg",
-      "description": "Few titles are more revered among horndogs-(ahem) connoisseurs of Japanese erotic video games-than Magical Explorer. One day, our smut-loving hero wakes up to find he has been reincarnated into the body of the game’s dreamboat protagonist! Or rather, his hapless comic-relief best friend, Kousuke Takioto. But with his unparalleled knowledge of Magical Explorer and Kousuke’s unorthodox abilities (a scarf that doubles as a fist?), our hero vows to turn the game’s unluckiest loser into its mightiest heartthrob. In this world, nothing is out of reach when you’ve got the know-how! (Source: Yen Press) Note: Each episode streamed 1 week early on ABEMA and d anime store. The original TV broadcast started on October 4th, 2026.",
-      "year": 2026,
-      "startDate": "2026-09-27",
-      "format": "ONA",
-      "episodes": 13,
-      "averageScore": 69,
-      "status": "RELEASING",
-      "genres": [
-        "Action",
-        "Adventure",
-        "Ecchi",
-        "Fantasy",
-        "Romance"
-      ],
-      "siteUrl": "https://anilist.co/anime/169581",
-      "streaming": [
-        {
-          "name": "Crunchyroll",
-          "url": "https://www.crunchyroll.com/series/GT00384003/magical-explorer"
-        }
-      ],
-      "trailer": {
-        "site": "youtube",
-        "id": "XqrBfyUNYZs"
-      },
-      "next": {
-        "at": 1793458800,
-        "episode": 6
-      },
-      "airingAt": 1792854000,
-      "episode": 5,
-      "scheduleId": 422396,
-      "description_es": "Pocos títulos son más venerados entre los erizos-(ahem) conocedores de videojuegos eróticos japoneses-que Magical Explorer. Un día, nuestro héroe amante de la mugre se despierta para encontrar que ha sido reencarnado en el cuerpo del protagonista de la lancha del juego! O más bien, su mejor amigo, Kousuke Takioto. Pero con su conocimiento inigualable del Explorador Mágico y las habilidades sin ortodoxas de Kousuke (una bufanda que se dobla como un puño?), nuestro héroe promete t"
-    },
-    {
-      "id": "mal-61578",
-      "mal_id": 61578,
-      "ani_id": 191656,
-      "title": "Even the Student Council Has Its Holes!",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx191656-xFHtxM8SUTdU.png",
-      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/191656-JQILdzh3FQxN.jpg",
-      "description": "This is Fujinasu Academy, a private high school with top-achieving students located on the outskirts of town. High School 1st-Year Ume Mizunoe has excellent grades in Japanese language class and has received multiple literary awards. However, his terrible grades in the sciences are affecting his ability to move up a grade. To avoid repeating a year, he becomes a member of the student council to improve his academic standing. However, in the student council, he meets the charismatic yet sullen student council president Kotobuki Hisako, and the scary yet kind and refined treasurer, Arisu Terui. Other members include a cheeky and cute boy, Tan Otori, and Komaro Michinoku, the admin who's like a small abandoned cat. This is the start of a slapstick, heartful, rom-com about a busy student council full of cute, mismatched, and quirky students! (Source: Even the Student Council Has Its Holes! Official Site)",
-      "year": 2026,
-      "startDate": "2026-10-04",
-      "format": "TV",
-      "episodes": 12,
-      "averageScore": 73,
-      "status": "RELEASING",
-      "genres": [
-        "Comedy",
-        "Ecchi",
-        "Slice of Life"
-      ],
-      "siteUrl": "https://anilist.co/anime/191656",
-      "streaming": [],
-      "trailer": {
-        "site": "youtube",
-        "id": "VTRVLnzhl90"
-      },
-      "next": {
-        "at": 1793460600,
-        "episode": 5
-      },
-      "airingAt": 1792855800,
-      "episode": 4,
-      "scheduleId": 418847,
-      "description_es": "Esta es la Academia Fujinasu, una escuela secundaria privada con estudiantes de primer nivel ubicados en las afueras de la ciudad. High School 1er año Ume Mizunoe tiene excelentes calificaciones en la clase de idioma japonés y ha recibido múltiples premios literarios. Sin embargo, sus calificaciones terribles en las ciencias están afectando su capacidad de avanzar en un grado. Para evitar repetir un año, se convierte en miembro del consejo estudiantil para mejorar su posición académica. Sin embargo, en el estudio"
-    },
-    {
-      "id": "mal-63801",
-      "mal_id": 63801,
-      "ani_id": 209872,
-      "title": "Ranma1/2 (2024) Season 3",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx209872-RBeVPqwejHFp.jpg",
-      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/209872-Qczb4k9Mw0pq.jpg",
-      "description": "The third season of Ranma 1/2 (2024) .",
-      "year": 2026,
-      "startDate": "2026-10-04",
-      "format": "TV",
-      "episodes": 0,
-      "averageScore": 78,
-      "status": "RELEASING",
-      "genres": [
-        "Action",
-        "Comedy",
-        "Romance"
-      ],
-      "siteUrl": "https://anilist.co/anime/209872",
-      "streaming": [],
-      "trailer": {
-        "site": "youtube",
-        "id": "dbe8esPSfYI"
-      },
-      "next": {
-        "at": 1793462160,
-        "episode": 5
-      },
-      "airingAt": 1792857360,
-      "episode": 4,
-      "scheduleId": 417717,
-      "description_es": "La tercera temporada de Ranma 1/2 (2024) ."
-    },
-    {
-      "id": "mal-62922",
-      "mal_id": 62922,
-      "ani_id": 202250,
-      "title": "Magic Repo Man: Dumped by My Party, I’ll Cash In With a Cute Support Fairy to Become the Strongest!",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx202250-mpm2cvr92Au2.jpg",
-      "banner": "",
-      "description": "If there's one thing you can never have enough of in a world of RPG-style swords and sorcery, it's magic points! Whether you're fueling spells, techniques, or showing off an incredible ability, you've gotta spend those points to do real damage. But what if you run out? Lent is part of the up-and-coming party known as the “Skypiercers,” and thanks to his unique Gift, he can loan massive amounts of magic to others. No MP? No problem with Lent around! Except, now that his companions have become formidable heroes (thanks to his skill), his usefulness is questioned. Kicked out of the group, Lent is furious…until he discovers a hidden power to his Gift. Now, with his adorably devious fairy partner, he's going to claw back every last scrap of magic from his former party—with interest! (Source: Seven Seas Entertainment)",
-      "year": 2026,
-      "startDate": "2026-10-04",
-      "format": "TV",
-      "episodes": 0,
-      "averageScore": 61,
-      "status": "RELEASING",
-      "genres": [
-        "Action",
-        "Adventure",
-        "Fantasy"
-      ],
-      "siteUrl": "https://anilist.co/anime/202250",
-      "streaming": [
-        {
-          "name": "Crunchyroll",
-          "url": "https://www.crunchyroll.com/series/GT00385867/magic-repo-man-dumped-by-my-party-ill-cash-in-with-a-cute-support-fairy-to-become-the-strongest"
-        }
-      ],
-      "trailer": {
-        "site": "youtube",
-        "id": "kXqx3rFSkxc"
-      },
-      "next": {
-        "at": 1793464200,
-        "episode": 5
-      },
-      "airingAt": 1792859400,
-      "episode": 4,
-      "scheduleId": 419565,
-      "description_es": "Si hay una cosa que nunca puedes tener suficiente en un mundo de espadas y brujería estilo RPG, ¡es puntos mágicos! Si estás alimentando hechizos, técnicas o mostrando una habilidad increíble, tienes que gastar esos puntos para hacer daño real. ¿Y si te escapas? La Cuaresma es parte de la fiesta de llegada conocida como los \"Skypiercers\", y gracias a su regalo único, puede prestar enormes cantidades de magia a otros. ¿Sin MP? No hay problema con Lent arou"
-    },
     {
       "id": "mal-63125",
       "mal_id": 63125,
@@ -463,8 +279,8 @@
       "streaming": [],
       "trailer": null,
       "next": {
-        "at": 1793066400,
-        "episode": 428
+        "at": 1793498400,
+        "episode": 429
       },
       "airingAt": 1792893600,
       "episode": 427,
@@ -1584,12 +1400,12 @@
         "id": "fmUpSXFbSK0"
       },
       "next": {
-        "at": 1793628000,
+        "at": 1794232800,
         "episode": 5
       },
       "airingAt": 1793023200,
       "episode": 4,
-      "scheduleId": 419766,
+      "scheduleId": 423053,
       "description_es": "Un día, la secundaria Ageha Yoshina recoge una misteriosa “tarjeta de teléfono roja” que queda atrás en una cabina telefónica pública. Unos días más tarde, su amigo de la infancia y compañero de clase, Sakurako Amamiya, que poseía la misma carta, desaparecen sin dejar rastro. En busca de ella, Ageha se encuentra dibujado en los rumores que rodean una cadena nacional de misteriosas desapariciones, dijo que es obra de una organización secreta conocida sólo como “Psyren”. Cuando accede al grupo, comienza un juego mortal, uno que cambiará su destino para siempre. (Fuente: Sitio Oficial de PSYHUEN)"
     },
     {
@@ -1680,8 +1496,8 @@
       "streaming": [],
       "trailer": null,
       "next": {
-        "at": 1793066400,
-        "episode": 428
+        "at": 1793498400,
+        "episode": 429
       },
       "airingAt": 1793066400,
       "episode": 428,
@@ -1711,8 +1527,8 @@
       "streaming": [],
       "trailer": null,
       "next": {
-        "at": 1793066400,
-        "episode": 21
+        "at": 1793671200,
+        "episode": 22
       },
       "airingAt": 1793066400,
       "episode": 21,
@@ -4579,8 +4395,8 @@
       "streaming": [],
       "trailer": null,
       "next": {
-        "at": 1793066400,
-        "episode": 428
+        "at": 1793498400,
+        "episode": 429
       },
       "airingAt": 1793498400,
       "episode": 429,
@@ -5645,45 +5461,6 @@
       "description_es": "La naturaleza altruista del trabajador de oficina Akira Yagami generalmente le consigue el extremo corto del palo. Cuando muere después de salvar a un niño del tráfico entrante... ¿reencarna en otro mundo como un duende? Normalmente, los duendes sólo viven durante siete días, pero los nuevos poderes de Akira le permiten desafiar la vida normal de la especie... ¡y son la clave de su camino para convertirse en el más fuerte de todos los tiempos! (Fuente: Yen Press) Nota: Tensei Goblin Dakedo Sitsumon Aru? está transmitiendo 1 semana antes de la emisión de televisión en ABEMA y Primer Video comenzando con el episodio 2 el 5 de octubre de 2026"
     },
     {
-      "id": "mal-63098",
-      "mal_id": 63098,
-      "ani_id": 204011,
-      "title": "PSYREN",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx204011-j45RZoqYbdZK.jpg",
-      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/204011-hBOwte9MzykA.jpg",
-      "description": "One day, high schooler Ageha Yoshina picks up a mysterious “red phone card” left behind in a public telephone booth. A few days later, his childhood friend and classmate, Sakurako Amamiya—who possessed the same card—suddenly vanishes without a trace. In search of her, Ageha finds himself drawn into the rumors surrounding a nationwide string of mysterious disappearances, said to be the work of a secret organization known only as “Psyren.” When he accesses the group, a deadly game begins—one that will change his fate forever. (Source: PSYЯEN Official Site)",
-      "year": 2026,
-      "startDate": "2026-10-05",
-      "format": "TV",
-      "episodes": 0,
-      "averageScore": 70,
-      "status": "RELEASING",
-      "genres": [
-        "Action",
-        "Adventure",
-        "Sci-Fi"
-      ],
-      "siteUrl": "https://anilist.co/anime/204011",
-      "streaming": [
-        {
-          "name": "Crunchyroll",
-          "url": "https://www.crunchyroll.com/series/GT00371866/psyren"
-        }
-      ],
-      "trailer": {
-        "site": "youtube",
-        "id": "fmUpSXFbSK0"
-      },
-      "next": {
-        "at": 1793628000,
-        "episode": 5
-      },
-      "airingAt": 1793628000,
-      "episode": 5,
-      "scheduleId": 419767,
-      "description_es": "Un día, la secundaria Ageha Yoshina recoge una misteriosa “tarjeta de teléfono roja” que queda atrás en una cabina telefónica pública. Unos días más tarde, su amigo de la infancia y compañero de clase, Sakurako Amamiya, que poseía la misma carta, desaparecen sin dejar rastro. En busca de ella, Ageha se encuentra dibujado en los rumores que rodean una cadena nacional de misteriosas desapariciones, dijo que es obra de una organización secreta conocida sólo como “Psyren”. Cuando accede al grupo, comienza un juego mortal, uno que cambiará su destino para siempre. (Fuente: Sitio Oficial de PSYHUEN)"
-    },
-    {
       "id": "mal-54344",
       "mal_id": 54344,
       "ani_id": 160803,
@@ -5741,8 +5518,8 @@
       "streaming": [],
       "trailer": null,
       "next": {
-        "at": 1793066400,
-        "episode": 21
+        "at": 1793671200,
+        "episode": 22
       },
       "airingAt": 1793671200,
       "episode": 22,
@@ -8083,7 +7860,7 @@
           "id": "fmUpSXFbSK0"
         },
         "next": {
-          "at": 1793628000,
+          "at": 1794232800,
           "episode": 5
         },
         "description_es": "Un día, la secundaria Ageha Yoshina recoge una misteriosa “tarjeta de teléfono roja” que queda atrás en una cabina telefónica pública. Unos días más tarde, su amigo de la infancia y compañero de clase, Sakurako Amamiya, que poseía la misma carta, desaparecen sin dejar rastro. En busca de ella, Ageha se encuentra dibujado en los rumores que rodean una cadena nacional de misteriosas desapariciones, dijo que es obra de una organización secreta conocida sólo como “Psyren”. Cuando accede al grupo, comienza un juego mortal, uno que cambiará su destino para siempre. (Fuente: Sitio Oficial de PSYHUEN)"
