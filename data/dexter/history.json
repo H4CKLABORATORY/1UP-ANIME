@@ -3,6 +3,42 @@
   "items": [
     {
       "providerId": "anilist_schedule",
+      "at": "2026-10-27T09:09:28.735Z",
+      "result": "success",
+      "observed": 182,
+      "created": 0,
+      "playback": 0,
+      "detail": "conectada"
+    },
+    {
+      "providerId": "licensed_library",
+      "at": "2026-10-27T09:09:28.735Z",
+      "result": "success",
+      "observed": 0,
+      "created": 0,
+      "playback": 0,
+      "detail": "sin_contenido_autorizado"
+    },
+    {
+      "providerId": "jkanime_external",
+      "at": "2026-10-27T09:09:28.735Z",
+      "result": "success",
+      "observed": 5,
+      "created": 0,
+      "playback": 0,
+      "detail": "conectada"
+    },
+    {
+      "providerId": "youtube_trailers",
+      "at": "2026-10-27T09:09:28.735Z",
+      "result": "success",
+      "observed": 93,
+      "created": 0,
+      "playback": 0,
+      "detail": "conectada"
+    },
+    {
+      "providerId": "anilist_schedule",
       "at": "2026-10-27T03:03:32.217Z",
       "result": "success",
       "observed": 188,
@@ -504,42 +540,6 @@
       "created": 16,
       "playback": 0,
       "detail": "conectada"
-    },
-    {
-      "providerId": "youtube_trailers",
-      "at": "2026-10-22T17:56:29.401Z",
-      "result": "success",
-      "observed": 96,
-      "created": 0,
-      "playback": 0,
-      "detail": "conectada"
-    },
-    {
-      "providerId": "licensed_library",
-      "at": "2026-10-22T15:03:10.022Z",
-      "result": "success",
-      "observed": 0,
-      "created": 0,
-      "playback": 0,
-      "detail": "sin_contenido_autorizado"
-    },
-    {
-      "providerId": "anilist_schedule",
-      "at": "2026-10-22T09:07:03.586Z",
-      "result": "success",
-      "observed": 186,
-      "created": 21,
-      "playback": 0,
-      "detail": "conectada"
-    },
-    {
-      "providerId": "licensed_library",
-      "at": "2026-10-22T09:07:03.586Z",
-      "result": "success",
-      "observed": 0,
-      "created": 0,
-      "playback": 0,
-      "detail": "sin_contenido_autorizado"
     }
   ]
 }

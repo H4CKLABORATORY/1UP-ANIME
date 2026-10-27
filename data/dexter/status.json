@@ -1,16 +1,16 @@
 {
   "schemaVersion": 1,
   "engine": "DexterAnimeSync",
-  "updatedAt": "2026-10-27T06:01:26.490Z",
+  "updatedAt": "2026-10-27T09:09:28.735Z",
   "job": {
-    "id": "sync-17d7ea495bf04d49",
-    "startedAt": "2026-10-27T06:01:26.490Z",
-    "completedAt": "2026-10-27T06:01:26.490Z",
+    "id": "sync-788648c59f6d5e17",
+    "startedAt": "2026-10-27T09:09:28.735Z",
+    "completedAt": "2026-10-27T09:09:28.735Z",
     "mode": "programada",
     "status": "correcta",
     "counters": {
       "animes": 0,
-      "episodesDetected": 0,
+      "episodesDetected": 182,
       "episodesNew": 0,
       "playbackSources": 0,
       "errors": 0
@@ -25,9 +25,9 @@
       "sourceType": "metadata",
       "intervalHours": 6,
       "lastRunAt": "2026-10-27T03:03:32.217Z",
-      "runAt": null,
-      "state": "en_espera",
-      "observed": 0,
+      "runAt": "2026-10-27T09:09:28.735Z",
+      "state": "conectada",
+      "observed": 182,
       "created": 0,
       "playback": 0,
       "error": null
@@ -40,12 +40,13 @@
       "sourceType": "playback",
       "intervalHours": 3,
       "lastRunAt": "2026-10-27T03:03:32.217Z",
-      "runAt": null,
-      "state": "en_espera",
+      "runAt": "2026-10-27T09:09:28.735Z",
+      "state": "sin_contenido_autorizado",
       "observed": 0,
       "created": 0,
       "playback": 0,
-      "error": null
+      "error": null,
+      "rejected": 0
     },
     {
       "id": "jkanime_external",
@@ -55,9 +56,9 @@
       "sourceType": "external_links",
       "intervalHours": 12,
       "lastRunAt": "2026-10-26T18:04:57.860Z",
-      "runAt": null,
-      "state": "en_espera",
-      "observed": 0,
+      "runAt": "2026-10-27T09:09:28.735Z",
+      "state": "conectada",
+      "observed": 5,
       "created": 0,
       "playback": 0,
       "error": null
@@ -70,9 +71,9 @@
       "sourceType": "embed",
       "intervalHours": 6,
       "lastRunAt": "2026-10-27T03:03:32.217Z",
-      "runAt": null,
-      "state": "en_espera",
-      "observed": 0,
+      "runAt": "2026-10-27T09:09:28.735Z",
+      "state": "conectada",
+      "observed": 93,
       "created": 0,
       "playback": 0,
       "error": null
