@@ -1,17 +1,17 @@
 {
   "schemaVersion": 1,
   "engine": "DexterAnimeSync",
-  "updatedAt": "2026-10-26T23:55:45.885Z",
+  "updatedAt": "2026-10-27T03:03:32.217Z",
   "job": {
-    "id": "sync-42481b48eeac4aab",
-    "startedAt": "2026-10-26T23:55:45.885Z",
-    "completedAt": "2026-10-26T23:55:45.885Z",
+    "id": "sync-22a25363a903acd6",
+    "startedAt": "2026-10-27T03:03:32.217Z",
+    "completedAt": "2026-10-27T03:03:32.217Z",
     "mode": "programada",
     "status": "correcta",
     "counters": {
-      "animes": 0,
-      "episodesDetected": 0,
-      "episodesNew": 0,
+      "animes": 1,
+      "episodesDetected": 188,
+      "episodesNew": 1,
       "playbackSources": 0,
       "errors": 0
     }
@@ -25,10 +25,10 @@
       "sourceType": "metadata",
       "intervalHours": 6,
       "lastRunAt": "2026-10-26T21:01:47.404Z",
-      "runAt": null,
-      "state": "en_espera",
-      "observed": 0,
-      "created": 0,
+      "runAt": "2026-10-27T03:03:32.217Z",
+      "state": "conectada",
+      "observed": 188,
+      "created": 1,
       "playback": 0,
       "error": null
     },
@@ -39,8 +39,8 @@
       "enabled": true,
       "sourceType": "playback",
       "intervalHours": 3,
-      "lastRunAt": "2026-10-26T18:04:57.860Z",
-      "runAt": "2026-10-26T23:55:45.885Z",
+      "lastRunAt": "2026-10-26T23:55:45.885Z",
+      "runAt": "2026-10-27T03:03:32.217Z",
       "state": "sin_contenido_autorizado",
       "observed": 0,
       "created": 0,
@@ -71,9 +71,9 @@
       "sourceType": "embed",
       "intervalHours": 6,
       "lastRunAt": "2026-10-26T21:01:47.404Z",
-      "runAt": null,
-      "state": "en_espera",
-      "observed": 0,
+      "runAt": "2026-10-27T03:03:32.217Z",
+      "state": "conectada",
+      "observed": 93,
       "created": 0,
       "playback": 0,
       "error": null
@@ -108,9 +108,9 @@
   "errors": [],
   "historySize": 60,
   "records": {
-    "anime": 127,
+    "anime": 128,
     "seasons": 1,
-    "episodes": 379,
+    "episodes": 380,
     "sources": 0
   }
 }
