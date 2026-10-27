@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
   "engine": "DexterAnimeSync",
-  "updatedAt": "2026-10-27T18:06:12.541Z",
+  "updatedAt": "2026-10-27T21:01:42.002Z",
   "job": {
-    "id": "sync-898c0493b6fb7fb0",
-    "startedAt": "2026-10-27T18:06:12.541Z",
-    "completedAt": "2026-10-27T18:06:12.541Z",
+    "id": "sync-4ad28026302ef39d",
+    "startedAt": "2026-10-27T21:01:42.002Z",
+    "completedAt": "2026-10-27T21:01:42.002Z",
     "mode": "programada",
     "status": "correcta",
     "counters": {
@@ -40,12 +40,13 @@
       "sourceType": "playback",
       "intervalHours": 3,
       "lastRunAt": "2026-10-27T15:14:04.017Z",
-      "runAt": null,
-      "state": "en_espera",
+      "runAt": "2026-10-27T21:01:42.002Z",
+      "state": "sin_contenido_autorizado",
       "observed": 0,
       "created": 0,
       "playback": 0,
-      "error": null
+      "error": null,
+      "rejected": 0
     },
     {
       "id": "jkanime_external",
