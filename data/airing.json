@@ -1,128 +1,9 @@
 {
-  "updated": "2026-10-28T15:52:45.894Z",
+  "updated": "2026-10-28T21:41:18.650Z",
   "source": "AniList public GraphQL metadata",
-  "windowStart": 1793004754,
-  "windowEnd": 1793980354,
+  "windowStart": 1793025666,
+  "windowEnd": 1794001266,
   "airing": [
-    {
-      "id": "mal-63409",
-      "mal_id": 63409,
-      "ani_id": 207191,
-      "title": "Hello, I am a Witch and my Crush Wants me to Make a Love Potion!",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx207191-VgkIzfH92WoZ.jpg",
-      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/207191-xYgpkCDnXc5m.jpg",
-      "description": "“Make me a love potion.” And with that single sentence, the Good Witch of the Lake’s secret crush on the dashing Sir Harij ends in heartbreak. Still, when he promises to help her gather the ingredients, Rose is thrilled at the chance to gaze upon a man she’d normally never get to interact with. She learns to brace her pounding heart for their usual stilted conversations…but what is she to do when he inexplicably shows up at her doorstep with bread and a jar of apple butter? (Source: Yen Press)",
-      "year": 2026,
-      "startDate": "2026-10-05",
-      "format": "TV",
-      "episodes": 12,
-      "averageScore": 72,
-      "status": "RELEASING",
-      "genres": [
-        "Fantasy",
-        "Romance"
-      ],
-      "siteUrl": "https://anilist.co/anime/207191",
-      "streaming": [
-        {
-          "name": "Crunchyroll",
-          "url": "https://www.crunchyroll.com/series/GT00378072/hello-i-am-a-witch-and-my-crush-wants-me-to-make-a-love-potion"
-        }
-      ],
-      "trailer": {
-        "site": "youtube",
-        "id": "hGRtocAh3iw"
-      },
-      "next": {
-        "at": 1793622600,
-        "episode": 5
-      },
-      "airingAt": 1793017800,
-      "episode": 4,
-      "scheduleId": 420068,
-      "description_es": "Hazme una poción de amor. Y con esa sola frase, la Buena Bruja del amor secreto del lago sobre el desgarrador Sir Harij termina en la ruptura del corazón. Sin embargo, cuando promete ayudarla a reunir los ingredientes, Rose está emocionada por la oportunidad de mirar a un hombre con el que normalmente nunca podría interactuar. Ella aprende a jactar su corazón por sus conversaciones usuales inclinadas... pero ¿qué va a hacer cuando aparece inexplicablemente en su puerta con bre"
-    },
-    {
-      "id": "mal-63712",
-      "mal_id": 63712,
-      "ani_id": 209219,
-      "title": "So What's Wrong with Getting Reborn as a Goblin?",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx209219-3yhKlRx0LX3p.jpg",
-      "banner": "",
-      "description": "Office worker Akira Yagami’s altruistic nature usually gets him the short end of the stick. When he dies after saving a kid from oncoming traffic...he reincarnates in another world as a goblin?! Normally, goblins only live for seven days, but Akira’s newfound powers let him defy the species’ normal life span...and are the key to his path to becoming the strongest goblin ever! (Source: Yen Press) Note: Tensei Goblin Dakedo Shitsumon Aru? is streaming 1 week in advance of the TV broadcast on ABEMA and Prime Video beginning with episode 2 on October 5th, 2026",
-      "year": 2026,
-      "startDate": "2026-10-05",
-      "format": "ONA",
-      "episodes": 0,
-      "averageScore": 66,
-      "status": "RELEASING",
-      "genres": [
-        "Action",
-        "Adventure",
-        "Comedy",
-        "Drama",
-        "Fantasy",
-        "Romance"
-      ],
-      "siteUrl": "https://anilist.co/anime/209219",
-      "streaming": [
-        {
-          "name": "Crunchyroll",
-          "url": "https://www.crunchyroll.com/series/GT00384010/so-whats-wrong-with-getting-reborn-as-a-goblin"
-        }
-      ],
-      "trailer": {
-        "site": "youtube",
-        "id": "ynr8tFWrK4c"
-      },
-      "next": {
-        "at": 1793624400,
-        "episode": 6
-      },
-      "airingAt": 1793019600,
-      "episode": 5,
-      "scheduleId": 422214,
-      "description_es": "La naturaleza altruista del trabajador de oficina Akira Yagami generalmente le consigue el extremo corto del palo. Cuando muere después de salvar a un niño del tráfico entrante... ¿reencarna en otro mundo como un duende? Normalmente, los duendes sólo viven durante siete días, pero los nuevos poderes de Akira le permiten desafiar el período de vida normal de la especie... ¡y son la clave de su camino para convertirse en el más fuerte de todos los tiempos! (Fuente: Yen Press) Nota: Tensei Goblin Dakedo Sitsumon Aru?"
-    },
-    {
-      "id": "mal-63098",
-      "mal_id": 63098,
-      "ani_id": 204011,
-      "title": "PSYREN",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx204011-j45RZoqYbdZK.jpg",
-      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/204011-hBOwte9MzykA.jpg",
-      "description": "One day, high schooler Ageha Yoshina picks up a mysterious “red phone card” left behind in a public telephone booth. A few days later, his childhood friend and classmate, Sakurako Amamiya—who possessed the same card—suddenly vanishes without a trace. In search of her, Ageha finds himself drawn into the rumors surrounding a nationwide string of mysterious disappearances, said to be the work of a secret organization known only as “Psyren.” When he accesses the group, a deadly game begins—one that will change his fate forever. (Source: PSYЯEN Official Site)",
-      "year": 2026,
-      "startDate": "2026-10-05",
-      "format": "TV",
-      "episodes": 0,
-      "averageScore": 69,
-      "status": "RELEASING",
-      "genres": [
-        "Action",
-        "Adventure",
-        "Sci-Fi"
-      ],
-      "siteUrl": "https://anilist.co/anime/204011",
-      "streaming": [
-        {
-          "name": "Crunchyroll",
-          "url": "https://www.crunchyroll.com/series/GT00371866/psyren"
-        }
-      ],
-      "trailer": {
-        "site": "youtube",
-        "id": "fmUpSXFbSK0"
-      },
-      "next": {
-        "at": 1794232800,
-        "episode": 5
-      },
-      "airingAt": 1793023200,
-      "episode": 4,
-      "scheduleId": 423053,
-      "description_es": "Un día, la secundaria Ageha Yoshina recoge una misteriosa “tarjeta de teléfono roja” que queda atrás en una cabina telefónica pública. Unos días más tarde, su amigo de la infancia y compañero de clase, Sakurako Amamiya, que poseía la misma carta, desaparecen sin dejar rastro. En busca de ella, Ageha se encuentra dibujado en los rumores que rodean una cadena nacional de misteriosas desapariciones, dijo ser el trabajo de una organización secreta conocida sólo como “Psyren”. Cuando él"
-    },
     {
       "id": "mal-60636",
       "mal_id": 60636,
@@ -5931,6 +5812,41 @@
       "episode": 18,
       "scheduleId": 421093,
       "description_es": "El manga se centra en el estudiante de secundaria Ito Hazui. Durante su descanso de primavera al final de su primer año de secundaria, la madre de Ito se vuelve a casar, y Ito se mueve a vivir con su nueva familia, convirtiéndose en Ito Narita. Al llegar a su nueva casa, Ito está sorprendido de saber que ahora tiene cuatro hermanos menores. Ito trata de que ella sea más difícil de llevar con todos los nuevos miembros de su familia, pero el hermano mayor Gen es un poco frío para ella. Sin embargo, bajo su fachada, ocasionalmente muestra su amabilidad. (Fuente: Anime News Network)"
+    },
+    {
+      "id": "mal-59088",
+      "mal_id": 59088,
+      "ani_id": 178083,
+      "title": "Tokyo Revengers: War of the Three Titans Arc",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx178083-bg7pg6TCHwtG.jpg",
+      "banner": "",
+      "description": "Sequel to Tokyo Revengers: Tenjiku-hen .",
+      "year": 2026,
+      "startDate": "2026-10-03",
+      "format": "TV",
+      "episodes": 13,
+      "averageScore": 76,
+      "status": "RELEASING",
+      "genres": [
+        "Action",
+        "Drama",
+        "Romance",
+        "Supernatural"
+      ],
+      "siteUrl": "https://anilist.co/anime/178083",
+      "streaming": [],
+      "trailer": {
+        "site": "youtube",
+        "id": "Nm21TTXUkf4"
+      },
+      "next": {
+        "at": 1793379180,
+        "episode": 5
+      },
+      "airingAt": 1793983980,
+      "episode": 6,
+      "scheduleId": 418626,
+      "description_es": "Secuela de los Revengers de Tokio: Tenjiku-hen."
     }
   ],
   "seasonal": {
@@ -8288,7 +8204,7 @@
         "ani_id": 207327,
         "title": "To You in the Beyond",
         "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx207327-OSrMbh8DrGE4.jpg",
-        "banner": "",
+        "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/207327-IogsMAKdwdlz.jpg",
         "description": "The story centers on a boy named Kazuki Tsukigase, who transfers to a high school on a remote island to get away from anyone who knows him. Kazuki finds out that there is an inlet on the island where people are rumored to disappear. Exploring the inlet, he encounters an unconscious girl. When she comes to after Kazuki takes her to the clinic, she is unable to give out anything about her identity except that she is named Nao, is 16 years old, and whispers the year \"1974.\" (Source: Anime News Network, edited)",
         "year": 2026,
         "startDate": "2026-10-09",
