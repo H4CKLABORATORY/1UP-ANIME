@@ -1,215 +1,9 @@
 {
-  "updated": "2026-10-27T21:37:33.073Z",
+  "updated": "2026-10-28T03:44:51.764Z",
   "source": "AniList public GraphQL metadata",
-  "windowStart": 1792939041,
-  "windowEnd": 1793914641,
+  "windowStart": 1792961080,
+  "windowEnd": 1793936680,
   "airing": [
-    {
-      "id": "mal-62590",
-      "mal_id": 62590,
-      "ani_id": 199426,
-      "title": "HOTEL INHUMANS Season 2",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx199426-0nBgTV9BrcJn.jpg",
-      "banner": "",
-      "description": "The second season of Hotel Inhumans .",
-      "year": 2026,
-      "startDate": "2026-10-04",
-      "format": "TV",
-      "episodes": 13,
-      "averageScore": 61,
-      "status": "RELEASING",
-      "genres": [
-        "Action",
-        "Drama"
-      ],
-      "siteUrl": "https://anilist.co/anime/199426",
-      "streaming": [
-        {
-          "name": "Crunchyroll",
-          "url": "https://www.crunchyroll.com/series/GXJHM3G08/hotel-inhumans"
-        }
-      ],
-      "trailer": null,
-      "next": {
-        "at": 1793544300,
-        "episode": 5
-      },
-      "airingAt": 1792939500,
-      "episode": 4,
-      "scheduleId": 422102,
-      "description_es": "La segunda temporada de Hotel Inhumans ."
-    },
-    {
-      "id": "mal-63753",
-      "mal_id": 63753,
-      "ani_id": 209463,
-      "title": "From Far Away",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx209463-Yxk2q10RXgg8.jpg",
-      "banner": "",
-      "description": "On her way home from school one day, Noriko is unexpectedly plunged into a strange and extraordinary fantasy world. Her troubles compound exponentially when she is rescued and befriended by a handsome young man by the name of Izark. He may be brave and courageous, but inside Izark lurks the darkest evil imaginable. And according to an ancient prophecy, Noriko possesses the power to unleash that evil. Now, inexorably bound together, these two unlikely allies must navigate a world both wondrous and hostile. (Source: VIZ Media)",
-      "year": 2026,
-      "startDate": "2026-10-05",
-      "format": "TV",
-      "episodes": 0,
-      "averageScore": 67,
-      "status": "RELEASING",
-      "genres": [
-        "Adventure",
-        "Fantasy",
-        "Romance"
-      ],
-      "siteUrl": "https://anilist.co/anime/209463",
-      "streaming": [
-        {
-          "name": "Crunchyroll",
-          "url": "https://www.crunchyroll.com/series/GT00384000/from-far-away"
-        }
-      ],
-      "trailer": {
-        "site": "youtube",
-        "id": "dLRKywRu3iM"
-      },
-      "next": {
-        "at": 1793545200,
-        "episode": 5
-      },
-      "airingAt": 1792940400,
-      "episode": 4,
-      "scheduleId": 417500,
-      "description_es": "En su camino a casa desde la escuela un día, Noriko se sumergió inesperadamente en un extraño y extraordinario mundo de fantasía. Sus problemas se complican exponencialmente cuando es rescatada y amigada por un joven guapo por el nombre de Izark. Puede ser valiente y valiente, pero dentro de Izark se esconde el mal más oscuro imaginable. Y según una profecía antigua, Noriko posee el poder de desencadenar ese mal. Ahora, inexorablemente unidos, estos dos aliados improbables deben navegar por un mundo maravilloso y hostil. (Fuente: VIZ Media)"
-    },
-    {
-      "id": "mal-64131",
-      "mal_id": 64131,
-      "ani_id": 211877,
-      "title": "My Girlfriend's Friend",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx211877-yWQ2r7XmWvG6.jpg",
-      "banner": "",
-      "description": "For the first time in my life, I have a girlfriend. But her friend tempts me with a body that's so seductive... What would you do if your girlfriend's friend came on to you like this? (Source: Yanmaga, translated)",
-      "year": 2026,
-      "startDate": "2026-10-05",
-      "format": "TV_SHORT",
-      "episodes": 12,
-      "averageScore": 49,
-      "status": "RELEASING",
-      "genres": [
-        "Drama",
-        "Ecchi",
-        "Romance"
-      ],
-      "siteUrl": "https://anilist.co/anime/211877",
-      "streaming": [],
-      "trailer": {
-        "site": "youtube",
-        "id": "E-stx_wwVSs"
-      },
-      "next": {
-        "at": 1793549100,
-        "episode": 5
-      },
-      "airingAt": 1792944300,
-      "episode": 4,
-      "scheduleId": 419329,
-      "description_es": "Por primera vez en mi vida, tengo una novia. Pero su amiga me tienta con un cuerpo tan seductor... ¿Qué harías si el amigo de tu novia viniera a ti así? (Fuente: Yanmaga, traducido)"
-    },
-    {
-      "id": "mal-65167",
-      "mal_id": 65167,
-      "ani_id": 217782,
-      "title": "My Girlfriend's Friend Mini Anime",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx217782-DV0vODQ68ZRk.png",
-      "banner": "",
-      "description": "A weekly mini anime shown with each episode of Kanojo no Tomodachi exclusively on the AT-X broadcast of the TV anime and online on OceanVeil.",
-      "year": 2026,
-      "startDate": "2026-10-05",
-      "format": "TV_SHORT",
-      "episodes": 12,
-      "averageScore": 0,
-      "status": "RELEASING",
-      "genres": [
-        "Drama",
-        "Ecchi",
-        "Romance"
-      ],
-      "siteUrl": "https://anilist.co/anime/217782",
-      "streaming": [],
-      "trailer": null,
-      "next": {
-        "at": 1793549820,
-        "episode": 5
-      },
-      "airingAt": 1792945020,
-      "episode": 4,
-      "scheduleId": 422165,
-      "description_es": "Un mini anime semanal mostrado con cada episodio de Kanojo no Tomodachi exclusivamente en la transmisión AT-X del anime de TV y en línea en OceanVeil."
-    },
-    {
-      "id": "mal-63509",
-      "mal_id": 63509,
-      "ani_id": 208025,
-      "title": "I'm Dating a Dark Summoner",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx208025-JKvqWNr8rz8l.jpg",
-      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/208025-s7hcRQO7kwmH.jpg",
-      "description": "Amona’s a dark summoner with demonic powers. Roni’s a devout priest who’s way too uptight. By all rights, they should hate each other. Instead, they end up fast-tracking their enemies-to-lovers arc with a one-night stand that somehow insists on becoming a recurring event. Now they must hide their situationship from the rest of the party while denying their growing attraction to one another, all while dealing with an imp who’s far too invested in their love life. (Source: HIDIVE)",
-      "year": 2026,
-      "startDate": "2026-10-05",
-      "format": "TV_SHORT",
-      "episodes": 12,
-      "averageScore": 67,
-      "status": "RELEASING",
-      "genres": [
-        "Comedy",
-        "Ecchi",
-        "Fantasy",
-        "Romance"
-      ],
-      "siteUrl": "https://anilist.co/anime/208025",
-      "streaming": [],
-      "trailer": {
-        "site": "youtube",
-        "id": "-YCols5lYow"
-      },
-      "next": {
-        "at": 1793550000,
-        "episode": 5
-      },
-      "airingAt": 1792945200,
-      "episode": 4,
-      "scheduleId": 419204,
-      "description_es": "Amona es un llamador oscuro con poderes demoníacos. Roni es un sacerdote devota que está demasiado tenso. Por todos los derechos, deben odiarse. En lugar de eso, terminan acelerando su arco de enemigos a amantes con un stand de una noche que de alguna manera insiste en convertirse en un evento recurrente. Ahora deben ocultar su situación del resto del partido, negando su creciente atracción entre sí, todo mientras se trata de un imp que está demasiado invertido en"
-    },
-    {
-      "id": "mal-65169",
-      "mal_id": 65169,
-      "ani_id": 218217,
-      "title": "JK Dark Summoner to Deki......Dei Nai!?",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx218217-crIGlnQDg0bJ.png",
-      "banner": "",
-      "description": "A weekly mini anime shown with each episode of Dark Summoner to Dekiteiru exclusively on the AT-X broadcast of the TV anime and online on Abema.",
-      "year": 2026,
-      "startDate": "2026-10-05",
-      "format": "TV_SHORT",
-      "episodes": 12,
-      "averageScore": 0,
-      "status": "RELEASING",
-      "genres": [
-        "Comedy",
-        "Ecchi",
-        "Fantasy",
-        "Romance"
-      ],
-      "siteUrl": "https://anilist.co/anime/218217",
-      "streaming": [],
-      "trailer": null,
-      "next": {
-        "at": 1793556000,
-        "episode": 5
-      },
-      "airingAt": 1792951200,
-      "episode": 4,
-      "scheduleId": 422529,
-      "description_es": "Un mini anime semanal mostrado con cada episodio de Dark Summoner a Dekiteiru exclusivamente en la transmisión AT-X del anime de TV y en línea en Abema."
-    },
     {
       "id": "mal-55809",
       "mal_id": 55809,
@@ -915,8 +709,8 @@
         "id": "8Q83sSev8fk"
       },
       "next": {
-        "at": 1793138760,
-        "episode": 16
+        "at": 1794348360,
+        "episode": 17
       },
       "airingAt": 1793138760,
       "episode": 16,
@@ -947,8 +741,8 @@
         "id": "Svh_xgdMWlU"
       },
       "next": {
-        "at": 1793142000,
-        "episode": 43
+        "at": 1793746800,
+        "episode": 44
       },
       "airingAt": 1793142000,
       "episode": 43,
@@ -981,8 +775,8 @@
         "id": "sKXK-6uZHjI"
       },
       "next": {
-        "at": 1793152800,
-        "episode": 17
+        "at": 1793757600,
+        "episode": 18
       },
       "airingAt": 1793152800,
       "episode": 17,
@@ -1011,8 +805,8 @@
       "streaming": [],
       "trailer": null,
       "next": {
-        "at": 1793152800,
-        "episode": 7
+        "at": 1793757600,
+        "episode": 8
       },
       "airingAt": 1793152800,
       "episode": 7,
@@ -4938,8 +4732,8 @@
         "id": "Svh_xgdMWlU"
       },
       "next": {
-        "at": 1793142000,
-        "episode": 43
+        "at": 1793746800,
+        "episode": 44
       },
       "airingAt": 1793746800,
       "episode": 44,
@@ -4972,8 +4766,8 @@
         "id": "sKXK-6uZHjI"
       },
       "next": {
-        "at": 1793152800,
-        "episode": 17
+        "at": 1793757600,
+        "episode": 18
       },
       "airingAt": 1793757600,
       "episode": 18,
@@ -5002,8 +4796,8 @@
       "streaming": [],
       "trailer": null,
       "next": {
-        "at": 1793152800,
-        "episode": 7
+        "at": 1793757600,
+        "episode": 8
       },
       "airingAt": 1793757600,
       "episode": 8,
@@ -5747,6 +5541,68 @@
       "episode": 5,
       "scheduleId": 418824,
       "description_es": "Una vez despedido como el único estudiante ordinario de la élite Arnold Academy of Sorcery, Ray White — secretamente, el Hechicero de Iceblade— finalmente ha ganado su lugar. Con un nuevo año escolar surge un nuevo desafío: La Guerra de los Magos, una gran competencia que enfrenta equipos de escuelas rivales entre sí. Pero una sombra ominosa sobre Ray y sus amigos mientras los otros grandes hechiceros trazan sus próximos movimientos. (Fuente: Crunchyroll)"
+    },
+    {
+      "id": "mal-65007",
+      "mal_id": 65007,
+      "ani_id": 217577,
+      "title": "Mazenchu",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx217577-bYfoFScj9Pwi.jpg",
+      "banner": "",
+      "description": "Mazenchu is set in a school where all kinds of food can live out their youth and form friendships, rivalries, and bittersweet romances. (Source: Anime News Network)",
+      "year": 2026,
+      "startDate": "2026-10-02",
+      "format": "TV_SHORT",
+      "episodes": 0,
+      "averageScore": 0,
+      "status": "RELEASING",
+      "genres": [
+        "Slice of Life"
+      ],
+      "siteUrl": "https://anilist.co/anime/217577",
+      "streaming": [],
+      "trailer": null,
+      "next": {
+        "at": 1793321400,
+        "episode": 5
+      },
+      "airingAt": 1793926200,
+      "episode": 6,
+      "scheduleId": 421794,
+      "description_es": "Mazenchu está en una escuela donde todo tipo de comida puede vivir su juventud y formar amistades, rivalidades y romances amargos. (Fuente: Anime News Network)"
+    },
+    {
+      "id": "mal-63045",
+      "mal_id": 63045,
+      "ani_id": 203275,
+      "title": "Devils' Crest",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b203275-YyNHygkzIjMC.jpg",
+      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/203275-g8zkD7HCkJCn.jpg",
+      "description": "Sixth-grader Yuuma Ashihara and his twin sister, Sawa, are playing Actual Magic, a brand-new virtual reality MMORPG, when it suddenly begins fusing with the real world. Amid all the chaos and confusion, it becomes clear that death is lurking around every corner, including when Yuuma runs into his classmate Sumika. Before, she was one of the cutest girls in his class, but she’s since undergone a terrible metamorphosis—into one of the game’s horrifying monsters! From the author of Sword Art Online and Accel World comes a story beyond VR and AR, where gaming and reality are one and the same…and staying alive is just the beginning! (Source: Yen Press)",
+      "year": 2026,
+      "startDate": "2026-11-06",
+      "format": "TV",
+      "episodes": 0,
+      "averageScore": 0,
+      "status": "NOT_YET_RELEASED",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Fantasy"
+      ],
+      "siteUrl": "https://anilist.co/anime/203275",
+      "streaming": [],
+      "trailer": {
+        "site": "youtube",
+        "id": "z_aHrTag3Ig"
+      },
+      "next": {
+        "at": 1793930400,
+        "episode": 1
+      },
+      "airingAt": 1793930400,
+      "episode": 1,
+      "scheduleId": 421825
     }
   ],
   "seasonal": {
