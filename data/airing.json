@@ -1,78 +1,9 @@
 {
-  "updated": "2026-10-28T03:44:51.764Z",
+  "updated": "2026-10-28T09:50:03.162Z",
   "source": "AniList public GraphQL metadata",
-  "windowStart": 1792961080,
-  "windowEnd": 1793936680,
+  "windowStart": 1792982991,
+  "windowEnd": 1793958591,
   "airing": [
-    {
-      "id": "mal-55809",
-      "mal_id": 55809,
-      "ani_id": 137653,
-      "title": "Renegade Immortal",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx137653-1wHbCVvABGOr.png",
-      "banner": "",
-      "description": "It tells the story of Wang Lin, an ordinary young man in the countryside, who is moved by his heart and cultivates against immortality. His pursuit is not only for longevity, but also for getting rid of the ants behind it. He firmly believed in human beings and entered the path of cultivation with mediocre qualifications. After experiencing ups and downs, with his wise mind, he gradually reached the pinnacle and became famous in the cultivation world with his own strength. (Source: WeTV)",
-      "year": 2023,
-      "startDate": "2023-09-25",
-      "format": "ONA",
-      "episodes": 180,
-      "averageScore": 83,
-      "status": "RELEASING",
-      "genres": [
-        "Action",
-        "Adventure",
-        "Drama",
-        "Fantasy"
-      ],
-      "siteUrl": "https://anilist.co/anime/137653",
-      "streaming": [
-        {
-          "name": "Crunchyroll",
-          "url": "https://www.crunchyroll.com/series/GKEH2G0MN/renegade-immortal"
-        }
-      ],
-      "trailer": null,
-      "next": {
-        "at": 1793584800,
-        "episode": 165
-      },
-      "airingAt": 1792980000,
-      "episode": 164,
-      "scheduleId": 414222,
-      "description_es": "Cuenta la historia de Wang Lin, un joven común en el campo, que se mueve por su corazón y cultiva contra la inmortalidad. Su búsqueda no es sólo para la longevidad, sino también para deshacerse de las hormigas detrás de ella. Creyó firmemente en los seres humanos y entró en el camino del cultivo con calificaciones mediocres. Después de experimentar altibajos, con su mente sabia, gradualmente llegó al pináculo y se hizo famoso en el mundo de cultivo con su propia fuerza. (Fuente: WeTV)"
-    },
-    {
-      "id": "al-214593",
-      "mal_id": null,
-      "ani_id": 214593,
-      "title": "YU-SANCHi! from YU-HACHi",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx214593-WZ0HaPSRae2E.png",
-      "banner": "",
-      "description": "",
-      "year": 2026,
-      "startDate": "2026-10-05",
-      "format": "TV_SHORT",
-      "episodes": 0,
-      "averageScore": 0,
-      "status": "RELEASING",
-      "genres": [
-        "Comedy",
-        "Slice of Life"
-      ],
-      "siteUrl": "https://anilist.co/anime/214593",
-      "streaming": [],
-      "trailer": {
-        "site": "youtube",
-        "id": "WprfleUJVck"
-      },
-      "next": {
-        "at": 1793286000,
-        "episode": 8
-      },
-      "airingAt": 1792980000,
-      "episode": 7,
-      "scheduleId": 419733
-    },
     {
       "id": "mal-65119",
       "mal_id": 65119,
@@ -382,7 +313,7 @@
       "airingAt": 1793103960,
       "episode": 4,
       "scheduleId": 417799,
-      "description_es": "Un gran héroe está invicto en su lecho de muerte, lamentando que nunca haya encontrado a un enemigo que pudiera derribarla. Ella nunca quiso encontrar su destino en otro lugar que en el campo de batalla, y su pacífica desaparición tiene su deseo desesperadamente de que las cosas podrían haber sido diferentes... Pero cuando de repente viene al cuerpo de la joven y frágil Nia Liston, tiene una nueva lucha por delante de ella. Nia es una niña enferma, lo que significa que tiene un largo camino para ir antes de que esté en forma de lucha. Ahora que se le ha dado un segundo tiro a la vida, sin embargo, está decidida a conseguir lo que quiere. Va a vivir."
+      "description_es": "Un gran héroe está invicto en su lecho de muerte, lamentando que nunca haya encontrado a un enemigo que pudiera derribarla. Nunca quiso encontrar su destino en otro lugar que en el campo de batalla, y su pacífica desaparición tiene su deseo desesperadamente de que las cosas podrían haber sido diferentes... Pero cuando de repente viene al cuerpo de la joven y frágil Nia Liston, tiene una nueva lucha por delante de ella. Nia es una niña enferma, lo que significa que tiene un largo camino por recorrer"
     },
     {
       "id": "mal-63754",
@@ -420,7 +351,7 @@
       "airingAt": 1793106000,
       "episode": 4,
       "scheduleId": 420419,
-      "description_es": "Sato-san es la flor inalcanzable de la clase. Siempre tiene frío y rito con compañeros de clase, pero sólo sé que es muy linda cuando sonríe, incluso si no es mucho fotógrafo. Oshio-kun es amistoso y animado, pero sólo sé que trabaja en el café de su familia después de la escuela. Hace un gran trabajo con la cuenta SNS de la cafetería, y su mala sonrisa hace que mi corazón salte un latido! Inocentes y dulces, pero a veces frustrantes, esta es una historia de 120% pura y fluida sobre dos personas que se enamoran por primera vez."
+      "description_es": "Sato-san es la flor inalcanzable de la clase. Ella siempre tiene frío y curtimiento con compañeros de clase, pero sólo sé que es muy linda cuando sonríe, incluso si no es mucho de fotógrafo. Oshio-kun es amistoso y animado, pero sólo sé que trabaja en el café de su familia después de la escuela. Hace un gran trabajo con la cuenta SNS de la cafetería, y su mala sonrisa hace que mi corazón se salte un latido! Innocente y dulce, pero a veces frustrante, esto es un"
     },
     {
       "id": "mal-62696",
@@ -761,7 +692,7 @@
       "startDate": "2026-07-22",
       "format": "ONA",
       "episodes": 46,
-      "averageScore": 69,
+      "averageScore": 68,
       "status": "RELEASING",
       "genres": [
         "Action",
@@ -1008,7 +939,7 @@
       "startDate": "2026-10-01",
       "format": "TV",
       "episodes": 0,
-      "averageScore": 57,
+      "averageScore": 58,
       "status": "RELEASING",
       "genres": [
         "Action",
@@ -1339,7 +1270,7 @@
       "airingAt": 1793285760,
       "episode": 5,
       "scheduleId": 421727,
-      "description_es": "Koyuki, la chica aislada; Miki, el antiguo ídolo escolar; Minato, el tipo sin concepto de espacio personal; y Youta, el amable jugador de baloncesto. Clumsy, frustrante, pero profundamente apasionante — este drama que se acerca a la edad de los corazones cruzados avanza. A medida que se acercan, Koyuki y Minato comienzan a desarrollar sentimientos entre sí que van más allá de la mera amistad. Mientras tanto, Youta finalmente confiesa a Miki los sentimientos por los que ha albergado"
+      "description_es": "Koyuki, la chica aislada; Miki, el antiguo ídolo escolar; Minato, el tipo sin concepto de espacio personal; y Youta, el amable jugador de baloncesto. Clumsy, frustrante, pero profundamente entrañable — este drama conjunto de la venida de la edad de los corazones cruzados marcha hacia adelante. A medida que crecen más cerca, Koyuki y Minato comienzan a desarrollar sentimientos entre sí que van más allá de la mera amistad. Mientras tanto, Youta finalmente confiesa a Miki los sentimientos que ha albergado durante años. Algunos hablan sus corazones mientras que otros mantienen sus emociones ocultas, causando sus caminos —y sus sentimientos por los demás— a crus continuamente"
     },
     {
       "id": "mal-62615",
@@ -1488,7 +1419,7 @@
       "startDate": "2026-10-09",
       "format": "TV",
       "episodes": 0,
-      "averageScore": 66,
+      "averageScore": 67,
       "status": "RELEASING",
       "genres": [
         "Action",
@@ -1742,7 +1673,8 @@
       },
       "airingAt": 1793354400,
       "episode": 138,
-      "scheduleId": 423102
+      "scheduleId": 423102,
+      "description_es": "Bird Kazami, con el objetivo de convertirse en un profesional Blader, se encuentra con el ex campeón Ekusu Kurosu, también conocido como 'Kamen X', y forma un equipo para que puedan apuntar al \"top\" de la X Tower. Pero lo que les espera es una batalla espectacular que nadie ha visto antes. El \"X\" aún invisible. El super acelerado (Xtreme) Beyblade corre a través de una nueva era! (Fuente: sitio web oficial)"
     },
     {
       "id": "mal-64848",
@@ -2624,7 +2556,7 @@
       "airingAt": 1793448000,
       "episode": 5,
       "scheduleId": 419828,
-      "description_es": "Romelia y su partido tienen éxito en derrotar al Rey demonio Zelgis, aunque la carga imprudente del príncipe Henri los obliga a una batalla agotadora. Después, Romelia se marca \"peso muerto\" por no luchar directamente, y el Príncipe unilateralmente rompe su compromiso. Denegado un lugar en las celebraciones de la victoria, Romelia vuelve a casa, sólo para ser conocido con indiferencia fría de su familia y sociedad. Sin embargo, se niega a romper. Ella ya tiene"
+      "description_es": "Romelia y su partido tienen éxito en derrotar al Rey demonio Zelgis, aunque la carga imprudente del príncipe Henri los obliga a una batalla agotadora. Después, Romelia se marca \"peso muerto\" por no luchar directamente, y el Príncipe unilateralmente rompe su compromiso. Denegado un lugar en las celebraciones de la victoria, Romelia vuelve a casa, sólo para ser conocido con indiferencia fría de su familia y sociedad. Sin embargo, se niega a romper. Ella ya ha puesto sus ojos en el camino que está por delante. (Fuente: Crunchyroll) Nota: Romelia War Chronicle fue transmitido 2 días antes de la emisión de televisión en A"
     },
     {
       "id": "mal-61153",
@@ -3005,7 +2937,7 @@
       "airingAt": 1793464200,
       "episode": 5,
       "scheduleId": 419566,
-      "description_es": "Si hay una cosa que nunca puedes tener suficiente en un mundo de espadas y brujería estilo RPG, ¡es puntos mágicos! Si estás alimentando hechizos, técnicas o mostrando una habilidad increíble, tienes que gastar esos puntos para hacer daño real. ¿Y si te escapas? La Cuaresma es parte de la fiesta de llegada conocida como los \"Skypiercers\", y gracias a su regalo único, puede prestar enormes cantidades de magia a otros. ¿Sin MP? ¡No hay problema con la Cuaresma! Excepto ahora que sus compañeros se han convertido en héroes formidables (gracias a su habilidad), su utilidad es cuestionada. Salió del grupo, la Cuaresma es"
+      "description_es": "Si hay una cosa que nunca puedes tener suficiente en un mundo de espadas y brujería estilo RPG, ¡es puntos mágicos! Si estás alimentando hechizos, técnicas o mostrando una habilidad increíble, tienes que gastar esos puntos para hacer daño real. ¿Y si te escapas? La Cuaresma es parte de la fiesta de llegada conocida como los \"Skypiercers\", y gracias a su regalo único, puede prestar enormes cantidades de magia a otros. ¿Sin MP? No hay problema con Lent arou"
     },
     {
       "id": "mal-63125",
@@ -3731,7 +3663,7 @@
       "airingAt": 1793542560,
       "episode": 4,
       "scheduleId": 419192,
-      "description_es": "Han pasado varios años desde la feroz batalla contra Majin Buu, y la Tierra finalmente ha recuperado un breve momento de paz. Al mismo tiempo, Beerus, el Dios de la Destrucción, despierta de su sueño largo y profundo. Incluso Kai y el Supremo Kai, consciente del abrumador poder de Beerus para destruir planetas enteros, ver su despertar con gran miedo... Mientras tanto, Beerus escucha rumores de un Saiyan que venció a Frieza y de repente aparece ante Goku. Meta de cerveza"
+      "description_es": "Han pasado varios años desde la feroz batalla contra Majin Buu, y la Tierra finalmente ha recuperado un breve momento de paz. Al mismo tiempo, Beerus, el Dios de la Destrucción, despierta de su sueño largo y profundo. Incluso Kai y el Supremo Kai, consciente del abrumador poder de Beerus para destruir planetas enteros, ver su despertar con gran miedo... Mientras tanto, Beerus escucha rumores de un Saiyan que venció a Frieza y de repente aparece ante Goku. Atacada por Beerus, el ser más fuerte del universo, la Tierra está en grave peligro. Así comienza una batalla cósmica que rompe la tierra entre el Dios de la Destrucción y Go"
     },
     {
       "id": "mal-60601",
@@ -3846,7 +3778,7 @@
       "airingAt": 1793543400,
       "episode": 5,
       "scheduleId": 419614,
-      "description_es": "Renací como una hija villana en un juego de harem otome inverso. Después de enfermarse con fiebre alta a los 10 años, Pia Rockwell de repente recordó su vida pasada como estudiante universitaria en Japón. Pero lejos de ir por la ruta villanosa, todo lo que esta chica súper tímida quiere es finalmente utilizar su conocimiento de cuando era una estudiante de posgrado que estudiaba para obtener su doctorado en paleontología. Su objetivo final es llegar a ser más común, excavar fos"
+      "description_es": "Renací como una hija villana en un juego de harem otome inverso. Después de enfermarse con fiebre alta a los 10 años, Pia Rockwell de repente recordó su vida pasada como estudiante universitaria en Japón. Pero lejos de ir por la ruta del villano, todo lo que esta chica súper tímida quiere es finalmente utilizar su conocimiento de cuando era una estudiante de posgrado que estudiaba para obtener su doctorado en paleontología. Su objetivo final es convertirse en un común, excavar fósiles, construir un museo y luego convertirse en un curador. Así que para escapar de la ruta del villano y evitar ser deportado por su prometido durante la graduación"
     },
     {
       "id": "mal-64340",
@@ -3900,7 +3832,7 @@
       "startDate": "2026-10-04",
       "format": "TV",
       "episodes": 13,
-      "averageScore": 61,
+      "averageScore": 62,
       "status": "RELEASING",
       "genres": [
         "Action",
@@ -3974,7 +3906,7 @@
       "startDate": "2026-10-05",
       "format": "TV_SHORT",
       "episodes": 8,
-      "averageScore": 52,
+      "averageScore": 51,
       "status": "RELEASING",
       "genres": [
         "Ecchi",
@@ -4406,7 +4338,7 @@
       "airingAt": 1793708760,
       "episode": 5,
       "scheduleId": 417800,
-      "description_es": "Un gran héroe está invicto en su lecho de muerte, lamentando que nunca haya encontrado a un enemigo que pudiera derribarla. Ella nunca quiso encontrar su destino en otro lugar que en el campo de batalla, y su pacífica desaparición tiene su deseo desesperadamente de que las cosas podrían haber sido diferentes... Pero cuando de repente viene al cuerpo de la joven y frágil Nia Liston, tiene una nueva lucha por delante de ella. Nia es una niña enferma, lo que significa que tiene un largo camino para ir antes de que esté en forma de lucha. Ahora que se le ha dado un segundo tiro a la vida, sin embargo, está decidida a conseguir lo que quiere. Va a vivir."
+      "description_es": "Un gran héroe está invicto en su lecho de muerte, lamentando que nunca haya encontrado a un enemigo que pudiera derribarla. Nunca quiso encontrar su destino en otro lugar que en el campo de batalla, y su pacífica desaparición tiene su deseo desesperadamente de que las cosas podrían haber sido diferentes... Pero cuando de repente viene al cuerpo de la joven y frágil Nia Liston, tiene una nueva lucha por delante de ella. Nia es una niña enferma, lo que significa que tiene un largo camino por recorrer"
     },
     {
       "id": "mal-63754",
@@ -4444,7 +4376,7 @@
       "airingAt": 1793710800,
       "episode": 5,
       "scheduleId": 420420,
-      "description_es": "Sato-san es la flor inalcanzable de la clase. Siempre tiene frío y rito con compañeros de clase, pero sólo sé que es muy linda cuando sonríe, incluso si no es mucho fotógrafo. Oshio-kun es amistoso y animado, pero sólo sé que trabaja en el café de su familia después de la escuela. Hace un gran trabajo con la cuenta SNS de la cafetería, y su mala sonrisa hace que mi corazón salte un latido! Inocentes y dulces, pero a veces frustrantes, esta es una historia de 120% pura y fluida sobre dos personas que se enamoran por primera vez."
+      "description_es": "Sato-san es la flor inalcanzable de la clase. Ella siempre tiene frío y curtimiento con compañeros de clase, pero sólo sé que es muy linda cuando sonríe, incluso si no es mucho de fotógrafo. Oshio-kun es amistoso y animado, pero sólo sé que trabaja en el café de su familia después de la escuela. Hace un gran trabajo con la cuenta SNS de la cafetería, y su mala sonrisa hace que mi corazón se salte un latido! Innocente y dulce, pero a veces frustrante, esto es un"
     },
     {
       "id": "mal-62696",
@@ -4752,7 +4684,7 @@
       "startDate": "2026-07-22",
       "format": "ONA",
       "episodes": 46,
-      "averageScore": 69,
+      "averageScore": 68,
       "status": "RELEASING",
       "genres": [
         "Action",
@@ -4999,7 +4931,7 @@
       "startDate": "2026-10-01",
       "format": "TV",
       "episodes": 0,
-      "averageScore": 57,
+      "averageScore": 58,
       "status": "RELEASING",
       "genres": [
         "Action",
@@ -5330,7 +5262,7 @@
       "airingAt": 1793890560,
       "episode": 6,
       "scheduleId": 421728,
-      "description_es": "Koyuki, la chica aislada; Miki, el antiguo ídolo escolar; Minato, el tipo sin concepto de espacio personal; y Youta, el amable jugador de baloncesto. Clumsy, frustrante, pero profundamente apasionante — este drama que se acerca a la edad de los corazones cruzados avanza. A medida que se acercan, Koyuki y Minato comienzan a desarrollar sentimientos entre sí que van más allá de la mera amistad. Mientras tanto, Youta finalmente confiesa a Miki los sentimientos por los que ha albergado"
+      "description_es": "Koyuki, la chica aislada; Miki, el antiguo ídolo escolar; Minato, el tipo sin concepto de espacio personal; y Youta, el amable jugador de baloncesto. Clumsy, frustrante, pero profundamente entrañable — este drama conjunto de la venida de la edad de los corazones cruzados marcha hacia adelante. A medida que crecen más cerca, Koyuki y Minato comienzan a desarrollar sentimientos entre sí que van más allá de la mera amistad. Mientras tanto, Youta finalmente confiesa a Miki los sentimientos que ha albergado durante años. Algunos hablan sus corazones mientras que otros mantienen sus emociones ocultas, causando sus caminos —y sus sentimientos por los demás— a crus continuamente"
     },
     {
       "id": "mal-59217",
@@ -5366,7 +5298,8 @@
       },
       "airingAt": 1793890800,
       "episode": 1,
-      "scheduleId": 417294
+      "scheduleId": 417294,
+      "description_es": "Película de antología compuesta por tres segmentos de animación originales: Q1 - ÉLIENS (correo electrónico) La Tierra ha entrado en una era de intercambio intergalático. Elie, una chica alienígena, llega como embajador de buena voluntad espacial. Ama la cultura de la Tierra y su vida cotidiana a menudo absurda, y se ha unido con un funcionario que trabaja en la agencia espacial para buscar \"amigos\". Q2 - Yoroshiku★Shoujo ( partícipe de moda) GALS TOKYO, una ciudad donde la mañana nunca llega. Buenas noches, chicas que han perdido su lugar en realidad, conocidas como \"Gal P\", se reúnen aquí. Su objetivo es convertirse en el guiño"
     },
     {
       "id": "mal-62615",
@@ -5515,7 +5448,7 @@
       "startDate": "2026-10-09",
       "format": "TV",
       "episodes": 0,
-      "averageScore": 66,
+      "averageScore": 67,
       "status": "RELEASING",
       "genres": [
         "Action",
@@ -5602,7 +5535,108 @@
       },
       "airingAt": 1793930400,
       "episode": 1,
-      "scheduleId": 421825
+      "scheduleId": 421825,
+      "description_es": "Yuuma Ashihara de sexto grado y su hermana gemela, Sawa, están jugando Actual Magic, una nueva realidad virtual MMORPG, cuando de repente comienza a fusionarse con el mundo real. En medio de todo el caos y la confusión, se hace evidente que la muerte está acechando alrededor de cada esquina, incluso cuando Yuuma entra en su compañero de clase Sumika. Antes, ella era una de las chicas más lindas de su clase, pero desde entonces ha sufrido una terrible metamorfosis, ¡en uno de los monstruos horrorosos del juego! Del autor de Sword Art Online y Accel World viene una historia más allá de VR y AR, donde el juego y la realidad son uno y el mismo...y s"
+    },
+    {
+      "id": "al-206244",
+      "mal_id": null,
+      "ani_id": 206244,
+      "title": "Luo Xiaohei Zhan Ji: Xue Qian Pian",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx206244-ke6bcfsL40qY.jpg",
+      "banner": "",
+      "description": "The third season of Luo Xiaohei Zhan Ji .",
+      "year": 2026,
+      "startDate": "2026-10-30",
+      "format": "ONA",
+      "episodes": 6,
+      "averageScore": 0,
+      "status": "NOT_YET_RELEASED",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Comedy",
+        "Supernatural"
+      ],
+      "siteUrl": "https://anilist.co/anime/206244",
+      "streaming": [],
+      "trailer": null,
+      "next": {
+        "at": 1793332800,
+        "episode": 1
+      },
+      "airingAt": 1793937600,
+      "episode": 2,
+      "scheduleId": 421373,
+      "description_es": "La tercera temporada de Luo Xiaohei Zhan Ji."
+    },
+    {
+      "id": "mal-61469",
+      "mal_id": 61469,
+      "ani_id": 210482,
+      "title": "STEEL BALL RUN JoJo's Bizarre Adventure 2nd - 3rd STAGE",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx210482-P1VNKbqdJ6Zj.jpg",
+      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/210482-pYAD0IbzNbgS.jpg",
+      "description": "In the 2nd STAGE, a desert crossing spanning roughly 750 miles- the land that Johnny Joestar and Gyro Zeppeli must challenge, is home to the area that is feared as the \"Devil's Palm.\" In 1875, a threat lurking in said desert wiped out a cavalry of 26 people, eliciting fear from the local native people. As ominous incidents begin to unfold, they are forced to realize that this race is far more than a mere competition. The two press forward, where countless hidden motives collide.. (Source: Warner Bros. Japan Anime, Netflix Anime, edited)",
+      "year": 2026,
+      "startDate": "2026-09-25",
+      "format": "ONA",
+      "episodes": 11,
+      "averageScore": 86,
+      "status": "RELEASING",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Drama",
+        "Mystery",
+        "Supernatural"
+      ],
+      "siteUrl": "https://anilist.co/anime/210482",
+      "streaming": [],
+      "trailer": {
+        "site": "youtube",
+        "id": "jXtG_lcR9P4"
+      },
+      "next": {
+        "at": 1793347200,
+        "episode": 6
+      },
+      "airingAt": 1793952000,
+      "episode": 7,
+      "scheduleId": 420970,
+      "description_es": "En la 2a ETAPA, un cruce desértico que recorre aproximadamente 750 millas- la tierra que Johnny Joestar y Gyro Zeppeli deben desafiar, es el hogar de la zona que se teme como la palma del Diablo. En 1875, una amenaza que acechaba en dicho desierto borró una caballería de 26 personas, provocando temor de los nativos locales. A medida que los incidentes ominosos comienzan a desarrollarse, se ven obligados a darse cuenta de que esta carrera es mucho más que una mera competencia. Las dos prensas hacia adelante, donde"
+    },
+    {
+      "id": "mal-62039",
+      "mal_id": 62039,
+      "ani_id": 194207,
+      "title": "Pan Dorobou",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx194207-7n4M6jOwLdcF.jpg",
+      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/194207-6yQitDZ3uOi5.jpg",
+      "description": "Kadokawa announced on June 9th, 2025 that Keiko Shibata's Pan Dorobou (Bread Thief) picture book will have an anime adaptation. The announcement did not reveal the anime's format. The picture books center on a piece of bread that also steals bread from bakeries in the city. (Source: Anime News Network)",
+      "year": 2026,
+      "startDate": "2026-10-02",
+      "format": "TV_SHORT",
+      "episodes": 0,
+      "averageScore": 0,
+      "status": "RELEASING",
+      "genres": [
+        "Comedy"
+      ],
+      "siteUrl": "https://anilist.co/anime/194207",
+      "streaming": [],
+      "trailer": {
+        "site": "youtube",
+        "id": "dUSYa-7rKpM"
+      },
+      "next": {
+        "at": 1793353200,
+        "episode": 5
+      },
+      "airingAt": 1793958000,
+      "episode": 6,
+      "scheduleId": 420233,
+      "description_es": "Kadokawa anunció el 9 de junio de 2025 que el libro de fotos Pan Dorobou (Bread Thief) de Keiko Shibata tendrá una adaptación de anime. El anuncio no reveló el formato del anime. Los libros de fotos se centran en un pedazo de pan que también roba pan de panaderías en la ciudad. (Fuente: Anime News Network)"
     }
   ],
   "seasonal": {
@@ -5905,7 +5939,7 @@
           "at": 1793285760,
           "episode": 5
         },
-        "description_es": "Koyuki, la chica aislada; Miki, el antiguo ídolo escolar; Minato, el tipo sin concepto de espacio personal; y Youta, el amable jugador de baloncesto. Clumsy, frustrante, pero profundamente apasionante — este drama que se acerca a la edad de los corazones cruzados avanza. A medida que se acercan, Koyuki y Minato comienzan a desarrollar sentimientos entre sí que van más allá de la mera amistad. Mientras tanto, Youta finalmente confiesa a Miki los sentimientos por los que ha albergado"
+        "description_es": "Koyuki, la chica aislada; Miki, el antiguo ídolo escolar; Minato, el tipo sin concepto de espacio personal; y Youta, el amable jugador de baloncesto. Clumsy, frustrante, pero profundamente entrañable — este drama conjunto de la venida de la edad de los corazones cruzados marcha hacia adelante. A medida que crecen más cerca, Koyuki y Minato comienzan a desarrollar sentimientos entre sí que van más allá de la mera amistad. Mientras tanto, Youta finalmente confiesa a Miki los sentimientos que ha albergado durante años. Algunos hablan sus corazones mientras que otros mantienen sus emociones ocultas, causando sus caminos —y sus sentimientos por los demás— a crus continuamente"
       },
       {
         "id": "mal-63337",
@@ -5954,7 +5988,7 @@
         "startDate": "2026-10-01",
         "format": "TV",
         "episodes": 0,
-        "averageScore": 57,
+        "averageScore": 58,
         "status": "RELEASING",
         "genres": [
           "Action",
@@ -6356,7 +6390,7 @@
           "at": 1793448000,
           "episode": 5
         },
-        "description_es": "Romelia y su partido tienen éxito en derrotar al Rey demonio Zelgis, aunque la carga imprudente del príncipe Henri los obliga a una batalla agotadora. Después, Romelia se marca \"peso muerto\" por no luchar directamente, y el Príncipe unilateralmente rompe su compromiso. Denegado un lugar en las celebraciones de la victoria, Romelia vuelve a casa, sólo para ser conocido con indiferencia fría de su familia y sociedad. Sin embargo, se niega a romper. Ella ya tiene"
+        "description_es": "Romelia y su partido tienen éxito en derrotar al Rey demonio Zelgis, aunque la carga imprudente del príncipe Henri los obliga a una batalla agotadora. Después, Romelia se marca \"peso muerto\" por no luchar directamente, y el Príncipe unilateralmente rompe su compromiso. Denegado un lugar en las celebraciones de la victoria, Romelia vuelve a casa, sólo para ser conocido con indiferencia fría de su familia y sociedad. Sin embargo, se niega a romper. Ella ya ha puesto sus ojos en el camino que está por delante. (Fuente: Crunchyroll) Nota: Romelia War Chronicle fue transmitido 2 días antes de la emisión de televisión en A"
       },
       {
         "id": "mal-62524",
@@ -6744,7 +6778,7 @@
           "at": 1793464200,
           "episode": 5
         },
-        "description_es": "Si hay una cosa que nunca puedes tener suficiente en un mundo de espadas y brujería estilo RPG, ¡es puntos mágicos! Si estás alimentando hechizos, técnicas o mostrando una habilidad increíble, tienes que gastar esos puntos para hacer daño real. ¿Y si te escapas? La Cuaresma es parte de la fiesta de llegada conocida como los \"Skypiercers\", y gracias a su regalo único, puede prestar enormes cantidades de magia a otros. ¿Sin MP? ¡No hay problema con la Cuaresma! Excepto ahora que sus compañeros se han convertido en héroes formidables (gracias a su habilidad), su utilidad es cuestionada. Salió del grupo, la Cuaresma es"
+        "description_es": "Si hay una cosa que nunca puedes tener suficiente en un mundo de espadas y brujería estilo RPG, ¡es puntos mágicos! Si estás alimentando hechizos, técnicas o mostrando una habilidad increíble, tienes que gastar esos puntos para hacer daño real. ¿Y si te escapas? La Cuaresma es parte de la fiesta de llegada conocida como los \"Skypiercers\", y gracias a su regalo único, puede prestar enormes cantidades de magia a otros. ¿Sin MP? No hay problema con Lent arou"
       },
       {
         "id": "mal-63801",
@@ -6811,7 +6845,7 @@
           "at": 1793543400,
           "episode": 5
         },
-        "description_es": "Renací como una hija villana en un juego de harem otome inverso. Después de enfermarse con fiebre alta a los 10 años, Pia Rockwell de repente recordó su vida pasada como estudiante universitaria en Japón. Pero lejos de ir por la ruta villanosa, todo lo que esta chica súper tímida quiere es finalmente utilizar su conocimiento de cuando era una estudiante de posgrado que estudiaba para obtener su doctorado en paleontología. Su objetivo final es llegar a ser más común, excavar fos"
+        "description_es": "Renací como una hija villana en un juego de harem otome inverso. Después de enfermarse con fiebre alta a los 10 años, Pia Rockwell de repente recordó su vida pasada como estudiante universitaria en Japón. Pero lejos de ir por la ruta del villano, todo lo que esta chica súper tímida quiere es finalmente utilizar su conocimiento de cuando era una estudiante de posgrado que estudiaba para obtener su doctorado en paleontología. Su objetivo final es convertirse en un común, excavar fósiles, construir un museo y luego convertirse en un curador. Así que para escapar de la ruta del villano y evitar ser deportado por su prometido durante la graduación"
       },
       {
         "id": "mal-63751",
@@ -6890,7 +6924,7 @@
         "startDate": "2026-10-04",
         "format": "TV",
         "episodes": 13,
-        "averageScore": 61,
+        "averageScore": 62,
         "status": "RELEASING",
         "genres": [
           "Action",
@@ -7232,7 +7266,7 @@
         "startDate": "2026-10-05",
         "format": "TV_SHORT",
         "episodes": 8,
-        "averageScore": 52,
+        "averageScore": 51,
         "status": "RELEASING",
         "genres": [
           "Ecchi",
@@ -7430,7 +7464,7 @@
           "at": 1793708760,
           "episode": 5
         },
-        "description_es": "Un gran héroe está invicto en su lecho de muerte, lamentando que nunca haya encontrado a un enemigo que pudiera derribarla. Ella nunca quiso encontrar su destino en otro lugar que en el campo de batalla, y su pacífica desaparición tiene su deseo desesperadamente de que las cosas podrían haber sido diferentes... Pero cuando de repente viene al cuerpo de la joven y frágil Nia Liston, tiene una nueva lucha por delante de ella. Nia es una niña enferma, lo que significa que tiene un largo camino para ir antes de que esté en forma de lucha. Ahora que se le ha dado un segundo tiro a la vida, sin embargo, está decidida a conseguir lo que quiere. Va a vivir."
+        "description_es": "Un gran héroe está invicto en su lecho de muerte, lamentando que nunca haya encontrado a un enemigo que pudiera derribarla. Nunca quiso encontrar su destino en otro lugar que en el campo de batalla, y su pacífica desaparición tiene su deseo desesperadamente de que las cosas podrían haber sido diferentes... Pero cuando de repente viene al cuerpo de la joven y frágil Nia Liston, tiene una nueva lucha por delante de ella. Nia es una niña enferma, lo que significa que tiene un largo camino por recorrer"
       },
       {
         "id": "mal-63754",
@@ -7465,7 +7499,7 @@
           "at": 1793710800,
           "episode": 5
         },
-        "description_es": "Sato-san es la flor inalcanzable de la clase. Siempre tiene frío y rito con compañeros de clase, pero sólo sé que es muy linda cuando sonríe, incluso si no es mucho fotógrafo. Oshio-kun es amistoso y animado, pero sólo sé que trabaja en el café de su familia después de la escuela. Hace un gran trabajo con la cuenta SNS de la cafetería, y su mala sonrisa hace que mi corazón salte un latido! Inocentes y dulces, pero a veces frustrantes, esta es una historia de 120% pura y fluida sobre dos personas que se enamoran por primera vez."
+        "description_es": "Sato-san es la flor inalcanzable de la clase. Ella siempre tiene frío y curtimiento con compañeros de clase, pero sólo sé que es muy linda cuando sonríe, incluso si no es mucho de fotógrafo. Oshio-kun es amistoso y animado, pero sólo sé que trabaja en el café de su familia después de la escuela. Hace un gran trabajo con la cuenta SNS de la cafetería, y su mala sonrisa hace que mi corazón se salte un latido! Innocente y dulce, pero a veces frustrante, esto es un"
       },
       {
         "id": "mal-54344",
@@ -7895,7 +7929,7 @@
         "startDate": "2026-10-09",
         "format": "TV",
         "episodes": 0,
-        "averageScore": 66,
+        "averageScore": 67,
         "status": "RELEASING",
         "genres": [
           "Action",
@@ -8162,7 +8196,7 @@
           "at": 1793542560,
           "episode": 4
         },
-        "description_es": "Han pasado varios años desde la feroz batalla contra Majin Buu, y la Tierra finalmente ha recuperado un breve momento de paz. Al mismo tiempo, Beerus, el Dios de la Destrucción, despierta de su sueño largo y profundo. Incluso Kai y el Supremo Kai, consciente del abrumador poder de Beerus para destruir planetas enteros, ver su despertar con gran miedo... Mientras tanto, Beerus escucha rumores de un Saiyan que venció a Frieza y de repente aparece ante Goku. Meta de cerveza"
+        "description_es": "Han pasado varios años desde la feroz batalla contra Majin Buu, y la Tierra finalmente ha recuperado un breve momento de paz. Al mismo tiempo, Beerus, el Dios de la Destrucción, despierta de su sueño largo y profundo. Incluso Kai y el Supremo Kai, consciente del abrumador poder de Beerus para destruir planetas enteros, ver su despertar con gran miedo... Mientras tanto, Beerus escucha rumores de un Saiyan que venció a Frieza y de repente aparece ante Goku. Atacada por Beerus, el ser más fuerte del universo, la Tierra está en grave peligro. Así comienza una batalla cósmica que rompe la tierra entre el Dios de la Destrucción y Go"
       },
       {
         "id": "mal-63292",
