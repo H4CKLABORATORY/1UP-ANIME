@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "engine": "ONEUP SELF HEALING ENGINE",
-  "updatedAt": "2026-10-28T10:04:54.370Z",
+  "updatedAt": "2026-10-28T14:13:01.861Z",
   "site": "https://h4cklaboratory.github.io/1UP-ANIME/",
   "mode": "local_y_publico",
   "verdict": "correcto",
@@ -10,7 +10,7 @@
   "warnings": 0,
   "persistentAlerts": [],
   "requiresManualAction": true,
-  "lastKnownGoodCommit": "0652c1cc575bedf4c41be9faf192ad1c9790a41d",
+  "lastKnownGoodCommit": "7d1f938f5f43b4abd082de05f596c1af4e9a2e1c",
   "checks": [
     {
       "id": "file:index.html",
@@ -106,7 +106,7 @@
       "id": "file:data/dexter/records.json",
       "level": "ok",
       "message": "Validado: Archivo requerido data/dexter/records.json",
-      "bytes": 325941
+      "bytes": 329110
     },
     {
       "id": "file:config/dexter-providers.json",
@@ -187,7 +187,7 @@
       "id": "catalog:freshness",
       "level": "ok",
       "message": "Catálogo actualizado",
-      "ageHours": 1
+      "ageHours": 5.1
     },
     {
       "id": "airing:entries",
@@ -204,7 +204,7 @@
       "id": "airing:freshness",
       "level": "ok",
       "message": "Calendario con fecha reciente",
-      "ageHours": 0.2
+      "ageHours": 4.4
     },
     {
       "id": "spanish:pack",
@@ -217,7 +217,7 @@
       "level": "ok",
       "message": "Validado: Registros del motor existentes",
       "anime": 130,
-      "episodes": 394,
+      "episodes": 397,
       "playbackSources": 0
     },
     {
@@ -249,7 +249,7 @@
       "id": "engine:freshness",
       "level": "ok",
       "message": "Sincronización reciente",
-      "ageHours": 0.8,
+      "ageHours": 2.1,
       "status": "correcta"
     },
     {
