@@ -1,17 +1,17 @@
 {
   "schemaVersion": 1,
   "engine": "DexterAnimeSync",
-  "updatedAt": "2026-10-28T03:12:19.379Z",
+  "updatedAt": "2026-10-28T06:08:43.211Z",
   "job": {
-    "id": "sync-52bfa2e17d2857ae",
-    "startedAt": "2026-10-28T03:12:19.379Z",
-    "completedAt": "2026-10-28T03:12:19.379Z",
+    "id": "sync-a7e7fd6fc49fe19e",
+    "startedAt": "2026-10-28T06:08:43.211Z",
+    "completedAt": "2026-10-28T06:08:43.211Z",
     "mode": "programada",
     "status": "correcta",
     "counters": {
-      "animes": 0,
-      "episodesDetected": 0,
-      "episodesNew": 0,
+      "animes": 1,
+      "episodesDetected": 161,
+      "episodesNew": 2,
       "playbackSources": 0,
       "errors": 0
     }
@@ -25,10 +25,10 @@
       "sourceType": "metadata",
       "intervalHours": 6,
       "lastRunAt": "2026-10-27T23:56:26.547Z",
-      "runAt": null,
-      "state": "en_espera",
-      "observed": 0,
-      "created": 0,
+      "runAt": "2026-10-28T06:08:43.211Z",
+      "state": "conectada",
+      "observed": 161,
+      "created": 2,
       "playback": 0,
       "error": null
     },
@@ -39,14 +39,13 @@
       "enabled": true,
       "sourceType": "playback",
       "intervalHours": 3,
-      "lastRunAt": "2026-10-27T21:01:42.002Z",
-      "runAt": "2026-10-28T03:12:19.379Z",
-      "state": "sin_contenido_autorizado",
+      "lastRunAt": "2026-10-28T03:12:19.379Z",
+      "runAt": null,
+      "state": "en_espera",
       "observed": 0,
       "created": 0,
       "playback": 0,
-      "error": null,
-      "rejected": 0
+      "error": null
     },
     {
       "id": "jkanime_external",
@@ -71,9 +70,9 @@
       "sourceType": "embed",
       "intervalHours": 6,
       "lastRunAt": "2026-10-27T23:56:26.547Z",
-      "runAt": null,
-      "state": "en_espera",
-      "observed": 0,
+      "runAt": "2026-10-28T06:08:43.211Z",
+      "state": "conectada",
+      "observed": 94,
       "created": 0,
       "playback": 0,
       "error": null
@@ -108,9 +107,9 @@
   "errors": [],
   "historySize": 60,
   "records": {
-    "anime": 129,
+    "anime": 130,
     "seasons": 1,
-    "episodes": 392,
+    "episodes": 394,
     "sources": 0
   }
 }
