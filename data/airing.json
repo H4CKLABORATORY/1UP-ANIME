@@ -1,75 +1,9 @@
 {
-  "updated": "2026-10-28T21:41:18.650Z",
+  "updated": "2026-10-29T03:47:10.203Z",
   "source": "AniList public GraphQL metadata",
-  "windowStart": 1793025666,
-  "windowEnd": 1794001266,
+  "windowStart": 1793047618,
+  "windowEnd": 1794023218,
   "airing": [
-    {
-      "id": "mal-60636",
-      "mal_id": 60636,
-      "ani_id": 185874,
-      "title": "BLEACH: Thousand-Year Blood War - The Calamity",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx185874-aU3e6tBT6wwA.jpg",
-      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/185874-IdGyh1EBG91I.jpg",
-      "description": "Destruction looms at the end of the Thousand-Year Blood War between the Soul Reapers and Quincies… as the death of the Soul King mirrors the collapse of the Three Worlds, distortions and omens of destruction start to appear in all realms. Fierce battles erupt throughout the Wahr Welt between the Thirteen Court Guard Squads and the Royal Guard. Ichigo learns about Uryuu's true intentions and renews his determination to protect the world together, as friends who trust each other. Yhwach has surpassed even his own ability, The Almighty... The fierce battle for the survival of the Three Worlds approaches its end. Beyond the chaos of calamity, what lies in wait—despair or hope? (Source: VIZ Media, edited)",
-      "year": 2026,
-      "startDate": "2026-07-25",
-      "format": "TV",
-      "episodes": 10,
-      "averageScore": 89,
-      "status": "FINISHED",
-      "genres": [
-        "Action",
-        "Adventure",
-        "Supernatural"
-      ],
-      "siteUrl": "https://anilist.co/anime/185874",
-      "streaming": [],
-      "trailer": {
-        "site": "youtube",
-        "id": "IJONbpfIlUg"
-      },
-      "next": null,
-      "airingAt": 1793026800,
-      "episode": 10,
-      "scheduleId": 422730,
-      "description_es": "La destrucción se desploma al final de la Guerra de la Sangre Mil Años entre los Reapers del Alma y las Quincias... mientras la muerte del Rey del Alma refleja el colapso de los Tres Mundos, las distorsiones y los presagios de destrucción comienzan a aparecer en todos los reinos. Quince batallas surgieron a lo largo de la Wahr Welt entre los 13 escuadrones de la Guardia de la Corte y la Guardia Real. Ichigo aprende sobre las verdaderas intenciones de Uryuu y renueva su determinación de proteger el mundo juntos"
-    },
-    {
-      "id": "mal-54344",
-      "mal_id": 54344,
-      "ani_id": 160803,
-      "title": "MAGICAL GIRL RAISING PROJECT restart",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx160803-Rcr3IvhE7q9c.png",
-      "banner": "",
-      "description": "Some magical girls fight. Others do not. Chosen by the mysterious Land of Magic, which exists unbeknownst to the rest of the world, magical girls are each granted a unique power. Pechka, whose magic makes food delicious, is forced to take part in a mysterious virtual game together with 16 unfamiliar magical girls, each with her own distinctive personality. It was supposed to be a safe training exercise designed to improve their magical abilities. But instead, it marks the beginning of a carefully orchestrated nightmare - a forbidden trial. A new Magical Girl Raising Project has begun. (Source: OceanVeil)",
-      "year": 2026,
-      "startDate": "2026-10-06",
-      "format": "TV",
-      "episodes": 0,
-      "averageScore": 62,
-      "status": "RELEASING",
-      "genres": [
-        "Action",
-        "Fantasy",
-        "Mahou Shoujo",
-        "Thriller"
-      ],
-      "siteUrl": "https://anilist.co/anime/160803",
-      "streaming": [],
-      "trailer": {
-        "site": "youtube",
-        "id": "34ubb-j0kbI"
-      },
-      "next": {
-        "at": 1793638800,
-        "episode": 5
-      },
-      "airingAt": 1793034000,
-      "episode": 4,
-      "scheduleId": 418905,
-      "description_es": "Algunas chicas mágicas pelean. Otros no. Elegido por la misteriosa Tierra de la Magia, que existe poco conocida por el resto del mundo, las chicas mágicas cada una tienen un poder único. Pechka, cuya magia hace deliciosa la comida, se ve obligada a participar en un misterioso juego virtual junto con 16 chicas mágicas desconocidas, cada una con su propia personalidad distintiva. Se suponía que era un ejercicio de entrenamiento seguro diseñado para mejorar sus habilidades mágicas. Pero en cambio, marca el comienzo de una pesadilla cuidadosamente orquestada - un juicio prohibido. Ha comenzado un nuevo proyecto de Raising Girl Magical. (Fuente:"
-    },
     {
       "id": "al-155723",
       "mal_id": null,
@@ -5847,6 +5781,270 @@
       "episode": 6,
       "scheduleId": 418626,
       "description_es": "Secuela de los Revengers de Tokio: Tenjiku-hen."
+    },
+    {
+      "id": "mal-64718",
+      "mal_id": 64718,
+      "ani_id": 214703,
+      "title": "Ghost Meets Gal!",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx214703-iXoaVH6UkiZd.png",
+      "banner": "",
+      "description": "",
+      "year": 2026,
+      "startDate": "2026-09-05",
+      "format": "TV_SHORT",
+      "episodes": 0,
+      "averageScore": 57,
+      "status": "RELEASING",
+      "genres": [
+        "Comedy",
+        "Fantasy"
+      ],
+      "siteUrl": "https://anilist.co/anime/214703",
+      "streaming": [],
+      "trailer": {
+        "site": "youtube",
+        "id": "n0na0hTpl1E"
+      },
+      "next": {
+        "at": 1793401200,
+        "episode": 9
+      },
+      "airingAt": 1794006000,
+      "episode": 10,
+      "scheduleId": 419760
+    },
+    {
+      "id": "mal-64210",
+      "mal_id": 64210,
+      "ani_id": 212308,
+      "title": "Pan no Akachan (TV)",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx212308-HUdh20Djd7cm.jpg",
+      "banner": "",
+      "description": "",
+      "year": 2026,
+      "startDate": "2026-07-04",
+      "format": "TV_SHORT",
+      "episodes": 0,
+      "averageScore": 0,
+      "status": "RELEASING",
+      "genres": [
+        "Comedy"
+      ],
+      "siteUrl": "https://anilist.co/anime/212308",
+      "streaming": [],
+      "trailer": {
+        "site": "youtube",
+        "id": "NGwgoL0TvI8"
+      },
+      "next": {
+        "at": 1793403000,
+        "episode": 18
+      },
+      "airingAt": 1794007800,
+      "episode": 19,
+      "scheduleId": 420280
+    },
+    {
+      "id": "mal-60153",
+      "mal_id": 60153,
+      "ani_id": 183231,
+      "title": "RILAKKUMA",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b183231-z7SgjmXZBcoX.png",
+      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/183231-JFjTqQe3rPCw.jpg",
+      "description": "Everyday life gets a cozy twist with the laid-back Rilakkuma. Gentle moments of friendship, change, and small joys unfold, turning ordinary moments into something quietly magical—one soft, comforting day at a time. It's a moment that will make your heart feel lighter and lighter. No matter where you are or what you're doing, Rilakkuma will be by your side. An exciting new story begins! Experience the stress-free world of Rilakkuma, the relaxed bear who makes being lazy look effortless! (Source: Crunchyroll, Rilakkuma Anime Site, translated)",
+      "year": 2026,
+      "startDate": "2026-04-04",
+      "format": "TV_SHORT",
+      "episodes": 0,
+      "averageScore": 64,
+      "status": "RELEASING",
+      "genres": [
+        "Fantasy",
+        "Slice of Life"
+      ],
+      "siteUrl": "https://anilist.co/anime/183231",
+      "streaming": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00374493/rilakkuma"
+        }
+      ],
+      "trailer": {
+        "site": "youtube",
+        "id": "rV-fcFL5vtU"
+      },
+      "next": {
+        "at": 1793406360,
+        "episode": 30
+      },
+      "airingAt": 1794011160,
+      "episode": 31,
+      "scheduleId": 421155,
+      "description_es": "Cada día la vida recibe un toque acogedor con el relajado Rilakkuma. Los momentos suaves de amistad, cambio y las pequeñas alegrías se desarrollan, convirtiendo los momentos ordinarios en algo silenciosamente mágico — un día suave y reconfortante a la vez. Es un momento que hará que su corazón se sienta más ligero y más ligero. No importa dónde estés o lo que estés haciendo, Rilakkuma estará a tu lado. ¡Una nueva historia emocionante comienza! ¡Experimente el mundo libre de estrés de Rilakkuma, el oso relajado que hace ser perezoso sin esfuerzo! (Fuente: Crunchyroll, Rilakkuma Anime Site, traducido)"
+    },
+    {
+      "id": "mal-64789",
+      "mal_id": 64789,
+      "ani_id": 214968,
+      "title": "Nezumi-kun no Chokki (TV) 2nd Season",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx214968-rrPSP2nKF40C.jpg",
+      "banner": "",
+      "description": "Second season of Nezumi-kun no Chokki (TV)",
+      "year": 2026,
+      "startDate": "2026-10-03",
+      "format": "TV_SHORT",
+      "episodes": 0,
+      "averageScore": 0,
+      "status": "RELEASING",
+      "genres": [
+        "Fantasy"
+      ],
+      "siteUrl": "https://anilist.co/anime/214968",
+      "streaming": [],
+      "trailer": null,
+      "next": {
+        "at": 1793406600,
+        "episode": 5
+      },
+      "airingAt": 1794011400,
+      "episode": 6,
+      "scheduleId": 418614,
+      "description_es": "Segunda temporada de Nezumi-kun no Chokki (TV)"
+    },
+    {
+      "id": "mal-63157",
+      "mal_id": 63157,
+      "ani_id": 216557,
+      "title": "KERORO☆",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx216557-b72dAqbVEDO7.jpg",
+      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/216557-FdbwnWM2oskW.jpg",
+      "description": "Sergeant Keroro comes to conquer Earth, only to get captured and stuck living with the Hinata family! (Source: Crunchyroll)",
+      "year": 2026,
+      "startDate": "2026-10-03",
+      "format": "TV",
+      "episodes": 0,
+      "averageScore": 60,
+      "status": "RELEASING",
+      "genres": [
+        "Comedy",
+        "Sci-Fi"
+      ],
+      "siteUrl": "https://anilist.co/anime/216557",
+      "streaming": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00383995/"
+        }
+      ],
+      "trailer": {
+        "site": "youtube",
+        "id": "iMyre5xXDzE"
+      },
+      "next": {
+        "at": 1793406600,
+        "episode": 5
+      },
+      "airingAt": 1794011400,
+      "episode": 6,
+      "scheduleId": 419530,
+      "description_es": "¡El sargento Keroro viene a conquistar la Tierra, sólo para ser capturado y atrapado viviendo con la familia Hinata! (Fuente: Crunchyroll)"
+    },
+    {
+      "id": "mal-61619",
+      "mal_id": 61619,
+      "ani_id": 214260,
+      "title": "A Good Day to Ascend",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx214260-m2fg5OwduwSt.jpg",
+      "banner": "",
+      "description": "In the chaotic times, demons and monsters roam freely, and treacherous officials are in power. With the invasion of the Netherworld, both humans and Netherworld beings wreak havoc on the mortal world, and the wild gods who work for the Netherworld bully the common people. Enraged, Xu Ying, a snake-catcher, rebels and commits the sin of killing a god, and also takes out an incompetent court official. Hunted down by the two realms, his fleeing begins... (Source: iQ)",
+      "year": 2026,
+      "startDate": "2026-07-18",
+      "format": "ONA",
+      "episodes": 30,
+      "averageScore": 0,
+      "status": "RELEASING",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Fantasy"
+      ],
+      "siteUrl": "https://anilist.co/anime/214260",
+      "streaming": [],
+      "trailer": null,
+      "next": {
+        "at": 1793408400,
+        "episode": 18
+      },
+      "airingAt": 1794013200,
+      "episode": 19,
+      "scheduleId": 417668,
+      "description_es": "En los tiempos caóticos, demonios y monstruos andan libremente, y funcionarios traicioneros están en el poder. Con la invasión del Netherworld, los seres humanos y el Netherworld causaron estragos en el mundo mortal, y los dioses salvajes que trabajan para el Netherworld intimidan al pueblo común. Enfurecido, Xu Ying, un cazador de serpientes, rebelde y comete el pecado de matar a un dios, y también saca a un funcionario de la corte incompetente. Cazado por los dos reinos, su huida comienza... (Fuente: iQ)"
+    },
+    {
+      "id": "mal-51836",
+      "mal_id": 51836,
+      "ani_id": 137683,
+      "title": "Soul Land 2: The Peerless Tang Clan",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx137683-IMuvIECdZNBh.png",
+      "banner": "",
+      "description": "The Tang Sect in a turbulent world. There is nothing but martial spirit here. Ten thousand years after the founding of the Tang Sect, it is in relative decline. An extremely talented man was born. Can the new Shrek Seven Monsters revive the Tang Sect and bring it back to glory? A soul beast of over one million years old; Electrolux who can pick stars; The new soul utensil system that led to the decline of the Tang Sect... A lot of secrets are to be revealed. Can the secret weapons of the Tang Sect be sharp again? Can the Tang Sect regain its former glory? (Source: WeTV)",
+      "year": 2023,
+      "startDate": "2023-06-24",
+      "format": "ONA",
+      "episodes": 182,
+      "averageScore": 77,
+      "status": "RELEASING",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Fantasy",
+        "Romance"
+      ],
+      "siteUrl": "https://anilist.co/anime/137683",
+      "streaming": [],
+      "trailer": null,
+      "next": {
+        "at": 1793412000,
+        "episode": 177
+      },
+      "airingAt": 1794016800,
+      "episode": 178,
+      "scheduleId": 414714,
+      "description_es": "El Tang Sect en un mundo turbulento. Aquí no hay nada más que espíritu marcial. Diez mil años después de la fundación del Tang Sect, está en declive relativo. Nació un hombre extremadamente talentoso. ¿Pueden los nuevos Monstruos Shrek revivir el Tang Sect y traerlo de vuelta a la gloria? Una bestia de alma de más de un millón de años; Electrolux que puede elegir estrellas; El nuevo sistema de utensilios de alma que llevó al declive del Tang Sect... Hay que revelar muchos secretos. ¿Pueden volver a afilarse las armas secretas del Tang Sect? ¿Puede el Tang Sect recuperar su antigua gloria? (Fuente: WeTV)"
+    },
+    {
+      "id": "mal-60597",
+      "mal_id": 60597,
+      "ani_id": 199353,
+      "title": "Dawang Raoming 3",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx199353-S2jczHjCWHGL.png",
+      "banner": "",
+      "description": "The third season of Dawang Raoming .",
+      "year": 2026,
+      "startDate": "2026-10-03",
+      "format": "ONA",
+      "episodes": 12,
+      "averageScore": 71,
+      "status": "RELEASING",
+      "genres": [
+        "Action",
+        "Fantasy"
+      ],
+      "siteUrl": "https://anilist.co/anime/199353",
+      "streaming": [],
+      "trailer": {
+        "site": "youtube",
+        "id": "xIa7dMUka-8"
+      },
+      "next": {
+        "at": 1793412000,
+        "episode": 7
+      },
+      "airingAt": 1794016800,
+      "episode": 8,
+      "scheduleId": 421876,
+      "description_es": "La tercera temporada de Dawang Raoming."
     }
   ],
   "seasonal": {
