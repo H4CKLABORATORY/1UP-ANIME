@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "engine": "ONEUP SELF HEALING ENGINE",
-  "updatedAt": "2026-10-29T02:08:38.626Z",
+  "updatedAt": "2026-10-29T05:59:00.677Z",
   "site": "https://h4cklaboratory.github.io/1UP-ANIME/",
   "mode": "local_y_publico",
   "verdict": "correcto",
@@ -10,7 +10,7 @@
   "warnings": 0,
   "persistentAlerts": [],
   "requiresManualAction": true,
-  "lastKnownGoodCommit": "09e8ddcefb8156277859d4225fe246f4a3e4bf52",
+  "lastKnownGoodCommit": "70b8d6b5d31245c3e4c054e3483f85a3a8337c6a",
   "checks": [
     {
       "id": "file:index.html",
@@ -94,7 +94,7 @@
       "id": "file:data/airing.json",
       "level": "ok",
       "message": "Validado: Archivo requerido data/airing.json",
-      "bytes": 417062
+      "bytes": 423404
     },
     {
       "id": "file:data/translations-es.json",
@@ -106,7 +106,7 @@
       "id": "file:data/dexter/records.json",
       "level": "ok",
       "message": "Validado: Archivo requerido data/dexter/records.json",
-      "bytes": 333727
+      "bytes": 334320
     },
     {
       "id": "file:config/dexter-providers.json",
@@ -187,13 +187,13 @@
       "id": "catalog:freshness",
       "level": "ok",
       "message": "Catálogo actualizado",
-      "ageHours": 17.1
+      "ageHours": 20.9
     },
     {
       "id": "airing:entries",
       "level": "ok",
       "message": "Validado: El calendario debe tener al menos 15 emisiones",
-      "entries": 168
+      "entries": 174
     },
     {
       "id": "airing:season",
@@ -204,7 +204,7 @@
       "id": "airing:freshness",
       "level": "ok",
       "message": "Calendario con fecha reciente",
-      "ageHours": 4.5
+      "ageHours": 2.2
     },
     {
       "id": "spanish:pack",
@@ -217,7 +217,7 @@
       "level": "ok",
       "message": "Validado: Registros del motor existentes",
       "anime": 130,
-      "episodes": 406,
+      "episodes": 407,
       "playbackSources": 0
     },
     {
@@ -249,7 +249,7 @@
       "id": "engine:freshness",
       "level": "ok",
       "message": "Sincronización reciente",
-      "ageHours": 2.1,
+      "ageHours": 2.8,
       "status": "correcta"
     },
     {
