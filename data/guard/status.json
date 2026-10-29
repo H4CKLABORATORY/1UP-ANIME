@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "engine": "ONEUP SELF HEALING ENGINE",
-  "updatedAt": "2026-10-28T21:56:23.262Z",
+  "updatedAt": "2026-10-29T02:08:38.626Z",
   "site": "https://h4cklaboratory.github.io/1UP-ANIME/",
   "mode": "local_y_publico",
   "verdict": "correcto",
@@ -10,7 +10,7 @@
   "warnings": 0,
   "persistentAlerts": [],
   "requiresManualAction": true,
-  "lastKnownGoodCommit": "3b1882ed380ee601d138cd5c14b5366545b9f79f",
+  "lastKnownGoodCommit": "09e8ddcefb8156277859d4225fe246f4a3e4bf52",
   "checks": [
     {
       "id": "file:index.html",
@@ -187,7 +187,7 @@
       "id": "catalog:freshness",
       "level": "ok",
       "message": "Catálogo actualizado",
-      "ageHours": 12.9
+      "ageHours": 17.1
     },
     {
       "id": "airing:entries",
@@ -204,7 +204,7 @@
       "id": "airing:freshness",
       "level": "ok",
       "message": "Calendario con fecha reciente",
-      "ageHours": 0.3
+      "ageHours": 4.5
     },
     {
       "id": "spanish:pack",
@@ -249,7 +249,7 @@
       "id": "engine:freshness",
       "level": "ok",
       "message": "Sincronización reciente",
-      "ageHours": 0.8,
+      "ageHours": 2.1,
       "status": "correcta"
     },
     {
