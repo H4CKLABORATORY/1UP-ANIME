@@ -22,7 +22,7 @@
 - No confundir el catálogo de Anime1v con episodios reproducibles ni su licencia MIT con derechos de distribución de anime.
 
 ## Estado detectado ahora
-- Último commit de aplicación encontrado: ba14f4e4e6ec1168397a0d85eaee21fb949bb127
+- Último commit de aplicación encontrado: 170fb60c0f9f71e4eba12d6e3c2b7615e8050e6b
 - Descubrimiento Anime1v configurado en frontend: sí, verificar la respuesta real en Render
 - Código runtime de metadatos Anime1v en repositorio: sí
 - Entradas de obras multimedia en data/licensed-media.json: 0
@@ -30,11 +30,11 @@
 - Safari físico: no dar por verificado salvo prueba real con evidencia.
 
 ## Últimos commits relevantes
-- ba14f4e4e — Sync authorized anime episode metadata and source statuses
-- a93cbd024 — ONEUP health snapshot (no application changes)
-- 3b1882ed3 — Update live anime airing calendar
-- cfb0c07cb — Sync authorized anime episode metadata and source statuses
-- 5246aa367 — Sync authorized anime episode metadata and source statuses
+- 170fb60c0 — Sync authorized anime episode metadata and source statuses
+- 7dec18f7d — ONEUP health snapshot (no application changes)
+- 70b8d6b5d — Update live anime airing calendar
+- 4b57f34d2 — Sync authorized anime episode metadata and source statuses
+- 043fb463b — ONEUP health snapshot (no application changes)
 
 ## PR abiertos (consultar cambios antes de desarrollar)
 - [#70](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/70) LU local: memoria de continuidad para Qwen entre chats
