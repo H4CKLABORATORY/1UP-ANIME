@@ -1,228 +1,9 @@
 {
-  "updated": "2026-10-29T15:54:35.597Z",
+  "updated": "2026-10-29T21:42:39.432Z",
   "source": "AniList public GraphQL metadata",
-  "windowStart": 1793091263,
-  "windowEnd": 1794066863,
+  "windowStart": 1793112147,
+  "windowEnd": 1794087747,
   "airing": [
-    {
-      "id": "mal-63382",
-      "mal_id": 63382,
-      "ani_id": 206949,
-      "title": "Nia Liston: The Merciless Maiden",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx206949-4HYI3YuP0eLI.png",
-      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/206949-c5hfhixdgvy5.jpg",
-      "description": "A great hero lies undefeated on her deathbed, regretting that she never found a foe who could take her down. She never intended to meet her fate anywhere other than on the battlefield, and her peaceful demise has her wishing desperately that things could have been different... But when she suddenly comes to in the body of the young, frail Nia Liston, she’s got an all-new fight ahead of her. Nia is a sickly child, meaning she has a long way to go before she’s in fighting form. Now that she’s been given a second shot at life, however, she’s determined to get what she wants. She’s going to live—and die—for battle this time! Make way for the Merciless Maiden! (Source: J-Novel Club)",
-      "year": 2026,
-      "startDate": "2026-10-06",
-      "format": "TV",
-      "episodes": 25,
-      "averageScore": 75,
-      "status": "RELEASING",
-      "genres": [
-        "Action",
-        "Fantasy"
-      ],
-      "siteUrl": "https://anilist.co/anime/206949",
-      "streaming": [],
-      "trailer": {
-        "site": "youtube",
-        "id": "gxG4vntLtbk"
-      },
-      "next": {
-        "at": 1793708760,
-        "episode": 5
-      },
-      "airingAt": 1793103960,
-      "episode": 4,
-      "scheduleId": 417799,
-      "description_es": "Un gran héroe está invicto en su lecho de muerte, lamentando que nunca haya encontrado a un enemigo que pudiera derribarla. Nunca quiso encontrar su destino en otro lugar que en el campo de batalla, y su pacífica desaparición tiene su deseo desesperadamente de que las cosas podrían haber sido diferentes... Pero cuando de repente viene al cuerpo de la joven y frágil Nia Liston, tiene una nueva lucha por delante de ella. Nia es una niña enferma, lo que significa que tiene un largo camino por recorrer"
-    },
-    {
-      "id": "mal-63754",
-      "mal_id": 63754,
-      "ani_id": 209502,
-      "title": "The Cold Sato-san is Only Sweet to Me",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx209502-C81oN8M4Smlo.jpg",
-      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/209502-TATgyznMxQOe.jpg",
-      "description": "Sato-san is the unattainable flower of the class. She is always cold and curt with classmates, but only I know she's actually very cute when she smiles, even if she's not much of a photographer. Oshio-kun is friendly and lively, but only I know he works at his family's cafe after school. He does a great job with the cafe's SNS account, and his mischievous smile makes my heart skip a beat! Innocent and sweet, but sometimes frustrating, this is a 120%-pure fluffy story about two people falling in love for the first time.",
-      "year": 2026,
-      "startDate": "2026-10-06",
-      "format": "TV",
-      "episodes": 12,
-      "averageScore": 69,
-      "status": "RELEASING",
-      "genres": [
-        "Comedy",
-        "Romance"
-      ],
-      "siteUrl": "https://anilist.co/anime/209502",
-      "streaming": [
-        {
-          "name": "Crunchyroll",
-          "url": "https://www.crunchyroll.com/series/GT00384014/the-cold-sato-san-is-only-sweet-to-me"
-        }
-      ],
-      "trailer": {
-        "site": "youtube",
-        "id": "8XgKVzuLmJw"
-      },
-      "next": {
-        "at": 1793710800,
-        "episode": 5
-      },
-      "airingAt": 1793106000,
-      "episode": 4,
-      "scheduleId": 420419,
-      "description_es": "Sato-san es la flor inalcanzable de la clase. Ella siempre tiene frío y curtimiento con compañeros de clase, pero sólo sé que es muy linda cuando sonríe, incluso si no es mucho de fotógrafo. Oshio-kun es amistoso y animado, pero sólo sé que trabaja en el café de su familia después de la escuela. Hace un gran trabajo con la cuenta SNS de la cafetería, y su mala sonrisa hace que mi corazón se salte un latido! Innocente y dulce, pero a veces frustrante, esto es un"
-    },
-    {
-      "id": "mal-62696",
-      "mal_id": 62696,
-      "ani_id": 200294,
-      "title": "Super Psychic Policeman Chojo",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx200294-E6KIgkFaJOfG.jpg",
-      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/200294-PPEwId1xfGNO.jpg",
-      "description": "The ultimate police duo is here to keep the peace! Rookie officer Nao just joined the force. She’s got a black belt in judo and earned the nickname “Gorilla” for her insane strength. Then there’s her partner Chojo, who wields every psychic power imaginable. But for a guy who can read minds, he still can’t seem to read the room. Now, these two are taking on crime together in Chinjuku. (Source: Crunchyroll)",
-      "year": 2026,
-      "startDate": "2026-10-06",
-      "format": "TV",
-      "episodes": 12,
-      "averageScore": 64,
-      "status": "RELEASING",
-      "genres": [
-        "Comedy",
-        "Slice of Life"
-      ],
-      "siteUrl": "https://anilist.co/anime/200294",
-      "streaming": [
-        {
-          "name": "Crunchyroll",
-          "url": "https://www.crunchyroll.com/series/GT00384013/super-psychic-policeman-chojo"
-        }
-      ],
-      "trailer": {
-        "site": "youtube",
-        "id": "rYpXoCdTNQI"
-      },
-      "next": {
-        "at": 1793714400,
-        "episode": 5
-      },
-      "airingAt": 1793109600,
-      "episode": 4,
-      "scheduleId": 418480,
-      "description_es": "¡El último dúo policial está aquí para mantener la paz! El oficial novato Nao acaba de unirse a la fuerza. Tiene un cinturón negro en judo y ganó el apodo \"Gorilla\" por su fuerza loca. Luego está su compañero Chojo, quien controla todo poder psíquico imaginable. Pero para un tipo que puede leer mentes, todavía no puede leer la habitación. Estos dos están cometiendo un crimen juntos en Chinjuku. (Fuente: Crunchyroll)"
-    },
-    {
-      "id": "mal-63818",
-      "mal_id": 63818,
-      "ani_id": 187990,
-      "title": "Battle Spirits [Re] Zekkai No Ku",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx187990-tNyQPmr9TkYi.png",
-      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/187990-iDUZ4BGtmEct.jpg",
-      "description": "Keio 3, Hinomoto, Eito. As the Bakumatsu throws Japan into turmoil, young Kuu Bashin dreams of becoming stronger through Standard Battle Spirits. His world changes when he encounters Ajara Zetsu, a wandering samurai and formidable Eternal Battler pursued by anti-shogunate forces. As the worlds of Standard and Eternal Battle collide, Kuu is pulled into Zetsu’s journey—and sets history in motion. (Source: Crunchyroll)",
-      "year": 2026,
-      "startDate": "2026-10-06",
-      "format": "TV",
-      "episodes": 0,
-      "averageScore": 51,
-      "status": "RELEASING",
-      "genres": [
-        "Action",
-        "Fantasy"
-      ],
-      "siteUrl": "https://anilist.co/anime/187990",
-      "streaming": [
-        {
-          "name": "Crunchyroll",
-          "url": "https://www.crunchyroll.com/series/GT00385703/battle-spirits-re-zekkai-no-ku"
-        }
-      ],
-      "trailer": {
-        "site": "youtube",
-        "id": "cXd4pKTx2pI"
-      },
-      "next": {
-        "at": 1793714400,
-        "episode": 5
-      },
-      "airingAt": 1793109600,
-      "episode": 4,
-      "scheduleId": 418975,
-      "description_es": "Keio 3, Hinomoto, Eito. A medida que el Bakumatsu lanza a Japón en agitación, el joven Kuu Bashin sueña con volverse más fuerte a través de los Espíritus de Batalla Estándar. Su mundo cambia cuando se encuentra con Ajara Zetsu, un samurai errante y formidable Batalla Eterna perseguido por fuerzas antihogunadas. Mientras los mundos de la batalla estándar y eterna chocan, Kuu es llevado al viaje de Zetsu, y pone la historia en movimiento. (Fuente: Crunchyroll)"
-    },
-    {
-      "id": "mal-62484",
-      "mal_id": 62484,
-      "ani_id": 198727,
-      "title": "Chitose Is in the Ramune Bottle 2nd Cour",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx198727-BL0JTpg0G8tq.jpg",
-      "banner": "",
-      "description": "The second part of Chitose-kun wa Ramune Bin no Naka .",
-      "year": 2026,
-      "startDate": "2026-10-13",
-      "format": "TV",
-      "episodes": 11,
-      "averageScore": 77,
-      "status": "RELEASING",
-      "genres": [
-        "Comedy",
-        "Romance"
-      ],
-      "siteUrl": "https://anilist.co/anime/198727",
-      "streaming": [
-        {
-          "name": "Crunchyroll",
-          "url": "https://www.crunchyroll.com/series/GT00364783/chitose-is-in-the-ramune-bottle"
-        }
-      ],
-      "trailer": {
-        "site": "youtube",
-        "id": "8RHh2AyKRfY"
-      },
-      "next": {
-        "at": 1793714400,
-        "episode": 4
-      },
-      "airingAt": 1793109600,
-      "episode": 3,
-      "scheduleId": 422540,
-      "description_es": "La segunda parte de Chitose-kun wa Ramune Bin no Naka."
-    },
-    {
-      "id": "mal-61140",
-      "mal_id": 61140,
-      "ani_id": 187316,
-      "title": "Gensou Suikoden",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx187316-jucYCojVTjSY.jpg",
-      "banner": "",
-      "description": "Two young boys... the hero, Riliu, and his best friend Jowy, were members of a youth brigade of their home nation, the Highland Kingdom - a powerful military nation located in the north-east of the Dunan region. The two of them looked up at the same starry skies, slept in the same tent, and believed in the same future. Once the fighting was over, and the night ended, their daily lives were sure to return. Contrary to their hopes, the two boys become swept up in the whirlpool of fate, guided by the flames of war. The powerless boys reached for, and grasped immense power. As the 108 stars shine brightly in the murky horizon, the boys step forward, each with their own beliefs for an answer-less question. (Source: Official Website, translated) Note: The first episode aired with a runtime of ~50 minutes as opposed to the standard 24 minute long episode.",
-      "year": 2026,
-      "startDate": "2026-10-03",
-      "format": "TV",
-      "episodes": 23,
-      "averageScore": 59,
-      "status": "RELEASING",
-      "genres": [
-        "Action",
-        "Adventure",
-        "Fantasy"
-      ],
-      "siteUrl": "https://anilist.co/anime/187316",
-      "streaming": [],
-      "trailer": {
-        "site": "youtube",
-        "id": "m4T9VcBD0vo"
-      },
-      "next": {
-        "at": 1793716200,
-        "episode": 5
-      },
-      "airingAt": 1793111400,
-      "episode": 4,
-      "scheduleId": 422443,
-      "description_es": "Dos jóvenes... el héroe, Riliu, y su mejor amigo Jowy, eran miembros de una brigada juvenil de su nación natal, el Reino de Highland, una poderosa nación militar situada en el noreste de la región de Dunan. Los dos miraron hacia arriba los mismos cielos estrellados, durmieron en la misma tienda, y creyeron en el mismo futuro. Una vez que la pelea terminó, y la noche terminó, sus vidas diarias estaban seguras de volver. Contrariamente a sus esperanzas, los dos chicos se arrastran en el torbellino del destino, guiados por las llamas de la guerra. Los chicos impotentes alcanzaron y captaron un inmenso poder. Como brillan las 108 estrellas"
-    },
     {
       "id": "mal-63431",
       "mal_id": 63431,
@@ -1160,8 +941,8 @@
         "id": "oxkxyAcKv2g"
       },
       "next": {
-        "at": 1793291280,
-        "episode": 4
+        "at": 1793896080,
+        "episode": 5
       },
       "airingAt": 1793291280,
       "episode": 4,
@@ -1272,7 +1053,7 @@
       "title": "Pan Dorobou",
       "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx194207-7n4M6jOwLdcF.jpg",
       "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/194207-6yQitDZ3uOi5.jpg",
-      "description": "Kadokawa announced on June 9th, 2025 that Keiko Shibata's Pan Dorobou (Bread Thief) picture book will have an anime adaptation. The announcement did not reveal the anime's format. The picture books center on a piece of bread that also steals bread from bakeries in the city. (Source: Anime News Network)",
+      "description": "Based on Keiko Shibata's picture book \"Pan Dorobou\" (Bread Thief). The picture books center on a piece of bread that also steals bread from bakeries in the city. (Source: Anime News Network, edited)",
       "year": 2026,
       "startDate": "2026-10-02",
       "format": "TV_SHORT",
@@ -5189,8 +4970,8 @@
         "id": "oxkxyAcKv2g"
       },
       "next": {
-        "at": 1793291280,
-        "episode": 4
+        "at": 1793896080,
+        "episode": 5
       },
       "airingAt": 1793896080,
       "episode": 5,
@@ -5335,7 +5116,7 @@
       "title": "Pan Dorobou",
       "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx194207-7n4M6jOwLdcF.jpg",
       "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/194207-6yQitDZ3uOi5.jpg",
-      "description": "Kadokawa announced on June 9th, 2025 that Keiko Shibata's Pan Dorobou (Bread Thief) picture book will have an anime adaptation. The announcement did not reveal the anime's format. The picture books center on a piece of bread that also steals bread from bakeries in the city. (Source: Anime News Network)",
+      "description": "Based on Keiko Shibata's picture book \"Pan Dorobou\" (Bread Thief). The picture books center on a piece of bread that also steals bread from bakeries in the city. (Source: Anime News Network, edited)",
       "year": 2026,
       "startDate": "2026-10-02",
       "format": "TV_SHORT",
@@ -6586,6 +6367,79 @@
       "episode": 6,
       "scheduleId": 418849,
       "description_es": "Esta es la Academia Fujinasu, una escuela secundaria privada con estudiantes de primer nivel ubicados en las afueras de la ciudad. High School 1er año Ume Mizunoe tiene excelentes calificaciones en la clase de idioma japonés y ha recibido múltiples premios literarios. Sin embargo, sus calificaciones terribles en las ciencias están afectando su capacidad de avanzar en un grado. Para evitar repetir un año, se convierte en miembro del consejo estudiantil para mejorar su posición académica. Sin embargo, en el estudio"
+    },
+    {
+      "id": "mal-63801",
+      "mal_id": 63801,
+      "ani_id": 209872,
+      "title": "Ranma1/2 (2024) Season 3",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx209872-RBeVPqwejHFp.jpg",
+      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/209872-Qczb4k9Mw0pq.jpg",
+      "description": "The third season of Ranma 1/2 (2024) .",
+      "year": 2026,
+      "startDate": "2026-10-04",
+      "format": "TV",
+      "episodes": 0,
+      "averageScore": 78,
+      "status": "RELEASING",
+      "genres": [
+        "Action",
+        "Comedy",
+        "Romance"
+      ],
+      "siteUrl": "https://anilist.co/anime/209872",
+      "streaming": [],
+      "trailer": {
+        "site": "youtube",
+        "id": "dbe8esPSfYI"
+      },
+      "next": {
+        "at": 1793462160,
+        "episode": 5
+      },
+      "airingAt": 1794066960,
+      "episode": 6,
+      "scheduleId": 417719,
+      "description_es": "La tercera temporada de Ranma 1/2 (2024) ."
+    },
+    {
+      "id": "mal-62922",
+      "mal_id": 62922,
+      "ani_id": 202250,
+      "title": "Magic Repo Man: Dumped by My Party, I’ll Cash In With a Cute Support Fairy to Become the Strongest!",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx202250-mpm2cvr92Au2.jpg",
+      "banner": "",
+      "description": "If there's one thing you can never have enough of in a world of RPG-style swords and sorcery, it's magic points! Whether you're fueling spells, techniques, or showing off an incredible ability, you've gotta spend those points to do real damage. But what if you run out? Lent is part of the up-and-coming party known as the “Skypiercers,” and thanks to his unique Gift, he can loan massive amounts of magic to others. No MP? No problem with Lent around! Except, now that his companions have become formidable heroes (thanks to his skill), his usefulness is questioned. Kicked out of the group, Lent is furious…until he discovers a hidden power to his Gift. Now, with his adorably devious fairy partner, he's going to claw back every last scrap of magic from his former party—with interest! (Source: Seven Seas Entertainment)",
+      "year": 2026,
+      "startDate": "2026-10-04",
+      "format": "TV",
+      "episodes": 0,
+      "averageScore": 61,
+      "status": "RELEASING",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Fantasy"
+      ],
+      "siteUrl": "https://anilist.co/anime/202250",
+      "streaming": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00385867/magic-repo-man-dumped-by-my-party-ill-cash-in-with-a-cute-support-fairy-to-become-the-strongest"
+        }
+      ],
+      "trailer": {
+        "site": "youtube",
+        "id": "kXqx3rFSkxc"
+      },
+      "next": {
+        "at": 1793464200,
+        "episode": 5
+      },
+      "airingAt": 1794069000,
+      "episode": 6,
+      "scheduleId": 419567,
+      "description_es": "Si hay una cosa que nunca puedes tener suficiente en un mundo de espadas y brujería estilo RPG, ¡es puntos mágicos! Si estás alimentando hechizos, técnicas o mostrando una habilidad increíble, tienes que gastar esos puntos para hacer daño real. ¿Y si te escapas? La Cuaresma es parte de la fiesta de llegada conocida como los \"Skypiercers\", y gracias a su regalo único, puede prestar enormes cantidades de magia a otros. ¿Sin MP? ¡No hay problema con la Cuaresma! Excepto ahora que sus compañeros se han convertido en héroes formidables (gracias a su habilidad), su utilidad es cuestionada. Salió del grupo, la Cuaresma es"
     }
   ],
   "seasonal": {
@@ -7152,7 +7006,7 @@
         "title": "Pan Dorobou",
         "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx194207-7n4M6jOwLdcF.jpg",
         "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/194207-6yQitDZ3uOi5.jpg",
-        "description": "Kadokawa announced on June 9th, 2025 that Keiko Shibata's Pan Dorobou (Bread Thief) picture book will have an anime adaptation. The announcement did not reveal the anime's format. The picture books center on a piece of bread that also steals bread from bakeries in the city. (Source: Anime News Network)",
+        "description": "Based on Keiko Shibata's picture book \"Pan Dorobou\" (Bread Thief). The picture books center on a piece of bread that also steals bread from bakeries in the city. (Source: Anime News Network, edited)",
         "year": 2026,
         "startDate": "2026-10-02",
         "format": "TV_SHORT",
@@ -8897,8 +8751,8 @@
           "id": "oxkxyAcKv2g"
         },
         "next": {
-          "at": 1793291280,
-          "episode": 4
+          "at": 1793896080,
+          "episode": 5
         },
         "description_es": "Una vez despedido como el único estudiante ordinario de la élite Arnold Academy of Sorcery, Ray White — secretamente, el Hechicero de Iceblade— finalmente ha ganado su lugar. Con un nuevo año escolar surge un nuevo desafío: La Guerra de los Magos, una gran competencia que enfrenta equipos de escuelas rivales entre sí. Pero una sombra ominosa sobre Ray y sus amigos mientras los otros grandes hechiceros trazan sus próximos movimientos. (Fuente: Crunchyroll)"
       },
