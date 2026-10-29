@@ -1,70 +1,9 @@
 {
-  "updated": "2026-10-29T03:47:10.203Z",
+  "updated": "2026-10-29T09:52:03.247Z",
   "source": "AniList public GraphQL metadata",
-  "windowStart": 1793047618,
-  "windowEnd": 1794023218,
+  "windowStart": 1793069511,
+  "windowEnd": 1794045111,
   "airing": [
-    {
-      "id": "al-155723",
-      "mal_id": null,
-      "ani_id": 155723,
-      "title": "Wushen Zhuzai: Da Wei Pian",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx155723-hM261Imc5yfd.png",
-      "banner": "",
-      "description": "The second season of Wushen Zhuzai .",
-      "year": 2022,
-      "startDate": "2022-10-16",
-      "format": "ONA",
-      "episodes": 448,
-      "averageScore": 69,
-      "status": "RELEASING",
-      "genres": [
-        "Action",
-        "Fantasy"
-      ],
-      "siteUrl": "https://anilist.co/anime/155723",
-      "streaming": [],
-      "trailer": null,
-      "next": {
-        "at": 1793498400,
-        "episode": 429
-      },
-      "airingAt": 1793066400,
-      "episode": 428,
-      "scheduleId": 408373,
-      "description_es": "La segunda temporada de Wushen Zhuzai."
-    },
-    {
-      "id": "mal-64388",
-      "mal_id": 64388,
-      "ani_id": 213188,
-      "title": "Jueshi Zhan Hun 2",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx213188-zwmmMVqqUjh8.png",
-      "banner": "",
-      "description": "In the Canglan Continent, strength is determined by martial spirits. Qin Nan, the young master of the Qin family, was originally a useless soul, suffering endless scorn. By chance, he awakened the soul of an ancient war god, thus defying fate. He swept through sect geniuses, overcame powerful enemies and obstacles, encountered a soulmate, used his battle spirit to break all laws, and forged a legend with his blood. From a humble young master, he rose through the ranks to become an invincible supreme celestial being who shakes the nine realms. (Source: IQIYI, translated)",
-      "year": 2026,
-      "startDate": "2026-06-09",
-      "format": "ONA",
-      "episodes": 100,
-      "averageScore": 0,
-      "status": "RELEASING",
-      "genres": [
-        "Action",
-        "Adventure",
-        "Fantasy"
-      ],
-      "siteUrl": "https://anilist.co/anime/213188",
-      "streaming": [],
-      "trailer": null,
-      "next": {
-        "at": 1793671200,
-        "episode": 22
-      },
-      "airingAt": 1793066400,
-      "episode": 21,
-      "scheduleId": 415244,
-      "description_es": "En el Continente Canglan, la fuerza está determinada por espíritus marciales. Qin Nan, el joven maestro de la familia Qin, fue originalmente un alma inútil, sufriendo un desprecio infinito. Por casualidad, despertó el alma de un dios de guerra antiguo, desafiando así el destino. Golpeó por los genios de la secta, superó a los poderosos enemigos y obstáculos, encontró a un alma gemela, usó su espíritu de batalla para romper todas las leyes, y forjó una leyenda con su sangre. De un humilde joven maestro, se levantó por las filas para convertirse en un ser celestial supremo invencible que sacude los nueve reinos. (Fuente: IQIYI, traducido)"
-    },
     {
       "id": "mal-63382",
       "mal_id": 63382,
@@ -77,7 +16,7 @@
       "startDate": "2026-10-06",
       "format": "TV",
       "episodes": 25,
-      "averageScore": 76,
+      "averageScore": 75,
       "status": "RELEASING",
       "genres": [
         "Action",
@@ -148,7 +87,7 @@
       "startDate": "2026-10-06",
       "format": "TV",
       "episodes": 12,
-      "averageScore": 65,
+      "averageScore": 64,
       "status": "RELEASING",
       "genres": [
         "Comedy",
@@ -262,7 +201,7 @@
       "startDate": "2026-10-03",
       "format": "TV",
       "episodes": 23,
-      "averageScore": 60,
+      "averageScore": 59,
       "status": "RELEASING",
       "genres": [
         "Action",
@@ -913,8 +852,8 @@
       "streaming": [],
       "trailer": null,
       "next": {
-        "at": 1793266200,
-        "episode": 5
+        "at": 1793871000,
+        "episode": 6
       },
       "airingAt": 1793266200,
       "episode": 5,
@@ -1324,7 +1263,7 @@
       "airingAt": 1793347200,
       "episode": 6,
       "scheduleId": 420969,
-      "description_es": "En la 2a ETAPA, un cruce desértico que recorre aproximadamente 750 millas- la tierra que Johnny Joestar y Gyro Zeppeli deben desafiar, es el hogar de la zona que se teme como la palma del Diablo. En 1875, una amenaza que acechaba en dicho desierto borró una caballería de 26 personas, provocando temor de los nativos locales. A medida que los incidentes ominosos comienzan a desarrollarse, se ven obligados a darse cuenta de que esta carrera es mucho más que una mera competencia. Las dos prensas hacia adelante, donde"
+      "description_es": "En la 2a ETAPA, un cruce desértico que recorre aproximadamente 750 millas- la tierra que Johnny Joestar y Gyro Zeppeli deben desafiar, es el hogar de la zona que se teme como la palma del Diablo. En 1875, una amenaza que acechaba en dicho desierto borró una caballería de 26 personas, provocando el miedo de los nativos locales. A medida que los incidentes ominosos comienzan a desarrollarse, se ven obligados a darse cuenta de que esta carrera es mucho más que una mera competencia. Los dos presionan hacia adelante, donde innumerables motivos ocultos chocan.. (Fuente: Warner Bros. Japón Anime, Netflix Anime, editado)"
     },
     {
       "id": "mal-62039",
@@ -1634,7 +1573,7 @@
       "airingAt": 1793370600,
       "episode": 4,
       "scheduleId": 418468,
-      "description_es": "En la superficie, Satoko lo tiene todo, es hermosa, la hija de un noble, y a una edad temprana para el matrimonio. Desafortunadamente, ella también está bastante enferma y sólo tiene un corto tiempo para vivir. Antes de que pueda conseguir un matrimonio que redimirá su valor en los ojos de su familia, se encuentra el blanco del misterioso asesino Shinpei, y sus planes están en peligro. ¡Para salvarse, hace una propuesta desesperada de matrimonio! Cuando c"
+      "description_es": "En la superficie, Satoko lo tiene todo, es hermosa, la hija de un noble, y a una edad privilegiada para el matrimonio. Desafortunadamente, ella también está bastante enferma y sólo tiene un corto tiempo para vivir. Antes de que pueda conseguir un matrimonio que redimirá su valor en los ojos de su familia, se encuentra el blanco del misterioso asesino Shinpei, y sus planes están en peligro. ¡Para salvarse, hace una propuesta desesperada de matrimonio! Sin embargo, cuando se trata de amor, Shinpei toma “hasta que la muerte nos separe” seriamente. (Fuente: VIZ Media)"
     },
     {
       "id": "mal-63181",
@@ -2249,7 +2188,7 @@
       "startDate": "2026-10-03",
       "format": "TV",
       "episodes": 20,
-      "averageScore": 66,
+      "averageScore": 67,
       "status": "RELEASING",
       "genres": [
         "Comedy",
@@ -2353,7 +2292,7 @@
       "startDate": "2026-10-03",
       "format": "ONA",
       "episodes": 0,
-      "averageScore": 70,
+      "averageScore": 69,
       "status": "RELEASING",
       "genres": [
         "Action",
@@ -2509,7 +2448,7 @@
       "startDate": "2026-10-03",
       "format": "TV",
       "episodes": 12,
-      "averageScore": 61,
+      "averageScore": 60,
       "status": "RELEASING",
       "genres": [
         "Action",
@@ -2720,7 +2659,7 @@
       "airingAt": 1793464200,
       "episode": 5,
       "scheduleId": 419566,
-      "description_es": "Si hay una cosa que nunca puedes tener suficiente en un mundo de espadas y brujería estilo RPG, ¡es puntos mágicos! Si estás alimentando hechizos, técnicas o mostrando una habilidad increíble, tienes que gastar esos puntos para hacer daño real. ¿Y si te escapas? La Cuaresma es parte de la fiesta de llegada conocida como los \"Skypiercers\", y gracias a su regalo único, puede prestar enormes cantidades de magia a otros. ¿Sin MP? No hay problema con Lent arou"
+      "description_es": "Si hay una cosa que nunca puedes tener suficiente en un mundo de espadas y brujería estilo RPG, ¡es puntos mágicos! Si estás alimentando hechizos, técnicas o mostrando una habilidad increíble, tienes que gastar esos puntos para hacer daño real. ¿Y si te escapas? La Cuaresma es parte de la fiesta de llegada conocida como los \"Skypiercers\", y gracias a su regalo único, puede prestar enormes cantidades de magia a otros. ¿Sin MP? ¡No hay problema con la Cuaresma! Excepto ahora que sus compañeros se han convertido en héroes formidables (gracias a su habilidad), su utilidad es cuestionada. Salió del grupo, la Cuaresma es"
     },
     {
       "id": "mal-63125",
@@ -3110,7 +3049,7 @@
       "startDate": "2026-10-11",
       "format": "TV",
       "episodes": 0,
-      "averageScore": 72,
+      "averageScore": 73,
       "status": "RELEASING",
       "genres": [
         "Action",
@@ -3484,7 +3423,7 @@
       "airingAt": 1793543400,
       "episode": 6,
       "scheduleId": 419230,
-      "description_es": "La tercera temporada de Tensei Kizoku, Kantei Skill de Nariagaru. Nota: El 4 de septiembre de 2026, se anunció que GeyeG Pictures tomaría la producción del estudio MOTHER manteniendo el mismo personal."
+      "description_es": "La tercera temporada de Tensei Kizoku, Kantei Skill de Nariagaru . Nota: El 4 de septiembre de 2026, se anunció que GeyeG Pictures tomaría la producción del estudio MOTHER manteniendo el mismo personal."
     },
     {
       "id": "mal-63292",
@@ -4102,7 +4041,7 @@
       "startDate": "2026-10-06",
       "format": "TV",
       "episodes": 25,
-      "averageScore": 76,
+      "averageScore": 75,
       "status": "RELEASING",
       "genres": [
         "Action",
@@ -4173,7 +4112,7 @@
       "startDate": "2026-10-06",
       "format": "TV",
       "episodes": 12,
-      "averageScore": 65,
+      "averageScore": 64,
       "status": "RELEASING",
       "genres": [
         "Comedy",
@@ -4287,7 +4226,7 @@
       "startDate": "2026-10-03",
       "format": "TV",
       "episodes": 23,
-      "averageScore": 60,
+      "averageScore": 59,
       "status": "RELEASING",
       "genres": [
         "Action",
@@ -4905,8 +4844,8 @@
       "streaming": [],
       "trailer": null,
       "next": {
-        "at": 1793266200,
-        "episode": 5
+        "at": 1793871000,
+        "episode": 6
       },
       "airingAt": 1793871000,
       "episode": 6,
@@ -5387,7 +5326,7 @@
       "airingAt": 1793952000,
       "episode": 7,
       "scheduleId": 420970,
-      "description_es": "En la 2a ETAPA, un cruce desértico que recorre aproximadamente 750 millas- la tierra que Johnny Joestar y Gyro Zeppeli deben desafiar, es el hogar de la zona que se teme como la palma del Diablo. En 1875, una amenaza que acechaba en dicho desierto borró una caballería de 26 personas, provocando temor de los nativos locales. A medida que los incidentes ominosos comienzan a desarrollarse, se ven obligados a darse cuenta de que esta carrera es mucho más que una mera competencia. Las dos prensas hacia adelante, donde"
+      "description_es": "En la 2a ETAPA, un cruce desértico que recorre aproximadamente 750 millas- la tierra que Johnny Joestar y Gyro Zeppeli deben desafiar, es el hogar de la zona que se teme como la palma del Diablo. En 1875, una amenaza que acechaba en dicho desierto borró una caballería de 26 personas, provocando el miedo de los nativos locales. A medida que los incidentes ominosos comienzan a desarrollarse, se ven obligados a darse cuenta de que esta carrera es mucho más que una mera competencia. Los dos presionan hacia adelante, donde innumerables motivos ocultos chocan.. (Fuente: Warner Bros. Japón Anime, Netflix Anime, editado)"
     },
     {
       "id": "mal-62039",
@@ -5667,7 +5606,7 @@
       "airingAt": 1793975400,
       "episode": 5,
       "scheduleId": 418469,
-      "description_es": "En la superficie, Satoko lo tiene todo, es hermosa, la hija de un noble, y a una edad temprana para el matrimonio. Desafortunadamente, ella también está bastante enferma y sólo tiene un corto tiempo para vivir. Antes de que pueda conseguir un matrimonio que redimirá su valor en los ojos de su familia, se encuentra el blanco del misterioso asesino Shinpei, y sus planes están en peligro. ¡Para salvarse, hace una propuesta desesperada de matrimonio! Cuando c"
+      "description_es": "En la superficie, Satoko lo tiene todo, es hermosa, la hija de un noble, y a una edad privilegiada para el matrimonio. Desafortunadamente, ella también está bastante enferma y sólo tiene un corto tiempo para vivir. Antes de que pueda conseguir un matrimonio que redimirá su valor en los ojos de su familia, se encuentra el blanco del misterioso asesino Shinpei, y sus planes están en peligro. ¡Para salvarse, hace una propuesta desesperada de matrimonio! Sin embargo, cuando se trata de amor, Shinpei toma “hasta que la muerte nos separe” seriamente. (Fuente: VIZ Media)"
     },
     {
       "id": "mal-63181",
@@ -6045,6 +5984,197 @@
       "episode": 8,
       "scheduleId": 421876,
       "description_es": "La tercera temporada de Dawang Raoming."
+    },
+    {
+      "id": "mal-63901",
+      "mal_id": 63901,
+      "ani_id": 209709,
+      "title": "Sirotan",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx209709-Wz8BKL1fm5MC.png",
+      "banner": "",
+      "description": "",
+      "year": 2026,
+      "startDate": "2026-10-03",
+      "format": "TV",
+      "episodes": 0,
+      "averageScore": 0,
+      "status": "RELEASING",
+      "genres": [],
+      "siteUrl": "https://anilist.co/anime/209709",
+      "streaming": [],
+      "trailer": {
+        "site": "youtube",
+        "id": "4iOFqQ1E4Mo"
+      },
+      "next": {
+        "at": 1793431740,
+        "episode": 5
+      },
+      "airingAt": 1794036540,
+      "episode": 6,
+      "scheduleId": 421818
+    },
+    {
+      "id": "mal-966",
+      "mal_id": 966,
+      "ani_id": 966,
+      "title": "Shin Chan",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b966-QUCdKAk4ls9J.jpg",
+      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/966-J5CwLLTBs4OO.jpg",
+      "description": "Crayon Shin-chan follows the wacky antics and adventures of five-year-old Shinnosuke \"Shin\" Nohara and his parents, neighbors, and friends and is set in Kasukabe, Saitama Prefecture, Japan. Many of the jokes in the series stem from Shin-chan's occasionally weird, unnatural and inappropriate use of language, as well as from his inappropriate behavior. A typical gag involves Shin-chan confounding his parents by using the wrong phrase for the occasion; for example, saying \"Welcome back!\" instead of \"I am back!\" when he comes home. During the beginning of the series, the TV show was mostly based on the storyline in the original manga. As the show progressed, more and more episodes became anime-original.",
+      "year": 1992,
+      "startDate": "1992-04-13",
+      "format": "TV",
+      "episodes": 0,
+      "averageScore": 77,
+      "status": "RELEASING",
+      "genres": [
+        "Comedy",
+        "Ecchi",
+        "Slice of Life"
+      ],
+      "siteUrl": "https://anilist.co/anime/966",
+      "streaming": [],
+      "trailer": null,
+      "next": {
+        "at": 1793431800,
+        "episode": 1359
+      },
+      "airingAt": 1794036600,
+      "episode": 1360,
+      "scheduleId": 409445,
+      "description_es": "Crayon Shin-chan sigue los locos anticos y aventuras de Shinnosuke, de cinco años, \"Shin\" Nohara y sus padres, vecinos y amigos, y se encuentra en Kasukabe, Prefectura de Saitama, Japón. Muchas de las bromas de la serie provienen del uso extraño, antinatural e inapropiado del lenguaje de Shin-chan, así como de su comportamiento inapropiado. Una mordaza típica involucra a Shin-chan confundiendo a sus padres usando la frase equivocada para la ocasión; por ejemplo, diciendo \"¡Bienvenido!\" en lugar de \"Estoy de vuelta!\" cuando él vuelve. Durante el comienzo de la serie, el programa de televisión se basaba principalmente en o"
+    },
+    {
+      "id": "mal-8687",
+      "mal_id": 8687,
+      "ani_id": 8687,
+      "title": "Doraemon (2005)",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b8687-bBnJMGnih4PT.jpg",
+      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/8687-aa3QbJjGfy3B.jpg",
+      "description": "A new Doraemon series produced by the same team as the 1979 series (in association with Studio Pierrot) with new voice actors and staff and updated character designs.",
+      "year": 2005,
+      "startDate": "2005-04-15",
+      "format": "TV",
+      "episodes": 0,
+      "averageScore": 77,
+      "status": "RELEASING",
+      "genres": [
+        "Adventure",
+        "Comedy",
+        "Sci-Fi"
+      ],
+      "siteUrl": "https://anilist.co/anime/8687",
+      "streaming": [],
+      "trailer": null,
+      "next": {
+        "at": 1793433600,
+        "episode": 939
+      },
+      "airingAt": 1794038400,
+      "episode": 940,
+      "scheduleId": 380068,
+      "description_es": "Una nueva serie Doraemon producida por el mismo equipo que la serie 1979 (en asociación con Studio Pierrot) con nuevos actores de voz y personal y diseños de caracteres actualizados."
+    },
+    {
+      "id": "mal-61999",
+      "mal_id": 61999,
+      "ani_id": 195571,
+      "title": "The Vermilion Mask",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx195571-fvj7u5GI7BRT.jpg",
+      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/195571-UkdB06UpyL8k.jpg",
+      "description": "\"The Mask” gives power to anyone who wears it. At times, that means endless possibility, or unimaginable tragedy… Peru, pupil of the legendary mask maker Gaston Roux, becomes controlled by the “Mask of the Warrior God,” and unintentionally kills his friends, and even his own master. In order to prevent this type of tragedy from reoccurring, Peru swears to destroy all of Gaston’s masks that are spread around the world. Confronting the sins that he has committed, he embarks on his voyage. Meeting new friends, then confronting powerful foes. The boy continues on. Until the day he can atone for his sins against his master. (Source: The Vermillion Mask English Site)",
+      "year": 2026,
+      "startDate": "2026-10-10",
+      "format": "TV",
+      "episodes": 0,
+      "averageScore": 68,
+      "status": "RELEASING",
+      "genres": [
+        "Action",
+        "Drama",
+        "Supernatural"
+      ],
+      "siteUrl": "https://anilist.co/anime/195571",
+      "streaming": [],
+      "trailer": {
+        "site": "youtube",
+        "id": "iX4N-Z5Hbxw"
+      },
+      "next": {
+        "at": 1793435400,
+        "episode": 4
+      },
+      "airingAt": 1794040200,
+      "episode": 5,
+      "scheduleId": 422492,
+      "description_es": "\"La máscara\" da poder a cualquiera que la use. A veces, eso significa una posibilidad interminable, o una tragedia inimaginable... Perú, alumno del legendario fabricante de máscaras Gaston Roux, se hace controlado por el “Mask del Dios Guerrero”, y mata involuntariamente a sus amigos, e incluso a su propio maestro. Para evitar que este tipo de tragedia vuelva a ocurrir, Perú jura destruir todas las máscaras de Gaston que se extienden alrededor del mundo. Frente a los pecados que ha cometido, se embarca en su viaje. Conocer a nuevos amigos y enfrentar a poderosos enemigos. El chico continúa. Hasta el día que puede expiar por hola"
+    },
+    {
+      "id": "mal-235",
+      "mal_id": 235,
+      "ani_id": 235,
+      "title": "Detective Conan",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx235-MyYT7K3chBdO.jpg",
+      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/235-MTmiz0uB0fMd.jpg",
+      "description": "Kudo Shinichi is a seventeen year-old high school detective whom people call the \"Modern Sherlock Holmes.\" However, one night after a date with his childhood sweetheart, Ran, Shinichi witnessed an illegal trade and, caught off his guard, was knocked unconscious and fed a drug that was supposed to kill him... but he woke up and found himself shrunken to a seven year-old. In order to track down the men who did this to him, Shinichi hid his identity and lived with Ran, whose father happened to be a hopeless detective, and with that came a series of murders and mysteries that he must solve. (Source: Anime News Network) Note: - Includes Keisatsu Gakkou-hen - Wild Police Story in episodes 1029, 1038, 1042, 1061 - Episodes 11, 52, 76, 118, 162, 184, 208, 342, 356, 449, 452, 487, 488, 489, 490, 515, 516, 521, 522, 651, 734, 804, 805, 927, 928, 1187 aired with a runtime of ~50 minutes as opposed to the standard 25 minute long episode. - Episodes 96, 129, 174, 219, 263, 304, 383, 479 aired with a runtime of ~90 minutes as opposed to the standard 25 minute long episode. - Episode 345, 425 aired with a runtime of ~115 minutes as opposed to the standard 25 minute long episode.",
+      "year": 1996,
+      "startDate": "1996-01-08",
+      "format": "TV",
+      "episodes": 0,
+      "averageScore": 82,
+      "status": "RELEASING",
+      "genres": [
+        "Adventure",
+        "Comedy",
+        "Mystery",
+        "Psychological"
+      ],
+      "siteUrl": "https://anilist.co/anime/235",
+      "streaming": [],
+      "trailer": null,
+      "next": {
+        "at": 1793437200,
+        "episode": 1218
+      },
+      "airingAt": 1794042000,
+      "episode": 1219,
+      "scheduleId": 422941,
+      "description_es": "Kudo Shinichi es un detective de secundaria de diecisiete años a quien la gente llama \"Modern Sherlock Holmes\". Sin embargo, una noche después de una cita con su novia de la infancia, Ran, Shinichi fue testigo de un comercio ilegal y, atrapado de su guardia, fue noqueado inconsciente y alimentado una droga que se suponía que lo mataría... pero se despertó y se encontró a sí mismo hundido a un niño de siete años. Para localizar a los hombres que le hicieron esto, Shinichi escondió su identidad y vivió con Ran, cuyo padre fue un detective sin esperanza, y con eso llegó una serie de asesinatos y misterios que él debe resolver. (Sourc)"
+    },
+    {
+      "id": "mal-64326",
+      "mal_id": 64326,
+      "ani_id": 212799,
+      "title": "The Seven Knights of the Marronnier Kingdom",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx212799-n7WDdic7IL1z.png",
+      "banner": "",
+      "description": "At the heart of a continent of eight kingdoms lies the Marronnier Kingdom. Its general, Baribara, has seven sons, each with a unique gift and serving as a knight commander. Bound by a single noble cause of heroically rescuing a princess someday, the brothers set out as goodwill ambassadors to the seven neighboring kingdoms. What encounters, trials, and destinies await them in these unknown lands? (Source: Amazon Prime Video)",
+      "year": 2026,
+      "startDate": "2026-10-03",
+      "format": "TV",
+      "episodes": 20,
+      "averageScore": 67,
+      "status": "RELEASING",
+      "genres": [
+        "Comedy",
+        "Fantasy",
+        "Romance"
+      ],
+      "siteUrl": "https://anilist.co/anime/212799",
+      "streaming": [],
+      "trailer": {
+        "site": "youtube",
+        "id": "wk26nTxUzPY"
+      },
+      "next": {
+        "at": 1793438700,
+        "episode": 5
+      },
+      "airingAt": 1794043500,
+      "episode": 6,
+      "scheduleId": 421842,
+      "description_es": "En el corazón de un continente de ocho reinos se encuentra el Reino Marronnier. Su general, Baribara, tiene siete hijos, cada uno con un regalo único y servir como comandante caballero. Heridos por una única causa noble de rescatar heroicamente a una princesa algún día, los hermanos se establecieron como embajadores de buena voluntad a los siete reinos vecinos. ¿Qué encuentros, pruebas y destinos les esperan en estas tierras desconocidas? (Fuente: Amazon Prime Video)"
     }
   ],
   "seasonal": {
@@ -6082,7 +6212,7 @@
           "at": 1793347200,
           "episode": 6
         },
-        "description_es": "En la 2a ETAPA, un cruce desértico que recorre aproximadamente 750 millas- la tierra que Johnny Joestar y Gyro Zeppeli deben desafiar, es el hogar de la zona que se teme como la palma del Diablo. En 1875, una amenaza que acechaba en dicho desierto borró una caballería de 26 personas, provocando temor de los nativos locales. A medida que los incidentes ominosos comienzan a desarrollarse, se ven obligados a darse cuenta de que esta carrera es mucho más que una mera competencia. Las dos prensas hacia adelante, donde"
+        "description_es": "En la 2a ETAPA, un cruce desértico que recorre aproximadamente 750 millas- la tierra que Johnny Joestar y Gyro Zeppeli deben desafiar, es el hogar de la zona que se teme como la palma del Diablo. En 1875, una amenaza que acechaba en dicho desierto borró una caballería de 26 personas, provocando el miedo de los nativos locales. A medida que los incidentes ominosos comienzan a desarrollarse, se ven obligados a darse cuenta de que esta carrera es mucho más que una mera competencia. Los dos presionan hacia adelante, donde innumerables motivos ocultos chocan.. (Fuente: Warner Bros. Japón Anime, Netflix Anime, editado)"
       },
       {
         "id": "mal-63140",
@@ -6190,7 +6320,7 @@
           "at": 1793543400,
           "episode": 6
         },
-        "description_es": "La tercera temporada de Tensei Kizoku, Kantei Skill de Nariagaru. Nota: El 4 de septiembre de 2026, se anunció que GeyeG Pictures tomaría la producción del estudio MOTHER manteniendo el mismo personal."
+        "description_es": "La tercera temporada de Tensei Kizoku, Kantei Skill de Nariagaru . Nota: El 4 de septiembre de 2026, se anunció que GeyeG Pictures tomaría la producción del estudio MOTHER manteniendo el mismo personal."
       },
       {
         "id": "mal-56733",
@@ -6442,8 +6572,8 @@
         "streaming": [],
         "trailer": null,
         "next": {
-          "at": 1793266200,
-          "episode": 5
+          "at": 1793871000,
+          "episode": 6
         },
         "description_es": "Cuarta temporada de PetitCure: Ferias precarias."
       },
@@ -6740,7 +6870,7 @@
         "startDate": "2026-10-03",
         "format": "ONA",
         "episodes": 0,
-        "averageScore": 70,
+        "averageScore": 69,
         "status": "RELEASING",
         "genres": [
           "Action",
@@ -6812,7 +6942,7 @@
         "startDate": "2026-10-03",
         "format": "TV",
         "episodes": 12,
-        "averageScore": 61,
+        "averageScore": 60,
         "status": "RELEASING",
         "genres": [
           "Action",
@@ -6850,7 +6980,7 @@
         "startDate": "2026-10-03",
         "format": "TV",
         "episodes": 23,
-        "averageScore": 60,
+        "averageScore": 59,
         "status": "RELEASING",
         "genres": [
           "Action",
@@ -6881,7 +7011,7 @@
         "startDate": "2026-10-03",
         "format": "TV",
         "episodes": 20,
-        "averageScore": 66,
+        "averageScore": 67,
         "status": "RELEASING",
         "genres": [
           "Comedy",
@@ -7186,7 +7316,7 @@
           "at": 1793464200,
           "episode": 5
         },
-        "description_es": "Si hay una cosa que nunca puedes tener suficiente en un mundo de espadas y brujería estilo RPG, ¡es puntos mágicos! Si estás alimentando hechizos, técnicas o mostrando una habilidad increíble, tienes que gastar esos puntos para hacer daño real. ¿Y si te escapas? La Cuaresma es parte de la fiesta de llegada conocida como los \"Skypiercers\", y gracias a su regalo único, puede prestar enormes cantidades de magia a otros. ¿Sin MP? No hay problema con Lent arou"
+        "description_es": "Si hay una cosa que nunca puedes tener suficiente en un mundo de espadas y brujería estilo RPG, ¡es puntos mágicos! Si estás alimentando hechizos, técnicas o mostrando una habilidad increíble, tienes que gastar esos puntos para hacer daño real. ¿Y si te escapas? La Cuaresma es parte de la fiesta de llegada conocida como los \"Skypiercers\", y gracias a su regalo único, puede prestar enormes cantidades de magia a otros. ¿Sin MP? ¡No hay problema con la Cuaresma! Excepto ahora que sus compañeros se han convertido en héroes formidables (gracias a su habilidad), su utilidad es cuestionada. Salió del grupo, la Cuaresma es"
       },
       {
         "id": "mal-63801",
@@ -7856,7 +7986,7 @@
         "startDate": "2026-10-06",
         "format": "TV",
         "episodes": 25,
-        "averageScore": 76,
+        "averageScore": 75,
         "status": "RELEASING",
         "genres": [
           "Action",
@@ -7953,7 +8083,7 @@
         "startDate": "2026-10-06",
         "format": "TV",
         "episodes": 12,
-        "averageScore": 65,
+        "averageScore": 64,
         "status": "RELEASING",
         "genres": [
           "Comedy",
@@ -8323,7 +8453,7 @@
           "at": 1793370600,
           "episode": 4
         },
-        "description_es": "En la superficie, Satoko lo tiene todo, es hermosa, la hija de un noble, y a una edad temprana para el matrimonio. Desafortunadamente, ella también está bastante enferma y sólo tiene un corto tiempo para vivir. Antes de que pueda conseguir un matrimonio que redimirá su valor en los ojos de su familia, se encuentra el blanco del misterioso asesino Shinpei, y sus planes están en peligro. ¡Para salvarse, hace una propuesta desesperada de matrimonio! Cuando c"
+        "description_es": "En la superficie, Satoko lo tiene todo, es hermosa, la hija de un noble, y a una edad privilegiada para el matrimonio. Desafortunadamente, ella también está bastante enferma y sólo tiene un corto tiempo para vivir. Antes de que pueda conseguir un matrimonio que redimirá su valor en los ojos de su familia, se encuentra el blanco del misterioso asesino Shinpei, y sus planes están en peligro. ¡Para salvarse, hace una propuesta desesperada de matrimonio! Sin embargo, cuando se trata de amor, Shinpei toma “hasta que la muerte nos separe” seriamente. (Fuente: VIZ Media)"
       },
       {
         "id": "mal-64254",
