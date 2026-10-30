@@ -1,8 +1,8 @@
 {
-  "updated": "2026-10-29T21:42:39.432Z",
+  "updated": "2026-10-30T03:47:34.120Z",
   "source": "AniList public GraphQL metadata",
-  "windowStart": 1793112147,
-  "windowEnd": 1794087747,
+  "windowStart": 1793134051,
+  "windowEnd": 1794109651,
   "airing": [
     {
       "id": "mal-63431",
@@ -9038,5 +9038,8 @@
       }
     ]
   },
-  "warnings": []
+  "warnings": [
+    "schedule: AniList HTTP 521",
+    "season: AniList HTTP 521"
+  ]
 }
