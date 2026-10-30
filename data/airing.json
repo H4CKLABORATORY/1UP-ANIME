@@ -1,8 +1,8 @@
 {
-  "updated": "2026-10-30T09:51:47.052Z",
+  "updated": "2026-10-30T15:51:38.011Z",
   "source": "AniList public GraphQL metadata",
-  "windowStart": 1793155893,
-  "windowEnd": 1794131493,
+  "windowStart": 1793177484,
+  "windowEnd": 1794153084,
   "airing": [
     {
       "id": "mal-52480",
@@ -861,8 +861,8 @@
         "id": "_c_hMehCORQ"
       },
       "next": {
-        "at": 1793354100,
-        "episode": 155
+        "at": 1793958900,
+        "episode": 156
       },
       "airingAt": 1793354100,
       "episode": 155,
@@ -894,8 +894,8 @@
         "id": "c3DcpEy3xd8"
       },
       "next": {
-        "at": 1793354400,
-        "episode": 86
+        "at": 1793959200,
+        "episode": 87
       },
       "airingAt": 1793354400,
       "episode": 86,
@@ -928,8 +928,8 @@
         "id": "SXdTmFshlFs"
       },
       "next": {
-        "at": 1793354400,
-        "episode": 138
+        "at": 1793959200,
+        "episode": 139
       },
       "airingAt": 1793354400,
       "episode": 138,
@@ -957,10 +957,7 @@
       "siteUrl": "https://anilist.co/anime/208367",
       "streaming": [],
       "trailer": null,
-      "next": {
-        "at": 1793361600,
-        "episode": 4
-      },
+      "next": null,
       "airingAt": 1793361600,
       "episode": 4,
       "scheduleId": 419663,
@@ -991,8 +988,8 @@
         "id": "4QafpDIgjS4"
       },
       "next": {
-        "at": 1793363160,
-        "episode": 5
+        "at": 1793967960,
+        "episode": 6
       },
       "airingAt": 1793363160,
       "episode": 5,
@@ -1029,8 +1026,8 @@
         "id": "NNHxQJgZdbQ"
       },
       "next": {
-        "at": 1793367000,
-        "episode": 4
+        "at": 1793971800,
+        "episode": 5
       },
       "airingAt": 1793367000,
       "episode": 4,
@@ -1067,8 +1064,8 @@
         "id": "YvNvvUeCztE"
       },
       "next": {
-        "at": 1793368800,
-        "episode": 5
+        "at": 1793973600,
+        "episode": 6
       },
       "airingAt": 1793368800,
       "episode": 5,
@@ -1105,8 +1102,8 @@
         "id": "Ex9LrBK-7hk"
       },
       "next": {
-        "at": 1793370600,
-        "episode": 4
+        "at": 1793975400,
+        "episode": 5
       },
       "airingAt": 1793370600,
       "episode": 4,
@@ -1144,8 +1141,8 @@
         "id": "upBWYExYoYc"
       },
       "next": {
-        "at": 1793370600,
-        "episode": 5
+        "at": 1793975400,
+        "episode": 6
       },
       "airingAt": 1793370600,
       "episode": 5,
@@ -1183,8 +1180,8 @@
         "id": "P927_ZvgUUg"
       },
       "next": {
-        "at": 1793372400,
-        "episode": 17
+        "at": 1793977200,
+        "episode": 18
       },
       "airingAt": 1793372400,
       "episode": 17,
@@ -4924,8 +4921,8 @@
         "id": "_c_hMehCORQ"
       },
       "next": {
-        "at": 1793354100,
-        "episode": 155
+        "at": 1793958900,
+        "episode": 156
       },
       "airingAt": 1793958900,
       "episode": 156,
@@ -4957,8 +4954,8 @@
         "id": "c3DcpEy3xd8"
       },
       "next": {
-        "at": 1793354400,
-        "episode": 86
+        "at": 1793959200,
+        "episode": 87
       },
       "airingAt": 1793959200,
       "episode": 87,
@@ -4991,8 +4988,8 @@
         "id": "SXdTmFshlFs"
       },
       "next": {
-        "at": 1793354400,
-        "episode": 138
+        "at": 1793959200,
+        "episode": 139
       },
       "airingAt": 1793959200,
       "episode": 139,
@@ -5024,8 +5021,8 @@
         "id": "4QafpDIgjS4"
       },
       "next": {
-        "at": 1793363160,
-        "episode": 5
+        "at": 1793967960,
+        "episode": 6
       },
       "airingAt": 1793967960,
       "episode": 6,
@@ -5062,8 +5059,8 @@
         "id": "NNHxQJgZdbQ"
       },
       "next": {
-        "at": 1793367000,
-        "episode": 4
+        "at": 1793971800,
+        "episode": 5
       },
       "airingAt": 1793971800,
       "episode": 5,
@@ -5100,8 +5097,8 @@
         "id": "YvNvvUeCztE"
       },
       "next": {
-        "at": 1793368800,
-        "episode": 5
+        "at": 1793973600,
+        "episode": 6
       },
       "airingAt": 1793973600,
       "episode": 6,
@@ -5138,8 +5135,8 @@
         "id": "Ex9LrBK-7hk"
       },
       "next": {
-        "at": 1793370600,
-        "episode": 4
+        "at": 1793975400,
+        "episode": 5
       },
       "airingAt": 1793975400,
       "episode": 5,
@@ -5177,8 +5174,8 @@
         "id": "upBWYExYoYc"
       },
       "next": {
-        "at": 1793370600,
-        "episode": 5
+        "at": 1793975400,
+        "episode": 6
       },
       "airingAt": 1793975400,
       "episode": 6,
@@ -5216,8 +5213,8 @@
         "id": "P927_ZvgUUg"
       },
       "next": {
-        "at": 1793372400,
-        "episode": 17
+        "at": 1793977200,
+        "episode": 18
       },
       "airingAt": 1793977200,
       "episode": 18,
@@ -6709,6 +6706,453 @@
       "episode": 2857,
       "scheduleId": 394997,
       "description_es": "El personaje principal es una madre llamada Sazae-san. Vive en una casa con su marido, su hijo, sus hermanos y sus padres. El espectáculo es el último programa familiar y tiende a seguir los temas tradicionales. Piense en este espectáculo como el equivalente japonés a \"The Partridge Family\" y obtendrá una buena sensación para la atmósfera de este show. No esperes ver cosas como violencia, juramento, acción kung-fu o chicas mágicas. Las parcelas son más como \"Hoy, Sazae-san va al nuevo centro comercial y se pierde\". Tales trazados \"boring\" y el arte simplista son a menudo un desvío a las audiencias no japonesas, pero la mayoría"
+    },
+    {
+      "id": "mal-64867",
+      "mal_id": 64867,
+      "ani_id": 215835,
+      "title": "Umayuru: Full Gate!",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx215835-B0seSw93V5qM.png",
+      "banner": "",
+      "description": "\"Umayuru\" is a short anime series featuring pint-sized Uma Musume! This time, it’s a \"Full-Gate\" three-minute race where *all* the Uma Musume take to the track! A super-sized, laid-back gathering with everyone!",
+      "year": 2026,
+      "startDate": "2026-09-27",
+      "format": "ONA",
+      "episodes": 26,
+      "averageScore": 69,
+      "status": "RELEASING",
+      "genres": [
+        "Comedy",
+        "Slice of Life"
+      ],
+      "siteUrl": "https://anilist.co/anime/215835",
+      "streaming": [],
+      "trailer": {
+        "site": "youtube",
+        "id": "rUHYbwZDVVI"
+      },
+      "next": {
+        "at": 1793534400,
+        "episode": 6
+      },
+      "airingAt": 1794139200,
+      "episode": 7,
+      "scheduleId": 422506,
+      "description_es": "\"Umayuru\" es una serie corta de animes que ofrece un musgo de Uma tamaño pint! Esta vez, es una carrera de tres minutos \"Full-Gate\" donde *all* el Uma Musume to the track! ¡Una reunión súper grande y relajada con todos!"
+    },
+    {
+      "id": "mal-60948",
+      "mal_id": 60948,
+      "ani_id": 186541,
+      "title": "Reborn as a Space Mercenary: I Woke Up Piloting the Strongest Starship!",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx186541-caYpLsLmbCh7.jpg",
+      "banner": "",
+      "description": "Sato Takahiro was an ordinary office worker and hobbyist gamer until the day he woke up on a spaceship–one that strangely resembled a craft from a favorite space-shooter game. With a decked-out ship, a crew full of babes, and a fantastic universe to explore, he's going to make the most of his good luck and create the life he's always dreamed of! (Source: Seven Seas Entertainment)",
+      "year": 2026,
+      "startDate": "2026-10-04",
+      "format": "TV",
+      "episodes": 13,
+      "averageScore": 69,
+      "status": "RELEASING",
+      "genres": [
+        "Action",
+        "Comedy",
+        "Drama",
+        "Mecha",
+        "Romance",
+        "Sci-Fi"
+      ],
+      "siteUrl": "https://anilist.co/anime/186541",
+      "streaming": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00384006/reborn-as-a-space-mercenary-i-woke-up-piloting-the-strongest-starship"
+        }
+      ],
+      "trailer": {
+        "site": "youtube",
+        "id": "Z9ofT53sz2U"
+      },
+      "next": {
+        "at": 1793536200,
+        "episode": 5
+      },
+      "airingAt": 1794141000,
+      "episode": 6,
+      "scheduleId": 419792,
+      "description_es": "Sato Takahiro era un trabajador de oficina ordinario y aficionado al juego hasta el día en que se despertó en una nave espacial – una que extrañamente se parecía a una nave de un juego favorito de tiro espacial. Con un barco desguace, una tripulación llena de chicas, y un universo fantástico para explorar, él va a aprovechar al máximo su buena suerte y crear la vida que siempre ha soñado con! (Fuente: Seven Seas Entertainment)"
+    },
+    {
+      "id": "mal-62907",
+      "mal_id": 62907,
+      "ani_id": 202079,
+      "title": "Uncle's Obsession with Cute Things",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx202079-nwBpDUms0Bab.png",
+      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/202079-oeULOdC1R1AR.jpg",
+      "description": "By day, Mitsutaka Oji is the handsome, dependable boss everyone admires. By night, he dotes on his favorite mascot, Pugtaro, and indulges his secret obsession with all things cute! He's kept his double life hidden for years—but one unexpected encounter turns everything upside down and forces Oji to face his feelings head-on! (Source: Crunchyroll)",
+      "year": 2026,
+      "startDate": "2026-10-04",
+      "format": "TV",
+      "episodes": 12,
+      "averageScore": 62,
+      "status": "RELEASING",
+      "genres": [
+        "Comedy",
+        "Slice of Life"
+      ],
+      "siteUrl": "https://anilist.co/anime/202079",
+      "streaming": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00385445/uncles-obsession-with-cute-things"
+        }
+      ],
+      "trailer": {
+        "site": "youtube",
+        "id": "YKgjylmYeoA"
+      },
+      "next": {
+        "at": 1793538000,
+        "episode": 5
+      },
+      "airingAt": 1794142800,
+      "episode": 6,
+      "scheduleId": 418254,
+      "description_es": "Al día, Mitsutaka Oji es el guapo y confiable jefe que todos admiran. Por la noche, hace su mascota favorita, Pugtaro, y complace su obsesión secreta con todas las cosas lindas! Ha mantenido su doble vida escondida durante años, pero un encuentro inesperado lo vuelve todo al revés y obliga a Oji a enfrentar sus sentimientos. (Fuente: Crunchyroll)"
+    },
+    {
+      "id": "mal-63667",
+      "mal_id": 63667,
+      "ani_id": 209032,
+      "title": "Magical Sisters LuluttoLilly Part 2",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx209032-R0gP5IFdk7Vd.jpg",
+      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/209032-hpYi0dlKkagd.jpg",
+      "description": "The second half of Mahou no Shimai LuluttoLilly.",
+      "year": 2026,
+      "startDate": "2026-10-04",
+      "format": "TV",
+      "episodes": 0,
+      "averageScore": 62,
+      "status": "RELEASING",
+      "genres": [
+        "Mahou Shoujo",
+        "Music"
+      ],
+      "siteUrl": "https://anilist.co/anime/209032",
+      "streaming": [],
+      "trailer": {
+        "site": "youtube",
+        "id": "rwUPmzMpECo"
+      },
+      "next": {
+        "at": 1793539800,
+        "episode": 5
+      },
+      "airingAt": 1794144600,
+      "episode": 6,
+      "scheduleId": 419242,
+      "description_es": "La segunda mitad de Mahou no Shimai LuluttoLilly."
+    },
+    {
+      "id": "mal-63751",
+      "mal_id": 63751,
+      "ani_id": 209499,
+      "title": "TANK CHAIR",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx209499-S0sWFrCpft85.jpg",
+      "banner": "",
+      "description": "Shizuka takes on the most dangerous of assassin jobs, but she's not the one doing the killing. Rather, it's her brother, Nagi, a strong assassin who took a bullet to protect his sister, leaving him in a comatose state and having to use a wheelchair. However, Shizuka has figured out the key to waking her brother up: he must be faced with killing intent! Thus begins a violent journey of recovery, battling the most dangerous foes! (Source: Kodansha USA)",
+      "year": 2026,
+      "startDate": "2026-10-04",
+      "format": "TV",
+      "episodes": 0,
+      "averageScore": 62,
+      "status": "RELEASING",
+      "genres": [
+        "Action",
+        "Sci-Fi"
+      ],
+      "siteUrl": "https://anilist.co/anime/209499",
+      "streaming": [],
+      "trailer": {
+        "site": "youtube",
+        "id": "ihAvU833DHA"
+      },
+      "next": {
+        "at": 1793541600,
+        "episode": 5
+      },
+      "airingAt": 1794146400,
+      "episode": 6,
+      "scheduleId": 422117,
+      "description_es": "Shizuka se ocupa de los trabajos más peligrosos de los asesinos, pero ella no es la que hace el asesinato. Más bien, es su hermano, Nagi, un asesino fuerte que tomó una bala para proteger a su hermana, dejarlo en estado en coma y tener que usar una silla de ruedas. Sin embargo, Shizuka ha descubierto la clave para despertar a su hermano: ¡debe enfrentarse con la intención de matar! Así comienza un viaje violento de recuperación, luchando contra los enemigos más peligrosos! (Fuente: Kodansha USA)"
+    },
+    {
+      "id": "mal-63367",
+      "mal_id": 63367,
+      "ani_id": 206814,
+      "title": "Dragon Ball Super: Beerus",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx206814-PVVzRbf1IQpe.jpg",
+      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/206814-ARuwrZJAGONN.jpg",
+      "description": "Several years have passed since the fierce battle against Majin Buu, and Earth has finally regained a brief moment of peace. At the same time, Beerus, the God of Destruction, awakens from his long, deep sleep. Even Kai and Supreme Kai, aware of Beerus's overwhelming power to destroy entire planets, watch his awakening with great fear… Meanwhile, Beerus hears rumors of a Saiyan who defeated Frieza—and suddenly appears before Goku. Targeted by Beerus, the strongest being in the universe, Earth is in grave danger. Thus begins an earth-shattering cosmic battle between the God of Destruction and Goku and his alliesa—a conflict that will shake the entire universe. (Source: Official Site) Note: “Enhanced” edition of Dragon Ball Super, featuring a large volume of newly added and redrawn cuts, a reconstructed narrative, and updated visuals for a more immersive and faithful representation of Akira Toriyama’s original manga.",
+      "year": 2026,
+      "startDate": "2026-10-11",
+      "format": "TV",
+      "episodes": 0,
+      "averageScore": 81,
+      "status": "RELEASING",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Sci-Fi"
+      ],
+      "siteUrl": "https://anilist.co/anime/206814",
+      "streaming": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00389311/dragon-ball-super-beerus"
+        }
+      ],
+      "trailer": {
+        "site": "youtube",
+        "id": "CFgEL7ei8VE"
+      },
+      "next": {
+        "at": 1793542560,
+        "episode": 4
+      },
+      "airingAt": 1794147360,
+      "episode": 5,
+      "scheduleId": 419193,
+      "description_es": "Han pasado varios años desde la feroz batalla contra Majin Buu, y la Tierra finalmente ha recuperado un breve momento de paz. Al mismo tiempo, Beerus, el Dios de la Destrucción, despierta de su sueño largo y profundo. Incluso Kai y el Supremo Kai, consciente del abrumador poder de Beerus para destruir planetas enteros, ver su despertar con gran miedo... Mientras tanto, Beerus escucha rumores de un Saiyan que venció a Frieza y de repente aparece ante Goku. Meta de cerveza"
+    },
+    {
+      "id": "mal-60601",
+      "mal_id": 60601,
+      "ani_id": 185756,
+      "title": "As a Reincarnated Aristocrat, I'll Use My Appraisal Skill to Rise in the World Season 3",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx185756-xPCl0RyQ7fXD.jpg",
+      "banner": "",
+      "description": "The third season of Tensei Kizoku, Kantei Skill de Nariagaru . Note: On September 4, 2026, it was announced that GeyeG Pictures would take over the production from studio MOTHER while keeping the same staff.",
+      "year": 2026,
+      "startDate": "2026-09-27",
+      "format": "TV",
+      "episodes": 0,
+      "averageScore": 69,
+      "status": "RELEASING",
+      "genres": [
+        "Adventure",
+        "Fantasy"
+      ],
+      "siteUrl": "https://anilist.co/anime/185756",
+      "streaming": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GG5H5XQMD/as-a-reincarnated-aristocrat-ill-use-my-appraisal-skill-to-rise-in-the-world"
+        }
+      ],
+      "trailer": {
+        "site": "youtube",
+        "id": "8_Lxr7vO9l0"
+      },
+      "next": {
+        "at": 1793543400,
+        "episode": 6
+      },
+      "airingAt": 1794148200,
+      "episode": 7,
+      "scheduleId": 419231,
+      "description_es": "La tercera temporada de Tensei Kizoku, Kantei Skill de Nariagaru. Nota: El 4 de septiembre de 2026, se anunció que GeyeG Pictures tomaría la producción del estudio MOTHER manteniendo el mismo personal."
+    },
+    {
+      "id": "mal-63292",
+      "mal_id": 63292,
+      "ani_id": 205896,
+      "title": "Full Clearing Another World under a Goddess with Zero Believers",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx205896-ElrV8oVAsuax.jpg",
+      "banner": "",
+      "description": "RPG player Makoto Takatsuki is hurled into another world with awful skills and stats. But he soon meets a goddess named Noah, who asks him to become her 1st believer in return for blessings. (Source: J-Novel Club)",
+      "year": 2026,
+      "startDate": "2026-10-11",
+      "format": "TV",
+      "episodes": 0,
+      "averageScore": 65,
+      "status": "RELEASING",
+      "genres": [
+        "Adventure",
+        "Fantasy"
+      ],
+      "siteUrl": "https://anilist.co/anime/205896",
+      "streaming": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00383992/full-clearing-another-world-under-a-goddess-with-zero-believers"
+        }
+      ],
+      "trailer": {
+        "site": "youtube",
+        "id": "qlMB8vSpLzc"
+      },
+      "next": {
+        "at": 1793543400,
+        "episode": 4
+      },
+      "airingAt": 1794148200,
+      "episode": 5,
+      "scheduleId": 419253,
+      "description_es": "El jugador de RPG Makoto Takatsuki es lanzado en otro mundo con terribles habilidades y estadísticas. Pero pronto se encuentra con una diosa llamada Noé, que le pide que se convierta en su primer creyente a cambio de bendiciones. (Fuente: J-Novel Club)"
+    },
+    {
+      "id": "mal-62753",
+      "mal_id": 62753,
+      "ani_id": 200455,
+      "title": "Even Though I'm a Super Timid Noble Girl, I Accepted the Bet From My Cunning Fiancé",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx200455-P3XStRQMJ7Di.png",
+      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/200455-rlIXyuk0jHE3.jpg",
+      "description": "I was reborn as a villainous daughter in a reverse harem otome game. After being sick with a high fever at the age of 10, Pia Rockwell suddenly remembered her past life as a university student in Japan. But far from going down the villainess route, all this super timid girl wants is to finally use her knowledge from when she was a grad student studying to get her doctorate in paleontology. Her ultimate goal is to become a commoner, excavate fossils, build a museum and then become a curator. So in order to escape the villainess route and avoid being deported by her fiancé during the graduation ball, Pia decides to avoid the upcoming hurt and heartache and asks to break off her engagement to Rufus, the Prime Minister's son. But will her cunning fiancé let her go that easily?",
+      "year": 2026,
+      "startDate": "2026-10-04",
+      "format": "TV",
+      "episodes": 12,
+      "averageScore": 67,
+      "status": "RELEASING",
+      "genres": [
+        "Comedy",
+        "Fantasy",
+        "Romance"
+      ],
+      "siteUrl": "https://anilist.co/anime/200455",
+      "streaming": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00365562"
+        }
+      ],
+      "trailer": {
+        "site": "youtube",
+        "id": "e41RGxVwJRs"
+      },
+      "next": {
+        "at": 1793543400,
+        "episode": 5
+      },
+      "airingAt": 1794148200,
+      "episode": 6,
+      "scheduleId": 419615,
+      "description_es": "Renací como una hija villana en un juego de harem otome inverso. Después de enfermarse con fiebre alta a los 10 años, Pia Rockwell de repente recordó su vida pasada como estudiante universitaria en Japón. Pero lejos de ir por la ruta del villano, todo lo que esta chica súper tímida quiere es finalmente utilizar su conocimiento de cuando era una estudiante de posgrado que estudiaba para obtener su doctorado en paleontología. Su objetivo final es convertirse en un común, excavar fósiles, construir un museo y luego convertirse en un curador. Así que para escapar de la ruta del villano y evitar ser deportado por su prometido durante la graduación"
+    },
+    {
+      "id": "mal-64340",
+      "mal_id": 64340,
+      "ani_id": 212888,
+      "title": "Overgeared",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx212888-NhyvqPt5aIuJ.jpg",
+      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/212888-ZsnNegBCKXQq.jpg",
+      "description": "Sin Yeong-U (a.k.a. Grid), an unlucky man in life and a low-level player in the popular VR game “Satisfy,” finds a powerful item that earns him a rare legendary class title: “Pagma’s Successor.” He’s now a skilled blacksmith who can forge unique weapons and equip the game’s most powerful gear. Grid resolves to use his new abilities to achieve fame and fortune, but as his very existence begins to stir up trouble in Satisfy, he realizes that life as a legend may be more than he bargained for…. (Source: Tapas, edited) Note: Tempal: Item no Chikara is streaming a week in advance of the TV broadcast on Prime Video and Crunchyroll beginning September 27th, 2026. Regular broadcasting began on October 2nd, 2026.",
+      "year": 2026,
+      "startDate": "2026-09-27",
+      "format": "ONA",
+      "episodes": 12,
+      "averageScore": 76,
+      "status": "RELEASING",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Comedy",
+        "Fantasy"
+      ],
+      "siteUrl": "https://anilist.co/anime/212888",
+      "streaming": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00384004"
+        }
+      ],
+      "trailer": {
+        "site": "youtube",
+        "id": "e1Km0FqUZl0"
+      },
+      "next": {
+        "at": 1793543400,
+        "episode": 6
+      },
+      "airingAt": 1794148200,
+      "episode": 7,
+      "scheduleId": 419900,
+      "description_es": "Sin Yeong-U (a.k.a. Grid), un hombre desafortunado en la vida y un jugador de bajo nivel en el popular juego VR “Satisfy”, encuentra un poderoso artículo que le gana un raro título legendario de clase: “El Sucesor de Pagma”. Ahora es un herrero experto que puede forjar armas únicas y equipar el equipo más poderoso del juego. Grid resuelve usar sus nuevas habilidades para alcanzar la fama y la fortuna, pero cuando su propia existencia comienza a provocar problemas en Satisfeo, se da cuenta de que la vida es una"
+    },
+    {
+      "id": "mal-62590",
+      "mal_id": 62590,
+      "ani_id": 199426,
+      "title": "HOTEL INHUMANS Season 2",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx199426-0nBgTV9BrcJn.jpg",
+      "banner": "",
+      "description": "The second season of Hotel Inhumans .",
+      "year": 2026,
+      "startDate": "2026-10-04",
+      "format": "TV",
+      "episodes": 13,
+      "averageScore": 62,
+      "status": "RELEASING",
+      "genres": [
+        "Action",
+        "Drama"
+      ],
+      "siteUrl": "https://anilist.co/anime/199426",
+      "streaming": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GXJHM3G08/hotel-inhumans"
+        }
+      ],
+      "trailer": null,
+      "next": {
+        "at": 1793544300,
+        "episode": 5
+      },
+      "airingAt": 1794149100,
+      "episode": 6,
+      "scheduleId": 422104,
+      "description_es": "La segunda temporada de Hotel Inhumans ."
+    },
+    {
+      "id": "mal-63753",
+      "mal_id": 63753,
+      "ani_id": 209463,
+      "title": "From Far Away",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx209463-Yxk2q10RXgg8.jpg",
+      "banner": "",
+      "description": "On her way home from school one day, Noriko is unexpectedly plunged into a strange and extraordinary fantasy world. Her troubles compound exponentially when she is rescued and befriended by a handsome young man by the name of Izark. He may be brave and courageous, but inside Izark lurks the darkest evil imaginable. And according to an ancient prophecy, Noriko possesses the power to unleash that evil. Now, inexorably bound together, these two unlikely allies must navigate a world both wondrous and hostile. (Source: VIZ Media)",
+      "year": 2026,
+      "startDate": "2026-10-05",
+      "format": "TV",
+      "episodes": 0,
+      "averageScore": 67,
+      "status": "RELEASING",
+      "genres": [
+        "Adventure",
+        "Fantasy",
+        "Romance"
+      ],
+      "siteUrl": "https://anilist.co/anime/209463",
+      "streaming": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00384000/from-far-away"
+        }
+      ],
+      "trailer": {
+        "site": "youtube",
+        "id": "dLRKywRu3iM"
+      },
+      "next": {
+        "at": 1793545200,
+        "episode": 5
+      },
+      "airingAt": 1794150000,
+      "episode": 6,
+      "scheduleId": 417502,
+      "description_es": "En su camino a casa desde la escuela un día, Noriko se sumergió inesperadamente en un extraño y extraordinario mundo de fantasía. Sus problemas se complican exponencialmente cuando es rescatada y amigada por un joven guapo por el nombre de Izark. Puede ser valiente y valiente, pero dentro de Izark se esconde el mal más oscuro imaginable. Y según una profecía antigua, Noriko posee el poder de desencadenar ese mal. Ahora, inexorablemente unidos, estos dos aliados improbables deben navegar por un mundo maravilloso y hostil. (Fuente: VIZ Media)"
     }
   ],
   "seasonal": {
@@ -7167,8 +7611,8 @@
           "id": "YvNvvUeCztE"
         },
         "next": {
-          "at": 1793368800,
-          "episode": 5
+          "at": 1793973600,
+          "episode": 6
         },
         "description_es": "Después de la rebelión del clan Shi, las cosas finalmente se han asentado, y Maomao ha vuelto a su antigua vida como farmacéutico en el distrito de placer. Un día, provocado por un desayuno servido en la Casa Verdigris, Maomao siente una anomalía y comienza a investigar su verdadera naturaleza. Mientras tanto, Jinshi, que ha revelado su verdadera identidad como el hermano imperial y ha comenzado a enfrentar sus pesadas responsabilidades, está profundamente preocupado por la fina"
       },
@@ -7203,8 +7647,8 @@
           "id": "upBWYExYoYc"
         },
         "next": {
-          "at": 1793370600,
-          "episode": 5
+          "at": 1793975400,
+          "episode": 6
         },
         "description_es": "Después de luchar en Kioto y Nerima, los estudiantes de la Academia Rasetsu se han hecho más fuertes. Pero Yaoroshi deja la academia para unirse a la Brigada Oni por su \"erración total del Momotaro\". Cuando Shiki se da cuenta de que también apuntan a los no combatientes, se pone después de Yaoroshi para traerlo de vuelta. Mientras tanto, en Nikko, hay una instalación de investigación para experimentos horribles en la antigua Kegon Falls... (Fuente: REMOW)"
       },
@@ -7233,8 +7677,8 @@
           "id": "4QafpDIgjS4"
         },
         "next": {
-          "at": 1793363160,
-          "episode": 5
+          "at": 1793967960,
+          "episode": 6
         },
         "description_es": "La historia de Aoki Denshou Welsh &quot; Shedar sigue a Welsh, un adolescente del país que ama cocinar, y a Shedar, un joven príncipe que está destinado a ser rey un día. Cuando los dos jóvenes con vidas muy diferentes son lanzados juntos por un encuentro casual, las ruedas del destino comienzan a girar, y pronto deben trabajar juntos para traer un futuro pacífico al detener un cruel déspota de conquistar el mundo. (Fuente: Crunchyroll)"
       },
@@ -8984,8 +9428,8 @@
           "id": "Ex9LrBK-7hk"
         },
         "next": {
-          "at": 1793370600,
-          "episode": 4
+          "at": 1793975400,
+          "episode": 5
         },
         "description_es": "En la superficie, Satoko lo tiene todo, es hermosa, la hija de un noble, y a una edad temprana para el matrimonio. Desafortunadamente, ella también está bastante enferma y sólo tiene un corto tiempo para vivir. Antes de que pueda conseguir un matrimonio que redimirá su valor en los ojos de su familia, se encuentra el blanco del misterioso asesino Shinpei, y sus planes están en peligro. ¡Para salvarse, hace una propuesta desesperada de matrimonio! Cuando c"
       },
@@ -9055,8 +9499,8 @@
           "id": "NNHxQJgZdbQ"
         },
         "next": {
-          "at": 1793367000,
-          "episode": 4
+          "at": 1793971800,
+          "episode": 5
         },
         "description_es": "Esta es una historia de cuatro chicas que viven en el \"Dark Side\" de Academy City. En la Ciudad de la Academia donde el \"ESP\" ha sido reconocido como una ciencia general. Detrás de la paz, hay una organización del lado oscuro que realiza misiones que no pueden hacerse públicas. \"ITEM\" es una unidad de élite compuesta por cuatro chicas. Takitsubo Rikou es capaz de leer y rastrear los campos AIM emitidos por aquellos con capacidades. Frenda Seivelun, que destaca en combate utilizando explosivos y trampas. Kinuhata Saiai, que puede manipular el nitrógeno a voluntad y juega un papel defensivo. Y uno de los 7 Espers que Academy City está orgulloso de: Mugino Shiz"
       },
@@ -9164,10 +9608,7 @@
         "siteUrl": "https://anilist.co/anime/208367",
         "streaming": [],
         "trailer": null,
-        "next": {
-          "at": 1793361600,
-          "episode": 4
-        },
+        "next": null,
         "description_es": "Secuela de Duel Masters LOST: Boukyaku no Taiyou."
       },
       {
