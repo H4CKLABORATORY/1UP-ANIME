@@ -1,17 +1,17 @@
 {
   "schemaVersion": 1,
   "engine": "DexterAnimeSync",
-  "updatedAt": "2026-10-30T00:00:04.890Z",
+  "updatedAt": "2026-10-30T03:13:36.681Z",
   "job": {
-    "id": "sync-951bcecb102c6731",
-    "startedAt": "2026-10-30T00:00:04.890Z",
-    "completedAt": "2026-10-30T00:00:04.890Z",
+    "id": "sync-50f3b8cbe21e06ae",
+    "startedAt": "2026-10-30T03:13:36.681Z",
+    "completedAt": "2026-10-30T03:13:36.681Z",
     "mode": "programada",
     "status": "correcta",
     "counters": {
-      "animes": 1,
-      "episodesDetected": 185,
-      "episodesNew": 13,
+      "animes": 0,
+      "episodesDetected": 0,
+      "episodesNew": 0,
       "playbackSources": 0,
       "errors": 0
     }
@@ -24,11 +24,11 @@
       "enabled": true,
       "sourceType": "metadata",
       "intervalHours": 6,
-      "lastRunAt": "2026-10-29T15:20:00.639Z",
-      "runAt": "2026-10-30T00:00:04.890Z",
-      "state": "conectada",
-      "observed": 185,
-      "created": 13,
+      "lastRunAt": "2026-10-30T00:00:04.890Z",
+      "runAt": null,
+      "state": "en_espera",
+      "observed": 0,
+      "created": 0,
       "playback": 0,
       "error": null
     },
@@ -40,12 +40,13 @@
       "sourceType": "playback",
       "intervalHours": 3,
       "lastRunAt": "2026-10-29T21:12:09.012Z",
-      "runAt": null,
-      "state": "en_espera",
+      "runAt": "2026-10-30T03:13:36.681Z",
+      "state": "sin_contenido_autorizado",
       "observed": 0,
       "created": 0,
       "playback": 0,
-      "error": null
+      "error": null,
+      "rejected": 0
     },
     {
       "id": "jkanime_external",
@@ -69,10 +70,10 @@
       "enabled": true,
       "sourceType": "embed",
       "intervalHours": 6,
-      "lastRunAt": "2026-10-29T15:20:00.639Z",
-      "runAt": "2026-10-30T00:00:04.890Z",
-      "state": "conectada",
-      "observed": 94,
+      "lastRunAt": "2026-10-30T00:00:04.890Z",
+      "runAt": null,
+      "state": "en_espera",
+      "observed": 0,
       "created": 0,
       "playback": 0,
       "error": null
