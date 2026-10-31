@@ -1,17 +1,17 @@
 {
   "schemaVersion": 1,
   "engine": "DexterAnimeSync",
-  "updatedAt": "2026-10-30T23:59:35.212Z",
+  "updatedAt": "2026-10-31T03:12:04.166Z",
   "job": {
-    "id": "sync-99c48b6a47bf7a59",
-    "startedAt": "2026-10-30T23:59:35.212Z",
-    "completedAt": "2026-10-30T23:59:35.212Z",
+    "id": "sync-9d7504b1d17b2186",
+    "startedAt": "2026-10-31T03:12:04.166Z",
+    "completedAt": "2026-10-31T03:12:04.166Z",
     "mode": "programada",
     "status": "correcta",
     "counters": {
       "animes": 0,
-      "episodesDetected": 207,
-      "episodesNew": 17,
+      "episodesDetected": 0,
+      "episodesNew": 0,
       "playbackSources": 0,
       "errors": 0
     }
@@ -24,11 +24,11 @@
       "enabled": true,
       "sourceType": "metadata",
       "intervalHours": 6,
-      "lastRunAt": "2026-10-30T15:19:41.765Z",
-      "runAt": "2026-10-30T23:59:35.212Z",
-      "state": "conectada",
-      "observed": 207,
-      "created": 17,
+      "lastRunAt": "2026-10-30T23:59:35.212Z",
+      "runAt": null,
+      "state": "en_espera",
+      "observed": 0,
+      "created": 0,
       "playback": 0,
       "error": null
     },
@@ -40,12 +40,13 @@
       "sourceType": "playback",
       "intervalHours": 3,
       "lastRunAt": "2026-10-30T21:08:17.656Z",
-      "runAt": null,
-      "state": "en_espera",
+      "runAt": "2026-10-31T03:12:04.166Z",
+      "state": "sin_contenido_autorizado",
       "observed": 0,
       "created": 0,
       "playback": 0,
-      "error": null
+      "error": null,
+      "rejected": 0
     },
     {
       "id": "jkanime_external",
@@ -69,10 +70,10 @@
       "enabled": true,
       "sourceType": "embed",
       "intervalHours": 6,
-      "lastRunAt": "2026-10-30T15:19:41.765Z",
-      "runAt": "2026-10-30T23:59:35.212Z",
-      "state": "conectada",
-      "observed": 94,
+      "lastRunAt": "2026-10-30T23:59:35.212Z",
+      "runAt": null,
+      "state": "en_espera",
+      "observed": 0,
       "created": 0,
       "playback": 0,
       "error": null
