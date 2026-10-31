@@ -1,8 +1,8 @@
 {
-  "updated": "2026-10-31T09:40:04.246Z",
+  "updated": "2026-10-31T15:36:14.174Z",
   "source": "AniList public GraphQL metadata",
-  "windowStart": 1793241590,
-  "windowEnd": 1794217190,
+  "windowStart": 1793262960,
+  "windowEnd": 1794238560,
   "airing": [
     {
       "id": "mal-65095",
@@ -1404,8 +1404,8 @@
       "streaming": [],
       "trailer": null,
       "next": {
-        "at": 1793440800,
-        "episode": 20
+        "at": 1794045600,
+        "episode": 21
       },
       "airingAt": 1793440800,
       "episode": 20,
@@ -1443,8 +1443,8 @@
         "id": "PxXPcoo8uGM"
       },
       "next": {
-        "at": 1793448000,
-        "episode": 5
+        "at": 1794052800,
+        "episode": 6
       },
       "airingAt": 1793448000,
       "episode": 5,
@@ -1482,8 +1482,8 @@
         "id": "9oBywQ403ZA"
       },
       "next": {
-        "at": 1793451600,
-        "episode": 6
+        "at": 1794056400,
+        "episode": 7
       },
       "airingAt": 1793451600,
       "episode": 6,
@@ -1521,8 +1521,8 @@
         "id": "LyDMSUR6_Q8"
       },
       "next": {
-        "at": 1793453400,
-        "episode": 6
+        "at": 1794058200,
+        "episode": 7
       },
       "airingAt": 1793453400,
       "episode": 6,
@@ -1561,8 +1561,8 @@
         "id": "4MYo8FfiXMA"
       },
       "next": {
-        "at": 1793455200,
-        "episode": 5
+        "at": 1794060000,
+        "episode": 6
       },
       "airingAt": 1793455200,
       "episode": 5,
@@ -1599,8 +1599,8 @@
         "id": "JqjXaJysS5w"
       },
       "next": {
-        "at": 1793457000,
-        "episode": 5
+        "at": 1794061800,
+        "episode": 6
       },
       "airingAt": 1793457000,
       "episode": 5,
@@ -1640,12 +1640,12 @@
         "id": "_0kVb8-uRSI"
       },
       "next": {
-        "at": 1793457000,
-        "episode": 5
+        "at": 1794666600,
+        "episode": 6
       },
       "airingAt": 1793457000,
       "episode": 5,
-      "scheduleId": 420132,
+      "scheduleId": 423117,
       "description_es": "Puede ser una ciudad arruinada devastada por zombis, pero para Aki y sus amigos, ¡es increíble! Habiendo crecido sólo escuchando historias del viejo mundo y el misterioso brote que borró a la humanidad, se pone con sus amigos de la infancia en busca de su padre desaparecido. Las cosas se convierten rápidamente en una lucha por la supervivencia fuera de la seguridad de su pequeño pueblo, sin embargo nunca se han sentido más vivos. (Fuente: Crunchyroll)"
     },
     {
@@ -1676,8 +1676,8 @@
       ],
       "trailer": null,
       "next": {
-        "at": 1793457900,
-        "episode": 4
+        "at": 1794062700,
+        "episode": 5
       },
       "airingAt": 1793457900,
       "episode": 4,
@@ -1717,8 +1717,8 @@
         "id": "XqrBfyUNYZs"
       },
       "next": {
-        "at": 1793458800,
-        "episode": 6
+        "at": 1794063600,
+        "episode": 7
       },
       "airingAt": 1793458800,
       "episode": 6,
@@ -1751,8 +1751,8 @@
         "id": "VTRVLnzhl90"
       },
       "next": {
-        "at": 1793460600,
-        "episode": 5
+        "at": 1794065400,
+        "episode": 6
       },
       "airingAt": 1793460600,
       "episode": 5,
@@ -3512,7 +3512,7 @@
       "startDate": "2026-10-14",
       "format": "TV",
       "episodes": 11,
-      "averageScore": 54,
+      "averageScore": 53,
       "status": "RELEASING",
       "genres": [
         "Mecha",
@@ -5370,8 +5370,8 @@
       "streaming": [],
       "trailer": null,
       "next": {
-        "at": 1793440800,
-        "episode": 20
+        "at": 1794045600,
+        "episode": 21
       },
       "airingAt": 1794045600,
       "episode": 21,
@@ -5409,8 +5409,8 @@
         "id": "PxXPcoo8uGM"
       },
       "next": {
-        "at": 1793448000,
-        "episode": 5
+        "at": 1794052800,
+        "episode": 6
       },
       "airingAt": 1794052800,
       "episode": 6,
@@ -5448,8 +5448,8 @@
         "id": "9oBywQ403ZA"
       },
       "next": {
-        "at": 1793451600,
-        "episode": 6
+        "at": 1794056400,
+        "episode": 7
       },
       "airingAt": 1794056400,
       "episode": 7,
@@ -5487,8 +5487,8 @@
         "id": "LyDMSUR6_Q8"
       },
       "next": {
-        "at": 1793453400,
-        "episode": 6
+        "at": 1794058200,
+        "episode": 7
       },
       "airingAt": 1794058200,
       "episode": 7,
@@ -5527,8 +5527,8 @@
         "id": "4MYo8FfiXMA"
       },
       "next": {
-        "at": 1793455200,
-        "episode": 5
+        "at": 1794060000,
+        "episode": 6
       },
       "airingAt": 1794060000,
       "episode": 6,
@@ -5599,54 +5599,13 @@
         "id": "JqjXaJysS5w"
       },
       "next": {
-        "at": 1793457000,
-        "episode": 5
+        "at": 1794061800,
+        "episode": 6
       },
       "airingAt": 1794061800,
       "episode": 6,
       "scheduleId": 419805,
       "description_es": "Akira vive una vida pacífica con su hermana mayor Haruka y su madre, que dirige un café. Sin embargo, la familia alberga un secreto — Haruka ha heredado un poder de su padre llamado \"Engine\", y esconde ese poder de otros. Akira, por otro lado, no ha heredado el poder de su padre, y tiene un complejo de inferioridad. En medio de esto, acontecimientos extraños comienzan a suceder alrededor del mundo. (Fuente: Anime News Network)"
-    },
-    {
-      "id": "mal-62524",
-      "mal_id": 62524,
-      "ani_id": 199007,
-      "title": "#I'm Looking For a Zombie",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx199007-8R1HsnflnHJE.jpg",
-      "banner": "",
-      "description": "It may be a ruined city ravaged by zombies, but to Aki and her friends, it’s amazing! Having grown up only hearing stories of the old world and the mysterious outbreak that wiped out humanity, she sets off with her childhood friends in search of her missing father. Things quickly become a fight for survival outside the safety of their small village, yet they’ve never felt more alive. (Source: Crunchyroll)",
-      "year": 2026,
-      "startDate": "2026-10-03",
-      "format": "TV",
-      "episodes": 12,
-      "averageScore": 60,
-      "status": "RELEASING",
-      "genres": [
-        "Action",
-        "Comedy",
-        "Horror",
-        "Mystery",
-        "Supernatural"
-      ],
-      "siteUrl": "https://anilist.co/anime/199007",
-      "streaming": [
-        {
-          "name": "Crunchyroll",
-          "url": "https://www.crunchyroll.com/series/GT00383996/im-looking-for-a-zombie"
-        }
-      ],
-      "trailer": {
-        "site": "youtube",
-        "id": "_0kVb8-uRSI"
-      },
-      "next": {
-        "at": 1793457000,
-        "episode": 5
-      },
-      "airingAt": 1794061800,
-      "episode": 6,
-      "scheduleId": 420133,
-      "description_es": "Puede ser una ciudad arruinada devastada por zombis, pero para Aki y sus amigos, ¡es increíble! Habiendo crecido sólo escuchando historias del viejo mundo y el misterioso brote que borró a la humanidad, se pone con sus amigos de la infancia en busca de su padre desaparecido. Las cosas se convierten rápidamente en una lucha por la supervivencia fuera de la seguridad de su pequeño pueblo, sin embargo nunca se han sentido más vivos. (Fuente: Crunchyroll)"
     },
     {
       "id": "mal-63053",
@@ -5676,8 +5635,8 @@
       ],
       "trailer": null,
       "next": {
-        "at": 1793457900,
-        "episode": 4
+        "at": 1794062700,
+        "episode": 5
       },
       "airingAt": 1794062700,
       "episode": 5,
@@ -5717,8 +5676,8 @@
         "id": "XqrBfyUNYZs"
       },
       "next": {
-        "at": 1793458800,
-        "episode": 6
+        "at": 1794063600,
+        "episode": 7
       },
       "airingAt": 1794063600,
       "episode": 7,
@@ -5751,8 +5710,8 @@
         "id": "VTRVLnzhl90"
       },
       "next": {
-        "at": 1793460600,
-        "episode": 5
+        "at": 1794065400,
+        "episode": 6
       },
       "airingAt": 1794065400,
       "episode": 6,
@@ -7057,6 +7016,125 @@
       "episode": 6,
       "scheduleId": 422696,
       "description_es": "Chibi shorts to Kusuriya no Hitorigoto 3rd Season lanzado en el canal de animación TOHO YouTube. Nota: El conteo de Episodio comienza a las 49."
+    },
+    {
+      "id": "mal-63409",
+      "mal_id": 63409,
+      "ani_id": 207191,
+      "title": "Hello, I am a Witch and my Crush Wants me to Make a Love Potion!",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx207191-VgkIzfH92WoZ.jpg",
+      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/207191-xYgpkCDnXc5m.jpg",
+      "description": "“Make me a love potion.” And with that single sentence, the Good Witch of the Lake’s secret crush on the dashing Sir Harij ends in heartbreak. Still, when he promises to help her gather the ingredients, Rose is thrilled at the chance to gaze upon a man she’d normally never get to interact with. She learns to brace her pounding heart for their usual stilted conversations…but what is she to do when he inexplicably shows up at her doorstep with bread and a jar of apple butter? (Source: Yen Press)",
+      "year": 2026,
+      "startDate": "2026-10-05",
+      "format": "TV",
+      "episodes": 12,
+      "averageScore": 72,
+      "status": "RELEASING",
+      "genres": [
+        "Fantasy",
+        "Romance"
+      ],
+      "siteUrl": "https://anilist.co/anime/207191",
+      "streaming": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00378072/hello-i-am-a-witch-and-my-crush-wants-me-to-make-a-love-potion"
+        }
+      ],
+      "trailer": {
+        "site": "youtube",
+        "id": "hGRtocAh3iw"
+      },
+      "next": {
+        "at": 1793622600,
+        "episode": 5
+      },
+      "airingAt": 1794227400,
+      "episode": 6,
+      "scheduleId": 420070,
+      "description_es": "Hazme una poción de amor. Y con esa sola frase, la Buena Bruja del amor secreto del lago sobre el desgarrador Sir Harij termina en la ruptura del corazón. Sin embargo, cuando promete ayudarla a reunir los ingredientes, Rose está emocionada por la oportunidad de mirar a un hombre con el que normalmente nunca podría interactuar. Ella aprende a jactar su corazón por sus conversaciones usuales inclinadas... pero ¿qué va a hacer cuando aparece inexplicablemente en su puerta con bre"
+    },
+    {
+      "id": "mal-63712",
+      "mal_id": 63712,
+      "ani_id": 209219,
+      "title": "So What's Wrong with Getting Reborn as a Goblin?",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx209219-3yhKlRx0LX3p.jpg",
+      "banner": "",
+      "description": "Office worker Akira Yagami’s altruistic nature usually gets him the short end of the stick. When he dies after saving a kid from oncoming traffic...he reincarnates in another world as a goblin?! Normally, goblins only live for seven days, but Akira’s newfound powers let him defy the species’ normal life span...and are the key to his path to becoming the strongest goblin ever! (Source: Yen Press) Note: Tensei Goblin Dakedo Shitsumon Aru? is streaming 1 week in advance of the TV broadcast on ABEMA and Prime Video beginning with episode 2 on October 5th, 2026",
+      "year": 2026,
+      "startDate": "2026-10-05",
+      "format": "ONA",
+      "episodes": 0,
+      "averageScore": 65,
+      "status": "RELEASING",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Comedy",
+        "Drama",
+        "Fantasy",
+        "Romance"
+      ],
+      "siteUrl": "https://anilist.co/anime/209219",
+      "streaming": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00384010/so-whats-wrong-with-getting-reborn-as-a-goblin"
+        }
+      ],
+      "trailer": {
+        "site": "youtube",
+        "id": "ynr8tFWrK4c"
+      },
+      "next": {
+        "at": 1793624400,
+        "episode": 6
+      },
+      "airingAt": 1794229200,
+      "episode": 7,
+      "scheduleId": 422216,
+      "description_es": "La naturaleza altruista del trabajador de oficina Akira Yagami generalmente le consigue el extremo corto del palo. Cuando muere después de salvar a un niño del tráfico entrante... ¿reencarna en otro mundo como un duende? Normalmente, los duendes sólo viven durante siete días, pero los nuevos poderes de Akira le permiten desafiar la vida normal de la especie... ¡y son la clave de su camino para convertirse en el más fuerte de todos los tiempos! (Fuente: Yen Press) Nota: Tensei Goblin Dakedo Sitsumon Aru? está transmitiendo 1 semana antes de la emisión de televisión en ABEMA y Primer Video comenzando con el episodio 2 el 5 de octubre de 2026"
+    },
+    {
+      "id": "mal-63098",
+      "mal_id": 63098,
+      "ani_id": 204011,
+      "title": "PSYREN",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx204011-j45RZoqYbdZK.jpg",
+      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/204011-hBOwte9MzykA.jpg",
+      "description": "One day, high schooler Ageha Yoshina picks up a mysterious “red phone card” left behind in a public telephone booth. A few days later, his childhood friend and classmate, Sakurako Amamiya—who possessed the same card—suddenly vanishes without a trace. In search of her, Ageha finds himself drawn into the rumors surrounding a nationwide string of mysterious disappearances, said to be the work of a secret organization known only as “Psyren.” When he accesses the group, a deadly game begins—one that will change his fate forever. (Source: PSYЯEN Official Site)",
+      "year": 2026,
+      "startDate": "2026-10-05",
+      "format": "TV",
+      "episodes": 0,
+      "averageScore": 69,
+      "status": "RELEASING",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Sci-Fi"
+      ],
+      "siteUrl": "https://anilist.co/anime/204011",
+      "streaming": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com/series/GT00371866/psyren"
+        }
+      ],
+      "trailer": {
+        "site": "youtube",
+        "id": "fmUpSXFbSK0"
+      },
+      "next": {
+        "at": 1794232800,
+        "episode": 5
+      },
+      "airingAt": 1794232800,
+      "episode": 5,
+      "scheduleId": 423054,
+      "description_es": "Un día, la secundaria Ageha Yoshina recoge una misteriosa “tarjeta de teléfono roja” que queda atrás en una cabina telefónica pública. Unos días más tarde, su amigo de la infancia y compañero de clase, Sakurako Amamiya, que poseía la misma carta, desaparecen sin dejar rastro. En busca de ella, Ageha se encuentra dibujado en los rumores que rodean una cadena nacional de misteriosas desapariciones, dijo que es obra de una organización secreta conocida sólo como “Psyren”. Cuando accede al grupo, comienza un juego mortal, uno que cambiará su destino para siempre. (Fuente: Sitio Oficial de PSYHUEN)"
     }
   ],
   "seasonal": {
@@ -7127,8 +7205,8 @@
           "id": "LyDMSUR6_Q8"
         },
         "next": {
-          "at": 1793453400,
-          "episode": 6
+          "at": 1794058200,
+          "episode": 7
         },
         "description_es": "¡La segunda temporada de Yasei no el último jefe ga Arawareta!"
       },
@@ -7237,8 +7315,8 @@
           "id": "XqrBfyUNYZs"
         },
         "next": {
-          "at": 1793458800,
-          "episode": 6
+          "at": 1794063600,
+          "episode": 7
         },
         "description_es": "Pocos títulos son más venerados entre los erizos-(ahem) conocedores de videojuegos eróticos japoneses-que Magical Explorer. Un día, nuestro héroe amante de la mugre se despierta para encontrar que ha sido reencarnado en el cuerpo del protagonista de la lancha del juego! O más bien, su mejor amigo, Kousuke Takioto. Pero con su inigualable conocimiento de Magical Explorer y las habilidades de Kousuke poco ortodoxas (una bufanda que se dobla como un puño?), nuestro héroe promete convertir el perdedor más desafortunado del juego en su corazón más poderoso. En este mundo, nada está fuera de alcance cuando tienes el know-how! (Fuente: Yen Press"
       },
@@ -7703,8 +7781,8 @@
           "id": "4MYo8FfiXMA"
         },
         "next": {
-          "at": 1793455200,
-          "episode": 5
+          "at": 1794060000,
+          "episode": 6
         },
         "description_es": "A medida que la tiranía envuelve el Reino de Clover, Asta y los Caballeros Mágicos lanzan una redada desesperada en el Reino de Spade para rescatar a sus capitanes de la Tribu Oscura. Pero su misión los lleva a una batalla brutal contra las fuerzas más allá de cualquier cosa que hayan enfrentado. Ahora, Asta debe elevarse por encima de las probabilidades imposibles de proteger a sus amigos y honrar la promesa que hizo a Yuno. (Fuente: Crunchyroll)"
       },
@@ -7771,8 +7849,8 @@
           "id": "9oBywQ403ZA"
         },
         "next": {
-          "at": 1793451600,
-          "episode": 6
+          "at": 1794056400,
+          "episode": 7
         },
         "description_es": "Fia siempre soñó con convertirse en un caballero. Nacida en una familia de caballeros, es la menos talentosa entre ellos, pero todavía se aferra a su esperanza y trenes con todo lo que tiene. Cuando llega el día para que mate a un pequeño demonio y pruebe su valor, termina cara a cara con un dragón en su lugar! Una herida mortal hace que su vida parpadee ante sus ojos... y de repente recuerda su vida anterior, cuando era un poderoso santo en una era pasada que venció al Rey demonio. Esa vida terminó con dolor por lo que era, haciendo que su miedo vuelva a ser un santo. Ahora que la magia de su anterior"
       },
@@ -7807,8 +7885,8 @@
           "id": "PxXPcoo8uGM"
         },
         "next": {
-          "at": 1793448000,
-          "episode": 5
+          "at": 1794052800,
+          "episode": 6
         },
         "description_es": "Romelia y su partido tienen éxito en derrotar al Rey demonio Zelgis, aunque la carga imprudente del príncipe Henri los obliga a una batalla agotadora. Después, Romelia se marca \"peso muerto\" por no luchar directamente, y el Príncipe unilateralmente rompe su compromiso. Denegado un lugar en las celebraciones de la victoria, Romelia vuelve a casa, sólo para ser conocido con indiferencia fría de su familia y sociedad. Sin embargo, se niega a romper. Ella ya ha puesto sus ojos en el camino que está por delante. (Fuente: Crunchyroll) Nota: Romelia War Chronicle fue transmitido 2 días antes de la emisión de televisión en A"
       },
@@ -7845,8 +7923,8 @@
           "id": "_0kVb8-uRSI"
         },
         "next": {
-          "at": 1793457000,
-          "episode": 5
+          "at": 1794666600,
+          "episode": 6
         },
         "description_es": "Puede ser una ciudad arruinada devastada por zombis, pero para Aki y sus amigos, ¡es increíble! Habiendo crecido sólo escuchando historias del viejo mundo y el misterioso brote que borró a la humanidad, se pone con sus amigos de la infancia en busca de su padre desaparecido. Las cosas se convierten rápidamente en una lucha por la supervivencia fuera de la seguridad de su pequeño pueblo, sin embargo nunca se han sentido más vivos. (Fuente: Crunchyroll)"
       },
@@ -7942,8 +8020,8 @@
           "id": "JqjXaJysS5w"
         },
         "next": {
-          "at": 1793457000,
-          "episode": 5
+          "at": 1794061800,
+          "episode": 6
         },
         "description_es": "Akira vive una vida pacífica con su hermana mayor Haruka y su madre, que dirige un café. Sin embargo, la familia alberga un secreto — Haruka ha heredado un poder de su padre llamado \"Engine\", y esconde ese poder de otros. Akira, por otro lado, no ha heredado el poder de su padre, y tiene un complejo de inferioridad. En medio de esto, acontecimientos extraños comienzan a suceder alrededor del mundo. (Fuente: Anime News Network)"
       },
@@ -8091,8 +8169,8 @@
           "id": "VTRVLnzhl90"
         },
         "next": {
-          "at": 1793460600,
-          "episode": 5
+          "at": 1794065400,
+          "episode": 6
         },
         "description_es": "Esta es la Academia Fujinasu, una escuela secundaria privada con estudiantes de primer nivel ubicados en las afueras de la ciudad. High School 1er año Ume Mizunoe tiene excelentes calificaciones en la clase de idioma japonés y ha recibido múltiples premios literarios. Sin embargo, sus calificaciones terribles en las ciencias están afectando su capacidad de avanzar en un grado. Para evitar repetir un año, se convierte en miembro del consejo estudiantil para mejorar su posición académica. Sin embargo, en el consejo estudiantil, se encuentra con el carismático y suplementario presidente del consejo estudiantil Kotobuki Hisako, y el tesorero aterrador pero amable, Arisu Terui."
       },
@@ -9574,8 +9652,8 @@
         ],
         "trailer": null,
         "next": {
-          "at": 1793457900,
-          "episode": 4
+          "at": 1794062700,
+          "episode": 5
         },
         "description_es": "Las leyendas urbanas cobran vida... Todos han oído una leyenda urbana antes, pero pocos han llegado cara a cara con uno. Estos fenómenos están en todas partes, existentes en las sombras de la realidad. Cada vez más de ellos han estado apareciendo a raíz del niño sin rostro visto por todo Japón. Si la ves o una de las leyendas urbanas que trae, ora al chico en la capucha roja te encuentra antes de que sea demasiado tarde. Usted no tendrá una oportunidad por su cuenta. Pero con su ayuda, puedes vivir para ver otro día... (Fuente: Yen Press)"
       },
