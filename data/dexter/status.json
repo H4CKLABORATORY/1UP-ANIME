@@ -1,17 +1,17 @@
 {
   "schemaVersion": 1,
   "engine": "DexterAnimeSync",
-  "updatedAt": "2026-10-31T03:12:04.166Z",
+  "updatedAt": "2026-10-31T06:05:37.939Z",
   "job": {
-    "id": "sync-9d7504b1d17b2186",
-    "startedAt": "2026-10-31T03:12:04.166Z",
-    "completedAt": "2026-10-31T03:12:04.166Z",
+    "id": "sync-1e19dd20b065d2cf",
+    "startedAt": "2026-10-31T06:05:37.939Z",
+    "completedAt": "2026-10-31T06:05:37.939Z",
     "mode": "programada",
     "status": "correcta",
     "counters": {
       "animes": 0,
-      "episodesDetected": 0,
-      "episodesNew": 0,
+      "episodesDetected": 204,
+      "episodesNew": 3,
       "playbackSources": 0,
       "errors": 0
     }
@@ -25,10 +25,10 @@
       "sourceType": "metadata",
       "intervalHours": 6,
       "lastRunAt": "2026-10-30T23:59:35.212Z",
-      "runAt": null,
-      "state": "en_espera",
-      "observed": 0,
-      "created": 0,
+      "runAt": "2026-10-31T06:05:37.939Z",
+      "state": "conectada",
+      "observed": 204,
+      "created": 3,
       "playback": 0,
       "error": null
     },
@@ -39,14 +39,13 @@
       "enabled": true,
       "sourceType": "playback",
       "intervalHours": 3,
-      "lastRunAt": "2026-10-30T21:08:17.656Z",
-      "runAt": "2026-10-31T03:12:04.166Z",
-      "state": "sin_contenido_autorizado",
+      "lastRunAt": "2026-10-31T03:12:04.166Z",
+      "runAt": null,
+      "state": "en_espera",
       "observed": 0,
       "created": 0,
       "playback": 0,
-      "error": null,
-      "rejected": 0
+      "error": null
     },
     {
       "id": "jkanime_external",
@@ -71,9 +70,9 @@
       "sourceType": "embed",
       "intervalHours": 6,
       "lastRunAt": "2026-10-30T23:59:35.212Z",
-      "runAt": null,
-      "state": "en_espera",
-      "observed": 0,
+      "runAt": "2026-10-31T06:05:37.939Z",
+      "state": "conectada",
+      "observed": 94,
       "created": 0,
       "playback": 0,
       "error": null
@@ -110,7 +109,7 @@
   "records": {
     "anime": 131,
     "seasons": 1,
-    "episodes": 464,
+    "episodes": 467,
     "sources": 0
   }
 }
