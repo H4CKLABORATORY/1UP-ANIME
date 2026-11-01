@@ -1,38 +1,9 @@
 {
-  "updated": "2026-11-01T03:51:38.616Z",
+  "updated": "2026-11-01T09:44:17.513Z",
   "source": "AniList public GraphQL metadata",
-  "windowStart": 1793307084,
-  "windowEnd": 1794282684,
+  "windowStart": 1793328245,
+  "windowEnd": 1794303845,
   "airing": [
-    {
-      "id": "mal-65007",
-      "mal_id": 65007,
-      "ani_id": 217577,
-      "title": "Mazenchu",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx217577-bYfoFScj9Pwi.jpg",
-      "banner": "",
-      "description": "Mazenchu is set in a school where all kinds of food can live out their youth and form friendships, rivalries, and bittersweet romances. (Source: Anime News Network)",
-      "year": 2026,
-      "startDate": "2026-10-02",
-      "format": "TV_SHORT",
-      "episodes": 0,
-      "averageScore": 0,
-      "status": "RELEASING",
-      "genres": [
-        "Slice of Life"
-      ],
-      "siteUrl": "https://anilist.co/anime/217577",
-      "streaming": [],
-      "trailer": null,
-      "next": {
-        "at": 1793926200,
-        "episode": 6
-      },
-      "airingAt": 1793321400,
-      "episode": 5,
-      "scheduleId": 421793,
-      "description_es": "Mazenchu está en una escuela donde todo tipo de comida puede vivir su juventud y formar amistades, rivalidades y romances amargos. (Fuente: Anime News Network)"
-    },
     {
       "id": "al-206244",
       "mal_id": null,
@@ -484,7 +455,7 @@
       "airingAt": 1793372400,
       "episode": 17,
       "scheduleId": 421092,
-      "description_es": "El manga se centra en el estudiante de secundaria Ito Hazui. Durante su descanso de primavera al final de su primer año de secundaria, la madre de Ito se vuelve a casar, y Ito se mueve a vivir con su nueva familia, convirtiéndose en Ito Narita. Al llegar a su nueva casa, Ito está conmocionado por saber que ahora tiene cuatro hermanos de paso más jóvenes. Ito trata de que ella sea más difícil de llevar con todos los nuevos miembros de su familia, pero el hermano mayor Gen es un poco frío para ella. Sin embargo, bajo su"
+      "description_es": "El manga se centra en el estudiante de secundaria Ito Hazui. Durante su descanso de primavera al final de su primer año de secundaria, la madre de Ito se vuelve a casar, y Ito se mueve a vivir con su nueva familia, convirtiéndose en Ito Narita. Al llegar a su nueva casa, Ito está conmocionado por saber que ahora tiene cuatro hermanos de paso más jóvenes. Ito trata de que ella sea más difícil de llevar con todos los nuevos miembros de su familia, pero el hermano mayor Gen es un poco frío para ella. Sin embargo, bajo su fachada, ocasionalmente muestra su bondad. (Fuente: Anime News Network)"
     },
     {
       "id": "mal-59088",
@@ -701,7 +672,7 @@
       "startDate": "2026-07-18",
       "format": "ONA",
       "episodes": 30,
-      "averageScore": 0,
+      "averageScore": 63,
       "status": "RELEASING",
       "genres": [
         "Action",
@@ -972,7 +943,7 @@
       "airingAt": 1793435400,
       "episode": 4,
       "scheduleId": 422491,
-      "description_es": "\"La máscara\" da poder a cualquiera que la use. A veces, eso significa una posibilidad interminable, o una tragedia inimaginable... Perú, alumno del legendario fabricante de máscaras Gaston Roux, se hace controlado por el “Mask del Dios Guerrero”, y mata involuntariamente a sus amigos, e incluso a su propio maestro. Para evitar que este tipo de tragedia vuelva a ocurrir, Perú jura destruir todas las máscaras de Gaston que se extienden alrededor del mundo. Frente a los pecados que ha cometido, se embarca en su viaje. Conocer a nuevos amigos y enfrentar a poderosos enemigos. El chico continúa. Hasta el día que puede expiar por hola"
+      "description_es": "\"La máscara\" da poder a cualquiera que la use. A veces, eso significa una posibilidad interminable, o una tragedia inimaginable... Perú, alumno del legendario fabricante de máscaras Gaston Roux, se hace controlado por el “Mask del Dios Guerrero”, y mata involuntariamente a sus amigos, e incluso a su propio maestro. Para evitar que este tipo de tragedia vuelva a ocurrir, Perú jura destruir todas las máscaras de Gaston que se extienden alrededor del mundo. Frente a los pecados que"
     },
     {
       "id": "mal-235",
@@ -1108,7 +1079,7 @@
       "airingAt": 1793448000,
       "episode": 5,
       "scheduleId": 419828,
-      "description_es": "Romelia y su partido tienen éxito en derrotar al Rey demonio Zelgis, aunque la carga imprudente del príncipe Henri los obliga a una batalla agotadora. Después, Romelia se marca \"peso muerto\" por no luchar directamente, y el Príncipe unilateralmente rompe su compromiso. Denegado un lugar en las celebraciones de la victoria, Romelia vuelve a casa, sólo para ser conocido con indiferencia fría de su familia y sociedad. Sin embargo, se niega a romper. Ella ya ha puesto sus ojos en el camino que está por delante. (Fuente: Crunchyroll) Nota: Romelia War Chronicle fue transmitido 2 días antes de la emisión de televisión en A"
+      "description_es": "Romelia y su partido tienen éxito en derrotar al Rey demonio Zelgis, aunque la carga imprudente del príncipe Henri los obliga a una batalla agotadora. Después, Romelia se marca \"peso muerto\" por no luchar directamente, y el Príncipe unilateralmente rompe su compromiso. Denegado un lugar en las celebraciones de la victoria, Romelia vuelve a casa, sólo para ser conocido con fría indiferencia de su familia y sociedad. Sin embargo, se niega a romper. Ella ya tiene"
     },
     {
       "id": "mal-61153",
@@ -1122,7 +1093,7 @@
       "startDate": "2026-10-03",
       "format": "ONA",
       "episodes": 0,
-      "averageScore": 70,
+      "averageScore": 69,
       "status": "RELEASING",
       "genres": [
         "Action",
@@ -1147,7 +1118,7 @@
       "airingAt": 1793451600,
       "episode": 6,
       "scheduleId": 421886,
-      "description_es": "Fia siempre soñó con convertirse en un caballero. Nacida en una familia de caballeros, es la menos talentosa entre ellos, pero todavía se aferra a su esperanza y trenes con todo lo que tiene. Cuando llega el día para que mate a un pequeño demonio y pruebe su valor, termina cara a cara con un dragón en su lugar! Una herida mortal hace que su vida parpadee ante sus ojos... y de repente recuerda su vida anterior, cuando era un poderoso santo en una era pasada que venció al Rey demonio. Esa vida terminó con dolor por lo que era, haciendo que su miedo vuelva a ser un santo. Ahora que la magia de su anterior"
+      "description_es": "Fia siempre soñó con convertirse en un caballero. Nacida en una familia de caballeros, es la menos talentosa entre ellos, pero todavía se aferra a su esperanza y trenes con todo lo que tiene. Cuando llega el día para que mate a un pequeño demonio y pruebe su valor, termina cara a cara con un dragón en su lugar! Una herida mortal hace que su vida parpadee ante sus ojos... y de repente recuerda su vida anterior, cuando ella era un poderoso santo en una era pasada que defea"
     },
     {
       "id": "mal-63140",
@@ -1278,7 +1249,7 @@
       "startDate": "2026-10-03",
       "format": "TV",
       "episodes": 12,
-      "averageScore": 60,
+      "averageScore": 59,
       "status": "RELEASING",
       "genres": [
         "Action",
@@ -1382,7 +1353,7 @@
       "airingAt": 1793458800,
       "episode": 6,
       "scheduleId": 422397,
-      "description_es": "Pocos títulos son más venerados entre los erizos-(ahem) conocedores de videojuegos eróticos japoneses-que Magical Explorer. Un día, nuestro héroe amante de la mugre se despierta para encontrar que ha sido reencarnado en el cuerpo del protagonista de la lancha del juego! O más bien, su mejor amigo, Kousuke Takioto. Pero con su inigualable conocimiento de Magical Explorer y las habilidades de Kousuke poco ortodoxas (una bufanda que se dobla como un puño?), nuestro héroe promete convertir el perdedor más desafortunado del juego en su corazón más poderoso. En este mundo, nada está fuera de alcance cuando tienes el know-how! (Fuente: Yen Press"
+      "description_es": "Pocos títulos son más venerados entre los erizos-(ahem) conocedores de videojuegos eróticos japoneses-que Magical Explorer. Un día, nuestro héroe amante de la mugre se despierta para encontrar que ha sido reencarnado en el cuerpo del protagonista de la lancha del juego! O más bien, su mejor amigo, Kousuke Takioto. Pero con su conocimiento inigualable del Explorador Mágico y las habilidades no ortodoxas de Kousuke (una bufanda que se dobla como un puño?), nuestro héroe promete t"
     },
     {
       "id": "mal-61578",
@@ -1416,7 +1387,7 @@
       "airingAt": 1793460600,
       "episode": 5,
       "scheduleId": 418848,
-      "description_es": "Esta es la Academia Fujinasu, una escuela secundaria privada con estudiantes de primer nivel ubicados en las afueras de la ciudad. High School 1er año Ume Mizunoe tiene excelentes calificaciones en la clase de idioma japonés y ha recibido múltiples premios literarios. Sin embargo, sus calificaciones terribles en las ciencias están afectando su capacidad de avanzar en un grado. Para evitar repetir un año, se convierte en miembro del consejo estudiantil para mejorar su posición académica. Sin embargo, en el consejo estudiantil, se encuentra con el carismático y suplementario presidente del consejo estudiantil Kotobuki Hisako, y el tesorero aterrador pero amable, Arisu Terui."
+      "description_es": "Esta es la Academia Fujinasu, una escuela secundaria privada con estudiantes de primer nivel ubicados en las afueras de la ciudad. High School 1er año Ume Mizunoe tiene excelentes calificaciones en la clase de idioma japonés y ha recibido múltiples premios literarios. Sin embargo, sus calificaciones terribles en las ciencias están afectando su capacidad de avanzar en un grado. Para evitar repetir un año, se convierte en miembro del consejo estudiantil para mejorar su posición académica. Sin embargo, en el estudio"
     },
     {
       "id": "mal-63801",
@@ -1450,7 +1421,7 @@
       "airingAt": 1793462160,
       "episode": 5,
       "scheduleId": 417718,
-      "description_es": "La tercera temporada de Ranma 1/2 (2024) ."
+      "description_es": "La tercera temporada de Ranma 1/2 (2024). Más rivales y aventuras siguen a Ranma y Akane como trenes de Colonia Ryouga, una guerra de galletas se desmorona de control, y Shampoo elabora nuevos esquemas. (Fuente: Netflix, editado)"
     },
     {
       "id": "mal-62922",
@@ -1489,7 +1460,7 @@
       "airingAt": 1793464200,
       "episode": 5,
       "scheduleId": 419566,
-      "description_es": "Si hay una cosa que nunca puedes tener suficiente en un mundo de espadas y brujería estilo RPG, ¡es puntos mágicos! Si estás alimentando hechizos, técnicas o mostrando una habilidad increíble, tienes que gastar esos puntos para hacer daño real. ¿Y si te escapas? La Cuaresma es parte de la fiesta de llegada conocida como los \"Skypiercers\", y gracias a su regalo único, puede prestar enormes cantidades de magia a otros. ¿Sin MP? ¡No hay problema con la Cuaresma! Excepto ahora que sus compañeros se han convertido en héroes formidables (gracias a su habilidad), su utilidad es cuestionada. Salió del grupo, la Cuaresma es"
+      "description_es": "Si hay una cosa que nunca puedes tener suficiente en un mundo de espadas y brujería estilo RPG, ¡es puntos mágicos! Si estás alimentando hechizos, técnicas o mostrando una increíble habilidad, tienes que gastar esos puntos para hacer daño real. ¿Y si te escapas? La Cuaresma es parte de la fiesta de llegada conocida como los \"Skypiercers\", y gracias a su regalo único, puede prestar enormes cantidades de magia a otros. ¿Sin MP? No hay problema con Lent arou"
     },
     {
       "id": "mal-63125",
@@ -1853,8 +1824,8 @@
         "id": "phKPnPXm74c"
       },
       "next": {
-        "at": 1793520000,
-        "episode": 5
+        "at": 1794124800,
+        "episode": 6
       },
       "airingAt": 1793520000,
       "episode": 5,
@@ -1887,8 +1858,8 @@
         "id": "059cJjeY19Y"
       },
       "next": {
-        "at": 1793520000,
-        "episode": 4
+        "at": 1794124800,
+        "episode": 5
       },
       "airingAt": 1793520000,
       "episode": 4,
@@ -1924,8 +1895,8 @@
         "id": "kLbI4teuPTc"
       },
       "next": {
-        "at": 1793521800,
-        "episode": 4
+        "at": 1794126600,
+        "episode": 5
       },
       "airingAt": 1793521800,
       "episode": 4,
@@ -1955,8 +1926,8 @@
       "streaming": [],
       "trailer": null,
       "next": {
-        "at": 1793523600,
-        "episode": 390
+        "at": 1794128400,
+        "episode": 391
       },
       "airingAt": 1793523600,
       "episode": 390,
@@ -1985,8 +1956,8 @@
       "streaming": [],
       "trailer": null,
       "next": {
-        "at": 1793525400,
-        "episode": 2856
+        "at": 1794130200,
+        "episode": 2857
       },
       "airingAt": 1793525400,
       "episode": 2856,
@@ -2413,7 +2384,7 @@
       "startDate": "2026-10-05",
       "format": "TV",
       "episodes": 0,
-      "averageScore": 67,
+      "averageScore": 68,
       "status": "RELEASING",
       "genres": [
         "Adventure",
@@ -2743,7 +2714,7 @@
       "airingAt": 1793622600,
       "episode": 5,
       "scheduleId": 420069,
-      "description_es": "Hazme una poción de amor. Y con esa sola frase, la Buena Bruja del amor secreto del lago sobre el desgarrador Sir Harij termina en la ruptura del corazón. Sin embargo, cuando promete ayudarla a reunir los ingredientes, Rose está emocionada por la oportunidad de mirar a un hombre con el que normalmente nunca podría interactuar. Ella aprende a jactar su corazón por sus conversaciones usuales inclinadas... pero ¿qué va a hacer cuando aparece inexplicablemente en su puerta con bre"
+      "description_es": "Hazme una poción de amor. Y con esa sola frase, la Buena Bruja del amor secreto del lago sobre el desgarrador Sir Harij termina en un desgarro. Aún así, cuando promete ayudarla a reunir los ingredientes, Rose está emocionada por la oportunidad de mirar a un hombre con el que normalmente nunca podría interactuar. Ella aprende a jactar su corazón por sus conversaciones habituales inclinadas... pero ¿qué va a hacer cuando aparece inexplicablemente en su puerta con pan y un frasco de mantequilla de manzana? (Fuente: Yen Press)"
     },
     {
       "id": "mal-63712",
@@ -2922,7 +2893,7 @@
       "airingAt": 1793710800,
       "episode": 5,
       "scheduleId": 420420,
-      "description_es": "Sato-san es la flor inalcanzable de la clase. Ella siempre tiene frío y curtimiento con compañeros de clase, pero sólo sé que es muy linda cuando sonríe, incluso si no es mucho de fotógrafo. Oshio-kun es amistoso y animado, pero sólo sé que trabaja en el café de su familia después de la escuela. Hace un gran trabajo con la cuenta SNS de la cafetería, y su mala sonrisa hace que mi corazón se salte un latido! Innocente y dulce, pero a veces frustrante, esto es un"
+      "description_es": "Sato-san es la flor inalcanzable de la clase. Siempre tiene frío y rito con compañeros de clase, pero sólo sé que es muy linda cuando sonríe, incluso si no es mucho fotógrafo. Oshio-kun es amistoso y animado, pero sólo sé que trabaja en el café de su familia después de la escuela. Hace un gran trabajo con la cuenta SNS de la cafetería, y su mala sonrisa hace que mi corazón salte un latido! Inocentes y dulces, pero a veces frustrantes, esta es una historia de 120% pura y fluida sobre dos personas que se enamoran por primera vez."
     },
     {
       "id": "mal-62696",
@@ -3741,7 +3712,7 @@
       "airingAt": 1793881800,
       "episode": 6,
       "scheduleId": 419085,
-      "description_es": "La estudiante universitaria Kurumi Fukuga finalmente ha cumplido su deseo de iniciar el comercio de divisas (FX), motivado por recuperar los 20 millones de yenes que su madre falleció en el comercio. \"Lo recuperaré fácilmente,\" pensó, pero el mundo en el que entra puede convertirse en el cielo o el infierno en un instante. Pérdidas no realizadas, fluctuaciones descompuestas, imparables... ¡pero todavía quiere comprar, vender y hacer dinero! Con los adictos FX Mochiko, Mebuki an"
+      "description_es": "La estudiante universitaria Kurumi Fukuga finalmente ha cumplido su deseo de iniciar el comercio de divisas (FX), motivado por recuperar los 20 millones de yenes que su madre falleció en el comercio. \"Lo recuperaré fácilmente,\" pensó, pero el mundo en el que entra puede convertirse en el cielo o el infierno en un instante. Pérdidas no realizadas, fluctuaciones descompuestas, imparables... ¡pero todavía quiere comprar, vender y hacer dinero! Con otros adictos FX Mochiko, Mebuki y Yasuko a lo largo de la marcha, el mercado se calienta! Joy, desesperación, alegría, desesperación — este es un juego de dinero entrañable, pero ligeramente arriesgado. Can Kurumi y ella"
     },
     {
       "id": "mal-61227",
@@ -4508,7 +4479,7 @@
       "airingAt": 1793977200,
       "episode": 18,
       "scheduleId": 421093,
-      "description_es": "El manga se centra en el estudiante de secundaria Ito Hazui. Durante su descanso de primavera al final de su primer año de secundaria, la madre de Ito se vuelve a casar, y Ito se mueve a vivir con su nueva familia, convirtiéndose en Ito Narita. Al llegar a su nueva casa, Ito está conmocionado por saber que ahora tiene cuatro hermanos de paso más jóvenes. Ito trata de que ella sea más difícil de llevar con todos los nuevos miembros de su familia, pero el hermano mayor Gen es un poco frío para ella. Sin embargo, bajo su"
+      "description_es": "El manga se centra en el estudiante de secundaria Ito Hazui. Durante su descanso de primavera al final de su primer año de secundaria, la madre de Ito se vuelve a casar, y Ito se mueve a vivir con su nueva familia, convirtiéndose en Ito Narita. Al llegar a su nueva casa, Ito está conmocionado por saber que ahora tiene cuatro hermanos de paso más jóvenes. Ito trata de que ella sea más difícil de llevar con todos los nuevos miembros de su familia, pero el hermano mayor Gen es un poco frío para ella. Sin embargo, bajo su fachada, ocasionalmente muestra su bondad. (Fuente: Anime News Network)"
     },
     {
       "id": "mal-59088",
@@ -4725,7 +4696,7 @@
       "startDate": "2026-07-18",
       "format": "ONA",
       "episodes": 30,
-      "averageScore": 0,
+      "averageScore": 63,
       "status": "RELEASING",
       "genres": [
         "Action",
@@ -4932,7 +4903,7 @@
       "airingAt": 1794040200,
       "episode": 5,
       "scheduleId": 422492,
-      "description_es": "\"La máscara\" da poder a cualquiera que la use. A veces, eso significa una posibilidad interminable, o una tragedia inimaginable... Perú, alumno del legendario fabricante de máscaras Gaston Roux, se hace controlado por el “Mask del Dios Guerrero”, y mata involuntariamente a sus amigos, e incluso a su propio maestro. Para evitar que este tipo de tragedia vuelva a ocurrir, Perú jura destruir todas las máscaras de Gaston que se extienden alrededor del mundo. Frente a los pecados que ha cometido, se embarca en su viaje. Conocer a nuevos amigos y enfrentar a poderosos enemigos. El chico continúa. Hasta el día que puede expiar por hola"
+      "description_es": "\"La máscara\" da poder a cualquiera que la use. A veces, eso significa una posibilidad interminable, o una tragedia inimaginable... Perú, alumno del legendario fabricante de máscaras Gaston Roux, se hace controlado por el “Mask del Dios Guerrero”, y mata involuntariamente a sus amigos, e incluso a su propio maestro. Para evitar que este tipo de tragedia vuelva a ocurrir, Perú jura destruir todas las máscaras de Gaston que se extienden alrededor del mundo. Frente a los pecados que"
     },
     {
       "id": "mal-235",
@@ -5068,7 +5039,7 @@
       "airingAt": 1794052800,
       "episode": 6,
       "scheduleId": 419829,
-      "description_es": "Romelia y su partido tienen éxito en derrotar al Rey demonio Zelgis, aunque la carga imprudente del príncipe Henri los obliga a una batalla agotadora. Después, Romelia se marca \"peso muerto\" por no luchar directamente, y el Príncipe unilateralmente rompe su compromiso. Denegado un lugar en las celebraciones de la victoria, Romelia vuelve a casa, sólo para ser conocido con indiferencia fría de su familia y sociedad. Sin embargo, se niega a romper. Ella ya ha puesto sus ojos en el camino que está por delante. (Fuente: Crunchyroll) Nota: Romelia War Chronicle fue transmitido 2 días antes de la emisión de televisión en A"
+      "description_es": "Romelia y su partido tienen éxito en derrotar al Rey demonio Zelgis, aunque la carga imprudente del príncipe Henri los obliga a una batalla agotadora. Después, Romelia se marca \"peso muerto\" por no luchar directamente, y el Príncipe unilateralmente rompe su compromiso. Denegado un lugar en las celebraciones de la victoria, Romelia vuelve a casa, sólo para ser conocido con fría indiferencia de su familia y sociedad. Sin embargo, se niega a romper. Ella ya tiene"
     },
     {
       "id": "mal-61153",
@@ -5082,7 +5053,7 @@
       "startDate": "2026-10-03",
       "format": "ONA",
       "episodes": 0,
-      "averageScore": 70,
+      "averageScore": 69,
       "status": "RELEASING",
       "genres": [
         "Action",
@@ -5107,7 +5078,7 @@
       "airingAt": 1794056400,
       "episode": 7,
       "scheduleId": 421887,
-      "description_es": "Fia siempre soñó con convertirse en un caballero. Nacida en una familia de caballeros, es la menos talentosa entre ellos, pero todavía se aferra a su esperanza y trenes con todo lo que tiene. Cuando llega el día para que mate a un pequeño demonio y pruebe su valor, termina cara a cara con un dragón en su lugar! Una herida mortal hace que su vida parpadee ante sus ojos... y de repente recuerda su vida anterior, cuando era un poderoso santo en una era pasada que venció al Rey demonio. Esa vida terminó con dolor por lo que era, haciendo que su miedo vuelva a ser un santo. Ahora que la magia de su anterior"
+      "description_es": "Fia siempre soñó con convertirse en un caballero. Nacida en una familia de caballeros, es la menos talentosa entre ellos, pero todavía se aferra a su esperanza y trenes con todo lo que tiene. Cuando llega el día para que mate a un pequeño demonio y pruebe su valor, termina cara a cara con un dragón en su lugar! Una herida mortal hace que su vida parpadee ante sus ojos... y de repente recuerda su vida anterior, cuando ella era un poderoso santo en una era pasada que defea"
     },
     {
       "id": "mal-63140",
@@ -5335,7 +5306,7 @@
       "airingAt": 1794063600,
       "episode": 7,
       "scheduleId": 422398,
-      "description_es": "Pocos títulos son más venerados entre los erizos-(ahem) conocedores de videojuegos eróticos japoneses-que Magical Explorer. Un día, nuestro héroe amante de la mugre se despierta para encontrar que ha sido reencarnado en el cuerpo del protagonista de la lancha del juego! O más bien, su mejor amigo, Kousuke Takioto. Pero con su inigualable conocimiento de Magical Explorer y las habilidades de Kousuke poco ortodoxas (una bufanda que se dobla como un puño?), nuestro héroe promete convertir el perdedor más desafortunado del juego en su corazón más poderoso. En este mundo, nada está fuera de alcance cuando tienes el know-how! (Fuente: Yen Press"
+      "description_es": "Pocos títulos son más venerados entre los erizos-(ahem) conocedores de videojuegos eróticos japoneses-que Magical Explorer. Un día, nuestro héroe amante de la mugre se despierta para encontrar que ha sido reencarnado en el cuerpo del protagonista de la lancha del juego! O más bien, su mejor amigo, Kousuke Takioto. Pero con su conocimiento inigualable del Explorador Mágico y las habilidades no ortodoxas de Kousuke (una bufanda que se dobla como un puño?), nuestro héroe promete t"
     },
     {
       "id": "mal-61578",
@@ -5369,7 +5340,7 @@
       "airingAt": 1794065400,
       "episode": 6,
       "scheduleId": 418849,
-      "description_es": "Esta es la Academia Fujinasu, una escuela secundaria privada con estudiantes de primer nivel ubicados en las afueras de la ciudad. High School 1er año Ume Mizunoe tiene excelentes calificaciones en la clase de idioma japonés y ha recibido múltiples premios literarios. Sin embargo, sus calificaciones terribles en las ciencias están afectando su capacidad de avanzar en un grado. Para evitar repetir un año, se convierte en miembro del consejo estudiantil para mejorar su posición académica. Sin embargo, en el consejo estudiantil, se encuentra con el carismático y suplementario presidente del consejo estudiantil Kotobuki Hisako, y el tesorero aterrador pero amable, Arisu Terui."
+      "description_es": "Esta es la Academia Fujinasu, una escuela secundaria privada con estudiantes de primer nivel ubicados en las afueras de la ciudad. High School 1er año Ume Mizunoe tiene excelentes calificaciones en la clase de idioma japonés y ha recibido múltiples premios literarios. Sin embargo, sus calificaciones terribles en las ciencias están afectando su capacidad de avanzar en un grado. Para evitar repetir un año, se convierte en miembro del consejo estudiantil para mejorar su posición académica. Sin embargo, en el estudio"
     },
     {
       "id": "mal-63801",
@@ -5403,7 +5374,7 @@
       "airingAt": 1794066960,
       "episode": 6,
       "scheduleId": 417719,
-      "description_es": "La tercera temporada de Ranma 1/2 (2024) ."
+      "description_es": "La tercera temporada de Ranma 1/2 (2024). Más rivales y aventuras siguen a Ranma y Akane como trenes de Colonia Ryouga, una guerra de galletas se desmorona de control, y Shampoo elabora nuevos esquemas. (Fuente: Netflix, editado)"
     },
     {
       "id": "mal-62922",
@@ -5442,7 +5413,7 @@
       "airingAt": 1794069000,
       "episode": 6,
       "scheduleId": 419567,
-      "description_es": "Si hay una cosa que nunca puedes tener suficiente en un mundo de espadas y brujería estilo RPG, ¡es puntos mágicos! Si estás alimentando hechizos, técnicas o mostrando una habilidad increíble, tienes que gastar esos puntos para hacer daño real. ¿Y si te escapas? La Cuaresma es parte de la fiesta de llegada conocida como los \"Skypiercers\", y gracias a su regalo único, puede prestar enormes cantidades de magia a otros. ¿Sin MP? ¡No hay problema con la Cuaresma! Excepto ahora que sus compañeros se han convertido en héroes formidables (gracias a su habilidad), su utilidad es cuestionada. Salió del grupo, la Cuaresma es"
+      "description_es": "Si hay una cosa que nunca puedes tener suficiente en un mundo de espadas y brujería estilo RPG, ¡es puntos mágicos! Si estás alimentando hechizos, técnicas o mostrando una increíble habilidad, tienes que gastar esos puntos para hacer daño real. ¿Y si te escapas? La Cuaresma es parte de la fiesta de llegada conocida como los \"Skypiercers\", y gracias a su regalo único, puede prestar enormes cantidades de magia a otros. ¿Sin MP? No hay problema con Lent arou"
     },
     {
       "id": "mal-63125",
@@ -5790,7 +5761,7 @@
       "airingAt": 1794123000,
       "episode": 5,
       "scheduleId": 423028,
-      "description_es": "La segunda temporada de Ao no Hako."
+      "description_es": "La segunda temporada de Ao no Hako. Mientras Taiki y Chinatsu navegan sus sentimientos en evolución, una amistad fracturada del pasado y feroz competencia nublan el camino hacia los nacionales. (Fuente: Netflix, editado)"
     },
     {
       "id": "mal-61603",
@@ -5816,8 +5787,8 @@
         "id": "phKPnPXm74c"
       },
       "next": {
-        "at": 1793520000,
-        "episode": 5
+        "at": 1794124800,
+        "episode": 6
       },
       "airingAt": 1794124800,
       "episode": 6,
@@ -5850,8 +5821,8 @@
         "id": "059cJjeY19Y"
       },
       "next": {
-        "at": 1793520000,
-        "episode": 4
+        "at": 1794124800,
+        "episode": 5
       },
       "airingAt": 1794124800,
       "episode": 5,
@@ -5887,8 +5858,8 @@
         "id": "kLbI4teuPTc"
       },
       "next": {
-        "at": 1793521800,
-        "episode": 4
+        "at": 1794126600,
+        "episode": 5
       },
       "airingAt": 1794126600,
       "episode": 5,
@@ -5918,8 +5889,8 @@
       "streaming": [],
       "trailer": null,
       "next": {
-        "at": 1793523600,
-        "episode": 390
+        "at": 1794128400,
+        "episode": 391
       },
       "airingAt": 1794128400,
       "episode": 391,
@@ -5948,8 +5919,8 @@
       "streaming": [],
       "trailer": null,
       "next": {
-        "at": 1793525400,
-        "episode": 2856
+        "at": 1794130200,
+        "episode": 2857
       },
       "airingAt": 1794130200,
       "episode": 2857,
@@ -6376,7 +6347,7 @@
       "startDate": "2026-10-05",
       "format": "TV",
       "episodes": 0,
-      "averageScore": 67,
+      "averageScore": 68,
       "status": "RELEASING",
       "genres": [
         "Adventure",
@@ -6706,7 +6677,7 @@
       "airingAt": 1794227400,
       "episode": 6,
       "scheduleId": 420070,
-      "description_es": "Hazme una poción de amor. Y con esa sola frase, la Buena Bruja del amor secreto del lago sobre el desgarrador Sir Harij termina en la ruptura del corazón. Sin embargo, cuando promete ayudarla a reunir los ingredientes, Rose está emocionada por la oportunidad de mirar a un hombre con el que normalmente nunca podría interactuar. Ella aprende a jactar su corazón por sus conversaciones usuales inclinadas... pero ¿qué va a hacer cuando aparece inexplicablemente en su puerta con bre"
+      "description_es": "Hazme una poción de amor. Y con esa sola frase, la Buena Bruja del amor secreto del lago sobre el desgarrador Sir Harij termina en un desgarro. Aún así, cuando promete ayudarla a reunir los ingredientes, Rose está emocionada por la oportunidad de mirar a un hombre con el que normalmente nunca podría interactuar. Ella aprende a jactar su corazón por sus conversaciones habituales inclinadas... pero ¿qué va a hacer cuando aparece inexplicablemente en su puerta con pan y un frasco de mantequilla de manzana? (Fuente: Yen Press)"
     },
     {
       "id": "mal-63712",
@@ -7037,7 +7008,7 @@
           "at": 1794063600,
           "episode": 7
         },
-        "description_es": "Pocos títulos son más venerados entre los erizos-(ahem) conocedores de videojuegos eróticos japoneses-que Magical Explorer. Un día, nuestro héroe amante de la mugre se despierta para encontrar que ha sido reencarnado en el cuerpo del protagonista de la lancha del juego! O más bien, su mejor amigo, Kousuke Takioto. Pero con su inigualable conocimiento de Magical Explorer y las habilidades de Kousuke poco ortodoxas (una bufanda que se dobla como un puño?), nuestro héroe promete convertir el perdedor más desafortunado del juego en su corazón más poderoso. En este mundo, nada está fuera de alcance cuando tienes el know-how! (Fuente: Yen Press"
+        "description_es": "Pocos títulos son más venerados entre los erizos-(ahem) conocedores de videojuegos eróticos japoneses-que Magical Explorer. Un día, nuestro héroe amante de la mugre se despierta para encontrar que ha sido reencarnado en el cuerpo del protagonista de la lancha del juego! O más bien, su mejor amigo, Kousuke Takioto. Pero con su conocimiento inigualable del Explorador Mágico y las habilidades no ortodoxas de Kousuke (una bufanda que se dobla como un puño?), nuestro héroe promete t"
       },
       {
         "id": "mal-64867",
@@ -7191,7 +7162,7 @@
           "at": 1793881800,
           "episode": 6
         },
-        "description_es": "La estudiante universitaria Kurumi Fukuga finalmente ha cumplido su deseo de iniciar el comercio de divisas (FX), motivado por recuperar los 20 millones de yenes que su madre falleció en el comercio. \"Lo recuperaré fácilmente,\" pensó, pero el mundo en el que entra puede convertirse en el cielo o el infierno en un instante. Pérdidas no realizadas, fluctuaciones descompuestas, imparables... ¡pero todavía quiere comprar, vender y hacer dinero! Con los adictos FX Mochiko, Mebuki an"
+        "description_es": "La estudiante universitaria Kurumi Fukuga finalmente ha cumplido su deseo de iniciar el comercio de divisas (FX), motivado por recuperar los 20 millones de yenes que su madre falleció en el comercio. \"Lo recuperaré fácilmente,\" pensó, pero el mundo en el que entra puede convertirse en el cielo o el infierno en un instante. Pérdidas no realizadas, fluctuaciones descompuestas, imparables... ¡pero todavía quiere comprar, vender y hacer dinero! Con otros adictos FX Mochiko, Mebuki y Yasuko a lo largo de la marcha, el mercado se calienta! Joy, desesperación, alegría, desesperación — este es un juego de dinero entrañable, pero ligeramente arriesgado. Can Kurumi y ella"
       },
       {
         "id": "mal-62534",
@@ -7549,7 +7520,7 @@
         "startDate": "2026-10-03",
         "format": "ONA",
         "episodes": 0,
-        "averageScore": 70,
+        "averageScore": 69,
         "status": "RELEASING",
         "genres": [
           "Action",
@@ -7571,7 +7542,7 @@
           "at": 1794056400,
           "episode": 7
         },
-        "description_es": "Fia siempre soñó con convertirse en un caballero. Nacida en una familia de caballeros, es la menos talentosa entre ellos, pero todavía se aferra a su esperanza y trenes con todo lo que tiene. Cuando llega el día para que mate a un pequeño demonio y pruebe su valor, termina cara a cara con un dragón en su lugar! Una herida mortal hace que su vida parpadee ante sus ojos... y de repente recuerda su vida anterior, cuando era un poderoso santo en una era pasada que venció al Rey demonio. Esa vida terminó con dolor por lo que era, haciendo que su miedo vuelva a ser un santo. Ahora que la magia de su anterior"
+        "description_es": "Fia siempre soñó con convertirse en un caballero. Nacida en una familia de caballeros, es la menos talentosa entre ellos, pero todavía se aferra a su esperanza y trenes con todo lo que tiene. Cuando llega el día para que mate a un pequeño demonio y pruebe su valor, termina cara a cara con un dragón en su lugar! Una herida mortal hace que su vida parpadee ante sus ojos... y de repente recuerda su vida anterior, cuando ella era un poderoso santo en una era pasada que defea"
       },
       {
         "id": "mal-59787",
@@ -7607,7 +7578,7 @@
           "at": 1794052800,
           "episode": 6
         },
-        "description_es": "Romelia y su partido tienen éxito en derrotar al Rey demonio Zelgis, aunque la carga imprudente del príncipe Henri los obliga a una batalla agotadora. Después, Romelia se marca \"peso muerto\" por no luchar directamente, y el Príncipe unilateralmente rompe su compromiso. Denegado un lugar en las celebraciones de la victoria, Romelia vuelve a casa, sólo para ser conocido con indiferencia fría de su familia y sociedad. Sin embargo, se niega a romper. Ella ya ha puesto sus ojos en el camino que está por delante. (Fuente: Crunchyroll) Nota: Romelia War Chronicle fue transmitido 2 días antes de la emisión de televisión en A"
+        "description_es": "Romelia y su partido tienen éxito en derrotar al Rey demonio Zelgis, aunque la carga imprudente del príncipe Henri los obliga a una batalla agotadora. Después, Romelia se marca \"peso muerto\" por no luchar directamente, y el Príncipe unilateralmente rompe su compromiso. Denegado un lugar en las celebraciones de la victoria, Romelia vuelve a casa, sólo para ser conocido con fría indiferencia de su familia y sociedad. Sin embargo, se niega a romper. Ella ya tiene"
       },
       {
         "id": "mal-62524",
@@ -7621,7 +7592,7 @@
         "startDate": "2026-10-03",
         "format": "TV",
         "episodes": 12,
-        "averageScore": 60,
+        "averageScore": 59,
         "status": "RELEASING",
         "genres": [
           "Action",
@@ -7860,7 +7831,7 @@
           "at": 1794123000,
           "episode": 5
         },
-        "description_es": "La segunda temporada de Ao no Hako."
+        "description_es": "La segunda temporada de Ao no Hako. Mientras Taiki y Chinatsu navegan sus sentimientos en evolución, una amistad fracturada del pasado y feroz competencia nublan el camino hacia los nacionales. (Fuente: Netflix, editado)"
       },
       {
         "id": "mal-61578",
@@ -7891,7 +7862,7 @@
           "at": 1794065400,
           "episode": 6
         },
-        "description_es": "Esta es la Academia Fujinasu, una escuela secundaria privada con estudiantes de primer nivel ubicados en las afueras de la ciudad. High School 1er año Ume Mizunoe tiene excelentes calificaciones en la clase de idioma japonés y ha recibido múltiples premios literarios. Sin embargo, sus calificaciones terribles en las ciencias están afectando su capacidad de avanzar en un grado. Para evitar repetir un año, se convierte en miembro del consejo estudiantil para mejorar su posición académica. Sin embargo, en el consejo estudiantil, se encuentra con el carismático y suplementario presidente del consejo estudiantil Kotobuki Hisako, y el tesorero aterrador pero amable, Arisu Terui."
+        "description_es": "Esta es la Academia Fujinasu, una escuela secundaria privada con estudiantes de primer nivel ubicados en las afueras de la ciudad. High School 1er año Ume Mizunoe tiene excelentes calificaciones en la clase de idioma japonés y ha recibido múltiples premios literarios. Sin embargo, sus calificaciones terribles en las ciencias están afectando su capacidad de avanzar en un grado. Para evitar repetir un año, se convierte en miembro del consejo estudiantil para mejorar su posición académica. Sin embargo, en el estudio"
       },
       {
         "id": "mal-60948",
@@ -7956,8 +7927,8 @@
           "id": "phKPnPXm74c"
         },
         "next": {
-          "at": 1793520000,
-          "episode": 5
+          "at": 1794124800,
+          "episode": 6
         },
         "description_es": "El juego de Aoi Ashito ahora le ha ganado un lugar en el equipo A, pero rápidamente está abrumado por su dura nueva realidad. Rodeado de jugadores de élite como Kuribayashi y Akutsu, las prácticas son tan misericordiosos como los partidos. En esta U-18 Premier League de talento de la central eléctrica, Ashito debe evolucionar o ser aplastado, si alguna vez es reconocido. (Fuente: Crunchyroll)"
       },
@@ -7995,7 +7966,7 @@
           "at": 1794069000,
           "episode": 6
         },
-        "description_es": "Si hay una cosa que nunca puedes tener suficiente en un mundo de espadas y brujería estilo RPG, ¡es puntos mágicos! Si estás alimentando hechizos, técnicas o mostrando una habilidad increíble, tienes que gastar esos puntos para hacer daño real. ¿Y si te escapas? La Cuaresma es parte de la fiesta de llegada conocida como los \"Skypiercers\", y gracias a su regalo único, puede prestar enormes cantidades de magia a otros. ¿Sin MP? ¡No hay problema con la Cuaresma! Excepto ahora que sus compañeros se han convertido en héroes formidables (gracias a su habilidad), su utilidad es cuestionada. Salió del grupo, la Cuaresma es"
+        "description_es": "Si hay una cosa que nunca puedes tener suficiente en un mundo de espadas y brujería estilo RPG, ¡es puntos mágicos! Si estás alimentando hechizos, técnicas o mostrando una increíble habilidad, tienes que gastar esos puntos para hacer daño real. ¿Y si te escapas? La Cuaresma es parte de la fiesta de llegada conocida como los \"Skypiercers\", y gracias a su regalo único, puede prestar enormes cantidades de magia a otros. ¿Sin MP? No hay problema con Lent arou"
       },
       {
         "id": "mal-63801",
@@ -8026,7 +7997,7 @@
           "at": 1794066960,
           "episode": 6
         },
-        "description_es": "La tercera temporada de Ranma 1/2 (2024) ."
+        "description_es": "La tercera temporada de Ranma 1/2 (2024). Más rivales y aventuras siguen a Ranma y Akane como trenes de Colonia Ryouga, una guerra de galletas se desmorona de control, y Shampoo elabora nuevos esquemas. (Fuente: Netflix, editado)"
       },
       {
         "id": "mal-62753",
@@ -8331,7 +8302,7 @@
           "at": 1793622600,
           "episode": 5
         },
-        "description_es": "Hazme una poción de amor. Y con esa sola frase, la Buena Bruja del amor secreto del lago sobre el desgarrador Sir Harij termina en la ruptura del corazón. Sin embargo, cuando promete ayudarla a reunir los ingredientes, Rose está emocionada por la oportunidad de mirar a un hombre con el que normalmente nunca podría interactuar. Ella aprende a jactar su corazón por sus conversaciones usuales inclinadas... pero ¿qué va a hacer cuando aparece inexplicablemente en su puerta con bre"
+        "description_es": "Hazme una poción de amor. Y con esa sola frase, la Buena Bruja del amor secreto del lago sobre el desgarrador Sir Harij termina en un desgarro. Aún así, cuando promete ayudarla a reunir los ingredientes, Rose está emocionada por la oportunidad de mirar a un hombre con el que normalmente nunca podría interactuar. Ella aprende a jactar su corazón por sus conversaciones habituales inclinadas... pero ¿qué va a hacer cuando aparece inexplicablemente en su puerta con pan y un frasco de mantequilla de manzana? (Fuente: Yen Press)"
       },
       {
         "id": "mal-63509",
@@ -8514,7 +8485,7 @@
         "startDate": "2026-10-05",
         "format": "TV",
         "episodes": 0,
-        "averageScore": 67,
+        "averageScore": 68,
         "status": "RELEASING",
         "genres": [
           "Adventure",
@@ -8716,7 +8687,7 @@
           "at": 1793710800,
           "episode": 5
         },
-        "description_es": "Sato-san es la flor inalcanzable de la clase. Ella siempre tiene frío y curtimiento con compañeros de clase, pero sólo sé que es muy linda cuando sonríe, incluso si no es mucho de fotógrafo. Oshio-kun es amistoso y animado, pero sólo sé que trabaja en el café de su familia después de la escuela. Hace un gran trabajo con la cuenta SNS de la cafetería, y su mala sonrisa hace que mi corazón se salte un latido! Innocente y dulce, pero a veces frustrante, esto es un"
+        "description_es": "Sato-san es la flor inalcanzable de la clase. Siempre tiene frío y rito con compañeros de clase, pero sólo sé que es muy linda cuando sonríe, incluso si no es mucho fotógrafo. Oshio-kun es amistoso y animado, pero sólo sé que trabaja en el café de su familia después de la escuela. Hace un gran trabajo con la cuenta SNS de la cafetería, y su mala sonrisa hace que mi corazón salte un latido! Inocentes y dulces, pero a veces frustrantes, esta es una historia de 120% pura y fluida sobre dos personas que se enamoran por primera vez."
       },
       {
         "id": "mal-54344",
@@ -9341,7 +9312,7 @@
           "at": 1794040200,
           "episode": 5
         },
-        "description_es": "\"La máscara\" da poder a cualquiera que la use. A veces, eso significa una posibilidad interminable, o una tragedia inimaginable... Perú, alumno del legendario fabricante de máscaras Gaston Roux, se hace controlado por el “Mask del Dios Guerrero”, y mata involuntariamente a sus amigos, e incluso a su propio maestro. Para evitar que este tipo de tragedia vuelva a ocurrir, Perú jura destruir todas las máscaras de Gaston que se extienden alrededor del mundo. Frente a los pecados que ha cometido, se embarca en su viaje. Conocer a nuevos amigos y enfrentar a poderosos enemigos. El chico continúa. Hasta el día que puede expiar por hola"
+        "description_es": "\"La máscara\" da poder a cualquiera que la use. A veces, eso significa una posibilidad interminable, o una tragedia inimaginable... Perú, alumno del legendario fabricante de máscaras Gaston Roux, se hace controlado por el “Mask del Dios Guerrero”, y mata involuntariamente a sus amigos, e incluso a su propio maestro. Para evitar que este tipo de tragedia vuelva a ocurrir, Perú jura destruir todas las máscaras de Gaston que se extienden alrededor del mundo. Frente a los pecados que"
       },
       {
         "id": "mal-63053",
