@@ -3,6 +3,42 @@
   "items": [
     {
       "providerId": "anilist_schedule",
+      "at": "2026-11-02T03:16:38.764Z",
+      "result": "success",
+      "observed": 196,
+      "created": 4,
+      "playback": 0,
+      "detail": "conectada"
+    },
+    {
+      "providerId": "licensed_library",
+      "at": "2026-11-02T03:16:38.764Z",
+      "result": "success",
+      "observed": 0,
+      "created": 0,
+      "playback": 0,
+      "detail": "sin_contenido_autorizado"
+    },
+    {
+      "providerId": "jkanime_external",
+      "at": "2026-11-02T03:16:38.764Z",
+      "result": "success",
+      "observed": 5,
+      "created": 0,
+      "playback": 0,
+      "detail": "conectada"
+    },
+    {
+      "providerId": "youtube_trailers",
+      "at": "2026-11-02T03:16:38.764Z",
+      "result": "success",
+      "observed": 95,
+      "created": 0,
+      "playback": 0,
+      "detail": "conectada"
+    },
+    {
+      "providerId": "anilist_schedule",
       "at": "2026-11-01T21:01:41.969Z",
       "result": "success",
       "observed": 202,
@@ -504,42 +540,6 @@
       "created": 0,
       "playback": 0,
       "detail": "conectada"
-    },
-    {
-      "providerId": "licensed_library",
-      "at": "2026-10-28T09:16:43.869Z",
-      "result": "success",
-      "observed": 0,
-      "created": 0,
-      "playback": 0,
-      "detail": "sin_contenido_autorizado"
-    },
-    {
-      "providerId": "anilist_schedule",
-      "at": "2026-10-28T06:08:43.211Z",
-      "result": "success",
-      "observed": 161,
-      "created": 2,
-      "playback": 0,
-      "detail": "conectada"
-    },
-    {
-      "providerId": "youtube_trailers",
-      "at": "2026-10-28T06:08:43.211Z",
-      "result": "success",
-      "observed": 94,
-      "created": 0,
-      "playback": 0,
-      "detail": "conectada"
-    },
-    {
-      "providerId": "licensed_library",
-      "at": "2026-10-28T03:12:19.379Z",
-      "result": "success",
-      "observed": 0,
-      "created": 0,
-      "playback": 0,
-      "detail": "sin_contenido_autorizado"
     }
   ]
 }
