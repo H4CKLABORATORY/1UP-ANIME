@@ -2,6 +2,24 @@
   "schemaVersion": 1,
   "items": [
     {
+      "providerId": "licensed_library",
+      "at": "2026-11-03T06:21:14.551Z",
+      "result": "success",
+      "observed": 0,
+      "created": 0,
+      "playback": 0,
+      "detail": "sin_contenido_autorizado"
+    },
+    {
+      "providerId": "jkanime_external",
+      "at": "2026-11-03T06:21:14.551Z",
+      "result": "success",
+      "observed": 5,
+      "created": 0,
+      "playback": 0,
+      "detail": "conectada"
+    },
+    {
       "providerId": "anilist_schedule",
       "at": "2026-11-03T03:18:13.385Z",
       "result": "success",
@@ -522,24 +540,6 @@
       "created": 0,
       "playback": 0,
       "detail": "conectada"
-    },
-    {
-      "providerId": "anilist_schedule",
-      "at": "2026-10-29T09:17:43.093Z",
-      "result": "success",
-      "observed": 174,
-      "created": 8,
-      "playback": 0,
-      "detail": "conectada"
-    },
-    {
-      "providerId": "licensed_library",
-      "at": "2026-10-29T09:17:43.093Z",
-      "result": "success",
-      "observed": 0,
-      "created": 0,
-      "playback": 0,
-      "detail": "sin_contenido_autorizado"
     }
   ]
 }
