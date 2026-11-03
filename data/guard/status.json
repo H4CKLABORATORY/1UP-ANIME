@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "engine": "ONEUP SELF HEALING ENGINE",
-  "updatedAt": "2026-11-03T18:01:50.953Z",
+  "updatedAt": "2026-11-03T22:01:53.523Z",
   "site": "https://h4cklaboratory.github.io/1UP-ANIME/",
   "mode": "local_y_publico",
   "verdict": "correcto",
@@ -10,7 +10,7 @@
   "warnings": 0,
   "persistentAlerts": [],
   "requiresManualAction": true,
-  "lastKnownGoodCommit": "f808514a6f129f8f23e9005206f00dee4e917afa",
+  "lastKnownGoodCommit": "af5b8acd26c56dd2d02bf4f182310d6db9900909",
   "checks": [
     {
       "id": "file:index.html",
@@ -94,7 +94,7 @@
       "id": "file:data/airing.json",
       "level": "ok",
       "message": "Validado: Archivo requerido data/airing.json",
-      "bytes": 430451
+      "bytes": 410386
     },
     {
       "id": "file:data/translations-es.json",
@@ -106,7 +106,7 @@
       "id": "file:data/dexter/records.json",
       "level": "ok",
       "message": "Validado: Archivo requerido data/dexter/records.json",
-      "bytes": 381880
+      "bytes": 387291
     },
     {
       "id": "file:config/dexter-providers.json",
@@ -187,13 +187,13 @@
       "id": "catalog:freshness",
       "level": "ok",
       "message": "Catálogo actualizado",
-      "ageHours": 8.9
+      "ageHours": 12.9
     },
     {
       "id": "airing:entries",
       "level": "ok",
       "message": "Validado: El calendario debe tener al menos 15 emisiones",
-      "entries": 176
+      "entries": 165
     },
     {
       "id": "airing:season",
@@ -204,7 +204,7 @@
       "id": "airing:freshness",
       "level": "ok",
       "message": "Calendario con fecha reciente",
-      "ageHours": 2.2
+      "ageHours": 0.3
     },
     {
       "id": "spanish:pack",
@@ -216,8 +216,8 @@
       "id": "engine:population",
       "level": "ok",
       "message": "Validado: Registros del motor existentes",
-      "anime": 132,
-      "episodes": 497,
+      "anime": 133,
+      "episodes": 506,
       "playbackSources": 0
     },
     {
@@ -249,7 +249,7 @@
       "id": "engine:freshness",
       "level": "ok",
       "message": "Sincronización reciente",
-      "ageHours": 2.8,
+      "ageHours": 0.8,
       "status": "correcta"
     },
     {
