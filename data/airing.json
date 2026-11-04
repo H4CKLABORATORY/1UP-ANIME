@@ -1,110 +1,9 @@
 {
-  "updated": "2026-11-04T03:53:00.333Z",
+  "updated": "2026-11-04T10:02:28.769Z",
   "source": "AniList public GraphQL metadata",
-  "windowStart": 1793566368,
-  "windowEnd": 1794541968,
+  "windowStart": 1793588536,
+  "windowEnd": 1794564136,
   "airing": [
-    {
-      "id": "mal-55809",
-      "mal_id": 55809,
-      "ani_id": 137653,
-      "title": "Renegade Immortal",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx137653-1wHbCVvABGOr.png",
-      "banner": "",
-      "description": "It tells the story of Wang Lin, an ordinary young man in the countryside, who is moved by his heart and cultivates against immortality. His pursuit is not only for longevity, but also for getting rid of the ants behind it. He firmly believed in human beings and entered the path of cultivation with mediocre qualifications. After experiencing ups and downs, with his wise mind, he gradually reached the pinnacle and became famous in the cultivation world with his own strength. (Source: WeTV)",
-      "year": 2023,
-      "startDate": "2023-09-25",
-      "format": "ONA",
-      "episodes": 180,
-      "averageScore": 83,
-      "status": "RELEASING",
-      "genres": [
-        "Action",
-        "Adventure",
-        "Drama",
-        "Fantasy"
-      ],
-      "siteUrl": "https://anilist.co/anime/137653",
-      "streaming": [
-        {
-          "name": "Crunchyroll",
-          "url": "https://www.crunchyroll.com/series/GKEH2G0MN/renegade-immortal"
-        }
-      ],
-      "trailer": null,
-      "next": {
-        "at": 1794189600,
-        "episode": 166
-      },
-      "airingAt": 1793584800,
-      "episode": 165,
-      "scheduleId": 414223,
-      "description_es": "Cuenta la historia de Wang Lin, un joven común en el campo, que se mueve por su corazón y cultiva contra la inmortalidad. Su búsqueda no es sólo para la longevidad, sino también para deshacerse de las hormigas detrás de ella. Creyó firmemente en los seres humanos y entró en el camino del cultivo con calificaciones mediocres. Después de experimentar altibajos, con su mente sabia, gradualmente llegó al pináculo y se hizo famoso en el mundo de cultivo con su propia fuerza. (Fuente: WeTV)"
-    },
-    {
-      "id": "al-214593",
-      "mal_id": null,
-      "ani_id": 214593,
-      "title": "YU-SANCHi! from YU-HACHi",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx214593-WZ0HaPSRae2E.png",
-      "banner": "",
-      "description": "",
-      "year": 2026,
-      "startDate": "2026-10-05",
-      "format": "TV_SHORT",
-      "episodes": 0,
-      "averageScore": 0,
-      "status": "RELEASING",
-      "genres": [
-        "Comedy",
-        "Slice of Life"
-      ],
-      "siteUrl": "https://anilist.co/anime/214593",
-      "streaming": [],
-      "trailer": {
-        "site": "youtube",
-        "id": "WprfleUJVck"
-      },
-      "next": {
-        "at": 1793890800,
-        "episode": 10
-      },
-      "airingAt": 1793584800,
-      "episode": 9,
-      "scheduleId": 419735
-    },
-    {
-      "id": "mal-65119",
-      "mal_id": 65119,
-      "ani_id": 218532,
-      "title": "Maomao no Hitorigoto 3rd Season",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx218532-I1GCprJrJ5sm.png",
-      "banner": "",
-      "description": "Chibi shorts to Kusuriya no Hitorigoto 3rd Season released on the TOHO animation YouTube channel. Note: Episode count begins at 49.",
-      "year": 2026,
-      "startDate": "2026-10-05",
-      "format": "ONA",
-      "episodes": 0,
-      "averageScore": 0,
-      "status": "RELEASING",
-      "genres": [
-        "Comedy"
-      ],
-      "siteUrl": "https://anilist.co/anime/218532",
-      "streaming": [],
-      "trailer": {
-        "site": "youtube",
-        "id": "FuGZ0Cl8YMY"
-      },
-      "next": {
-        "at": 1794193200,
-        "episode": 6
-      },
-      "airingAt": 1793588400,
-      "episode": 5,
-      "scheduleId": 422695,
-      "description_es": "Chibi shorts to Kusuriya no Hitorigoto 3rd Season lanzado en el canal de animación TOHO YouTube. Nota: El conteo de Episodio comienza a las 49."
-    },
     {
       "id": "mal-65184",
       "mal_id": 65184,
@@ -315,7 +214,7 @@
       "airingAt": 1793708760,
       "episode": 5,
       "scheduleId": 417800,
-      "description_es": "Un gran héroe está invicto en su lecho de muerte, lamentando que nunca haya encontrado a un enemigo que pudiera derribarla. Nunca quiso encontrar su destino en otro lugar que en el campo de batalla, y su pacífica desaparición tiene su deseo desesperadamente de que las cosas podrían haber sido diferentes... Pero cuando de repente viene al cuerpo de la joven y frágil Nia Liston, tiene una nueva lucha por delante de ella. Nia es una niña enferma, lo que significa que tiene un largo camino para ir antes de que esté en forma de lucha. Ahora que se le ha dado un segundo tiro a la vida, sin embargo, está decidida a conseguir lo que quiere. Va a vivir."
+      "description_es": "Un gran héroe está invicto en su lecho de muerte, lamentando que nunca haya encontrado a un enemigo que pudiera derribarla. Ella nunca quiso encontrar su destino en otro lugar que en el campo de batalla, y su pacífica desaparición tiene su deseo desesperadamente de que las cosas podrían haber sido diferentes... Pero cuando de repente viene al cuerpo de la joven y frágil Nia Liston, tiene una nueva lucha por delante de ella. Nia es una niña enferma, lo que significa que tiene un largo camino por recorrer"
     },
     {
       "id": "mal-63754",
@@ -353,7 +252,7 @@
       "airingAt": 1793710800,
       "episode": 5,
       "scheduleId": 420420,
-      "description_es": "Sato-san es la flor inalcanzable de la clase. Siempre tiene frío y rito con compañeros de clase, pero sólo sé que es muy linda cuando sonríe, incluso si no es mucho fotógrafo. Oshio-kun es amistoso y animado, pero sólo sé que trabaja en el café de su familia después de la escuela. Hace un gran trabajo con la cuenta SNS de la cafetería, y su mala sonrisa hace que mi corazón salte un latido! Inocentes y dulces, pero a veces frustrantes, esta es una historia de 120% pura y fluida sobre dos personas que se enamoran por primera vez."
+      "description_es": "Sato-san es la flor inalcanzable de la clase. Siempre tiene frío y rito con compañeros de clase, pero sólo sé que es muy linda cuando sonríe, incluso si no es mucho fotógrafo. Oshio-kun es amistoso y animado, pero sólo sé que trabaja en el café de su familia después de la escuela. Hace un gran trabajo con la cuenta SNS de la cafetería, y su mala sonrisa hace que mi corazón salte un latido! Innocente y dulce, pero a veces frustrante, esto es un"
     },
     {
       "id": "mal-62696",
@@ -367,7 +266,7 @@
       "startDate": "2026-10-06",
       "format": "TV",
       "episodes": 12,
-      "averageScore": 64,
+      "averageScore": 65,
       "status": "RELEASING",
       "genres": [
         "Comedy",
@@ -1875,7 +1774,7 @@
       "startDate": "2026-10-02",
       "format": "TV",
       "episodes": 12,
-      "averageScore": 72,
+      "averageScore": 73,
       "status": "RELEASING",
       "genres": [
         "Action",
@@ -2051,7 +1950,7 @@
       "startDate": "2026-04-04",
       "format": "TV_SHORT",
       "episodes": 0,
-      "averageScore": 64,
+      "averageScore": 65,
       "status": "RELEASING",
       "genres": [
         "Fantasy",
@@ -2219,7 +2118,7 @@
       "startDate": "2026-10-03",
       "format": "ONA",
       "episodes": 12,
-      "averageScore": 71,
+      "averageScore": 72,
       "status": "RELEASING",
       "genres": [
         "Action",
@@ -2499,7 +2398,7 @@
       "airingAt": 1794052800,
       "episode": 6,
       "scheduleId": 419829,
-      "description_es": "Romelia y su partido tienen éxito en derrotar al Rey demonio Zelgis, aunque la carga imprudente del príncipe Henri los obliga a una batalla agotadora. Después, Romelia se marca \"peso muerto\" por no luchar directamente, y el Príncipe unilateralmente rompe su compromiso. Denegado un lugar en las celebraciones de la victoria, Romelia vuelve a casa, sólo para ser conocido con fría indiferencia de su familia y sociedad. Sin embargo, se niega a romper. Ella ya tiene"
+      "description_es": "Romelia y su partido tienen éxito en derrotar al Rey demonio Zelgis, aunque la carga imprudente del príncipe Henri los obliga a una batalla agotadora. Después, Romelia se marca \"peso muerto\" por no luchar directamente, y el Príncipe unilateralmente rompe su compromiso. Denegado un lugar en las celebraciones de la victoria, Romelia vuelve a casa, sólo para ser conocido con fría indiferencia de su familia y sociedad. Sin embargo, se niega a romper. Ella ya ha puesto sus ojos en el camino que está por delante. (Fuente: Crunchyroll) Nota: Romelia War Chronicle transmitió 2 días antes de la emisión de televisión en Anime"
     },
     {
       "id": "mal-61153",
@@ -2513,7 +2412,7 @@
       "startDate": "2026-10-03",
       "format": "ONA",
       "episodes": 0,
-      "averageScore": 69,
+      "averageScore": 70,
       "status": "RELEASING",
       "genres": [
         "Action",
@@ -2873,7 +2772,7 @@
       "airingAt": 1794069000,
       "episode": 6,
       "scheduleId": 419567,
-      "description_es": "Si hay una cosa que nunca puedes tener suficiente en un mundo de espadas y brujería estilo RPG, ¡es puntos mágicos! Si estás alimentando hechizos, técnicas o mostrando una increíble habilidad, tienes que gastar esos puntos para hacer daño real. ¿Y si te escapas? La Cuaresma es parte de la fiesta de llegada conocida como los \"Skypiercers\", y gracias a su regalo único, puede prestar enormes cantidades de magia a otros. ¿Sin MP? No hay problema con Lent arou"
+      "description_es": "Si hay una cosa que nunca puedes tener suficiente en un mundo de espadas y brujería estilo RPG, ¡es puntos mágicos! Si estás alimentando hechizos, técnicas o mostrando una increíble habilidad, tienes que gastar esos puntos para hacer daño real. ¿Y si te escapas? La Cuaresma es parte de la fiesta de llegada conocida como los \"Skypiercers\", y gracias a su regalo único, puede prestar enormes cantidades de magia a otros. ¿Sin MP? ¡No hay problema con la Cuaresma! Excepto ahora que sus compañeros se han convertido en héroes formidables (gracias a su habilidad), su utilidad es cuestionada. Escapada del grupo, Lent es"
     },
     {
       "id": "mal-63125",
@@ -3301,7 +3200,7 @@
       "startDate": "2026-10-11",
       "format": "TV",
       "episodes": 0,
-      "averageScore": 80,
+      "averageScore": 81,
       "status": "RELEASING",
       "genres": [
         "Sports"
@@ -3718,7 +3617,7 @@
       "airingAt": 1794148200,
       "episode": 6,
       "scheduleId": 419615,
-      "description_es": "Renací como una hija villana en un juego de harem otome inverso. Después de enfermarse con fiebre alta a los 10 años, Pia Rockwell de repente recordó su vida pasada como estudiante universitaria en Japón. Pero lejos de ir por la ruta del villano, todo lo que esta chica súper tímida quiere es finalmente utilizar su conocimiento de cuando era una estudiante de posgrado que estudiaba para obtener su doctorado en paleontología. Su objetivo final es llegar a ser más común, excavar fos"
+      "description_es": "Renací como una hija villana en un juego de harem otome inverso. Después de enfermarse con fiebre alta a los 10 años, Pia Rockwell de repente recordó su vida pasada como estudiante universitaria en Japón. Pero lejos de ir por la ruta villanosa, todo lo que esta chica súper tímida quiere es finalmente utilizar su conocimiento de cuando era una estudiante de posgrado que estudiaba para obtener su doctorado en paleontología. Su objetivo final es convertirse en un común, excavar fósiles, construir un museo y luego convertirse en un curador. Así que para escapar de la ruta del villano y evitar ser deportado por su prometido durante la graduación"
     },
     {
       "id": "mal-64340",
@@ -3807,7 +3706,7 @@
       "startDate": "2026-10-05",
       "format": "TV",
       "episodes": 0,
-      "averageScore": 68,
+      "averageScore": 69,
       "status": "RELEASING",
       "genres": [
         "Adventure",
@@ -3846,7 +3745,7 @@
       "startDate": "2026-10-05",
       "format": "TV_SHORT",
       "episodes": 8,
-      "averageScore": 51,
+      "averageScore": 52,
       "status": "RELEASING",
       "genres": [
         "Ecchi",
@@ -4350,7 +4249,7 @@
       "airingAt": 1794313560,
       "episode": 6,
       "scheduleId": 417801,
-      "description_es": "Un gran héroe está invicto en su lecho de muerte, lamentando que nunca haya encontrado a un enemigo que pudiera derribarla. Nunca quiso encontrar su destino en otro lugar que en el campo de batalla, y su pacífica desaparición tiene su deseo desesperadamente de que las cosas podrían haber sido diferentes... Pero cuando de repente viene al cuerpo de la joven y frágil Nia Liston, tiene una nueva lucha por delante de ella. Nia es una niña enferma, lo que significa que tiene un largo camino para ir antes de que esté en forma de lucha. Ahora que se le ha dado un segundo tiro a la vida, sin embargo, está decidida a conseguir lo que quiere. Va a vivir."
+      "description_es": "Un gran héroe está invicto en su lecho de muerte, lamentando que nunca haya encontrado a un enemigo que pudiera derribarla. Ella nunca quiso encontrar su destino en otro lugar que en el campo de batalla, y su pacífica desaparición tiene su deseo desesperadamente de que las cosas podrían haber sido diferentes... Pero cuando de repente viene al cuerpo de la joven y frágil Nia Liston, tiene una nueva lucha por delante de ella. Nia es una niña enferma, lo que significa que tiene un largo camino por recorrer"
     },
     {
       "id": "mal-63754",
@@ -4388,7 +4287,7 @@
       "airingAt": 1794315600,
       "episode": 6,
       "scheduleId": 420421,
-      "description_es": "Sato-san es la flor inalcanzable de la clase. Siempre tiene frío y rito con compañeros de clase, pero sólo sé que es muy linda cuando sonríe, incluso si no es mucho fotógrafo. Oshio-kun es amistoso y animado, pero sólo sé que trabaja en el café de su familia después de la escuela. Hace un gran trabajo con la cuenta SNS de la cafetería, y su mala sonrisa hace que mi corazón salte un latido! Inocentes y dulces, pero a veces frustrantes, esta es una historia de 120% pura y fluida sobre dos personas que se enamoran por primera vez."
+      "description_es": "Sato-san es la flor inalcanzable de la clase. Siempre tiene frío y rito con compañeros de clase, pero sólo sé que es muy linda cuando sonríe, incluso si no es mucho fotógrafo. Oshio-kun es amistoso y animado, pero sólo sé que trabaja en el café de su familia después de la escuela. Hace un gran trabajo con la cuenta SNS de la cafetería, y su mala sonrisa hace que mi corazón salte un latido! Innocente y dulce, pero a veces frustrante, esto es un"
     },
     {
       "id": "mal-62696",
@@ -4402,7 +4301,7 @@
       "startDate": "2026-10-06",
       "format": "TV",
       "episodes": 12,
-      "averageScore": 64,
+      "averageScore": 65,
       "status": "RELEASING",
       "genres": [
         "Comedy",
@@ -5404,7 +5303,8 @@
       },
       "airingAt": 1794495600,
       "episode": 1,
-      "scheduleId": 419799
+      "scheduleId": 419799,
+      "description_es": "Una película de secuela de la película de 2014 Rakuen Tsuihou: Expeled From Paradise."
     },
     {
       "id": "mal-64180",
@@ -5578,6 +5478,207 @@
       "episode": 2,
       "scheduleId": 421826,
       "description_es": "Yuuma Ashihara de sexto grado y su hermana gemela, Sawa, están jugando Actual Magic, una nueva realidad virtual MMORPG, cuando de repente comienza a fusionarse con el mundo real. En medio de todo el caos y la confusión, se hace evidente que la muerte está acechando alrededor de cada esquina, incluso cuando Yuuma entra en su compañero de clase Sumika. Antes, ella era una de las chicas más lindas de su clase, pero desde entonces ha sufrido una terrible metamorfosis, ¡en uno de los monstruos horrorosos del juego! Del autor de Sword Art Online y Accel World viene una historia más allá de VR y AR, donde el juego y la realidad son uno y el mismo...y s"
+    },
+    {
+      "id": "al-206244",
+      "mal_id": null,
+      "ani_id": 206244,
+      "title": "Luo Xiaohei Zhan Ji: Xue Qian Pian",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx206244-ke6bcfsL40qY.jpg",
+      "banner": "",
+      "description": "The third season of Luo Xiaohei Zhan Ji .",
+      "year": 2026,
+      "startDate": "2026-10-30",
+      "format": "ONA",
+      "episodes": 6,
+      "averageScore": 0,
+      "status": "RELEASING",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Comedy",
+        "Supernatural"
+      ],
+      "siteUrl": "https://anilist.co/anime/206244",
+      "streaming": [],
+      "trailer": null,
+      "next": {
+        "at": 1793937600,
+        "episode": 2
+      },
+      "airingAt": 1794542400,
+      "episode": 3,
+      "scheduleId": 421374,
+      "description_es": "La tercera temporada de Luo Xiaohei Zhan Ji."
+    },
+    {
+      "id": "mal-61469",
+      "mal_id": 61469,
+      "ani_id": 210482,
+      "title": "STEEL BALL RUN JoJo's Bizarre Adventure 2nd - 3rd STAGE",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx210482-P1VNKbqdJ6Zj.jpg",
+      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/210482-pYAD0IbzNbgS.jpg",
+      "description": "In the 2nd STAGE, a desert crossing spanning roughly 750 miles- the land that Johnny Joestar and Gyro Zeppeli must challenge, is home to the area that is feared as the \"Devil's Palm.\" In 1875, a threat lurking in said desert wiped out a cavalry of 26 people, eliciting fear from the local native people. As ominous incidents begin to unfold, they are forced to realize that this race is far more than a mere competition. The two press forward, where countless hidden motives collide.. (Source: Warner Bros. Japan Anime, Netflix Anime, edited)",
+      "year": 2026,
+      "startDate": "2026-09-25",
+      "format": "ONA",
+      "episodes": 11,
+      "averageScore": 86,
+      "status": "RELEASING",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Drama",
+        "Mystery",
+        "Supernatural"
+      ],
+      "siteUrl": "https://anilist.co/anime/210482",
+      "streaming": [],
+      "trailer": {
+        "site": "youtube",
+        "id": "jXtG_lcR9P4"
+      },
+      "next": {
+        "at": 1793952000,
+        "episode": 7
+      },
+      "airingAt": 1794556800,
+      "episode": 8,
+      "scheduleId": 420971,
+      "description_es": "En la 2a ETAPA, un cruce desértico que recorre aproximadamente 750 millas- la tierra que Johnny Joestar y Gyro Zeppeli deben desafiar, es el hogar de la zona que se teme como la palma del Diablo. En 1875, una amenaza que acechaba en dicho desierto borró una caballería de 26 personas, provocando temor de los nativos locales. A medida que los incidentes ominosos comienzan a desarrollarse, se ven obligados a darse cuenta de que esta carrera es mucho más que una mera competencia. Las dos prensas hacia adelante, donde"
+    },
+    {
+      "id": "mal-62039",
+      "mal_id": 62039,
+      "ani_id": 194207,
+      "title": "Pan Dorobou",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx194207-7n4M6jOwLdcF.jpg",
+      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/194207-6yQitDZ3uOi5.jpg",
+      "description": "Based on Keiko Shibata's picture book \"Pan Dorobou\" (Bread Thief). The picture books center on a piece of bread that also steals bread from bakeries in the city. (Source: Anime News Network, edited)",
+      "year": 2026,
+      "startDate": "2026-10-02",
+      "format": "TV_SHORT",
+      "episodes": 0,
+      "averageScore": 0,
+      "status": "RELEASING",
+      "genres": [
+        "Comedy"
+      ],
+      "siteUrl": "https://anilist.co/anime/194207",
+      "streaming": [],
+      "trailer": {
+        "site": "youtube",
+        "id": "dUSYa-7rKpM"
+      },
+      "next": {
+        "at": 1793958000,
+        "episode": 6
+      },
+      "airingAt": 1794562800,
+      "episode": 7,
+      "scheduleId": 420234,
+      "description_es": "Basado en el libro de fotos de Keiko Shibata \"Pan Dorobou\" (Bread Thief). Los libros de fotos se centran en un pedazo de pan que también roba pan de panaderías en la ciudad. (Fuente: Anime News Network, editado)"
+    },
+    {
+      "id": "mal-53876",
+      "mal_id": 53876,
+      "ani_id": 158871,
+      "title": "Pokémon Horizons: The Series",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx158871-GBM9AMDfDRSu.jpg",
+      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/158871-PtipBrtn93hB.jpg",
+      "description": "A new dream and adventure set throughout the entire Pokémon world unfolds in a brand new Pokémon-series following a girl named Liko and a boy named Roy.",
+      "year": 2023,
+      "startDate": "2023-04-14",
+      "format": "TV",
+      "episodes": 0,
+      "averageScore": 73,
+      "status": "RELEASING",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Fantasy"
+      ],
+      "siteUrl": "https://anilist.co/anime/158871",
+      "streaming": [],
+      "trailer": {
+        "site": "youtube",
+        "id": "_c_hMehCORQ"
+      },
+      "next": {
+        "at": 1793958900,
+        "episode": 156
+      },
+      "airingAt": 1794563700,
+      "episode": 157,
+      "scheduleId": 421009,
+      "description_es": "Un nuevo sueño y aventura en todo el mundo Pokémon se desarrolla en una nueva serie Pokémon siguiendo a una chica llamada Liko y un chico llamado Roy."
+    },
+    {
+      "id": "mal-51768",
+      "mal_id": 51768,
+      "ani_id": 146004,
+      "title": "Watame Did Borderline Nothing Wrong",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx146004-hH08KAB1yHlN.png",
+      "banner": "",
+      "description": "A series of comedic YouTube shorts airing every Friday on Watame's YouTube channel. Notes: - Episodes 1-21 (Series 1) were originally released in a vertical format, later rereleased widescreen in 8 compilation videos. - Contains special episode \"Best Girl？！スペシャル回！！！\"",
+      "year": 2022,
+      "startDate": "2022-01-07",
+      "format": "ONA",
+      "episodes": 0,
+      "averageScore": 70,
+      "status": "RELEASING",
+      "genres": [
+        "Comedy",
+        "Slice of Life"
+      ],
+      "siteUrl": "https://anilist.co/anime/146004",
+      "streaming": [],
+      "trailer": {
+        "site": "youtube",
+        "id": "c3DcpEy3xd8"
+      },
+      "next": {
+        "at": 1793959200,
+        "episode": 87
+      },
+      "airingAt": 1794564000,
+      "episode": 88,
+      "scheduleId": 422662,
+      "description_es": "Una serie de cortos cómicos de YouTube que emiten cada viernes en el canal de YouTube de Watame. Notas: - Episodios 1-21 (Series 1) fueron publicados originalmente en un formato vertical, posteriormente en pantalla ancha liberada en 8 vídeos de compilación. - Contiene episodio especial \"Mejor chica?!"
+    },
+    {
+      "id": "mal-56566",
+      "mal_id": 56566,
+      "ani_id": 165159,
+      "title": "BEYBLADE X",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx165159-aCFC9Sng7t4M.png",
+      "banner": "",
+      "description": "Bird Kazami, aiming to become a pro Blader, meets former champion Ekusu Kurosu, also known as 'Kamen X', and forms a team so that they can aim for the \"top\" of the X Tower. But what awaits them is a spectacular battle that no one has ever seen before. The yet unseen 'X'. The super accelerated (Xtreme) Beyblade runs through a new era! (Source: Official website)",
+      "year": 2023,
+      "startDate": "2023-10-06",
+      "format": "TV",
+      "episodes": 0,
+      "averageScore": 65,
+      "status": "RELEASING",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Sports"
+      ],
+      "siteUrl": "https://anilist.co/anime/165159",
+      "streaming": [],
+      "trailer": {
+        "site": "youtube",
+        "id": "SXdTmFshlFs"
+      },
+      "next": {
+        "at": 1793959200,
+        "episode": 139
+      },
+      "airingAt": 1794564000,
+      "episode": 140,
+      "scheduleId": 423104,
+      "description_es": "Bird Kazami, con el objetivo de convertirse en un profesional Blader, se encuentra con el ex campeón Ekusu Kurosu, también conocido como 'Kamen X', y forma un equipo para que puedan apuntar al \"top\" de la X Tower. Pero lo que les espera es una batalla espectacular que nadie ha visto antes. El \"X\" aún invisible. El super acelerado (Xtreme) Beyblade corre a través de una nueva era! (Fuente: sitio web oficial)"
     }
   ],
   "seasonal": {
@@ -6053,7 +6154,7 @@
         "startDate": "2026-10-02",
         "format": "TV",
         "episodes": 12,
-        "averageScore": 72,
+        "averageScore": 73,
         "status": "RELEASING",
         "genres": [
           "Action",
@@ -6273,7 +6374,7 @@
         "startDate": "2026-10-03",
         "format": "ONA",
         "episodes": 0,
-        "averageScore": 69,
+        "averageScore": 70,
         "status": "RELEASING",
         "genres": [
           "Action",
@@ -6331,7 +6432,7 @@
           "at": 1794052800,
           "episode": 6
         },
-        "description_es": "Romelia y su partido tienen éxito en derrotar al Rey demonio Zelgis, aunque la carga imprudente del príncipe Henri los obliga a una batalla agotadora. Después, Romelia se marca \"peso muerto\" por no luchar directamente, y el Príncipe unilateralmente rompe su compromiso. Denegado un lugar en las celebraciones de la victoria, Romelia vuelve a casa, sólo para ser conocido con fría indiferencia de su familia y sociedad. Sin embargo, se niega a romper. Ella ya tiene"
+        "description_es": "Romelia y su partido tienen éxito en derrotar al Rey demonio Zelgis, aunque la carga imprudente del príncipe Henri los obliga a una batalla agotadora. Después, Romelia se marca \"peso muerto\" por no luchar directamente, y el Príncipe unilateralmente rompe su compromiso. Denegado un lugar en las celebraciones de la victoria, Romelia vuelve a casa, sólo para ser conocido con fría indiferencia de su familia y sociedad. Sin embargo, se niega a romper. Ella ya ha puesto sus ojos en el camino que está por delante. (Fuente: Crunchyroll) Nota: Romelia War Chronicle transmitió 2 días antes de la emisión de televisión en Anime"
       },
       {
         "id": "mal-62524",
@@ -6719,7 +6820,7 @@
           "at": 1794069000,
           "episode": 6
         },
-        "description_es": "Si hay una cosa que nunca puedes tener suficiente en un mundo de espadas y brujería estilo RPG, ¡es puntos mágicos! Si estás alimentando hechizos, técnicas o mostrando una increíble habilidad, tienes que gastar esos puntos para hacer daño real. ¿Y si te escapas? La Cuaresma es parte de la fiesta de llegada conocida como los \"Skypiercers\", y gracias a su regalo único, puede prestar enormes cantidades de magia a otros. ¿Sin MP? No hay problema con Lent arou"
+        "description_es": "Si hay una cosa que nunca puedes tener suficiente en un mundo de espadas y brujería estilo RPG, ¡es puntos mágicos! Si estás alimentando hechizos, técnicas o mostrando una increíble habilidad, tienes que gastar esos puntos para hacer daño real. ¿Y si te escapas? La Cuaresma es parte de la fiesta de llegada conocida como los \"Skypiercers\", y gracias a su regalo único, puede prestar enormes cantidades de magia a otros. ¿Sin MP? ¡No hay problema con la Cuaresma! Excepto ahora que sus compañeros se han convertido en héroes formidables (gracias a su habilidad), su utilidad es cuestionada. Escapada del grupo, Lent es"
       },
       {
         "id": "mal-63801",
@@ -6786,7 +6887,7 @@
           "at": 1794148200,
           "episode": 6
         },
-        "description_es": "Renací como una hija villana en un juego de harem otome inverso. Después de enfermarse con fiebre alta a los 10 años, Pia Rockwell de repente recordó su vida pasada como estudiante universitaria en Japón. Pero lejos de ir por la ruta del villano, todo lo que esta chica súper tímida quiere es finalmente utilizar su conocimiento de cuando era una estudiante de posgrado que estudiaba para obtener su doctorado en paleontología. Su objetivo final es llegar a ser más común, excavar fos"
+        "description_es": "Renací como una hija villana en un juego de harem otome inverso. Después de enfermarse con fiebre alta a los 10 años, Pia Rockwell de repente recordó su vida pasada como estudiante universitaria en Japón. Pero lejos de ir por la ruta villanosa, todo lo que esta chica súper tímida quiere es finalmente utilizar su conocimiento de cuando era una estudiante de posgrado que estudiaba para obtener su doctorado en paleontología. Su objetivo final es convertirse en un común, excavar fósiles, construir un museo y luego convertirse en un curador. Así que para escapar de la ruta del villano y evitar ser deportado por su prometido durante la graduación"
       },
       {
         "id": "mal-63751",
@@ -6972,6 +7073,31 @@
         "description_es": "La historia se centra en la vida diaria de un perro de mapache que no está bien con él y un zorro malicioso que le gusta burlar al perro de mapache. Los dos son amigos cercanos que viven juntos en una montaña. Sus otros amigos incluyen un lobo, un oso, un conejo y aves. (Fuente: Anime News Network)"
       },
       {
+        "id": "mal-64211",
+        "mal_id": 64211,
+        "ani_id": 217787,
+        "title": "Pop Pap Polters",
+        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b217787-NHLlgGiqy59P.jpg",
+        "banner": "",
+        "description": "",
+        "year": 2026,
+        "startDate": "2026-10-04",
+        "format": "TV_SHORT",
+        "episodes": 0,
+        "averageScore": 0,
+        "status": "RELEASING",
+        "genres": [
+          "Slice of Life"
+        ],
+        "siteUrl": "https://anilist.co/anime/217787",
+        "streaming": [],
+        "trailer": null,
+        "next": {
+          "at": 1794099600,
+          "episode": 6
+        }
+      },
+      {
         "id": "al-216860",
         "mal_id": null,
         "ani_id": 216860,
@@ -6996,31 +7122,6 @@
           "episode": 6
         },
         "description_es": "Cuarta temporada de Punirunes ."
-      },
-      {
-        "id": "mal-64211",
-        "mal_id": 64211,
-        "ani_id": 217787,
-        "title": "Pop Pap Polters",
-        "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b217787-NHLlgGiqy59P.jpg",
-        "banner": "",
-        "description": "",
-        "year": 2026,
-        "startDate": "2026-10-04",
-        "format": "TV_SHORT",
-        "episodes": 0,
-        "averageScore": 0,
-        "status": "RELEASING",
-        "genres": [
-          "Slice of Life"
-        ],
-        "siteUrl": "https://anilist.co/anime/217787",
-        "streaming": [],
-        "trailer": null,
-        "next": {
-          "at": 1794099600,
-          "episode": 6
-        }
       },
       {
         "id": "mal-63409",
@@ -7207,7 +7308,7 @@
         "startDate": "2026-10-05",
         "format": "TV_SHORT",
         "episodes": 8,
-        "averageScore": 51,
+        "averageScore": 52,
         "status": "RELEASING",
         "genres": [
           "Ecchi",
@@ -7238,7 +7339,7 @@
         "startDate": "2026-10-05",
         "format": "TV",
         "episodes": 0,
-        "averageScore": 68,
+        "averageScore": 69,
         "status": "RELEASING",
         "genres": [
           "Adventure",
@@ -7405,7 +7506,7 @@
           "at": 1794313560,
           "episode": 6
         },
-        "description_es": "Un gran héroe está invicto en su lecho de muerte, lamentando que nunca haya encontrado a un enemigo que pudiera derribarla. Nunca quiso encontrar su destino en otro lugar que en el campo de batalla, y su pacífica desaparición tiene su deseo desesperadamente de que las cosas podrían haber sido diferentes... Pero cuando de repente viene al cuerpo de la joven y frágil Nia Liston, tiene una nueva lucha por delante de ella. Nia es una niña enferma, lo que significa que tiene un largo camino para ir antes de que esté en forma de lucha. Ahora que se le ha dado un segundo tiro a la vida, sin embargo, está decidida a conseguir lo que quiere. Va a vivir."
+        "description_es": "Un gran héroe está invicto en su lecho de muerte, lamentando que nunca haya encontrado a un enemigo que pudiera derribarla. Ella nunca quiso encontrar su destino en otro lugar que en el campo de batalla, y su pacífica desaparición tiene su deseo desesperadamente de que las cosas podrían haber sido diferentes... Pero cuando de repente viene al cuerpo de la joven y frágil Nia Liston, tiene una nueva lucha por delante de ella. Nia es una niña enferma, lo que significa que tiene un largo camino por recorrer"
       },
       {
         "id": "mal-63754",
@@ -7440,7 +7541,7 @@
           "at": 1794315600,
           "episode": 6
         },
-        "description_es": "Sato-san es la flor inalcanzable de la clase. Siempre tiene frío y rito con compañeros de clase, pero sólo sé que es muy linda cuando sonríe, incluso si no es mucho fotógrafo. Oshio-kun es amistoso y animado, pero sólo sé que trabaja en el café de su familia después de la escuela. Hace un gran trabajo con la cuenta SNS de la cafetería, y su mala sonrisa hace que mi corazón salte un latido! Inocentes y dulces, pero a veces frustrantes, esta es una historia de 120% pura y fluida sobre dos personas que se enamoran por primera vez."
+        "description_es": "Sato-san es la flor inalcanzable de la clase. Siempre tiene frío y rito con compañeros de clase, pero sólo sé que es muy linda cuando sonríe, incluso si no es mucho fotógrafo. Oshio-kun es amistoso y animado, pero sólo sé que trabaja en el café de su familia después de la escuela. Hace un gran trabajo con la cuenta SNS de la cafetería, y su mala sonrisa hace que mi corazón salte un latido! Innocente y dulce, pero a veces frustrante, esto es un"
       },
       {
         "id": "mal-54344",
@@ -7486,7 +7587,7 @@
         "startDate": "2026-10-06",
         "format": "TV",
         "episodes": 12,
-        "averageScore": 64,
+        "averageScore": 65,
         "status": "RELEASING",
         "genres": [
           "Comedy",
