@@ -3,6 +3,15 @@
   "items": [
     {
       "providerId": "licensed_library",
+      "at": "2026-11-04T15:15:58.430Z",
+      "result": "success",
+      "observed": 0,
+      "created": 0,
+      "playback": 0,
+      "detail": "sin_contenido_autorizado"
+    },
+    {
+      "providerId": "licensed_library",
       "at": "2026-11-04T12:11:56.224Z",
       "result": "success",
       "observed": 0,
@@ -529,15 +538,6 @@
       "result": "success",
       "observed": 207,
       "created": 17,
-      "playback": 0,
-      "detail": "conectada"
-    },
-    {
-      "providerId": "youtube_trailers",
-      "at": "2026-10-30T23:59:35.212Z",
-      "result": "success",
-      "observed": 94,
-      "created": 0,
       "playback": 0,
       "detail": "conectada"
     }
