@@ -1,12 +1,12 @@
 {
-  "updated": "2026-11-04T10:36:42+00:00",
+  "updated": "2026-11-05T10:29:57+00:00",
   "status": "ok",
   "source": {
     "name": "Wikipedia: 2026 in anime",
     "url": "https://en.wikipedia.org/wiki/2026_in_anime",
     "attribution": "Contribuidores de Wikipedia, CC BY-SA; verificar condiciones de reutilización."
   },
-  "count": 317,
+  "count": 318,
   "items": [
     {
       "title": "Labyrinth",
@@ -2734,6 +2734,15 @@
       "studio": "Kinema Citrus",
       "episodes": 3,
       "sourceUrl": "https://en.wikipedia.org/wiki/My_Happy_Marriage"
+    },
+    {
+      "title": "Spirit Circle",
+      "format": "TV",
+      "year": 2026,
+      "release": "December",
+      "studio": "Nagomi EOTA",
+      "episodes": 18,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Spirit_Circle"
     },
     {
       "title": "The Idolmaster Million Live!",
