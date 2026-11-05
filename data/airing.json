@@ -1,40 +1,9 @@
 {
-  "updated": "2026-11-05T03:55:25.160Z",
+  "updated": "2026-11-05T10:02:08.174Z",
   "source": "AniList public GraphQL metadata",
-  "windowStart": 1793652913,
-  "windowEnd": 1794628513,
+  "windowStart": 1793674916,
+  "windowEnd": 1794650516,
   "airing": [
-    {
-      "id": "mal-64388",
-      "mal_id": 64388,
-      "ani_id": 213188,
-      "title": "Jueshi Zhan Hun 2",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx213188-zwmmMVqqUjh8.png",
-      "banner": "",
-      "description": "In the Canglan Continent, strength is determined by martial spirits. Qin Nan, the young master of the Qin family, was originally a useless soul, suffering endless scorn. By chance, he awakened the soul of an ancient war god, thus defying fate. He swept through sect geniuses, overcame powerful enemies and obstacles, encountered a soulmate, used his battle spirit to break all laws, and forged a legend with his blood. From a humble young master, he rose through the ranks to become an invincible supreme celestial being who shakes the nine realms. (Source: IQIYI, translated)",
-      "year": 2026,
-      "startDate": "2026-06-09",
-      "format": "ONA",
-      "episodes": 100,
-      "averageScore": 0,
-      "status": "RELEASING",
-      "genres": [
-        "Action",
-        "Adventure",
-        "Fantasy"
-      ],
-      "siteUrl": "https://anilist.co/anime/213188",
-      "streaming": [],
-      "trailer": null,
-      "next": {
-        "at": 1794276000,
-        "episode": 23
-      },
-      "airingAt": 1793671200,
-      "episode": 22,
-      "scheduleId": 415245,
-      "description_es": "En el Continente Canglan, la fuerza está determinada por espíritus marciales. Qin Nan, el joven maestro de la familia Qin, fue originalmente un alma inútil, sufriendo un desprecio infinito. Por casualidad, despertó el alma de un dios de guerra antiguo, desafiando así el destino. Golpeó por los genios de la secta, superó a los poderosos enemigos y obstáculos, encontró a un alma gemela, usó su espíritu de batalla para romper todas las leyes, y forjó una leyenda con su sangre. De un humilde joven maestro, se levantó por las filas para convertirse en un ser celestial supremo invencible que sacude los nueve reinos. (Fuente: IQIYI, traducido)"
-    },
     {
       "id": "mal-63382",
       "mal_id": 63382,
@@ -80,7 +49,7 @@
       "startDate": "2026-10-06",
       "format": "TV",
       "episodes": 12,
-      "averageScore": 69,
+      "averageScore": 68,
       "status": "RELEASING",
       "genres": [
         "Comedy",
@@ -850,8 +819,8 @@
       "streaming": [],
       "trailer": null,
       "next": {
-        "at": 1793871000,
-        "episode": 6
+        "at": 1794475800,
+        "episode": 7
       },
       "airingAt": 1793871000,
       "episode": 6,
@@ -990,7 +959,7 @@
       "airingAt": 1793890560,
       "episode": 6,
       "scheduleId": 421728,
-      "description_es": "Koyuki, la chica aislada; Miki, el antiguo ídolo escolar; Minato, el tipo sin concepto de espacio personal; y Youta, el amable jugador de baloncesto. Clumsy, frustrante, pero profundamente apasionante — este drama que se acerca a la edad de los corazones cruzados avanza. A medida que se acercan, Koyuki y Minato comienzan a desarrollar sentimientos entre sí que van más allá de la mera amistad. Mientras tanto, Youta finalmente confiesa a Miki los sentimientos por los que ha albergado"
+      "description_es": "Koyuki, la chica aislada; Miki, el antiguo ídolo escolar; Minato, el tipo sin concepto de espacio personal; y Youta, el amable jugador de baloncesto. Clumsy, frustrante, pero profundamente apasionante — este drama que se acerca a la edad de los corazones cruzados avanza. A medida que se acercan, Koyuki y Minato comienzan a desarrollar sentimientos entre sí que van más allá de la mera amistad. Mientras tanto, Youta finalmente confiesa a Miki los sentimientos que ha albergado durante años. Algunos hablan sus corazones mientras que otros mantienen sus emociones ocultas, causando sus caminos —y sus sentimientos por los demás— a crus continuamente"
     },
     {
       "id": "mal-59217",
@@ -1869,7 +1838,7 @@
       "startDate": "2026-10-03",
       "format": "TV",
       "episodes": 0,
-      "averageScore": 59,
+      "averageScore": 58,
       "status": "RELEASING",
       "genres": [
         "Comedy",
@@ -1907,7 +1876,7 @@
       "startDate": "2026-07-18",
       "format": "ONA",
       "episodes": 30,
-      "averageScore": 63,
+      "averageScore": 62,
       "status": "RELEASING",
       "genres": [
         "Action",
@@ -2264,7 +2233,7 @@
       "startDate": "2026-10-03",
       "format": "ONA",
       "episodes": 0,
-      "averageScore": 70,
+      "averageScore": 69,
       "status": "RELEASING",
       "genres": [
         "Action",
@@ -2517,7 +2486,7 @@
       "airingAt": 1794063600,
       "episode": 7,
       "scheduleId": 422398,
-      "description_es": "Pocos títulos son más venerados entre los erizos-(ahem) conocedores de videojuegos eróticos japoneses-que Magical Explorer. Un día, nuestro héroe amante de la mugre se despierta para encontrar que ha sido reencarnado en el cuerpo del protagonista de la lancha del juego! O más bien, su mejor amigo, Kousuke Takioto. Pero con su conocimiento inigualable del Explorador Mágico y las habilidades no ortodoxas de Kousuke (una bufanda que se dobla como un puño?), nuestro héroe promete t"
+      "description_es": "Pocos títulos son más venerados entre los erizos-(ahem) conocedores de videojuegos eróticos japoneses-que Magical Explorer. Un día, nuestro héroe amante de la mugre se despierta para encontrar que ha sido reencarnado en el cuerpo del protagonista de la lancha del juego! O más bien, su mejor amigo, Kousuke Takioto. Pero con su inigualable conocimiento de Magical Explorer y las habilidades de Kousuke poco ortodoxas (una bufanda que se dobla como un puño?), nuestro héroe promete convertir el perdedor más desafortunado del juego en su corazón más poderoso. En este mundo, nada está fuera de alcance cuando tienes el know-how! (Fuente: Yen Press"
     },
     {
       "id": "mal-61578",
@@ -2624,7 +2593,7 @@
       "airingAt": 1794069000,
       "episode": 6,
       "scheduleId": 419567,
-      "description_es": "Si hay una cosa que nunca puedes tener suficiente en un mundo de espadas y brujería estilo RPG, ¡es puntos mágicos! Si estás alimentando hechizos, técnicas o mostrando una increíble habilidad, tienes que gastar esos puntos para hacer daño real. ¿Y si te escapas? La Cuaresma es parte de la fiesta de llegada conocida como los \"Skypiercers\", y gracias a su regalo único, puede prestar enormes cantidades de magia a otros. ¿Sin MP? ¡No hay problema con la Cuaresma! Excepto ahora que sus compañeros se han convertido en héroes formidables (gracias a su habilidad), su utilidad es cuestionada. Escapada del grupo, Lent es"
+      "description_es": "Si hay una cosa que nunca puedes tener suficiente en un mundo de espadas y brujería estilo RPG, ¡es puntos mágicos! Si estás alimentando hechizos, técnicas o mostrando una increíble habilidad, tienes que gastar esos puntos para hacer daño real. ¿Y si te escapas? La Cuaresma es parte de la fiesta de llegada conocida como los \"Skypiercers\", y gracias a su regalo único, puede prestar enormes cantidades de magia a otros. ¿Sin MP? No hay problema con Lent arou"
     },
     {
       "id": "mal-63125",
@@ -3263,7 +3232,7 @@
       "startDate": "2026-10-04",
       "format": "TV",
       "episodes": 0,
-      "averageScore": 62,
+      "averageScore": 63,
       "status": "RELEASING",
       "genres": [
         "Mahou Shoujo",
@@ -3717,7 +3686,7 @@
       "airingAt": 1794154800,
       "episode": 6,
       "scheduleId": 419206,
-      "description_es": "Amona es un llamador oscuro con poderes demoníacos. Roni es un sacerdote devota que está demasiado tenso. Por todos los derechos, deben odiarse. En lugar de eso, terminan acelerando su arco de enemigos a amantes con un stand de una noche que de alguna manera insiste en convertirse en un evento recurrente. Ahora deben ocultar su nave de situación del resto del partido mientras niegan su creciente atracción entre sí, todo mientras se trata de un imp que está demasiado invertido en"
+      "description_es": "Amona es un llamador oscuro con poderes demoníacos. Roni es un sacerdote devota que está demasiado tenso. Por todos los derechos, deben odiarse. En lugar de eso, terminan acelerando su arco de enemigos a amantes con un stand de una noche que de alguna manera insiste en convertirse en un evento recurrente. Ahora deben ocultar su nave de situación del resto del partido mientras niegan su creciente atracción entre sí, mientras tratan con un imp que está demasiado invertido en su vida amorosa. (Fuente: HIDIVE)"
     },
     {
       "id": "mal-65169",
@@ -4115,7 +4084,7 @@
       "startDate": "2026-10-06",
       "format": "TV",
       "episodes": 12,
-      "averageScore": 69,
+      "averageScore": 68,
       "status": "RELEASING",
       "genres": [
         "Comedy",
@@ -4918,8 +4887,8 @@
       "streaming": [],
       "trailer": null,
       "next": {
-        "at": 1793871000,
-        "episode": 6
+        "at": 1794475800,
+        "episode": 7
       },
       "airingAt": 1794475800,
       "episode": 7,
@@ -5058,7 +5027,7 @@
       "airingAt": 1794495360,
       "episode": 7,
       "scheduleId": 421729,
-      "description_es": "Koyuki, la chica aislada; Miki, el antiguo ídolo escolar; Minato, el tipo sin concepto de espacio personal; y Youta, el amable jugador de baloncesto. Clumsy, frustrante, pero profundamente apasionante — este drama que se acerca a la edad de los corazones cruzados avanza. A medida que se acercan, Koyuki y Minato comienzan a desarrollar sentimientos entre sí que van más allá de la mera amistad. Mientras tanto, Youta finalmente confiesa a Miki los sentimientos por los que ha albergado"
+      "description_es": "Koyuki, la chica aislada; Miki, el antiguo ídolo escolar; Minato, el tipo sin concepto de espacio personal; y Youta, el amable jugador de baloncesto. Clumsy, frustrante, pero profundamente apasionante — este drama que se acerca a la edad de los corazones cruzados avanza. A medida que se acercan, Koyuki y Minato comienzan a desarrollar sentimientos entre sí que van más allá de la mera amistad. Mientras tanto, Youta finalmente confiesa a Miki los sentimientos que ha albergado durante años. Algunos hablan sus corazones mientras que otros mantienen sus emociones ocultas, causando sus caminos —y sus sentimientos por los demás— a crus continuamente"
     },
     {
       "id": "mal-62615",
@@ -5934,7 +5903,7 @@
       "startDate": "2026-10-03",
       "format": "TV",
       "episodes": 0,
-      "averageScore": 59,
+      "averageScore": 58,
       "status": "RELEASING",
       "genres": [
         "Comedy",
@@ -5972,7 +5941,7 @@
       "startDate": "2026-07-18",
       "format": "ONA",
       "episodes": 30,
-      "averageScore": 63,
+      "averageScore": 62,
       "status": "RELEASING",
       "genres": [
         "Action",
@@ -6055,6 +6024,228 @@
       "episode": 9,
       "scheduleId": 421877,
       "description_es": "La tercera temporada de Dawang Raoming."
+    },
+    {
+      "id": "mal-63901",
+      "mal_id": 63901,
+      "ani_id": 209709,
+      "title": "Sirotan",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx209709-Wz8BKL1fm5MC.png",
+      "banner": "",
+      "description": "",
+      "year": 2026,
+      "startDate": "2026-10-03",
+      "format": "TV",
+      "episodes": 0,
+      "averageScore": 0,
+      "status": "RELEASING",
+      "genres": [],
+      "siteUrl": "https://anilist.co/anime/209709",
+      "streaming": [],
+      "trailer": {
+        "site": "youtube",
+        "id": "4iOFqQ1E4Mo"
+      },
+      "next": {
+        "at": 1794036540,
+        "episode": 6
+      },
+      "airingAt": 1794641340,
+      "episode": 7,
+      "scheduleId": 421819
+    },
+    {
+      "id": "mal-966",
+      "mal_id": 966,
+      "ani_id": 966,
+      "title": "Shin Chan",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b966-QUCdKAk4ls9J.jpg",
+      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/966-J5CwLLTBs4OO.jpg",
+      "description": "Crayon Shin-chan follows the wacky antics and adventures of five-year-old Shinnosuke \"Shin\" Nohara and his parents, neighbors, and friends and is set in Kasukabe, Saitama Prefecture, Japan. Many of the jokes in the series stem from Shin-chan's occasionally weird, unnatural and inappropriate use of language, as well as from his inappropriate behavior. A typical gag involves Shin-chan confounding his parents by using the wrong phrase for the occasion; for example, saying \"Welcome back!\" instead of \"I am back!\" when he comes home. During the beginning of the series, the TV show was mostly based on the storyline in the original manga. As the show progressed, more and more episodes became anime-original.",
+      "year": 1992,
+      "startDate": "1992-04-13",
+      "format": "TV",
+      "episodes": 0,
+      "averageScore": 77,
+      "status": "RELEASING",
+      "genres": [
+        "Comedy",
+        "Ecchi",
+        "Slice of Life"
+      ],
+      "siteUrl": "https://anilist.co/anime/966",
+      "streaming": [],
+      "trailer": null,
+      "next": {
+        "at": 1794036600,
+        "episode": 1360
+      },
+      "airingAt": 1794641400,
+      "episode": 1361,
+      "scheduleId": 409446,
+      "description_es": "Crayon Shin-chan sigue los locos anticos y aventuras de Shinnosuke, de cinco años, \"Shin\" Nohara y sus padres, vecinos y amigos, y se encuentra en Kasukabe, Prefectura de Saitama, Japón. Muchas de las bromas de la serie provienen del uso extraño, antinatural e inapropiado del lenguaje de Shin-chan, así como de su comportamiento inapropiado. Una mordaza típica involucra a Shin-chan confundiendo a sus padres usando la frase equivocada para la ocasión; por ejemplo, diciendo \"¡Bienvenido!\" en lugar de \"Estoy de vuelta!\" cuando él vuelve. Durante el comienzo de la serie, el programa de televisión se basaba principalmente en o"
+    },
+    {
+      "id": "mal-8687",
+      "mal_id": 8687,
+      "ani_id": 8687,
+      "title": "Doraemon (2005)",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b8687-bBnJMGnih4PT.jpg",
+      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/8687-aa3QbJjGfy3B.jpg",
+      "description": "A new Doraemon series produced by the same team as the 1979 series (in association with Studio Pierrot) with new voice actors and staff and updated character designs.",
+      "year": 2005,
+      "startDate": "2005-04-15",
+      "format": "TV",
+      "episodes": 0,
+      "averageScore": 77,
+      "status": "RELEASING",
+      "genres": [
+        "Adventure",
+        "Comedy",
+        "Sci-Fi"
+      ],
+      "siteUrl": "https://anilist.co/anime/8687",
+      "streaming": [],
+      "trailer": null,
+      "next": {
+        "at": 1794038400,
+        "episode": 940
+      },
+      "airingAt": 1794643200,
+      "episode": 941,
+      "scheduleId": 380069,
+      "description_es": "Una nueva serie Doraemon producida por el mismo equipo que la serie 1979 (en asociación con Studio Pierrot) con nuevos actores de voz y personal y diseños de caracteres actualizados."
+    },
+    {
+      "id": "mal-61999",
+      "mal_id": 61999,
+      "ani_id": 195571,
+      "title": "The Vermilion Mask",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx195571-fvj7u5GI7BRT.jpg",
+      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/195571-UkdB06UpyL8k.jpg",
+      "description": "\"The Mask” gives power to anyone who wears it. At times, that means endless possibility, or unimaginable tragedy… Peru, pupil of the legendary mask maker Gaston Roux, becomes controlled by the “Mask of the Warrior God,” and unintentionally kills his friends, and even his own master. In order to prevent this type of tragedy from reoccurring, Peru swears to destroy all of Gaston’s masks that are spread around the world. Confronting the sins that he has committed, he embarks on his voyage. Meeting new friends, then confronting powerful foes. The boy continues on. Until the day he can atone for his sins against his master. (Source: The Vermillion Mask English Site)",
+      "year": 2026,
+      "startDate": "2026-10-10",
+      "format": "TV",
+      "episodes": 0,
+      "averageScore": 68,
+      "status": "RELEASING",
+      "genres": [
+        "Action",
+        "Drama",
+        "Supernatural"
+      ],
+      "siteUrl": "https://anilist.co/anime/195571",
+      "streaming": [],
+      "trailer": {
+        "site": "youtube",
+        "id": "iX4N-Z5Hbxw"
+      },
+      "next": {
+        "at": 1794040200,
+        "episode": 5
+      },
+      "airingAt": 1794645000,
+      "episode": 6,
+      "scheduleId": 422493,
+      "description_es": "\"La máscara\" da poder a cualquiera que la use. A veces, eso significa una posibilidad interminable, o una tragedia inimaginable... Perú, alumno del legendario fabricante de máscaras Gaston Roux, se hace controlado por el “Mask del Dios Guerrero”, y mata involuntariamente a sus amigos, e incluso a su propio maestro. Para evitar que este tipo de tragedia vuelva a ocurrir, Perú jura destruir todas las máscaras de Gaston que se extienden por todo el mundo. Frente a los pecados que ha cometido, se embarca en su viaje. Conocer a nuevos amigos y enfrentar a poderosos enemigos. El chico continúa. Hasta el día que puede expiar por hola"
+    },
+    {
+      "id": "mal-235",
+      "mal_id": 235,
+      "ani_id": 235,
+      "title": "Detective Conan",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx235-MyYT7K3chBdO.jpg",
+      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/235-MTmiz0uB0fMd.jpg",
+      "description": "Kudo Shinichi is a seventeen year-old high school detective whom people call the \"Modern Sherlock Holmes.\" However, one night after a date with his childhood sweetheart, Ran, Shinichi witnessed an illegal trade and, caught off his guard, was knocked unconscious and fed a drug that was supposed to kill him... but he woke up and found himself shrunken to a seven year-old. In order to track down the men who did this to him, Shinichi hid his identity and lived with Ran, whose father happened to be a hopeless detective, and with that came a series of murders and mysteries that he must solve. (Source: Anime News Network) Note: - Includes Keisatsu Gakkou-hen - Wild Police Story in episodes 1029, 1038, 1042, 1061 - Episodes 11, 52, 76, 118, 162, 184, 208, 342, 356, 449, 452, 487, 488, 489, 490, 515, 516, 521, 522, 651, 734, 804, 805, 927, 928, 1187 aired with a runtime of ~50 minutes as opposed to the standard 25 minute long episode. - Episodes 96, 129, 174, 219, 263, 304, 383, 479 aired with a runtime of ~90 minutes as opposed to the standard 25 minute long episode. - Episode 345, 425 aired with a runtime of ~115 minutes as opposed to the standard 25 minute long episode.",
+      "year": 1996,
+      "startDate": "1996-01-08",
+      "format": "TV",
+      "episodes": 0,
+      "averageScore": 82,
+      "status": "RELEASING",
+      "genres": [
+        "Adventure",
+        "Comedy",
+        "Mystery",
+        "Psychological"
+      ],
+      "siteUrl": "https://anilist.co/anime/235",
+      "streaming": [],
+      "trailer": null,
+      "next": {
+        "at": 1794042000,
+        "episode": 1219
+      },
+      "airingAt": 1794646800,
+      "episode": 1220,
+      "scheduleId": 422942,
+      "description_es": "Kudo Shinichi es un detective de secundaria de diecisiete años a quien la gente llama \"Modern Sherlock Holmes\". Sin embargo, una noche después de una cita con su novia de la infancia, Ran, Shinichi fue testigo de un comercio ilegal y, atrapado de su guardia, fue noqueado inconsciente y alimentado una droga que se suponía que lo mataría... pero se despertó y se encontró a sí mismo hundido a un niño de siete años. Para localizar a los hombres que le hicieron esto, Shinichi escondió su identidad y vivió con Ran, cuyo padre fue un detective sin esperanza, y con eso llegó una serie de asesinatos y misterios que él debe resolver. (Sourc)"
+    },
+    {
+      "id": "mal-64326",
+      "mal_id": 64326,
+      "ani_id": 212799,
+      "title": "The Seven Knights of the Marronnier Kingdom",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx212799-n7WDdic7IL1z.png",
+      "banner": "",
+      "description": "At the heart of a continent of eight kingdoms lies the Marronnier Kingdom. Its general, Baribara, has seven sons, each with a unique gift and serving as a knight commander. Bound by a single noble cause of heroically rescuing a princess someday, the brothers set out as goodwill ambassadors to the seven neighboring kingdoms. What encounters, trials, and destinies await them in these unknown lands? (Source: Amazon Prime Video)",
+      "year": 2026,
+      "startDate": "2026-10-03",
+      "format": "TV",
+      "episodes": 20,
+      "averageScore": 68,
+      "status": "RELEASING",
+      "genres": [
+        "Drama",
+        "Fantasy",
+        "Romance"
+      ],
+      "siteUrl": "https://anilist.co/anime/212799",
+      "streaming": [],
+      "trailer": {
+        "site": "youtube",
+        "id": "wk26nTxUzPY"
+      },
+      "next": {
+        "at": 1794043500,
+        "episode": 6
+      },
+      "airingAt": 1794648300,
+      "episode": 7,
+      "scheduleId": 421843,
+      "description_es": "En el corazón de un continente de ocho reinos se encuentra el Reino Marronnier. Su general, Baribara, tiene siete hijos, cada uno con un regalo único y servir como comandante caballero. Heridos por una única causa noble de rescatar heroicamente a una princesa algún día, los hermanos se establecieron como embajadores de buena voluntad a los siete reinos vecinos. ¿Qué encuentros, pruebas y destinos les esperan en estas tierras desconocidas? (Fuente: Amazon Prime Video)"
+    },
+    {
+      "id": "mal-64398",
+      "mal_id": 64398,
+      "ani_id": 213356,
+      "title": "Beyond Time's Gaze 2",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx213356-nYFTX2yeMBd5.jpg",
+      "banner": "",
+      "description": "Second season of Guangyin Zhi Wai .",
+      "year": 2026,
+      "startDate": "2026-06-20",
+      "format": "ONA",
+      "episodes": 52,
+      "averageScore": 72,
+      "status": "RELEASING",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Fantasy"
+      ],
+      "siteUrl": "https://anilist.co/anime/213356",
+      "streaming": [],
+      "trailer": null,
+      "next": {
+        "at": 1794045600,
+        "episode": 21
+      },
+      "airingAt": 1794650400,
+      "episode": 22,
+      "scheduleId": 415800,
+      "description_es": "Segunda temporada de Guangyin Zhi Wai."
     }
   ],
   "seasonal": {
@@ -6238,7 +6429,7 @@
           "at": 1794063600,
           "episode": 7
         },
-        "description_es": "Pocos títulos son más venerados entre los erizos-(ahem) conocedores de videojuegos eróticos japoneses-que Magical Explorer. Un día, nuestro héroe amante de la mugre se despierta para encontrar que ha sido reencarnado en el cuerpo del protagonista de la lancha del juego! O más bien, su mejor amigo, Kousuke Takioto. Pero con su conocimiento inigualable del Explorador Mágico y las habilidades no ortodoxas de Kousuke (una bufanda que se dobla como un puño?), nuestro héroe promete t"
+        "description_es": "Pocos títulos son más venerados entre los erizos-(ahem) conocedores de videojuegos eróticos japoneses-que Magical Explorer. Un día, nuestro héroe amante de la mugre se despierta para encontrar que ha sido reencarnado en el cuerpo del protagonista de la lancha del juego! O más bien, su mejor amigo, Kousuke Takioto. Pero con su inigualable conocimiento de Magical Explorer y las habilidades de Kousuke poco ortodoxas (una bufanda que se dobla como un puño?), nuestro héroe promete convertir el perdedor más desafortunado del juego en su corazón más poderoso. En este mundo, nada está fuera de alcance cuando tienes el know-how! (Fuente: Yen Press"
       },
       {
         "id": "mal-64867",
@@ -6357,7 +6548,7 @@
           "at": 1793890560,
           "episode": 6
         },
-        "description_es": "Koyuki, la chica aislada; Miki, el antiguo ídolo escolar; Minato, el tipo sin concepto de espacio personal; y Youta, el amable jugador de baloncesto. Clumsy, frustrante, pero profundamente apasionante — este drama que se acerca a la edad de los corazones cruzados avanza. A medida que se acercan, Koyuki y Minato comienzan a desarrollar sentimientos entre sí que van más allá de la mera amistad. Mientras tanto, Youta finalmente confiesa a Miki los sentimientos por los que ha albergado"
+        "description_es": "Koyuki, la chica aislada; Miki, el antiguo ídolo escolar; Minato, el tipo sin concepto de espacio personal; y Youta, el amable jugador de baloncesto. Clumsy, frustrante, pero profundamente apasionante — este drama que se acerca a la edad de los corazones cruzados avanza. A medida que se acercan, Koyuki y Minato comienzan a desarrollar sentimientos entre sí que van más allá de la mera amistad. Mientras tanto, Youta finalmente confiesa a Miki los sentimientos que ha albergado durante años. Algunos hablan sus corazones mientras que otros mantienen sus emociones ocultas, causando sus caminos —y sus sentimientos por los demás— a crus continuamente"
       },
       {
         "id": "mal-63337",
@@ -6452,8 +6643,8 @@
         "streaming": [],
         "trailer": null,
         "next": {
-          "at": 1793871000,
-          "episode": 6
+          "at": 1794475800,
+          "episode": 7
         },
         "description_es": "Cuarta temporada de PetitCure: Ferias precarias."
       },
@@ -6750,7 +6941,7 @@
         "startDate": "2026-10-03",
         "format": "ONA",
         "episodes": 0,
-        "averageScore": 70,
+        "averageScore": 69,
         "status": "RELEASING",
         "genres": [
           "Action",
@@ -6822,7 +7013,7 @@
         "startDate": "2026-10-03",
         "format": "TV",
         "episodes": 12,
-        "averageScore": 59,
+        "averageScore": 58,
         "status": "RELEASING",
         "genres": [
           "Action",
@@ -6957,7 +7148,7 @@
         "startDate": "2026-10-03",
         "format": "TV",
         "episodes": 0,
-        "averageScore": 59,
+        "averageScore": 58,
         "status": "RELEASING",
         "genres": [
           "Comedy",
@@ -7196,7 +7387,7 @@
           "at": 1794069000,
           "episode": 6
         },
-        "description_es": "Si hay una cosa que nunca puedes tener suficiente en un mundo de espadas y brujería estilo RPG, ¡es puntos mágicos! Si estás alimentando hechizos, técnicas o mostrando una increíble habilidad, tienes que gastar esos puntos para hacer daño real. ¿Y si te escapas? La Cuaresma es parte de la fiesta de llegada conocida como los \"Skypiercers\", y gracias a su regalo único, puede prestar enormes cantidades de magia a otros. ¿Sin MP? ¡No hay problema con la Cuaresma! Excepto ahora que sus compañeros se han convertido en héroes formidables (gracias a su habilidad), su utilidad es cuestionada. Escapada del grupo, Lent es"
+        "description_es": "Si hay una cosa que nunca puedes tener suficiente en un mundo de espadas y brujería estilo RPG, ¡es puntos mágicos! Si estás alimentando hechizos, técnicas o mostrando una increíble habilidad, tienes que gastar esos puntos para hacer daño real. ¿Y si te escapas? La Cuaresma es parte de la fiesta de llegada conocida como los \"Skypiercers\", y gracias a su regalo único, puede prestar enormes cantidades de magia a otros. ¿Sin MP? No hay problema con Lent arou"
       },
       {
         "id": "mal-63801",
@@ -7374,7 +7565,7 @@
         "startDate": "2026-10-04",
         "format": "TV",
         "episodes": 0,
-        "averageScore": 62,
+        "averageScore": 63,
         "status": "RELEASING",
         "genres": [
           "Mahou Shoujo",
@@ -7564,7 +7755,7 @@
           "at": 1794154800,
           "episode": 6
         },
-        "description_es": "Amona es un llamador oscuro con poderes demoníacos. Roni es un sacerdote devota que está demasiado tenso. Por todos los derechos, deben odiarse. En lugar de eso, terminan acelerando su arco de enemigos a amantes con un stand de una noche que de alguna manera insiste en convertirse en un evento recurrente. Ahora deben ocultar su nave de situación del resto del partido mientras niegan su creciente atracción entre sí, todo mientras se trata de un imp que está demasiado invertido en"
+        "description_es": "Amona es un llamador oscuro con poderes demoníacos. Roni es un sacerdote devota que está demasiado tenso. Por todos los derechos, deben odiarse. En lugar de eso, terminan acelerando su arco de enemigos a amantes con un stand de una noche que de alguna manera insiste en convertirse en un evento recurrente. Ahora deben ocultar su nave de situación del resto del partido mientras niegan su creciente atracción entre sí, mientras tratan con un imp que está demasiado invertido en su vida amorosa. (Fuente: HIDIVE)"
       },
       {
         "id": "mal-63098",
@@ -7896,7 +8087,7 @@
         "startDate": "2026-10-06",
         "format": "TV",
         "episodes": 12,
-        "averageScore": 69,
+        "averageScore": 68,
         "status": "RELEASING",
         "genres": [
           "Comedy",
