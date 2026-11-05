@@ -2,6 +2,24 @@
   "schemaVersion": 1,
   "items": [
     {
+      "providerId": "anilist_schedule",
+      "at": "2026-11-05T18:07:21.813Z",
+      "result": "success",
+      "observed": 191,
+      "created": 17,
+      "playback": 0,
+      "detail": "conectada"
+    },
+    {
+      "providerId": "youtube_trailers",
+      "at": "2026-11-05T18:07:21.813Z",
+      "result": "success",
+      "observed": 95,
+      "created": 0,
+      "playback": 0,
+      "detail": "conectada"
+    },
+    {
       "providerId": "licensed_library",
       "at": "2026-11-05T15:23:25.106Z",
       "result": "success",
@@ -520,24 +538,6 @@
       "result": "success",
       "observed": 203,
       "created": 1,
-      "playback": 0,
-      "detail": "conectada"
-    },
-    {
-      "providerId": "licensed_library",
-      "at": "2026-11-01T03:12:39.065Z",
-      "result": "success",
-      "observed": 0,
-      "created": 0,
-      "playback": 0,
-      "detail": "sin_contenido_autorizado"
-    },
-    {
-      "providerId": "youtube_trailers",
-      "at": "2026-11-01T03:12:39.065Z",
-      "result": "success",
-      "observed": 94,
-      "created": 0,
       "playback": 0,
       "detail": "conectada"
     }
