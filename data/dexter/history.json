@@ -2,6 +2,15 @@
   "schemaVersion": 1,
   "items": [
     {
+      "providerId": "licensed_library",
+      "at": "2026-11-05T15:23:25.106Z",
+      "result": "success",
+      "observed": 0,
+      "created": 0,
+      "playback": 0,
+      "detail": "sin_contenido_autorizado"
+    },
+    {
       "providerId": "jkanime_external",
       "at": "2026-11-05T12:20:35.372Z",
       "result": "success",
@@ -528,15 +537,6 @@
       "at": "2026-11-01T03:12:39.065Z",
       "result": "success",
       "observed": 94,
-      "created": 0,
-      "playback": 0,
-      "detail": "conectada"
-    },
-    {
-      "providerId": "jkanime_external",
-      "at": "2026-10-31T23:57:31.823Z",
-      "result": "success",
-      "observed": 5,
       "created": 0,
       "playback": 0,
       "detail": "conectada"
