@@ -2,6 +2,33 @@
   "schemaVersion": 1,
   "items": [
     {
+      "providerId": "anilist_schedule",
+      "at": "2026-11-05T03:16:04.113Z",
+      "result": "success",
+      "observed": 167,
+      "created": 1,
+      "playback": 0,
+      "detail": "conectada"
+    },
+    {
+      "providerId": "licensed_library",
+      "at": "2026-11-05T03:16:04.113Z",
+      "result": "success",
+      "observed": 0,
+      "created": 0,
+      "playback": 0,
+      "detail": "sin_contenido_autorizado"
+    },
+    {
+      "providerId": "youtube_trailers",
+      "at": "2026-11-05T03:16:04.113Z",
+      "result": "success",
+      "observed": 95,
+      "created": 0,
+      "playback": 0,
+      "detail": "conectada"
+    },
+    {
       "providerId": "jkanime_external",
       "at": "2026-11-05T00:02:39.337Z",
       "result": "success",
@@ -513,33 +540,6 @@
       "created": 0,
       "playback": 0,
       "detail": "sin_contenido_autorizado"
-    },
-    {
-      "providerId": "youtube_trailers",
-      "at": "2026-10-31T15:00:34.327Z",
-      "result": "success",
-      "observed": 94,
-      "created": 0,
-      "playback": 0,
-      "detail": "conectada"
-    },
-    {
-      "providerId": "licensed_library",
-      "at": "2026-10-31T09:08:43.176Z",
-      "result": "success",
-      "observed": 0,
-      "created": 0,
-      "playback": 0,
-      "detail": "sin_contenido_autorizado"
-    },
-    {
-      "providerId": "jkanime_external",
-      "at": "2026-10-31T09:08:43.176Z",
-      "result": "success",
-      "observed": 5,
-      "created": 0,
-      "playback": 0,
-      "detail": "conectada"
     }
   ]
 }
