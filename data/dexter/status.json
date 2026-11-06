@@ -1,17 +1,17 @@
 {
   "schemaVersion": 1,
   "engine": "DexterAnimeSync",
-  "updatedAt": "2026-11-06T15:11:28.908Z",
+  "updatedAt": "2026-11-06T18:11:26.481Z",
   "job": {
-    "id": "sync-680252315eebefc8",
-    "startedAt": "2026-11-06T15:11:28.908Z",
-    "completedAt": "2026-11-06T15:11:28.908Z",
+    "id": "sync-c9ee1a80a1a44cd8",
+    "startedAt": "2026-11-06T18:11:26.481Z",
+    "completedAt": "2026-11-06T18:11:26.481Z",
     "mode": "programada",
     "status": "correcta",
     "counters": {
       "animes": 0,
-      "episodesDetected": 0,
-      "episodesNew": 0,
+      "episodesDetected": 209,
+      "episodesNew": 19,
       "playbackSources": 0,
       "errors": 0
     }
@@ -25,10 +25,10 @@
       "sourceType": "metadata",
       "intervalHours": 6,
       "lastRunAt": "2026-11-06T09:23:00.181Z",
-      "runAt": null,
-      "state": "en_espera",
-      "observed": 0,
-      "created": 0,
+      "runAt": "2026-11-06T18:11:26.481Z",
+      "state": "conectada",
+      "observed": 209,
+      "created": 19,
       "playback": 0,
       "error": null
     },
@@ -40,12 +40,13 @@
       "sourceType": "playback",
       "intervalHours": 3,
       "lastRunAt": "2026-11-06T12:17:13.379Z",
-      "runAt": null,
-      "state": "en_espera",
+      "runAt": "2026-11-06T18:11:26.481Z",
+      "state": "sin_contenido_autorizado",
       "observed": 0,
       "created": 0,
       "playback": 0,
-      "error": null
+      "error": null,
+      "rejected": 0
     },
     {
       "id": "jkanime_external",
@@ -55,9 +56,9 @@
       "sourceType": "external_links",
       "intervalHours": 12,
       "lastRunAt": "2026-11-06T03:16:26.715Z",
-      "runAt": null,
-      "state": "en_espera",
-      "observed": 0,
+      "runAt": "2026-11-06T18:11:26.481Z",
+      "state": "conectada",
+      "observed": 5,
       "created": 0,
       "playback": 0,
       "error": null
@@ -70,9 +71,9 @@
       "sourceType": "embed",
       "intervalHours": 6,
       "lastRunAt": "2026-11-06T09:23:00.181Z",
-      "runAt": null,
-      "state": "en_espera",
-      "observed": 0,
+      "runAt": "2026-11-06T18:11:26.481Z",
+      "state": "conectada",
+      "observed": 96,
       "created": 0,
       "playback": 0,
       "error": null
@@ -109,7 +110,7 @@
   "records": {
     "anime": 134,
     "seasons": 1,
-    "episodes": 559,
+    "episodes": 578,
     "sources": 0
   }
 }
