@@ -1,152 +1,9 @@
 {
-  "updated": "2026-11-06T15:51:06.318Z",
+  "updated": "2026-11-06T21:41:53.424Z",
   "source": "AniList public GraphQL metadata",
-  "windowStart": 1793782252,
-  "windowEnd": 1794757852,
+  "windowStart": 1793803299,
+  "windowEnd": 1794778899,
   "airing": [
-    {
-      "id": "mal-52480",
-      "mal_id": 52480,
-      "ani_id": 152677,
-      "title": "The Detective Is Already Dead Season 2",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx152677-gtJbgjE94lCN.png",
-      "banner": "",
-      "description": "After thwarting a hijacking with beautiful, silver-haired detective Siesta, Kimihiko leads a life of globe-trotting and crime-solving—until Siesta dies. A year later, a new case will open old wounds as it threads murder, conspiracy, and his dead partner! (Source: Crunchyroll)",
-      "year": 2026,
-      "startDate": "2026-10-07",
-      "format": "TV",
-      "episodes": 13,
-      "averageScore": 71,
-      "status": "RELEASING",
-      "genres": [
-        "Comedy",
-        "Drama",
-        "Mystery",
-        "Romance",
-        "Supernatural"
-      ],
-      "siteUrl": "https://anilist.co/anime/152677",
-      "streaming": [],
-      "trailer": {
-        "site": "youtube",
-        "id": "8AnNxEp733c"
-      },
-      "next": {
-        "at": 1794400200,
-        "episode": 6
-      },
-      "airingAt": 1793795400,
-      "episode": 5,
-      "scheduleId": 422059,
-      "description_es": "Después de frustrar un secuestro con el hermoso detective de pelo plateado Siesta, Kimihiko conduce una vida de ataque mundial y resolución del crimen hasta que Siesta muera. Un año más tarde, un nuevo caso abrirá viejas heridas mientras roza asesinato, conspiración y su compañero muerto! (Fuente: Crunchyroll)"
-    },
-    {
-      "id": "al-217282",
-      "mal_id": null,
-      "ani_id": 217282,
-      "title": "GelPiyo 2",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx217282-fRAAhF2b5eIr.png",
-      "banner": "",
-      "description": "Second season of GelPiyo .",
-      "year": 2026,
-      "startDate": "2026-10-21",
-      "format": "TV_SHORT",
-      "episodes": 0,
-      "averageScore": 0,
-      "status": "RELEASING",
-      "genres": [
-        "Comedy"
-      ],
-      "siteUrl": "https://anilist.co/anime/217282",
-      "streaming": [],
-      "trailer": null,
-      "next": {
-        "at": 1794401640,
-        "episode": 4
-      },
-      "airingAt": 1793796840,
-      "episode": 3,
-      "scheduleId": 420790,
-      "description_es": "Segunda temporada de GelPiyo."
-    },
-    {
-      "id": "mal-64084",
-      "mal_id": 64084,
-      "ani_id": 211778,
-      "title": "The World's Strongest Witch",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx211778-0MXK5HqVFBYH.jpg",
-      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/211778-ZbXEhqfFkj62.jpg",
-      "description": "After using her SSS-Rank skill, Internet, to crush her former family’s ambitions, Lorna is free to travel the world. Her next stop is the port town of Aquas, where she hopes to see the sights and chow down on some fresh seafood. But when she arrives, the place is on the brink of destruction thanks to a certain Weekly Quest… Good thing Lorna has the gods on her side! (Source: Crunchyroll)",
-      "year": 2026,
-      "startDate": "2026-10-07",
-      "format": "TV",
-      "episodes": 0,
-      "averageScore": 70,
-      "status": "RELEASING",
-      "genres": [
-        "Action",
-        "Comedy",
-        "Fantasy"
-      ],
-      "siteUrl": "https://anilist.co/anime/211778",
-      "streaming": [
-        {
-          "name": "Crunchyroll",
-          "url": "https://www.crunchyroll.com/series/GT00384009/the-worlds-strongest-witch"
-        }
-      ],
-      "trailer": {
-        "site": "youtube",
-        "id": "snJZD9vxfHY"
-      },
-      "next": {
-        "at": 1794402000,
-        "episode": 6
-      },
-      "airingAt": 1793797200,
-      "episode": 5,
-      "scheduleId": 420156,
-      "description_es": "Después de usar su habilidad SSS-Rank, Internet, para aplastar las ambiciones de su antigua familia, Lorna es libre de viajar por el mundo. Su próxima parada es la ciudad portuaria de Aquas, donde espera ver los lugares de interés y disfrutar de algunos mariscos frescos. Pero cuando llega, el lugar está al borde de la destrucción gracias a una cierta misión semanal... ¡Qué bueno que Lorna tenga los dioses de su lado! (Fuente: Crunchyroll)"
-    },
-    {
-      "id": "mal-58518",
-      "mal_id": 58518,
-      "ani_id": 176314,
-      "title": "Sasaki and Peeps Season 2",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx176314-lpvca6vjmkeO.jpg",
-      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/176314-nj2hmqbGQ9HJ.jpg",
-      "description": "The second season of Sasaki to Pii-chan .",
-      "year": 2026,
-      "startDate": "2026-10-07",
-      "format": "TV",
-      "episodes": 12,
-      "averageScore": 70,
-      "status": "RELEASING",
-      "genres": [
-        "Comedy",
-        "Fantasy",
-        "Mahou Shoujo"
-      ],
-      "siteUrl": "https://anilist.co/anime/176314",
-      "streaming": [
-        {
-          "name": "Crunchyroll",
-          "url": "https://www.crunchyroll.com/series/G5PHNM935/sasaki-and-peeps"
-        }
-      ],
-      "trailer": {
-        "site": "youtube",
-        "id": "gY0hpk9E7p8"
-      },
-      "next": {
-        "at": 1794402000,
-        "episode": 6
-      },
-      "airingAt": 1793797200,
-      "episode": 5,
-      "scheduleId": 422252,
-      "description_es": "La segunda temporada de Sasaki a Pii-chan."
-    },
     {
       "id": "mal-59204",
       "mal_id": 59204,
@@ -538,8 +395,8 @@
       "ani_id": 178972,
       "title": "GROTESQQQUE",
       "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx178972-THp4trZ9uR9b.jpg",
-      "banner": "",
-      "description": "Anthology movie consisting of three original animation segments: Q1 - ÆLIENS (エリィアンズ) Earth has entered an era of intergalatic exchange. Amidst swirling prejudice and fear of aliens, Elie, an alien girl, arrives as a space goodwill ambassador. She loves Earth's culture and its often absurd daily life, and has teamed up with a civil servant working at the space agency to search for \"friends\". Q2 - Yoroshiku★Shoujo (夜露死駆★少女) GALs TOKYO, a city where morning never comes. Night after night, girls who have lost their place in reality, known as \"Gal P\", gather here. Their goal is to become the winner, the \"Queen\" in a game called \"Queen of Butterfly\" or \"QoB\" for short. Q3 - Nocturne: Kono Grotesque na Yoru ni (ノクターン～このグロテスクな夜に～) A world after humanity has perished. Traveling in a van are Ayame, a pure-blooded vampire, and three girls who survived by being bitten and \"infected\" by her. There, they find a sky full of stars that illuminate the night as brightly as day, and fields of glittering golden grass—even a desolate world looks so beautiful through the eyes of a vampire. They enjoy a simple everyday life in this world left behind. (Souce: Official Website, translated)",
+      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/178972-ep3xPXU4ND07.jpg",
+      "description": "Anthology movie consisting of three original animation segments: Q1 - ÆLIENS (エリィアンズ) Earth has entered an age of interplanetary exchange. As fear and prejudice toward aliens spread across society, a young alien girl named Elie arrives as an interstellar goodwill ambassador. She adores Earth’s culture and its wonderfully pointless everyday life, and teams up with Kento Kunikura, a civil servant who works for the Space Bureau, to search for “friends” across the planet. But Elie’s powers sometimes spiral out of control. As a mysterious alien surrounded by secrets, she soon attracts public attention and suspicion, and people gradually begin to see her as an “invader.” Then, without warning, hostile aliens appear──!? Q2 - Yoroshiku★Shoujo (夜露死駆★少女) In the city of GALs TOKYO, morning never comes. Every night, girls known as “Gal Ps” gather there—girls who no longer have a place for themselves in the real world. They all seek the same goal: to become the ultimate victor in a game called Queen of Butterfly, or QoB for short, and claim the title of “Queen.” A truant girl named STELLA hears rumors of an urban legend and throws herself into the deadly game. Girls kill and fall, scattering like butterflies in the night. In the middle of the chaos, STELLA encounters a mysterious girl carrying an SSS-ranked weapon and wielding overwhelming power. Through her, STELLA uncovers the hidden truth behind the game── Q3 - Nocturne: Kono Grotesque na Yoru ni (ノクターン～このグロテスクな夜に～) In a world where humanity has already perished, a pureblood vampire named Ayame travels in a wagon car alongside three girls who survived by becoming “infected” through her blood. Above them, countless stars light up the night like daylight, while golden fields shimmer across the ruined earth. Through a vampire’s eyes, even a devastated world can look breathtakingly beautiful. Together, the girls cherish the small, quiet moments of life left behind in this empty world. “Even if a vampire’s body perishes, the soul never disappears.” When Ayame quietly speaks those words, Shion senses the loneliness and despair hidden within someone doomed to live forever. Then one day, something strange begins to happen to Ayame, and the girls’ unchanging everyday life slowly starts to crack apart. (Souce: Aniplex USA)",
       "year": 2026,
       "startDate": "2026-11-06",
       "format": "MOVIE",
@@ -1286,8 +1143,8 @@
         "id": "Nm21TTXUkf4"
       },
       "next": {
-        "at": 1793983980,
-        "episode": 6
+        "at": 1794588780,
+        "episode": 7
       },
       "airingAt": 1793983980,
       "episode": 6,
@@ -5351,8 +5208,8 @@
         "id": "Nm21TTXUkf4"
       },
       "next": {
-        "at": 1793983980,
-        "episode": 6
+        "at": 1794588780,
+        "episode": 7
       },
       "airingAt": 1794588780,
       "episode": 7,
@@ -7257,6 +7114,172 @@
       "episode": 7,
       "scheduleId": 417503,
       "description_es": "En su camino a casa desde la escuela un día, Noriko se sumergió inesperadamente en un extraño y extraordinario mundo de fantasía. Sus problemas se complican exponencialmente cuando es rescatada y amigada por un joven guapo por el nombre de Izark. Puede ser valiente y valiente, pero dentro de Izark se esconde el mal más oscuro imaginable. Y según una profecía antigua, Noriko posee el poder de desencadenar ese mal. Ahora, inexorablemente unidos, estos dos aliados improbables deben navegar por un mundo maravilloso y hostil. (Fuente: VIZ Media)"
+    },
+    {
+      "id": "mal-63381",
+      "mal_id": 63381,
+      "ani_id": 206774,
+      "title": "Now That I Can Control Reality With A Mouse Cursor, I'm Gonna Click Away On The Girls!",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx206774-gXVdrySlLY6y.jpg",
+      "banner": "",
+      "description": "What if you could control reality with a mouse cursor? One day during class, Takumi— an otaku — notices his mouse cursor has sprung out of the screen. Panicked, he asks his childhood friend Mone, sitting next to him, to take a look, only to be brushed off... Once Takumi realizes he could actually control it himself, he uses the mouse cursor— visible only to him— to slip it in between Mone's clothes and starts clicking away... Here's Japan’s (probably) first new genre of romcom, \"Clicking Away at a Gyaru Who's Mean to Otakus with a Mouse Cursor\"! (Source: Official Site) Note: Episode 1 receives an advanced distribution on AnimeFesta on September 11th, 2026. The start date reflects the start of the regular series broadcasting.",
+      "year": 2026,
+      "startDate": "2026-10-05",
+      "format": "TV_SHORT",
+      "episodes": 8,
+      "averageScore": 51,
+      "status": "RELEASING",
+      "genres": [
+        "Ecchi",
+        "Romance",
+        "Supernatural"
+      ],
+      "siteUrl": "https://anilist.co/anime/206774",
+      "streaming": [],
+      "trailer": {
+        "site": "youtube",
+        "id": "2zhlC9mffas"
+      },
+      "next": {
+        "at": 1794153600,
+        "episode": 5
+      },
+      "airingAt": 1794758400,
+      "episode": 6,
+      "scheduleId": 419006,
+      "description_es": "¿Y si pudiera controlar la realidad con un cursor del ratón? Un día durante la clase, Takumi, un otaku, nota que el cursor del ratón ha salido de la pantalla. Panicked, pide a su amigo de la infancia Mone, sentado junto a él, para echar un vistazo, sólo para ser cepillado... Una vez que Takumi se da cuenta de que podía controlarlo él mismo, utiliza el cursor del ratón — visible sólo para él— para deslizarlo entre la ropa de Mone y empieza a hacer clic... Aquí está Japón (probablemente) primer nuevo género de romcom, \"Haciendo clic en Away en un Gyaru Who's Mean a Otakus con un cursor Mouse\"! (Fuente: Sitio Oficial) Nota: Episodio 1 recibe"
+    },
+    {
+      "id": "mal-64131",
+      "mal_id": 64131,
+      "ani_id": 211877,
+      "title": "My Girlfriend's Friend",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx211877-yWQ2r7XmWvG6.jpg",
+      "banner": "",
+      "description": "For the first time in my life, I have a girlfriend. But her friend tempts me with a body that's so seductive... What would you do if your girlfriend's friend came on to you like this? (Source: Yanmaga, translated)",
+      "year": 2026,
+      "startDate": "2026-10-05",
+      "format": "TV_SHORT",
+      "episodes": 12,
+      "averageScore": 49,
+      "status": "RELEASING",
+      "genres": [
+        "Drama",
+        "Ecchi",
+        "Romance"
+      ],
+      "siteUrl": "https://anilist.co/anime/211877",
+      "streaming": [],
+      "trailer": {
+        "site": "youtube",
+        "id": "E-stx_wwVSs"
+      },
+      "next": {
+        "at": 1794153900,
+        "episode": 6
+      },
+      "airingAt": 1794758700,
+      "episode": 7,
+      "scheduleId": 419332,
+      "description_es": "Por primera vez en mi vida, tengo una novia. Pero su amiga me tienta con un cuerpo tan seductor... ¿Qué harías si el amigo de tu novia viniera a ti así? (Fuente: Yanmaga, traducido)"
+    },
+    {
+      "id": "mal-65167",
+      "mal_id": 65167,
+      "ani_id": 217782,
+      "title": "My Girlfriend's Friend Mini Anime",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx217782-DV0vODQ68ZRk.png",
+      "banner": "",
+      "description": "A weekly mini anime shown with each episode of Kanojo no Tomodachi exclusively on the AT-X broadcast of the TV anime and online on OceanVeil.",
+      "year": 2026,
+      "startDate": "2026-10-05",
+      "format": "TV_SHORT",
+      "episodes": 12,
+      "averageScore": 0,
+      "status": "RELEASING",
+      "genres": [
+        "Drama",
+        "Ecchi",
+        "Romance"
+      ],
+      "siteUrl": "https://anilist.co/anime/217782",
+      "streaming": [],
+      "trailer": null,
+      "next": {
+        "at": 1794154620,
+        "episode": 6
+      },
+      "airingAt": 1794759420,
+      "episode": 7,
+      "scheduleId": 422168,
+      "description_es": "Un mini anime semanal mostrado con cada episodio de Kanojo no Tomodachi exclusivamente en la transmisión AT-X del anime de TV y en línea en OceanVeil."
+    },
+    {
+      "id": "mal-63509",
+      "mal_id": 63509,
+      "ani_id": 208025,
+      "title": "I'm Dating a Dark Summoner",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx208025-JKvqWNr8rz8l.jpg",
+      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/208025-s7hcRQO7kwmH.jpg",
+      "description": "Amona’s a dark summoner with demonic powers. Roni’s a devout priest who’s way too uptight. By all rights, they should hate each other. Instead, they end up fast-tracking their enemies-to-lovers arc with a one-night stand that somehow insists on becoming a recurring event. Now they must hide their situationship from the rest of the party while denying their growing attraction to one another, all while dealing with an imp who’s far too invested in their love life. (Source: HIDIVE)",
+      "year": 2026,
+      "startDate": "2026-10-05",
+      "format": "TV_SHORT",
+      "episodes": 12,
+      "averageScore": 67,
+      "status": "RELEASING",
+      "genres": [
+        "Comedy",
+        "Ecchi",
+        "Fantasy",
+        "Romance"
+      ],
+      "siteUrl": "https://anilist.co/anime/208025",
+      "streaming": [],
+      "trailer": {
+        "site": "youtube",
+        "id": "-YCols5lYow"
+      },
+      "next": {
+        "at": 1794154800,
+        "episode": 6
+      },
+      "airingAt": 1794759600,
+      "episode": 7,
+      "scheduleId": 419207,
+      "description_es": "Amona es un llamador oscuro con poderes demoníacos. Roni es un sacerdote devota que está demasiado tenso. Por todos los derechos, deben odiarse. En lugar de eso, terminan acelerando su arco de enemigos a amantes con un stand de una noche que de alguna manera insiste en convertirse en un evento recurrente. Ahora deben ocultar su nave de situación del resto del partido mientras niegan su creciente atracción entre sí, mientras tratan con un imp que está demasiado invertido en su vida amorosa. (Fuente: HIDIVE)"
+    },
+    {
+      "id": "mal-65169",
+      "mal_id": 65169,
+      "ani_id": 218217,
+      "title": "JK Dark Summoner to Deki......Dei Nai!?",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx218217-crIGlnQDg0bJ.png",
+      "banner": "",
+      "description": "A weekly mini anime shown with each episode of Dark Summoner to Dekiteiru exclusively on the AT-X broadcast of the TV anime and online on Abema.",
+      "year": 2026,
+      "startDate": "2026-10-05",
+      "format": "TV_SHORT",
+      "episodes": 12,
+      "averageScore": 0,
+      "status": "RELEASING",
+      "genres": [
+        "Comedy",
+        "Ecchi",
+        "Fantasy",
+        "Romance"
+      ],
+      "siteUrl": "https://anilist.co/anime/218217",
+      "streaming": [],
+      "trailer": null,
+      "next": {
+        "at": 1794160800,
+        "episode": 6
+      },
+      "airingAt": 1794765600,
+      "episode": 7,
+      "scheduleId": 422532,
+      "description_es": "Un mini anime semanal mostrado con cada episodio de Dark Summoner a Dekiteiru exclusivamente en la transmisión AT-X del anime de TV y en línea en Abema."
     }
   ],
   "seasonal": {
@@ -7935,8 +7958,8 @@
           "id": "Nm21TTXUkf4"
         },
         "next": {
-          "at": 1793983980,
-          "episode": 6
+          "at": 1794588780,
+          "episode": 7
         },
         "description_es": "Secuela de los Revengers de Tokio: Tenjiku-hen."
       },
