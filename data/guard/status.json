@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "engine": "ONEUP SELF HEALING ENGINE",
-  "updatedAt": "2026-11-06T17:59:49.350Z",
+  "updatedAt": "2026-11-06T21:56:12.637Z",
   "site": "https://h4cklaboratory.github.io/1UP-ANIME/",
   "mode": "local_y_publico",
   "verdict": "correcto",
@@ -10,7 +10,7 @@
   "warnings": 0,
   "persistentAlerts": [],
   "requiresManualAction": true,
-  "lastKnownGoodCommit": "1d4d7a946ce391e1349c9dfc7eb82b4f3af4b736",
+  "lastKnownGoodCommit": "f787a39ab0b2b12cf588f9672ab58978f97050b2",
   "checks": [
     {
       "id": "file:index.html",
@@ -94,7 +94,7 @@
       "id": "file:data/airing.json",
       "level": "ok",
       "message": "Validado: Archivo requerido data/airing.json",
-      "bytes": 481027
+      "bytes": 484626
     },
     {
       "id": "file:data/translations-es.json",
@@ -106,7 +106,7 @@
       "id": "file:data/dexter/records.json",
       "level": "ok",
       "message": "Validado: Archivo requerido data/dexter/records.json",
-      "bytes": 415542
+      "bytes": 425828
     },
     {
       "id": "file:config/dexter-providers.json",
@@ -187,13 +187,13 @@
       "id": "catalog:freshness",
       "level": "ok",
       "message": "Catálogo actualizado",
-      "ageHours": 8.8
+      "ageHours": 12.7
     },
     {
       "id": "airing:entries",
       "level": "ok",
       "message": "Validado: El calendario debe tener al menos 15 emisiones",
-      "entries": 209
+      "entries": 210
     },
     {
       "id": "airing:season",
@@ -204,7 +204,7 @@
       "id": "airing:freshness",
       "level": "ok",
       "message": "Calendario con fecha reciente",
-      "ageHours": 2.1
+      "ageHours": 0.2
     },
     {
       "id": "spanish:pack",
@@ -217,7 +217,7 @@
       "level": "ok",
       "message": "Validado: Registros del motor existentes",
       "anime": 134,
-      "episodes": 559,
+      "episodes": 578,
       "playbackSources": 0
     },
     {
@@ -249,7 +249,7 @@
       "id": "engine:freshness",
       "level": "ok",
       "message": "Sincronización reciente",
-      "ageHours": 2.8,
+      "ageHours": 0.8,
       "status": "correcta"
     },
     {
