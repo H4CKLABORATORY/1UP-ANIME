@@ -3,7 +3,7 @@
 // CacheStorage is origin-wide: GitHub Pages apps on the same domain share it.
 // Restrict cleanup to caches that belong to this 1UP Anime service worker.
 const CACHE_PREFIX='oneup-stream-integrated-';
-const CACHE=CACHE_PREFIX+'v40-native-auth-20261107';
+const CACHE=CACHE_PREFIX+'v41-phase1-cleanup-20261107';
 const SHELL=[
  './','./index.html','./studio.css','./studio.js','./anime-title-search.js','./premiere-ranking.js','./premiere-hero.js','./premiere-hero.css','./spotlight.css',
  './dexter-motion-studio.html','./motion-studio/scene.mjs','./motion-studio/camera.mjs','./motion-studio/renderer.mjs','./motion-studio/app.mjs','./motion-studio/studio.css',
@@ -17,17 +17,10 @@ const SHELL=[
  './data/airing.json','./airing-ui.js','./airing-ui.css','./comunidad.html',
  './community.js','./community.css','./social-backend.js',
  './hls-adapter.js','./episode-player.js','./supabase-config.js','./supabase-episode-backend.js','./episode-comments.js','./episode-comments.css',
- './themes/kokomi-studio/theme.css','./themes/kokomi-studio/theme.js',
- './themes/kokomi-mobile-preview/theme.css','./themes/kokomi-mobile-preview/theme.js',
- './themes/kokomi-mobile-preview/opening.css','./themes/kokomi-mobile-preview/opening.js',
- './themes/cinematic-v3/production.css','./themes/cinematic-v3/studio.js','./themes/cinematic-v3/opening-controller.js',
- './themes/kokomi-mobile-preview/official-textmark.css',
- './themes/kokomi-mobile-preview/pages.css','./themes/kokomi-mobile-preview/pages.js',
- './themes/kokomi-mobile-preview/watch-comments.css','./themes/kokomi-mobile-preview/watch-comments.js',
- './themes/october-2026/theme.css','./themes/october-2026/theme.js',
- './themes/oneup-palette/selector.css','./themes/oneup-palette/selector.js',
- './themes/oneup-motion/windows.css','./themes/oneup-motion/windows.js',
- './themes/october-2026/arcane-seal.svg','./preview-kokomi.html','./external-providers.js','./data/external-providers.json','./external-providers.css','./motor.html','./motor.js','./motor.css',
+ './themes/oneup/theme.css','./themes/oneup/theme.js',
+ './themes/oneup/arcane-seal.svg','./themes/oneup/characters.json',
+ './themes/preview-only/cinematic-studio.css','./themes/preview-only/kokomi-opening.js',
+ './preview-kokomi.html','./external-providers.js','./data/external-providers.json','./external-providers.css','./motor.html','./motor.js','./motor.css',
  './moderacion.html','./moderacion.js','./moderacion.css',
  './data/dexter/status.json','./data/dexter/history.json','./data/guard/status.json',
  './gremio.html','./data/guild-license.json'

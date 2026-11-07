@@ -19,8 +19,9 @@
 <link rel="stylesheet" href="./airing-ui.css">
 <link rel="stylesheet" href="./official-watch.css">
 <link rel="stylesheet" href="./external-providers.css">
-<link rel="stylesheet" href="./themes/kokomi-studio/theme.css">
-<link rel="stylesheet" href="./themes/october-2026/theme.css">
+<!-- 1UP theme system: one consolidated stylesheet (themes/oneup/theme.css).
+     Palettes are optional (esmeralda default); the visitor never has to choose. -->
+<link rel="stylesheet" href="./themes/oneup/theme.css">
 <script defer src="./social-backend.js"></script>
 <script defer src="./supabase-config.js"></script><script defer src="./supabase-episode-backend.js"></script>
 <script defer src="./episode-comments.js"></script>
@@ -35,25 +36,10 @@
 <script defer src="./airing-ui.js"></script>
 <script defer src="./premiere-ranking.js"></script><script defer src="./premiere-hero.js"></script>
 <script defer src="./external-providers.js"></script>
-<script defer src="./themes/kokomi-studio/theme.js"></script>
-<script defer src="./themes/october-2026/theme.js"></script>
-<link rel="stylesheet" href="./themes/kokomi-mobile-preview/theme.css">
-<link rel="stylesheet" href="./themes/kokomi-mobile-preview/pages.css">
-<link rel="stylesheet" href="./themes/kokomi-mobile-preview/watch-comments.css">
-<script defer src="./themes/kokomi-mobile-preview/theme.js"></script>
-<script defer src="./themes/kokomi-mobile-preview/pages.js"></script>
-<script defer src="./themes/kokomi-mobile-preview/watch-comments.js"></script>
-<link rel="stylesheet" href="./themes/kokomi-mobile-preview/opening.css">
-<link rel="stylesheet" href="./themes/cinematic-v3/production.css">
-<link rel="stylesheet" href="./themes/kokomi-mobile-preview/official-textmark.css">
-<script defer src="./themes/cinematic-v3/opening-controller.js"></script>
-<script defer src="./themes/cinematic-v3/studio.js"></script>
+<!-- 1UP theme system: one consolidated script (themes/oneup/theme.js). -->
+<script defer src="./themes/oneup/theme.js"></script>
 <link rel="stylesheet" href="./anime1v-discovery.css">
 <script defer src="./anime1v-discovery.js"></script>
-<link rel="stylesheet" href="./themes/oneup-palette/selector.css">
-<script defer src="./themes/oneup-palette/selector.js"></script>
-<link rel="stylesheet" href="./themes/oneup-motion/windows.css">
-<script defer src="./themes/oneup-motion/windows.js"></script>
 <link rel="stylesheet" href="styles/depth-system.css">
 <link rel="stylesheet" href="styles/depth-toggle.css">
 <link rel="stylesheet" href="styles/anime-card-depth.css">
@@ -79,8 +65,11 @@
    <div class="optical-flash" aria-hidden="true"></div>
    <div class="letterbox-noise" aria-hidden="true"></div>
   </div>
-  <video id="original-signature" preload="auto" playsinline
-   src="./assets/1up-anime-intro-firma-3seg.mp4" tabindex="-1"
+  <!-- Intro signature: no src + preload="none" on purpose. The source is
+       attached by the theme bundle (cinematic studio) only when the intro
+       actually plays; a discarded intro must never start (and abort) a download. -->
+  <video id="original-signature" preload="none" playsinline
+   data-src="./assets/1up-anime-intro-firma-3seg.mp4" tabindex="-1"
    aria-hidden="true"></video>
   <p id="audio-status" class="sr-only" role="status" aria-live="polite"></p>
  </section>
