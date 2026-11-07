@@ -32,11 +32,11 @@ function maskError(error){
  if(value.includes('p0001')||value.includes('wait before commenting'))return 'Publicas demasiado rápido. Inténtalo de nuevo en unos segundos.';
  if(value.includes('23505')||value.includes('duplicate'))return 'Ya enviaste este reporte.';
  if(value.includes('42501')||value.includes('permission')||value.includes('row-level'))return 'No tienes permiso para realizar esa acción.';
- if(value.includes('anonymous')||value.includes('signups'))return 'Necesitas iniciar sesión o habilitar el acceso para invitados.';
+ if(value.includes('anonymous')||value.includes('signups'))return 'Necesitas iniciar sesión con tu cuenta 1UP.';
  return 'No se pudo completar la operación. Inténtalo de nuevo más tarde.';
 }
 async function client(){
- if(!enabled())throw Error('Supabase no está configurado para 1UP ANIME.');
+ if(!enabled())throw Error('La comunidad 1UP aún no está disponible.');
  if(!pending){
   pending=import(SDK).then(({createClient})=>createClient(
    conf().url,conf().publishableKey,{

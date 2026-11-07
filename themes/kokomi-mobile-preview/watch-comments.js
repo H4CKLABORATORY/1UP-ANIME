@@ -42,7 +42,7 @@ function subscribe(){
  const id=++serial;
  if(!backend()?.enabled()){
   const list=$('#km-watch-comment-list');
-  if(list)list.innerHTML='<p class="km-watch-muted">Los comentarios públicos estarán disponibles cuando el propietario configure Supabase.</p>';
+  if(list)list.innerHTML='<p class="km-watch-muted">Los comentarios de este episodio aún no están disponibles.</p>';
   setStatus('Comentarios en espera de conexión con la comunidad.');
   return;
  }

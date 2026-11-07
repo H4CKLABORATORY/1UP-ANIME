@@ -29,7 +29,7 @@ function subscribe(){
  const target=$('#oneup-episode-comments');
  if(!target||!activeAnime)return;
  const token=requestSerial;
- if(!api()?.enabled()){target.innerHTML='<p class="oneup-no-comments">Los comentarios públicos estarán disponibles al conectar el servidor de la comunidad.</p>';message('Aún falta configurar el servidor público.');return}
+ if(!api()?.enabled()){target.innerHTML='<p class="oneup-no-comments">Los comentarios de este episodio aún no están disponibles.</p>';message('Los comentarios aún no están disponibles. Puedes explorar el catálogo como invitado.');return}
  target.innerHTML='<p class="oneup-no-comments">Cargando comentarios públicos…</p>';
  message('Los comentarios de este episodio son públicos y pueden leerse sin registrarse. Para comentar, inicia sesión con tu cuenta 1UP.');
  api().subscribeEpisode(activeAnime,episode,items=>{if(token!==requestSerial)return;renderComments(items)},error=>{if(token!==requestSerial)return;target.innerHTML='<p class="oneup-no-comments">'+escape(error)+'</p>'})
@@ -75,7 +75,7 @@ function draw(anime){
  $('#oneup-guest-comment-form').addEventListener('submit',async e=>{
   e.preventDefault();
   const button=$('#oneup-send-comment'),body=$('#oneup-guest-text').value.trim();
-  if(!api()?.enabled()){message('Para publicar, primero debe activarse el servidor de comentarios.');return}
+  if(!api()?.enabled()){message('Los comentarios aún no están disponibles.');return}
   if(!window.OneUpAuth?.isAccount?.()){message('Para comentar necesitas una cuenta 1UP.');window.OneUpAuth?.openDialog('Inicia sesión para comentar este episodio. Si aún no tienes cuenta, crea una en un minuto.');return}
   const name=window.OneUpAuth.get().name;
   const token=viewSerial,backend=api(),animeId=activeAnime,selectedEpisode=episode;

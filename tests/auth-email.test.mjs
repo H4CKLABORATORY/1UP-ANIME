@@ -335,12 +335,13 @@ test('recovery link opens the new-password form', async () => {
   assert.match(elements.get('auth-message').textContent, /nueva contraseña/);
 });
 
-test('without Supabase configured, sign-up explains the missing setup', async () => {
+test('without Supabase configured, sign-up says accounts are not available yet', async () => {
   const backend = makeBackend();
   const { auth } = makeContext(backend, null);
   const res = await auth.signUp({ username: 'asta_fan', email: 'asta@ejemplo.com', password: 'abc12345' });
   assert.equal(res.ok, false);
-  assert.match(res.message, /propietario debe crear el proyecto Supabase/);
+  assert.match(res.message, /aún no están disponibles/);
+  assert.doesNotMatch(res.message, /configurar|supabase-config|SUPABASE_SETUP/);
 });
 
 test('no Google sign-in and no Firebase code remains', () => {

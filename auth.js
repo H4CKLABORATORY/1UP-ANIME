@@ -50,7 +50,7 @@ function configured(){
   typeof c?.publishableKey==="string"&&c.publishableKey.startsWith("sb_publishable_");
 }
 function missing(){
- return "Las cuentas 1UP aún no están activadas: el propietario debe crear el proyecto Supabase, habilitar el registro con correo y contraseña y pegar la configuración en supabase-config.js (ver docs/SUPABASE_SETUP.md). Mientras tanto puedes explorar como invitado.";
+ return "Las cuentas 1UP aún no están disponibles. Puedes explorar el catálogo como invitado.";
 }
 function friendlyAuthError(e){
  const msg=String(e?.message||"").toLowerCase();
@@ -64,7 +64,7 @@ function friendlyAuthError(e){
  if(msg.includes("network")||msg.includes("fetch failed")||msg.includes("failed to fetch"))
   return "Sin conexión con el servidor. Revisa tu internet e inténtalo de nuevo.";
  if(msg.includes("signups not allowed")||msg.includes("provider is not enabled"))
-  return "El registro con correo y contraseña no está habilitado en este proyecto Supabase.";
+  return "El registro con correo aún no está habilitado. Inténtalo más tarde.";
  if(msg.includes("user is banned")||msg.includes("user disabled"))
   return "Esta cuenta está deshabilitada.";
  if(msg.includes("username")&&msg.includes("taken")||code==="23505")
@@ -250,7 +250,7 @@ function render(){
  const help=$("#auth-service-note");
  if(help)help.textContent=configured()
   ?"Tu cuenta 1UP guarda tu nombre de usuario. También puedes entrar sin registrarte, pero comentar y guardar favoritos necesitan una cuenta."
-  :"Las cuentas 1UP estarán disponibles cuando el propietario configure Supabase.";
+  :"Las cuentas 1UP aún no están disponibles. Puedes explorar el catálogo como invitado.";
 }
 function refreshProfiles(){
  const details=$("#auth-profiles"),select=$("#auth-profile-select");

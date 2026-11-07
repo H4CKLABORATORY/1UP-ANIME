@@ -9,7 +9,7 @@ const api=()=>window.OneUpSocialBackend;
 const status=s=>$('#admin-status').textContent=s;
 let last=null;
 async function userLogin(){
- if(!api()?.enabled()){status('Supabase aún no está conectado a 1UP Anime. Configura supabase-config.js para activar este panel.');return}
+ if(!api()?.enabled()){status('El panel de moderación aún no está disponible.');return}
  const button=$('#admin-login');button.disabled=true;status('Comprobando tu sesión…');
  try{const me=await api().supabaseAccount();if(!api().registered(me)){status('Inicia sesión con tu cuenta 1UP en La Plaza (comunidad.html) y vuelve a este panel.');return}await refresh()}
  catch(e){status(api().maskError(e))}
@@ -39,7 +39,7 @@ async function preview(){
  }
 }
 async function refresh(){
- if(!api()?.enabled()){status('Falta configurar Supabase. Este panel no concede acceso sin autorización.');$('#admin-dashboard').hidden=true;return}
+ if(!api()?.enabled()){status('Este panel aún no está disponible. No concede acceso sin autorización.');$('#admin-dashboard').hidden=true;return}
  try{
   const result=await api().callable('moderationDashboard',{});
   last=result;

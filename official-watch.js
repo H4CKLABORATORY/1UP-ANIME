@@ -108,7 +108,7 @@ function attachToDetail(anime){
  const copy=document.createElement('div');copy.className='oneup-official-watch-copy';
  const heading=document.createElement('h3');heading.textContent='ELIGE DÓNDE VERLO';
  const note=document.createElement('p');
- note.textContent='Consulta los servidores de 1UP cuando estén habilitados o abre la página oficial. La emisión no garantiza que el episodio ya esté disponible en cada plataforma.';
+ note.textContent='Abre la página oficial para ver este episodio. La emisión no garantiza que el episodio ya esté disponible en cada plataforma.';
  copy.append(heading,note);
  const episodeTarget=document.createElement('div');episodeTarget.className='oneup-official-episode';
  episodeTarget.dataset.oneupOfficialEpisode='true';copy.append(episodeTarget);

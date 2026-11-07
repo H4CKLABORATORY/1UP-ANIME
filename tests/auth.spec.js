@@ -41,14 +41,14 @@ test('native account dialog: login/signup/reset forms, no Google button', async 
     await page.locator('#auth-signup-password').fill('abc12345');
     await page.locator('#auth-signup-password2').fill('abc12345');
     await page.locator('#auth-signup-form button[type=submit]').click();
-    await expect(page.locator('#auth-message')).toContainText('propietario debe crear el proyecto Supabase');
+    await expect(page.locator('#auth-message')).toContainText('Las cuentas 1UP aún no están disponibles');
     // Password reset flow.
     await page.locator('#auth-tab-login').click();
     await page.locator('#auth-forgot').click();
     await expect(page.locator('#auth-reset-form')).toBeVisible();
     await page.locator('#auth-reset-email').fill('asta@ejemplo.com');
     await page.locator('#auth-reset-form button[type=submit]').click();
-    await expect(page.locator('#auth-message')).toContainText('propietario debe crear el proyecto Supabase');
+    await expect(page.locator('#auth-message')).toContainText('Las cuentas 1UP aún no están disponibles');
     expect(errors).toEqual([]);
   } finally { await context.close(); }
 });

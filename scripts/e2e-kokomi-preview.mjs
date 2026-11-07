@@ -144,7 +144,7 @@ try{
   if(!id)throw Error('No catalogue identifier');
   await page.goto(base+'preview-kokomi-mobile.html#km/series-play/'+id,{waitUntil:'domcontentloaded'});
   await page.locator('#km-watch-comment-form').waitFor({timeout:9000});
-  if(!await page.locator('#km-watch-comment-list').getByText('Supabase').count())throw Error('Disconnected backend not disclosed');
+  if(!await page.locator('#km-watch-comment-list').getByText('aún no están disponibles').count())throw Error('Disconnected backend not disclosed');
   await page.locator('#km-player-section .oneup-player-placeholder').waitFor();
   if(await page.locator('#km-player-section [data-server-slot]').count()!==7)throw Error('Expected seven shared engine slots');
   if(await page.locator('#km-player-section [data-server-slot]:enabled').count())throw Error('Empty library enabled a server');

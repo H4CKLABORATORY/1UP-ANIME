@@ -8,7 +8,7 @@
 (()=>{
 'use strict';
 const SDK_URL='https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.117.3/+esm';
-const EXPLAIN='La comunidad todavía necesita activar Supabase y sus políticas de seguridad. Puedes explorar anime como invitado.';
+const EXPLAIN='La comunidad 1UP aún no está disponible. Puedes explorar anime como invitado.';
 const getConfig=()=>window.ONEUP_SUPABASE_CONFIG;
 const normalizeId=value=>String(value||'').trim().slice(0,100);
 let clientPromise=null;

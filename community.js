@@ -19,7 +19,8 @@ async function registered(){
 }
 async function requireAccount(){
  if(!backend()?.enabled()){
-  stateMessage('La comunidad necesita activar Supabase y sus políticas. Aún no hay un servidor conectado.');
+  stateMessage('La comunidad 1UP aún no está disponible. Puedes explorar el catálogo como invitado.');
+  $('#c-auth-dialog').showModal();
   return false;
  }
  if(await registered())return true;
@@ -97,17 +98,17 @@ async function renderMedia(){
 function renderFeed(){
  const e=$('#feed-list');if(!e)return;
  const posts=feedData();
- e.innerHTML=posts.length?posts.map(postHTML).join(''):'<div class="c-empty">Aún no hay publicaciones en esta sección. Cuando esté conectada la comunidad, aquí aparecerán las conversaciones reales.</div>';
+ e.innerHTML=posts.length?posts.map(postHTML).join(''):'<div class="c-empty">Aún no hay publicaciones en esta sección.</div>';
  if(backend()?.enabled())renderMedia();
 }
 function subscribeFeed(){
- if(!backend()?.enabled()){stateMessage(backend()?.explain||'Configura Supabase para mostrar publicaciones reales.');$('#feed-list').innerHTML='<div class="c-empty">La red social todavía no tiene un servidor público conectado. No se mostrarán publicaciones simuladas.</div>';return}
+ if(!backend()?.enabled()){stateMessage(backend()?.explain||'La comunidad 1UP aún no está disponible.');$('#feed-list').innerHTML='<div class="c-empty">La comunidad 1UP aún no está disponible. Puedes explorar el catálogo como invitado.</div>';return}
  backend().subscribeFeed(posts=>{allPosts=posts;renderFeed()},e=>{
   stateMessage(e);$('#feed-list').innerHTML='<div class="c-empty">'+esc(e)+'</div>'
  }).then(cleanup=>feedStop=cleanup).catch(e=>stateMessage(errorText(e)));
 }
 function showComposer(){
- if(!backend()?.enabled()){stateMessage('Para publicar hace falta configurar Supabase y activar el servidor de 1UP Comunidad.');return}
+ if(!backend()?.enabled()){requireAccount();return}
  requireAccount().then(ok=>{if(ok){setTab('recientes');$('#composer').hidden=false;$('#post-text').focus()}});
 }
 async function publish(e){
@@ -133,7 +134,7 @@ async function publish(e){
 }
 async function showChat(){
  if(chatStop||!backend()?.enabled()){
-  if(!backend()?.enabled())$('#global-messages').innerHTML='<div class="c-empty">El chat global necesita conectar el servidor de la comunidad.</div>';
+  if(!backend()?.enabled())$('#global-messages').innerHTML='<div class="c-empty">El chat global aún no está disponible. Puedes explorar el catálogo como invitado.</div>';
   return;
  }
  backend().subscribeGlobal(messages=>{
@@ -193,7 +194,7 @@ async function showFriends(){
  }catch(e){box.textContent=errorText(e)}
 }
 async function loadMyProfile(){
- if(!backend()?.enabled()){status('#profile-state','Configura Supabase para guardar un perfil público.');return}
+ if(!backend()?.enabled()){status('#profile-state','Inicia sesión con tu cuenta 1UP para editar tu perfil.');return}
  if(!await registered()){status('#profile-state','Inicia sesión con tu cuenta 1UP para editar tu perfil.');return}
  try{const data=await backend().myProfile();if(data){$('#profile-alias').value=data.displayName||'';selectedAvatar=data.icon||'⚔️';profileIcons()}}
  catch(e){status('#profile-state',errorText(e))}
@@ -218,7 +219,7 @@ async function verify(e){
  catch(e){status('#verification-state',errorText(e))}
 }
 async function account(){
- if(!backend()?.enabled()){status('#c-auth-state','Debes configurar Supabase para activar el inicio de sesión.');$('#c-auth-dialog').showModal();return}
+ if(!backend()?.enabled()){status('#c-auth-state','Inicia sesión con tu cuenta 1UP.');$('#c-auth-dialog').showModal();return}
  try{
   const me=await backend().supabaseAccount();
   if(backend().registered(me)){const ok=confirm('Sesión iniciada. ¿Quieres cerrar sesión?');if(ok){if(window.OneUpAuth?.signOut)await window.OneUpAuth.signOut();else{const x=await backend().sdk();await x.supabase.auth.signOut()}$('#c-login').textContent='Iniciar sesión';const so=$('#c-signout');if(so)so.hidden=true;stateMessage('Sesión cerrada. Puedes seguir leyendo publicaciones públicas.')}return}
