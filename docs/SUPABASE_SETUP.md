@@ -38,6 +38,7 @@ Cuentas propias de 1UP Anime: cada usuario crea su cuenta con **nombre de usuari
    - `supabase/sql/oneup_community_optional.sql` — comentarios por episodio, reportes, progreso/favoritos.
    - `supabase/sql/oneup_community.sql` — publicaciones, respuestas, chat global, perfiles públicos, seguir, amistad, verificación, reportes, moderación, límites.
    - `supabase/sql/oneup_storage.sql` — carpetas de fotos de perfil y archivos de publicaciones.
+   - `supabase/sql/oneup_licensed_media.sql` — episodios con licencia gestionados por el propietario/moderadores (Fase 6; Regla 12 aplicada en el esquema).
 3. Cada archivo debe terminar sin errores. Si uno falla, no sigas con el siguiente: revisa el mensaje y vuelve a intentarlo.
 
 ### 4. Desplegar las Edge Functions (moderación + buscador)
@@ -163,6 +164,7 @@ psql -h 127.0.0.1 -p 54322 -U postgres -d postgres -f supabase/sql/oneup_auth.sq
 psql -h 127.0.0.1 -p 54322 -U postgres -d postgres -f supabase/sql/oneup_community_optional.sql
 psql -h 127.0.0.1 -p 54322 -U postgres -d postgres -f supabase/sql/oneup_community.sql
 psql -h 127.0.0.1 -p 54322 -U postgres -d postgres -f supabase/sql/oneup_storage.sql
+psql -h 127.0.0.1 -p 54322 -U postgres -d postgres -f supabase/sql/oneup_licensed_media.sql
 # 3. Probar (o todo junto con scripts/run-supabase-local.sh)
 npm run test:auth:supabase
 # 4. Apagar el stack
@@ -179,6 +181,7 @@ Las claves que muestra `supabase start` son **solo para desarrollo local** y no 
 - `supabase/sql/oneup_community_optional.sql` — comentarios por episodio, reportes, progreso/favoritos.
 - `supabase/sql/oneup_community.sql` — comunidad, chat, perfiles, amistad, moderación, límites.
 - `supabase/sql/oneup_storage.sql` — buckets y políticas de archivos.
+- `supabase/sql/oneup_licensed_media.sql` — tabla de episodios con licencia y su administración (Fase 6).
 - `supabase/functions/` — moderación y buscador (Edge Functions Deno).
 - `social-backend.js` — adaptador de comunidad para el navegador (Supabase JS).
 - `supabase-episode-backend.js` — adaptador de comentarios por episodio y progreso.

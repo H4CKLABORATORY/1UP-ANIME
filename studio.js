@@ -6,7 +6,7 @@ const API='https://graphql.anilist.co';
    before this file) is the canonical definition (TTLs per data type,
    versioned keys, SWR). This inline mirror keeps the file working
    standalone in tests; both versions MUST match sw.js. */
-const CACHE_POLICY=(typeof window!=='undefined'&&window.OneUpCachePolicy)||{version:'v44-phase3-catalog-20261107',catalogListTtlMs:28800000,catalogListStaleMaxMs:86400000,catalogKeyPrefix:'oneup_catalog_v44_',fingerprint:function(items){if(!Array.isArray(items))return '';var out=items.length+':';for(var i=0;i<items.length;i++)out+=(items[i]&&items[i].id?items[i].id:'?')+',';return out}};
+const CACHE_POLICY=(typeof window!=='undefined'&&window.OneUpCachePolicy)||{version:'v45-phase6-episode-admin-20261107',catalogListTtlMs:28800000,catalogListStaleMaxMs:86400000,catalogKeyPrefix:'oneup_catalog_v44_',fingerprint:function(items){if(!Array.isArray(items))return '';var out=items.length+':';for(var i=0;i<items.length;i++)out+=(items[i]&&items[i].id?items[i].id:'?')+',';return out}};
 const $=q=>document.querySelector(q), $$=q=>[...document.querySelectorAll(q)];
 const esc=t=>String(t??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const safe=u=>{try{let x=new URL(u);return x.protocol==='https:'?x.href:''}catch{return ''}};
@@ -462,7 +462,17 @@ async function mediaForAnime(id){
  }
  await authorizedMediaLoading;
  const entry=authorizedMedia?.[id];
- return Array.isArray(entry?.episodes)?entry.episodes.filter(item=>mediaSources(item).length>0).slice(0,60):[];
+ let episodes=Array.isArray(entry?.episodes)?entry.episodes:[];
+ // Phase 6: same merge as episode-player.js — DB entries managed by the
+ // owner appear next to the static manifest with no deploy. Unconfigured
+ // or offline Supabase resolves to [] and nothing changes (Rule 1).
+ try{
+  const dbEpisodes=await window.OneUpLicensedMedia?.fetchDbEpisodes?.(id);
+  if(Array.isArray(dbEpisodes)&&dbEpisodes.length&&window.OneUpLicensedMedia?.mergeEpisodes){
+   episodes=window.OneUpLicensedMedia.mergeEpisodes(episodes,dbEpisodes);
+  }
+ }catch{}
+ return episodes.filter(item=>mediaSources(item).length>0).slice(0,60);
 }
 function mediaFileUrl(value){
  try{
@@ -483,7 +493,7 @@ function mediaSources(item){
   // Explicitly approved provider iframe. Public YouTube is the only built-in
   // embedded third-party host; this does not auto-discover anime episodes.
   if(source.mode==='official_embed'&&source.provider==='youtube'&&
-     source.rights==='authorized'&&/^[\w-]{11}$/.test(source.videoId||'')){
+     ['owned','authorized'].includes(source.rights)&&/^[\w-]{11}$/.test(source.videoId||'')){
    const videoId=source.videoId;
    return {name,language,quality,kind:'official_embed',provider:'youtube',videoId,
     src:'https://www.youtube-nocookie.com/embed/'+videoId,

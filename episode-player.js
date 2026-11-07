@@ -119,8 +119,18 @@ async function configuredEpisodes(id,season){
   if(!r.ok)throw Error('No se pudo consultar el catálogo multimedia.');
   const json=await r.json();
   const records=json?.entries?.[id]?.episodes;
+  // Phase 6: merge the owner-managed DB entries (Supabase) with the static
+  // manifest. When Supabase is unconfigured/offline the backend resolves
+  // to [] and this is exactly the pre-Phase-6 static behavior.
+  let mergedEpisodes=Array.isArray(records)?records.slice(0,9999):[];
+  try{
+   const dbEpisodes=await window.OneUpLicensedMedia?.fetchDbEpisodes?.(id);
+   if(Array.isArray(dbEpisodes)&&dbEpisodes.length&&window.OneUpLicensedMedia?.mergeEpisodes){
+    mergedEpisodes=window.OneUpLicensedMedia.mergeEpisodes(mergedEpisodes,dbEpisodes);
+   }
+  }catch{}
   const map=new Map();
-  if(Array.isArray(records))records.slice(0,9999).forEach((item,index)=>{
+  mergedEpisodes.forEach((item,index)=>{
    if(!item||typeof item!=='object')return;
    if(safeNumber(item.season,1)!==season)return;
    const no=safeNumber(item.number??item.episode,index+1);
