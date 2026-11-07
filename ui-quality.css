@@ -24,8 +24,8 @@ a,button,select,input,textarea{touch-action:manipulation}
  max-height:min(88dvh,760px);height:fit-content!important;min-height:0!important;
  padding:0;overflow-y:auto;overflow-x:hidden;
  border:1px solid color-mix(in srgb,var(--oneup-ux-accent) 33%,#4e4060);
- border-radius:23px;
- background:radial-gradient(circle at 50% 4%,#28382d36,transparent 36%),#15111c;
+ border-radius:var(--oneup-radius-dialog,23px);
+ background:radial-gradient(circle at 50% 4%,#28382d36,transparent 36%),var(--oneup-color-dialog,#15111c);
  box-shadow:0 32px 90px #000b,0 0 0 1px #ffffff08 inset;
  color:#f8f4fb;overscroll-behavior:contain;
  scrollbar-width:thin;scrollbar-color:#9fbcad70 transparent;

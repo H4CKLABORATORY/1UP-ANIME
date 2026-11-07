@@ -1,3 +1,4 @@
+:root{--oneup-color-card:#141d32}
 .moderator{padding-top:47px;padding-bottom:110px}
 .moderator .c-feed-title h1{font:900 clamp(52px,7vw,92px)/.91 var(--display);margin:11px 0}
 .mod-section{margin:38px 0 43px}
@@ -5,7 +6,7 @@
 .mod-title h2{font:900 38px var(--display);margin:0 0 5px}
 .mod-title span{font-size:12px;color:#b4c2dc}
 .mod-list{display:grid;gap:12px}
-.mod-card{display:flex;gap:24px;justify-content:space-between;align-items:start;padding:20px;background:#141d32;border:1px solid #8e9fb967;border-radius:11px}
+.mod-card{display:flex;gap:var(--oneup-space-6,24px);justify-content:space-between;align-items:start;padding:var(--oneup-space-5,20px);background:var(--oneup-color-card,#141d32);border:1px solid #8e9fb967;border-radius:var(--oneup-radius-md,10px)}
 .mod-details{min-width:0;max-width:790px;flex:1}
 .mod-details strong{display:block;font-size:14px;margin-bottom:7px;word-break:break-all}
 .mod-details span{font-size:10px;color:#aac4fc;font-weight:800}
@@ -16,3 +17,9 @@
 .mod-preview{max-width:min(100%,450px);margin-top:12px;display:grid;place-items:center;padding:5px;background:#050917;border-radius:8px;border:1px solid #8195c153;color:#b1bed8;font-size:11px;min-height:140px}
 .mod-preview video,.mod-preview img{max-width:100%;max-height:320px;object-fit:contain}
 @media(max-width:750px){.mod-card{flex-direction:column}.mod-actions{width:100%}.mod-actions button{flex:1}}
+
+/* Phase 8 polish (moderation): hover/focus parity, reduced motion. */
+.mod-card{transition:border-color .2s ease}
+.mod-card:hover{border-color:#aac4fc8c}
+.mod-card:focus-within{border-color:var(--oneup-color-focus,#a7c6ff)}
+@media(prefers-reduced-motion:reduce){.mod-card{transition:none!important}}

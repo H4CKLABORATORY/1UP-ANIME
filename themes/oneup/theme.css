@@ -260,7 +260,6 @@ body.oneup-kokomi{
 .oneup-kokomi .schedule-item{background:#151f28;border:1px solid #8faaa243;border-radius:8px}
 .oneup-kokomi .schedule-time{color:#dfc49c}
 .oneup-kokomi .footer{border-top:1px solid #89998b4a}
-.oneup-kokomi .anime-dialog{border-color:#8fa69471}
 .oneup-kokomi .oneup-detail-commands .cta.primary{background:linear-gradient(105deg,#eac49f,#d7a476);color:#202323}
 .oneup-kokomi .browse-screen .browse-intro h1 em{color:#e4c79d}
 /* Quick destinations, injected by original vanilla JS; same route engine. */
@@ -739,7 +738,6 @@ body.oneup-october{
 .oneup-october .mobile-navigation button,.oneup-october .mobile-navigation a{color:#b3c9be}
 .oneup-october .mobile-navigation button.active,.oneup-october .mobile-navigation a:hover{color:#b5f1cd}
 .oneup-october .footer{border-color:#65968448}
-.oneup-october .anime-dialog{border-color:#8ac7a559}
 .oneup-october .oneup-detail-commands .cta.primary{background:linear-gradient(105deg,#d7efde,#87caab);color:#0c1e17}
 .oneup-october .section-heading h2,.oneup-october .browse-intro h1{letter-spacing:.01em}
 .oneup-october .browse-screen .browse-intro h1 em{color:#b6ebcf}
@@ -1929,14 +1927,13 @@ body.oneup-kokomi .footer-brand .oneup-footer-textmark{display:block;width:150px
 
 /* Existing native dialogs keep their close button, focus and Escape semantics.
    Never animate display or use fixed delays to enable interaction. */
-body.oneup-kokomi :is(#anime-dialog, #auth-dialog)[open] {
+body.oneup-kokomi #auth-dialog[open] {
   animation: oneup-sheet-in var(--oneup-motion-medium) var(--oneup-motion-curve) both;
   transform-origin: 50% 36%;
 }
-body.oneup-kokomi :is(#anime-dialog, #auth-dialog)[open]::backdrop {
+body.oneup-kokomi #auth-dialog[open]::backdrop {
   animation: oneup-veil-in var(--oneup-motion-medium) ease-out both;
 }
-body.oneup-kokomi .anime-dialog::backdrop,
 body.oneup-kokomi .auth-dialog::backdrop {
   background: var(--oneup-motion-veil);
   backdrop-filter: blur(8px);
@@ -1976,10 +1973,6 @@ body.oneup-kokomi :is(.dialog-close, .oneup-theme-trigger, #km-close):focus-visi
   }
 }
 @media (max-width: 780px) {
-  body.oneup-kokomi #anime-dialog[open] {
-    animation-duration: 220ms;
-    transform-origin: center bottom;
-  }
   body.kokomi-mobile-reference .km-drawer:not([hidden]) {
     animation-duration: 235ms;
   }
@@ -1987,8 +1980,8 @@ body.oneup-kokomi :is(.dialog-close, .oneup-theme-trigger, #km-close):focus-visi
 
 /* A user's explicit reduced-motion preference takes priority everywhere. */
 @media (prefers-reduced-motion: reduce) {
-  body.oneup-kokomi :is(#anime-dialog, #auth-dialog)[open],
-  body.oneup-kokomi :is(#anime-dialog, #auth-dialog)[open]::backdrop,
+  body.oneup-kokomi #auth-dialog[open],
+  body.oneup-kokomi #auth-dialog[open]::backdrop,
   body.kokomi-mobile-reference .km-drawer:not([hidden]),
   body.kokomi-mobile-reference .km-overlay:not([hidden]),
   body.kokomi-mobile-reference .km-search-pop:not([hidden]),
@@ -2001,11 +1994,136 @@ body.oneup-kokomi :is(.dialog-close, .oneup-theme-trigger, #km-close):focus-visi
     transition: none !important;
   }
 }
-body.km-quiet.oneup-kokomi :is(#anime-dialog, #auth-dialog)[open],
-body.km-quiet.oneup-kokomi :is(#anime-dialog, #auth-dialog)[open]::backdrop,
+body.km-quiet.oneup-kokomi #auth-dialog[open],
+body.km-quiet.oneup-kokomi #auth-dialog[open]::backdrop,
 body.km-quiet.kokomi-mobile-reference .km-drawer:not([hidden]),
 body.km-quiet.kokomi-mobile-reference .km-overlay:not([hidden]),
 body.km-quiet.kokomi-mobile-reference .km-search-pop:not([hidden]) {
   animation: none !important;
   transform: none !important;
+}
+
+/* ===== 11/11 — Phase 8: design tokens + polish (Nov 2026) =====
+ *
+ * Token consolidation: the oneup palette / spacing / type scale now lives
+ * here as --oneup-* custom properties. Every value is taken FROM the
+ * existing oneup theme (sections 1/10–10/10 above, studio.css and
+ * anime-detail.css) — this is a consolidation, not a rebrand. The full
+ * inventory, with the source of each value, is in docs/DESIGN.md.
+ * Surfaces migrated to the tokens: home rails + catalog grid (below),
+ * the detail page (anime-detail.css), community + moderation + admin
+ * (community.css / moderacion.css / admin-episodios.css) and the auth
+ * dialog (ui-quality.css, via token fallbacks of identical value).
+ * Palette themes (esmeralda / violeta / original) keep working exactly
+ * as before: they override --kp-* / --oneup-pal-*, never these tokens.
+ */
+:root {
+  /* Colour — from body.oneup-kokomi (section 1/10) unless noted. */
+  --oneup-color-page: #000000;        /* anime-detail.css page background */
+  --oneup-color-bg: #080b11;          /* --kp-bg */
+  --oneup-color-header: #272727;      /* anime-detail.css top bar band */
+  --oneup-color-panel: #131b24;       /* --kp-panel */
+  --oneup-color-raised: #161d25;      /* --panel in section 1/10 */
+  --oneup-color-ink: #f5f6f4;         /* --kp-ink */
+  --oneup-color-muted: #adb9be;       /* --kp-muted */
+  --oneup-color-line: #ffffff21;      /* --kp-line */
+  --oneup-color-accent: #e7a66d;      /* --kp-accent */
+  --oneup-color-accent-strong: #c87651; /* --orange2 in section 1/10 */
+  --oneup-color-action: #ff640a;      /* anime-detail.css action orange */
+  --oneup-color-action-hot: #ff5e00;  /* measured action orange, detail hover family */
+  --oneup-color-cream: #f8ebd5;       /* --cream in section 1/10 */
+  --oneup-color-dialog: #15111c;      /* ui-quality.css #auth-dialog background */
+  --oneup-color-focus: #a2ffd0;       /* --oneup-pal-highlight (esmeralda) */
+  /* Type — the two self-hosted families the pages already load. */
+  --oneup-font-body: 'Outfit', system-ui, sans-serif;
+  --oneup-font-display: 'Barlow Condensed', Impact, sans-serif;
+  --oneup-text-xs: 10px;
+  --oneup-text-sm: 12px;
+  --oneup-text-md: 14px;
+  --oneup-text-lg: 15px;
+  /* Spacing rhythm — 4px base, the scale the surfaces already used. */
+  --oneup-space-1: 4px;
+  --oneup-space-2: 8px;
+  --oneup-space-3: 12px;
+  --oneup-space-4: 16px;
+  --oneup-space-5: 20px;
+  --oneup-space-6: 24px;
+  --oneup-space-7: 32px;
+  --oneup-space-8: 48px;
+  /* Radii — card 11–12px, dialog 14–23px in the pre-token theme. */
+  --oneup-radius-sm: 7px;
+  --oneup-radius-md: 10px;
+  --oneup-radius-lg: 12px;
+  --oneup-radius-xl: 16px;
+  --oneup-radius-dialog: 23px;        /* ui-quality.css #auth-dialog */
+}
+
+/* Home rails + catalog grid on the token rhythm. Values equal the
+   pre-token ones except two documented normalisations to the scale:
+   rail gap 15px -> 16px and grid gap 17px -> 16px (docs/DESIGN.md). */
+body.oneup-kokomi .card-rail { gap: var(--oneup-space-4); }
+body.oneup-kokomi .poster-grid { gap: var(--oneup-space-4); }
+body.oneup-kokomi .anime-card { border-radius: var(--oneup-radius-lg); }
+body.oneup-kokomi .card-info { padding: var(--oneup-space-3); }
+
+/* Card hover / focus: the motion section above already lifts cards on
+   hover for fine pointers. Keyboard users get the same emphasis via
+   :focus-within (a card contains buttons/links), with a visible ring. */
+@media (hover: hover) and (pointer: fine) {
+  body.oneup-kokomi .anime-card:hover {
+    border-color: color-mix(in srgb, var(--oneup-color-accent) 55%, transparent);
+  }
+}
+body.oneup-kokomi .anime-card:focus-within {
+  border-color: var(--oneup-color-focus);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--oneup-color-focus) 45%, transparent);
+}
+body.oneup-kokomi .anime-card :focus-visible {
+  outline: 2px solid var(--oneup-color-focus);
+  outline-offset: 2px;
+}
+
+/* Loading + empty states (studio.js renders .loading / .empty / .error
+   inside rails and grids while AniList data resolves, and for empty
+   filter results). Token surfaces + the anti-magic ✦ motif the site
+   already uses in .placeholder-art and .loading. No layout change:
+   same box, same padding scale, no gate — content still appears the
+   moment data arrives (standing rule 1: first click). */
+body.oneup-kokomi :is(.loading, .empty, .error) {
+  background: var(--oneup-color-panel);
+  border: 1px solid var(--oneup-color-line);
+  border-radius: var(--oneup-radius-md);
+  color: var(--oneup-color-muted);
+  padding: var(--oneup-space-7) var(--oneup-space-6);
+  font-size: var(--oneup-text-md);
+}
+body.oneup-kokomi .empty::before {
+  content: "✦";
+  display: block;
+  color: var(--oneup-color-accent);
+  font-size: 38px;
+  line-height: 1.2;
+}
+/* Reusable skeleton block for async surfaces (shimmer is disabled
+   under reduced motion, below). */
+.oneup-skeleton {
+  background: linear-gradient(100deg, var(--oneup-color-panel) 40%, var(--oneup-color-raised) 50%, var(--oneup-color-panel) 60%);
+  background-size: 200% 100%;
+  border-radius: var(--oneup-radius-md);
+  animation: oneup-skeleton-slide 1.4s ease-in-out infinite;
+}
+@keyframes oneup-skeleton-slide {
+  from { background-position: 120% 0; }
+  to { background-position: -80% 0; }
+}
+
+/* Phase 8 motion rule: every animation/transition this section adds is
+   switched off for reduced-motion users (the motion section above
+   already does the same for dialogs, drawer and cards). */
+@media (prefers-reduced-motion: reduce) {
+  .oneup-skeleton { animation: none !important; }
+  body.oneup-kokomi .anime-card,
+  body.oneup-kokomi .anime-card :focus-visible {
+    transition: none !important;
+  }
 }

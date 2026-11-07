@@ -1,10 +1,10 @@
 /* Phase 6 — licensed-episode admin (companion to moderacion.css). */
 .lm-login{max-width:520px;margin-bottom:30px}
 .lm-form{max-width:720px;display:grid;gap:9px}
-.lm-form label{font-size:11px;font-weight:800;color:#c0cee9;margin-top:6px}
-.lm-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.lm-form label{font-size:11px;font-weight:800;color:var(--oneup-color-label,#c0cee9);margin-top:6px}
+.lm-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--oneup-space-3,12px)}
 .lm-grid>div{display:grid;gap:9px}
 .lm-check{display:flex;gap:10px;align-items:center;font-size:12px;color:#e6edff}
 .lm-check input{width:auto}
-.lm-status{font-size:11px;color:#bbd0ff;min-height:20px;margin:4px 0;white-space:pre-line}
+.lm-status{font-size:11px;color:var(--oneup-color-state,#bbd0ff);min-height:20px;margin:4px 0;white-space:pre-line}
 @media(max-width:750px){.lm-grid{grid-template-columns:1fr}}
