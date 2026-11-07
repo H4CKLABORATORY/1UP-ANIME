@@ -202,6 +202,7 @@ function ensureItem(id){const a=state.entries.get(id);if(!a)return null;return s
 let toastTimer;
 function toast(s){$('#toast').textContent=s;$('#toast').classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('#toast').classList.remove('show'),2500)}
 function toggle(id){
+ if(window.OneUpAuth&&!window.OneUpAuth.isAccount()){window.OneUpAuth.requireAccount('guardar este anime en Mi lista');return}
  const x=ensureItem(id);if(!x)return;x.favorite=!x.favorite;
  if(!x.favorite&&!x.watched&&!x.externalUrl)delete state.saved[id];
  persist();refreshFav();renderContinue();

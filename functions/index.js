@@ -14,10 +14,10 @@ const GUARD_MS={episode:18000,post:45000,reply:14000,react:2000,chat:15000,repor
 const genres=['debate','pregunta','fanart','clip','manga','recomendacion'];
 const clean=(s,n=800)=>String(s||'').replace(/[\u0000-\u001f\u007f]/g,' ').replace(/\s+/g,' ').trim().slice(0,n+1);
 const account=req=>req.auth?.token?.firebase?.sign_in_provider||'';
-function requireAuth(req){if(!req.auth?.uid)throw new HttpsError('unauthenticated','Se requiere una sesión, incluso para comentar como invitado.')}
+function requireAuth(req){if(!req.auth?.uid)throw new HttpsError('unauthenticated','Se requiere una sesión para esta acción.')}
 function requireRegistered(req){
  requireAuth(req);
- if(account(req)!=='google.com')throw new HttpsError('permission-denied','Para participar en la comunidad necesitas una cuenta de Google.');
+ if(account(req)!=='password')throw new HttpsError('permission-denied','Para participar en la comunidad necesitas una cuenta 1UP (correo y contraseña).');
 }
 function nameOf(req){
  const value=clean(req.auth?.token?.name || (req.auth?.token?.email||'').split('@')[0] || 'Fan del anime',28);
@@ -57,12 +57,14 @@ async function throttleAndWrite(req,kind,write){
 }
 function publicFlags(uid){return db.collection('creatorFlags').doc(uid).get().then(d=>d.exists?d.data():{})}
 async function publicAuthor(req){
- const [flags,prof]=await Promise.all([
+ const [flags,prof,accountDoc]=await Promise.all([
   publicFlags(req.auth.uid),
-  db.collection('creatorProfiles').doc(req.auth.uid).get()
+  db.collection('creatorProfiles').doc(req.auth.uid).get(),
+  db.collection('users').doc(req.auth.uid).get()
  ]);
  const profile=prof.exists?prof.data():{};
- return {displayName:clean(profile.displayName||nameOf(req),28),
+ const username=accountDoc.exists?clean(accountDoc.data()?.username||'',28):'';
+ return {displayName:clean(profile.displayName||username||nameOf(req),28),
   icon:clean(profile.icon||'⚔️',10),
   avatarPath:clean(profile.avatarPath||'',270),
   verified:flags.verified===true,
@@ -78,16 +80,14 @@ async function requireModerator(req){
 
 function caller(fn){return onCall(common,fn)}
 exports.submitEpisodeComment=caller(async req=>{
- requireAuth(req);
- const {animeId,episode,text,pseudonym:alias}=req.data||{};
+ requireRegistered(req);
+ const {animeId,episode,text}=req.data||{};
  const id=threadName(animeId,episode),body=validText(text,900);
- if(/(?:https?:\/\/|www\.)/i.test(body)&&account(req)==='anonymous')throw new HttpsError('invalid-argument','Los invitados no pueden publicar enlaces.');
- const guest=account(req)==='anonymous';
- const author=guest?null:await publicAuthor(req);
- const displayName=guest?pseudonym(alias):author.displayName;
+ const author=await publicAuthor(req);
+ const displayName=author.displayName;
  const row=await throttleAndWrite(req,'episode',(tx,uid,now)=>{
   const ref=db.collection('episodeThreads').doc(id).collection('comments').doc();
-  tx.set(ref,{authorUid:uid,displayName,guest,verified:author?.verified===true,owner:author?.owner===true,icon:author?.icon||'',text:body,status:'visible',
+  tx.set(ref,{authorUid:uid,displayName,guest:false,verified:author.verified===true,owner:author.owner===true,icon:author.icon||'',text:body,status:'visible',
     episode:Number(episode),animeId:String(animeId),createdAt:Timestamp.fromMillis(now),reports:0});
   return {id:ref.id};
  });

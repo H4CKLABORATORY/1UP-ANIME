@@ -1,6 +1,6 @@
 /* 1UP Community adapter: the site is public; participation requires Firebase.
-   Guest episode comments use anonymous Firebase Auth (no user account/signup form).
-   Community posts and replies require a non-anonymous, verified Google account.
+   Episode comments require a 1UP account (email + password); anonymous sessions are only used for reports.
+   Community posts and replies require a non-anonymous 1UP account (email + password).
    All writes go through rate-limited server functions; never trust client flags. */
 (()=>{
 'use strict';
@@ -24,12 +24,12 @@ async function sdk(){
   throw new Error(EXPLAIN);
  sdkPromise=(async()=>{
   const [app,auth,db,funcs,storage,appCheck]=await Promise.all([
-   import('https://www.gstatic.com/firebasejs/11.10.0/firebase-app.js'),
-   import('https://www.gstatic.com/firebasejs/11.10.0/firebase-auth.js'),
-   import('https://www.gstatic.com/firebasejs/11.10.0/firebase-firestore.js'),
-   import('https://www.gstatic.com/firebasejs/11.10.0/firebase-functions.js'),
-   import('https://www.gstatic.com/firebasejs/11.10.0/firebase-storage.js'),
-   import('https://www.gstatic.com/firebasejs/11.10.0/firebase-app-check.js')
+   import('https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js'),
+   import('https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js'),
+   import('https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js'),
+   import('https://www.gstatic.com/firebasejs/12.19.0/firebase-functions.js'),
+   import('https://www.gstatic.com/firebasejs/12.19.0/firebase-storage.js'),
+   import('https://www.gstatic.com/firebasejs/12.19.0/firebase-app-check.js')
   ]);
   const config=getConfig();
   const instance=app.getApps().length?app.getApp():app.initializeApp(config);
@@ -58,8 +58,8 @@ async function firebaseAccount(){
  return x.authentication.currentUser;
 }
 function registered(user){
- const list=user?.providerData||[];
- return Boolean(user&&!user.isAnonymous&&list.some(p=>p.providerId==='google.com'));
+ // Any non-anonymous Firebase account counts: 1UP accounts are email + password only.
+ return Boolean(user&&!user.isAnonymous);
 }
 async function guestAccess(){
  const x=await sdk();
@@ -69,21 +69,10 @@ async function guestAccess(){
  }
  return x.authentication.currentUser;
 }
-async function loginWithGoogle(){
+async function loginWithEmail(email,password){
  const x=await sdk();
- const provider=new x.auth.GoogleAuthProvider();
- const current=await firebaseAccount();
- // Existing anonymous comments do not become a Google account by simply signing in.
- // A fresh authenticated session is sufficient for social access.
- try{await x.auth.signInWithPopup(x.authentication,provider)}
- catch(e){
-  if(['auth/popup-blocked','auth/operation-not-supported-in-this-environment'].includes(e.code)){
-   await x.auth.signInWithRedirect(x.authentication,provider);
-   return null;
-  }
-  throw e;
- }
- return await firebaseAccount();
+ const result=await x.auth.signInWithEmailAndPassword(x.authentication,String(email||'').trim(),String(password||''));
+ return result.user||await firebaseAccount();
 }
 async function callable(name,values){
  const x=await sdk();
@@ -115,22 +104,22 @@ function subscribeGlobal(cb,onError){
 }
 async function sendGlobal(text){
  const user=await firebaseAccount();
- if(!registered(user))throw Error('Para escribir en el chat global necesitas una cuenta Google.');
+ if(!registered(user))throw Error('Para escribir en el chat global necesitas una cuenta 1UP.');
  return callable('sendGlobalMessage',{text});
 }
 async function updateProfile({displayName,icon,avatarPath}) {
  const user=await firebaseAccount();
- if(!registered(user))throw Error('Inicia sesión con Google para personalizar tu perfil.');
+ if(!registered(user))throw Error('Inicia sesión con tu cuenta 1UP para personalizar tu perfil.');
  return callable('setMyCommunityProfile',{displayName,icon,avatarPath});
 }
 async function verificationRequest(reason){
  const user=await firebaseAccount();
- if(!registered(user))throw Error('Inicia sesión con Google para solicitar verificación.');
+ if(!registered(user))throw Error('Inicia sesión con tu cuenta 1UP para solicitar verificación.');
  return callable('requestVerification',{reason});
 }
 async function follow(uid){
  const user=await firebaseAccount();
- if(!registered(user))throw Error('Inicia sesión con Google para seguir perfiles.');
+ if(!registered(user))throw Error('Inicia sesión con tu cuenta 1UP para seguir perfiles.');
  return callable('toggleFollow',{targetUid:uid});
 }
 async function myProfile(){
@@ -142,7 +131,7 @@ async function myProfile(){
 }
 async function uploadAvatar(file){
  const user=await firebaseAccount();
- if(!registered(user))throw Error('Inicia sesión con Google para subir foto de perfil.');
+ if(!registered(user))throw Error('Inicia sesión con tu cuenta 1UP para subir foto de perfil.');
  const valid={'image/jpeg':'jpg','image/png':'png','image/webp':'webp'};
  const ext=valid[file.type];
  if(!ext||file.size>5*1024*1024)throw Error('Se admiten fotos JPG, PNG o WebP de hasta 5 MB.');
@@ -160,19 +149,19 @@ function subscribeFeed(cb,onError){
   return x.db.onSnapshot(q,snap=>cb(snap.docs.map(d=>({id:d.id,...d.data()}))),(err)=>(onError||(()=>{}))(maskError(err)));
  });
 }
-async function publishPost({text,kind='debate',mediaPath=''}){const user=await firebaseAccount();if(!registered(user))throw Error('Para publicar en 1UP Comunidad necesitas iniciar sesión con Google.');return callable('createCommunityPost',{text,kind,mediaPath})}
-async function replyToPost(postId,text){const user=await firebaseAccount();if(!registered(user))throw Error('Para comentar publicaciones de la comunidad necesitas una cuenta de Google.');return callable('replyCommunityPost',{postId,text})}
+async function publishPost({text,kind='debate',mediaPath=''}){const user=await firebaseAccount();if(!registered(user))throw Error('Para publicar en 1UP Comunidad necesitas iniciar sesión con tu cuenta 1UP.');return callable('createCommunityPost',{text,kind,mediaPath})}
+async function replyToPost(postId,text){const user=await firebaseAccount();if(!registered(user))throw Error('Para comentar publicaciones de la comunidad necesitas una cuenta 1UP.');return callable('replyCommunityPost',{postId,text})}
 function subscribeReplies(postId,cb,onError){
  return sdk().then(x=>{
   const q=x.db.query(x.db.collection(x.firestore,'communityPosts',postId,'comments'),x.db.where('status','==','visible'),x.db.orderBy('createdAt','asc'),x.db.limit(60));
   return x.db.onSnapshot(q,snap=>cb(snap.docs.map(d=>({id:d.id,...d.data()}))),e=>(onError||(()=>{}))(maskError(e)));
  });
 }
-async function react(postId){const user=await firebaseAccount();if(!registered(user))throw Error('Para reaccionar en la comunidad necesitas una cuenta de Google.');return callable('toggleCommunityReaction',{postId})}
+async function react(postId){const user=await firebaseAccount();if(!registered(user))throw Error('Para reaccionar en la comunidad necesitas una cuenta 1UP.');return callable('toggleCommunityReaction',{postId})}
 async function report(type,id,reason){await guestAccess();return callable('reportContent',{type,id,reason})}
 async function uploadCommunityFile(file,postId){
  const user=await firebaseAccount();
- if(!registered(user))throw Error('Necesitas iniciar sesión con Google para subir contenido.');
+ if(!registered(user))throw Error('Necesitas iniciar sesión con tu cuenta 1UP para subir contenido.');
  const types=['image/jpeg','image/png','image/webp','video/mp4'];
  if(!types.includes(file.type))throw Error('Solo se admiten JPG, PNG, WebP o MP4.');
  const max=file.type==='video/mp4'?25*1024*1024:5*1024*1024;
@@ -185,24 +174,24 @@ async function uploadCommunityFile(file,postId){
 }
 async function requestFriend(uid){
  const user=await firebaseAccount();
- if(!registered(user))throw Error('Inicia sesión con Google para enviar invitaciones.');
+ if(!registered(user))throw Error('Inicia sesión con tu cuenta 1UP para enviar invitaciones.');
  return callable('requestFriendship',{targetUid:uid});
 }
 async function listFriends(){
  const user=await firebaseAccount();
- if(!registered(user))throw Error('Necesitas iniciar sesión con Google para consultar amigos.');
+ if(!registered(user))throw Error('Necesitas iniciar sesión con tu cuenta 1UP para consultar amigos.');
  return callable('listMyFriendRequests',{});
 }
 async function answerFriend(uid,accept){
  const user=await firebaseAccount();
- if(!registered(user))throw Error('Necesitas iniciar sesión con Google.');
+ if(!registered(user))throw Error('Necesitas iniciar sesión con tu cuenta 1UP.');
  return callable('respondFriendship',{fromUid:uid,accept:!!accept});
 }
 async function mediaURL(path){
  const x=await sdk();
  return x.storage.getDownloadURL(x.storage.ref(x.files,path));
 }
-window.OneUpSocialBackend={sdk,firebaseAccount,guestAccess,registered,loginWithGoogle,episodeThread,
+window.OneUpSocialBackend={sdk,firebaseAccount,guestAccess,registered,loginWithEmail,episodeThread,
  subscribeEpisode,sendEpisodeComment,subscribeFeed,publishPost,replyToPost,subscribeReplies,react,report,
  subscribeGlobal,sendGlobal,updateProfile,verificationRequest,follow,requestFriend,listFriends,answerFriend,myProfile,uploadAvatar,
  uploadCommunityFile,mediaURL,callable,maskError,enabled:()=>Boolean(getConfig()?.apiKey),explain:EXPLAIN};

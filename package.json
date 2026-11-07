@@ -6,7 +6,9 @@
     "test:puppeteer": "node scripts/puppeteer-site-audit.mjs",
     "test:motion-engine": "node --test tests/dexter-motion-engine.test.mjs",
     "test:motion-studio": "node --test tests/motion-studio.test.mjs tests/motion-studio-camera.test.mjs",
-    "render:motion-studio": "node scripts/render-motion-studio.mjs"
+    "render:motion-studio": "node scripts/render-motion-studio.mjs",
+    "test:auth": "node --test tests/auth-email.test.mjs",
+    "test:auth:emulator": "node --test tests/auth-emulator.test.mjs"
   },
   "devDependencies": {
     "@playwright/test": "1.56.1",

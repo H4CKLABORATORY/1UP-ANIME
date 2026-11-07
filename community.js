@@ -182,7 +182,7 @@ async function showFriends(){
  const box=$('#c-friend-requests'),list=$('#c-friend-list');
  if(!box||!list)return;
  if(!await registered()){
-  box.innerHTML='<p class="c-empty">Inicia sesión con Google para consultar solicitudes de amistad.</p>';list.textContent='';return;
+  box.innerHTML='<p class="c-empty">Inicia sesión con tu cuenta 1UP para consultar solicitudes de amistad.</p>';list.textContent='';return;
  }
  try{
   const result=await backend().listFriends();
@@ -194,7 +194,7 @@ async function showFriends(){
 }
 async function loadMyProfile(){
  if(!backend()?.enabled()){status('#profile-state','Configura Firebase para guardar un perfil público.');return}
- if(!await registered()){status('#profile-state','Inicia sesión con Google para editar tu perfil.');return}
+ if(!await registered()){status('#profile-state','Inicia sesión con tu cuenta 1UP para editar tu perfil.');return}
  try{const data=await backend().myProfile();if(data){$('#profile-alias').value=data.displayName||'';selectedAvatar=data.icon||'⚔️';profileIcons()}}
  catch(e){status('#profile-state',errorText(e))}
  await showFriends();
@@ -221,17 +221,40 @@ async function account(){
  if(!backend()?.enabled()){status('#c-auth-state','Debes configurar Firebase y App Check para activar el inicio de sesión.');$('#c-auth-dialog').showModal();return}
  try{
   const me=await backend().firebaseAccount();
-  if(backend().registered(me)){const ok=confirm('Sesión iniciada. ¿Quieres cerrar sesión?');if(ok){const x=await backend().sdk();await x.auth.signOut(x.authentication);$('#c-login').textContent='Iniciar sesión';stateMessage('Sesión cerrada. Puedes seguir leyendo publicaciones públicas.')}return}
+  if(backend().registered(me)){const ok=confirm('Sesión iniciada. ¿Quieres cerrar sesión?');if(ok){if(window.OneUpAuth?.signOut)await window.OneUpAuth.signOut();else{const x=await backend().sdk();await x.auth.signOut(x.authentication)}$('#c-login').textContent='Iniciar sesión';const so=$('#c-signout');if(so)so.hidden=true;stateMessage('Sesión cerrada. Puedes seguir leyendo publicaciones públicas.')}return}
  }catch{}
  $('#c-auth-dialog').showModal();
 }
-async function google(){
- const button=$('#c-google');button.disabled=true;status('#c-auth-state','Conectando con Google…');
+async function submitLogin(e){
+ e.preventDefault();
+ const button=$('#c-login-form button[type=submit]');button.disabled=true;status('#c-auth-state','Conectando…');
  try{
-  const user=await backend().loginWithGoogle();
-  if(user){$('#c-login').textContent=user.displayName?.slice(0,22)||'Mi cuenta';$('#c-auth-dialog').close();stateMessage('Sesión iniciada. Ya puedes participar en La Plaza, el chat y tu perfil.')}
- }catch(e){status('#c-auth-state',errorText(e))}
+  const auth=window.OneUpAuth;
+  if(!auth){status('#c-auth-state','Falta cargar el acceso de 1UP. Recarga la página.');return}
+  const response=await auth.signIn({email:$('#c-login-email').value,password:$('#c-login-password').value});
+  if(response.ok){$('#c-login').textContent=response.name?.slice(0,22)||'Mi cuenta';const so=$('#c-signout');if(so)so.hidden=false;$('#c-auth-dialog').close();stateMessage('Sesión iniciada. Ya puedes participar en La Plaza, el chat y tu perfil.')}
+  else status('#c-auth-state',response.message);
+ }catch(err){status('#c-auth-state',errorText(err))}
  finally{button.disabled=false}
+}
+async function submitSignup(e){
+ e.preventDefault();
+ const button=$('#c-signup-form button[type=submit]');button.disabled=true;status('#c-auth-state','Creando tu cuenta…');
+ try{
+  const auth=window.OneUpAuth;
+  if(!auth){status('#c-auth-state','Falta cargar el acceso de 1UP. Recarga la página.');return}
+  const response=await auth.signUp({username:$('#c-signup-username').value,email:$('#c-signup-email').value,password:$('#c-signup-password').value});
+  if(response.ok){$('#c-login').textContent=response.name?.slice(0,22)||'Mi cuenta';const so=$('#c-signout');if(so)so.hidden=false;$('#c-auth-dialog').close();stateMessage('Cuenta creada. Ya puedes participar en La Plaza, el chat y tu perfil.')}
+  else status('#c-auth-state',response.message);
+ }catch(err){status('#c-auth-state',errorText(err))}
+ finally{button.disabled=false}
+}
+async function resetCommunityPassword(){
+ const email=($('#c-login-email').value||'').trim();
+ const auth=window.OneUpAuth;
+ if(!auth){status('#c-auth-state','Falta cargar el acceso de 1UP. Recarga la página.');return}
+ const response=await auth.resetPassword(email);
+ status('#c-auth-state',response.message);
 }
 async function reportPost(id){
  if(!backend()?.enabled())return;
@@ -256,7 +279,16 @@ async function init(){
  profileIcons();
  document.addEventListener('click',actions);
  $('#c-login').addEventListener('click',account);
- $('#c-google').addEventListener('click',google);
+ $('#c-login-form').addEventListener('submit',submitLogin);
+ $('#c-signup-form').addEventListener('submit',submitSignup);
+ $('#c-toggle-signup').addEventListener('click',()=>{
+  const signup=$('#c-signup-form'),login=$('#c-login-form');
+  const showSignup=signup.hidden;
+  signup.hidden=!showSignup;login.hidden=showSignup;
+  $('#c-toggle-signup').textContent=showSignup?'¿Ya tienes cuenta? Iniciar sesión':'¿Aún no tienes cuenta? Crear una';
+ });
+ $('#c-forgot').addEventListener('click',resetCommunityPassword);
+ $('#c-signout').addEventListener('click',async()=>{await window.OneUpAuth?.signOut();$('#c-login').textContent='Iniciar sesión';$('#c-signout').hidden=true;stateMessage('Sesión cerrada. Puedes seguir leyendo publicaciones públicas.');});
  $('#c-auth-close').addEventListener('click',()=>$('#c-auth-dialog').close());
  $('#c-compose').addEventListener('click',showComposer);
  $('#c-compose-hero').addEventListener('click',showComposer);
@@ -277,7 +309,7 @@ async function init(){
   watch.observe(target,{childList:true});setTimeout(()=>watch.disconnect(),7000);
  }
  if(backend()?.enabled()){
-  try{const me=await backend().firebaseAccount();if(backend().registered(me))$('#c-login').textContent=me.displayName||'Mi cuenta'}catch{}
+  try{const me=await backend().firebaseAccount();if(backend().registered(me)){$('#c-login').textContent=(window.OneUpAuth?.get?.().name)||me.displayName||me.email?.split('@')[0]||'Mi cuenta';const so=$('#c-signout');if(so)so.hidden=false}}catch{}
  }
  subscribeFeed();
 }

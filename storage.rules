@@ -4,7 +4,7 @@ service firebase.storage {
   function registered(uid) {
    return request.auth != null &&
      request.auth.uid == uid &&
-     request.auth.token.firebase.sign_in_provider == 'google.com';
+     request.auth.token.firebase.sign_in_provider == 'password';
   }
   function isImage() {
    return request.resource.contentType.matches('image/(jpeg|png|webp)') &&

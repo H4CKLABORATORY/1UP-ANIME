@@ -138,14 +138,19 @@ async function saveProgress(animeId,{favorite=false,watched=0}={}){
  },{onConflict:'user_id,anime_id'});
  if(error)throw error;
 }
-async function loginWithGoogle(){
+async function signUpWithEmail(email,password){
  const supa=await client();
- return supa.auth.signInWithOAuth({provider:'google',options:{
-  redirectTo:global.location?.origin+global.location?.pathname
- }});
+ const {data,error}=await supa.auth.signUp({email:String(email||'').trim(),password:String(password||'')});
+ if(error)throw error;
+ return data.user;
 }
-global.OneUpSupabaseEpisodeBackend={
+async function signInWithEmail(email,password){
+ const supa=await client();
+ const {data,error}=await supa.auth.signInWithPassword({email:String(email||'').trim(),password:String(password||'')});
+ if(error)throw error;
+ return data.user;
+}global.OneUpSupabaseEpisodeBackend={
  enabled,client,subscribeEpisode,sendEpisodeComment,report,
- loadProgress,saveProgress,loginWithGoogle,maskError,episodeId
+ loadProgress,saveProgress,signUpWithEmail,signInWithEmail,maskError,episodeId
 };
 })(window);

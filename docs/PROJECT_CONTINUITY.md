@@ -350,3 +350,12 @@ Al concluir cada trabajo agregar:
 
 
 **Cierre verificado 2026-10-20 (Motion Studio V2):** PR #66 fusionado en main, squash SHA `665ec5a312b3d3dd4c30648b14e155b8688c55a3`. Los 14 checks del PR dieron SUCCESS, incluyendo DEXTER Motion Studio, Browser Acceptance, Puppeteer, HLS, Depth, editorial y sitewide. Workflow `DEXTER Motion Studio · MP4 / QA` de main: https://github.com/H4CKLABORATORY/1UP-ANIME/actions/runs/39418935821, success. Artifacts 12263426712 (MP4 16:9 + 9:16; ~2.86 MB) y 12263621223 (capturas; ~0.95 MB). FFprobe en log verifica 1920×1080 y 1080×1920, ambos 30 fps 3.2 s, H.264 + AAC original. GitHub Pages: deploy success run 39418935619. Artefactos expiran 2026-11-03. Pendientes: Safari iPhone físico y revisión visual del propietario; intro pública original conservada.
+
+### 2026-11-07 — Cuentas nativas 1UP (sin Google)
+- Rama feature/native-auth. PR por abrir contra main (no fusionar sin revisión).
+- Cuentas propias: registro con nombre de usuario + correo + contraseña, inicio con correo + contraseña, restablecimiento por correo, cierre de sesión y persistencia local (Firebase Authentication, proveedor correo/contraseña únicamente). Sin inicio de sesión con Google: se eliminó todo el código y botones de Google (auth-google.js, firebase-config.js, GOOGLE_LOGIN_SETUP.md, loginWithGoogle en cliente/servidor/Supabase, proveedor google.com en functions y storage.rules).
+- Nombres de usuario únicos (3–20 caracteres, a-z/0-9/_) reservados en Firestore con transacción + reglas (usernames/{nombre}, users/{uid}); las contraseñas nunca se almacenan en 1UP.
+- Invitados pueden explorar; comentar (episodios y comunidad) y guardar favoritos requieren cuenta 1UP (el servidor exige sign_in_provider == 'password').
+- Pruebas en dexter: Node 51/51 (+2 de emulador omitidas sin emulador), Python 16/16, Playwright 12/12, Puppeteer 12/12, emulador Firebase 2/2 (registro, correo duplicado, inicio, contraseña incorrecta, restablecimiento, unicidad de nombre por reglas).
+- En vivo: IMPLEMENTADO PERO NO VERIFICADO. Douglas debe crear el proyecto Firebase, habilitar solo Email/Password, crear Firestore, desplegar las reglas y pegar la configuración en auth-config.js. Pasos exactos en docs/AUTH_SETUP.md.
+- Pendiente: revisión del PR, prueba en vivo con cuenta real tras configurar Firebase, Safari físico en iPhone.

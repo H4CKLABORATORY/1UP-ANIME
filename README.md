@@ -30,20 +30,21 @@ No hay registro de usuarios ni anuncios ni analíticas propias. Se usan datos p�
 
 - Continuar como invitado: sin correo, cuenta ni perfil. Los favoritos quedan guardados en este navegador.
 - Perfiles locales: opcionales, hasta seis, sin sincronización entre dispositivos.
-- Google: integración técnica preparada pero inactiva hasta configurar Firebase Authentication.
+- Cuentas 1UP: registro nativo con nombre de usuario, correo y contraseña (Firebase Authentication, proveedor correo/contraseña). Sin inicio de sesión con terceros. Inactiva hasta configurar Firebase; ver docs/AUTH_SETUP.md.
 - Catálogo: AniList como fuente principal, Jikan como respaldo, ejemplos locales si ambas fuentes fallan. Los ejemplos NO representan estrenos actuales.
 - Categorías: géneros, películas, OVA, ONA, especiales, programación y seguimiento de episodios.
 - No se aloja contenido de streaming no autorizado; se enlazan plataformas externas sólo si figuran en las fuentes públicas.
 
-### Configuración de Google
+### Configuración de cuentas 1UP
 
 1. Crear proyecto en https://console.firebase.google.com/ y registrar la aplicación web.
-2. Habilitar proveedor Google en Authentication > Sign-in method.
-3. Agregar h4cklaboratory.github.io en Authentication > Settings > Authorized domains.
-4. Colocar el objeto público de configuración web Firebase en firebase-config.js, reemplazando null.
-5. Probar inicio de sesión en Safari y modo PWA; los flujos popup/redirect pueden requerir ajustes según el dominio.
+2. Habilitar **únicamente** el proveedor correo/contraseña en Authentication > Sign-in method. No habilitar Google.
+3. Crear una base de datos Firestore y desplegar `firestore.rules` (nombres de usuario únicos).
+4. Agregar h4cklaboratory.github.io en Authentication > Settings > Authorized domains.
+5. Colocar el objeto público de configuración web Firebase en `auth-config.js`, reemplazando null.
+6. Probar registro, inicio de sesión, restablecimiento de contraseña y persistencia en Safari y modo PWA.
 
-**Nota:** Autenticación Google NO sincroniza favoritos; para sincronización se necesitaría base de datos con reglas de seguridad. Nunca publicar credenciales privadas en GitHub.
+Pasos exactos en `docs/AUTH_SETUP.md`. Las contraseñas las guarda Firebase Authentication (hash); 1UP nunca las almacena. Nunca publicar credenciales privadas en GitHub.
 
 
 ## Reproducción opcional de episodios autorizados
