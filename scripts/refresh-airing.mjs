@@ -1,30 +1,55 @@
 /* 1UP Anime schedule: historic airing data, upcoming slots & anime season previews.
  * An aired episode is not necessarily available on any particular streaming service.
+ * Phase 3: reads X-RateLimit-Remaining / X-RateLimit-Reset and slows down
+ * BEFORE the limit (same discipline as refresh-catalog.mjs); HTTP 403 /
+ * 5xx from AniList are retriable outages (backoff, then the previous file
+ * is reused); shared concurrency lock so manual and workflow runs of the
+ * refresh scripts can never overlap and double the AniList rate.
+ * Test/scratch overrides: ONEUP_ANILIST_ENDPOINT, ONEUP_AIRING_PATH,
+ * ONEUP_TRANSLATIONS_PATH, ONEUP_REFRESH_GAP_MS, ONEUP_LOCK_PATH,
+ * ONEUP_LOCK_STALE_MS — the real data/airing.json is only the default.
  */
 import fs from 'node:fs/promises';
-const API='https://graphql.anilist.co';
+import path from 'node:path';
+import {acquireLockOrExit, createRateState, isOutageStatus, noteRateHeaders, rateWaitMs, retryDelayMs} from './refresh-common.mjs';
+const API=process.env.ONEUP_ANILIST_ENDPOINT||'https://graphql.anilist.co';
+const airingPath=process.env.ONEUP_AIRING_PATH||'data/airing.json';
+const translationsPath=process.env.ONEUP_TRANSLATIONS_PATH||'data/translations-es.json';
+const minGapMs=Number(process.env.ONEUP_REFRESH_GAP_MS)||2300;
+const lockPath=process.env.ONEUP_LOCK_PATH||path.join(path.dirname(path.resolve(airingPath)),'.anilist-refresh.lock');
+const lockStaleMs=Number(process.env.ONEUP_LOCK_STALE_MS)||undefined;
+const releaseLock=acquireLockOrExit(lockPath,{staleMs:lockStaleMs,label:'refresh-airing'});
 const pause=ms=>new Promise(resolve=>setTimeout(resolve,ms));
+const rate=createRateState();
 let last=0;
 async function call(query,variables){
  // AniList currently documents a temporary 30 requests/minute cap.
- const gap=Math.max(0,2300-(Date.now()-last));if(gap)await pause(gap);
+ const gap=Math.max(0,minGapMs-(Date.now()-last));if(gap)await pause(gap);
+ let lastError=null;
  for(let trial=0;trial<3;trial++){
+  // Slow down BEFORE the limit: with 2 or fewer requests left in the
+  // window, wait for the reset instead of firing into a 429.
+  const wait=rateWaitMs(rate);if(wait>0)await pause(wait);
   last=Date.now();const ctrl=new AbortController(),timer=setTimeout(()=>ctrl.abort(),14500);
   try{
    const res=await fetch(API,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({query,variables}),signal:ctrl.signal});
+   noteRateHeaders(rate,res.headers);
    if(res.status===429){
-    const retrySeconds=Number(res.headers.get('Retry-After'));
-    const retryMs=Number.isFinite(retrySeconds)&&retrySeconds>0
-      ? Math.min(65000,Math.ceil(retrySeconds*1000))
-      : 10000*(trial+1);
-    await pause(retryMs);continue;
+    lastError=Error('AniList rate-limited after 3 retries');
+    if(trial<2)await pause(retryDelayMs(res.headers,trial+1));
+    continue;
+   }
+   if(isOutageStatus(res.status)){
+    lastError=Error('AniList HTTP '+res.status);
+    if(trial<2){await pause(retryDelayMs(res.headers,trial+1));continue}
+    throw lastError;
    }
    if(!res.ok)throw Error('AniList HTTP '+res.status);
    const json=await res.json();if(json.errors?.length)throw Error(JSON.stringify(json.errors));
    return json.data;
   }finally{clearTimeout(timer)}
  }
- throw Error('AniList rate-limited after 3 retries');
+ throw lastError||Error('AniList rate-limited after 3 retries');
 }
 const film='id idMal type isAdult format title{romaji english native} coverImage{extraLarge large} bannerImage description(asHtml:false) episodes averageScore status startDate{year month day} season seasonYear trailer{id site thumbnail} siteUrl genres nextAiringEpisode{airingAt episode} externalLinks{site url type}';
 const schedQuery='query($page:Int,$start:Int,$end:Int){Page(page:$page,perPage:50){pageInfo{hasNextPage} airingSchedules(airingAt_greater:$start,airingAt_lesser:$end,sort:TIME){id airingAt episode media{'+film+'}}}}';
@@ -73,13 +98,13 @@ const now=new Date(),sec=Math.floor(now.getTime()/1000),start=sec-60*60*55,end=s
 const errors=[];let aired=[],seasonalData=null;
 try{aired=await schedules(start,end)}catch(e){errors.push('schedule: '+e.message)}
 try{seasonalData=await seasonal(now)}catch(e){errors.push('season: '+e.message)}
-let existing=null;try{existing=JSON.parse(await fs.readFile('data/airing.json','utf8'))}catch{}
+let existing=null;try{existing=JSON.parse(await fs.readFile(airingPath,'utf8'))}catch{}
 if(!aired.length&&existing?.airing?.length){console.warn('Reusing previous airing schedule');aired=existing.airing}
 if(!seasonalData?.entries?.length&&existing?.seasonal?.entries?.length){console.warn('Reusing previous seasonal listings');seasonalData=existing.seasonal}
 if(!aired.length&&!seasonalData?.entries?.length)throw Error('No fresh or previous schedule. '+errors.join('; '));
 // Preserve existing Spanish translations when the 6-hour schedule refresh runs.
 try{
- const translated=JSON.parse(await fs.readFile('data/translations-es.json','utf8')).translations||{};
+ const translated=JSON.parse(await fs.readFile(translationsPath,'utf8')).translations||{};
  for(const a of aired){
   const row=translated[a.id];
   if(typeof row?.es==='string'&&row.es.length>=12)a.description_es=row.es;
@@ -90,6 +115,7 @@ try{
  }
 }catch(error){console.warn('Spanish schedule translations not available yet:',error.message)}
 const output={updated:new Date().toISOString(),source:'AniList public GraphQL metadata',windowStart:start,windowEnd:end,airing:aired,seasonal:seasonalData||{season:'',year:now.getUTCFullYear(),entries:[]},warnings:errors};
-await fs.mkdir('data',{recursive:true});
-const tmp='data/airing.json.tmp';await fs.writeFile(tmp,JSON.stringify(output,null,2)+'\n');await fs.rename(tmp,'data/airing.json');
+await fs.mkdir(path.dirname(path.resolve(airingPath)),{recursive:true});
+const tmp=airingPath+'.tmp';await fs.writeFile(tmp,JSON.stringify(output,null,2)+'\n');await fs.rename(tmp,airingPath);
 console.log('Saved '+aired.length+' airing dates, '+output.seasonal.entries.length+' seasonal titles. '+errors.join('; '));
+releaseLock();
