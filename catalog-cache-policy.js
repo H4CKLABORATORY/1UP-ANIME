@@ -19,7 +19,7 @@
 (function () {
   'use strict';
   var POLICY = {
-    version: 'v44-phase3-catalog-20261107',
+    version: 'v45-phase6-episode-admin-20261107',
     /* Catalog lists kept in localStorage by studio.js. */
     catalogListTtlMs: 8 * 60 * 60 * 1000,
     /* A stale catalog list may still be rendered (SWR) up to this age

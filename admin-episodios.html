@@ -1,0 +1,51 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1,viewport-fit=cover"><meta name="robots" content="noindex,nofollow"><meta name="theme-color" content="#090d1a"><title>Episodios con licencia · Admin · 1UP Anime</title><link rel="icon" href="./assets/oneup-crest.svg" type="image/svg+xml"><link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;900&family=Outfit:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="./community.css"><link rel="stylesheet" href="./moderacion.css"><link rel="stylesheet" href="./admin-episodios.css"><script defer src="./supabase-config.js"></script><script defer src="./social-backend.js"></script><script defer src="./licensed-media-backend.js"></script><script defer src="./admin-episodios.js"></script><link rel="stylesheet" href="./ui-quality.css">
+</head><body>
+<header class="c-header"><div class="c-container header-row"><a class="c-brand" href="./"><img src="./assets/oneup-crest-mark.svg" alt=""><span>1UP <b>EPISODIOS</b></span></a><nav><a href="./moderacion.html">Moderación</a><a href="./comunidad.html">La Plaza</a><a href="./">Catálogo</a></nav></div></header>
+<main class="c-container moderator"><div class="c-feed-title"><div><span class="micro">ESPACIO RESTRINGIDO / MEDIOS CON LICENCIA</span><h1>EPISODIOS <em>CON LICENCIA.</em></h1><p>Gestiona las fuentes reproducibles por anime. Una entrada solo puede estar activa con derechos propios o autorizados y su nota de derechos documentada (Regla 12); la base de datos lo exige, no solo este formulario.</p></div></div>
+<p id="admin-status" class="c-info" role="status">Comprobando acceso…</p>
+<form id="admin-login-form" class="c-view lm-login" hidden>
+<label for="admin-email">Correo de tu cuenta 1UP</label>
+<input id="admin-email" type="email" autocomplete="username" required>
+<label for="admin-password">Contraseña</label>
+<input id="admin-password" type="password" autocomplete="current-password" required>
+<div class="c-actions"><button class="c-primary" type="submit">Acceder con mi cuenta 1UP</button></div>
+</form>
+<div id="admin-dashboard" hidden>
+<section class="mod-section"><div class="mod-title"><h2 id="lm-form-title">NUEVA ENTRADA</h2><span>Al activar una entrada aparece sola en la ficha del anime, sin publicar de nuevo</span></div>
+<form id="lm-form" class="c-view lm-form">
+<input type="hidden" id="lm-editing-id" value="">
+<label for="lm-anime-id">ID del anime (p. ej. mal-27947)</label>
+<input id="lm-anime-id" type="text" placeholder="mal-27947" required>
+<div class="lm-grid">
+<div><label for="lm-season">Temporada</label><input id="lm-season" type="number" min="1" max="99" value="1" required></div>
+<div><label for="lm-episode-number">Episodio</label><input id="lm-episode-number" type="number" min="1" max="9999" value="1" required></div>
+</div>
+<label for="lm-episode-title">Título del episodio</label>
+<input id="lm-episode-title" type="text" maxlength="160" placeholder="Título del episodio">
+<label for="lm-provider">Proveedor / nombre de la fuente</label>
+<input id="lm-provider" type="text" maxlength="80" placeholder="Ej. TMS · YouTube oficial" required>
+<label for="lm-mode">Modo de reproducción</label>
+<select id="lm-mode"><option value="official_embed">Inserción oficial (YouTube)</option><option value="file">Archivo directo (MP4 / WebM / HLS)</option></select>
+<div id="lm-video-wrap"><label for="lm-video-id">ID de video de YouTube (11 caracteres)</label>
+<input id="lm-video-id" type="text" maxlength="11" placeholder="K8LrLO_omys"></div>
+<div id="lm-source-wrap" hidden><label for="lm-source-url">URL del archivo (https, .mp4 / .webm / .m3u8)</label>
+<input id="lm-source-url" type="url" placeholder="https://ejemplo.com/episodio.webm"></div>
+<div class="lm-grid">
+<div><label for="lm-language">Idioma</label><input id="lm-language" type="text" maxlength="35" value="es-419"></div>
+<div><label for="lm-quality">Calidad</label><input id="lm-quality" type="text" maxlength="35" placeholder="1080p"></div>
+</div>
+<label for="lm-subtitles-url">URL de subtítulos (.vtt, opcional)</label>
+<input id="lm-subtitles-url" type="text" placeholder="https://ejemplo.com/episodio.vtt">
+<label for="lm-rights-status">Estado de derechos</label>
+<select id="lm-rights-status"><option value="pending">Pendiente</option><option value="owned">Propio</option><option value="authorized">Autorizado</option><option value="rejected">Rechazado</option></select>
+<label for="lm-rights-note">Nota de derechos (obligatoria para activar)</label>
+<textarea id="lm-rights-note" rows="3" placeholder="Documenta el permiso: titular, acuerdo y alcance de la inserción o distribución"></textarea>
+<label class="lm-check"><input id="lm-active" type="checkbox"> Entrada activa (visible en la ficha del anime)</label>
+<p id="lm-form-status" class="lm-status" role="status"></p>
+<div class="c-actions"><button class="c-primary" type="submit" id="lm-submit">Guardar entrada</button><button class="c-outline" type="button" id="lm-cancel" hidden>Cancelar edición</button></div>
+</form>
+</section>
+<section class="mod-section"><div class="mod-title"><h2>ENTRADAS GESTIONADAS (BASE DE DATOS)</h2><span>Se combinan con el manifiesto estático en cada ficha</span></div><div id="lm-list" class="mod-list"></div></section>
+<section class="mod-section"><div class="mod-title"><h2>MANIFIESTO ESTÁTICO</h2><span>Solo lectura: vive en data/licensed-media.json y no se edita desde aquí</span></div><div id="lm-static-list" class="mod-list"></div></section>
+<button class="c-outline" type="button" id="admin-refresh">Actualizar listas</button></div>
+</main></body></html>
