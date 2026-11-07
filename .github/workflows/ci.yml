@@ -33,7 +33,11 @@ concurrency:
 jobs:
   test:
     name: Lint + unit + browser tests
-    runs-on: ubuntu-latest
+    # Pinned to ubuntu-24.04 (not ubuntu-latest), on purpose: the repo
+    # pins Playwright 1.56.1, which does not support chromium on the
+    # Ubuntu 26.04 image that ubuntu-latest now resolves to (proven by
+    # CI run 42424197404, 2026-11-07). 24.04 is supported by 1.56.1.
+    runs-on: ubuntu-24.04
     timeout-minutes: 30
     steps:
       - name: Checkout
