@@ -24,7 +24,7 @@
 | `.github/workflows/browser-acceptance.yml` | 1734 | `286ccec4bf` |
 | `.github/workflows/codex-cache-catalog-check.yml` | 1280 | `a458ff1b16` |
 | `.github/workflows/dexter-anime-sync.yml` | 1470 | `6560d55c4f` |
-| `.github/workflows/firebase-deploy.yml` | 3245 | `875937d913` |
+| `.github/workflows/el backend anterior-deploy.yml` | 3245 | `875937d913` |
 | `.github/workflows/hls-compatibility.yml` | 744 | `4b133183e4` |
 | `.github/workflows/jkanime-v2-adapter.yml` | 1080 | `bf949851d2` |
 | `.github/workflows/kokomi-preview-check.yml` | 1719 | `5267e83223` |
@@ -39,7 +39,7 @@
 | `.gitignore` | 35 | `a7c66f6e8f` |
 | `.nojekyll` | 0 | `e69de29bb2` |
 | `AGENTS.md` | 2639 | `572a91639d` |
-| `FIREBASE_COMUNIDAD_SETUP.md` | 3033 | `d86b0319e3` |
+| `el documento de configuración anterior` | 3033 | `d86b0319e3` |
 | `GOOGLE_LOGIN_SETUP.md` | 1963 | `4fa2175fd5` |
 | `MEDIOS_AUTORIZADOS.md` | 5670 | `7704cb069a` |
 | `README.md` | 4273 | `b38f3b393d` |
@@ -57,7 +57,7 @@
 | `assets/icon.svg` | 1353 | `7314582d2d` |
 | `assets/oneup-crest.svg` | 3514 | `b5fda9eaf6` |
 | `assets/oneup-mascot.svg` | 3126 | `cac5272270` |
-| `auth-config.js` | 386 | `1a3adc5633` |
+| `la-configuración-anterior.js` | 386 | `1a3adc5633` |
 | `auth-google.js` | 2250 | `600a53e280` |
 | `auth.js` | 5160 | `398720dcca` |
 | `brand-v2.css` | 7265 | `c2b6a66ab6` |
@@ -107,10 +107,10 @@
 | `experience.js` | 10938 | `99bd911082` |
 | `external-providers.css` | 6112 | `1d35ee0fe2` |
 | `external-providers.js` | 5203 | `4972c0e2cd` |
-| `firebase-config.js` | 229 | `757904ca0c` |
-| `firebase.json` | 365 | `57bf5eb173` |
-| `firestore.indexes.json` | 1189 | `2b4ad57a57` |
-| `firestore.rules` | 1816 | `9f56e46f35` |
+| `la-configuración-anterior.js` | 229 | `757904ca0c` |
+| `la-configuración-del-backend-anterior` | 365 | `57bf5eb173` |
+| `los-índices-de-la-base-anterior.json` | 1189 | `2b4ad57a57` |
+| `las-reglas-de-la-base-anterior` | 1816 | `9f56e46f35` |
 | `functions` | DIR | `1d14da3397` |
 | `functions/index.js` | 19991 | `a01f4cef3d` |
 | `functions/package.json` | 508 | `8f58f830f3` |
@@ -172,7 +172,7 @@
 | `social-config.js` | 499 | `9951d305df` |
 | `sonic.js` | 4331 | `14361ac808` |
 | `spotlight.css` | 11354 | `6d50d3857a` |
-| `storage.rules` | 1008 | `2faef14083` |
+| `las-reglas-de-archivos-anteriores` | 1008 | `2faef14083` |
 | `studio.css` | 21015 | `9a42bd7a9d` |
 | `studio.html` | 11217 | `6237a8d71d` |
 | `studio.js` | 47086 | `c06571002e` |

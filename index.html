@@ -21,7 +21,6 @@
 <link rel="stylesheet" href="./external-providers.css">
 <link rel="stylesheet" href="./themes/kokomi-studio/theme.css">
 <link rel="stylesheet" href="./themes/october-2026/theme.css">
-<script defer src="./auth-config.js"></script><script defer src="./social-config.js"></script>
 <script defer src="./social-backend.js"></script>
 <script defer src="./supabase-config.js"></script><script defer src="./supabase-episode-backend.js"></script>
 <script defer src="./episode-comments.js"></script>
@@ -198,6 +197,15 @@
    <button class="auth-primary" type="submit">Enviar correo de restablecimiento</button>
    <button id="auth-back-login" class="auth-link" type="button">Volver a iniciar sesión</button>
   </form>
+  <form id="auth-new-password-form" class="auth-form" hidden>
+   <label for="auth-new-password">Nueva contraseña</label>
+   <input id="auth-new-password" name="password" type="password" autocomplete="new-password" required minlength="8" placeholder="Mínimo 8 caracteres, con letra y número">
+   <label for="auth-new-password2">Repite la contraseña</label>
+   <input id="auth-new-password2" name="password2" type="password" autocomplete="new-password" required minlength="8" placeholder="Repite tu contraseña">
+   <button class="auth-primary" type="submit">Guardar nueva contraseña</button>
+   <button id="auth-back-login2" class="auth-link" type="button">Volver a iniciar sesión</button>
+  </form>
+
    <button id="guest-login" class="guest-login" type="button">Continuar como invitado</button>
    <button id="auth-signout" class="guest-login" type="button" hidden>Cerrar sesión</button>
   </div>

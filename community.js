@@ -1,5 +1,5 @@
 /* One Up Community: public reading, registered social features, realtime chat.
-   No simulated posts, counts or users. Inactive until the owner connects Firebase. */
+   No simulated posts, counts or users. Inactive until the owner connects Supabase. */
 (()=>{
 'use strict';
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
@@ -15,11 +15,11 @@ const labels={debate:'Debate',pregunta:'Pregunta',manga:'Manga',fanart:'Fanart',
 function stateMessage(message){status('#c-info',message)}
 function errorText(e){return backend()?.maskError(e)||e?.message||'No se pudo completar la acción.'}
 async function registered(){
- try{return backend()?.registered(await backend().firebaseAccount())||false}catch{return false}
+ try{return backend()?.registered(await backend().supabaseAccount())||false}catch{return false}
 }
 async function requireAccount(){
  if(!backend()?.enabled()){
-  stateMessage('La comunidad necesita activar Firebase, App Check y sus funciones. Aún no hay un servidor conectado.');
+  stateMessage('La comunidad necesita activar Supabase y sus políticas. Aún no hay un servidor conectado.');
   return false;
  }
  if(await registered())return true;
@@ -101,13 +101,13 @@ function renderFeed(){
  if(backend()?.enabled())renderMedia();
 }
 function subscribeFeed(){
- if(!backend()?.enabled()){stateMessage(backend()?.explain||'Configura Firebase para mostrar publicaciones reales.');$('#feed-list').innerHTML='<div class="c-empty">La red social todavía no tiene un servidor público conectado. No se mostrarán publicaciones simuladas.</div>';return}
+ if(!backend()?.enabled()){stateMessage(backend()?.explain||'Configura Supabase para mostrar publicaciones reales.');$('#feed-list').innerHTML='<div class="c-empty">La red social todavía no tiene un servidor público conectado. No se mostrarán publicaciones simuladas.</div>';return}
  backend().subscribeFeed(posts=>{allPosts=posts;renderFeed()},e=>{
   stateMessage(e);$('#feed-list').innerHTML='<div class="c-empty">'+esc(e)+'</div>'
  }).then(cleanup=>feedStop=cleanup).catch(e=>stateMessage(errorText(e)));
 }
 function showComposer(){
- if(!backend()?.enabled()){stateMessage('Para publicar hace falta configurar Firebase y activar el servidor de 1UP Comunidad.');return}
+ if(!backend()?.enabled()){stateMessage('Para publicar hace falta configurar Supabase y activar el servidor de 1UP Comunidad.');return}
  requireAccount().then(ok=>{if(ok){setTab('recientes');$('#composer').hidden=false;$('#post-text').focus()}});
 }
 async function publish(e){
@@ -118,7 +118,7 @@ async function publish(e){
  try{
   let mediaPath='';
   if(file){
-   const uid=(await backend().firebaseAccount()).uid;
+   const uid=(await backend().supabaseAccount()).uid;
    const draft=crypto.randomUUID?.()||('u'+Date.now().toString(36)+'abcdef');
    const ext={'image/jpeg':'jpg','image/png':'png','image/webp':'webp','video/mp4':'mp4'}[file.type];
    if(!ext)throw Error('Formato de archivo no admitido.');
@@ -193,7 +193,7 @@ async function showFriends(){
  }catch(e){box.textContent=errorText(e)}
 }
 async function loadMyProfile(){
- if(!backend()?.enabled()){status('#profile-state','Configura Firebase para guardar un perfil público.');return}
+ if(!backend()?.enabled()){status('#profile-state','Configura Supabase para guardar un perfil público.');return}
  if(!await registered()){status('#profile-state','Inicia sesión con tu cuenta 1UP para editar tu perfil.');return}
  try{const data=await backend().myProfile();if(data){$('#profile-alias').value=data.displayName||'';selectedAvatar=data.icon||'⚔️';profileIcons()}}
  catch(e){status('#profile-state',errorText(e))}
@@ -218,10 +218,10 @@ async function verify(e){
  catch(e){status('#verification-state',errorText(e))}
 }
 async function account(){
- if(!backend()?.enabled()){status('#c-auth-state','Debes configurar Firebase y App Check para activar el inicio de sesión.');$('#c-auth-dialog').showModal();return}
+ if(!backend()?.enabled()){status('#c-auth-state','Debes configurar Supabase para activar el inicio de sesión.');$('#c-auth-dialog').showModal();return}
  try{
-  const me=await backend().firebaseAccount();
-  if(backend().registered(me)){const ok=confirm('Sesión iniciada. ¿Quieres cerrar sesión?');if(ok){if(window.OneUpAuth?.signOut)await window.OneUpAuth.signOut();else{const x=await backend().sdk();await x.auth.signOut(x.authentication)}$('#c-login').textContent='Iniciar sesión';const so=$('#c-signout');if(so)so.hidden=true;stateMessage('Sesión cerrada. Puedes seguir leyendo publicaciones públicas.')}return}
+  const me=await backend().supabaseAccount();
+  if(backend().registered(me)){const ok=confirm('Sesión iniciada. ¿Quieres cerrar sesión?');if(ok){if(window.OneUpAuth?.signOut)await window.OneUpAuth.signOut();else{const x=await backend().sdk();await x.supabase.auth.signOut()}$('#c-login').textContent='Iniciar sesión';const so=$('#c-signout');if(so)so.hidden=true;stateMessage('Sesión cerrada. Puedes seguir leyendo publicaciones públicas.')}return}
  }catch{}
  $('#c-auth-dialog').showModal();
 }
@@ -309,7 +309,7 @@ async function init(){
   watch.observe(target,{childList:true});setTimeout(()=>watch.disconnect(),7000);
  }
  if(backend()?.enabled()){
-  try{const me=await backend().firebaseAccount();if(backend().registered(me)){$('#c-login').textContent=(window.OneUpAuth?.get?.().name)||me.displayName||me.email?.split('@')[0]||'Mi cuenta';const so=$('#c-signout');if(so)so.hidden=false}}catch{}
+  try{const me=await backend().supabaseAccount();if(backend().registered(me)){$('#c-login').textContent=(window.OneUpAuth?.get?.().name)||me.email?.split('@')[0]||'Mi cuenta';const so=$('#c-signout');if(so)so.hidden=false}}catch{}
  }
  subscribeFeed();
 }

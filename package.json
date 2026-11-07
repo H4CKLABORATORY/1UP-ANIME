@@ -8,7 +8,8 @@
     "test:motion-studio": "node --test tests/motion-studio.test.mjs tests/motion-studio-camera.test.mjs",
     "render:motion-studio": "node scripts/render-motion-studio.mjs",
     "test:auth": "node --test tests/auth-email.test.mjs",
-    "test:auth:emulator": "node --test tests/auth-emulator.test.mjs"
+    "test:auth:supabase": "node --test tests/auth-supabase.test.mjs",
+    "test:auth:supabase:local": "bash scripts/run-supabase-local.sh"
   },
   "devDependencies": {
     "@playwright/test": "1.56.1",

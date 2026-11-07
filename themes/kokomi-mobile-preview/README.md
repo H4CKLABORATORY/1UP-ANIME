@@ -5,7 +5,7 @@
 ## Abrir
 - Ruta propuesta: `/preview-kokomi-mobile.html`.
 - Para probar con catálogo real hay que servir todos los archivos de esta rama en un hosting HTTPS/servidor de desarrollo; GitHub Pages en `main` no muestra automáticamente archivos de ramas.
-- La página reutiliza `studio.js`, su catálogo AniList/Jikan, Firebase opcional, perfiles, favoritos, comentarios y comunidad; **no** incluye los archivos comerciales de TemplateMonster.
+- La página reutiliza `studio.js`, su catálogo AniList/Jikan, Supabase opcional, perfiles, favoritos, comentarios y comunidad; **no** incluye los archivos comerciales de TemplateMonster.
 
 ## Diseño que reproduce con componentes originales
 Basado en el video aportado por el propietario el 15/10/2026: fondo negro grafito, hero condensado, botones compactos, menú lateral, categorías con cuatro tarjetas, ranking rojo y tarjetas 2-columnas en teléfono, sección de películas, recientes y calendario. El diseño conserva el nombre y logotipo 1UP ANIME.

@@ -1,7 +1,10 @@
--- 1UP ANIME: optional Supabase community backend, not active until reviewed and deployed.
--- Execute on a NEW Supabase project after the owner approves it.
--- RLS is mandatory: public schema is exposed through the Supabase Data API.
--- Do not remove or replace existing Firebase data using this script.
+-- 1UP ANIME: Supabase community backend (episode comments, reports, progress).
+-- This is THE backend now: the old backend was removed in Nov 2026
+-- (see docs/SUPABASE_SETUP.md). Execute on the Supabase project after the
+-- owner creates it. RLS is mandatory: public schema is exposed through the
+-- Supabase Data API. Run after supabase/sql/oneup_auth.sql.
+-- Episode comments require a 1UP account (email + password). Anonymous Auth
+-- is NOT used: the guards below reject anonymous JWTs.
 
 create extension if not exists pgcrypto;
 
@@ -52,6 +55,14 @@ begin
   if auth.uid() is null or new.author_id <> auth.uid() then
     raise exception 'Invalid commenter' using errcode = '42501';
   end if;
+  if coalesce((auth.jwt() ->> 'is_anonymous')::boolean, false) then
+    raise exception 'A 1UP account is required to comment' using errcode = '42501';
+  end if;
+  -- Display name always comes from the account profile, never the client.
+  select username into new.display_name from public.profiles where id = auth.uid();
+  if new.display_name is null then
+    raise exception 'A 1UP account is required to comment' using errcode = '42501';
+  end if;
   perform pg_catalog.pg_advisory_xact_lock(pg_catalog.hashtext(new.author_id::text));
   if exists (
     select 1 from public.oneup_episode_comments
@@ -78,6 +89,9 @@ as $$
 begin
   if auth.uid() is null or new.reporter_id <> auth.uid() then
     raise exception 'Invalid reporter' using errcode = '42501';
+  end if;
+  if coalesce((auth.jwt() ->> 'is_anonymous')::boolean, false) then
+    raise exception 'A 1UP account is required to report' using errcode = '42501';
   end if;
   new.created_at := pg_catalog.now();
   return new;
@@ -173,3 +187,8 @@ end $$;
 
 -- Moderation is done by a privileged dashboard/admin server, not by user JWT metadata.
 -- Never place service_role or secret keys in the GitHub Pages frontend.
+
+-- Audit columns for moderation Edge Functions (moderate-episode-comment).
+alter table public.oneup_episode_comments
+  add column if not exists reviewed_by uuid references auth.users(id) on delete set null,
+  add column if not exists reviewed_at timestamptz;

@@ -19,7 +19,7 @@
 | P0 | Comprobar integridad del deploy (logo MP4/AAC, JS/CSS sin 404) | pendiente |
 | P0 | Conciliar PRs #14, #18, #19, #20, #22, #23 | pendiente |
 | P0 | Reproductor: pruebas hasta 7 posiciones, MP4/WebM/HLS, subtítulos | pendiente |
-| P1 | Comunidad Firebase (auth + Firestore) | pendiente |
+| P1 | Comunidad Supabase (auth + Postgres + RLS) | pendiente |
 | P1 | UX/Catálogo: 22 rutas Kokomi, metadatos, filtros | pendiente |
 | P1 | QA/CI: workflows, links, accesibilidad, performance | pendiente |
 | — | Tema Esmeralda PR #41: verificar CI + selector en URL pública | pendiente |

@@ -1,6 +1,6 @@
 /* Public episode discussion — browse without login; post with a 1UP account.
-   Firestore listener reads public data. Writes require a 1UP account (email + password)
-   and go through server moderation. No fake comments, no local-only comment
+   Supabase Realtime reads public data. Writes require a 1UP account (email + password)
+   and go through RLS + guard triggers. No fake comments, no local-only comment
    masquerading as public. */
 (()=>{
 'use strict';
@@ -65,7 +65,7 @@ function draw(anime){
  '</select>'+(max>120?'<input id="oneup-episode-number" type="number" min="1" max="'+max+'" value="1" aria-label="Número de episodio" placeholder="Episodio">':'')+'</div>'+
  '<div id="oneup-episode-comments" class="oneup-episode-comments"><p class="oneup-no-comments">Cargando comentarios…</p></div>'+
  '<form id="oneup-guest-comment-form" class="oneup-comment-form"><label for="oneup-guest-name">Tu nombre de usuario</label>'+
- '<input id="oneup-guest-name" type="text" maxlength="25" minlength="3" autocomplete="nickname" placeholder="'+(accountName?'':'Inicia sesión para comentar')+'" required value="'+escape(accountName)+'"'+(accountName?' readonly':'')+'>'+
+ '<input id="oneup-guest-name" type="text" maxlength="25" minlength="3" autocomplete="nickname" placeholder="'+(accountName?'':'Inicia sesión para comentar')+'" value="'+escape(accountName)+'"'+(accountName?' readonly':'')+'>'+
  '<label for="oneup-guest-text">Tu comentario</label><textarea id="oneup-guest-text" rows="3" maxlength="900" minlength="2" placeholder="Comparte tu opinión sin spoilers…" required></textarea>'+
  '<div class="oneup-comment-submit"><small>Los mensajes son públicos. Hay límites contra spam y se puede reportar contenido.</small>'+
  '<button id="oneup-send-comment" class="cta primary" type="submit">Publicar comentario</button></div>'+

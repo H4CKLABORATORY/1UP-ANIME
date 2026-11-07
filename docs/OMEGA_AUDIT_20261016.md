@@ -9,7 +9,7 @@
 
 ## Capacidades y diferencias reales
 - main conserva catálogo AniList/Jikan/snapshot, favoritos/perfiles/progreso locales, PWA, reproductor de episodios con siete posiciones, HLS y comentarios opcionales.
-- `data/licensed-media.json` sigue vacío; ningún servidor ni idioma real puede anunciarse disponible. Firebase y Supabase no configurados. No hay prueba de autenticación, persistencia remota o reproducción real.
+- `data/licensed-media.json` sigue vacío; ningún servidor ni idioma real puede anunciarse disponible. el backend anterior y Supabase no configurados. No hay prueba de autenticación, persistencia remota o reproducción real.
 - PR #14 conserva diseño Kokomi, 22 rutas y conversación visual. Su preview no carga `episode-player.js`/`hls-adapter.js`: duplica reproducción nativa en `themes/kokomi-mobile-preview/pages.js`. Antes de integrar debe adoptar el contrato actual, limitar ocho posiciones a siete y ofrecer idiomas según pistas reales.
 - La demo original `https://kokomi.soulknightweb.com/` respondió HTTP 200 durante la auditoría. Esto actualiza la observación previa de 502; no acredita comparación visual ni fidelidad exacta.
 - Portadas, branding y temas existentes se preservan. No se incorporaron recursos comerciales.
@@ -18,7 +18,7 @@
 - `episode-player.js`: el reproductor anterior se libera antes de esperar otro manifiesto; MP4/WebM también se pausan y liberan al cerrar/cambiar, además de HLS.
 - `studio.js`: navegar invalida solicitudes pendientes, evitando que catálogo tardío sobrescriba Mi lista, inicio o programación.
 - `episode-comments.js`: un solo manejador de reportes y aislamiento de respuestas asíncronas entre fichas.
-- `.github/workflows/firebase-deploy.yml`: ejecución manual desde otra rama ya no puede desplegar ni publicar ajustes sobre main. No se ejecutó ese workflow.
+- `.github/workflows/el backend anterior-deploy.yml`: ejecución manual desde otra rama ya no puede desplegar ni publicar ajustes sobre main. No se ejecutó ese workflow.
 - Regresiones nuevas integradas en UI Quality. Fixtures locales no añaden medios ni usuarios al producto.
 
 ## Pendientes priorizados
@@ -35,5 +35,5 @@ Un escritor por módulo y revisión QA posterior redujeron conflictos. Mantener 
 - `node scripts/test-episode-player.mjs`, `node scripts/test-navigation-race.mjs`, `node scripts/test-episode-comments.mjs`: PASS.
 - `node scripts/check-ui.mjs` (149 assertions), `node scripts/check-resilience.mjs`, `node scripts/check-hls-browser.mjs`, `node scripts/test-media-source-contract.mjs`, `node scripts/check-supabase-option.mjs`: PASS.
 - `node scripts/e2e-browser.mjs`: 36/36 PASS, Chromium 390×844 y 1360×860, cero excepciones JavaScript; capturas e2e en artefactos CI. Sin dependencia de API externa para pasar.
-- YAML Firebase validado y `git diff --check` PASS. CI remoto se informa por separado en el PR.
+- YAML el backend anterior validado y `git diff --check` PASS. CI remoto se informa por separado en el PR.
 - Revisión de seguridad pendiente antes de activar comunidad: Storage permite lecturas públicas de postUploads aunque una publicación esté pendiente de moderación; revisar reglas/flujo y cobertura con emulador. No se activó backend.

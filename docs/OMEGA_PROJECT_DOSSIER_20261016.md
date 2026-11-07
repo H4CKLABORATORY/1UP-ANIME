@@ -18,7 +18,7 @@
 - Árbol actualizado: **194 entradas** (directorios incluidos), registrar ruta/SHA individual en `docs/OMEGA_REPO_INVENTORY_20261016.md`.
 - PRs de línea Kokomi #14 #18 #19 #20 figuran abiertos/draft en consulta previa; no fusionar sin comparación con `main`.
 - Único inventario real de media editorial `data/licensed-media.json`: `{"version":1,"entries":{}}`. NO hay episodios configurados. Selector de fuentes no equivale a siete servidores reales.
-- Configuración backend remota: `firebase-config.js`, `auth-config.js`, `social-config.js` y `supabase-config.js` contienen valores `null`. No afirmar que Google login / comentarios / moderación remotos estén conectados.
+- Configuración backend remota: `la-configuración-anterior.js`, `la-configuración-anterior.js`, `social-config.js` y `supabase-config.js` contienen valores `null`. No afirmar que Google login / comentarios / moderación remotos estén conectados.
 - Archivo `data/guild-license.json` tiene universo **ficticio Nébula** (`fictional_alternate_reality`), no concede licencia de difusión para animes reales.
 
 ## 3. Arquitectura de dependencias
@@ -31,8 +31,8 @@ GitHub Pages / Safari iOS / Android / Desktop
  │   ├─ Reproductor episode-player.js ← data/licensed-media.json
  │   │     └─ hls-adapter.js [HLS nativo Safari, adaptador para otros]
  │   ├─ Comentarios episodio episode-comments.js
- │   │     └─ social-backend.js / Firebase opcional / Supabase opcional
- │   ├─ Autenticación auth.js / auth-google.js / auth-config.js
+ │   │     └─ social-backend.js / el backend anterior opcional / Supabase opcional
+ │   ├─ Autenticación auth.js / auth-google.js / la-configuración-anterior.js
  │   ├─ Proveedores externos external-providers.js → data/external-providers.json
  │   └─ PWA manifest.webmanifest + sw.js
  ├─ comunidad.html + community.js
@@ -40,7 +40,7 @@ GitHub Pages / Safari iOS / Android / Desktop
  ├─ gremio.html / studio.html
  └─ motor.html + motor.js → data/dexter/status.json, data/guard/status.json
 GitHub Actions → catálogo / emisión / DexterAnimeSync / Guard / pruebas / Pages
-Firebase Functions / firestore.rules → backend PREPARADO, no desplegado/verificado
+el backend anterior Functions / las-reglas-de-la-base-anterior → backend PREPARADO, no desplegado/verificado
 Supabase SQL / RLS / supabase-episode-backend.js → alternativa OPT-IN desactivada
 ```
 
@@ -90,22 +90,22 @@ Supabase SQL / RLS / supabase-episode-backend.js → alternativa OPT-IN desactiv
 ## 5. Estructura de páginas: ID, scripts y estilos observables en archivos
 ### `index.html`
 - ID de elementos observados (52): `ico-search`, `ico-menu`, `ico-play`, `ico-arrow`, `ico-plus`, `ico-check`, `ico-star`, `ico-clock`, `ico-heart`, `header-search`, `auth-open`, `auth-label`, `home-screen`, `hero-poster`, `hero-title`, `hero-description`, `hero-badges`, `hero-detail`, `hero-save`, `hero-picks`, `hero-feature-cover`, `hero-feature-title`, `hero-feature-caption`, `search-form`, `search-input`, `genre-pills`, `continue-section`, `continue-rail`, `trending-rail`, `season-rail`, `schedule-preview-list`, `recent-rail`, `movies-rail`, `browse-screen`, `browse-eyebrow`, `browse-title`, `browse-summary`, `browse-controls`, `browse-status`, `browse-grid`, `browse-next`, `anime-dialog`, `anime-dialog-body`, `anime-close`, `auth-dialog`, `auth-close`, `google-login`, `guest-login`, `auth-signout`, `auth-message`, `toast`, `startup`.
-- Scripts explícitos (19): `./auth-config.js`, `./social-config.js`, `./social-backend.js`, `./supabase-config.js`, `./supabase-episode-backend.js`, `./episode-comments.js`, `./auth.js`, `./studio.js`, `./hls-adapter.js`, `./episode-player.js`, `./motion.js`, `./airing-ui.js`, `./external-providers.js`, `./themes/kokomi-studio/theme.js`, `./themes/october-2026/theme.js`, `./themes/kokomi-mobile-preview/theme.js`, `./themes/kokomi-mobile-preview/pages.js`, `./themes/kokomi-mobile-preview/watch-comments.js`, `./themes/kokomi-mobile-preview/brand-signature.js`.
+- Scripts explícitos (19): `./la-configuración-anterior.js`, `./social-config.js`, `./social-backend.js`, `./supabase-config.js`, `./supabase-episode-backend.js`, `./episode-comments.js`, `./auth.js`, `./studio.js`, `./hls-adapter.js`, `./episode-player.js`, `./motion.js`, `./airing-ui.js`, `./external-providers.js`, `./themes/kokomi-studio/theme.js`, `./themes/october-2026/theme.js`, `./themes/kokomi-mobile-preview/theme.js`, `./themes/kokomi-mobile-preview/pages.js`, `./themes/kokomi-mobile-preview/watch-comments.js`, `./themes/kokomi-mobile-preview/brand-signature.js`.
 - Hojas CSS explícitas (14): `./studio.css`, `./motion.css`, `./spotlight.css`, `./player.css`, `./brand-v2.css`, `./episode-comments.css`, `./airing-ui.css`, `./external-providers.css`, `./themes/kokomi-studio/theme.css`, `./themes/october-2026/theme.css`, `./themes/kokomi-mobile-preview/theme.css`, `./themes/kokomi-mobile-preview/pages.css`, `./themes/kokomi-mobile-preview/watch-comments.css`, `./themes/kokomi-mobile-preview/brand-signature.css`.
 
 ### `preview-kokomi-mobile.html`
 - ID de elementos observados (52): `ico-search`, `ico-menu`, `ico-play`, `ico-arrow`, `ico-plus`, `ico-check`, `ico-star`, `ico-clock`, `ico-heart`, `header-search`, `auth-open`, `auth-label`, `home-screen`, `hero-poster`, `hero-title`, `hero-description`, `hero-badges`, `hero-detail`, `hero-save`, `hero-picks`, `hero-feature-cover`, `hero-feature-title`, `hero-feature-caption`, `search-form`, `search-input`, `genre-pills`, `continue-section`, `continue-rail`, `trending-rail`, `season-rail`, `schedule-preview-list`, `recent-rail`, `movies-rail`, `browse-screen`, `browse-eyebrow`, `browse-title`, `browse-summary`, `browse-controls`, `browse-status`, `browse-grid`, `browse-next`, `anime-dialog`, `anime-dialog-body`, `anime-close`, `auth-dialog`, `auth-close`, `google-login`, `guest-login`, `auth-signout`, `auth-message`, `toast`, `startup`.
-- Scripts explícitos (19): `./auth-config.js`, `./social-config.js`, `./social-backend.js`, `./supabase-config.js`, `./supabase-episode-backend.js`, `./episode-comments.js`, `./auth.js`, `./studio.js`, `./hls-adapter.js`, `./episode-player.js`, `./motion.js`, `./airing-ui.js`, `./external-providers.js`, `./themes/kokomi-studio/theme.js`, `./themes/october-2026/theme.js`, `./themes/kokomi-mobile-preview/theme.js`, `./themes/kokomi-mobile-preview/pages.js`, `./themes/kokomi-mobile-preview/watch-comments.js`, `./themes/kokomi-mobile-preview/brand-signature.js`.
+- Scripts explícitos (19): `./la-configuración-anterior.js`, `./social-config.js`, `./social-backend.js`, `./supabase-config.js`, `./supabase-episode-backend.js`, `./episode-comments.js`, `./auth.js`, `./studio.js`, `./hls-adapter.js`, `./episode-player.js`, `./motion.js`, `./airing-ui.js`, `./external-providers.js`, `./themes/kokomi-studio/theme.js`, `./themes/october-2026/theme.js`, `./themes/kokomi-mobile-preview/theme.js`, `./themes/kokomi-mobile-preview/pages.js`, `./themes/kokomi-mobile-preview/watch-comments.js`, `./themes/kokomi-mobile-preview/brand-signature.js`.
 - Hojas CSS explícitas (14): `./studio.css`, `./motion.css`, `./spotlight.css`, `./player.css`, `./brand-v2.css`, `./episode-comments.css`, `./airing-ui.css`, `./external-providers.css`, `./themes/kokomi-studio/theme.css`, `./themes/october-2026/theme.css`, `./themes/kokomi-mobile-preview/theme.css`, `./themes/kokomi-mobile-preview/pages.css`, `./themes/kokomi-mobile-preview/watch-comments.css`, `./themes/kokomi-mobile-preview/brand-signature.css`.
 
 ### `comunidad.html`
 - ID de elementos observados (45): `open-chat`, `c-login`, `c-compose-hero`, `c-info`, `feed-view`, `feed-title`, `feed-desc`, `c-compose`, `composer`, `post-form`, `post-kind`, `post-text`, `post-media`, `cancel-compose`, `post-result`, `feed-list`, `chat-view`, `global-messages`, `global-form`, `global-text`, `chat-state`, `profile-view`, `profile-form`, `profile-alias`, `profile-icons`, `profile-photo`, `profile-state`, `verification-form`, `verification-reason`, `verification-state`, `c-friend-requests`, `c-friend-list`, `c-friend-state`, `c-auth-dialog`, `c-auth-close`, `c-google`, `c-signout`, `c-auth-state`, `c-reply-dialog`, `c-reply-close`, `c-reply-context`, `reply-list`, `reply-form`, `reply-text`, `reply-state`.
-- Scripts explícitos (4): `./auth-config.js`, `./social-config.js`, `./social-backend.js`, `./community.js`.
+- Scripts explícitos (4): `./la-configuración-anterior.js`, `./social-config.js`, `./social-backend.js`, `./community.js`.
 - Hojas CSS explícitas (1): `./community.css`.
 
 ### `studio.html`
 - ID de elementos observados (50): `ico-search`, `ico-menu`, `ico-play`, `ico-arrow`, `ico-plus`, `ico-check`, `ico-star`, `ico-clock`, `ico-heart`, `header-search`, `auth-open`, `auth-label`, `home-screen`, `hero-poster`, `hero-title`, `hero-description`, `hero-badges`, `hero-detail`, `hero-save`, `search-form`, `search-input`, `genre-pills`, `continue-section`, `continue-rail`, `trending-rail`, `season-rail`, `schedule-preview-list`, `recent-rail`, `movies-rail`, `browse-screen`, `browse-eyebrow`, `browse-title`, `browse-summary`, `browse-controls`, `browse-status`, `browse-grid`, `browse-next`, `anime-dialog`, `anime-close`, `anime-dialog-body`, `auth-dialog`, `auth-close`, `google-login`, `guest-login`, `auth-signout`, `auth-message`, `toast`, `startup`, `startup-sound`, `startup-skip`.
-- Scripts explícitos (4): `./sonic.js`, `./auth-config.js`, `./auth.js`, `./studio.js`.
+- Scripts explícitos (4): `./sonic.js`, `./la-configuración-anterior.js`, `./auth.js`, `./studio.js`.
 - Hojas CSS explícitas (1): `./studio.css`.
 
 ### `gremio.html`
@@ -120,7 +120,7 @@ Supabase SQL / RLS / supabase-episode-backend.js → alternativa OPT-IN desactiv
 
 ### `moderacion.html`
 - ID de elementos observados (8): `admin-login`, `admin-status`, `admin-dashboard`, `mod-posts`, `mod-reports`, `mod-verification-section`, `mod-verifications`, `admin-refresh`.
-- Scripts explícitos (4): `./auth-config.js`, `./social-config.js`, `./social-backend.js`, `./moderacion.js`.
+- Scripts explícitos (4): `./la-configuración-anterior.js`, `./social-config.js`, `./social-backend.js`, `./moderacion.js`.
 - Hojas CSS explícitas (2): `./community.css`, `./moderacion.css`.
 
 
@@ -141,13 +141,13 @@ Registro original en `docs/KOKOMI_FIDELITY_MATRIX.md`.
 ## 8. Comunidad y cuentas
 - `comunidad.html` y `community.js`: UI social existente, verificar estado local/backend.
 - `episode-comments.js`: comentarios enlazados al episodio; respaldo opcional.
-- `auth.js` / `auth-google.js`: invitado, perfiles locales, Google preparado; el login no está activo hasta configurar Firebase.
-- `firebase.json`, `firestore.rules`, `storage.rules`, `firestore.indexes.json`, `functions/index.js`: código backend que requiere despliegue/credenciales y revisar si Cloud Functions obliga plan con facturación.
+- `auth.js` / `auth-google.js`: invitado, perfiles locales, Google preparado; el login no está activo hasta configurar el backend anterior.
+- `la-configuración-del-backend-anterior`, `las-reglas-de-la-base-anterior`, `las-reglas-de-archivos-anteriores`, `los-índices-de-la-base-anterior.json`, `functions/index.js`: código backend que requiere despliegue/credenciales y revisar si Cloud Functions obliga plan con facturación.
 - `supabase/sql/oneup_community_optional.sql`: esquema Postgres/RLS opt-in, `supabase-episode-backend.js` y `supabase-config.js` null. No duplicar base.
 - `moderacion.html/js`: UI para roles reportes; verificación de administración real depende del servidor. Usuarios visitantes no deben ganar permisos por editar JS del navegador.
 
 ## 9. Automatización, salud y flujos
-- Workflows en `.github/workflows/` para tests UI, aceptación navegador, HLS, contrato, caché, Kokomi, iconos, firma logo, actualizaciones de catálogo/programación, Firebase, Supabase, DexterAnimeSync, ONEUP Guard y propuesta de reversión.
+- Workflows en `.github/workflows/` para tests UI, aceptación navegador, HLS, contrato, caché, Kokomi, iconos, firma logo, actualizaciones de catálogo/programación, el backend anterior, Supabase, DexterAnimeSync, ONEUP Guard y propuesta de reversión.
 - `scripts/oneup-guard.mjs` ejecuta diagnósticos programados aproximados cada 4h; no es monitoreo continuo. Estados `data/guard/status.json`, historial `data/guard/history.json`; no aplica rollback automático.
 - `scripts/dexter-anime-sync.mjs`: sincronizador de **metadatos y fuentes declaradas**. Snapshot `data/dexter/status.json` reportó 200 episodios detectados y 6 nuevos en el ciclo 2026-10-16T11:57Z, `playbackSources:0`: detección ≠ videos.
 - Pruebas `scripts/check-ui.mjs`, `scripts/e2e-browser.mjs`, `scripts/e2e-kokomi-preview.mjs`, `scripts/test-episode-player.mjs`, `scripts/test-media-source-contract.mjs`, `scripts/test-episode-comments.mjs`, `scripts/check-resilience.mjs`, y demás según inventario.
@@ -168,7 +168,7 @@ Usar `.agents/skills/omega-ingenio-memoria/SKILL.md` y `docs/OMEGA_MEMORY.md`. R
 - `AGENTS.md`, `README.md`, `docs/PROJECT_CONTINUITY.md`, `docs/PROJECT_DECISIONS.md`.
 - `docs/ART_DIRECTION_CINEMATIC_2026.md`, `docs/KOKOMI_FIDELITY_MATRIX.md`.
 - `docs/FREE_STREAMING_ARCHITECTURE.md`, `docs/STREAMING_IMPLEMENTATION.md`, `MEDIOS_AUTORIZADOS.md`.
-- `docs/SUPABASE_COMUNIDAD.md`, `FIREBASE_COMUNIDAD_SETUP.md`, `GOOGLE_LOGIN_SETUP.md`.
+- `docs/SUPABASE_COMUNIDAD.md`, `el documento de configuración anterior`, `GOOGLE_LOGIN_SETUP.md`.
 - `docs/ONEUP_SELF_HEALING.md`, `docs/OMEGA_AUDIT_20261016.md`, `docs/OMEGA_SWARM_BOARD.md`.
 - `docs/OMEGA_SKILLS_CATALOGO_201.md` inventario de 201 skills observadas, NO instalación automática en Codex.
 - `docs/OMEGA_REPO_INVENTORY_20261016.md` todas las rutas + tamaños + sha observados.

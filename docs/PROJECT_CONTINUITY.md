@@ -18,8 +18,8 @@
 - Proyecto ya existente, con GitHub Pages y PWA: `index.html`, `manifest.webmanifest`, `sw.js`.
 - Catálogo de anime (en código y README): AniList como principal, Jikan como respaldo, snapshots de datos; hay pantallas de búsqueda, tendencias, temporada, programación y películas.
 - Diseño actual: `studio.css`, `spotlight.css`, `motion.css`, `brand-v2.css`, `themes/kokomi-studio/`, `themes/october-2026/`. **No borrar ni reemplazar indiscriminadamente**. Revisar cascada CSS y viewport.
-- Perfil/inicio de sesión: `auth.js`, `auth-config.js`, `firebase-config.js`; Google pendiente de configuración del propietario según README.
-- Comunidad/comentarios: `comunidad.html`, `community.js`, `social-backend.js`, `episode-comments.js`, reglas Firestore; verificar backend real antes de afirmar sincronización.
+- Perfil/inicio de sesión: `auth.js`, `la-configuración-anterior.js`, `la-configuración-anterior.js`; Google pendiente de configuración del propietario según README.
+- Comunidad/comentarios: `comunidad.html`, `community.js`, `social-backend.js`, `episode-comments.js`, reglas la base de datos anterior; verificar backend real antes de afirmar sincronización.
 - Fuentes y reproductor: `external-providers.js`, `player.css`, `motor.html`, `integrations/`; proveedores externos son enlaces de catálogo, no garantía de video incrustable.
 - Salud/autorecuperación: `docs/ONEUP_SELF_HEALING.md`, `.github/workflows/`, `scripts/` y estado en `data/guard/`. Los chequeos programados NO equivalen a disponibilidad continua.
 - Dirección artística ya documentada en `docs/ART_DIRECTION_CINEMATIC_2026.md`; exige validación visual previa a rediseños importantes.
@@ -54,7 +54,7 @@ Prueba automatizada del prototipo: navegación de 23 rutas, favoritos y comentar
 - BitTorrent, si se estudia, solo como módulo opcional de contenido con distribución autorizada; iPhone necesita motor externo para torrents, no se garantiza streaming P2P nativo.
 
 ### Fase D — Datos de usuario y comunidad
-- Configuración controlada de Firebase, reglas seguras y pruebas con cuenta de test.
+- Configuración controlada de el backend anterior, reglas seguras y pruebas con cuenta de test.
 - Sincronización de progreso y favoritos cuando esté implementada, controles de privacidad y moderación.
 - No tratar `localStorage` como cuenta en la nube.
 
@@ -81,7 +81,7 @@ Al concluir cada trabajo agregar:
 
 ### 2026-10-16 — OMEGA SWARM primer ciclo real
 - Base main `85ef098`; leídos misión PR15 e issue16; preservado PR14 Kokomi (12 archivos aditivos, sin integrar ni rehacer).
-- Corregidos lifecycle HLS/MP4/WebM al cambiar anime, respuestas tardías de navegación y duplicación/aislamiento de comentarios. Workflow Firebase restringido a main; sin ejecutarlo.
+- Corregidos lifecycle HLS/MP4/WebM al cambiar anime, respuestas tardías de navegación y duplicación/aislamiento de comentarios. Workflow el backend anterior restringido a main; sin ejecutarlo.
 - Regresiones nuevas conectadas a UI Quality y Browser Acceptance. PASS: UI 149 assertions, resiliencia, HLS, contrato multimedia, Supabase opcional, lifecycle, navegación, comentarios Chromium; E2E 36/36 móvil 390×844 y desktop 1360×860, cero errores JS. Capturas disponibles como artefactos del workflow de navegador cuando finalice CI.
 - Seis subagentes reales con archivos diferenciados. Detalle de hallazgos, prioridades y SHAs: `docs/OMEGA_AUDIT_20261016.md`; seguimiento `docs/OMEGA_SWARM_BOARD.md`.
 - No hay medios licenciados configurados, autenticación/comunidad remota comprobada, Safari físico, aprobación visual, merge ni despliegue. Próxima tarea: unir preview Kokomi al motor de main sin degradar HLS, siete posiciones e idiomas.
@@ -111,7 +111,7 @@ Al concluir cada trabajo agregar:
 - `studio.js`: `POPULARITY_DESC` utiliza el grupo `popular`; cuando el snapshot antiguo aún no lo incluye, se consultan las APIs en vez de etiquetar `trending` como popularidad. Los filtros priorizan el grupo del orden solicitado.
 - `scripts/refresh-catalog.mjs`: generará el grupo `popular` en la próxima actualización; no se modificó artificialmente `data/catalog.json` ni se afirmó una actualización nueva del catálogo.
 - Pruebas añadidas: `scripts/test-cache-catalog.mjs` y workflow `ONEUP Codex Cache and Catalog Regression`, además de tests existentes del sitio, navegador y motor de episodios. Revisar el último SHA y workflow antes de declarar aceptación.
-- Pendiente: cadena de PRs #17→#18→#19→#20 sin fusionar; aprobación del despliegue, medios autorizados reales, Firebase/Supabase, Safari físico y verificación final de los interiores Kokomi.
+- Pendiente: cadena de PRs #17→#18→#19→#20 sin fusionar; aprobación del despliegue, medios autorizados reales, el backend anterior/Supabase, Safari físico y verificación final de los interiores Kokomi.
 
 
 ### 2026-10-16 — Motor de fuentes multilingüe y seguridad aplicada (PUBLICADO EN MAIN)
@@ -138,7 +138,7 @@ Al concluir cada trabajo agregar:
 
 ### 2026-10-16 — Adaptador Anime1v (FxxMorgan), pendiente de configuración externa
 - Repo upstream verificado: FxxMorgan/anime1v-api (Node.js; MIT del software, no de episodios). Usa X-API-Key, expone búsqueda/catálogo además de resolutores no habilitados en 1UP.
-- Rama: feature/anime1v-safe-integration-20261016. Módulos: functions/anime1v-adapter.js, nueva función Firebase anime1vDiscovery en functions/index.js, anime1v-discovery.js/css, data/anime1v-config.json, pruebas y docs/ANIME1V_INTEGRATION.md.
+- Rama: feature/anime1v-safe-integration-20261016. Módulos: functions/anime1v-adapter.js, nueva función el backend anterior anime1vDiscovery en functions/index.js, anime1v-discovery.js/css, data/anime1v-config.json, pruebas y docs/ANIME1V_INTEGRATION.md.
 - La integración de información está desactivada hasta configurar una URL HTTPS real de Cloud Function, servidor Anime1v y clave secreta. La API key nunca aparece en JS público.
 - No se conectaron /episode, /resolve ni /download porque no se han acreditado fuentes autorizadas. data/licensed-media.json sigue con entries vacío; no afirmar que hay anime reproducible.
 - Mantener diseño Kokomi, logo original animado y reproductor actual. Revisar CI y realizar prueba real una vez exista backend.
@@ -250,9 +250,9 @@ Al concluir cada trabajo agregar:
 
 ### 2026-10-18 — Auditoría transversal de calidad visual y acceso (PR #48)
 - Rama `feature/sitewide-mobile-ux-quality-20261018`, [PR #48](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/48): correcciones del acceso a raíz de captura Safari, SVG de emblema puro, cabeceras, altura intrínseca del modal, responsive móvil, formularios, título hero largo, navegación interior y botón 3D.
-- `ui-quality.css` se carga al final en portada, studio, comunidad, motor, moderación y gremio, sin deshacer CSS histórico. Nueva caché PWA `v31`; selector de perfiles locales dentro del modal sustituye `prompt()`. Google queda claramente no disponible mientras Firebase no esté conectado.
+- `ui-quality.css` se carga al final en portada, studio, comunidad, motor, moderación y gremio, sin deshacer CSS histórico. Nueva caché PWA `v31`; selector de perfiles locales dentro del modal sustituye `prompt()`. Google queda claramente no disponible mientras el backend anterior no esté conectado.
 - Verificación: workflow `ONEUP Sitewide Quality` con capturas Chromium 390 px; segunda inspección visual detectó que `inset:0` estiraba modal vacío, corregido con `height:fit-content`; pruebas de modal compacto, perfiles, 320/390/768/1440 y páginas internas en verde. `Depth mode Playwright` también recuperó PASS en viewport móvil y desktop al eliminar dependencia del drawer. El resto de CI debe reconfirmarse en el HEAD final antes de merge.
-- Limitaciones / riesgos: no se han probado clics ni scroll en Safari físico; Firebase y la reproducción real continúan sin activar; es una fase de calidad y no certificado de sitio completamente terminado. Auditoría y pendientes en [SITE_QUALITY_AUDIT_20261018.md](SITE_QUALITY_AUDIT_20261018.md).
+- Limitaciones / riesgos: no se han probado clics ni scroll en Safari físico; el backend anterior y la reproducción real continúan sin activar; es una fase de calidad y no certificado de sitio completamente terminado. Auditoría y pendientes en [SITE_QUALITY_AUDIT_20261018.md](SITE_QUALITY_AUDIT_20261018.md).
 
 ### 2026-10-19 — integración de Puppeteer en CI (PR en revisión)
 - Se incorpora como `devDependency` `puppeteer@25.14.0` (no en scripts del frontend), sin tocar catálogo, reproductor ni SW.
@@ -353,9 +353,9 @@ Al concluir cada trabajo agregar:
 
 ### 2026-11-07 — Cuentas nativas 1UP (sin Google)
 - Rama feature/native-auth. PR #71 (draft) contra main: https://github.com/H4CKLABORATORY/1UP-ANIME/pull/71 (no fusionar sin revisión).
-- Cuentas propias: registro con nombre de usuario + correo + contraseña, inicio con correo + contraseña, restablecimiento por correo, cierre de sesión y persistencia local (Firebase Authentication, proveedor correo/contraseña únicamente). Sin inicio de sesión con Google: se eliminó todo el código y botones de Google (auth-google.js, firebase-config.js, GOOGLE_LOGIN_SETUP.md, loginWithGoogle en cliente/servidor/Supabase, proveedor google.com en functions y storage.rules).
-- Nombres de usuario únicos (3–20 caracteres, a-z/0-9/_) reservados en Firestore con transacción + reglas (usernames/{nombre}, users/{uid}); las contraseñas nunca se almacenan en 1UP.
+- Cuentas propias: registro con nombre de usuario + correo + contraseña, inicio con correo + contraseña, restablecimiento por correo, cierre de sesión y persistencia local (el backend anterior Authentication, proveedor correo/contraseña únicamente). Sin inicio de sesión con Google: se eliminó todo el código y botones de Google (auth-google.js, la-configuración-anterior.js, GOOGLE_LOGIN_SETUP.md, el inicio con el proveedor externo en cliente/servidor/Supabase, proveedor google.com en functions y las-reglas-de-archivos-anteriores).
+- Nombres de usuario únicos (3–20 caracteres, a-z/0-9/_) reservados en la base de datos anterior con transacción + reglas (usernames/{nombre}, users/{uid}); las contraseñas nunca se almacenan en 1UP.
 - Invitados pueden explorar; comentar (episodios y comunidad) y guardar favoritos requieren cuenta 1UP (el servidor exige sign_in_provider == 'password').
-- Pruebas en dexter: Node 51/51 (+2 de emulador omitidas sin emulador), Python 16/16, Playwright 12/12, Puppeteer 12/12, emulador Firebase 2/2 (registro, correo duplicado, inicio, contraseña incorrecta, restablecimiento, unicidad de nombre por reglas).
-- En vivo: IMPLEMENTADO PERO NO VERIFICADO. Douglas debe crear el proyecto Firebase, habilitar solo Email/Password, crear Firestore, desplegar las reglas y pegar la configuración en auth-config.js. Pasos exactos en docs/AUTH_SETUP.md.
-- Pendiente: revisión del PR, prueba en vivo con cuenta real tras configurar Firebase, Safari físico en iPhone.
+- Pruebas en dexter: Node 51/51 (+2 de emulador omitidas sin emulador), Python 16/16, Playwright 12/12, Puppeteer 12/12, emulador el backend anterior 2/2 (registro, correo duplicado, inicio, contraseña incorrecta, restablecimiento, unicidad de nombre por reglas).
+- En vivo: IMPLEMENTADO PERO NO VERIFICADO. Douglas debe crear el proyecto el backend anterior, habilitar solo Email/Password, crear la base de datos anterior, desplegar las reglas y pegar la configuración en la-configuración-anterior.js. Pasos exactos en docs/AUTH_SETUP.md.
+- Pendiente: revisión del PR, prueba en vivo con cuenta real tras configurar el backend anterior, Safari físico en iPhone.

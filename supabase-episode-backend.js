@@ -1,6 +1,9 @@
-/* 1UP ANIME — optional Supabase episode comments and personal progress.
- * Not loaded by index.html until a Supabase project has been configured and reviewed.
- * Uses a PUBLIC publishable key only; do NOT put server keys in a web bundle.
+/* 1UP ANIME — Supabase episode comments and personal progress.
+ * Requires a Supabase project configured in supabase-config.js.
+ * Comments and favorites require a 1UP account (email + password); there is
+ * no anonymous sign-in. Uses a PUBLIC publishable key only; do NOT put
+ * server keys in a web bundle. Display names always come from the account
+ * profile (public.profiles), enforced by the database trigger.
  */
 (function(global){
 'use strict';
@@ -43,22 +46,17 @@ async function client(){
  }
  return pending;
 }
-async function account({guest=false}={}){
+async function account(){
  const supa=await client();
- let {data,error}=await supa.auth.getUser();
+ const {data,error}=await supa.auth.getUser();
  if(error&&error.name!=='AuthSessionMissingError')throw error;
- if(!data?.user&&guest){
-  const login=await supa.auth.signInAnonymously();
-  if(login.error)throw login.error;
-  data=login.data;
- }
- if(!data?.user)throw Error('Inicia sesión antes de continuar.');
+ if(!data?.user)throw Error('Inicia sesión con tu cuenta 1UP antes de continuar.');
  return {user:data.user,supa};
 }
 function mapComment(row){
  return {
   id:row.id,displayName:row.display_name,text:row.body,
-  guest:true,owner:false,verified:false,
+  guest:false,owner:false,verified:false,
   createdAt:{toDate:()=>new Date(row.created_at)}
  };
 }
@@ -99,7 +97,7 @@ async function sendEpisodeComment(animeId,episode,pseudonym,text){
  const body=String(text??'').trim();
  if(displayName.length<3||displayName.length>25)throw Error('El apodo debe tener de 3 a 25 caracteres.');
  if(body.length<2||body.length>900)throw Error('El comentario debe tener de 2 a 900 caracteres.');
- const {user,supa}=await account({guest:true});
+ const {user,supa}=await account();
  const {error}=await supa.from('oneup_episode_comments').insert({
   anime_id:name,episode_number:number,author_id:user.id,display_name:displayName,
   body,status:'visible'
@@ -111,7 +109,7 @@ async function report(type,id,reason){
  const value=String(id||'');
  const match=value.match(/^((?:mal|al)-[1-9]\d*)_ep_(\d{1,4})\/([a-f0-9-]{36})$/i);
  if(!match||!UUID.test(match[3]))throw Error('Identificador del comentario incorrecto.');
- const {user,supa}=await account({guest:true});
+ const {user,supa}=await account();
  const note=String(reason??'').trim();
  if(note.length<10||note.length>300)throw Error('Escribe un motivo entre 10 y 300 caracteres.');
  const {error}=await supa.from('oneup_comment_reports').insert({
@@ -130,7 +128,7 @@ async function loadProgress(animeId){
 }
 async function saveProgress(animeId,{favorite=false,watched=0}={}){
  const {name}=episodeId(animeId,1);
- const {user,supa}=await account({guest:true});
+ const {user,supa}=await account();
  const episode=Number(watched);
  if(!Number.isInteger(episode)||episode<0||episode>9999)throw Error('Progreso incorrecto.');
  const {error}=await supa.from('oneup_anime_progress').upsert({

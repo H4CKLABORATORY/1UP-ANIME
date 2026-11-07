@@ -8,3 +8,8 @@ ios/OneUpAnime/Resources/
 ios/build/
 
 .env
+supabase/.temp/
+__pycache__/
+test-results/
+supabase/.branches/
+qa-*.png

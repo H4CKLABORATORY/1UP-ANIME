@@ -1,5 +1,5 @@
 /* Real browser journey checks for GitHub Pages pages.
- * Loads the exact static project through a local HTTP server; no Firebase or
+ * Loads the exact static project through a local HTTP server; no Supabase or
  * unauthorized media integrations are simulated as successful.
  */
 import {chromium} from 'playwright';
@@ -177,11 +177,11 @@ try{
    const heading=await page.locator('#browse-title').innerText();
    if(!heading.trim())throw new Error('Search route rendered no heading');
   });
-  await test(device.name+' public community degrades clearly without Firebase',async()=>{
+  await test(device.name+' public community degrades clearly without Supabase',async()=>{
    await page.goto(base+'comunidad.html',{waitUntil:'domcontentloaded'});
    await page.locator('#feed-list').waitFor({timeout:9000});
    const all=await page.locator('body').innerText();
-   if(!/Firebase|servidor|cuenta|publicaciones|registr/i.test(all))throw new Error('Community error message is missing');
+   if(!/Supabase|servidor|cuenta|publicaciones|registr/i.test(all))throw new Error('Community error message is missing');
   });
   await test(device.name+' management displays actual provider data',async()=>{
    await page.goto(base+'motor.html',{waitUntil:'domcontentloaded'});

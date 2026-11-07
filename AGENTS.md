@@ -19,7 +19,7 @@ Estas reglas se aplican a cualquier agente (Codex, Work u otro) que edite este r
 - studio.css, spotlight.css, motion.css: diseño base, contenido protagonista, efectos opcionales.
 - data/catalog.json: copia pública del catálogo generada por GitHub Actions.
 - scripts/refresh-catalog.mjs: refresco seguro de información pública.
-- auth.js y auth-config.js: invitado, perfiles locales y cuentas nativas 1UP (correo + contraseña, Firebase). Sin inicio de sesión con terceros.
+- auth.js y supabase-config.js: invitado, perfiles locales y cuentas nativas 1UP (correo + contraseña, Supabase). Sin inicio de sesión con terceros.
 
 ## Antes de publicar
 - Confirmar que cada selector HTML usado por JavaScript existe.

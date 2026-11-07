@@ -18,7 +18,7 @@ Restart or deploy the service after any environment changes.
 
 ### What remains
 Running the service does NOT deploy FxxMorgan's upstream program. To enable real Anime1v metadata (instead of Jikan fallback), deploy a separately authorized Anime1v source and configure ANIME1V_BASE_URL and ANIME1V_API_KEY as Render env vars. Check license and upstream terms. The software MIT license does not grant streaming rights to episodes hosted by third parties.
-Firebase functions are optional in this route; the standalone Render service replaces the discovery gateway for public metadata.
+el backend anterior functions are optional in this route; the standalone Render service replaces the discovery gateway for public metadata.
 Never claim actual episodes playable just because the discovery service is online.
 
 ## Actualización 17/10/2026 — Fuente Anime1v conectada

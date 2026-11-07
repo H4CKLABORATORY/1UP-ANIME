@@ -40,7 +40,7 @@
 - [#70](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/70) LU local: memoria de continuidad para Qwen entre chats
 - [#69](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/69) fix: recuperar catálogo ante caché local malformada
 - [#68](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/68) 1UP Auth: registro y recuperación por correo; retirar acceso Google
-- [#67](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/67) Configure Firebase web app for Google sign-in
+- [#67](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/67) Configure el backend anterior web app for Google sign-in
 - [#61](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/61) 1UP: primer episodio completo desde canal oficial TMS y QA real
 - [#54](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/54) 1UP Anime: primer episodio oficial TMS y técnicas educativas de r/node
 - [#51](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/51) 1UP Anime: lector manga y publicación automática de medios autorizados

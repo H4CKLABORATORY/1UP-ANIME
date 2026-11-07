@@ -1,8 +1,8 @@
 /* 1UP Anime — native account tests (email + password, no Google sign-in).
- * Runs auth.js in a vm with stubbed DOM/storage and a fake Firebase backend
- * injected through the window.__ONEUP_FIREBASE_LOADER__ seam.
- * Live Firebase is NOT used here; see tests/auth-emulator.test.mjs for the
- * real Auth/Firestore emulator run.
+ * Runs auth.js in a vm with stubbed DOM/storage and a fake Supabase backend
+ * injected through the window.__ONEUP_SUPABASE_LOADER__ seam.
+ * Live Supabase is NOT used here; see tests/auth-supabase.test.mjs for the
+ * real local-stack run (sign-up/login/RLS against supabase start).
  */
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
@@ -16,74 +16,115 @@ const authSrc = fs.readFileSync(path.join(repo, 'auth.js'), 'utf8');
 
 function makeBackend() {
   const usersByEmail = new Map();
-  const docs = new Map();
-  const calls = { resetEmails: [], deletedUids: [], persistence: [] };
-  const flags = { raceUsername: null };
+  const profiles = new Map(); // userId -> { id, username }
+  const usernameIndex = new Map(); // username -> userId
+  const calls = { resetEmails: [], signOuts: 0 };
+  const flags = { raceUsername: null, noTrigger: false, confirmEmail: false };
   let uidSeq = 0;
   let currentUser = null;
   const listeners = new Set();
-  const notify = () => { for (const cb of listeners) { try { cb(currentUser); } catch { /* ignore */ } } };
-  const snap = (p) => ({ exists: () => docs.has(p), data: () => docs.get(p) });
-  const fakeAuthObj = { get currentUser() { return currentUser; } };
-  const authMod = {
-    browserLocalPersistence: 'local',
-    getAuth: () => fakeAuthObj,
-    setPersistence: async (_a, p) => { calls.persistence.push(p); },
-    onAuthStateChanged: (_a, cb) => { listeners.add(cb); return () => listeners.delete(cb); },
-    authStateReady: async () => {},
-    createUserWithEmailAndPassword: async (_a, email, password) => {
-      if (usersByEmail.has(email)) {
-        throw Object.assign(new Error('email in use'), { code: 'auth/email-already-in-use' });
-      }
-      const user = { uid: 'uid' + (++uidSeq), email, password, displayName: null };
-      usersByEmail.set(email, user);
-      currentUser = user;
-      notify();
-      return { user };
-    },
-    signInWithEmailAndPassword: async (_a, email, password) => {
-      const user = usersByEmail.get(email);
-      if (!user || user.password !== password) {
-        throw Object.assign(new Error('bad credentials'), { code: 'auth/invalid-credential' });
-      }
-      currentUser = user;
-      notify();
-      return { user };
-    },
-    sendPasswordResetEmail: async (_a, email) => {
-      calls.resetEmails.push(email);
-      if (!usersByEmail.has(email)) {
-        throw Object.assign(new Error('no such user'), { code: 'auth/user-not-found' });
-      }
-    },
-    signOut: async () => { currentUser = null; notify(); },
-    updateProfile: async (user, patch) => { Object.assign(user, patch); },
-    deleteUser: async (user) => {
-      for (const [email, u] of usersByEmail) if (u.uid === user.uid) usersByEmail.delete(email);
-      calls.deletedUids.push(user.uid);
-      if (currentUser && currentUser.uid === user.uid) { currentUser = null; notify(); }
-    },
+  const notify = (event = 'SIGNED_IN', session = currentUser ? { user: currentUser } : null) => {
+    for (const cb of listeners) { try { cb(event, session); } catch { /* ignore */ } }
   };
-  const dbMod = {
-    getFirestore: () => ({ __db: true }),
-    doc: (_db, ...segs) => ({ path: segs.join('/') }),
-    getDoc: async (ref) => snap(ref.path),
-    runTransaction: async (_db, fn) => {
-      if (flags.raceUsername) {
-        docs.set('usernames/' + flags.raceUsername, { uid: 'uid-other', username: flags.raceUsername });
-      }
-      const tx = {
-        get: async (ref) => snap(ref.path),
-        set: (ref, data) => { docs.set(ref.path, { ...data }); },
+  const client = {
+    auth: {
+      signUp: async ({ email, password, options }) => {
+        if (usersByEmail.has(email)) {
+          return { data: {}, error: { message: 'User already registered' } };
+        }
+        const username = String(options?.data?.username || '');
+        if (flags.raceUsername === username) {
+          // Another user claimed the name between the pre-check and sign-up.
+          usernameIndex.set(username, 'uid-other');
+          profiles.set('uid-other', { id: 'uid-other', username });
+        }
+        if (!/^[a-z0-9_]{3,20}$/.test(username)) {
+          return { data: {}, error: { message: 'Username must be 3-20 chars' } };
+        }
+        if (usernameIndex.has(username)) {
+          return { data: {}, error: { message: 'Username already taken' } };
+        }
+        const user = { id: 'uid' + (++uidSeq), email, password, user_metadata: options?.data || {} };
+        usersByEmail.set(email, user);
+        if (!flags.noTrigger) {
+          profiles.set(user.id, { id: user.id, username });
+          usernameIndex.set(username, user.id);
+        }
+        currentUser = user;
+        const session = flags.confirmEmail ? null : { user };
+        notify('SIGNED_IN', session);
+        return { data: { user, session }, error: null };
+      },
+      signInWithPassword: async ({ email, password }) => {
+        const user = usersByEmail.get(email);
+        if (!user || user.password !== password) {
+          return { data: {}, error: { message: 'Invalid login credentials' } };
+        }
+        currentUser = user;
+        notify('SIGNED_IN', { user });
+        return { data: { user, session: { user } }, error: null };
+      },
+      signOut: async () => {
+        calls.signOuts++;
+        currentUser = null;
+        notify('SIGNED_OUT', null);
+        return { error: null };
+      },
+      getSession: async () => ({
+        data: { session: currentUser ? { user: currentUser } : null }, error: null,
+      }),
+      getUser: async () => ({
+        data: { user: currentUser }, error: currentUser ? null : { name: 'AuthSessionMissingError' },
+      }),
+      onAuthStateChange: (cb) => {
+        listeners.add(cb);
+        return { data: { subscription: { unsubscribe: () => listeners.delete(cb) } } };
+      },
+      resetPasswordForEmail: async (email) => {
+        calls.resetEmails.push(email);
+        if (!usersByEmail.has(email)) {
+          return { data: {}, error: { message: 'User not found' } };
+        }
+        return { data: {}, error: null };
+      },
+      updateUser: async ({ password }) => {
+        if (!currentUser) return { data: {}, error: { message: 'Auth session missing' } };
+        currentUser.password = password;
+        return { data: { user: currentUser }, error: null };
+      },
+    },
+    from: (table) => {
+      if (table !== 'profiles') throw new Error('unexpected table ' + table);
+      const query = {
+        _eq: null,
+        select: () => query,
+        eq: (col, val) => { query._eq = [col, val]; return query; },
+        maybeSingle: async () => {
+          const [col, val] = query._eq || [];
+          let row = null;
+          if (col === 'username') {
+            const id = usernameIndex.get(val);
+            if (id) row = profiles.get(id) || null;
+          } else if (col === 'id') {
+            row = profiles.get(val) || null;
+          }
+          return { data: row, error: null };
+        },
+        insert: async (row) => {
+          if (usernameIndex.has(row.username)) {
+            return { data: null, error: { code: '23505', message: 'duplicate key value violates unique constraint "profiles_username_key"' } };
+          }
+          profiles.set(row.id, { id: row.id, username: row.username });
+          usernameIndex.set(row.username, row.id);
+          return { data: [row], error: null };
+        },
       };
-      await fn(tx);
+      return query;
     },
-    serverTimestamp: () => 'TS',
   };
-  const appMod = { getApps: () => [], initializeApp: () => ({}) };
-  const loader = async () => ({ app: appMod, auth: authMod, db: dbMod, instance: {} });
+  const loader = async () => client;
   return {
-    usersByEmail, docs, calls, flags, loader,
+    usersByEmail, profiles, usernameIndex, calls, flags, loader, client,
     get currentUser() { return currentUser; },
   };
 }
@@ -103,13 +144,14 @@ function makeEl(id) {
   };
 }
 
-function makeContext(backend, config = { apiKey: 'fake', authDomain: 'demo.firebaseapp.com', projectId: 'demo', appId: '1:1:web:x' }) {
+function makeContext(backend, config = { url: 'https://demo.supabase.co', publishableKey: 'sb_publishable_demo' }, hash = '') {
   const elements = new Map();
   const domReady = [];
   const store = new Map();
   const sandbox = {
     console,
     setTimeout, clearTimeout,
+    location: { origin: 'https://ejemplo.test', pathname: '/index.html', hash },
     localStorage: {
       getItem: (k) => (store.has(k) ? store.get(k) : null),
       setItem: (k, v) => { store.set(k, String(v)); },
@@ -127,8 +169,8 @@ function makeContext(backend, config = { apiKey: 'fake', authDomain: 'demo.fireb
     },
   };
   sandbox.window = sandbox;
-  sandbox.window.ONEUP_FIREBASE_CONFIG = config;
-  sandbox.window.__ONEUP_FIREBASE_LOADER__ = backend.loader;
+  sandbox.window.ONEUP_SUPABASE_CONFIG = config;
+  sandbox.window.__ONEUP_SUPABASE_LOADER__ = backend.loader;
   const ctx = vm.createContext(sandbox);
   vm.runInContext(authSrc, ctx, { filename: 'auth.js' });
   for (const cb of domReady) cb();
@@ -153,10 +195,10 @@ test('validation rejects bad usernames, emails and passwords', async () => {
   assert.equal(v.validatePassword('corta1').ok, false);
   assert.equal(v.validatePassword('sinnumeros').ok, false);
   assert.equal(v.validatePassword('abc12345').ok, true);
-  assert.equal(auth.FIREBASE_SDK_VERSION, '12.19.0');
+  assert.equal(auth.SUPABASE_SDK_VERSION, '2.117.3');
 });
 
-test('sign-up creates the account and claims the username in Firestore', async () => {
+test('sign-up creates the account and claims the username in profiles', async () => {
   const backend = makeBackend();
   const { auth } = makeContext(backend);
   const res = await auth.signUp({ username: 'Asta_Fan', email: 'asta@ejemplo.com', password: 'abc12345' });
@@ -166,9 +208,8 @@ test('sign-up creates the account and claims the username in Firestore', async (
   assert.equal(me.kind, 'account');
   assert.equal(me.name, 'asta_fan');
   assert.equal(me.email, 'asta@ejemplo.com');
-  assert.deepEqual(backend.docs.get('usernames/asta_fan'), { uid: me.uid, username: 'asta_fan', createdAt: 'TS' });
-  assert.deepEqual(backend.docs.get('users/' + me.uid), { uid: me.uid, username: 'asta_fan', createdAt: 'TS' });
-  assert.deepEqual(backend.calls.persistence, ['local']);
+  assert.deepEqual(backend.profiles.get(me.uid), { id: me.uid, username: 'asta_fan' });
+  assert.equal(backend.usernameIndex.get('asta_fan'), me.uid);
 });
 
 test('sign-up rejects a taken username without creating an Auth user', async () => {
@@ -182,15 +223,34 @@ test('sign-up rejects a taken username without creating an Auth user', async () 
   assert.equal(backend.usersByEmail.size, before);
 });
 
-test('sign-up race on the username deletes the orphan Auth user', async () => {
+test('sign-up race on the username creates no usable account', async () => {
   const backend = makeBackend();
   const { auth } = makeContext(backend);
   backend.flags.raceUsername = 'yuno_fan';
   const res = await auth.signUp({ username: 'yuno_fan', email: 'yuno@ejemplo.com', password: 'abc12345' });
   assert.equal(res.ok, false);
   assert.match(res.message, /ya está en uso/);
-  assert.equal(backend.usersByEmail.size, 0);
-  assert.equal(backend.calls.deletedUids.length, 1);
+  assert.equal(backend.usersByEmail.has('yuno@ejemplo.com'), false);
+  assert.equal(auth.get().kind, 'guest');
+});
+
+test('sign-up without a profile trigger falls back to a direct profile insert', async () => {
+  const backend = makeBackend();
+  backend.flags.noTrigger = true;
+  const { auth } = makeContext(backend);
+  const res = await auth.signUp({ username: 'asta_fan', email: 'asta@ejemplo.com', password: 'abc12345' });
+  assert.equal(res.ok, true);
+  assert.deepEqual(backend.profiles.get(auth.get().uid), { id: auth.get().uid, username: 'asta_fan' });
+});
+
+test('sign-up with email confirmation on asks the user to confirm', async () => {
+  const backend = makeBackend();
+  backend.flags.confirmEmail = true;
+  const { auth } = makeContext(backend);
+  const res = await auth.signUp({ username: 'asta_fan', email: 'asta@ejemplo.com', password: 'abc12345' });
+  assert.equal(res.ok, true);
+  assert.equal(res.needsConfirmation, true);
+  assert.match(res.message, /confirmarla/);
   assert.equal(auth.get().kind, 'guest');
 });
 
@@ -231,6 +291,18 @@ test('password reset sends the email and never reveals unknown accounts', async 
   assert.deepEqual(backend.calls.resetEmails, ['asta@ejemplo.com', 'nadie@ejemplo.com']);
 });
 
+test('update password works for a signed-in account', async () => {
+  const backend = makeBackend();
+  const { auth } = makeContext(backend);
+  await auth.signUp({ username: 'asta_fan', email: 'asta@ejemplo.com', password: 'abc12345' });
+  const res = await auth.updatePassword('nueva1234');
+  assert.equal(res.ok, true);
+  assert.match(res.message, /actualizada/);
+  await auth.signOut();
+  const login = await auth.signIn({ email: 'asta@ejemplo.com', password: 'nueva1234' });
+  assert.equal(login.ok, true);
+});
+
 test('requireAccount blocks guests with a login prompt and allows accounts', async () => {
   const backend = makeBackend();
   const { auth, elements } = makeContext(backend);
@@ -242,55 +314,74 @@ test('requireAccount blocks guests with a login prompt and allows accounts', asy
   assert.equal(auth.requireAccount('guardar este anime en Mi lista'), true);
 });
 
-test('session is restored from Firebase on a fresh page load', async () => {
+test('session is restored from Supabase on a fresh page load', async () => {
   const backend = makeBackend();
   const first = makeContext(backend);
   await first.auth.signUp({ username: 'asta_fan', email: 'asta@ejemplo.com', password: 'abc12345' });
-  // Fresh page: new JS context, empty localStorage, same Firebase session.
+  // Fresh page: new JS context, empty localStorage, same Supabase session.
   const second = makeContext(backend);
   await tick(50);
   assert.equal(second.auth.get().kind, 'account');
   assert.equal(second.auth.get().name, 'asta_fan');
 });
 
-test('without Firebase configured, sign-up explains the missing setup', async () => {
+test('recovery link opens the new-password form', async () => {
+  const backend = makeBackend();
+  const { elements } = makeContext(backend, undefined, '#access_token=tok&type=recovery');
+  await tick(25);
+  assert.equal(elements.get('auth-dialog').open, true);
+  assert.equal(elements.get('auth-new-password-form').hidden, false);
+  assert.equal(elements.get('auth-login-form').hidden, true);
+  assert.match(elements.get('auth-message').textContent, /nueva contraseña/);
+});
+
+test('without Supabase configured, sign-up explains the missing setup', async () => {
   const backend = makeBackend();
   const { auth } = makeContext(backend, null);
   const res = await auth.signUp({ username: 'asta_fan', email: 'asta@ejemplo.com', password: 'abc12345' });
   assert.equal(res.ok, false);
-  assert.match(res.message, /propietario debe crear el proyecto Firebase/);
+  assert.match(res.message, /propietario debe crear el proyecto Supabase/);
 });
 
-test('no Google sign-in code remains; Firebase SDK version is unified', () => {
-  const codeFiles = ['auth.js', 'auth-config.js', 'social-backend.js', 'community.js',
-    'episode-comments.js', 'functions/index.js', 'moderacion.js', 'experience.js',
+test('no Google sign-in and no Firebase code remains', () => {
+  const codeFiles = ['auth.js', 'supabase-config.js', 'social-backend.js', 'community.js',
+    'episode-comments.js', 'moderacion.js', 'experience.js',
     'supabase-episode-backend.js', 'studio.js', 'index.html', 'studio.html',
     'comunidad.html', 'moderacion.html', 'preview-kokomi.html',
-    'preview-kokomi-mobile.html', 'preview-october.html', 'firestore.rules', 'storage.rules'];
+    'preview-kokomi-mobile.html', 'preview-october.html',
+    'supabase/sql/oneup_auth.sql', 'supabase/sql/oneup_community.sql',
+    'supabase/sql/oneup_storage.sql', 'supabase/sql/oneup_community_optional.sql'];
   const forbidden = ['GoogleAuthProvider', 'signInWithPopup', 'signInWithRedirect',
     'signInWithOAuth', 'google-login', 'OneUpGoogle', 'loginWithGoogle', 'auth-google',
-    'Google', 'google.com'];
+    'signInAnonymously', 'firebase', 'Firebase', 'firestore', 'Firestore',
+    'gstatic.com/firebasejs', 'ONEUP_FIREBASE_CONFIG', 'FIREBASE_SDK_VERSION'];
   for (const file of codeFiles) {
-    const text = fs.readFileSync(path.join(repo, file), 'utf8')
-      .replaceAll('console.firebase.google.com', '');
+    const text = fs.readFileSync(path.join(repo, file), 'utf8');
     for (const bad of forbidden) {
       assert.equal(text.includes(bad), false, `${file} still contains ${bad}`);
     }
   }
-  for (const gone of ['auth-google.js', 'firebase-config.js', 'GOOGLE_LOGIN_SETUP.md']) {
+  // The word Google may only appear in "no Google" statements (docs/setup notes).
+  for (const file of ['auth.js', 'social-backend.js', 'supabase-episode-backend.js']) {
+    const text = fs.readFileSync(path.join(repo, file), 'utf8');
+    assert.equal(/Google/.test(text), false, `${file} still mentions Google`);
+  }
+  for (const gone of ['auth-google.js', 'firebase-config.js', 'GOOGLE_LOGIN_SETUP.md',
+    'auth-config.js', 'social-config.js', 'firebase.json', 'firestore.rules',
+    'firestore.indexes.json', 'storage.rules', 'FIREBASE_COMUNIDAD_SETUP.md',
+    'docs/AUTH_SETUP.md', 'tests/auth-emulator.test.mjs', 'scripts/run-auth-emulator.sh']) {
     assert.equal(fs.existsSync(path.join(repo, gone)), false, `${gone} should be deleted`);
   }
-  for (const file of ['auth.js', 'social-backend.js']) {
-    const text = fs.readFileSync(path.join(repo, file), 'utf8');
-    assert.match(text, /12\.19\.0/);
-    assert.equal(text.includes('11.10.0'), false, `${file} still uses Firebase 11.10.0`);
-  }
-  const rules = fs.readFileSync(path.join(repo, 'firestore.rules'), 'utf8');
-  assert.match(rules, /match \/usernames\/\{username\}/);
-  assert.match(rules, /match \/users\/\{uid\}/);
-  const storage = fs.readFileSync(path.join(repo, 'storage.rules'), 'utf8');
-  assert.match(storage, /sign_in_provider == 'password'/);
-  assert.equal(fs.existsSync(path.join(repo, 'docs', 'AUTH_SETUP.md')), true);
-  assert.match(fs.readFileSync(path.join(repo, 'docs', 'AUTH_SETUP.md'), 'utf8'), /Email\/Password/);
+  assert.equal(fs.existsSync(path.join(repo, 'functions')), false, 'functions/ should be deleted');
+  assert.equal(fs.existsSync(path.join(repo, 'docs', 'SUPABASE_SETUP.md')), true);
+  assert.match(fs.readFileSync(path.join(repo, 'docs', 'SUPABASE_SETUP.md'), 'utf8'), /Email/);
   assert.equal(fs.existsSync(path.join(repo, '.env.example')), true);
+  const config = fs.readFileSync(path.join(repo, 'supabase-config.js'), 'utf8');
+  assert.match(config, /ONEUP_SUPABASE_CONFIG/);
+  assert.match(config, /ONEUP_SUPABASE_CONFIG = null/,
+    'supabase-config.js must keep a null placeholder, never a real key');
+  const authSql = fs.readFileSync(path.join(repo, 'supabase/sql/oneup_auth.sql'), 'utf8');
+  assert.match(authSql, /create table if not exists public\.profiles/);
+  assert.match(authSql, /oneup_handle_new_user/);
+  assert.match(authSql, /unique/);
 });

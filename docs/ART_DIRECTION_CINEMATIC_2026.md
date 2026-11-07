@@ -60,7 +60,7 @@ Implementación: preferir CSS/WAAPI; considerar Anime.js v4 solo cuando agregue 
 
 GitHub Pages + CSS/JS plano. Ya existen studio.css, brand-v2.css, spotlight.css y motion.css con capas de estilos acumulados, más motion.js con partículas. Agregar FX sin consolidar causaría conflictos de apilamiento. También existe sonic.js, pero no está actualmente cargado desde index.html: hay que estudiar si conviene sustituirlo o adaptarlo antes de publicarlo.
 
-Conservar catálogo, búsquedas, fichas, calendario, comentarios, cuentas, comunidad y monitoreo. No mezclar este rediseño con la configuración pendiente de Firebase.
+Conservar catálogo, búsquedas, fichas, calendario, comentarios, cuentas, comunidad y monitoreo. No mezclar este rediseño con la configuración pendiente de el backend anterior.
 
 ## Criterios de aceptación y fases
 

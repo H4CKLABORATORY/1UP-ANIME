@@ -8,7 +8,7 @@ const sw=read('sw.js');
 const css=read('spotlight.css');
 let checks=0;
 const assert=(ok,reason)=>{checks++;if(!ok)throw Error(reason)};
-for(const file of ['studio.js','auth.js','motion.js','sonic.js','sw.js','airing-ui.js','episode-comments.js','community.js','social-backend.js','functions/index.js','moderacion.js']){
+for(const file of ['studio.js','auth.js','motion.js','sonic.js','sw.js','airing-ui.js','episode-comments.js','community.js','social-backend.js','moderacion.js']){
  new vm.Script(read(file),{filename:file});
 }
 const ids=['hero-poster','hero-title','hero-description','hero-badges','hero-feature-cover',
@@ -70,22 +70,22 @@ assert(read('comunidad.html').includes('community.js'),'Community javascript mis
 assert(read('comunidad.html').includes('social-backend.js'),'Realtime backend adapter missing');
 assert(read('community.js').includes('data-answer-friend'),'Mutual friend approval screen missing');
 assert(read('episode-comments.js').includes('oneup-guest-name'),'Temporary names in guest episode comments missing');
-assert(read('functions/index.js').includes('exports.respondFriendship'),'Friend request backend missing');
-assert(read('functions/index.js').includes('exports.submitEpisodeComment'),'Guest comment backend missing');
-assert(read('functions/index.js').includes('exports.moderateEpisodeComment'),'Episode moderation missing');
+assert(read('supabase/sql/oneup_community.sql').includes('respond_friendship'),'Friend request backend missing');
+assert(read('supabase/sql/oneup_community_optional.sql').includes('oneup_guard_episode_comment'),'Guest comment backend missing');
+assert(fs.existsSync('supabase/functions/moderate-episode-comment/index.ts'),'Episode moderation missing');
 assert(sw.includes("'./airing-ui.js'")&&sw.includes("'./comunidad.html'"),'PWA cache lacks new interfaces');
 assert(read('moderacion.html').includes('moderacion.js'),'Moderator console not linked');
 assert(read('moderacion.js').includes('moderationDashboard'),'Moderation queue not loaded');
-assert(read('functions/index.js').includes('exports.moderationDashboard'),'Moderation backend absent');
-assert(read('functions/index.js').includes('exports.listMyFriendRequests'),'Mutual friendship inbox absent');
-assert(read('functions/index.js').includes('exports.reviewVerification'),'Owner verification backend absent');
-assert(read('functions/index.js').includes('exports.reviewReport'),'Report processing backend absent');
+assert(fs.existsSync('supabase/functions/moderation-dashboard/index.ts'),'Moderation backend absent');
+assert(read('social-backend.js').includes('listFriends'),'Mutual friendship inbox absent');
+assert(fs.existsSync('supabase/functions/review-verification/index.ts'),'Owner verification backend absent');
+assert(fs.existsSync('supabase/functions/review-report/index.ts'),'Report processing backend absent');
 assert(read('social-backend.js').includes('requestFriend'),'Friend requests not connected');
-assert(read('firebase.json').includes('firestore.rules'),'Firestore rules not configured');
-assert(read('FIREBASE_COMUNIDAD_SETUP.md').includes('FIREBASE_SERVICE_ACCOUNT'),'Phone-only deployment docs incomplete');
-const storageRules=read('storage.rules');
-assert(storageRules.includes(String.raw`media\\.(jpg|png|webp|mp4)`),'Firebase Storage regex escaping regressed');
-assert(storageRules.includes(String.raw`{8,90}\\.(jpg|png|webp)`),'Avatar upload extension regex must escape dot');
+assert(read('supabase/sql/oneup_community.sql').includes('enable row level security'),'Supabase RLS not configured');
+assert(read('docs/SUPABASE_SETUP.md').includes('supabase.com/dashboard'),'Phone-only deployment docs incomplete');
+const storageRules=read('supabase/sql/oneup_storage.sql');
+assert(storageRules.includes(String.raw`media\.(jpg|png|webp|mp4)`),'Supabase Storage regex escaping regressed');
+assert(storageRules.includes(String.raw`{8,90}\.(jpg|png|webp)`),'Avatar upload extension regex must escape dot');
 assert(html.includes('external-providers.js'),'Public anime pages provider script is not loaded');
 assert(sw.includes("'./external-providers.js'"),'Offline cache missing authorized external links');
 assert(read('community.js').includes("for(const badge of $('[data-avatar-file]'))"),'Multiple community avatars must use querySelectorAll');

@@ -71,11 +71,11 @@ Leer \`AGENTS.md\`, \`docs/PROJECT_CONTINUITY.md\` y este documento; continuar s
 
 ## Etapa: experiencia de reproducción y conversación (16/10/2026)
 - Implementado un reproductor visual coherente con el tema oscuro Kokomi, con selector de servidores, temporadas y episodios **solo para medios del manifiesto autorizado**.
-- El panel de comentarios aparece debajo del video, con selector de conversación por episodio; usa las mismas funciones Firebase que el diálogo existente. Si Firebase no está configurado, se muestra una explicación explícita. Esto no acredita una prueba de escritura en una base real.
+- El panel de comentarios aparece debajo del video, con selector de conversación por episodio; usa las mismas funciones el backend anterior que el diálogo existente. Si el backend anterior no está configurado, se muestra una explicación explícita. Esto no acredita una prueba de escritura en una base real.
 - Se añadió activación voluntaria antes de cargar iframes externos y limpieza del video al abandonar la página.
 - Rediseñados los estados vacíos sin video: contenido centrado en desktop y sin botones cortados en móvil.
 - Pruebas por Playwright: fixture aislado de dos temporadas, cambio de servidor, bloqueo de carga anticipada de iframe, renderizado de hilos y restauración de navegación. Capturas de ficha y reproductor incluidas en Artifacts.
-- **Restan**: fidelidad visual contrastada para interiores Kokomi de origen, videos activos verificados en iPhone y Android, backend Firebase real, todos los componentes de cuenta y notificaciones.
+- **Restan**: fidelidad visual contrastada para interiores Kokomi de origen, videos activos verificados en iPhone y Android, backend el backend anterior real, todos los componentes de cuenta y notificaciones.
 
 ## Ciclo de integración del motor compartido
 - La demo origen respondió HTTP 200 en auditoría 2026-10-16; el 502 anterior es histórico. Aún no se certifica fidelidad visual completa.
