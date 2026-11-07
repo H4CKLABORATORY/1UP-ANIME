@@ -40,20 +40,27 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      # Phase 7 fix (order only; same steps, same triggers): browsers are
+      # installed BEFORE the unit tests because two script suites inside
+      # `npm test` launch a Playwright headless shell directly and fail
+      # on a fresh runner when the executable is not installed yet.
+      # Proven by CI run 42423927652 (2026-11-07) on feature/phase7-infra;
+      # the corrected sequence is the one ci.yml runs green. This gate
+      # itself was NOT dispatched in Phase 7 (static verification only).
+      - name: Install Playwright browser
+        run: npx playwright install --with-deps chromium
+
+      - name: Install Puppeteer browser
+        run: npx puppeteer browsers install chrome-headless-shell
+
       - name: Lint
         run: npm run lint
 
       - name: Unit + script tests
         run: npm test
 
-      - name: Install Playwright browser
-        run: npx playwright install --with-deps chromium
-
       - name: Browser tests (Playwright)
         run: npm run test:e2e
-
-      - name: Install Puppeteer browser
-        run: npx puppeteer browsers install chrome-headless-shell
 
       - name: Browser tests (Puppeteer)
         run: npm run test:puppeteer
