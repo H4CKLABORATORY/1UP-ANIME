@@ -33,3 +33,7 @@ dialog{max-width:min(610px,calc(100vw - 20px));border:1px solid #8fa9d664;border
 .c-link{background:none;border:0;color:#bbd0ff;font-size:12px;text-decoration:underline;padding:6px}
 
 #c-auth-dialog [hidden]{display:none!important}
+
+.c-media-preview{margin-top:10px}
+.c-media-preview img,.c-media-preview video{max-width:100%;max-height:320px;border-radius:10px;display:block}
+.c-media-preview small{display:block;margin-top:6px;opacity:.8}

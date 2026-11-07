@@ -189,7 +189,7 @@ create table if not exists public.oneup_community_posts (
   owner boolean not null default false,
   kind text not null check (kind in ('debate','pregunta','fanart','clip','manga','recomendacion')),
   text text not null check (char_length(btrim(text)) between 3 and 2500),
-  media_path text not null default '' check (media_path = '' or media_path ~ '^postUploads/[0-9a-f-]{36}/[A-Za-z0-9_-]{8,90}/media\.(jpg|png|webp|mp4)$'),
+  media_path text not null default '' check (media_path = '' or media_path ~ '^postUploads/[0-9a-f-]{36}/[A-Za-z0-9_-]{8,90}/media\.(jpg|png|webp|gif|mp4)$'),
   status text not null default 'visible' check (status in ('visible','pending','removed')),
   likes integer not null default 0 check (likes >= 0),
   reports integer not null default 0 check (reports >= 0),
