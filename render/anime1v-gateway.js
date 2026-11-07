@@ -1,6 +1,8 @@
 /* 1UP ANIME — standalone Render discovery gateway.
  * Uses FxxMorgan's Anime1v API WHEN its upstream and key are configured.
- * Otherwise uses Jikan's public metadata API (never claims Anime1v is active).
+ * Otherwise uses AniList's public GraphQL metadata API (never claims
+ * Anime1v is active). Jikan was removed on 2026-11-07: its public API
+ * died on 2026-10-01 and only times out since.
  * This server does not offer video extraction, streams, downloads or proxies.
  */
 'use strict';
@@ -12,7 +14,7 @@ const LIMIT=640*1024;
 const WINDOW=60*1000,MAX_RPM=18;
 const buckets=new Map(),cache=new Map();
 let animeClient=null;
-let lastSource='jikan_fallback';
+let lastSource='anilist_fallback';
 function json(res,status,value){
  res.writeHead(status,{
   'Content-Type':'application/json; charset=utf-8',
@@ -26,21 +28,31 @@ function json(res,status,value){
  });
  res.end(JSON.stringify(value));
 }
-function normalizeJikan(d,kind){
- const data=Array.isArray(d?.data)?d.data:[];
- return {source:'jikan',mode:'catalog_only',kind,provider:'Jikan',
-  results:data.slice(0,24).map(item=>({
-   title:String(item.title||item.title_english||'').slice(0,150),
-   image:String(item.images?.webp?.large_image_url||item.images?.jpg?.image_url||'').slice(0,500),
-   provider:'Jikan'
+function normalizeAniList(d,kind){
+ const media=Array.isArray(d?.data?.Page?.media)?d.data.Page.media:[];
+ return {source:'anilist',mode:'catalog_only',kind,provider:'AniList',
+  results:media.slice(0,24).map(item=>({
+   title:String(item.title?.english||item.title?.romaji||'').slice(0,150),
+   image:String(item.coverImage?.extraLarge||item.coverImage?.large||'').slice(0,500),
+   provider:'AniList'
   })).filter(item=>item.title),
-  hasMore:d?.pagination?.has_next_page===true
+  hasMore:d?.data?.Page?.pageInfo?.hasNextPage===true
  };
 }
-async function limitedJSON(url){
+async function aniListFallback(kind,params){
+ const fields='title{english romaji} coverImage{extraLarge large}';
+ const query=kind==='search'
+  ?'query($search:String){Page(page:1,perPage:24){pageInfo{hasNextPage}media(type:ANIME,isAdult:false,search:$search,sort:SEARCH_MATCH){'+fields+'}}}'
+  :'query($page:Int){Page(page:$page,perPage:24){pageInfo{hasNextPage}media(type:ANIME,isAdult:false,sort:POPULARITY_DESC){'+fields+'}}}';
+ const variables=kind==='search'?{search:String(params.q||'')}:{page:Number(params.page||1)||1};
+ const payload=await limitedJSON('https://graphql.anilist.co',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({query,variables})});
+ if(payload?.errors?.length)throw Error('AniList GraphQL error');
+ return normalizeAniList(payload,kind);
+}
+async function limitedJSON(url,init={}){
  const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),9000);
  try{
-  const r=await fetch(url,{redirect:'error',signal:controller.signal,headers:{Accept:'application/json'}});
+  const r=await fetch(url,{redirect:'error',signal:controller.signal,method:init.method||'GET',headers:{Accept:'application/json',...(init.headers||{})},body:init.body});
   if(!r.ok)throw Error('HTTP '+r.status);
   const length=Number(r.headers.get('content-length')||0);
   if(length>LIMIT)throw Error('Oversized result');
@@ -60,7 +72,7 @@ async function lookup(kind,params){
  if(hit&&hit.expires>Date.now())return hit.value;
  let data;
  // The restricted Anime1v runtime currently offers AnimeAV1 metadata only;
- // every other provider retains the Jikan fallback. Never mislabel the source.
+ // every other provider retains the AniList fallback. Never mislabel the source.
  const anime1vReady=!!(process.env.ANIME1V_BASE_URL&&process.env.ANIME1V_API_KEY);
  const anime1vProvider=!params.provider||['animeav1','animeav1.com'].includes(params.provider);
  if(anime1vReady&&anime1vProvider){
@@ -69,22 +81,15 @@ async function lookup(kind,params){
    const upstream=await animeClient.query(kind,params);
    if(Array.isArray(upstream?.results)&&upstream.results.length)data=upstream;
   }catch(error){
-   console.warn('Anime1v metadata unavailable; using Jikan fallback:',String(error?.message||'unavailable').slice(0,130));
+   console.warn('Anime1v metadata unavailable; using AniList fallback:',String(error?.message||'unavailable').slice(0,130));
   }
  }
  if(!data){
-  // Public Jikan metadata fallback when upstream is down, has no results,
+  // Public AniList metadata fallback when upstream is down, has no results,
   // or doesn't support the requested provider. This is NOT streaming.
-  const u=new URL(kind==='search'?'https://api.jikan.moe/v4/anime':'https://api.jikan.moe/v4/top/anime');
-  u.searchParams.set('limit','24');u.searchParams.set('sfw','true');
-  if(kind==='search')u.searchParams.set('q',params.q);
-  else{
-   u.searchParams.set('page',String(params.page||1));
-   u.searchParams.set('filter','bypopularity');
-  }
-  data=normalizeJikan(await limitedJSON(u),kind);
+  data=await aniListFallback(kind,params);
  }
- lastSource=data.source==='anime1v'?'anime1v':'jikan_fallback';
+ lastSource=data.source==='anime1v'?'anime1v':'anilist_fallback';
  if(cache.size>100)cache.clear();
  cache.set(key,{value:data,expires:Date.now()+180000});
  return data;
@@ -98,7 +103,7 @@ const server=http.createServer(async(req,res)=>{
  if(req.method!=='GET'){json(res,405,{error:'Método no permitido'});return}
  let u;try{u=new URL(req.url,'http://localhost')}catch{return json(res,400,{error:'URL no válida'})}
  if(u.pathname==='/health'){
-  json(res,200,{ok:true,service:'1UP metadata gateway',upstream:process.env.ANIME1V_BASE_URL?'anime1v':'jikan_fallback',lastSource,streaming:false});return;
+  json(res,200,{ok:true,service:'1UP metadata gateway',upstream:process.env.ANIME1V_BASE_URL?'anime1v':'anilist_fallback',lastSource,streaming:false});return;
  }
  if(u.pathname!=='/anime1vDiscovery')return json(res,404,{error:'Ruta inexistente'});
  const key=String(req.headers['x-forwarded-for']||req.socket.remoteAddress||'unknown').split(',')[0].slice(0,70);

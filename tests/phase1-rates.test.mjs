@@ -1,4 +1,4 @@
-/* Phase 1 - AniList/Jikan rate limits + refresh-catalog robustness.
+/* Phase 1 - AniList rate limits + refresh-catalog robustness.
    Tests the browser loaders (studio.js, catalog-plus.js) in a vm sandbox
    with stubbed fetch/storage/DOM, and scripts/refresh-catalog.mjs as a
    child process against a local fake AniList endpoint. Metadata only. */
@@ -49,15 +49,6 @@ const aniMedia = id => ({
 });
 const aniPage = items => ({data: {Page: {media: items, pageInfo: {hasNextPage: false}}}});
 
-const jikanItem = id => ({
-  mal_id: id, title: 'Jikan ' + id, title_english: 'Jikan ' + id,
-  title_japanese: '', title_synonyms: [], titles: [], synopsis: 'S',
-  score: 8.5, year: 2024, aired: {prop: {from: {year: 2024}}},
-  genres: [{name: 'Action'}], type: 'TV', episodes: 12, airing: false,
-  url: 'https://myanimelist.net/anime/' + id, streaming: [],
-  images: {webp: {large_image_url: 'https://example.test/j.jpg'}, jpg: {large_image_url: ''}},
-});
-
 function loadStudio(fetchImpl) {
   const sandbox = {
     console, setTimeout, clearTimeout,
@@ -97,7 +88,7 @@ function loadCatalogPlus(fetchImpl) {
     window: {},
     state: {catalogSource: ''},
     sections: {},
-    getJson: async () => { throw Error('Jikan down'); },
+    getJson: async () => { throw Error('legacy provider down'); },
     loadHome: async () => {},
     switchView: () => {},
     paint: () => {},
@@ -178,39 +169,30 @@ test('AniList: X-RateLimit-Remaining<=2 waits until the reset window', async () 
   assert.ok(elapsed >= 2800, 'must wait for the reset window (~3-4s), took ' + elapsed + 'ms');
 });
 
-// --- studio.js: Jikan ---
+// --- studio.js: no Jikan (removed 2026-11-07; its API died 2026-10-01) ---
 
-test('Jikan: sequential calls spaced >=425ms and concurrent burst serialized', async () => {
-  let concurrent = 0, maxConcurrent = 0, calls = 0;
-  const hook = loadStudio(async () => {
-    calls++; concurrent++; maxConcurrent = Math.max(maxConcurrent, concurrent);
-    await sleep(20);
-    concurrent--;
-    return resp({data: {data: [jikanItem(1)], pagination: {has_next_page: false}}});
-  });
-  assert.equal(hook.jikan.minGapMs, 425, 'Jikan gap reuses the app.js 425ms pattern (3 req/s)');
-  const start = Date.now();
-  await Promise.all([hook.callJikan({}), hook.callJikan({}), hook.callJikan({})]);
-  const elapsed = Date.now() - start;
-  assert.equal(calls, 3);
-  assert.equal(maxConcurrent, 1, 'no parallel Jikan bursts');
-  assert.ok(elapsed >= 750, '3 calls need 2 gaps of 425ms, took ' + elapsed + 'ms');
+test('No Jikan: studio hook exposes AniList only, no Jikan loader remains', async () => {
+  const hook = loadStudio(async () => resp({data: aniPage([aniMedia(1)])}));
+  assert.equal(hook.jikan, undefined, 'no Jikan rate-limit entry may remain');
+  assert.equal(hook.callJikan, undefined, 'no Jikan loader may remain');
+  assert.equal(typeof hook.callAni, 'function');
+  const r = await hook.callAni({});
+  assert.equal(r.source, 'anilist');
 });
 
-test('Jikan: 429 is retried with backoff and then succeeds', async () => {
-  let calls = 0;
-  const hook = loadStudio(async () => {
-    calls++;
-    if (calls === 1) return resp({status: 429, data: {}});
-    return resp({data: {data: [jikanItem(2)], pagination: {has_next_page: false}}});
-  });
-  const start = Date.now();
-  const r = await hook.callJikan({});
-  const elapsed = Date.now() - start;
-  assert.equal(calls, 2);
-  assert.equal(r.source, 'jikan');
-  assert.equal(r.items.length, 1);
-  assert.ok(elapsed >= 1000, '429 backoff (1200ms x attempt) must apply, took ' + elapsed + 'ms');
+test('No Jikan: no runtime file references the dead Jikan API host', () => {
+  const needle = 'api.' + 'jikan' + '.moe';
+  const runtimeFiles = [
+    'studio.js', 'catalog-plus.js', 'franchise-explorer.mjs',
+    'anime1v-discovery.js', 'anime-title-search.js',
+    'render/anime1v-gateway.js', 'render/anime1v-adapter.js',
+    'scripts/scrape-anime-metadata.py', 'scripts/refresh-catalog.mjs',
+    'scripts/refresh-airing.mjs', 'index.html', 'studio.html',
+  ];
+  for (const rel of runtimeFiles) {
+    const src = fs.readFileSync(path.join(repoRoot, rel), 'utf8');
+    assert.ok(!src.includes(needle), rel + ' must not reference ' + needle);
+  }
 });
 
 // --- catalog-plus.js: ask() ---

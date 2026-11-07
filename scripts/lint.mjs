@@ -4,7 +4,11 @@
  *   1. Syntax: `node --check` on every *.js / *.mjs (except node_modules, .git).
  *   2. Python: `python3 -m py_compile` on every *.py (same exclusions).
  *   3. JSON: every *.json parses (same exclusions).
- *   4. No-Firebase guard: package.json / package-lock.json must not list
+ *   4. No-Jikan guard: no runtime .js / .mjs / .html / .py file may
+ *      reference the dead Jikan API host (removed 2026-11-07; the API
+ *      died 2026-10-01). Docs may still mention Jikan historically and
+ *      tests assert its absence, so tests/ is excluded.
+ *   5. No-Firebase guard: package.json / package-lock.json must not list
  *      Firebase packages, and no .js / .mjs / .html may import, require or
  *      load one (the accounts rework deleted Firebase; the same rule is
  *      asserted for auth.js by tests/auth-email.test.mjs).
@@ -80,6 +84,20 @@ for (const f of [...jsFiles, ...htmlFiles]) {
   }
 }
 console.log('no-firebase: ' + (failures.some((x) => x.startsWith('no-firebase')) ? 'FAIL' : 'ok'));
+
+// No-Jikan guard: the metadata chain is AniList -> snapshot cache -> BASIC
+// local fallback. The host is built from parts so this guard does not
+// trip over its own literal.
+const jikanHost = 'api.' + 'jikan' + '.moe';
+for (const f of [...jsFiles, ...htmlFiles, ...pyFiles]) {
+  if (f === selfFile) continue; // the guard itself names what it guards against
+  if (path.relative(repo, f).startsWith('tests' + path.sep)) continue;
+  const src = fs.readFileSync(f, 'utf8');
+  if (src.includes(jikanHost)) {
+    failures.push('no-jikan: ' + path.relative(repo, f) + ' references the dead Jikan API');
+  }
+}
+console.log('no-jikan: ' + (failures.some((x) => x.startsWith('no-jikan')) ? 'FAIL' : 'ok'));
 
 if (failures.length > 0) {
   console.log('\nLint failed (' + failures.length + ' problem(s)):');

@@ -70,16 +70,14 @@ async function askSerial(query,variables){
 }
 function args(path){let u=new URL(path,'https://example.test'),a={page:Math.max(1,+u.searchParams.get('page')||1),perPage:24,sort:['POPULARITY_DESC']};if(u.pathname==='/top/anime'){if(u.searchParams.get('type')==='movie')a.format='MOVIE'}else if(u.pathname==='/seasons/now'){let n=new Date();a.season=['WINTER','SPRING','SUMMER','FALL'][Math.floor(n.getMonth()/3)];a.seasonYear=n.getFullYear();a.sort=['TRENDING_DESC']}else if(u.pathname==='/anime'||u.pathname==='/schedules'){let s=u.searchParams.get('q'),g=u.searchParams.get('genre'),f=u.searchParams.get('type');if(s){a.search=s;a.sort=['SEARCH_MATCH']}if(g)a.genre=g;if(f&&['MOVIE','OVA','ONA','SPECIAL'].includes(f.toUpperCase()))a.format=f.toUpperCase();if(u.pathname==='/schedules')a.status='RELEASING'}else return null;return a}
 function local(path){let u=new URL(path,'https://example.test'),q=(u.searchParams.get('q')||'').toLowerCase(),g=(u.searchParams.get('genre')||'').toLowerCase(),type=u.searchParams.get('type'),p=Math.max(1,+u.searchParams.get('page')||1);let a=BASIC.filter(x=>(!q||x.title.toLowerCase().includes(q))&&(!g||x.genres.some(y=>y.name.toLowerCase().includes(g)))&&(!type||type!=='movie'||x.type==='Movie'));return{data:a.slice((p-1)*24,p*24),pagination:{has_next_page:p*24<a.length},offline:true}}
-const original=getJson;
 getJson=async function(path){
  const m=/^\/anime\/(-?\d+)\/full/.exec(path);
  try{
  let out;
  if(m){let k=+m[1],res=await ask(D,k<0?{id:-k}:{idMal:k});out={data:norm(res.Media)}}
- else{let variables=args(path);if(!variables)return original(path);const result=await ask(Q,variables),items=(result.Page?.media||[]).map(norm);if(!items.length)throw Error('No results');out={data:items,pagination:{has_next_page:!!result.Page?.pageInfo?.hasNextPage}}}
+ else{let variables=args(path);if(!variables)throw Error('Ruta de catálogo no admitida');const result=await ask(Q,variables),items=(result.Page?.media||[]).map(norm);if(!items.length)throw Error('No results');out={data:items,pagination:{has_next_page:!!result.Page?.pageInfo?.hasNextPage}}}
  state.catalogSource=askFellBack?'Caché':'AniList';try{sessionStorage.setItem('oneup_cache_'+path,JSON.stringify(out))}catch{}return out
  }catch(err){
- try{let result=await original(path);if(result?.data&&(Array.isArray(result.data)?result.data.length:true)){state.catalogSource='Jikan';return result}}catch{}
  try{let r=JSON.parse(sessionStorage.getItem('oneup_cache_'+path)||'null');if(r?.data){state.catalogSource='Caché';return r}}catch{}
  state.catalogSource='Catálogo básico';
  if(m){let x=BASIC.find(x=>x.mal_id===+m[1]);if(x)return{data:x};throw Error('Ficha no disponible')}
@@ -98,7 +96,7 @@ function continueShelf(){let el=document.querySelector('#continue-shelf');if(!el
 const oldHome=loadHome;
 loadHome=async function(){mount();continueShelf();rememberAll(BASIC);paint(document.querySelector('#top-grid'),BASIC.slice(0,10),true);paint(document.querySelector('#season-grid'),BASIC.slice(10,20),false);setFeatured(BASIC[0]);paint(document.querySelector('#movie-shelf'),BASIC.filter(x=>x.type==='Movie'),false);document.querySelector('#schedule-shelf').innerHTML='<p>Consultando estrenos y programación…</p>';await oldHome();try{let m=await getJson('/top/anime?type=movie&limit=6');rememberAll(m.data||[]);paint(document.querySelector('#movie-shelf'),(m.data||[]).slice(0,6),false)}catch{}
 try{let s=await getJson('/schedules?limit=24'),items=(s.data||[]).filter(x=>x.nextAiringEpisode?.airingAt).sort((a,b)=>a.nextAiringEpisode.airingAt-b.nextAiringEpisode.airingAt).slice(0,8);rememberAll(items);document.querySelector('#schedule-shelf').innerHTML=items.length?items.map(a=>'<button class="schedule-item" data-detail="'+a.mal_id+'"><strong>EP '+a.nextAiringEpisode.episode+'</strong><span>'+escapeText(a.title_english||a.title)+'</span><time>'+new Intl.DateTimeFormat('es',{weekday:'short',hour:'2-digit',minute:'2-digit'}).format(new Date(a.nextAiringEpisode.airingAt*1000))+'</time></button>').join(''):'<p>La programación en vivo estará disponible cuando responda AniList.</p>'}catch{}
-let source=document.querySelector('#catalog-source-info');if(source)source.textContent='Datos: '+(state.catalogSource||'AniList / Jikan')};
+let source=document.querySelector('#catalog-source-info');if(source)source.textContent='Datos: '+(state.catalogSource||'AniList')};
 const oldSwitch=switchView;switchView=function(v){oldSwitch(v);if(v==='inicio')continueShelf()};
 // Phase 1 diagnostics hook (no UI, no setup): exposes ask() and its rate
 // state for automated tests and debugging.

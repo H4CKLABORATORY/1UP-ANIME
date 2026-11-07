@@ -18,7 +18,7 @@ try{
  const root='http://127.0.0.1:'+port;
  const health=await(await fetch(root+'/health')).json();
  assert.equal(health.ok,true);
- assert.equal(health.upstream,'jikan_fallback');
+ assert.equal(health.upstream,'anilist_fallback');
  assert.equal(health.streaming,false);
  for(const endpoint of ['/resolve','/api/v1/anime/episode','/download','/api/v1/anime/resolve']){
   const r=await fetch(root+endpoint);assert.equal(r.status,404,endpoint+' unexpectedly exposed');

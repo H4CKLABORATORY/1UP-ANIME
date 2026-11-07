@@ -43,4 +43,4 @@ jobs:
           set -euo pipefail
           curl --fail --retry 4 --retry-delay 4 --location --max-time 120 \
             'https://oneup-anime-discovery.onrender.com/health' -o /tmp/oneup-health.json
-          node -e "const h=require('/tmp/oneup-health.json'); if(h.ok!==true||h.streaming!==false||!['jikan_fallback','anime1v'].includes(h.upstream))process.exit(1); console.log('Render online; metadata source:',h.upstream);"
+          node -e "const h=require('/tmp/oneup-health.json'); if(h.ok!==true||h.streaming!==false||!['anilist_fallback','anime1v'].includes(h.upstream))process.exit(1); console.log('Render online; metadata source:',h.upstream);"

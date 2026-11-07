@@ -1,6 +1,6 @@
 /* Non-secret real-world smoke test of connected Render metadata services.
  * Uses only the gateway's public URL; it never handles the private API key.
- * A Jikan fallback is reported honestly instead of being labelled Anime1v.
+ * An AniList fallback is reported honestly instead of being labelled Anime1v.
  */
 const root='https://oneup-anime-discovery.onrender.com';
 const source='https://oneup-anime1v-metadata.onrender.com';
@@ -37,8 +37,8 @@ const output={
  numberOfResults:result.data.results.length,
  sampleTitles:result.data.results.slice(0,3).map(x=>x.title)
 };
-if(!['anime1v','jikan'].includes(output.selectedSource))
+if(!['anime1v','anilist'].includes(output.selectedSource))
  throw Error('Unknown metadata source: '+output.selectedSource);
 console.log(JSON.stringify(output,null,2));
 if(output.selectedSource!=='anime1v')
- console.warn('WARNING: Anime1v returned no usable results or is unavailable; public Jikan fallback is active.');
+ console.warn('WARNING: Anime1v returned no usable results or is unavailable; public AniList fallback is active.');
