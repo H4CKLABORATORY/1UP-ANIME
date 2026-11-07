@@ -24,8 +24,11 @@ try {
   const page = await browser.newPage();
   const errors = [];
   page.on('pageerror', (error) => errors.push(error.message));
-  // Abort real media requests: the error is dispatched manually below.
-  await page.route('**/*.mp4', (route) => route.abort());
+  // Hold media requests pending: the failure is dispatched manually below.
+  // (Phase 4: the player now also listens for <source> errors, so aborting
+  // the request would itself trigger the automatic failover under test and
+  // race the first scenario's assertions.)
+  await page.route('**/*.mp4', () => new Promise(() => {}));
   await page.setContent('<section id="oneup-player-section"></section>');
   // Install the fetch stub in this document (addInitScript does not survive
   // setContent here); it must be in place before the player fetches.
