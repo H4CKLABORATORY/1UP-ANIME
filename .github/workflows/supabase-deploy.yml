@@ -1,0 +1,53 @@
+name: Activate 1UP Community Supabase
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: oneup-supabase-backend-deploy
+  cancel-in-progress: false
+jobs:
+  deploy:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      SUPABASE_PROJECT_REF: ${{ vars.SUPABASE_PROJECT_REF }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Setup Supabase CLI
+        uses: supabase/setup-cli@v1
+        with:
+          version: latest
+      - name: Verify required owner configuration
+        run: |
+          if [ -z "$SUPABASE_PROJECT_REF" ]; then
+            echo "::error::Set SUPABASE_PROJECT_REF in GitHub Actions Variables."
+            exit 1
+          fi
+          node --check auth.js
+          node --check social-backend.js
+          node --check supabase-episode-backend.js
+          node --check supabase-config.js
+      - name: Link Supabase project
+        run: supabase link --project-ref "$SUPABASE_PROJECT_REF"
+        env:
+          SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+      - name: Deploy database migrations (SQL files)
+        run: |
+          export PGPASSWORD="${{ secrets.SUPABASE_DB_PASSWORD }}"
+          supabase db push --db-url "postgresql://postgres:$PGPASSWORD@db.$SUPABASE_PROJECT_REF.supabase.co:5432/postgres" || \
+          echo "::warning::db push needs a migrations folder; apply supabase/sql/*.sql in the SQL Editor instead."
+      - name: Deploy Edge Functions (moderation + anime discovery)
+        run: |
+          supabase functions deploy moderation-dashboard moderate-post review-report review-verification moderate-episode-comment moderate-global-message moderate-community-reply anime1v-discovery
+        env:
+          SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+      - name: Reminder
+        run: |
+          echo "Public config is NOT written by this workflow."
+          echo "Douglas must paste the Project URL + publishable key into supabase-config.js (see docs/SUPABASE_SETUP.md)."

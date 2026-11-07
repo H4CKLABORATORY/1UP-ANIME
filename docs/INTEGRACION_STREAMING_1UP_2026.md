@@ -16,7 +16,7 @@ GitHub Pages / Safari iPhone / navegadores de escritorio
        │    └─ iframe admitido cuando el dueño permita la incrustación
        ├─ episode-comments.js (sincroniza el episodio de la conversación)
        │    ├─ Supabase opcional: supabase-episode-backend.js
-       │    └─ Firebase actual de respaldo
+       │    └─ el backend anterior actual de respaldo
        └─ sw.js (solo caché de la aplicación; nunca cachear segmentos ajenos)
 GitHub Actions → chequeos de HLS, contrato de fuentes, UI, comentarios y seguridad
 DexterAnimeSync → valida hasta 7 fuentes declaradas; ninguna URL se considera
@@ -70,7 +70,7 @@ Si en el futuro se despliega infraestructura de origen, usar HTTPS, mínimo priv
 
 ## Comunidad opcional
 
-- Firebase existente permanece. Supabase solo se utiliza si el propietario crea un proyecto, configura `supabase-config.js` con clave **pública** e instala el esquema RLS bajo revisión.
+- el backend anterior existente permanece. Supabase solo se utiliza si el propietario crea un proyecto, configura `supabase-config.js` con clave **pública** e instala el esquema RLS bajo revisión.
 - Ninguna clave `service_role`, secreto de Supabase o token de GitHub debe aparecer en archivos públicos.
 - La preparación incluye políticas RLS, controles para escritura por autor, anti-spam y separación de comentarios/progreso, pero **no** implica un backend conectado hoy.
 - Los comentarios se sincronizan con el episodio seleccionado por el espectador, no se inventan comentarios falsos.
@@ -82,7 +82,7 @@ Si en el futuro se despliega infraestructura de origen, usar HTTPS, mínimo priv
 - `node scripts/check-supabase-option.mjs`: permisos y configuración desactivada.
 - `node scripts/check-ui.mjs`: invariantes de la web actual.
 - `node scripts/e2e-browser.mjs`: pruebas reales de Chromium para móvil simulado/escritorio (requiere Playwright).
-- Las comprobaciones offline **no demuestran** reproducción de episodios reales, disponibilidad de un proveedor, derechos de autor, Firebase/Supabase en producción ni compatibilidad real de Safari iPhone.
+- Las comprobaciones offline **no demuestran** reproducción de episodios reales, disponibilidad de un proveedor, derechos de autor, el backend anterior/Supabase en producción ni compatibilidad real de Safari iPhone.
 - Esta rama integra código que ya se había desarrollado en PR #7, #8, #10 y #11; no fusionar esas ramas antiguas a ciegas sin revisar sus conflictos.
 
 ## Estado al crear esta rama

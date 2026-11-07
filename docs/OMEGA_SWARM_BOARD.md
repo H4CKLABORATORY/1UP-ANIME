@@ -36,7 +36,7 @@ Cada ejecución agrega bajo esta línea: fecha, ID, estado anterior→nuevo, age
 
 ### 2026-10-16 — ciclo real OMEGA CORE
 - SW-00 READY→REVIEW: auditoría completada sobre main `85ef098`, PR14 `09e8fa2`, PR15 `eb3e227`; informe `docs/OMEGA_AUDIT_20261016.md`.
-- Seis especialistas reales con propiedad separada: visual (lectura), frontend (`studio.js`), media (`episode-player.js`), data (`episode-comments.js`), QA (verificación), infra (`firebase-deploy.yml`). CORE integra documentación y CI.
+- Seis especialistas reales con propiedad separada: visual (lectura), frontend (`studio.js`), media (`episode-player.js`), data (`episode-comments.js`), QA (verificación), infra (`el backend anterior-deploy.yml`). CORE integra documentación y CI.
 - SW-02/03/04/05: correcciones acotadas en REVIEW; no se declara terminada cada especialidad. SW-06: restricción de despliegue en REVIEW. SW-01 continúa BACKLOG: conservar PR14, integrar motor actual y comparar capturas de Kokomi ahora accesible.
 - Rama: `fix/omega-episode-lifecycle-20261016`. Tests lifecycle, carrera navegación, comentarios Chromium, UI 149 assertions, HLS, contrato, resiliencia y Supabase opcional PASS. E2E 36/36 móvil 390×844 y desktop 1360×860 PASS, sin errores JS. Fixtures aislados, sin escritura remota.
 - SW-07: PR de revisión, sin merge/despliegue. Safari físico, medios autorizados y backends reales BLOCKED por entradas/configuración no disponibles.
@@ -57,6 +57,6 @@ Cada ejecución agrega bajo esta línea: fecha, ID, estado anterior→nuevo, age
 ### 2026-10-16 — continuación con preferencia por Codex
 - **Preferencia de diseño verificada en conversación:** el propietario prefiere la propuesta más reciente de Codex; PR #19 y sus bases #18/#17 pasan a ser la línea visual a preservar. No revivir diseño anterior como default.
 - **SW-08 en revisión, no desplegado:** rama `fix/codex-pwa-popularity-20261016`, PR #20 apilado sobre PR #19. Corrección de cachés origin-wide, selección popular distinta de trending y futura generación de `groups.popular` del snapshot.
-- El cambio es código real y no depende de fuentes de anime, Firebase o acceso a Safari; su suite nueva es `scripts/test-cache-catalog.mjs`, CI `ONEUP Codex Cache and Catalog Regression`.
+- El cambio es código real y no depende de fuentes de anime, el backend anterior o acceso a Safari; su suite nueva es `scripts/test-cache-catalog.mjs`, CI `ONEUP Codex Cache and Catalog Regression`.
 - **Cadena pendiente:** #17 → #18 → #19 → #20. Para integrar en `main` hace falta revisión coherente del conjunto (incluidos conflictos y capturas); no fusionar PRs fuera de orden.
 - **Bloqueos externos persistentes:** manifiesto de video sin episodios, autenticación/servicios de comunidad no configurados, pruebas Safari iPhone físico y reproducción real ausentes.

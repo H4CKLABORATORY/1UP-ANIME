@@ -14,7 +14,7 @@ Continúa el proyecto existente hasta convertirlo en una plataforma de anime coh
 - No confundir metadatos de AniList/Jikan con derechos de reproducción.
 - No convertir la web en tarjetas para visitar otros servicios; el reproductor de episodios mostrará únicamente fuentes integrables verificadas y autorizadas.
 - No prometer «7 reproductores» si el manifiesto `data/licensed-media.json` está vacío: son hasta siete *slots*, no servidores activos.
-- No dar por finalizados Google Login, Supabase, Firebase, Safari físico ni fuentes HLS reales sin verificación y configuración efectiva.
+- No dar por finalizados Google Login, Supabase, el backend anterior, Safari físico ni fuentes HLS reales sin verificación y configuración efectiva.
 - No comprar servicios, divulgar secretos, eludir DRM o CORS, obtener material de sitios sin autorización, ni usar servicios de terceros para evadir restricciones.
 - No fusionar PR #14 sin aprobación visual del propietario. No desplegar a producción por defecto.
 - Kokomi es el referente visual prioritario: estudiar distribución, hero, carruseles, navegación, tarjetas, páginas y móvil. Recrear comportamientos mediante código y recursos originales; una réplica de activos comerciales exige licencia válida. No asumir coincidencia pixel-perfect si la demo no estuvo disponible.
@@ -31,7 +31,7 @@ Leer en este orden antes de editar:
 
 Archivos identificados en `main`: `index.html`, `studio.js`, `app.js`, `studio.css`, `brand-v2.css`, `spotlight.css`, `motion.css`, `episode-player.js`, `hls-adapter.js`, `episode-comments.js`, `community.js`, `social-backend.js`, `supabase-episode-backend.js`, `external-providers.js`, `data/licensed-media.json`, `sw.js`, `.github/workflows/` y `scripts/`. Verificar que sigan existiendo.
 
-**Estado al preparar este envío:** PR #14 abierto en borrador; README informa manifiesto multimedia vacío; Firebase/Supabase requieren configuración; pruebas automatizadas de PR #14 documentadas, pero Safari iPhone físico y reproducción real pendientes. Esto NO prueba que el despliegue actual sea el de PR #14.
+**Estado al preparar este envío:** PR #14 abierto en borrador; README informa manifiesto multimedia vacío; el backend anterior/Supabase requieren configuración; pruebas automatizadas de PR #14 documentadas, pero Safari iPhone físico y reproducción real pendientes. Esto NO prueba que el despliegue actual sea el de PR #14.
 
 ## 2. Orquestación eficiente (6 especialidades + coordinador)
 
@@ -84,7 +84,7 @@ Máximo inicial recomendado: cuatro frentes de escritura independientes; revisor
 ### Paso E — Datos, backends y privacidad
 - Verificar AniList/Jikan y respaldos sin inventar estrenos. Respetar rate limits y atribuciones.
 - Los perfiles `localStorage` no equivalen a cuentas sincronizadas.
-- Firebase y Supabase permanecen opcionales hasta configurar proyecto/credenciales públicas/seguridad y verificar integración real.
+- el backend anterior y Supabase permanecen opcionales hasta configurar proyecto/credenciales públicas/seguridad y verificar integración real.
 - No introducir service keys o secretos al frontend ni mezclar dos backends sin decisión explícita.
 - Publicar los requisitos del propietario y la ruta de verificación, sin inventar usuarios ni comentarios.
 

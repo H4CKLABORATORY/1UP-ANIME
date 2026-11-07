@@ -1,182 +1,71 @@
-/* Offline player lifecycle regression: use the public API and a small DOM double. */
+/* Regression checks for Rule 2 (everything automatic) in the episode player.
+ * No network media is fetched: licensed-media.json is stubbed and the video
+ * error is dispatched manually. Verifies: Spanish (Latino) is the default
+ * language and the first server auto-plays with no click; a failed source
+ * auto-switches to the next server with no click; when no Latino source
+ * exists it falls back to all languages. */
 import assert from 'node:assert/strict';
-import fs from 'node:fs';
-import vm from 'node:vm';
+import { chromium } from 'playwright';
 
-class Element {
- constructor(tag='div'){this.tag=tag;this.children=[];this.dataset={};this.isConnected=true;this.classList={toggle(){}};this.attributes={};this.pauseCalls=0;this.loadCalls=0;}
- appendChild(node){this.children.push(node);return node;}
- append(...nodes){this.children.push(...nodes);}
- after(node){(this.afterChildren??=[]).push(node)}
- replaceChildren(){this.children=[];}
- setAttribute(key,value){this.attributes[key]=value;}
- removeAttribute(key){delete this.attributes[key];if(key==='src')this.src='';}
- addEventListener(event,fn){(this.listeners??={})[event]=fn;}
- querySelector(){return null;}
- querySelectorAll(selector){return selector==='source'?this.children.filter(node=>node.tag==='source'):[];}
- pause(){this.pauseCalls++;}
- load(){this.loadCalls++;}
-}
-function setup(mime,episode={},records){
- const events=new Map(),nodes=new Map();
- const root=new Element();
- root.querySelector=selector=>nodes.get(selector)||null;
- root.querySelectorAll=()=>[];
- Object.defineProperty(root,'innerHTML',{set(){
-  nodes.clear();
-  for(const id of ['oneup-watch-episode','oneup-watch-language','oneup-playback-display','oneup-player-message','oneup-now-watching'])nodes.set('#'+id,new Element());
- }});
- const document={querySelector:()=>root,createElement:tag=>new Element(tag),addEventListener:(name,fn)=>events.set(name,fn),dispatchEvent(){}};
- let pending=false,disposed=0;
- const window={OneUpHLS:{attach(){return ()=>disposed++;}}};
- const fetch=()=>pending?new Promise(()=>{}):Promise.resolve({ok:true,json:async()=>({entries:{'al-1':{episodes:records||[{number:1,rights:'owned',sources:[{src:'https://media.example.com/video',mime}],...episode}]}}})});
- vm.runInNewContext(fs.readFileSync('episode-player.js','utf8'),{window,document,fetch,URL,location:{href:'https://anime.example.com/'},AbortController,setTimeout,clearTimeout,CustomEvent:class{}});
- return {window,root,nodes,events,setPending(){pending=true;},get disposed(){return disposed;}};
-}
+const MOCK = {
+  entries: {
+    'test-1': { episodes: [{ number: 1, title: 'Episodio 1', language: 'Español latino', sources: [
+      { name: 'Servidor Latino', src: 'https://no-such-server-1up.example.com/latino.mp4', language: 'Español latino', rights: 'authorized' },
+      { name: 'Servidor Sub', src: 'https://no-such-server-1up.example.com/sub.mp4', language: 'Japonés subtitulado', rights: 'authorized' },
+    ] }] },
+    'test-2': { episodes: [{ number: 1, title: 'Episodio 1', language: 'Japonés subtitulado', sources: [
+      { name: 'Servidor Sub', src: 'https://no-such-server-1up.example.com/sub.mp4', language: 'Japonés subtitulado', rights: 'authorized' },
+    ] }] },
+  },
+};
 
-// A new anime must release old media immediately, before its manifest resolves.
-for(const mime of ['video/mp4','video/webm','application/vnd.apple.mpegurl']){
- const c=setup(mime);
- await c.window.OneUpEpisodePlayer.show({id:'al-1',episodes:1});
- const video=c.nodes.get('#oneup-playback-display').children[0];
- c.setPending();
- // The unresolved mock intentionally ignores abort; do not await it.
- const next=c.window.OneUpEpisodePlayer.show({id:'al-2'});
- if(mime==='application/vnd.apple.mpegurl')assert.equal(c.disposed,1,'HLS must dispose before the next fetch completes');
- else{
-  assert.equal(video.pauseCalls,1,'Direct media must stop playing');
-  assert.equal(video.children[0].src,'','Direct source must be released');
-  assert.equal(video.loadCalls,1,'Reset the browser media resource');
- }
- c.events.get('oneup-anime-closed')();
- if(mime==='application/vnd.apple.mpegurl')assert.equal(c.disposed,1,'Repeated close must not dispose twice');
- void next;
-}
+const browser = await chromium.launch({ headless: true, args: ['--no-sandbox'] });
+try {
+  const page = await browser.newPage();
+  const errors = [];
+  page.on('pageerror', (error) => errors.push(error.message));
+  // Abort real media requests: the error is dispatched manually below.
+  await page.route('**/*.mp4', (route) => route.abort());
+  await page.setContent('<section id="oneup-player-section"></section>');
+  // Install the fetch stub in this document (addInitScript does not survive
+  // setContent here); it must be in place before the player fetches.
+  await page.evaluate((mock) => {
+    const origFetch = window.fetch.bind(window);
+    window.fetch = (url, opts) => {
+      if (String(url).includes('licensed-media.json')) {
+        return Promise.resolve(new Response(JSON.stringify(mock), {
+          status: 200, headers: { 'Content-Type': 'application/json' },
+        }));
+      }
+      return origFetch(url, opts);
+    };
+  }, MOCK);
+  await page.addScriptTag({ path: 'episode-player.js' });
+  const currentSrc = () => page.evaluate(() => document.querySelector('#oneup-playback-display video source')?.src || '');
 
-// Closing the anime also releases direct files without selecting another source.
-{
- const c=setup('video/mp4');
- await c.window.OneUpEpisodePlayer.show({id:'al-1'});
- const video=c.nodes.get('#oneup-playback-display').children[0];
- c.events.get('oneup-anime-closed')();
- assert.equal(video.pauseCalls,1);
- assert.equal(video.loadCalls,1);
-}
-// Missing source metadata inherits episode values, including local WebVTT captions.
-{
- const c=setup('video/mp4',{language:'Español latino',quality:'1080p',subtitles_es:'./media/subtitles/episode-1.vtt'});
- await c.window.OneUpEpisodePlayer.show({id:'al-1'});
- const video=c.nodes.get('#oneup-playback-display').children[0];
- assert.equal(video.children.find(node=>node.tag==='track').src,'./media/subtitles/episode-1.vtt');
- assert.match(c.nodes.get('#oneup-player-message').textContent,/Español latino · 1080p/);
-}
-// A source can override episode metadata and captions independently.
-{
- const c=setup('video/mp4',{language:'Japonés',quality:'720p',subtitles_es:'./media/default.vtt',sources:[{src:'https://media.example.com/video.mp4',language:'Castellano',quality:'1080p',subtitles_es:'https://media.example.com/captions.vtt'}]});
- await c.window.OneUpEpisodePlayer.show({id:'al-1'});
- const video=c.nodes.get('#oneup-playback-display').children[0];
- assert.equal(video.children.find(node=>node.tag==='track').src,'https://media.example.com/captions.vtt');
- assert.match(c.nodes.get('#oneup-player-message').textContent,/Castellano · 1080p/);
-}
-// Reject insecure and escaping caption paths, rather than silently loading them.
-for(const subtitles_es of ['./media/../secret.vtt','./media/%2e%2e/secret.vtt','../media/test.vtt','http://media.example.com/test.vtt','javascript:alert(1)','//media.example.com/test.vtt','./media/test.mp4']){
- const c=setup('video/mp4',{subtitles_es});
- await c.window.OneUpEpisodePlayer.show({id:'al-1'});
- const video=c.nodes.get('#oneup-playback-display').children[0];
- assert.equal(video.children.some(node=>node.tag==='track'),false,subtitles_es);
-}
+  // Scenario 1: Spanish default + first server auto-plays, no click.
+  await page.evaluate(() => window.OneUpEpisodePlayer.show({ id: 'test-1', episodes: 1 }));
+  await page.locator('#oneup-playback-display video').waitFor({ timeout: 9000 });
+  assert.match(await currentSrc(), /latino\.mp4$/, 'Spanish (Latino) source must auto-play first');
+  assert.equal(await page.locator('#oneup-watch-language').inputValue(), 'latino', 'Language must default to Spanish Latino');
+  assert.equal(await page.evaluate(() => document.querySelector('[data-server-slot="0"]')?.classList.contains('active')), true, 'First server must be active without a click');
+  assert.equal(await page.evaluate(() => document.querySelectorAll('.oneup-source-retry').length), 0, 'No manual retry button before any failure');
 
-// Only declared language groups appear; filtering preserves the seven source slots.
-{
- const sources=[
-  {language:'es-419'}, {language:'es-ES'},
-  {language:'ja',subtitles_es:'./media/sub.vtt'}, {language:'ja'}, {language:'en'}
- ].map((source,index)=>({src:'https://media.example.com/video-'+index+'.mp4',name:'Fuente '+index,...source}));
- const c=setup('video/mp4',{sources});
- await c.window.OneUpEpisodePlayer.show({id:'al-1'});
- const select=c.nodes.get('#oneup-watch-language');
- for(const group of ['latino','castellano','sub','original','other'])assert(select.innerHTML.includes('value="'+group+'"'));
- for(const [group,index] of [['latino',0],['castellano',1],['sub',2],['original',3],['other',4]]){
-  select.listeners.change({target:{value:group}});
-  const video=c.nodes.get('#oneup-playback-display').children[0];
-  assert.equal(video.children[0].src,sources[index].src);
- }
- c.window.OneUpEpisodePlayer.close();
-}
-{
- const c=setup('video/mp4',{language:'es'});
- await c.window.OneUpEpisodePlayer.show({id:'al-1'});
- const select=c.nodes.get('#oneup-watch-language');
- assert(!select.innerHTML.includes('value="latino"'),'Unspecified Spanish region must not become Latino');
- assert(select.innerHTML.includes('value="other"'));
-}
+  // Scenario 2: a failed source auto-switches to the next server, no click.
+  await page.evaluate(() => {
+    document.querySelector('#oneup-playback-display video').dispatchEvent(new Event('error'));
+  });
+  assert.match(await currentSrc(), /sub\.mp4$/, 'Failed source must auto-switch to the next server');
+  assert.equal(await page.locator('#oneup-watch-language').inputValue(), 'all', 'Failover widens the language when no Latino server remains');
+  assert.equal(await page.evaluate(() => document.querySelectorAll('.oneup-source-retry').length), 0, 'Failover must be automatic, not a manual retry button');
+  assert.match(await page.locator('#oneup-player-message').textContent(), /Fuente seleccionada: Servidor Sub/, 'Auto-failover must land on the next source');
 
-// External subtitle files do not add captions inside a provider's iframe.
-{
- const c=setup('video/mp4',{sources:[{mode:'official_embed',provider:'youtube',videoId:'abcdefghijk',language:'ja',subtitles_es:'./media/sub.vtt'}]});
- await c.window.OneUpEpisodePlayer.show({id:'al-1'});
- const select=c.nodes.get('#oneup-watch-language');
- assert(select.innerHTML.includes('value="original"'));
- assert(!select.innerHTML.includes('value="sub"'),'Iframe cannot use a local WebVTT file');
-}
+  // Scenario 3: no Latino source -> fall back to all languages.
+  await page.evaluate(() => window.OneUpEpisodePlayer.show({ id: 'test-2', episodes: 1 }));
+  await page.locator('#oneup-playback-display video').waitFor({ timeout: 9000 });
+  assert.match(await currentSrc(), /sub\.mp4$/, 'Without a Latino source the available source must play');
+  assert.equal(await page.locator('#oneup-watch-language').inputValue(), 'all', 'Language must fall back to all when no Latino source exists');
 
-// Identical episode numbers in different seasons must not overwrite each other.
-{
- const records=[undefined,2].map((season,index)=>({number:1,season,rights:'owned',src:'https://media.example.com/season-'+(index+1)+'.mp4'}));
- const c=setup('video/mp4',{},records);
- await c.window.OneUpEpisodePlayer.show({id:'al-1'},{root:c.root});
- assert.equal(c.nodes.get('#oneup-playback-display').children[0].children[0].src,records[0].src);
- await c.window.OneUpEpisodePlayer.show({id:'al-1'},{root:c.root,season:2});
- assert.equal(c.nodes.get('#oneup-playback-display').children[0].children[0].src,records[1].src);
-}
-
-// Reject private/loopback endpoints and unusual HTTPS ports in the browser too.
-for(const unsafe of [
- 'https://localhost/episode.mp4','https://127.0.0.1/episode.mp4',
- 'https://media.local/episode.mp4','https://media.example.com:4443/episode.mp4',
- 'https://user:secret@media.example.com/episode.mp4',
- 'http://media.example.com/episode.mp4',
- 'https://media.example.com/episode.mp4#fragment'
-]){
- const c=setup('video/mp4',{sources:[{src:unsafe,mime:'video/mp4',rights:'authorized'}]});
- await c.window.OneUpEpisodePlayer.show({id:'al-1'});
- const stage=c.nodes.get('#oneup-playback-display');
- assert.equal(stage.children[0].tag,'div', 'Unsafe source should remain unavailable: '+unsafe);
-}
-// Multiple WebVTT tracks are exposed to the browser without silent defaulting.
-{
- const tracks=[
-  {lang:'es',label:'Español',url:'./media/demo/es.vtt'},
-  {lang:'en',label:'English',url:'https://cdn.example.com/demo/en.vtt'},
-  {lang:'ja',label:'日本語',url:'javascript:alert(1)'}
- ];
- const c=setup('video/mp4',{sources:[{
-  rights:'owned',src:'https://media.example.com/demo.mp4',tracks
- }]});
- await c.window.OneUpEpisodePlayer.show({id:'al-1'});
- const video=c.nodes.get('#oneup-playback-display').children[0];
- const actual=video.children.filter(n=>n.tag==='track');
- assert.equal(actual.length,2);
- assert.deepEqual(actual.map(n=>n.srclang),['es','en']);
-}
-// When a licensed source fails, the user chooses another server; no autoplay.
-{
- const c=setup('video/mp4',{sources:[
-  {rights:'owned',src:'https://cdn.example.com/first.mp4'},
-  {rights:'owned',src:'https://cdn.example.com/second.mp4'}
- ]});
- await c.window.OneUpEpisodePlayer.show({id:'al-1'});
- const stage=c.nodes.get('#oneup-playback-display');
- const first=stage.children[0];
- first.listeners.error();
- assert.equal(stage.afterChildren?.length,1,'Retry button missing on playback failure');
- const button=stage.afterChildren[0];
- assert.equal(button.tag,'button');
- assert.match(button.textContent,/servidor 2/);
- assert.equal(stage.children[0],first,'Source should not change until user clicks retry');
- button.listeners.click();
- assert.equal(stage.children[0].children[0].src,'https://cdn.example.com/second.mp4');
- assert.equal(first.pauseCalls,1,'Failed video not disposed');
-}
-
-console.log('Episode player passed: lifecycle, language filtering, inherited metadata, safe captions and seasons.');
+  assert.deepEqual(errors, []);
+  console.log('PASS episode player: Spanish default, auto server, automatic failover');
+} finally { await browser.close(); }

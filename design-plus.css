@@ -48,10 +48,9 @@ body{background:#09090d}
 .schedule-list>p{grid-column:1/-1;color:#beadb9;padding:25px;background:#1d141e;border-radius:9px}
 .oneup-entry-options{width:min(470px,100%);margin:26px auto 0;display:grid;gap:10px}
 .oneup-entry-options[hidden]{display:none}
-.oneup-guest-entry,.oneup-google-entry{display:flex;gap:3px;flex-direction:column;align-items:center;justify-content:center;padding:14px 18px!important;border-radius:11px;min-height:66px;line-height:1.3;background:linear-gradient(110deg,#ffc17d,#fa732d)!important;color:#160a08!important;border:1px solid #ffd4a9!important;font-size:13px!important;font-weight:900!important;letter-spacing:.7px}
-.oneup-guest-entry small,.oneup-google-entry small{font-size:10px;font-weight:600;opacity:.74;letter-spacing:0}
-.oneup-google-entry{background:#fff!important;color:#282028!important;border-color:#eee!important;box-shadow:0 4px 18px #0003}
-.google-g{font-size:23px;font-weight:900;color:#4285f4}
+.oneup-guest-entry,.oneup-account-entry{display:flex;gap:3px;flex-direction:column;align-items:center;justify-content:center;padding:14px 18px!important;border-radius:11px;min-height:66px;line-height:1.3;background:linear-gradient(110deg,#ffc17d,#fa732d)!important;color:#160a08!important;border:1px solid #ffd4a9!important;font-size:13px!important;font-weight:900!important;letter-spacing:.7px}
+.oneup-guest-entry small,.oneup-account-entry small{font-size:10px;font-weight:600;opacity:.74;letter-spacing:0}
+.oneup-account-entry{background:#fff!important;color:#282028!important;border-color:#eee!important;box-shadow:0 4px 18px #0003}
 .oneup-entry-separator{font-size:10px;color:#d6a9a9;letter-spacing:2px;margin-top:17px;font-weight:800}
 .oneup-profile-grid{margin-top:24px}
 .oneup-profiles-content{max-width:810px}

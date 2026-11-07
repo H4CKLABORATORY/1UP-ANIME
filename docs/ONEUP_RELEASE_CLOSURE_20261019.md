@@ -9,7 +9,7 @@ Se estudiaron patrones de diseño en proyectos de anime públicos y archivados, 
 
 ## Estado funcional
 Disponible sin servicios propios: navegación pública, catálogo y búsqueda de anime, géneros, calendario, favoritos y progreso en el dispositivo, explorador de franquicias, scraping educativo de metadatos.
-Necesita pasos del titular para ser operativo: Google OAuth (auth-config.js null), backend comunidad y sincronización (Firebase/Supabase null) y fuentes de reproducción con derechos verificados (data/licensed-media.json tiene entries vacío). Una API de títulos no es servidor de videos.
+Necesita pasos del titular para ser operativo: Google OAuth (la-configuración-anterior.js null), backend comunidad y sincronización (el backend anterior/Supabase null) y fuentes de reproducción con derechos verificados (data/licensed-media.json tiene entries vacío). Una API de títulos no es servidor de videos.
 
 ## Verificación y salida
 - node --test tests/oneup-finale.test.mjs

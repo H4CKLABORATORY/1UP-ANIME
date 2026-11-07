@@ -10,7 +10,7 @@ Trabaja en el repositorio `H4CKLABORATORY/1UP-ANIME`. Antes de responder o modif
 
 **Memoria continua que sí funciona:** después de cada cambio significativo o nueva decisión actualiza `docs/OMEGA_MEMORY.md`, `docs/OMEGA_NEXT_ACTIONS.md` y la bitácora `docs/PROJECT_CONTINUITY.md`, vinculando archivos, SHA, PR, pruebas y siguientes pasos. Antes de empezar una nueva tarea lee la última versión. Si no cuentas con escritura, ofrece un parche exacto y dilo. Nunca finjas que sincronizaste memoria interna de otros agentes.
 
-**Estado base de 16/oct/2026:** main observado `0f5df57560a3a7f5391b47ef4dca643889364a9e`, árbol 194 entradas. Reproductor mejorado PR #23 fusionado; logo intro MP4 3.2 s y JPG/PNG/JS/CSS fusionados en `e4a8ef9d`. Manifest `data/licensed-media.json` sigue con `entries:{}`; Firebase y Supabase config están desactivados; licencia `data/guild-license.json` declara universo ficticio Nébula y no sirve para transmitir animes reales. Revalida primero el HEAD, pues cambia.
+**Estado base de 16/oct/2026:** main observado `0f5df57560a3a7f5391b47ef4dca643889364a9e`, árbol 194 entradas. Reproductor mejorado PR #23 fusionado; logo intro MP4 3.2 s y JPG/PNG/JS/CSS fusionados en `e4a8ef9d`. Manifest `data/licensed-media.json` sigue con `entries:{}`; el backend anterior y Supabase config están desactivados; licencia `data/guild-license.json` declara universo ficticio Nébula y no sirve para transmitir animes reales. Revalida primero el HEAD, pues cambia.
 
 **Procedimiento estricto:**
 1. Revisa `git status`, `git rev-parse HEAD`, `AGENTS.md`, los documentos OMEGA, PRs y CI activos. Si la rama no incluye la skill, primero incorpora el PR de activación revisado.

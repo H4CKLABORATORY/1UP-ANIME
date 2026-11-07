@@ -7,8 +7,9 @@
 const MAX_SERVERS=7;
 let requestId=0,activeAnime='',activeSeason=1,selectedEpisode=1,episodeCount=1;
 let mediaByEpisode=new Map(),playerRoot=null;
+let autoTriedServers=new Set();
 let disposeActiveVideo=null;
-let selectedLanguage='all';
+let selectedLanguage='latino';
 const LANGUAGE_LABELS={latino:'Español latino',castellano:'Español castellano',sub:'Japonés subtitulado',original:'Japonés original',other:'Otros idiomas'};
 function languageGroup(source){
  const lang=source.lang.toLowerCase().trim();
@@ -132,10 +133,26 @@ function showVideo(slot,serverIndex=-1){
  let retryOffered=false;
  const offerRetry=()=>{
   if(retryOffered||!playerRoot?.isConnected)return;
-  retryOffered=true;
   const sources=mediaByEpisode.get(selectedEpisode)?.sources||[];
-  const indices=sources.map((source,i)=>source&&(selectedLanguage==='all'||languageGroup(source)===selectedLanguage)?i:-1).filter(i=>i>=0&&i!==serverIndex);
-  if(!indices.length)return;
+  const poolFor=lang=>sources.map((source,i)=>source&&(lang==='all'||languageGroup(source)===lang)?i:-1).filter(i=>i>=0&&i!==serverIndex);
+  const sameLang=poolFor(selectedLanguage),anyLang=poolFor('all');
+  if(!anyLang.length)return;
+  // Automatic failover (Rule 2): try the next untried server on our own,
+  // same language first, then any language, once per server, before asking
+  // the visitor to press anything.
+  autoTriedServers.add(serverIndex);
+  const nextUntried=pool=>pool.find(i=>i>serverIndex&&!autoTriedServers.has(i))??pool.find(i=>!autoTriedServers.has(i));
+  let autoNext=nextUntried(sameLang),widen=false;
+  if(autoNext===undefined){autoNext=nextUntried(anyLang);widen=autoNext!==undefined}
+  if(autoNext!==undefined){
+   autoTriedServers.add(autoNext);
+   if(widen)selectedLanguage='all';
+   status.textContent='Este servidor no respondió. Probando otro servidor…';
+   renderSources(autoNext,{auto:true});
+   return;
+  }
+  retryOffered=true;
+  const indices=sameLang.length?sameLang:anyLang;
   const fallback=indices.find(i=>i>serverIndex)??indices[0];
   const button=document.createElement('button');
   button.type='button';button.className='oneup-source-retry';
@@ -149,7 +166,7 @@ function showVideo(slot,serverIndex=-1){
   placeholder.className='oneup-player-placeholder';
   placeholder.textContent='Todavía no hay una fuente de reproducción disponible para este episodio.';
   stage.appendChild(placeholder);
-  status.textContent='Solo se habilitan servidores configurados con permiso de integración.';
+  status.textContent='Este episodio aún no tiene una fuente de reproducción disponible.';
   return;
  }
  if(slot.kind==='embed'){
@@ -219,8 +236,9 @@ function showVideo(slot,serverIndex=-1){
   }
  }
 }
-function renderSources(preferred=0){
+function renderSources(preferred=0,opts={}){
  if(!playerRoot)return;
+ if(!opts.auto)autoTriedServers=new Set();
  const item=mediaByEpisode.get(selectedEpisode);
  const allSources=item?.sources||Array(MAX_SERVERS).fill(null);
  const languageSelect=playerRoot.querySelector('#oneup-watch-language');
@@ -257,7 +275,7 @@ async function show(anime,{root,season=1}={}){
  // Stop the previous anime before fetching, even if the next request fails.
  closeVideo();
  const id=String(anime.id),token=++requestId;
- activeAnime=id;activeSeason=safeNumber(season,1);selectedEpisode=1;episodeCount=1;selectedLanguage='all';mediaByEpisode=new Map();
+ activeAnime=id;activeSeason=safeNumber(season,1);selectedEpisode=1;episodeCount=1;selectedLanguage='latino';mediaByEpisode=new Map();autoTriedServers=new Set();
  playerRoot=root||document.querySelector('#oneup-player-section');
  if(!playerRoot)return;
  playerRoot.hidden=false;
@@ -277,7 +295,7 @@ async function show(anime,{root,season=1}={}){
   (episodeCount>120?'<label class="oneup-watch-jump" for="oneup-watch-episode-number">Ir al episodio <input id="oneup-watch-episode-number" type="number" min="1" max="'+episodeCount+'" value="1"></label>':'')+
   '<label for="oneup-watch-language">Idioma de reproducción</label><select id="oneup-watch-language" aria-label="Idioma de reproducción"></select></div>'+
   '<h4 id="oneup-now-watching">Episodio 1</h4>'+
-  '<div class="oneup-server-selector" role="group" aria-label="Siete servidores disponibles si están configurados"><strong>ELEGIR SERVIDOR</strong>'+
+  '<div class="oneup-server-selector" role="group" aria-label="Servidores disponibles; el mejor se elige automáticamente"><strong>CAMBIAR SERVIDOR (OPCIONAL)</strong>'+
   Array.from({length:MAX_SERVERS},(_,i)=>'<button type="button" data-server-slot="'+i+'" class="oneup-server-choice" disabled>Servidor '+(i+1)+'</button>').join('')+'</div>'+
   '<div id="oneup-playback-display" class="oneup-playback-stage"></div>'+
   '<p id="oneup-player-message" class="oneup-player-state" role="status" aria-live="polite"></p>'+

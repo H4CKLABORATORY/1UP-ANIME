@@ -1,6 +1,6 @@
 /* Kokomi watch community — isolated episode discussion UI
- * Reuses the same public Firebase backend as 1UP's detail dialog.
- * No fake comments; no posting when Firebase has not been configured.
+ * Reuses the same public Supabase backend as 1UP's detail dialog.
+ * No fake comments; no posting when Supabase has not been configured.
  */
 (()=>{
 'use strict';
@@ -42,7 +42,7 @@ function subscribe(){
  const id=++serial;
  if(!backend()?.enabled()){
   const list=$('#km-watch-comment-list');
-  if(list)list.innerHTML='<p class="km-watch-muted">Los comentarios públicos estarán disponibles cuando el propietario configure Firebase.</p>';
+  if(list)list.innerHTML='<p class="km-watch-muted">Los comentarios de este episodio aún no están disponibles.</p>';
   setStatus('Comentarios en espera de conexión con la comunidad.');
   return;
  }
@@ -101,7 +101,7 @@ function mount({anime,episode,season,episodeOptions}){
  const form=$('#km-watch-comment-form');
  form.addEventListener('submit',async e=>{
   e.preventDefault();
-  if(!backend()?.enabled()){setStatus('Firebase aún no está configurado para publicar.');return}
+  if(!backend()?.enabled()){setStatus('Supabase aún no está configurado para publicar.');return}
   const username=$('#km-watch-name').value.trim(),body=$('#km-watch-text').value.trim();
   if(username.length<3||body.length<2){setStatus('Escribe un apodo y un comentario válido.');return}
   const button=$('#km-watch-publish'),target=thread,current=active.id;

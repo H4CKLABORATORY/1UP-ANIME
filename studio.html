@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="./studio.css">
-<script defer src="./sonic.js"></script><script defer src="./auth-config.js"></script><script defer src="./auth.js"></script><script defer src="./anime-title-search.js"></script><script defer src="./studio.js"></script>
+<script defer src="./sonic.js"></script><script defer src="./supabase-config.js"></script><script defer src="./auth.js"></script><script defer src="./anime-title-search.js"></script><script defer src="./studio.js"></script>
 <link rel="stylesheet" href="./ui-quality.css">
 </head><body>
 <svg xmlns="http://www.w3.org/2000/svg" class="svg-sprite" aria-hidden="true">
@@ -61,7 +61,7 @@
   <section class="wrap section schedule-preview"><div class="section-heading"><div><div class="micro">NUNCA PIERDAS UN ESTRENO</div><h2>Próximamente <em>al aire.</em></h2></div><button class="section-more" data-route="programacion">Programación ↗</button></div><div id="schedule-preview-list" class="schedule-rail"><div class="loading">Consultando próximas emisiones...</div></div><p class="small-note">Las horas son estimaciones de AniList y se muestran en tu zona horaria. No representan reproducción de episodios.</p></section>
   <section class="wrap section"><div class="section-heading"><div><div class="micro">SELECCIÓN 03 / DESCUBRE MÁS</div><h2>Agregados <em>recientemente.</em></h2></div><button class="section-more" data-route="recientes">Explorar recientes ↗</button></div><div id="recent-rail" class="card-rail"><div class="loading">Descubriendo series...</div></div></section>
   <section class="wrap section"><div class="section-heading"><div><div class="micro">SELECCIÓN 04 / CINE</div><h2>Películas <em>imperdibles.</em></h2></div><button class="section-more" data-route="peliculas">Ver películas ↗</button></div><div id="movies-rail" class="card-rail"><div class="loading">Cargando cine anime...</div></div></section>
-  <section class="wrap community-note"><div class="community-symbol">1UP</div><div><span class="micro">DESCUBRE · GUARDA · CONTINÚA</span><h2>Siempre hay una<br><em>historia más.</em></h2><p>Puedes usar 1UP Anime como invitado, sin cuenta ni perfiles. Tus listas se guardan en este dispositivo.</p></div></section>
+  <section class="wrap community-note"><div class="community-symbol">1UP</div><div><span class="micro">DESCUBRE · GUARDA · CONTINÚA</span><h2>Siempre hay una<br><em>historia más.</em></h2><p>Puedes explorar como invitado, sin cuenta ni perfiles. Para guardar favoritos y comentar necesitas una cuenta 1UP.</p></div></section>
  </div>
  <section id="browse-screen" class="wrap browse-screen" hidden><div class="browse-intro"><div class="micro" id="browse-eyebrow">EXPLORE / 1UP ANIME</div><h1 id="browse-title">Explorar <em>anime.</em></h1><p id="browse-summary">Descubre nuevas historias.</p></div><div id="browse-controls" class="browse-controls"></div><div id="browse-status" class="browse-status"></div><div id="browse-grid" class="poster-grid"></div><div class="pagination"><button id="browse-next" class="cta outline" hidden>Cargar más ↓</button></div></section>
 </main>
@@ -74,11 +74,40 @@
   <div class="auth-brand"><img class="auth-crest" src="./assets/oneup-crest-mark.svg" width="128" height="135" alt=""><span class="auth-wordmark">1UP <strong>ANIME</strong></span></div>
   <div class="micro auth-kicker">TU UNIVERSO, A TU MANERA</div>
   <h2 id="auth-title" class="auth-title">BIENVENIDO A <em>1UP.</em></h2>
-  <p id="auth-description" class="auth-copy">Descubre anime a tu ritmo. Entra como invitado o continúa con tu perfil guardado.</p>
+  <p id="auth-description" class="auth-copy">Crea tu cuenta 1UP o entra como invitado para explorar.</p>
   <div class="auth-actions">
-   <button id="google-login" class="google-login" type="button"><span class="google-g" aria-hidden="true">G</span><span id="auth-google-label">Continuar con Google</span></button>
+  <div class="auth-tabs" role="tablist" aria-label="Acceso a 1UP Anime">
+   <button id="auth-tab-login" type="button" role="tab" aria-selected="true" aria-controls="auth-login-form">Iniciar sesión</button>
+   <button id="auth-tab-signup" type="button" role="tab" aria-selected="false" aria-controls="auth-signup-form">Crear cuenta</button>
+  </div>
+  <form id="auth-login-form" class="auth-form">
+   <label for="auth-login-email">Correo</label>
+   <input id="auth-login-email" name="email" type="email" autocomplete="email" required placeholder="tu@correo.com">
+   <label for="auth-login-password">Contraseña</label>
+   <input id="auth-login-password" name="password" type="password" autocomplete="current-password" required minlength="8" placeholder="Tu contraseña">
+   <button class="auth-primary" type="submit">Entrar a 1UP</button>
+   <button id="auth-forgot" class="auth-link" type="button">¿Olvidaste tu contraseña?</button>
+  </form>
+  <form id="auth-signup-form" class="auth-form" hidden>
+   <label for="auth-signup-username">Nombre de usuario</label>
+   <input id="auth-signup-username" name="username" type="text" autocomplete="username" required minlength="3" maxlength="20" placeholder="ejemplo: asta_fan">
+   <small class="auth-hint">De 3 a 20 caracteres: letras (a-z), números y guion bajo. Es único: nadie más podrá usarlo.</small>
+   <label for="auth-signup-email">Correo</label>
+   <input id="auth-signup-email" name="email" type="email" autocomplete="email" required placeholder="tu@correo.com">
+   <label for="auth-signup-password">Contraseña</label>
+   <input id="auth-signup-password" name="password" type="password" autocomplete="new-password" required minlength="8" placeholder="Mínimo 8 caracteres, con letra y número">
+   <label for="auth-signup-password2">Repite la contraseña</label>
+   <input id="auth-signup-password2" name="password2" type="password" autocomplete="new-password" required minlength="8" placeholder="Repite tu contraseña">
+   <button class="auth-primary" type="submit">Crear mi cuenta</button>
+  </form>
+  <form id="auth-reset-form" class="auth-form" hidden>
+   <label for="auth-reset-email">Correo de tu cuenta</label>
+   <input id="auth-reset-email" name="email" type="email" autocomplete="email" required placeholder="tu@correo.com">
+   <button class="auth-primary" type="submit">Enviar correo de restablecimiento</button>
+   <button id="auth-back-login" class="auth-link" type="button">Volver a iniciar sesión</button>
+  </form>
    <button id="guest-login" class="guest-login" type="button">Continuar como invitado</button>
-   <button id="auth-signout" class="guest-login" type="button" hidden>Cerrar sesión de Google</button>
+   <button id="auth-signout" class="guest-login" type="button" hidden>Cerrar sesión</button>
   </div>
   <details id="auth-profiles" class="auth-profiles" hidden>
    <summary>Usar perfil guardado en este dispositivo</summary>
