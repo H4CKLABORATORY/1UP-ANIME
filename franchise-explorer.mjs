@@ -92,8 +92,9 @@ function display(host,data){
  host.append(element('p','oneup-franchise-state',statusText(data)));
  window.OneUpCatalog?.register?.([...data.relations,...data.recommendations]);
 }
-const isCurrent=(id,token)=>token===sequence&&window.OneUpCatalog?.active?.()===id&&
- Boolean(document.querySelector('#anime-dialog')?.open);
+const isCurrent=(id,token)=>token===sequence&&window.OneUpCatalog?.active()===id&&
+ Boolean(document.querySelector('#anime-detail')&&!document.querySelector('#anime-detail').hidden);
+
 async function fromAni(identity,signal){
  const gap=Math.max(0,1300-(Date.now()-lastCall));
  if(gap)await new Promise((resolve,reject)=>{
@@ -135,7 +136,7 @@ function opened(event){
  const anime=event.detail;if(!anime?.id)return;
  sequence++;currentController?.abort();
  const token=sequence,ctrl=new AbortController();currentController=ctrl;
- const parent=document.querySelector('#anime-dialog-body .oneup-detail-lower');
+ const parent=document.querySelector('#anime-detail-body .oneup-detail-lower');
  if(!parent)return;
  const host=element('section','oneup-franchise-host');
  host.setAttribute('aria-label','Secuelas y recomendaciones verificadas');

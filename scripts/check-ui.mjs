@@ -13,7 +13,7 @@ for(const file of ['studio.js','auth.js','motion.js','sonic.js','sw.js','airing-
 }
 const ids=['hero-poster','hero-title','hero-description','hero-badges','hero-feature-cover',
  'hero-feature-title','hero-feature-caption','hero-picks','hero-save','hero-detail',
- 'anime-dialog','anime-dialog-body','anime-close','browse-grid','trending-rail'];
+ 'anime-detail','anime-detail-body','anime-close','browse-grid','trending-rail'];
 for(const id of ids)assert(html.includes('id="'+id+'"'),'Missing required HTML ID: '+id);
 for(const asset of ['./studio.css','./motion.css','./spotlight.css','./studio.js','./auth.js','./motion.js']){
  assert(html.includes(asset.replace('./','')),'Asset not linked: '+asset);
@@ -21,7 +21,7 @@ for(const asset of ['./studio.css','./motion.css','./spotlight.css','./studio.js
 assert(!html.includes('Entrar con sonido'),'Legacy audio login gate still present');
 assert(/function hero\(a, chosen=false(?:, persist=chosen)?\)/.test(js),'Selected artwork hero not implemented');
 assert(js.includes('hero(a,true)'),'Clicking anime must update selected hero');
-assert(js.includes('oneup-detail-cover'),'Hero artwork missing from modal');
+assert(js.includes('oneup-detail-cover'),'Hero artwork missing from detail page');
 assert(js.includes('oneup-synopsis-text'),'Full anime synopsis is missing');
 assert(js.includes('const synopsis=chosenSynopsis(a)'),'Auto-sourced localized synopsis is missing');
 assert(js.includes('loadSpanishSynopses()'),'Spanish synopsis loader missing');

@@ -226,7 +226,7 @@ function showFeaturedAnime(anime){
  const link=$('#oct-black-clover-link');
  if(link){
   link.textContent='Ver ficha del anime ↗';
-  link.href='#anime-dialog';
+  link.href='anime/'+encodeURIComponent(anime.id);
   link.removeAttribute('target');link.removeAttribute('rel');
   link.addEventListener('click',event=>{
    event.preventDefault();
@@ -639,7 +639,7 @@ async function render(){
   window.OneUpKokomiWatch?.unmount?.();
   activeRoute='';root.hidden=true;
   const route=hash.split('/')[0];
-  if(home.hidden&&browse.hidden){
+  if(home.hidden&&browse.hidden&&document.querySelector('#anime-detail')?.hidden!==false){
    const fallback=nativeRoutes.has(route)?route:'inicio';
    document.querySelector('.desktop-links [data-route="'+fallback+'"]')?.click();
   }

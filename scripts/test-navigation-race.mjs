@@ -17,7 +17,9 @@ function fixture(){
  };
  const requests=[];
  const state={view:'inicio',seq:0,loading:false,saved:{},home:{season:[]},entries:new Map(),filters:{},results:[]};
- const context=vm.createContext({state,$,$$:()=>[],window:{scrollTo(){}},history:{replaceState(){}},
+ const context=vm.createContext({state,$,$$:()=>[],window:{scrollTo(){}},history:{replaceState(){},pushState(){}},
+  DETAIL_ROUTES:['inicio','temporada','programacion','catalogo','peliculas','milista','populares','recientes','genero','buscar'],
+  isDetailOpen:()=>false,closeDetailView(){},appBase:()=>'/',restoreScroll(){},
   heading:(title)=>{$('#browse-title').innerHTML=title},register(){},
   paint:(selector,items)=>{$(selector).innerHTML=items.map(x=>x.title).join(',')},
   fetchCatalog:()=>new Promise(resolve=>requests.push(resolve)),genres:[],esc:x=>x,filters(){},scheduleHTML:()=> 'SCHEDULE'});

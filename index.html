@@ -4,6 +4,14 @@
 <meta property="og:image" content="https://h4cklaboratory.github.io/1UP-ANIME/assets/1up-anime-logo-poster.jpg">
 <meta property="og:title" content="1UP Anime · Tu siguiente vida es anime">
 <title>1UP Anime | Tu siguiente vida es anime</title>
+<script>
+/* GitHub Pages SPA route restore (companion to 404.html): turns the
+   /?/anime/<id> redirect back into the real /anime/<id> URL before the
+   app boots, so a shared detail link opens the detail directly. It also
+   pins a <base> to the app root: after replaceState, relative './' asset
+   URLs would otherwise resolve under /anime/ and 404. */
+(function(l){if(l.search[1]==='/'){var decoded=l.search.slice(1).split('&').map(function(x){return x.replace(/~and~/g,'&')}).join('?');var b=document.createElement('base');b.href=l.pathname;document.head.appendChild(b);window.history.replaceState(null,null,l.pathname.slice(0,-1)+decoded+l.hash)}}(window.location));
+</script>
 <link rel="icon" href="./assets/1up-anime-app-icon-512.png" type="image/png"><link rel="apple-touch-icon" href="./assets/1up-anime-app-icon-512.png"><link rel="manifest" href="./manifest.webmanifest">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -22,6 +30,7 @@
 <!-- 1UP theme system: one consolidated stylesheet (themes/oneup/theme.css).
      Palettes are optional (esmeralda default); the visitor never has to choose. -->
 <link rel="stylesheet" href="./themes/oneup/theme.css">
+<link rel="stylesheet" href="./anime-detail.css">
 <script defer src="./social-backend.js"></script>
 <script defer src="./supabase-config.js"></script><script defer src="./supabase-episode-backend.js"></script>
 <script defer src="./episode-comments.js"></script>
@@ -143,11 +152,15 @@
   <section class="wrap community-note"><div class="community-symbol">1UP</div><div><span class="micro">1UP COMUNIDAD / EL GREMIO</span><h2>Las mejores teorías<br><em>merecen conversación.</em></h2><p>Comparte preguntas sobre manga, fotos y videos. Lee publicaciones y debates públicamente; para participar en La Plaza y comentar capítulos necesitarás una cuenta 1UP.</p><a class="cta primary" href="./comunidad.html">✦ Entrar a La Plaza</a></div></section>
  </div>
  <section id="browse-screen" class="wrap browse-screen" hidden><div class="browse-intro"><div class="micro" id="browse-eyebrow">EXPLORE / 1UP ANIME</div><h1 id="browse-title">Explorar <em>anime.</em></h1><p id="browse-summary">Descubre nuevas historias.</p></div><div id="browse-controls" class="browse-controls"></div><div id="browse-status" class="browse-status"></div><div id="browse-grid" class="poster-grid"></div><div class="pagination"><button id="browse-next" class="cta outline" hidden>Cargar más ↓</button></div></section>
+<section id="anime-detail" class="anime-detail-page" hidden aria-label="Ficha del anime">
+ <div class="wrap anime-detail-topbar"><button type="button" class="cta outline anime-detail-back" id="anime-close" aria-label="Volver a la vista anterior">← Volver</button></div>
+ <div id="anime-detail-body"></div>
+</section>
 </main>
 <footer class="footer wrap"><div class="footer-brand"><img src="./assets/oneup-header-letters.png" alt="1UP ANIME" class="oneup-footer-textmark"></div><div><p>Tu siguiente vida es anime. Catálogo informativo, favoritos y programación.</p><p>Datos: AniList. Los enlaces externos pertenecen a sus plataformas. 1UP Anime no redistribuye episodios de terceros; reproduce únicamente fuentes autorizadas.</p></div><small>© 2026 1UP Anime · <a href="./dexter-motion-studio.html">Estudio Motion</a> · <a href="./motor.html">Motor de contenido</a> · <a href="./scraping-lab.html">Laboratorio de scraping</a> · <a href="./gremio.html" title="Licencia narrativa de autoridad del Gremio en Nébula">Licencia del gremio</a></small></footer>
 <button id="depth-toggle" class="depth-toggle-btn" type="button" aria-label="Modo 3D" aria-pressed="false" title="Activar modo profundidad" hidden><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="12" height="12" rx="2"/><rect x="9" y="9" width="12" height="12" rx="2"/></svg><span>3D</span></button>
 <nav class="mobile-navigation"><button data-route="inicio" class="active"><b>⌂</b>Inicio</button><button data-route="temporada"><b>◉</b>Temporada</button><button data-route="catalogo"><b>▦</b>Catálogo</button><button data-route="programacion"><b>◷</b>Emisión</button><button data-route="milista"><b>♡</b>Mi lista</button><a href="./comunidad.html"><b>✦</b>Plaza</a></nav>
-<dialog id="anime-dialog" class="anime-dialog"><button type="button" class="dialog-close" id="anime-close" aria-label="Cerrar ficha del anime">✕</button><div id="anime-dialog-body"></div></dialog>
+
 <dialog id="auth-dialog" class="auth-dialog" aria-labelledby="auth-title" aria-describedby="auth-description">
  <button class="dialog-close" id="auth-close" type="button" aria-label="Cerrar ventana de acceso">✕</button>
  <div class="auth-panel">

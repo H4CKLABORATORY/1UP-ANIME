@@ -79,9 +79,9 @@ try{
   });
   await test(device.name+' anime detail, poster and episode discussion',async()=>{
    await page.locator('#hero-detail').click();
-   await page.locator('#anime-dialog[open] #detail-anime-name').waitFor({timeout:9000});
+   await page.locator('#anime-detail #detail-anime-name').waitFor({timeout:9000});
    await page.locator('#oneup-comments-section').waitFor({timeout:4000});
-   const text=await page.locator('#anime-dialog').innerText();
+   const text=await page.locator('#anime-detail').innerText();
    if(!/SINOPSIS|HISTORIA|COMENTARIOS/i.test(text))throw new Error('Detail lacks synopsis and discussion');
    await page.evaluate(()=>window.OneUpCatalog.open('mal-21'));
    await page.locator('#oneup-watch-episode').waitFor({timeout:8000});
@@ -107,9 +107,9 @@ try{
     if(!target)throw new Error('Close button has no visible hit area');
     await page.touchscreen.tap(target.x+target.width/2,target.y+target.height/2);
    }else await page.locator('#anime-close').click({timeout:6500});
-   await page.waitForFunction(()=>!document.querySelector('#anime-dialog')?.open,null,{timeout:3500});
+   await page.waitForFunction(()=>document.querySelector('#anime-detail')?.hidden,null,{timeout:3500});
   });
-  await test(device.name+' Overgeared dialog X closes without reopening or ghost taps',async()=>{
+  await test(device.name+' Overgeared detail back control closes without reopening or ghost taps',async()=>{
    // Reproduce the anime in the user's Safari screen recording, independently
    // of which cards happen to be loaded in the latest local catalog snapshot.
    await page.evaluate(()=>{
@@ -119,37 +119,38 @@ try{
    });
    for(let attempt=0;attempt<3;attempt++){
     await page.evaluate(()=>window.OneUpCatalog.open('mal-64340'));
-    await page.locator('#anime-dialog[open] #detail-anime-name').getByText('Overgeared').waitFor();
+    await page.locator('#anime-detail #detail-anime-name').getByText('Overgeared').waitFor();
     const target=await page.locator('#anime-close').evaluate(button=>{
      const box=button.getBoundingClientRect();
      const elem=document.elementFromPoint(box.x+box.width/2,box.y+box.height/2);
      return {
-      parent:button.parentElement?.id,
+      parent:button.parentElement?.className,
       width:box.width,height:box.height,
       hit:elem===button||button.contains(elem),
       id:elem?.id||'',html:elem?.outerHTML?.slice(0,100)||''
      };
     });
-    if(target.parent!=='anime-dialog')throw Error('Close X was reparented into poster content');
+    if(!String(target.parent).includes('anime-detail-topbar'))throw Error('Back control was reparented into poster content: '+target.parent);
     if(target.width<44||target.height<44||!target.hit)
      throw Error('X hit target blocked on '+device.name+': '+JSON.stringify(target));
     if(device.mobile){
      const b=await page.locator('#anime-close').boundingBox();
      await page.touchscreen.tap(b.x+b.width/2,b.y+b.height/2);
     }else await page.locator('#anime-close').click();
-    await page.locator('#anime-dialog').waitFor({state:'hidden',timeout:3200});
+    await page.locator('#anime-detail').waitFor({state:'hidden',timeout:3200});
     await page.waitForTimeout(500);
-    if(await page.locator('#anime-dialog').evaluate(el=>el.open))
-     throw Error('Closing the X caused the detail modal to reopen');
+    if(await page.locator('#anime-detail').evaluate(el=>!el.hidden))
+     throw Error('Closing the back control caused the detail page to reopen');
     const closedId=await page.evaluate(()=>window.OneUpCatalog.active());
     if(closedId!==null)throw Error('Active anime state not cleared after X');
    }
    await page.evaluate(()=>window.OneUpCatalog.open('mal-64340'));
-   await page.keyboard.press('Escape');
-   await page.locator('#anime-dialog').waitFor({state:'hidden',timeout:3200});
+   await page.locator('#anime-detail #detail-anime-name').getByText('Overgeared').waitFor();
+   await page.goBack();
+   await page.locator('#anime-detail').waitFor({state:'hidden',timeout:3200});
   });
   // Isolate later navigation checks even when a modal-close assertion fails.
-  await page.evaluate(()=>document.querySelector('#anime-dialog')?.close()).catch(()=>{});
+  await page.evaluate(()=>{if(window.OneUpCatalog?.active())document.querySelector('#anime-close')?.click()}).catch(()=>{});
   await test(device.name+' calendar navigation',async()=>{
    const menu=page.locator('.desktop-links [data-route="temporada"]');
    if(device.mobile)await touchTab('temporada');
@@ -196,7 +197,7 @@ try{
    if(!/OCTUBRE|HALLOWEEN/.test(label))throw Error('October event identity missing');
    const frame=await page.locator('.oct-event-frame').count();
    if(!frame)throw Error('Original October editorial artwork missing');
-   await page.locator('#oct-black-clover-link[href="#anime-dialog"]').waitFor({timeout:7500});
+   await page.locator('#oct-black-clover-link[href*="anime/"]').waitFor({timeout:7500});
    if(await page.locator('#oct-feature-metadata>span').count()<2)throw Error('Local Black Clover catalogue metadata failed to load');
    const theme=await page.evaluate(()=>getComputedStyle(document.body).getPropertyValue('--oct-main').trim());
    if(!theme)throw Error('Theme stylesheet was not applied');
@@ -219,26 +220,26 @@ try{
   await test(device.name+' October featured anime opens a real catalogue detail',async()=>{
    if(device.mobile)await touchTab('inicio');
    else await page.locator('.desktop-links [data-route="inicio"]').click();
-   await page.locator('#oct-black-clover-link[href="#anime-dialog"]').click({timeout:8000});
-   await page.locator('#anime-dialog[open] #detail-anime-name').waitFor({timeout:7000});
+   await page.locator('#oct-black-clover-link[href*="anime/"]').click({timeout:8000});
+   await page.locator('#anime-detail #detail-anime-name').waitFor({timeout:7000});
    const title=await page.locator('#detail-anime-name').innerText();
    if(!/Black Clover/i.test(title))throw Error('Featured card opened wrong anime: '+title);
    const close=await page.locator('#anime-close').boundingBox();
    if(!close)throw Error('Missing close button');
    if(device.mobile)await page.touchscreen.tap(close.x+close.width/2,close.y+close.height/2);
    else await page.locator('#anime-close').click();
-   await page.waitForFunction(()=>!document.querySelector('#anime-dialog')?.open,null,{timeout:3500});
+   await page.waitForFunction(()=>document.querySelector('#anime-detail')?.hidden,null,{timeout:3500});
   });
   await test(device.name+' October preview retains anime details',async()=>{
    if(device.mobile)await touchTab('inicio');
    else await page.locator('.desktop-links [data-route="inicio"]').click();
    await page.locator('#hero-detail').click({timeout:9000});
-   await page.locator('#anime-dialog[open] #detail-anime-name').waitFor({timeout:6500});
+   await page.locator('#anime-detail #detail-anime-name').waitFor({timeout:6500});
    const button=page.locator('#anime-close'),rect=await button.boundingBox();
    if(!rect)throw Error('The close button is not visible');
    if(device.mobile)await page.touchscreen.tap(rect.x+rect.width/2,rect.y+rect.height/2);
    else await button.click();
-   await page.waitForFunction(()=>!document.querySelector('#anime-dialog')?.open,null,{timeout:3500});
+   await page.waitForFunction(()=>document.querySelector('#anime-detail')?.hidden,null,{timeout:3500});
   });
   try{await page.screenshot({path:'e2e-october-'+device.name+'.png',fullPage:true,animations:'disabled'})}catch{}
   await test(device.name+' licensed third-party embed loads only after visitor click',async()=>{
@@ -262,20 +263,20 @@ try{
    if(await page.locator('#oneup-embed-frame iframe').count())throw Error('Third-party iframe must not load before user interaction');
    if(device.mobile){
     const hit=await page.evaluate(()=>{
-     const selectors=['#oneup-embed-play','.oneup-embed-stage','#oneup-player-content','#oneup-player-section','#anime-dialog','#oneup-player-section .oneup-detail-section>p'];
+     const selectors=['#oneup-embed-play','.oneup-embed-stage','#oneup-player-content','#oneup-player-section','#anime-detail','#oneup-player-section .oneup-detail-section>p'];
      return selectors.map(query=>{
       const el=document.querySelector(query);
       if(!el)return {query,missing:true};
       const r=el.getBoundingClientRect(),cs=getComputedStyle(el);
       const cx=r.left+r.width/2,cy=r.top+r.height/2,hit=document.elementFromPoint(cx,cy);
-      return {query,rect:{x:r.x,y:r.y,width:r.width,height:r.height},position:cs.position,zIndex:cs.zIndex,display:cs.display,pointerEvents:cs.pointerEvents,hit:hit?.tagName+'.'+String(hit?.className||'').slice(0,50),dialogScroll:document.querySelector('#anime-dialog')?.scrollTop};
+      return {query,rect:{x:r.x,y:r.y,width:r.width,height:r.height},position:cs.position,zIndex:cs.zIndex,display:cs.display,pointerEvents:cs.pointerEvents,hit:hit?.tagName+'.'+String(hit?.className||'').slice(0,50),pageScroll:Math.round(window.scrollY)};
      });
     });
     console.log('ONEUP MOBILE EMBED HIT TEST:',JSON.stringify(hit));
    }
    if(device.mobile){
-    await page.locator('#anime-dialog').evaluate(el=>{el.scrollTop=el.scrollHeight});
-    const viewport=await page.evaluate(()=>({innerHeight,visualHeight:visualViewport?.height,dialogScroll:document.querySelector('#anime-dialog')?.scrollTop,dialogScrollHeight:document.querySelector('#anime-dialog')?.scrollHeight,dialogClientHeight:document.querySelector('#anime-dialog')?.clientHeight,button:document.querySelector('#oneup-embed-play')?.getBoundingClientRect()?.toJSON()}));
+    await page.evaluate(()=>window.scrollTo(0,document.documentElement.scrollHeight));
+    const viewport=await page.evaluate(()=>({innerHeight,visualHeight:visualViewport?.height,pageScroll:Math.round(window.scrollY),docScrollHeight:document.documentElement.scrollHeight,button:document.querySelector('#oneup-embed-play')?.getBoundingClientRect()?.toJSON()}));
     console.log('ONEUP MOBILE PLAYER SCROLL:',JSON.stringify(viewport));
    }
    await action.click({timeout:6500});
@@ -302,8 +303,8 @@ try{
    const count=await page.locator('#oneup-studio-trailers [data-details]').count();
    if(count<2)throw Error('Trailer editorial has fewer than two actual anime selections');
    await page.locator('#oneup-studio-trailers [data-details]').first().click({timeout:7000});
-   await page.locator('#anime-dialog[open] #detail-anime-name').waitFor({timeout:6000});
-   await page.evaluate(()=>document.querySelector('#anime-dialog')?.close());
+   await page.locator('#anime-detail #detail-anime-name').waitFor({timeout:6000});
+   await page.evaluate(()=>document.querySelector('#anime-close')?.click());
    const overflow=await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth);
    if(overflow>12)throw Error('Trailer editorial overflows '+overflow+'px');
   });
@@ -313,14 +314,14 @@ try{
    if(device.mobile)await touchTab('inicio');
    else await page.locator('.desktop-links [data-route="inicio"]').click();
    await page.locator('#hero-detail').click({timeout:8000});
-   await page.locator('#anime-dialog[open] #detail-anime-name').waitFor({timeout:7000});
+   await page.locator('#anime-detail #detail-anime-name').waitFor({timeout:7000});
    const close=page.locator('#anime-close');
    if(device.mobile){
     const box=await close.boundingBox();
     if(!box)throw Error('Studio detail close not visible');
     await page.touchscreen.tap(box.x+box.width/2,box.y+box.height/2);
    }else await close.click();
-   await page.waitForFunction(()=>!document.querySelector('#anime-dialog')?.open,null,{timeout:4500});
+   await page.waitForFunction(()=>document.querySelector('#anime-detail')?.hidden,null,{timeout:4500});
   });
   await test(device.name+' real upcoming schedule is distinguishable from playable episodes',async()=>{
    await page.locator('#oneup-studio-airing').waitFor({timeout:6500});

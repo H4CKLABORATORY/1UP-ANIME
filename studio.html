@@ -7,6 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="./studio.css">
+<link rel="stylesheet" href="./anime-detail.css">
 <script defer src="./sonic.js"></script><script defer src="./supabase-config.js"></script><script defer src="./auth.js"></script><script defer src="./anime-title-search.js"></script><script defer src="./studio.js"></script>
 <link rel="stylesheet" href="./ui-quality.css">
 </head><body>
@@ -67,7 +68,10 @@
 </main>
 <footer class="footer wrap"><div class="footer-brand"><img src="./assets/oneup-mascot.svg" alt=""><span>1UP ANIME</span></div><div><p>Tu siguiente vida es anime. Catálogo informativo, favoritos y programación.</p><p>Datos: AniList. Los enlaces externos pertenecen a sus plataformas. 1UP Anime no aloja ni reproduce episodios.</p></div><small>© 2026 1UP Anime · Identidad original</small></footer>
 <nav class="mobile-navigation"><button data-route="inicio" class="active"><b>⌂</b>Inicio</button><button data-route="temporada"><b>◉</b>Temporada</button><button data-route="catalogo"><b>▦</b>Catálogo</button><button data-route="programacion"><b>◷</b>Emisión</button><button data-route="milista"><b>♡</b>Mi lista</button></nav>
-<dialog id="anime-dialog" class="anime-dialog"><button class="dialog-close" id="anime-close" aria-label="Cerrar">✕</button><div id="anime-dialog-body"></div></dialog>
+<section id="anime-detail" class="anime-detail-page" hidden aria-label="Ficha del anime">
+ <div class="wrap anime-detail-topbar"><button type="button" class="cta outline anime-detail-back" id="anime-close" aria-label="Volver a la vista anterior">← Volver</button></div>
+ <div id="anime-detail-body"></div>
+</section>
 <dialog id="auth-dialog" class="auth-dialog" aria-labelledby="auth-title" aria-describedby="auth-description">
  <button class="dialog-close" id="auth-close" type="button" aria-label="Cerrar ventana de acceso">✕</button>
  <div class="auth-panel">

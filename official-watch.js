@@ -86,7 +86,7 @@ function get(anime){
  return null;
 }
 function attachToDetail(anime){
- const root=document.querySelector('#anime-dialog-body');
+ const root=document.querySelector('#anime-detail-body');
  if(!root || window.OneUpCatalog?.active()!==anime?.id)return;
  root.querySelector('#oneup-official-watch')?.remove();
  root.querySelector('.oneup-crunchyroll-cta')?.remove();
