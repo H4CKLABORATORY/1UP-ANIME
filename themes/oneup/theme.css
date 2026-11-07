@@ -1,0 +1,2011 @@
+/* 1UP ANIME — single theme system (Phase 1 cleanup, Nov 2026).
+ *
+ * This ONE file replaces the 10 stylesheets the 6 old theme systems used to
+ * load on every page (kokomi-studio, october-2026, kokomi-mobile-preview,
+ * cinematic-v3, oneup-palette, oneup-motion). The rules below are the same
+ * rules, in the same cascade order the live page used before — only the
+ * delivery changed (one request instead of ten, one documented order).
+ * The old per-theme files live in git history if they are ever needed.
+ *
+ * Palettes (optional, advanced, never required — default is esmeralda):
+ *   esmeralda = black + green (default, no choice needed)
+ *   violeta   = black + violet
+ *   original  = the original 1UP design
+ * Switching is opt-in via the palette button in the header; the choice is
+ * stored in localStorage (oneup.palette.v1). Nothing else asks the visitor
+ * to choose anything: first click works, zero setup.
+ *
+ * Preview-only files that were NOT part of the live page live in
+ * themes/preview-only/ (cinematic studio CSS, Kokomi opening controller).
+ * Assets still referenced by path: themes/oneup/arcane-seal.svg,
+ * themes/oneup/characters.json.
+ */
+
+/* ===== 1/10 — themes/kokomi-studio/theme.css ===== */
+
+/*
+ 1UP / Studio Cinema
+ Original anime-platform art direction informed by common streaming UI patterns,
+ without importing the proprietary Kokomi template's CSS, images or JavaScript.
+ Styles intentionally scoped to .oneup-kokomi.
+*/
+body.oneup-kokomi{
+ --kp-bg:#080b11;--kp-panel:#131b24;--kp-ink:#f5f6f4;--kp-muted:#adb9be;
+ --kp-accent:#e7a66d;--kp-secondary:#89c7b4;--kp-line:#ffffff21;
+ --kp-ease:cubic-bezier(.2,.8,.2,1);
+ --bg:var(--kp-bg);--surf:var(--kp-panel);--panel:#161d25;
+ --orange:var(--kp-accent);--orange2:#c87651;--cream:#f8ebd5;
+ --ink:var(--kp-ink);--muted:var(--kp-muted);
+ background:radial-gradient(ellipse at 90% 3%,#203d393d,transparent 35%),
+ radial-gradient(ellipse at 0 35%,#2d1f2e25,transparent 40%),#080b11;
+ color:var(--kp-ink);
+ font-family:'Outfit',system-ui,sans-serif;
+}
+.oneup-kokomi .app-sheen{
+ pointer-events:none;
+ background:radial-gradient(ellipse 45% 37% at 75% 8%,#3d705b1f,transparent 75%);
+ opacity:.68;
+}
+.oneup-kokomi .header{
+ height:82px;background:#080d12ed;box-shadow:0 10px 38px #0008;
+ border-bottom:1px solid #a6b8ae30;
+ backdrop-filter:blur(19px);
+}
+.oneup-kokomi .header-inner{height:100%;max-width:1470px;gap:24px}
+.oneup-kokomi .brand{min-width:max-content;gap:11px}
+.oneup-kokomi .brand-symbol{
+ background:linear-gradient(135deg,#1d292b,#0b1419);
+ border:1px solid #cfdfc657;
+ border-radius:9px;
+ box-shadow:0 0 0 3px #151b1a,0 0 21px #85b59a24;
+ width:45px;height:45px;
+}
+.oneup-kokomi .brand-name{
+ font:900 26px/.85 'Barlow Condensed',Impact,sans-serif;
+ letter-spacing:.04em;
+}
+.oneup-kokomi .brand-name>span{color:#d6dfda}
+.oneup-kokomi .desktop-links{
+ display:flex;gap:1px;align-items:center;overflow-x:auto;
+ background:#1e262c85;padding:5px;border:1px solid #90a69a32;
+ border-radius:9px;scrollbar-width:none;max-width:min(67vw,800px);
+}
+.oneup-kokomi .desktop-links button,
+.oneup-kokomi .desktop-links .oneup-link-community{
+ display:inline-flex;align-items:center;justify-content:center;
+ min-height:38px;padding:8px 12px;border:0;border-radius:5px;
+ font:800 13px/1 'Barlow Condensed',Impact,sans-serif;
+ text-transform:uppercase;letter-spacing:.08em;
+ white-space:nowrap;color:#bbc7c6;background:transparent;
+ position:relative;
+ transition:background .2s,color .2s;
+}
+.oneup-kokomi .desktop-links button.active,
+.oneup-kokomi .desktop-links button:hover,
+.oneup-kokomi .desktop-links a:hover{
+ background:linear-gradient(95deg,#436052a1,#2c4e477a);
+ color:#f9fff9;
+}
+.oneup-kokomi .desktop-links button.active::after{
+ content:"";position:absolute;left:20%;right:20%;bottom:1px;height:2px;
+ border-radius:2px;background:var(--kp-accent);
+}
+.oneup-kokomi .header-right{gap:10px}
+.oneup-kokomi .header-right .icon-button,
+.oneup-kokomi .header-right .account-button{
+ border:1px solid #9da99e4a;background:#1a242b;color:#f1f5ef;
+ border-radius:7px;
+}
+.oneup-kokomi .account-dot{color:var(--kp-accent)}
+/* The art uses live AniList metadata; never a copied proprietary sample. */
+.oneup-kokomi .hero{
+ height:min(780px,90svh);min-height:610px;overflow:hidden;
+ position:relative;isolation:isolate;
+ border-bottom:1px solid #66776d38;background:#0b1419;
+}
+.oneup-kokomi .hero-poster{
+ inset:0;opacity:.79;transform:scale(1.02);animation:none;
+ background-size:cover;background-position:72% center;
+ filter:saturate(.87) contrast(1.08) brightness(.78);
+ transition:background-image .38s,opacity .38s,filter .38s;
+}
+.oneup-kokomi .hero-darken{
+ background:linear-gradient(90deg,#090d13fc 0%,#080d15ee 23%,#0c1220ab 54%,#0b10204a 100%),
+ linear-gradient(0deg,#090c12 0%,#070b1000 50%,#05091482 100%);
+}
+.oneup-kokomi .hero::before{
+ content:"";position:absolute;inset:0;z-index:2;pointer-events:none;
+ background:radial-gradient(ellipse at 78% 50%,#699e8633,transparent 56%),
+ linear-gradient(0deg,#090e13ba,transparent 37%);
+}
+.oneup-kokomi .hero::after{
+ background:linear-gradient(104deg,transparent 35%,#ffffff06 50%,transparent 64%);
+ mix-blend-mode:screen;opacity:.6;pointer-events:none;
+}
+.oneup-kokomi .hero-lines{
+ opacity:.23;pointer-events:none;
+ background:repeating-linear-gradient(90deg,transparent 0 160px,#cbddce17 161px,transparent 162px);
+}
+.oneup-kokomi .hero-grid{
+ max-width:1470px;padding-bottom:64px;padding-top:30px;
+ gap:35px;z-index:5;
+}
+.oneup-kokomi .hero-copy{max-width:min(740px,68%)}
+.oneup-kokomi .hero h1{
+ font:900 clamp(64px,7.4vw,116px)/.82 'Barlow Condensed',Impact,sans-serif;
+ letter-spacing:-.008em;color:#fbf9f1;
+ text-shadow:0 8px 36px #000c;
+}
+.oneup-kokomi .hero h1 span{
+ background:linear-gradient(104deg,#f0f4f1 0%,#e2d6b2 47%,#dfad80 95%);
+ color:transparent;-webkit-background-clip:text;background-clip:text;
+}
+.oneup-kokomi .hero .eyebrow{
+ color:#f0d9bd;font:800 12px/1.3 'Barlow Condensed',Impact,sans-serif;
+ letter-spacing:.18em;
+}
+.oneup-kokomi .limited-tag{
+ background:#1c2c2acc;color:#dfece3;border:1px solid #c4d4bd53;
+ box-shadow:none;border-radius:5px;
+ font:900 12px/1.3 'Barlow Condensed',Impact,sans-serif;
+ letter-spacing:.19em;
+ padding:9px 12px;margin-top:32px;
+}
+.oneup-kokomi .hero-description{color:#c6d0cf;max-width:610px;line-height:1.72;font-size:13px}
+.oneup-kokomi .hero-badges span{background:#1c282a99;border:1px solid #aac0b25b;color:#e9f2ea}
+.oneup-kokomi .hero-picks-label{color:#e0d6b8}
+.oneup-kokomi .hero-pick{
+ border-radius:5px;border:1px solid #d8e4d341;background:#122126ad;
+ color:#e0e9e5;
+ font:800 12px 'Barlow Condensed',Impact,sans-serif;
+ letter-spacing:.035em;
+}
+.oneup-kokomi .hero-pick.active{
+ background:#4c6d588a;border-color:#b0e4c2;
+ color:#fff;
+}
+.oneup-kokomi .hero-art-card{
+ width:250px;min-height:348px;
+ border:1px solid #9ebba65c;background:#131d24da;
+ transform:rotate(3deg);animation:none;
+ border-radius:12px;box-shadow:0 20px 80px #0009,0 0 45px #74b48b2b;
+}
+.oneup-kokomi .hero-art-emblem{border-radius:8px}
+.oneup-kokomi .hero-art-caption span{color:#dab894}
+.oneup-kokomi .hero-art-caption b{color:#f5faf0}
+.oneup-kokomi .hero-bottom{
+ color:#d4ded3;font-family:'Barlow Condensed',Impact,sans-serif;
+ font-size:12px;letter-spacing:.11em;
+}
+.oneup-kokomi .cta{
+ min-height:49px;border-radius:5px;
+ font:900 14px 'Barlow Condensed',Impact,sans-serif;
+ text-transform:uppercase;letter-spacing:.11em;
+ padding:12px 20px;
+ transition:transform .2s var(--kp-ease),background .2s,border-color .2s;
+}
+.oneup-kokomi .cta.primary,
+.oneup-kokomi .searchbar button{
+ background:linear-gradient(107deg,#eac18e,#d99d75);color:#172020;
+ border:1px solid #ffe1ab;
+ box-shadow:0 12px 29px #ad73582b;
+}
+.oneup-kokomi .cta.outline{
+ background:#172327bb;border:1px solid #c8d5be7b;
+ color:#f3f7ef;
+}
+.oneup-kokomi .cta:hover{transform:translateY(-2px)}
+.oneup-kokomi .cta:focus-visible,
+.oneup-kokomi .anime-card:focus-within{outline:2px solid #f4d4a1;outline-offset:3px}
+.oneup-kokomi .marquee{
+ background:#151c20;color:#e2d5b7;border-top:1px solid #71806e50;
+ border-bottom:1px solid #71806e50;
+ font:900 18px 'Barlow Condensed',Impact,sans-serif;letter-spacing:.19em;
+}
+.oneup-kokomi .marquee div{animation-duration:54s}
+.oneup-kokomi .wrap{max-width:1380px}
+.oneup-kokomi .explore-section{margin-top:40px}
+.oneup-kokomi .explore-top h2,
+.oneup-kokomi .section-heading h2,
+.oneup-kokomi .season-copy h2,
+.oneup-kokomi .community-note h2{
+ font-family:'Barlow Condensed',Impact,sans-serif;
+ text-transform:uppercase;
+ font-weight:900;
+ letter-spacing:-.006em;
+}
+.oneup-kokomi .explore-top h2 em,
+.oneup-kokomi .section-heading h2 em,
+.oneup-kokomi .season-copy h2 em,
+.oneup-kokomi .community-note h2 em{color:#e6c192}
+.oneup-kokomi .section-heading::after{background:linear-gradient(90deg,#e2ac7b9c,transparent)}
+.oneup-kokomi .micro{color:#d5ac8b;letter-spacing:.14em}
+.oneup-kokomi .section-more{color:#efd3b0;font:900 12px 'Barlow Condensed',Impact,sans-serif;letter-spacing:.1em;text-transform:uppercase}
+.oneup-kokomi .searchbar{background:#172028;border:1px solid #98b7aa4e;border-radius:6px}
+.oneup-kokomi .searchbar button{font:900 13px 'Barlow Condensed',Impact,sans-serif;letter-spacing:.09em;border-radius:4px}
+.oneup-kokomi .genre-pills button{
+ background:#171f27;color:#b9cebe;border:1px solid #718d7b49;
+ border-radius:5px;font-size:11px;font-weight:800;
+}
+.oneup-kokomi .genre-pills button.active,
+.oneup-kokomi .genre-pills button:hover{
+ border-color:#a2d7b78c;color:#f1faee;background:#2854486b;
+}
+.oneup-kokomi .section{margin-top:55px}
+.oneup-kokomi .card-rail{
+ grid-auto-columns:clamp(172px,15.5vw,216px);gap:16px;
+ scroll-snap-type:x proximity;scrollbar-width:thin;scrollbar-color:#8a9b865c transparent;
+}
+.oneup-kokomi .card-rail>.anime-card{scroll-snap-align:start}
+.oneup-kokomi .anime-card{
+ border-radius:10px;background:#152024;border:1px solid #8fa79b30;
+ box-shadow:0 7px 30px #02060742;
+}
+.oneup-kokomi .anime-card:hover{border-color:#dbc8a36b;box-shadow:0 17px 38px #0009}
+.oneup-kokomi .anime-art{aspect-ratio:3/4.05;background:#203238}
+.oneup-kokomi .anime-card .card-info{background:linear-gradient(180deg,#131d25,#111a22)}
+.oneup-kokomi .anime-card .card-name{color:#f1f4ef}
+.oneup-kokomi .anime-card .card-type{background:#334d4085;color:#d7ebd7}
+.oneup-kokomi .anime-card .rating b{color:#edd5a3}
+.oneup-kokomi .anime-save.saved{background:#e3b887;border-color:#e3b887;color:#12171a}
+.oneup-kokomi .season-banner{
+ border-radius:12px;
+ background:linear-gradient(115deg,#16232b,#23413c 64%,#15242e);
+ border:1px solid #84a5a056;
+}
+.oneup-kokomi .season-banner-bg{background:radial-gradient(circle at 70% 46%,#94e8bd34,transparent 40%)}
+.oneup-kokomi .season-glyph{color:#b5dfc41a;text-shadow:0 0 49px #78c7a83d}
+.oneup-kokomi .community-note{background:linear-gradient(120deg,#16222c,#1a3533);border:1px solid #91b5a55b;border-radius:12px}
+.oneup-kokomi .community-symbol{color:#f0dcb3;text-shadow:none}
+.oneup-kokomi .schedule-item{background:#151f28;border:1px solid #8faaa243;border-radius:8px}
+.oneup-kokomi .schedule-time{color:#dfc49c}
+.oneup-kokomi .footer{border-top:1px solid #89998b4a}
+.oneup-kokomi .anime-dialog{border-color:#8fa69471}
+.oneup-kokomi .oneup-detail-commands .cta.primary{background:linear-gradient(105deg,#eac49f,#d7a476);color:#202323}
+.oneup-kokomi .browse-screen .browse-intro h1 em{color:#e4c79d}
+/* Quick destinations, injected by original vanilla JS; same route engine. */
+.oneup-studio-dock{
+ position:relative;z-index:3;
+ display:grid;grid-template-columns:repeat(4,minmax(0,1fr));
+ gap:10px;margin:30px auto 35px;padding:0;
+}
+.oneup-studio-dock .studio-dock-item{
+ display:flex;gap:13px;align-items:center;justify-content:space-between;
+ padding:17px 20px;min-width:0;min-height:84px;position:relative;overflow:hidden;
+ background:linear-gradient(115deg,#1c2d32,#131d28);border:1px solid #a6bbae55;
+ border-radius:8px;color:#f0f3e9;text-align:left;
+ transition:background .2s,transform .2s,border-color .2s;
+}
+.oneup-studio-dock .studio-dock-item::before{
+ content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:#dbae83;opacity:.8;
+}
+.oneup-studio-dock .studio-dock-item:hover{
+ transform:translateY(-3px);
+ border-color:#e0c5a370;background:linear-gradient(120deg,#263c3a,#1b2832);
+}
+.oneup-studio-dock .studio-dock-icon{
+ display:grid;place-items:center;flex-shrink:0;width:40px;height:40px;
+ border:1px solid #d3dfbc55;border-radius:9px;
+ color:#f3d7ab;font:800 20px 'Barlow Condensed',Impact,sans-serif;
+}
+.oneup-studio-dock .studio-dock-label{
+ display:grid;gap:4px;min-width:0;flex:1;
+ font:900 20px/.96 'Barlow Condensed',Impact,sans-serif;
+ letter-spacing:.04em;text-transform:uppercase;
+}
+.oneup-studio-dock .studio-dock-label small{
+ color:#b0c5bc;font:600 10px 'Outfit',sans-serif;
+ text-transform:none;letter-spacing:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+}
+.oneup-studio-dock .studio-dock-arrow{color:#f1dab1;font-size:17px}
+/* Real future-airing pulse, not a row of invented videos. */
+.oneup-studio-airing{
+ position:relative;z-index:3;
+ margin:0 auto 25px;min-height:75px;
+ background:#111a22;
+ border-top:1px solid #a3b3a052;border-bottom:1px solid #a3b3a052;
+}
+.oneup-studio-airing-inner{display:flex;align-items:center;gap:16px;padding:12px 0}
+.oneup-studio-airing-label{
+ flex:0 0 180px;display:grid;gap:4px;
+ font:900 20px/.95 'Barlow Condensed',Impact,sans-serif;
+ text-transform:uppercase;color:#f4e6d2;letter-spacing:.055em;
+}
+.oneup-studio-airing-label small{font:700 9px 'Outfit',sans-serif;color:#abc3bc;letter-spacing:.04em}
+.oneup-studio-airing-items{display:flex;overflow-x:auto;gap:10px;min-width:0;flex:1;scrollbar-width:none}
+.oneup-studio-airing-item{
+ display:flex;gap:10px;align-items:center;flex:0 0 auto;
+ min-width:190px;max-width:250px;min-height:53px;
+ padding:6px 12px;background:#1a2830;border:1px solid #6c8d8159;border-radius:5px;
+ color:#e8eee9;text-align:left;
+}
+.oneup-studio-airing-item:hover{background:#25433e;border-color:#b9d9af}
+.oneup-studio-airing-item img{width:34px;height:45px;object-fit:cover;border-radius:3px}
+.oneup-studio-airing-item span{display:grid;gap:3px;min-width:0}
+.oneup-studio-airing-item b{
+ font:800 13px 'Barlow Condensed',Impact,sans-serif;
+ max-width:164px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+.oneup-studio-airing-item small{font:600 10px 'Outfit',sans-serif;color:#c1d1c7}
+.oneup-studio-airing-more{
+ color:#dfc69f;border:1px solid #8b9c8a8f;border-radius:5px;
+ padding:12px;font:900 13px 'Barlow Condensed',Impact,sans-serif;
+ text-transform:uppercase;white-space:nowrap;background:#182029;
+}
+.oneup-studio-airing-more:hover{background:#2d3835}
+/* Hero editorial label visible while the selected poster changes dynamically. */
+.oneup-kokomi .hero-grid .hero-copy::before{
+ content:"ANIME  /  UNA HISTORIA DIFERENTE";
+ display:block;color:#e4c4a1;
+ font:900 12px 'Barlow Condensed',Impact,sans-serif;
+ letter-spacing:.17em;position:absolute;top:-22px;
+ opacity:.8;pointer-events:none;
+}
+.oneup-kokomi .mobile-navigation{
+ background:#0c131bef;border-top:1px solid #a8bdb04f;
+ box-shadow:0 -10px 34px #0009;
+}
+.oneup-kokomi .mobile-navigation button.active{color:#f0d0a3}
+@media(max-width:1250px){
+ .oneup-kokomi .header-inner{gap:12px}
+ .oneup-kokomi .desktop-links{gap:0;max-width:660px}
+ .oneup-kokomi .desktop-links button,
+ .oneup-kokomi .desktop-links .oneup-link-community{padding:7px 9px;font-size:12px}
+ .oneup-kokomi .hero-copy{max-width:65%}
+}
+@media(max-width:1000px){
+ .oneup-kokomi .desktop-links{display:none}
+ .oneup-studio-dock{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .oneup-kokomi .hero-copy{max-width:75%}
+}
+@media(max-width:780px){
+ .oneup-kokomi .header{height:68px}
+ .oneup-kokomi .hero{height:auto;min-height:715px}
+ .oneup-kokomi .hero-poster{background-position:64% center;opacity:.72}
+ .oneup-kokomi .hero-darken{
+  background:linear-gradient(0deg,#070a10 0%,#0a1121c0 55%,#08101970 100%),
+  linear-gradient(90deg,#070d17b8,transparent 95%);
+ }
+ .oneup-kokomi .hero-grid{padding:135px 0 72px}
+ .oneup-kokomi .hero-copy{max-width:100%}
+ .oneup-kokomi .hero h1{font-size:clamp(55px,12vw,82px)}
+ .oneup-kokomi .hero-art-card{display:none}
+ .oneup-kokomi .hero .eyebrow{font-size:11px}
+ .oneup-kokomi .limited-tag{margin-top:25px}
+ .oneup-kokomi .hero-description{font-size:12px}
+ .oneup-kokomi .hero-bottom{font-size:10px}
+ .oneup-kokomi .card-rail{grid-auto-columns:clamp(150px,42vw,200px)}
+ .oneup-studio-airing-inner{flex-wrap:wrap;gap:10px}
+ .oneup-studio-airing-label{flex:1 0 100%;font-size:18px}
+ .oneup-studio-airing-more{font-size:11px}
+ .oneup-studio-dock{margin-top:24px}
+ .oneup-kokomi .mobile-navigation{z-index:2147483000}
+}
+@media(max-width:480px){
+ .oneup-kokomi .hero-grid{padding-top:112px}
+ .oneup-kokomi .hero h1{font-size:clamp(57px,12.5vw,75px)}
+ .oneup-studio-dock{gap:9px}
+ .oneup-studio-dock .studio-dock-item{min-height:77px;padding:10px}
+ .oneup-studio-dock .studio-dock-icon{width:31px;height:34px;font-size:17px}
+ .oneup-studio-dock .studio-dock-label{font-size:17px}
+ .oneup-studio-dock .studio-dock-label small{font-size:9px}
+ .oneup-studio-dock .studio-dock-arrow{display:none}
+}
+@media(hover:none){
+ .oneup-kokomi .anime-card:hover{transform:none}
+ .oneup-kokomi .cta:hover{transform:none}
+ .oneup-studio-dock .studio-dock-item:hover{transform:none}
+}
+@media(prefers-reduced-motion:reduce){
+ .oneup-kokomi .hero-poster,.oneup-kokomi .hero h1,.oneup-kokomi .anime-card,
+ .oneup-studio-dock .studio-dock-item{animation:none!important;transition:none!important}
+ .oneup-kokomi .marquee div{animation:none!important}
+}
+
+/* Editorial trailer showcase. These link to the existing details/trailer interface
+   and never autoplay or imply licensed episode availability. */
+.oneup-kokomi .oneup-studio-trailers{margin-top:72px;margin-bottom:70px}
+.oneup-kokomi .oneup-studio-trailer-heading{
+ display:flex;justify-content:space-between;align-items:end;gap:20px;
+ margin-bottom:20px;
+}
+.oneup-kokomi .oneup-studio-trailer-heading span{
+ color:#e9bf97;font:800 12px 'Barlow Condensed',Impact,sans-serif;
+ letter-spacing:.18em;
+}
+.oneup-kokomi .oneup-studio-trailer-heading h2{
+ margin:9px 0 0;color:#f6f7ef;
+ font:900 clamp(39px,5vw,66px)/.9 'Barlow Condensed',Impact,sans-serif;
+ text-transform:uppercase;
+}
+.oneup-kokomi .oneup-studio-trailer-heading em{color:#e9be8d}
+.oneup-kokomi .oneup-studio-trailer-heading p{
+ max-width:410px;margin:0;color:#adbdba;font:500 11px/1.7 'Outfit',sans-serif
+}
+.oneup-kokomi .oneup-studio-trailer-grid{
+ display:grid;grid-template-columns:minmax(0,1.45fr) minmax(270px,.75fr);
+ gap:15px;min-height:390px;
+}
+.oneup-kokomi .oneup-studio-trailer-main{
+ display:block;text-align:left;position:relative;overflow:hidden;
+ width:100%;min-width:0;min-height:390px;
+ border:1px solid #a2b6a45f;border-radius:11px;
+ background:#111d23;color:#fff;padding:0;
+ box-shadow:0 24px 60px #01070965;
+}
+.oneup-kokomi .oneup-studio-trailer-main>img{
+ position:absolute;inset:0;width:100%;height:100%;
+ object-fit:cover;object-position:center;
+ filter:saturate(.82) brightness(.8);
+ transition:transform .6s cubic-bezier(.16,1,.3,1);
+}
+.oneup-kokomi .oneup-studio-trailer-main:hover>img{
+ transform:scale(1.045);
+}
+.oneup-kokomi .oneup-studio-trailer-scrim{
+ position:absolute;inset:0;pointer-events:none;
+ background:linear-gradient(0deg,#050b12f5 0%,#08111bc8 18%,#070a121f 85%),linear-gradient(90deg,#080d1675,transparent 80%);
+}
+.oneup-kokomi .oneup-studio-trailer-main-copy{
+ position:absolute;z-index:2;left:30px;right:120px;bottom:30px;
+ display:grid;gap:11px;
+}
+.oneup-kokomi .oneup-studio-trailer-main-copy small{
+ color:#e8d6b5;font:900 12px 'Barlow Condensed',Impact,sans-serif;letter-spacing:.13em;
+}
+.oneup-kokomi .oneup-studio-trailer-main-copy strong{
+ color:#fff;font:900 clamp(32px,4vw,60px)/.92 'Barlow Condensed',Impact,sans-serif;
+ text-shadow:0 4px 20px #000b;
+ text-transform:uppercase;
+}
+.oneup-kokomi .oneup-studio-trailer-main-copy em{
+ color:#f4d4a5;font:900 13px 'Barlow Condensed',Impact,sans-serif;letter-spacing:.09em;
+ text-transform:uppercase;
+}
+.oneup-kokomi .oneup-studio-trailer-play{
+ position:absolute;bottom:32px;right:30px;width:62px;height:62px;
+ display:grid;place-items:center;
+ border-radius:50%;border:1px solid #d9dfc7c7;color:#fefbf0;
+ background:#243934b7;z-index:3;font:800 37px 'Barlow Condensed',Impact,sans-serif;
+}
+.oneup-kokomi .oneup-studio-trailer-list{
+ display:grid;grid-template-rows:repeat(4,minmax(0,1fr));gap:11px;min-width:0;
+}
+.oneup-kokomi .oneup-studio-trailer-mini{
+ display:flex;gap:13px;text-align:left;min-height:0;
+ border:1px solid #879d9149;border-radius:9px;padding:9px 12px;
+ background:#17242b;color:#eef6ec;
+ overflow:hidden;
+ transition:background .2s,border-color .2s;
+}
+.oneup-kokomi .oneup-studio-trailer-mini:hover{border-color:#d8caa47a;background:#294137}
+.oneup-kokomi .oneup-studio-trailer-mini img{
+ width:65px;min-height:77px;height:100%;object-fit:cover;border-radius:5px;flex-shrink:0;
+}
+.oneup-kokomi .oneup-studio-trailer-mini>span{
+ display:flex;flex-direction:column;align-items:flex-start;justify-content:center;
+ gap:6px;min-width:0;
+}
+.oneup-kokomi .oneup-studio-trailer-mini small{
+ color:#e2ba91;font:700 10px 'Outfit',sans-serif
+}
+.oneup-kokomi .oneup-studio-trailer-mini b{
+ font:900 20px/.94 'Barlow Condensed',Impact,sans-serif;
+ display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;
+}
+.oneup-kokomi .oneup-studio-trailer-mini i{
+ color:#bdd9c4;font:800 11px 'Barlow Condensed',Impact,sans-serif;letter-spacing:.07em;
+ text-transform:uppercase;font-style:normal;
+}
+.oneup-kokomi .oneup-studio-trailer-grid button:focus-visible{
+ outline:3px solid #eed4a3;outline-offset:3px;
+}
+@media(max-width:900px){
+ .oneup-kokomi .oneup-studio-trailer-grid{grid-template-columns:1fr}
+ .oneup-kokomi .oneup-studio-trailer-list{
+  grid-template-columns:repeat(4,minmax(170px,1fr));grid-template-rows:unset;
+  overflow-x:auto;scroll-snap-type:x proximity;
+ }
+ .oneup-kokomi .oneup-studio-trailer-mini{scroll-snap-align:start;min-height:95px}
+ .oneup-kokomi .oneup-studio-trailer-main{min-height:330px}
+ .oneup-kokomi .oneup-studio-trailer-heading{display:block}
+ .oneup-kokomi .oneup-studio-trailer-heading p{margin-top:13px}
+}
+@media(max-width:480px){
+ .oneup-kokomi .oneup-studio-trailers{margin-top:49px;margin-bottom:45px}
+ .oneup-kokomi .oneup-studio-trailer-main{min-height:290px}
+ .oneup-kokomi .oneup-studio-trailer-main-copy{left:18px;right:65px;bottom:23px}
+ .oneup-kokomi .oneup-studio-trailer-main-copy strong{font-size:33px}
+ .oneup-kokomi .oneup-studio-trailer-main-copy small{font-size:10px}
+ .oneup-kokomi .oneup-studio-trailer-play{right:15px;bottom:20px;width:44px;height:44px;font-size:25px}
+ .oneup-kokomi .oneup-studio-trailer-list{grid-template-columns:repeat(4,185px)}
+ .oneup-kokomi .oneup-studio-trailer-mini{gap:8px;padding:7px}
+ .oneup-kokomi .oneup-studio-trailer-mini img{width:57px}
+}
+@media(prefers-reduced-motion:reduce){
+ .oneup-kokomi .oneup-studio-trailer-main img{transition:none!important}
+}
+
+/* ===== 2/10 — themes/october-2026/theme.css ===== */
+
+/*
+ ONE UP // CINEMATIC OCTOBER STUDY
+ Responsive first-party theme, deliberately scoped to .oneup-october.
+ No copyrighted artwork, fake licensed episodes, or forced audio.
+ Motion = transform / opacity / masks; reduced-motion fallback included.
+*/
+body.oneup-october{
+ --oct-ink:#f6f4ee;
+ --oct-muted:#aab6bc;
+ --oct-main:#90e1c6;
+ --oct-main-deep:#245b58;
+ --oct-spark:#e5a866;
+ --oct-red:#b14246;
+ --oct-ease:cubic-bezier(.16,1,.3,1);
+ --bg:#080c11;--surf:#101820;--panel:#151b22;
+ --orange:#90e1c6;--orange2:#57b69d;
+ --cream:#f6f1e7;
+ background:radial-gradient(ellipse at 75% 3%,#173b372f,transparent 43%),#080c11;
+ color:var(--oct-ink);
+ font-family:'Outfit',system-ui,sans-serif;
+}
+.oneup-october .app-sheen{
+ background:radial-gradient(ellipse at 66% 8%,#38654b1f,transparent 35%),radial-gradient(ellipse at 20% 36%,#2a30302d,transparent 38%);
+ opacity:.9;pointer-events:none;
+}
+.oneup-october .header{
+ height:79px;
+ background:#080d12ea;
+ border-bottom:1px solid #b9ddc92a;
+ box-shadow:0 6px 36px #02040676;
+}
+.oneup-october .header-inner{height:100%;gap:22px}
+.oneup-october .brand{gap:10px}
+.oneup-october .brand-symbol{border:1px solid #5b9b8870;background:#0f1c21;box-shadow:0 0 0 3px #0b1d1a,0 0 30px #64bd9436}
+.oneup-october .brand-name{letter-spacing:.02em;color:#f7f7f3;font-family:'Barlow Condensed',Impact,sans-serif}
+.oneup-october .brand-name>span{color:#c9d2cc}
+.oneup-october .desktop-links{
+ gap:3px;overflow:visible;
+ padding:5px;border:1px solid #8ca99a27;border-radius:4px;
+ background:#13192298;
+}
+.oneup-october .desktop-links button,
+.oneup-october .desktop-links .oneup-link-community{
+ height:44px;min-height:44px;display:inline-flex;align-items:center;
+ padding:0 12px;margin:0;
+ color:#bfc8c7;
+ font-family:'Barlow Condensed',Impact,sans-serif;
+ font-weight:800;font-size:15px;letter-spacing:.1em;
+ text-transform:uppercase;
+ background:transparent;
+ border:1px solid transparent;border-radius:2px;
+ position:relative;transition:color .17s ease,background .17s ease;
+}
+.oneup-october .desktop-links button::before,.oneup-october .desktop-links a::before{
+ content:"";width:0;height:13px;background:var(--oct-red);
+ position:absolute;left:4px;top:50%;transform:translateY(-50%);
+ transition:width .2s var(--oct-ease);border-radius:1px;
+}
+.oneup-october .desktop-links button.active,
+.oneup-october .desktop-links button:hover,
+.oneup-october .desktop-links a:hover{
+ color:#fff;background:#a3caba1e;padding-left:17px;
+}
+.oneup-october .desktop-links button.active::before,
+.oneup-october .desktop-links button:hover::before,
+.oneup-october .desktop-links a:hover::before{width:3px}
+.oneup-october .desktop-links button.active::after{display:none}
+.oneup-october .header-right .icon-button,
+.oneup-october .header-right .account-button{
+ border-color:#81aaa04d;background:#132024a6;color:#e2eae6;
+}
+.oneup-october .header-right .account-dot{color:var(--oct-main)}
+.oneup-october .hero{
+ height:min(790px,calc(100svh - 78px));
+ min-height:635px;
+ isolation:isolate;
+ background:#0a1118;
+ border-bottom:1px solid #638d8058;
+}
+.oneup-october .hero::before{
+ content:"";position:absolute;z-index:2;inset:0;
+ pointer-events:none;
+ background:
+  linear-gradient(90deg,#060b10ed 0%,#080d11d9 28%,#080e126a 61%,#080c1245 100%),
+  linear-gradient(0deg,#080b12 0%,transparent 37%,#080e1259 100%),
+  radial-gradient(ellipse at 73% 38%,#61c89a1f,transparent 49%);
+}
+.oneup-october .hero::after{
+ content:"";position:absolute;z-index:2;inset:0;pointer-events:none;
+ background:linear-gradient(125deg,transparent 38%,#94ebd00b 48%,transparent 58%);
+ mix-blend-mode:screen;
+}
+.oneup-october .hero-poster{
+ opacity:.7;filter:saturate(.77) brightness(.72) contrast(1.1);
+ background-position:70% center;
+ animation:none;
+ transform:scale(1.02);
+ transition:opacity .5s ease,background-image .4s ease;
+}
+.oneup-october .hero-darken{background:none}
+.oneup-october .hero-lines{
+ z-index:2;pointer-events:none;
+ background:repeating-linear-gradient(90deg,transparent 0 175px,#bad7cc0c 176px,transparent 177px);
+ opacity:.46;
+}
+.oneup-october .hero .oneup-visual-fx{opacity:.38}
+.oneup-october .hero .oneup-ember{background:#c9ecce;box-shadow:0 0 12px #a9d2ae}
+.oneup-october .hero-grid{z-index:4;gap:38px;padding-bottom:60px}
+.oneup-october .hero-copy{max-width:min(800px,63%)}
+.oneup-october .hero-art-card{z-index:1;transform:rotate(1deg) translateY(10px);border:1px solid #90bfa04a;box-shadow:0 35px 90px #020306a8,0 0 85px #42907228;background:#101a1dda}
+.oneup-october .hero-art-emblem{border-color:#b1e4bf45}
+.oneup-october .hero h1{
+ font:900 clamp(78px,7.8vw,130px)/.81 'Barlow Condensed',Impact,sans-serif;
+ letter-spacing:.003em;
+ color:#f9f7f0;text-shadow:0 8px 40px #020409c2;
+ max-width:850px;
+}
+.oneup-october .hero h1 span{
+ color:#e4e7dd;
+ background:linear-gradient(105deg,#ecf7ed 0%,#b1d8c8 42%,#70cbb0 84%);
+ -webkit-background-clip:text;background-clip:text;
+}
+.oneup-october .hero .eyebrow{
+ color:#d2e1d5;font-weight:900;letter-spacing:.15em;
+ font-family:'Barlow Condensed',Impact,sans-serif;font-size:13px;
+}
+.oneup-october .eyebrow .signal{box-shadow:0 0 20px #61dda8;background:#7af0c0}
+.oneup-october .limited-tag{
+ margin:29px 0 23px;border:1px solid #c4d0ad50;
+ background:#19241ee3;letter-spacing:.19em;
+ color:#e6d5a7;padding:9px 14px 9px 11px;
+ font-family:'Barlow Condensed',Impact,sans-serif;font-size:14px;
+ box-shadow:none;position:relative;
+}
+.oneup-october .limited-tag::before{
+ content:"";display:inline-block;width:5px;height:12px;
+ margin-right:9px;background:var(--oct-red);
+}
+.oneup-october .hero-description{color:#c8d1cc;line-height:1.75;font-size:13px;max-width:590px}
+.oneup-october .hero-badges span{background:#0f232199;border-color:#94c6ae44;color:#d8e8d9}
+.oneup-october .hero-picks .hero-pick{
+ border:1px solid #729b8c4d;border-radius:2px;
+ background:#141e23cc;color:#e4e8e4;
+ font-family:'Barlow Condensed',Impact,sans-serif;font-weight:800;font-size:13px;letter-spacing:.035em;
+ transition:border .2s,background .2s;
+}
+.oneup-october .hero-picks .hero-pick.active{border-color:#8fe4b7;background:#234d4278}
+.oneup-october .hero-picks-label{font-family:'Barlow Condensed',Impact,sans-serif;font-size:12px;letter-spacing:.1em;color:#bed1c1}
+.oneup-october .hero-bottom{
+ color:#b9cbbd;z-index:4;
+ font-family:'Barlow Condensed',Impact,sans-serif;letter-spacing:.1em;
+}
+.oneup-october .cta,
+.oneup-october .section-more,
+.oneup-october .searchbar button,
+.oneup-october .genre-pills button{
+ font-family:'Barlow Condensed',Impact,sans-serif;
+ text-transform:uppercase;letter-spacing:.115em;
+ font-weight:900;font-size:15px;
+ border-radius:2px;min-height:48px;
+ transition:transform .18s var(--oct-ease),background .18s ease,border-color .18s ease;
+}
+.oneup-october .cta.primary,.oneup-october .searchbar button{
+ color:#0c1715;
+ background:linear-gradient(105deg,#d6f1d7,#8ccfb3);
+ box-shadow:0 12px 28px #356e5552;
+ border:1px solid #c5e9d4;
+}
+.oneup-october .cta.outline{
+ color:#edf4ec;background:#172a27a6;border:1px solid #a5c8a578;
+ box-shadow:none;
+}
+.oneup-october .cta.primary:hover,.oneup-october .searchbar button:hover{
+ background:linear-gradient(105deg,#ecfff1,#b0e4c9);transform:translateY(-2px);
+}
+.oneup-october .cta.outline:hover{background:#31504799;border-color:#bcf0d6}
+.oneup-october .cta.primary::before{z-index:0;opacity:.25;pointer-events:none}
+.oneup-october .hero-actions .cta>*{position:relative;z-index:1}
+.oneup-october .marquee{
+ border-color:#bbbe9470;background:#171b1d;color:#d9e7d9;
+ font-family:'Barlow Condensed',Impact,sans-serif;letter-spacing:.15em;
+ font-size:20px;
+}
+.oneup-october .marquee div{animation-duration:54s}
+.oneup-october .explore-top h2 em,
+.oneup-october .section-heading h2 em,
+.oneup-october .season-copy h2 em,
+.oneup-october .community-note h2 em{color:#b4dfc6}
+.oneup-october .section-heading::after{background:linear-gradient(90deg,#89c4a5a3,transparent)}
+.oneup-october .micro,.oneup-october .section-more{color:#b8d7be}
+.oneup-october .searchbar{background:#121c22;border-color:#98bba55e}
+.oneup-october .searchbar:focus-within{border-color:#b7ddc7}
+.oneup-october .genre-pills button{background:#182222;color:#d3dcd4;border:1px solid #678b7952;font-size:12px;min-height:35px}
+.oneup-october .genre-pills button.active,.oneup-october .genre-pills button:hover{border-color:#b4d8b4;background:#2b51453d;color:#f6fcf5}
+.oneup-october .anime-card{border:1px solid #638e7f33;background:#111a20;box-shadow:0 2px 16px #02060737}
+.oneup-october .anime-card:hover,.oneup-october .anime-card:focus-within{border-color:#92dcb58c;box-shadow:0 16px 45px #080f0e85}
+.oneup-october .anime-card::after{border-color:#aad7b461;box-shadow:inset 0 0 20px #69a88a17}
+.oneup-october .card-type{background:#285b466c;color:#bce5d2}
+.oneup-october .rating b{color:#d2e6cf}
+.oneup-october .season-banner{
+ background:linear-gradient(115deg,#17241f,#1e3330 58%,#101e21);
+ border:1px solid #809d795c;border-radius:8px;
+}
+.oneup-october .season-banner-bg{background:radial-gradient(circle at 69% 45%,#5e9a8458,transparent 43%)}
+.oneup-october .season-glyph{color:#9cc5a21d;text-shadow:0 0 70px #3f856b44}
+.oneup-october .community-note{background:linear-gradient(118deg,#142321,#1a242d);border:1px solid #789b8955}
+.oneup-october .community-symbol{color:#b7e7ca;text-shadow:0 0 38px #5bc5914a}
+.oneup-october .mobile-navigation{background:#0c1518f5;border-top-color:#93bda35e}
+.oneup-october .mobile-navigation button,.oneup-october .mobile-navigation a{color:#b3c9be}
+.oneup-october .mobile-navigation button.active,.oneup-october .mobile-navigation a:hover{color:#b5f1cd}
+.oneup-october .footer{border-color:#65968448}
+.oneup-october .anime-dialog{border-color:#8ac7a559}
+.oneup-october .oneup-detail-commands .cta.primary{background:linear-gradient(105deg,#d7efde,#87caab);color:#0c1e17}
+.oneup-october .section-heading h2,.oneup-october .browse-intro h1{letter-spacing:.01em}
+.oneup-october .browse-screen .browse-intro h1 em{color:#b6ebcf}
+/* The special feature is an event card, NOT an invented streamer. */
+.oct-event{
+ position:relative;isolation:isolate;overflow:hidden;
+ display:grid;grid-template-columns:minmax(0,1.1fr) minmax(240px,.9fr);
+ gap:25px;align-items:center;
+ min-height:395px;padding:40px clamp(25px,4.1vw,64px);
+ margin-top:37px;margin-bottom:60px;
+ background:radial-gradient(circle at 80% 45%,#305e4c78,transparent 42%),linear-gradient(107deg,#121a1e,#122324 75%,#091418);
+ border:1px solid #b0d3b36c;border-radius:8px;
+ box-shadow:0 26px 70px #020a0a61;
+}
+.oct-event::after{
+ content:"";position:absolute;z-index:-1;inset:0;pointer-events:none;
+ background:repeating-linear-gradient(90deg,transparent,transparent 120px,#c5dcbd0b 121px,transparent 122px);
+}
+.oct-event .oct-event-seal{
+ position:absolute;z-index:-1;right:5%;top:50%;
+ width:min(510px,62vw);aspect-ratio:1;transform:translateY(-50%) rotate(12deg);
+ opacity:.36;animation:oct-seal 24s ease-in-out infinite alternate;
+ filter:drop-shadow(0 0 17px #92edb344);
+}
+.oct-event-copy{z-index:2;position:relative}
+.oct-kicker{
+ display:inline-flex;gap:11px;align-items:center;
+ font:900 14px/1.3 'Barlow Condensed',Impact,sans-serif;
+ letter-spacing:.22em;color:#e8cd9d;
+}
+.oct-kicker::before{content:"";width:18px;height:4px;background:#a84344}
+.oct-event h2{
+ margin:18px 0 12px;
+ font:900 clamp(67px,7vw,114px)/.76 'Barlow Condensed',Impact,sans-serif;
+ letter-spacing:-.005em;
+ text-transform:uppercase;color:#f8f6ec;
+ text-shadow:0 14px 35px #0008;
+}
+.oct-event h2 span{color:#95d8b1}
+.oct-event p{font-size:12px;line-height:1.8;color:#cad5c9;max-width:450px;margin-bottom:23px}
+.oct-event .oct-footnote{font-size:10px;margin-top:13px;color:#91aa9d}
+.oct-event-art{position:relative;z-index:1;display:flex;justify-content:center;align-items:center;min-height:288px}
+.oct-event-frame{
+ position:relative;max-width:265px;width:60%;
+ aspect-ratio:2/3;
+ border:3px solid #c4c5a1b0;
+ transform:rotate(6deg);
+ box-shadow:18px 20px 0 #0b151aca,0 27px 55px #0009;
+ background:#142d2a;
+ overflow:hidden;
+}
+.oct-event-frame img{width:100%;height:100%;display:block;object-fit:cover;filter:saturate(.85);transition:filter .25s}
+.oct-event-frame:not(.has-poster)::before{
+ content:"";position:absolute;inset:0;
+ background:radial-gradient(circle,#59957a69,#0f1c25);
+}
+.oct-event-frame .oct-art-fallback{position:absolute;inset:0;display:grid;place-items:center;color:#a4d7c0;font:900 120px/1 'Barlow Condensed',Impact,sans-serif}
+.oct-event .oct-stamp{
+ position:absolute;right:4%;bottom:10%;
+ padding:14px;border:1px solid #a8d6b481;background:#0f191bdf;
+ font:900 20px/1.05 'Barlow Condensed',Impact,sans-serif;
+ letter-spacing:.11em;text-align:center;transform:rotate(-5deg);
+}
+.oct-event .oct-stamp small{display:block;margin-top:7px;font:700 9px 'Outfit',sans-serif;color:#dfcba8}
+.oct-moon{
+ position:absolute;right:7%;top:10%;
+ width:71px;height:71px;border-radius:50%;
+ background:radial-gradient(circle at 40% 32%,#f2e7ba,#bdba9f 55%,#5c6d69);
+ opacity:.52;box-shadow:0 0 52px #e7caa63c;
+ pointer-events:none;
+}
+/* Seasonal micro-effects are tiny and use GPU-safe transforms/opacity. */
+.oct-arcane-mark{
+ position:absolute;right:3%;top:50%;width:min(42vw,530px);
+ opacity:.17;z-index:2;pointer-events:none;
+ transform:translateY(-50%) rotate(-13deg);
+ animation:oct-breathe 15s ease-in-out infinite alternate;
+}
+.oct-event-control{
+ position:fixed;z-index:120;right:max(18px,env(safe-area-inset-right));
+ bottom:calc(20px + env(safe-area-inset-bottom));
+ display:flex;align-items:center;gap:9px;
+ min-height:41px;padding:10px 14px;
+ border:1px solid #93bda372;background:#122021ed;color:#e6efdf;
+ border-radius:3px;box-shadow:0 11px 30px #01050599;
+ backdrop-filter:blur(15px);
+ font:900 12px 'Barlow Condensed',Impact,sans-serif;
+ letter-spacing:.09em;text-transform:uppercase;
+ transition:border-color .2s,background .2s;
+}
+.oct-event-control:hover{border-color:#e0d9b6;background:#243a34}
+.oct-event-control .oct-audio-indicator{
+ display:inline-block;width:7px;height:7px;border-radius:50%;
+ background:#8d8d83;
+}
+.oct-event-control[aria-pressed="true"] .oct-audio-indicator{background:#91e5b4;box-shadow:0 0 9px #91e5b489}
+.oct-event-control:focus-visible{outline:2px solid #f0d6a8;outline-offset:4px}
+@keyframes oct-breathe{to{transform:translateY(-48%) rotate(-9deg);opacity:.24}}
+@keyframes oct-seal{to{transform:translateY(-50%) rotate(22deg);opacity:.26}}
+/* Journal-style editorial animation, scoped and nonblocking. */
+@keyframes oct-reveal{from{opacity:.01;transform:translate3d(0,16px,0)}to{opacity:1;transform:none}}
+.oneup-october .hero .eyebrow,.oneup-october .hero .limited-tag,
+.oneup-october .hero h1,.oneup-october .hero .hero-actions{
+ animation:oct-reveal .85s var(--oct-ease) both;
+}
+.oneup-october .hero .limited-tag{animation-delay:.09s}
+.oneup-october .hero h1{animation-delay:.16s}
+.oneup-october .hero .hero-actions{animation-delay:.3s}
+.oneup-october .hero.is-switching h1{animation:spotlightText .4s var(--oct-ease) both}
+@media(max-width:1250px){
+ .oneup-october .desktop-links button,.oneup-october .desktop-links .oneup-link-community{font-size:13px;padding-left:8px;padding-right:8px}
+ .oneup-october .desktop-links{gap:1px}
+ .oneup-october .hero-copy{max-width:62%}
+}
+@media(max-width:1000px){
+ .oneup-october .desktop-links{display:none}
+ .oneup-october .hero-copy{max-width:70%}
+ .oct-event{grid-template-columns:1fr 270px}
+}
+@media(max-width:780px){
+ .oneup-october .header{height:68px}
+ .oneup-october .hero{height:auto;min-height:730px}
+ .oneup-october .hero::before{
+  background:linear-gradient(0deg,#070c11 3%,#0910168a 62%,#0710185c),linear-gradient(90deg,#081017b8,transparent 85%);
+ }
+ .oneup-october .hero-poster{background-position:62% center;opacity:.55}
+ .oneup-october .hero-copy{max-width:100%}
+ .oneup-october .hero-grid{padding-top:120px;padding-bottom:70px}
+ .oneup-october .hero h1{font-size:clamp(65px,11vw,85px)}
+ .oneup-october .hero-art-card{display:none}
+ .oneup-october .hero .limited-tag{margin-top:30px}
+ .oneup-october .hero-actions .cta{font-size:13px}
+ .oneup-october .hero-picks .hero-pick{font-size:12px}
+ .oneup-october .hero .eyebrow{letter-spacing:.1em}
+ .oct-event{grid-template-columns:1fr;min-height:550px;padding:28px 24px 34px;margin-bottom:42px}
+ .oct-event h2{font-size:clamp(70px,13vw,96px)}
+ .oct-event-art{min-height:185px;align-items:flex-start}
+ .oct-event-frame{width:150px;max-width:none;height:200px;aspect-ratio:auto}
+ .oct-event .oct-stamp{right:8%;bottom:20%}
+ .oct-event .oct-event-seal{top:67%;width:300px}
+ .oct-event-control{bottom:calc(83px + env(safe-area-inset-bottom));right:12px}
+ .oct-arcane-mark{width:68vw;right:-18%;top:22%;opacity:.1}
+}
+@media(max-width:480px){
+ .oneup-october .hero-grid{padding-top:108px;padding-bottom:90px}
+ .oneup-october .hero h1{font-size:clamp(57px,12.5vw,75px)}
+ .oneup-october .hero .hero-description{font-size:12px}
+ .oneup-october .hero-picks{max-height:100px;overflow:auto}
+ .oct-event{margin-top:15px}
+ .oct-event h2{font-size:70px}
+ .oct-event-control{font-size:11px;padding:9px 11px}
+ .oneup-october .hero .eyebrow{font-size:11px}
+}
+@media(prefers-reduced-motion:reduce){
+ .oneup-october .hero .eyebrow,.oneup-october .hero .limited-tag,
+ .oneup-october .hero h1,.oneup-october .hero .hero-actions,
+ .oct-arcane-mark,.oct-event .oct-event-seal{animation:none!important;transform:none!important}
+ .oneup-october .marquee div{animation:none!important}
+ .oneup-october .anime-card,.oneup-october .cta{transition:none!important}
+}
+
+/* Mobile accessibility fix: keep the opt-in sound control in the hero's
+   natural flow, above the same touch layer as the existing CTAs. */
+.oneup-october .oct-sound-wrap{
+ position:relative;z-index:12;
+ display:flex;align-items:center;justify-content:flex-start;
+ margin:12px 0 0;
+ pointer-events:auto;
+}
+.oneup-october .oct-sound-wrap .oct-event-control{
+ position:relative!important;inset:auto!important;
+ bottom:auto!important;right:auto!important;
+ display:inline-flex;flex:0 0 auto;
+ width:auto;max-width:100%;
+ min-height:37px;padding:8px 13px;
+ box-shadow:none;backdrop-filter:none;
+ background:#15231ee5;
+ pointer-events:auto!important;touch-action:manipulation;
+}
+@media(max-width:780px){
+ .oneup-october .oct-sound-wrap{margin-top:13px;margin-bottom:8px;z-index:13}
+ .oneup-october .oct-sound-wrap .oct-event-control{
+  bottom:auto!important;right:auto!important;
+  font-size:12px;
+ }
+}
+
+/* Authentic catalogue metadata; avoids generic fake episode availability. */
+.oneup-october .oct-feature-metadata{
+ display:flex;align-items:center;flex-wrap:wrap;
+ gap:6px;margin:0 0 18px;
+ font:800 11px/1.25 'Barlow Condensed',Impact,sans-serif;
+ letter-spacing:.12em;
+}
+.oneup-october .oct-feature-metadata:empty{display:none}
+.oneup-october .oct-feature-metadata>span{
+ color:#d1e3d2;background:#233d346b;
+ border:1px solid #b6dbb349;border-radius:2px;
+ padding:6px 9px;
+}
+.oneup-october .oct-event-art{
+ transform:translate3d(var(--oct-shift-x,0px),var(--oct-shift-y,0px),0);
+ transition:transform .28s cubic-bezier(.16,1,.3,1);
+}
+@media(hover:none),(pointer:coarse){
+ .oneup-october .oct-event-art{transform:none;transition:none}
+}
+@media(prefers-reduced-motion:reduce){
+ .oneup-october .oct-event-art{transform:none!important;transition:none!important}
+}
+
+/* ===== 3/10 — themes/kokomi-mobile-preview/theme.css ===== */
+
+/* 1UP Anime — experimental mobile-first cinematic layout.
+ * Original implementation informed by a user-provided reference recording.
+ * Scoped to .kokomi-mobile-reference; production remains unchanged.
+ */
+body.kokomi-mobile-reference{
+  --km-bg:#111116;--km-panel:#1c1d24;--km-ink:#f6f6f8;--km-muted:#9fabb7;
+  --km-turquoise:#40d6c4;--km-red:#fd3158;--km-blue:#507dff;
+  background:#101015;color:var(--km-ink);
+}
+.kokomi-mobile-reference .app-sheen,.kokomi-mobile-reference .hero-lines,
+.kokomi-mobile-reference .hero-floating,.kokomi-mobile-reference .marquee,
+.kokomi-mobile-reference .limited-tag{display:none!important}
+.kokomi-mobile-reference .header{background:#121319f6;border-bottom:1px solid #383940;
+ box-shadow:0 5px 25px #0008;height:66px;position:sticky;top:0;z-index:60}
+.kokomi-mobile-reference .brand{gap:7px}
+.kokomi-mobile-reference .brand-name{font:900 25px/.9 'Barlow Condensed',sans-serif;letter-spacing:.01em}
+.kokomi-mobile-reference .brand-name>span{color:#8e9efd}
+.kokomi-mobile-reference .brand-symbol{width:35px;height:35px;padding:3px;border-radius:5px}
+.kokomi-mobile-reference .header-inner{gap:8px}
+.kokomi-mobile-reference .desktop-links{background:#23252c;border-radius:5px}
+.kokomi-mobile-reference .desktop-links button{font-size:12px}
+.kokomi-mobile-reference .hero{height:clamp(310px,52vw,560px);min-height:0;max-height:none;border:0;background:#131522}
+.kokomi-mobile-reference .hero-poster{inset:0;opacity:.85;filter:saturate(1.07) brightness(.82);
+ background-position:center 36%;transform:none}
+.kokomi-mobile-reference .hero-darken{background:linear-gradient(90deg,#080b11f5,#090a1690 56%,#05071335),
+ linear-gradient(0deg,#101116,transparent 75%)}
+.kokomi-mobile-reference .hero::before{background:linear-gradient(0deg,#101116 0%,transparent 26%)}
+.kokomi-mobile-reference .hero-grid{height:100%;display:flex;align-items:flex-end;justify-content:flex-start;padding:22px 0 58px}
+.kokomi-mobile-reference .hero-copy{width:min(780px,90%);max-width:780px}
+.kokomi-mobile-reference .hero .eyebrow{font-size:10px;letter-spacing:.18em;color:#71ecd7}
+.kokomi-mobile-reference .hero h1{font:900 clamp(45px,6vw,92px)/.91 'Barlow Condensed',sans-serif;margin:13px 0 12px;text-transform:uppercase;max-width:720px}
+.kokomi-mobile-reference .hero h1 span{background:none;color:white}
+.kokomi-mobile-reference .hero-description{font-size:12px;line-height:1.4;max-width:480px;opacity:.87}
+.kokomi-mobile-reference .hero-art-card{display:none}
+.kokomi-mobile-reference .hero-actions{gap:8px}
+.kokomi-mobile-reference .hero-actions .cta{font-size:11px;border-radius:4px;min-height:36px;padding:8px 13px}
+.kokomi-mobile-reference .hero-actions .primary{background:#4d78fd;border-color:#4d78fd}
+.kokomi-mobile-reference .hero-actions .outline{background:#fafaff;color:#1c202c;border-color:#fafaff}
+.kokomi-mobile-reference .hero-badges,.kokomi-mobile-reference .hero-bottom{display:none}
+.kokomi-mobile-reference .hero-picks{margin-top:9px}
+.kokomi-mobile-reference .wrap{max-width:1400px}
+.kokomi-mobile-reference .section{margin-top:27px;margin-bottom:30px}
+.kokomi-mobile-reference .section-heading{margin-bottom:14px;border-bottom:1px solid #42424b;padding-bottom:9px}
+.kokomi-mobile-reference .section-heading h2{font:850 clamp(20px,2vw,26px)/1.1 'Barlow Condensed',sans-serif;margin:0;text-transform:none}
+.kokomi-mobile-reference .section-heading h2::before{content:"";display:inline-block;width:3px;height:.75em;margin-right:8px;background:var(--km-turquoise)}
+.kokomi-mobile-reference .section-heading h2 em{color:#f3f4f8;font-style:normal}
+.kokomi-mobile-reference .section-heading .micro,.kokomi-mobile-reference .season-banner,
+.kokomi-mobile-reference .schedule-preview .small-note{display:none}
+.kokomi-mobile-reference #trending-rail,.kokomi-mobile-reference #season-rail,
+.kokomi-mobile-reference #recent-rail,.kokomi-mobile-reference #movies-rail,
+.kokomi-mobile-reference #browse-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));
+ gap:13px;overflow:visible;scroll-snap-type:none}
+.kokomi-mobile-reference .anime-card{max-width:none;min-width:0;margin:0}
+.kokomi-mobile-reference .anime-card .anime-art{border-radius:2px}
+.kokomi-mobile-reference .anime-card .anime-art img{height:100%;width:100%;object-fit:cover}
+.kokomi-mobile-reference .anime-card .rating{font-size:10px}
+.kokomi-mobile-reference .anime-save{border-radius:3px}
+.kokomi-mobile-reference .card-name{font-weight:700;font-size:12px}
+.kokomi-mobile-reference .card-sub{font-size:10px;color:#9ca1b0}
+.kokomi-mobile-reference .explore-section{margin-top:20px}
+.kokomi-mobile-reference .genre-pills button{border-radius:3px}
+.kokomi-mobile-reference .footer{background:#17171d;border-top:1px solid #35353d}
+.kokomi-mobile-reference .mobile-navigation{display:none!important}
+.kokomi-mobile-reference .km-menu-toggle{display:grid;place-items:center;background:transparent;border:0;color:#fff;
+ min-width:36px;height:40px;font-size:24px;cursor:pointer}
+.km-drawer[hidden],.km-overlay[hidden],.km-search-pop[hidden]{display:none!important}
+.km-overlay{position:fixed;inset:0;background:#000b;z-index:109;backdrop-filter:blur(3px)}
+.km-drawer{position:fixed;inset:0 auto 0 0;width:min(275px,84vw);background:#16171d;
+ border-right:1px solid #45464f;box-shadow:20px 0 70px #000b;z-index:110;
+ overflow:auto;transform:translateX(0);animation:km-in .22s ease-out}
+.km-drawer-head{height:70px;display:flex;align-items:center;justify-content:space-between;padding:14px 16px;
+ border-bottom:1px solid #33353e;font:900 27px 'Barlow Condensed',sans-serif}
+.km-drawer-brand{display:flex;align-items:center;gap:8px;color:inherit;text-decoration:none;
+ min-width:0;font-size:23px;white-space:nowrap}
+.km-drawer-brand img{width:38px;height:38px;object-fit:contain;flex-shrink:0}
+.km-drawer-brand:focus-visible{outline:2px solid #8adfd4;outline-offset:4px}
+.km-drawer-head b{color:#91a5ff}.km-drawer button{font:750 13px 'Outfit',sans-serif}
+.km-drawer-close{background:#31323b;color:white;border:0;padding:8px 11px;border-radius:3px}
+.km-nav{display:grid;gap:7px;padding:12px}
+.km-nav button,.km-nav a{border:0;background:#212228;color:#e7e7ed;display:flex;align-items:center;
+ gap:12px;text-align:left;padding:12px;min-height:47px;border-radius:4px}
+.km-nav button:focus-visible,.km-nav a:focus-visible{outline:2px solid #8adfd4;outline-offset:2px}
+.km-nav span{background:#353640;border-radius:4px;width:31px;height:31px;display:grid;place-items:center;
+ font-size:20px;color:#a7d4ff}
+.km-nav button:hover,.km-nav a:hover{background:#323544}
+.km-drawer-foot{margin:20px 12px;border-top:1px solid #34363b;padding:18px 0;color:#9b9eab;font-size:12px}
+.km-search-pop{position:fixed;inset:68px 12px auto;z-index:105;max-width:520px;margin:auto;
+ background:#262833;border:1px solid #484d5f;border-radius:8px;display:flex;gap:10px;padding:12px;
+ box-shadow:0 20px 60px #000a}
+.km-search-pop input{min-width:0;flex:1;border:0;background:#11131a;border-radius:5px;
+ padding:11px;color:white;outline-color:#91a5ff}
+.km-search-pop button{border:0;border-radius:5px;padding:9px 13px;background:#537afd;color:white}
+.km-rank{position:absolute;z-index:5;top:0;left:0;min-width:25px;padding:3px 6px;background:#f5294d;
+ color:white;font:900 16px 'Barlow Condensed',sans-serif}
+.km-genre-row{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;
+ padding:13px 0 4px}
+.km-genre-row button{border:1px solid #ffffff1b;background:linear-gradient(130deg,#1f3c4c,#25203b);
+ color:white;font:850 19px 'Barlow Condensed',sans-serif;text-align:left;padding:17px;
+ min-height:90px;border-radius:4px}
+.km-genre-row button:nth-child(2){background:linear-gradient(130deg,#5b2c51,#242034)}
+.km-genre-row button:nth-child(3){background:linear-gradient(130deg,#1f4e49,#23283a)}
+.km-genre-row button:nth-child(4){background:linear-gradient(130deg,#715729,#25202e)}
+@keyframes km-in{from{transform:translateX(-100%)}to{transform:translateX(0)}}
+@media(max-width:1100px){
+ .kokomi-mobile-reference .desktop-links{display:none}
+ .kokomi-mobile-reference #trending-rail,.kokomi-mobile-reference #season-rail,
+ .kokomi-mobile-reference #recent-rail,.kokomi-mobile-reference #movies-rail,
+ .kokomi-mobile-reference #browse-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+}
+@media(max-width:780px){
+ .kokomi-mobile-reference .header{height:54px}
+ .kokomi-mobile-reference .header-inner{width:calc(100% - 22px);padding:0;gap:6px}
+ .kokomi-mobile-reference .brand-name{font-size:23px}
+ .kokomi-mobile-reference .brand-symbol{display:block;width:32px;height:32px;object-fit:contain;flex-shrink:0}
+ .kokomi-mobile-reference .header-right{gap:6px;min-width:0;flex-shrink:0}
+ .kokomi-mobile-reference .account-button{min-height:32px;padding-inline:8px;gap:6px;min-width:0}
+ .kokomi-mobile-reference #auth-label{max-width:50px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+ .kokomi-mobile-reference .hero{height:345px;min-height:0}
+ .kokomi-mobile-reference .hero-poster{background-position:60% center}
+ .kokomi-mobile-reference .hero-grid{padding:13px 0 42px}
+ .kokomi-mobile-reference .hero-copy{width:94%;max-width:none}
+ .kokomi-mobile-reference .hero h1{font-size:clamp(37px,11vw,55px);max-width:345px}
+ .kokomi-mobile-reference .hero-description{max-width:265px;font-size:11px;
+ display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden}
+ .kokomi-mobile-reference .section{margin-top:26px;margin-bottom:28px}
+ .kokomi-mobile-reference #trending-rail,.kokomi-mobile-reference #season-rail,
+ .kokomi-mobile-reference #recent-rail,.kokomi-mobile-reference #movies-rail,
+ .kokomi-mobile-reference #browse-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+ .kokomi-mobile-reference .section-heading h2{font-size:19px}
+ .kokomi-mobile-reference .card-name{font-size:11px}
+ .kokomi-mobile-reference .genre-pills{display:none}
+ .km-genre-row{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+ .km-genre-row button{font-size:18px;min-height:72px;padding:12px}
+ .kokomi-mobile-reference .explore-section{margin-top:8px}
+ .kokomi-mobile-reference .explore-top{display:none}
+}
+@media(prefers-reduced-motion:reduce){.km-drawer{animation:none}}
+
+
+/* Critical compatibility fix: studio.css applies grid-auto-flow:column to rails.
+   Without resetting this property, the Kokomi preview extends thousands of
+   pixels horizontally even when grid-template-columns is defined. */
+body.kokomi-mobile-reference .card-rail,
+body.kokomi-mobile-reference #trending-rail,
+body.kokomi-mobile-reference #season-rail,
+body.kokomi-mobile-reference #recent-rail,
+body.kokomi-mobile-reference #movies-rail{
+ display:grid!important;
+ grid-auto-flow:row!important;
+ grid-auto-columns:minmax(0,1fr)!important;
+ grid-template-columns:repeat(5,minmax(0,1fr))!important;
+ width:100%!important;max-width:100%!important;
+ min-width:0!important;overflow:clip!important;
+}
+body.kokomi-mobile-reference .card-rail>.anime-card{width:auto;max-width:100%;min-width:0}
+body.kokomi-mobile-reference .hero-picks{display:flex;flex-wrap:wrap;max-width:100%;min-width:0}
+body.kokomi-mobile-reference .hero-picks button{max-width:100%;min-width:0;white-space:normal}
+body.kokomi-mobile-reference .section,
+body.kokomi-mobile-reference .wrap{min-width:0}
+@media (max-width:1100px){
+ body.kokomi-mobile-reference .card-rail{grid-template-columns:repeat(4,minmax(0,1fr))!important}
+}
+@media (max-width:780px){
+ body.kokomi-mobile-reference .card-rail{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+}
+
+
+/* Keep old calendar carousels inside the actual phone viewport.
+   Prevent a long list of episode covers or an auto-sized flex child from
+   changing the document layout viewport; scrolling remains within the rail. */
+html:has(body.kokomi-mobile-reference),
+body.kokomi-mobile-reference{max-width:100%;overflow-x:clip}
+body.kokomi-mobile-reference .oneup-studio-airing,
+body.kokomi-mobile-reference .oneup-studio-airing-inner,
+body.kokomi-mobile-reference .oneup-airing-dashboard,
+body.kokomi-mobile-reference .airing-category,
+body.kokomi-mobile-reference .airing-premieres,
+body.kokomi-mobile-reference .schedule-preview,
+body.kokomi-mobile-reference .schedule-rail,
+body.kokomi-mobile-reference .oneup-studio-trailers{
+ box-sizing:border-box;max-width:100%;min-width:0;
+}
+body.kokomi-mobile-reference .oneup-studio-airing-inner{width:100%;overflow:hidden;flex-wrap:wrap}
+body.kokomi-mobile-reference .oneup-studio-airing-items{
+ display:flex;flex:1 1 220px;width:100%;max-width:100%;min-width:0;
+ overflow-x:auto;overflow-y:hidden;overscroll-behavior-x:contain;
+}
+body.kokomi-mobile-reference .oneup-studio-airing-item{flex:0 0 200px}
+body.kokomi-mobile-reference .airing-rail{
+ width:100%;max-width:100%;min-width:0;
+ overflow-x:auto;overflow-y:hidden;overscroll-behavior-x:contain;
+}
+@media(max-width:780px){
+ body.kokomi-mobile-reference .oneup-studio-airing-inner{padding:12px;gap:10px}
+ body.kokomi-mobile-reference .oneup-studio-airing-items{order:2;flex:1 1 100%}
+ body.kokomi-mobile-reference .oneup-studio-airing-more{order:3}
+ body.kokomi-mobile-reference .schedule-rail{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+
+
+/* Offline-friendly artwork fallback for external poster image failures. */
+body.kokomi-mobile-reference .km-poster-fallback{
+ display:flex;align-items:flex-end;justify-content:flex-start;
+ position:absolute;inset:0;padding:15px;color:#d9e5ff;
+ font:900 clamp(22px,5vw,38px)/.87 'Barlow Condensed',Impact,sans-serif;
+ letter-spacing:.04em;text-shadow:0 2px 12px #0008;
+ background:radial-gradient(circle at 70% 20%,#514cc65e,transparent 45%),
+ linear-gradient(155deg,#17273d,#2c203b 65%,#090f16);
+}
+body.kokomi-mobile-reference .anime-card .anime-art,
+body.kokomi-mobile-reference .km-poster-art{position:relative;overflow:hidden}
+
+/* ===== 4/10 — themes/kokomi-mobile-preview/pages.css ===== */
+
+/* 1UP Anime / original Kokomi-reference interior theme.
+   This CSS loads only on preview-kokomi-mobile.html.
+*/
+.kokomi-mobile-reference .km-extra-root[hidden]{display:none!important}
+.kokomi-mobile-reference .km-extra-root{background:#101116;min-height:74vh;color:#eeeef3;padding-bottom:90px}
+.kokomi-mobile-reference .km-page-inner{max-width:1350px;margin:0 auto;padding:28px clamp(14px,3.3vw,44px)}
+.kokomi-mobile-reference .km-eyebrow{font:800 11px 'Barlow Condensed',sans-serif;color:#68e4d3;letter-spacing:.16em}
+.kokomi-mobile-reference .km-page-heading{padding:18px 0 28px;border-bottom:1px solid #34353d;margin-bottom:24px}
+.kokomi-mobile-reference .km-page-heading h1{font:900 clamp(35px,5.3vw,68px)/.96 'Barlow Condensed',Impact,sans-serif;text-transform:uppercase;letter-spacing:.004em;margin:13px 0 9px}
+.kokomi-mobile-reference .km-page-heading p{max-width:800px;font:400 14px/1.65 'Outfit',sans-serif;color:#aeb3c1}
+.kokomi-mobile-reference .km-gallery{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:14px 13px}
+.kokomi-mobile-reference .km-poster{text-decoration:none;color:inherit;display:block;min-width:0}
+.kokomi-mobile-reference .km-poster-art{position:relative;aspect-ratio:2/3;overflow:hidden;background:linear-gradient(145deg,#283244,#211f2b)}
+.kokomi-mobile-reference .km-poster-art img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .35s cubic-bezier(.2,.7,.25,1),filter .3s}
+.kokomi-mobile-reference .km-poster:hover img,.kokomi-mobile-reference .km-poster:focus-visible img{transform:scale(1.065);filter:saturate(1.2)}
+.kokomi-mobile-reference .km-poster-index{position:absolute;top:0;left:0;min-width:25px;padding:4px 7px;background:#ec2446;font:900 17px/1 'Barlow Condensed',sans-serif}
+.kokomi-mobile-reference .km-poster>b{display:block;font-size:12px;margin-top:7px;white-space:nowrap;text-overflow:ellipsis;overflow:hidden}
+.kokomi-mobile-reference .km-poster>small{color:#a0a4b2;font-size:10px}
+.kokomi-mobile-reference .km-art-empty{padding:14px;font:900 18px 'Barlow Condensed',sans-serif;display:block}
+.kokomi-mobile-reference .km-detail-banner{background-color:#1a1a26;background-size:cover;background-position:center;min-height:420px;display:flex;align-items:flex-end;border-bottom:1px solid #30313a}
+.kokomi-mobile-reference .km-detail-inner{padding:clamp(26px,4vw,60px);width:100%;max-width:850px}
+.kokomi-mobile-reference .km-detail-inner h1{font:900 clamp(40px,6vw,86px)/.98 'Barlow Condensed',sans-serif;margin:17px 0;text-transform:uppercase}
+.kokomi-mobile-reference .km-detail-inner p{max-width:690px;line-height:1.65;font-size:13px;color:#d0d1df;max-height:220px;overflow:auto}
+.kokomi-mobile-reference .km-detail-meta,.kokomi-mobile-reference .km-tags{display:flex;gap:9px;flex-wrap:wrap;margin:10px 0}
+.kokomi-mobile-reference .km-detail-meta span,.kokomi-mobile-reference .km-tags span{border:1px solid #ffffff28;padding:5px 8px;font-size:11px;background:#11131b9c}
+.kokomi-mobile-reference .km-tags span{border-color:#40c2b64a;color:#a4ecdc}
+.kokomi-mobile-reference .km-action-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin:21px 0}
+.kokomi-mobile-reference .km-main-button,.kokomi-mobile-reference .km-second-button,.kokomi-mobile-reference .km-source-link{border:1px solid #6a90ff;display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;min-height:41px;border-radius:3px;cursor:pointer;text-decoration:none;font:800 12px 'Outfit',sans-serif;letter-spacing:.035em}
+.kokomi-mobile-reference .km-main-button{background:#517afa;color:white;border-color:#517afa}
+.kokomi-mobile-reference .km-main-button:hover{background:#7394ff}
+.kokomi-mobile-reference .km-second-button{background:#262937;color:#f2f4ff;border-color:#555766}
+.kokomi-mobile-reference .km-source-link{color:#cfdeff;background:#161c2b;border-color:#464a6a}
+.kokomi-mobile-reference .km-main-button:focus-visible,.kokomi-mobile-reference .km-second-button:focus-visible,.kokomi-mobile-reference .km-source-link:focus-visible{outline:2px solid #55efd4;outline-offset:3px}
+.kokomi-mobile-reference .km-block{padding:25px 6px;border-bottom:1px solid #32333c}
+.kokomi-mobile-reference .km-block h2{font:900 30px 'Barlow Condensed',sans-serif}
+.kokomi-mobile-reference .km-block p{font-size:13px;line-height:1.7;color:#b8bbc8}
+.kokomi-mobile-reference .km-watch-layout{display:grid;grid-template-columns:minmax(0,2fr) minmax(250px,1fr);gap:19px}
+.kokomi-mobile-reference .km-watch-layout>aside{background:#1c1d24;padding:19px;align-self:start;border:1px solid #333541}
+.kokomi-mobile-reference .km-video-holder{aspect-ratio:16/9;background:#050507;border:1px solid #34353b;overflow:hidden}
+.kokomi-mobile-reference .km-play-stage{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.kokomi-mobile-reference .km-play-stage video,.kokomi-mobile-reference .km-play-stage iframe{width:100%;height:100%;object-fit:contain;border:0;background:#000}
+.kokomi-mobile-reference .km-embed-wrap{width:100%;height:100%}
+.kokomi-mobile-reference .km-play-stage #km-player-status{margin:0;padding:5px 10px;background:#111118;font-size:11px;align-self:stretch}
+.kokomi-mobile-reference .km-no-media{padding:30px 15px;min-height:180px;display:flex;gap:9px;align-items:center;justify-content:center;flex-direction:column;text-align:center;background:#171921;color:#d4d8e5}
+.kokomi-mobile-reference .km-no-media>span{font-size:35px;color:#77bef7}
+.kokomi-mobile-reference .km-no-media p{font-size:12px;color:#aaadb7;max-width:470px}
+.kokomi-mobile-reference .km-episode-list>b{display:block;font:900 17px 'Barlow Condensed',sans-serif;margin-bottom:12px}
+.kokomi-mobile-reference .km-episode-buttons{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-bottom:22px}
+.kokomi-mobile-reference .km-episode-buttons button,.kokomi-mobile-reference .km-server-list button{background:#2c2e38;color:#dadfea;border:1px solid #444651;border-radius:3px;cursor:pointer;padding:9px;font:800 12px 'Outfit',sans-serif}
+.kokomi-mobile-reference .km-episode-buttons button.active,.kokomi-mobile-reference .km-server-list button.active{background:#527ff6;border-color:#527ff6;color:white}
+.kokomi-mobile-reference .km-server-list{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.kokomi-mobile-reference .km-server-list button small{color:inherit;opacity:.8}
+.kokomi-mobile-reference .km-muted{display:block;color:#a7aaba;font-size:12px;line-height:1.6;margin:10px 0}
+.kokomi-mobile-reference .km-rows{display:grid;gap:10px;max-width:900px}
+.kokomi-mobile-reference .km-row{display:flex;gap:13px;align-items:center;background:#191a22;padding:10px;color:inherit;text-decoration:none;border:1px solid #333540}
+.kokomi-mobile-reference .km-row:hover{background:#222638}
+.kokomi-mobile-reference .km-row>img{width:56px;height:75px;object-fit:cover}
+.kokomi-mobile-reference .km-row>span:nth-child(2){flex:1}
+.kokomi-mobile-reference .km-row strong{display:block;font-size:13px}
+.kokomi-mobile-reference .km-row small{display:block;color:#a1a7b6;margin-top:5px}
+.kokomi-mobile-reference .km-posts{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.kokomi-mobile-reference .km-post{display:block;color:inherit;text-decoration:none;background:#1b1d26;border-top:3px solid #5780ef;padding:25px;min-height:190px}
+.kokomi-mobile-reference .km-post>span{font-size:11px;letter-spacing:.1em;color:#61e1cc}
+.kokomi-mobile-reference .km-post h2{font:850 28px 'Barlow Condensed',sans-serif;line-height:1.1}
+.kokomi-mobile-reference .km-post p{color:#afb4c5;font-size:12px}
+.kokomi-mobile-reference .km-article{background:#1b1d26;padding:25px;max-width:870px;line-height:1.9;margin-bottom:18px}
+.kokomi-mobile-reference .km-profile-panel{display:flex;gap:20px;align-items:center;background:#1d1f29;border:1px solid #353946;padding:25px;margin-bottom:25px}
+.kokomi-mobile-reference .km-avatar{display:grid;place-items:center;background:linear-gradient(145deg,#528be9,#9d50df);border-radius:50%;width:96px;height:96px;font-weight:900;font-size:22px}
+.kokomi-mobile-reference .km-profile-panel p{color:#aeb4bf;font-size:12px}
+.kokomi-mobile-reference .km-preferences{max-width:650px;background:#1c1e26;border:1px solid #383b44;padding:25px}
+.kokomi-mobile-reference .km-preferences label{display:flex;justify-content:space-between;align-items:center;padding:14px 0;border-bottom:1px solid #393b45;font-size:13px}
+.kokomi-mobile-reference .km-preferences input{width:21px;height:21px;accent-color:#557eff}
+.kokomi-mobile-reference .km-preferences button{margin-top:18px}
+.kokomi-mobile-reference .km-nav-title{font:900 12px 'Outfit',sans-serif;color:#96a0b2;padding:22px 12px 5px}
+.kokomi-mobile-reference .km-nav a.active{background:#3a4152;color:white}
+.kokomi-mobile-reference.km-quiet .hero-poster,.kokomi-mobile-reference.km-quiet .anime-card *,.kokomi-mobile-reference.km-quiet .km-poster img{animation:none!important;transition:none!important}
+.kokomi-mobile-reference.km-compact .km-page-inner{padding-top:12px}
+.kokomi-mobile-reference.km-compact .km-gallery{gap:8px}
+.kokomi-mobile-reference.km-no-halloween .limited-tag{display:none!important}
+@media(max-width:1100px){.kokomi-mobile-reference .km-gallery{grid-template-columns:repeat(4,minmax(0,1fr))}.kokomi-mobile-reference .km-posts{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:780px){
+ .kokomi-mobile-reference .km-page-inner{padding:17px 12px}
+ .kokomi-mobile-reference .km-page-heading{padding:12px 0 18px}
+ .kokomi-mobile-reference .km-page-heading h1{font-size:34px}
+ .kokomi-mobile-reference .km-gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 10px}
+ .kokomi-mobile-reference .km-watch-layout{grid-template-columns:1fr}
+ .kokomi-mobile-reference .km-detail-banner{min-height:370px;align-items:flex-end;background-position:center}
+ .kokomi-mobile-reference .km-detail-inner{padding:18px}
+ .kokomi-mobile-reference .km-detail-inner h1{font-size:39px}
+ .kokomi-mobile-reference .km-detail-inner p{font-size:12px;max-height:155px}
+ .kokomi-mobile-reference .km-action-row{gap:8px}
+ .kokomi-mobile-reference .km-posts{grid-template-columns:1fr}
+ .kokomi-mobile-reference .km-profile-panel{align-items:flex-start;padding:16px}
+ .kokomi-mobile-reference .km-avatar{width:65px;height:65px;font-size:15px;flex:none}
+}
+@media(prefers-reduced-motion:reduce){.kokomi-mobile-reference .km-poster-art img{transition:none!important}}
+
+
+/* When no source exists, the entire player stage stays intentional.
+   The old min-height-only placeholder left a large unused black area on
+   desktop and clipped its CTA on phones. */
+body.kokomi-mobile-reference .km-watch-no-media{
+ position:relative;isolation:isolate;
+ background:radial-gradient(circle at 50% 40%,#343b647c,#11151e 58%,#0c0f17);
+}
+body.kokomi-mobile-reference .km-watch-no-media::before{
+ content:"1UP";pointer-events:none;position:absolute;left:50%;top:50%;
+ transform:translate(-50%,-50%) rotate(-12deg);
+ font:900 clamp(120px,22vw,380px)/1 'Barlow Condensed',Impact,sans-serif;
+ color:#abbcff0e;z-index:0;
+}
+body.kokomi-mobile-reference .km-watch-no-media>.km-no-media{
+ position:relative;z-index:1;box-sizing:border-box;
+ width:100%;height:100%;min-height:100%;
+ padding:clamp(18px,3vw,45px);
+ background:transparent;
+}
+body.kokomi-mobile-reference .km-watch-no-media .km-no-media strong{font-size:clamp(14px,2vw,20px)}
+body.kokomi-mobile-reference .km-watch-no-media .km-no-media p{max-width:470px;line-height:1.6}
+@media(max-width:780px){
+ body.kokomi-mobile-reference .km-watch-no-media{
+  aspect-ratio:auto;min-height:285px;height:auto;overflow:visible;
+ }
+ body.kokomi-mobile-reference .km-watch-no-media>.km-no-media{
+  min-height:285px;height:auto;padding:24px 16px;
+ }
+}
+
+
+/* Watch heading: the actual show has priority over a generic page label. */
+body.kokomi-mobile-reference .km-watch-heading{
+ padding:5px 0 17px;margin-bottom:18px;border-bottom:1px solid #333844
+}
+body.kokomi-mobile-reference .km-watch-topline{
+ display:flex;align-items:center;gap:18px;flex-wrap:wrap;
+ margin-bottom:12px
+}
+body.kokomi-mobile-reference .km-watch-topline a{
+ font:800 10px 'Outfit',sans-serif;color:#a8bcff;
+ text-decoration:none;border:1px solid #444f6a;padding:8px 12px;border-radius:3px
+}
+body.kokomi-mobile-reference .km-watch-topline a:hover{background:#1e2c4c;color:#fff}
+body.kokomi-mobile-reference .km-watch-heading h1{
+ font:900 clamp(29px,3.7vw,52px)/1.03 'Barlow Condensed',Impact,sans-serif;
+ text-transform:uppercase;letter-spacing:.01em;max-width:1050px;
+ margin:0 0 12px;overflow-wrap:anywhere;
+ display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;overflow:hidden
+}
+body.kokomi-mobile-reference .km-watch-subtitle{display:flex;gap:10px;flex-wrap:wrap}
+body.kokomi-mobile-reference .km-watch-subtitle span{
+ color:#b1c0d1;font:800 10px 'Outfit',sans-serif;letter-spacing:.06em
+}
+@media(max-width:780px){
+ body.kokomi-mobile-reference .km-watch-heading h1{font-size:clamp(29px,7.5vw,37px)}
+ body.kokomi-mobile-reference .km-watch-topline{gap:9px}
+ body.kokomi-mobile-reference .km-watch-subtitle{gap:8px}
+}
+
+/* The preview delegates playback to the same engine as the public detail dialog. */
+.kokomi-mobile-reference .km-watch-layout.km-shared-player{grid-template-columns:minmax(0,1fr)}
+.kokomi-mobile-reference #km-player-section{min-width:0;padding:0}
+.kokomi-mobile-reference #km-player-section .oneup-watch-panel{background:#171820;border:1px solid #333541;border-radius:12px;padding:18px}
+.kokomi-mobile-reference .km-season-control{display:flex;align-items:center;gap:12px;margin:0 0 20px;font-weight:700;flex-wrap:wrap}
+.kokomi-mobile-reference .km-season-control select{min-height:44px;padding:10px;background:#1c1d24;color:#fff;border:1px solid #535561;border-radius:8px}
+
+/* ===== 5/10 — themes/kokomi-mobile-preview/watch-comments.css ===== */
+
+/* Cinematic in-player discussions: compatible with existing 1UP Supabase service. */
+.kokomi-mobile-reference .km-watch-discussion{
+ margin-top:24px;padding:26px 28px;background:#191b22;
+ border-top:3px solid #5f89fb;border-bottom:1px solid #434758;color:#eef0f9
+}
+.kokomi-mobile-reference .km-discussion-title{
+ display:flex;align-items:flex-start;justify-content:space-between;gap:18px;margin-bottom:19px
+}
+.kokomi-mobile-reference .km-discussion-title h2{
+ font:900 clamp(27px,3vw,36px)/1 'Barlow Condensed',Impact,sans-serif;
+ margin:8px 0 7px;text-transform:uppercase
+}
+.kokomi-mobile-reference .km-discussion-title p{font-size:12px;color:#b1b5c2;line-height:1.6;margin:0}
+.kokomi-mobile-reference .km-discussion-title>label{
+ display:grid;gap:7px;font-size:11px;color:#bfc5d3;font-weight:800
+}
+.kokomi-mobile-reference .km-discussion-title select{
+ background:#272b38;color:#f2f5ff;padding:10px 13px;
+ border:1px solid #5d657d;border-radius:3px;min-width:156px
+}
+.kokomi-mobile-reference .km-watch-comments{
+ display:grid;gap:10px;max-height:520px;overflow-y:auto;overscroll-behavior:contain;padding:3px 0 14px;
+ border-bottom:1px solid #ffffff21
+}
+.kokomi-mobile-reference .km-watch-comment{
+ display:grid;grid-template-columns:37px minmax(0,1fr);gap:12px;
+ padding:15px;background:#232630;border:1px solid #ffffff16;
+ border-radius:4px;overflow-wrap:anywhere
+}
+.kokomi-mobile-reference .km-watch-avatar{
+ width:37px;height:37px;border-radius:50%;background:linear-gradient(130deg,#3f65be,#9367d9);
+ color:#fff;display:grid;place-items:center;font-weight:900;font-size:14px
+}
+.kokomi-mobile-reference .km-comment-by{display:flex;flex-wrap:wrap;align-items:center;gap:8px;font-size:12px}
+.kokomi-mobile-reference .km-comment-by span{
+ border:1px solid #68bfac55;padding:3px 5px;color:#93d8c8;font-size:9px
+}
+.kokomi-mobile-reference .km-comment-by small{color:#8d99ad;font-size:10px}
+.kokomi-mobile-reference .km-watch-comment p{
+ color:#d8deea;font-size:12px;line-height:1.6;white-space:pre-wrap;margin:9px 0
+}
+.kokomi-mobile-reference .km-watch-comment button{
+ color:#a1acc1;background:none;border:0;text-decoration:underline;cursor:pointer;padding:3px 0;font-size:10px
+}
+.kokomi-mobile-reference .km-watch-muted{
+ font-size:12px;color:#b3bdcc;line-height:1.6;margin:0;padding:18px;
+ background:#242632
+}
+.kokomi-mobile-reference .km-watch-form{display:grid;gap:8px;margin-top:16px}
+.kokomi-mobile-reference .km-watch-form>label{font-size:11px;font-weight:800;color:#c5cedd}
+.kokomi-mobile-reference .km-watch-form input,
+.kokomi-mobile-reference .km-watch-form textarea{
+ border:1px solid #4d5261;background:#12141c;color:white;border-radius:3px;padding:11px;
+ font:12px/1.5 'Outfit',sans-serif;resize:vertical;width:100%
+}
+.kokomi-mobile-reference .km-watch-form input:focus-visible,
+.kokomi-mobile-reference .km-watch-form textarea:focus-visible,
+.kokomi-mobile-reference .km-discussion-title select:focus-visible{
+ outline:2px solid #66d5c6;outline-offset:2px
+}
+.kokomi-mobile-reference .km-watch-submit{
+ display:flex;justify-content:space-between;align-items:center;gap:14px;margin-top:10px
+}
+.kokomi-mobile-reference .km-watch-submit small{max-width:400px;color:#949eae;font-size:10px;line-height:1.6}
+.kokomi-mobile-reference .km-watch-submit button{
+ border:1px solid #617ff5;background:#5579eb;color:white;padding:12px 16px;
+ border-radius:3px;font-size:12px;font-weight:900;cursor:pointer
+}
+.kokomi-mobile-reference .km-watch-submit button:disabled{opacity:.5;cursor:wait}
+.kokomi-mobile-reference #km-watch-status{font-size:11px;color:#96d7c6;min-height:15px;margin:2px 0}
+@media(max-width:780px){
+ .kokomi-mobile-reference .km-watch-discussion{padding:18px 13px}
+ .kokomi-mobile-reference .km-discussion-title{display:grid}
+ .kokomi-mobile-reference .km-discussion-title select{min-height:43px}
+ .kokomi-mobile-reference .km-watch-submit{align-items:stretch;flex-direction:column}
+ .kokomi-mobile-reference .km-watch-submit button{min-height:44px}
+}
+
+/* ===== 6/10 — themes/kokomi-mobile-preview/opening.css ===== */
+
+/* 1UP original 3.2 second pre-site movie signature. No controls or skip.
+   Automatic sound is requested; browser autoplay policies still apply. */
+#oneup-opening{
+ position:fixed;inset:0;z-index:2147483000;display:grid;place-items:center;
+ box-sizing:border-box;width:100%;max-width:100vw;min-height:100dvh;
+ background:#020306;color:#eaf0ff;overflow:hidden;isolation:isolate;
+ opacity:1;transition:opacity .42s ease;
+}
+#oneup-opening[hidden]{display:none!important}
+#oneup-opening.oneup-opening-out{opacity:0;pointer-events:none}
+#oneup-opening .oneup-opening-stage{
+ display:grid;place-items:center;position:relative;
+ width:100vw;max-width:100%;min-width:0;
+ padding:clamp(8px,2vw,24px);box-sizing:border-box;
+}
+#oneup-opening video,#oneup-opening .oneup-opening-poster{
+ display:block;width:min(98vw,980px);height:auto;max-height:min(76dvh,650px);
+ aspect-ratio:16/9;object-fit:contain;border:0;background:transparent
+}
+#oneup-opening video[hidden],#oneup-opening img[hidden]{display:none!important}
+@media(max-width:600px){
+ #oneup-opening .oneup-opening-stage{padding:6px}
+ #oneup-opening video,#oneup-opening .oneup-opening-poster{width:100%;max-height:70dvh}
+}
+@media(prefers-reduced-motion:reduce){
+ #oneup-opening{transition:none}
+ #oneup-opening .oneup-opening-poster{max-height:60dvh}
+}
+
+
+/* Portrait asset has real 9:16 pixels; no bars or sideways stretching. */
+#oneup-opening.oneup-opening-portrait .oneup-opening-stage{
+ position:absolute;inset:0;padding:0;width:100%;height:100%;max-height:none;
+}
+#oneup-opening.oneup-opening-portrait video,
+#oneup-opening.oneup-opening-portrait .oneup-opening-poster{
+ width:100vw;height:100dvh;max-height:none;max-width:none;aspect-ratio:9/16;
+ object-fit:cover;object-position:center;background:#101221
+}
+
+/* ===== 7/10 — themes/cinematic-v3/production.css ===== */
+
+/* 1UP ANIME V3: original compositing, not a poster zoom.
+   Each energy/nebula/fog/ring/light/logo layer has independent motion. */
+#cinema{position:fixed;inset:0;min-height:100dvh;overflow:hidden;isolation:isolate;color:#ebf1ff}
+.environment{position:absolute;inset:0;overflow:hidden;background:
+ radial-gradient(ellipse at 10% 33%,#0c1b43 0,transparent 48%),
+ radial-gradient(ellipse at 92% 66%,#40051f 0,transparent 55%),
+ linear-gradient(145deg,#020511,#0c0921 52%,#070308)}
+.ambient{position:absolute;inset:-30%;filter:blur(65px);opacity:.22;mix-blend-mode:screen}
+.ambient-blue{background:radial-gradient(ellipse at 28% 38%,#086eff 0,transparent 41%);transform:translate(-6%,0)}
+.ambient-red{background:radial-gradient(ellipse at 76% 64%,#fa2440 0,transparent 46%);transform:translate(7%,0)}
+.nebula{position:absolute;width:120vmax;height:120vmax;left:50%;top:50%;
+ border-radius:50%;filter:blur(11px);transform:translate(-50%,-50%) rotate(0);
+ mix-blend-mode:screen;opacity:.16;will-change:transform}
+.nebula-a{background:conic-gradient(from 12deg,#006dff,transparent 12%,#183fdc 18%,transparent 29%,#e10050 43%,transparent 54%,#008cff 68%,transparent 83%,#dc0749 91%,transparent)}
+.nebula-b{width:84vmax;height:84vmax;opacity:.17;background:conic-gradient(from 95deg,transparent 0 10%,#0d4cff 18%,transparent 27%,#aa0c5b 51%,transparent 67%,#2578ff 80%,transparent 90%)}
+.energy-column{position:absolute;inset:-15% 0 0;width:57%;mix-blend-mode:screen;filter:blur(12px);opacity:.25}
+.energy-blue{left:-20%;background:linear-gradient(107deg,transparent 23%,#005aff36 48%,#428fff4c 53%,transparent 73%);transform:rotate(9deg)}
+.energy-red{left:auto;right:-20%;background:linear-gradient(70deg,transparent 20%,#fb305035 44%,#ff898b4d 51%,transparent 72%);transform:rotate(-7deg)}
+.ring{position:absolute;left:50%;top:50%;width:min(90vw,100vh);aspect-ratio:1;
+ border:1px solid transparent;border-radius:50%;pointer-events:none;
+ transform:translate(-50%,-50%) rotate(-22deg) scaleX(1.6) scaleY(.62);
+ box-shadow:0 0 38px #1f67ff23;filter:drop-shadow(0 0 9px #e81d5f78);
+ background:linear-gradient(#0000,#0000) padding-box,
+ conic-gradient(from 20deg,transparent 0 12%,#439cff95 20%,transparent 30%,
+ #fe427a96 51%,transparent 62%,#1e76ffad 75%,transparent 85%) border-box;opacity:.43}
+.ring-a{width:min(110vw,110vh)}
+.ring-b{width:min(82vw,85vh);transform:translate(-50%,-50%) rotate(42deg) scaleX(1.5) scaleY(.6);opacity:.24}
+.scene-fog{position:absolute;bottom:-20%;width:75%;height:68%;filter:blur(55px);opacity:.18;pointer-events:none}
+.scene-fog-blue{left:-24%;background:radial-gradient(ellipse at 45% 65%,#0878ff 0,transparent 68%);transform:rotate(-13deg)}
+.scene-fog-red{right:-24%;background:radial-gradient(ellipse at 55% 65%,#ff2956 0,transparent 69%);transform:rotate(17deg)}
+#particles{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;mix-blend-mode:screen}
+.logo-group{position:absolute;z-index:5;left:50%;top:49%;width:min(90vw,1080px);
+ transform:translate(-50%,-50%);transform-style:preserve-3d;will-change:transform,filter;
+ isolation:isolate;filter:drop-shadow(0 15px 25px #000b)}
+.logo-group img{width:100%;height:auto;display:block;object-fit:contain}
+.logo-main{position:relative;z-index:2;filter:drop-shadow(0 3px 12px #091c61bb)}
+.logo-halo{position:absolute;inset:0;z-index:1;filter:blur(26px) brightness(2) saturate(1.4);opacity:.32;transform:scale(1.03)}
+.light-sweep{position:absolute;inset:0;z-index:3;pointer-events:none;opacity:0;
+ background:linear-gradient(114deg,transparent 24%,#ffffff00 39%,#d6faff7a 50%,#ffffff00 60%,transparent 72%);
+ mix-blend-mode:screen;clip-path:polygon(0 12%,100% 12%,100% 83%,0 83%);transform:translateX(-110%)}
+.optical-flash{position:absolute;inset:0;pointer-events:none;z-index:7;
+ background:radial-gradient(ellipse at 50% 49%,#d6eaffbd 0,#4577ff65 22%,transparent 58%);opacity:0}
+.letterbox-noise{position:absolute;inset:-10%;opacity:.07;pointer-events:none;
+ background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 140 140' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.76' numOctaves='3' seed='8' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.4'/%3E%3C/svg%3E");}
+#original-signature{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none}
+.preview-toolbar{position:absolute;z-index:20;bottom:0;left:0;right:0;min-height:74px;
+ display:flex;align-items:center;gap:14px;padding:12px max(24px,env(safe-area-inset-left))
+ max(12px,env(safe-area-inset-bottom));background:linear-gradient(transparent,#060718d9 25%,#060718e6)}
+.stage-tag{font-weight:800;font-size:10px;letter-spacing:.16em;color:#d1dcf6}
+.stage-desc{font-size:11px;color:#abb4cd}
+.preview-toolbar button,.preview-toolbar a{background:#17213f;color:#e9f6ff;border:1px solid #657ba6;
+ border-radius:4px;padding:11px 13px;font-size:12px;font-weight:700;text-decoration:none;cursor:pointer;white-space:nowrap}
+.preview-toolbar button{margin-left:auto;background:#2f59b5}
+.preview-toolbar :focus-visible{outline:2px solid #95f1ff;outline-offset:3px}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+#cinema.playing .ambient-blue{animation:blue-breath 3.2s cubic-bezier(.2,.5,.2,1) both}
+#cinema.playing .ambient-red{animation:red-breath 3.2s cubic-bezier(.2,.5,.2,1) both}
+#cinema.playing .nebula-a{animation:nebula-rotate 3.2s ease-out both}
+#cinema.playing .nebula-b{animation:nebula-counter 3.2s ease-out both}
+#cinema.playing .ring-a{animation:orbital .94s cubic-bezier(.15,.7,.2,1) .18s both}
+#cinema.playing .ring-b{animation:orbital-counter 1.23s cubic-bezier(.15,.7,.2,1) .24s both}
+#cinema.playing .energy-blue{animation:energy-blue 3.2s cubic-bezier(.16,.4,.2,1) both}
+#cinema.playing .energy-red{animation:energy-red 3.2s cubic-bezier(.16,.4,.2,1) both}
+#cinema.playing .scene-fog-blue{animation:fog-blue 3.2s ease-out both}
+#cinema.playing .scene-fog-red{animation:fog-red 3.2s ease-out both}
+#cinema.playing .logo-group{animation:word-reveal 3.2s cubic-bezier(.12,.72,.23,1) both}
+#cinema.playing .logo-halo{animation:halo 3.2s ease-out both}
+#cinema.playing .light-sweep{animation:sweep 1.1s ease-in-out 1.01s both}
+#cinema.playing .optical-flash{animation:flash 3.2s linear both}
+@keyframes blue-breath{0%{opacity:.02;transform:translate(-9%,2%) scale(.9)}36%{opacity:.64;transform:translate(-4%,-2%) scale(1.08)}65%{opacity:.33;transform:translate(-1%,-5%) scale(1.12)}100%{opacity:.19;transform:translate(-2%,0) scale(1.17)}}
+@keyframes red-breath{0%{opacity:.01;transform:translate(10%,5%) scale(.9)}36%{opacity:.5;transform:translate(4%,0) scale(1.05)}66%{opacity:.58;transform:translate(0,-4%) scale(1.2)}100%{opacity:.23;transform:translate(2%,-2%) scale(1.1)}}
+@keyframes nebula-rotate{0%{transform:translate(-50%,-50%) rotate(-19deg) scale(.88)}100%{transform:translate(-50%,-50%) rotate(28deg) scale(1.19)}}
+@keyframes nebula-counter{0%{transform:translate(-50%,-50%) rotate(30deg) scale(.93)}100%{transform:translate(-50%,-50%) rotate(-25deg) scale(1.18)}}
+@keyframes orbital{0%{opacity:0;transform:translate(-50%,-50%) rotate(-58deg) scaleX(1.15) scaleY(.45)}65%{opacity:.95}100%{opacity:.38;transform:translate(-50%,-50%) rotate(-22deg) scaleX(1.6) scaleY(.62)}}
+@keyframes orbital-counter{0%{opacity:0;transform:translate(-50%,-50%) rotate(108deg) scaleX(1.1) scaleY(.44)}80%{opacity:.6}100%{opacity:.25;transform:translate(-50%,-50%) rotate(42deg) scaleX(1.5) scaleY(.6)}}
+@keyframes energy-blue{0%{opacity:0;transform:translateX(-27%) rotate(9deg)}50%{opacity:.53;transform:translateX(3%) rotate(9deg)}100%{opacity:.21;transform:translateX(10%) rotate(9deg)}}
+@keyframes energy-red{0%{opacity:0;transform:translateX(25%) rotate(-7deg)}50%{opacity:.51;transform:translateX(0) rotate(-7deg)}100%{opacity:.21;transform:translateX(-11%) rotate(-7deg)}}
+@keyframes fog-blue{0%{opacity:0;transform:translate(-30%,12%) rotate(-13deg)}60%{opacity:.28}100%{opacity:.13;transform:translate(6%,-5%) rotate(-6deg)}}
+@keyframes fog-red{0%{opacity:0;transform:translate(30%,10%) rotate(17deg)}60%{opacity:.30}100%{opacity:.15;transform:translate(-5%,-3%) rotate(11deg)}}
+@keyframes word-reveal{0%{opacity:0;transform:translate(-50%,-42%) scale(.78) rotateX(14deg);filter:blur(18px)}
+19%{opacity:0;filter:blur(17px)}28%{opacity:.38;filter:blur(7px)}
+35%{opacity:1;transform:translate(-50%,-50%) scale(1.04) rotateX(0);filter:blur(0)}
+39%{transform:translate(-50%,-50%) scale(.985)}
+48%{transform:translate(-50%,-50%) scale(1.005)}
+100%{opacity:1;transform:translate(-50%,-50%) scale(1.02)}}
+@keyframes halo{0%,17%{opacity:0}35%{opacity:.96}55%{opacity:.46}100%{opacity:.20}}
+@keyframes sweep{0%{opacity:0;transform:translateX(-110%)}20%{opacity:.16}49%{opacity:.78}
+85%{opacity:.45}100%{opacity:0;transform:translateX(120%)}}
+@keyframes flash{0%,33%{opacity:0}34.5%{opacity:.60}37%{opacity:0}100%{opacity:0}}
+@media (orientation:portrait){
+ .logo-group{width:95vw;top:45%}
+ .ring-a{width:145vw}.ring-b{width:125vw}
+ .energy-column{width:95%}
+ .preview-toolbar{flex-wrap:wrap;gap:7px 11px}
+ .stage-desc{display:none}
+ .stage-tag{font-size:9px}
+ .preview-toolbar button,.preview-toolbar a{padding:10px;font-size:10px}
+}
+@media(prefers-reduced-motion:reduce){
+ #cinema.playing *{animation:none!important;transition:none!important}
+ .logo-group{opacity:1;filter:none;transform:translate(-50%,-50%)}
+ .optical-flash,.light-sweep{display:none}
+ .nebula,.ring{opacity:.07}
+}
+
+/* Optional real character cutouts are inert until permission metadata and
+   corresponding owner-authorized transparent PNGs have been supplied. */
+.authorized-character{position:absolute;z-index:4;top:52%;
+  width:clamp(110px,25vw,440px);max-height:70vh;object-fit:contain;
+  filter:drop-shadow(0 16px 26px #000b);opacity:.74;pointer-events:none}
+.authorized-character-0{left:0;transform:translate(-12%,-50%) rotate(-2deg)}
+.authorized-character-1{right:0;transform:translate(12%,-50%) rotate(2deg)}
+#cinema.playing .authorized-character-0{animation:character-left 3.2s ease-out both}
+#cinema.playing .authorized-character-1{animation:character-right 3.2s ease-out both}
+@keyframes character-left{0%{opacity:0;transform:translate(-22%,-42%) scale(.92)}
+ 34%{opacity:.77;transform:translate(-11%,-50%) scale(1)}
+ 100%{opacity:.78;transform:translate(-8%,-53%) scale(1.018)}}
+@keyframes character-right{0%{opacity:0;transform:translate(22%,-46%) scale(.92)}
+ 34%{opacity:.76;transform:translate(12%,-50%) scale(1)}
+ 100%{opacity:.78;transform:translate(8%,-53%) scale(1.018)}}
+@media(orientation:portrait){
+ .authorized-character{top:49%;width:clamp(90px,39vw,300px);
+  max-height:43vh;opacity:.64}
+ .authorized-character-0{left:-12%}.authorized-character-1{right:-12%}
+}
+/* Production-only override: the studio is the layer inside the pre-site gate.
+   The site's document remains scrollable as soon as the scene finishes. */
+#oneup-opening #cinema{position:absolute;inset:0;min-height:100%;width:100%;max-width:100%;overflow:hidden;box-sizing:border-box}
+#oneup-opening #cinema *{box-sizing:border-box}
+#oneup-opening .logo-group{max-width:96vw}
+#oneup-opening .preview-toolbar{display:none!important}
+#oneup-opening #original-signature{opacity:0;width:1px;height:1px;pointer-events:none}
+
+/* ===== 8/10 — themes/kokomi-mobile-preview/official-textmark.css ===== */
+
+/* Owner-approved static lettering derived from the 1UP intro. No animation. */
+body.oneup-kokomi .header .brand{display:flex;align-items:center;flex:0 1 166px;min-width:0;max-width:min(40vw,175px)}
+body.oneup-kokomi .header .oneup-textmark{display:block;max-width:100%;width:clamp(104px,29vw,170px);height:auto;max-height:55px;object-fit:contain;filter:drop-shadow(0 1px 6px #3755fa4a)}
+body.oneup-kokomi .header .brand-symbol,
+body.oneup-kokomi .header .brand-name{display:none!important}
+body.oneup-kokomi .km-drawer-brand .oneup-drawer-textmark{
+ display:block;width:clamp(122px,46vw,177px);max-height:60px;height:auto;object-fit:contain
+}
+body.oneup-kokomi .footer-brand .oneup-footer-textmark{display:block;width:150px;max-width:100%;max-height:60px;height:auto;object-fit:contain}
+@media(max-width:440px){
+ body.oneup-kokomi .header .brand{max-width:min(31vw,135px);flex:0 1 135px}
+ body.oneup-kokomi .header .oneup-textmark{width:100%;max-height:50px}
+}
+@media(max-width:345px){
+ body.oneup-kokomi .header .brand{max-width:98px}
+ body.oneup-kokomi .header .oneup-textmark{width:98px}
+}
+
+/* ===== 9/10 — themes/oneup-palette/selector.css ===== */
+
+/*
+ * ONEUP PALETTE — Original black/emerald + violet themes for 1UP Anime.
+ * Scoped to explicit themes: selecting "Original" restores the site's
+ * existing Kokomi/October styles without overriding their appearance.
+ * No Crunchyroll/TemplateMonster CSS, fonts or graphic assets copied.
+ */
+:root[data-oneup-theme="esmeralda"] {
+  --oneup-pal-bg: #080e0d;
+  --oneup-pal-card: #101d1a;
+  --oneup-pal-raised: #152620;
+  --oneup-pal-ink: #f4fff8;
+  --oneup-pal-muted: #b6d0c4;
+  --oneup-pal-line: #5fac8b54;
+  --oneup-pal-accent: #7aeeab;
+  --oneup-pal-active: #38ca83;
+  --oneup-pal-soft: #44c78a26;
+  --oneup-pal-on: #04110c;
+  --oneup-pal-highlight: #a2ffd0;
+  --oneup-pal-glow: #35b47c24;
+  color-scheme: dark;
+}
+:root[data-oneup-theme="violeta"] {
+  --oneup-pal-bg: #0d0b17;
+  --oneup-pal-card: #171429;
+  --oneup-pal-raised: #211d37;
+  --oneup-pal-ink: #faf7ff;
+  --oneup-pal-muted: #cdc4e3;
+  --oneup-pal-line: #8a79cb65;
+  --oneup-pal-accent: #c9b2ff;
+  --oneup-pal-active: #a78af0;
+  --oneup-pal-soft: #8e77df30;
+  --oneup-pal-on: #150c29;
+  --oneup-pal-highlight: #dfd0ff;
+  --oneup-pal-glow: #8a6fd52e;
+  color-scheme: dark;
+}
+:root[data-oneup-theme="original"] { color-scheme: dark; }
+
+/* A real control in the desktop header and full-sized choices in mobile menu. */
+.oneup-theme-control { position: relative; flex: 0 0 auto; }
+.oneup-theme-trigger {
+  display: grid !important;
+  place-items: center;
+  min-width: 44px;
+  min-height: 44px;
+  width: 44px;
+  padding: 8px;
+  border-radius: 8px;
+  background: #1b242d;
+  border: 1px solid #8fa19f66;
+}
+.oneup-theme-trigger svg { width: 21px; height: 21px; }
+.oneup-theme-trigger[aria-expanded="true"] { outline: 2px solid #9df5be; outline-offset: 2px; }
+.oneup-theme-panel[hidden] { display: none !important; }
+.oneup-theme-panel {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 12px);
+  z-index: 150;
+  width: min(270px, calc(100vw - 18px));
+  padding: 13px;
+  border-radius: 12px;
+  background: #121a20;
+  border: 1px solid #9eb9b152;
+  box-shadow: 0 25px 65px #000c;
+  color: #f7f9ff;
+}
+.oneup-theme-heading {
+  margin: 1px 8px 12px;
+  color: #e3eaf4;
+  font: 800 13px/1.3 'Outfit', system-ui, sans-serif;
+  letter-spacing: .01em;
+}
+.oneup-theme-option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  min-height: 45px;
+  margin: 4px 0;
+  padding: 9px 10px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  text-align: left;
+  color: #e7edf5;
+  background: #ffffff09;
+  font: 700 13px/1.3 'Outfit', system-ui, sans-serif;
+  transition: background .18s ease, border-color .18s ease;
+}
+.oneup-theme-option:hover,
+.oneup-theme-option:focus-visible {
+  background: #ffffff19;
+  border-color: #b9d8ee7d;
+}
+.oneup-theme-option:focus-visible { outline: 2px solid #a5edcf; outline-offset: 2px; }
+.oneup-theme-option[aria-pressed="true"] { background: #5edba924; border-color: #9af3c39c; color: #fff; }
+.oneup-theme-swatch {
+  flex: 0 0 19px;
+  width: 19px;
+  height: 19px;
+  border-radius: 50%;
+  background: var(--swatch);
+  border: 3px solid #162022;
+  box-shadow: 0 0 0 1px #f5f9ff80;
+}
+.oneup-theme-label { flex: 1; }
+.oneup-theme-check { opacity: 0; color: #abf6c8; font-weight: 900; }
+.oneup-theme-option[aria-pressed="true"] .oneup-theme-check { opacity: 1; }
+.oneup-theme-drawer {
+  margin: 9px 12px 13px;
+  padding: 13px 9px 9px;
+  border: 1px solid #718b805a;
+  background: #10191d;
+  border-radius: 9px;
+}
+.oneup-theme-drawer .oneup-theme-heading { font-size: 13px; color: #dce7ea; }
+.oneup-theme-drawer .oneup-theme-option { min-height: 47px; font-size: 13px; }
+@media(max-width:780px) {
+  .oneup-theme-control { display: none !important; }
+}
+@media(min-width:781px) {
+  .oneup-theme-drawer { display: none; }
+}
+
+/* Palette overrides apply only when a visitor explicitly chooses one.
+   The "Original" option therefore remains a genuine original-theme mode. */
+:root[data-oneup-theme="esmeralda"] body.kokomi-mobile-reference,
+:root[data-oneup-theme="violeta"] body.kokomi-mobile-reference {
+  --bg: var(--oneup-pal-bg);
+  --surf: var(--oneup-pal-card);
+  --panel: var(--oneup-pal-raised);
+  --ink: var(--oneup-pal-ink);
+  --muted: var(--oneup-pal-muted);
+  --orange: var(--oneup-pal-accent);
+  --orange2: var(--oneup-pal-active);
+  --cream: var(--oneup-pal-ink);
+  --km-bg: var(--oneup-pal-bg);
+  --km-panel: var(--oneup-pal-card);
+  --km-ink: var(--oneup-pal-ink);
+  --km-muted: var(--oneup-pal-muted);
+  --km-turquoise: var(--oneup-pal-accent);
+  --km-red: var(--oneup-pal-active);
+  --km-blue: var(--oneup-pal-accent);
+  --kp-bg: var(--oneup-pal-bg);
+  --kp-panel: var(--oneup-pal-card);
+  --kp-ink: var(--oneup-pal-ink);
+  --kp-muted: var(--oneup-pal-muted);
+  --kp-accent: var(--oneup-pal-accent);
+  --kp-secondary: var(--oneup-pal-active);
+  --oct-main: var(--oneup-pal-accent);
+  --oct-red: var(--oneup-pal-active);
+  background: radial-gradient(ellipse at 87% 5%, var(--oneup-pal-glow), transparent 43%), var(--oneup-pal-bg);
+  color: var(--oneup-pal-ink);
+}
+
+/* Distinct title, gallery and actions—not an imitation of another platform. */
+:root[data-oneup-theme="esmeralda"] body.kokomi-mobile-reference .header,
+:root[data-oneup-theme="violeta"] body.kokomi-mobile-reference .header {
+  background: #080e13f0;
+  border-color: var(--oneup-pal-line);
+}
+:root[data-oneup-theme="esmeralda"] body.kokomi-mobile-reference .desktop-links,
+:root[data-oneup-theme="violeta"] body.kokomi-mobile-reference .desktop-links {
+  background: var(--oneup-pal-card);
+  border-color: var(--oneup-pal-line);
+}
+:root[data-oneup-theme="esmeralda"] body.kokomi-mobile-reference .desktop-links :is(button,a):is(.active,:hover),
+:root[data-oneup-theme="violeta"] body.kokomi-mobile-reference .desktop-links :is(button,a):is(.active,:hover) {
+  color: var(--oneup-pal-ink);
+  background: var(--oneup-pal-soft);
+}
+:root[data-oneup-theme="esmeralda"] body.kokomi-mobile-reference .hero,
+:root[data-oneup-theme="violeta"] body.kokomi-mobile-reference .hero {
+  background: var(--oneup-pal-bg);
+  border-bottom: 1px solid var(--oneup-pal-line);
+}
+:root[data-oneup-theme="esmeralda"] body.kokomi-mobile-reference .hero-darken,
+:root[data-oneup-theme="violeta"] body.kokomi-mobile-reference .hero-darken {
+  background: linear-gradient(0deg, var(--oneup-pal-bg), transparent 66%),
+    linear-gradient(90deg, #05090de8, #060c10c0 45%, #070b1161 100%);
+}
+:root[data-oneup-theme="esmeralda"] body.kokomi-mobile-reference .hero .eyebrow,
+:root[data-oneup-theme="violeta"] body.kokomi-mobile-reference .hero .eyebrow {
+  color: var(--oneup-pal-highlight);
+}
+:root[data-oneup-theme="esmeralda"] body.kokomi-mobile-reference .hero h1 span,
+:root[data-oneup-theme="violeta"] body.kokomi-mobile-reference .hero h1 span {
+  background: none;
+  color: var(--oneup-pal-ink);
+  -webkit-text-fill-color: var(--oneup-pal-ink);
+}
+:root[data-oneup-theme="esmeralda"] body.kokomi-mobile-reference .hero-description,
+:root[data-oneup-theme="violeta"] body.kokomi-mobile-reference .hero-description {
+  color: #e7f2ed;
+  text-shadow: 0 1px 12px #0009;
+}
+:root[data-oneup-theme="esmeralda"] body.kokomi-mobile-reference :is(.cta.primary,.searchbar button,.km-main-button),
+:root[data-oneup-theme="violeta"] body.kokomi-mobile-reference :is(.cta.primary,.searchbar button,.km-main-button) {
+  background: linear-gradient(110deg, var(--oneup-pal-accent), var(--oneup-pal-active));
+  color: var(--oneup-pal-on);
+  border-color: var(--oneup-pal-accent);
+  box-shadow: 0 10px 30px var(--oneup-pal-glow);
+}
+:root[data-oneup-theme="esmeralda"] body.kokomi-mobile-reference :is(.cta.outline,.hero-pick,.genre-pills button),
+:root[data-oneup-theme="violeta"] body.kokomi-mobile-reference :is(.cta.outline,.hero-pick,.genre-pills button) {
+  color: var(--oneup-pal-ink);
+  background: #111b1cd4;
+  border-color: var(--oneup-pal-line);
+}
+:root[data-oneup-theme="esmeralda"] body.kokomi-mobile-reference :is(.hero-pick.active,.genre-pills button.active),
+:root[data-oneup-theme="violeta"] body.kokomi-mobile-reference :is(.hero-pick.active,.genre-pills button.active) {
+  color: var(--oneup-pal-highlight);
+  background: var(--oneup-pal-soft);
+  border-color: var(--oneup-pal-accent);
+}
+:root[data-oneup-theme="esmeralda"] body.kokomi-mobile-reference .section-heading h2::before,
+:root[data-oneup-theme="violeta"] body.kokomi-mobile-reference .section-heading h2::before,
+:root[data-oneup-theme="esmeralda"] body.kokomi-mobile-reference .signal,
+:root[data-oneup-theme="violeta"] body.kokomi-mobile-reference .signal {
+  background: var(--oneup-pal-active);
+}
+:root[data-oneup-theme="esmeralda"] body.kokomi-mobile-reference :is(.section-heading h2 em,.section-more,.micro,.schedule-time,.km-eyebrow),
+:root[data-oneup-theme="violeta"] body.kokomi-mobile-reference :is(.section-heading h2 em,.section-more,.micro,.schedule-time,.km-eyebrow) {
+  color: var(--oneup-pal-highlight);
+}
+:root[data-oneup-theme="esmeralda"] body.kokomi-mobile-reference :is(.anime-card,.schedule-item,.oneup-watch-panel),
+:root[data-oneup-theme="violeta"] body.kokomi-mobile-reference :is(.anime-card,.schedule-item,.oneup-watch-panel) {
+  background: var(--oneup-pal-card);
+  border-color: var(--oneup-pal-line);
+}
+:root[data-oneup-theme="esmeralda"] body.kokomi-mobile-reference .anime-card .card-info,
+:root[data-oneup-theme="violeta"] body.kokomi-mobile-reference .anime-card .card-info {
+  background: var(--oneup-pal-card);
+}
+:root[data-oneup-theme="esmeralda"] body.kokomi-mobile-reference :is(.anime-card .card-name,.km-detail-inner h1),
+:root[data-oneup-theme="violeta"] body.kokomi-mobile-reference :is(.anime-card .card-name,.km-detail-inner h1) {
+  color: var(--oneup-pal-ink);
+}
+:root[data-oneup-theme="esmeralda"] body.kokomi-mobile-reference .anime-card:hover,
+:root[data-oneup-theme="violeta"] body.kokomi-mobile-reference .anime-card:hover {
+  border-color: var(--oneup-pal-accent);
+}
+:root[data-oneup-theme="esmeralda"] body.kokomi-mobile-reference :is(.anime-save.saved,.km-rank),
+:root[data-oneup-theme="violeta"] body.kokomi-mobile-reference :is(.anime-save.saved,.km-rank) {
+  color: var(--oneup-pal-on);
+  background: var(--oneup-pal-accent);
+  border-color: var(--oneup-pal-accent);
+}
+:root[data-oneup-theme="esmeralda"] body.kokomi-mobile-reference :is(.km-detail-banner,.km-extra-root,.browse-screen,.km-watch-no-media),
+:root[data-oneup-theme="violeta"] body.kokomi-mobile-reference :is(.km-detail-banner,.km-extra-root,.browse-screen,.km-watch-no-media) {
+  background-color: var(--oneup-pal-bg);
+}
+:root[data-oneup-theme="esmeralda"] body.kokomi-mobile-reference .km-drawer,
+:root[data-oneup-theme="violeta"] body.kokomi-mobile-reference .km-drawer {
+  background: var(--oneup-pal-card);
+  border-color: var(--oneup-pal-line);
+}
+:root[data-oneup-theme="esmeralda"] body.kokomi-mobile-reference .km-nav :is(button,a).active,
+:root[data-oneup-theme="violeta"] body.kokomi-mobile-reference .km-nav :is(button,a).active {
+  background: var(--oneup-pal-soft);
+  border-color: var(--oneup-pal-line);
+  color: var(--oneup-pal-ink);
+}
+:root[data-oneup-theme="esmeralda"] body.kokomi-mobile-reference .footer,
+:root[data-oneup-theme="violeta"] body.kokomi-mobile-reference .footer {
+  background: var(--oneup-pal-card);
+  border-color: var(--oneup-pal-line);
+}
+:root[data-oneup-theme="esmeralda"] body.kokomi-mobile-reference :is(button,a,select,input):focus-visible,
+:root[data-oneup-theme="violeta"] body.kokomi-mobile-reference :is(button,a,select,input):focus-visible {
+  outline: 3px solid var(--oneup-pal-highlight);
+  outline-offset: 3px;
+}
+@media(max-width:780px) {
+  :root[data-oneup-theme="esmeralda"] body.kokomi-mobile-reference .hero-darken,
+  :root[data-oneup-theme="violeta"] body.kokomi-mobile-reference .hero-darken {
+    background: linear-gradient(0deg,var(--oneup-pal-bg),transparent 88%),
+      linear-gradient(90deg,#05090dcb,transparent 95%);
+  }
+  .oneup-theme-drawer { padding-bottom: max(10px,env(safe-area-inset-bottom)); }
+}
+@media(prefers-reduced-motion:reduce) {
+  .oneup-theme-option { transition: none; }
+}
+
+/* ===== 10/10 — themes/oneup-motion/windows.css ===== */
+
+/*
+ * 1UP Anime / Motion System — original transitions for native screens,
+ * dialogs, menus and theme popovers. Inspired by general streaming UX,
+ * not a copy of any third-party application's private code or animation.
+ * Keep movement short (160–290 ms) and GPU-friendly (opacity/transform).
+ */
+:root {
+  --oneup-motion-fast: 170ms;
+  --oneup-motion-medium: 270ms;
+  --oneup-motion-curve: cubic-bezier(.22, 1, .36, 1);
+  --oneup-motion-veil: #03050bd9;
+}
+@keyframes oneup-sheet-in {
+  from { opacity: .3; transform: translate3d(0, 14px, 0) scale(.985); }
+  to { opacity: 1; transform: translate3d(0, 0, 0) scale(1); }
+}
+@keyframes oneup-drawer-in {
+  from { opacity: .72; transform: translate3d(-24px, 0, 0); }
+  to { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+@keyframes oneup-veil-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes oneup-pop-in {
+  from { opacity: 0; transform: translate3d(0, -9px, 0) scale(.98); }
+  to { opacity: 1; transform: translate3d(0, 0, 0) scale(1); }
+}
+
+/* Existing native dialogs keep their close button, focus and Escape semantics.
+   Never animate display or use fixed delays to enable interaction. */
+body.oneup-kokomi :is(#anime-dialog, #auth-dialog)[open] {
+  animation: oneup-sheet-in var(--oneup-motion-medium) var(--oneup-motion-curve) both;
+  transform-origin: 50% 36%;
+}
+body.oneup-kokomi :is(#anime-dialog, #auth-dialog)[open]::backdrop {
+  animation: oneup-veil-in var(--oneup-motion-medium) ease-out both;
+}
+body.oneup-kokomi .anime-dialog::backdrop,
+body.oneup-kokomi .auth-dialog::backdrop {
+  background: var(--oneup-motion-veil);
+  backdrop-filter: blur(8px);
+}
+
+/* Mobile navigation is anchored to the edge: no scaling the page behind it. */
+body.kokomi-mobile-reference .km-drawer:not([hidden]) {
+  animation: oneup-drawer-in var(--oneup-motion-medium) var(--oneup-motion-curve) both;
+}
+body.kokomi-mobile-reference .km-overlay:not([hidden]) {
+  animation: oneup-veil-in 210ms ease-out both;
+}
+body.kokomi-mobile-reference .km-search-pop:not([hidden]),
+body.oneup-kokomi .oneup-theme-panel:not([hidden]) {
+  animation: oneup-pop-in var(--oneup-motion-fast) var(--oneup-motion-curve) both;
+}
+body.oneup-kokomi :is(.dialog-close, .oneup-theme-trigger, #km-close) {
+  transition: background-color 180ms ease, border-color 180ms ease, color 180ms ease;
+}
+body.oneup-kokomi :is(.dialog-close, .oneup-theme-trigger, #km-close):focus-visible {
+  outline: 3px solid var(--oneup-pal-highlight, #d5e4ff);
+  outline-offset: 3px;
+}
+@media (hover: hover) and (pointer: fine) {
+  body.oneup-kokomi .anime-card {
+    transition: transform 260ms var(--oneup-motion-curve),
+      border-color 230ms ease, box-shadow 260ms ease;
+  }
+  body.oneup-kokomi .anime-card:hover {
+    transform: translate3d(0, -3px, 0);
+  }
+}
+@media (pointer: coarse) {
+  body.oneup-kokomi .anime-card:hover { transform: none; }
+  body.oneup-kokomi :is(.cta, .km-main-button, .oneup-theme-option, .km-nav button):active {
+    transform: scale(.987);
+  }
+}
+@media (max-width: 780px) {
+  body.oneup-kokomi #anime-dialog[open] {
+    animation-duration: 220ms;
+    transform-origin: center bottom;
+  }
+  body.kokomi-mobile-reference .km-drawer:not([hidden]) {
+    animation-duration: 235ms;
+  }
+}
+
+/* A user's explicit reduced-motion preference takes priority everywhere. */
+@media (prefers-reduced-motion: reduce) {
+  body.oneup-kokomi :is(#anime-dialog, #auth-dialog)[open],
+  body.oneup-kokomi :is(#anime-dialog, #auth-dialog)[open]::backdrop,
+  body.kokomi-mobile-reference .km-drawer:not([hidden]),
+  body.kokomi-mobile-reference .km-overlay:not([hidden]),
+  body.kokomi-mobile-reference .km-search-pop:not([hidden]),
+  body.oneup-kokomi .oneup-theme-panel:not([hidden]) {
+    animation: none !important;
+    transform: none !important;
+  }
+  body.oneup-kokomi .anime-card,
+  body.oneup-kokomi :is(.dialog-close, .oneup-theme-trigger, #km-close) {
+    transition: none !important;
+  }
+}
+body.km-quiet.oneup-kokomi :is(#anime-dialog, #auth-dialog)[open],
+body.km-quiet.oneup-kokomi :is(#anime-dialog, #auth-dialog)[open]::backdrop,
+body.km-quiet.kokomi-mobile-reference .km-drawer:not([hidden]),
+body.km-quiet.kokomi-mobile-reference .km-overlay:not([hidden]),
+body.km-quiet.kokomi-mobile-reference .km-search-pop:not([hidden]) {
+  animation: none !important;
+  transform: none !important;
+}
