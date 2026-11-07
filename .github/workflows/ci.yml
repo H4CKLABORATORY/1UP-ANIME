@@ -1,0 +1,77 @@
+name: CI
+
+# Safe CI (Phase 7): runs the full test gate on every branch push and on
+# every pull request. This workflow NEVER deploys anything: it has no
+# Pages, Supabase, Render or push steps and its token is read-only.
+# Deployment stays exclusively in deploy-pages.yml (push to main only,
+# behind the same test gate). The Supabase live tests skip themselves
+# gracefully when no local Supabase stack is running (there is none in
+# CI), exactly as they do in the standard local run.
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    name: Lint + unit + browser tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Python test dependency
+        run: pip install beautifulsoup4
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Unit + script tests
+        run: npm test
+
+      - name: Install Playwright browser
+        run: npx playwright install --with-deps chromium
+
+      - name: Browser tests (Playwright)
+        run: npm run test:e2e
+
+      - name: Install Puppeteer browser
+        run: npx puppeteer browsers install chrome-headless-shell
+
+      - name: Browser tests (Puppeteer)
+        run: npm run test:puppeteer
+
+      - name: Upload browser test artifacts on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ci-browser-artifacts
+          path: |
+            playwright-report/
+            test-results/
+            artifacts/puppeteer/
+          if-no-files-found: ignore
+          retention-days: 7
