@@ -22,7 +22,7 @@
 - No confundir el catálogo de Anime1v con episodios reproducibles ni su licencia MIT con derechos de distribución de anime.
 
 ## Estado detectado ahora
-- Último commit de aplicación encontrado: bc66249fa78488d4da776288f7da1a896ec97d7b
+- Último commit de aplicación encontrado: 6ace5ca46487b565643ee7af3f87068e3db057f9
 - Descubrimiento Anime1v configurado en frontend: sí, verificar la respuesta real en Render
 - Código runtime de metadatos Anime1v en repositorio: sí
 - Entradas de obras multimedia en data/licensed-media.json: 0
@@ -30,13 +30,15 @@
 - Safari físico: no dar por verificado salvo prueba real con evidencia.
 
 ## Últimos commits relevantes
-- bc66249fa — Sync authorized anime episode metadata and source statuses
-- b973373eb — Update educational anime metadata from Wikipedia
-- 3320e86b4 — ONEUP health snapshot (no application changes)
-- 75328639d — Update live anime airing calendar
-- b35b57258 — Sync authorized anime episode metadata and source statuses
+- 6ace5ca46 — Sync authorized anime episode metadata and source statuses
+- 5daa4e1b2 — ONEUP health snapshot (no application changes)
+- e709ac73f — Update live anime airing calendar
+- 5113df42e — Sync authorized anime episode metadata and source statuses
+- cee1ed76b — ONEUP health snapshot (no application changes)
 
 ## PR abiertos (consultar cambios antes de desarrollar)
+- [#72](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/72) Phase 1: AniList/Jikan rate safety + refresh-catalog robustness
+- [#71](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/71) Cuentas nativas 1UP en Supabase (correo + contraseña), sin Google ni Firebase
 - [#70](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/70) LU local: memoria de continuidad para Qwen entre chats
 - [#69](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/69) fix: recuperar catálogo ante caché local malformada
 - [#68](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/68) 1UP Auth: registro y recuperación por correo; retirar acceso Google
@@ -47,8 +49,6 @@
 - [#50](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/50) Documentar MAL Updater como referencia para seguimiento de 1UP Anime
 - [#46](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/46) 1UP Anime: contador de conexiones en línea para portada y comunidad
 - [#45](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/45) WIP: guarded comment image/GIF preview and anime detail UX audit
-- [#44](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/44) Audit: release readiness baseline and Depth Mode regression coverage
-- [#40](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/40) Diseño 1UP Editorial Pro: pulido cinematográfico original (solo preview)
 
 ## Próxima tarea por prioridad
 1. Leer AGENTS.md, esta ficha, PROJECT_CONTINUITY.md y OMEGA_NEXT_ACTIONS.md; confirmar HEAD y CI.
