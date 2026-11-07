@@ -939,6 +939,11 @@ const isOpening=root?.dataset.mode==='opening';
 const status=document.querySelector('#audio-status');
 if(!root||!canvas||!media||(!replay&&!isOpening))return;
 const signatureSrc=media.getAttribute('src')||media.dataset.src||'';
+// Only attach the signature file when this browser can actually decode it
+// (H.264 + AAC). Without the codecs the fetch is guaranteed to abort with a
+// demuxer error (net::ERR_ABORTED) and the visual scene loses nothing: it is
+// procedural canvas + logo, the MP4 only carries the audio signature.
+const signaturePlayable=(()=>{try{return Boolean(media.canPlayType('video/mp4; codecs="avc1.42E01E, mp4a.40.2"'))}catch{return false}})();
 const ctx=canvas.getContext('2d',{alpha:true});
 const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
 let width=innerWidth,height=innerHeight,dpr=1,particles=[],start=0,raf=0,playing=false,once=0;
@@ -1066,7 +1071,7 @@ function startScene(){
  // preload="none" and no src in the markup, a discarded intro never starts
  // (and never aborts) a download of the 1.6 MB file. The stash keeps the
  // studio preview replay working after the first play.
- if(!media.getAttribute('src')&&signatureSrc){media.src=signatureSrc;}
+ if(!media.getAttribute('src')&&signatureSrc&&signaturePlayable){media.src=signatureSrc;}
  playing=true;audioFallback=false;once++;
  root.classList.remove('playing','finished');
  // Force restart of CSS keyframes while keeping the same DOM and original logo.
@@ -1078,6 +1083,13 @@ function startScene(){
  if(reduced){
   status.textContent='Movimiento reducido: se conserva el logotipo estático.';
   setTimeout(stop,900);return;
+ }
+ if(!media.getAttribute('src')){
+  // Codec not supported in this browser: keep the visual scene, skip the
+  // doomed download and the doomed play() call entirely.
+  audioFallback=true;
+  status.textContent='Audio no disponible en este navegador; permanece la vista visual.';
+  return;
  }
  media.muted=false;
  media.playsInline=true;
