@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "engine": "ONEUP SELF HEALING ENGINE",
-  "updatedAt": "2026-11-07T06:01:26.880Z",
+  "updatedAt": "2026-11-07T10:01:57.061Z",
   "site": "https://h4cklaboratory.github.io/1UP-ANIME/",
   "mode": "local_y_publico",
   "verdict": "correcto",
@@ -10,7 +10,7 @@
   "warnings": 0,
   "persistentAlerts": [],
   "requiresManualAction": true,
-  "lastKnownGoodCommit": "8923232bc04f0a2eee97af246785988db0a1e3a7",
+  "lastKnownGoodCommit": "75328639d3b14a78eec3849e99c7ac8cdceb7632",
   "checks": [
     {
       "id": "file:index.html",
@@ -88,25 +88,25 @@
       "id": "file:data/catalog.json",
       "level": "ok",
       "message": "Validado: Archivo requerido data/catalog.json",
-      "bytes": 284405
+      "bytes": 280751
     },
     {
       "id": "file:data/airing.json",
       "level": "ok",
       "message": "Validado: Archivo requerido data/airing.json",
-      "bytes": 478864
+      "bytes": 480358
     },
     {
       "id": "file:data/translations-es.json",
       "level": "ok",
       "message": "Validado: Archivo requerido data/translations-es.json",
-      "bytes": 155530
+      "bytes": 154893
     },
     {
       "id": "file:data/dexter/records.json",
       "level": "ok",
       "message": "Validado: Archivo requerido data/dexter/records.json",
-      "bytes": 428457
+      "bytes": 428584
     },
     {
       "id": "file:config/dexter-providers.json",
@@ -187,13 +187,13 @@
       "id": "catalog:freshness",
       "level": "ok",
       "message": "Catálogo actualizado",
-      "ageHours": 20.8
+      "ageHours": 1
     },
     {
       "id": "airing:entries",
       "level": "ok",
       "message": "Validado: El calendario debe tener al menos 15 emisiones",
-      "entries": 207
+      "entries": 208
     },
     {
       "id": "airing:season",
@@ -204,13 +204,13 @@
       "id": "airing:freshness",
       "level": "ok",
       "message": "Calendario con fecha reciente",
-      "ageHours": 2.2
+      "ageHours": 0.2
     },
     {
       "id": "spanish:pack",
       "level": "ok",
       "message": "Validado: Sinopsis en español disponibles",
-      "count": 194
+      "count": 193
     },
     {
       "id": "engine:population",
@@ -249,7 +249,7 @@
       "id": "engine:freshness",
       "level": "ok",
       "message": "Sincronización reciente",
-      "ageHours": 2.8,
+      "ageHours": 0.8,
       "status": "correcta"
     },
     {
