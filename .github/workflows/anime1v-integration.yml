@@ -12,6 +12,12 @@ on:
   workflow_dispatch:
 permissions:
   contents: read
+# Added in the Phase 7 audit: this was the only audited workflow with no
+# concurrency group. Cancelling a superseded run of this read-only check
+# does not change what it verifies.
+concurrency:
+  group: anime1v-integration-${{ github.ref }}
+  cancel-in-progress: true
 jobs:
   adapter:
     runs-on: ubuntu-latest

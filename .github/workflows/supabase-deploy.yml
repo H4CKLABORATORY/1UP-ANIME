@@ -22,7 +22,9 @@ jobs:
       - name: Setup Supabase CLI
         uses: supabase/setup-cli@v1
         with:
-          version: latest
+          # Pinned (Phase 7 audit): was `latest` (unpinned). 2.45.5 is the
+          # Supabase CLI version verified locally in dexter.
+          version: 2.45.5
       - name: Verify required owner configuration
         run: |
           if [ -z "$SUPABASE_PROJECT_REF" ]; then
