@@ -9,6 +9,16 @@ Estas reglas se aplican a cualquier agente (Codex, Work u otro) que edite este r
 4. **Móvil primero.** Funcionar en Safari de iPhone sin inicio de sesión, audio obligatorio ni bloqueo de navegación.
 5. **Rendimiento.** Evitar librerías pesadas y animaciones constantes. Mantener una ruta funcional sin animaciones y respetar prefers-reduced-motion.
 
+## Reglas permanentes de Douglas — primer clic y todo automático (7 nov 2026)
+
+**Regla 1 — Todo funciona desde el PRIMER CLIC: cero configuración manual para el usuario.**
+La web ya abre y funciona (GitHub Pages) y debe seguir así: nada de pasos de configuración para los visitantes. El catálogo, el reproductor y la comunidad funcionan inmediatamente. La futura app Capacitor (App Store / Play Store) también debe solo abrirse y funcionar tras instalar — sin configuración, sin pasos manuales, sin línea de comandos. El único primer paso permitido es el que el propio Douglas pidió: crear la cuenta del usuario (nombre de usuario + contraseña, Supabase Auth) — una sola pantalla, una sola vez. Sin backend configurado, el sitio sigue funcionando: los invitados exploran el catálogo, el reproductor reproduce medios con licencia, y las funciones que necesitan cuenta muestran el inicio de sesión (una pantalla), nunca un manual de configuración. Ningún cambio puede añadir pasos de configuración para el visitante; los estados "no configurado" degradan con gracia (modo invitado + mensaje claro), nunca con una pantalla de setup. Las configuraciones de Douglas (proyecto Supabase, llaves, despliegues) son trabajo del propietario/desarrollador, nunca del visitante.
+
+**Regla 2 — Todo AUTOMÁTICO: el usuario NO debe elegir.**
+La app y la web funcionan con cero elecciones obligatorias del usuario: el catálogo, el reproductor, las recomendaciones, la calidad y el idioma eligen lo mejor automáticamente. Calidad: el reproductor elige la mejor calidad según la conexión, con cambio automático si falla (failover automático entre servidores). Idioma: español por defecto (el catálogo es en español); detección automática del dispositivo/navegador, sin preguntar. Recomendaciones: el sistema propone qué ver sin que el usuario tenga que configurar gustos primero. Temas y ajustes: las opciones manuales existen solo como ajuste avanzado opcional, nunca como paso obligatorio (el tema por defecto ya es el correcto; el selector de temas es opcional). Lo único que Douglas toca él mismo son su propia configuración de cuenta y sus propios pasos de plataforma (proyecto Supabase, llaves, despliegues). El visitante no toca nada. Cada flujo nuevo se revisa con la pregunta "¿el usuario tiene que elegir algo para que esto funcione?". Si la respuesta es sí, el flujo está mal.
+
+Ambas reglas se aplican en todas las fases (Fase 1 en adelante) y en la app Capacitor. No añadir pasos de configuración ni elecciones obligatorias en ningún cambio.
+
 ## Skills del proyecto
 - [.agents/skills/anime-art-direction/SKILL.md](.agents/skills/anime-art-direction/SKILL.md): revisión de diseño editorial y motion.
 - [.agents/skills/anime-catalog/SKILL.md](.agents/skills/anime-catalog/SKILL.md): APIs, fallback y consistencia de datos.
