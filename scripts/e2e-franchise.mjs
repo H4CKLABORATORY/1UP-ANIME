@@ -71,14 +71,14 @@ try{
     }]);
     window.OneUpCatalog.open('mal-21');
    });
-   await page.locator('#anime-dialog[open] .oneup-franchise-tile').first().waitFor({timeout:14000});
-   await page.waitForFunction(()=>document.querySelectorAll('#anime-dialog .oneup-franchise-tile').length===3,null,{timeout:14000});
-   const ids=await page.locator('#anime-dialog .oneup-franchise-tile').evaluateAll(nodes=>nodes.map(el=>el.dataset.details));
+   await page.locator('#anime-detail .oneup-franchise-tile').first().waitFor({timeout:14000});
+   await page.waitForFunction(()=>document.querySelectorAll('#anime-detail .oneup-franchise-tile').length===3,null,{timeout:14000});
+   const ids=await page.locator('#anime-detail .oneup-franchise-tile').evaluateAll(nodes=>nodes.map(el=>el.dataset.details));
    assert.deepEqual(ids,['mal-100','mal-101','mal-102']);
    assert.equal(franchiseRequests,1,'La consulta AniList se duplicó');
-   assert.equal(await page.locator('#anime-dialog .oneup-franchise-host').getByText('Precuela').count(),1);
+   assert.equal(await page.locator('#anime-detail .oneup-franchise-host').getByText('Precuela').count(),1);
    await page.evaluate(()=>{
-    document.querySelector('#anime-dialog [data-details="mal-101"]').click();
+    document.querySelector('#anime-detail [data-details="mal-101"]').click();
    });
    await page.locator('#detail-anime-name').waitFor({state:'visible'});
    assert.equal((await page.locator('#detail-anime-name').textContent()).trim(),'Temporada siguiente');

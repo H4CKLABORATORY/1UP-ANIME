@@ -66,19 +66,18 @@ try{
    await page.locator('#trending-rail [data-details]').first().waitFor({state:'attached',timeout:17000});
    const detailId=await page.locator('#trending-rail [data-details]').first().getAttribute('data-details');
    await page.evaluate(id=>document.querySelector('#trending-rail [data-details="'+id+'"]').click(),detailId);
-   await page.locator('#anime-dialog').waitFor({state:'visible',timeout:5000});
-   const dialogAnim=await page.locator('#anime-dialog').evaluate(el=>getComputedStyle(el).animationName);
-   assert.equal(dialogAnim.includes('oneup-sheet-in'),!reduced,'Dialog opening preference mismatch: '+dialogAnim);
+   await page.locator('#anime-detail').waitFor({state:'visible',timeout:5000});
+   assert.equal(new URL(page.url()).pathname,'/anime/'+detailId,'Detail URL mismatch: '+page.url());
    await page.locator('#anime-close').click();
-   await page.waitForFunction(()=>!document.querySelector('#anime-dialog').open,{timeout:4000});
+   await page.waitForFunction(()=>document.querySelector('#anime-detail').hidden,{timeout:4000});
 
    // 450 ms iOS ghost-click guard is intentional; wait before a deliberate reopen.
    await page.waitForTimeout(520);
    // Native Escape must always close immediately and restore the application.
    await page.locator('#trending-rail [data-details]').first().click();
-   await page.locator('#anime-dialog').waitFor({state:'visible'});
-   await page.keyboard.press('Escape');
-   await page.waitForFunction(()=>!document.querySelector('#anime-dialog').open,{timeout:4000});
+   await page.locator('#anime-detail').waitFor({state:'visible'});
+   await page.goBack();
+   await page.waitForFunction(()=>document.querySelector('#anime-detail').hidden,{timeout:4000});
 
    if(mobile){
      await page.locator('#km-open').click();

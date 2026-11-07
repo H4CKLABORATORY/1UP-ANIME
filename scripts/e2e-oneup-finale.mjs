@@ -68,10 +68,10 @@ try{
     }]);
     window.OneUpCatalog.open('mal-999932');
    });
-   await page.waitForFunction(()=>Boolean(document.querySelector('#anime-dialog')?.open),{timeout:4500});
+   await page.waitForFunction(()=>!document.querySelector('#anime-detail')?.hidden,{timeout:4500});
    assert.equal(await page.locator('#detail-anime-name').count(),1);
    await page.evaluate(()=>document.querySelector('#anime-close').click());
-   await page.waitForFunction(()=>!document.querySelector('#anime-dialog')?.open,{timeout:5000});
+   await page.waitForFunction(()=>document.querySelector('#anime-detail')?.hidden,{timeout:5000});
    await page.evaluate(()=>document.querySelector('[data-route="inicio"]').click());
    await page.waitForFunction(()=>!document.querySelector('#home-screen').hidden,{timeout:8000});
    const overflow=await page.evaluate(()=>({
@@ -80,7 +80,7 @@ try{
    }));
    assert.ok(overflow.doc<=overflow.viewport+2,'Horizontal overflow '+JSON.stringify(overflow));
    assert.equal(errors.length,0,'JS errors: '+errors.join(' | '));
-   console.log('PASS editorial '+width+'px: estado, enlaces, dialog, diseño y overflow');
+   console.log('PASS editorial '+width+'px: estado, enlaces, ficha, diseño y overflow');
   }finally{await context.close()}
  }
 }finally{

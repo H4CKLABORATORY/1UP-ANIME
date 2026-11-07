@@ -55,7 +55,7 @@ function applySpanishToVisibleText(){
   const el=$('#hero-description');if(el)el.textContent=chosenSynopsis(featured).slice(0,245);
  }
  const active=state.entries.get(state.active);
- if(!active||!$('#anime-dialog')?.open)return;
+ if(!active||!isDetailOpen())return;
  const excerpt=$('.oneup-detail-synopsis');
  if(excerpt)excerpt.textContent=chosenSynopsis(active);
  const full=$('.oneup-synopsis-text');
@@ -340,17 +340,27 @@ function renderContinue(){
  $('#continue-section').hidden=!arr.length;
  if(arr.length){register(arr);paint('#continue-rail',arr)}
 }
-function go(route){
- const routes=['inicio','temporada','programacion','catalogo','peliculas','milista','populares','recientes','genero','buscar'];
+function go(route,opts={}){
+ const routes=DETAIL_ROUTES;
  if(!routes.includes(route))route='inicio';
  // Invalidate pending catalogue responses even when the next view is synchronous.
  ++state.seq;state.loading=false;
+ const wasDetail=isDetailOpen();
+ if(wasDetail)closeDetailView();
  state.view=route;$('#home-screen').hidden=route!=='inicio';$('#browse-screen').hidden=route==='inicio';
  $$('[data-route]').forEach(b=>b.classList.toggle('active',b.dataset.route===route));
- window.scrollTo({top:0,behavior:'instant'});try{history.replaceState(null,'','#'+route)}catch{}
+ if(!opts.skipHistory){
+  const entry={oneup:1,view:route,scrollY:0};
+  try{
+   if(wasDetail)history.pushState(entry,'',appBase()+'#'+route);
+   else history.replaceState(entry,'','#'+route);
+  }catch{}
+ }
+ if(opts.restoreScrollY==null)window.scrollTo({top:0,behavior:'instant'});
  if(route==='milista')showSaved();else if(route==='programacion')showSchedule();else if(route!=='inicio')browse(route);
  // A nonblocking visual transition; routing and data loading stay synchronous.
  window.OneUpMotion?.enter?.(route==='inicio'?$('#home-screen'):$('#browse-screen'));
+ if(opts.restoreScrollY!=null)restoreScroll(opts.restoreScrollY);
 }
 function heading(h,sub,tag){$('#browse-title').innerHTML=h;$('#browse-summary').textContent=sub;$('#browse-eyebrow').textContent=tag}
 function showSaved(){
@@ -530,7 +540,7 @@ function playbackEpisode(id,episodes,index,serverIndex=0,tried=[]){
 async function loadAuthorizedPlayer(id){
  const host=$('#oneup-player-section');if(!host)return;
  const episodes=await mediaForAnime(id);
- if(state.active!==id||!$('#anime-dialog')?.open)return;
+ if(state.active!==id||!isDetailOpen())return;
  if(!episodes.length){host.hidden=true;return}
  host.hidden=false;
  const buttons=episodes.map((x,i)=>'<button class="oneup-episode-button" type="button" data-licensed-episode="'+i+'" aria-label="Abrir episodio autorizado '+(i+1)+'">'+(i+1)+' · '+esc(x.title||'Episodio')+'</button>').join('');
@@ -542,8 +552,208 @@ async function loadAuthorizedPlayer(id){
  }));
  playbackEpisode(id,episodes,0);
 }
-function detail(id){
- const a=state.entries.get(id);if(!a)return;
+
+/* Phase 2 — full detail pages at /anime/<id> (no modal).
+ * Navigation uses the History API: in-app opens pushState the detail URL;
+ * every history entry continuously stamps its own scrollY (on scroll,
+ * rAF-throttled) and popstate restores it EXACTLY after rendering.
+ * Deep links work on GitHub Pages via 404.html (see that file) plus the
+ * restore snippet in index.html; the app reads the id from the path. */
+const DETAIL_ROUTES=['inicio','temporada','programacion','catalogo','peliculas','milista','populares','recientes','genero','buscar'];
+let pushedDetail=false,scrollTick=false,detailSeq=0,detailChain=0,detailDepthNow=0;
+function appBase(){
+ let p=location.pathname.replace(/\/anime\/[^/]+\/?$/,'/');
+ p=p.replace(/[^/]*$/,'');
+ return p||'/';
+}
+function detailPath(id){return appBase()+'anime/'+encodeURIComponent(id)}
+function detailIdFromPath(){
+ const m=location.pathname.match(/\/anime\/([^/]+)\/?$/);
+ if(!m)return null;
+ try{return decodeURIComponent(m[1])}catch{return m[1]}
+}
+function isDetailOpen(){
+ const el=$('#anime-detail');
+ return Boolean(el&&!el.hidden);
+}
+const STATUS_LABELS={RELEASING:'En emisión',FINISHED:'Finalizado',NOT_YET_RELEASED:'Aún no emitido',CANCELLED:'Cancelado',HIATUS:'En pausa'};
+function statusLabel(v){return STATUS_LABELS[v]||v||''}
+function stampScroll(){
+ try{
+  const prev=history.state&&history.state.oneup?{...history.state}:null;
+  const s=prev||{oneup:1,view:state.view};
+  s.scrollY=Math.round(window.scrollY);
+  if(isDetailOpen()&&state.active){s.view='detail';s.id=state.active}
+  history.replaceState(s,'');
+ }catch{}
+}
+function restoreScroll(y){
+ const target=Math.max(0,Math.round(Number(y)||0));
+ let tries=0;
+ const attempt=()=>{
+  window.scrollTo({top:target,behavior:'instant'});
+  // Verify AFTER a frame: the browser can shift the scroll once when the
+  // sticky header / page layout settles, so a synchronous check is a lie.
+  requestAnimationFrame(()=>{
+   if(Math.abs(window.scrollY-target)<=2||++tries>20)return;
+   setTimeout(attempt,60);
+  });
+ };
+ requestAnimationFrame(attempt);
+}
+function blurActive(){try{document.activeElement?.blur?.()}catch{}}
+function nextDetailStamp(){
+ const prev=history.state&&history.state.oneup?history.state:null;
+ if(prev&&prev.view==='detail'&&prev.chain===detailChain&&detailChain>0){
+  detailDepthNow=(prev.depth||1)+1;
+ }else{detailChain++;detailDepthNow=1}
+ return {oneup:1,view:'detail',chain:detailChain,depth:detailDepthNow,scrollY:0};
+}
+function showDetailView(a,opts={}){
+ const page=$('#anime-detail');if(!page)return;
+ if(!opts.skipHistory)stampScroll();
+ $('#home-screen').hidden=true;$('#browse-screen').hidden=true;page.hidden=false;
+ document.title=a.title+' · 1UP Anime';
+ if(!opts.skipHistory){
+  try{history.pushState({...nextDetailStamp(),id:a.id},'',detailPath(a.id))}catch{}
+  pushedDetail=true;
+ }
+ if(opts.restoreScrollY==null&&!opts.keepScroll){blurActive();window.scrollTo({top:0,behavior:'instant'});restoreScroll(0)}
+}
+function closeDetailView(){
+ const page=$('#anime-detail');if(page)page.hidden=true;
+ $('#home-screen').hidden=state.view!=='inicio';
+ $('#browse-screen').hidden=state.view==='inicio';
+ if(state.active){
+  state.active=null;
+  document.dispatchEvent(new Event('oneup-anime-closed'));
+ }
+ document.title='1UP Anime | Tu siguiente vida es anime';
+}
+function showDetailLoading(id,opts={}){
+ const page=$('#anime-detail');if(!page)return;
+ if(!opts.skipHistory)stampScroll();
+ $('#home-screen').hidden=true;$('#browse-screen').hidden=true;page.hidden=false;
+ document.title='Cargando ficha · 1UP Anime';
+ $('#anime-detail-body').innerHTML='<div class="wrap anime-detail-loading" role="status">Cargando ficha…</div>';
+ if(!opts.skipHistory){
+  try{history.pushState({...nextDetailStamp(),id},'',detailPath(id))}catch{}
+  pushedDetail=true;
+ }
+ if(opts.restoreScrollY==null){blurActive();window.scrollTo({top:0,behavior:'instant'});restoreScroll(0)}
+}
+function detailNotFound(id){
+ state.active=null;
+ const page=$('#anime-detail');if(!page)return;
+ $('#home-screen').hidden=true;$('#browse-screen').hidden=true;page.hidden=false;
+ document.title='Anime no encontrado · 1UP Anime';
+ $('#anime-detail-body').innerHTML='<div class="wrap anime-not-found"><span class="micro">1UP ANIME / FICHA</span><h1>Anime no encontrado</h1><p>No encontramos la ficha «'+esc(id)+'» en el catálogo. Puede que el enlace esté incompleto o que el título aún no esté disponible.</p><button type="button" class="cta primary" data-route="catalogo">Explorar el catálogo</button></div>';
+ blurActive();window.scrollTo({top:0,behavior:'instant'});
+}
+/* AniList detail lookup (metadata only), through the SAME serialized,
+ * rate-spaced queue as the catalog loader: one attempt, null on failure. */
+const detailGql=[
+'query OneUpDetail($id:Int,$idMal:Int){',
+'Media(id:$id,idMal:$idMal,type:ANIME,isAdult:false){',
+'id idMal title{english romaji native} synonyms description(asHtml:false) coverImage{extraLarge large} bannerImage',
+'averageScore episodes format status seasonYear startDate{year} genres siteUrl',
+'nextAiringEpisode{episode airingAt} externalLinks{site url type}',
+'studios(isMain:true){nodes{name}}',
+'}}'].join(' ');
+async function aniDetail(vars){
+ const work=aniQueue.catch(()=>{}).then(async()=>{
+  const now=Date.now();
+  const gap=Math.max(0,ANILIST_MIN_GAP_MS-(now-lastCall),aniRate.backoffUntil-now);
+  if(gap)await sleep(gap);
+  lastCall=Date.now();
+  const c=new AbortController(),timer=setTimeout(()=>c.abort(),7000);
+  try{
+   const r=await fetch(API,{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify({query:detailGql,variables:vars}),signal:c.signal});
+   aniNoteRateHeaders(r);
+   if(!r.ok)return null;
+   const j=await r.json();
+   const m=j.data?.Media;
+   if(!m)return null;
+   const rec=normalizeAni(m);
+   const studio=m.studios?.nodes?.[0]?.name;
+   if(studio)rec.studio=studio;
+   return rec;
+  }catch{return null}
+  finally{clearTimeout(timer)}
+ });
+ aniQueue=work.catch(()=>{});
+ return work;
+}
+function enhanceStudio(a){
+ if(!a||a.studio||!a.mal_id)return;
+ aniDetail({idMal:a.mal_id}).then(rec=>{
+  if(rec?.studio){
+   a.studio=rec.studio;
+   const el=$('#detail-studio-value');
+   if(el&&state.active===a.id)el.textContent=rec.studio;
+  }
+ }).catch(()=>{});
+}
+/* Resolution chain for an id that is not in memory yet:
+ * snapshot -> licensed manifest (minimal record, player stays reachable)
+ * -> AniList by MAL/AniList id. Null means "not found". */
+async function resolveAnime(id){
+ try{
+  const snap=await getSnapshot();
+  if(snap?.groups){
+   const all=Object.values(snap.groups).filter(Array.isArray).flat();
+   const found=all.find(x=>x.id===id);
+   if(found){register([found]);return found}
+  }
+ }catch{}
+ try{
+  const eps=await mediaForAnime(id);
+  const meta=authorizedMedia?.[id];
+  if(meta||eps.length){
+   const rec={id,mal_id:/^mal-(\d+)$/.test(id)?Number(id.slice(4)):null,
+    title:meta?.title||('Anime '+id),image:'',banner:'',description:'',
+    averageScore:0,year:'',genres:[],format:'TV',episodes:eps.length||1,
+    status:'',siteUrl:'',streaming:[],next:null,source:'licensed'};
+   register([rec]);return rec;
+  }
+ }catch{}
+ const mal=/^mal-(\d+)$/.exec(id),al=/^al-(\d+)$/.exec(id);
+ if(mal||al){
+  const rec=await aniDetail(mal?{idMal:Number(mal[1])}:{id:Number(al[1])});
+  if(rec){register([rec]);return rec}
+ }
+ return null;
+}
+async function openDetailById(id,opts={}){
+ const token=++detailSeq;
+ if(state.entries.get(id)){detail(id,opts);return}
+ showDetailLoading(id,opts);
+ const found=await resolveAnime(id);
+ if(token!==detailSeq)return;
+ if(found)detail(id,{...opts,skipHistory:true});
+ else detailNotFound(id);
+}
+function openDetail(id){openDetailById(id)}
+function onPopState(){
+ const st=history.state||{};
+ if(st.oneup&&st.view==='detail'&&st.id){
+  detailDepthNow=st.depth||1;if(st.chain)detailChain=st.chain;
+  openDetailById(st.id,{skipHistory:true,restoreScrollY:st.scrollY||0});
+  return;
+ }
+ if(st.oneup&&DETAIL_ROUTES.includes(st.view)){
+  detailDepthNow=0;
+  go(st.view,{skipHistory:true,restoreScrollY:st.scrollY||0});
+  return;
+ }
+ const deepId=detailIdFromPath();
+ if(deepId){detailDepthNow=1;openDetailById(deepId,{skipHistory:true});return}
+ detailDepthNow=0;
+ go('inicio',{skipHistory:true});
+}
+
+function detail(id,opts={}){
+ const a=state.entries.get(id);if(!a||!$('#anime-detail-body'))return;
  state.active=id;
  hero(a,true);
  const item=state.saved[id]||{},site=safe(a.siteUrl||'');
@@ -559,6 +769,7 @@ function detail(id){
   a.episodes?(a.episodes+' episodios'):'',
   a.averageScore?('★ '+(a.averageScore/10).toFixed(1)):''
  ].filter(Boolean);
+ if(a.status)stats.splice(1,0,statusLabel(a.status));
  const chips=(a.genres||[]).slice(0,7).map(g=>'<span class="oneup-genre-tag">'+esc(genreSpanish(g))+'</span>').join('');
  const links=(a.streaming||[]).filter(x=>safe(x.url)).map(x=>'<a href="'+esc(safe(x.url))+'" target="_blank" rel="noopener noreferrer">'+esc(x.name||'Plataforma oficial')+' ↗</a>').join('');
  const pool=[...state.entries.values()];
@@ -591,6 +802,8 @@ function detail(id){
   (hasSynopsis?'<section class="oneup-detail-section oneup-synopsis-section"><h3>HISTORIA Y SINOPSIS</h3><p class="oneup-synopsis-source">'+(autoTranslated?(hasEditorialSpanish(a)?'Sinopsis en español revisada editorialmente':'Traducción automática al español · puede contener imprecisiones'):'Sinopsis en español pendiente de traducción')+'</p><p class="oneup-synopsis-text">'+esc(synopsis)+'</p><button type="button" data-synopsis-original="1" class="oneup-synopsis-toggle"'+(!originalSynopsis?' hidden':'')+'>Ver texto original</button></section><hr class="oneup-detail-separator">':'')+
   '<section class="oneup-detail-section"><h3>GÉNEROS</h3><div class="oneup-genre-tags">'+(chips||'<span class="oneup-genre-tag">Anime</span>')+'</div></section>'+
   '<hr class="oneup-detail-separator">'+
+  '<section class="oneup-detail-section"><h3>FICHA TÉCNICA</h3><dl class="oneup-tech-grid"><div><dt>Tipo</dt><dd>'+esc(formats[a.format]||a.format||'Anime')+'</dd></div><div><dt>Estado</dt><dd>'+esc(statusLabel(a.status)||'—')+'</dd></div><div><dt>Episodios</dt><dd>'+(a.episodes?esc(String(a.episodes)):'—')+'</dd></div><div><dt>Año</dt><dd>'+(a.year?esc(String(a.year)):'—')+'</dd></div><div><dt>Estudio</dt><dd id="detail-studio-value">'+esc(a.studio||'—')+'</dd></div><div><dt>Puntuación</dt><dd>'+(a.averageScore?((a.averageScore/10).toFixed(1)+' / 10'):'—')+'</dd></div></dl></section>'+
+  '<hr class="oneup-detail-separator">'+
   '<section class="oneup-detail-section"><h3>TU PROGRESO</h3><p>Lleva un registro personal de los episodios vistos.</p><div class="episode-controls"><button type="button" data-episode="-1" aria-label="Restar episodio">−</button><strong id="episode-value">'+(item.watched||0)+'</strong><button type="button" data-episode="1" aria-label="Sumar episodio">+</button><span class="oneup-episode-text">de '+(a.episodes||'?')+' episodios</span></div></section>'+
   '<hr class="oneup-detail-separator">'+
   '<section class="oneup-detail-section"><h3>DÓNDE VERLO</h3><div class="detail-links">'+(links||'<p>No hay plataformas oficiales registradas para este título.</p>')+'</div><p>Los enlaces conducen a proveedores externos; la disponibilidad depende de cada plataforma y región.</p></section>'+
@@ -600,16 +813,15 @@ function detail(id){
  '</div>';
  // Keep the close button outside regenerated anime detail markup.
  // Re-parenting it into the poster/cover grid broke hit-testing in iOS Safari.
- $('#anime-dialog-body').innerHTML=detailUI;
+ $('#anime-detail-body').innerHTML=detailUI;
  const bg=safe(a.banner||a.image);
  const scene=$('#oneup-detail-art');
  if(scene&&bg)scene.style.backgroundImage='url("'+bg.replace(/["\\]/g,'')+'")';
- const dialog=$('#anime-dialog');
- if(!dialog.open)dialog.showModal();
- dialog.setAttribute('aria-labelledby','detail-anime-name');
- dialog.scrollTop=0;
+ showDetailView(a,opts);
  window.OneUpEpisodePlayer?.show(a)?.catch(()=>{});
  document.dispatchEvent(new CustomEvent('oneup-anime-opened',{detail:a}));
+ enhanceStudio(a);
+ if(opts.restoreScrollY!=null)restoreScroll(opts.restoreScrollY);
 }
 function changeEp(delta){
  const item=ensureItem(state.active);if(!item)return;
@@ -637,7 +849,7 @@ function splash(){
 }
 window.OneUpCatalog={
  register(items){for(const a of items||[]){if(a?.id)state.entries.set(a.id,a)}},
- open(id){detail(id)},
+ open(id){openDetail(id)},
  feature(id){
   const anime=state.entries.get(id);
   if(!anime)return false;
@@ -649,19 +861,20 @@ window.OneUpCatalog={
  get(id){return state.entries.get(id)}
 };
 function init(){
+ try{history.scrollRestoration='manual'}catch{}
  reloadSaved();
  loadSpanishSynopses();
  $('#genre-pills').innerHTML='<button data-genre="">✦ Explorar todos</button>'+genres.map(([en,es])=>'<button data-genre="'+esc(en)+'">'+esc(es)+'</button>').join('');
  document.addEventListener('click',e=>{
   const nav=e.target.closest('[data-route]');if(nav){e.preventDefault();go(nav.dataset.route);return}
   const g=e.target.closest('[data-genre]');if(g){state.filters.genre=g.dataset.genre;go(g.dataset.genre?'genero':'catalogo');return}
-  const s=e.target.closest('[data-save]');if(s){const id=s.dataset.save;toggle(id);if($('#anime-dialog').open&&state.active===id){const button=$('#anime-dialog [data-save]');if(button)button.textContent=isFav(id)?'✓ Guardado':'＋ Añadir a mi lista'}return}
+  const s=e.target.closest('[data-save]');if(s){const id=s.dataset.save;toggle(id);if(isDetailOpen()&&state.active===id){const button=$('#anime-detail [data-save]');if(button)button.textContent=isFav(id)?'✓ Guardado':'＋ Añadir a mi lista'}return}
   const pick=e.target.closest('[data-feature]');if(pick){const anime=state.entries.get(pick.dataset.feature);if(anime)hero(anime,true);return}
   const d=e.target.closest('[data-details]');
   if(d){
    // Block delayed Safari ghost click that would immediately reopen the dialog.
    if(performance.now()-lastDetailDismissed<450){e.preventDefault();return}
-   detail(d.dataset.details);return
+   openDetail(d.dataset.details);return
   }
   const ep=e.target.closest('[data-episode]');if(ep){changeEp(Number(ep.dataset.episode))}
  });
@@ -683,10 +896,10 @@ function init(){
    return;
   }
  },true);
- document.addEventListener('keydown',e=>{if((e.key==='Enter'||e.key===' ')&&e.target.matches('[data-details]')){e.preventDefault();detail(e.target.dataset.details)}});
+ document.addEventListener('keydown',e=>{if((e.key==='Enter'||e.key===' ')&&e.target.matches('[data-details]')){e.preventDefault();openDetail(e.target.dataset.details)}});
  $('#search-form').addEventListener('submit',e=>{e.preventDefault();doSearch($('#search-input').value)});
  $('#header-search').addEventListener('click',()=>{go('inicio');setTimeout(()=>{$('#search-input').scrollIntoView({block:'center'});$('#search-input').focus()},100)});
- $('#hero-detail').addEventListener('click',()=>state.featured?detail(state.featured.id):go('catalogo'));
+ $('#hero-detail').addEventListener('click',()=>state.featured?openDetail(state.featured.id):go('catalogo'));
  $('#hero-save').addEventListener('click',()=>state.featured&&toggle(state.featured.id));
  $('#browse-next').addEventListener('click',()=>!state.loading&&state.next&&browse(state.view,state.page+1,true));
  $('#browse-controls').addEventListener('change',e=>{const keys={'filter-genre':'genre','filter-format':'format','filter-status':'status','filter-sort':'sort'};if(keys[e.target.id]){state.filters[keys[e.target.id]]=e.target.value;browse('catalogo')}});
@@ -694,30 +907,14 @@ function init(){
  let lastDetailDismissed=-10000;
  const closeAnime=(event)=>{
   if(event){event.preventDefault();event.stopPropagation()}
-  const modal=$('#anime-dialog');
-  if(!modal?.open)return;
+  if(!isDetailOpen())return;
   lastDetailDismissed=performance.now();
-  if(!window.OneUpMotion?.closeDialog?.(modal))modal.close();
+  if(pushedDetail&&detailDepthNow>1)history.go(-detailDepthNow);
+  else if(pushedDetail)history.back();
+  else go('inicio');
  };
  $('#anime-close').addEventListener('click',closeAnime);
- // iOS fallback applies only when another element intercepts the X's
- // screen coordinates, not a normal tap on the button itself.
- // Closing on the button's pointerdown allowed click-through to a card.
- $('#anime-dialog').addEventListener('pointerdown',e=>{
-  const button=$('#anime-close'),modal=$('#anime-dialog');
-  if(!modal?.open||!button||button.contains(e.target))return;
-  const r=button.getBoundingClientRect(),pad=5;
-  if(e.clientX<r.left-pad||e.clientX>r.right+pad||
-     e.clientY<r.top-pad||e.clientY>r.bottom+pad)return;
-  e.preventDefault();e.stopPropagation();closeAnime();
- },true);
- $('#anime-dialog').addEventListener('close',()=>{
-  lastDetailDismissed=performance.now();
-  state.active=null;
-  document.dispatchEvent(new Event('oneup-anime-closed'));
- });
- $('#anime-dialog').addEventListener('click',e=>{
-  if(e.target===$('#anime-dialog'))closeAnime(e);
+ $('#anime-detail')?.addEventListener('click',e=>{
   if(e.target.id==='save-url')saveUrl();
   const btn=e.target.closest('[data-synopsis-original]');
   if(btn){
@@ -735,8 +932,19 @@ function init(){
  });
  window.OneUpAuth?.onChange(()=>{reloadSaved();refreshFav();renderContinue();if(state.view==='milista')showSaved()});
  splash();
- const route=location.hash.slice(1);if(['temporada','programacion','catalogo','peliculas','milista','populares','recientes'].includes(route))go(route);
- loadHome();
+ const deepId=detailIdFromPath();
+ if(deepId){
+  detailChain=1;detailDepthNow=1;
+  try{history.replaceState({oneup:1,view:'detail',id:deepId,chain:1,depth:1,scrollY:Math.round(window.scrollY)},'')}catch{}
+  loadHome();
+  openDetailById(deepId,{skipHistory:true});
+ }else{
+  const route=location.hash.slice(1);if(['temporada','programacion','catalogo','peliculas','milista','populares','recientes'].includes(route))go(route);
+  else{try{history.replaceState({oneup:1,view:'inicio',scrollY:0},'')}catch{}}
+  loadHome();
+ }
+ window.addEventListener('popstate',onPopState);
+ window.addEventListener('scroll',()=>{if(scrollTick)return;scrollTick=true;requestAnimationFrame(()=>{scrollTick=false;stampScroll()})},{passive:true});
  if('serviceWorker' in navigator&&location.protocol==='https:')navigator.serviceWorker.register('./sw.js').catch(()=>{});
 }
 // Phase 1 diagnostics hook (no UI, no setup, no user choice): exposes the live

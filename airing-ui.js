@@ -177,7 +177,7 @@ async function fetchIndividualTrailer(a){
 }
 function trailerPane(a,info){
  if(!a?.id)return;
- const root=$('#anime-dialog-body');if(!root)return;
+ const root=$('#anime-detail-body');if(!root)return;
  root.querySelector('#oneup-trailer-pane')?.remove();
  const trailer=info?.trailer||a.trailer;
  if(!trailer||trailer.site!=='youtube'||!approved(trailer.id))return;

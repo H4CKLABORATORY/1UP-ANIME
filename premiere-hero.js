@@ -13,7 +13,7 @@
  let images=new Set(),updated='';
  const reduced=()=>window.matchMedia?.('(prefers-reduced-motion: reduce)').matches===true;
  const canAuto=()=>ready&&slides.length>1&&!document.hidden&&visible&&!hovered&&!focused&&!reduced()&&
-  !$('#anime-dialog')?.open&&location.hash!=='#buscar'&&
+  !window.OneUpCatalog?.active()&&location.hash!=='#buscar'&&
   !$('#home-screen')?.hidden;
  const cancel=()=>{if(timeout!==null){clearTimeout(timeout);timeout=null}};
  function schedule(){

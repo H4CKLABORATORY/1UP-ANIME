@@ -84,7 +84,7 @@ async function addDirectory(){
 document.addEventListener('oneup-anime-opened',async ({detail:anime})=>{
  const id=anime?.id;
  if(!id)return;
- const panel=$('#anime-dialog-body .oneup-detail-lower');
+ const panel=$('#anime-detail-body .oneup-detail-lower');
  if(!panel)return;
  const dir=await getDirectory();
  if(window.OneUpCatalog?.active()!==id||!panel.isConnected)return;

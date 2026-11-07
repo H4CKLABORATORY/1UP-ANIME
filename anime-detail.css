@@ -1,0 +1,102 @@
+/* 1UP Anime - Phase 2: full anime detail page (/anime/<id>).
+   Original 1UP design inside the unified themes/oneup system:
+   Black Clover / anti-magic identity, page background #000000,
+   header band #272727, action orange #FF640A as a restrained accent.
+   Structure: top bar with back control, hero, synopsis, ficha tecnica,
+   episode/player section and community entry points. */
+
+.anime-detail-page {
+  background: #000000;
+  min-height: 70vh;
+  padding-bottom: 48px;
+}
+.anime-detail-page[hidden] { display: none; }
+
+.anime-detail-topbar {
+  background: #272727;
+  border-bottom: 1px solid #ffffff1f;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  position: sticky;
+  top: 0;
+  z-index: 60;
+}
+.anime-detail-back {
+  min-width: 44px;
+  min-height: 44px;
+}
+.anime-detail-back:hover,
+.anime-detail-back:focus-visible {
+  border-color: #ff640a;
+  color: #ff640a;
+}
+
+/* The detail hero keeps the cinematic cover from the old modal, now as a
+   full-bleed page hero constrained to the content column. */
+#anime-detail-body .oneup-detail-content {
+  max-width: 1180px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+#anime-detail-body .oneup-detail-lower {
+  max-width: 1180px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Ficha técnica (type / status / episodes / year / studio / score). */
+.oneup-tech-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 12px;
+  margin: 0;
+}
+.oneup-tech-grid > div {
+  background: #ffffff0d;
+  border: 1px solid #ffffff1f;
+  border-radius: 10px;
+  padding: 12px 14px;
+}
+.oneup-tech-grid dt {
+  font-size: 10px;
+  letter-spacing: 2px;
+  font-weight: 900;
+  color: #abbffa;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+.oneup-tech-grid dd {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 700;
+  color: #f5f6f4;
+}
+
+.anime-detail-loading {
+  padding: 90px 20px;
+  text-align: center;
+  color: #aeb3c8;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+.anime-not-found {
+  padding: 90px 20px 70px;
+  max-width: 720px;
+}
+.anime-not-found h1 {
+  font: 900 clamp(38px, 6vw, 64px)/0.95 'Barlow Condensed', Impact, sans-serif;
+  margin: 10px 0 14px;
+  color: #fff;
+}
+.anime-not-found p {
+  color: #aeb3c8;
+  line-height: 1.75;
+  font-size: 14px;
+  margin-bottom: 24px;
+}
