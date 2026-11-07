@@ -121,13 +121,16 @@ async function publish(e){
   if(file){
    const uid=(await backend().supabaseAccount()).uid;
    const draft=crypto.randomUUID?.()||('u'+Date.now().toString(36)+'abcdef');
-   const ext={'image/jpeg':'jpg','image/png':'png','image/webp':'webp','video/mp4':'mp4'}[file.type];
-   if(!ext)throw Error('Formato de archivo no admitido.');
+   const ext={'image/jpeg':'jpg','image/png':'png','image/webp':'webp','image/gif':'gif','video/mp4':'mp4'}[file.type];
+   if(!ext)throw Error('Formato no admitido: solo JPG, PNG, WebP, GIF o MP4.');
+   const maxMb=file.type==='video/mp4'?25:5;
+   if(file.size>maxMb*1024*1024)throw Error('El archivo excede el limite de '+maxMb+' MB para '+(file.type==='video/mp4'?'videos':'imagenes y GIF')+'.');
+   if($('#post-media').dataset.blocked==='1')throw Error('El archivo elegido no es valido. Elige otro archivo.');
    mediaPath=await backend().uploadCommunityFile(file,draft);
   }
   await backend().publishPost({text,kind,mediaPath});
   status('#post-result',file?'Tu publicación multimedia está pendiente de revisión.':'Publicación creada correctamente.');
-  $('#post-text').value='';$('#post-media').value='';
+  $('#post-text').value='';$('#post-media').value='';clearMediaPreview();
   if(!file){setTimeout(()=>$('#composer').hidden=true,850)}
  }catch(err){status('#post-result',errorText(err))}
  finally{button.disabled=false}
@@ -156,6 +159,31 @@ async function sharePost(id){
  else{await navigator.clipboard.writeText(uri);stateMessage('Enlace de publicación copiado.')}}
  catch(e){if(e.name!=='AbortError')stateMessage('No se pudo compartir el enlace.')}
 }
+let previewURL='';
+function clearMediaPreview(){
+ if(previewURL){URL.revokeObjectURL(previewURL);previewURL=''}
+ const box=$('#post-media-preview');if(box){box.hidden=true;box.replaceChildren()}
+ const input=$('#post-media');if(input)delete input.dataset.blocked;
+}
+function previewMedia(){
+ const input=$('#post-media'),box=$('#post-media-preview');if(!input||!box)return;
+ clearMediaPreview();
+ const file=input.files[0];box.hidden=false;
+ const block=msg=>{input.dataset.blocked='1';box.textContent=msg;status('#post-result',msg)};
+ if(!file){box.hidden=true;return}
+ const kinds={'image/jpeg':'jpg','image/png':'png','image/webp':'webp','image/gif':'gif','video/mp4':'mp4'};
+ if(!kinds[file.type]){block('Vista previa bloqueada: formato no admitido. Solo JPG, PNG, WebP, GIF o MP4.');return}
+ const maxMb=file.type==='video/mp4'?25:5;
+ if(file.size>maxMb*1024*1024){block('Vista previa bloqueada: el archivo excede el limite de '+maxMb+' MB.');return}
+ previewURL=URL.createObjectURL(file);
+ if(file.type==='video/mp4'){
+  const video=document.createElement('video');video.src=previewURL;video.controls=true;video.preload='metadata';video.playsInline=true;video.setAttribute('aria-label','Vista previa del video');box.replaceChildren(video);
+ }else{
+  const image=document.createElement('img');image.src=previewURL;image.alt='Vista previa de la imagen adjunta';box.replaceChildren(image);
+ }
+ const note=document.createElement('small');note.textContent='Vista previa local. Si es multimedia, la publicacion quedara en cuarentena hasta que un moderador la apruebe.';box.append(note);
+ status('#post-result','Archivo listo para enviar a revision.');
+}
 function startReplies(postId){
  activePost=postId;
  const post=allPosts.find(x=>x.id===postId);
@@ -165,7 +193,7 @@ function startReplies(postId){
  if(repliesStop){repliesStop();repliesStop=null}
  if(!backend()?.enabled()){$('#reply-list').innerHTML='<div class="c-empty">Se necesita conectar la comunidad.</div>';return}
  backend().subscribeReplies(postId,comments=>{
-  $('#reply-list').innerHTML=comments.length?comments.map(x=>'<article class="c-reply"><strong>'+esc(x.displayName||'Fan')+' '+badge(x)+'</strong><p>'+esc(x.text)+'</p><small>'+niceDate(x.createdAt)+'</small></article>').join(''):'<div class="c-empty">Nadie ha comentado esta publicación todavía.</div>';
+  $('#reply-list').innerHTML=comments.length?comments.map(x=>'<article class="c-reply"><strong>'+esc(x.displayName||'Fan')+' '+badge(x)+'</strong><p>'+esc(x.text)+'</p><small>'+niceDate(x.createdAt)+'</small> <button type="button" data-report-reply="'+esc(postId)+'/'+esc(x.id)+'">Reportar</button></article>').join(''):'<div class="c-empty">Nadie ha comentado esta publicación todavía.</div>';
  },e=>status('#reply-state',e)).then(off=>repliesStop=off).catch(e=>status('#reply-state',errorText(e)));
 }
 async function reply(e){
@@ -257,6 +285,13 @@ async function resetCommunityPassword(){
  const response=await auth.resetPassword(email);
  status('#c-auth-state',response.message);
 }
+async function reportReply(target){
+ if(!backend()?.enabled())return;
+ const reason=prompt('Motivo del reporte (minimo 4 caracteres):','Contenido inapropiado');
+ if(!reason)return;
+ try{await backend().report('communityComment',target,reason);status('#reply-state','Reporte enviado a revision.')}
+ catch(e){status('#reply-state',errorText(e))}
+}
 async function reportPost(id){
  if(!backend()?.enabled())return;
  const reason=prompt('Motivo del reporte (mínimo 4 caracteres):','Contenido inapropiado');
@@ -271,6 +306,7 @@ function actions(e){
  const like=target.closest('[data-like]');if(like){requireAccount().then(ok=>ok&&backend().react(like.dataset.like).catch(err=>stateMessage(errorText(err))));return}
  const share=target.closest('[data-share]');if(share){sharePost(share.dataset.share);return}
  const report=target.closest('[data-report]');if(report){reportPost(report.dataset.report);return}
+ const reportReplyBtn=target.closest('[data-report-reply]');if(reportReplyBtn){reportReply(reportReplyBtn.dataset.reportReply);return}
  const follow=target.closest('[data-follow]');if(follow){requireAccount().then(ok=>ok&&backend().follow(follow.dataset.follow).then(v=>stateMessage(v.following?'Ahora sigues este perfil.':'Dejaste de seguir el perfil.')).catch(e=>stateMessage(errorText(e))));return}
  const friend=target.closest('[data-friend]');if(friend){requireAccount().then(ok=>ok&&backend().requestFriend(friend.dataset.friend).then(()=>stateMessage('Invitación enviada. Se necesita aceptación para ser amigos.')).catch(e=>stateMessage(errorText(e))));return}
  const answer=target.closest('[data-answer-friend]');if(answer){backend().answerFriend(answer.dataset.answerFriend,answer.dataset.accept==='1').then(()=>{status('#c-friend-state','Respuesta enviada.');showFriends()}).catch(e=>status('#c-friend-state',errorText(e)));return}
@@ -293,8 +329,9 @@ async function init(){
  $('#c-auth-close').addEventListener('click',()=>$('#c-auth-dialog').close());
  $('#c-compose').addEventListener('click',showComposer);
  $('#c-compose-hero').addEventListener('click',showComposer);
- $('#cancel-compose').addEventListener('click',()=>$('#composer').hidden=true);
+ $('#cancel-compose').addEventListener('click',()=>{clearMediaPreview();$('#composer').hidden=true});
  $('#post-form').addEventListener('submit',publish);
+ $('#post-media').addEventListener('change',previewMedia);
  $('#open-chat').addEventListener('click',()=>setTab('chat'));
  $('#global-form').addEventListener('submit',chatSubmit);
  $('#c-reply-close').addEventListener('click',()=>$('#c-reply-dialog').close());

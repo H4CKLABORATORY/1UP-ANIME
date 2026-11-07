@@ -241,7 +241,7 @@ async function publishPost({text,kind='debate',mediaPath=''}){
  if(body.length<3||body.length>2500)throw Error('Escribe una publicación de 3 a 2500 caracteres.');
  if(!KINDS.includes(kind))throw Error('Tipo de publicación no admitido.');
  const path=String(mediaPath||'');
- if(path&&!new RegExp('^postUploads/'+user.id.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+'/[A-Za-z0-9_-]{8,90}/media\\.(jpg|png|webp|mp4)$').test(path))
+ if(path&&!new RegExp('^postUploads/'+user.id.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+'/[A-Za-z0-9_-]{8,90}/media\\.(jpg|png|webp|gif|mp4)$').test(path))
   throw Error('Ruta de archivo incorrecta.');
  const {supabase}=await sdk();
  const {data,error}=await supabase.from('oneup_community_posts').insert({
@@ -292,11 +292,11 @@ async function report(type,id,reason){
 }
 async function uploadCommunityFile(file,postId){
  const user=await requireAccount();
- const types=['image/jpeg','image/png','image/webp','video/mp4'];
- if(!types.includes(file.type))throw Error('Solo se admiten JPG, PNG, WebP o MP4.');
+ const types=['image/jpeg','image/png','image/webp','image/gif','video/mp4'];
+ if(!types.includes(file.type))throw Error('Solo se admiten JPG, PNG, WebP, GIF o MP4.');
  const max=file.type==='video/mp4'?25*1024*1024:5*1024*1024;
  if(file.size>max)throw Error('El archivo excede el límite de '+(max/1024/1024)+' MB.');
- const ext={'image/jpeg':'jpg','image/png':'png','image/webp':'webp','video/mp4':'mp4'}[file.type];
+ const ext={'image/jpeg':'jpg','image/png':'png','image/webp':'webp','image/gif':'gif','video/mp4':'mp4'}[file.type];
  const path='postUploads/'+user.id+'/'+String(postId)+'/media.'+ext;
  const {supabase}=await sdk();
  const {error}=await supabase.storage.from('post-uploads').upload(path,file,{contentType:file.type});
