@@ -99,6 +99,35 @@ const gql=[
 'averageScore episodes format status seasonYear startDate{year} genres siteUrl',
 'nextAiringEpisode{episode airingAt} externalLinks{site url type}',
 '}}}'].join(' ');
+/* Phase 1 - AniList rate safety (degraded cap 30 req/min, verified Nov 7 2026).
+   Requests run through ONE serialized queue (no parallel bursts), spaced at
+   least ANILIST_MIN_GAP_MS apart, and slow down BEFORE the limit using
+   X-RateLimit-Remaining / X-RateLimit-Reset. HTTP 429 honours Retry-After
+   with exponential backoff (max 3 attempts). Metadata only; no user setup. */
+const ANILIST_MIN_GAP_MS=2100,ANILIST_MAX_ATTEMPTS=3;
+const aniRate={remaining:null,limit:null,resetAt:0,backoffUntil:0};
+const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+function aniRetryDelayMs(r,attempt){
+ const seconds=Number(r?.headers?.get?.('Retry-After'));
+ if(Number.isFinite(seconds)&&seconds>0)return Math.min(65000,Math.ceil(seconds*1000));
+ return 2000*attempt;
+}
+function aniNoteRateHeaders(r){
+ try{
+  const remaining=Number((r?.headers?.get?.('X-RateLimit-Remaining'))??NaN);
+  const limit=Number((r?.headers?.get?.('X-RateLimit-Limit'))??NaN);
+  const reset=Number((r?.headers?.get?.('X-RateLimit-Reset'))??NaN);
+  if(Number.isFinite(remaining))aniRate.remaining=remaining;
+  if(Number.isFinite(limit))aniRate.limit=limit;
+  if(Number.isFinite(reset)&&reset>0)aniRate.resetAt=reset*1000;
+  // Slow down BEFORE hitting the limit: with 2 or fewer requests left,
+  // wait until the reset window instead of firing into a 429.
+  if(Number.isFinite(remaining)&&remaining<=2){
+   const until=aniRate.resetAt>Date.now()?aniRate.resetAt:Date.now()+30000;
+   aniRate.backoffUntil=Math.max(aniRate.backoffUntil,until);
+  }
+ }catch{}
+}
 let lastCall=0,aniQueue=Promise.resolve();
 async function ani(options){
  const work=aniQueue.catch(()=>{}).then(()=>fetchAniSerial(options));
@@ -106,18 +135,55 @@ async function ani(options){
  return work;
 }
 async function fetchAniSerial(options){
- const gap=Math.max(0,1500-(Date.now()-lastCall));if(gap)await new Promise(r=>setTimeout(r,gap));lastCall=Date.now();
- const c=new AbortController(),timer=setTimeout(()=>c.abort(),7000);
- try{
-  const variables={page:options.page||1,perPage:options.perPage||18,sort:[options.sort||'POPULARITY_DESC']};
-  for(const k of ['status','search','genre','format'])if(options[k])variables[k]=options[k];
-  const r=await fetch(API,{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify({query:gql,variables}),signal:c.signal});
-  if(!r.ok)throw Error('AniList '+r.status);
-  const j=await r.json();if(j.errors?.length)throw Error(j.errors[0].message);
-  return {items:(j.data?.Page?.media||[]).map(normalizeAni),next:!!j.data?.Page?.pageInfo?.hasNextPage,source:'anilist'};
- }finally{clearTimeout(timer)}
+ const variables={page:options.page||1,perPage:options.perPage||18,sort:[options.sort||'POPULARITY_DESC']};
+ for(const k of ['status','search','genre','format'])if(options[k])variables[k]=options[k];
+ let lastError=null;
+ for(let attempt=1;attempt<=ANILIST_MAX_ATTEMPTS;attempt++){
+  // Serialized spacing: at least ANILIST_MIN_GAP_MS since the previous
+  // AniList request, plus any backoff (rate-limit window / Retry-After).
+  const now=Date.now();
+  const gap=Math.max(0,ANILIST_MIN_GAP_MS-(now-lastCall),aniRate.backoffUntil-now);
+  if(gap)await sleep(gap);
+  lastCall=Date.now();
+  const c=new AbortController(),timer=setTimeout(()=>c.abort(),7000);
+  try{
+   const r=await fetch(API,{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify({query:gql,variables}),signal:c.signal});
+   aniNoteRateHeaders(r);
+   if(r.status===429){
+    lastError=Error('AniList 429');
+    if(attempt<ANILIST_MAX_ATTEMPTS){await sleep(aniRetryDelayMs(r,attempt));continue}
+    throw lastError;
+   }
+   if(!r.ok)throw Error('AniList '+r.status);
+   const j=await r.json();
+   if(j.errors?.length){
+    const rateLimited=j.errors.some(e=>e?.status===429||/too many requests/i.test(e?.message||''));
+    if(rateLimited){
+     lastError=Error('AniList 429');
+     if(attempt<ANILIST_MAX_ATTEMPTS){await sleep(2000*attempt);continue}
+    }
+    throw Error(j.errors[0].message);
+   }
+   return {items:(j.data?.Page?.media||[]).map(normalizeAni),next:!!j.data?.Page?.pageInfo?.hasNextPage,source:'anilist'};
+  }catch(e){
+   lastError=e;
+   if((e?.name==='AbortError'||/network|failed to fetch|load failed/i.test(e?.message||''))&&attempt<ANILIST_MAX_ATTEMPTS){await sleep(2000*attempt);continue}
+   throw e;
+  }finally{clearTimeout(timer)}
+ }
+ throw lastError||Error('AniList unavailable');
 }
+/* Phase 1 - Jikan spacing (60 req/min, 3 req/s): the same serialized-queue
+   pattern as app.js getJson (425 ms spacing, ~2.35 req/s), with retries:
+   429/503 back off 1200 ms x attempt, other failures 700 ms x attempt. */
+const JIKAN_MIN_GAP_MS=425,JIKAN_MAX_ATTEMPTS=3;
+let lastJikanCall=0,jikanQueue=Promise.resolve();
 async function jikan(options){
+ const work=jikanQueue.catch(()=>{}).then(()=>fetchJikanSerial(options));
+ jikanQueue=work.catch(()=>{});
+ return work;
+}
+async function fetchJikanSerial(options){
  let path='/top/anime?limit=20';
  if(options.search)path='/anime?sfw=true&limit=20&q='+encodeURIComponent(options.search);
  else if(options.status==='RELEASING')path='/seasons/now?sfw=true&limit=20';
@@ -126,13 +192,30 @@ async function jikan(options){
   const ids={Action:1,Adventure:2,Comedy:4,Drama:8,Fantasy:10,Romance:22,'Sci-Fi':24,Supernatural:37,Mystery:7,Sports:30,Horror:14,'Slice of Life':36};
   path='/anime?sfw=true&limit=20&order_by=popularity&sort=asc&genres='+(ids[options.genre]||1);
  }else if(options.sort==='START_DATE_DESC')path='/anime?sfw=true&limit=20&order_by=start_date&sort=desc';
- const ctrl=new AbortController(),timer=setTimeout(()=>ctrl.abort(),6600);
- try{
-  const r=await fetch(JIKAN+path+'&page='+(options.page||1),{signal:ctrl.signal});
-  if(!r.ok)throw Error('Jikan '+r.status);
-  const j=await r.json();
-  return {items:(j.data||[]).map(normalizeJikan),next:!!j.pagination?.has_next_page,source:'jikan'};
- }finally{clearTimeout(timer)}
+ let lastError=null;
+ for(let attempt=1;attempt<=JIKAN_MAX_ATTEMPTS;attempt++){
+  const gap=Math.max(0,JIKAN_MIN_GAP_MS-(Date.now()-lastJikanCall));
+  if(gap)await sleep(gap);
+  lastJikanCall=Date.now();
+  const ctrl=new AbortController(),timer=setTimeout(()=>ctrl.abort(),6600);
+  try{
+   const r=await fetch(JIKAN+path+'&page='+(options.page||1),{signal:ctrl.signal});
+   if(r.status===429||r.status===503){
+    const err=Error('Jikan '+r.status);err.oneupRateLimited=true;
+    if(attempt<JIKAN_MAX_ATTEMPTS){await sleep(1200*attempt);continue}
+    throw err;
+   }
+   if(!r.ok)throw Error('Jikan '+r.status);
+   const j=await r.json();
+   return {items:(j.data||[]).map(normalizeJikan),next:!!j.pagination?.has_next_page,source:'jikan'};
+  }catch(e){
+   lastError=e;
+   if(e?.oneupRateLimited)throw e;
+   if(attempt<JIKAN_MAX_ATTEMPTS){await sleep(700*attempt);continue}
+   throw e;
+  }finally{clearTimeout(timer)}
+ }
+ throw lastError||Error('Jikan unavailable');
 }
 function cacheKey(o){return 'oneup_catalog_'+JSON.stringify(o)}
 function cached(o){try{const x=JSON.parse(localStorage.getItem(cacheKey(o))||'null');return x&&x.items?.length&&Date.now()-x.at<3600000*8?x:null}catch{return null}}
@@ -705,5 +788,8 @@ function init(){
  loadHome();
  if('serviceWorker' in navigator&&location.protocol==='https:')navigator.serviceWorker.register('./sw.js').catch(()=>{});
 }
+// Phase 1 diagnostics hook (no UI, no setup, no user choice): exposes the live
+// rate-limit state and the guarded loaders for automated tests and debugging.
+if(typeof window!=='undefined')window.OneUpRateLimits={ani:{get state(){return {...aniRate}},get minGapMs(){return ANILIST_MIN_GAP_MS},get maxAttempts(){return ANILIST_MAX_ATTEMPTS}},jikan:{get minGapMs(){return JIKAN_MIN_GAP_MS},get maxAttempts(){return JIKAN_MAX_ATTEMPTS}},callAni:ani,callJikan:jikan};
 document.addEventListener('DOMContentLoaded',init);
 })();
