@@ -3,23 +3,27 @@
    Black Clover / anti-magic identity, page background #000000,
    header band #272727, action orange #FF640A as a restrained accent.
    Structure: top bar with back control, hero, synopsis, ficha tecnica,
-   episode/player section and community entry points. */
+   episode/player section and community entry points.
+   Phase 8: surfaces consume the --oneup-* tokens defined in
+   themes/oneup/theme.css; every var() fallback is the exact pre-token
+   value, so pages that load this sheet without the theme (studio.html)
+   render identically. See docs/DESIGN.md. */
 
 .anime-detail-page {
-  background: #000000;
+  background: var(--oneup-color-page, #000000);
   min-height: 70vh;
-  padding-bottom: 48px;
+  padding-bottom: var(--oneup-space-8, 48px);
 }
 .anime-detail-page[hidden] { display: none; }
 
 .anime-detail-topbar {
-  background: #272727;
+  background: var(--oneup-color-header, #272727);
   border-bottom: 1px solid #ffffff1f;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: var(--oneup-space-3, 12px);
+  padding-bottom: var(--oneup-space-3, 12px);
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: var(--oneup-space-3, 12px);
   position: sticky;
   top: 0;
   z-index: 60;
@@ -30,8 +34,8 @@
 }
 .anime-detail-back:hover,
 .anime-detail-back:focus-visible {
-  border-color: #ff640a;
-  color: #ff640a;
+  border-color: var(--oneup-color-action, #ff640a);
+  color: var(--oneup-color-action, #ff640a);
 }
 
 /* The detail hero keeps the cinematic cover from the old modal, now as a
@@ -53,17 +57,17 @@
 .oneup-tech-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 12px;
+  gap: var(--oneup-space-3, 12px);
   margin: 0;
 }
 .oneup-tech-grid > div {
   background: #ffffff0d;
   border: 1px solid #ffffff1f;
-  border-radius: 10px;
-  padding: 12px 14px;
+  border-radius: var(--oneup-radius-md, 10px);
+  padding: var(--oneup-space-3, 12px) var(--oneup-space-4, 16px);
 }
 .oneup-tech-grid dt {
-  font-size: 10px;
+  font-size: var(--oneup-text-xs, 10px);
   letter-spacing: 2px;
   font-weight: 900;
   color: #abbffa;
@@ -72,31 +76,36 @@
 }
 .oneup-tech-grid dd {
   margin: 0;
-  font-size: 15px;
+  font-size: var(--oneup-text-lg, 15px);
   font-weight: 700;
   color: #f5f6f4;
 }
 
+/* Loading state while the ficha resolves (AniList / snapshot): token
+   surface + anti-magic pulse, off under reduced motion. It is a status,
+   never a gate — the ficha replaces it the moment data arrives. */
 .anime-detail-loading {
-  padding: 90px 20px;
+  padding: 90px var(--oneup-space-5, 20px);
   text-align: center;
   color: #aeb3c8;
-  font-size: 14px;
+  font-size: var(--oneup-text-md, 14px);
   letter-spacing: 1px;
 }
 
+/* Empty state (unknown id): the anti-magic identity — the ✦ seal motif
+   the site already uses, with the way back one click away. */
 .anime-not-found {
-  padding: 90px 20px 70px;
+  padding: 90px var(--oneup-space-5, 20px) 70px;
   max-width: 720px;
 }
 .anime-not-found h1 {
   font: 900 clamp(38px, 6vw, 64px)/0.95 'Barlow Condensed', Impact, sans-serif;
-  margin: 10px 0 14px;
+  margin: var(--oneup-space-3, 12px) 0 var(--oneup-space-4, 16px);
   color: #fff;
 }
 .anime-not-found p {
   color: #aeb3c8;
   line-height: 1.75;
-  font-size: 14px;
-  margin-bottom: 24px;
+  font-size: var(--oneup-text-md, 14px);
+  margin-bottom: var(--oneup-space-6, 24px);
 }
