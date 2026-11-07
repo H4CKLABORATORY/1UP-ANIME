@@ -84,10 +84,10 @@
       "reason": "Sin integración de reproducción documentada y autorizada; el repositorio comunitario no concede licencias para retransmitir."
     },
     {
-      "id": "social_firebase",
+      "id": "social_supabase",
       "displayName": "1UP Comunidad",
       "status": "needs_configuration",
-      "reason": "Falta proyecto Firebase configurado, App Check y despliegue de backend."
+      "reason": "Falta proyecto Supabase configurado y despliegue de backend (SQL + Edge Functions)."
     },
     {
       "id": "iqiyi_video_embed",

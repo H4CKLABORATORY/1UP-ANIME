@@ -30,20 +30,21 @@ No hay registro de usuarios ni anuncios ni analíticas propias. Se usan datos p�
 
 - Continuar como invitado: sin correo, cuenta ni perfil. Los favoritos quedan guardados en este navegador.
 - Perfiles locales: opcionales, hasta seis, sin sincronización entre dispositivos.
-- Google: integración técnica preparada pero inactiva hasta configurar Firebase Authentication.
+- Cuentas 1UP: registro nativo con nombre de usuario, correo y contraseña (Supabase Authentication, solo proveedor correo/contraseña). Sin inicio de sesión con terceros. Inactiva hasta configurar Supabase; ver docs/SUPABASE_SETUP.md.
 - Catálogo: AniList como fuente principal, Jikan como respaldo, ejemplos locales si ambas fuentes fallan. Los ejemplos NO representan estrenos actuales.
 - Categorías: géneros, películas, OVA, ONA, especiales, programación y seguimiento de episodios.
 - No se aloja contenido de streaming no autorizado; se enlazan plataformas externas sólo si figuran en las fuentes públicas.
 
-### Configuración de Google
+### Configuración de cuentas 1UP
 
-1. Crear proyecto en https://console.firebase.google.com/ y registrar la aplicación web.
-2. Habilitar proveedor Google en Authentication > Sign-in method.
-3. Agregar h4cklaboratory.github.io en Authentication > Settings > Authorized domains.
-4. Colocar el objeto público de configuración web Firebase en firebase-config.js, reemplazando null.
-5. Probar inicio de sesión en Safari y modo PWA; los flujos popup/redirect pueden requerir ajustes según el dominio.
+1. Crear proyecto en https://supabase.com/dashboard.
+2. Habilitar **únicamente** el proveedor Email en Authentication > Providers. No habilitar Google ni Anonymous.
+3. Ejecutar el SQL de `supabase/sql/` (perfiles, comunidad, RLS, Storage).
+4. Agregar h4cklaboratory.github.io en Authentication > URL Configuration (Site URL + Redirect URLs).
+5. Colocar la URL del proyecto y la clave publicable en `supabase-config.js`, reemplazando null.
+6. Probar registro, inicio de sesión, restablecimiento de contraseña y persistencia en Safari y modo PWA.
 
-**Nota:** Autenticación Google NO sincroniza favoritos; para sincronización se necesitaría base de datos con reglas de seguridad. Nunca publicar credenciales privadas en GitHub.
+Pasos exactos en `docs/SUPABASE_SETUP.md`. Las contraseñas las guarda Supabase Authentication (hash); 1UP nunca las almacena. Nunca publicar credenciales privadas en GitHub.
 
 
 ## Reproducción opcional de episodios autorizados
@@ -54,7 +55,7 @@ El motor multimedia de 1UP ANIME incluye un selector con **hasta siete posicione
 
 Los módulos principales son `episode-player.js`, `hls-adapter.js`, `scripts/media-source-contract.mjs` y `scripts/dexter-anime-sync.mjs`. Consulta `docs/INTEGRACION_STREAMING_1UP_2026.md`.
 
-El backend opcional Supabase para comentarios/progreso está preparado pero **desactivado** en `supabase-config.js`; Firebase sigue como opción existente y no se ha migrado ningún dato. No se han contratado servidores, dominios ni servicios externos.
+El backend Supabase para cuentas, comentarios, progreso y comunidad está preparado pero **desactivado** en `supabase-config.js` hasta que el propietario cree el proyecto. No se han contratado servidores, dominios ni servicios externos.
 
 ## App iPhone nativa y Subtitle Studio (19 oct 2026)
 

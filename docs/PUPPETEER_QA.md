@@ -17,7 +17,7 @@ npx puppeteer browsers install chrome-headless-shell
 npm run test:puppeteer
 ```
 
-Se ejecuta contra un servidor HTTP temporal en `127.0.0.1` y bloquea peticiones externas. Esto evita tocar Firebase, APIs o sitios ajenos. Genera capturas y `report.json` en `artifacts/puppeteer/`.
+Se ejecuta contra un servidor HTTP temporal en `127.0.0.1` y bloquea peticiones externas. Esto evita tocar el backend anterior, APIs o sitios ajenos. Genera capturas y `report.json` en `artifacts/puppeteer/`.
 
 ## Qué comprueba
 - Catálogo, Comunidad, Motor, Moderación y Gremio a 390 y 1365 píxeles.
@@ -28,6 +28,6 @@ Se ejecuta contra un servidor HTTP temporal en `127.0.0.1` y bloquea peticiones 
 
 ## Límites
 
-No es un robot ejecutándose continuamente en GitHub Pages. Se activa por eventos de GitHub Actions o manualmente. El navegador es Chrome Headless Shell, no Safari real. Para probar Firebase, sesiones remotas, publicaciones, streams o autorizaciones de derechos se necesitan entornos configurados y pruebas adicionales; el script no los inventa ni los modifica.
+No es un robot ejecutándose continuamente en GitHub Pages. Se activa por eventos de GitHub Actions o manualmente. El navegador es Chrome Headless Shell, no Safari real. Para probar el backend anterior, sesiones remotas, publicaciones, streams o autorizaciones de derechos se necesitan entornos configurados y pruebas adicionales; el script no los inventa ni los modifica.
 
 La instalación del navegador puede usar descargas importantes en CI y debe respetar los límites gratuitos de GitHub Actions. Se utiliza `--ignore-scripts` en npm y la descarga explícita del navegador para minimizar ejecución de postinstalaciones de terceros.

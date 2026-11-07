@@ -13,7 +13,7 @@ const git=args=>{try{return execFileSync('git',args,{encoding:'utf8',timeout:700
 const parse=p=>{try{return JSON.parse(read(p))}catch{return{}}};
 const config=parse('data/anime1v-config.json');
 const media=parse('data/licensed-media.json');
-const characters=parse('themes/cinematic-v3/characters.json');
+const characters=parse('themes/oneup/characters.json');
 const totalMedia=Object.keys(media.entries||{}).length;
 const totalCharacters=Array.isArray(characters.layers)?characters.layers.length:0;
 const activeGateway=config.enabled===true&&String(config.endpoint||'').startsWith('https://');

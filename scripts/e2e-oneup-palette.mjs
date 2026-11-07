@@ -34,10 +34,10 @@ try {
   const html = await readFile('index.html', 'utf8');
   const sw = await readFile('sw.js', 'utf8');
   assert.match(html, /data-oneup-theme="esmeralda"/);
-  assert.match(html, /themes\/oneup-palette\/selector\.css/);
-  assert.match(html, /themes\/oneup-palette\/selector\.js/);
-  assert(sw.includes('./themes/oneup-palette/selector.js'));
-  assert(sw.includes('./themes/oneup-palette/selector.css'));
+  assert.match(html, /themes\/oneup\/theme\.css/);
+  assert.match(html, /themes\/oneup\/theme\.js/);
+  assert(sw.includes('./themes/oneup/theme.js'));
+  assert(sw.includes('./themes/oneup/theme.css'));
   browser = await chromium.launch({headless: true, args: ['--no-sandbox']});
   for (const width of [320, 390, 1366]) {
     const mobile = width < 600;

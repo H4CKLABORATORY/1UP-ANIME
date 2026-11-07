@@ -28,7 +28,7 @@ const commentPos=html.indexOf('src="./episode-comments.js"');
 assert(configPos>=0&&configPos<backendPos&&backendPos<commentPos,'Scripts must load in safe order');
 const comments=read('episode-comments.js');
 assert(comments.includes('OneUpSupabaseEpisodeBackend?.enabled()'),'Comments did not receive opt-in adapter');
-assert(comments.includes('window.OneUpSocialBackend'),'Firebase fallback missing');
+assert(comments.includes('window.OneUpSocialBackend'),'Supabase community backend missing');
 assert(read('sw.js').includes("'./supabase-episode-backend.js'"),'PWA missing backend file');
 const w={ONEUP_SUPABASE_CONFIG:null};
 vm.runInNewContext(read('supabase-episode-backend.js'),{window:w,URL,console});
@@ -46,4 +46,14 @@ assert.equal(api.enabled(),true,'Valid publishable config not recognized');
 w.ONEUP_SUPABASE_CONFIG={url:'http://localhost',publishableKey:'sb_secret_private'};
 assert.equal(api.enabled(),false,'Unsafe credentials were accepted');
 assert(api.maskError({code:'P0001'}).includes('rápido'),'Rate-limit message missing');
+const authSql=read('supabase/sql/oneup_auth.sql');
+assert(authSql.includes('create table if not exists public.profiles'),'Profiles table missing');
+assert(authSql.includes('oneup_handle_new_user'),'Sign-up trigger missing');
+assert(authSql.includes('unique'),'Username uniqueness missing');
+const communitySql=read('supabase/sql/oneup_community.sql');
+for(const name of ['oneup_community_posts','oneup_global_messages','oneup_creator_profiles','oneup_moderation_reports']) {
+ assert(communitySql.includes('alter table public.'+name+' enable row level security;'),name+' lacks RLS');
+}
+assert(!fs.existsSync('firebase.json'),'Old backend config was not removed');
+assert(!fs.existsSync('auth-config.js'),'Old backend config was not removed');
 console.log('1UP optional Supabase checks passed: wiring, RLS guardrails and disabled-by-default config.');

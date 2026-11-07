@@ -2,9 +2,15 @@ name: ONEUP optional Supabase verification
 on:
   pull_request:
     paths:
+      - "supabase/sql/oneup_auth.sql"
+      - "supabase/sql/oneup_community.sql"
       - "supabase/sql/oneup_community_optional.sql"
+      - "supabase/sql/oneup_storage.sql"
+      - "supabase/functions/**"
       - "supabase-config.js"
       - "supabase-episode-backend.js"
+      - "social-backend.js"
+      - "auth.js"
       - "episode-comments.js"
       - "scripts/check-supabase-option.mjs"
       - ".github/workflows/supabase-optional-check.yml"
@@ -23,6 +29,10 @@ jobs:
         run: |
           node --check supabase-config.js
           node --check supabase-episode-backend.js
+          node --check social-backend.js
+          node --check auth.js
           node --check episode-comments.js
+      - name: Verify auth unit tests
+        run: node --test tests/auth-email.test.mjs
       - name: Verify optional Supabase backend without network or secrets
         run: node scripts/check-supabase-option.mjs

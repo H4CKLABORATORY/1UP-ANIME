@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {QUERY,animeIdentity,normalizeAni,parseAni,parseJikan,statusText} from '../franchise-explorer.mjs';
+import {QUERY,animeIdentity,normalizeAni,parseAni,statusText} from '../franchise-explorer.mjs';
+import * as franchise from '../franchise-explorer.mjs';
 const anime=(id,idMal,title,more={})=>({id,idMal,type:'ANIME',isAdult:false,title:{english:title},coverImage:{large:'https://s4.anilist.co/example.jpg'},format:'TV',seasonYear:2026,...more});
 test('Franquicias consultan un ID exacto sin confundir anime y manga',()=>{
  assert.deepEqual(animeIdentity({id:'mal-123'}),{idMal:123});
@@ -25,12 +26,7 @@ test('No guarda imagen de esquema no seguro ni registros sin título',()=>{
  assert.equal(result.image,'');
  assert.equal(result.id,'al-7');
 });
-test('Jikan: sólo anime, sin duplicados, sin inventar datos ausentes',()=>{
- const data=parseJikan({data:[
-  {relation:'Sequel',entry:[{type:'anime',mal_id:20,name:'Segunda'},{type:'manga',mal_id:30,name:'Manga'}]},
-  {relation:'Prequel',entry:[{type:'anime',mal_id:20,name:'Duplicado'},{type:'anime',mal_id:10,name:'Primera'}]}
- ]},'mal-99');
- assert.deepEqual(data.relations.map(x=>x.id),['mal-10','mal-20']);
- assert.equal(data.recommendations.length,0);
- assert.equal(parseJikan({data:[]},'mal-1').relations.length,0);
+test('Sin Jikan: el módulo no exporta ningún respaldo Jikan (API muerta 2026-10-01)',()=>{
+ assert.equal('parseJikan' in franchise,false);
+ assert.equal('fromJikan' in franchise,false);
 });

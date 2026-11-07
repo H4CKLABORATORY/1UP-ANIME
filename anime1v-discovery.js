@@ -32,7 +32,7 @@ async function install(){
  '<button type="submit">Buscar ↗</button></form>'+
  '<p id="oneup-anime1v-status" role="status" aria-live="polite"></p>'+
  '<div class="oneup-anime1v-grid" id="oneup-anime1v-results"></div>'+
- '<p class="oneup-anime1v-credit">Datos informativos de <span id="oneup-discovery-source">Jikan</span>. Si se configura Anime1v, su código es de FxxMorgan. Ningún resultado implica permiso de retransmisión.</p>';
+ '<p class="oneup-anime1v-credit">Datos informativos de <span id="oneup-discovery-source">AniList</span>. Si se configura Anime1v, su código es de FxxMorgan. Ningún resultado implica permiso de retransmisión.</p>';
  host.append(area);
  const form=area.querySelector('form'),status=area.querySelector('#oneup-anime1v-status');
  const results=area.querySelector('#oneup-anime1v-results');
@@ -61,7 +61,7 @@ async function install(){
    const data=await response.json();
    if(current!==counter)return;
    const items=Array.isArray(data.results)?data.results.slice(0,30):[];
-   const source=area.querySelector('#oneup-discovery-source');if(source)source.textContent=data.source==='anime1v'?'Anime1v (FxxMorgan)':'Jikan';
+   const source=area.querySelector('#oneup-discovery-source');if(source)source.textContent=data.source==='anime1v'?'Anime1v (FxxMorgan)':'AniList';
    status.textContent=items.length?items.length+' resultados informativos encontrados.':'Sin resultados para esa búsqueda.';
    results.innerHTML=items.map(a=>{
     let safe='';

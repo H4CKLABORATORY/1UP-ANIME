@@ -75,7 +75,7 @@ try{
    await page.locator('#oneup-opening').waitFor({state:'detached',timeout:3000});
   }finally{await context.close()}
  });
- await check('Render catalog panel uses live configured URL and labels Jikan fallback',async()=>{
+ await check('Render catalog panel uses live configured URL and labels AniList fallback',async()=>{
   const context=await browser.newContext({viewport:{width:390,height:844},isMobile:true,hasTouch:true,reducedMotion:'reduce'});
   await context.addInitScript(()=>{try{sessionStorage.setItem('oneup-v3-opening-seen-v1','yes')}catch{}});
   await context.route('**/*',route=>{
@@ -84,8 +84,8 @@ try{
     if(u.startsWith('https://oneup-anime-discovery.onrender.com/anime1vDiscovery'))
       return route.fulfill({status:200,contentType:'application/json',
         headers:{'Access-Control-Allow-Origin':base.slice(0,-1)},
-        body:JSON.stringify({source:'jikan',mode:'catalog_only',provider:'Jikan',
-          results:[{title:'One Piece',image:'https://cdn.example.com/poster.jpg',provider:'Jikan'}]})});
+        body:JSON.stringify({source:'anilist',mode:'catalog_only',provider:'AniList',
+          results:[{title:'One Piece',image:'https://cdn.example.com/poster.jpg',provider:'AniList'}]})});
     return route.abort();
   });
   try{
@@ -96,7 +96,7 @@ try{
    await page.locator('#oneup-anime1v-query').fill('One Piece');
    await page.locator('#oneup-anime1v-form button[type="submit"]').click();
    await page.locator('.oneup-anime1v-item').first().waitFor({timeout:6500});
-   if(!await page.locator('#oneup-discovery-source').getByText('Jikan').count())
+   if(!await page.locator('#oneup-discovery-source').getByText('AniList').count())
     throw Error('Fallback service falsely advertised itself as Anime1v');
   }finally{await context.close()}
  });
@@ -144,7 +144,7 @@ try{
   if(!id)throw Error('No catalogue identifier');
   await page.goto(base+'preview-kokomi-mobile.html#km/series-play/'+id,{waitUntil:'domcontentloaded'});
   await page.locator('#km-watch-comment-form').waitFor({timeout:9000});
-  if(!await page.locator('#km-watch-comment-list').getByText('Firebase').count())throw Error('Disconnected backend not disclosed');
+  if(!await page.locator('#km-watch-comment-list').getByText('aún no están disponibles').count())throw Error('Disconnected backend not disclosed');
   await page.locator('#km-player-section .oneup-player-placeholder').waitFor();
   if(await page.locator('#km-player-section [data-server-slot]').count()!==7)throw Error('Expected seven shared engine slots');
   if(await page.locator('#km-player-section [data-server-slot]:enabled').count())throw Error('Empty library enabled a server');

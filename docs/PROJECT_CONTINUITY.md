@@ -18,8 +18,8 @@
 - Proyecto ya existente, con GitHub Pages y PWA: `index.html`, `manifest.webmanifest`, `sw.js`.
 - Catálogo de anime (en código y README): AniList como principal, Jikan como respaldo, snapshots de datos; hay pantallas de búsqueda, tendencias, temporada, programación y películas.
 - Diseño actual: `studio.css`, `spotlight.css`, `motion.css`, `brand-v2.css`, `themes/kokomi-studio/`, `themes/october-2026/`. **No borrar ni reemplazar indiscriminadamente**. Revisar cascada CSS y viewport.
-- Perfil/inicio de sesión: `auth.js`, `auth-config.js`, `firebase-config.js`; Google pendiente de configuración del propietario según README.
-- Comunidad/comentarios: `comunidad.html`, `community.js`, `social-backend.js`, `episode-comments.js`, reglas Firestore; verificar backend real antes de afirmar sincronización.
+- Perfil/inicio de sesión: `auth.js`, `la-configuración-anterior.js`, `la-configuración-anterior.js`; Google pendiente de configuración del propietario según README.
+- Comunidad/comentarios: `comunidad.html`, `community.js`, `social-backend.js`, `episode-comments.js`, reglas la base de datos anterior; verificar backend real antes de afirmar sincronización.
 - Fuentes y reproductor: `external-providers.js`, `player.css`, `motor.html`, `integrations/`; proveedores externos son enlaces de catálogo, no garantía de video incrustable.
 - Salud/autorecuperación: `docs/ONEUP_SELF_HEALING.md`, `.github/workflows/`, `scripts/` y estado en `data/guard/`. Los chequeos programados NO equivalen a disponibilidad continua.
 - Dirección artística ya documentada en `docs/ART_DIRECTION_CINEMATIC_2026.md`; exige validación visual previa a rediseños importantes.
@@ -54,7 +54,7 @@ Prueba automatizada del prototipo: navegación de 23 rutas, favoritos y comentar
 - BitTorrent, si se estudia, solo como módulo opcional de contenido con distribución autorizada; iPhone necesita motor externo para torrents, no se garantiza streaming P2P nativo.
 
 ### Fase D — Datos de usuario y comunidad
-- Configuración controlada de Firebase, reglas seguras y pruebas con cuenta de test.
+- Configuración controlada de el backend anterior, reglas seguras y pruebas con cuenta de test.
 - Sincronización de progreso y favoritos cuando esté implementada, controles de privacidad y moderación.
 - No tratar `localStorage` como cuenta en la nube.
 
@@ -81,7 +81,7 @@ Al concluir cada trabajo agregar:
 
 ### 2026-10-16 — OMEGA SWARM primer ciclo real
 - Base main `85ef098`; leídos misión PR15 e issue16; preservado PR14 Kokomi (12 archivos aditivos, sin integrar ni rehacer).
-- Corregidos lifecycle HLS/MP4/WebM al cambiar anime, respuestas tardías de navegación y duplicación/aislamiento de comentarios. Workflow Firebase restringido a main; sin ejecutarlo.
+- Corregidos lifecycle HLS/MP4/WebM al cambiar anime, respuestas tardías de navegación y duplicación/aislamiento de comentarios. Workflow el backend anterior restringido a main; sin ejecutarlo.
 - Regresiones nuevas conectadas a UI Quality y Browser Acceptance. PASS: UI 149 assertions, resiliencia, HLS, contrato multimedia, Supabase opcional, lifecycle, navegación, comentarios Chromium; E2E 36/36 móvil 390×844 y desktop 1360×860, cero errores JS. Capturas disponibles como artefactos del workflow de navegador cuando finalice CI.
 - Seis subagentes reales con archivos diferenciados. Detalle de hallazgos, prioridades y SHAs: `docs/OMEGA_AUDIT_20261016.md`; seguimiento `docs/OMEGA_SWARM_BOARD.md`.
 - No hay medios licenciados configurados, autenticación/comunidad remota comprobada, Safari físico, aprobación visual, merge ni despliegue. Próxima tarea: unir preview Kokomi al motor de main sin degradar HLS, siete posiciones e idiomas.
@@ -111,7 +111,7 @@ Al concluir cada trabajo agregar:
 - `studio.js`: `POPULARITY_DESC` utiliza el grupo `popular`; cuando el snapshot antiguo aún no lo incluye, se consultan las APIs en vez de etiquetar `trending` como popularidad. Los filtros priorizan el grupo del orden solicitado.
 - `scripts/refresh-catalog.mjs`: generará el grupo `popular` en la próxima actualización; no se modificó artificialmente `data/catalog.json` ni se afirmó una actualización nueva del catálogo.
 - Pruebas añadidas: `scripts/test-cache-catalog.mjs` y workflow `ONEUP Codex Cache and Catalog Regression`, además de tests existentes del sitio, navegador y motor de episodios. Revisar el último SHA y workflow antes de declarar aceptación.
-- Pendiente: cadena de PRs #17→#18→#19→#20 sin fusionar; aprobación del despliegue, medios autorizados reales, Firebase/Supabase, Safari físico y verificación final de los interiores Kokomi.
+- Pendiente: cadena de PRs #17→#18→#19→#20 sin fusionar; aprobación del despliegue, medios autorizados reales, el backend anterior/Supabase, Safari físico y verificación final de los interiores Kokomi.
 
 
 ### 2026-10-16 — Motor de fuentes multilingüe y seguridad aplicada (PUBLICADO EN MAIN)
@@ -138,7 +138,7 @@ Al concluir cada trabajo agregar:
 
 ### 2026-10-16 — Adaptador Anime1v (FxxMorgan), pendiente de configuración externa
 - Repo upstream verificado: FxxMorgan/anime1v-api (Node.js; MIT del software, no de episodios). Usa X-API-Key, expone búsqueda/catálogo además de resolutores no habilitados en 1UP.
-- Rama: feature/anime1v-safe-integration-20261016. Módulos: functions/anime1v-adapter.js, nueva función Firebase anime1vDiscovery en functions/index.js, anime1v-discovery.js/css, data/anime1v-config.json, pruebas y docs/ANIME1V_INTEGRATION.md.
+- Rama: feature/anime1v-safe-integration-20261016. Módulos: functions/anime1v-adapter.js, nueva función el backend anterior anime1vDiscovery en functions/index.js, anime1v-discovery.js/css, data/anime1v-config.json, pruebas y docs/ANIME1V_INTEGRATION.md.
 - La integración de información está desactivada hasta configurar una URL HTTPS real de Cloud Function, servidor Anime1v y clave secreta. La API key nunca aparece en JS público.
 - No se conectaron /episode, /resolve ni /download porque no se han acreditado fuentes autorizadas. data/licensed-media.json sigue con entries vacío; no afirmar que hay anime reproducible.
 - Mantener diseño Kokomi, logo original animado y reproductor actual. Revisar CI y realizar prueba real una vez exista backend.
@@ -250,9 +250,9 @@ Al concluir cada trabajo agregar:
 
 ### 2026-10-18 — Auditoría transversal de calidad visual y acceso (PR #48)
 - Rama `feature/sitewide-mobile-ux-quality-20261018`, [PR #48](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/48): correcciones del acceso a raíz de captura Safari, SVG de emblema puro, cabeceras, altura intrínseca del modal, responsive móvil, formularios, título hero largo, navegación interior y botón 3D.
-- `ui-quality.css` se carga al final en portada, studio, comunidad, motor, moderación y gremio, sin deshacer CSS histórico. Nueva caché PWA `v31`; selector de perfiles locales dentro del modal sustituye `prompt()`. Google queda claramente no disponible mientras Firebase no esté conectado.
+- `ui-quality.css` se carga al final en portada, studio, comunidad, motor, moderación y gremio, sin deshacer CSS histórico. Nueva caché PWA `v31`; selector de perfiles locales dentro del modal sustituye `prompt()`. Google queda claramente no disponible mientras el backend anterior no esté conectado.
 - Verificación: workflow `ONEUP Sitewide Quality` con capturas Chromium 390 px; segunda inspección visual detectó que `inset:0` estiraba modal vacío, corregido con `height:fit-content`; pruebas de modal compacto, perfiles, 320/390/768/1440 y páginas internas en verde. `Depth mode Playwright` también recuperó PASS en viewport móvil y desktop al eliminar dependencia del drawer. El resto de CI debe reconfirmarse en el HEAD final antes de merge.
-- Limitaciones / riesgos: no se han probado clics ni scroll en Safari físico; Firebase y la reproducción real continúan sin activar; es una fase de calidad y no certificado de sitio completamente terminado. Auditoría y pendientes en [SITE_QUALITY_AUDIT_20261018.md](SITE_QUALITY_AUDIT_20261018.md).
+- Limitaciones / riesgos: no se han probado clics ni scroll en Safari físico; el backend anterior y la reproducción real continúan sin activar; es una fase de calidad y no certificado de sitio completamente terminado. Auditoría y pendientes en [SITE_QUALITY_AUDIT_20261018.md](SITE_QUALITY_AUDIT_20261018.md).
 
 ### 2026-10-19 — integración de Puppeteer en CI (PR en revisión)
 - Se incorpora como `devDependency` `puppeteer@25.14.0` (no en scripts del frontend), sin tocar catálogo, reproductor ni SW.
@@ -350,3 +350,33 @@ Al concluir cada trabajo agregar:
 
 
 **Cierre verificado 2026-10-20 (Motion Studio V2):** PR #66 fusionado en main, squash SHA `665ec5a312b3d3dd4c30648b14e155b8688c55a3`. Los 14 checks del PR dieron SUCCESS, incluyendo DEXTER Motion Studio, Browser Acceptance, Puppeteer, HLS, Depth, editorial y sitewide. Workflow `DEXTER Motion Studio · MP4 / QA` de main: https://github.com/H4CKLABORATORY/1UP-ANIME/actions/runs/39418935821, success. Artifacts 12263426712 (MP4 16:9 + 9:16; ~2.86 MB) y 12263621223 (capturas; ~0.95 MB). FFprobe en log verifica 1920×1080 y 1080×1920, ambos 30 fps 3.2 s, H.264 + AAC original. GitHub Pages: deploy success run 39418935619. Artefactos expiran 2026-11-03. Pendientes: Safari iPhone físico y revisión visual del propietario; intro pública original conservada.
+
+### 2026-11-07 — Cuentas nativas 1UP (sin Google)
+- Rama feature/native-auth. PR #71 (draft) contra main: https://github.com/H4CKLABORATORY/1UP-ANIME/pull/71 (no fusionar sin revisión).
+- Cuentas propias: registro con nombre de usuario + correo + contraseña, inicio con correo + contraseña, restablecimiento por correo, cierre de sesión y persistencia local (el backend anterior Authentication, proveedor correo/contraseña únicamente). Sin inicio de sesión con Google: se eliminó todo el código y botones de Google (auth-google.js, la-configuración-anterior.js, GOOGLE_LOGIN_SETUP.md, el inicio con el proveedor externo en cliente/servidor/Supabase, proveedor google.com en functions y las-reglas-de-archivos-anteriores).
+- Nombres de usuario únicos (3–20 caracteres, a-z/0-9/_) reservados en la base de datos anterior con transacción + reglas (usernames/{nombre}, users/{uid}); las contraseñas nunca se almacenan en 1UP.
+- Invitados pueden explorar; comentar (episodios y comunidad) y guardar favoritos requieren cuenta 1UP (el servidor exige sign_in_provider == 'password').
+- Pruebas en dexter: Node 51/51 (+2 de emulador omitidas sin emulador), Python 16/16, Playwright 12/12, Puppeteer 12/12, emulador el backend anterior 2/2 (registro, correo duplicado, inicio, contraseña incorrecta, restablecimiento, unicidad de nombre por reglas).
+- En vivo: IMPLEMENTADO PERO NO VERIFICADO. Douglas debe crear el proyecto el backend anterior, habilitar solo Email/Password, crear la base de datos anterior, desplegar las reglas y pegar la configuración en la-configuración-anterior.js. Pasos exactos en docs/AUTH_SETUP.md.
+- Pendiente: revisión del PR, prueba en vivo con cuenta real tras configurar el backend anterior, Safari físico en iPhone.
+
+
+### 2026-11-07 — Fase 1: consolidación de temas y limpieza (feature/phase1-cleanup) — TERMINADO Y VERIFICADO
+- Base: `feature/native-auth` en `8cb1626`. El checkpoint WIP `635cac9` (hecho durante la pausa por límite, sin verificar) quedó verificado y corregido en esta rama; correcciones en `e9bb894`.
+- Temas consolidados: se eliminaron los 6 sistemas viejos (`themes/cinematic-v3`, `themes/kokomi-mobile-preview`, `themes/kokomi-studio`, `themes/october-2026`, `themes/oneup-motion`, `themes/oneup-palette`) y quedó un único tema `themes/oneup/` (`theme.css` + `theme.js` consolidados, `arcane-seal.svg`, `characters.json`, `README.md`) más `themes/preview-only/` (`cinematic-studio.css`, `kokomi-opening.js`). `index.html` y los 4 previews (`preview-cinematic-v3.html`, `preview-kokomi.html`, `preview-kokomi-mobile.html`, `preview-october.html`) cargan el tema unificado.
+- `app.js` y `styles.css` eliminados por completo: eran archivos huérfanos heredados; ni la base ni esta rama los referencian (grep en HTML/JS/MJS: 0 referencias) y el sitio funciona sin ellos.
+- Corrección `sw.js` (en `e9bb894`): el precache seguía apuntando a 21 archivos de los temas eliminados. Reemplazados por el tema unificado y `preview-only`; caché `v41-phase1-cleanup-20261107`. SHELL final: 80 entradas, 0 faltantes.
+- Intro (video `assets/1up-anime-intro-firma-3seg.mp4`, H.264 + AAC, 3,2 s): el marcado ya no trae `src` (`preload="none"` + `data-src`) y en visita repetida no se descarga (verificado). La causa real del `ERR_ABORTED` al reproducir la prueba nueva en dexter no era el overlay: es el códec — el Chromium headless de Playwright/Puppeteer en dexter no decodifica H.264/AAC (`DEMUXER_ERROR_NO_SUPPORTED_STREAMS`, `canPlayType` vacío). Corrección en `themes/oneup/theme.js`: la fuente solo se adjunta si el navegador puede decodificar H.264/AAC; sin códec no hay descarga condenada a fallar y la escena visual (canvas + logotipo) continúa sin audio. `tests/intro-video.spec.js`: **2/2**. En navegadores reales con códec (Chrome/Safari) el camino es el anterior — NO verificado en Safari/Chrome real en esta sesión.
+- `scripts/e2e-oneup-motion.mjs` y `scripts/e2e-oneup-palette.mjs` actualizados al tema unificado: movimiento PASS 4/4 (390/1366 px × movimiento reducido sí/no), paleta PASS en 320/390/1366 px. `scripts/update-new-chat-handoff.mjs`: ruta de `characters.json` actualizada a `themes/oneup/`.
+- Pruebas finales en dexter (worktree limpio de verificación sobre `635cac9` + correcciones): Node **55 pass / 0 fail / 7 omitidas** (62 en total; las 7 omitidas son las locales de cuentas, sin el stack local levantado), Python **16/16 OK**, scripts `test-*.mjs` **6/8**, Playwright **15/15** (depth 2, premiere-hero 1, site-quality 7, auth 3, intro-video 2), Puppeteer **12/12**.
+- Los 2 scripts que fallan (`test-anime1v-integration.mjs`, `test-render-anime1v.mjs`) fallan **igual en la base `8cb1626`**: requieren `functions/anime1v-adapter.js`, inexistente en esta línea desde antes de la limpieza. No es regresión de esta rama; queda pendiente fuera de su alcance.
+- Verificación de navegador (Playwright, 390 px): 0 errores de consola en las specs, desbordamiento horizontal 0, héroe y rail de tendencias renderizan con datos reales, Explorar/Catálogo muestra 60 tarjetas, el detalle abre en diálogo con su sección de reproductor presente (episodios autorizados cargados en el repo: 0, por diseño y por la regla de contenido autorizado). Una llamada externa a la API de metadatos de AniList devolvió 404 una vez en una sonda manual; el catálogo siguió renderizando desde el snapshot local.
+- Sin reintroducir el backend eliminado: grep solo encuentra menciones en las pruebas que verifican su ausencia. Sin tocar archivos de cuentas/auth, ni PR #71/#72, ni `main`.
+- Pendiente: revisión y fusión vía PR de esta rama, Safari físico en iPhone, y levantar el stack local de cuentas para ejecutar las 7 pruebas omitidas.
+
+
+### 2026-11-07 — Jikan eliminado (AniList primero) — TERMINADO Y VERIFICADO
+- La API pública de Jikan (`api.jikan.moe/v4`) murió el 1 de octubre de 2026. Evidencia: dos sondas en vivo desde dexter el 7 de noviembre de 2026 (`curl https://api.jikan.moe/v4/top/anime?limit=1`) → connection timed out, HTTP 000, 0 bytes; AniList GraphQL respondió HTTP 200 en ~0,35 s.
+- Eliminada toda llamada en tiempo de ejecución a Jikan: `studio.js` (cargador Jikan y su cola de 425 ms), `catalog-plus.js` (respaldo vía el `getJson` heredado), `franchise-explorer.mjs` (`parseJikan`/`fromJikan`), `render/anime1v-gateway.js` (su respaldo pasa a ser AniList GraphQL, `upstream: anilist_fallback`), `scripts/scrape-anime-metadata.py` (recolector educativo ahora AniList) y las etiquetas visibles «Jikan» (pies de página, panel Anime1v, `data/anime1v-config.json`).
+- La cadena de metadatos queda: **AniList → snapshot en caché (último bueno) → catálogo básico local (BASIC)**. Se conserva intacta la seguridad de tasas de AniList (cola serializada ≥2,1 s, 429 con `Retry-After` + backoff, lectura de cabeceras `X-RateLimit-*`) y el respaldo por snapshot. Sin ninguna elección ni error nuevo para el visitante.
+- Guardia permanente: `scripts/lint.mjs` falla si cualquier archivo de ejecución vuelve a referenciar el host de Jikan, y `tests/phase1-rates.test.mjs` lo verifica sobre los archivos principales. Las notas históricas y documentos anteriores pueden seguir mencionando Jikan; no son código en ejecución.

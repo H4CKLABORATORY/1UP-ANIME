@@ -23,8 +23,8 @@ let browser;
 try{
  const html=await readFile('index.html','utf8');
  const sw=await readFile('sw.js','utf8');
- assert(html.includes('themes/oneup-motion/windows.css')&&html.includes('themes/oneup-motion/windows.js'));
- assert(sw.includes('./themes/oneup-motion/windows.css')&&sw.includes('./themes/oneup-motion/windows.js'));
+ assert(html.includes('themes/oneup/theme.css')&&html.includes('themes/oneup/theme.js'));
+ assert(sw.includes('./themes/oneup/theme.css')&&sw.includes('./themes/oneup/theme.js'));
  browser=await chromium.launch({headless:true,args:['--no-sandbox']});
  for(const setting of [
   {width:390,reduced:false},
@@ -42,7 +42,7 @@ try{
   try{
    await page.goto(BASE+'index.html',{waitUntil:'domcontentloaded'});
    await page.addStyleTag({content:'#oneup-opening{display:none!important}'});
-   await page.waitForFunction(()=>!!window.OneUpMotion&&!!document.querySelector('link[href$="windows.css"]')?.sheet);
+   await page.waitForFunction(()=>!!window.OneUpMotion&&!!document.querySelector('link[href$="theme.css"]')?.sheet);
    const motion=await page.evaluate(()=>({
      reduced:window.OneUpMotion.prefersReducedMotion(),
      disabledByPref:window.matchMedia('(prefers-reduced-motion: reduce)').matches,

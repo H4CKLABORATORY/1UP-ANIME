@@ -40,7 +40,7 @@ En Safari abre GitHub → 1UP-ANIME → Actions → ONEUP Self Healing. En una e
 3. Elige Run workflow e introduce el SHA completo (40 dígitos hexadecimales) del commit defectuoso.
 4. El flujo crea una rama de reversión y pasa las pruebas de interfaz y salud local.
 5. Solo si las verificaciones pasan intenta crear una Pull Request. Nadie hace merge automáticamente.
-6. Revisa la diferencia de archivos antes de aprobar. Ante conflictos, datos nuevos o más de un commit defectuoso, corrige manualmente. Una reversión Git no revierte Firebase.
+6. Revisa la diferencia de archivos antes de aprobar. Ante conflictos, datos nuevos o más de un commit defectuoso, corrige manualmente. Una reversión Git no revierte el backend anterior.
 
 ## Detección de fallos y mantenimiento
 
@@ -48,8 +48,8 @@ Los niveles son ok, info, warning y critical. Si un mismo fallo se repite en con
 
 Las actualizaciones de dependencias deben llegar mediante PR y ejecutar pruebas. JKAnime V2 se encuentra aislado y utiliza una versión compatible de Cheerio, pero su existencia no autoriza retransmitir sus videos. Los scripts de detección no copian servidores ajenos.
 
-El reproductor propio solo acepta videos autorizados y cambia de alternativa si falla la carga. No permite concluir que una URL sea reproducible hasta que el elemento de video responda. La red social todavía requiere conectar Firebase y sus reglas desde la cuenta del propietario.
+El reproductor propio solo acepta videos autorizados y cambia de alternativa si falla la carga. No permite concluir que una URL sea reproducible hasta que el elemento de video responda. La red social todavía requiere conectar el backend anterior y sus reglas desde la cuenta del propietario.
 
 ## Limitaciones
 
-No se realiza modificación destructiva de producción, reversión automática ni despliegue de Firebase sin autorización. La supervisión sigue el cron de GitHub Actions, cuya ejecución puede retrasarse. Las pruebas de código y HTTP no reemplazan una prueba visual real en Safari de iPhone.
+No se realiza modificación destructiva de producción, reversión automática ni despliegue de el backend anterior sin autorización. La supervisión sigue el cron de GitHub Actions, cuya ejecución puede retrasarse. Las pruebas de código y HTTP no reemplazan una prueba visual real en Safari de iPhone.

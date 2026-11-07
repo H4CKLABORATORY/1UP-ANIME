@@ -8,7 +8,7 @@ Estado: cambios en PR #48, rama `feature/sitewide-mobile-ux-quality-20261018`. *
 | --- | --- | --- |
 | Identidad de acceso | SVG comprimía microtexto y filtros a escala móvil | SVG derivado del emblema original sin texto microscópico (`assets/oneup-crest-mark.svg`), rótulo tipográfico separado |
 | Ventana de bienvenida | Titular y márgenes desproporcionados, cierre visualmente intrusivo | Reorganización semántica y `ui-quality.css`: altura intrínseca, foco visible, zona táctil 44 px, safe-area y scroll |
-| Google | API de Firebase no configurada en el repositorio, CTA inducía a error | Botón deshabilitado y rotulado `Google · próximamente` cuando falta configuración; activación automática con datos públicos válidos |
+| Google | API de el backend anterior no configurada en el repositorio, CTA inducía a error | Botón deshabilitado y rotulado `Google · próximamente` cuando falta configuración; activación automática con datos públicos válidos |
 | Perfil local | Navegador usaba `prompt()` para escoger perfil | Selector de perfiles HTML accesible, opciones creadas con texto seguro y límite visible |
 | Profundidad | Control se movía al drawer móvil oculto y quedaba inaccesible | Control fijo accesible que no depende del drawer |
 | Títulos largos | Títulos de anime largos invadían verticalmente el cartel de la portada | Clases por longitud, tipografía y altura móvil adaptables; sin truncar nombre real |
@@ -31,7 +31,7 @@ Estado: cambios en PR #48, rama `feature/sitewide-mobile-ux-quality-20261018`. *
 
 ## Limitaciones y trabajo pendiente
 1. **Safari físico:** validar modal con teclado, zoom del sistema, rotación, botón X, navegación en iPhone y PWA instalada. Chromium emulando tamaños iPhone no es Safari.
-2. **Firebase:** aún faltan configuración real y pruebas de OAuth, cuentas y sincronización; no convertir el modo invitado local en falsa cuenta cloud.
+2. **el backend anterior:** aún faltan configuración real y pruebas de OAuth, cuentas y sincronización; no convertir el modo invitado local en falsa cuenta cloud.
 3. **Vídeos:** `data/licensed-media.json` no tiene episodios autorizados. El reproductor conserva 7 posiciones pero no hay que prometer reproducción sin fuentes y derechos.
 4. **Comunidad:** requiere backend real configurado para publicar, chat y moderación; diseño no implica que operaciones remotas funcionen.
 5. **Rendimiento:** continuar la auditoría visual/consumo en dispositivos reales y considerar optimizar los bucles de profundidad cuando está apagada.

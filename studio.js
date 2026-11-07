@@ -1,7 +1,7 @@
-/* 1UP Anime v4: AniList main provider, Jikan backup, offline sample. */
+/* 1UP Anime v4: AniList main provider, snapshot cache, offline sample. */
 (()=>{
 'use strict';
-const API='https://graphql.anilist.co', JIKAN='https://api.jikan.moe/v4';
+const API='https://graphql.anilist.co';
 const $=q=>document.querySelector(q), $$=q=>[...document.querySelectorAll(q)];
 const esc=t=>String(t??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const safe=u=>{try{let x=new URL(u);return x.protocol==='https:'?x.href:''}catch{return ''}};
@@ -88,9 +88,6 @@ function normalizeAni(m){
  const score=Number(m.averageScore)||0;
  return {id:m.idMal?'mal-'+m.idMal:'al-'+m.id,mal_id:m.idMal||null,title:m.title?.english||m.title?.romaji||'Anime',title_romaji:m.title?.romaji||'',title_native:m.title?.native||'',aliases:window.OneUpAnimeSearch?.collectAliases(m.title,m.synonyms)||[],image:safe(m.coverImage?.extraLarge||m.coverImage?.large),banner:safe(m.bannerImage),description:String(m.description||'').replace(/<[^>]+>/g,'').replace(/\n/g,' '),averageScore:score,year:m.seasonYear||m.startDate?.year||'',genres:m.genres||[],format:m.format||'TV',episodes:m.episodes||0,status:m.status||'',siteUrl:safe(m.siteUrl),streaming:(m.externalLinks||[]).filter(x=>x.type==='STREAMING'&&safe(x.url)).map(x=>({name:x.site,url:x.url})),next:m.nextAiringEpisode?{at:m.nextAiringEpisode.airingAt,episode:m.nextAiringEpisode.episode}:null,source:'anilist'};
 }
-function normalizeJikan(m){
- return {id:'mal-'+m.mal_id,mal_id:m.mal_id,title:m.title_english||m.title||'Anime',title_romaji:m.title||'',title_native:m.title_japanese||'',aliases:window.OneUpAnimeSearch?.collectAliases({english:m.title_english,romaji:m.title,native:m.title_japanese},[...(m.title_synonyms||[]),...(m.titles||[]).map(x=>x.title)])||[],image:safe(m.images?.webp?.large_image_url||m.images?.jpg?.large_image_url),banner:'',description:m.synopsis||'',averageScore:m.score?Math.round(m.score*10):0,year:m.year||m.aired?.prop?.from?.year||'',genres:(m.genres||[]).map(x=>x.name),format:m.type==='Movie'?'MOVIE':m.type==='OVA'?'OVA':m.type==='ONA'?'ONA':'TV',episodes:m.episodes||0,status:m.airing?'RELEASING':'FINISHED',siteUrl:safe(m.url),streaming:(m.streaming||[]).filter(x=>safe(x.url)).map(x=>({name:x.name,url:x.url})),next:null,source:'jikan'};
-}
 const gql=[
 'query OneUp($page:Int,$perPage:Int,$sort:[MediaSort],$status:MediaStatus,$search:String,$genre:String,$format:MediaFormat){',
 'Page(page:$page,perPage:$perPage){pageInfo{hasNextPage currentPage}',
@@ -99,6 +96,35 @@ const gql=[
 'averageScore episodes format status seasonYear startDate{year} genres siteUrl',
 'nextAiringEpisode{episode airingAt} externalLinks{site url type}',
 '}}}'].join(' ');
+/* Phase 1 - AniList rate safety (degraded cap 30 req/min, verified Nov 7 2026).
+   Requests run through ONE serialized queue (no parallel bursts), spaced at
+   least ANILIST_MIN_GAP_MS apart, and slow down BEFORE the limit using
+   X-RateLimit-Remaining / X-RateLimit-Reset. HTTP 429 honours Retry-After
+   with exponential backoff (max 3 attempts). Metadata only; no user setup. */
+const ANILIST_MIN_GAP_MS=2100,ANILIST_MAX_ATTEMPTS=3;
+const aniRate={remaining:null,limit:null,resetAt:0,backoffUntil:0};
+const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+function aniRetryDelayMs(r,attempt){
+ const seconds=Number(r?.headers?.get?.('Retry-After'));
+ if(Number.isFinite(seconds)&&seconds>0)return Math.min(65000,Math.ceil(seconds*1000));
+ return 2000*attempt;
+}
+function aniNoteRateHeaders(r){
+ try{
+  const remaining=Number((r?.headers?.get?.('X-RateLimit-Remaining'))??NaN);
+  const limit=Number((r?.headers?.get?.('X-RateLimit-Limit'))??NaN);
+  const reset=Number((r?.headers?.get?.('X-RateLimit-Reset'))??NaN);
+  if(Number.isFinite(remaining))aniRate.remaining=remaining;
+  if(Number.isFinite(limit))aniRate.limit=limit;
+  if(Number.isFinite(reset)&&reset>0)aniRate.resetAt=reset*1000;
+  // Slow down BEFORE hitting the limit: with 2 or fewer requests left,
+  // wait until the reset window instead of firing into a 429.
+  if(Number.isFinite(remaining)&&remaining<=2){
+   const until=aniRate.resetAt>Date.now()?aniRate.resetAt:Date.now()+30000;
+   aniRate.backoffUntil=Math.max(aniRate.backoffUntil,until);
+  }
+ }catch{}
+}
 let lastCall=0,aniQueue=Promise.resolve();
 async function ani(options){
  const work=aniQueue.catch(()=>{}).then(()=>fetchAniSerial(options));
@@ -106,33 +132,43 @@ async function ani(options){
  return work;
 }
 async function fetchAniSerial(options){
- const gap=Math.max(0,1500-(Date.now()-lastCall));if(gap)await new Promise(r=>setTimeout(r,gap));lastCall=Date.now();
- const c=new AbortController(),timer=setTimeout(()=>c.abort(),7000);
- try{
-  const variables={page:options.page||1,perPage:options.perPage||18,sort:[options.sort||'POPULARITY_DESC']};
-  for(const k of ['status','search','genre','format'])if(options[k])variables[k]=options[k];
-  const r=await fetch(API,{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify({query:gql,variables}),signal:c.signal});
-  if(!r.ok)throw Error('AniList '+r.status);
-  const j=await r.json();if(j.errors?.length)throw Error(j.errors[0].message);
-  return {items:(j.data?.Page?.media||[]).map(normalizeAni),next:!!j.data?.Page?.pageInfo?.hasNextPage,source:'anilist'};
- }finally{clearTimeout(timer)}
-}
-async function jikan(options){
- let path='/top/anime?limit=20';
- if(options.search)path='/anime?sfw=true&limit=20&q='+encodeURIComponent(options.search);
- else if(options.status==='RELEASING')path='/seasons/now?sfw=true&limit=20';
- else if(options.format==='MOVIE')path='/top/anime?type=movie&limit=20';
- else if(options.genre){
-  const ids={Action:1,Adventure:2,Comedy:4,Drama:8,Fantasy:10,Romance:22,'Sci-Fi':24,Supernatural:37,Mystery:7,Sports:30,Horror:14,'Slice of Life':36};
-  path='/anime?sfw=true&limit=20&order_by=popularity&sort=asc&genres='+(ids[options.genre]||1);
- }else if(options.sort==='START_DATE_DESC')path='/anime?sfw=true&limit=20&order_by=start_date&sort=desc';
- const ctrl=new AbortController(),timer=setTimeout(()=>ctrl.abort(),6600);
- try{
-  const r=await fetch(JIKAN+path+'&page='+(options.page||1),{signal:ctrl.signal});
-  if(!r.ok)throw Error('Jikan '+r.status);
-  const j=await r.json();
-  return {items:(j.data||[]).map(normalizeJikan),next:!!j.pagination?.has_next_page,source:'jikan'};
- }finally{clearTimeout(timer)}
+ const variables={page:options.page||1,perPage:options.perPage||18,sort:[options.sort||'POPULARITY_DESC']};
+ for(const k of ['status','search','genre','format'])if(options[k])variables[k]=options[k];
+ let lastError=null;
+ for(let attempt=1;attempt<=ANILIST_MAX_ATTEMPTS;attempt++){
+  // Serialized spacing: at least ANILIST_MIN_GAP_MS since the previous
+  // AniList request, plus any backoff (rate-limit window / Retry-After).
+  const now=Date.now();
+  const gap=Math.max(0,ANILIST_MIN_GAP_MS-(now-lastCall),aniRate.backoffUntil-now);
+  if(gap)await sleep(gap);
+  lastCall=Date.now();
+  const c=new AbortController(),timer=setTimeout(()=>c.abort(),7000);
+  try{
+   const r=await fetch(API,{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify({query:gql,variables}),signal:c.signal});
+   aniNoteRateHeaders(r);
+   if(r.status===429){
+    lastError=Error('AniList 429');
+    if(attempt<ANILIST_MAX_ATTEMPTS){await sleep(aniRetryDelayMs(r,attempt));continue}
+    throw lastError;
+   }
+   if(!r.ok)throw Error('AniList '+r.status);
+   const j=await r.json();
+   if(j.errors?.length){
+    const rateLimited=j.errors.some(e=>e?.status===429||/too many requests/i.test(e?.message||''));
+    if(rateLimited){
+     lastError=Error('AniList 429');
+     if(attempt<ANILIST_MAX_ATTEMPTS){await sleep(2000*attempt);continue}
+    }
+    throw Error(j.errors[0].message);
+   }
+   return {items:(j.data?.Page?.media||[]).map(normalizeAni),next:!!j.data?.Page?.pageInfo?.hasNextPage,source:'anilist'};
+  }catch(e){
+   lastError=e;
+   if((e?.name==='AbortError'||/network|failed to fetch|load failed/i.test(e?.message||''))&&attempt<ANILIST_MAX_ATTEMPTS){await sleep(2000*attempt);continue}
+   throw e;
+  }finally{clearTimeout(timer)}
+ }
+ throw lastError||Error('AniList unavailable');
 }
 function cacheKey(o){return 'oneup_catalog_'+JSON.stringify(o)}
 function cached(o){try{const x=JSON.parse(localStorage.getItem(cacheKey(o))||'null');return x&&x.items?.length&&Date.now()-x.at<3600000*8?x:null}catch{return null}}
@@ -186,9 +222,7 @@ async function fetchCatalog(o){
  if(!o.search&&!o.genre&&(!o.page||o.page===1)){
   const snapshot=await fromSnapshot(o);if(snapshot){cache(o,snapshot);return snapshot;}
  }
- for(const loader of [ani,jikan]){
-  try{const r=await loader(o);if(r.items.length){register(r.items);cache(o,r);return r}}catch(e){console.warn('1UP provider temporarily unavailable',e?.message)}
- }
+ try{const r=await ani(o);if(r.items.length){register(r.items);cache(o,r);return r}}catch(e){console.warn('1UP provider temporarily unavailable',e?.message)}
  const snapshot=await fromSnapshot(o);if(snapshot){cache(o,snapshot);return snapshot;}
  let items=samples.filter(x=>(!o.search||(window.OneUpAnimeSearch?.matches(x,o.search)??x.title.toLowerCase().includes(o.search.toLowerCase())))&&(!o.genre||x.genres.includes(o.genre))&&(!o.format||x.format===o.format));
  register(items);
@@ -202,6 +236,7 @@ function ensureItem(id){const a=state.entries.get(id);if(!a)return null;return s
 let toastTimer;
 function toast(s){$('#toast').textContent=s;$('#toast').classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('#toast').classList.remove('show'),2500)}
 function toggle(id){
+ if(window.OneUpAuth&&!window.OneUpAuth.isAccount()){window.OneUpAuth.requireAccount('guardar este anime en Mi lista');return}
  const x=ensureItem(id);if(!x)return;x.favorite=!x.favorite;
  if(!x.favorite&&!x.watched&&!x.externalUrl)delete state.saved[id];
  persist();refreshFav();renderContinue();
@@ -360,7 +395,7 @@ async function browse(route,page=1,append=false){
  if(token!==state.seq)return;
  state.results=append?state.results.concat(d.items):d.items;state.next=d.next;state.page=page;state.loading=false;
  paint('#browse-grid',state.results,d.source);
- $('#browse-status').textContent=d.source==='sample'?'Ejemplos · Fuentes no disponibles':((d.source==='snapshot'?'Catálogo guardado':d.source==='anilist'?'AniList':'Jikan')+' · '+state.results.length+' títulos');
+ $('#browse-status').textContent=d.source==='sample'?'Ejemplos · Fuentes no disponibles':((d.source==='snapshot'?'Catálogo guardado':'AniList')+' · '+state.results.length+' títulos');
  $('#browse-next').hidden=!state.next;
 }
 function doSearch(q){q=(q||'').trim();if(!q){toast('Escribe el nombre del anime');return}state.query=q;go('buscar')}
@@ -425,7 +460,7 @@ function playbackEpisode(id,episodes,index,serverIndex=0,tried=[]){
  const caption=mediaFileUrl(item.subtitles_es||'');
  if(activeSource.kind==='official_embed'){
   const choiceHtml=sources.length>1?
-   '<div class="oneup-server-selector" aria-label="Fuentes de reproducción"><strong>ELEGIR SERVIDOR</strong>'+
+   '<div class="oneup-server-selector" aria-label="Fuentes de reproducción"><strong>CAMBIAR SERVIDOR (OPCIONAL)</strong>'+
    sources.map((source,i)=>'<button type="button" class="oneup-server-choice'+(source===activeSource?' active':'')+'" data-licensed-server="'+i+'" aria-pressed="'+String(source===activeSource)+'">'+esc(source.name)+'</button>').join('')+'</div>':'';
   host.innerHTML=choiceHtml+
    '<div class="oneup-playback-stage oneup-embed-stage"><button type="button" id="oneup-embed-play" aria-label="Cargar reproductor externo oficial">'+
@@ -454,7 +489,7 @@ function playbackEpisode(id,episodes,index,serverIndex=0,tried=[]){
  }
 
  const sourceChoices=sources.length>1?
-  '<div class="oneup-server-selector" aria-label="Cambiar servidor autorizado"><strong>SELECCIONAR SERVIDOR</strong>'+
+  '<div class="oneup-server-selector" aria-label="Cambiar servidor autorizado"><strong>CAMBIAR SERVIDOR (OPCIONAL)</strong>'+
   sources.map((source,i)=>'<button type="button" class="oneup-server-choice'+(source===activeSource?' active':'')+'" data-licensed-server="'+i+'" aria-pressed="'+String(source===activeSource)+'">'+esc(source.name)+'</button>').join('')+'</div>':'';
  host.innerHTML=sourceChoices+
  '<div class="oneup-playback-stage">'+
@@ -499,7 +534,7 @@ async function loadAuthorizedPlayer(id){
  if(!episodes.length){host.hidden=true;return}
  host.hidden=false;
  const buttons=episodes.map((x,i)=>'<button class="oneup-episode-button" type="button" data-licensed-episode="'+i+'" aria-label="Abrir episodio autorizado '+(i+1)+'">'+(i+1)+' · '+esc(x.title||'Episodio')+'</button>').join('');
- host.innerHTML='<div class="oneup-detail-section"><h3>EPISODIOS DISPONIBLES</h3><p>Estas fuentes se agregan únicamente con permiso de distribución. Elige episodio y servidor.</p>'+
+ host.innerHTML='<div class="oneup-detail-section"><h3>EPISODIOS DISPONIBLES</h3><p>Estas fuentes se agregan únicamente con permiso de distribución. Elige un episodio para verlo; el servidor se selecciona automáticamente.</p>'+
  '<div id="oneup-licensed-episodes" class="oneup-episode-select">'+buttons+'</div>'+
  '<div id="oneup-player-content"></div></div>';
  host.querySelectorAll('[data-licensed-episode]').forEach(button=>button.addEventListener('click',()=>{
@@ -704,5 +739,8 @@ function init(){
  loadHome();
  if('serviceWorker' in navigator&&location.protocol==='https:')navigator.serviceWorker.register('./sw.js').catch(()=>{});
 }
+// Phase 1 diagnostics hook (no UI, no setup, no user choice): exposes the live
+// rate-limit state and the guarded loaders for automated tests and debugging.
+if(typeof window!=='undefined')window.OneUpRateLimits={ani:{get state(){return {...aniRate}},get minGapMs(){return ANILIST_MIN_GAP_MS},get maxAttempts(){return ANILIST_MAX_ATTEMPTS}},callAni:ani};
 document.addEventListener('DOMContentLoaded',init);
 })();

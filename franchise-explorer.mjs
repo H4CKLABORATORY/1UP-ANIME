@@ -1,4 +1,4 @@
-/* 1UP · Relaciones reales de anime con AniList y respaldo Jikan.
+/* 1UP · Relaciones reales de anime con AniList.
    Sólo metadatos. Módulo independiente y opcional. */
 export const QUERY = [
  'query OneUpFranchise($id:Int,$idMal:Int){Media(id:$id,idMal:$idMal,type:ANIME){',
@@ -52,27 +52,6 @@ export function parseAni(payload,activeId){
   if(recommendations.length>=8)break;
  }
  return {relations,recommendations,source:'AniList'};
-}
-export function parseJikan(payload,activeId){
- const relations=[],seen=new Set([activeId]);
- for(const group of payload?.data||[]){
-  const type=trim(group?.relation||'Other',40).toUpperCase().replace(/[\s-]+/g,'_');
-  if(!NAMES[type])continue;
-  for(const row of group?.entry||[]){
-   if(String(row?.type||'').toLowerCase()!=='anime')continue;
-   const mal=number(row?.mal_id),title=trim(row?.name);
-   if(!mal||!title||seen.has('mal-'+mal))continue;
-   const id='mal-'+mal;seen.add(id);
-   relations.push({id,mal_id:mal,title,image:'',banner:'',description:'',averageScore:0,
-    year:'',genres:[],format:'',episodes:0,status:'',next:null,streaming:[],
-    siteUrl:'https://myanimelist.net/anime/'+mal,source:'jikan',
-    relationLabel:NAMES[type],relationType:type});
-   if(relations.length>=12)break;
-  }
-  if(relations.length>=12)break;
- }
- relations.sort((a,b)=>PRIORITY.indexOf(a.relationType)-PRIORITY.indexOf(b.relationType));
- return {relations,recommendations:[],source:'Jikan'};
 }
 export function statusText(data){
  return data.relations.length||data.recommendations.length
@@ -132,12 +111,6 @@ async function fromAni(identity,signal){
  if(payload.errors?.length)throw new Error('AniList GraphQL error');
  return payload;
 }
-async function fromJikan(idMal,signal){
- const r=await fetch('https://api.jikan.moe/v4/anime/'+idMal+'/relations',{
-  headers:{Accept:'application/json'},signal});
- if(!r.ok)throw new Error('Jikan HTTP '+r.status);
- return r.json();
-}
 async function fetchFranchise(anime,host,token,ctrl){
  const identity=animeIdentity(anime);
  if(!identity){host.textContent='No hay ID válido para explorar esta franquicia.';return}
@@ -148,11 +121,7 @@ async function fetchFranchise(anime,host,token,ctrl){
  const timeout=setTimeout(()=>ctrl.abort(),11500);
  let result;
  try{
-  try{result=parseAni(await fromAni(identity,ctrl.signal),anime.id)}
-  catch(error){
-   if(ctrl.signal.aborted||!identity.idMal)throw error;
-   result=parseJikan(await fromJikan(identity.idMal,ctrl.signal),anime.id);
-  }
+  result=parseAni(await fromAni(identity,ctrl.signal),anime.id);
  }catch{
   if(isCurrent(anime.id,token))host.textContent='Las relaciones están temporalmente fuera de servicio. El resto de la ficha funciona normalmente.';
   return;

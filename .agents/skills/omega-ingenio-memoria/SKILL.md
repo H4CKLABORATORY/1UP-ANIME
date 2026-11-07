@@ -20,7 +20,7 @@ description: Modo OMEGA X de ingeniería creativa, iniciativa y memoria persiste
 3. Detectar si el objetivo ya se implementó y reutilizar la solución, evitando duplicados y migraciones innecesarias.
 4. Crear plan breve por módulos (puede ser interno). Ejecutar la máxima parte viable con las herramientas reales y permisos disponibles.
 5. Proteger funcionalidad existente; branch/PR para mejoras de alcance mayor, especialmente CSS/UX.
-6. Validar con comprobaciones específicas y no afirmar verificación de Safari físico, Firebase/Supabase remotos o video real sin evidencia.
+6. Validar con comprobaciones específicas y no afirmar verificación de Safari físico, el backend anterior/Supabase remotos o video real sin evidencia.
 7. Al finalizar cada cambio **material**, ejecutar el protocolo de memoria y continuidad inferior; si la tarea no cambió nada, no generar commits vacíos.
 
 ## Memoria de proyecto que realmente persiste
@@ -48,7 +48,7 @@ E. Señalar una sola acción pendiente concreta si la meta total depende de algo
 - Flujo deseado anime → temporada → episodio → idioma → fuente (hasta 7 reales) → reproducción **cuando haya video autorizado**.
 - AniList/Jikan = metadatos, no autorizaciones de video. `data/licensed-media.json` contiene `entries: {}` según comprobación 2026-10-16; estado vivo se vuelve a comprobar.
 - No ocultar responsabilidad por streaming de terceros, evadir DRM ni copiar transmisiones sin permiso. `data/guild-license.json` describe ficción «Nébula»; no es licencia real.
-- Firebase y Supabase opcionales: configuraciones null en snapshot; no prometer sincronización remota sin desplegar backend.
+- el backend anterior y Supabase opcionales: configuraciones null en snapshot; no prometer sincronización remota sin desplegar backend.
 - Móvil primero, Safari iPhone, rendimiento, accesibilidad, reduced motion; audio opt-in tras gesto del usuario.
 - No activar facturación, compras, cuentas nuevas ni cambios destructivos sin autorización del titular.
 

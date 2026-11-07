@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import {createRequire} from 'node:module';
 const require=createRequire(import.meta.url);
-const {buildClient,normalized,args,upstreamUrl}=require('../functions/anime1v-adapter.js');
+const {buildClient,normalized,args,upstreamUrl}=require('../render/anime1v-adapter.js');
 for(const type of ['episode','resolve','download','image-proxy','info']){
  assert.throws(()=>args(type,{}),error=>error.status===404,'Unapproved upstream capability exposed: '+type);
 }
