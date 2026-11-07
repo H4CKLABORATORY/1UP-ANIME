@@ -1,138 +1,9 @@
 {
-  "updated": "2026-11-07T15:38:50.355Z",
+  "updated": "2026-11-07T21:38:18.923Z",
   "source": "AniList public GraphQL metadata",
-  "windowStart": 1793867916,
-  "windowEnd": 1794843516,
+  "windowStart": 1793889484,
+  "windowEnd": 1794865084,
   "airing": [
-    {
-      "id": "mal-65095",
-      "mal_id": 65095,
-      "ani_id": 217624,
-      "title": "PetitCure: Precure Fairies Season 4",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx217624-Cwkze5dZ5txL.jpg",
-      "banner": "",
-      "description": "Fourth season of PetitCure: Precure Fairies.",
-      "year": 2026,
-      "startDate": "2026-10-01",
-      "format": "ONA",
-      "episodes": 0,
-      "averageScore": 0,
-      "status": "RELEASING",
-      "genres": [
-        "Fantasy",
-        "Slice of Life"
-      ],
-      "siteUrl": "https://anilist.co/anime/217624",
-      "streaming": [],
-      "trailer": null,
-      "next": {
-        "at": 1794475800,
-        "episode": 7
-      },
-      "airingAt": 1793871000,
-      "episode": 6,
-      "scheduleId": 421767,
-      "description_es": "Cuarta temporada de PetitCure: Ferias precarias."
-    },
-    {
-      "id": "al-218942",
-      "mal_id": null,
-      "ani_id": 218942,
-      "title": "Sylvanian Families: Freya no Colorful Everyday",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b218942-P2vuXzw9knaY.png",
-      "banner": "",
-      "description": "",
-      "year": 2026,
-      "startDate": "2026-10-01",
-      "format": "TV_SHORT",
-      "episodes": 12,
-      "averageScore": 0,
-      "status": "RELEASING",
-      "genres": [
-        "Fantasy",
-        "Slice of Life"
-      ],
-      "siteUrl": "https://anilist.co/anime/218942",
-      "streaming": [],
-      "trailer": null,
-      "next": {
-        "at": 1794478740,
-        "episode": 7
-      },
-      "airingAt": 1793873940,
-      "episode": 6,
-      "scheduleId": 423043
-    },
-    {
-      "id": "mal-63337",
-      "mal_id": 63337,
-      "ani_id": 206401,
-      "title": "FX Fighter Kurumi-chan",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx206401-8cAebkI0i8BA.png",
-      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/206401-sKPZQks8FxNL.jpg",
-      "description": "University student Kurumi Fukuga has finally fulfilled her long-held desire of starting foreign exchange (FX) trading, motivated by recouping the 20 million yen her late mother lost in trading. \"I'll easily make it back,\" she thought, but the world she enters can become heaven or hell in an instant. Unrealized losses, loss-cutting, unstoppable fluctuations… but she still wants to buy, sell and make money! With fellow FX addicts Mochiko, Mebuki and Yasuko along for the ride, the market heats up! Joy, despair, joy, despair — this is an endearing, yet slightly risky money game. Can Kurumi and her friends survive this turbulent world? (Source: Crunchyroll)",
-      "year": 2026,
-      "startDate": "2026-10-01",
-      "format": "TV",
-      "episodes": 12,
-      "averageScore": 67,
-      "status": "RELEASING",
-      "genres": [
-        "Drama",
-        "Slice of Life"
-      ],
-      "siteUrl": "https://anilist.co/anime/206401",
-      "streaming": [
-        {
-          "name": "Crunchyroll",
-          "url": "https://crunchyroll.com/series/GT00384001/fx-fighter-kurumi-chan"
-        }
-      ],
-      "trailer": {
-        "site": "youtube",
-        "id": "7rxIZ3z0S4s"
-      },
-      "next": {
-        "at": 1794486600,
-        "episode": 7
-      },
-      "airingAt": 1793881800,
-      "episode": 6,
-      "scheduleId": 419085,
-      "description_es": "La estudiante universitaria Kurumi Fukuga finalmente ha cumplido su deseo de iniciar el comercio de divisas (FX), motivado por recuperar los 20 millones de yenes que su madre falleció en el comercio. \"Lo recuperaré fácilmente\", pensó, pero el mundo en el que entra puede convertirse en el cielo o el infierno en un instante. Las pérdidas no realizadas, las fluctuaciones descompuestas, imparables... ¡pero todavía quiere comprar, vender y ganar dinero! Con otros adictos FX Mochiko, Mebuki y Yasuko a lo largo de la excursión, el mercado se calienta! Joy, desesperación, alegría, desesperación — este es un juego de dinero entrañable, pero ligeramente arriesgado. Can Kurumi y ella"
-    },
-    {
-      "id": "mal-61227",
-      "mal_id": 61227,
-      "ani_id": 188034,
-      "title": "Girls und Panzer: Motto Love Love Sakusen desu!",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx188034-oRwVKBMezOOk.jpg",
-      "banner": "",
-      "description": "A deep dive into the untold daily lives and the inter-school interactions of the Ooarai Girls' team and the other students (along with the colorful characters that surround them) who are wholeheartedly dedicated to the way of the tank! (Source: Official Website, translated) Note: The series had a four-part theatrical pre-screening in Japan starting in December 2025. Regular TV broadcast began in October 2026. • Part 1 releasing theatrically on December 26, 2025. • Part 2 releasing theatrically on January 30, 2026. • Part 3 releasing theatrically on March 6, 2026. • Part 4 releasing theatrically on April 10, 2026.",
-      "year": 2026,
-      "startDate": "2026-10-08",
-      "format": "TV",
-      "episodes": 12,
-      "averageScore": 75,
-      "status": "RELEASING",
-      "genres": [
-        "Comedy"
-      ],
-      "siteUrl": "https://anilist.co/anime/188034",
-      "streaming": [],
-      "trailer": {
-        "site": "youtube",
-        "id": "AVIDW2dT2AM"
-      },
-      "next": {
-        "at": 1794493800,
-        "episode": 6
-      },
-      "airingAt": 1793889000,
-      "episode": 5,
-      "scheduleId": 422410,
-      "description_es": "Una profunda inmersión en la vida cotidiana incalculable y las interacciones entre escuelas del equipo de Ooarai Girls y los demás estudiantes (junto con los personajes coloridos que los rodean) que están totalmente dedicados al camino del tanque! (Fuente: Página Web Oficial, traducido) Nota: La serie tenía un pre-pantalla de cuatro partes en Japón a partir de diciembre de 2025. La televisión regular comenzó en octubre de 2026. • Parte 1 liberando teatralmente el 26 de diciembre de 2025. • Parte 2 liberando teatralmente el 30 de enero de 2026. • Parte 3 liberando teatralmente el 6 de marzo de 2026. • Parte 4 liberando teatricall"
-    },
     {
       "id": "mal-64534",
       "mal_id": 64534,
@@ -929,38 +800,6 @@
       "episode": 6,
       "scheduleId": 418626,
       "description_es": "Secuela de los Revengers de Tokio: Tenjiku-hen."
-    },
-    {
-      "id": "mal-64718",
-      "mal_id": 64718,
-      "ani_id": 214703,
-      "title": "Ghost Meets Gal!",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx214703-iXoaVH6UkiZd.png",
-      "banner": "",
-      "description": "",
-      "year": 2026,
-      "startDate": "2026-09-05",
-      "format": "TV_SHORT",
-      "episodes": 0,
-      "averageScore": 57,
-      "status": "RELEASING",
-      "genres": [
-        "Comedy",
-        "Fantasy"
-      ],
-      "siteUrl": "https://anilist.co/anime/214703",
-      "streaming": [],
-      "trailer": {
-        "site": "youtube",
-        "id": "n0na0hTpl1E"
-      },
-      "next": {
-        "at": 1794610800,
-        "episode": 11
-      },
-      "airingAt": 1794006000,
-      "episode": 10,
-      "scheduleId": 419760
     },
     {
       "id": "mal-64210",
@@ -1810,8 +1649,8 @@
         "id": "dbe8esPSfYI"
       },
       "next": {
-        "at": 1794066960,
-        "episode": 6
+        "at": 1794671760,
+        "episode": 7
       },
       "airingAt": 1794066960,
       "episode": 6,
@@ -1849,8 +1688,8 @@
         "id": "kXqx3rFSkxc"
       },
       "next": {
-        "at": 1794069000,
-        "episode": 6
+        "at": 1794673800,
+        "episode": 7
       },
       "airingAt": 1794069000,
       "episode": 6,
@@ -1976,11 +1815,11 @@
       },
       "next": {
         "at": 1794092400,
-        "episode": 84
+        "episode": 83
       },
       "airingAt": 1794092400,
-      "episode": 84,
-      "scheduleId": 412320,
+      "episode": 83,
+      "scheduleId": 423319,
       "description_es": "La historia de la serie sigue las aventuras cotidianas de Koupen-chan y sus amigos mientras disfrutan de las pequeñas cosas en la vida. (Fuente: Crunchyroll News, editado)"
     },
     {
@@ -2954,7 +2793,7 @@
       "id": "mal-65169",
       "mal_id": 65169,
       "ani_id": 218217,
-      "title": "JK Dark Summoner to Deki......Dei Nai!?",
+      "title": "I’m Dating a Dark Summoner Omake Shorts",
       "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx218217-crIGlnQDg0bJ.png",
       "banner": "",
       "description": "A weekly mini anime shown with each episode of Dark Summoner to Dekiteiru exclusively on the AT-X broadcast of the TV anime and online on Abema.",
@@ -5024,38 +4863,6 @@
       "description_es": "Secuela de los Revengers de Tokio: Tenjiku-hen."
     },
     {
-      "id": "mal-64718",
-      "mal_id": 64718,
-      "ani_id": 214703,
-      "title": "Ghost Meets Gal!",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx214703-iXoaVH6UkiZd.png",
-      "banner": "",
-      "description": "",
-      "year": 2026,
-      "startDate": "2026-09-05",
-      "format": "TV_SHORT",
-      "episodes": 0,
-      "averageScore": 57,
-      "status": "RELEASING",
-      "genres": [
-        "Comedy",
-        "Fantasy"
-      ],
-      "siteUrl": "https://anilist.co/anime/214703",
-      "streaming": [],
-      "trailer": {
-        "site": "youtube",
-        "id": "n0na0hTpl1E"
-      },
-      "next": {
-        "at": 1794610800,
-        "episode": 11
-      },
-      "airingAt": 1794610800,
-      "episode": 11,
-      "scheduleId": 419761
-    },
-    {
       "id": "mal-64210",
       "mal_id": 64210,
       "ani_id": 212308,
@@ -5916,8 +5723,8 @@
         "id": "dbe8esPSfYI"
       },
       "next": {
-        "at": 1794066960,
-        "episode": 6
+        "at": 1794671760,
+        "episode": 7
       },
       "airingAt": 1794671760,
       "episode": 7,
@@ -5955,8 +5762,8 @@
         "id": "kXqx3rFSkxc"
       },
       "next": {
-        "at": 1794069000,
-        "episode": 6
+        "at": 1794673800,
+        "episode": 7
       },
       "airingAt": 1794673800,
       "episode": 7,
@@ -6082,11 +5889,11 @@
       },
       "next": {
         "at": 1794092400,
-        "episode": 84
+        "episode": 83
       },
       "airingAt": 1794697200,
-      "episode": 85,
-      "scheduleId": 412321,
+      "episode": 84,
+      "scheduleId": 423320,
       "description_es": "La historia de la serie sigue las aventuras cotidianas de Koupen-chan y sus amigos mientras disfrutan de las pequeñas cosas en la vida. (Fuente: Crunchyroll News, editado)"
     },
     {
@@ -7060,7 +6867,7 @@
       "id": "mal-65169",
       "mal_id": 65169,
       "ani_id": 218217,
-      "title": "JK Dark Summoner to Deki......Dei Nai!?",
+      "title": "I’m Dating a Dark Summoner Omake Shorts",
       "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx218217-crIGlnQDg0bJ.png",
       "banner": "",
       "description": "A weekly mini anime shown with each episode of Dark Summoner to Dekiteiru exclusively on the AT-X broadcast of the TV anime and online on Abema.",
@@ -7340,6 +7147,41 @@
       "episode": 6,
       "scheduleId": 423055,
       "description_es": "Un día, la secundaria Ageha Yoshina recoge una misteriosa “tarjeta de teléfono roja” que queda atrás en una cabina telefónica pública. Unos días más tarde, su amigo de la infancia y compañero de clase, Sakurako Amamiya, que poseía la misma carta, desaparecen sin dejar rastro. En busca de ella, Ageha se encuentra dibujado en los rumores que rodean una cadena nacional de misteriosas desapariciones, dijo que es obra de una organización secreta conocida sólo como “Psyren”. Cuando accede al grupo, comienza un juego mortal, uno que cambiará su destino para siempre. (Fuente: Sitio Oficial de PSYHUEN)"
+    },
+    {
+      "id": "mal-54344",
+      "mal_id": 54344,
+      "ani_id": 160803,
+      "title": "MAGICAL GIRL RAISING PROJECT restart",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx160803-Rcr3IvhE7q9c.png",
+      "banner": "",
+      "description": "Some magical girls fight. Others do not. Chosen by the mysterious Land of Magic, which exists unbeknownst to the rest of the world, magical girls are each granted a unique power. Pechka, whose magic makes food delicious, is forced to take part in a mysterious virtual game together with 16 unfamiliar magical girls, each with her own distinctive personality. It was supposed to be a safe training exercise designed to improve their magical abilities. But instead, it marks the beginning of a carefully orchestrated nightmare - a forbidden trial. A new Magical Girl Raising Project has begun. (Source: OceanVeil)",
+      "year": 2026,
+      "startDate": "2026-10-06",
+      "format": "TV",
+      "episodes": 0,
+      "averageScore": 61,
+      "status": "RELEASING",
+      "genres": [
+        "Action",
+        "Fantasy",
+        "Mahou Shoujo",
+        "Thriller"
+      ],
+      "siteUrl": "https://anilist.co/anime/160803",
+      "streaming": [],
+      "trailer": {
+        "site": "youtube",
+        "id": "34ubb-j0kbI"
+      },
+      "next": {
+        "at": 1794243600,
+        "episode": 6
+      },
+      "airingAt": 1794848400,
+      "episode": 7,
+      "scheduleId": 418908,
+      "description_es": "Algunas chicas mágicas pelean. Otros no. Elegido por la misteriosa Tierra de la Magia, que existe poco conocida por el resto del mundo, las chicas mágicas cada una tienen un poder único. Pechka, cuya magia hace deliciosa la comida, se ve obligada a participar en un misterioso juego virtual junto con 16 chicas mágicas desconocidas, cada una con su propia personalidad distintiva. Se suponía que era un ejercicio de entrenamiento seguro diseñado para mejorar sus habilidades mágicas. Pero en cambio, marca el comienzo de una pesadilla cuidadosamente orquestada - un juicio prohibido. Ha comenzado un nuevo proyecto de Raising Girl Magical. (Fuente:"
     }
   ],
   "seasonal": {
@@ -8478,8 +8320,8 @@
           "id": "kXqx3rFSkxc"
         },
         "next": {
-          "at": 1794069000,
-          "episode": 6
+          "at": 1794673800,
+          "episode": 7
         },
         "description_es": "Si hay una cosa que nunca puedes tener suficiente en un mundo de espadas y brujería estilo RPG, ¡es puntos mágicos! Si estás alimentando hechizos, técnicas o mostrando una increíble habilidad, tienes que gastar esos puntos para hacer daño real. ¿Y si te escapas? La Cuaresma es parte de la fiesta de llegada conocida como los \"Skypiercers\", y gracias a su regalo único, puede prestar enormes cantidades de magia a otros. ¿Sin MP? ¡No hay problema con la Cuaresma! Excepto ahora que sus compañeros se han convertido en héroes formidables (gracias a su habilidad), su utilidad es cuestionada. Escapada del grupo, Lent es"
       },
@@ -8509,8 +8351,8 @@
           "id": "dbe8esPSfYI"
         },
         "next": {
-          "at": 1794066960,
-          "episode": 6
+          "at": 1794671760,
+          "episode": 7
         },
         "description_es": "La tercera temporada de Ranma 1/2 (2024) . Más rivales y aventuras siguen a Ranma y Akane como trenes de Colonia Ryouga, una guerra de galletas se desmorona de control, y Shampoo elabora nuevos esquemas. (Fuente: Netflix, editado)"
       },
@@ -9085,7 +8927,7 @@
         "id": "mal-65169",
         "mal_id": 65169,
         "ani_id": 218217,
-        "title": "JK Dark Summoner to Deki......Dei Nai!?",
+        "title": "I’m Dating a Dark Summoner Omake Shorts",
         "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx218217-crIGlnQDg0bJ.png",
         "banner": "",
         "description": "A weekly mini anime shown with each episode of Dark Summoner to Dekiteiru exclusively on the AT-X broadcast of the TV anime and online on Abema.",
