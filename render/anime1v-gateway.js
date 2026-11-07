@@ -5,7 +5,7 @@
  */
 'use strict';
 const http=require('node:http');
-const {buildClient,args}=require('../functions/anime1v-adapter.js');
+const {buildClient,args}=require('./anime1v-adapter.js');
 const PORT=Number(process.env.PORT||10000);
 const ORIGIN='https://h4cklaboratory.github.io';
 const LIMIT=640*1024;
