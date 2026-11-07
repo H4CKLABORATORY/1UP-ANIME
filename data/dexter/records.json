@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-07T09:14:54.770Z",
+  "updatedAt": "2026-11-07T12:04:27.523Z",
   "anime": [
     {
       "id": "al-155723",
@@ -15,7 +15,7 @@
         "Fantasy"
       ],
       "firstSeenAt": "2026-10-15T22:22:27.011Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "al-206244",
@@ -32,7 +32,7 @@
         "Supernatural"
       ],
       "firstSeenAt": "2026-10-21T11:59:44.940Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "al-214593",
@@ -47,7 +47,7 @@
         "Slice of Life"
       ],
       "firstSeenAt": "2026-10-15T22:22:27.011Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z",
+      "lastSeenAt": "2026-11-07T12:04:27.523Z",
       "trailer": {
         "platform": "youtube",
         "id": "WprfleUJVck",
@@ -66,7 +66,7 @@
         "Slice of Life"
       ],
       "firstSeenAt": "2026-10-15T22:22:27.011Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "al-217282",
@@ -80,7 +80,7 @@
         "Comedy"
       ],
       "firstSeenAt": "2026-10-15T22:22:27.011Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "al-218008",
@@ -95,7 +95,7 @@
         "Fantasy"
       ],
       "firstSeenAt": "2026-10-15T22:22:27.011Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z",
+      "lastSeenAt": "2026-11-07T12:04:27.523Z",
       "trailer": {
         "platform": "youtube",
         "id": "8Q83sSev8fk",
@@ -115,7 +115,7 @@
         "Slice of Life"
       ],
       "firstSeenAt": "2026-10-27T03:03:32.217Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-235",
@@ -132,7 +132,7 @@
         "Psychological"
       ],
       "firstSeenAt": "2026-10-15T22:22:27.011Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-2406",
@@ -147,7 +147,7 @@
         "Slice of Life"
       ],
       "firstSeenAt": "2026-10-15T22:22:27.011Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-39168",
@@ -162,7 +162,7 @@
         "Sports"
       ],
       "firstSeenAt": "2026-10-15T22:22:27.011Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z",
+      "lastSeenAt": "2026-11-07T12:04:27.523Z",
       "trailer": {
         "platform": "youtube",
         "id": "yDRK9-yG9X8",
@@ -183,7 +183,7 @@
         "Comedy"
       ],
       "firstSeenAt": "2026-10-15T22:22:27.011Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-51039",
@@ -199,7 +199,7 @@
         "Fantasy"
       ],
       "firstSeenAt": "2026-10-15T22:22:27.011Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-51768",
@@ -214,7 +214,7 @@
         "Slice of Life"
       ],
       "firstSeenAt": "2026-10-16T20:57:01.730Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z",
+      "lastSeenAt": "2026-11-07T12:04:27.523Z",
       "trailer": {
         "platform": "youtube",
         "id": "c3DcpEy3xd8",
@@ -236,7 +236,7 @@
         "Romance"
       ],
       "firstSeenAt": "2026-10-15T22:22:27.011Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-52480",
@@ -254,7 +254,7 @@
         "Supernatural"
       ],
       "firstSeenAt": "2026-10-15T22:22:27.011Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z",
+      "lastSeenAt": "2026-11-07T12:04:27.523Z",
       "trailer": {
         "platform": "youtube",
         "id": "8AnNxEp733c",
@@ -275,7 +275,7 @@
         "Fantasy"
       ],
       "firstSeenAt": "2026-10-15T22:22:27.011Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z",
+      "lastSeenAt": "2026-11-07T12:04:27.523Z",
       "trailer": {
         "platform": "youtube",
         "id": "_c_hMehCORQ",
@@ -296,7 +296,7 @@
         "Fantasy"
       ],
       "firstSeenAt": "2026-10-15T22:22:27.011Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z",
+      "lastSeenAt": "2026-11-07T12:04:27.523Z",
       "trailer": {
         "platform": "youtube",
         "id": "kbtRqqa2GyA",
@@ -342,7 +342,7 @@
         "Thriller"
       ],
       "firstSeenAt": "2026-10-15T22:22:27.011Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z",
+      "lastSeenAt": "2026-11-07T12:04:27.523Z",
       "trailer": {
         "platform": "youtube",
         "id": "34ubb-j0kbI",
@@ -364,7 +364,7 @@
         "Fantasy"
       ],
       "firstSeenAt": "2026-10-15T22:22:27.011Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-56566",
@@ -380,7 +380,7 @@
         "Sports"
       ],
       "firstSeenAt": "2026-10-15T22:22:27.011Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z",
+      "lastSeenAt": "2026-11-07T12:04:27.523Z",
       "trailer": {
         "platform": "youtube",
         "id": "SXdTmFshlFs",
@@ -403,7 +403,7 @@
         "Romance"
       ],
       "firstSeenAt": "2026-10-15T22:22:27.011Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z",
+      "lastSeenAt": "2026-11-07T12:04:27.523Z",
       "trailer": {
         "platform": "youtube",
         "id": "XqrBfyUNYZs",
@@ -424,7 +424,7 @@
         "Fantasy"
       ],
       "firstSeenAt": "2026-10-15T22:22:27.011Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z",
+      "lastSeenAt": "2026-11-07T12:04:27.523Z",
       "trailer": {
         "platform": "youtube",
         "id": "YBWOrQCB9r0",
@@ -445,7 +445,7 @@
         "Sci-Fi"
       ],
       "firstSeenAt": "2026-11-03T18:13:13.733Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z",
+      "lastSeenAt": "2026-11-07T12:04:27.523Z",
       "trailer": {
         "platform": "youtube",
         "id": "gdqs6y-6R3g",
@@ -466,7 +466,7 @@
         "Mahou Shoujo"
       ],
       "firstSeenAt": "2026-10-15T22:22:27.011Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z",
+      "lastSeenAt": "2026-11-07T12:04:27.523Z",
       "trailer": {
         "platform": "youtube",
         "id": "gY0hpk9E7p8",
@@ -480,13 +480,13 @@
       "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/177636-hSmS5gUCnoox.jpg",
       "year": 2026,
       "format": "ONA",
-      "description_es": "En una ciudad dividida por clase y una pared masiva, el aprendiz ninja Kamari befriends Rappa, un chico libre de espíritu de la ciudad baja. Como las verdades sepultadas y la superficie de corrupción, los dos niños cuestionan el sistema que gobierna su mundo. (Fuente: Annecy Festival Global Anime Challenge - Proyectos IP originales) Nota: Desde un informe a través de Anime News Network, este anime fue anunciado inicialmente por el estudio Kinema Citrus y revelado en el panel \"Kinema Citrus Sweet 16 de Anime Central 2024: My Happy Marriage and What's New\".",
+      "description_es": "Rappa es un huérfano que idóliza ninja ficticia. Una noche nevada, él cae de una azotea y es salvado por un verdadero ninja llamado Okachimachi y su maestro. Rappa aparece en su puerta pidiendo ser aprendiz, y los tres comienzan a vivir juntos como familia. Años después, Rappa se lanza a entrenar para convertirse en un ninja que pueda proteger la ciudad. Los niños que lo miran se reúnen en la tradicional tienda de dulces japonesas del maestro, un lugar donde puede reírse con familiares y amigos. Rappa piensa que estos días durarán para siempre, pero ve a Okachimachi tender a su maestro jubilado y gato",
       "genres": [
         "Action",
         "Slice of Life"
       ],
       "firstSeenAt": "2026-11-06T03:16:26.715Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z",
+      "lastSeenAt": "2026-11-07T12:04:27.523Z",
       "trailer": {
         "platform": "youtube",
         "id": "hfrbzeG6v2I",
@@ -508,7 +508,7 @@
         "Supernatural"
       ],
       "firstSeenAt": "2026-10-15T22:22:27.011Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z",
+      "lastSeenAt": "2026-11-07T12:04:27.523Z",
       "trailer": {
         "platform": "youtube",
         "id": "Nm21TTXUkf4",
@@ -530,7 +530,7 @@
         "Mecha"
       ],
       "firstSeenAt": "2026-10-15T22:22:27.011Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z",
+      "lastSeenAt": "2026-11-07T12:04:27.523Z",
       "trailer": {
         "platform": "youtube",
         "id": "67GqhfLw3ys",
@@ -544,7 +544,7 @@
       "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/178972-ep3xPXU4ND07.jpg",
       "year": 2026,
       "format": "MOVIE",
-      "description_es": "Película de antología compuesta por tres segmentos de animación originales: Q1 - ÉLIENS (correo electrónico) La Tierra ha entrado en una era de intercambio intergalático. Elie, una chica alienígena, llega como embajador de buena voluntad espacial. Ama la cultura de la Tierra y su vida cotidiana a menudo absurda, y se ha unido con un funcionario que trabaja en la agencia espacial para buscar \"amigos\". Q2 - Yoroshiku★Shoujo ( partícipe de moda) GALS TOKYO, una ciudad donde la mañana nunca llega. Buenas noches, chicas que han perdido su lugar en realidad, conocidas como \"Gal P\", se reúnen aquí. Su objetivo es convertirse en el guiño",
+      "description_es": "Película de antología compuesta por tres segmentos de animación originales: Q1 - ÉLIENS (correo electrónico) La Tierra ha entrado en una era de intercambio interplanetario. Como el miedo y los prejuicios hacia los alienígenas se extienden por toda la sociedad, una joven alienígena llamada Elie llega como embajadora de buena voluntad interestelar. Adora la cultura de la Tierra y su vida cotidiana maravillosamente inútil, y se une con Kento Kunikura, un funcionario que trabaja para la Oficina del Espacio, para buscar “amigos” en todo el planeta. Pero los poderes de Elie a veces están fuera de control. Como misteriosa alienígena rodeada de secretos, pronto atrae a los atentados públicos",
       "genres": [
         "Action",
         "Comedy",
@@ -554,7 +554,7 @@
         "Supernatural"
       ],
       "firstSeenAt": "2026-10-27T23:56:26.547Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z",
+      "lastSeenAt": "2026-11-07T12:04:27.523Z",
       "trailer": {
         "platform": "youtube",
         "id": "s4dAQP5MlCs",
@@ -574,7 +574,7 @@
         "Sci-Fi"
       ],
       "firstSeenAt": "2026-10-15T22:22:27.011Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z",
+      "lastSeenAt": "2026-11-07T12:04:27.523Z",
       "trailer": {
         "platform": "youtube",
         "id": "Tvvs_SlUYgA",
@@ -594,15 +594,12 @@
         "Fantasy"
       ],
       "firstSeenAt": "2026-10-15T22:22:27.011Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z",
+      "lastSeenAt": "2026-11-07T12:04:27.523Z",
       "trailer": {
         "platform": "youtube",
         "id": "uC13b3_8riU",
         "mode": "embed_al_hacer_clic"
-      },
-      "externalLinks": [
-        "https://jkanime.net/tsuihou-sareta-tensei-juukishi-wa-game-chishiki-de-musou-suru/"
-      ]
+      }
     },
     {
       "id": "mal-59787",
@@ -618,7 +615,7 @@
         "Fantasy"
       ],
       "firstSeenAt": "2026-10-15T22:22:27.011Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z",
+      "lastSeenAt": "2026-11-07T12:04:27.523Z",
       "trailer": {
         "platform": "youtube",
         "id": "PxXPcoo8uGM",
@@ -638,7 +635,7 @@
         "Slice of Life"
       ],
       "firstSeenAt": "2026-10-15T22:22:27.011Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z",
+      "lastSeenAt": "2026-11-07T12:04:27.523Z",
       "trailer": {
         "platform": "youtube",
         "id": "rV-fcFL5vtU",
@@ -657,7 +654,7 @@
         "Slice of Life"
       ],
       "firstSeenAt": "2026-10-15T22:22:27.011Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z",
+      "lastSeenAt": "2026-11-07T12:04:27.523Z",
       "trailer": {
         "platform": "youtube",
         "id": "L4wurjkd0JM",
@@ -677,7 +674,7 @@
         "Fantasy"
       ],
       "firstSeenAt": "2026-10-15T22:22:27.011Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z",
+      "lastSeenAt": "2026-11-07T12:04:27.523Z",
       "trailer": {
         "platform": "youtube",
         "id": "xIa7dMUka-8",
@@ -698,7 +695,7 @@
         "Comedy"
       ],
       "firstSeenAt": "2026-10-15T22:22:27.011Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-60601",
@@ -713,7 +710,7 @@
         "Fantasy"
       ],
       "firstSeenAt": "2026-10-15T22:22:27.011Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z",
+      "lastSeenAt": "2026-11-07T12:04:27.523Z",
       "trailer": {
         "platform": "youtube",
         "id": "8_Lxr7vO9l0",
@@ -758,7 +755,7 @@
         "Sci-Fi"
       ],
       "firstSeenAt": "2026-10-15T22:22:27.011Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z",
+      "lastSeenAt": "2026-11-07T12:04:27.523Z",
       "trailer": {
         "platform": "youtube",
         "id": "Z9ofT53sz2U",
@@ -772,13 +769,13 @@
       "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/186742-nZP1PcuUpcGg.jpg",
       "year": 2026,
       "format": "TV",
-      "description_es": "Esta es una historia de cuatro chicas que viven en el \"Dark Side\" de Academy City. En la Ciudad de la Academia donde el \"ESP\" ha sido reconocido como una ciencia general. Detrás de la paz, hay una organización Dark Side que realiza misiones que no pueden hacerse públicas. \"ITEM\" es una unidad de élite compuesta por cuatro niñas. Takitsubo Rikou es capaz de leer y rastrear los campos AIM emitidos por aquellos con capacidades. Frenda Seivelun, que destaca en combate utilizando explosivos y trampas. Kinuhata Saiai, que puede manipular el nitrógeno a voluntad y juega un papel defensivo. Y uno de los 7 Espers que Academy City está orgulloso de: Mugino Shiz",
+      "description_es": "Esta es una historia de cuatro chicas que viven en el \"Dark Side\" de Academy City. En la Ciudad de la Academia donde el \"ESP\" ha sido reconocido como una ciencia general. Detrás de la paz, hay una organización Dark Side que realiza misiones que no pueden hacerse públicas. \"ITEM\" es una unidad de élite compuesta por cuatro niñas. Takitsubo Rikou es capaz de leer y rastrear los campos AIM emitidos por aquellos con capacidades. Frenda Seivelun, que destaca en combate utilizando explosivos y t",
       "genres": [
         "Action",
         "Sci-Fi"
       ],
       "firstSeenAt": "2026-10-15T22:22:27.011Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z",
+      "lastSeenAt": "2026-11-07T12:04:27.523Z",
       "trailer": {
         "platform": "youtube",
         "id": "NNHxQJgZdbQ",
@@ -799,7 +796,7 @@
         "Fantasy"
       ],
       "firstSeenAt": "2026-10-15T22:22:27.011Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z",
+      "lastSeenAt": "2026-11-07T12:04:27.523Z",
       "trailer": {
         "platform": "youtube",
         "id": "m4T9VcBD0vo",
@@ -820,7 +817,7 @@
         "Fantasy"
       ],
       "firstSeenAt": "2026-10-15T22:22:27.011Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z",
+      "lastSeenAt": "2026-11-07T12:04:27.523Z",
       "trailer": {
         "platform": "youtube",
         "id": "9oBywQ403ZA",
@@ -839,7 +836,7 @@
         "Comedy"
       ],
       "firstSeenAt": "2026-10-15T22:22:27.011Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z",
+      "lastSeenAt": "2026-11-07T12:04:27.523Z",
       "trailer": {
         "platform": "youtube",
         "id": "AVIDW2dT2AM",
@@ -880,7 +877,7 @@
         "Sports"
       ],
       "firstSeenAt": "2026-10-15T22:22:27.011Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z",
+      "lastSeenAt": "2026-11-07T12:04:27.523Z",
       "trailer": {
         "platform": "youtube",
         "id": "hJ6Y8PAOUk8",
@@ -924,7 +921,7 @@
         "Supernatural"
       ],
       "firstSeenAt": "2026-10-15T22:22:27.011Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z",
+      "lastSeenAt": "2026-11-07T12:04:27.523Z",
       "trailer": {
         "platform": "youtube",
         "id": "jXtG_lcR9P4",
@@ -945,7 +942,7 @@
         "Slice of Life"
       ],
       "firstSeenAt": "2026-10-15T22:22:27.011Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z",
+      "lastSeenAt": "2026-11-07T12:04:27.523Z",
       "trailer": {
         "platform": "youtube",
         "id": "VTRVLnzhl90",
@@ -964,7 +961,7 @@
         "Sports"
       ],
       "firstSeenAt": "2026-10-15T22:22:27.011Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z",
+      "lastSeenAt": "2026-11-07T12:04:27.523Z",
       "trailer": {
         "platform": "youtube",
         "id": "phKPnPXm74c",
@@ -1007,7 +1004,7 @@
         "Fantasy"
       ],
       "firstSeenAt": "2026-10-15T22:22:27.011Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-61967",
@@ -1024,7 +1021,7 @@
         "Fantasy"
       ],
       "firstSeenAt": "2026-10-15T22:22:27.011Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z",
+      "lastSeenAt": "2026-11-07T12:04:27.523Z",
       "trailer": {
         "platform": "youtube",
         "id": "4MYo8FfiXMA",
@@ -1044,7 +1041,7 @@
         "Mystery"
       ],
       "firstSeenAt": "2026-10-15T22:22:27.011Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z",
+      "lastSeenAt": "2026-11-07T12:04:27.523Z",
       "trailer": {
         "platform": "youtube",
         "id": "YvNvvUeCztE",
@@ -1086,7 +1083,7 @@
         "Supernatural"
       ],
       "firstSeenAt": "2026-10-15T22:22:27.011Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z",
+      "lastSeenAt": "2026-11-07T12:04:27.523Z",
       "trailer": {
         "platform": "youtube",
         "id": "iX4N-Z5Hbxw",
@@ -1105,7 +1102,7 @@
         "Comedy"
       ],
       "firstSeenAt": "2026-10-15T22:22:27.011Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z",
+      "lastSeenAt": "2026-11-07T12:04:27.523Z",
       "trailer": {
         "platform": "youtube",
         "id": "dUSYa-7rKpM",
@@ -1125,7 +1122,7 @@
         "Fantasy"
       ],
       "firstSeenAt": "2026-10-15T22:22:27.011Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-62248",
@@ -1141,7 +1138,7 @@
         "Fantasy"
       ],
       "firstSeenAt": "2026-10-15T22:22:27.011Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z",
+      "lastSeenAt": "2026-11-07T12:04:27.523Z",
       "trailer": {
         "platform": "youtube",
         "id": "sKXK-6uZHjI",
@@ -1181,7 +1178,7 @@
         "Romance"
       ],
       "firstSeenAt": "2026-10-15T22:22:27.011Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z",
+      "lastSeenAt": "2026-11-07T12:04:27.523Z",
       "trailer": {
         "platform": "youtube",
         "id": "8RHh2AyKRfY",
@@ -1204,7 +1201,7 @@
         "Supernatural"
       ],
       "firstSeenAt": "2026-10-15T22:22:27.011Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z",
+      "lastSeenAt": "2026-11-07T12:04:27.523Z",
       "trailer": {
         "platform": "youtube",
         "id": "_0kVb8-uRSI",
@@ -1225,7 +1222,7 @@
         "Sports"
       ],
       "firstSeenAt": "2026-10-15T22:22:27.011Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z",
+      "lastSeenAt": "2026-11-07T12:04:27.523Z",
       "trailer": {
         "platform": "youtube",
         "id": "bsNeADDQFD4",
@@ -1267,7 +1264,7 @@
         "Drama"
       ],
       "firstSeenAt": "2026-10-15T22:22:27.011Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-62615",
@@ -1281,7 +1278,7 @@
         "Slice of Life"
       ],
       "firstSeenAt": "2026-10-15T22:22:27.011Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z",
+      "lastSeenAt": "2026-11-07T12:04:27.523Z",
       "trailer": {
         "platform": "youtube",
         "id": "GixEiC7k9_4",
@@ -1301,7 +1298,7 @@
         "Slice of Life"
       ],
       "firstSeenAt": "2026-10-15T22:22:27.011Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z",
+      "lastSeenAt": "2026-11-07T12:04:27.523Z",
       "trailer": {
         "platform": "youtube",
         "id": "rYpXoCdTNQI",
@@ -1322,7 +1319,7 @@
         "Romance"
       ],
       "firstSeenAt": "2026-10-15T22:22:27.011Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z",
+      "lastSeenAt": "2026-11-07T12:04:27.523Z",
       "trailer": {
         "platform": "youtube",
         "id": "e41RGxVwJRs",
@@ -1342,7 +1339,7 @@
         "Slice of Life"
       ],
       "firstSeenAt": "2026-10-15T22:22:27.011Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z",
+      "lastSeenAt": "2026-11-07T12:04:27.523Z",
       "trailer": {
         "platform": "youtube",
         "id": "YKgjylmYeoA",
@@ -1363,7 +1360,7 @@
         "Fantasy"
       ],
       "firstSeenAt": "2026-10-15T22:22:27.011Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z",
+      "lastSeenAt": "2026-11-07T12:04:27.523Z",
       "trailer": {
         "platform": "youtube",
         "id": "kXqx3rFSkxc",
@@ -1383,7 +1380,7 @@
         "Mystery"
       ],
       "firstSeenAt": "2026-10-15T22:22:27.011Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z",
+      "lastSeenAt": "2026-11-07T12:04:27.523Z",
       "trailer": {
         "platform": "youtube",
         "id": "qjozo1fh7OI",
@@ -1397,14 +1394,14 @@
       "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/203275-g8zkD7HCkJCn.jpg",
       "year": 2026,
       "format": "TV",
-      "description_es": "Yuuma Ashihara de sexto grado y su hermana gemela, Sawa, están jugando Actual Magic, una nueva realidad virtual MMORPG, cuando de repente comienza a fusionarse con el mundo real. En medio de todo el caos y la confusión, se hace evidente que la muerte está acechando alrededor de cada esquina, incluso cuando Yuuma entra en su compañero de clase Sumika. Antes, ella era una de las chicas más lindas de su clase, pero desde entonces ha sufrido una terrible metamorfosis, ¡en uno de los monstruos horrorosos del juego! Del autor de Sword Art Online y Accel World viene una historia más allá de VR y AR, donde el juego y la realidad son uno y el mismo...y s",
+      "description_es": "Yuuma Ashihara de sexto grado y su hermana gemela, Sawa, están jugando Actual Magic, una nueva realidad virtual MMORPG, cuando de repente comienza a fusionarse con el mundo real. En medio de todo el caos y la confusión, se hace evidente que la muerte está acechando alrededor de cada esquina, incluso cuando Yuuma entra en su compañero de clase Sumika. Antes, ella era una de las chicas más lindas de su clase, pero desde entonces se ha sometido a una terrible metamorfosis, en uno de los horrifus del juego",
       "genres": [
         "Action",
         "Adventure",
         "Fantasy"
       ],
       "firstSeenAt": "2026-10-28T06:08:43.211Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z",
+      "lastSeenAt": "2026-11-07T12:04:27.523Z",
       "trailer": {
         "platform": "youtube",
         "id": "z_aHrTag3Ig",
@@ -1425,7 +1422,7 @@
         "Supernatural"
       ],
       "firstSeenAt": "2026-10-15T22:22:27.011Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-63061",
@@ -1434,14 +1431,14 @@
       "banner": null,
       "year": 2026,
       "format": "TV",
-      "description_es": "El manga se centra en el estudiante de secundaria Ito Hazui. Durante su descanso de primavera al final de su primer año de secundaria, la madre de Ito se vuelve a casar, y Ito se mueve a vivir con su nueva familia, convirtiéndose en Ito Narita. Al llegar a su nueva casa, Ito está conmocionado por saber que ahora tiene cuatro hermanos de paso más jóvenes. Ito trata de que ella sea más difícil de llevar con todos los nuevos miembros de su familia, pero el hermano mayor Gen es un poco frío para ella. Sin embargo, bajo su fachada, ocasionalmente muestra su bondad. (Fuente: Anime News Network)",
+      "description_es": "El manga se centra en el estudiante de secundaria Ito Hazui. Durante su descanso de primavera al final de su primer año de secundaria, la madre de Ito se vuelve a casar, y Ito se mueve a vivir con su nueva familia, convirtiéndose en Ito Narita. Al llegar a su nueva casa, Ito está sorprendido de saber que ahora tiene cuatro hermanos menores. Ito trata de que ella sea más difícil de llevar con todos los nuevos miembros de su familia, pero el hermano mayor Gen es un poco frío para ella. Sin embargo, bajo su",
       "genres": [
         "Comedy",
         "Romance",
         "Slice of Life"
       ],
       "firstSeenAt": "2026-10-15T22:22:27.011Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z",
+      "lastSeenAt": "2026-11-07T12:04:27.523Z",
       "trailer": {
         "platform": "youtube",
         "id": "P927_ZvgUUg",
@@ -1462,7 +1459,7 @@
         "Sci-Fi"
       ],
       "firstSeenAt": "2026-10-15T22:22:27.011Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z",
+      "lastSeenAt": "2026-11-07T12:04:27.523Z",
       "trailer": {
         "platform": "youtube",
         "id": "fmUpSXFbSK0",
@@ -1481,7 +1478,7 @@
         "Slice of Life"
       ],
       "firstSeenAt": "2026-10-15T22:22:27.011Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z",
+      "lastSeenAt": "2026-11-07T12:04:27.523Z",
       "trailer": {
         "platform": "youtube",
         "id": "Laf46YXDt68",
@@ -1502,7 +1499,7 @@
         "Fantasy"
       ],
       "firstSeenAt": "2026-10-15T22:22:27.011Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z",
+      "lastSeenAt": "2026-11-07T12:04:27.523Z",
       "trailer": {
         "platform": "youtube",
         "id": "LyDMSUR6_Q8",
@@ -1521,7 +1518,7 @@
         "Slice of Life"
       ],
       "firstSeenAt": "2026-10-15T22:22:27.011Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z",
+      "lastSeenAt": "2026-11-07T12:04:27.523Z",
       "trailer": {
         "platform": "youtube",
         "id": "Svh_xgdMWlU",
@@ -1541,7 +1538,7 @@
         "Sci-Fi"
       ],
       "firstSeenAt": "2026-10-15T22:22:27.011Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z",
+      "lastSeenAt": "2026-11-07T12:04:27.523Z",
       "trailer": {
         "platform": "youtube",
         "id": "iMyre5xXDzE",
@@ -1562,7 +1559,7 @@
         "Supernatural"
       ],
       "firstSeenAt": "2026-10-15T22:22:27.011Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z",
+      "lastSeenAt": "2026-11-07T12:04:27.523Z",
       "trailer": {
         "platform": "youtube",
         "id": "upBWYExYoYc",
@@ -1582,7 +1579,7 @@
         "Fantasy"
       ],
       "firstSeenAt": "2026-10-15T22:22:27.011Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z",
+      "lastSeenAt": "2026-11-07T12:04:27.523Z",
       "trailer": {
         "platform": "youtube",
         "id": "qlMB8vSpLzc",
@@ -1602,7 +1599,7 @@
         "Romance"
       ],
       "firstSeenAt": "2026-10-15T22:22:27.011Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z",
+      "lastSeenAt": "2026-11-07T12:04:27.523Z",
       "trailer": {
         "platform": "youtube",
         "id": "Ex9LrBK-7hk",
@@ -1616,13 +1613,13 @@
       "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/206401-sKPZQks8FxNL.jpg",
       "year": 2026,
       "format": "TV",
-      "description_es": "La estudiante universitaria Kurumi Fukuga finalmente ha cumplido su deseo de iniciar el comercio de divisas (FX), motivado por recuperar los 20 millones de yenes que su madre falleció en el comercio. \"Lo recuperaré fácilmente,\" pensó, pero el mundo en el que entra puede convertirse en el cielo o el infierno en un instante. Pérdidas no realizadas, fluctuaciones descompuestas, imparables... ¡pero todavía quiere comprar, vender y hacer dinero! Con los adictos FX Mochiko, Mebuki an",
+      "description_es": "La estudiante universitaria Kurumi Fukuga finalmente ha cumplido su deseo de iniciar el comercio de divisas (FX), motivado por recuperar los 20 millones de yenes que su madre falleció en el comercio. \"Lo recuperaré fácilmente\", pensó, pero el mundo en el que entra puede convertirse en el cielo o el infierno en un instante. Las pérdidas no realizadas, las fluctuaciones descompuestas, imparables... ¡pero todavía quiere comprar, vender y ganar dinero! Con otros adictos FX Mochiko, Mebuki y Yasuko a lo largo de la excursión, el mercado se calienta! Joy, desesperación, alegría, desesperación — este es un juego de dinero entrañable, pero ligeramente arriesgado. Can Kurumi y ella",
       "genres": [
         "Drama",
         "Slice of Life"
       ],
       "firstSeenAt": "2026-10-15T22:22:27.011Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z",
+      "lastSeenAt": "2026-11-07T12:04:27.523Z",
       "trailer": {
         "platform": "youtube",
         "id": "7rxIZ3z0S4s",
@@ -1641,7 +1638,7 @@
         "Music"
       ],
       "firstSeenAt": "2026-10-15T22:22:27.011Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z",
+      "lastSeenAt": "2026-11-07T12:04:27.523Z",
       "trailer": {
         "platform": "youtube",
         "id": "j5MgjyhhUBc",
@@ -1655,14 +1652,14 @@
       "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/206814-ARuwrZJAGONN.jpg",
       "year": 2026,
       "format": "TV",
-      "description_es": "Han pasado varios años desde la feroz batalla contra Majin Buu, y la Tierra finalmente ha recuperado un breve momento de paz. Al mismo tiempo, Beerus, el Dios de la Destrucción, despierta de su sueño largo y profundo. Incluso Kai y el Supremo Kai, consciente del abrumador poder de Beerus para destruir planetas enteros, ver su despertar con gran miedo... Mientras tanto, Beerus escucha rumores de un Saiyan que venció a Frieza y de repente aparece ante Goku. Meta de cerveza",
+      "description_es": "Han pasado varios años desde la feroz batalla contra Majin Buu, y la Tierra finalmente ha recuperado un breve momento de paz. Al mismo tiempo, Beerus, el Dios de la Destrucción, despierta de su sueño largo y profundo. Incluso Kai y el Supremo Kai, consciente del abrumador poder de Beerus para destruir planetas enteros, ver su despertar con gran miedo... Mientras tanto, Beerus escucha rumores de un Saiyan que venció a Frieza y de repente aparece ante Goku. Atacada por Beerus, el ser más fuerte del universo, la Tierra está en grave peligro. Así comienza una batalla cósmica que rompe la tierra entre el Dios de la Destrucción y Go",
       "genres": [
         "Action",
         "Adventure",
         "Sci-Fi"
       ],
       "firstSeenAt": "2026-10-15T22:22:27.011Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z",
+      "lastSeenAt": "2026-11-07T12:04:27.523Z",
       "trailer": {
         "platform": "youtube",
         "id": "CFgEL7ei8VE",
@@ -1683,7 +1680,7 @@
         "Supernatural"
       ],
       "firstSeenAt": "2026-10-15T22:22:27.011Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z",
+      "lastSeenAt": "2026-11-07T12:04:27.523Z",
       "trailer": {
         "platform": "youtube",
         "id": "2zhlC9mffas",
@@ -1703,7 +1700,7 @@
         "Fantasy"
       ],
       "firstSeenAt": "2026-10-15T22:22:27.011Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z",
+      "lastSeenAt": "2026-11-07T12:04:27.523Z",
       "trailer": {
         "platform": "youtube",
         "id": "gxG4vntLtbk",
@@ -1739,13 +1736,13 @@
       "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/207191-xYgpkCDnXc5m.jpg",
       "year": 2026,
       "format": "TV",
-      "description_es": "Hazme una poción de amor. Y con esa sola frase, la Buena Bruja del amor secreto del lago sobre el desgarrador Sir Harij termina en un desgarro. Aún así, cuando promete ayudarla a reunir los ingredientes, Rose está emocionada por la oportunidad de mirar a un hombre con el que normalmente nunca podría interactuar. Ella aprende a jactar su corazón por sus conversaciones usuales inclinadas... pero ¿qué va a hacer cuando aparece inexplicablemente en su puerta con bre",
+      "description_es": "Hazme una poción de amor. Y con esa sola frase, la Buena Bruja del amor secreto del lago sobre el desgarrador Sir Harij termina en la ruptura del corazón. Sin embargo, cuando promete ayudarla a reunir los ingredientes, Rose está emocionada por la oportunidad de mirar a un hombre con el que normalmente nunca podría interactuar. Ella aprende a jactar su corazón por sus conversaciones usuales inclinadas... pero ¿qué va a hacer cuando aparece inexplicablemente en su puerta con pan y un frasco de mantequilla de manzana? (Fuente: Yen Press)",
       "genres": [
         "Fantasy",
         "Romance"
       ],
       "firstSeenAt": "2026-10-15T22:22:27.011Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z",
+      "lastSeenAt": "2026-11-07T12:04:27.523Z",
       "trailer": {
         "platform": "youtube",
         "id": "hGRtocAh3iw",
@@ -1765,7 +1762,7 @@
         "Romance"
       ],
       "firstSeenAt": "2026-10-15T22:22:27.011Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z",
+      "lastSeenAt": "2026-11-07T12:04:27.523Z",
       "trailer": {
         "platform": "youtube",
         "id": "J2tjySs8UbA",
@@ -1787,7 +1784,7 @@
         "Slice of Life"
       ],
       "firstSeenAt": "2026-10-15T22:22:27.011Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z",
+      "lastSeenAt": "2026-11-07T12:04:27.523Z",
       "trailer": {
         "platform": "youtube",
         "id": "BJXBr_aFF8s",
@@ -1810,7 +1807,7 @@
         "Romance"
       ],
       "firstSeenAt": "2026-10-15T22:22:27.011Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z",
+      "lastSeenAt": "2026-11-07T12:04:27.523Z",
       "trailer": {
         "platform": "youtube",
         "id": "qpFcQ1Bek08",
@@ -1832,7 +1829,7 @@
         "Romance"
       ],
       "firstSeenAt": "2026-10-15T22:22:27.011Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z",
+      "lastSeenAt": "2026-11-07T12:04:27.523Z",
       "trailer": {
         "platform": "youtube",
         "id": "-YCols5lYow",
@@ -1852,7 +1849,7 @@
         "Music"
       ],
       "firstSeenAt": "2026-10-15T22:22:27.011Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z",
+      "lastSeenAt": "2026-11-07T12:04:27.523Z",
       "trailer": {
         "platform": "youtube",
         "id": "rwUPmzMpECo",
@@ -1866,7 +1863,7 @@
       "banner": null,
       "year": 2026,
       "format": "ONA",
-      "description_es": "La naturaleza altruista del trabajador de oficina Akira Yagami generalmente le consigue el extremo corto del palo. Cuando muere después de salvar a un niño del tráfico entrante... ¿reencarna en otro mundo como un duende? Normalmente, los duendes sólo viven durante siete días, pero los nuevos poderes de Akira le permiten desafiar la vida normal de la especie... ¡y son la clave de su camino para convertirse en el más fuerte de todos los tiempos! (Fuente: Yen Press) Nota: Tensei Goblin Dakedo Sitsumon Aru?",
+      "description_es": "La naturaleza altruista del trabajador de oficina Akira Yagami generalmente le consigue el extremo corto del palo. Cuando muere después de salvar a un niño del tráfico entrante... ¿reencarna en otro mundo como un duende? Normalmente, los duendes sólo viven durante siete días, pero los nuevos poderes de Akira le permiten desafiar el período de vida normal de la especie... ¡y son la clave de su camino para convertirse en el más fuerte de todos los tiempos! (Fuente: Yen Press) Nota: Tensei Goblin Dakedo Sitsumon Aru? está transmitiendo 1 semana antes de la emisión de televisión en ABEMA y Primer Video comenzando con el episodio 2 el 5 de octubre de 2026",
       "genres": [
         "Action",
         "Adventure",
@@ -1876,7 +1873,7 @@
         "Romance"
       ],
       "firstSeenAt": "2026-10-15T22:22:27.011Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z",
+      "lastSeenAt": "2026-11-07T12:04:27.523Z",
       "trailer": {
         "platform": "youtube",
         "id": "ynr8tFWrK4c",
@@ -1896,7 +1893,7 @@
         "Sci-Fi"
       ],
       "firstSeenAt": "2026-10-15T22:22:27.011Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z",
+      "lastSeenAt": "2026-11-07T12:04:27.523Z",
       "trailer": {
         "platform": "youtube",
         "id": "ihAvU833DHA",
@@ -1917,7 +1914,7 @@
         "Romance"
       ],
       "firstSeenAt": "2026-10-15T22:22:27.011Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z",
+      "lastSeenAt": "2026-11-07T12:04:27.523Z",
       "trailer": {
         "platform": "youtube",
         "id": "dLRKywRu3iM",
@@ -1931,13 +1928,13 @@
       "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/209502-TATgyznMxQOe.jpg",
       "year": 2026,
       "format": "TV",
-      "description_es": "Sato-san es la flor inalcanzable de la clase. Siempre tiene frío y rito con compañeros de clase, pero sólo sé que es muy linda cuando sonríe, incluso si no es mucho fotógrafo. Oshio-kun es amistoso y animado, pero sólo sé que trabaja en el café de su familia después de la escuela. Hace un gran trabajo con la cuenta SNS de la cafetería, y su mala sonrisa hace que mi corazón salte un latido! Inocentes y dulces, pero a veces frustrantes, esta es una historia de 120% pura y fluida sobre dos personas que se enamoran por primera vez.",
+      "description_es": "Sato-san es la flor inalcanzable de la clase. Ella siempre tiene frío y curtimiento con compañeros de clase, pero sólo sé que es muy linda cuando sonríe, incluso si no es mucho de fotógrafo. Oshio-kun es amistoso y animado, pero sólo sé que trabaja en el café de su familia después de la escuela. Hace un gran trabajo con la cuenta SNS de la cafetería, y su mala sonrisa hace que mi corazón se salte un latido! Innocente y dulce, pero a veces frustrante, esto es un",
       "genres": [
         "Comedy",
         "Romance"
       ],
       "firstSeenAt": "2026-10-15T22:22:27.011Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z",
+      "lastSeenAt": "2026-11-07T12:04:27.523Z",
       "trailer": {
         "platform": "youtube",
         "id": "8XgKVzuLmJw",
@@ -1957,7 +1954,7 @@
         "Mecha"
       ],
       "firstSeenAt": "2026-10-15T22:22:27.011Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z",
+      "lastSeenAt": "2026-11-07T12:04:27.523Z",
       "trailer": {
         "platform": "youtube",
         "id": "JqjXaJysS5w",
@@ -1978,7 +1975,7 @@
         "Romance"
       ],
       "firstSeenAt": "2026-10-15T22:22:27.011Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z",
+      "lastSeenAt": "2026-11-07T12:04:27.523Z",
       "trailer": {
         "platform": "youtube",
         "id": "dbe8esPSfYI",
@@ -1998,7 +1995,7 @@
         "Fantasy"
       ],
       "firstSeenAt": "2026-10-15T22:22:27.011Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z",
+      "lastSeenAt": "2026-11-07T12:04:27.523Z",
       "trailer": {
         "platform": "youtube",
         "id": "cXd4pKTx2pI",
@@ -2015,7 +2012,7 @@
       "description_es": "",
       "genres": [],
       "firstSeenAt": "2026-10-15T22:22:27.011Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z",
+      "lastSeenAt": "2026-11-07T12:04:27.523Z",
       "trailer": {
         "platform": "youtube",
         "id": "4iOFqQ1E4Mo",
@@ -2036,7 +2033,7 @@
         "Fantasy"
       ],
       "firstSeenAt": "2026-10-30T00:00:04.890Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z",
+      "lastSeenAt": "2026-11-07T12:04:27.523Z",
       "trailer": {
         "platform": "youtube",
         "id": "zxgmRfemSMI",
@@ -2055,7 +2052,7 @@
         "Comedy"
       ],
       "firstSeenAt": "2026-10-15T22:22:27.011Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z",
+      "lastSeenAt": "2026-11-07T12:04:27.523Z",
       "trailer": {
         "platform": "youtube",
         "id": "DO_UchIVN9Y",
@@ -2076,7 +2073,7 @@
         "Fantasy"
       ],
       "firstSeenAt": "2026-10-15T22:22:27.011Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z",
+      "lastSeenAt": "2026-11-07T12:04:27.523Z",
       "trailer": {
         "platform": "youtube",
         "id": "snJZD9vxfHY",
@@ -2097,7 +2094,7 @@
         "Romance"
       ],
       "firstSeenAt": "2026-10-15T22:22:27.011Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z",
+      "lastSeenAt": "2026-11-07T12:04:27.523Z",
       "trailer": {
         "platform": "youtube",
         "id": "E-stx_wwVSs",
@@ -2117,7 +2114,7 @@
         "Romance"
       ],
       "firstSeenAt": "2026-10-15T22:22:27.011Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z",
+      "lastSeenAt": "2026-11-07T12:04:27.523Z",
       "trailer": {
         "platform": "youtube",
         "id": "vnOrtJ4vRmw",
@@ -2136,7 +2133,7 @@
         "Comedy"
       ],
       "firstSeenAt": "2026-10-15T22:22:27.011Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z",
+      "lastSeenAt": "2026-11-07T12:04:27.523Z",
       "trailer": {
         "platform": "youtube",
         "id": "NGwgoL0TvI8",
@@ -2155,7 +2152,7 @@
         "Slice of Life"
       ],
       "firstSeenAt": "2026-10-15T22:22:27.011Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-64254",
@@ -2171,7 +2168,7 @@
         "Fantasy"
       ],
       "firstSeenAt": "2026-10-15T22:22:27.011Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z",
+      "lastSeenAt": "2026-11-07T12:04:27.523Z",
       "trailer": {
         "platform": "youtube",
         "id": "oxkxyAcKv2g",
@@ -2192,7 +2189,7 @@
         "Romance"
       ],
       "firstSeenAt": "2026-10-15T22:22:27.011Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z",
+      "lastSeenAt": "2026-11-07T12:04:27.523Z",
       "trailer": {
         "platform": "youtube",
         "id": "wk26nTxUzPY",
@@ -2214,7 +2211,7 @@
         "Fantasy"
       ],
       "firstSeenAt": "2026-10-15T22:22:27.011Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z",
+      "lastSeenAt": "2026-11-07T12:04:27.523Z",
       "trailer": {
         "platform": "youtube",
         "id": "e1Km0FqUZl0",
@@ -2234,7 +2231,7 @@
         "Mecha"
       ],
       "firstSeenAt": "2026-10-15T22:22:27.011Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z",
+      "lastSeenAt": "2026-11-07T12:04:27.523Z",
       "trailer": {
         "platform": "youtube",
         "id": "ihJfkOT_0wU",
@@ -2255,7 +2252,7 @@
         "Fantasy"
       ],
       "firstSeenAt": "2026-10-15T22:22:27.011Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-64398",
@@ -2271,7 +2268,7 @@
         "Fantasy"
       ],
       "firstSeenAt": "2026-10-15T22:22:27.011Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-64430",
@@ -2283,7 +2280,7 @@
       "description_es": "La popular y popular serie de enciclopedias ilustradas de Gakken, que todos pueden disfrutar con sus cómics de cuatro paneles, finalmente se está adaptando a un anime de televisión! Descubre aspectos sorprendentes y hechos divertidos sobre los seres vivientes, llenos de secretos que te harán decir: \"¡Wow!\" Disfruta de este nuevo tipo de anime que hace que las cosas aterradoras sean divertidas y fáciles de ver, con su estilo de arte lindo. (Fuente: Sitio oficial, traducido)",
       "genres": [],
       "firstSeenAt": "2026-10-15T22:22:27.011Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z",
+      "lastSeenAt": "2026-11-07T12:04:27.523Z",
       "trailer": {
         "platform": "youtube",
         "id": "cH7enqqATwE",
@@ -2325,7 +2322,7 @@
         "Romance"
       ],
       "firstSeenAt": "2026-10-15T22:22:27.011Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z",
+      "lastSeenAt": "2026-11-07T12:04:27.523Z",
       "trailer": {
         "platform": "youtube",
         "id": "059cJjeY19Y",
@@ -2344,7 +2341,7 @@
         "Sports"
       ],
       "firstSeenAt": "2026-10-15T22:22:27.011Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z",
+      "lastSeenAt": "2026-11-07T12:04:27.523Z",
       "trailer": {
         "platform": "youtube",
         "id": "kLbI4teuPTc",
@@ -2366,7 +2363,7 @@
         "Slice of Life"
       ],
       "firstSeenAt": "2026-10-15T22:22:27.011Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z",
+      "lastSeenAt": "2026-11-07T12:04:27.523Z",
       "trailer": {
         "platform": "youtube",
         "id": "VvzeL7UMCE8",
@@ -2386,7 +2383,7 @@
         "Fantasy"
       ],
       "firstSeenAt": "2026-10-15T22:22:27.011Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z",
+      "lastSeenAt": "2026-11-07T12:04:27.523Z",
       "trailer": {
         "platform": "youtube",
         "id": "n0na0hTpl1E",
@@ -2405,7 +2402,7 @@
         "Fantasy"
       ],
       "firstSeenAt": "2026-10-15T22:22:27.011Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-64848",
@@ -2420,7 +2417,7 @@
         "Supernatural"
       ],
       "firstSeenAt": "2026-10-15T22:22:27.011Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-64867",
@@ -2435,7 +2432,7 @@
         "Slice of Life"
       ],
       "firstSeenAt": "2026-10-15T22:22:27.011Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z",
+      "lastSeenAt": "2026-11-07T12:04:27.523Z",
       "trailer": {
         "platform": "youtube",
         "id": "rUHYbwZDVVI",
@@ -2454,7 +2451,7 @@
         "Slice of Life"
       ],
       "firstSeenAt": "2026-10-15T22:22:27.011Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-65009",
@@ -2469,7 +2466,7 @@
         "Fantasy"
       ],
       "firstSeenAt": "2026-10-15T22:22:27.011Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z",
+      "lastSeenAt": "2026-11-07T12:04:27.523Z",
       "trailer": {
         "platform": "youtube",
         "id": "4QafpDIgjS4",
@@ -2488,7 +2485,7 @@
         "Slice of Life"
       ],
       "firstSeenAt": "2026-10-15T22:22:27.011Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z",
+      "lastSeenAt": "2026-11-07T12:04:27.523Z",
       "trailer": {
         "platform": "youtube",
         "id": "Rya5HXrNeww",
@@ -2508,7 +2505,7 @@
         "Slice of Life"
       ],
       "firstSeenAt": "2026-10-15T22:22:27.011Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-65119",
@@ -2522,7 +2519,7 @@
         "Comedy"
       ],
       "firstSeenAt": "2026-10-18T20:51:40.679Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z",
+      "lastSeenAt": "2026-11-07T12:04:27.523Z",
       "trailer": {
         "platform": "youtube",
         "id": "FuGZ0Cl8YMY",
@@ -2543,7 +2540,7 @@
         "Romance"
       ],
       "firstSeenAt": "2026-10-15T22:22:27.011Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-65169",
@@ -2560,7 +2557,7 @@
         "Romance"
       ],
       "firstSeenAt": "2026-10-15T22:22:27.011Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-65184",
@@ -2575,7 +2572,7 @@
         "Romance"
       ],
       "firstSeenAt": "2026-11-02T03:16:38.764Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z",
+      "lastSeenAt": "2026-11-07T12:04:27.523Z",
       "trailer": {
         "platform": "youtube",
         "id": "A2ZuZt01_Po",
@@ -2617,7 +2614,7 @@
         "Sci-Fi"
       ],
       "firstSeenAt": "2026-10-15T22:22:27.011Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-966",
@@ -2633,7 +2630,7 @@
         "Slice of Life"
       ],
       "firstSeenAt": "2026-10-15T22:22:27.011Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     }
   ],
   "seasons": [
@@ -2724,7 +2721,7 @@
         "mal-63367",
         "mal-63292"
       ],
-      "updatedAt": "2026-11-07T03:15:37.648Z"
+      "updatedAt": "2026-11-07T12:04:27.523Z"
     }
   ],
   "episodes": [
@@ -2822,7 +2819,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-10-30T15:19:41.765Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "al-155723:ep:431",
@@ -2838,7 +2835,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-11-06T09:23:00.181Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "al-206244:ep:1",
@@ -2870,7 +2867,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-10-28T12:09:14.147Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "al-206244:ep:3",
@@ -2886,7 +2883,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-11-04T18:15:37.532Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "al-214593:ep:10",
@@ -2902,7 +2899,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-10-27T23:56:26.547Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "al-214593:ep:11",
@@ -2918,7 +2915,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-10-31T06:05:37.939Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "al-214593:ep:12",
@@ -2934,7 +2931,23 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-11-03T18:13:13.733Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
+    },
+    {
+      "id": "al-214593:ep:13",
+      "animeId": "al-214593",
+      "seasonId": null,
+      "episodeNumber": 13,
+      "title": null,
+      "language": null,
+      "scheduledAt": "2026-11-16T02:00:00.000Z",
+      "publishedAt": null,
+      "airedStatus": "proxima_emision_programada",
+      "playbackStatus": "sin_fuente_autorizada",
+      "playbackSourceIds": [],
+      "metadataSource": "anilist_schedule",
+      "firstSeenAt": "2026-11-07T12:04:27.523Z",
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "al-214593:ep:4",
@@ -3094,7 +3107,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-10-30T15:19:41.765Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "al-216860:ep:7",
@@ -3110,7 +3123,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-11-06T09:23:00.181Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "al-217282:ep:1",
@@ -3174,7 +3187,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-11-02T18:17:40.360Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "al-218008:ep:15",
@@ -3222,7 +3235,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-11-02T09:32:46.564Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "al-218942:ep:5",
@@ -3254,7 +3267,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-10-27T23:56:26.547Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "al-218942:ep:7",
@@ -3270,7 +3283,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-11-03T18:13:13.733Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-235:ep:1217",
@@ -3313,12 +3326,12 @@
       "language": null,
       "scheduledAt": "2026-11-07T09:00:00.000Z",
       "publishedAt": null,
-      "airedStatus": "proxima_emision_programada",
+      "airedStatus": "fecha_de_emision_pasada",
       "playbackStatus": "sin_fuente_autorizada",
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-10-22T17:56:29.401Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-235:ep:1220",
@@ -3334,7 +3347,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-11-05T18:07:21.813Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-2406:ep:2854",
@@ -3398,7 +3411,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-10-30T15:19:41.765Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-2406:ep:2858",
@@ -3414,7 +3427,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-11-06T18:11:26.481Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-44042:ep:388",
@@ -3478,7 +3491,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-10-30T15:19:41.765Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-44042:ep:392",
@@ -3494,7 +3507,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-11-06T18:11:26.481Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-51039:ep:57",
@@ -3558,7 +3571,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-10-30T15:19:41.765Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-51039:ep:61",
@@ -3574,7 +3587,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-11-06T09:23:00.181Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-51768:ep:84",
@@ -3638,7 +3651,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-10-28T18:09:56.442Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-51768:ep:88",
@@ -3654,7 +3667,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-11-04T18:15:37.532Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-51836:ep:175",
@@ -3718,7 +3731,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-10-29T09:17:43.093Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-51836:ep:179",
@@ -3734,7 +3747,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-11-05T09:28:37.429Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-52480:ep:2",
@@ -3814,7 +3827,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-11-02T18:17:40.360Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-53876:ep:153",
@@ -3878,7 +3891,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-10-28T18:09:56.442Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-53876:ep:157",
@@ -3894,7 +3907,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-11-04T18:15:37.532Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-53913:ep:3",
@@ -3974,7 +3987,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-11-02T18:17:40.360Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-54250:ep:1",
@@ -4054,7 +4067,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-11-01T03:12:39.065Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-55809:ep:163",
@@ -4118,7 +4131,23 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-10-31T06:05:37.939Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
+    },
+    {
+      "id": "mal-55809:ep:167",
+      "animeId": "mal-55809",
+      "seasonId": null,
+      "episodeNumber": 167,
+      "title": null,
+      "language": null,
+      "scheduledAt": "2026-11-16T02:00:00.000Z",
+      "publishedAt": null,
+      "airedStatus": "proxima_emision_programada",
+      "playbackStatus": "sin_fuente_autorizada",
+      "playbackSourceIds": [],
+      "metadataSource": "anilist_schedule",
+      "firstSeenAt": "2026-11-07T12:04:27.523Z",
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-56566:ep:136",
@@ -4166,7 +4195,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-10-28T18:09:56.442Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-56566:ep:140",
@@ -4182,7 +4211,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-11-04T18:15:37.532Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-56733:ep:4",
@@ -4246,7 +4275,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-10-30T00:00:04.890Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-56733:ep:8",
@@ -4262,7 +4291,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-11-05T18:07:21.813Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-57612:ep:2",
@@ -4342,7 +4371,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-11-02T18:17:40.360Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-57961:ep:1",
@@ -4358,7 +4387,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-11-03T18:13:13.733Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-58518:ep:2",
@@ -4438,7 +4467,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-11-02T18:17:40.360Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-58879:ep:1",
@@ -4454,7 +4483,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-11-06T03:16:26.715Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-59088:ep:3",
@@ -4518,7 +4547,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-10-29T03:12:32.980Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-59088:ep:7",
@@ -4534,7 +4563,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-11-05T03:16:04.113Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-59204:ep:2",
@@ -4614,7 +4643,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-11-02T18:17:40.360Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-59217:ep:1",
@@ -4630,7 +4659,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-10-27T23:56:26.547Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-59415:ep:1",
@@ -4710,7 +4739,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-11-02T03:16:38.764Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-59741:ep:16",
@@ -4774,7 +4803,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-10-27T23:56:26.547Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-59741:ep:20",
@@ -4790,7 +4819,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-11-03T18:13:13.733Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-59787:ep:3",
@@ -4849,12 +4878,12 @@
       "language": null,
       "scheduledAt": "2026-11-07T12:00:00.000Z",
       "publishedAt": null,
-      "airedStatus": "proxima_emision_programada",
+      "airedStatus": "fecha_de_emision_pasada",
       "playbackStatus": "sin_fuente_autorizada",
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-10-30T00:00:04.890Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-59787:ep:7",
@@ -4870,7 +4899,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-11-05T18:07:21.813Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-60153:ep:28",
@@ -4934,7 +4963,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-10-29T09:17:43.093Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-60153:ep:32",
@@ -4950,7 +4979,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-11-05T09:28:37.429Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-60534:ep:81",
@@ -5014,7 +5043,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-10-30T15:19:41.765Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-60534:ep:85",
@@ -5030,7 +5059,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-11-06T09:23:00.181Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-60597:ep:5",
@@ -5094,7 +5123,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-10-29T09:17:43.093Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-60597:ep:9",
@@ -5110,7 +5139,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-11-05T09:28:37.429Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-60598:ep:1",
@@ -5190,7 +5219,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-11-02T18:17:40.360Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-60601:ep:4",
@@ -5254,7 +5283,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-10-30T23:59:35.212Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-60601:ep:8",
@@ -5270,7 +5299,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-11-06T18:11:26.481Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-60636:ep:10",
@@ -5366,7 +5395,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-10-30T23:59:35.212Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-60948:ep:7",
@@ -5382,7 +5411,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-11-06T18:11:26.481Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-61014:ep:2",
@@ -5446,7 +5475,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-10-28T18:09:56.442Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-61014:ep:6",
@@ -5462,7 +5491,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-11-04T18:15:37.532Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-61140:ep:3",
@@ -5526,7 +5555,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-11-01T21:01:41.969Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-61153:ep:4",
@@ -5590,7 +5619,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-10-30T00:00:04.890Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-61153:ep:8",
@@ -5606,7 +5635,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-11-05T18:07:21.813Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-61227:ep:2",
@@ -5670,7 +5699,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-10-27T23:56:26.547Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-61227:ep:6",
@@ -5686,7 +5715,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-11-03T18:13:13.733Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-61297:ep:19",
@@ -5750,7 +5779,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-10-23T15:06:02.961Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-61323:ep:6",
@@ -5766,7 +5795,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-11-06T18:11:26.481Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-61440:ep:1",
@@ -5878,7 +5907,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-10-28T12:09:14.147Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-61469:ep:8",
@@ -5894,7 +5923,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-11-04T18:15:37.532Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-61578:ep:3",
@@ -5958,7 +5987,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-10-30T00:00:04.890Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-61578:ep:7",
@@ -5974,7 +6003,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-11-05T18:07:21.813Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-61603:ep:3",
@@ -6038,7 +6067,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-10-30T15:19:41.765Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-61603:ep:7",
@@ -6054,7 +6083,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-11-06T18:11:26.481Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-61607:ep:11",
@@ -6150,7 +6179,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-10-29T09:17:43.093Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-61619:ep:20",
@@ -6166,7 +6195,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-11-05T09:28:37.429Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-61967:ep:3",
@@ -6230,7 +6259,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-10-30T00:00:04.890Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-61967:ep:7",
@@ -6246,7 +6275,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-11-05T18:07:21.813Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-61987:ep:3",
@@ -6310,7 +6339,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-10-28T18:09:56.442Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-61987:ep:7",
@@ -6326,7 +6355,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-11-04T18:15:37.532Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-61990:ep:1",
@@ -6545,12 +6574,12 @@
       "language": null,
       "scheduledAt": "2026-11-07T08:30:00.000Z",
       "publishedAt": null,
-      "airedStatus": "proxima_emision_programada",
+      "airedStatus": "fecha_de_emision_pasada",
       "playbackStatus": "sin_fuente_autorizada",
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-10-29T15:20:00.639Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-61999:ep:6",
@@ -6566,7 +6595,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-11-05T18:07:21.813Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-62039:ep:3",
@@ -6630,7 +6659,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-10-28T12:09:14.147Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-62039:ep:7",
@@ -6646,7 +6675,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-11-04T18:15:37.532Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-62218:ep:5",
@@ -6726,7 +6755,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-11-02T09:32:46.564Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-62248:ep:15",
@@ -6806,7 +6835,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-11-02T09:32:46.564Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-62270:ep:1",
@@ -6886,7 +6915,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-11-01T21:01:41.969Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-62524:ep:3",
@@ -6950,7 +6979,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-10-30T00:00:04.890Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-62534:ep:3",
@@ -7030,7 +7059,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-11-02T18:17:40.360Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-62582:ep:1",
@@ -7110,7 +7139,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-10-30T23:59:35.212Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-62590:ep:7",
@@ -7126,7 +7155,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-11-06T18:11:26.481Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-62615:ep:2",
@@ -7190,7 +7219,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-10-27T23:56:26.547Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-62615:ep:6",
@@ -7206,7 +7235,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-11-03T18:13:13.733Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-62696:ep:3",
@@ -7270,7 +7299,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-11-01T21:01:41.969Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-62753:ep:3",
@@ -7334,7 +7363,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-10-30T23:59:35.212Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-62753:ep:7",
@@ -7350,7 +7379,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-11-06T18:11:26.481Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-62907:ep:3",
@@ -7414,7 +7443,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-10-30T23:59:35.212Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-62907:ep:7",
@@ -7430,7 +7459,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-11-06T18:11:26.481Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-62922:ep:3",
@@ -7494,7 +7523,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-10-30T00:00:04.890Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-62922:ep:7",
@@ -7510,7 +7539,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-11-06T03:16:26.715Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-63042:ep:38",
@@ -7558,7 +7587,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-10-23T09:03:27.094Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-63042:ep:41",
@@ -7574,7 +7603,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-11-06T09:23:00.181Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-63045:ep:1",
@@ -7606,7 +7635,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-11-04T09:23:42.269Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-63045:ep:3",
@@ -7622,7 +7651,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-11-06T18:11:26.481Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-63053:ep:2",
@@ -7686,7 +7715,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-10-30T00:00:04.890Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-63053:ep:6",
@@ -7702,7 +7731,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-11-05T18:07:21.813Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-63061:ep:15",
@@ -7766,7 +7795,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-10-28T18:09:56.442Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-63061:ep:19",
@@ -7782,7 +7811,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-11-04T18:15:37.532Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-63098:ep:3",
@@ -7830,7 +7859,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-10-24T23:47:11.781Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-63125:ep:28",
@@ -7894,7 +7923,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-10-30T15:19:41.765Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-63125:ep:32",
@@ -7910,7 +7939,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-11-06T09:23:00.181Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-63140:ep:4",
@@ -7974,7 +8003,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-10-30T00:00:04.890Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-63140:ep:8",
@@ -7990,7 +8019,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-11-05T18:07:21.813Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-63151:ep:41",
@@ -8070,7 +8099,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-11-02T09:32:46.564Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-63157:ep:3",
@@ -8134,7 +8163,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-10-29T09:17:43.093Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-63157:ep:7",
@@ -8150,7 +8179,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-11-05T09:28:37.429Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-63181:ep:3",
@@ -8214,7 +8243,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-10-28T18:09:56.442Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-63181:ep:7",
@@ -8230,7 +8259,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-11-04T18:15:37.532Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-63292:ep:2",
@@ -8294,7 +8323,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-10-30T23:59:35.212Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-63292:ep:6",
@@ -8310,7 +8339,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-11-06T18:11:26.481Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-63293:ep:2",
@@ -8374,7 +8403,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-10-28T18:09:56.442Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-63293:ep:6",
@@ -8390,7 +8419,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-11-04T18:15:37.532Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-63337:ep:3",
@@ -8454,7 +8483,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-10-27T23:56:26.547Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-63337:ep:7",
@@ -8470,7 +8499,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-11-03T18:13:13.733Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-63352:ep:29",
@@ -8534,7 +8563,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-10-30T15:19:41.765Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-63352:ep:33",
@@ -8550,7 +8579,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-11-06T09:23:00.181Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-63367:ep:2",
@@ -8614,7 +8643,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-10-30T23:59:35.212Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-63367:ep:6",
@@ -8630,7 +8659,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-11-06T18:11:26.481Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-63381:ep:3",
@@ -8678,7 +8707,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-10-30T23:59:35.212Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-63381:ep:6",
@@ -8694,7 +8723,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-11-07T03:15:37.648Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-63382:ep:3",
@@ -8758,7 +8787,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-11-01T21:01:41.969Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-63396:ep:2",
@@ -8838,7 +8867,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-10-31T21:00:44.024Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-63431:ep:2",
@@ -8918,7 +8947,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-11-01T21:01:41.969Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-63489:ep:15",
@@ -8998,7 +9027,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-11-02T03:16:38.764Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-63509:ep:3",
@@ -9062,7 +9091,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-10-30T23:59:35.212Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-63509:ep:7",
@@ -9078,7 +9107,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-11-07T03:15:37.648Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-63667:ep:3",
@@ -9142,7 +9171,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-10-30T23:59:35.212Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-63667:ep:7",
@@ -9158,7 +9187,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-11-06T18:11:26.481Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-63712:ep:4",
@@ -9222,7 +9251,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-10-31T21:00:44.024Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-63751:ep:3",
@@ -9286,7 +9315,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-10-30T23:59:35.212Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-63751:ep:7",
@@ -9302,7 +9331,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-11-06T18:11:26.481Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-63753:ep:3",
@@ -9366,7 +9395,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-10-30T23:59:35.212Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-63753:ep:7",
@@ -9382,7 +9411,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-11-06T18:11:26.481Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-63754:ep:3",
@@ -9446,7 +9475,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-11-01T21:01:41.969Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-63764:ep:3",
@@ -9510,7 +9539,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-10-30T00:00:04.890Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-63764:ep:7",
@@ -9526,7 +9555,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-11-05T18:07:21.813Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-63801:ep:3",
@@ -9590,7 +9619,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-10-30T00:00:04.890Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-63801:ep:7",
@@ -9606,7 +9635,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-11-05T18:07:21.813Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-63818:ep:3",
@@ -9670,7 +9699,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-11-01T21:01:41.969Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-63901:ep:3",
@@ -9729,12 +9758,12 @@
       "language": null,
       "scheduledAt": "2026-11-07T07:29:00.000Z",
       "publishedAt": null,
-      "airedStatus": "proxima_emision_programada",
+      "airedStatus": "fecha_de_emision_pasada",
       "playbackStatus": "sin_fuente_autorizada",
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-10-29T15:20:00.639Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-63901:ep:7",
@@ -9750,7 +9779,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-11-05T18:07:21.813Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-63938:ep:1",
@@ -9766,7 +9795,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-10-30T00:00:04.890Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-63938:ep:2",
@@ -9782,7 +9811,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-11-05T18:07:21.813Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-64028:ep:3",
@@ -9846,7 +9875,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-10-30T15:19:41.765Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-64028:ep:7",
@@ -9862,7 +9891,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-11-06T09:23:00.181Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-64084:ep:2",
@@ -9942,7 +9971,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-11-02T18:17:40.360Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-64131:ep:3",
@@ -10006,7 +10035,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-10-30T23:59:35.212Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-64131:ep:7",
@@ -10022,7 +10051,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-11-07T03:15:37.648Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-64180:ep:3",
@@ -10086,7 +10115,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-10-27T23:56:26.547Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-64180:ep:7",
@@ -10102,7 +10131,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-11-03T18:13:13.733Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-64210:ep:16",
@@ -10166,7 +10195,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-10-29T09:17:43.093Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-64210:ep:20",
@@ -10182,7 +10211,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-11-05T09:28:37.429Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-64211:ep:3",
@@ -10246,7 +10275,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-10-30T15:19:41.765Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-64211:ep:7",
@@ -10262,7 +10291,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-11-06T09:23:00.181Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-64254:ep:2",
@@ -10326,7 +10355,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-10-27T23:56:26.547Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-64254:ep:6",
@@ -10342,7 +10371,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-11-04T03:17:26.984Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-64326:ep:3",
@@ -10401,12 +10430,12 @@
       "language": null,
       "scheduledAt": "2026-11-07T09:25:00.000Z",
       "publishedAt": null,
-      "airedStatus": "proxima_emision_programada",
+      "airedStatus": "fecha_de_emision_pasada",
       "playbackStatus": "sin_fuente_autorizada",
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-10-29T15:20:00.639Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-64326:ep:7",
@@ -10422,7 +10451,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-11-05T18:07:21.813Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-64340:ep:4",
@@ -10486,7 +10515,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-10-30T23:59:35.212Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-64340:ep:8",
@@ -10502,7 +10531,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-11-06T18:11:26.481Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-64344:ep:2",
@@ -10582,7 +10611,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-11-02T18:17:40.360Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-64388:ep:20",
@@ -10646,7 +10675,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-11-01T11:59:16.499Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-64398:ep:18",
@@ -10705,12 +10734,12 @@
       "language": null,
       "scheduledAt": "2026-11-07T10:00:00.000Z",
       "publishedAt": null,
-      "airedStatus": "proxima_emision_programada",
+      "airedStatus": "fecha_de_emision_pasada",
       "playbackStatus": "sin_fuente_autorizada",
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-10-30T00:00:04.890Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-64398:ep:22",
@@ -10726,7 +10755,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-11-05T18:07:21.813Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-64430:ep:3",
@@ -10790,7 +10819,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-10-30T15:19:41.765Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-64430:ep:7",
@@ -10806,7 +10835,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-11-06T09:23:00.181Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-64461:ep:12",
@@ -10886,7 +10915,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-10-30T15:19:41.765Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-64503:ep:6",
@@ -10902,7 +10931,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-11-06T18:11:26.481Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-64505:ep:2",
@@ -10966,7 +10995,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-10-30T15:19:41.765Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-64505:ep:6",
@@ -10982,7 +11011,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-11-06T18:11:26.481Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-64534:ep:3",
@@ -11046,7 +11075,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-10-27T23:56:26.547Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-64534:ep:7",
@@ -11062,7 +11091,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-11-03T18:13:13.733Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-64718:ep:10",
@@ -11078,7 +11107,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-10-29T09:17:43.093Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-64718:ep:11",
@@ -11094,7 +11123,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-11-05T09:28:37.429Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-64718:ep:7",
@@ -11206,7 +11235,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-10-29T09:17:43.093Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-64789:ep:7",
@@ -11222,7 +11251,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-11-05T09:28:37.429Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-64848:ep:2",
@@ -11334,7 +11363,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-10-30T23:59:35.212Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-64867:ep:8",
@@ -11350,7 +11379,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-11-06T18:11:26.481Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-65007:ep:3",
@@ -11414,7 +11443,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-10-28T06:08:43.211Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-65007:ep:7",
@@ -11430,7 +11459,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-11-04T09:23:42.269Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-65009:ep:3",
@@ -11494,7 +11523,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-10-28T18:09:56.442Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-65009:ep:7",
@@ -11510,7 +11539,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-11-04T18:15:37.532Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-65095:ep:3",
@@ -11574,7 +11603,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-10-27T15:14:04.017Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-65095:ep:7",
@@ -11590,7 +11619,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-11-03T12:12:41.802Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-65119:ep:3",
@@ -11654,7 +11683,23 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-10-31T06:05:37.939Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
+    },
+    {
+      "id": "mal-65119:ep:7",
+      "animeId": "mal-65119",
+      "seasonId": null,
+      "episodeNumber": 7,
+      "title": null,
+      "language": null,
+      "scheduledAt": "2026-11-16T03:00:00.000Z",
+      "publishedAt": null,
+      "airedStatus": "proxima_emision_programada",
+      "playbackStatus": "sin_fuente_autorizada",
+      "playbackSourceIds": [],
+      "metadataSource": "anilist_schedule",
+      "firstSeenAt": "2026-11-07T12:04:27.523Z",
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-65167:ep:3",
@@ -11718,7 +11763,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-10-30T23:59:35.212Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-65167:ep:7",
@@ -11734,7 +11779,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-11-07T03:15:37.648Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-65169:ep:3",
@@ -11798,7 +11843,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-10-30T23:59:35.212Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-65169:ep:7",
@@ -11814,7 +11859,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-11-07T03:15:37.648Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-65184:ep:4",
@@ -11846,7 +11891,23 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-11-02T03:16:38.764Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
+    },
+    {
+      "id": "mal-65184:ep:6",
+      "animeId": "mal-65184",
+      "seasonId": null,
+      "episodeNumber": 6,
+      "title": null,
+      "language": null,
+      "scheduledAt": "2026-11-16T09:00:00.000Z",
+      "publishedAt": null,
+      "airedStatus": "proxima_emision_programada",
+      "playbackStatus": "sin_fuente_autorizada",
+      "playbackSourceIds": [],
+      "metadataSource": "anilist_schedule",
+      "firstSeenAt": "2026-11-07T12:04:27.523Z",
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-65209:ep:1",
@@ -11953,12 +12014,12 @@
       "language": null,
       "scheduledAt": "2026-11-07T08:00:00.000Z",
       "publishedAt": null,
-      "airedStatus": "proxima_emision_programada",
+      "airedStatus": "fecha_de_emision_pasada",
       "playbackStatus": "sin_fuente_autorizada",
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-10-29T15:20:00.639Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-8687:ep:941",
@@ -11974,7 +12035,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-11-05T18:07:21.813Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-966:ep:1357",
@@ -12033,12 +12094,12 @@
       "language": null,
       "scheduledAt": "2026-11-07T07:30:00.000Z",
       "publishedAt": null,
-      "airedStatus": "proxima_emision_programada",
+      "airedStatus": "fecha_de_emision_pasada",
       "playbackStatus": "sin_fuente_autorizada",
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-10-29T15:20:00.639Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     },
     {
       "id": "mal-966:ep:1361",
@@ -12054,7 +12115,7 @@
       "playbackSourceIds": [],
       "metadataSource": "anilist_schedule",
       "firstSeenAt": "2026-11-05T18:07:21.813Z",
-      "lastSeenAt": "2026-11-07T03:15:37.648Z"
+      "lastSeenAt": "2026-11-07T12:04:27.523Z"
     }
   ],
   "sources": []
