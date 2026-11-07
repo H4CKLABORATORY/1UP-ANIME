@@ -2,6 +2,11 @@
 (()=>{
 'use strict';
 const API='https://graphql.anilist.co';
+/* Phase 3 - ONE catalog cache policy: catalog-cache-policy.js (loaded
+   before this file) is the canonical definition (TTLs per data type,
+   versioned keys, SWR). This inline mirror keeps the file working
+   standalone in tests; both versions MUST match sw.js. */
+const CACHE_POLICY=(typeof window!=='undefined'&&window.OneUpCachePolicy)||{version:'v44-phase3-catalog-20261107',catalogListTtlMs:28800000,catalogListStaleMaxMs:86400000,catalogKeyPrefix:'oneup_catalog_v44_',fingerprint:function(items){if(!Array.isArray(items))return '';var out=items.length+':';for(var i=0;i<items.length;i++)out+=(items[i]&&items[i].id?items[i].id:'?')+',';return out}};
 const $=q=>document.querySelector(q), $$=q=>[...document.querySelectorAll(q)];
 const esc=t=>String(t??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const safe=u=>{try{let x=new URL(u);return x.protocol==='https:'?x.href:''}catch{return ''}};
@@ -151,6 +156,13 @@ async function fetchAniSerial(options){
     if(attempt<ANILIST_MAX_ATTEMPTS){await sleep(aniRetryDelayMs(r,attempt));continue}
     throw lastError;
    }
+   if(r.status===403||r.status>=500){
+    // AniList outage (403 / 5xx): back off and retry; after the last
+    // attempt the caller falls back to snapshot / cache, not an error.
+    lastError=Error('AniList '+r.status);
+    if(attempt<ANILIST_MAX_ATTEMPTS){await sleep(aniRetryDelayMs(r,attempt));continue}
+    throw lastError;
+   }
    if(!r.ok)throw Error('AniList '+r.status);
    const j=await r.json();
    if(j.errors?.length){
@@ -170,9 +182,25 @@ async function fetchAniSerial(options){
  }
  throw lastError||Error('AniList unavailable');
 }
-function cacheKey(o){return 'oneup_catalog_'+JSON.stringify(o)}
-function cached(o){try{const x=JSON.parse(localStorage.getItem(cacheKey(o))||'null');return x&&x.items?.length&&Date.now()-x.at<3600000*8?x:null}catch{return null}}
+function cacheKey(o){return CACHE_POLICY.catalogKeyPrefix+JSON.stringify(o)}
+function cachedEntry(o){try{const x=JSON.parse(localStorage.getItem(cacheKey(o))||'null');return x&&x.items?.length?x:null}catch{return null}}
+function cached(o){const x=cachedEntry(o);return x&&Date.now()-x.at<CACHE_POLICY.catalogListTtlMs?x:null}
+function staleCached(o){const x=cachedEntry(o);return x&&Date.now()-x.at<CACHE_POLICY.catalogListStaleMaxMs?x:null}
 function cache(o,r){try{localStorage.setItem(cacheKey(o),JSON.stringify({...r,at:Date.now(),items:r.items.slice(0,24)}))}catch{}}
+/* Stale-while-revalidate (Phase 3): refresh one catalog query from
+   AniList in the background. The UI is updated ONLY when the data
+   actually changed (fingerprint of ordered ids); outages keep the
+   stale/snapshot data silently - never an error screen. */
+const revalidating=new Set();
+function revalidateCatalog(o,current){
+ const key=cacheKey(o);if(revalidating.has(key))return;revalidating.add(key);
+ ani(o).then(r=>{
+  revalidating.delete(key);
+  if(!r.items.length)return;
+  register(r.items);cache(o,r);
+  if(CACHE_POLICY.fingerprint(r.items)!==CACHE_POLICY.fingerprint(current?.items||[])&&typeof o.onUpdate==='function')o.onUpdate(r);
+ }).catch(()=>{revalidating.delete(key)});
+}
 let snapshotPromise=null;
 async function getSnapshot(){
  if(!snapshotPromise){
@@ -219,8 +247,13 @@ async function fromSnapshot(o){
 }
 async function fetchCatalog(o){
  const old=cached(o);if(old){register(old.items);return old}
+ // SWR: a stale-but-usable list renders NOW; AniList refreshes behind it.
+ const stale=staleCached(o);
+ if(stale){register(stale.items);revalidateCatalog(o,stale);return {...stale,source:stale.source||'snapshot'}}
  if(!o.search&&!o.genre&&(!o.page||o.page===1)){
-  const snapshot=await fromSnapshot(o);if(snapshot){cache(o,snapshot);return snapshot;}
+  // Snapshot-first: render the shipped snapshot immediately, then let a
+  // background AniList refresh update the view only if data changed.
+  const snapshot=await fromSnapshot(o);if(snapshot){cache(o,snapshot);revalidateCatalog(o,snapshot);return snapshot;}
  }
  try{const r=await ani(o);if(r.items.length){register(r.items);cache(o,r);return r}}catch(e){console.warn('1UP provider temporarily unavailable',e?.message)}
  const snapshot=await fromSnapshot(o);if(snapshot){cache(o,snapshot);return snapshot;}
@@ -322,6 +355,7 @@ async function loadHome(){
  hero(samples[6]);renderContinue();
  const requests=[['trending','#trending-rail',{sort:'TRENDING_DESC',perPage:18}],['season','#season-rail',{sort:'TRENDING_DESC',status:'RELEASING',perPage:18}],['recent','#recent-rail',{sort:'START_DATE_DESC',perPage:18}],['movies','#movies-rail',{sort:'POPULARITY_DESC',format:'MOVIE',perPage:18}]];
  await Promise.all(requests.map(async ([k,target,o])=>{
+  o.onUpdate=fresh=>{state.home[k]=fresh.items;paint(target,fresh.items,fresh.source);if(k==='season')$('#schedule-preview-list').innerHTML=scheduleHTML(fresh.items);if(k==='trending'&&state.featured?.source==='snapshot')hero(fresh.items.find(x=>x.banner)||fresh.items[0])};
   const d=await fetchCatalog(o);
   state.home[k]=d.items;
   paint(target,d.items,d.source);
@@ -401,6 +435,7 @@ async function browse(route,page=1,append=false){
  else if(route==='buscar'){params.search=state.query;params.sort='POPULARITY_DESC'}
  else Object.assign(params,state.filters);
  const token=++state.seq;state.loading=true;
+ params.onUpdate=fresh=>{if(state.loading)return;state.results=fresh.items;state.next=fresh.next;paint('#browse-grid',state.results,fresh.source);$('#browse-status').textContent='AniList · '+state.results.length+' títulos';$('#browse-next').hidden=!state.next};
  const d=await fetchCatalog(params);
  if(token!==state.seq)return;
  state.results=append?state.results.concat(d.items):d.items;state.next=d.next;state.page=page;state.loading=false;
@@ -668,8 +703,9 @@ async function aniDetail(vars){
   lastCall=Date.now();
   const c=new AbortController(),timer=setTimeout(()=>c.abort(),7000);
   try{
-   const r=await fetch(API,{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify({query:detailGql,variables:vars}),signal:c.signal});
+   let r=await fetch(API,{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify({query:detailGql,variables:vars}),signal:c.signal});
    aniNoteRateHeaders(r);
+   if(r.status===403||r.status>=500){await sleep(1500);r=await fetch(API,{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify({query:detailGql,variables:vars}),signal:c.signal});aniNoteRateHeaders(r)}
    if(!r.ok)return null;
    const j=await r.json();
    const m=j.data?.Media;
@@ -949,6 +985,6 @@ function init(){
 }
 // Phase 1 diagnostics hook (no UI, no setup, no user choice): exposes the live
 // rate-limit state and the guarded loaders for automated tests and debugging.
-if(typeof window!=='undefined')window.OneUpRateLimits={ani:{get state(){return {...aniRate}},get minGapMs(){return ANILIST_MIN_GAP_MS},get maxAttempts(){return ANILIST_MAX_ATTEMPTS}},callAni:ani};
+if(typeof window!=='undefined')window.OneUpRateLimits={ani:{get state(){return {...aniRate}},get minGapMs(){return ANILIST_MIN_GAP_MS},get maxAttempts(){return ANILIST_MAX_ATTEMPTS}},callAni:ani,cachePolicy:CACHE_POLICY,fetchCatalog};
 document.addEventListener('DOMContentLoaded',init);
 })();

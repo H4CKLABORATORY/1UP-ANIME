@@ -13,11 +13,15 @@ function norm(x){const img=secure(x.coverImage?.extraLarge||x.coverImage?.large|
    exponential backoff, X-RateLimit-Remaining slows us down early) plus a
    fallback to the last good cached snapshot for the same query when the
    live call fails or stays rate-limited. Metadata only; no user setup. */
-const ASK_MIN_GAP_MS=2100,ASK_MAX_ATTEMPTS=3,ASK_SNAPSHOT_PREFIX='oneup_anilist_snapshot_';
+const ASK_MIN_GAP_MS=2100,ASK_MAX_ATTEMPTS=3;
+/* Phase 3 - ONE catalog cache policy (catalog-cache-policy.js via
+   studio.js; this mirror keeps the file working standalone in tests). */
+const ASK_POLICY=(typeof window!=='undefined'&&window.OneUpCachePolicy)||{askSnapshotTtlMs:7200000,routeCacheTtlMs:7200000,askSnapshotKeyPrefix:'oneup_anilist_snapshot_v44_',routeKeyPrefix:'oneup_cache_v44_'};
+const ASK_SNAPSHOT_PREFIX=ASK_POLICY.askSnapshotKeyPrefix;
 const askRate={remaining:null,limit:null,resetAt:0,backoffUntil:0};
 let askLastCall=0,askQueue=Promise.resolve(),askFellBack=false;
 function askSnapshotKey(query,variables){let h=0;const raw=query+JSON.stringify(variables||{});for(let i=0;i<raw.length;i++)h=(h*31+raw.charCodeAt(i))>>>0;return ASK_SNAPSHOT_PREFIX+h.toString(36)}
-function askReadSnapshot(query,variables){try{const x=JSON.parse(sessionStorage.getItem(askSnapshotKey(query,variables))||'null');return x&&x.data?x.data:null}catch{return null}}
+function askReadSnapshot(query,variables){try{const x=JSON.parse(sessionStorage.getItem(askSnapshotKey(query,variables))||'null');return x&&x.data&&Date.now()-(x.at||0)<ASK_POLICY.askSnapshotTtlMs?x.data:null}catch{return null}}
 function askSaveSnapshot(query,variables,data){try{sessionStorage.setItem(askSnapshotKey(query,variables),JSON.stringify({at:Date.now(),data}))}catch{}}
 async function ask(query,variables){
  const work=askQueue.catch(()=>{}).then(()=>askSerial(query,variables));
@@ -48,7 +52,14 @@ async function askSerial(query,variables){
     if(attempt<ASK_MAX_ATTEMPTS){const sec=Number(r.headers.get('Retry-After'));await new Promise(res=>setTimeout(res,Number.isFinite(sec)&&sec>0?Math.min(65000,Math.ceil(sec*1000)):10000*attempt));continue}
     break;
    }
-   if(!r.ok)throw Error('AniList '+r.status);
+   if(!r.ok){
+    lastError=Error('AniList '+r.status);
+    // Phase 3 (audit gap 7): 403 / 5xx = AniList outage: back off and
+    // retry; after the last attempt the snapshot fallback below serves
+    // the last good data instead of a hard error.
+    if((r.status===403||r.status>=500)&&attempt<ASK_MAX_ATTEMPTS){const sec=Number(r.headers.get('Retry-After'));await new Promise(res=>setTimeout(res,Number.isFinite(sec)&&sec>0?Math.min(65000,Math.ceil(sec*1000)):1500*attempt));continue}
+    break;
+   }
    const j=await r.json();
    if(j.errors?.length){
     const rateLimited=j.errors.some(e=>e?.status===429||/too many requests/i.test(e?.message||''));
@@ -76,9 +87,9 @@ getJson=async function(path){
  let out;
  if(m){let k=+m[1],res=await ask(D,k<0?{id:-k}:{idMal:k});out={data:norm(res.Media)}}
  else{let variables=args(path);if(!variables)throw Error('Ruta de catálogo no admitida');const result=await ask(Q,variables),items=(result.Page?.media||[]).map(norm);if(!items.length)throw Error('No results');out={data:items,pagination:{has_next_page:!!result.Page?.pageInfo?.hasNextPage}}}
- state.catalogSource=askFellBack?'Caché':'AniList';try{sessionStorage.setItem('oneup_cache_'+path,JSON.stringify(out))}catch{}return out
+ state.catalogSource=askFellBack?'Caché':'AniList';try{sessionStorage.setItem(ASK_POLICY.routeKeyPrefix+path,JSON.stringify({...out,at:Date.now()}))}catch{}return out
  }catch(err){
- try{let r=JSON.parse(sessionStorage.getItem('oneup_cache_'+path)||'null');if(r?.data){state.catalogSource='Caché';return r}}catch{}
+ try{let r=JSON.parse(sessionStorage.getItem(ASK_POLICY.routeKeyPrefix+path)||'null');if(r?.data&&Date.now()-(r.at||0)<ASK_POLICY.routeCacheTtlMs){state.catalogSource='Caché';return r}}catch{}
  state.catalogSource='Catálogo básico';
  if(m){let x=BASIC.find(x=>x.mal_id===+m[1]);if(x)return{data:x};throw Error('Ficha no disponible')}
  return local(path);
