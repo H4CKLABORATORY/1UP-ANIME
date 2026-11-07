@@ -22,6 +22,29 @@ function closeVideo(){
  if(typeof disposeActiveVideo==='function')disposeActiveVideo();
  disposeActiveVideo=null;
 }
+/* Playback progress (Phase 4): guest progress lives in localStorage, per
+ * anime/season/episode, so a direct-file episode resumes where it stopped
+ * with no account and no server. Signed-in watched-episode counts keep
+ * living in Supabase (supabase-episode-backend.js) and are untouched. */
+const PROGRESS_PREFIX='oneup-player-progress-v1:';
+function progressKey(){return PROGRESS_PREFIX+activeAnime+':s'+activeSeason+':e'+selectedEpisode}
+function readProgress(){
+ try{
+  const raw=localStorage.getItem(progressKey());if(!raw)return 0;
+  const data=JSON.parse(raw),t=Number(data?.t);
+  return Number.isFinite(t)&&t>0?t:0;
+ }catch{return 0}
+}
+function saveProgress(video){
+ try{
+  if(!video||!Number.isFinite(video.duration)||video.duration<=0)return;
+  const t=Number(video.currentTime);
+  if(!Number.isFinite(t))return;
+  if(t<2||video.ended||t>=video.duration-1.5){if(video.ended)localStorage.removeItem(progressKey());return}
+  localStorage.setItem(progressKey(),JSON.stringify({t,d:video.duration,at:Date.now()}));
+ }catch{}
+}
+function clearProgress(){try{localStorage.removeItem(progressKey())}catch{}}
 
 const escapeHtml=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const safeNumber=(value,fallback=1)=>{const n=Number(value);return Number.isInteger(n)&&n>=1&&n<=9999?n:fallback};
@@ -202,22 +225,67 @@ function showVideo(slot,serverIndex=-1){
   const video=document.createElement('video');
   video.controls=true;video.playsInline=true;video.preload='metadata';
   video.setAttribute('aria-label','Episodio '+selectedEpisode+' desde '+slot.label);
+  // Cross-origin WebVTT tracks are blocked unless the media element opts
+  // into CORS (the studio player already does this). Only opt in when the
+  // source actually carries tracks, so plain files on hosts without CORS
+  // headers keep playing exactly as before.
+  if((slot.tracks||[]).length)video.crossOrigin='anonymous';
+  let sourceEl=null;
   if(slot.mime!=='application/vnd.apple.mpegurl'){
-   const source=document.createElement('source');source.src=slot.url;source.type=slot.mime;
-   video.appendChild(source);
+   sourceEl=document.createElement('source');sourceEl.src=slot.url;sourceEl.type=slot.mime;
+   video.appendChild(sourceEl);
   }
+  // The Spanish track (or the first available) is on by default: subtitles
+  // the visitor must hunt for in a menu are not automatic (Rule 2).
+  const defaultTrack=(slot.tracks||[]).find(entry=>entry.lang.toLowerCase().startsWith('es'))||(slot.tracks||[])[0];
   for(const entry of slot.tracks||[]){
    const track=document.createElement('track');
    track.kind='subtitles';track.srclang=entry.lang;track.label=entry.label;track.src=entry.url;
+   if(entry===defaultTrack){
+    track.default=true;
+    // The track list is not populated yet at loadedmetadata; assert the
+    // showing mode again when this track itself finishes loading.
+    track.addEventListener('load',()=>{try{track.track.mode='showing'}catch{}});
+   }
    video.appendChild(track);
   }
-  video.addEventListener('loadedmetadata',()=>{if(video.isConnected)status.textContent='Fuente cargada · '+slot.label});
+  let failoverDone=false;
+  const handleVideoError=()=>{if(failoverDone||!video.isConnected)return;failoverDone=true;status.textContent='No se pudo reproducir esta fuente. Puedes intentar otro servidor.';offerRetry()};
+  // A failing <source> reports its error on the <source> element itself,
+  // not on <video>: listen to both or automatic failover never fires.
+  sourceEl?.addEventListener('error',handleVideoError);
+  let lastSavedAt=0,resumed=false,resumeTarget=0;
+  video.addEventListener('loadedmetadata',()=>{
+   if(!video.isConnected)return;
+   for(const textTrack of video.textTracks||[]){
+    if(defaultTrack&&textTrack.language===defaultTrack.lang)textTrack.mode='showing';
+   }
+   const saved=readProgress();
+   if(saved>2&&Number.isFinite(video.duration)&&saved<video.duration-1.2){
+    resumeTarget=saved;
+    try{video.currentTime=saved;resumed=true}catch{}
+   }
+   status.textContent=(resumed?'Reanudando donde lo dejaste · ':'Fuente cargada · ')+slot.label;
+  });
+  // A seek issued at loadedmetadata can be dropped when little is buffered
+  // yet (hosts without Range support): re-assert it once playback can start.
+  video.addEventListener('canplay',()=>{
+   if(resumeTarget&&video.currentTime<resumeTarget-0.5){try{video.currentTime=resumeTarget}catch{}}
+   resumeTarget=0;
+  });
   video.addEventListener('playing',()=>{if(video.isConnected)status.textContent='Reproduciendo desde '+slot.label});
-  video.addEventListener('error',()=>{if(video.isConnected){status.textContent='No se pudo reproducir esta fuente. Puedes intentar otro servidor.';offerRetry()}});
+  video.addEventListener('timeupdate',()=>{
+   const now=Date.now();
+   if(now-lastSavedAt>=2000){lastSavedAt=now;saveProgress(video)}
+  });
+  video.addEventListener('pause',()=>saveProgress(video));
+  video.addEventListener('ended',()=>clearProgress());
+  video.addEventListener('error',handleVideoError);
   stage.appendChild(video);
   document.dispatchEvent(new CustomEvent('oneup-video-ready',{detail:{video,tracks:slot.tracks||[]}}));
   // Detached media may continue playing/downloading; release direct files too.
   disposeActiveVideo=()=>{
+   saveProgress(video);
    video.pause();
    video.removeAttribute('src');
    video.querySelectorAll('source').forEach(source=>source.removeAttribute('src'));
