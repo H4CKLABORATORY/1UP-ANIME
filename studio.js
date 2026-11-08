@@ -991,7 +991,12 @@ function init(){
  }
  window.addEventListener('popstate',onPopState);
  window.addEventListener('scroll',()=>{if(scrollTick)return;scrollTick=true;requestAnimationFrame(()=>{scrollTick=false;stampScroll()})},{passive:true});
- if('serviceWorker' in navigator&&location.protocol==='https:')navigator.serviceWorker.register('./sw.js').catch(()=>{});
+ // Phase 10: never register the PWA service worker inside the Capacitor
+ // app. Android serves the bundle from https://localhost, so the https:
+ // check alone would register it in the webview, where it can only serve
+ // a stale shell — the native bundle already ships every asset locally.
+ // iOS uses capacitor:// and was already excluded by the protocol check.
+ if('serviceWorker' in navigator&&location.protocol==='https:'&&!window.Capacitor)navigator.serviceWorker.register('./sw.js').catch(()=>{});
 }
 // Phase 1 diagnostics hook (no UI, no setup, no user choice): exposes the live
 // rate-limit state and the guarded loaders for automated tests and debugging.

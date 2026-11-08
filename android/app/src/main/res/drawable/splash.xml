@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Phase 10: launch background — solid brand color with the 1UP icon
+     centered (replaces the full-bleed generated splash bitmaps). -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@color/splashBackground" />
+    <item>
+        <bitmap android:src="@drawable/splash_logo" android:gravity="center" />
+    </item>
+</layer-list>

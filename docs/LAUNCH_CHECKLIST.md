@@ -38,7 +38,7 @@ Cada PR está apilado sobre el anterior; **al fusionar uno, GitHub re-apunta aut
 | 8 | #79 | `feature/phase7-infra` → `feature/phase6-episode-admin` | Fase 7: infraestructura / CI |
 | 9 | #80 | `feature/phase8-design` → `feature/phase7-infra` | Fase 8: diseño premium |
 | 10 | PR de la Fase 9 (lo abre el coordinador) | `feature/phase9-qa` → `feature/phase8-design` | Fase 9: QA completa + esta lista |
-| 11 | Fase 10 | (rama futura) | Cierre final |
+| 11 | PR de la Fase 10 (lo abre el coordinador) | `feature/phase10-app` → `feature/phase9-qa` | Fase 10 (FINAL): app Capacitor (Android/iOS) + arnés kokomi reparado — ver paso 8 y `docs/APP.md` |
 
 Notas:
 - El PR **#72** (`feature/phase1-rates` → `feature/native-auth`) **no** forma parte de la cadena principal: su contenido ya está integrado en la Fase 1 (#73, verificado con `git branch -r --merged origin/feature/phase1-stability`). Decisión de Douglas: cerrarlo como redundante cuando #73 esté fusionado.
@@ -76,6 +76,30 @@ La única superficie que ningún arnés de dexter/CI puede verificar: abrir http
 - GitHub Pages publica la raíz del repo en https://h4cklaboratory.github.io/1UP-ANIME/ cuando la puerta pasa.
 - Lo que **no** es automático: Supabase (paso 2–3), Render (paso 4) y la limpieza de ramas (paso 5) son pasos manuales de Douglas.
 
+### 8. Ruta app — Android / iOS (Fase 10)
+La web y la app salen del **mismo código**: la app es un envoltorio Capacitor
+sobre este sitio (guía completa: **`docs/APP.md`**). Estado: proyecto Android
+generado y **APK debug construido y verificado en dexter** (11,093,020 bytes,
+paquete `com.oneup.anime`); la app abre en modo invitado sin configurar nada.
+Pasos que solo puede hacer Douglas:
+
+1. **Android (prueba inmediata, sin tienda):** instalar el APK debug
+   (`android/app/build/outputs/apk/debug/app-debug.apk`, regenerable con
+   `npm run app:android`) en su Android y comprobar apertura, catálogo,
+   ficha `/anime/<id>`, reproductor y comunidad como invitado.
+2. **Google Play (envío):** cuenta Play Console (**25 USD, pago único**),
+   crear SU keystore de subida (comando exacto en `docs/APP.md` §Android —
+   nunca commitear keystores ni contraseñas), activar Play App Signing,
+   `gradlew bundleRelease` y subir el `.aab`. Decidir el `appId`
+   **antes** de este primer envío: cambiarlo después = ficha nueva.
+3. **iOS:** decidir la vía — en `ios/` ya existe un proyecto **SwiftUI
+   nativo** previo que ocupa la carpeta y bloquea `cap add ios` en este repo
+   (la generación Capacitor está verificada en copia desechable). Si elige
+   Capacitor: mover el proyecto nativo a `ios-native/`, `npx cap add ios`,
+   y compilar en un **Mac con Xcode** + cuenta **Apple Developer
+   (99 USD/año)** (detalle en `docs/APP.md` §iOS).
+
 ## Bloqueos de lanzamiento (solo Douglas)
 1. Fusionar la cadena del paso 1. 2. Proyecto Supabase real (pasos 2–3). 3. Redespliegue en Render (paso 4). 4. Safari físico (paso 6).
 Sin esos cuatro, el sitio fusionado se despliega pero **cuentas/comunidad quedan sin backend en vivo** (el código está verificado contra el stack local de Supabase; el proyecto en la nube aún no existe).
+5. **Solo para la app (paso 8):** cuentas de tienda (Play 25 USD único / Apple 99 USD/año), keystore de subida propio, Mac para iOS y la decisión sobre el proyecto SwiftUI previo en `ios/`.
