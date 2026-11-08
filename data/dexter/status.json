@@ -1,17 +1,17 @@
 {
   "schemaVersion": 1,
   "engine": "DexterAnimeSync",
-  "updatedAt": "2026-11-08T17:58:18.137Z",
+  "updatedAt": "2026-11-08T21:03:31.048Z",
   "job": {
-    "id": "sync-299010f419333db2",
-    "startedAt": "2026-11-08T17:58:18.137Z",
-    "completedAt": "2026-11-08T17:58:18.137Z",
+    "id": "sync-bb8cf7e43b68abec",
+    "startedAt": "2026-11-08T21:03:31.048Z",
+    "completedAt": "2026-11-08T21:03:31.048Z",
     "mode": "programada",
     "status": "correcta",
     "counters": {
-      "animes": 0,
-      "episodesDetected": 0,
-      "episodesNew": 0,
+      "animes": 1,
+      "episodesDetected": 206,
+      "episodesNew": 9,
       "playbackSources": 0,
       "errors": 0
     }
@@ -25,10 +25,10 @@
       "sourceType": "metadata",
       "intervalHours": 6,
       "lastRunAt": "2026-11-08T12:04:18.499Z",
-      "runAt": null,
-      "state": "en_espera",
-      "observed": 0,
-      "created": 0,
+      "runAt": "2026-11-08T21:03:31.048Z",
+      "state": "conectada",
+      "observed": 206,
+      "created": 9,
       "playback": 0,
       "error": null
     },
@@ -40,12 +40,13 @@
       "sourceType": "playback",
       "intervalHours": 3,
       "lastRunAt": "2026-11-08T15:05:42.934Z",
-      "runAt": null,
-      "state": "en_espera",
+      "runAt": "2026-11-08T21:03:31.048Z",
+      "state": "sin_contenido_autorizado",
       "observed": 0,
       "created": 0,
       "playback": 0,
-      "error": null
+      "error": null,
+      "rejected": 0
     },
     {
       "id": "jkanime_external",
@@ -70,9 +71,9 @@
       "sourceType": "embed",
       "intervalHours": 6,
       "lastRunAt": "2026-11-08T12:04:18.499Z",
-      "runAt": null,
-      "state": "en_espera",
-      "observed": 0,
+      "runAt": "2026-11-08T21:03:31.048Z",
+      "state": "conectada",
+      "observed": 95,
       "created": 0,
       "playback": 0,
       "error": null
@@ -107,9 +108,9 @@
   "errors": [],
   "historySize": 60,
   "records": {
-    "anime": 135,
+    "anime": 136,
     "seasons": 1,
-    "episodes": 593,
+    "episodes": 602,
     "sources": 0
   }
 }
