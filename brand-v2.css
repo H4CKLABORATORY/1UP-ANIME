@@ -52,66 +52,14 @@ body{background:radial-gradient(ellipse at 84% 3%,#27356739,transparent 42%),#07
 .startup-mark span{color:#c2d6ff}
 .oneup-visual-fx::before{background:radial-gradient(circle,transparent 0 38%,#789bf012 39% 40%,transparent 41% 54%,#7b77d822 55%,transparent 57%),conic-gradient(from 0deg,transparent,#93a5f116,transparent)}
 .oneup-ember{background:radial-gradient(circle,#ffffff 0%,#99b6ff 30%,#577cff00 75%);box-shadow:0 0 13px #577cff48}
-.anime-dialog{border-color:#889bd468}
 .oneup-detail-cover{background:#11182a}
 .oneup-detail-cover-image{filter:saturate(.92) brightness(.91)}
-.anime-dialog .dialog-close{margin-bottom:-48px}
-.anime-dialog #anime-dialog-body{margin-top:0}
 @media(max-width:780px){
  .brand-symbol{width:46px;height:46px}
  .startup-mark img{width:min(175px,38vw)}
 }
 @media(prefers-reduced-motion:reduce){
  .oneup-ember,.hero-poster,.hero-art-card{animation:none!important}
-}
-/* iPhone fix: close control must occupy a higher stacking context than the
-   illustrated anime cover and remain tappable when the modal scrolls.
-   Do not float it: float + clear + negative margins made content intercept taps. */
-.anime-dialog{isolation:isolate}
-.anime-dialog .dialog-close{
- position:sticky;top:12px;right:auto;float:none;display:block;
- z-index:9999;isolation:isolate;pointer-events:auto;
- width:46px;height:46px;
- margin:12px 12px -58px auto;
- touch-action:manipulation;
- box-shadow:0 5px 24px #000c;
-}
-.anime-dialog #anime-dialog-body{
- position:relative;z-index:0;clear:none;
- margin-top:0;
-}
-
-/* Final cross-browser modal hit-target fix: absolute overlay, not sticky.
-   Safari/Chromium mobile could paint sticky sibling behind detail content. */
-#anime-dialog.anime-dialog > #anime-close.dialog-close{
- position:absolute!important;top:14px!important;right:14px!important;
- bottom:auto!important;left:auto!important;
- margin:0!important;float:none!important;
- z-index:2147483647!important;pointer-events:auto!important;
- transform:translateZ(0);-webkit-transform:translateZ(0);
-}
-
-/* Keep the close button INSIDE the illustrated cover stacking context.
-   On iPhone this prevents dialog content from stealing taps. */
-#anime-dialog .oneup-detail-cover > #anime-close.dialog-close{
- position:absolute!important;inset:12px 12px auto auto!important;
- float:none!important;margin:0!important;
- z-index:2147483647!important;
- display:grid!important;place-items:center!important;
- pointer-events:auto!important;opacity:1!important;
- width:48px!important;height:48px!important;
-}
-
-/* iPhone: move the X inside the content stacking layer itself. */
-#anime-dialog .oneup-detail-content > #anime-close.dialog-close {
- position:absolute!important;inset:10px 10px auto auto!important;
- z-index:2147483647!important;
- display:grid!important;place-items:center!important;
- width:48px!important;height:48px!important;
- float:none!important;margin:0!important;
- pointer-events:auto!important;
- background:#080e20f2!important;
- border:1px solid #e1e8ffb8!important;
 }
 
 /* iPhone navigation must stay above the animated catalogue and marquee.
