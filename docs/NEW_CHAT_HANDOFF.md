@@ -22,7 +22,7 @@
 - No confundir el catálogo de Anime1v con episodios reproducibles ni su licencia MIT con derechos de distribución de anime.
 
 ## Estado detectado ahora
-- Último commit de aplicación encontrado: 6ace5ca46487b565643ee7af3f87068e3db057f9
+- Último commit de aplicación encontrado: af130a20a090195551120dd671c89713950c6c3f
 - Descubrimiento Anime1v configurado en frontend: sí, verificar la respuesta real en Render
 - Código runtime de metadatos Anime1v en repositorio: sí
 - Entradas de obras multimedia en data/licensed-media.json: 0
@@ -30,25 +30,25 @@
 - Safari físico: no dar por verificado salvo prueba real con evidencia.
 
 ## Últimos commits relevantes
+- af130a20a — Sync authorized anime episode metadata and source statuses
+- 6fa691210 — ONEUP health snapshot (no application changes)
+- 71e0a4aad — Update live anime airing calendar
+- 10b61981a — Sync authorized anime episode metadata and source statuses
 - 6ace5ca46 — Sync authorized anime episode metadata and source statuses
-- 5daa4e1b2 — ONEUP health snapshot (no application changes)
-- e709ac73f — Update live anime airing calendar
-- 5113df42e — Sync authorized anime episode metadata and source statuses
-- cee1ed76b — ONEUP health snapshot (no application changes)
 
 ## PR abiertos (consultar cambios antes de desarrollar)
+- [#82](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/82) Fase 10: app Capacitor (APK verificado; iOS = decisión/Mac)
+- [#81](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/81) Fase 9: QA completo y preparación de lanzamiento
+- [#80](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/80) Fase 8: diseño premium (tokens oneup, QA visual, sin CSS muerto)
+- [#79](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/79) Fase 7: infraestructura (CI verde en Actions, runbook, inventario)
+- [#78](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/78) Fase 6: admin de episodios con licencia (Regla 12 en el esquema)
+- [#77](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/77) Fase 5: comunidad multimedia con moderación (cuarentena→publicación)
+- [#76](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/76) Fase 4: reproductor (failover real, subtítulos, reanudación)
+- [#75](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/75) Fase 3: catálogo (caché coherente, lock, outage AniList, offline)
+- [#74](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/74) Fase 2: páginas de detalle /anime/ id  (sin modal, deep-link, scroll exacto)
+- [#73](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/73) Fase 1: estabilidad (integración — AniList primero, sin Jikan, limpieza y gate)
 - [#72](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/72) Phase 1: AniList/Jikan rate safety + refresh-catalog robustness
 - [#71](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/71) Cuentas nativas 1UP en Supabase (correo + contraseña), sin Google ni Firebase
-- [#70](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/70) LU local: memoria de continuidad para Qwen entre chats
-- [#69](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/69) fix: recuperar catálogo ante caché local malformada
-- [#68](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/68) 1UP Auth: registro y recuperación por correo; retirar acceso Google
-- [#67](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/67) Configure Firebase web app for Google sign-in
-- [#61](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/61) 1UP: primer episodio completo desde canal oficial TMS y QA real
-- [#54](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/54) 1UP Anime: primer episodio oficial TMS y técnicas educativas de r/node
-- [#51](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/51) 1UP Anime: lector manga y publicación automática de medios autorizados
-- [#50](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/50) Documentar MAL Updater como referencia para seguimiento de 1UP Anime
-- [#46](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/46) 1UP Anime: contador de conexiones en línea para portada y comunidad
-- [#45](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/45) WIP: guarded comment image/GIF preview and anime detail UX audit
 
 ## Próxima tarea por prioridad
 1. Leer AGENTS.md, esta ficha, PROJECT_CONTINUITY.md y OMEGA_NEXT_ACTIONS.md; confirmar HEAD y CI.
