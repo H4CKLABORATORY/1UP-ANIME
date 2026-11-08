@@ -45,7 +45,7 @@ with check (
   and name ~ '^avatars/[0-9a-f-]{36}/[A-Za-z0-9_-]{8,90}\.(jpg|png|webp)$'
 );
 
--- Post media: post-uploads/<uid>/<draft>/media.<jpg|png|webp|mp4>, owner only.
+-- Post media: post-uploads/<uid>/<draft>/media.<jpg|png|webp|gif|mp4>, owner only.
 drop policy if exists "1up post media is public" on storage.objects;
 create policy "1up post media is public" on storage.objects
 for select to anon, authenticated using (bucket_id = 'post-uploads');

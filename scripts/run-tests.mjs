@@ -4,6 +4,9 @@
  *   1. Node unit tests (node --test tests/*.test.mjs)
  *   2. Python unit tests (python3 -m unittest discover -s tests -p "test_*.py")
  *   3. Script assertion checks (scripts/test-*.mjs)
+ *   4. Production smoke checks (scripts/check-ui.mjs) — wired in by Phase 9;
+ *      it had been left out of the aggregator, which is how its stale
+ *      Supabase Storage assertion went unnoticed by every gate.
  * Browser suites stay separate (they need downloaded browsers + a server):
  *   npm run test:e2e        (Playwright, all specs)
  *   npm run test:puppeteer   (Puppeteer site audit)
@@ -33,6 +36,7 @@ const suites = [
   { name: 'node', cmd: process.execPath, args: ['--test', ...nodeTests] },
   { name: 'python', cmd: 'python3', args: ['-m', 'unittest', 'discover', '-s', 'tests', '-p', 'test_*.py'] },
   ...scriptTests.map((f) => ({ name: f, cmd: process.execPath, args: [f] })),
+  { name: 'scripts/check-ui.mjs', cmd: process.execPath, args: ['scripts/check-ui.mjs'] },
 ];
 
 function run(suite) {

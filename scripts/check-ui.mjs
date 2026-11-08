@@ -84,7 +84,7 @@ assert(read('social-backend.js').includes('requestFriend'),'Friend requests not 
 assert(read('supabase/sql/oneup_community.sql').includes('enable row level security'),'Supabase RLS not configured');
 assert(read('docs/SUPABASE_SETUP.md').includes('supabase.com/dashboard'),'Phone-only deployment docs incomplete');
 const storageRules=read('supabase/sql/oneup_storage.sql');
-assert(storageRules.includes(String.raw`media\.(jpg|png|webp|mp4)`),'Supabase Storage regex escaping regressed');
+assert(storageRules.includes(String.raw`media\.(jpg|png|webp|gif|mp4)`),'Supabase Storage regex escaping regressed');
 assert(storageRules.includes(String.raw`{8,90}\.(jpg|png|webp)`),'Avatar upload extension regex must escape dot');
 assert(html.includes('external-providers.js'),'Public anime pages provider script is not loaded');
 assert(sw.includes("'./external-providers.js'"),'Offline cache missing authorized external links');

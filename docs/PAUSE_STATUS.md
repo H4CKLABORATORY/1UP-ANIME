@@ -1,5 +1,7 @@
 # PAUSA — Estado 1UP ANIME (7 nov 2026)
 
+> **Nota (Fase 9, 7 nov 2026): pausa levantada el 7 nov 2026 por Douglas; el trabajo se reanudó y se completó — ver `docs/PROJECT_CONTINUITY.md`.** El cuerpo siguiente es el registro histórico de la pausa.
+
 **Pausa:** 7 nov 2026, ~3:35 p.m. EST.
 **Motivo:** Douglas está al 96% de su límite semanal gratuito de Muse. El límite se resetea el **11 nov 2026, 12:54 p.m. EST**. No se inicia nada nuevo hasta reanudar (o hasta que Douglas diga lo contrario).
 **Repo:** H4CKLABORATORY/1UP-ANIME. Base de auditoría: `main` @ `cee1ed76`. Rama base de trabajo: `feature/native-auth` @ `8cb1626` (rework Supabase, PR #71).
