@@ -2,6 +2,15 @@
   "schemaVersion": 1,
   "items": [
     {
+      "providerId": "licensed_library",
+      "at": "2026-11-08T15:05:42.934Z",
+      "result": "success",
+      "observed": 0,
+      "created": 0,
+      "playback": 0,
+      "detail": "sin_contenido_autorizado"
+    },
+    {
       "providerId": "anilist_schedule",
       "at": "2026-11-08T12:04:18.499Z",
       "result": "success",
@@ -529,15 +538,6 @@
       "result": "success",
       "observed": 5,
       "created": 0,
-      "playback": 0,
-      "detail": "conectada"
-    },
-    {
-      "providerId": "anilist_schedule",
-      "at": "2026-11-03T18:13:13.733Z",
-      "result": "success",
-      "observed": 176,
-      "created": 9,
       "playback": 0,
       "detail": "conectada"
     }
