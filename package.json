@@ -12,9 +12,17 @@
     "test:e2e": "playwright test",
     "test:motion-engine": "node --test tests/dexter-motion-engine.test.mjs",
     "test:motion-studio": "node --test tests/motion-studio.test.mjs tests/motion-studio-camera.test.mjs",
-    "test:puppeteer": "node scripts/puppeteer-site-audit.mjs"
+    "test:puppeteer": "node scripts/puppeteer-site-audit.mjs",
+    "app:build-www": "node scripts/build-www.mjs",
+    "app:sync": "node scripts/build-www.mjs && cap sync android",
+    "app:android": "node scripts/build-www.mjs && cap sync android && cd android && ./gradlew assembleDebug",
+    "app:ios": "node scripts/build-www.mjs && cap sync ios"
   },
   "devDependencies": {
+    "@capacitor/android": "^8.6.0",
+    "@capacitor/cli": "^8.6.0",
+    "@capacitor/core": "^8.6.0",
+    "@capacitor/ios": "^8.6.0",
     "@playwright/test": "1.56.1",
     "puppeteer": "25.14.0"
   }

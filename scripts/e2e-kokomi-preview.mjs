@@ -30,15 +30,28 @@ try{
    const state=await gate.evaluate(el=>({
     logo:el.querySelector('.logo-main')?.getAttribute('src'),
     audio:el.querySelector('#original-signature')?.getAttribute('src'),
+    audioDataSrc:el.querySelector('#original-signature')?.getAttribute('data-src'),
+    audioPreload:el.querySelector('#original-signature')?.getAttribute('preload'),
     beams:el.querySelectorAll('.energy-column').length,
     fog:el.querySelectorAll('.scene-fog').length,
     rings:el.querySelectorAll('.ring').length,
     particles:el.querySelector('#particles')?.width||0,
     width:el.getBoundingClientRect().width,viewport:innerWidth
    }));
+   // Phase 10 harness update (stale expectation replaced, not deleted):
+   // since the Phase 1 codec guard, the signature <video> intentionally has
+   // NO src in the markup (preload="none" + data-src only); the theme
+   // attaches src at scene start ONLY when canPlayType confirms this browser
+   // can decode H.264/AAC — otherwise the fetch would abort and the visual
+   // scene loses nothing. Assert exactly that contract: owner brand logo,
+   // the declared data-src, preload="none", and an attached src (when the
+   // browser can decode) pointing at the same signature file. The play /
+   // fallback behaviour per codec is asserted by the dedicated check below.
    if(!state.logo?.endsWith('/assets/oneup-header-letters.png')||
-      !state.audio?.endsWith('/assets/1up-anime-intro-firma-3seg.mp4'))
-     throw Error('Owner brand or original AAC source missing: '+JSON.stringify(state));
+      !state.audioDataSrc?.endsWith('/assets/1up-anime-intro-firma-3seg.mp4')||
+      state.audioPreload!=='none'||
+      (state.audio!==null&&!state.audio?.endsWith('/assets/1up-anime-intro-firma-3seg.mp4')))
+     throw Error('Owner brand or codec-guarded signature source missing: '+JSON.stringify(state));
    if(state.beams!==2||state.fog!==2||state.rings!==2||state.particles<100)
      throw Error('V3 effects are missing from public opening: '+JSON.stringify(state));
    if(state.width<width-2||state.width>width+2)throw Error('Opening not fullscreen: '+JSON.stringify(state));
@@ -52,7 +65,13 @@ try{
    if(body.inert||body.blocked||body.overflowing>12)throw Error('Opening did not release page: '+JSON.stringify(body));
   })}finally{await context.close()}
  }
- await check('V3 attempts original AAC and falls back silently if autoplay is blocked',async()=>{
+ // Phase 10 harness update (stale expectation replaced, not deleted): the
+ // old check assumed the signature audio is always attempted. Since the
+ // Phase 1 codec guard, the theme attaches the source and calls play() ONLY
+ // when this browser can decode H.264/AAC; headless Chromium shells ship
+ // without the proprietary codecs, so BOTH branches below are intended
+ // behaviour and the check branches on the page's own codec support.
+ await check('V3 signature audio: codec-guarded attach, audible first, muted fallback, silent visual-only when undecodable',async()=>{
   const context=await browser.newContext({viewport:{width:390,height:844},isMobile:true,hasTouch:true,reducedMotion:'no-preference'});
   await context.addInitScript(()=>{
    window.__introPlays=[];
@@ -67,9 +86,32 @@ try{
    const page=await context.newPage();
    await page.goto(base+'index.html?intro=1',{waitUntil:'domcontentloaded'});
    await page.locator('#cinema.playing').waitFor();
-   await page.waitForFunction(()=>window.__introPlays.includes('muted'));
-   const plays=await page.evaluate(()=>window.__introPlays);
-   if(plays[0]!=='audible')throw Error('Should try original audio first: '+plays);
+   const playable=await page.evaluate(()=>{
+    const media=document.querySelector('#original-signature');
+    return Boolean(media?.canPlayType('video/mp4; codecs="avc1.42E01E, mp4a.40.2"'));
+   });
+   if(playable){
+    // Decoding browser: source attached, original audio attempted FIRST,
+    // muted retry when autoplay with sound is rejected (previous behaviour,
+    // kept intact).
+    await page.waitForFunction(()=>window.__introPlays.includes('muted'));
+    const plays=await page.evaluate(()=>window.__introPlays);
+    if(plays[0]!=='audible')throw Error('Should try original audio first: '+plays);
+    const attached=await page.evaluate(()=>document.querySelector('#original-signature')?.getAttribute('src')||'');
+    if(!attached.endsWith('/assets/1up-anime-intro-firma-3seg.mp4'))throw Error('Signature src not attached in a decoding browser: '+attached);
+   }else{
+    // Undecodable browser (e.g. headless shell): NO play() attempt and NO
+    // src attached (no doomed download of the 1.6 MB file), the status line
+    // discloses the silent fallback and the visual scene still runs.
+    const silent=await page.evaluate(()=>({
+     plays:window.__introPlays.length,
+     src:document.querySelector('#original-signature')?.getAttribute('src'),
+     status:document.querySelector('#audio-status')?.textContent||''
+    }));
+    if(silent.plays!==0)throw Error('Codec guard leaked a play() attempt: '+JSON.stringify(silent));
+    if(silent.src!==null)throw Error('Codec guard attached an undecodable src: '+JSON.stringify(silent));
+    if(!silent.status.includes('Audio no disponible'))throw Error('Silent fallback not disclosed: '+JSON.stringify(silent));
+   }
    await page.locator('#oneup-opening').waitFor({state:'detached',timeout:6500});
    await page.goto(base+'index.html',{waitUntil:'domcontentloaded'});
    await page.locator('#oneup-opening').waitFor({state:'detached',timeout:3000});
