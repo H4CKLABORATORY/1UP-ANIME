@@ -1,241 +1,9 @@
 {
-  "updated": "2026-11-09T03:56:30.512Z",
+  "updated": "2026-11-09T09:59:53.296Z",
   "source": "AniList public GraphQL metadata",
-  "windowStart": 1793998576,
-  "windowEnd": 1794974176,
+  "windowStart": 1794020381,
+  "windowEnd": 1794995981,
   "airing": [
-    {
-      "id": "mal-64210",
-      "mal_id": 64210,
-      "ani_id": 212308,
-      "title": "Pan no Akachan (TV)",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx212308-HUdh20Djd7cm.jpg",
-      "banner": "",
-      "description": "",
-      "year": 2026,
-      "startDate": "2026-07-04",
-      "format": "TV_SHORT",
-      "episodes": 0,
-      "averageScore": 0,
-      "status": "RELEASING",
-      "genres": [
-        "Comedy"
-      ],
-      "siteUrl": "https://anilist.co/anime/212308",
-      "streaming": [],
-      "trailer": {
-        "site": "youtube",
-        "id": "NGwgoL0TvI8"
-      },
-      "next": {
-        "at": 1794612600,
-        "episode": 20
-      },
-      "airingAt": 1794007800,
-      "episode": 19,
-      "scheduleId": 420280
-    },
-    {
-      "id": "mal-60153",
-      "mal_id": 60153,
-      "ani_id": 183231,
-      "title": "RILAKKUMA",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b183231-z7SgjmXZBcoX.png",
-      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/183231-JFjTqQe3rPCw.jpg",
-      "description": "Everyday life gets a cozy twist with the laid-back Rilakkuma. Gentle moments of friendship, change, and small joys unfold, turning ordinary moments into something quietly magical—one soft, comforting day at a time. It's a moment that will make your heart feel lighter and lighter. No matter where you are or what you're doing, Rilakkuma will be by your side. An exciting new story begins! Experience the stress-free world of Rilakkuma, the relaxed bear who makes being lazy look effortless! (Source: Crunchyroll, Rilakkuma Anime Site, translated)",
-      "year": 2026,
-      "startDate": "2026-04-04",
-      "format": "TV_SHORT",
-      "episodes": 0,
-      "averageScore": 65,
-      "status": "RELEASING",
-      "genres": [
-        "Fantasy",
-        "Slice of Life"
-      ],
-      "siteUrl": "https://anilist.co/anime/183231",
-      "streaming": [
-        {
-          "name": "Crunchyroll",
-          "url": "https://www.crunchyroll.com/series/GT00374493/rilakkuma"
-        }
-      ],
-      "trailer": {
-        "site": "youtube",
-        "id": "rV-fcFL5vtU"
-      },
-      "next": {
-        "at": 1794615960,
-        "episode": 32
-      },
-      "airingAt": 1794011160,
-      "episode": 31,
-      "scheduleId": 421155,
-      "description_es": "Cada día la vida recibe un toque acogedor con el relajado Rilakkuma. Los momentos suaves de amistad, cambio y las pequeñas alegrías se desarrollan, convirtiendo los momentos ordinarios en algo silenciosamente mágico — un día suave y reconfortante a la vez. Es un momento que hará que su corazón se sienta más ligero y más ligero. No importa dónde estés o lo que estés haciendo, Rilakkuma estará a tu lado. ¡Una nueva historia emocionante comienza! ¡Experimente el mundo libre de estrés de Rilakkuma, el oso relajado que hace ser perezoso sin esfuerzo! (Fuente: Crunchyroll, Rilakkuma Anime Site, traducido)"
-    },
-    {
-      "id": "mal-64789",
-      "mal_id": 64789,
-      "ani_id": 214968,
-      "title": "Nezumi-kun no Chokki (TV) 2nd Season",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx214968-rrPSP2nKF40C.jpg",
-      "banner": "",
-      "description": "Second season of Nezumi-kun no Chokki (TV)",
-      "year": 2026,
-      "startDate": "2026-10-03",
-      "format": "TV_SHORT",
-      "episodes": 0,
-      "averageScore": 0,
-      "status": "RELEASING",
-      "genres": [
-        "Fantasy"
-      ],
-      "siteUrl": "https://anilist.co/anime/214968",
-      "streaming": [],
-      "trailer": null,
-      "next": {
-        "at": 1794616200,
-        "episode": 7
-      },
-      "airingAt": 1794011400,
-      "episode": 6,
-      "scheduleId": 418614,
-      "description_es": "Segunda temporada de Nezumi-kun no Chokki (TV)"
-    },
-    {
-      "id": "mal-63157",
-      "mal_id": 63157,
-      "ani_id": 216557,
-      "title": "KERORO☆",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx216557-b72dAqbVEDO7.jpg",
-      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/216557-FdbwnWM2oskW.jpg",
-      "description": "Sergeant Keroro comes to conquer Earth, only to get captured and stuck living with the Hinata family! (Source: Crunchyroll)",
-      "year": 2026,
-      "startDate": "2026-10-03",
-      "format": "TV",
-      "episodes": 0,
-      "averageScore": 59,
-      "status": "RELEASING",
-      "genres": [
-        "Comedy",
-        "Sci-Fi"
-      ],
-      "siteUrl": "https://anilist.co/anime/216557",
-      "streaming": [
-        {
-          "name": "Crunchyroll",
-          "url": "https://www.crunchyroll.com/series/GT00383995/"
-        }
-      ],
-      "trailer": {
-        "site": "youtube",
-        "id": "iMyre5xXDzE"
-      },
-      "next": {
-        "at": 1794616200,
-        "episode": 7
-      },
-      "airingAt": 1794011400,
-      "episode": 6,
-      "scheduleId": 419530,
-      "description_es": "¡El sargento Keroro viene a conquistar la Tierra, sólo para ser capturado y atrapado viviendo con la familia Hinata! (Fuente: Crunchyroll)"
-    },
-    {
-      "id": "mal-61619",
-      "mal_id": 61619,
-      "ani_id": 214260,
-      "title": "A Good Day to Ascend",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx214260-m2fg5OwduwSt.jpg",
-      "banner": "",
-      "description": "In the chaotic times, demons and monsters roam freely, and treacherous officials are in power. With the invasion of the Netherworld, both humans and Netherworld beings wreak havoc on the mortal world, and the wild gods who work for the Netherworld bully the common people. Enraged, Xu Ying, a snake-catcher, rebels and commits the sin of killing a god, and also takes out an incompetent court official. Hunted down by the two realms, his fleeing begins... (Source: iQ)",
-      "year": 2026,
-      "startDate": "2026-07-18",
-      "format": "ONA",
-      "episodes": 30,
-      "averageScore": 63,
-      "status": "RELEASING",
-      "genres": [
-        "Action",
-        "Adventure",
-        "Fantasy"
-      ],
-      "siteUrl": "https://anilist.co/anime/214260",
-      "streaming": [],
-      "trailer": null,
-      "next": {
-        "at": 1794618000,
-        "episode": 20
-      },
-      "airingAt": 1794013200,
-      "episode": 19,
-      "scheduleId": 417668,
-      "description_es": "En los tiempos caóticos, demonios y monstruos andan libremente, y funcionarios traicioneros están en el poder. Con la invasión del Netherworld, los seres humanos y el Netherworld causaron estragos en el mundo mortal, y los dioses salvajes que trabajan para el Netherworld intimidan al pueblo común. Enfurecido, Xu Ying, un cazador de serpientes, rebelde y comete el pecado de matar a un dios, y también saca a un funcionario de la corte incompetente. Cazado por los dos reinos, su huida comienza... (Fuente: iQ)"
-    },
-    {
-      "id": "mal-51836",
-      "mal_id": 51836,
-      "ani_id": 137683,
-      "title": "Soul Land 2: The Peerless Tang Clan",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx137683-IMuvIECdZNBh.png",
-      "banner": "",
-      "description": "The Tang Sect in a turbulent world. There is nothing but martial spirit here. Ten thousand years after the founding of the Tang Sect, it is in relative decline. An extremely talented man was born. Can the new Shrek Seven Monsters revive the Tang Sect and bring it back to glory? A soul beast of over one million years old; Electrolux who can pick stars; The new soul utensil system that led to the decline of the Tang Sect... A lot of secrets are to be revealed. Can the secret weapons of the Tang Sect be sharp again? Can the Tang Sect regain its former glory? (Source: WeTV)",
-      "year": 2023,
-      "startDate": "2023-06-24",
-      "format": "ONA",
-      "episodes": 182,
-      "averageScore": 77,
-      "status": "RELEASING",
-      "genres": [
-        "Action",
-        "Adventure",
-        "Fantasy",
-        "Romance"
-      ],
-      "siteUrl": "https://anilist.co/anime/137683",
-      "streaming": [],
-      "trailer": null,
-      "next": {
-        "at": 1794621600,
-        "episode": 179
-      },
-      "airingAt": 1794016800,
-      "episode": 178,
-      "scheduleId": 414714,
-      "description_es": "El Tang Sect en un mundo turbulento. Aquí no hay nada más que espíritu marcial. Diez mil años después de la fundación del Tang Sect, está en declive relativo. Nació un hombre extremadamente talentoso. ¿Pueden los nuevos Monstruos Shrek revivir el Tang Sect y traerlo de vuelta a la gloria? Una bestia de alma de más de un millón de años; Electrolux que puede elegir estrellas; El nuevo sistema de utensilios de alma que llevó al declive del Tang Sect... Hay que revelar muchos secretos. ¿Pueden volver a afilarse las armas secretas del Tang Sect? ¿Puede el Tang Sect recuperar su antigua gloria? (Fuente: WeTV)"
-    },
-    {
-      "id": "mal-60597",
-      "mal_id": 60597,
-      "ani_id": 199353,
-      "title": "Dawang Raoming 3",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx199353-S2jczHjCWHGL.png",
-      "banner": "",
-      "description": "The third season of Dawang Raoming .",
-      "year": 2026,
-      "startDate": "2026-10-03",
-      "format": "ONA",
-      "episodes": 12,
-      "averageScore": 72,
-      "status": "RELEASING",
-      "genres": [
-        "Action",
-        "Fantasy"
-      ],
-      "siteUrl": "https://anilist.co/anime/199353",
-      "streaming": [],
-      "trailer": {
-        "site": "youtube",
-        "id": "xIa7dMUka-8"
-      },
-      "next": {
-        "at": 1794621600,
-        "episode": 9
-      },
-      "airingAt": 1794016800,
-      "episode": 8,
-      "scheduleId": 421876,
-      "description_es": "La tercera temporada de Dawang Raoming."
-    },
     {
       "id": "mal-63240",
       "mal_id": 63240,
@@ -267,7 +35,8 @@
       },
       "airingAt": 1794020400,
       "episode": 23,
-      "scheduleId": 423364
+      "scheduleId": 423364,
+      "description_es": "La quinta temporada de Fanren Xiu Xian Zhuan . Nota: Incluye Episodios 177-228."
     },
     {
       "id": "mal-63901",
@@ -372,7 +141,7 @@
       "startDate": "2026-10-10",
       "format": "TV",
       "episodes": 0,
-      "averageScore": 68,
+      "averageScore": 67,
       "status": "RELEASING",
       "genres": [
         "Action",
@@ -392,7 +161,7 @@
       "airingAt": 1794040200,
       "episode": 5,
       "scheduleId": 422492,
-      "description_es": "\"La máscara\" da poder a cualquiera que la use. A veces, eso significa una posibilidad interminable, o una tragedia inimaginable... Perú, alumno del legendario fabricante de máscaras Gaston Roux, se hace controlado por el “Mask del Dios Guerrero”, y mata involuntariamente a sus amigos, e incluso a su propio maestro. Para evitar que este tipo de tragedia vuelva a ocurrir, Perú jura destruir todas las máscaras de Gaston que se extienden por todo el mundo. Frente a los pecados que"
+      "description_es": "\"La máscara\" da poder a cualquiera que la use. A veces, eso significa una posibilidad interminable, o una tragedia inimaginable... Perú, alumno del legendario fabricante de máscaras Gaston Roux, se hace controlado por el “Mask del Dios Guerrero”, y mata involuntariamente a sus amigos, e incluso a su propio maestro. Para evitar que este tipo de tragedia vuelva a ocurrir, Perú jura destruir todas las máscaras de Gaston que se extienden alrededor del mundo. Frente a los pecados que ha cometido, se embarca en su viaje. Conocer a nuevos amigos y enfrentar a poderosos enemigos. El chico continúa. Hasta el día que puede expiar por hola"
     },
     {
       "id": "mal-235",
@@ -567,7 +336,7 @@
       "airingAt": 1794056400,
       "episode": 7,
       "scheduleId": 421887,
-      "description_es": "Fia siempre soñó con convertirse en un caballero. Nacida en una familia de caballeros, es la menos talentosa entre ellos, pero todavía se aferra a su esperanza y trenes con todo lo que tiene. Cuando llega el día para que mate a un pequeño demonio y pruebe su valor, termina cara a cara con un dragón en su lugar! Una herida mortal hace que su vida parpadee ante sus ojos... y de repente recuerda su vida anterior, cuando ella era un poderoso santo en una era pasada que defea"
+      "description_es": "Fia siempre soñó con convertirse en un caballero. Nacida en una familia de caballeros, es la menos talentosa entre ellos, pero todavía se aferra a su esperanza y trenes con todo lo que tiene. Cuando llega el día para que mate a un pequeño demonio y pruebe su valor, termina cara a cara con un dragón en su lugar! Una herida mortal hace que su vida parpadee ante sus ojos... y de repente recuerda su vida anterior, cuando era un poderoso santo en una era pasada que venció al Rey demonio. Esa vida terminó con dolor por lo que era, haciendo que su miedo vuelva a ser un santo. Ahora que la magia de su anterior"
     },
     {
       "id": "mal-63140",
@@ -892,7 +661,7 @@
       "airingAt": 1794066960,
       "episode": 6,
       "scheduleId": 417719,
-      "description_es": "La tercera temporada de Ranma 1/2 (2024). Más rivales y aventuras siguen a Ranma y Akane como trenes de Colonia Ryouga, una guerra de galletas se desmorona de control, y Shampoo elabora nuevos esquemas. (Fuente: Netflix, editado)"
+      "description_es": "La tercera temporada de Ranma 1/2 (2024) . Más rivales y aventuras siguen a Ranma y Akane como trenes de Colonia Ryouga, una guerra de galletas se desmorona de control, y Shampoo elabora nuevos esquemas. (Fuente: Netflix, editado)"
     },
     {
       "id": "mal-62922",
@@ -906,7 +675,7 @@
       "startDate": "2026-10-04",
       "format": "TV",
       "episodes": 0,
-      "averageScore": 62,
+      "averageScore": 61,
       "status": "RELEASING",
       "genres": [
         "Action",
@@ -1293,7 +1062,7 @@
       "startDate": "2026-10-04",
       "format": "TV",
       "episodes": 24,
-      "averageScore": 80,
+      "averageScore": 81,
       "status": "RELEASING",
       "genres": [
         "Sports"
@@ -1359,7 +1128,7 @@
       "startDate": "2026-10-11",
       "format": "TV",
       "episodes": 0,
-      "averageScore": 81,
+      "averageScore": 82,
       "status": "RELEASING",
       "genres": [
         "Sports"
@@ -1603,7 +1372,7 @@
       "startDate": "2026-10-04",
       "format": "TV",
       "episodes": 0,
-      "averageScore": 62,
+      "averageScore": 61,
       "status": "RELEASING",
       "genres": [
         "Action",
@@ -1661,7 +1430,7 @@
       "airingAt": 1794147360,
       "episode": 5,
       "scheduleId": 419193,
-      "description_es": "Han pasado varios años desde la feroz batalla contra Majin Buu, y la Tierra finalmente ha recuperado un breve momento de paz. Al mismo tiempo, Beerus, el Dios de la Destrucción, despierta de su sueño largo y profundo. Incluso Kai y el Supremo Kai, consciente del abrumador poder de Beerus para destruir planetas enteros, ver su despertar con gran miedo... Mientras tanto, Beerus escucha rumores de un Saiyan que venció a Frieza y de repente aparece ante Goku. Atacada por Beerus, el ser más fuerte del universo, la Tierra está en grave peligro. Así comienza una batalla cósmica que rompe la tierra entre el Dios de la Destrucción y Go"
+      "description_es": "Han pasado varios años desde la feroz batalla contra Majin Buu, y la Tierra finalmente ha recuperado un breve momento de paz. Al mismo tiempo, Beerus, el Dios de la Destrucción, despierta de su sueño largo y profundo. Incluso Kai y el Supremo Kai, consciente del abrumador poder de Beerus para destruir planetas enteros, ver su despertar con gran miedo... Mientras tanto, Beerus escucha rumores de un Saiyan que venció a Frieza y de repente aparece ante Goku. Meta de cerveza"
     },
     {
       "id": "mal-60601",
@@ -1699,7 +1468,7 @@
       "airingAt": 1794148200,
       "episode": 7,
       "scheduleId": 419231,
-      "description_es": "La tercera temporada de Tensei Kizoku, Kantei Skill de Nariagaru . Nota: El 4 de septiembre de 2026, se anunció que GeyeG Pictures tomaría la producción del estudio MOTHER manteniendo el mismo personal."
+      "description_es": "La tercera temporada de Tensei Kizoku, Kantei Skill de Nariagaru. Nota: El 4 de septiembre de 2026, se anunció que GeyeG Pictures tomaría la producción del estudio MOTHER manteniendo el mismo personal."
     },
     {
       "id": "mal-63292",
@@ -1776,7 +1545,7 @@
       "airingAt": 1794148200,
       "episode": 6,
       "scheduleId": 419615,
-      "description_es": "Renací como una hija villana en un juego de harem otome inverso. Después de enfermarse con fiebre alta a los 10 años, Pia Rockwell de repente recordó su vida pasada como estudiante universitaria en Japón. Pero lejos de ir por la ruta villanosa, todo lo que esta chica súper tímida quiere es finalmente utilizar su conocimiento de cuando era una estudiante de posgrado que estudiaba para obtener su doctorado en paleontología. Su objetivo final es convertirse en un común, excavar fósiles, construir un museo y luego convertirse en un curador. Así que para escapar de la ruta del villano y evitar ser deportado por su prometido durante la graduación"
+      "description_es": "Renací como una hija villana en un juego de harem otome inverso. Después de enfermarse con fiebre alta a los 10 años, Pia Rockwell de repente recordó su vida pasada como estudiante universitaria en Japón. Pero lejos de ir por la ruta villanosa, todo lo que esta chica súper tímida quiere es finalmente utilizar su conocimiento de cuando era una estudiante de posgrado que estudiaba para obtener su doctorado en paleontología. Su objetivo final es llegar a ser más común, excavar fos"
     },
     {
       "id": "mal-64340",
@@ -1865,7 +1634,7 @@
       "startDate": "2026-10-05",
       "format": "TV",
       "episodes": 0,
-      "averageScore": 69,
+      "averageScore": 70,
       "status": "RELEASING",
       "genres": [
         "Adventure",
@@ -1904,7 +1673,7 @@
       "startDate": "2026-10-05",
       "format": "TV_SHORT",
       "episodes": 8,
-      "averageScore": 51,
+      "averageScore": 52,
       "status": "RELEASING",
       "genres": [
         "Ecchi",
@@ -2024,7 +1793,7 @@
       "airingAt": 1794154800,
       "episode": 6,
       "scheduleId": 419206,
-      "description_es": "Amona es un llamador oscuro con poderes demoníacos. Roni es un sacerdote devota que está demasiado tenso. Por todos los derechos, deben odiarse. En lugar de eso, terminan acelerando su arco de enemigos a amantes con un stand de una noche que de alguna manera insiste en convertirse en un evento recurrente. Ahora deben ocultar su nave de situación del resto del partido mientras niegan su creciente atracción entre sí, mientras tratan con un imp que está demasiado invertido en su vida amorosa. (Fuente: HIDIVE)"
+      "description_es": "Amona es un llamador oscuro con poderes demoníacos. Roni es un sacerdote devota que está demasiado tenso. Por todos los derechos, deben odiarse. En lugar de eso, terminan acelerando su arco de enemigos a amantes con un stand de una noche que de alguna manera insiste en convertirse en un evento recurrente. Ahora deben ocultar su situación del resto del partido, negando su creciente atracción entre sí, todo mientras se trata de un imp que está demasiado invertido en"
     },
     {
       "id": "mal-65169",
@@ -2184,8 +1953,8 @@
         "id": "A2ZuZt01_Po"
       },
       "next": {
-        "at": 1794214800,
-        "episode": 5
+        "at": 1794819600,
+        "episode": 6
       },
       "airingAt": 1794214800,
       "episode": 5,
@@ -2204,7 +1973,7 @@
       "startDate": "2026-10-05",
       "format": "TV",
       "episodes": 12,
-      "averageScore": 72,
+      "averageScore": 73,
       "status": "RELEASING",
       "genres": [
         "Fantasy",
@@ -2634,7 +2403,7 @@
       "airingAt": 1794322800,
       "episode": 6,
       "scheduleId": 420257,
-      "description_es": "Rein, un encantador, es expulsado de su gremio un día. Pero en lugar de desesperar, declara, “¡Ahora puedo hacer cualquier cosa!” y comienza a reclamar el enorme número de puntos de mejora que una vez vierte en el equipo de sus compañeros, a partir de un nuevo camino como aventurero. Reunirse a su alrededor son personas que llevan heridas que no se desvanecen fácilmente: un genio aventurero que cerró su corazón después de que su partido fue masacrado, un guerrero que perdió"
+      "description_es": "Rein, un encantador, es expulsado de su gremio un día. Pero en lugar de desesperar, declara, “¡Ahora puedo hacer cualquier cosa!” y comienza a reclamar el enorme número de puntos de mejora que una vez vierte en el equipo de sus compañeros, a partir de un nuevo camino como aventurero. Reunirse a su alrededor son personas que llevan heridas que no se desvanecen fácilmente: un genio aventurero que cerró su corazón después de que su partido fue masacrado, un guerrero que perdió su familia, y un asesino criado de la infancia para matar. Sin embargo Rein nunca rechaza sus pasados ni sus cicatrices, los acepta a todos con brillante, hetero"
     },
     {
       "id": "mal-63489",
@@ -3889,7 +3658,7 @@
       "startDate": "2026-10-09",
       "format": "TV",
       "episodes": 0,
-      "averageScore": 67,
+      "averageScore": 66,
       "status": "RELEASING",
       "genres": [
         "Action",
@@ -3913,7 +3682,7 @@
       "airingAt": 1794576600,
       "episode": 6,
       "scheduleId": 419707,
-      "description_es": "Esta es una historia de cuatro chicas que viven en el \"Dark Side\" de Academy City. En la Ciudad de la Academia donde el \"ESP\" ha sido reconocido como una ciencia general. Detrás de la paz, hay una organización Dark Side que realiza misiones que no pueden hacerse públicas. \"ITEM\" es una unidad de élite compuesta por cuatro niñas. Takitsubo Rikou es capaz de leer y rastrear los campos AIM emitidos por aquellos con capacidades. Frenda Seivelun, que destaca en combate utilizando explosivos y t"
+      "description_es": "Esta es una historia de cuatro chicas que viven en el \"Dark Side\" de Academy City. En la Ciudad de la Academia donde el \"ESP\" ha sido reconocido como una ciencia general. Detrás de la paz, hay una organización del lado oscuro que realiza misiones que no pueden hacerse públicas. \"ITEM\" es una unidad de élite compuesta por cuatro chicas. Takitsubo Rikou es capaz de leer y rastrear los campos AIM emitidos por aquellos con capacidades. Frenda Seivelun, que destaca en combate utilizando explosivos y trampas. Kinuhata Saiai, que puede manipular nitrógeno a voluntad y juega un papel defensivo. Y uno de los 7 Espers que Academy City está orgulloso de: Mugino Shiz"
     },
     {
       "id": "mal-61987",
@@ -4367,7 +4136,8 @@
       },
       "airingAt": 1794625200,
       "episode": 24,
-      "scheduleId": 423365
+      "scheduleId": 423365,
+      "description_es": "La quinta temporada de Fanren Xiu Xian Zhuan . Nota: Incluye Episodios 177-228."
     },
     {
       "id": "mal-63901",
@@ -4472,7 +4242,7 @@
       "startDate": "2026-10-10",
       "format": "TV",
       "episodes": 0,
-      "averageScore": 68,
+      "averageScore": 67,
       "status": "RELEASING",
       "genres": [
         "Action",
@@ -4492,7 +4262,7 @@
       "airingAt": 1794645000,
       "episode": 6,
       "scheduleId": 422493,
-      "description_es": "\"La máscara\" da poder a cualquiera que la use. A veces, eso significa una posibilidad interminable, o una tragedia inimaginable... Perú, alumno del legendario fabricante de máscaras Gaston Roux, se hace controlado por el “Mask del Dios Guerrero”, y mata involuntariamente a sus amigos, e incluso a su propio maestro. Para evitar que este tipo de tragedia vuelva a ocurrir, Perú jura destruir todas las máscaras de Gaston que se extienden por todo el mundo. Frente a los pecados que"
+      "description_es": "\"La máscara\" da poder a cualquiera que la use. A veces, eso significa una posibilidad interminable, o una tragedia inimaginable... Perú, alumno del legendario fabricante de máscaras Gaston Roux, se hace controlado por el “Mask del Dios Guerrero”, y mata involuntariamente a sus amigos, e incluso a su propio maestro. Para evitar que este tipo de tragedia vuelva a ocurrir, Perú jura destruir todas las máscaras de Gaston que se extienden alrededor del mundo. Frente a los pecados que ha cometido, se embarca en su viaje. Conocer a nuevos amigos y enfrentar a poderosos enemigos. El chico continúa. Hasta el día que puede expiar por hola"
     },
     {
       "id": "mal-235",
@@ -4667,7 +4437,7 @@
       "airingAt": 1794661200,
       "episode": 8,
       "scheduleId": 421888,
-      "description_es": "Fia siempre soñó con convertirse en un caballero. Nacida en una familia de caballeros, es la menos talentosa entre ellos, pero todavía se aferra a su esperanza y trenes con todo lo que tiene. Cuando llega el día para que mate a un pequeño demonio y pruebe su valor, termina cara a cara con un dragón en su lugar! Una herida mortal hace que su vida parpadee ante sus ojos... y de repente recuerda su vida anterior, cuando ella era un poderoso santo en una era pasada que defea"
+      "description_es": "Fia siempre soñó con convertirse en un caballero. Nacida en una familia de caballeros, es la menos talentosa entre ellos, pero todavía se aferra a su esperanza y trenes con todo lo que tiene. Cuando llega el día para que mate a un pequeño demonio y pruebe su valor, termina cara a cara con un dragón en su lugar! Una herida mortal hace que su vida parpadee ante sus ojos... y de repente recuerda su vida anterior, cuando era un poderoso santo en una era pasada que venció al Rey demonio. Esa vida terminó con dolor por lo que era, haciendo que su miedo vuelva a ser un santo. Ahora que la magia de su anterior"
     },
     {
       "id": "mal-63140",
@@ -5004,7 +4774,7 @@
       "airingAt": 1794671760,
       "episode": 7,
       "scheduleId": 417720,
-      "description_es": "La tercera temporada de Ranma 1/2 (2024). Más rivales y aventuras siguen a Ranma y Akane como trenes de Colonia Ryouga, una guerra de galletas se desmorona de control, y Shampoo elabora nuevos esquemas. (Fuente: Netflix, editado)"
+      "description_es": "La tercera temporada de Ranma 1/2 (2024) . Más rivales y aventuras siguen a Ranma y Akane como trenes de Colonia Ryouga, una guerra de galletas se desmorona de control, y Shampoo elabora nuevos esquemas. (Fuente: Netflix, editado)"
     },
     {
       "id": "mal-62922",
@@ -5018,7 +4788,7 @@
       "startDate": "2026-10-04",
       "format": "TV",
       "episodes": 0,
-      "averageScore": 62,
+      "averageScore": 61,
       "status": "RELEASING",
       "genres": [
         "Action",
@@ -5405,7 +5175,7 @@
       "startDate": "2026-10-04",
       "format": "TV",
       "episodes": 24,
-      "averageScore": 80,
+      "averageScore": 81,
       "status": "RELEASING",
       "genres": [
         "Sports"
@@ -5471,7 +5241,7 @@
       "startDate": "2026-10-11",
       "format": "TV",
       "episodes": 0,
-      "averageScore": 81,
+      "averageScore": 82,
       "status": "RELEASING",
       "genres": [
         "Sports"
@@ -5715,7 +5485,7 @@
       "startDate": "2026-10-04",
       "format": "TV",
       "episodes": 0,
-      "averageScore": 62,
+      "averageScore": 61,
       "status": "RELEASING",
       "genres": [
         "Action",
@@ -5773,7 +5543,7 @@
       "airingAt": 1794752160,
       "episode": 6,
       "scheduleId": 419194,
-      "description_es": "Han pasado varios años desde la feroz batalla contra Majin Buu, y la Tierra finalmente ha recuperado un breve momento de paz. Al mismo tiempo, Beerus, el Dios de la Destrucción, despierta de su sueño largo y profundo. Incluso Kai y el Supremo Kai, consciente del abrumador poder de Beerus para destruir planetas enteros, ver su despertar con gran miedo... Mientras tanto, Beerus escucha rumores de un Saiyan que venció a Frieza y de repente aparece ante Goku. Atacada por Beerus, el ser más fuerte del universo, la Tierra está en grave peligro. Así comienza una batalla cósmica que rompe la tierra entre el Dios de la Destrucción y Go"
+      "description_es": "Han pasado varios años desde la feroz batalla contra Majin Buu, y la Tierra finalmente ha recuperado un breve momento de paz. Al mismo tiempo, Beerus, el Dios de la Destrucción, despierta de su sueño largo y profundo. Incluso Kai y el Supremo Kai, consciente del abrumador poder de Beerus para destruir planetas enteros, ver su despertar con gran miedo... Mientras tanto, Beerus escucha rumores de un Saiyan que venció a Frieza y de repente aparece ante Goku. Meta de cerveza"
     },
     {
       "id": "mal-60601",
@@ -5811,7 +5581,7 @@
       "airingAt": 1794753000,
       "episode": 8,
       "scheduleId": 419232,
-      "description_es": "La tercera temporada de Tensei Kizoku, Kantei Skill de Nariagaru . Nota: El 4 de septiembre de 2026, se anunció que GeyeG Pictures tomaría la producción del estudio MOTHER manteniendo el mismo personal."
+      "description_es": "La tercera temporada de Tensei Kizoku, Kantei Skill de Nariagaru. Nota: El 4 de septiembre de 2026, se anunció que GeyeG Pictures tomaría la producción del estudio MOTHER manteniendo el mismo personal."
     },
     {
       "id": "mal-63292",
@@ -5888,7 +5658,7 @@
       "airingAt": 1794753000,
       "episode": 7,
       "scheduleId": 419616,
-      "description_es": "Renací como una hija villana en un juego de harem otome inverso. Después de enfermarse con fiebre alta a los 10 años, Pia Rockwell de repente recordó su vida pasada como estudiante universitaria en Japón. Pero lejos de ir por la ruta villanosa, todo lo que esta chica súper tímida quiere es finalmente utilizar su conocimiento de cuando era una estudiante de posgrado que estudiaba para obtener su doctorado en paleontología. Su objetivo final es convertirse en un común, excavar fósiles, construir un museo y luego convertirse en un curador. Así que para escapar de la ruta del villano y evitar ser deportado por su prometido durante la graduación"
+      "description_es": "Renací como una hija villana en un juego de harem otome inverso. Después de enfermarse con fiebre alta a los 10 años, Pia Rockwell de repente recordó su vida pasada como estudiante universitaria en Japón. Pero lejos de ir por la ruta villanosa, todo lo que esta chica súper tímida quiere es finalmente utilizar su conocimiento de cuando era una estudiante de posgrado que estudiaba para obtener su doctorado en paleontología. Su objetivo final es llegar a ser más común, excavar fos"
     },
     {
       "id": "mal-64340",
@@ -5977,7 +5747,7 @@
       "startDate": "2026-10-05",
       "format": "TV",
       "episodes": 0,
-      "averageScore": 69,
+      "averageScore": 70,
       "status": "RELEASING",
       "genres": [
         "Adventure",
@@ -6016,7 +5786,7 @@
       "startDate": "2026-10-05",
       "format": "TV_SHORT",
       "episodes": 8,
-      "averageScore": 51,
+      "averageScore": 52,
       "status": "RELEASING",
       "genres": [
         "Ecchi",
@@ -6136,7 +5906,7 @@
       "airingAt": 1794759600,
       "episode": 7,
       "scheduleId": 419207,
-      "description_es": "Amona es un llamador oscuro con poderes demoníacos. Roni es un sacerdote devota que está demasiado tenso. Por todos los derechos, deben odiarse. En lugar de eso, terminan acelerando su arco de enemigos a amantes con un stand de una noche que de alguna manera insiste en convertirse en un evento recurrente. Ahora deben ocultar su nave de situación del resto del partido mientras niegan su creciente atracción entre sí, mientras tratan con un imp que está demasiado invertido en su vida amorosa. (Fuente: HIDIVE)"
+      "description_es": "Amona es un llamador oscuro con poderes demoníacos. Roni es un sacerdote devota que está demasiado tenso. Por todos los derechos, deben odiarse. En lugar de eso, terminan acelerando su arco de enemigos a amantes con un stand de una noche que de alguna manera insiste en convertirse en un evento recurrente. Ahora deben ocultar su situación del resto del partido, negando su creciente atracción entre sí, todo mientras se trata de un imp que está demasiado invertido en"
     },
     {
       "id": "mal-65169",
@@ -6296,8 +6066,8 @@
         "id": "A2ZuZt01_Po"
       },
       "next": {
-        "at": 1794214800,
-        "episode": 5
+        "at": 1794819600,
+        "episode": 6
       },
       "airingAt": 1794819600,
       "episode": 6,
@@ -6316,7 +6086,7 @@
       "startDate": "2026-10-05",
       "format": "TV",
       "episodes": 12,
-      "averageScore": 72,
+      "averageScore": 73,
       "status": "RELEASING",
       "genres": [
         "Fantasy",
@@ -6746,7 +6516,7 @@
       "airingAt": 1794927600,
       "episode": 7,
       "scheduleId": 420258,
-      "description_es": "Rein, un encantador, es expulsado de su gremio un día. Pero en lugar de desesperar, declara, “¡Ahora puedo hacer cualquier cosa!” y comienza a reclamar el enorme número de puntos de mejora que una vez vierte en el equipo de sus compañeros, a partir de un nuevo camino como aventurero. Reunirse a su alrededor son personas que llevan heridas que no se desvanecen fácilmente: un genio aventurero que cerró su corazón después de que su partido fue masacrado, un guerrero que perdió"
+      "description_es": "Rein, un encantador, es expulsado de su gremio un día. Pero en lugar de desesperar, declara, “¡Ahora puedo hacer cualquier cosa!” y comienza a reclamar el enorme número de puntos de mejora que una vez vierte en el equipo de sus compañeros, a partir de un nuevo camino como aventurero. Reunirse a su alrededor son personas que llevan heridas que no se desvanecen fácilmente: un genio aventurero que cerró su corazón después de que su partido fue masacrado, un guerrero que perdió su familia, y un asesino criado de la infancia para matar. Sin embargo Rein nunca rechaza sus pasados ni sus cicatrices, los acepta a todos con brillante, hetero"
     },
     {
       "id": "mal-63489",
@@ -7067,7 +6837,7 @@
           "at": 1794753000,
           "episode": 8
         },
-        "description_es": "La tercera temporada de Tensei Kizoku, Kantei Skill de Nariagaru . Nota: El 4 de septiembre de 2026, se anunció que GeyeG Pictures tomaría la producción del estudio MOTHER manteniendo el mismo personal."
+        "description_es": "La tercera temporada de Tensei Kizoku, Kantei Skill de Nariagaru. Nota: El 4 de septiembre de 2026, se anunció que GeyeG Pictures tomaría la producción del estudio MOTHER manteniendo el mismo personal."
       },
       {
         "id": "mal-56733",
@@ -7639,7 +7409,7 @@
           "at": 1794661200,
           "episode": 8
         },
-        "description_es": "Fia siempre soñó con convertirse en un caballero. Nacida en una familia de caballeros, es la menos talentosa entre ellos, pero todavía se aferra a su esperanza y trenes con todo lo que tiene. Cuando llega el día para que mate a un pequeño demonio y pruebe su valor, termina cara a cara con un dragón en su lugar! Una herida mortal hace que su vida parpadee ante sus ojos... y de repente recuerda su vida anterior, cuando ella era un poderoso santo en una era pasada que defea"
+        "description_es": "Fia siempre soñó con convertirse en un caballero. Nacida en una familia de caballeros, es la menos talentosa entre ellos, pero todavía se aferra a su esperanza y trenes con todo lo que tiene. Cuando llega el día para que mate a un pequeño demonio y pruebe su valor, termina cara a cara con un dragón en su lugar! Una herida mortal hace que su vida parpadee ante sus ojos... y de repente recuerda su vida anterior, cuando era un poderoso santo en una era pasada que venció al Rey demonio. Esa vida terminó con dolor por lo que era, haciendo que su miedo vuelva a ser un santo. Ahora que la magia de su anterior"
       },
       {
         "id": "mal-59787",
@@ -8012,7 +7782,7 @@
         "startDate": "2026-10-04",
         "format": "TV",
         "episodes": 24,
-        "averageScore": 80,
+        "averageScore": 81,
         "status": "RELEASING",
         "genres": [
           "Sports"
@@ -8041,7 +7811,7 @@
         "startDate": "2026-10-04",
         "format": "TV",
         "episodes": 0,
-        "averageScore": 62,
+        "averageScore": 61,
         "status": "RELEASING",
         "genres": [
           "Action",
@@ -8094,7 +7864,7 @@
           "at": 1794671760,
           "episode": 7
         },
-        "description_es": "La tercera temporada de Ranma 1/2 (2024). Más rivales y aventuras siguen a Ranma y Akane como trenes de Colonia Ryouga, una guerra de galletas se desmorona de control, y Shampoo elabora nuevos esquemas. (Fuente: Netflix, editado)"
+        "description_es": "La tercera temporada de Ranma 1/2 (2024) . Más rivales y aventuras siguen a Ranma y Akane como trenes de Colonia Ryouga, una guerra de galletas se desmorona de control, y Shampoo elabora nuevos esquemas. (Fuente: Netflix, editado)"
       },
       {
         "id": "mal-62753",
@@ -8130,7 +7900,7 @@
           "at": 1794753000,
           "episode": 7
         },
-        "description_es": "Renací como una hija villana en un juego de harem otome inverso. Después de enfermarse con fiebre alta a los 10 años, Pia Rockwell de repente recordó su vida pasada como estudiante universitaria en Japón. Pero lejos de ir por la ruta villanosa, todo lo que esta chica súper tímida quiere es finalmente utilizar su conocimiento de cuando era una estudiante de posgrado que estudiaba para obtener su doctorado en paleontología. Su objetivo final es convertirse en un común, excavar fósiles, construir un museo y luego convertirse en un curador. Así que para escapar de la ruta del villano y evitar ser deportado por su prometido durante la graduación"
+        "description_es": "Renací como una hija villana en un juego de harem otome inverso. Después de enfermarse con fiebre alta a los 10 años, Pia Rockwell de repente recordó su vida pasada como estudiante universitaria en Japón. Pero lejos de ir por la ruta villanosa, todo lo que esta chica súper tímida quiere es finalmente utilizar su conocimiento de cuando era una estudiante de posgrado que estudiaba para obtener su doctorado en paleontología. Su objetivo final es llegar a ser más común, excavar fos"
       },
       {
         "id": "mal-63751",
@@ -8144,7 +7914,7 @@
         "startDate": "2026-10-04",
         "format": "TV",
         "episodes": 0,
-        "averageScore": 62,
+        "averageScore": 61,
         "status": "RELEASING",
         "genres": [
           "Action",
@@ -8378,7 +8148,7 @@
         "startDate": "2026-10-05",
         "format": "TV",
         "episodes": 12,
-        "averageScore": 72,
+        "averageScore": 73,
         "status": "RELEASING",
         "genres": [
           "Fantasy",
@@ -8431,7 +8201,7 @@
           "at": 1794759600,
           "episode": 7
         },
-        "description_es": "Amona es un llamador oscuro con poderes demoníacos. Roni es un sacerdote devota que está demasiado tenso. Por todos los derechos, deben odiarse. En lugar de eso, terminan acelerando su arco de enemigos a amantes con un stand de una noche que de alguna manera insiste en convertirse en un evento recurrente. Ahora deben ocultar su nave de situación del resto del partido mientras niegan su creciente atracción entre sí, mientras tratan con un imp que está demasiado invertido en su vida amorosa. (Fuente: HIDIVE)"
+        "description_es": "Amona es un llamador oscuro con poderes demoníacos. Roni es un sacerdote devota que está demasiado tenso. Por todos los derechos, deben odiarse. En lugar de eso, terminan acelerando su arco de enemigos a amantes con un stand de una noche que de alguna manera insiste en convertirse en un evento recurrente. Ahora deben ocultar su situación del resto del partido, negando su creciente atracción entre sí, todo mientras se trata de un imp que está demasiado invertido en"
       },
       {
         "id": "mal-63098",
@@ -8551,7 +8321,7 @@
         "startDate": "2026-10-05",
         "format": "TV_SHORT",
         "episodes": 8,
-        "averageScore": 51,
+        "averageScore": 52,
         "status": "RELEASING",
         "genres": [
           "Ecchi",
@@ -8582,7 +8352,7 @@
         "startDate": "2026-10-05",
         "format": "TV",
         "episodes": 0,
-        "averageScore": 69,
+        "averageScore": 70,
         "status": "RELEASING",
         "genres": [
           "Adventure",
@@ -8923,7 +8693,7 @@
           "at": 1794322800,
           "episode": 6
         },
-        "description_es": "Rein, un encantador, es expulsado de su gremio un día. Pero en lugar de desesperar, declara, “¡Ahora puedo hacer cualquier cosa!” y comienza a reclamar el enorme número de puntos de mejora que una vez vierte en el equipo de sus compañeros, a partir de un nuevo camino como aventurero. Reunirse a su alrededor son personas que llevan heridas que no se desvanecen fácilmente: un genio aventurero que cerró su corazón después de que su partido fue masacrado, un guerrero que perdió"
+        "description_es": "Rein, un encantador, es expulsado de su gremio un día. Pero en lugar de desesperar, declara, “¡Ahora puedo hacer cualquier cosa!” y comienza a reclamar el enorme número de puntos de mejora que una vez vierte en el equipo de sus compañeros, a partir de un nuevo camino como aventurero. Reunirse a su alrededor son personas que llevan heridas que no se desvanecen fácilmente: un genio aventurero que cerró su corazón después de que su partido fue masacrado, un guerrero que perdió su familia, y un asesino criado de la infancia para matar. Sin embargo Rein nunca rechaza sus pasados ni sus cicatrices, los acepta a todos con brillante, hetero"
       },
       {
         "id": "mal-52480",
@@ -9250,7 +9020,7 @@
         "startDate": "2026-10-09",
         "format": "TV",
         "episodes": 0,
-        "averageScore": 67,
+        "averageScore": 66,
         "status": "RELEASING",
         "genres": [
           "Action",
@@ -9271,7 +9041,7 @@
           "at": 1794576600,
           "episode": 6
         },
-        "description_es": "Esta es una historia de cuatro chicas que viven en el \"Dark Side\" de Academy City. En la Ciudad de la Academia donde el \"ESP\" ha sido reconocido como una ciencia general. Detrás de la paz, hay una organización Dark Side que realiza misiones que no pueden hacerse públicas. \"ITEM\" es una unidad de élite compuesta por cuatro niñas. Takitsubo Rikou es capaz de leer y rastrear los campos AIM emitidos por aquellos con capacidades. Frenda Seivelun, que destaca en combate utilizando explosivos y t"
+        "description_es": "Esta es una historia de cuatro chicas que viven en el \"Dark Side\" de Academy City. En la Ciudad de la Academia donde el \"ESP\" ha sido reconocido como una ciencia general. Detrás de la paz, hay una organización del lado oscuro que realiza misiones que no pueden hacerse públicas. \"ITEM\" es una unidad de élite compuesta por cuatro chicas. Takitsubo Rikou es capaz de leer y rastrear los campos AIM emitidos por aquellos con capacidades. Frenda Seivelun, que destaca en combate utilizando explosivos y trampas. Kinuhata Saiai, que puede manipular nitrógeno a voluntad y juega un papel defensivo. Y uno de los 7 Espers que Academy City está orgulloso de: Mugino Shiz"
       },
       {
         "id": "mal-63423",
@@ -9392,7 +9162,7 @@
         "startDate": "2026-10-10",
         "format": "TV",
         "episodes": 0,
-        "averageScore": 68,
+        "averageScore": 67,
         "status": "RELEASING",
         "genres": [
           "Action",
@@ -9409,7 +9179,7 @@
           "at": 1794645000,
           "episode": 6
         },
-        "description_es": "\"La máscara\" da poder a cualquiera que la use. A veces, eso significa una posibilidad interminable, o una tragedia inimaginable... Perú, alumno del legendario fabricante de máscaras Gaston Roux, se hace controlado por el “Mask del Dios Guerrero”, y mata involuntariamente a sus amigos, e incluso a su propio maestro. Para evitar que este tipo de tragedia vuelva a ocurrir, Perú jura destruir todas las máscaras de Gaston que se extienden por todo el mundo. Frente a los pecados que"
+        "description_es": "\"La máscara\" da poder a cualquiera que la use. A veces, eso significa una posibilidad interminable, o una tragedia inimaginable... Perú, alumno del legendario fabricante de máscaras Gaston Roux, se hace controlado por el “Mask del Dios Guerrero”, y mata involuntariamente a sus amigos, e incluso a su propio maestro. Para evitar que este tipo de tragedia vuelva a ocurrir, Perú jura destruir todas las máscaras de Gaston que se extienden alrededor del mundo. Frente a los pecados que ha cometido, se embarca en su viaje. Conocer a nuevos amigos y enfrentar a poderosos enemigos. El chico continúa. Hasta el día que puede expiar por hola"
       },
       {
         "id": "mal-63053",
@@ -9478,7 +9248,7 @@
           "at": 1794752160,
           "episode": 6
         },
-        "description_es": "Han pasado varios años desde la feroz batalla contra Majin Buu, y la Tierra finalmente ha recuperado un breve momento de paz. Al mismo tiempo, Beerus, el Dios de la Destrucción, despierta de su sueño largo y profundo. Incluso Kai y el Supremo Kai, consciente del abrumador poder de Beerus para destruir planetas enteros, ver su despertar con gran miedo... Mientras tanto, Beerus escucha rumores de un Saiyan que venció a Frieza y de repente aparece ante Goku. Atacada por Beerus, el ser más fuerte del universo, la Tierra está en grave peligro. Así comienza una batalla cósmica que rompe la tierra entre el Dios de la Destrucción y Go"
+        "description_es": "Han pasado varios años desde la feroz batalla contra Majin Buu, y la Tierra finalmente ha recuperado un breve momento de paz. Al mismo tiempo, Beerus, el Dios de la Destrucción, despierta de su sueño largo y profundo. Incluso Kai y el Supremo Kai, consciente del abrumador poder de Beerus para destruir planetas enteros, ver su despertar con gran miedo... Mientras tanto, Beerus escucha rumores de un Saiyan que venció a Frieza y de repente aparece ante Goku. Meta de cerveza"
       },
       {
         "id": "mal-63292",
