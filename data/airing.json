@@ -1,186 +1,9 @@
 {
-  "updated": "2026-11-09T21:49:54.558Z",
+  "updated": "2026-11-10T03:51:19.234Z",
   "source": "AniList public GraphQL metadata",
-  "windowStart": 1794062982,
-  "windowEnd": 1795038582,
+  "windowStart": 1794084667,
+  "windowEnd": 1795060267,
   "airing": [
-    {
-      "id": "mal-56733",
-      "mal_id": 56733,
-      "ani_id": 169581,
-      "title": "Magical Explorer",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx169581-UlAviVH36Hxi.png",
-      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/169581-cdooqY7Jqy3x.jpg",
-      "description": "Few titles are more revered among horndogs-(ahem) connoisseurs of Japanese erotic video games-than Magical Explorer. One day, our smut-loving hero wakes up to find he has been reincarnated into the body of the game’s dreamboat protagonist! Or rather, his hapless comic-relief best friend, Kousuke Takioto. But with his unparalleled knowledge of Magical Explorer and Kousuke’s unorthodox abilities (a scarf that doubles as a fist?), our hero vows to turn the game’s unluckiest loser into its mightiest heartthrob. In this world, nothing is out of reach when you’ve got the know-how! (Source: Yen Press) Note: Each episode streamed 1 week early on ABEMA and d anime store. The original TV broadcast started on October 4th, 2026.",
-      "year": 2026,
-      "startDate": "2026-09-27",
-      "format": "ONA",
-      "episodes": 13,
-      "averageScore": 69,
-      "status": "RELEASING",
-      "genres": [
-        "Action",
-        "Adventure",
-        "Ecchi",
-        "Fantasy",
-        "Romance"
-      ],
-      "siteUrl": "https://anilist.co/anime/169581",
-      "streaming": [
-        {
-          "name": "Crunchyroll",
-          "url": "https://www.crunchyroll.com/series/GT00384003/magical-explorer"
-        }
-      ],
-      "trailer": {
-        "site": "youtube",
-        "id": "XqrBfyUNYZs"
-      },
-      "next": {
-        "at": 1794668400,
-        "episode": 8
-      },
-      "airingAt": 1794063600,
-      "episode": 7,
-      "scheduleId": 422398,
-      "description_es": "Pocos títulos son más venerados entre los erizos-(ahem) conocedores de videojuegos eróticos japoneses-que Magical Explorer. Un día, nuestro héroe amante de la mugre se despierta para encontrar que ha sido reencarnado en el cuerpo del protagonista de la lancha del juego! O más bien, su mejor amigo, Kousuke Takioto. Pero con su conocimiento inigualable del Explorador Mágico y las habilidades no ortodoxas de Kousuke (una bufanda que se dobla como un puño?), nuestro héroe promete t"
-    },
-    {
-      "id": "mal-64008",
-      "mal_id": 64008,
-      "ani_id": 208105,
-      "title": "Yani Neko Mini",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b208105-pYHSBy6n9naY.png",
-      "banner": "",
-      "description": "Chibi shorts posted on the official Yani Neko YouTube channel and Twitter account of the main series.",
-      "year": 2026,
-      "startDate": "2026-02-22",
-      "format": "ONA",
-      "episodes": 22,
-      "averageScore": 61,
-      "status": "FINISHED",
-      "genres": [
-        "Comedy"
-      ],
-      "siteUrl": "https://anilist.co/anime/208105",
-      "streaming": [],
-      "trailer": {
-        "site": "youtube",
-        "id": "uPZ5qL6ka2Q"
-      },
-      "next": null,
-      "airingAt": 1794063600,
-      "episode": 22,
-      "scheduleId": 423274,
-      "description_es": "Chibi shorts publicados en el canal oficial de YouTube Yani Neko y cuenta de Twitter de la serie principal."
-    },
-    {
-      "id": "mal-61578",
-      "mal_id": 61578,
-      "ani_id": 191656,
-      "title": "Even the Student Council Has Its Holes!",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx191656-xFHtxM8SUTdU.png",
-      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/191656-JQILdzh3FQxN.jpg",
-      "description": "This is Fujinasu Academy, a private high school with top-achieving students located on the outskirts of town. High School 1st-Year Ume Mizunoe has excellent grades in Japanese language class and has received multiple literary awards. However, his terrible grades in the sciences are affecting his ability to move up a grade. To avoid repeating a year, he becomes a member of the student council to improve his academic standing. However, in the student council, he meets the charismatic yet sullen student council president Kotobuki Hisako, and the scary yet kind and refined treasurer, Arisu Terui. Other members include a cheeky and cute boy, Tan Otori, and Komaro Michinoku, the admin who's like a small abandoned cat. This is the start of a slapstick, heartful, rom-com about a busy student council full of cute, mismatched, and quirky students! (Source: Even the Student Council Has Its Holes! Official Site)",
-      "year": 2026,
-      "startDate": "2026-10-04",
-      "format": "TV",
-      "episodes": 12,
-      "averageScore": 73,
-      "status": "RELEASING",
-      "genres": [
-        "Comedy",
-        "Ecchi",
-        "Slice of Life"
-      ],
-      "siteUrl": "https://anilist.co/anime/191656",
-      "streaming": [],
-      "trailer": {
-        "site": "youtube",
-        "id": "VTRVLnzhl90"
-      },
-      "next": {
-        "at": 1794670200,
-        "episode": 7
-      },
-      "airingAt": 1794065400,
-      "episode": 6,
-      "scheduleId": 418849,
-      "description_es": "Esta es la Academia Fujinasu, una escuela secundaria privada con estudiantes de primer nivel ubicados en las afueras de la ciudad. High School 1er año Ume Mizunoe tiene excelentes calificaciones en la clase de idioma japonés y ha recibido múltiples premios literarios. Sin embargo, sus calificaciones terribles en las ciencias están afectando su capacidad de avanzar en un grado. Para evitar repetir un año, se convierte en miembro del consejo estudiantil para mejorar su posición académica. Sin embargo, en el estudio"
-    },
-    {
-      "id": "mal-63801",
-      "mal_id": 63801,
-      "ani_id": 209872,
-      "title": "Ranma1/2 (2024) Season 3",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx209872-RBeVPqwejHFp.jpg",
-      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/209872-Qczb4k9Mw0pq.jpg",
-      "description": "The third season of Ranma 1/2 (2024) . More rivals and misadventures follow Ranma and Akane as Cologne trains Ryouga, a cookie war crumbles out of control, and Shampoo brews new schemes. (Source: Netflix, edited)",
-      "year": 2026,
-      "startDate": "2026-10-04",
-      "format": "TV",
-      "episodes": 0,
-      "averageScore": 79,
-      "status": "RELEASING",
-      "genres": [
-        "Action",
-        "Comedy",
-        "Romance"
-      ],
-      "siteUrl": "https://anilist.co/anime/209872",
-      "streaming": [],
-      "trailer": {
-        "site": "youtube",
-        "id": "dbe8esPSfYI"
-      },
-      "next": {
-        "at": 1794671760,
-        "episode": 7
-      },
-      "airingAt": 1794066960,
-      "episode": 6,
-      "scheduleId": 417719,
-      "description_es": "La tercera temporada de Ranma 1/2 (2024) . Más rivales y aventuras siguen a Ranma y Akane como trenes de Colonia Ryouga, una guerra de galletas se desmorona de control, y Shampoo elabora nuevos esquemas. (Fuente: Netflix, editado)"
-    },
-    {
-      "id": "mal-62922",
-      "mal_id": 62922,
-      "ani_id": 202250,
-      "title": "Magic Repo Man: Dumped by My Party, I’ll Cash In With a Cute Support Fairy to Become the Strongest!",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx202250-mpm2cvr92Au2.jpg",
-      "banner": "",
-      "description": "If there's one thing you can never have enough of in a world of RPG-style swords and sorcery, it's magic points! Whether you're fueling spells, techniques, or showing off an incredible ability, you've gotta spend those points to do real damage. But what if you run out? Lent is part of the up-and-coming party known as the “Skypiercers,” and thanks to his unique Gift, he can loan massive amounts of magic to others. No MP? No problem with Lent around! Except, now that his companions have become formidable heroes (thanks to his skill), his usefulness is questioned. Kicked out of the group, Lent is furious…until he discovers a hidden power to his Gift. Now, with his adorably devious fairy partner, he's going to claw back every last scrap of magic from his former party—with interest! (Source: Seven Seas Entertainment)",
-      "year": 2026,
-      "startDate": "2026-10-04",
-      "format": "TV",
-      "episodes": 0,
-      "averageScore": 61,
-      "status": "RELEASING",
-      "genres": [
-        "Action",
-        "Adventure",
-        "Fantasy"
-      ],
-      "siteUrl": "https://anilist.co/anime/202250",
-      "streaming": [
-        {
-          "name": "Crunchyroll",
-          "url": "https://www.crunchyroll.com/series/GT00385867/magic-repo-man-dumped-by-my-party-ill-cash-in-with-a-cute-support-fairy-to-become-the-strongest"
-        }
-      ],
-      "trailer": {
-        "site": "youtube",
-        "id": "kXqx3rFSkxc"
-      },
-      "next": {
-        "at": 1794673800,
-        "episode": 7
-      },
-      "airingAt": 1794069000,
-      "episode": 6,
-      "scheduleId": 419567,
-      "description_es": "Si hay una cosa que nunca puedes tener suficiente en un mundo de espadas y brujería estilo RPG, ¡es puntos mágicos! Si estás alimentando hechizos, técnicas o mostrando una habilidad increíble, tienes que gastar esos puntos para hacer daño real. ¿Y si te escapas? La Cuaresma es parte de la fiesta de llegada conocida como los \"Skypiercers\", y gracias a su regalo único, puede prestar enormes cantidades de magia a otros. ¿Sin MP? No hay problema con Lent arou"
-    },
     {
       "id": "mal-63125",
       "mal_id": 63125,
@@ -1575,8 +1398,8 @@
       "streaming": [],
       "trailer": null,
       "next": {
-        "at": 1794276000,
-        "episode": 23
+        "at": 1794880800,
+        "episode": 24
       },
       "airingAt": 1794276000,
       "episode": 23,
@@ -5693,8 +5516,8 @@
       "streaming": [],
       "trailer": null,
       "next": {
-        "at": 1794276000,
-        "episode": 23
+        "at": 1794880800,
+        "episode": 24
       },
       "airingAt": 1794880800,
       "episode": 24,
