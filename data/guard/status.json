@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "engine": "ONEUP SELF HEALING ENGINE",
-  "updatedAt": "2026-11-10T14:24:50.768Z",
+  "updatedAt": "2026-11-10T18:00:08.572Z",
   "site": "https://h4cklaboratory.github.io/1UP-ANIME/",
   "mode": "local_y_publico",
   "verdict": "correcto",
@@ -10,7 +10,7 @@
   "warnings": 0,
   "persistentAlerts": [],
   "requiresManualAction": true,
-  "lastKnownGoodCommit": "fa8e02eb7cc615faf36443239da4d91f80c5381f",
+  "lastKnownGoodCommit": "0dca1f967bd06e139233a4a9f97e069c6cdeee9b",
   "checks": [
     {
       "id": "file:index.html",
@@ -94,7 +94,7 @@
       "id": "file:data/airing.json",
       "level": "ok",
       "message": "Validado: Archivo requerido data/airing.json",
-      "bytes": 423077
+      "bytes": 433250
     },
     {
       "id": "file:data/translations-es.json",
@@ -187,13 +187,13 @@
       "id": "catalog:freshness",
       "level": "ok",
       "message": "Catálogo actualizado",
-      "ageHours": 5.3
+      "ageHours": 8.9
     },
     {
       "id": "airing:entries",
       "level": "ok",
       "message": "Validado: El calendario debe tener al menos 15 emisiones",
-      "entries": 172
+      "entries": 178
     },
     {
       "id": "airing:season",
@@ -204,7 +204,7 @@
       "id": "airing:freshness",
       "level": "ok",
       "message": "Calendario con fecha reciente",
-      "ageHours": 4.5
+      "ageHours": 2.2
     },
     {
       "id": "spanish:pack",
@@ -249,7 +249,7 @@
       "id": "engine:freshness",
       "level": "ok",
       "message": "Sincronización reciente",
-      "ageHours": 2.2,
+      "ageHours": 2.8,
       "status": "correcta"
     },
     {
