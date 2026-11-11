@@ -1,78 +1,9 @@
 {
-  "updated": "2026-11-11T03:55:05.486Z",
+  "updated": "2026-11-11T09:59:13.640Z",
   "source": "AniList public GraphQL metadata",
-  "windowStart": 1794171293,
-  "windowEnd": 1795146893,
+  "windowStart": 1794193141,
+  "windowEnd": 1795168741,
   "airing": [
-    {
-      "id": "mal-55809",
-      "mal_id": 55809,
-      "ani_id": 137653,
-      "title": "Renegade Immortal",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx137653-1wHbCVvABGOr.png",
-      "banner": "",
-      "description": "It tells the story of Wang Lin, an ordinary young man in the countryside, who is moved by his heart and cultivates against immortality. His pursuit is not only for longevity, but also for getting rid of the ants behind it. He firmly believed in human beings and entered the path of cultivation with mediocre qualifications. After experiencing ups and downs, with his wise mind, he gradually reached the pinnacle and became famous in the cultivation world with his own strength. (Source: WeTV)",
-      "year": 2023,
-      "startDate": "2023-09-25",
-      "format": "ONA",
-      "episodes": 180,
-      "averageScore": 83,
-      "status": "RELEASING",
-      "genres": [
-        "Action",
-        "Adventure",
-        "Drama",
-        "Fantasy"
-      ],
-      "siteUrl": "https://anilist.co/anime/137653",
-      "streaming": [
-        {
-          "name": "Crunchyroll",
-          "url": "https://www.crunchyroll.com/series/GKEH2G0MN/renegade-immortal"
-        }
-      ],
-      "trailer": null,
-      "next": {
-        "at": 1794794400,
-        "episode": 167
-      },
-      "airingAt": 1794189600,
-      "episode": 166,
-      "scheduleId": 414224,
-      "description_es": "Cuenta la historia de Wang Lin, un joven común en el campo, que se mueve por su corazón y cultiva contra la inmortalidad. Su búsqueda no es sólo para la longevidad, sino también para deshacerse de las hormigas detrás de ella. Creyó firmemente en los seres humanos y entró en el camino del cultivo con calificaciones mediocres. Después de experimentar altibajos, con su mente sabia, gradualmente llegó al pináculo y se hizo famoso en el mundo de cultivo con su propia fuerza. (Fuente: WeTV)"
-    },
-    {
-      "id": "al-214593",
-      "mal_id": null,
-      "ani_id": 214593,
-      "title": "YU-SANCHi! from YU-HACHi",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx214593-WZ0HaPSRae2E.png",
-      "banner": "",
-      "description": "",
-      "year": 2026,
-      "startDate": "2026-10-05",
-      "format": "TV_SHORT",
-      "episodes": 0,
-      "averageScore": 0,
-      "status": "RELEASING",
-      "genres": [
-        "Comedy",
-        "Slice of Life"
-      ],
-      "siteUrl": "https://anilist.co/anime/214593",
-      "streaming": [],
-      "trailer": {
-        "site": "youtube",
-        "id": "WprfleUJVck"
-      },
-      "next": {
-        "at": 1794495600,
-        "episode": 12
-      },
-      "airingAt": 1794189600,
-      "episode": 11,
-      "scheduleId": 419737
-    },
     {
       "id": "mal-65119",
       "mal_id": 65119,
@@ -312,7 +243,7 @@
       "airingAt": 1794313560,
       "episode": 6,
       "scheduleId": 417801,
-      "description_es": "Un gran héroe está invicto en su lecho de muerte, lamentando que nunca haya encontrado a un enemigo que pudiera derribarla. Nunca quiso encontrar su destino en otro lugar que en el campo de batalla, y su pacífica desaparición tiene su deseo desesperadamente de que las cosas podrían haber sido diferentes... Pero cuando de repente viene al cuerpo de la joven y frágil Nia Liston, tiene una nueva lucha por delante de ella. Nia es una niña enferma, lo que significa que tiene un largo camino para ir antes de que esté en forma de lucha. Ahora que se le ha dado un segundo tiro a la vida, sin embargo, está decidida a conseguir lo que quiere. Va a vivir."
+      "description_es": "Un gran héroe está invicto en su lecho de muerte, lamentando que nunca haya encontrado a un enemigo que pudiera derribarla. Nunca quiso encontrar su destino en otro lugar que en el campo de batalla, y su pacífica desaparición tiene su deseo desesperadamente de que las cosas podrían haber sido diferentes... Pero cuando de repente viene al cuerpo de la joven y frágil Nia Liston, tiene una nueva lucha por delante de ella. Nia es una niña enferma, lo que significa que tiene un largo camino por recorrer"
     },
     {
       "id": "mal-63754",
@@ -350,7 +281,7 @@
       "airingAt": 1794315600,
       "episode": 6,
       "scheduleId": 420421,
-      "description_es": "Sato-san es la flor inalcanzable de la clase. Ella siempre tiene frío y curtimiento con compañeros de clase, pero sólo sé que es muy linda cuando sonríe, incluso si no es mucho de fotógrafo. Oshio-kun es amistoso y animado, pero sólo sé que trabaja en el café de su familia después de la escuela. Hace un gran trabajo con la cuenta SNS de la cafetería, y su mala sonrisa hace que mi corazón se salte un latido! Inocentes y dulces, pero a veces frustrantes, esta es una historia de 120% pura y fluida sobre dos personas enamoradas por primera vez."
+      "description_es": "Sato-san es la flor inalcanzable de la clase. Ella siempre tiene frío y curtimiento con compañeros de clase, pero sólo sé que es muy linda cuando sonríe, incluso si no es mucho de fotógrafo. Oshio-kun es amistoso y animado, pero sólo sé que trabaja en el café de su familia después de la escuela. Hace un gran trabajo con la cuenta SNS de la cafetería, y su mala sonrisa hace que mi corazón se salte un latido! Innocente y dulce, pero a veces frustrante, esto es un"
     },
     {
       "id": "mal-62696",
@@ -440,7 +371,7 @@
       "startDate": "2026-10-13",
       "format": "TV",
       "episodes": 11,
-      "averageScore": 79,
+      "averageScore": 78,
       "status": "RELEASING",
       "genres": [
         "Comedy",
@@ -1274,7 +1205,7 @@
       "airingAt": 1794495360,
       "episode": 7,
       "scheduleId": 421729,
-      "description_es": "Koyuki, la chica aislada; Miki, el antiguo ídolo escolar; Minato, el tipo sin concepto de espacio personal; y Youta, el amable jugador de baloncesto. Clumsy, frustrante, pero profundamente apasionante — este drama que se acerca a la edad de los corazones cruzados avanza. A medida que se acercan, Koyuki y Minato comienzan a desarrollar sentimientos entre sí que van más allá de la mera amistad. Mientras tanto, Youta finalmente confiesa a Miki los sentimientos por los que ha albergado"
+      "description_es": "Koyuki, la chica aislada; Miki, el antiguo ídolo escolar; Minato, el tipo sin concepto de espacio personal; y Youta, el amable jugador de baloncesto. Clumsy, frustrante, pero profundamente entrañable — este drama conjunto de la venida de la edad de los corazones cruzados marcha hacia adelante. A medida que crecen más cerca, Koyuki y Minato comienzan a desarrollar sentimientos entre sí que van más allá de la mera amistad. Mientras tanto, Youta finalmente confiesa a Miki los sentimientos que ha albergado durante años. Algunos hablan sus corazones mientras que otros mantienen sus emociones ocultas, causando sus caminos —y sus sentimientos por los demás— a crus continuamente"
     },
     {
       "id": "mal-62615",
@@ -2577,7 +2508,7 @@
       "airingAt": 1794661200,
       "episode": 8,
       "scheduleId": 421888,
-      "description_es": "Fia siempre soñó con convertirse en un caballero. Nacida en una familia de caballeros, es la menos talentosa entre ellos, pero todavía se aferra a su esperanza y trenes con todo lo que tiene. Cuando llega el día para que mate a un pequeño demonio y pruebe su valor, termina cara a cara con un dragón en su lugar! Una herida mortal hace que su vida parpadee ante sus ojos... y de repente recuerda su vida anterior, cuando ella era un poderoso santo en una era pasada que defea"
+      "description_es": "Fia siempre soñó con convertirse en un caballero. Nacida en una familia de caballeros, es la menos talentosa entre ellos, pero todavía se aferra a su esperanza y trenes con todo lo que tiene. Cuando llega el día para que mate a un pequeño demonio y pruebe su valor, termina cara a cara con un dragón en su lugar! Una herida mortal hace que su vida parpadee ante sus ojos... y de repente recuerda su vida anterior, cuando ella era un poderoso santo en una era pasada que venció al Rey demonio. Esa vida terminó en dolor debido a quién era, haciendo que su miedo se convierta en un santo de nuevo. Ahora que la magia de su anterior"
     },
     {
       "id": "mal-63140",
@@ -3625,7 +3556,7 @@
       "startDate": "2026-10-04",
       "format": "TV",
       "episodes": 0,
-      "averageScore": 62,
+      "averageScore": 61,
       "status": "RELEASING",
       "genres": [
         "Action",
@@ -3658,7 +3589,7 @@
       "startDate": "2026-10-11",
       "format": "TV",
       "episodes": 0,
-      "averageScore": 81,
+      "averageScore": 80,
       "status": "RELEASING",
       "genres": [
         "Action",
@@ -3798,7 +3729,7 @@
       "airingAt": 1794753000,
       "episode": 7,
       "scheduleId": 419616,
-      "description_es": "Renací como una hija villana en un juego de harem otome inverso. Después de enfermarse con fiebre alta a los 10 años, Pia Rockwell de repente recordó su vida pasada como estudiante universitaria en Japón. Pero lejos de ir por la ruta villanosa, todo lo que esta chica súper tímida quiere es finalmente utilizar su conocimiento de cuando era una estudiante de posgrado que estudiaba para obtener su doctorado en paleontología. Su objetivo final es llegar a ser más común, excavar fos"
+      "description_es": "Renací como una hija villana en un juego de harem otome inverso. Después de enfermarse con fiebre alta a los 10 años, Pia Rockwell de repente recordó su vida pasada como estudiante universitaria en Japón. Pero lejos de ir por la ruta del villano, todo lo que esta chica súper tímida quiere es finalmente utilizar su conocimiento de cuando era una estudiante de posgrado que estudiaba para obtener su doctorado en paleontología. Su objetivo final es convertirse en un común, excavar fósiles, construir un museo y luego convertirse en un curador. Así que para escapar de la ruta del villano y evitar ser deportado por su prometido durante la graduación"
     },
     {
       "id": "mal-64340",
@@ -4430,7 +4361,7 @@
       "airingAt": 1794918360,
       "episode": 7,
       "scheduleId": 417802,
-      "description_es": "Un gran héroe está invicto en su lecho de muerte, lamentando que nunca haya encontrado a un enemigo que pudiera derribarla. Nunca quiso encontrar su destino en otro lugar que en el campo de batalla, y su pacífica desaparición tiene su deseo desesperadamente de que las cosas podrían haber sido diferentes... Pero cuando de repente viene al cuerpo de la joven y frágil Nia Liston, tiene una nueva lucha por delante de ella. Nia es una niña enferma, lo que significa que tiene un largo camino para ir antes de que esté en forma de lucha. Ahora que se le ha dado un segundo tiro a la vida, sin embargo, está decidida a conseguir lo que quiere. Va a vivir."
+      "description_es": "Un gran héroe está invicto en su lecho de muerte, lamentando que nunca haya encontrado a un enemigo que pudiera derribarla. Nunca quiso encontrar su destino en otro lugar que en el campo de batalla, y su pacífica desaparición tiene su deseo desesperadamente de que las cosas podrían haber sido diferentes... Pero cuando de repente viene al cuerpo de la joven y frágil Nia Liston, tiene una nueva lucha por delante de ella. Nia es una niña enferma, lo que significa que tiene un largo camino por recorrer"
     },
     {
       "id": "mal-63754",
@@ -4468,7 +4399,7 @@
       "airingAt": 1794920400,
       "episode": 7,
       "scheduleId": 420422,
-      "description_es": "Sato-san es la flor inalcanzable de la clase. Ella siempre tiene frío y curtimiento con compañeros de clase, pero sólo sé que es muy linda cuando sonríe, incluso si no es mucho de fotógrafo. Oshio-kun es amistoso y animado, pero sólo sé que trabaja en el café de su familia después de la escuela. Hace un gran trabajo con la cuenta SNS de la cafetería, y su mala sonrisa hace que mi corazón se salte un latido! Inocentes y dulces, pero a veces frustrantes, esta es una historia de 120% pura y fluida sobre dos personas enamoradas por primera vez."
+      "description_es": "Sato-san es la flor inalcanzable de la clase. Ella siempre tiene frío y curtimiento con compañeros de clase, pero sólo sé que es muy linda cuando sonríe, incluso si no es mucho de fotógrafo. Oshio-kun es amistoso y animado, pero sólo sé que trabaja en el café de su familia después de la escuela. Hace un gran trabajo con la cuenta SNS de la cafetería, y su mala sonrisa hace que mi corazón se salte un latido! Innocente y dulce, pero a veces frustrante, esto es un"
     },
     {
       "id": "mal-62696",
@@ -4558,7 +4489,7 @@
       "startDate": "2026-10-13",
       "format": "TV",
       "episodes": 11,
-      "averageScore": 79,
+      "averageScore": 78,
       "status": "RELEASING",
       "genres": [
         "Comedy",
@@ -5359,7 +5290,7 @@
       "airingAt": 1795100160,
       "episode": 8,
       "scheduleId": 421730,
-      "description_es": "Koyuki, la chica aislada; Miki, el antiguo ídolo escolar; Minato, el tipo sin concepto de espacio personal; y Youta, el amable jugador de baloncesto. Clumsy, frustrante, pero profundamente apasionante — este drama que se acerca a la edad de los corazones cruzados avanza. A medida que se acercan, Koyuki y Minato comienzan a desarrollar sentimientos entre sí que van más allá de la mera amistad. Mientras tanto, Youta finalmente confiesa a Miki los sentimientos por los que ha albergado"
+      "description_es": "Koyuki, la chica aislada; Miki, el antiguo ídolo escolar; Minato, el tipo sin concepto de espacio personal; y Youta, el amable jugador de baloncesto. Clumsy, frustrante, pero profundamente entrañable — este drama conjunto de la venida de la edad de los corazones cruzados marcha hacia adelante. A medida que crecen más cerca, Koyuki y Minato comienzan a desarrollar sentimientos entre sí que van más allá de la mera amistad. Mientras tanto, Youta finalmente confiesa a Miki los sentimientos que ha albergado durante años. Algunos hablan sus corazones mientras que otros mantienen sus emociones ocultas, causando sus caminos —y sus sentimientos por los demás— a crus continuamente"
     },
     {
       "id": "mal-50668",
@@ -5392,7 +5323,8 @@
       },
       "airingAt": 1795100400,
       "episode": 1,
-      "scheduleId": 417332
+      "scheduleId": 417332,
+      "description_es": "Aoko Aozaki, una chica normal de secundaria, es en realidad un mago que vive en el mundo moderno... aunque todavía es sólo un aprendiz. Mientras pasa sus días viviendo junto a su compañera de casa, Alice Kuonji, tratando de convertirse en un mago completo... La chica conoce a un niño. Este es el comienzo de la historia de una joven —la historia de una bruja. (Fuente: Crunchyroll)"
     },
     {
       "id": "mal-62615",
@@ -5521,7 +5453,8 @@
       },
       "airingAt": 1795100400,
       "episode": 1,
-      "scheduleId": 422787
+      "scheduleId": 422787,
+      "description_es": "La historia del Trooper Armado VOTOMS: Die Graue Hexe se establece durante las etapas finales de la Guerra del Año Centrado entre Gilgamesh y Balarant que asoló la galaxia astragius. En este contexto, el oficial del ejército Maki Staufenberg es asignado a Valkyria II, el segundo planeta del sistema Asgard, donde se le encarga de investigar Ash Vamps, un soldado que ha ganado el apodo de “Witch” debido a su hábito de ser la única sobreviviente en misiones asignadas a su banda de ragtag de soldados en detalle de castigo. (Fuente: Crunchyroll News) Nota: Las relaciones son provisionales y están sujetas a cambios."
     },
     {
       "id": "mal-59741",
@@ -5628,6 +5561,140 @@
       "episode": 8,
       "scheduleId": 421796,
       "description_es": "Mazenchu está en una escuela donde todo tipo de comida puede vivir su juventud y formar amistades, rivalidades y romances amargos. (Fuente: Anime News Network)"
+    },
+    {
+      "id": "al-206244",
+      "mal_id": null,
+      "ani_id": 206244,
+      "title": "Luo Xiaohei Zhan Ji: Xue Qian Pian",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx206244-ke6bcfsL40qY.jpg",
+      "banner": "",
+      "description": "The third season of Luo Xiaohei Zhan Ji .",
+      "year": 2026,
+      "startDate": "2026-10-30",
+      "format": "ONA",
+      "episodes": 6,
+      "averageScore": 0,
+      "status": "RELEASING",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Comedy",
+        "Supernatural"
+      ],
+      "siteUrl": "https://anilist.co/anime/206244",
+      "streaming": [],
+      "trailer": null,
+      "next": {
+        "at": 1794542400,
+        "episode": 3
+      },
+      "airingAt": 1795147200,
+      "episode": 4,
+      "scheduleId": 421375,
+      "description_es": "La tercera temporada de Luo Xiaohei Zhan Ji."
+    },
+    {
+      "id": "mal-61469",
+      "mal_id": 61469,
+      "ani_id": 210482,
+      "title": "STEEL BALL RUN JoJo's Bizarre Adventure 2nd - 3rd STAGE",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx210482-P1VNKbqdJ6Zj.jpg",
+      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/210482-pYAD0IbzNbgS.jpg",
+      "description": "In the 2nd STAGE, a desert crossing spanning roughly 750 miles- the land that Johnny Joestar and Gyro Zeppeli must challenge, is home to the area that is feared as the \"Devil's Palm.\" In 1875, a threat lurking in said desert wiped out a cavalry of 26 people, eliciting fear from the local native people. As ominous incidents begin to unfold, they are forced to realize that this race is far more than a mere competition. The two press forward, where countless hidden motives collide.. (Source: Warner Bros. Japan Anime, Netflix Anime, edited)",
+      "year": 2026,
+      "startDate": "2026-09-25",
+      "format": "ONA",
+      "episodes": 11,
+      "averageScore": 86,
+      "status": "RELEASING",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Drama",
+        "Mystery",
+        "Supernatural"
+      ],
+      "siteUrl": "https://anilist.co/anime/210482",
+      "streaming": [],
+      "trailer": {
+        "site": "youtube",
+        "id": "jXtG_lcR9P4"
+      },
+      "next": {
+        "at": 1794556800,
+        "episode": 8
+      },
+      "airingAt": 1795161600,
+      "episode": 9,
+      "scheduleId": 420972,
+      "description_es": "En la 2a ETAPA, un cruce desértico que recorre aproximadamente 750 millas- la tierra que Johnny Joestar y Gyro Zeppeli deben desafiar, es el hogar de la zona que se teme como la palma del Diablo. En 1875, una amenaza que acechaba en dicho desierto borró una caballería de 26 personas, provocando temor de los nativos locales. A medida que los incidentes ominosos comienzan a desarrollarse, se ven obligados a darse cuenta de que esta carrera es mucho más que una mera competencia. Las dos prensas hacia adelante, donde"
+    },
+    {
+      "id": "mal-62039",
+      "mal_id": 62039,
+      "ani_id": 194207,
+      "title": "Pan Dorobou",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx194207-7n4M6jOwLdcF.jpg",
+      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/194207-6yQitDZ3uOi5.jpg",
+      "description": "Based on Keiko Shibata's picture book \"Pan Dorobou\" (Bread Thief). The picture books center on a piece of bread that also steals bread from bakeries in the city. (Source: Anime News Network, edited)",
+      "year": 2026,
+      "startDate": "2026-10-02",
+      "format": "TV_SHORT",
+      "episodes": 26,
+      "averageScore": 0,
+      "status": "RELEASING",
+      "genres": [
+        "Comedy"
+      ],
+      "siteUrl": "https://anilist.co/anime/194207",
+      "streaming": [],
+      "trailer": {
+        "site": "youtube",
+        "id": "dUSYa-7rKpM"
+      },
+      "next": {
+        "at": 1794562800,
+        "episode": 7
+      },
+      "airingAt": 1795167600,
+      "episode": 8,
+      "scheduleId": 420235,
+      "description_es": "Basado en el libro de fotos de Keiko Shibata \"Pan Dorobou\" (Bread Thief). Los libros de fotos se centran en un pedazo de pan que también roba pan de panaderías en la ciudad. (Fuente: Anime News Network, editado)"
+    },
+    {
+      "id": "mal-53876",
+      "mal_id": 53876,
+      "ani_id": 158871,
+      "title": "Pokémon Horizons: The Series",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx158871-GBM9AMDfDRSu.jpg",
+      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/158871-PtipBrtn93hB.jpg",
+      "description": "A new dream and adventure set throughout the entire Pokémon world unfolds in a brand new Pokémon-series following a girl named Liko and a boy named Roy.",
+      "year": 2023,
+      "startDate": "2023-04-14",
+      "format": "TV",
+      "episodes": 0,
+      "averageScore": 73,
+      "status": "RELEASING",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Fantasy"
+      ],
+      "siteUrl": "https://anilist.co/anime/158871",
+      "streaming": [],
+      "trailer": {
+        "site": "youtube",
+        "id": "_c_hMehCORQ"
+      },
+      "next": {
+        "at": 1794563700,
+        "episode": 157
+      },
+      "airingAt": 1795168500,
+      "episode": 158,
+      "scheduleId": 421010,
+      "description_es": "Un nuevo sueño y aventura en todo el mundo Pokémon se desarrolla en una nueva serie Pokémon siguiendo a una chica llamada Liko y un chico llamado Roy."
     }
   ],
   "seasonal": {
@@ -5930,7 +5997,7 @@
           "at": 1794495360,
           "episode": 7
         },
-        "description_es": "Koyuki, la chica aislada; Miki, el antiguo ídolo escolar; Minato, el tipo sin concepto de espacio personal; y Youta, el amable jugador de baloncesto. Clumsy, frustrante, pero profundamente apasionante — este drama que se acerca a la edad de los corazones cruzados avanza. A medida que se acercan, Koyuki y Minato comienzan a desarrollar sentimientos entre sí que van más allá de la mera amistad. Mientras tanto, Youta finalmente confiesa a Miki los sentimientos por los que ha albergado"
+        "description_es": "Koyuki, la chica aislada; Miki, el antiguo ídolo escolar; Minato, el tipo sin concepto de espacio personal; y Youta, el amable jugador de baloncesto. Clumsy, frustrante, pero profundamente entrañable — este drama conjunto de la venida de la edad de los corazones cruzados marcha hacia adelante. A medida que crecen más cerca, Koyuki y Minato comienzan a desarrollar sentimientos entre sí que van más allá de la mera amistad. Mientras tanto, Youta finalmente confiesa a Miki los sentimientos que ha albergado durante años. Algunos hablan sus corazones mientras que otros mantienen sus emociones ocultas, causando sus caminos —y sus sentimientos por los demás— a crus continuamente"
       },
       {
         "id": "mal-63337",
@@ -6345,7 +6412,7 @@
           "at": 1794661200,
           "episode": 8
         },
-        "description_es": "Fia siempre soñó con convertirse en un caballero. Nacida en una familia de caballeros, es la menos talentosa entre ellos, pero todavía se aferra a su esperanza y trenes con todo lo que tiene. Cuando llega el día para que mate a un pequeño demonio y pruebe su valor, termina cara a cara con un dragón en su lugar! Una herida mortal hace que su vida parpadee ante sus ojos... y de repente recuerda su vida anterior, cuando ella era un poderoso santo en una era pasada que defea"
+        "description_es": "Fia siempre soñó con convertirse en un caballero. Nacida en una familia de caballeros, es la menos talentosa entre ellos, pero todavía se aferra a su esperanza y trenes con todo lo que tiene. Cuando llega el día para que mate a un pequeño demonio y pruebe su valor, termina cara a cara con un dragón en su lugar! Una herida mortal hace que su vida parpadee ante sus ojos... y de repente recuerda su vida anterior, cuando ella era un poderoso santo en una era pasada que venció al Rey demonio. Esa vida terminó en dolor debido a quién era, haciendo que su miedo se convierta en un santo de nuevo. Ahora que la magia de su anterior"
       },
       {
         "id": "mal-59787",
@@ -6836,7 +6903,7 @@
           "at": 1794753000,
           "episode": 7
         },
-        "description_es": "Renací como una hija villana en un juego de harem otome inverso. Después de enfermarse con fiebre alta a los 10 años, Pia Rockwell de repente recordó su vida pasada como estudiante universitaria en Japón. Pero lejos de ir por la ruta villanosa, todo lo que esta chica súper tímida quiere es finalmente utilizar su conocimiento de cuando era una estudiante de posgrado que estudiaba para obtener su doctorado en paleontología. Su objetivo final es llegar a ser más común, excavar fos"
+        "description_es": "Renací como una hija villana en un juego de harem otome inverso. Después de enfermarse con fiebre alta a los 10 años, Pia Rockwell de repente recordó su vida pasada como estudiante universitaria en Japón. Pero lejos de ir por la ruta del villano, todo lo que esta chica súper tímida quiere es finalmente utilizar su conocimiento de cuando era una estudiante de posgrado que estudiaba para obtener su doctorado en paleontología. Su objetivo final es convertirse en un común, excavar fósiles, construir un museo y luego convertirse en un curador. Así que para escapar de la ruta del villano y evitar ser deportado por su prometido durante la graduación"
       },
       {
         "id": "mal-63751",
@@ -6850,7 +6917,7 @@
         "startDate": "2026-10-04",
         "format": "TV",
         "episodes": 0,
-        "averageScore": 62,
+        "averageScore": 61,
         "status": "RELEASING",
         "genres": [
           "Action",
@@ -7455,7 +7522,7 @@
           "at": 1794918360,
           "episode": 7
         },
-        "description_es": "Un gran héroe está invicto en su lecho de muerte, lamentando que nunca haya encontrado a un enemigo que pudiera derribarla. Nunca quiso encontrar su destino en otro lugar que en el campo de batalla, y su pacífica desaparición tiene su deseo desesperadamente de que las cosas podrían haber sido diferentes... Pero cuando de repente viene al cuerpo de la joven y frágil Nia Liston, tiene una nueva lucha por delante de ella. Nia es una niña enferma, lo que significa que tiene un largo camino para ir antes de que esté en forma de lucha. Ahora que se le ha dado un segundo tiro a la vida, sin embargo, está decidida a conseguir lo que quiere. Va a vivir."
+        "description_es": "Un gran héroe está invicto en su lecho de muerte, lamentando que nunca haya encontrado a un enemigo que pudiera derribarla. Nunca quiso encontrar su destino en otro lugar que en el campo de batalla, y su pacífica desaparición tiene su deseo desesperadamente de que las cosas podrían haber sido diferentes... Pero cuando de repente viene al cuerpo de la joven y frágil Nia Liston, tiene una nueva lucha por delante de ella. Nia es una niña enferma, lo que significa que tiene un largo camino por recorrer"
       },
       {
         "id": "mal-63754",
@@ -7490,7 +7557,7 @@
           "at": 1794920400,
           "episode": 7
         },
-        "description_es": "Sato-san es la flor inalcanzable de la clase. Ella siempre tiene frío y curtimiento con compañeros de clase, pero sólo sé que es muy linda cuando sonríe, incluso si no es mucho de fotógrafo. Oshio-kun es amistoso y animado, pero sólo sé que trabaja en el café de su familia después de la escuela. Hace un gran trabajo con la cuenta SNS de la cafetería, y su mala sonrisa hace que mi corazón se salte un latido! Inocentes y dulces, pero a veces frustrantes, esta es una historia de 120% pura y fluida sobre dos personas enamoradas por primera vez."
+        "description_es": "Sato-san es la flor inalcanzable de la clase. Ella siempre tiene frío y curtimiento con compañeros de clase, pero sólo sé que es muy linda cuando sonríe, incluso si no es mucho de fotógrafo. Oshio-kun es amistoso y animado, pero sólo sé que trabaja en el café de su familia después de la escuela. Hace un gran trabajo con la cuenta SNS de la cafetería, y su mala sonrisa hace que mi corazón se salte un latido! Innocente y dulce, pero a veces frustrante, esto es un"
       },
       {
         "id": "mal-54344",
@@ -7991,7 +8058,7 @@
         "startDate": "2026-10-09",
         "format": "MOVIE",
         "episodes": 1,
-        "averageScore": 69,
+        "averageScore": 70,
         "status": "FINISHED",
         "genres": [
           "Mystery",
@@ -8167,7 +8234,7 @@
         "startDate": "2026-10-11",
         "format": "TV",
         "episodes": 0,
-        "averageScore": 81,
+        "averageScore": 80,
         "status": "RELEASING",
         "genres": [
           "Action",
