@@ -61,7 +61,7 @@ jobs:
       - name: Checkout site
         uses: actions/checkout@v4
       - name: Prepare Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
           node-version: "22"
       - name: Validate UI and cached anime data
