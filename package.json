@@ -2,6 +2,8 @@
   "name": "oneup-anime",
   "private": true,
   "scripts": {
+    "test:auth": "node --test tests/oneup-auth.test.mjs",
+    "test:auth-ui": "node tests/oneup-auth-browser.mjs",
     "test:depth": "playwright test tests/depth-mode.spec.js",
     "test:puppeteer": "node scripts/puppeteer-site-audit.mjs",
     "test:motion-engine": "node --test tests/dexter-motion-engine.test.mjs",

@@ -1,0 +1,10 @@
+/* Only the additional, opt-in panel; existing auth layout and theme stay intact. */
+#auth-dialog #oneup-auth-details{margin-top:12px;text-align:left}
+#auth-dialog #oneup-auth-details summary{cursor:pointer;padding:10px 0}
+#oneup-auth-form{display:grid;gap:12px;margin-top:12px}
+#oneup-auth-form label{display:grid;gap:6px;font-size:14px}
+#oneup-auth-form :is(input,select){width:100%;min-width:0;min-height:44px;padding:10px;border:1px solid #ffffff38;border-radius:10px;background:#12151c;color:#fff;font-size:16px}
+#oneup-auth-form button{min-height:44px}
+#oneup-auth-form [hidden]{display:none!important}
+#oneup-auth-status{font-size:14px;line-height:1.5;overflow-wrap:anywhere}
+#oneup-auth-captcha{max-width:100%;overflow:auto}

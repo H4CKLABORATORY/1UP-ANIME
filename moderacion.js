@@ -10,8 +10,8 @@ const status=s=>$('#admin-status').textContent=s;
 let last=null;
 async function userLogin(){
  if(!api()?.enabled()){status('Firebase aún no está conectado a 1UP Anime. Configura auth-config.js y App Check para activar este panel.');return}
- const button=$('#admin-login');button.disabled=true;status('Autenticando con Google…');
- try{const me=await api().firebaseAccount();if(!api().registered(me))await api().loginWithGoogle();await refresh()}
+ const button=$('#admin-login');button.disabled=true;status('Comprobando sesión administrativa…');
+ try{const me=await api().firebaseAccount();if(!api().registered(me)){status('El acceso administrativo está pendiente de migración a 1UP Auth.');return}await refresh()}
  catch(e){status(api().maskError(e))}
  finally{button.disabled=false}
 }

@@ -1,0 +1,5 @@
+project_id = "oneup-auth"
+
+[functions.oneup-auth]
+# Public entrypoint; broker validates CAPTCHA, opaque bearer and shared limits itself.
+verify_jwt = false

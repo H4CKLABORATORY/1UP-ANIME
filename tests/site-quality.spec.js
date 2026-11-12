@@ -33,8 +33,8 @@ for(const device of screens){
    await expect(img).toHaveAttribute('src','./assets/oneup-crest-mark.svg');
    const isImageLoaded=await img.evaluate(el=>el.complete&&el.naturalWidth>0);
    expect(isImageLoaded).toBe(true);
-   await expect(page.locator('#auth-google-label')).toHaveText(/Google/);
-   await expect(page.locator('#google-login')).toBeDisabled(); // no Firebase project configured
+   await expect(page.locator('#google-login')).toHaveCount(0);
+   await expect(page.locator('#oneup-auth-details')).toBeVisible();
    await expect(page.locator('#guest-login')).toBeEnabled();
    const close=page.locator('#auth-close');
    const box=await close.boundingBox();
