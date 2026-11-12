@@ -7,6 +7,7 @@ on:
       - 'studio.js'
       - 'scripts/refresh-catalog.mjs'
       - 'scripts/test-cache-catalog.mjs'
+      - 'tests/catalog-cache.test.mjs'
       - '.github/workflows/codex-cache-catalog-check.yml'
   pull_request:
     branches: [main, design/brand-continuity-20261016]
@@ -15,6 +16,7 @@ on:
       - 'studio.js'
       - 'scripts/refresh-catalog.mjs'
       - 'scripts/test-cache-catalog.mjs'
+      - 'tests/catalog-cache.test.mjs'
       - '.github/workflows/codex-cache-catalog-check.yml'
   workflow_dispatch:
 permissions:
@@ -37,6 +39,7 @@ jobs:
       - name: Verify cache and catalog, with existing production checks
         run: |
           node scripts/test-cache-catalog.mjs
+          node --test tests/catalog-cache.test.mjs
           node scripts/check-ui.mjs
           node scripts/test-navigation-race.mjs
           node scripts/test-episode-player.mjs
