@@ -5,18 +5,18 @@
 const CACHE_PREFIX='oneup-stream-integrated-';
 const CACHE=CACHE_PREFIX+'v39-motion-v2-camera-20261020';
 const SHELL=[
- './','./index.html','./studio.css','./studio.js','./anime-title-search.js','./premiere-ranking.js','./premiere-hero.js','./premiere-hero.css','./spotlight.css',
- './dexter-motion-studio.html','./motion-studio/scene.mjs','./motion-studio/camera.mjs','./motion-studio/renderer.mjs','./motion-studio/app.mjs','./motion-studio/studio.css',
- './js/dexter-motion-engine.js','./styles/dexter-motion-engine.css','./franchise-explorer.mjs','./franchise-explorer.css','./oneup-finale.css','./oneup-finale.js','./ui-quality.css','./assets/oneup-crest-mark.svg','./motion.css','./motion.js','./subtitle-studio.js','./subtitle-studio.css','./official-watch.js','./official-watch.css','./brand-v2.css','./player.css','./auth.js',
- './auth-config.js','./manifest.webmanifest','./assets/oneup-crest.svg',
+ './','./index.html','./src/styles/studio.css','./src/js/studio.js','./src/js/anime-title-search.js','./src/js/premiere-ranking.js','./src/js/premiere-hero.js','./src/styles/premiere-hero.css','./src/styles/spotlight.css',
+ './pages/dexter-motion-studio.html','./motion-studio/scene.mjs','./motion-studio/camera.mjs','./motion-studio/renderer.mjs','./motion-studio/app.mjs','./motion-studio/studio.css',
+ './src/js/dexter-motion-engine.js','./src/styles/dexter-motion-engine.css','./src/js/franchise-explorer.mjs','./src/styles/franchise-explorer.css','./src/styles/oneup-finale.css','./src/js/oneup-finale.js','./src/styles/ui-quality.css','./assets/oneup-crest-mark.svg','./src/styles/motion.css','./src/js/motion.js','./src/js/subtitle-studio.js','./src/styles/subtitle-studio.css','./src/js/official-watch.js','./src/styles/official-watch.css','./src/styles/brand-v2.css','./src/styles/player.css','./src/js/auth.js',
+ './src/js/auth-config.js','./manifest.webmanifest','./assets/oneup-crest.svg',
  './assets/icon-180.png','./assets/icon-192.png','./assets/icon-512.png',
  './assets/1up-anime-logo-poster.jpg','./assets/1up-anime-app-icon-512.png',
  './assets/oneup-header-letters.png','./assets/oneup-poster-portrait.png',
  './data/catalog.json','./data/translations-es.json','./data/licensed-media.json',
- './data/anime1v-config.json','./anime1v-discovery.js','./anime1v-discovery.css',
- './data/airing.json','./airing-ui.js','./airing-ui.css','./comunidad.html',
- './community.js','./community.css','./social-backend.js','./social-config.js',
- './hls-adapter.js','./episode-player.js','./supabase-config.js','./supabase-episode-backend.js','./episode-comments.js','./episode-comments.css',
+ './data/anime1v-config.json','./src/js/anime1v-discovery.js','./src/styles/anime1v-discovery.css',
+ './data/airing.json','./src/js/airing-ui.js','./src/styles/airing-ui.css','./pages/comunidad.html',
+ './src/js/community.js','./src/styles/community.css','./src/js/social-backend.js','./src/js/social-config.js',
+ './src/js/hls-adapter.js','./src/js/episode-player.js','./src/js/supabase-config.js','./src/js/supabase-episode-backend.js','./src/js/episode-comments.js','./src/styles/episode-comments.css',
  './themes/kokomi-studio/theme.css','./themes/kokomi-studio/theme.js',
  './themes/kokomi-mobile-preview/theme.css','./themes/kokomi-mobile-preview/theme.js',
  './themes/kokomi-mobile-preview/opening.css','./themes/kokomi-mobile-preview/opening.js',
@@ -27,14 +27,14 @@ const SHELL=[
  './themes/october-2026/theme.css','./themes/october-2026/theme.js',
  './themes/oneup-palette/selector.css','./themes/oneup-palette/selector.js',
  './themes/oneup-motion/windows.css','./themes/oneup-motion/windows.js',
- './themes/october-2026/arcane-seal.svg','./preview-kokomi.html','./external-providers.js','./data/external-providers.json','./external-providers.css','./motor.html','./motor.js','./motor.css',
- './moderacion.html','./moderacion.js','./moderacion.css',
+ './themes/october-2026/arcane-seal.svg','./pages/preview-kokomi.html','./src/js/external-providers.js','./data/external-providers.json','./src/styles/external-providers.css','./pages/motor.html','./src/js/motor.js','./src/styles/motor.css',
+ './pages/moderacion.html','./src/js/moderacion.js','./src/styles/moderacion.css',
  './data/dexter/status.json','./data/dexter/history.json','./data/guard/status.json',
- './gremio.html','./data/guild-license.json'
+ './pages/gremio.html','./data/guild-license.json'
 ];
 self.addEventListener('install',event=>{
  // Core shell is required; optional assets must not block an otherwise healthy update.
- const core=['./index.html','./studio.css','./studio.js'];
+ const core=['./index.html','./src/styles/studio.css','./src/js/studio.js'];
  event.waitUntil(caches.open(CACHE).then(async cache=>{
   await cache.addAll(core);
   const optional=SHELL.filter(item=>!core.includes(item));

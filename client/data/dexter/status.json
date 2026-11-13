@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 1,
+  "engine": "DexterAnimeSync",
+  "updatedAt": "2026-11-13T18:14:36.933Z",
+  "job": {
+    "id": "sync-f016ab8a38c31a73",
+    "startedAt": "2026-11-13T18:14:36.933Z",
+    "completedAt": "2026-11-13T18:14:36.933Z",
+    "mode": "programada",
+    "status": "correcta",
+    "counters": {
+      "animes": 0,
+      "episodesDetected": 208,
+      "episodesNew": 18,
+      "playbackSources": 0,
+      "errors": 0
+    }
+  },
+  "providers": [
+    {
+      "id": "anilist_schedule",
+      "name": "AniList — emisiones",
+      "mode": "schedule",
+      "enabled": true,
+      "sourceType": "metadata",
+      "intervalHours": 6,
+      "lastRunAt": "2026-11-13T09:26:15.796Z",
+      "runAt": "2026-11-13T18:14:36.933Z",
+      "state": "conectada",
+      "observed": 208,
+      "created": 18,
+      "playback": 0,
+      "error": null
+    },
+    {
+      "id": "licensed_library",
+      "name": "Biblioteca autorizada 1UP",
+      "mode": "self_hosted",
+      "enabled": true,
+      "sourceType": "playback",
+      "intervalHours": 3,
+      "lastRunAt": "2026-11-13T15:13:44.142Z",
+      "runAt": "2026-11-13T18:14:36.933Z",
+      "state": "sin_contenido_autorizado",
+      "observed": 0,
+      "created": 0,
+      "playback": 0,
+      "error": null,
+      "rejected": 0
+    },
+    {
+      "id": "jkanime_external",
+      "name": "JKAnime — páginas externas",
+      "mode": "external_only",
+      "enabled": true,
+      "sourceType": "external_links",
+      "intervalHours": 12,
+      "lastRunAt": "2026-11-13T03:15:37.637Z",
+      "runAt": "2026-11-13T18:14:36.933Z",
+      "state": "conectada",
+      "observed": 5,
+      "created": 0,
+      "playback": 0,
+      "error": null
+    },
+    {
+      "id": "youtube_trailers",
+      "name": "YouTube — tráilers de AniList",
+      "mode": "official_embed",
+      "enabled": true,
+      "sourceType": "embed",
+      "intervalHours": 6,
+      "lastRunAt": "2026-11-13T09:26:15.796Z",
+      "runAt": "2026-11-13T18:14:36.933Z",
+      "state": "conectada",
+      "observed": 95,
+      "created": 0,
+      "playback": 0,
+      "error": null
+    }
+  ],
+  "externalIntegrations": [
+    {
+      "id": "jkanime_video",
+      "displayName": "Servidores de video JKAnime",
+      "status": "requires_permission",
+      "reason": "Sin integración de reproducción documentada y autorizada; el repositorio comunitario no concede licencias para retransmitir."
+    },
+    {
+      "id": "social_firebase",
+      "displayName": "1UP Comunidad",
+      "status": "needs_configuration",
+      "reason": "Falta proyecto Firebase configurado, App Check y despliegue de backend."
+    },
+    {
+      "id": "iqiyi_video_embed",
+      "displayName": "iQIYI — Servidores de reproducción",
+      "status": "requires_permission",
+      "reason": "No se confirmó licencia de inserción; condiciones de iQIYI restringen reproducir/embeber contenido fuera de su servicio."
+    },
+    {
+      "id": "animeonline_video_embed",
+      "displayName": "AnimeOnline — Servidores de reproducción",
+      "status": "requires_permission",
+      "reason": "La categoría enlazada no respondió al análisis; no se verificaron URLs de iframe autorizadas."
+    }
+  ],
+  "errors": [],
+  "historySize": 60,
+  "records": {
+    "anime": 139,
+    "seasons": 1,
+    "episodes": 700,
+    "sources": 0
+  }
+}

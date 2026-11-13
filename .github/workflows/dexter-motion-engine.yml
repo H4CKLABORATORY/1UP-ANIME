@@ -3,11 +3,11 @@ name: DEXTER Motion Engine Quality
 on:
   pull_request:
     paths:
-      - 'index.html'
-      - 'sw.js'
-      - 'js/dexter-motion-engine.js'
-      - 'styles/dexter-motion-engine.css'
-      - 'tests/dexter-motion-engine.test.mjs'
+      - 'client/index.html'
+      - 'client/sw.js'
+      - 'client/src/js/dexter-motion-engine.js'
+      - 'client/src/styles/dexter-motion-engine.css'
+      - 'tests/unit/dexter-motion-engine.test.mjs'
       - 'package.json'
       - '.github/workflows/dexter-motion-engine.yml'
   push:
@@ -26,6 +26,6 @@ jobs:
         with:
           node-version: '22'
       - name: Check syntax
-        run: node --check js/dexter-motion-engine.js
+        run: node --check client/src/js/dexter-motion-engine.js
       - name: Run motion regression tests
-        run: node --test tests/dexter-motion-engine.test.mjs
+        run: node --test tests/unit/dexter-motion-engine.test.mjs

@@ -4,6 +4,8 @@ on:
     branches: [main]
     paths:
       - "index.html"
+      - "client/**"
+      - "server/**"
       - "studio.js"
       - "spotlight.css"
       - "player.css"
@@ -66,12 +68,12 @@ jobs:
           node-version: "22"
       - name: Validate UI and cached anime data
         run: |
-          node scripts/test-episode-player.mjs
-          node scripts/test-navigation-race.mjs
+          node tests/unit/test-episode-player.mjs
+          node tests/unit/test-navigation-race.mjs
           node scripts/check-ui.mjs
           node scripts/check-resilience.mjs
           bash -n scripts/oneup-safe-push.sh
-          bash scripts/test-safe-push.sh
+          bash tests/unit/test-safe-push.sh
           node --check scripts/oneup-guard.mjs
           node --check scripts/guard-alert.mjs
           node scripts/oneup-guard.mjs --offline --strict

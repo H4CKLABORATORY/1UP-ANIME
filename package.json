@@ -1,12 +1,24 @@
 {
   "name": "oneup-anime",
+  "version": "2.0.0",
   "private": true,
+  "description": "1UP Anime — Catálogo editorial, reproductor PWA mobile-first y motor cinematográfico Dexter",
   "scripts": {
-    "test:depth": "playwright test tests/depth-mode.spec.js",
+    "test": "node --test tests/unit/*.test.mjs",
+    "test:unit": "node --test tests/unit/*.test.mjs",
+    "test:python": "python -m unittest discover tests",
+    "test:ui": "node scripts/check-ui.mjs",
+    "test:guard": "node scripts/oneup-guard.mjs --offline",
+    "test:all": "node --test tests/unit/*.test.mjs && python -m unittest discover tests && node scripts/check-ui.mjs && node scripts/oneup-guard.mjs --offline",
+    "test:depth": "playwright test tests/e2e/depth-mode.spec.js",
     "test:puppeteer": "node scripts/puppeteer-site-audit.mjs",
-    "test:motion-engine": "node --test tests/dexter-motion-engine.test.mjs",
-    "test:motion-studio": "node --test tests/motion-studio.test.mjs tests/motion-studio-camera.test.mjs",
-    "render:motion-studio": "node scripts/render-motion-studio.mjs"
+    "test:motion-engine": "node --test tests/unit/dexter-motion-engine.test.mjs",
+    "test:motion-studio": "node --test tests/unit/motion-studio.test.mjs tests/unit/motion-studio-camera.test.mjs",
+    "render:motion-studio": "node scripts/render-motion-studio.mjs",
+    "sync:dexter": "node scripts/dexter-anime-sync.mjs",
+    "refresh:catalog": "node scripts/refresh-catalog.mjs",
+    "refresh:airing": "node scripts/refresh-airing.mjs",
+    "handoff": "node scripts/update-new-chat-handoff.mjs"
   },
   "devDependencies": {
     "@playwright/test": "1.56.1",

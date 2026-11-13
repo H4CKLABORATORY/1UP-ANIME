@@ -91,5 +91,11 @@ try{
 }catch(error){console.warn('Spanish schedule translations not available yet:',error.message)}
 const output={updated:new Date().toISOString(),source:'AniList public GraphQL metadata',windowStart:start,windowEnd:end,airing:aired,seasonal:seasonalData||{season:'',year:now.getUTCFullYear(),entries:[]},warnings:errors};
 await fs.mkdir('data',{recursive:true});
-const tmp='data/airing.json.tmp';await fs.writeFile(tmp,JSON.stringify(output,null,2)+'\n');await fs.rename(tmp,'data/airing.json');
+const tmp='data/airing.json.tmp';const payload=JSON.stringify(output,null,2)+'\n';
+await fs.writeFile(tmp,payload);await fs.rename(tmp,'data/airing.json');
+try{
+ if(await fs.stat('client/data').then(()=>true).catch(()=>false)){
+  await fs.writeFile('client/data/airing.json',payload);
+ }
+}catch{}
 console.log('Saved '+aired.length+' airing dates, '+output.seasonal.entries.length+' seasonal titles. '+errors.join('; '));

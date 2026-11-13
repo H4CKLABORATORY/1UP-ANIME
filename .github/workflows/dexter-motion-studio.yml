@@ -3,23 +3,23 @@ name: DEXTER Motion Studio · MP4 / QA
 on:
   pull_request:
     paths:
-      - 'dexter-motion-studio.html'
-      - 'motion-studio/**'
+      - 'client/pages/dexter-motion-studio.html'
+      - 'client/motion-studio/**'
       - 'scripts/render-motion-studio.mjs'
-      - 'scripts/e2e-motion-studio.mjs'
-      - 'tests/motion-studio.test.mjs'
-      - 'tests/motion-studio-camera.test.mjs'
-      - 'index.html'
-      - 'sw.js'
+      - 'tests/e2e/e2e-motion-studio.mjs'
+      - 'tests/unit/motion-studio.test.mjs'
+      - 'tests/unit/motion-studio-camera.test.mjs'
+      - 'client/index.html'
+      - 'client/sw.js'
       - '.github/workflows/dexter-motion-studio.yml'
   push:
     branches: [main]
     paths:
-      - 'dexter-motion-studio.html'
-      - 'motion-studio/**'
+      - 'client/pages/dexter-motion-studio.html'
+      - 'client/motion-studio/**'
       - 'scripts/render-motion-studio.mjs'
-      - 'scripts/e2e-motion-studio.mjs'
-      - 'tests/motion-studio.test.mjs'
+      - 'tests/e2e/e2e-motion-studio.mjs'
+      - 'tests/unit/motion-studio.test.mjs'
       - '.github/workflows/dexter-motion-studio.yml'
   workflow_dispatch:
     inputs:
@@ -42,13 +42,13 @@ jobs:
           node-version: '22'
       - name: Syntax and pure scene tests
         run: |
-          node --check motion-studio/scene.mjs
-          node --check motion-studio/camera.mjs
-          node --check motion-studio/renderer.mjs
-          node --check motion-studio/app.mjs
+          node --check client/motion-studio/scene.mjs
+          node --check client/motion-studio/camera.mjs
+          node --check client/motion-studio/renderer.mjs
+          node --check client/motion-studio/app.mjs
           node --check scripts/render-motion-studio.mjs
-          node --check scripts/e2e-motion-studio.mjs
-          node --test tests/motion-studio.test.mjs tests/motion-studio-camera.test.mjs
+          node --check tests/e2e/e2e-motion-studio.mjs
+          node --test tests/unit/motion-studio.test.mjs tests/unit/motion-studio-camera.test.mjs
       - name: Install browser and video encoder
         run: |
           npm install --no-save --ignore-scripts --no-audit --no-fund playwright@1.56.1
@@ -56,7 +56,7 @@ jobs:
           if ! command -v ffmpeg >/dev/null; then sudo apt-get update && sudo apt-get install -y ffmpeg; fi
           ffmpeg -version | head -1
       - name: Visual regression on mobile and desktop
-        run: node scripts/e2e-motion-studio.mjs
+        run: node tests/e2e/e2e-motion-studio.mjs
       - name: MP4 encoder integration smoke test (320x180, AAC)
         run: |
           node scripts/render-motion-studio.mjs --format landscape --fps 6 --duration 2 --width 320 --height 180 --out artifacts/motion-smoke.mp4

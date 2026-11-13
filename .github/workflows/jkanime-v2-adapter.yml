@@ -4,13 +4,13 @@ on:
   pull_request:
     branches: [main]
     paths:
-      - "integrations/jkanime-v2/package.json"
-      - "integrations/jkanime-v2/check-api.mjs"
+      - "server/integrations/jkanime-v2/package.json"
+      - "server/integrations/jkanime-v2/check-api.mjs"
       - ".github/workflows/jkanime-v2-adapter.yml"
   push:
     paths:
-      - "integrations/jkanime-v2/package.json"
-      - "integrations/jkanime-v2/check-api.mjs"
+      - "server/integrations/jkanime-v2/package.json"
+      - "server/integrations/jkanime-v2/check-api.mjs"
       - ".github/workflows/jkanime-v2-adapter.yml"
 permissions:
   contents: read
@@ -26,8 +26,8 @@ jobs:
         with:
           node-version: "22"
       - name: Install pinned unofficial package in isolated workspace
-        run: npm --prefix integrations/jkanime-v2 install --ignore-scripts --no-audit --no-fund
+        run: npm --prefix server/integrations/jkanime-v2 install --ignore-scripts --no-audit --no-fund
       - name: Verify package and metadata API (no video extraction)
         run: |
-          npm --prefix integrations/jkanime-v2 ls jkanime-v2
-          npm --prefix integrations/jkanime-v2 run check
+          npm --prefix server/integrations/jkanime-v2 ls jkanime-v2
+          npm --prefix server/integrations/jkanime-v2 run check

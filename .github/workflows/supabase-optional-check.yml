@@ -2,10 +2,10 @@ name: ONEUP optional Supabase verification
 on:
   pull_request:
     paths:
-      - "supabase/sql/oneup_community_optional.sql"
-      - "supabase-config.js"
-      - "supabase-episode-backend.js"
-      - "episode-comments.js"
+      - "server/supabase/sql/oneup_community_optional.sql"
+      - "client/src/js/supabase-config.js"
+      - "client/src/js/supabase-episode-backend.js"
+      - "client/src/js/episode-comments.js"
       - "scripts/check-supabase-option.mjs"
       - ".github/workflows/supabase-optional-check.yml"
   workflow_dispatch:
@@ -21,8 +21,8 @@ jobs:
           node-version: "22"
       - name: Verify frontend syntax
         run: |
-          node --check supabase-config.js
-          node --check supabase-episode-backend.js
-          node --check episode-comments.js
+          node --check client/src/js/supabase-config.js
+          node --check client/src/js/supabase-episode-backend.js
+          node --check client/src/js/episode-comments.js
       - name: Verify optional Supabase backend without network or secrets
         run: node scripts/check-supabase-option.mjs

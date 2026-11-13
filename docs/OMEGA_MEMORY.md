@@ -150,3 +150,24 @@ Agregado módulo reversible camera.mjs con trayectorias orbit/dolly/glide, persp
 
 
 **Resultado V2 comprobado (2026-10-20):** merge de PR #66 `665ec5a3`; 14 workflows PR verdes; Pages success; render dual Full HD 16:9/9:16 con H.264/AAC y 30 FPS success (run 39418935821, artifact 12263426712). Programa ahora con cámara 2.5D configurable y 0 dependencias visuales externas. El intro de producción no fue sustituido. Safari físico pendiente.
+
+
+### 2026-11-13 — Reorganización modular y contenedores limpios (estilo jkanime_app)
+- Pedido: Reestructurar el código a contenedores y carpetas más limpio, organizando scripts y archivos sueltos como en `C:\Users\Marco\Desktop\script_prueba\jkanime_app`, manteniendo el 100% del estilo, funcionalidad y PWA.
+- Estado previo: Raíz con más de 80 archivos sueltos (CSS, JS, HTML, MD, JSON de configuración y pruebas).
+- Cambio y rutas:
+  - `client/`: `client/src/styles/` (26 CSS), `client/src/js/` (35 JS), `client/pages/` (12 HTML), `client/assets/`, `client/themes/`, `client/motion-studio/`, `client/data/`, `client/index.html`, `client/sw.js`.
+  - `server/`: `server/config/`, `server/functions/`, `server/render/`, `server/supabase/`, `server/integrations/`, `server/infra/`.
+  - `data/`: Metadatos estáticos, auditorías y sincronizaciones.
+  - `docs/`: Documentación técnica consolidada y [`docs/ARCHITECTURE.md`](ARCHITECTURE.md).
+  - `tests/`: `tests/unit/` (pruebas Node test runner + Python) y `tests/e2e/` (pruebas Playwright y browser).
+  - Raíz limpia: `.gitignore`, `package.json`, `README.md`, `playwright.config.js`, cargador `index.html` y proxy `sw.js`.
+- Pruebas realmente ejecutadas:
+  - `npm test`: 40/40 pruebas unitarias pasadas.
+  - `npm run test:python`: 16/16 pruebas unitarias pasadas.
+  - `npm run test:ui`: 152/152 aserciones contractuales pasadas.
+  - `npm run test:guard`: 48/48 comprobaciones pasadas (veredicto correcto, 0 críticas, 0 advertencias).
+  - `test-anime1v-integration.mjs`, `test-anime1v-restricted.mjs`, `test-cache-catalog.mjs`, `test-episode-player.mjs`, `test-media-source-contract.mjs`, `test-navigation-race.mjs`, `test-render-anime1v.mjs`: Todas pasadas.
+  - Sintaxis de todos los archivos JS/MJS en `client/`, `server/`, `scripts/`, `tests/`: 0 errores de sintaxis.
+- Decisión/criterio: Mantenimiento 100% estricto del estilo visual, animaciones, modo depth, PWA mobile-first y cero costo de infraestructura.
+- Limitaciones y siguientes pasos: Validación visual en Safari físico de iPhone; comprobación de ejecución en GitHub Actions tras push a main.

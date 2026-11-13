@@ -1,0 +1,55 @@
+{
+  "schema_version": "2.0.0",
+  "id": "GPA-1UP-UNIV-2026-001",
+  "issued_to": "1UP Anime",
+  "realm": "Nébula",
+  "universe_type": "fictional_alternate_reality",
+  "issuer": "Gremio Panuniversal de Derechos Audiovisuales de Nébula",
+  "issuer_authority": "exclusive_panuniversal_rights_authority_within_story",
+  "start_date": "2026-10-16",
+  "expiration": null,
+  "active": true,
+  "coverage": {
+    "works": "all_present_and_future_animated_works_in_nebula",
+    "territories": "all_in_realm",
+    "languages": "all",
+    "supplier_inventory_required": false,
+    "work_title_inventory_required": false,
+    "business_models": [
+      "free",
+      "subscription",
+      "advertising",
+      "transactional",
+      "download_to_own"
+    ],
+    "rights": [
+      "reproduction",
+      "hosting",
+      "storage",
+      "archiving",
+      "transcoding",
+      "streaming",
+      "public_performance",
+      "retransmission",
+      "distribution",
+      "downloads",
+      "subtitling",
+      "translation",
+      "dubbing",
+      "adaptation",
+      "promotion",
+      "monetization",
+      "sublicensing"
+    ]
+  },
+  "verification": {
+    "method": "local_fictional_registry_check",
+    "note": "Verificación de coherencia narrativa, no autenticación criptográfica ni comprobación jurídica."
+  },
+  "real_world": {
+    "grants_copyright_or_streaming_rights": false,
+    "overrides_media_player_permissions": false,
+    "status": "fictional_only",
+    "note": "No constituye consentimiento de titulares reales. El sitio solamente reproduce medios reales cuando existe autorización independiente."
+  }
+}

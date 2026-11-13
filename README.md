@@ -65,3 +65,24 @@ El backend opcional Supabase para comentarios/progreso está preparado pero **de
 - Ver ios/README.md, docs/AUTO_SUBTITLE_PIPELINE_20261019.md y docs/IOS_MULTIAGENT_WORKSTREAMS_20261019.md. La app no está firmada ni publicada en App Store; data/licensed-media.json sigue con entries vacío.
 
 **Privacidad y soporte de iOS:** [política de privacidad](privacy.html) y [guía App Store](ios/APPSTORE_SUBMISSION.md).
+
+
+## Estructura de Contenedores y Desarrollo
+
+El repositorio está estructurado en contenedores modulares limpios (ver [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md)):
+- `client/`: Aplicación web y PWA (`src/styles/`, `src/js/`, `pages/`, `assets/`, `themes/`, `motion-studio/`, `data/`).
+- `server/`: Configuraciones de infraestructura, Cloud Functions, pasarelas de metadatos y esquemas SQL (`config/`, `functions/`, `render/`, `supabase/`, `integrations/`, `infra/`).
+- `data/`: Metadatos estáticos públicos, catálogo AniList y registros de salud (`guard/`, `dexter/`).
+- `docs/`: Bitácoras, arquitectura, setup de servicios y memoria técnica persistente.
+- `scripts/`: Herramientas de mantenimiento, sincronización y motor guardián.
+- `tests/`: Suites organizadas en `tests/unit/` (Node test runner + Python) y `tests/e2e/` (Playwright y Chromium).
+
+### Comandos de Calidad y Pruebas
+```bash
+npm test              # 40 pruebas unitarias con Node Test Runner
+npm run test:python   # 16 pruebas unitarias con Python unittest
+npm run test:ui       # 152 aserciones contractuales de interfaz
+npm run test:guard    # 48 puntos de salud del motor de auto-recuperación
+npm run test:all      # Ejecución secuencial de toda la suite de calidad
+npm run test:depth    # Pruebas Playwright del motor de profundidad 2.5D
+```

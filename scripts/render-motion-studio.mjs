@@ -5,11 +5,12 @@
  */
 import { chromium } from 'playwright';
 import { createServer } from 'node:http';
+import { existsSync } from 'node:fs';
 import { readFile, mkdir } from 'node:fs/promises';
 import { extname, resolve, dirname, sep } from 'node:path';
 import { spawn } from 'node:child_process';
 import { once } from 'node:events';
-import { DEFAULT_SCENE, dimensions, normalizeScene } from '../motion-studio/scene.mjs';
+import { DEFAULT_SCENE, dimensions, normalizeScene } from '../client/motion-studio/scene.mjs';
 
 const ROOT = resolve(import.meta.dirname, '..');
 function parseArgs(argv) {
@@ -39,9 +40,19 @@ async function serve() {
   const server = createServer(async (req, res) => {
     try {
       if (req.method !== 'GET') throw Error('GET only');
-      const pathname = new URL(req.url, 'http://127.0.0.1').pathname;
-      const file = resolve(ROOT, '.' + decodeURIComponent(pathname === '/' ? '/dexter-motion-studio.html' : pathname));
-      if (!file.startsWith(ROOT + sep)) throw Error('Unsafe path');
+      const raw = decodeURIComponent(pathname);
+      const candidates = [
+        resolve(ROOT, '.' + raw),
+        resolve(ROOT, 'client' + raw),
+        resolve(ROOT, 'client/pages' + raw),
+        resolve(ROOT, 'client/src/js' + raw),
+        resolve(ROOT, 'client/src/styles' + raw)
+      ];
+      let file = candidates.find(p => existsSync(p) && p.startsWith(ROOT + sep));
+      if (!file && (raw === '/' || raw === '/dexter-motion-studio.html')) {
+        file = resolve(ROOT, 'client/pages/dexter-motion-studio.html');
+      }
+      if (!file || !file.startsWith(ROOT + sep)) throw Error('Unsafe or missing path');
       const bytes = await readFile(file);
       res.writeHead(200, { 'Content-Type': mime[extname(file)] || 'application/octet-stream',
         'Cache-Control': 'no-store' }); res.end(bytes);

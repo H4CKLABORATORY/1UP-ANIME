@@ -1,0 +1,365 @@
+{
+  "schemaVersion": 1,
+  "checks": [
+    {
+      "at": "2026-11-13T21:36:58.253Z",
+      "verdict": "correcto",
+      "issues": []
+    },
+    {
+      "at": "2026-11-13T18:03:58.394Z",
+      "verdict": "correcto",
+      "issues": []
+    },
+    {
+      "at": "2026-11-13T14:26:51.610Z",
+      "verdict": "correcto",
+      "issues": []
+    },
+    {
+      "at": "2026-11-13T10:17:59.161Z",
+      "verdict": "correcto",
+      "issues": []
+    },
+    {
+      "at": "2026-11-13T06:16:50.300Z",
+      "verdict": "correcto",
+      "issues": []
+    },
+    {
+      "at": "2026-11-13T02:16:15.400Z",
+      "verdict": "correcto",
+      "issues": []
+    },
+    {
+      "at": "2026-11-12T22:03:18.409Z",
+      "verdict": "correcto",
+      "issues": []
+    },
+    {
+      "at": "2026-11-12T18:05:58.072Z",
+      "verdict": "correcto",
+      "issues": []
+    },
+    {
+      "at": "2026-11-12T14:27:37.030Z",
+      "verdict": "correcto",
+      "issues": []
+    },
+    {
+      "at": "2026-11-12T10:21:43.078Z",
+      "verdict": "correcto",
+      "issues": []
+    },
+    {
+      "at": "2026-11-12T06:19:12.435Z",
+      "verdict": "correcto",
+      "issues": []
+    },
+    {
+      "at": "2026-11-12T02:20:58.208Z",
+      "verdict": "correcto",
+      "issues": []
+    },
+    {
+      "at": "2026-11-11T22:18:50.550Z",
+      "verdict": "correcto",
+      "issues": []
+    },
+    {
+      "at": "2026-11-11T18:07:06.167Z",
+      "verdict": "correcto",
+      "issues": []
+    },
+    {
+      "at": "2026-11-11T14:27:19.119Z",
+      "verdict": "correcto",
+      "issues": []
+    },
+    {
+      "at": "2026-11-11T10:17:36.876Z",
+      "verdict": "correcto",
+      "issues": []
+    },
+    {
+      "at": "2026-11-11T06:15:05.848Z",
+      "verdict": "correcto",
+      "issues": []
+    },
+    {
+      "at": "2026-11-11T02:14:29.350Z",
+      "verdict": "correcto",
+      "issues": []
+    },
+    {
+      "at": "2026-11-10T21:57:22.019Z",
+      "verdict": "correcto",
+      "issues": []
+    },
+    {
+      "at": "2026-11-10T18:00:08.572Z",
+      "verdict": "correcto",
+      "issues": []
+    },
+    {
+      "at": "2026-11-10T14:24:50.768Z",
+      "verdict": "correcto",
+      "issues": []
+    },
+    {
+      "at": "2026-11-10T10:12:17.251Z",
+      "verdict": "correcto",
+      "issues": []
+    },
+    {
+      "at": "2026-11-10T06:10:15.384Z",
+      "verdict": "correcto",
+      "issues": []
+    },
+    {
+      "at": "2026-11-10T02:17:46.523Z",
+      "verdict": "correcto",
+      "issues": []
+    },
+    {
+      "at": "2026-11-09T22:01:44.413Z",
+      "verdict": "correcto",
+      "issues": []
+    },
+    {
+      "at": "2026-11-09T14:27:51.401Z",
+      "verdict": "correcto",
+      "issues": []
+    },
+    {
+      "at": "2026-11-09T10:15:52.707Z",
+      "verdict": "correcto",
+      "issues": []
+    },
+    {
+      "at": "2026-11-09T06:24:06.887Z",
+      "verdict": "correcto",
+      "issues": []
+    },
+    {
+      "at": "2026-11-09T02:21:48.767Z",
+      "verdict": "correcto",
+      "issues": []
+    },
+    {
+      "at": "2026-11-08T21:53:11.651Z",
+      "verdict": "correcto",
+      "issues": []
+    },
+    {
+      "at": "2026-11-08T17:50:24.831Z",
+      "verdict": "correcto",
+      "issues": []
+    },
+    {
+      "at": "2026-11-08T14:01:35.943Z",
+      "verdict": "correcto",
+      "issues": []
+    },
+    {
+      "at": "2026-11-08T10:01:59.934Z",
+      "verdict": "correcto",
+      "issues": []
+    },
+    {
+      "at": "2026-11-08T06:03:52.533Z",
+      "verdict": "correcto",
+      "issues": []
+    },
+    {
+      "at": "2026-11-08T02:16:25.430Z",
+      "verdict": "correcto",
+      "issues": []
+    },
+    {
+      "at": "2026-11-07T21:52:30.003Z",
+      "verdict": "correcto",
+      "issues": []
+    },
+    {
+      "at": "2026-11-07T17:50:16.088Z",
+      "verdict": "correcto",
+      "issues": []
+    },
+    {
+      "at": "2026-11-07T14:01:51.358Z",
+      "verdict": "correcto",
+      "issues": []
+    },
+    {
+      "at": "2026-11-07T10:01:57.061Z",
+      "verdict": "correcto",
+      "issues": []
+    },
+    {
+      "at": "2026-11-07T06:01:26.880Z",
+      "verdict": "correcto",
+      "issues": []
+    },
+    {
+      "at": "2026-11-07T02:09:53.077Z",
+      "verdict": "correcto",
+      "issues": []
+    },
+    {
+      "at": "2026-11-06T21:56:12.637Z",
+      "verdict": "correcto",
+      "issues": []
+    },
+    {
+      "at": "2026-11-06T17:59:49.350Z",
+      "verdict": "correcto",
+      "issues": []
+    },
+    {
+      "at": "2026-11-06T14:27:41.195Z",
+      "verdict": "correcto",
+      "issues": []
+    },
+    {
+      "at": "2026-11-06T10:19:47.678Z",
+      "verdict": "correcto",
+      "issues": []
+    },
+    {
+      "at": "2026-11-06T06:16:15.547Z",
+      "verdict": "correcto",
+      "issues": []
+    },
+    {
+      "at": "2026-11-06T02:24:00.409Z",
+      "verdict": "correcto",
+      "issues": []
+    },
+    {
+      "at": "2026-11-05T22:02:01.058Z",
+      "verdict": "correcto",
+      "issues": []
+    },
+    {
+      "at": "2026-11-05T18:00:27.412Z",
+      "verdict": "correcto",
+      "issues": []
+    },
+    {
+      "at": "2026-11-05T14:28:36.291Z",
+      "verdict": "correcto",
+      "issues": []
+    },
+    {
+      "at": "2026-11-05T10:21:30.403Z",
+      "verdict": "correcto",
+      "issues": []
+    },
+    {
+      "at": "2026-11-05T06:17:03.281Z",
+      "verdict": "correcto",
+      "issues": []
+    },
+    {
+      "at": "2026-11-05T02:23:07.862Z",
+      "verdict": "correcto",
+      "issues": []
+    },
+    {
+      "at": "2026-11-04T22:02:32.868Z",
+      "verdict": "correcto",
+      "issues": []
+    },
+    {
+      "at": "2026-11-04T18:05:38.293Z",
+      "verdict": "correcto",
+      "issues": []
+    },
+    {
+      "at": "2026-11-04T14:28:06.725Z",
+      "verdict": "correcto",
+      "issues": []
+    },
+    {
+      "at": "2026-11-04T10:24:44.396Z",
+      "verdict": "correcto",
+      "issues": []
+    },
+    {
+      "at": "2026-11-04T06:15:26.148Z",
+      "verdict": "correcto",
+      "issues": []
+    },
+    {
+      "at": "2026-11-04T02:11:39.457Z",
+      "verdict": "correcto",
+      "issues": []
+    },
+    {
+      "at": "2026-11-03T22:01:53.523Z",
+      "verdict": "correcto",
+      "issues": []
+    },
+    {
+      "at": "2026-11-03T18:01:50.953Z",
+      "verdict": "correcto",
+      "issues": []
+    },
+    {
+      "at": "2026-11-03T14:26:55.483Z",
+      "verdict": "correcto",
+      "issues": []
+    },
+    {
+      "at": "2026-11-03T10:11:50.404Z",
+      "verdict": "correcto",
+      "issues": []
+    },
+    {
+      "at": "2026-11-03T06:10:43.706Z",
+      "verdict": "correcto",
+      "issues": []
+    },
+    {
+      "at": "2026-11-03T02:13:44.533Z",
+      "verdict": "correcto",
+      "issues": []
+    },
+    {
+      "at": "2026-11-02T21:57:00.214Z",
+      "verdict": "correcto",
+      "issues": []
+    },
+    {
+      "at": "2026-11-02T18:08:54.738Z",
+      "verdict": "correcto",
+      "issues": []
+    },
+    {
+      "at": "2026-11-02T14:29:30.671Z",
+      "verdict": "correcto",
+      "issues": []
+    },
+    {
+      "at": "2026-11-02T10:23:54.678Z",
+      "verdict": "correcto",
+      "issues": []
+    },
+    {
+      "at": "2026-11-02T06:19:11.547Z",
+      "verdict": "correcto",
+      "issues": []
+    },
+    {
+      "at": "2026-11-02T02:16:49.721Z",
+      "verdict": "correcto",
+      "issues": []
+    },
+    {
+      "at": "2026-11-01T21:51:28.764Z",
+      "verdict": "correcto",
+      "issues": []
+    }
+  ]
+}

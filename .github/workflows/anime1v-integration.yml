@@ -3,12 +3,12 @@ on:
   pull_request:
     branches: [main]
     paths:
-      - 'functions/anime1v-adapter.js'
-      - 'functions/index.js'
-      - 'anime1v-discovery.js'
-      - 'anime1v-discovery.css'
+      - 'server/functions/anime1v-adapter.js'
+      - 'server/functions/index.js'
+      - 'client/src/js/anime1v-discovery.js'
+      - 'client/src/styles/anime1v-discovery.css'
       - 'data/anime1v-config.json'
-      - 'scripts/test-anime1v-integration.mjs'
+      - 'tests/unit/test-anime1v-integration.mjs'
       - '.github/workflows/anime1v-integration.yml'
   workflow_dispatch:
 permissions:
@@ -24,13 +24,13 @@ jobs:
           node-version: '22'
       - name: Verify syntax
         run: |
-          node --check functions/anime1v-adapter.js
-          node --check functions/index.js
-          node --check anime1v-discovery.js
-          node --check scripts/test-anime1v-integration.mjs
+          node --check server/functions/anime1v-adapter.js
+          node --check server/functions/index.js
+          node --check client/src/js/anime1v-discovery.js
+          node --check tests/unit/test-anime1v-integration.mjs
       - name: Adapter unit tests
-        run: node scripts/test-anime1v-integration.mjs
+        run: node tests/unit/test-anime1v-integration.mjs
       - name: Existing player regression
         run: |
-          node scripts/test-episode-player.mjs
-          node scripts/test-media-source-contract.mjs
+          node tests/unit/test-episode-player.mjs
+          node tests/unit/test-media-source-contract.mjs

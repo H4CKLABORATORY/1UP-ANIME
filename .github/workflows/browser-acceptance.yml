@@ -4,32 +4,32 @@ on:
   push:
     branches: [main]
     paths:
-      - "scripts/e2e-browser.mjs"
-      - "scripts/e2e-franchise.mjs"
+      - "tests/e2e/e2e-browser.mjs"
+      - "tests/e2e/e2e-franchise.mjs"
       - ".github/workflows/browser-acceptance.yml"
-      - "index.html"
-      - "themes/oneup-palette/**"
-      - "scripts/e2e-oneup-palette.mjs"
-      - "themes/oneup-motion/**"
-      - "scripts/e2e-oneup-motion.mjs"
-      - "comunidad.html"
-      - "moderacion.html"
-      - "studio.js"
-      - "community.js"
-      - "airing-ui.js"
-      - "motor.js"
-      - "external-providers.js"
-      - "external-providers.css"
+      - "client/index.html"
+      - "client/themes/oneup-palette/**"
+      - "tests/e2e/e2e-oneup-palette.mjs"
+      - "client/themes/oneup-motion/**"
+      - "tests/e2e/e2e-oneup-motion.mjs"
+      - "client/pages/comunidad.html"
+      - "client/pages/moderacion.html"
+      - "client/src/js/studio.js"
+      - "client/src/js/community.js"
+      - "client/src/js/airing-ui.js"
+      - "client/src/js/motor.js"
+      - "client/src/js/external-providers.js"
+      - "client/src/styles/external-providers.css"
       - "data/external-providers.json"
-      - "sw.js"
-      - "brand-v2.css"
-      - "preview-october.html"
-      - "themes/october-2026/**"
-      - "preview-kokomi.html"
-      - "themes/kokomi-studio/**"
-      - "spotlight.css"
-      - "player.css"
-      - "community.css"
+      - "client/sw.js"
+      - "client/src/styles/brand-v2.css"
+      - "client/pages/preview-october.html"
+      - "client/themes/october-2026/**"
+      - "client/pages/preview-kokomi.html"
+      - "client/themes/kokomi-studio/**"
+      - "client/src/styles/spotlight.css"
+      - "client/src/styles/player.css"
+      - "client/src/styles/community.css"
   pull_request:
     branches: [main]
 concurrency:
@@ -52,14 +52,14 @@ jobs:
         run: ./node_modules/.bin/playwright install --with-deps chromium
       - name: Run real iPhone-width and desktop user journeys
         run: |
-          node scripts/test-episode-comments.mjs
-          node scripts/e2e-player-languages.mjs
-          node scripts/e2e-browser.mjs
-          node scripts/e2e-franchise.mjs
-          node scripts/e2e-oneup-palette.mjs
-          node --check themes/oneup-motion/windows.js
-          node --check scripts/e2e-oneup-motion.mjs
-          node scripts/e2e-oneup-motion.mjs
+          node tests/e2e/test-episode-comments.mjs
+          node tests/e2e/e2e-player-languages.mjs
+          node tests/e2e/e2e-browser.mjs
+          node tests/e2e/e2e-franchise.mjs
+          node tests/e2e/e2e-oneup-palette.mjs
+          node --check client/themes/oneup-motion/windows.js
+          node --check tests/e2e/e2e-oneup-motion.mjs
+          node tests/e2e/e2e-oneup-motion.mjs
       - name: Keep browser screenshots for review
         if: always()
         uses: actions/upload-artifact@v4

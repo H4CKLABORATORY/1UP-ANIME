@@ -45,14 +45,15 @@ jobs:
           if-no-files-found: error
           path: |
             index.html
-            sw.js
-            studio.js
+            client/index.html
+            client/sw.js
+            client/src/js/studio.js
             data/catalog.json
             data/airing.json
             data/translations-es.json
             data/dexter/records.json
             data/dexter/history.json
-            config/dexter-providers.json
+            server/config/dexter-providers.json
             data/licensed-media.json
             data/external-providers.json
       - name: Probe data and public Pages with bounded retries

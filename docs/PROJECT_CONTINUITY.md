@@ -350,3 +350,24 @@ Al concluir cada trabajo agregar:
 
 
 **Cierre verificado 2026-10-20 (Motion Studio V2):** PR #66 fusionado en main, squash SHA `665ec5a312b3d3dd4c30648b14e155b8688c55a3`. Los 14 checks del PR dieron SUCCESS, incluyendo DEXTER Motion Studio, Browser Acceptance, Puppeteer, HLS, Depth, editorial y sitewide. Workflow `DEXTER Motion Studio · MP4 / QA` de main: https://github.com/H4CKLABORATORY/1UP-ANIME/actions/runs/39418935821, success. Artifacts 12263426712 (MP4 16:9 + 9:16; ~2.86 MB) y 12263621223 (capturas; ~0.95 MB). FFprobe en log verifica 1920×1080 y 1080×1920, ambos 30 fps 3.2 s, H.264 + AAC original. GitHub Pages: deploy success run 39418935619. Artefactos expiran 2026-11-03. Pendientes: Safari iPhone físico y revisión visual del propietario; intro pública original conservada.
+
+
+### 2026-11-13 — Reestructuración limpia a contenedores y carpetas modulares
+
+- **Objetivo completado**: Reorganización completa del código a contenedores modulares limpios siguiendo el estándar de arquitectura de `jkanime_app`, eliminando más de 80 archivos sueltos en la raíz y manteniendo intacto el 100% del estilo visual, la compatibilidad PWA y la funcionalidad existente.
+- **Contenedores de primer nivel**:
+  - `client/`: Todo el frontend web y PWA (`client/src/styles/` con las 26 hojas CSS; `client/src/js/` con los 35 módulos JS; `client/pages/` con las 12 vistas secundarias; `client/assets/`, `client/themes/`, `client/motion-studio/`, `client/data/`, `client/index.html`, `client/sw.js`).
+  - `server/`: Toda la infraestructura de backend (`server/config/`, `server/functions/`, `server/render/`, `server/supabase/`, `server/integrations/`, `server/infra/`).
+  - `data/`: Metadatos públicos, catálogo, emisiones y auditorías de salud (`data/guard/`, `data/dexter/`).
+  - `docs/`: Documentación técnica, bitácoras, guías de setup y memoria OMEGA.
+  - `scripts/`: Herramientas de mantenimiento, sincronización, auditorías y guardián de auto-recuperación.
+  - `tests/`: Infraestructura separada en `tests/unit/` (pruebas Node test runner + Python) y `tests/e2e/` (especificaciones Playwright y recorridos browser).
+- **Pruebas y Verificación**:
+  - `npm test` (`node --test tests/unit/*.test.mjs`): **40/40 PASADAS** (0 fallos).
+  - `npm run test:python` (`python -m unittest discover tests`): **16/16 PASADAS** (0 fallos).
+  - `npm run test:ui` (`node scripts/check-ui.mjs`): **152/152 aserciones contractuales PASADAS**.
+  - `npm run test:guard` (`node scripts/oneup-guard.mjs --offline`): **48/48 comprobaciones PASADAS** (veredicto correcto, 0 críticas, 0 advertencias).
+  - `npm run test:all`: Suite completa ejecutada y aprobada al 100%.
+  - Pruebas contractuales aisladas (`test-anime1v-integration.mjs`, `test-anime1v-restricted.mjs`, `test-cache-catalog.mjs`, `test-episode-player.mjs`, `test-media-source-contract.mjs`, `test-navigation-race.mjs`, `test-render-anime1v.mjs`): **TODAS PASADAS**.
+- **Flujos CI/CD**: Actualizados los 41 flujos de trabajo en `.github/workflows/` para referenciar las rutas dentro de los nuevos contenedores.
+- **Documentación**: Creado [`docs/ARCHITECTURE.md`](ARCHITECTURE.md) con diagramas de componentes Mermaid y detalle de la organización modular.

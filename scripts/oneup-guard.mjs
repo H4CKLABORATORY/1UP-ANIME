@@ -38,18 +38,18 @@ function requireValid(condition,id,message,details){
 }
 async function checkFiles(){
  const mandatory=[
-  'index.html','comunidad.html','moderacion.html','studio.js','studio.css',
-  'sw.js','auth.js','airing-ui.js','episode-comments.js','community.js',
-  'social-backend.js','functions/index.js','data/catalog.json','data/airing.json',
+  'index.html','client/pages/comunidad.html','client/pages/moderacion.html','client/src/js/studio.js','client/src/styles/studio.css',
+  'client/sw.js','client/src/js/auth.js','client/src/js/airing-ui.js','client/src/js/episode-comments.js','client/src/js/community.js',
+  'client/src/js/social-backend.js','server/functions/index.js','data/catalog.json','data/airing.json',
   'data/translations-es.json','data/dexter/records.json',
-  'config/dexter-providers.json','data/licensed-media.json',
+  'server/config/dexter-providers.json','data/licensed-media.json',
   'scripts/dexter-anime-sync.mjs','scripts/check-ui.mjs'
  ];
  for(const filename of mandatory){
   try{const stat=await fs.stat(path.join(ROOT,filename));requireValid(stat.isFile()&&stat.size>0,'file:'+filename,'Archivo requerido '+filename,{bytes:stat.size})}
   catch{mk('file:'+filename,'critical','No existe o no puede leerse: '+filename)}
  }
- for(const filename of ['studio.js','auth.js','sw.js','airing-ui.js','episode-comments.js','community.js','social-backend.js','moderacion.js']){
+ for(const filename of ['client/src/js/studio.js','client/src/js/auth.js','client/sw.js','client/src/js/airing-ui.js','client/src/js/episode-comments.js','client/src/js/community.js','client/src/js/social-backend.js','client/src/js/moderacion.js']){
   try{new vm.Script(await readFile(filename),{filename});mk('syntax:'+filename,'ok','JavaScript válido: '+filename)}
   catch(e){mk('syntax:'+filename,'critical','Error de sintaxis '+filename+': '+e.message)}
  }
@@ -105,13 +105,13 @@ async function checkSync(){
   else mk('engine:providers','ok','Adaptadores sin errores detectados');
  }catch(e){mk('engine:status','warning','Estado reciente de sincronización no disponible: '+e.message)}
  try{
-  const cfg=await json('config/dexter-providers.json');
+  const cfg=await json('server/config/dexter-providers.json');
   requireValid(Array.isArray(cfg.providers)&&cfg.providers.length>=3,'engine:adapters','Configuración modular de proveedores existente');
  }catch(e){mk('engine:adapters','critical','Configuración de proveedores corrupta: '+e.message)}
 }
 async function checkDependencies(){
  try{
-  const pkg=await json('integrations/jkanime-v2/package.json');
+  const pkg=await json('server/integrations/jkanime-v2/package.json');
   const pinned=pkg.dependencies?.['jkanime-v2']==='1.0.1'&&pkg.overrides?.cheerio==='1.0.0-rc.12';
   mk('dependency:jkanime',pinned?'ok':'warning',
    pinned?'JKAnime V2 aislado y Cheerio fijado en versión compatible':'Se modificaron versiones de JKAnime V2/Cheerio; ejecutar auditoría de compatibilidad');

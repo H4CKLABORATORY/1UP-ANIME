@@ -13,11 +13,11 @@ const git=args=>{try{return execFileSync('git',args,{encoding:'utf8',timeout:700
 const parse=p=>{try{return JSON.parse(read(p))}catch{return{}}};
 const config=parse('data/anime1v-config.json');
 const media=parse('data/licensed-media.json');
-const characters=parse('themes/cinematic-v3/characters.json');
+const characters=parse(existsSync('client/themes/cinematic-v3/characters.json')?'client/themes/cinematic-v3/characters.json':'themes/cinematic-v3/characters.json');
 const totalMedia=Object.keys(media.entries||{}).length;
 const totalCharacters=Array.isArray(characters.layers)?characters.layers.length:0;
 const activeGateway=config.enabled===true&&String(config.endpoint||'').startsWith('https://');
-const runtime=existsSync('render/anime1v-source/server.js');
+const runtime=existsSync('server/render/anime1v-source/server.js')||existsSync('render/anime1v-source/server.js');
 const logs=git(['log','-n','60','--format=%H%x09%s']).split('\n')
  .filter(Boolean).map(line=>{const p=line.split('\t');return{sha:p[0],subject:p.slice(1).join(' ')};})
  .filter(c=>!/^docs: (?:automatic|refresh) new-chat handoff/i.test(c.subject)).slice(0,5);

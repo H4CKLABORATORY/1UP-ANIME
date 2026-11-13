@@ -4,24 +4,26 @@ on:
   pull_request:
     branches: [main]
     paths:
-      - 'subtitle-studio.*'
-      - 'episode-player.js'
-      - 'themes/october-2026/theme.js'
-      - 'themes/cinematic-v3/studio.js'
+      - 'client/src/js/subtitle-studio.js'
+      - 'client/src/styles/subtitle-studio.css'
+      - 'client/src/js/episode-player.js'
+      - 'client/themes/october-2026/theme.js'
+      - 'client/themes/cinematic-v3/studio.js'
       - 'scripts/generate-authorized-subtitles.py'
-      - 'tests/subtitle-studio.test.mjs'
-      - 'tests/test_authorized_subtitles.py'
+      - 'tests/unit/subtitle-studio.test.mjs'
+      - 'tests/unit/test_authorized_subtitles.py'
       - '.github/workflows/four-track-qa.yml'
       - 'data/licensed-media.json'
   push:
     branches: [main]
     paths:
-      - 'subtitle-studio.*'
-      - 'episode-player.js'
-      - 'themes/october-2026/theme.js'
+      - 'client/src/js/subtitle-studio.js'
+      - 'client/src/styles/subtitle-studio.css'
+      - 'client/src/js/episode-player.js'
+      - 'client/themes/october-2026/theme.js'
       - 'scripts/generate-authorized-subtitles.py'
-      - 'tests/subtitle-studio.test.mjs'
-      - 'tests/test_authorized_subtitles.py'
+      - 'tests/unit/subtitle-studio.test.mjs'
+      - 'tests/unit/test_authorized_subtitles.py'
 permissions:
   contents: read
 jobs:
@@ -35,9 +37,9 @@ jobs:
           node-version: '22'
       - name: Check intro and no sound toggle
         run: |
-          node --check themes/october-2026/theme.js
-          node --check themes/cinematic-v3/studio.js
-          node -e "const fs=require('fs'); const s=fs.readFileSync('themes/october-2026/theme.js','utf8'); if(s.includes('oct-audio-control'))process.exit(1);if(!fs.readFileSync('themes/cinematic-v3/studio.js','utf8').includes('media.play()'))process.exit(1)"
+          node --check client/themes/october-2026/theme.js
+          node --check client/themes/cinematic-v3/studio.js
+          node -e "const fs=require('fs'); const s=fs.readFileSync('client/themes/october-2026/theme.js','utf8'); if(s.includes('oct-audio-control'))process.exit(1);if(!fs.readFileSync('client/themes/cinematic-v3/studio.js','utf8').includes('media.play()'))process.exit(1)"
   web-captions:
     name: Track B - Subtitle player
     runs-on: ubuntu-latest
@@ -47,10 +49,10 @@ jobs:
         with:
           node-version: '22'
       - run: |
-          node --check subtitle-studio.js
-          node --check episode-player.js
-          node --test tests/subtitle-studio.test.mjs
-          node scripts/test-episode-player.mjs
+          node --check client/src/js/subtitle-studio.js
+          node --check client/src/js/episode-player.js
+          node --test tests/unit/subtitle-studio.test.mjs
+          node tests/unit/test-episode-player.mjs
   speech-pipeline:
     name: Track C - Educational licensed subtitle generator
     runs-on: ubuntu-latest
@@ -72,4 +74,4 @@ jobs:
           node-version: '22'
       - run: |
           node --check scripts/media-source-contract.mjs
-          node scripts/test-media-source-contract.mjs
+          node tests/unit/test-media-source-contract.mjs

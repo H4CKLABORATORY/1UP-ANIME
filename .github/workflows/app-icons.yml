@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
     paths:
-      - "assets/oneup-crest.svg"
+      - "client/assets/oneup-crest.svg"
       - "scripts/build-icons.py"
       - ".github/workflows/app-icons.yml"
 permissions:
@@ -27,4 +27,4 @@ jobs:
       - name: Render branded PNG icons
         run: python scripts/build-icons.py
       - name: Commit generated icons
-        run: bash scripts/oneup-safe-push.sh 'Update iPhone and PWA icons from original 1UP crest' assets/icon-180.png assets/icon-192.png assets/icon-512.png
+        run: bash scripts/oneup-safe-push.sh 'Update iPhone and PWA icons from original 1UP crest' client/assets/icon-180.png client/assets/icon-192.png client/assets/icon-512.png

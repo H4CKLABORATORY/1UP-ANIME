@@ -4,13 +4,15 @@ set -euo pipefail
 cd "$(dirname "$0")/../.."
 RESOURCE="ios/OneUpAnime/Resources"
 mkdir -p "$RESOURCE/Assets.xcassets/AppIcon.appiconset" "$RESOURCE/Assets.xcassets/LaunchBackground.colorset"
-cp assets/1up-anime-intro-firma-3seg.mp4 "$RESOURCE/intro.mp4"
+ASSET_DIR="assets"
+if [ -d "client/assets" ]; then ASSET_DIR="client/assets"; fi
+cp "$ASSET_DIR/1up-anime-intro-firma-3seg.mp4" "$RESOURCE/intro.mp4"
 curl -fLsS --retry 2 "https://raw.githubusercontent.com/google/fonts/main/ofl/bangers/Bangers-Regular.ttf" -o "$RESOURCE/Bangers-Regular.ttf"
 curl -fLsS --retry 2 "https://raw.githubusercontent.com/google/fonts/main/ofl/bangers/OFL.txt" -o "$RESOURCE/OFL-Bangers.txt"
 test -s "$RESOURCE/Bangers-Regular.ttf"
 test -s "$RESOURCE/OFL-Bangers.txt"
 # Existing app icon enlarged provisionally; replace with studio-grade 1024 artwork before submitting.
-sips -s format png -z 1024 1024 "assets/1up-anime-app-icon-512.png" --out "$RESOURCE/Assets.xcassets/AppIcon.appiconset/AppIcon.png" >/dev/null
+sips -s format png -z 1024 1024 "$ASSET_DIR/1up-anime-app-icon-512.png" --out "$RESOURCE/Assets.xcassets/AppIcon.appiconset/AppIcon.png" >/dev/null
 cat > "$RESOURCE/Assets.xcassets/AppIcon.appiconset/Contents.json" <<'JSON'
 {"images":[{"filename":"AppIcon.png","idiom":"universal","platform":"ios","size":"1024x1024"}],"info":{"author":"xcode","version":1}}
 JSON

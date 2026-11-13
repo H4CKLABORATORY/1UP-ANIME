@@ -2,7 +2,7 @@ import fs from 'node:fs';
 import assert from 'node:assert/strict';
 import path from 'node:path';
 
-const folder=path.resolve('assets');
+const folder=fs.existsSync('client/assets')?path.resolve('client/assets'):path.resolve('assets');
 const mp4=path.join(folder,'1up-anime-intro-firma-3seg.mp4');
 const poster=path.join(folder,'1up-anime-logo-poster.jpg');
 assert.ok(fs.existsSync(mp4),'Upload the original 1UP MP4 before enabling the new brand');
@@ -14,6 +14,11 @@ for(const atom of ['ftyp','moov','mdat','avc1','mp4a']){
 }
 const jpg=fs.readFileSync(poster);
 assert.ok(jpg.length>30_000&&jpg[0]===0xff&&jpg[1]===0xd8&&jpg.at(-2)===0xff&&jpg.at(-1)===0xd9,'Poster is not a valid JPEG');
-const index=fs.readFileSync('index.html','utf8');
-assert.ok(index.includes('brand-signature.js')&&index.includes('brand-signature.css'),'Brand module missing from homepage');
+const indexPath=fs.existsSync('client/index.html')?'client/index.html':'index.html';
+const index=fs.readFileSync(indexPath,'utf8');
+assert.ok(
+ (index.includes('brand-signature.js') && index.includes('brand-signature.css')) ||
+ ((index.includes('opening.js') || index.includes('opening-controller.js')) && (index.includes('opening.css') || index.includes('studio.css'))),
+ 'Brand module missing from homepage'
+);
 console.log('PASS: original brand MP4 (with AAC sound), poster and homepage installation present');

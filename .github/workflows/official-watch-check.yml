@@ -2,21 +2,23 @@ name: ONEUP Official Watch Links
 on:
   pull_request:
     paths:
-      - 'official-watch.*'
-      - 'airing-ui.js'
-      - 'index.html'
+      - 'client/src/js/official-watch.js'
+      - 'client/src/styles/official-watch.css'
+      - 'client/src/js/airing-ui.js'
+      - 'client/index.html'
       - 'scripts/refresh-airing.mjs'
-      - 'sw.js'
-      - 'tests/official-watch.test.mjs'
+      - 'client/sw.js'
+      - 'tests/unit/official-watch.test.mjs'
       - '.github/workflows/official-watch-check.yml'
   push:
     paths:
-      - 'official-watch.*'
-      - 'airing-ui.js'
-      - 'index.html'
+      - 'client/src/js/official-watch.js'
+      - 'client/src/styles/official-watch.css'
+      - 'client/src/js/airing-ui.js'
+      - 'client/index.html'
       - 'scripts/refresh-airing.mjs'
-      - 'sw.js'
-      - 'tests/official-watch.test.mjs'
+      - 'client/sw.js'
+      - 'tests/unit/official-watch.test.mjs'
 permissions:
   contents: read
 jobs:
@@ -29,8 +31,8 @@ jobs:
           node-version: '22'
       - name: Sintaxis de módulos
         run: |
-          node --check official-watch.js
-          node --check airing-ui.js
+          node --check client/src/js/official-watch.js
+          node --check client/src/js/airing-ui.js
           node --check scripts/refresh-airing.mjs
       - name: Probar enlaces externos y rutas
-        run: node --test tests/official-watch.test.mjs
+        run: node --test tests/unit/official-watch.test.mjs

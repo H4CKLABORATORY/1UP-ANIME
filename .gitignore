@@ -6,3 +6,6 @@ ios/OneUpAnime.xcodeproj/
 ios/OneUpAnime/Info.plist
 ios/OneUpAnime/Resources/
 ios/build/
+
+__pycache__/
+*.pyc

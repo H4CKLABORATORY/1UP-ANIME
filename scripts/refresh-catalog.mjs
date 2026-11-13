@@ -61,5 +61,11 @@ for(const [section,vars] of Object.entries(sets)){
  console.log('Fetched '+section+': '+groups[section].length);
 }
 await fs.mkdir('data',{recursive:true});
-await fs.writeFile('data/catalog.json',JSON.stringify({updated:new Date().toISOString(),source:'AniList public GraphQL',groups},null,2)+'\n');
+const payload=JSON.stringify({updated:new Date().toISOString(),source:'AniList public GraphQL',groups},null,2)+'\n';
+await fs.writeFile('data/catalog.json',payload);
+try{
+ if(await fs.stat('client/data').then(()=>true).catch(()=>false)){
+  await fs.writeFile('client/data/catalog.json',payload);
+ }
+}catch{}
 console.log('Updated catalog snapshot: '+total+' anime cards');

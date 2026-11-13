@@ -3,18 +3,18 @@ on:
   pull_request:
     branches: [main]
     paths:
-      - 'franchise-explorer.mjs'
-      - 'franchise-explorer.css'
-      - 'tests/franchise-explorer.test.mjs'
+      - 'client/src/js/franchise-explorer.mjs'
+      - 'client/src/styles/franchise-explorer.css'
+      - 'tests/unit/franchise-explorer.test.mjs'
       - '.github/workflows/franchise-explorer.yml'
-      - 'index.html'
-      - 'sw.js'
+      - 'client/index.html'
+      - 'client/sw.js'
   push:
     branches: [main]
     paths:
-      - 'franchise-explorer.mjs'
-      - 'franchise-explorer.css'
-      - 'tests/franchise-explorer.test.mjs'
+      - 'client/src/js/franchise-explorer.mjs'
+      - 'client/src/styles/franchise-explorer.css'
+      - 'tests/unit/franchise-explorer.test.mjs'
       - '.github/workflows/franchise-explorer.yml'
   workflow_dispatch:
 permissions:
@@ -29,6 +29,6 @@ jobs:
         with:
           node-version: '22'
       - name: Verificar sintaxis
-        run: node --check franchise-explorer.mjs
+        run: node --check client/src/js/franchise-explorer.mjs
       - name: Pruebas sin red de franquicias
-        run: node --test tests/franchise-explorer.test.mjs
+        run: node --test tests/unit/franchise-explorer.test.mjs

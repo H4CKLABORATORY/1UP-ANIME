@@ -79,7 +79,8 @@ function fromVideoEpisode(animeId,item,index,stamp,existing){
 }
 export async function syncDexter({root=process.cwd(),now=new Date(),force=false,persist=true}={}){
  const nowMs=now.getTime(),stamp=now.toISOString(),engineVersion=1;
- const config=await readJSON(root,'config/dexter-providers.json');
+ const configPath=await fs.stat(path.join(root,'server/config/dexter-providers.json')).then(()=>'server/config/dexter-providers.json').catch(()=>'config/dexter-providers.json');
+ const config=await readJSON(root,configPath);
  const settings=config.settings||{};
  const maxEpisodes=number(settings.maxEpisodes,20,10000)||1500;
  const historyLimit=number(settings.historyLimit,10,500)||60;

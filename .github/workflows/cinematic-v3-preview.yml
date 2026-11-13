@@ -3,9 +3,9 @@ on:
   pull_request:
     branches: [main]
     paths:
-      - 'preview-cinematic-v3.html'
-      - 'themes/cinematic-v3/**'
-      - 'scripts/e2e-cinematic-v3.mjs'
+      - 'client/pages/preview-cinematic-v3.html'
+      - 'client/themes/cinematic-v3/**'
+      - 'tests/e2e/e2e-cinematic-v3.mjs'
       - '.github/workflows/cinematic-v3-preview.yml'
   workflow_dispatch:
 permissions:
@@ -21,16 +21,16 @@ jobs:
           node-version: '22'
       - name: Validate JavaScript and source media is present
         run: |
-          node --check themes/cinematic-v3/studio.js
-          node --check scripts/e2e-cinematic-v3.mjs
-          test -s assets/oneup-header-letters.png
-          test -s assets/1up-anime-intro-firma-3seg.mp4
+          node --check client/themes/cinematic-v3/studio.js
+          node --check tests/e2e/e2e-cinematic-v3.mjs
+          test -s client/assets/oneup-header-letters.png
+          test -s client/assets/1up-anime-intro-firma-3seg.mp4
       - name: Install browser
         run: |
           npm install --no-save --ignore-scripts --no-audit --no-fund playwright@1.56.1
           npx playwright install --with-deps chromium
       - name: Verify independent layers / iPhone / desktop / reduced motion
-        run: node scripts/e2e-cinematic-v3.mjs
+        run: node tests/e2e/e2e-cinematic-v3.mjs
       - name: Upload screenshots
         if: always()
         uses: actions/upload-artifact@v4

@@ -8,13 +8,13 @@ on:
     paths:
       - 'scripts/scrape-encyclopedia-anime.py'
       - 'tests/fixtures/encyclopedia-anime.html'
-      - 'tests/test_educational_scraper.py'
+      - 'tests/unit/test_educational_scraper.py'
       - '.github/workflows/educational-anime-scraping.yml'
   pull_request:
     paths:
       - 'scripts/scrape-encyclopedia-anime.py'
       - 'tests/fixtures/encyclopedia-anime.html'
-      - 'tests/test_educational_scraper.py'
+      - 'tests/unit/test_educational_scraper.py'
       - '.github/workflows/educational-anime-scraping.yml'
 permissions:
   contents: read

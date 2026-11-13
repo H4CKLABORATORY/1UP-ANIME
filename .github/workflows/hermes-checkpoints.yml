@@ -3,14 +3,14 @@ on:
   pull_request:
     paths:
       - 'tools/hermes/**'
-      - 'tests/test_hermes_checkpoint.py'
+      - 'tests/unit/test_hermes_checkpoint.py'
       - '.hermes/checkpoints/**'
       - '.github/workflows/hermes-checkpoints.yml'
   push:
     branches: [main]
     paths:
       - 'tools/hermes/**'
-      - 'tests/test_hermes_checkpoint.py'
+      - 'tests/unit/test_hermes_checkpoint.py'
       - '.hermes/checkpoints/**'
   workflow_dispatch:
 permissions:

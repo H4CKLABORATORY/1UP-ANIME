@@ -2,24 +2,24 @@ name: ONEUP Multilingual Anime Search QA
 on:
   pull_request:
     paths:
-      - 'anime-title-search.js'
-      - 'studio.js'
-      - 'studio.html'
-      - 'index.html'
-      - 'sw.js'
+      - 'client/src/js/anime-title-search.js'
+      - 'client/src/js/studio.js'
+      - 'client/pages/studio.html'
+      - 'client/index.html'
+      - 'client/sw.js'
       - 'scripts/refresh-catalog.mjs'
-      - 'tests/anime-title-search.test.mjs'
+      - 'tests/unit/anime-title-search.test.mjs'
       - '.github/workflows/anime-title-search.yml'
   push:
     branches: [main]
     paths:
-      - 'anime-title-search.js'
-      - 'studio.js'
-      - 'studio.html'
-      - 'index.html'
-      - 'sw.js'
+      - 'client/src/js/anime-title-search.js'
+      - 'client/src/js/studio.js'
+      - 'client/pages/studio.html'
+      - 'client/index.html'
+      - 'client/sw.js'
       - 'scripts/refresh-catalog.mjs'
-      - 'tests/anime-title-search.test.mjs'
+      - 'tests/unit/anime-title-search.test.mjs'
       - '.github/workflows/anime-title-search.yml'
 permissions:
   contents: read
@@ -33,11 +33,11 @@ jobs:
           node-version: '22'
       - name: Syntax and source checks
         run: |
-          node --check anime-title-search.js
-          node --check studio.js
+          node --check client/src/js/anime-title-search.js
+          node --check client/src/js/studio.js
           node --check scripts/refresh-catalog.mjs
-          node --check tests/anime-title-search.test.mjs
+          node --check tests/unit/anime-title-search.test.mjs
       - name: Search tests
-        run: node --test tests/anime-title-search.test.mjs
+        run: node --test tests/unit/anime-title-search.test.mjs
       - name: Existing UI contract
         run: node scripts/check-ui.mjs

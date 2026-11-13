@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" role="img" aria-label="ONE UP mascot anime original">
+<defs>
+ <linearGradient id="a" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ffe5a7"/><stop offset=".4" stop-color="#ffad4a"/><stop offset="1" stop-color="#f35c38"/></linearGradient>
+ <linearGradient id="hair" x1="0" y1="0" x2=".8" y2="1"><stop stop-color="#6c4264"/><stop offset=".5" stop-color="#34203d"/><stop offset="1" stop-color="#100c1b"/></linearGradient>
+ <linearGradient id="coat" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#343147"/><stop offset="1" stop-color="#120d22"/></linearGradient>
+ <radialGradient id="bg"><stop stop-color="#492a44"/><stop offset=".65" stop-color="#191426"/><stop offset="1" stop-color="#0c0913"/></radialGradient>
+ <filter id="glow"><feGaussianBlur stdDeviation="17"/></filter>
+</defs>
+<rect width="600" height="600" rx="135" fill="url(#bg)"/>
+<circle cx="300" cy="286" r="225" fill="none" stroke="#ffad56" stroke-width="6" opacity=".8"/>
+<circle cx="300" cy="286" r="207" fill="none" stroke="#ff9b514f" stroke-width="2" stroke-dasharray="14 19"/>
+<path d="m300 39 15 42-15 43-15-43zM83 294l44-11 38 11-38 11zM517 294l-42-11-41 11 41 11z" fill="#ffac68"/>
+<ellipse cx="300" cy="463" rx="170" ry="90" fill="#ff6d3e" opacity=".35" filter="url(#glow)"/>
+<!-- cape collar -->
+<path d="M89 576q10-158 120-190l91 38 94-38q110 40 118 190z" fill="url(#coat)" stroke="#ff964a" stroke-width="11"/>
+<path d="m180 404 98 71-49 28-93-61zM423 404l-102 71 53 25 88-58z" fill="#f88e48"/>
+<path d="M258 419h84l-13 71-30 24-31-25z" fill="#d08c71"/>
+<!-- face -->
+<path d="M171 230q0-126 129-132t132 138l-13 127q-27 95-119 102-89-8-122-97z" fill="#efc1a4" stroke="#2b1e2c" stroke-width="10"/>
+<path d="M179 290q-32-23-35 9t34 53M420 289q35-23 36 6t-36 55" fill="#db9b86" stroke="#34202f" stroke-width="9"/>
+<!-- distinct anime spiked hair -->
+<path d="M164 311Q135 224 158 148l-44 22 55-78 68 17L216 46l90 48L355 39l8 78 92-21-44 66 49 13-43 130-23-66-56-32-61 46 1-60-75 75 18-91-47 21z" fill="url(#hair)" stroke="#130f1d" stroke-width="13" stroke-linejoin="round"/>
+<path d="M166 203Q230 124 300 126q78-7 133 75" fill="none" stroke="#c5a2cc" stroke-opacity=".4" stroke-width="15"/>
+<!-- large focused eyes -->
+<path d="M213 302q30-24 64 0l-8 22h-48zM322 303q34-27 64-2l-8 23h-47z" fill="#fff4e5" stroke="#221626" stroke-width="7"/>
+<path d="M239 300h23v25h-23zM342 298h23v27h-23z" fill="#e36c3a"/>
+<path d="M248 302h12v20h-12zM352 299h12v24h-12z" fill="#241524"/>
+<path d="m215 284 60-10M327 275l59 12" stroke="#2b1728" stroke-linecap="round" stroke-width="13"/>
+<path d="m291 335-9 22 19 7" fill="none" stroke="#d18778" stroke-width="8"/>
+<path d="M263 387q37 26 77-1" fill="none" stroke="#7f4050" stroke-width="7" stroke-linecap="round"/>
+<path d="M182 337l24 8m190-10-19 8" stroke="#f17961" stroke-width="6"/>
+<path d="m283 503 18-27 18 27-18 33z" fill="url(#a)"/>
+<!-- original plus life marker -->
+<circle cx="446" cy="163" r="52" fill="#100c18" stroke="#ffc671" stroke-width="9"/>
+<path d="M446 127v72m-36-36h72" stroke="#ffc36f" stroke-width="15" stroke-linecap="round"/>
+</svg>

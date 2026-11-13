@@ -5,8 +5,9 @@ from pathlib import Path
 import cairosvg
 from PIL import Image
 
-vector = Path("assets/oneup-crest.svg").read_bytes()
-out = Path("assets")
+out = Path("client/assets") if Path("client/assets").exists() else Path("assets")
+vector_path = out / "oneup-crest.svg"
+vector = vector_path.read_bytes()
 out.mkdir(parents=True, exist_ok=True)
 
 for edge in (180, 192, 512):

@@ -3,8 +3,8 @@ on:
   pull_request:
     branches: [main]
     paths:
-      - 'render/anime1v-gateway.js'
-      - 'scripts/test-render-anime1v.mjs'
+      - 'server/render/anime1v-gateway.js'
+      - 'tests/unit/test-render-anime1v.mjs'
       - '.github/workflows/render-anime1v-gateway.yml'
   workflow_dispatch:
 permissions:
@@ -19,6 +19,6 @@ jobs:
           node-version: '22'
       - name: Validate and smoke test
         run: |
-          node --check render/anime1v-gateway.js
-          node scripts/test-render-anime1v.mjs
-          node scripts/test-anime1v-integration.mjs
+          node --check server/render/anime1v-gateway.js
+          node tests/unit/test-render-anime1v.mjs
+          node tests/unit/test-anime1v-integration.mjs

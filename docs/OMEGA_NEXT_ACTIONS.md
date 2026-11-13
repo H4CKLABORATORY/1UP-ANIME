@@ -58,3 +58,6 @@ Restricción: presupuesto $0, no compras/deploy destructivo sin permiso; no conv
 
 - [x] **DEXTER Motion Studio V2 implementado y desplegado:** PR #66 merge; 14 checks verdes; Pages success; dos MP4 Full HD de 3.2 s a 30fps con H.264/AAC (run 39418935821, artifact 12263426712, hasta 2026-11-03). La intro pública sigue siendo la actual.
 - [ ] **Motion Studio V2 visual/Safari real:** evaluar el aspecto de las versiones V2 y prueba de iPhone Safari físico; decidir voluntariamente si reemplazar la intro actual. No dar por hecho esa aprobación.
+
+
+- [x] **Reestructuración de arquitectura limpia a contenedores (2026-11-13):** Organizados todos los archivos en contenedores modulares (`client/`, `server/`, `data/`, `docs/`, `scripts/`, `tests/`) según el estándar de `jkanime_app`, eliminando más de 80 archivos sueltos en la raíz y preservando el 100% del estilo visual y la compatibilidad PWA. 40/40 pruebas unitarias Node + 16/16 Python + 152 UI + 48 comprobaciones guard PASADAS al 100%. Documentado en [ARCHITECTURE.md](ARCHITECTURE.md).

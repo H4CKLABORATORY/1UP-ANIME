@@ -2,6 +2,40 @@
   "schemaVersion": 1,
   "checks": [
     {
+      "at": "2026-11-13T22:11:52.771Z",
+      "verdict": "correcto",
+      "issues": []
+    },
+    {
+      "at": "2026-11-13T22:00:20.531Z",
+      "verdict": "correcto",
+      "issues": []
+    },
+    {
+      "at": "2026-11-13T21:55:58.589Z",
+      "verdict": "correcto",
+      "issues": []
+    },
+    {
+      "at": "2026-11-13T21:55:39.633Z",
+      "verdict": "fallo",
+      "issues": [
+        {
+          "id": "engine:adapters",
+          "level": "critical"
+        },
+        {
+          "id": "dependency:jkanime",
+          "level": "warning"
+        }
+      ]
+    },
+    {
+      "at": "2026-11-13T21:36:58.253Z",
+      "verdict": "correcto",
+      "issues": []
+    },
+    {
       "at": "2026-11-13T18:03:58.394Z",
       "verdict": "correcto",
       "issues": []
@@ -333,31 +367,6 @@
     },
     {
       "at": "2026-11-02T14:29:30.671Z",
-      "verdict": "correcto",
-      "issues": []
-    },
-    {
-      "at": "2026-11-02T10:23:54.678Z",
-      "verdict": "correcto",
-      "issues": []
-    },
-    {
-      "at": "2026-11-02T06:19:11.547Z",
-      "verdict": "correcto",
-      "issues": []
-    },
-    {
-      "at": "2026-11-02T02:16:49.721Z",
-      "verdict": "correcto",
-      "issues": []
-    },
-    {
-      "at": "2026-11-01T21:51:28.764Z",
-      "verdict": "correcto",
-      "issues": []
-    },
-    {
-      "at": "2026-11-01T17:49:50.415Z",
       "verdict": "correcto",
       "issues": []
     }

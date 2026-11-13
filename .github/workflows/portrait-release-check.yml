@@ -3,14 +3,14 @@ on:
   pull_request:
     branches: [main]
     paths:
-      - 'assets/oneup-intro-portrait-9x16.mp4'
-      - 'assets/oneup-poster-portrait.png'
-      - 'assets/oneup-header-letters.png'
-      - 'themes/kokomi-mobile-preview/opening.js'
-      - 'themes/kokomi-mobile-preview/opening.css'
-      - 'themes/kokomi-mobile-preview/official-textmark.css'
+      - 'client/assets/oneup-intro-portrait-9x16.mp4'
+      - 'client/assets/oneup-poster-portrait.png'
+      - 'client/assets/oneup-header-letters.png'
+      - 'client/themes/kokomi-mobile-preview/opening.js'
+      - 'client/themes/kokomi-mobile-preview/opening.css'
+      - 'client/themes/kokomi-mobile-preview/official-textmark.css'
       - 'data/anime1v-config.json'
-      - 'scripts/e2e-kokomi-preview.mjs'
+      - 'tests/e2e/e2e-kokomi-preview.mjs'
       - '.github/workflows/portrait-release-check.yml'
   workflow_dispatch:
 permissions:
@@ -28,16 +28,16 @@ jobs:
         run: |
           set -euo pipefail
           if ! command -v ffprobe >/dev/null; then sudo apt-get update -qq && sudo apt-get install -y ffmpeg; fi
-          test "$(ffprobe -v error -select_streams v:0 -show_entries stream=width,height -of csv=p=0 assets/oneup-intro-portrait-9x16.mp4)" = '720,1280'
-          test "$(ffprobe -v error -select_streams a:0 -show_entries stream=codec_name -of default=noprint_wrappers=1:nokey=1 assets/oneup-intro-portrait-9x16.mp4)" = 'aac'
-          test "$(ffprobe -v error -select_streams v:0 -show_entries stream=width,height -of csv=p=0 assets/oneup-header-letters.png)" = '2172,724'
-          test "$(ffprobe -v error -select_streams v:0 -show_entries stream=width,height -of csv=p=0 assets/oneup-poster-portrait.png)" = '941,1672'
+          test "$(ffprobe -v error -select_streams v:0 -show_entries stream=width,height -of csv=p=0 client/assets/oneup-intro-portrait-9x16.mp4)" = '720,1280'
+          test "$(ffprobe -v error -select_streams a:0 -show_entries stream=codec_name -of default=noprint_wrappers=1:nokey=1 client/assets/oneup-intro-portrait-9x16.mp4)" = 'aac'
+          test "$(ffprobe -v error -select_streams v:0 -show_entries stream=width,height -of csv=p=0 client/assets/oneup-header-letters.png)" = '2172,724'
+          test "$(ffprobe -v error -select_streams v:0 -show_entries stream=width,height -of csv=p=0 client/assets/oneup-poster-portrait.png)" = '941,1672'
           printf '%s\n' \
-            'e94b82ce94905eb7088dd5958ae72459c11a2883824407a2ccde9c4c7db92c52  assets/oneup-header-letters.png' \
-            'd44c059f467be9b55a6f8812a0e8b30143b54b3f0feebc0bc828446c5ad10144  assets/oneup-poster-portrait.png' \
+            'e94b82ce94905eb7088dd5958ae72459c11a2883824407a2ccde9c4c7db92c52  client/assets/oneup-header-letters.png' \
+            'd44c059f467be9b55a6f8812a0e8b30143b54b3f0feebc0bc828446c5ad10144  client/assets/oneup-poster-portrait.png' \
             | sha256sum -c -
-          node --check themes/kokomi-mobile-preview/opening.js
-          node --check anime1v-discovery.js
+          node --check client/themes/kokomi-mobile-preview/opening.js
+          node --check client/src/js/anime1v-discovery.js
       - name: Verify public Render gateway health (metadata-only)
         run: |
           set -euo pipefail
