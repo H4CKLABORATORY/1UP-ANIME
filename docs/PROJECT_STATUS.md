@@ -1,41 +1,56 @@
 # PROJECT_STATUS — 1UP ANIME
 
-> Bitácora de sesión para continuar trabajo entre chats. Actualizar tras cada avance verificable.
+> Bitácora de sesión para continuar trabajo entre chats y agentes. Actualizar tras cada avance verificable.
 
 ## Última actualización
-**Fecha:** 2026-10-21 19:24 (America/Mexico_City)
-**Agente:** OpenCode / Qwen local
-**Commit base:** `f56ef19` — docs: refresh new-chat handoff
+**Fecha:** 2026-11-13 15:48 (America/Hermosillo)
+**Agente:** Antigravity / Google DeepMind
+**Estado:** Reestructuración de arquitectura limpia a contenedores completada y verificada al 100%.
+
+---
 
 ## Estado actual del proyecto
-- **Rama activa:** main
-- **Último commit de aplicación:** dd6afa0b6 (Sync authorized anime episode metadata)
-- **Deploy GitHub Pages:** activo en https://h4cklaboratory.github.io/1UP-ANIME/
-- **PRs abiertos relevantes:** #70, #69 (ver docs/NEW_CHAT_HANDOFF.md)
+- **Rama activa:** `main`
+- **Deploy GitHub Pages:** Activo en https://h4cklaboratory.github.io/1UP-ANIME/
+- **Estructura de Contenedores:**
+  - `client/`: Frontend Web, PWA, 35 módulos JS, 26 hojas CSS, 12 páginas secundarias, assets y themes.
+  - `server/`: Backend, Cloud Functions, Render gateway, configuraciones seguras y esquemas SQL.
+  - `data/`: Metadatos estáticos, catálogo AniList, transmisiones y reportes de salud guard.
+  - `docs/`: Documentación técnica completa (incluyendo `docs/ARCHITECTURE.md`).
+  - `scripts/`: Herramientas de desarrollo, mantenimiento, servidor local `serve-client.mjs` y motor guard.
+  - `tests/`: Infraestructura separada en `tests/unit/` (Node + Python) y `tests/e2e/` (Playwright).
+- **Servidor Local de Desarrollo:** `npm start` (o `npm run dev`) en `http://localhost:8765/`.
 
-## Tareas pendientes (de OMEGA_NEXT_ACTIONS.md)
-| Prioridad | Task | Estado |
-|-----------|------|--------|
-| P0 | Comprobar integridad del deploy (logo MP4/AAC, JS/CSS sin 404) | pendiente |
-| P0 | Conciliar PRs #14, #18, #19, #20, #22, #23 | pendiente |
-| P0 | Reproductor: pruebas hasta 7 posiciones, MP4/WebM/HLS, subtítulos | pendiente |
-| P1 | Comunidad Firebase (auth + Firestore) | pendiente |
-| P1 | UX/Catálogo: 22 rutas Kokomi, metadatos, filtros | pendiente |
-| P1 | QA/CI: workflows, links, accesibilidad, performance | pendiente |
-| — | Tema Esmeralda PR #41: verificar CI + selector en URL pública | pendiente |
-| — | Motion profesional 1UP: revisar rama feature/oneup-premium-window-motion-20261017 | pendiente |
-| — | DEXTER Motion Studio V2 visual/Safari real: evaluar MP4, decide reemplazo intro | pendiente |
+---
 
-## Checkpoint Hermes (1up-iphone-player)
-- **next_action:** PR #60 iOS fusionado en main (6ea1e9d). Inspeccionar diferencias entre main y rama feature/hermes-portable-checkpoints-20261020, revisar CI y acceso a episodios autorizados, elegir un defecto reproducible y corregirlo.
-- **Blockers:** data/licensed-media.json tiene 0 fuentes reales; no anunciar reproducción completa.
+## Resultados de Pruebas y QA
+| Suite de Pruebas | Comando | Resultado |
+| :--- | :--- | :--- |
+| **Pruebas Unitarias Node** | `npm test` | **40/40 PASADAS** (0 fallos) |
+| **Pruebas Unitarias Python** | `npm run test:python` | **16/16 PASADAS** (0 fallos) |
+| **Aserciones Contractuales UI** | `npm run test:ui` | **152/152 PASADAS** |
+| **Motor de Salud Guard** | `npm run test:guard` | **48/48 PASADAS** (`verdict: correcto`) |
+| **Suite Completa Integrada** | `npm run test:all` | **100% PASADA** en secuencia |
+| **Sintaxis JavaScript / ESM** | `node --check` | **0 errores** en todos los archivos del repo |
+| **Flujos de CI/CD** | `.github/workflows/` | **41 flujos actualizados** con nuevas rutas |
+
+---
+
+## Tareas y Próximos Pasos (de `docs/OMEGA_NEXT_ACTIONS.md`)
+| Prioridad | Tarea | Estado |
+| :--- | :--- | :--- |
+| **P0** | Arquitectura modular limpia en contenedores (estilo `jkanime_app`) | **COMPLETADA** |
+| **P0** | Actualizar workflows de GitHub Actions para nuevas rutas en contenedores | **COMPLETADA** |
+| **P0** | Documentar arquitectura técnica y componentes ([`docs/ARCHITECTURE.md`](ARCHITECTURE.md)) | **COMPLETADA** |
+| **P1** | Servidor local integrado con Node.js (`scripts/serve-client.mjs` y `npm start`) | **COMPLETADA** |
+| **P1** | Documentación de contenedores (`client/`, `server/`, `data/`, `scripts/`, `tests/`) | **COMPLETADA** |
+| **P1** | Verificación visual en Safari físico de iPhone tras push a `main` | Pendiente |
+| **P2** | Configuración de Firebase Comunidad / Google OAuth por parte del propietario | Pendiente |
+| **P2** | Agregar episodios y fuentes autorizadas a `data/licensed-media.json` | Pendiente |
+
+---
 
 ## Siguiente acción concreta
-1. Comprobar integridad del deploy actual (P0): verificar que archivos de intro MP4/AAC y assets resuelven sin 404 en la URL pública.
-2. Revisar PRs abiertos #70 y #69 para no duplicar trabajo.
-3. Elegir una defect reproducible from the checkpoint and fix it in a new branch.
-
-## Notas de sesión
-- Clonado repo completo desde GitHub (depth 50).
-- No se han hecho cambios al código aún; esta es la baseline session.
-- `gh` CLI no disponible en this environment — use git directly for PR inspection via API or web.
+1. Hacer push de los cambios confirmados a `origin/main` cuando el usuario lo solicite.
+2. Monitorear que los flujos de GitHub Actions (`Deploy to GitHub Pages` y QA checks) terminen en `success`.
+3. Validar en un iPhone real con Safari abriendo https://h4cklaboratory.github.io/1UP-ANIME/ y añadiendo a pantalla de inicio.

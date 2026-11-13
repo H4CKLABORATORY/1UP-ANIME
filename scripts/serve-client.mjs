@@ -31,6 +31,8 @@ const server = http.createServer((req, res) => {
         file = path.join(root, 'src/js', pathname);
       } else if (fs.existsSync(path.join(root, 'src/styles', pathname))) {
         file = path.join(root, 'src/styles', pathname);
+      } else if (fs.existsSync(path.join(root, '..', pathname))) {
+        file = path.join(root, '..', pathname);
       }
     }
     if (!fs.existsSync(file) || fs.statSync(file).isDirectory()) {
@@ -45,6 +47,11 @@ const server = http.createServer((req, res) => {
   }
 });
 
-server.listen(port, '127.0.0.1', () => {
-  console.log(`1UP Client Server running on http://127.0.0.1:${port}`);
+server.listen(port, '0.0.0.0', () => {
+  console.log('====================================================');
+  console.log(`  1UP ANIME — Servidor local iniciado con exito`);
+  console.log(`  -> URL Local:     http://localhost:${port}/`);
+  console.log(`  -> URL Loopback:  http://127.0.0.1:${port}/`);
+  console.log('  Presiona Ctrl + C para detener el servidor.');
+  console.log('====================================================');
 });

@@ -22,7 +22,7 @@
 - No confundir el catálogo de Anime1v con episodios reproducibles ni su licencia MIT con derechos de distribución de anime.
 
 ## Estado detectado ahora
-- Último commit de aplicación encontrado: 2b69e1d85fdb20f2701e55dcc5d9283be6aa317d
+- Último commit de aplicación encontrado: b7a9503b2c67b16d0fb4c4fdd12ed7163e369c03
 - Descubrimiento Anime1v configurado en frontend: sí, verificar la respuesta real en Render
 - Código runtime de metadatos Anime1v en repositorio: sí
 - Entradas de obras multimedia en data/licensed-media.json: 0
@@ -30,11 +30,11 @@
 - Safari físico: no dar por verificado salvo prueba real con evidencia.
 
 ## Últimos commits relevantes
+- b7a9503b2 — chore(guard): record passing health guard status after restructure
+- 6ce9a75eb — refactor(architecture): reorganize into clean modular containers matching jkanime_app
 - 2b69e1d85 — Sync authorized anime episode metadata and source statuses
 - c8e12b309 — ONEUP health snapshot (no application changes)
 - f20fe8839 — Update live anime airing calendar
-- e5c41106c — Sync authorized anime episode metadata and source statuses
-- 30f337f6b — ONEUP health snapshot (no application changes)
 
 ## PR abiertos (consultar cambios antes de desarrollar)
 - Consultar https://github.com/H4CKLABORATORY/1UP-ANIME/pulls para obtener lista actual (no significa que no haya PRs).

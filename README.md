@@ -1,88 +1,124 @@
 # 1UP Anime
 
-Aplicación web progresiva independiente de anime, optimizada para celulares y escritorio. Explora datos públicos de anime mediante [Jikan](https://jikan.moe/), consulta estrenos, busca series y guarda tus favoritos y progreso en el dispositivo.
+Aplicación web progresiva (PWA) mobile-first y plataforma editorial independiente de anime, optimizada para iPhone (Safari) y computadoras de escritorio. Explora datos públicos de anime mediante [AniList GraphQL](https://graphql.anilist.co) y [Jikan](https://jikan.moe/), consulta estrenos en tiempo real, busca series con alias multilingües, reproduce contenido licenciado y guarda tus favoritos y progreso localmente en el dispositivo.
 
-**Sin publicidad propia.** No aloja ni retransmite episodios, no copia la web de JKAnime y no bloquea anuncios ni el acceso de servicios externos. Los enlaces de streaming, si existen, abren las plataformas originales.
+**Sin publicidad comercial invasiva.** No aloja contenido pirata, respeta derechos de autor, no copia el diseño ni el código de marcas de terceros y no bloquea servicios externos.
 
-## Publicación
+---
 
-En GitHub, abre **Settings > Pages**, elige **Deploy from a branch**, selecciona **main** y **/(root)** y guarda los cambios. Dirección prevista: https://h4cklaboratory.github.io/1UP-ANIME/
+## Inicio Rápido (Servidor Local)
 
-## PWA
+Para ejecutar la aplicación localmente en tu computadora:
 
-En iPhone: Safari > Compartir > Añadir a pantalla de inicio. En Android: Chrome > Instalar app, si está disponible.
-
-## Privacidad y servicios
-
-No hay registro de usuarios ni anuncios ni analíticas propias. Se usan datos públicos de Jikan y las miniaturas/sinopsis de sus fuentes. Favoritos y progreso se almacenan en el navegador. Proyecto independiente, no afiliado a JKAnime, Jikan o MyAnimeList.
-
-
-## Intro, perfiles y Halloween
-
-- Intro cinematográfica original, sin botón de sonido u omitir; intenta sonar al iniciar, con alternativa silenciosa cuando Safari impide audio automático.
-- Selección de hasta seis perfiles, cada uno con avatar, favoritos y episodios por separado, almacenados en `localStorage` del navegador.
-- No son cuentas con contraseña ni sincronizadas entre dispositivos. Si se borran los datos de Safari, se pierden perfiles y progreso.
-- Estética temporal Halloween/anti-magia; contenido y fichas desde Jikan.
-- Para iPhone, abrir la web en Safari y elegir **Compartir > Añadir a pantalla de inicio**. Es una PWA, no un archivo IPA ni una aplicación de App Store.
-
-
-## Actualización: catálogo robusto y acceso opcional
-
-- Continuar como invitado: sin correo, cuenta ni perfil. Los favoritos quedan guardados en este navegador.
-- Perfiles locales: opcionales, hasta seis, sin sincronización entre dispositivos.
-- Google: integración técnica preparada pero inactiva hasta configurar Firebase Authentication.
-- Catálogo: AniList como fuente principal, Jikan como respaldo, ejemplos locales si ambas fuentes fallan. Los ejemplos NO representan estrenos actuales.
-- Categorías: géneros, películas, OVA, ONA, especiales, programación y seguimiento de episodios.
-- No se aloja contenido de streaming no autorizado; se enlazan plataformas externas sólo si figuran en las fuentes públicas.
-
-### Configuración de Google
-
-1. Crear proyecto en https://console.firebase.google.com/ y registrar la aplicación web.
-2. Habilitar proveedor Google en Authentication > Sign-in method.
-3. Agregar h4cklaboratory.github.io en Authentication > Settings > Authorized domains.
-4. Colocar el objeto público de configuración web Firebase en firebase-config.js, reemplazando null.
-5. Probar inicio de sesión en Safari y modo PWA; los flujos popup/redirect pueden requerir ajustes según el dominio.
-
-**Nota:** Autenticación Google NO sincroniza favoritos; para sincronización se necesitaría base de datos con reglas de seguridad. Nunca publicar credenciales privadas en GitHub.
-
-
-## Reproducción opcional de episodios autorizados
-
-El motor multimedia de 1UP ANIME incluye un selector con **hasta siete posiciones por episodio**. Admite MP4/WebM por HTTPS, HLS nativo en Safari y hls.js en navegadores compatibles, e incrustaciones expresamente permitidas que solo se activan tras pulsar. El selector de episodio sincroniza su número con los comentarios.
-
-**No hay episodios alojados ni fuentes reales configuradas**: `data/licensed-media.json` tiene `entries: {}`. Los botones sin fuente permanecen deshabilitados. Añadir una dirección o indicar `rights: "authorized"` no sustituye una licencia comprobable.
-
-Los módulos principales son `episode-player.js`, `hls-adapter.js`, `scripts/media-source-contract.mjs` y `scripts/dexter-anime-sync.mjs`. Consulta `docs/INTEGRACION_STREAMING_1UP_2026.md`.
-
-El backend opcional Supabase para comentarios/progreso está preparado pero **desactivado** en `supabase-config.js`; Firebase sigue como opción existente y no se ha migrado ningún dato. No se han contratado servidores, dominios ni servicios externos.
-
-## App iPhone nativa y Subtitle Studio (19 oct 2026)
-
-- Proyecto SwiftUI auténtico en ios/ y workflow de compilación de simulador (sin firmar). La intro usa el propio archivo de firma 1UP y AVPlayer para intentar sonido automáticamente en el lanzamiento nativo.
-- En la web desaparece el botón de sonido de octubre. La intro intenta audio; Safari puede rechazar sonido sin un gesto, y la introducción continúa sin interrumpir al visitante.
-- Para fuentes multimedia permitidas, Subtitle Studio permite elegir las pistas WebVTT español/inglés presentes, Bangers por defecto (SIL OFL), Arial, Moderna y Arcade, 4 efectos y tamaño.
-- El script scripts/generate-authorized-subtitles.py permite transcribir un archivo local autorizado y crear archivos es/en si faster-whisper y modelos Argos están disponibles. No inventa subtítulos ni descarga video.
-- Ver ios/README.md, docs/AUTO_SUBTITLE_PIPELINE_20261019.md y docs/IOS_MULTIAGENT_WORKSTREAMS_20261019.md. La app no está firmada ni publicada en App Store; data/licensed-media.json sigue con entries vacío.
-
-**Privacidad y soporte de iOS:** [política de privacidad](privacy.html) y [guía App Store](ios/APPSTORE_SUBMISSION.md).
-
-
-## Estructura de Contenedores y Desarrollo
-
-El repositorio está estructurado en contenedores modulares limpios (ver [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md)):
-- `client/`: Aplicación web y PWA (`src/styles/`, `src/js/`, `pages/`, `assets/`, `themes/`, `motion-studio/`, `data/`).
-- `server/`: Configuraciones de infraestructura, Cloud Functions, pasarelas de metadatos y esquemas SQL (`config/`, `functions/`, `render/`, `supabase/`, `integrations/`, `infra/`).
-- `data/`: Metadatos estáticos públicos, catálogo AniList y registros de salud (`guard/`, `dexter/`).
-- `docs/`: Bitácoras, arquitectura, setup de servicios y memoria técnica persistente.
-- `scripts/`: Herramientas de mantenimiento, sincronización y motor guardián.
-- `tests/`: Suites organizadas en `tests/unit/` (Node test runner + Python) y `tests/e2e/` (Playwright y Chromium).
-
-### Comandos de Calidad y Pruebas
 ```bash
-npm test              # 40 pruebas unitarias con Node Test Runner
-npm run test:python   # 16 pruebas unitarias con Python unittest
-npm run test:ui       # 152 aserciones contractuales de interfaz
-npm run test:guard    # 48 puntos de salud del motor de auto-recuperación
-npm run test:all      # Ejecución secuencial de toda la suite de calidad
-npm run test:depth    # Pruebas Playwright del motor de profundidad 2.5D
+# 1. Iniciar el servidor local
+npm start
+# (o también: npm run dev)
+
+# 2. Abrir en el navegador
+# http://localhost:8765/
 ```
+
+El servidor integrado resuelve automáticamente todos los módulos de `client/`, las 12 vistas secundarias en `client/pages/` y los recursos estáticos.
+
+---
+
+## Estructura de Contenedores y Arquitectura
+
+El repositorio está estructurado en contenedores modulares limpios siguiendo el estándar de arquitectura de `jkanime_app` (consulta el documento maestro en [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md)):
+
+```
+1UP-ANIME/
+├── client/                     # Frontend Web y PWA
+│   ├── assets/                 # Recursos gráficos originales (SVG, PNG, JPG, MP4 intro)
+│   ├── data/                   # Copia local de catálogo y metadatos para el cliente
+│   ├── motion-studio/          # Motor cinematográfico DEXTER (scene, camera, renderer)
+│   ├── pages/                  # 12 vistas secundarias (comunidad, moderacion, motor, etc.)
+│   ├── src/
+│   │   ├── js/                 # 35 módulos JavaScript (studio, auth, player, depth, etc.)
+│   │   └── styles/             # 26 hojas de estilo CSS modulares
+│   ├── themes/                 # Variaciones temáticas (Kokomi, October, Cinematic V3, etc.)
+│   ├── index.html              # Entrada principal de la aplicación PWA
+│   ├── manifest.webmanifest    # Manifiesto PWA para instalación nativa
+│   └── sw.js                   # Service Worker PWA con estrategia cache-first
+├── server/                     # Backend, Servicios e Infraestructura
+│   ├── config/                 # Configuraciones seguras (Firebase, Supabase, Dexter)
+│   ├── functions/              # Cloud Functions y adaptadores de metadatos
+│   ├── infra/                  # Plantillas Nginx para reverse-proxy
+│   ├── integrations/           # Adaptadores aislados (jkanime-v2)
+│   ├── render/                 # Pasarela y runtime de Anime1v alojados en Render
+│   └── supabase/               # Esquemas y migraciones DDL con Row Level Security (RLS)
+├── data/                       # Almacén de Metadatos Públicos y Salud
+│   ├── catalog.json / airing.json / licensed-media.json / translations-es.json
+│   ├── dexter/                 # Registros incrementales de DexterAnimeSync
+│   └── guard/                  # Reportes persistentes de auto-recuperación
+├── docs/                       # Documentación Técnica, Guías y Bitácoras
+│   ├── ARCHITECTURE.md         # Documento maestro de arquitectura y componentes
+│   ├── PROJECT_CONTINUITY.md   # Bitácora continua de desarrollo y estado
+│   ├── OMEGA_MEMORY.md         # Memoria de ingeniería y decisiones persistentes
+│   └── OMEGA_NEXT_ACTIONS.md   # Plan de acción y próximas tareas
+├── scripts/                    # Herramientas de Mantenimiento y Automatización
+│   ├── check-guard.mjs / check-ui.mjs / oneup-guard.mjs / dexter-anime-sync.mjs
+│   ├── refresh-catalog.mjs / refresh-airing.mjs / render-motion-studio.mjs / serve-client.mjs
+├── tests/                      # Suite de Pruebas de Calidad (QA)
+│   ├── e2e/                    # Especificaciones Playwright y recorridos browser (.spec.js, .mjs)
+│   ├── fixtures/               # Fixtures estáticos de prueba (HTML, JSON)
+│   └── unit/                   # Pruebas unitarias aisladas (Node test runner y Python unittest)
+├── index.html                  # Cargador raíz con redirección instantánea a client/
+├── package.json                # Configuración de scripts unificados
+├── playwright.config.js        # Configuración del ejecutor de pruebas de navegador
+└── sw.js                       # Proxy de Service Worker en raíz
+```
+
+---
+
+## Comandos de Calidad y Pruebas
+
+Se proporcionan comandos unificados en `package.json` para validar la integridad del proyecto:
+
+```bash
+npm start             # Inicia el servidor local en http://localhost:8765/
+npm test              # 40 pruebas unitarias con Node Test Runner (tests/unit/)
+npm run test:python   # 16 pruebas unitarias con Python unittest (tests/unit/)
+npm run test:ui       # 152 aserciones contractuales de interfaz (scripts/check-ui.mjs)
+npm run test:guard    # 48 comprobaciones de salud del sistema (scripts/oneup-guard.mjs)
+npm run test:all      # Ejecución secuencial completa de toda la suite de calidad
+npm run test:depth    # Pruebas Playwright del motor de profundidad 2.5D
+npm run sync:dexter   # Sincronización incremental de fuentes y metadatos
+npm run handoff       # Regeneración de la ficha de traspaso técnico (docs/NEW_CHAT_HANDOFF.md)
+```
+
+---
+
+## Despliegue en GitHub Pages y Modo PWA
+
+### Publicación Web
+El sitio se publica automáticamente mediante GitHub Actions a GitHub Pages:
+- **URL pública**: https://h4cklaboratory.github.io/1UP-ANIME/
+
+### Instalación como PWA en iPhone y Móviles
+1. Abre https://h4cklaboratory.github.io/1UP-ANIME/ en Safari (iPhone).
+2. Toca el botón **Compartir** (icono de cuadrado con flecha hacia arriba).
+3. Selecciona **«Añadir a pantalla de inicio»**.
+4. La app se abrirá en pantalla completa sin barra de navegación, con soporte sin conexión gracias al Service Worker en [`client/sw.js`](client/sw.js).
+
+---
+
+## Privacidad, Catálogo y Multimedia
+
+- **Privacidad primero**: No se rastrea a los usuarios ni se almacenan cookies publicitarias. Favoritos y progreso se guardan en el `localStorage` del navegador. Consulta la [política de privacidad](client/pages/privacy.html).
+- **Metadatos verificables**: Datos sincronizados desde fuentes públicas AniList/Jikan mediante scripts deterministas en [`scripts/refresh-catalog.mjs`](scripts/refresh-catalog.mjs) y [`scripts/refresh-airing.mjs`](scripts/refresh-airing.mjs).
+- **Reproducción autorizada**: El motor en [`client/src/js/episode-player.js`](client/src/js/episode-player.js) admite hasta 7 fuentes por episodio (MP4, HLS, adaptativo). Solo reproduce contenido presente en [`data/licensed-media.json`](data/licensed-media.json) con derechos confirmados.
+- **Subtítulos con estilo**: Subtitle Studio en [`client/src/js/subtitle-studio.js`](client/src/js/subtitle-studio.js) admite fuentes tipográficas Bangers (SIL OFL), Arcade y Moderna sobre subtítulos WebVTT oficiales.
+
+---
+
+## Documentación Técnica de Referencia
+
+- [**Guía de Arquitectura Modular**](docs/ARCHITECTURE.md): Diagrama de componentes y responsabilidades.
+- [**Bitácora de Continuidad**](docs/PROJECT_CONTINUITY.md): Registro histórico de versiones y decisiones.
+- [**Memoria Técnica OMEGA**](docs/OMEGA_MEMORY.md): Memoria persistente de decisiones y estándares.
+- [**Instrucciones para Agentes**](AGENTS.md): Reglas de desarrollo y verificación para asistentes IA.
+- [**Setup de Firebase Comunidad**](docs/FIREBASE_COMUNIDAD_SETUP.md): Configuración opcional de backend social.
+- [**Setup de Google Login**](docs/GOOGLE_LOGIN_SETUP.md): Autenticación opcional federada.
+- [**App Nativa SwiftUI iOS**](ios/README.md): Proyecto Xcode nativo para iPhone.

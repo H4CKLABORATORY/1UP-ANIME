@@ -4,6 +4,9 @@
   "private": true,
   "description": "1UP Anime — Catálogo editorial, reproductor PWA mobile-first y motor cinematográfico Dexter",
   "scripts": {
+    "start": "node scripts/serve-client.mjs 8765",
+    "dev": "node scripts/serve-client.mjs 8765",
+    "serve": "node scripts/serve-client.mjs 8765",
     "test": "node --test tests/unit/*.test.mjs",
     "test:unit": "node --test tests/unit/*.test.mjs",
     "test:python": "python -m unittest discover tests",

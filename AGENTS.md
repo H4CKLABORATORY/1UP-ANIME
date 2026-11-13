@@ -13,13 +13,18 @@ Estas reglas se aplican a cualquier agente (Codex, Work u otro) que edite este r
 - [.agents/skills/anime-art-direction/SKILL.md](.agents/skills/anime-art-direction/SKILL.md): revisión de diseño editorial y motion.
 - [.agents/skills/anime-catalog/SKILL.md](.agents/skills/anime-catalog/SKILL.md): APIs, fallback y consistencia de datos.
 
-## Arquitectura
-- index.html: interfaz pública y diálogo de detalles.
-- studio.js: contenido, estado, selección de anime y favoritos.
-- studio.css, spotlight.css, motion.css: diseño base, contenido protagonista, efectos opcionales.
-- data/catalog.json: copia pública del catálogo generada por GitHub Actions.
-- scripts/refresh-catalog.mjs: refresco seguro de información pública.
-- auth.js y auth-config.js: invitado y configuración opcional de Firebase Google.
+## Arquitectura (Contenedores Modulares)
+- `client/index.html`: interfaz pública y diálogo de detalles PWA.
+- `client/src/js/`: módulos JavaScript (`studio.js` contenido/estado/favoritos, `auth.js`, `episode-player.js`, `depth-engine.js`, `premiere-hero.js`, etc.).
+- `client/src/styles/`: diseño modular (`studio.css`, `spotlight.css`, `motion.css`, `player.css`, `brand-v2.css`, etc.).
+- `client/pages/`: 12 vistas secundarias (`comunidad.html`, `dexter-motion-studio.html`, `moderacion.html`, `motor.html`, etc.).
+- `client/assets/` y `client/themes/`: recursos de marca originales, firmas de video y temas cinematográficos.
+- `server/`: configuraciones de backend (`server/config/`), funciones (`server/functions/`), runtime de metadatos (`server/render/`) y esquemas SQL (`server/supabase/`).
+- `data/catalog.json`: copia pública del catálogo generada por GitHub Actions.
+- `scripts/`: herramientas de mantenimiento, servidor local (`serve-client.mjs`), guardián (`oneup-guard.mjs`), sincronización (`dexter-anime-sync.mjs`).
+- `tests/`: infraestructura dividida en `tests/unit/` (pruebas unitarias Node + Python) y `tests/e2e/` (pruebas Playwright y journeys).
+- Raíz limpia: `package.json`, `README.md`, `playwright.config.js`, cargador `index.html` y proxy `sw.js`.
+- Documento maestro de arquitectura: [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md).
 
 ## Antes de publicar
 - Confirmar que cada selector HTML usado por JavaScript existe.
