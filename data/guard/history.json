@@ -2,6 +2,11 @@
   "schemaVersion": 1,
   "checks": [
     {
+      "at": "2026-11-13T22:12:34.824Z",
+      "verdict": "correcto",
+      "issues": []
+    },
+    {
       "at": "2026-11-13T22:11:52.771Z",
       "verdict": "correcto",
       "issues": []
@@ -362,11 +367,6 @@
     },
     {
       "at": "2026-11-02T18:08:54.738Z",
-      "verdict": "correcto",
-      "issues": []
-    },
-    {
-      "at": "2026-11-02T14:29:30.671Z",
       "verdict": "correcto",
       "issues": []
     }
