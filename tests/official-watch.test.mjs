@@ -57,7 +57,11 @@ test('la UI conserva el player integrado y no anida botones con enlaces externos
  assert.match(airing,/airing-official-cta/);
  assert.match(airing,/streaming:Array\.isArray\(a\.streaming\)/);
  assert.match(read('episode-player.js'),/OneUpEpisodePlayer/);
- assert.match(read('data/licensed-media.json'),/"entries":\s*\{\s*\}/);
+ // Fase 1: el manifiesto ya no está vacío; la primera entrada con licencia
+ // verificada es el EP01 de LUPIN THE 3rd PART 4 (TMS, YouTube oficial).
+ assert.match(read('data/licensed-media.json'),/"mal-27947"/);
+ assert.match(read('data/licensed-media.json'),/Anime! on TMS Official Channel/);
+ assert.match(read('data/licensed-media.json'),/K8LrLO_omys/);
 });
 test('el refresco programado solicitará enlaces de AniList sin videos ni claves',()=>{
  const script=read('scripts/refresh-airing.mjs');
