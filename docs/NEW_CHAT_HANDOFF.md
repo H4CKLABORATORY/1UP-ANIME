@@ -22,7 +22,7 @@
 - No confundir el catálogo de Anime1v con episodios reproducibles ni su licencia MIT con derechos de distribución de anime.
 
 ## Estado detectado ahora
-- Último commit de aplicación encontrado: f31d35ea0b60523924b201f8fc9f0d043549ebad
+- Último commit de aplicación encontrado: 2b69e1d85fdb20f2701e55dcc5d9283be6aa317d
 - Descubrimiento Anime1v configurado en frontend: sí, verificar la respuesta real en Render
 - Código runtime de metadatos Anime1v en repositorio: sí
 - Entradas de obras multimedia en data/licensed-media.json: 0
@@ -30,11 +30,11 @@
 - Safari físico: no dar por verificado salvo prueba real con evidencia.
 
 ## Últimos commits relevantes
-- f31d35ea0 — Sync authorized anime episode metadata and source statuses
-- bf704f8f3 — Update educational anime metadata from Wikipedia
-- df0adcbbf — ONEUP health snapshot (no application changes)
-- 4a7d3e413 — Update live anime airing calendar
-- 1672264e2 — Sync authorized anime episode metadata and source statuses
+- 2b69e1d85 — Sync authorized anime episode metadata and source statuses
+- c8e12b309 — ONEUP health snapshot (no application changes)
+- f20fe8839 — Update live anime airing calendar
+- e5c41106c — Sync authorized anime episode metadata and source statuses
+- 30f337f6b — ONEUP health snapshot (no application changes)
 
 ## PR abiertos (consultar cambios antes de desarrollar)
 - [#82](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/82) Fase 10: app Capacitor (APK verificado; iOS = decisión/Mac)
