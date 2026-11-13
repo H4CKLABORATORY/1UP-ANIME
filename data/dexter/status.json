@@ -1,17 +1,17 @@
 {
   "schemaVersion": 1,
   "engine": "DexterAnimeSync",
-  "updatedAt": "2026-11-13T15:13:44.142Z",
+  "updatedAt": "2026-11-13T18:14:36.933Z",
   "job": {
-    "id": "sync-076fce0518387019",
-    "startedAt": "2026-11-13T15:13:44.142Z",
-    "completedAt": "2026-11-13T15:13:44.142Z",
+    "id": "sync-f016ab8a38c31a73",
+    "startedAt": "2026-11-13T18:14:36.933Z",
+    "completedAt": "2026-11-13T18:14:36.933Z",
     "mode": "programada",
     "status": "correcta",
     "counters": {
       "animes": 0,
-      "episodesDetected": 0,
-      "episodesNew": 0,
+      "episodesDetected": 208,
+      "episodesNew": 18,
       "playbackSources": 0,
       "errors": 0
     }
@@ -25,10 +25,10 @@
       "sourceType": "metadata",
       "intervalHours": 6,
       "lastRunAt": "2026-11-13T09:26:15.796Z",
-      "runAt": null,
-      "state": "en_espera",
-      "observed": 0,
-      "created": 0,
+      "runAt": "2026-11-13T18:14:36.933Z",
+      "state": "conectada",
+      "observed": 208,
+      "created": 18,
       "playback": 0,
       "error": null
     },
@@ -39,8 +39,8 @@
       "enabled": true,
       "sourceType": "playback",
       "intervalHours": 3,
-      "lastRunAt": "2026-11-13T09:26:15.796Z",
-      "runAt": "2026-11-13T15:13:44.142Z",
+      "lastRunAt": "2026-11-13T15:13:44.142Z",
+      "runAt": "2026-11-13T18:14:36.933Z",
       "state": "sin_contenido_autorizado",
       "observed": 0,
       "created": 0,
@@ -56,9 +56,9 @@
       "sourceType": "external_links",
       "intervalHours": 12,
       "lastRunAt": "2026-11-13T03:15:37.637Z",
-      "runAt": null,
-      "state": "en_espera",
-      "observed": 0,
+      "runAt": "2026-11-13T18:14:36.933Z",
+      "state": "conectada",
+      "observed": 5,
       "created": 0,
       "playback": 0,
       "error": null
@@ -71,9 +71,9 @@
       "sourceType": "embed",
       "intervalHours": 6,
       "lastRunAt": "2026-11-13T09:26:15.796Z",
-      "runAt": null,
-      "state": "en_espera",
-      "observed": 0,
+      "runAt": "2026-11-13T18:14:36.933Z",
+      "state": "conectada",
+      "observed": 95,
       "created": 0,
       "playback": 0,
       "error": null
@@ -110,7 +110,7 @@
   "records": {
     "anime": 139,
     "seasons": 1,
-    "episodes": 682,
+    "episodes": 700,
     "sources": 0
   }
 }
