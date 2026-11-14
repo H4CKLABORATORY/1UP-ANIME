@@ -41,7 +41,7 @@ jobs:
         run: node tests/e2e/e2e-oneup-finale.mjs
       - name: Guardar evidencia visual
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: oneup-editorial-finale-qa
           path: e2e-finale-*.png
