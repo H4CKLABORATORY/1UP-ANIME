@@ -1,373 +1,9 @@
 {
-  "updated": "2026-11-13T15:51:03.632Z",
+  "updated": "2026-11-14T01:24:44.851Z",
   "source": "AniList public GraphQL metadata",
-  "windowStart": 1794387049,
-  "windowEnd": 1795362649,
+  "windowStart": 1794421470,
+  "windowEnd": 1795397070,
   "airing": [
-    {
-      "id": "mal-52480",
-      "mal_id": 52480,
-      "ani_id": 152677,
-      "title": "The Detective Is Already Dead Season 2",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx152677-gtJbgjE94lCN.png",
-      "banner": "",
-      "description": "After thwarting a hijacking with beautiful, silver-haired detective Siesta, Kimihiko leads a life of globe-trotting and crime-solving—until Siesta dies. A year later, a new case will open old wounds as it threads murder, conspiracy, and his dead partner! (Source: Crunchyroll)",
-      "year": 2026,
-      "startDate": "2026-10-07",
-      "format": "TV",
-      "episodes": 13,
-      "averageScore": 70,
-      "status": "RELEASING",
-      "genres": [
-        "Comedy",
-        "Drama",
-        "Mystery",
-        "Romance",
-        "Supernatural"
-      ],
-      "siteUrl": "https://anilist.co/anime/152677",
-      "streaming": [],
-      "trailer": {
-        "site": "youtube",
-        "id": "8AnNxEp733c"
-      },
-      "next": {
-        "at": 1795005000,
-        "episode": 7
-      },
-      "airingAt": 1794400200,
-      "episode": 6,
-      "scheduleId": 422060,
-      "description_es": "Después de frustrar un secuestro con el hermoso detective de pelo plateado Siesta, Kimihiko conduce una vida de ataque mundial y resolución del crimen hasta que Siesta muera. Un año más tarde, un nuevo caso abrirá viejas heridas mientras roza asesinato, conspiración y su compañero muerto! (Fuente: Crunchyroll)"
-    },
-    {
-      "id": "mal-65409",
-      "mal_id": 65409,
-      "ani_id": 217282,
-      "title": "GelPiyo 2",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx217282-fRAAhF2b5eIr.png",
-      "banner": "",
-      "description": "Second season of GelPiyo .",
-      "year": 2026,
-      "startDate": "2026-10-21",
-      "format": "TV_SHORT",
-      "episodes": 0,
-      "averageScore": 0,
-      "status": "RELEASING",
-      "genres": [
-        "Comedy"
-      ],
-      "siteUrl": "https://anilist.co/anime/217282",
-      "streaming": [],
-      "trailer": null,
-      "next": {
-        "at": 1795006440,
-        "episode": 5
-      },
-      "airingAt": 1794401640,
-      "episode": 4,
-      "scheduleId": 420791,
-      "description_es": "Segunda temporada de GelPiyo."
-    },
-    {
-      "id": "mal-64084",
-      "mal_id": 64084,
-      "ani_id": 211778,
-      "title": "The World's Strongest Witch",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx211778-0MXK5HqVFBYH.jpg",
-      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/211778-ZbXEhqfFkj62.jpg",
-      "description": "After using her SSS-Rank skill, Internet, to crush her former family’s ambitions, Lorna is free to travel the world. Her next stop is the port town of Aquas, where she hopes to see the sights and chow down on some fresh seafood. But when she arrives, the place is on the brink of destruction thanks to a certain Weekly Quest… Good thing Lorna has the gods on her side! (Source: Crunchyroll)",
-      "year": 2026,
-      "startDate": "2026-10-07",
-      "format": "TV",
-      "episodes": 0,
-      "averageScore": 70,
-      "status": "RELEASING",
-      "genres": [
-        "Action",
-        "Comedy",
-        "Fantasy"
-      ],
-      "siteUrl": "https://anilist.co/anime/211778",
-      "streaming": [
-        {
-          "name": "Crunchyroll",
-          "url": "https://www.crunchyroll.com/series/GT00384009/the-worlds-strongest-witch"
-        }
-      ],
-      "trailer": {
-        "site": "youtube",
-        "id": "snJZD9vxfHY"
-      },
-      "next": {
-        "at": 1795006800,
-        "episode": 7
-      },
-      "airingAt": 1794402000,
-      "episode": 6,
-      "scheduleId": 420157,
-      "description_es": "Después de usar su habilidad SSS-Rank, Internet, para aplastar las ambiciones de su antigua familia, Lorna es libre de viajar por el mundo. Su próxima parada es la ciudad portuaria de Aquas, donde espera ver los lugares de interés y disfrutar de algunos mariscos frescos. Pero cuando llega, el lugar está al borde de la destrucción gracias a una cierta misión semanal... ¡Qué bueno que Lorna tenga los dioses de su lado! (Fuente: Crunchyroll)"
-    },
-    {
-      "id": "mal-58518",
-      "mal_id": 58518,
-      "ani_id": 176314,
-      "title": "Sasaki and Peeps Season 2",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx176314-lpvca6vjmkeO.jpg",
-      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/176314-nj2hmqbGQ9HJ.jpg",
-      "description": "The second season of Sasaki to Pii-chan .",
-      "year": 2026,
-      "startDate": "2026-10-07",
-      "format": "TV",
-      "episodes": 12,
-      "averageScore": 70,
-      "status": "RELEASING",
-      "genres": [
-        "Comedy",
-        "Fantasy",
-        "Mahou Shoujo"
-      ],
-      "siteUrl": "https://anilist.co/anime/176314",
-      "streaming": [
-        {
-          "name": "Crunchyroll",
-          "url": "https://www.crunchyroll.com/series/G5PHNM935/sasaki-and-peeps"
-        }
-      ],
-      "trailer": {
-        "site": "youtube",
-        "id": "gY0hpk9E7p8"
-      },
-      "next": {
-        "at": 1795006800,
-        "episode": 7
-      },
-      "airingAt": 1794402000,
-      "episode": 6,
-      "scheduleId": 422253,
-      "description_es": "La segunda temporada de Sasaki a Pii-chan."
-    },
-    {
-      "id": "mal-59204",
-      "mal_id": 59204,
-      "ani_id": 178868,
-      "title": "Magic Knight Rayearth (2026)",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx178868-mfp0HIHNJNAm.jpg",
-      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/178868-l7VyM7j7LRtH.jpg",
-      "description": "Hikaru Shidou, Umi Ryuuzaki, and Fuu Hououji aren't from Cephiro. While on a school field trip to the Tokyo Tower, the three girls' minds are on anything but different worlds filled with magic and wonder. That is, until Princess Emeraude, the Pillar of Cephiro, cries out for the Magic Knights to save her world--and that just happens to be those three! (Source: Crunchyroll)",
-      "year": 2026,
-      "startDate": "2026-10-07",
-      "format": "TV",
-      "episodes": 0,
-      "averageScore": 68,
-      "status": "RELEASING",
-      "genres": [
-        "Adventure",
-        "Fantasy",
-        "Mahou Shoujo",
-        "Mecha"
-      ],
-      "siteUrl": "https://anilist.co/anime/178868",
-      "streaming": [
-        {
-          "name": "Crunchyroll",
-          "url": "https://www.crunchyroll.com/series/GT00383994/magic-knight-rayearth-2026"
-        }
-      ],
-      "trailer": {
-        "site": "youtube",
-        "id": "67GqhfLw3ys"
-      },
-      "next": {
-        "at": 1795013160,
-        "episode": 7
-      },
-      "airingAt": 1794408360,
-      "episode": 6,
-      "scheduleId": 417275,
-      "description_es": "Hikaru Shidou, Umi Ryuuzaki, y Fuu Hououji no son de Cephiro. Mientras que en un viaje de campo escolar a la Torre de Tokio, las mentes de las tres chicas están en cualquier cosa excepto mundos diferentes llenos de magia y maravilla. Es decir, hasta que la Princesa Esmeraude, el Pilar de Cephiro, clama por los Caballeros Mágicos para salvar su mundo, ¡y eso resulta que son esos tres! (Fuente: Crunchyroll)"
-    },
-    {
-      "id": "mal-62534",
-      "mal_id": 62534,
-      "ani_id": 199068,
-      "title": "The Prince of Tennis II U-17 WORLD CUP: Final Member Selection Match",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx199068-2afNaytl50Ko.png",
-      "banner": "",
-      "description": "Old rivalries reignite as Team Japan players face off to earn spots in the lineup for the World Cup final. (Source: Crunchyroll News)",
-      "year": 2026,
-      "startDate": "2026-10-01",
-      "format": "TV",
-      "episodes": 0,
-      "averageScore": 58,
-      "status": "RELEASING",
-      "genres": [
-        "Action",
-        "Comedy",
-        "Sports"
-      ],
-      "siteUrl": "https://anilist.co/anime/199068",
-      "streaming": [
-        {
-          "name": "Crunchyroll",
-          "url": "https://www.crunchyroll.com/series/G65VP3106/the-prince-of-tennis-ii"
-        }
-      ],
-      "trailer": {
-        "site": "youtube",
-        "id": "bsNeADDQFD4"
-      },
-      "next": {
-        "at": 1795014000,
-        "episode": 8
-      },
-      "airingAt": 1794409200,
-      "episode": 7,
-      "scheduleId": 419604,
-      "description_es": "Las viejas rivalidades reinan cuando los jugadores del equipo Japón se enfrentan para ganar puntos en la alineación para la final de la Copa Mundial. (Fuente: Crunchyroll News)"
-    },
-    {
-      "id": "mal-60598",
-      "mal_id": 60598,
-      "ani_id": 168085,
-      "title": "Dali Si Rizhi 3",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx168085-hPOOODUADp7D.png",
-      "banner": "",
-      "description": "The third seasons of Dali Si Rizhi .",
-      "year": 2026,
-      "startDate": "2026-10-15",
-      "format": "ONA",
-      "episodes": 0,
-      "averageScore": 0,
-      "status": "RELEASING",
-      "genres": [
-        "Action",
-        "Adventure",
-        "Comedy"
-      ],
-      "siteUrl": "https://anilist.co/anime/168085",
-      "streaming": [],
-      "trailer": null,
-      "next": {
-        "at": 1795014000,
-        "episode": 6
-      },
-      "airingAt": 1794409200,
-      "episode": 5,
-      "scheduleId": 421454,
-      "description_es": "Las terceras temporadas de Dali Si Rizhi."
-    },
-    {
-      "id": "mal-53913",
-      "mal_id": 53913,
-      "ani_id": 159042,
-      "title": "Reincarnated as a Sword Season 2",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx159042-GGFwlDskc5vR.png",
-      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/159042-X0mqyaUFBkms.jpg",
-      "description": "The second season of Tensei Shitara Ken Deshita . Note: Each episode was streamed one week in advance of the TV broadcast starting on October 1, 2026 on Abema. Regular broadcasting began on October 8, 2026.",
-      "year": 2026,
-      "startDate": "2026-10-01",
-      "format": "ONA",
-      "episodes": 12,
-      "averageScore": 75,
-      "status": "RELEASING",
-      "genres": [
-        "Action",
-        "Adventure",
-        "Fantasy"
-      ],
-      "siteUrl": "https://anilist.co/anime/159042",
-      "streaming": [],
-      "trailer": {
-        "site": "youtube",
-        "id": "kbtRqqa2GyA"
-      },
-      "next": {
-        "at": 1795015800,
-        "episode": 8
-      },
-      "airingAt": 1794411000,
-      "episode": 7,
-      "scheduleId": 418799,
-      "description_es": "La segunda temporada de Tensei Mierda Ken Deshita. Nota: Cada episodio fue transmitido una semana antes de la emisión de televisión a partir del 1 de octubre de 2026 en Abema. La radiodifusión regular comenzó el 8 de octubre de 2026."
-    },
-    {
-      "id": "mal-64344",
-      "mal_id": 64344,
-      "ani_id": 213068,
-      "title": "Dandivine",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx213068-aFSedkY5bQ4m.png",
-      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/213068-EQba2gbIKAy5.jpg",
-      "description": "The story takes place 20 years after the robot Dandivine defeated the mysterious Aposdoll. The world is now in peace. However, toy manufacturer Kasuga, who relied on its toys of merchandise of Dandivine, has fallen into decline. Thus, Kasuga's president Genjuro Shijima prayed for Dandivine's revival, and the Aposdoll suddenly returned. High school student Gekiha Shijima gets an invitation from his uncle Yusaku Kuroiwa, the former main pilot of Dandivine, to pilot the giant robot himself. (Source: Anime News Network)",
-      "year": 2026,
-      "startDate": "2026-10-08",
-      "format": "TV",
-      "episodes": 0,
-      "averageScore": 50,
-      "status": "RELEASING",
-      "genres": [
-        "Action",
-        "Mecha"
-      ],
-      "siteUrl": "https://anilist.co/anime/213068",
-      "streaming": [
-        {
-          "name": "Crunchyroll",
-          "url": "https://www.crunchyroll.com/series/GT00385792/dandivine"
-        }
-      ],
-      "trailer": {
-        "site": "youtube",
-        "id": "ihJfkOT_0wU"
-      },
-      "next": {
-        "at": 1795015800,
-        "episode": 7
-      },
-      "airingAt": 1794411000,
-      "episode": 6,
-      "scheduleId": 419817,
-      "description_es": "La historia tiene lugar 20 años después de que el robot Dandivine derrotara al misterioso Aposdoll. El mundo está ahora en paz. Sin embargo, el fabricante de juguetes Kasuga, que dependía de sus juguetes de mercadería de Dandivine, ha caído en declive. Así, el presidente de Kasuga, Genjuro Shijima, oró por el renacimiento de Dandivine, y el Aposdoll de repente regresó. El estudiante de secundaria Gekiha Shijima recibe una invitación de su tío Yusaku Kuroiwa, el ex piloto principal de Dandivine, para pilotar el robot gigante mismo. (Fuente: Anime News Network)"
-    },
-    {
-      "id": "mal-57612",
-      "mal_id": 57612,
-      "ani_id": 172192,
-      "title": "A Returner's Magic Should be Special Season 2",
-      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx172192-W7P5xEUaxF3y.jpg",
-      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/172192-jibcmb7wdbzk.jpg",
-      "description": "In a land dominated by the formidable Shadow Worlds, most of humanity has been destroyed. To rescue their planet from impending doom, six brave heroes fight a perilous battle…and fail. But there’s a glimpse of hope when Desir, one of the last mages, is suddenly sent back in time 13 years! Now armed with knowledge of the grim future, can he alter the course of history and save the world? (Source: Crunchyroll)",
-      "year": 2026,
-      "startDate": "2026-10-08",
-      "format": "TV",
-      "episodes": 0,
-      "averageScore": 69,
-      "status": "RELEASING",
-      "genres": [
-        "Action",
-        "Adventure",
-        "Fantasy"
-      ],
-      "siteUrl": "https://anilist.co/anime/172192",
-      "streaming": [
-        {
-          "name": "Crunchyroll",
-          "url": "https://www.crunchyroll.com/series/GEXH3W207/a-returners-magic-should-be-special"
-        }
-      ],
-      "trailer": {
-        "site": "youtube",
-        "id": "YBWOrQCB9r0"
-      },
-      "next": {
-        "at": 1795016700,
-        "episode": 7
-      },
-      "airingAt": 1794411900,
-      "episode": 6,
-      "scheduleId": 420121,
-      "description_es": "En una tierra dominada por los formidables Mundos Sombríos, la mayoría de la humanidad ha sido destruida. Para rescatar a su planeta de la muerte inminente, seis héroes valientes luchan una batalla peligrosa... y fracasan. Pero hay una mirada de esperanza cuando Desir, una de las últimas magras, es de repente enviado en el tiempo 13 años! Ahora armado con conocimiento del futuro sombrío, ¿puede alterar el curso de la historia y salvar el mundo? (Fuente: Crunchyroll)"
-    },
     {
       "id": "mal-65095",
       "mal_id": 65095,
@@ -1253,8 +889,8 @@
         "id": "Nm21TTXUkf4"
       },
       "next": {
-        "at": 1794588780,
-        "episode": 7
+        "at": 1795193580,
+        "episode": 8
       },
       "airingAt": 1794588780,
       "episode": 7,
@@ -1285,8 +921,8 @@
         "id": "NGwgoL0TvI8"
       },
       "next": {
-        "at": 1794612600,
-        "episode": 20
+        "at": 1795217400,
+        "episode": 21
       },
       "airingAt": 1794612600,
       "episode": 20,
@@ -1322,8 +958,8 @@
         "id": "rV-fcFL5vtU"
       },
       "next": {
-        "at": 1794615960,
-        "episode": 32
+        "at": 1795220760,
+        "episode": 33
       },
       "airingAt": 1794615960,
       "episode": 32,
@@ -1351,8 +987,8 @@
       "streaming": [],
       "trailer": null,
       "next": {
-        "at": 1794616200,
-        "episode": 7
+        "at": 1795221000,
+        "episode": 8
       },
       "airingAt": 1794616200,
       "episode": 7,
@@ -1389,8 +1025,8 @@
         "id": "iMyre5xXDzE"
       },
       "next": {
-        "at": 1794616200,
-        "episode": 7
+        "at": 1795221000,
+        "episode": 8
       },
       "airingAt": 1794616200,
       "episode": 7,
@@ -1420,8 +1056,8 @@
       "streaming": [],
       "trailer": null,
       "next": {
-        "at": 1794618000,
-        "episode": 20
+        "at": 1795222800,
+        "episode": 21
       },
       "airingAt": 1794618000,
       "episode": 20,
@@ -5371,8 +5007,8 @@
         "id": "Nm21TTXUkf4"
       },
       "next": {
-        "at": 1794588780,
-        "episode": 7
+        "at": 1795193580,
+        "episode": 8
       },
       "airingAt": 1795193580,
       "episode": 8,
@@ -5403,8 +5039,8 @@
         "id": "NGwgoL0TvI8"
       },
       "next": {
-        "at": 1794612600,
-        "episode": 20
+        "at": 1795217400,
+        "episode": 21
       },
       "airingAt": 1795217400,
       "episode": 21,
@@ -5440,8 +5076,8 @@
         "id": "rV-fcFL5vtU"
       },
       "next": {
-        "at": 1794615960,
-        "episode": 32
+        "at": 1795220760,
+        "episode": 33
       },
       "airingAt": 1795220760,
       "episode": 33,
@@ -5469,8 +5105,8 @@
       "streaming": [],
       "trailer": null,
       "next": {
-        "at": 1794616200,
-        "episode": 7
+        "at": 1795221000,
+        "episode": 8
       },
       "airingAt": 1795221000,
       "episode": 8,
@@ -5507,8 +5143,8 @@
         "id": "iMyre5xXDzE"
       },
       "next": {
-        "at": 1794616200,
-        "episode": 7
+        "at": 1795221000,
+        "episode": 8
       },
       "airingAt": 1795221000,
       "episode": 8,
@@ -5538,8 +5174,8 @@
       "streaming": [],
       "trailer": null,
       "next": {
-        "at": 1794618000,
-        "episode": 20
+        "at": 1795222800,
+        "episode": 21
       },
       "airingAt": 1795222800,
       "episode": 21,
@@ -7253,6 +6889,138 @@
       "episode": 8,
       "scheduleId": 417504,
       "description_es": "En su camino a casa desde la escuela un día, Noriko se sumergió inesperadamente en un extraño y extraordinario mundo de fantasía. Sus problemas se complican exponencialmente cuando es rescatada y amigada por un joven guapo por el nombre de Izark. Puede ser valiente y valiente, pero dentro de Izark se esconde el mal más oscuro imaginable. Y según una profecía antigua, Noriko posee el poder de desencadenar ese mal. Ahora, inexorablemente unidos, estos dos aliados improbables deben navegar por un mundo maravilloso y hostil. (Fuente: VIZ Media)"
+    },
+    {
+      "id": "mal-64131",
+      "mal_id": 64131,
+      "ani_id": 211877,
+      "title": "My Girlfriend's Friend",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx211877-yWQ2r7XmWvG6.jpg",
+      "banner": "",
+      "description": "For the first time in my life, I have a girlfriend. But her friend tempts me with a body that's so seductive... What would you do if your girlfriend's friend came on to you like this? (Source: Yanmaga, translated)",
+      "year": 2026,
+      "startDate": "2026-10-05",
+      "format": "TV_SHORT",
+      "episodes": 12,
+      "averageScore": 49,
+      "status": "RELEASING",
+      "genres": [
+        "Drama",
+        "Ecchi",
+        "Romance"
+      ],
+      "siteUrl": "https://anilist.co/anime/211877",
+      "streaming": [],
+      "trailer": {
+        "site": "youtube",
+        "id": "E-stx_wwVSs"
+      },
+      "next": {
+        "at": 1794758700,
+        "episode": 7
+      },
+      "airingAt": 1795363500,
+      "episode": 8,
+      "scheduleId": 419333,
+      "description_es": "Por primera vez en mi vida, tengo una novia. Pero su amiga me tienta con un cuerpo tan seductor... ¿Qué harías si el amigo de tu novia viniera a ti así? (Fuente: Yanmaga, traducido)"
+    },
+    {
+      "id": "mal-65167",
+      "mal_id": 65167,
+      "ani_id": 217782,
+      "title": "My Girlfriend's Friend Mini Anime",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx217782-DV0vODQ68ZRk.png",
+      "banner": "",
+      "description": "A weekly mini anime shown with each episode of Kanojo no Tomodachi exclusively on the AT-X broadcast of the TV anime and online on OceanVeil.",
+      "year": 2026,
+      "startDate": "2026-10-05",
+      "format": "TV_SHORT",
+      "episodes": 12,
+      "averageScore": 0,
+      "status": "RELEASING",
+      "genres": [
+        "Drama",
+        "Ecchi",
+        "Romance"
+      ],
+      "siteUrl": "https://anilist.co/anime/217782",
+      "streaming": [],
+      "trailer": null,
+      "next": {
+        "at": 1794759420,
+        "episode": 7
+      },
+      "airingAt": 1795364220,
+      "episode": 8,
+      "scheduleId": 422169,
+      "description_es": "Un mini anime semanal mostrado con cada episodio de Kanojo no Tomodachi exclusivamente en la transmisión AT-X del anime de TV y en línea en OceanVeil."
+    },
+    {
+      "id": "mal-63509",
+      "mal_id": 63509,
+      "ani_id": 208025,
+      "title": "I'm Dating a Dark Summoner",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx208025-JKvqWNr8rz8l.jpg",
+      "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/208025-s7hcRQO7kwmH.jpg",
+      "description": "Amona’s a dark summoner with demonic powers. Roni’s a devout priest who’s way too uptight. By all rights, they should hate each other. Instead, they end up fast-tracking their enemies-to-lovers arc with a one-night stand that somehow insists on becoming a recurring event. Now they must hide their situationship from the rest of the party while denying their growing attraction to one another, all while dealing with an imp who’s far too invested in their love life. (Source: HIDIVE)",
+      "year": 2026,
+      "startDate": "2026-10-05",
+      "format": "TV_SHORT",
+      "episodes": 12,
+      "averageScore": 67,
+      "status": "RELEASING",
+      "genres": [
+        "Comedy",
+        "Ecchi",
+        "Fantasy",
+        "Romance"
+      ],
+      "siteUrl": "https://anilist.co/anime/208025",
+      "streaming": [],
+      "trailer": {
+        "site": "youtube",
+        "id": "-YCols5lYow"
+      },
+      "next": {
+        "at": 1794759600,
+        "episode": 7
+      },
+      "airingAt": 1795364400,
+      "episode": 8,
+      "scheduleId": 419208,
+      "description_es": "Amona es un llamador oscuro con poderes demoníacos. Roni es un sacerdote devota que está demasiado tenso. Por todos los derechos, deben odiarse. En lugar de eso, terminan acelerando su arco de enemigos a amantes con un stand de una noche que de alguna manera insiste en convertirse en un evento recurrente. Ahora deben ocultar su nave de situación del resto del partido mientras niegan su creciente atracción entre sí, mientras tratan con un imp que está demasiado invertido en su vida amorosa. (Fuente: HIDIVE)"
+    },
+    {
+      "id": "mal-65169",
+      "mal_id": 65169,
+      "ani_id": 218217,
+      "title": "I’m Dating a Dark Summoner Omake Shorts",
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx218217-crIGlnQDg0bJ.png",
+      "banner": "",
+      "description": "A weekly mini anime shown with each episode of Dark Summoner to Dekiteiru exclusively on the AT-X broadcast of the TV anime and online on Abema.",
+      "year": 2026,
+      "startDate": "2026-10-05",
+      "format": "TV_SHORT",
+      "episodes": 12,
+      "averageScore": 0,
+      "status": "RELEASING",
+      "genres": [
+        "Comedy",
+        "Ecchi",
+        "Fantasy",
+        "Romance"
+      ],
+      "siteUrl": "https://anilist.co/anime/218217",
+      "streaming": [],
+      "trailer": null,
+      "next": {
+        "at": 1794765600,
+        "episode": 7
+      },
+      "airingAt": 1795370400,
+      "episode": 8,
+      "scheduleId": 422533,
+      "description_es": "Un mini anime semanal mostrado con cada episodio de Dark Summoner a Dekiteiru exclusivamente en la transmisión AT-X del anime de TV y en línea en Abema."
     }
   ],
   "seasonal": {
@@ -7931,8 +7699,8 @@
           "id": "Nm21TTXUkf4"
         },
         "next": {
-          "at": 1794588780,
-          "episode": 7
+          "at": 1795193580,
+          "episode": 8
         },
         "description_es": "Secuela de los Revengers de Tokio: Tenjiku-hen."
       },
@@ -8173,8 +7941,8 @@
           "id": "iMyre5xXDzE"
         },
         "next": {
-          "at": 1794616200,
-          "episode": 7
+          "at": 1795221000,
+          "episode": 8
         },
         "description_es": "¡El sargento Keroro viene a conquistar la Tierra, sólo para ser capturado y atrapado viviendo con la familia Hinata! (Fuente: Crunchyroll)"
       },
@@ -8225,8 +7993,8 @@
         "streaming": [],
         "trailer": null,
         "next": {
-          "at": 1794616200,
-          "episode": 7
+          "at": 1795221000,
+          "episode": 8
         },
         "description_es": "Segunda temporada de Nezumi-kun no Chokki (TV)"
       },
