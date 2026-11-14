@@ -3,7 +3,7 @@
 // CacheStorage is origin-wide: GitHub Pages apps on the same domain share it.
 // Restrict cleanup to caches that belong to this 1UP Anime service worker.
 const CACHE_PREFIX='oneup-stream-integrated-';
-const CACHE=CACHE_PREFIX+'v39-motion-v2-camera-20261020';
+const CACHE=CACHE_PREFIX+'v40-catalog-virtual-transform-20261114';
 const SHELL=[
  './','./index.html','./src/styles/studio.css','./src/js/studio.js','./src/js/anime-title-search.js','./src/js/premiere-ranking.js','./src/js/premiere-hero.js','./src/styles/premiere-hero.css','./src/styles/spotlight.css',
  './pages/dexter-motion-studio.html','./motion-studio/scene.mjs','./motion-studio/camera.mjs','./motion-studio/renderer.mjs','./motion-studio/app.mjs','./motion-studio/studio.css',
@@ -12,8 +12,8 @@ const SHELL=[
  './assets/icon-180.png','./assets/icon-192.png','./assets/icon-512.png',
  './assets/1up-anime-logo-poster.jpg','./assets/1up-anime-app-icon-512.png',
  './assets/oneup-header-letters.png','./assets/oneup-poster-portrait.png',
- './data/catalog.json','./data/translations-es.json','./data/licensed-media.json',
- './data/anime1v-config.json','./src/js/anime1v-discovery.js','./src/styles/anime1v-discovery.css',
+ './data/catalog.json','./data/catalog-full.json','./data/translations-es.json','./data/licensed-media.json',
+ './data/anime1v-config.json','./src/js/anime1v-discovery.js','./src/styles/anime1v-discovery.css','./src/styles/catalog-virtual.css',
  './data/airing.json','./src/js/airing-ui.js','./src/styles/airing-ui.css','./pages/comunidad.html',
  './src/js/community.js','./src/styles/community.css','./src/js/social-backend.js','./src/js/social-config.js',
  './src/js/hls-adapter.js','./src/js/episode-player.js','./src/js/supabase-config.js','./src/js/supabase-episode-backend.js','./src/js/episode-comments.js','./src/styles/episode-comments.css',

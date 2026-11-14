@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "engine": "ONEUP SELF HEALING ENGINE",
-  "updatedAt": "2026-11-13T22:48:43.058Z",
+  "updatedAt": "2026-11-14T07:58:23.089Z",
   "site": "https://h4cklaboratory.github.io/1UP-ANIME/",
   "mode": "solo_local",
   "verdict": "correcto",
@@ -34,25 +34,25 @@
       "id": "file:client/src/js/studio.js",
       "level": "ok",
       "message": "Validado: Archivo requerido client/src/js/studio.js",
-      "bytes": 49573
+      "bytes": 70608
     },
     {
       "id": "file:client/src/styles/studio.css",
       "level": "ok",
       "message": "Validado: Archivo requerido client/src/styles/studio.css",
-      "bytes": 21034
+      "bytes": 21220
     },
     {
       "id": "file:client/sw.js",
       "level": "ok",
       "message": "Validado: Archivo requerido client/sw.js",
-      "bytes": 5937
+      "bytes": 6008
     },
     {
       "id": "file:client/src/js/auth.js",
       "level": "ok",
       "message": "Validado: Archivo requerido client/src/js/auth.js",
-      "bytes": 6861
+      "bytes": 7097
     },
     {
       "id": "file:client/src/js/airing-ui.js",
@@ -187,7 +187,7 @@
       "id": "catalog:freshness",
       "level": "ok",
       "message": "Catálogo actualizado",
-      "ageHours": 13.6
+      "ageHours": 22.7
     },
     {
       "id": "airing:entries",
@@ -204,7 +204,7 @@
       "id": "airing:freshness",
       "level": "ok",
       "message": "Calendario con fecha reciente",
-      "ageHours": 7
+      "ageHours": 16.1
     },
     {
       "id": "spanish:pack",
@@ -249,7 +249,7 @@
       "id": "engine:freshness",
       "level": "ok",
       "message": "Sincronización reciente",
-      "ageHours": 4.6,
+      "ageHours": 13.7,
       "status": "correcta"
     },
     {

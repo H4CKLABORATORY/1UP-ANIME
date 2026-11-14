@@ -14,6 +14,7 @@ Restricción: presupuesto $0, no compras/deploy destructivo sin permiso; no conv
 
 
 - [x] PR #31: reparar X del diálogo Overgeared en Safari móvil; CI Chromium 390px/desktop en verde. **Pendiente** confirmación tras GitHub Pages y en iPhone físico.
+- [x] **Optimización integral de rendimiento y motion (2026-11-14):** erradicación de bucles RAF infinitos en `card-depth-engine.js` y `depth-engine.js` (ahora 100% reactivos y 0% CPU en reposo); sincronización fluida de salida en diálogos y `::backdrop` con clase `.is-closing` y `@keyframes oneup-veil-out` en `windows.js/css`; eliminación de layout thrashing en `studio.js` (scroll virtual con caché de altura y offset); transiciones 3D por GPU en toast, spotlight y carruseles hero. 69/69 tests unitarios Node pasados, suite completa `test:all` en verde y E2E Playwright móvil 390px y desktop 1366px aprobados.
 
 - [ ] **Tema Esmeralda para producción, PR #41:** comprobar CI `ONEUP Browser Acceptance` y tres resoluciones, fusionar solo sin conflictos y con pruebas verdes, confirmar despliegue GitHub Pages y que el selector Esmeralda/Original/Violeta realmente funcione en la URL pública. La intención del propietario es publicar mejoras probadas de forma continua, no desplegar cambios de alto riesgo o incompletos sin verificar. [Manual](ONEUP_COLOR_THEMES.md).
 
@@ -61,3 +62,17 @@ Restricción: presupuesto $0, no compras/deploy destructivo sin permiso; no conv
 
 
 - [x] **Reestructuración de arquitectura limpia a contenedores (2026-11-13):** Organizados todos los archivos en contenedores modulares (`client/`, `server/`, `data/`, `docs/`, `scripts/`, `tests/`) según el estándar de `jkanime_app`, eliminando más de 80 archivos sueltos en la raíz y preservando el 100% del estilo visual y la compatibilidad PWA. 40/40 pruebas unitarias Node + 16/16 Python + 152 UI + 48 comprobaciones guard PASADAS al 100%. Documentado en [ARCHITECTURE.md](ARCHITECTURE.md).
+- [x] **Migración a Vue 3 y Vite (2026-11-13):** Implementada arquitectura frontend basada en Vue 3 y Vite (`client/src-vue/`). Descompuesto el monolito en más de 20 componentes pequeños y 8 composables modulares, manteniendo idéntico el diseño visual, estilos, responsive mobile para Safari de iPhone y accesibilidad. Pruebas 43/43 Node unitarias, 16/16 Python, 152/152 UI assertions y 48 comprobaciones del Guardián aprobadas al 100%. Pipeline de `npm run build` genera `dist/` optimizado con Vite.
+- [x] **Catálogo completo con Virtual Scroll, índice lateral A-Z y búsqueda encapsulada (2026-11-13):** Implementado `VirtualCatalogGrid.vue` con scroll virtual responsivo a 60 fps (5/4/3/2 columnas) para más de 4,800 animes; riel alfabético `LetterFilterRail.vue` a la derecha con soporte táctil y burbuja de aumento móvil; barra de búsqueda superior en `BrowseControls.vue` con botón ✕ para limpiar y encapsulación de términos al dar Enter («buscar de lo ya buscado»); exportación de `data/catalog-full.json` y `client/data/catalog-full.json`; 61/61 pruebas unitarias Node + 16/16 Python + 152 UI assertions + 48 verificaciones del Guardián aprobadas al 100%.
+- [x] **Ajuste cinemático de tarjetas y arquitectura GPU translate3d (2026-11-14):** Resuelto el anidamiento CSS Grid de `#browse-grid` con `.catalog-virtual-active`; proporción 2:3 estándar internacional; virtualización acelerada por GPU con `translate3d` eliminando saltos erráticos en scroll (precisión 1:1 de 300px); 100% llenado horizontal sin huecos y etiquetas completas de emisión/episodios.
+- [x] **Integración de catálogo, reproductores y descargas de `jkanime_app` en producción (2026-11-14):**
+  - Servicio REST API desacoplado en Node.js (`server/src/catalog-service.js`) con `node:sqlite` nativo en modo WAL sobre 4,885 animes, 71,541 episodios y 524,212 enlaces.
+  - Proxy de API transparente en `scripts/serve-client.mjs`.
+  - Ingesta en frontend (`client/src/js/studio.js`) para inicio, tendencias, en emisión, populares, películas y catálogo general.
+  - Integración de selector de streaming (Desu, Magi, Streamwish, Mega, VOE, Okru, Mediafire), preservación de hash Mega y descargas directas en `client/src/js/episode-player.js`.
+  - Preservación del 100% de los estilos visuales en `client/src/styles/` (0 modificaciones).
+  - Veredicto de auditoría independiente: **`VICTORY CONFIRMED`**. Pruebas 61/61 Node + 16/16 Python + 152 UI + 48 Guard aprobadas al 100%.
+
+### Próximas acciones priorizadas
+- [ ] **Configuración y despliegue del servicio Node.js en servidor nuevo:** Preparar variables de entorno (`PORT`, `JKANIME_DB_PATH`, `CORS_ORIGIN`), scripts de arranque (`pm2` / `systemd` / `Dockerfile`) para el montaje del backend de catálogo en el servidor de destino.
+- [ ] **Pruebas de reproducción en dispositivos Safari físicos:** Verificar la carga de los iframes de streaming y descargas en iPhone / iPad reales bajo Safari sin restricciones de reproducción ni bloqueos táctiles.

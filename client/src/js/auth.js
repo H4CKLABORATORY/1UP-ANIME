@@ -98,17 +98,23 @@ function init(){
  const dialog=$('#auth-dialog'),open=$('#auth-open');
  if(!dialog||!open)return;
  const message=$('#auth-message'),close=$('#auth-close');
+ const dismiss=()=>{
+  if(!dialog.open)return;
+  if(!window.OneUpMotion?.closeDialog?.(dialog))dialog.close();
+ };
  const show=()=>{
   render();refreshProfiles();
   if(message)message.textContent='';
+  window.OneUpMotion?.prepareOpen?.(dialog);
+  for(const a of dialog?.getAnimations?.()||[]){if(a.id==='oneup-motion-close')a.cancel()}
   if(!dialog.open)dialog.showModal();
   close?.focus({preventScroll:true});
  };
  open.addEventListener('click',show);
- close?.addEventListener('click',()=>dialog.close());
- dialog.addEventListener('click',event=>{if(event.target===dialog)dialog.close()});
+ close?.addEventListener('click',dismiss);
+ dialog.addEventListener('click',event=>{if(event.target===dialog)dismiss()});
  $('#guest-login')?.addEventListener('click',()=>{
-  guest();render();dialog.close();
+  guest();render();dismiss();
  });
  $('#auth-profile-enter')?.addEventListener('click',()=>{
   const id=$('#auth-profile-select')?.value;

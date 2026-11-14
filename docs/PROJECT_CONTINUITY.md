@@ -368,6 +368,408 @@ Al concluir cada trabajo agregar:
   - `npm run test:ui` (`node scripts/check-ui.mjs`): **152/152 aserciones contractuales PASADAS**.
   - `npm run test:guard` (`node scripts/oneup-guard.mjs --offline`): **48/48 comprobaciones PASADAS** (veredicto correcto, 0 críticas, 0 advertencias).
   - `npm run test:all`: Suite completa ejecutada y aprobada al 100%.
+
+### 2026-11-14 — Optimización visual del catálogo: Corrección de anidamiento CSS Grid y escalado cinemático de tarjetas
+
+- **Problema detectado por el usuario**: «aparecen los animes en chico, puedes acomodarlos bien».
+- **Causa raíz descubierta en inspección de navegador**:
+  - En la vista de catálogo (`#catalogo`), el contenedor `#browse-grid` conservaba la clase `.poster-grid` (`display: grid; grid-template-columns: repeat(4, 1fr)`).
+  - Al inyectar el cuerpo del scroll virtual `<div class="virtual-scroll-body">` como hijo directo de `#browse-grid`, CSS Grid lo confinaba a la **Columna 1** (ocupando solo el 24% del ancho en escritorio y el 44% en móvil).
+  - Dentro de esa columna comprimida, cada fila virtual (`.virtual-row`) creaba **otra cuadrícula interna** de 4 o 2 columnas, miniaturizando las tarjetas a micro-miniaturas de **40.5px** de ancho en escritorio y **70.25px** en móvil, cubiertas casi en su totalidad por el botón de guardar (`.anime-save`).
+- **Solución implementada**:
+  - `client/src/styles/catalog-virtual.css`:
+    - Declarado `#browse-grid.catalog-virtual-active, #browse-grid:has(.virtual-scroll-body), .virtual-catalog-container { display: block !important; width: 100% !important; min-width: 0 !important; gap: 0 !important; }`.
+    - `.virtual-scroll-body`: Declarado `display: block !important; width: 100% !important; min-width: 0 !important;`.
+    - Breakpoints responsivos unificados: `>= 1380px` (5 columnas, gap 18px), `900px - 1379px` (4 columnas, gap 16px), `600px - 899px` (3 columnas, gap 14px), `< 600px` (2 columnas, gap 12px).
+    - Rediseño de tarjetas `.virtual-row .anime-card`: Proporción de póster estándar internacional de anime `2:3` (`aspect-ratio: 2 / 3`), botón de guardar de 32×32px posicionado elegantemente en esquina superior derecha con fondo glassmorphism, badge de puntuación en esquina inferior izquierda, tipografía de título nítida de 13px con corte a 2 líneas (`-webkit-line-clamp: 2`), y píldora esmeralda para tipo de formato (`.card-type`).
+  - `client/src/js/studio.js`:
+    - En `renderCatalogView()` y `paintCatalogVirtual()`, remueve automáticamente `.poster-grid` y activa `.virtual-catalog-container.catalog-virtual-active`.
+    - En `renderVirtualSlice()`, ajustados los cálculos de `cols` y `rowHeight` (`410px` para 5 cols, `390px` para 4 cols, `370px` para 3 cols, `330px` para 2 cols) para un desplazamiento virtual sub-pixel perfecto.
+    - En `go(route)`, restaura la cuadrícula estándar para las demás rutas (`temporada`, `populares`, `recientes`, etc.).
+  - `client/src-vue/components/browse/VirtualCatalogGrid.vue`:
+    - Sincronizados los computeds `columnCount` y `rowHeight` con las métricas responsivas exactas de `catalog-virtual.css`.
+  - `client/index.html`:
+    - Corregidas las rutas relativas de scripts `./src/js/depth-engine.js`, `./src/js/depth-toggle-button.js` y `./src/js/card-depth-engine.js` eliminando peticiones 404.
+- **Verificación en navegador en vivo**:
+  - **Escritorio (1018×917)**: Tarjetas aumentaron de 40.5px a **210.75px de ancho × 316.125px de alto** (poster 208.75px × 225.125px, título 184.75px), ocupando el 100% del ancho del catálogo (891px) en 3-4 columnas.
+  - **Móvil (390×844 Safari iPhone)**: Tarjetas aumentaron de 70.25px a **151.5px de ancho × 227.25px de alto**, ocupando el ancho útil con 2 columnas perfectamente equilibradas junto al riel A-Z.
+  - Evidencia visual guardada: screenshots de escritorio y móvil capturados por el subagente de navegación.
+  - Suite de pruebas completa: **61/61 tests Node**, **16/16 tests Python**, **152/152 aserciones UI smoke check**, **48/48 comprobaciones del Guardián**. Vite build en 289ms.
+
+### 2026-11-14 — Arquitectura GPU `translate3d` para Virtual Scroll, eliminación del bucle de aceleración descontrolada y llenado horizontal 100%
+
+- **Problema reportado**: «revisar bien la virtual scroll, se aloca raro y no hace bien la funcion del scroll, baja o sube raro demaciado rapido, aparte no esta bien acomodada la lista en horizontal, me refiero faltaria llenar bien los campos».
+- **Diagnóstico cuantitativo con agente de navegación**:
+  1. **Bucle de retroalimentación en el scroll**: El uso de `<div class="virtual-spacer-top">` y `.virtual-spacer-bottom` en el flujo del documento empujaba el contenido hacia abajo al expandirse, alterando `grid.getBoundingClientRect().top` durante el propio scroll del usuario. 5 eventos de rueda de ratón de 300px disparaban la página en más de 29,000px, perdiendo la sincronización y provocando vacíos negros.
+  2. **Hueco horizontal (columna 4 vacía)**: En anchos como 891px o 1018px, JS calculaba `cols = 3` basándose en `grid.clientWidth`, mientras que CSS media query aplicaba 4 columnas basadas en `window.innerWidth`, dejando un vacío de 226px a la derecha en cada fila.
+  3. **Campos incompletos en tarjetas**: Faltaban insignias de emisión (`EMISIÓN`), conteo de episodios (`12 eps`) y tooltip completo con recorte uniforme.
+- **Solución implementada**:
+  - **Arquitectura de Virtualización GPU `translate3d`**:
+    - Eliminados por completo los espaciadores de bloque `.virtual-spacer-top` y `.virtual-spacer-bottom`.
+    - `.virtual-scroll-body` mantiene una altura total fija e invariable (`totalHeight = totalRows * rowPitch`) durante todo el desplazamiento, estabilizando la barra de scroll y el documento.
+    - `.virtual-rendered-rows` se posiciona de forma absoluta fuera del flujo con aceleración de hardware `transform: translate3d(0, offsetY, px, 0)`.
+    - Cálculo de `scrollTop` lineal inmune a reflujos: `Math.max(0, pageScroll - gridDocTop)`.
+    - Caché de renderizado (`catalogLastRender`): No modifica el DOM si el rango de filas visibles no ha variado, permitiendo desplazamiento nativo a 60/120 fps.
+  - **Llenado Horizontal 100% y Estilo de Columnas Dinámico**:
+    - Cada fila inyecta `style="grid-template-columns: repeat(${cols}, minmax(0, 1fr)); gap: ${gap}px;"`, garantizando que las tarjetas llenen el 100% del contenedor sin importar el viewport.
+    - Breakpoints perfeccionados: `gridWidth >= 1150px` (5 cols), `800px – 1149px` (4 cols), `520px – 799px` (3 cols), `<520px` (2 cols).
+  - **Campos Completos de Metadatos**:
+    - Insignia verde esmeralda `EMISIÓN` para series en curso.
+    - Píldora de episodios (`12 eps`, `24 eps`, etc.).
+    - Año de lanzamiento y formato (`TV`, `Película`, `OVA`, `ONA`).
+    - Puntuación con estrella (`★ 9.6`) y botón de guardado interactivo (`＋` / `✓`).
+  - **Sincronización PWA y Service Worker**:
+    - Actualizado `CACHE` a `v40-catalog-virtual-transform-20261114` en `sw.js` y `client/sw.js`.
+    - Añadida versión query `?v=20261114-gpu` en `client/index.html`.
+    - Sincronizado `VirtualCatalogGrid.vue` y `AnimeCard.vue`.
+- **Verificación en navegador en vivo**:
+  - **Prueba de rueda 1:1**: Cada paso de rueda de 300px desplaza **exactamente 300.00px** sin aceleración descontrolada, tanto en scroll superficial como en scroll profundo hasta 3,000px y al volver arriba. Cero vacíos negros.
+  - **Escritorio (1018px)**: 4 columnas exactas de 210.75px con gap de 16px llenan el 100.0% de los 891px del contenedor.
+  - **Móvil (390px iPhone)**: 2 columnas exactas de 151.5px con gap de 12px llenan el 100.0% de los 315px disponibles.
+  - **Suite completa**: 61/61 tests Node, 16/16 Python, 152/152 UI smoke assertions, 48/48 del Guardián y Vite build aprobados al 100%.
+
+### 2026-11-14 — Integración de catálogo, reproductores y descargas de `jkanime_app` mediante servicio Node.js (Teamwork multi-agente)
+
+- **Pedido del usuario**: «en la pagina principal que es el front, era implementar lo que son del otro proyecto, los que es la forma de indexar, los animes, el catalogo, los posters, los titulos, sinopsis, links players o players, links de descarga, implementar en el forntend asi como se ve sin alterar estilos, revisar todo ya que por ejemplo vemos trend, inicio, populares, en emision, catalogo, etc...»
+- **Arquitectura y componentes implementados**:
+  - **Servicio REST API de Catálogo en Node.js (`server/src/catalog-service.js`)**:
+    - Motor de datos autónomo basado en `node:sqlite` nativo (`DatabaseSync` con `journal_mode = WAL` y `busy_timeout = 5000`).
+    - Detección resiliente de base de datos (`JKANIME_DB_PATH`, `data/jkanime.db`, rutas relativas de `jkanime_app`).
+    - Endpoints de alta velocidad:
+      - `GET /api/health`: Estado de conectividad y conteos globales.
+      - `GET /api/stats`: Resumen de 4,885 animes, 71,541 episodios y 524,212 enlaces.
+      - `GET /api/home`: Carga compuesta para la portada (tendencias, en emisión, recientes, películas, populares).
+      - `GET /api/animes`: Catálogo paginado con filtros por búsqueda, estado y tipo.
+      - `GET /api/animes/:id`: Detalle completo, sinopsis en español y lista de episodios.
+      - `GET /api/animes/:id/episodes/:num/links`: Enlaces de servidores de streaming (`kind = 'player'`) y descargas directas (`kind = 'download'`).
+  - **Proxy Inverso en Servidor de Desarrollo (`scripts/serve-client.mjs`)**:
+    - Reenvío dinámico transparente de llamadas `/api/*` hacia el microservicio en puerto 4050, con fallback en proceso si se ejecuta en modo standalone.
+  - **Ingesta en Frontend (`client/src/js/studio.js`)**:
+    - Vinculación de las secciones de portada (`inicio`, `tendencias`, `en emisión`, `populares`, `recientes`, `películas`) y catálogo general para consumir los endpoints de la API de Node.js.
+    - Indexación tolerante multicampo, desduplicación de recomendaciones y respaldo automático hacia snapshots locales para tolerancia offline.
+  - **Reproductor de Episodios y Descargas (`client/src/js/episode-player.js`)**:
+    - Selector dinámico de servidores de streaming (Desu, Magi, Streamwish, Mega, VOE, Okru, Mediafire).
+    - Preservación íntegra de fragmentos hash de desencriptación `#...` en enlaces de Mega.
+    - Botones de descarga directa con insignias de peso de archivo en megabytes.
+    - Activación controlada bajo demanda (click-to-play) y liberación segura de iframes.
+    - Soporte dual transparente para contratos `episodes_list` (array) y `episodes` (conteo).
+  - **Preservación estricta de hojas de estilo (`client/src/styles/`)**:
+    - Se certificaron **0 modificaciones** en todas las hojas de estilo del directorio `client/src/styles/`. La estética, colores, tipografías y efectos visuales de 1UP Anime se mantienen al 100%.
+- **Verificación y Auditoría Independiente de Victoria**:
+  - **Veredicto oficial**: **`VICTORY CONFIRMED`** (Auditor de Victoria independiente `b679b364-fb8b-45df-a79f-e765e3a6c919`).
+  - `node --test tests/unit/*.test.mjs`: **61/61 tests unitarios Node pasados** (0 fallos).
+  - `python -m unittest discover tests`: **16/16 tests Python pasados** (0 fallos).
+  - `node scripts/check-ui.mjs`: **152/152 aserciones contractuales de interfaz pasadas**.
+  - `node scripts/oneup-guard.mjs --offline`: **48/48 comprobaciones del Guardián pasadas** (0 críticas, 0 advertencias).
+  - `npm run test:all`: Suite completa ejecutada al 100% en verde.
+  - Cero errores en consola de navegador en todas las rutas y modales.
+- **Próximos pasos**:
+  - Preparar empaquetado de producción o archivo Dockerfile/systemd para el despliegue del servicio Node.js en el nuevo servidor.
+  - Ejecutar pruebas en dispositivos iPhone físicos (Safari móvil).
+
+### 2026-11-14 — Corrección de ciclo de vida en modales y Web Animations API (`OneUpMotion`)
+
+- **Síntoma reportado por el usuario**: Al hacer clic en un anime / tarjeta tras haber cerrado previamente otro, la pantalla se ponía borrosa («bluy») por el `::backdrop` con blur pero el contenido del anime no se mostraba (quedaba invisible). Al hacer clic en las orillas (fuera del diálogo), el anime aparecía súbitamente por una fracción de segundo y se cerraba.
+- **Causa raíz identificada**:
+  - En `client/themes/oneup-motion/windows.js`, la función `closeDialog` ejecutaba una animación de salida con `fill: 'forwards'`:
+    `dialog.animate([{ opacity: 1, ... }, { opacity: 0, ... }], { duration: 165, fill: 'forwards' })`.
+  - Al completarse la animación en `finish()`, se llamaba a `closing.delete(dialog)` antes de `dialog.close()`. El evento `'close'` evaluaba `closing.get(dialog) === animation` (que resultaba falso al estar ya borrado), por lo que **nunca se llamaba a `animation.cancel()`**.
+  - Según la especificación CSS / Web Animations API, un efecto de animación con `fill: 'forwards'` persiste en el nivel de animación de la cascada CSS, anulando cualquier regla CSS posterior (incluyendo `@keyframes oneup-sheet-in`). Por tanto, en la siguiente apertura (`showModal()`), el diálogo quedaba congelado en `opacity: 0` mientras que su `::backdrop` con `backdrop-filter: blur(11px)` sí se renderizaba.
+  - Al hacer clic en las orillas, el manejador de clic exterior invocaba nuevamente `closeDialog`, el cual iniciaba una nueva animación desde `opacity: 1`, haciendo que el diálogo apareciera de golpe durante 165ms antes de desvanecerse y cerrarse.
+- **Componentes auditados y corregidos**:
+  1. `client/themes/oneup-motion/windows.js`:
+     - Se añadió `cancelMotion(element)` para cancelar limpiamente animaciones activas o terminadas con `id === 'oneup-motion-close'` y `id === 'oneup-motion-enter'`.
+     - En `closeDialog`, se invoca `animation.cancel()` tanto en la resolución de `animation.finished` como en el evento `'close'`.
+     - Se implementó `prepareOpen(dialog)` exportado en `window.OneUpMotion` para limpiar cualquier residuo antes de `showModal()`.
+     - Se agregó un listener global de captura para el evento `'close'` en elementos `<dialog>`.
+  2. `client/src/js/studio.js`:
+     - En `detail(id)`, se ejecuta `window.OneUpMotion?.prepareOpen?.(dialog)` y cancelación defensiva de cualquier animación previa antes de `dialog.showModal()`.
+     - En el listener `'close'` de `#anime-dialog`, se cancela cualquier animación residual.
+  3. `client/src/js/auth.js`:
+     - Se integró `window.OneUpMotion?.prepareOpen?.(dialog)` en la apertura de `#auth-dialog` y `OneUpMotion?.closeDialog?.(dialog)` en el cierre.
+  4. `client/src-vue/components/modals/AnimeDetailModal.vue` y `AuthModal.vue`:
+     - Se sincronizó el ciclo de apertura y cierre con `prepareOpen` y `closeDialog`.
+  5. `client/index.html`:
+     - Se condicionó la carga dinámica de `./src-vue/main.js` a entornos con Vite dev server o bundler, evitando que en servidores estáticos sin transformador de módulos bare se lancen excepciones no controladas.
+  6. `tests/e2e/e2e-oneup-motion.mjs`:
+     - Se amplió la prueba E2E de Playwright para validar la reapertura sucesiva de modales comprobando que la opacidad tras la reapertura sea exactamente 1.0 (no congelada en 0).
+- **Pruebas y verificación**:
+  - `tests/e2e/e2e-oneup-motion.mjs`: 4/4 configuraciones de viewport y accesibilidad pasadas (390px y 1366px, motion estándar y reduced-motion).
+  - Test de 5 aperturas/cierres consecutivos alternando botón X, clic en orillas y tecla Escape: 100% exitoso con opacidad 1.0 en todas las aperturas.
+  - `node --test tests/unit/*.test.mjs`: 61/61 tests unitarios pasados.
+  - `python -m unittest discover tests`: 16/16 tests pasados.
+  - `npx vite build`: build de producción exitoso.
+
+### 2026-11-14 — Optimización integral de rendimiento: eliminación de bloqueos/stutter en componentes al moverse o salir
+
+- **Problema reportado**: Componentes que se trababan o tironeaban (stutter/frame drops/jank) al moverse o salir (modales, tarjetas, scroll de catálogo, menú drawer, búsqueda y notificaciones toast).
+- **Causas raíz identificadas y solventadas**:
+  1. **Bucles infinitos de RAF en motores de profundidad (`card-depth-engine.js` y `depth-engine.js`)**:
+     - Cada tarjeta (`.anime-card`) en el DOM (50-100+ tarjetas) ejecutaba su propio bucle infinito `requestAnimationFrame(loop)` a 60/120fps incluso cuando el modo 3D estaba desactivado (estado por defecto), realizando miles de consultas al DOM (`querySelectorAll`) y reasignando `card.style.transform` por segundo.
+     - `depth-engine.js` consultaba `document.querySelectorAll("[data-depth]")` en cada frame sin importar si el puntero se movía o si el modo estaba activo.
+     - `depth-system.css` tenía `transition: transform 0.12s ease-out` en `[data-depth]`, compitiendo con la interpolación de JS y causando doble suavizado y tironeo; además forzaba `will-change: transform` global en cientos de elementos.
+     - *Solución*: Se rediseñó `card-depth-engine.js` para ser 100% reactivo/event-driven: 0 loops cuando está inactivo, bucle iniciado únicamente al hacer hover sobre la tarjeta y detenido inmediatamente al volver al reposo (`diff < 0.03`). En `depth-engine.js` se cachearon las capas, se pausó el loop cuando está en reposo o la pestaña está oculta (`visibilitychange`). En `depth-system.css` se eliminó la transición conflictiva y el `will-change` global innecesario.
+  2. **Animaciones de salida y conflicto de GPU/Backdrop en modales (`windows.js`, `windows.css`, `spotlight.css`)**:
+     - Al cerrar `#anime-dialog` o `#auth-dialog`, el elemento `<dialog>` se animaba con WAAPI pero el `::backdrop` con `backdrop-filter: blur(11px)` permanecía congelado al 100% de opacidad y desaparecía súbitamente al terminar los 165ms, produciendo un salto visual tosco.
+     - El botón de cierre `.dialog-close` dentro del modal tenía `backdrop-filter: blur(11px)`. Tener elementos con `backdrop-filter` dentro de un contenedor animado en escala y opacidad forzaba al compositor de Chromium y Safari a capturar el frame-buffer en cada frame.
+     - Durante la animación de salida, los clics del usuario podían atravesar el diálogo hacia las tarjetas inferiores.
+     - *Solución*: Se implementó la clase `.is-closing` en `windows.js` y `windows.css` con `@keyframes oneup-veil-out` para desvanecer suave y coordinadamente el backdrop junto con el diálogo; se desactiva `pointer-events: none` durante el cierre; se desactiva el `backdrop-filter` interno durante la transición; y se añade promoción `will-change: transform, opacity` limpiada al terminar.
+  3. **Transición y salida de notificaciones toast (`studio.css`)**:
+     - `.toast` utilizaba `transition: .2s` (shorthand global que animaba todas las propiedades CSS) y `transform: translate(-50%, 15px)` en 2D.
+     - *Solución*: Se migró a `transform: translate3d(-50%, 15px, 0)` en 3D con aceleración por GPU, `transition: transform 0.22s cubic-bezier(.22, 1, .36, 1), opacity 0.22s cubic-bezier(.22, 1, .36, 1)`, `will-change: transform, opacity` y `backface-visibility: hidden`.
+  4. **Layout Thrashing en el scroll virtual del catálogo (`studio.js`)**:
+     - En `renderVirtualSlice()`, en cada evento de scroll se reescribía `body.style.height = totalHeight + 'px'` e inmediatamente se leía `grid.getBoundingClientRect().top`, forzando un recálculo síncrono de layout (reflow) en cada tick de scroll.
+     - *Solución*: Se condicionó la escritura de `body.style.height` a cuando la altura realmente cambia (`body.dataset.renderedHeight !== targetHeightStr`) y se cacheó `catalogGridDocTop`, eliminando por completo el layout thrashing durante el scroll continuo.
+  5. **Salida abrupta del menú móvil Kokomi y buscador (`theme.js` y `windows.css`)**:
+     - Al invocar `closeMenu()` o `closeSearch()`, los componentes se ocultaban inmediatamente con `hidden = true` sin transición de salida.
+     - *Solución*: Se añadieron keyframes `@keyframes oneup-drawer-out` y `@keyframes oneup-pop-out` coordinados con clase `.is-closing` y timeout antes de fijar `hidden = true` (respetando `prefers-reduced-motion`).
+  6. **Aceleración por GPU en transiciones del Hero (`premiere-hero.css`, `spotlight.css`, `studio.js`)**:
+     - `premiereCopyIn` y `spotlightText` pasaron de `translateY` 2D a `translate3d(0, 9px, 0)` con `will-change` promovido durante el cambio y timeout para retirar la clase `.is-switching`.
+     - En `catalog-virtual.css`, el hover de tarjetas en el grid virtual se optimizó a `translate3d(0, -5px, 0)` con `backface-visibility: hidden`.
+- **Verificación**:
+  - `tests/unit/ui-motion-optimization.test.mjs`: Nueva suite con 8 pruebas verificando todas las optimizaciones de movimiento, ciclos de RAF inactivos, coordinación de salida y transformaciones GPU.
+  - `node --test tests/unit/*.test.mjs`: **69/69 tests unitarios pasados** (0 fallos, tiempo de ejecución optimizado a ~340ms).
+  - `node tests/e2e/e2e-oneup-motion.mjs`: **100% pasado en móvil (390px) y escritorio (1366px)**, tanto con movimiento estándar como con `prefers-reduced-motion`.
+  - `npm run test:all`: Suite integral de 69 tests Node + 16 tests Python + 152 comprobaciones smoke + 48 comprobaciones guardián todas pasadas (0 críticas, 0 advertencias).
+  - `npm run build`: Build de Vite completado en ~204ms sin errores.
   - Pruebas contractuales aisladas (`test-anime1v-integration.mjs`, `test-anime1v-restricted.mjs`, `test-cache-catalog.mjs`, `test-episode-player.mjs`, `test-media-source-contract.mjs`, `test-navigation-race.mjs`, `test-render-anime1v.mjs`): **TODAS PASADAS**.
 - **Flujos CI/CD**: Actualizados los 41 flujos de trabajo en `.github/workflows/` para referenciar las rutas dentro de los nuevos contenedores.
 - **Documentación**: Creado [`docs/ARCHITECTURE.md`](ARCHITECTURE.md) con diagramas de componentes Mermaid y detalle de la organización modular.
+
+
+### 2026-11-13 — Migración a Vue 3, Vite y arquitectura de componentes pequeños
+
+- **Objetivo completado**: Migración del frontend a **Vue 3** y **Vite**, preservando al 100% el diseño visual, maquetación, paleta de colores (Kokomi/Esmeralda/Octubre), tokens CSS, responsive mobile-first para Safari iPhone, PWA y compatibilidad hacia atrás.
+- **Estructura de Componentes Pequeños (`client/src-vue/`)**:
+  - `App.vue`: Orquestador principal de estado, vistas (`#home-screen`, `#browse-screen`), modal de detalles y accesibilidad.
+  - `components/layout/`: `OneUpHeader.vue`, `MobileNav.vue`, `OneUpFooter.vue`.
+  - `components/cinema/`: `OneUpCinema.vue` (intro cinematográfica con partículas y audio voluntario).
+  - `components/hero/`: `HeroBanner.vue`, `HeroArtCard.vue`.
+  - `components/discovery/`: `QuickAccessDeck.vue`, `MarqueeBanner.vue`, `ExploreBar.vue`, `SeasonBanner.vue`.
+  - `components/rails/`: `AnimeCard.vue`, `AnimeRail.vue`, `ContinueRail.vue`, `ScheduleRail.vue`.
+  - `components/browse/`: `BrowseScreen.vue`, `BrowseControls.vue`.
+  - `components/community/`: `CommunityBanner.vue`.
+  - `components/modals/`: `AnimeDetailModal.vue`, `EpisodePlayer.vue`, `EpisodeComments.vue`, `AuthModal.vue`.
+  - `components/ui/`: `DepthToggle.vue`, `ToastNotification.vue`, `SvgSprites.vue`.
+- **Capa de Lógica y Composables Reactivos (`client/src-vue/composables/`)**:
+  - `useCatalog.js`: AniList GraphQL, Jikan fallback, snapshot estático y gestión de catálogo reactivo.
+  - `useSpanishSynopses.js`: Carga y consulta de sinopsis en español (`data/translations-es.json`).
+  - `useFavorites.js`: Persistencia local de favoritos, progreso de episodios y sincronización por perfil.
+  - `useAiring.js`: Programación de emisiones y cálculo horario local del usuario.
+  - `useAuthorizedMedia.js`: Manifiesto de episodios con licencia (`data/licensed-media.json`).
+  - `useAuth.js`: Perfil de usuario, acceso de invitado y switch local.
+  - `useDexterMotion.js`: Motor 3D, giroscopio y spotlight adaptado a `prefers-reduced-motion`.
+  - `useToast.js`: Notificaciones reactivas flotantes.
+- **Tooling y Build con Vite**:
+  - `vite.config.mjs`: Configurado con `@vitejs/plugin-vue`, base `./`, output `dist/` y copiado automático de `data/` y `client/assets/`.
+  - `npm run build`: Compilación ultra-rápida (200ms) a `dist/` optimizado.
+  - `npm run dev:vite`: Servidor HMR en vivo.
+- **Pruebas y Verificación**:
+  - `npm test` (`node --test tests/unit/*.test.mjs`): **43/43 PASADAS** (0 fallos).
+  - `npm run test:python` (`python -m unittest discover tests`): **16/16 PASADAS** (0 fallos).
+  - `npm run test:ui` (`node scripts/check-ui.mjs`): **152/152 aserciones contractuales PASADAS**.
+  - `npm run test:guard` (`node scripts/oneup-guard.mjs --offline`): **48/48 comprobaciones PASADAS**.
+  - `npm run test:all`: Suite completa en verde.
+
+
+### 2026-11-13 — Depuración y limpia de archivos huérfanos y obsoletos
+
+- **Objetivo completado**: Limpieza controlada de 9 archivos muertos/huérfanos y purga de cachés de compilación en el repositorio, eliminando ~55 KB de código y hojas CSS no referenciadas sin alterar flujos CI ni la suite de pruebas.
+- **Archivos eliminados**:
+  - `client/src/js/experience.js`: Modal sonoro anticuado ("Entrar con sonido").
+  - `client/src/styles/experience.css`: Hoja de estilos del modal obsoleto.
+  - `client/src/js/catalog-plus.js`: Intento descontinuado de monkey-patching sobre funciones ya inexistentes.
+  - `client/src/styles/design-plus.css`: Estilos no referenciados para `#extra-catalog`.
+  - `client/src/styles/styles.css`: Estilo monolítico primitivo previo a la modularización.
+  - `client/src/js/auth-google.js`: Script suelto anterior a la consolidación de `auth.js`.
+  - `client/src/js/firebase-config.js`: Declaración residual de 2 líneas.
+  - `scripts/verify-production-depth.mjs`: Script auxiliar puntual sin referencias activas.
+  - `scripts/audit-branches.sh`: Script de auditoría remota git sin dependencias.
+  - Purgadas carpetas de caché de Python `__pycache__/`.
+- **Verificación**: `npm run build` genera `dist/` en 208ms; `npm run test:all` mantiene 43/43 tests Node, 16/16 Python, 152/152 aserciones UI y 48/48 del Guardián aprobadas al 100%.
+
+
+### 2026-11-13 — Catálogo completo con Virtual Scroll, índice lateral A-Z y búsqueda encapsulada multinivel ("Buscar de lo ya buscado")
+
+- **Objetivo completado**: Implementación integral del catálogo completo con renderizado virtualizado a 60 fps, riel de índice por letras A-Z a la derecha con soporte táctil, barra de filtrado superior con botón de limpieza «✕» e innovador sistema de encapsulación de filtros por etiquetas («buscar de lo ya buscado») al pulsar Enter.
+- **Componentes y Módulos Creados/Actualizados**:
+  - `client/src-vue/components/browse/VirtualCatalogGrid.vue`: Cuadrícula con desplazamiento virtual responsivo (5, 4, 3 y 2 columnas) que solo mantiene en el DOM entre 15 y 35 tarjetas a la vez (+ espaciadores superior e inferior calculados con precisión sub-pixel), permitiendo navegar miles de animes sin caídas de framerate ni saturación de memoria.
+  - `client/src-vue/components/browse/LetterFilterRail.vue`: Riel alfabético (`TODOS`, `#`, `A` a `Z`) ubicado a la derecha de la lista; fijo y sticky en escritorio, y barra flotante con burbuja de aumento táctil en Safari móvil iPhone y Android.
+  - `client/src-vue/components/browse/BrowseControls.vue`: Barra de búsqueda superior con input reactivo, botón de limpieza «✕» visible ante contenido activo, botón de encapsulación «＋ Encapsular», shelf de etiquetas encapsuladas («Buscando de lo ya buscado») con eliminación individual por chip y reseteo total, sugerencias rápidas de 1 clic y selectores de género, tipo, estado y ordenación.
+  - `client/src-vue/components/browse/BrowseScreen.vue`: Orquestador de la vista de catálogo (`#browse-screen`) que integra la cuadrícula virtual, el riel de letras y el contador dinámico en tiempo real (`X de Y animes encontrados`).
+  - `client/src-vue/composables/useCatalog.js`: Lógica reactiva singleton que gestiona `fullCatalog`, `loadFullCatalog` (backend API `/api/animes?limit=5000` con fallback a `data/catalog-full.json`), `selectedLetter`, `searchTags`, `catalogSearchQuery` y el computed `filteredFullCatalog` con coincidencia AND entre etiquetas y normalización de acentos Unicode (NFD).
+  - `client/src/styles/catalog-virtual.css`: Estilos visuales acordes a la línea Kokomi/Esmeralda de 1UP Anime, con superficies translúcidas glassmorphism, foco en verde esmeralda (`#00e676`), chips de gradiente y total respeto a `prefers-reduced-motion`.
+  - `client/src/js/studio.js`: Implementado `loadFullCatalogStudio`, `ensureLetterRailElement`, `paintCatalogVirtual` y `renderVirtualSlice` para que la vista `#catalogo` en el cliente vanilla también cargue los 4,885 títulos completos con scroll virtual a 60 fps y riel alfabético interactivo.
+  - `data/catalog-full.json` & `client/data/catalog-full.json`: Exportación completa y determinista de los 4,885 títulos indexados desde SQLite.
+- **Pruebas y Verificación**:
+  - `node --test tests/unit/catalog-virtual-scroll.test.mjs`: **5/5 tests PASADOS** (integridad del catálogo, filtrado alfabético con acentos/comillas, encapsulación de tags, input con botón ✕ y matemática de espaciadores de Virtual Scroll).
+  - `npm test` (`node --test tests/unit/*.test.mjs`): **61/61 PASADAS** (0 fallos).
+  - `npm run test:python` (`python -m unittest discover tests`): **16/16 PASADAS** (0 fallos).
+  - `npm run test:ui` (`node scripts/check-ui.mjs`): **152/152 aserciones contractuales PASADAS**.
+  - `npm run test:guard` (`node scripts/oneup-guard.mjs --offline`): **48/48 comprobaciones PASADAS** (veredicto correcto, 0 críticas, 0 advertencias).
+  - `npm run build`: Compilación Vite en 230ms sin advertencias.
+  - `npm run test:all`: Suite completa ejecutada y aprobada al 100%.
+
+### 2026-11-14 — Optimización visual del catálogo: Corrección de anidamiento CSS Grid y escalado cinemático de tarjetas
+
+- **Problema detectado por el usuario**: «aparecen los animes en chico, puedes acomodarlos bien».
+- **Causa raíz descubierta en inspección de navegador**:
+  - En la vista de catálogo (`#catalogo`), el contenedor `#browse-grid` conservaba la clase `.poster-grid` (`display: grid; grid-template-columns: repeat(4, 1fr)`).
+  - Al inyectar el cuerpo del scroll virtual `<div class="virtual-scroll-body">` como hijo directo de `#browse-grid`, CSS Grid lo confinaba a la **Columna 1** (ocupando solo el 24% del ancho en escritorio y el 44% en móvil).
+  - Dentro de esa columna comprimida, cada fila virtual (`.virtual-row`) creaba **otra cuadrícula interna** de 4 o 2 columnas, miniaturizando las tarjetas a micro-miniaturas de **40.5px** de ancho en escritorio y **70.25px** en móvil, cubiertas casi en su totalidad por el botón de guardar (`.anime-save`).
+- **Solución implementada**:
+  - `client/src/styles/catalog-virtual.css`:
+    - Declarado `#browse-grid.catalog-virtual-active, #browse-grid:has(.virtual-scroll-body), .virtual-catalog-container { display: block !important; width: 100% !important; min-width: 0 !important; gap: 0 !important; }`.
+    - `.virtual-scroll-body`: Declarado `display: block !important; width: 100% !important; min-width: 0 !important;`.
+    - Breakpoints responsivos unificados: `>= 1380px` (5 columnas, gap 18px), `900px - 1379px` (4 columnas, gap 16px), `600px - 899px` (3 columnas, gap 14px), `< 600px` (2 columnas, gap 12px).
+    - Rediseño de tarjetas `.virtual-row .anime-card`: Proporción de póster estándar internacional de anime `2:3` (`aspect-ratio: 2 / 3`), botón de guardar de 32×32px posicionado elegantemente en esquina superior derecha con fondo glassmorphism, badge de puntuación en esquina inferior izquierda, tipografía de título nítida de 13px con corte a 2 líneas (`-webkit-line-clamp: 2`), y píldora esmeralda para tipo de formato (`.card-type`).
+  - `client/src/js/studio.js`:
+    - En `renderCatalogView()` y `paintCatalogVirtual()`, remueve automáticamente `.poster-grid` y activa `.virtual-catalog-container.catalog-virtual-active`.
+    - En `renderVirtualSlice()`, ajustados los cálculos de `cols` y `rowHeight` (`410px` para 5 cols, `390px` para 4 cols, `370px` para 3 cols, `330px` para 2 cols) para un desplazamiento virtual sub-pixel perfecto.
+    - En `go(route)`, restaura la cuadrícula estándar para las demás rutas (`temporada`, `populares`, `recientes`, etc.).
+  - `client/src-vue/components/browse/VirtualCatalogGrid.vue`:
+    - Sincronizados los computeds `columnCount` y `rowHeight` con las métricas responsivas exactas de `catalog-virtual.css`.
+  - `client/index.html`:
+    - Corregidas las rutas relativas de scripts `./src/js/depth-engine.js`, `./src/js/depth-toggle-button.js` y `./src/js/card-depth-engine.js` eliminando peticiones 404.
+- **Verificación en navegador en vivo**:
+  - **Escritorio (1018×917)**: Tarjetas aumentaron de 40.5px a **210.75px de ancho × 316.125px de alto** (poster 208.75px × 225.125px, título 184.75px), ocupando el 100% del ancho del catálogo (891px) en 3-4 columnas.
+  - **Móvil (390×844 Safari iPhone)**: Tarjetas aumentaron de 70.25px a **151.5px de ancho × 227.25px de alto**, ocupando el ancho útil con 2 columnas perfectamente equilibradas junto al riel A-Z.
+  - Evidencia visual guardada: screenshots de escritorio y móvil capturados por el subagente de navegación.
+  - Suite de pruebas completa: **61/61 tests Node**, **16/16 tests Python**, **152/152 aserciones UI smoke check**, **48/48 comprobaciones del Guardián**. Vite build en 289ms.
+
+### 2026-11-14 — Arquitectura GPU `translate3d` para Virtual Scroll, eliminación del bucle de aceleración descontrolada y llenado horizontal 100%
+
+- **Problema reportado**: «revisar bien la virtual scroll, se aloca raro y no hace bien la funcion del scroll, baja o sube raro demaciado rapido, aparte no esta bien acomodada la lista en horizontal, me refiero faltaria llenar bien los campos».
+- **Diagnóstico cuantitativo con agente de navegación**:
+  1. **Bucle de retroalimentación en el scroll**: El uso de `<div class="virtual-spacer-top">` y `.virtual-spacer-bottom` en el flujo del documento empujaba el contenido hacia abajo al expandirse, alterando `grid.getBoundingClientRect().top` durante el propio scroll del usuario. 5 eventos de rueda de ratón de 300px disparaban la página en más de 29,000px, perdiendo la sincronización y provocando vacíos negros.
+  2. **Hueco horizontal (columna 4 vacía)**: En anchos como 891px o 1018px, JS calculaba `cols = 3` basándose en `grid.clientWidth`, mientras que CSS media query aplicaba 4 columnas basadas en `window.innerWidth`, dejando un vacío de 226px a la derecha en cada fila.
+  3. **Campos incompletos en tarjetas**: Faltaban insignias de emisión (`EMISIÓN`), conteo de episodios (`12 eps`) y tooltip completo con recorte uniforme.
+- **Solución implementada**:
+  - **Arquitectura de Virtualización GPU `translate3d`**:
+    - Eliminados por completo los espaciadores de bloque `.virtual-spacer-top` y `.virtual-spacer-bottom`.
+    - `.virtual-scroll-body` mantiene una altura total fija e invariable (`totalHeight = totalRows * rowPitch`) durante todo el desplazamiento, estabilizando la barra de scroll y el documento.
+    - `.virtual-rendered-rows` se posiciona de forma absoluta fuera del flujo con aceleración de hardware `transform: translate3d(0, offsetY, px, 0)`.
+    - Cálculo de `scrollTop` lineal inmune a reflujos: `Math.max(0, pageScroll - gridDocTop)`.
+    - Caché de renderizado (`catalogLastRender`): No modifica el DOM si el rango de filas visibles no ha variado, permitiendo desplazamiento nativo a 60/120 fps.
+  - **Llenado Horizontal 100% y Estilo de Columnas Dinámico**:
+    - Cada fila inyecta `style="grid-template-columns: repeat(${cols}, minmax(0, 1fr)); gap: ${gap}px;"`, garantizando que las tarjetas llenen el 100% del contenedor sin importar el viewport.
+    - Breakpoints perfeccionados: `gridWidth >= 1150px` (5 cols), `800px – 1149px` (4 cols), `520px – 799px` (3 cols), `<520px` (2 cols).
+  - **Campos Completos de Metadatos**:
+    - Insignia verde esmeralda `EMISIÓN` para series en curso.
+    - Píldora de episodios (`12 eps`, `24 eps`, etc.).
+    - Año de lanzamiento y formato (`TV`, `Película`, `OVA`, `ONA`).
+    - Puntuación con estrella (`★ 9.6`) y botón de guardado interactivo (`＋` / `✓`).
+  - **Sincronización PWA y Service Worker**:
+    - Actualizado `CACHE` a `v40-catalog-virtual-transform-20261114` en `sw.js` y `client/sw.js`.
+    - Añadida versión query `?v=20261114-gpu` en `client/index.html`.
+    - Sincronizado `VirtualCatalogGrid.vue` y `AnimeCard.vue`.
+- **Verificación en navegador en vivo**:
+  - **Prueba de rueda 1:1**: Cada paso de rueda de 300px desplaza **exactamente 300.00px** sin aceleración descontrolada, tanto en scroll superficial como en scroll profundo hasta 3,000px y al volver arriba. Cero vacíos negros.
+  - **Escritorio (1018px)**: 4 columnas exactas de 210.75px con gap de 16px llenan el 100.0% de los 891px del contenedor.
+  - **Móvil (390px iPhone)**: 2 columnas exactas de 151.5px con gap de 12px llenan el 100.0% de los 315px disponibles.
+  - **Suite completa**: 61/61 tests Node, 16/16 Python, 152/152 UI smoke assertions, 48/48 del Guardián y Vite build aprobados al 100%.
+
+### 2026-11-14 — Integración de catálogo, reproductores y descargas de `jkanime_app` mediante servicio Node.js (Teamwork multi-agente)
+
+- **Pedido del usuario**: «en la pagina principal que es el front, era implementar lo que son del otro proyecto, los que es la forma de indexar, los animes, el catalogo, los posters, los titulos, sinopsis, links players o players, links de descarga, implementar en el forntend asi como se ve sin alterar estilos, revisar todo ya que por ejemplo vemos trend, inicio, populares, en emision, catalogo, etc...»
+- **Arquitectura y componentes implementados**:
+  - **Servicio REST API de Catálogo en Node.js (`server/src/catalog-service.js`)**:
+    - Motor de datos autónomo basado en `node:sqlite` nativo (`DatabaseSync` con `journal_mode = WAL` y `busy_timeout = 5000`).
+    - Detección resiliente de base de datos (`JKANIME_DB_PATH`, `data/jkanime.db`, rutas relativas de `jkanime_app`).
+    - Endpoints de alta velocidad:
+      - `GET /api/health`: Estado de conectividad y conteos globales.
+      - `GET /api/stats`: Resumen de 4,885 animes, 71,541 episodios y 524,212 enlaces.
+      - `GET /api/home`: Carga compuesta para la portada (tendencias, en emisión, recientes, películas, populares).
+      - `GET /api/animes`: Catálogo paginado con filtros por búsqueda, estado y tipo.
+      - `GET /api/animes/:id`: Detalle completo, sinopsis en español y lista de episodios.
+      - `GET /api/animes/:id/episodes/:num/links`: Enlaces de servidores de streaming (`kind = 'player'`) y descargas directas (`kind = 'download'`).
+  - **Proxy Inverso en Servidor de Desarrollo (`scripts/serve-client.mjs`)**:
+    - Reenvío dinámico transparente de llamadas `/api/*` hacia el microservicio en puerto 4050, con fallback en proceso si se ejecuta en modo standalone.
+  - **Ingesta en Frontend (`client/src/js/studio.js`)**:
+    - Vinculación de las secciones de portada (`inicio`, `tendencias`, `en emisión`, `populares`, `recientes`, `películas`) y catálogo general para consumir los endpoints de la API de Node.js.
+    - Indexación tolerante multicampo, desduplicación de recomendaciones y respaldo automático hacia snapshots locales para tolerancia offline.
+  - **Reproductor de Episodios y Descargas (`client/src/js/episode-player.js`)**:
+    - Selector dinámico de servidores de streaming (Desu, Magi, Streamwish, Mega, VOE, Okru, Mediafire).
+    - Preservación íntegra de fragmentos hash de desencriptación `#...` en enlaces de Mega.
+    - Botones de descarga directa con insignias de peso de archivo en megabytes.
+    - Activación controlada bajo demanda (click-to-play) y liberación segura de iframes.
+    - Soporte dual transparente para contratos `episodes_list` (array) y `episodes` (conteo).
+  - **Preservación estricta de hojas de estilo (`client/src/styles/`)**:
+    - Se certificaron **0 modificaciones** en todas las hojas de estilo del directorio `client/src/styles/`. La estética, colores, tipografías y efectos visuales de 1UP Anime se mantienen al 100%.
+- **Verificación y Auditoría Independiente de Victoria**:
+  - **Veredicto oficial**: **`VICTORY CONFIRMED`** (Auditor de Victoria independiente `b679b364-fb8b-45df-a79f-e765e3a6c919`).
+  - `node --test tests/unit/*.test.mjs`: **61/61 tests unitarios Node pasados** (0 fallos).
+  - `python -m unittest discover tests`: **16/16 tests Python pasados** (0 fallos).
+  - `node scripts/check-ui.mjs`: **152/152 aserciones contractuales de interfaz pasadas**.
+  - `node scripts/oneup-guard.mjs --offline`: **48/48 comprobaciones del Guardián pasadas** (0 críticas, 0 advertencias).
+  - `npm run test:all`: Suite completa ejecutada al 100% en verde.
+  - Cero errores en consola de navegador en todas las rutas y modales.
+- **Próximos pasos**:
+  - Preparar empaquetado de producción o archivo Dockerfile/systemd para el despliegue del servicio Node.js en el nuevo servidor.
+  - Ejecutar pruebas en dispositivos iPhone físicos (Safari móvil).
+
+### 2026-11-14 — Corrección de ciclo de vida en modales y Web Animations API (`OneUpMotion`)
+
+- **Síntoma reportado por el usuario**: Al hacer clic en un anime / tarjeta tras haber cerrado previamente otro, la pantalla se ponía borrosa («bluy») por el `::backdrop` con blur pero el contenido del anime no se mostraba (quedaba invisible). Al hacer clic en las orillas (fuera del diálogo), el anime aparecía súbitamente por una fracción de segundo y se cerraba.
+- **Causa raíz identificada**:
+  - En `client/themes/oneup-motion/windows.js`, la función `closeDialog` ejecutaba una animación de salida con `fill: 'forwards'`:
+    `dialog.animate([{ opacity: 1, ... }, { opacity: 0, ... }], { duration: 165, fill: 'forwards' })`.
+  - Al completarse la animación en `finish()`, se llamaba a `closing.delete(dialog)` antes de `dialog.close()`. El evento `'close'` evaluaba `closing.get(dialog) === animation` (que resultaba falso al estar ya borrado), por lo que **nunca se llamaba a `animation.cancel()`**.
+  - Según la especificación CSS / Web Animations API, un efecto de animación con `fill: 'forwards'` persiste en el nivel de animación de la cascada CSS, anulando cualquier regla CSS posterior (incluyendo `@keyframes oneup-sheet-in`). Por tanto, en la siguiente apertura (`showModal()`), el diálogo quedaba congelado en `opacity: 0` mientras que su `::backdrop` con `backdrop-filter: blur(11px)` sí se renderizaba.
+  - Al hacer clic en las orillas, el manejador de clic exterior invocaba nuevamente `closeDialog`, el cual iniciaba una nueva animación desde `opacity: 1`, haciendo que el diálogo apareciera de golpe durante 165ms antes de desvanecerse y cerrarse.
+- **Componentes auditados y corregidos**:
+  1. `client/themes/oneup-motion/windows.js`:
+     - Se añadió `cancelMotion(element)` para cancelar limpiamente animaciones activas o terminadas con `id === 'oneup-motion-close'` y `id === 'oneup-motion-enter'`.
+     - En `closeDialog`, se invoca `animation.cancel()` tanto en la resolución de `animation.finished` como en el evento `'close'`.
+     - Se implementó `prepareOpen(dialog)` exportado en `window.OneUpMotion` para limpiar cualquier residuo antes de `showModal()`.
+     - Se agregó un listener global de captura para el evento `'close'` en elementos `<dialog>`.
+  2. `client/src/js/studio.js`:
+     - En `detail(id)`, se ejecuta `window.OneUpMotion?.prepareOpen?.(dialog)` y cancelación defensiva de cualquier animación previa antes de `dialog.showModal()`.
+     - En el listener `'close'` de `#anime-dialog`, se cancela cualquier animación residual.
+  3. `client/src/js/auth.js`:
+     - Se integró `window.OneUpMotion?.prepareOpen?.(dialog)` en la apertura de `#auth-dialog` y `OneUpMotion?.closeDialog?.(dialog)` en el cierre.
+  4. `client/src-vue/components/modals/AnimeDetailModal.vue` y `AuthModal.vue`:
+     - Se sincronizó el ciclo de apertura y cierre con `prepareOpen` y `closeDialog`.
+  5. `client/index.html`:
+     - Se condicionó la carga dinámica de `./src-vue/main.js` a entornos con Vite dev server o bundler, evitando que en servidores estáticos sin transformador de módulos bare se lancen excepciones no controladas.
+  6. `tests/e2e/e2e-oneup-motion.mjs`:
+     - Se amplió la prueba E2E de Playwright para validar la reapertura sucesiva de modales comprobando que la opacidad tras la reapertura sea exactamente 1.0 (no congelada en 0).
+- **Pruebas y verificación**:
+  - `tests/e2e/e2e-oneup-motion.mjs`: 4/4 configuraciones de viewport y accesibilidad pasadas (390px y 1366px, motion estándar y reduced-motion).
+  - Test de 5 aperturas/cierres consecutivos alternando botón X, clic en orillas y tecla Escape: 100% exitoso con opacidad 1.0 en todas las aperturas.
+  - `node --test tests/unit/*.test.mjs`: 61/61 tests unitarios pasados.
+  - `python -m unittest discover tests`: 16/16 tests pasados.
+  - `npx vite build`: build de producción exitoso.
+
+### 2026-11-14 — Optimización integral de rendimiento: eliminación de bloqueos/stutter en componentes al moverse o salir
+
+- **Problema reportado**: Componentes que se trababan o tironeaban (stutter/frame drops/jank) al moverse o salir (modales, tarjetas, scroll de catálogo, menú drawer, búsqueda y notificaciones toast).
+- **Causas raíz identificadas y solventadas**:
+  1. **Bucles infinitos de RAF en motores de profundidad (`card-depth-engine.js` y `depth-engine.js`)**:
+     - Cada tarjeta (`.anime-card`) en el DOM (50-100+ tarjetas) ejecutaba su propio bucle infinito `requestAnimationFrame(loop)` a 60/120fps incluso cuando el modo 3D estaba desactivado (estado por defecto), realizando miles de consultas al DOM (`querySelectorAll`) y reasignando `card.style.transform` por segundo.
+     - `depth-engine.js` consultaba `document.querySelectorAll("[data-depth]")` en cada frame sin importar si el puntero se movía o si el modo estaba activo.
+     - `depth-system.css` tenía `transition: transform 0.12s ease-out` en `[data-depth]`, compitiendo con la interpolación de JS y causando doble suavizado y tironeo; además forzaba `will-change: transform` global en cientos de elementos.
+     - *Solución*: Se rediseñó `card-depth-engine.js` para ser 100% reactivo/event-driven: 0 loops cuando está inactivo, bucle iniciado únicamente al hacer hover sobre la tarjeta y detenido inmediatamente al volver al reposo (`diff < 0.03`). En `depth-engine.js` se cachearon las capas, se pausó el loop cuando está en reposo o la pestaña está oculta (`visibilitychange`). En `depth-system.css` se eliminó la transición conflictiva y el `will-change` global innecesario.
+  2. **Animaciones de salida y conflicto de GPU/Backdrop en modales (`windows.js`, `windows.css`, `spotlight.css`)**:
+     - Al cerrar `#anime-dialog` o `#auth-dialog`, el elemento `<dialog>` se animaba con WAAPI pero el `::backdrop` con `backdrop-filter: blur(11px)` permanecía congelado al 100% de opacidad y desaparecía súbitamente al terminar los 165ms, produciendo un salto visual tosco.
+     - El botón de cierre `.dialog-close` dentro del modal tenía `backdrop-filter: blur(11px)`. Tener elementos con `backdrop-filter` dentro de un contenedor animado en escala y opacidad forzaba al compositor de Chromium y Safari a capturar el frame-buffer en cada frame.
+     - Durante la animación de salida, los clics del usuario podían atravesar el diálogo hacia las tarjetas inferiores.
+     - *Solución*: Se implementó la clase `.is-closing` en `windows.js` y `windows.css` con `@keyframes oneup-veil-out` para desvanecer suave y coordinadamente el backdrop junto con el diálogo; se desactiva `pointer-events: none` durante el cierre; se desactiva el `backdrop-filter` interno durante la transición; y se añade promoción `will-change: transform, opacity` limpiada al terminar.
+  3. **Transición y salida de notificaciones toast (`studio.css`)**:
+     - `.toast` utilizaba `transition: .2s` (shorthand global que animaba todas las propiedades CSS) y `transform: translate(-50%, 15px)` en 2D.
+     - *Solución*: Se migró a `transform: translate3d(-50%, 15px, 0)` en 3D con aceleración por GPU, `transition: transform 0.22s cubic-bezier(.22, 1, .36, 1), opacity 0.22s cubic-bezier(.22, 1, .36, 1)`, `will-change: transform, opacity` y `backface-visibility: hidden`.
+  4. **Layout Thrashing en el scroll virtual del catálogo (`studio.js`)**:
+     - En `renderVirtualSlice()`, en cada evento de scroll se reescribía `body.style.height = totalHeight + 'px'` e inmediatamente se leía `grid.getBoundingClientRect().top`, forzando un recálculo síncrono de layout (reflow) en cada tick de scroll.
+     - *Solución*: Se condicionó la escritura de `body.style.height` a cuando la altura realmente cambia (`body.dataset.renderedHeight !== targetHeightStr`) y se cacheó `catalogGridDocTop`, eliminando por completo el layout thrashing durante el scroll continuo.
+  5. **Salida abrupta del menú móvil Kokomi y buscador (`theme.js` y `windows.css`)**:
+     - Al invocar `closeMenu()` o `closeSearch()`, los componentes se ocultaban inmediatamente con `hidden = true` sin transición de salida.
+     - *Solución*: Se añadieron keyframes `@keyframes oneup-drawer-out` y `@keyframes oneup-pop-out` coordinados con clase `.is-closing` y timeout antes de fijar `hidden = true` (respetando `prefers-reduced-motion`).
+  6. **Aceleración por GPU en transiciones del Hero (`premiere-hero.css`, `spotlight.css`, `studio.js`)**:
+     - `premiereCopyIn` y `spotlightText` pasaron de `translateY` 2D a `translate3d(0, 9px, 0)` con `will-change` promovido durante el cambio y timeout para retirar la clase `.is-switching`.
+     - En `catalog-virtual.css`, el hover de tarjetas en el grid virtual se optimizó a `translate3d(0, -5px, 0)` con `backface-visibility: hidden`.
+- **Verificación**:
+  - `tests/unit/ui-motion-optimization.test.mjs`: Nueva suite con 8 pruebas verificando todas las optimizaciones de movimiento, ciclos de RAF inactivos, coordinación de salida y transformaciones GPU.
+  - `node --test tests/unit/*.test.mjs`: **69/69 tests unitarios pasados** (0 fallos, tiempo de ejecución optimizado a ~340ms).
+  - `node tests/e2e/e2e-oneup-motion.mjs`: **100% pasado en móvil (390px) y escritorio (1366px)**, tanto con movimiento estándar como con `prefers-reduced-motion`.
+  - `npm run test:all`: Suite integral de 69 tests Node + 16 tests Python + 152 comprobaciones smoke + 48 comprobaciones guardián todas pasadas (0 críticas, 0 advertencias).
+  - `npm run build`: Build de Vite completado en ~204ms sin errores.

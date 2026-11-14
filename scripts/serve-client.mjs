@@ -3,6 +3,8 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 const port = Number(process.argv[2]) || 8765;
+const catalogPort = Number(process.env.ONEUP_CATALOG_PORT || process.env.PORT_CATALOG) || 4050;
+const catalogHost = process.env.ONEUP_CATALOG_HOST || '127.0.0.1';
 const root = path.resolve('client');
 const mime = {
   '.html': 'text/html; charset=utf-8',
@@ -23,6 +25,35 @@ const mime = {
 const server = http.createServer((req, res) => {
   try {
     const pathname = decodeURIComponent(new URL(req.url, 'http://127.0.0.1').pathname);
+
+    // Reverse-proxy /api/* requests to catalog service
+    if (pathname.startsWith('/api/') || pathname === '/api') {
+      const proxyReq = http.request({
+        hostname: catalogHost,
+        port: catalogPort,
+        path: req.url,
+        method: req.method,
+        headers: { ...req.headers, host: `${catalogHost}:${catalogPort}` }
+      }, (proxyRes) => {
+        res.writeHead(proxyRes.statusCode || 200, proxyRes.headers);
+        proxyRes.pipe(res);
+      });
+
+      proxyReq.on('error', async () => {
+        try {
+          const { createRequire } = await import('node:module');
+          const reqCjs = createRequire(import.meta.url);
+          const catalogService = reqCjs('../server/src/catalog-service.js');
+          await catalogService.handleRequest(req, res);
+        } catch (fallbackErr) {
+          res.writeHead(502, { 'Content-Type': 'application/json; charset=utf-8' });
+          res.end(JSON.stringify({ error: 'Catalog backend service unavailable' }));
+        }
+      });
+
+      req.pipe(proxyReq);
+      return;
+    }
     let file = path.join(root, pathname === '/' ? 'index.html' : pathname);
     if (!fs.existsSync(file)) {
       if (fs.existsSync(path.join(root, 'pages', pathname))) {

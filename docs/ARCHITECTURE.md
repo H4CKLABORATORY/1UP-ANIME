@@ -25,8 +25,14 @@ flowchart TD
         C_MAN["client/manifest.webmanifest"]
         
         subgraph ClientSrc ["client/src/"]
-            JS["src/js/ (35 módulos JavaScript)"]
-            CSS["src/styles/ (26 hojas de estilo CSS)"]
+            JS["src/js/ (31 módulos JavaScript activos)"]
+            CSS["src/styles/ (23 hojas de estilo CSS activas)"]
+        end
+
+        subgraph ClientVue ["client/src-vue/ (Vue 3 + Vite Architecture)"]
+            V_APP["App.vue (Orquestador principal)"]
+            V_COMP["components/ (Layout, Hero, Discovery, Rails, Modals, UI)"]
+            V_COMPOS["composables/ (Catalog, Favorites, Synopses, Airing, Motion)"]
         end
         
         subgraph ClientPages ["client/pages/"]
@@ -52,6 +58,7 @@ flowchart TD
 
     subgraph ServerContainer ["server/ (Servicios y Configuraciones)"]
         S_CONF["server/config/ (Firebase, Supabase, Dexter JSON/Rules)"]
+        S_SRC["server/src/ (Catalog REST API Service & SQLite runtime)"]
         S_FUNC["server/functions/ (Cloud Functions & Adapters)"]
         S_REND["server/render/ (Anime1v Gateway & Metadata Runtime)"]
         S_SUPA["server/supabase/ (SQL migrations & RLS)"]
@@ -113,6 +120,28 @@ flowchart TD
 │   │   ├── privacy.html        # Términos de servicio y política de privacidad
 │   │   ├── scraping-lab.html   # Laboratorio de metadatos educativos
 │   │   └── studio.html         # Espacio editorial de trabajo creativo
+│   ├── src-vue/                # Arquitectura moderna Vue 3 + Vite:
+│   │   ├── App.vue             # Componente raíz y orquestador reactivo
+│   │   ├── main.js             # Punto de entrada de montaje y bootstrap
+│   │   ├── components/         # Componentes pequeños y modulares:
+│   │   │   ├── layout/         # OneUpHeader, MobileNav, OneUpFooter
+│   │   │   ├── cinema/         # OneUpCinema (intro cinematográfica)
+│   │   │   ├── hero/           # HeroBanner, HeroArtCard
+│   │   │   ├── discovery/      # QuickAccessDeck, MarqueeBanner, ExploreBar, SeasonBanner
+│   │   │   ├── rails/          # AnimeCard, AnimeRail, ContinueRail, ScheduleRail
+│   │   │   ├── browse/         # BrowseScreen, BrowseControls
+│   │   │   ├── community/      # CommunityBanner
+│   │   │   ├── modals/         # AnimeDetailModal, EpisodePlayer, EpisodeComments, AuthModal
+│   │   │   └── ui/             # DepthToggle, ToastNotification, SvgSprites
+│   │   └── composables/        # Lógica de estado reactiva y reusable:
+│   │       ├── useCatalog.js   # Catálogo AniList/Jikan/Snapshot
+│   │       ├── useFavorites.js # Gestión de Mi lista y episodios vistos
+│   │       ├── useSpanishSynopses.js # Traducciones y sinopsis editorial en español
+│   │       ├── useAiring.js    # Horarios y programación de estrenos en vivo
+│   │       ├── useAuth.js      # Sesión de invitado y perfiles
+│   │       ├── useAuthorizedMedia.js # Manifiesto de episodios licenciados
+│   │       ├── useDexterMotion.js # Modo 3D y seguimiento de cursor
+│   │       └── useToast.js     # Notificaciones flotantes
 │   ├── src/
 │   │   ├── js/                 # 35 módulos JavaScript frontend estructurados:
 │   │   │   ├── studio.js       # Núcleo de catálogo, búsqueda y estado de la app
@@ -169,6 +198,8 @@ flowchart TD
 │   │   ├── firestore.rules     # Reglas de seguridad RLS de Firestore
 │   │   ├── storage.rules       # Reglas de control de acceso a Cloud Storage
 │   │   └── dexter-providers.json # Definición de proveedores de sincronización
+│   ├── src/                    # Servicios de backend desacoplados para producción:
+│   │   └── catalog-service.js  # Servicio REST API nativo (node:sqlite WAL) de catálogo, streaming y descargas
 │   ├── functions/              # Cloud Functions serverless (Node.js):
 │   │   ├── index.js            # Punto de entrada de funciones serverless
 │   │   ├── anime1v-adapter.js  # Adaptador restringido de solo metadatos

@@ -82,8 +82,16 @@ async function loadSpanishSynopses(){
   applySpanishToVisibleText();
  }catch(e){console.info('1UP Anime: sinopsis en español pendiente.',e?.message)}
 }
-const state={entries:new Map(),saved:{},home:{},featured:null,view:'inicio',results:[],page:1,next:false,loading:false,filters:{genre:'',format:'',status:'',sort:'POPULARITY_DESC'},query:'',active:null,seq:0};
-function register(data){for(const a of data||[])if(a.id)state.entries.set(a.id,a)}
+const state={entries:new Map(),saved:{},home:{},featured:null,view:'inicio',results:[],page:1,next:false,loading:false,filters:{genre:'',format:'',status:'',sort:'POPULARITY_DESC',letter:'ALL'},query:'',searchTags:[],fullCatalog:[],fullCatalogLoaded:false,fullCatalogLoading:false,active:null,seq:0};
+function register(data){
+ for(const a of data||[]){
+  if(!a||!a.id)continue;
+  state.entries.set(a.id,a);
+  if(a.slug&&!state.entries.has(a.slug))state.entries.set(a.slug,a);
+  if(a.raw_id!=null&&!state.entries.has(String(a.raw_id)))state.entries.set(String(a.raw_id),a);
+  if(typeof a.id==='string'&&a.id.startsWith('jk-')&&!state.entries.has(a.id.slice(3)))state.entries.set(a.id.slice(3),a);
+ }
+}
 function normalizeAni(m){
  const score=Number(m.averageScore)||0;
  return {id:m.idMal?'mal-'+m.idMal:'al-'+m.id,mal_id:m.idMal||null,title:m.title?.english||m.title?.romaji||'Anime',title_romaji:m.title?.romaji||'',title_native:m.title?.native||'',aliases:window.OneUpAnimeSearch?.collectAliases(m.title,m.synonyms)||[],image:safe(m.coverImage?.extraLarge||m.coverImage?.large),banner:safe(m.bannerImage),description:String(m.description||'').replace(/<[^>]+>/g,'').replace(/\n/g,' '),averageScore:score,year:m.seasonYear||m.startDate?.year||'',genres:m.genres||[],format:m.format||'TV',episodes:m.episodes||0,status:m.status||'',siteUrl:safe(m.siteUrl),streaming:(m.externalLinks||[]).filter(x=>x.type==='STREAMING'&&safe(x.url)).map(x=>({name:x.site,url:x.url})),next:m.nextAiringEpisode?{at:m.nextAiringEpisode.airingAt,episode:m.nextAiringEpisode.episode}:null,source:'anilist'};
@@ -181,8 +189,92 @@ async function fromSnapshot(o){
  const res={items:items.slice(0,o.perPage||24),next:false,source:'snapshot',updated:data.updated};
  register(res.items);return res;
 }
+let backendHomePromise=null;
+async function fetchBackendHome(){
+ if(!backendHomePromise){
+  backendHomePromise=(async()=>{
+   const bases=[
+    (typeof window!=='undefined'&&window.ONEUP_API_BASE),
+    '/api',
+    'http://127.0.0.1:4050/api',
+    'http://localhost:4050/api'
+   ].filter(Boolean);
+   for(const base of bases){
+    const ctrl=new AbortController(),timer=setTimeout(()=>ctrl.abort(),3500);
+    try{
+     const url=base.replace(/\/$/,'')+'/home';
+     const res=await fetch(url,{cache:'no-cache',signal:ctrl.signal});
+     if(res.ok){
+      const obj=await res.json();
+      if(obj?.groups&&obj?.updated)return obj;
+     }
+    }catch(e){}finally{clearTimeout(timer)}
+   }
+   return null;
+  })();
+ }
+ return backendHomePromise;
+}
+async function fromBackendHome(o){
+ const data=await fetchBackendHome();if(!data)return null;
+ let group='trending';
+ if(o.status==='RELEASING')group='season';
+ else if(o.format==='MOVIE')group='movies';
+ else if(o.sort==='START_DATE_DESC')group='recent';
+ else if(o.sort==='POPULARITY_DESC')group='popular';
+ let items=Array.isArray(data.groups[group])?data.groups[group]:[];
+ if(o.search||o.genre||o.format||o.status){
+  const combined=[...items,...Object.values(data.groups).filter(Array.isArray).flat()];
+  const unique=new Map();for(const x of combined)if(x.id&&!unique.has(x.id))unique.set(x.id,x);
+  items=[...unique.values()].filter(x=>
+   (!o.search||(window.OneUpAnimeSearch?.matches(x,o.search)??x.title.toLowerCase().includes(o.search.toLowerCase())))&&
+   (!o.genre||(x.genres||[]).includes(o.genre))&&
+   (!o.format||x.format===o.format)&&
+   (!o.status||x.status===o.status)
+  );
+ }
+ if(!items.length)return null;
+ const res={items:items.slice(0,o.perPage||24),next:false,source:'backend',updated:data.updated};
+ register(res.items);return res;
+}
+async function fetchBackendApi(o){
+ const bases=[
+  (typeof window!=='undefined'&&window.ONEUP_API_BASE),
+  '/api',
+  'http://127.0.0.1:4050/api',
+  'http://localhost:4050/api'
+ ].filter(Boolean);
+ const p=new URLSearchParams();
+ if(o.search)p.set('search',o.search);
+ if(o.status)p.set('status',o.status);
+ if(o.format)p.set('format',o.format);
+ if(o.genre)p.set('genre',o.genre);
+ if(o.sort)p.set('sort',o.sort);
+ p.set('page',String(o.page||1));
+ p.set('limit',String(o.perPage||20));
+ for(const base of bases){
+  const ctrl=new AbortController(),timer=setTimeout(()=>ctrl.abort(),3500);
+  try{
+   const url=base.replace(/\/$/,'')+'/animes?'+p.toString();
+   const res=await fetch(url,{cache:'no-cache',signal:ctrl.signal});
+   if(!res.ok)continue;
+   const json=await res.json();
+   if(Array.isArray(json?.items)&&json.items.length>0){
+    register(json.items);
+    return {items:json.items,next:Boolean(json.next),source:'backend',total:json.total};
+   }
+  }catch(e){}finally{clearTimeout(timer)}
+ }
+ return null;
+}
 async function fetchCatalog(o){
  const old=cached(o);if(old){register(old.items);return old}
+ if(!o.search&&!o.genre&&(!o.page||o.page===1)){
+  const backendHome=await fromBackendHome(o);
+  if(backendHome){cache(o,backendHome);return backendHome;}
+ }
+ const backend=await fetchBackendApi(o);
+ if(backend&&backend.items?.length){register(backend.items);cache(o,backend);return backend;}
  if(!o.search&&!o.genre&&(!o.page||o.page===1)){
   const snapshot=await fromSnapshot(o);if(snapshot){cache(o,snapshot);return snapshot;}
  }
@@ -213,8 +305,33 @@ function refreshFav(){
  if(state.featured)$('#hero-save').innerHTML=isFav(state.featured.id)?'<svg><use href="#ico-check"/></svg> Guardado':'<svg><use href="#ico-plus"/></svg> Guardar anime';
 }
 function card(a){
- const pic=a.image?'<img data-depth="far" loading="lazy" referrerpolicy="no-referrer" src="'+esc(a.image)+'" alt="Póster de '+esc(a.title)+'">':'<div class="placeholder-art"><strong>'+esc(a.title.slice(0,27))+'</strong></div>';
- return '<article class="anime-card depth-scene"><div class="anime-art" data-details="'+esc(a.id)+'" role="button" tabindex="0">'+pic+'<div class="art-shade anime-card-shine" data-depth="mid"></div><span class="rating" data-depth="front"><b>★</b> '+(a.averageScore?(a.averageScore/10).toFixed(1):'—')+'</span></div><button class="anime-save'+(isFav(a.id)?' saved':'')+'" data-save="'+esc(a.id)+'">'+(isFav(a.id)?'✓':'＋')+'</button><div class="card-info" data-depth="front"><button class="card-name" data-details="'+esc(a.id)+'">'+esc(a.title)+'</button><div class="card-sub"><span>'+esc(String(a.year||'Anime'))+'</span><span class="card-type">'+esc(formats[a.format]||a.format||'Serie')+'</span></div></div></article>';
+ const title = (a.title || a.title_romaji || 'Anime').trim();
+ const year = a.year || (a.season ? a.season.split(' ').pop() : 'Anime');
+ const type = formats[a.format] || a.type || a.format || 'Serie';
+ const eps = a.episodes ? `${a.episodes} eps` : (a.status_label || (a.status === 'RELEASING' ? 'En emisión' : ''));
+ const score = a.averageScore ? (a.averageScore / 10).toFixed(1) : (a.score ? Number(a.score).toFixed(1) : '—');
+ const pic = (a.image || a.poster)
+  ? '<img data-depth="far" loading="lazy" referrerpolicy="no-referrer" src="'+esc(a.image || a.poster)+'" alt="Póster de '+esc(title)+'">'
+  : '<div class="placeholder-art"><strong>'+esc(title.slice(0, 27))+'</strong></div>';
+ const isAiring = a.status === 'RELEASING' || (a.status_label && a.status_label.toLowerCase().includes('emisión'));
+
+ return '<article class="anime-card depth-scene" data-id="'+esc(a.id)+'">'+
+   '<div class="anime-art" data-details="'+esc(a.id)+'" role="button" tabindex="0">'+
+     pic+
+     '<div class="art-shade anime-card-shine" data-depth="mid"></div>'+
+     '<span class="rating" data-depth="front"><b>★</b> '+score+'</span>'+
+     (isAiring ? '<span class="card-badge-airing">EMISIÓN</span>' : '')+
+   '</div>'+
+   '<button class="anime-save'+(isFav(a.id)?' saved':'')+'" data-save="'+esc(a.id)+'" type="button" aria-label="'+(isFav(a.id)?'Guardado':'Guardar')+'">'+(isFav(a.id)?'✓':'＋')+'</button>'+
+   '<div class="card-info" data-depth="front">'+
+     '<button class="card-name" data-details="'+esc(a.id)+'" title="'+esc(title)+'">'+esc(title)+'</button>'+
+     '<div class="card-sub">'+
+       '<span class="card-year">'+esc(String(year))+'</span>'+
+       (eps ? '<span class="card-episodes">'+esc(eps)+'</span>' : '')+
+       '<span class="card-type">'+esc(type)+'</span>'+
+     '</div>'+
+   '</div>'+
+ '</article>';
 }
 function paint(selector,data,source=''){
  const e=$(selector);if(!e)return;
@@ -269,7 +386,7 @@ function hero(a, chosen=false, persist=chosen){
  if(chosen){
   const wrap=document.querySelector('.hero');
   if(wrap && !matchMedia('(prefers-reduced-motion: reduce)').matches){
-   wrap.classList.remove('is-switching');void wrap.offsetWidth;wrap.classList.add('is-switching');
+   wrap.classList.remove('is-switching');void wrap.offsetWidth;wrap.classList.add('is-switching');setTimeout(()=>wrap.classList.remove('is-switching'),500);
   }
  }
 }
@@ -283,6 +400,7 @@ function scheduleHTML(items){
 }
 async function loadHome(){
  register(samples);
+ loadFullCatalogStudio().catch(()=>{});
  for(const [selector,amount] of [['#trending-rail',10],['#season-rail',10],['#recent-rail',10],['#movies-rail',8]])paint(selector,(selector==='#movies-rail'?samples.filter(x=>x.format==='MOVIE'):samples.filter(x=>x.format==='TV')).slice(0,amount),'sample');
  hero(samples[6]);renderContinue();
  const requests=[['trending','#trending-rail',{sort:'TRENDING_DESC',perPage:18}],['season','#season-rail',{sort:'TRENDING_DESC',status:'RELEASING',perPage:18}],['recent','#recent-rail',{sort:'START_DATE_DESC',perPage:18}],['movies','#movies-rail',{sort:'POPULARITY_DESC',format:'MOVIE',perPage:18}]];
@@ -311,6 +429,12 @@ function go(route){
  // Invalidate pending catalogue responses even when the next view is synchronous.
  ++state.seq;state.loading=false;
  state.view=route;$('#home-screen').hidden=route!=='inicio';$('#browse-screen').hidden=route==='inicio';
+ const railAside=$('#catalog-letter-rail-aside');if(railAside)railAside.hidden=(route!=='catalogo');
+ const gridEl=$('#browse-grid');
+ if(gridEl&&route!=='catalogo'){
+  gridEl.classList.remove('virtual-catalog-container','catalog-virtual-active');
+  if(route!=='programacion')gridEl.classList.add('poster-grid');
+ }
  $$('[data-route]').forEach(b=>b.classList.toggle('active',b.dataset.route===route));
  window.scrollTo({top:0,behavior:'instant'});try{history.replaceState(null,'','#'+route)}catch{}
  if(route==='milista')showSaved();else if(route==='programacion')showSchedule();else if(route!=='inicio')browse(route);
@@ -334,12 +458,378 @@ function showSchedule(){
 }
 function options(opts,selected){return opts.map(([k,v])=>'<option value="'+esc(k)+'"'+(k===selected?' selected':'')+'>'+esc(v)+'</option>').join('')}
 function filters(){
- $('#browse-controls').innerHTML='<select aria-label="Género" id="filter-genre">'+options([['','Todos los géneros'],...genres],state.filters.genre)+'</select>'+
- '<select aria-label="Tipo" id="filter-format">'+options([['','Todos los tipos'],['TV','Series'],['MOVIE','Películas'],['OVA','OVA'],['ONA','ONA'],['SPECIAL','Especiales']],state.filters.format)+'</select>'+
- '<select aria-label="Estado" id="filter-status">'+options([['','Todos los estados'],['RELEASING','En emisión'],['FINISHED','Finalizados']],state.filters.status)+'</select>'+
- '<select aria-label="Orden" id="filter-sort">'+options([['POPULARITY_DESC','Más populares'],['TRENDING_DESC','Tendencias'],['SCORE_DESC','Mejor puntuados'],['START_DATE_DESC','Más recientes']],state.filters.sort)+'</select><button id="filter-reset">Limpiar</button>';
+ const hasQ=Boolean(state.query||state.searchTags.length);
+ const tagsHtml=state.searchTags.length?
+  '<div class="encapsulated-tags-section"><div class="encapsulated-header"><span class="encapsulated-badge">⚡ Buscando de lo ya buscado ('+state.searchTags.length+')</span><button type="button" id="clear-tags-btn" class="clear-tags-link">Limpiar filtros</button></div><div class="filter-chips-list">'+state.searchTags.map((t,i)=>'<span class="filter-chip"><span class="chip-label">'+esc(t)+'</span><button type="button" class="chip-remove" data-tag-idx="'+i+'">✕</button></span>').join('')+'</div></div>':'';
+ $('#browse-controls').innerHTML=
+  '<div class="catalog-filter-controls">'+
+  '<div class="catalog-search-bar"><div class="search-input-box"><span class="search-icon">🔍</span><input id="catalog-search-input" class="catalog-search-input" type="text" placeholder="Buscar en catálogo... (Enter para encapsular y filtrar más)" value="'+esc(state.query)+'"><button id="catalog-search-clear" class="catalog-search-clear-btn" type="button" aria-label="Limpiar búsqueda" '+(hasQ?'':'style="display:none"')+'>✕</button></div>'+(state.query.trim()?'<button type="button" id="encapsulate-btn" class="encapsulate-btn">＋ Encapsular</button>':'')+'</div>'+
+  tagsHtml+
+  '<div class="browse-controls-row">'+
+  '<select aria-label="Género" id="filter-genre">'+options([['','Todos los géneros'],...genres],state.filters.genre)+'</select>'+
+  '<select aria-label="Tipo" id="filter-format">'+options([['','Todos los tipos'],['TV','Series'],['MOVIE','Películas'],['OVA','OVA'],['ONA','ONA'],['SPECIAL','Especiales']],state.filters.format)+'</select>'+
+  '<select aria-label="Estado" id="filter-status">'+options([['','Todos los estados'],['RELEASING','En emisión'],['FINISHED','Finalizados']],state.filters.status)+'</select>'+
+  '<select aria-label="Orden" id="filter-sort">'+options([['POPULARITY_DESC','Más populares'],['TRENDING_DESC','Tendencias'],['SCORE_DESC','Mejor puntuados'],['START_DATE_DESC','Más recientes']],state.filters.sort)+'</select><button id="filter-reset">Limpiar</button>'+
+  '</div></div>';
 }
+let catalogVirtualScrollAttached = false;
+let catalogFilteredCache = [];
+let catalogGridDocTop = -1;
+
+async function loadFullCatalogStudio() {
+ if (state.fullCatalogLoaded && state.fullCatalog.length) return state.fullCatalog;
+ if (state.fullCatalogLoading) return state.fullCatalog;
+ state.fullCatalogLoading = true;
+ const bases = [
+  (typeof window !== 'undefined' && window.ONEUP_API_BASE),
+  '/api',
+  'http://127.0.0.1:4050/api',
+  'http://localhost:4050/api'
+ ].filter(Boolean);
+ for (const base of bases) {
+  const ctrl = new AbortController(), timer = setTimeout(() => ctrl.abort(), 3500);
+  try {
+   const url = base.replace(/\/$/, '') + '/animes?limit=5000';
+   const res = await fetch(url, { cache: 'no-cache', signal: ctrl.signal });
+   if (res.ok) {
+    const json = await res.json();
+    if (Array.isArray(json?.items) && json.items.length > 0) {
+     register(json.items);
+     state.fullCatalog = json.items;
+     state.fullCatalogLoaded = true;
+     state.fullCatalogLoading = false;
+     return json.items;
+    }
+   }
+  } catch (e) {} finally { clearTimeout(timer); }
+ }
+ const files = ['./data/catalog-full.json', '/data/catalog-full.json', './client/data/catalog-full.json', './data/catalog.json'];
+ for (const f of files) {
+  const ctrl = new AbortController(), timer = setTimeout(() => ctrl.abort(), 4000);
+  try {
+   const res = await fetch(f, { signal: ctrl.signal });
+   if (res.ok) {
+    const json = await res.json();
+    const items = Array.isArray(json?.items) ? json.items : (json.groups ? Object.values(json.groups).flat() : []);
+    if (items.length) {
+     const unique = new Map();
+     for (const x of items) if (x && x.id && !unique.has(x.id)) unique.set(x.id, x);
+     const uniqueItems = [...unique.values()];
+     register(uniqueItems);
+     state.fullCatalog = uniqueItems;
+     state.fullCatalogLoaded = true;
+     state.fullCatalogLoading = false;
+     return uniqueItems;
+    }
+   }
+  } catch (e) {} finally { clearTimeout(timer); }
+ }
+ state.fullCatalogLoading = false;
+ return state.fullCatalog;
+}
+
+function ensureLetterRailElement() {
+ let layout = $('#catalog-view-layout');
+ const grid = $('#browse-grid');
+ if (!layout && grid && grid.parentNode) {
+  layout = document.createElement('div');
+  layout.id = 'catalog-view-layout';
+  layout.className = 'catalog-view-layout';
+  grid.parentNode.insertBefore(layout, grid);
+  const gridArea = document.createElement('div');
+  gridArea.className = 'catalog-grid-area';
+  gridArea.appendChild(grid);
+  layout.appendChild(gridArea);
+
+  const aside = document.createElement('aside');
+  aside.id = 'catalog-letter-rail-aside';
+  aside.className = 'catalog-letter-rail-aside';
+  aside.innerHTML = `
+    <nav id="catalog-letter-rail" class="letter-filter-rail" aria-label="Filtro de catálogo por letra" role="navigation">
+      <div class="letter-rail-header"><span class="letter-rail-label">A-Z</span></div>
+      <div class="letter-rail-list">
+        ${['TODOS', '#', ...'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('')].map(l => 
+          `<button type="button" class="letter-btn ${l === 'TODOS' ? 'is-all' : ''}" data-letter="${l}" aria-label="Letra ${l}"><span class="letter-text">${l === 'TODOS' ? 'ALL' : l}</span></button>`
+        ).join('')}
+      </div>
+    </nav>
+  `;
+  layout.appendChild(aside);
+
+  aside.addEventListener('click', e => {
+   const btn = e.target.closest('.letter-btn');
+   if (!btn) return;
+   const letVal = btn.dataset.letter;
+   if (letVal === 'TODOS' || state.filters.letter === letVal) {
+    state.filters.letter = 'ALL';
+   } else {
+    state.filters.letter = letVal;
+   }
+   updateLetterRailActive();
+   paintCatalogVirtual();
+   window.scrollTo({ top: 320, behavior: 'smooth' });
+  });
+ }
+ const railAside = $('#catalog-letter-rail-aside');
+ if (railAside) railAside.hidden = false;
+ updateLetterRailActive();
+}
+
+function updateLetterRailActive() {
+ const rail = $('#catalog-letter-rail');
+ if (!rail) return;
+ const current = state.filters.letter || 'ALL';
+ rail.querySelectorAll('.letter-btn').forEach(b => {
+  const l = b.dataset.letter;
+  const isAct = (l === current) || (l === 'TODOS' && current === 'ALL');
+  b.classList.toggle('active', isAct);
+  b.setAttribute('aria-pressed', isAct);
+ });
+}
+
+function matchStudioAnime(item, q) {
+ if (!q) return true;
+ q = q.toLowerCase().trim();
+ if (!q) return true;
+ if ((item.title || '').toLowerCase().includes(q)) return true;
+ if ((item.short_title || '').toLowerCase().includes(q)) return true;
+ if ((item.slug || '').toLowerCase().includes(q)) return true;
+ if ((item.aliases || []).some(a => String(a).toLowerCase().includes(q))) return true;
+ if ((item.genres || []).some(g => String(g).toLowerCase().includes(q))) return true;
+ if (String(item.year || '').includes(q)) return true;
+ if ((item.studios || '').toLowerCase().includes(q)) return true;
+ if ((item.description || item.synopsis || '').toLowerCase().includes(q)) return true;
+ if ((item.type || '').toLowerCase().includes(q)) return true;
+ return false;
+}
+
+function getFilteredCatalogStudio() {
+ let list = state.fullCatalog || [];
+ if (!list.length) return [];
+
+ const letter = state.filters.letter;
+ if (letter && letter !== 'ALL' && letter !== 'TODOS') {
+  if (letter === '#') {
+   list = list.filter(item => {
+    const title = (item.title || '').trim().replace(/^["'«“‘]+/g, '');
+    const first = title.charAt(0);
+    return !/^[a-zA-ZáéíóúÁÉÍÓÚñÑ]/.test(first);
+   });
+  } else {
+   const target = letter.toUpperCase();
+   list = list.filter(item => {
+    const title = (item.title || '').trim().replace(/^["'«“‘]+/g, '');
+    const normalized = title.charAt(0).normalize('NFD').replace(/[\u0300-\u036f]/g, '').toUpperCase();
+    return normalized === target;
+   });
+  }
+ }
+
+ if (state.filters.genre) {
+  const g = state.filters.genre.toLowerCase();
+  list = list.filter(item => (item.genres || []).some(genre => genre.toLowerCase().includes(g)));
+ }
+
+ if (state.filters.format) {
+  const f = state.filters.format;
+  list = list.filter(item => item.format === f || item.type === f);
+ }
+
+ if (state.filters.status) {
+  const s = state.filters.status;
+  list = list.filter(item => item.status === s);
+ }
+
+ if (state.searchTags && state.searchTags.length) {
+  list = list.filter(item => state.searchTags.every(tag => matchStudioAnime(item, tag)));
+ }
+
+ if (state.query && state.query.trim()) {
+  list = list.filter(item => matchStudioAnime(item, state.query));
+ }
+
+ const sort = state.filters.sort;
+ const sorted = [...list];
+ if (sort === 'POPULARITY_DESC') {
+  sorted.sort((a, b) => (b.vote_count || b.averageScore || 0) - (a.vote_count || a.averageScore || 0));
+ } else if (sort === 'TRENDING_DESC') {
+  sorted.sort((a, b) => (b.id > a.id ? 1 : -1));
+ } else if (sort === 'START_DATE_DESC') {
+  sorted.sort((a, b) => (Number(b.year) || 0) - (Number(a.year) || 0));
+ } else if (sort === 'SCORE_DESC') {
+  sorted.sort((a, b) => (b.averageScore || 0) - (a.averageScore || 0));
+ } else if (sort === 'TITLE_ASC') {
+  sorted.sort((a, b) => a.title.localeCompare(b.title, 'es', { sensitivity: 'base' }));
+ } else if (sort === 'TITLE_DESC') {
+  sorted.sort((a, b) => b.title.localeCompare(a.title, 'es', { sensitivity: 'base' }));
+ }
+ return sorted;
+}
+
+let catalogLastRender = { startRow: -1, endRow: -1, cols: -1, count: -1, gridWidth: 0 };
+
+function renderVirtualSlice() {
+ const grid = $('#browse-grid');
+ if (!grid) return;
+ const body = grid.querySelector('.virtual-scroll-body');
+ if (!body) return;
+ const rowsWrapper = body.querySelector('.virtual-rendered-rows');
+ if (!rowsWrapper) return;
+
+ const items = catalogFilteredCache || [];
+ if (!items.length) {
+  body.style.height = '0px';
+  rowsWrapper.innerHTML = '';
+  return;
+ }
+
+ const gridWidth = grid.clientWidth || window.innerWidth;
+ let cols = 4;
+ if (gridWidth >= 1150) cols = 5;
+ else if (gridWidth >= 880) cols = 4;
+ else if (gridWidth >= 560) cols = 3;
+ else cols = 2;
+
+ const gap = cols >= 3 ? 16 : 12;
+ const cardWidth = Math.max(120, (gridWidth - (cols - 1) * gap) / cols);
+ const posterHeight = Math.round(cardWidth * 1.5);
+ const infoHeight = cols >= 3 ? 84 : 74;
+ const cardHeight = posterHeight + infoHeight;
+ const rowPitch = cardHeight + gap;
+
+ const totalRows = Math.ceil(items.length / cols);
+ const totalHeight = totalRows * rowPitch;
+ const targetHeightStr = totalHeight + 'px';
+ if (body.dataset.renderedHeight !== targetHeightStr) {
+  body.style.height = targetHeightStr;
+  body.dataset.renderedHeight = targetHeightStr;
+ }
+
+ const pageScroll = window.scrollY || window.pageYOffset || document.documentElement.scrollTop || 0;
+ const gridDocTop = (typeof catalogGridDocTop === 'number' && catalogGridDocTop >= 0)
+  ? catalogGridDocTop
+  : (grid.getBoundingClientRect().top + pageScroll);
+ catalogGridDocTop = gridDocTop;
+ const scrollTop = Math.max(0, pageScroll - gridDocTop);
+ const viewportHeight = window.innerHeight || 800;
+
+ const overscan = 2;
+ const rawStart = Math.floor(scrollTop / rowPitch) - overscan;
+ const startRow = Math.max(0, rawStart);
+ const rawEnd = Math.ceil((scrollTop + viewportHeight) / rowPitch) + overscan;
+ const endRow = Math.min(totalRows, rawEnd);
+
+ const offsetY = startRow * rowPitch;
+ rowsWrapper.style.transform = 'translate3d(0,' + offsetY + 'px,0)';
+
+ if (
+  startRow === catalogLastRender.startRow &&
+  endRow === catalogLastRender.endRow &&
+  cols === catalogLastRender.cols &&
+  items.length === catalogLastRender.count &&
+  Math.abs(gridWidth - catalogLastRender.gridWidth) < 5
+ ) {
+  return;
+ }
+
+ catalogLastRender = { startRow, endRow, cols, count: items.length, gridWidth };
+
+ let rowsHtml = '';
+ for (let r = startRow; r < endRow; r++) {
+  const slice = items.slice(r * cols, (r + 1) * cols);
+  rowsHtml += '<div class="virtual-row" style="grid-template-columns: repeat(' + cols + ', minmax(0, 1fr)); gap: ' + gap + 'px; min-height: ' + cardHeight + 'px;">' +
+    slice.map(card).join('') +
+  '</div>';
+ }
+ rowsWrapper.innerHTML = rowsHtml;
+}
+
+function paintCatalogVirtual() {
+ const grid = $('#browse-grid');
+ if (!grid) return;
+ if (grid.classList.contains('poster-grid')) {
+  grid.classList.remove('poster-grid');
+  grid.classList.add('virtual-catalog-container', 'catalog-virtual-active');
+ }
+ const items = getFilteredCatalogStudio();
+ catalogFilteredCache = items;
+ catalogLastRender = { startRow: -1, endRow: -1, cols: -1, count: -1, gridWidth: 0 };
+
+ const total = (state.fullCatalog || []).length;
+ const count = items.length;
+ const letter = state.filters.letter && state.filters.letter !== 'ALL' && state.filters.letter !== 'TODOS'
+  ? ' · Letra: ' + state.filters.letter
+  : '';
+ const tags = state.searchTags.length ? ' · ' + state.searchTags.length + ' filtros encapsulados' : '';
+ const live = state.query ? ' · Buscando «' + state.query + '»' : '';
+ $('#browse-status').textContent = count === total
+  ? `${total.toLocaleString()} animes en catálogo completo (Scroll virtual 60fps)${letter}${tags}${live}`
+  : `${count.toLocaleString()} de ${total.toLocaleString()} animes encontrados${letter}${tags}${live}`;
+
+ if (!items.length) {
+  grid.innerHTML = '<div class="empty">No encontramos títulos con esos filtros. Prueba encapsular otros términos o cambiar la letra.</div>';
+  return;
+ }
+
+ if (!grid.querySelector('.virtual-scroll-body')) {
+  grid.innerHTML = `
+    <div class="virtual-scroll-body" style="position: relative; width: 100%;">
+      <div class="virtual-rendered-rows" style="position: absolute; top: 0; left: 0; right: 0; width: 100%;"></div>
+    </div>
+  `;
+ }
+
+ renderVirtualSlice();
+
+ if (!catalogVirtualScrollAttached) {
+  catalogVirtualScrollAttached = true;
+  let ticking = false;
+  window.addEventListener('scroll', () => {
+   if (state.view !== 'catalogo') return;
+   if (!ticking) {
+    ticking = true;
+    requestAnimationFrame(() => {
+     renderVirtualSlice();
+     ticking = false;
+    });
+   }
+  }, { passive: true });
+  window.addEventListener('resize', () => {
+   if (state.view === 'catalogo') {
+    catalogGridDocTop = -1;
+    catalogLastRender.gridWidth = 0;
+    renderVirtualSlice();
+   }
+  }, { passive: true });
+ }
+}
+
+async function renderCatalogView() {
+ heading('CATÁLOGO <em>COMPLETO.</em>', 'Explora todo el universo anime con scroll virtual, búsqueda encapsulada e índice A-Z.', 'EXPLORA / TODOS LOS ANIMES');
+ filters();
+ $('#browse-next').hidden = true;
+ ensureLetterRailElement();
+ const grid = $('#browse-grid');
+ if (grid) {
+  grid.classList.remove('poster-grid');
+  grid.classList.add('virtual-catalog-container', 'catalog-virtual-active');
+ }
+
+ if (!state.fullCatalog || !state.fullCatalog.length) {
+  $('#browse-grid').innerHTML = '<div class="loading">Cargando catálogo completo (4,885 animes)...</div>';
+  $('#browse-status').textContent = 'Cargando catálogo completo...';
+  await loadFullCatalogStudio();
+ }
+
+ updateLetterRailActive();
+ paintCatalogVirtual();
+}
+
 async function browse(route,page=1,append=false){
+ if(route==='catalogo'){
+  renderCatalogView();
+  return;
+ }
  if(state.loading&&append)return;
  const descriptions={temporada:['EN <em>EMISIÓN.</em>','Las series que están en emisión.','TEMPORADA / EN EMISIÓN'],peliculas:['PELÍCULAS <em>ANIME.</em>','El cine anime que no te quieres perder.','CINE / PELÍCULAS'],populares:['TOP <em>ANIME.</em>','Ranking por popularidad.','RANKING / POPULARES'],recientes:['ANIME <em>RECIENTE.</em>','Series y nuevas incorporaciones.','CATÁLOGO / RECIENTES'],catalogo:['CATÁLOGO <em>COMPLETO.</em>','Busca por género, tipo y estado.','EXPLORA / TODOS'],genero:['ANIME DE <em>'+esc(genres.find(x=>x[0]===state.filters.genre)?.[1]||state.filters.genre)+'</em>','Historias por género.','GÉNEROS / FILTRO'],buscar:['RESULTADOS DE <em>BÚSQUEDA.</em>','Búsqueda para «'+state.query+'».','BÚSQUEDA / ANIME']};
  heading(...(descriptions[route]||descriptions.catalogo));
@@ -526,7 +1016,7 @@ function detail(id){
  ].filter(Boolean);
  const chips=(a.genres||[]).slice(0,7).map(g=>'<span class="oneup-genre-tag">'+esc(genreSpanish(g))+'</span>').join('');
  const links=(a.streaming||[]).filter(x=>safe(x.url)).map(x=>'<a href="'+esc(safe(x.url))+'" target="_blank" rel="noopener noreferrer">'+esc(x.name||'Plataforma oficial')+' ↗</a>').join('');
- const pool=[...state.entries.values()];
+ const pool=[...new Set(state.entries.values())];
  const related=pool.filter(x=>x.id!==id && x.image && (x.genres||[]).some(g=>(a.genres||[]).includes(g))).slice(0,4);
  const recommendations=related.length?
  '<section class="oneup-detail-section"><h3>SI TE INTERESÓ ESTE ANIME</h3><div class="oneup-related-grid">'+related.map(x=>
@@ -570,6 +1060,8 @@ function detail(id){
  const scene=$('#oneup-detail-art');
  if(scene&&bg)scene.style.backgroundImage='url("'+bg.replace(/["\\]/g,'')+'")';
  const dialog=$('#anime-dialog');
+ window.OneUpMotion?.prepareOpen?.(dialog);
+ for(const a of dialog?.getAnimations?.()||[]){if(a.id==='oneup-motion-close')a.cancel()}
  if(!dialog.open)dialog.showModal();
  dialog.setAttribute('aria-labelledby','detail-anime-name');
  dialog.scrollTop=0;
@@ -655,7 +1147,40 @@ function init(){
  $('#hero-save').addEventListener('click',()=>state.featured&&toggle(state.featured.id));
  $('#browse-next').addEventListener('click',()=>!state.loading&&state.next&&browse(state.view,state.page+1,true));
  $('#browse-controls').addEventListener('change',e=>{const keys={'filter-genre':'genre','filter-format':'format','filter-status':'status','filter-sort':'sort'};if(keys[e.target.id]){state.filters[keys[e.target.id]]=e.target.value;browse('catalogo')}});
- $('#browse-controls').addEventListener('click',e=>{if(e.target.id==='filter-reset'){state.filters={genre:'',format:'',status:'',sort:'POPULARITY_DESC'};browse('catalogo')}});
+ $('#browse-controls').addEventListener('click',e=>{
+  if(e.target.id==='filter-reset'){
+   state.filters={genre:'',format:'',status:'',sort:'POPULARITY_DESC',letter:'ALL'};
+   state.query='';state.searchTags=[];
+   browse('catalogo');
+  }else if(e.target.id==='catalog-search-clear'){
+   state.query='';state.searchTags=[];
+   browse('catalogo');
+  }else if(e.target.id==='clear-tags-btn'){
+   state.searchTags=[];
+   browse('catalogo');
+  }else if(e.target.closest('.chip-remove')){
+   const idx=Number(e.target.closest('.chip-remove').dataset.tagIdx);
+   if(!isNaN(idx))state.searchTags.splice(idx,1);
+   browse('catalogo');
+  }else if(e.target.id==='encapsulate-btn'){
+   const q=state.query.trim();
+   if(q&&!state.searchTags.includes(q)){state.searchTags.push(q);state.query='';browse('catalogo')}
+  }
+ });
+ $('#browse-controls').addEventListener('keydown',e=>{
+  if(e.target.id==='catalog-search-input'&&e.key==='Enter'){
+   e.preventDefault();
+   const q=e.target.value.trim();
+   if(q&&!state.searchTags.includes(q)){state.searchTags.push(q);state.query='';e.target.value='';browse('catalogo')}
+  }
+ });
+ $('#browse-controls').addEventListener('input',e=>{
+  if(e.target.id==='catalog-search-input'){
+   state.query=e.target.value;
+   const clr=$('#catalog-search-clear');
+   if(clr)clr.style.display=(state.query||state.searchTags.length)?'':'none';
+  }
+ });
  let lastDetailDismissed=-10000;
  const closeAnime=(event)=>{
   if(event){event.preventDefault();event.stopPropagation()}
@@ -679,6 +1204,8 @@ function init(){
  $('#anime-dialog').addEventListener('close',()=>{
   lastDetailDismissed=performance.now();
   state.active=null;
+  window.OneUpMotion?.cancelMotion?.($('#anime-dialog'));
+  for(const a of $('#anime-dialog')?.getAnimations?.()||[]){if(a.id==='oneup-motion-close')a.cancel()}
   document.dispatchEvent(new Event('oneup-anime-closed'));
  });
  $('#anime-dialog').addEventListener('click',e=>{

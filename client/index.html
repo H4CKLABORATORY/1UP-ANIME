@@ -25,7 +25,7 @@
 <script defer src="./src/js/social-backend.js"></script>
 <script defer src="./src/js/supabase-config.js"></script><script defer src="./src/js/supabase-episode-backend.js"></script>
 <script defer src="./src/js/episode-comments.js"></script>
-<script defer src="./src/js/auth.js"></script><script defer src="./src/js/anime-title-search.js"></script><script defer src="./src/js/studio.js"></script>
+<script defer src="./src/js/auth.js"></script><script defer src="./src/js/anime-title-search.js"></script><script defer src="./src/js/studio.js?v=20261114-gpu"></script>
 <script type="module" src="./src/js/franchise-explorer.mjs"></script>
 <script defer src="./src/js/oneup-finale.js"></script>
 <script defer src="./src/js/hls-adapter.js"></script><script defer src="./src/js/episode-player.js"></script>
@@ -62,7 +62,9 @@
 <link rel="stylesheet" href="./src/styles/oneup-finale.css">
 <link rel="stylesheet" href="./src/styles/premiere-hero.css">
 <link rel="stylesheet" href="./src/styles/dexter-motion-engine.css">
+<link rel="stylesheet" href="./src/styles/catalog-virtual.css?v=20261114-gpu">
 </head><body class="oneup-kokomi kokomi-mobile-reference" data-theme-preview="off">
+<div id="app">
 <div id="oneup-opening" role="dialog" aria-modal="true" aria-label="Introducción cinematográfica de 1UP ANIME">
  <section id="cinema" data-mode="opening" aria-label="Animación de entrada 1UP ANIME">
   <div class="environment">
@@ -182,8 +184,15 @@
 </dialog>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 <div id="startup" class="startup" hidden><div class="startup-mark"><img src="./assets/oneup-crest.svg" alt=""><strong>ONE <em>UP</em></strong><span>A N I M E</span></div></div>
-<script src="js/depth-engine.js"></script>
-<script src="js/depth-toggle-button.js"></script>
-<script src="js/card-depth-engine.js"></script>
+</div>
+<script type="module">
+  // Vue 3 Virtual Catalog: Active under Vite dev server or bundler
+  if (typeof window !== 'undefined' && (window.__VITE__ || import.meta.hot)) {
+    import('./src-vue/main.js').catch(() => {});
+  }
+</script>
+<script src="./src/js/depth-engine.js"></script>
+<script src="./src/js/depth-toggle-button.js"></script>
+<script src="./src/js/card-depth-engine.js"></script>
 </body></html>
 <!-- pages redeploy trigger -->

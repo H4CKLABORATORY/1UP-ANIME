@@ -39,7 +39,9 @@ try{
  const sw=await readFile(existsSync('client/sw.js')?'client/sw.js':'sw.js','utf8');
  assert(html.includes('themes/oneup-motion/windows.css')&&html.includes('themes/oneup-motion/windows.js'));
  assert(sw.includes('./themes/oneup-motion/windows.css')&&sw.includes('./themes/oneup-motion/windows.js'));
- browser=await chromium.launch({headless:true,args:['--no-sandbox']});
+ const launchOptions = { headless: true, args: ['--no-sandbox'] };
+ if (process.platform === 'win32') launchOptions.channel = 'msedge';
+ browser = await chromium.launch(launchOptions);
  for(const setting of [
   {width:390,reduced:false},
   {width:1366,reduced:false},
@@ -91,6 +93,9 @@ try{
    // Native Escape must always close immediately and restore the application.
    await page.locator('#trending-rail [data-details]').first().click();
    await page.locator('#anime-dialog').waitFor({state:'visible'});
+   await page.waitForTimeout(300);
+   const reopenOpacity = await page.locator('#anime-dialog').evaluate(el => getComputedStyle(el).opacity);
+   assert.equal(reopenOpacity, '1', 'Dialog opacity must be 1 on reopen, not stuck at 0 from fill: forwards');
    await page.keyboard.press('Escape');
    await page.waitForFunction(()=>!document.querySelector('#anime-dialog').open,{timeout:4000});
 

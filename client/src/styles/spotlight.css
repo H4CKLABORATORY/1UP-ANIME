@@ -54,9 +54,9 @@
 .hero-pick.active{background:#778dfc22;border-color:#a7b8ffb2;color:#f4f6ff}
 .hero-pick:focus-visible{outline:2px solid #a7b8ff}
 .hero.is-switching .hero-poster{animation:spotlightBackdrop .48s ease-out both}
-.hero.is-switching .hero-copy h1,.hero.is-switching .hero-description{animation:spotlightText .46s ease-out both}
+.hero.is-switching .hero-copy h1,.hero.is-switching .hero-description{animation:spotlightText .46s ease-out both;will-change:transform,opacity}
 @keyframes spotlightBackdrop{from{opacity:.4;filter:brightness(.48) saturate(.6)}to{opacity:.44;filter:brightness(.8) saturate(.91)}}
-@keyframes spotlightText{from{opacity:.2;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+@keyframes spotlightText{from{opacity:.2;transform:translate3d(0,8px,0)}to{opacity:1;transform:translate3d(0,0,0)}}
 .anime-card:focus-within{border-color:#a2b7ff}
 .anime-card:hover{border-color:#91a5eebd;box-shadow:0 17px 44px #5376ec1a}
 .anime-card .card-name{color:#f8f6fc}
@@ -77,7 +77,7 @@
  display:grid;place-items:center;
  margin:14px 14px -62px auto;z-index:120;
  background:#0c0e1df0;border:1px solid #c4cbeb9e;color:white;
- backdrop-filter:blur(11px);border-radius:100px;width:48px;height:48px;
+ border-radius:100px;width:48px;height:48px;
  touch-action:manipulation;pointer-events:auto;
  cursor:pointer
 }

@@ -72,17 +72,37 @@ document.addEventListener('DOMContentLoaded',()=>{
    toggle.setAttribute('aria-expanded','true');qs('#km-close').focus();
  }
  function closeMenu(restoreFocus=true){
-   if(drawer.hidden)return;
-   drawer.hidden=true;backdrop.hidden=true;body.style.overflow=previousOverflow;
-   toggle.setAttribute('aria-expanded','false');
-   if(restoreFocus)(lastFocus?.isConnected?lastFocus:toggle).focus();
+   if(drawer.hidden || drawer.classList.contains('is-closing'))return;
+   const finish = () => {
+     drawer.classList.remove('is-closing');
+     backdrop.classList.remove('is-closing');
+     drawer.hidden=true;backdrop.hidden=true;body.style.overflow=previousOverflow;
+     toggle.setAttribute('aria-expanded','false');
+     if(restoreFocus)(lastFocus?.isConnected?lastFocus:toggle).focus();
+   };
+   if (window.matchMedia?.('(prefers-reduced-motion: reduce)').matches || !drawer.animate) {
+     finish();
+     return;
+   }
+   drawer.classList.add('is-closing');
+   backdrop.classList.add('is-closing');
+   setTimeout(finish, 180);
  }
  function openSearch(){
    closeMenu(false);inputForm.hidden=false;qs('#km-search-input').focus();
  }
  function closeSearch(restoreFocus=true){
-   if(inputForm.hidden)return;
-   inputForm.hidden=true;if(restoreFocus)qs('#header-search')?.focus();
+   if(inputForm.hidden || inputForm.classList.contains('is-closing'))return;
+   const finish = () => {
+     inputForm.classList.remove('is-closing');
+     inputForm.hidden=true;if(restoreFocus)qs('#header-search')?.focus();
+   };
+   if (window.matchMedia?.('(prefers-reduced-motion: reduce)').matches || !inputForm.animate) {
+     finish();
+     return;
+   }
+   inputForm.classList.add('is-closing');
+   setTimeout(finish, 150);
  }
  toggle.addEventListener('click',()=>drawer.hidden?openMenu():closeMenu());
  qs('#km-close').addEventListener('click',()=>closeMenu());
