@@ -1,176 +1,176 @@
 {
   "schemaVersion": 1,
   "engine": "ONEUP SELF HEALING ENGINE",
-  "updatedAt": "2026-11-14T07:58:23.089Z",
+  "updatedAt": "2026-11-14T01:28:51.364Z",
   "site": "https://h4cklaboratory.github.io/1UP-ANIME/",
-  "mode": "solo_local",
+  "mode": "local_y_publico",
   "verdict": "correcto",
-  "totalChecks": 48,
+  "totalChecks": 52,
   "critical": 0,
   "warnings": 0,
   "persistentAlerts": [],
   "requiresManualAction": true,
-  "lastKnownGoodCommit": null,
+  "lastKnownGoodCommit": "1e2374234e00c07384c6b5c74b3cb90746bbc00f",
   "checks": [
     {
       "id": "file:index.html",
       "level": "ok",
       "message": "Validado: Archivo requerido index.html",
-      "bytes": 760
+      "bytes": 19966
     },
     {
-      "id": "file:client/pages/comunidad.html",
+      "id": "file:comunidad.html",
       "level": "ok",
-      "message": "Validado: Archivo requerido client/pages/comunidad.html",
-      "bytes": 8700
+      "message": "Validado: Archivo requerido comunidad.html",
+      "bytes": 8583
     },
     {
-      "id": "file:client/pages/moderacion.html",
+      "id": "file:moderacion.html",
       "level": "ok",
-      "message": "Validado: Archivo requerido client/pages/moderacion.html",
-      "bytes": 2546
+      "message": "Validado: Archivo requerido moderacion.html",
+      "bytes": 2444
     },
     {
-      "id": "file:client/src/js/studio.js",
+      "id": "file:studio.js",
       "level": "ok",
-      "message": "Validado: Archivo requerido client/src/js/studio.js",
-      "bytes": 70608
+      "message": "Validado: Archivo requerido studio.js",
+      "bytes": 48865
     },
     {
-      "id": "file:client/src/styles/studio.css",
+      "id": "file:studio.css",
       "level": "ok",
-      "message": "Validado: Archivo requerido client/src/styles/studio.css",
-      "bytes": 21220
+      "message": "Validado: Archivo requerido studio.css",
+      "bytes": 21015
     },
     {
-      "id": "file:client/sw.js",
+      "id": "file:sw.js",
       "level": "ok",
-      "message": "Validado: Archivo requerido client/sw.js",
-      "bytes": 6008
+      "message": "Validado: Archivo requerido sw.js",
+      "bytes": 5435
     },
     {
-      "id": "file:client/src/js/auth.js",
+      "id": "file:auth.js",
       "level": "ok",
-      "message": "Validado: Archivo requerido client/src/js/auth.js",
-      "bytes": 7097
+      "message": "Validado: Archivo requerido auth.js",
+      "bytes": 6717
     },
     {
-      "id": "file:client/src/js/airing-ui.js",
+      "id": "file:airing-ui.js",
       "level": "ok",
-      "message": "Validado: Archivo requerido client/src/js/airing-ui.js",
-      "bytes": 13427
+      "message": "Validado: Archivo requerido airing-ui.js",
+      "bytes": 13210
     },
     {
-      "id": "file:client/src/js/episode-comments.js",
+      "id": "file:episode-comments.js",
       "level": "ok",
-      "message": "Validado: Archivo requerido client/src/js/episode-comments.js",
-      "bytes": 8174
+      "message": "Validado: Archivo requerido episode-comments.js",
+      "bytes": 8063
     },
     {
-      "id": "file:client/src/js/community.js",
+      "id": "file:community.js",
       "level": "ok",
-      "message": "Validado: Archivo requerido client/src/js/community.js",
-      "bytes": 18325
+      "message": "Validado: Archivo requerido community.js",
+      "bytes": 18040
     },
     {
-      "id": "file:client/src/js/social-backend.js",
+      "id": "file:social-backend.js",
       "level": "ok",
-      "message": "Validado: Archivo requerido client/src/js/social-backend.js",
-      "bytes": 10814
+      "message": "Validado: Archivo requerido social-backend.js",
+      "bytes": 10605
     },
     {
-      "id": "file:server/functions/index.js",
+      "id": "file:functions/index.js",
       "level": "ok",
-      "message": "Validado: Archivo requerido server/functions/index.js",
-      "bytes": 22789
+      "message": "Validado: Archivo requerido functions/index.js",
+      "bytes": 22373
     },
     {
       "id": "file:data/catalog.json",
       "level": "ok",
       "message": "Validado: Archivo requerido data/catalog.json",
-      "bytes": 288417
+      "bytes": 282788
     },
     {
       "id": "file:data/airing.json",
       "level": "ok",
       "message": "Validado: Archivo requerido data/airing.json",
-      "bytes": 491014
+      "bytes": 471601
     },
     {
       "id": "file:data/translations-es.json",
       "level": "ok",
       "message": "Validado: Archivo requerido data/translations-es.json",
-      "bytes": 153945
+      "bytes": 153164
     },
     {
       "id": "file:data/dexter/records.json",
       "level": "ok",
       "message": "Validado: Archivo requerido data/dexter/records.json",
-      "bytes": 506832
+      "bytes": 492795
     },
     {
-      "id": "file:server/config/dexter-providers.json",
+      "id": "file:config/dexter-providers.json",
       "level": "ok",
-      "message": "Validado: Archivo requerido server/config/dexter-providers.json",
-      "bytes": 3877
+      "message": "Validado: Archivo requerido config/dexter-providers.json",
+      "bytes": 3772
     },
     {
       "id": "file:data/licensed-media.json",
       "level": "ok",
       "message": "Validado: Archivo requerido data/licensed-media.json",
-      "bytes": 158
+      "bytes": 153
     },
     {
       "id": "file:scripts/dexter-anime-sync.mjs",
       "level": "ok",
       "message": "Validado: Archivo requerido scripts/dexter-anime-sync.mjs",
-      "bytes": 13949
+      "bytes": 13519
     },
     {
       "id": "file:scripts/check-ui.mjs",
       "level": "ok",
       "message": "Validado: Archivo requerido scripts/check-ui.mjs",
-      "bytes": 8712
+      "bytes": 7980
     },
     {
-      "id": "syntax:client/src/js/studio.js",
+      "id": "syntax:studio.js",
       "level": "ok",
-      "message": "JavaScript válido: client/src/js/studio.js"
+      "message": "JavaScript válido: studio.js"
     },
     {
-      "id": "syntax:client/src/js/auth.js",
+      "id": "syntax:auth.js",
       "level": "ok",
-      "message": "JavaScript válido: client/src/js/auth.js"
+      "message": "JavaScript válido: auth.js"
     },
     {
-      "id": "syntax:client/sw.js",
+      "id": "syntax:sw.js",
       "level": "ok",
-      "message": "JavaScript válido: client/sw.js"
+      "message": "JavaScript válido: sw.js"
     },
     {
-      "id": "syntax:client/src/js/airing-ui.js",
+      "id": "syntax:airing-ui.js",
       "level": "ok",
-      "message": "JavaScript válido: client/src/js/airing-ui.js"
+      "message": "JavaScript válido: airing-ui.js"
     },
     {
-      "id": "syntax:client/src/js/episode-comments.js",
+      "id": "syntax:episode-comments.js",
       "level": "ok",
-      "message": "JavaScript válido: client/src/js/episode-comments.js"
+      "message": "JavaScript válido: episode-comments.js"
     },
     {
-      "id": "syntax:client/src/js/community.js",
+      "id": "syntax:community.js",
       "level": "ok",
-      "message": "JavaScript válido: client/src/js/community.js"
+      "message": "JavaScript válido: community.js"
     },
     {
-      "id": "syntax:client/src/js/social-backend.js",
+      "id": "syntax:social-backend.js",
       "level": "ok",
-      "message": "JavaScript válido: client/src/js/social-backend.js"
+      "message": "JavaScript válido: social-backend.js"
     },
     {
-      "id": "syntax:client/src/js/moderacion.js",
+      "id": "syntax:moderacion.js",
       "level": "ok",
-      "message": "JavaScript válido: client/src/js/moderacion.js"
+      "message": "JavaScript válido: moderacion.js"
     },
     {
       "id": "catalog:data",
@@ -187,13 +187,13 @@
       "id": "catalog:freshness",
       "level": "ok",
       "message": "Catálogo actualizado",
-      "ageHours": 22.7
+      "ageHours": 16.2
     },
     {
       "id": "airing:entries",
       "level": "ok",
       "message": "Validado: El calendario debe tener al menos 15 emisiones",
-      "entries": 208
+      "entries": 202
     },
     {
       "id": "airing:season",
@@ -204,7 +204,7 @@
       "id": "airing:freshness",
       "level": "ok",
       "message": "Calendario con fecha reciente",
-      "ageHours": 16.1
+      "ageHours": 0.1
     },
     {
       "id": "spanish:pack",
@@ -249,7 +249,7 @@
       "id": "engine:freshness",
       "level": "ok",
       "message": "Sincronización reciente",
-      "ageHours": 13.7,
+      "ageHours": 0.5,
       "status": "correcta"
     },
     {
@@ -281,6 +281,30 @@
       "id": "dependency:scripts/refresh-catalog.mjs",
       "level": "ok",
       "message": "Herramienta de sincronización presente: scripts/refresh-catalog.mjs"
+    },
+    {
+      "id": "site:home",
+      "level": "ok",
+      "message": "Página pública respondió correctamente",
+      "url": "https://h4cklaboratory.github.io/1UP-ANIME/"
+    },
+    {
+      "id": "site:community",
+      "level": "ok",
+      "message": "Página pública respondió correctamente",
+      "url": "https://h4cklaboratory.github.io/1UP-ANIME/comunidad.html"
+    },
+    {
+      "id": "site:catalog",
+      "level": "ok",
+      "message": "Página pública respondió correctamente",
+      "url": "https://h4cklaboratory.github.io/1UP-ANIME/data/catalog.json"
+    },
+    {
+      "id": "site:airing",
+      "level": "ok",
+      "message": "Página pública respondió correctamente",
+      "url": "https://h4cklaboratory.github.io/1UP-ANIME/data/airing.json"
     }
   ],
   "recommendations": [
