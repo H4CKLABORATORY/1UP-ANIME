@@ -1,6 +1,6 @@
 /* 1UP ANIME — Catalog Virtual Scroll, Encapsulated Multi-Tag Search & A-Z Letter Rail */
 
-/* 1. Top Search Bar & Encapsulated Filter Controls */
+/* 1. Top Search Bar & Compact Inline Encapsulated Filter Controls */
 .catalog-filter-controls {
   display: flex;
   flex-direction: column;
@@ -19,53 +19,131 @@
 .search-input-box {
   display: flex;
   align-items: center;
-  gap: 10px;
+  flex-wrap: wrap;
+  gap: 6px 8px;
   flex: 1;
-  background: rgba(22, 19, 32, 0.92);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 12px;
-  padding: 10px 14px;
+  background: rgba(22, 19, 32, 0.94);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 10px;
+  padding: 6px 12px;
   box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
   transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
-  min-height: 46px;
+  min-height: 44px;
+  cursor: text;
 }
 
-.search-input-box.has-focus {
+.search-input-box.has-focus,
+.search-input-box:focus-within {
   border-color: #00e676;
   background: rgba(26, 22, 38, 0.98);
-  box-shadow: 0 0 0 3px rgba(0, 230, 118, 0.2), 0 8px 24px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 0 2px rgba(0, 230, 118, 0.25), 0 8px 24px rgba(0, 0, 0, 0.5);
 }
 
 .search-icon {
-  font-size: 15px;
+  font-size: 14px;
   opacity: 0.65;
+  user-select: none;
+  flex-shrink: 0;
+  margin-right: 2px;
+}
+
+.search-chips-wrap {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+/* Compact Chip inside the search filter box */
+.filter-chip,
+.filter-chip.compact-chip,
+.search-chips-wrap .filter-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: linear-gradient(135deg, rgba(0, 230, 118, 0.18), rgba(24, 38, 30, 0.92));
+  border: 1px solid rgba(0, 230, 118, 0.45);
+  border-radius: 6px;
+  padding: 3px 8px 3px 10px;
+  color: #e8fff4;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.2;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+  transition: border-color 0.15s, transform 0.15s, background 0.15s;
+  animation: compactChipIn 0.16s ease-out both;
   user-select: none;
 }
 
+@keyframes compactChipIn {
+  from { opacity: 0; transform: scale(0.92); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.filter-chip:hover,
+.filter-chip.compact-chip:hover,
+.search-chips-wrap .filter-chip:hover {
+  border-color: #00e676;
+  background: linear-gradient(135deg, rgba(0, 230, 118, 0.26), rgba(28, 44, 35, 0.95));
+}
+
+.filter-chip .chip-label {
+  max-width: 180px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.filter-chip .chip-remove {
+  background: rgba(255, 255, 255, 0.14);
+  border: none;
+  color: #ff6b6b;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 900;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  line-height: 1;
+  transition: background 0.15s, color 0.15s, transform 0.15s;
+}
+
+.filter-chip .chip-remove:hover {
+  background: #ff5252;
+  color: #fff;
+  transform: scale(1.15);
+}
+
 .catalog-search-input {
-  flex: 1;
+  flex: 1 1 140px;
   background: transparent;
   border: none;
   outline: none;
   color: #fff;
   font-family: inherit;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 500;
   line-height: 1.4;
-  min-width: 0;
+  min-width: 110px;
+  padding: 3px 4px;
 }
 
 .catalog-search-input::placeholder {
   color: rgba(255, 255, 255, 0.42);
-  font-size: 13px;
+  font-size: 12px;
 }
 
 .catalog-search-clear-btn {
   background: rgba(255, 255, 255, 0.12);
   border: none;
   color: rgba(255, 255, 255, 0.8);
-  width: 24px;
-  height: 24px;
+  width: 22px;
+  height: 22px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -75,6 +153,7 @@
   cursor: pointer;
   transition: background 0.18s, color 0.18s, transform 0.18s;
   flex-shrink: 0;
+  margin-left: auto;
   padding: 0;
 }
 
@@ -85,136 +164,12 @@
 }
 
 .encapsulate-btn {
-  background: linear-gradient(135deg, rgba(0, 230, 118, 0.2), rgba(0, 230, 118, 0.08));
-  border: 1px solid rgba(0, 230, 118, 0.5);
-  color: #00e676;
-  border-radius: 10px;
-  padding: 10px 16px;
-  font-family: inherit;
-  font-size: 12px;
-  font-weight: 700;
-  cursor: pointer;
-  white-space: nowrap;
-  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
-  box-shadow: 0 4px 12px rgba(0, 230, 118, 0.15);
-  height: 46px;
-  display: flex;
-  align-items: center;
+  display: none !important;
 }
 
-.encapsulate-btn:hover {
-  background: #00e676;
-  color: #090a11;
-  transform: translateY(-1px);
-  box-shadow: 0 6px 18px rgba(0, 230, 118, 0.35);
-}
-
-/* 2. Encapsulated Tags Section ("Buscar de lo ya buscado") */
+/* Fallback for external tags section if ever invoked */
 .encapsulated-tags-section {
-  background: rgba(26, 21, 38, 0.7);
-  border: 1px solid rgba(0, 230, 118, 0.3);
-  border-radius: 12px;
-  padding: 11px 15px;
-  backdrop-filter: blur(8px);
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
-}
-
-.encapsulated-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10px;
-}
-
-.encapsulated-badge {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  color: #00e676;
-  font-size: 12px;
-  letter-spacing: 0.03em;
-}
-
-.badge-icon {
-  font-size: 13px;
-}
-
-.badge-count {
-  color: rgba(255, 255, 255, 0.6);
-  font-size: 11px;
-}
-
-.clear-tags-link {
-  background: none;
-  border: none;
-  color: rgba(255, 255, 255, 0.5);
-  font-size: 11px;
-  text-decoration: underline;
-  cursor: pointer;
-  padding: 2px 4px;
-}
-
-.clear-tags-link:hover {
-  color: #ff5252;
-}
-
-.filter-chips-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.filter-chip {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: linear-gradient(135deg, rgba(38, 30, 56, 0.95), rgba(22, 18, 34, 0.95));
-  border: 1px solid rgba(0, 230, 118, 0.45);
-  border-radius: 18px;
-  padding: 4px 10px 4px 12px;
-  color: #fff;
-  font-size: 12px;
-  font-weight: 700;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
-  transition: border-color 0.15s, transform 0.15s;
-}
-
-.filter-chip:hover {
-  border-color: #00e676;
-  transform: translateY(-1px);
-}
-
-.chip-label {
-  max-width: 220px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.chip-remove {
-  background: rgba(255, 255, 255, 0.15);
-  border: none;
-  color: #ff5252;
-  width: 17px;
-  height: 17px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 9px;
-  font-weight: 900;
-  cursor: pointer;
-  padding: 0;
-  transition: background 0.15s, color 0.15s, transform 0.15s;
-}
-
-.chip-remove:hover {
-  background: #ff5252;
-  color: #fff;
-  transform: scale(1.15);
+  display: none !important;
 }
 
 /* 3. Quick Tag Suggestions */
@@ -490,12 +445,17 @@
 
 @media (max-width: 599px) {
   .catalog-search-bar {
-    flex-direction: column;
-    align-items: stretch;
+    width: 100%;
   }
 
-  .encapsulate-btn {
-    justify-content: center;
+  .search-input-box {
+    padding: 6px 10px;
+    gap: 4px 6px;
+  }
+
+  .catalog-search-input {
+    min-width: 90px;
+    font-size: 12px;
   }
 
   .browse-controls-row select {

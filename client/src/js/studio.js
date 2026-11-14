@@ -459,18 +459,52 @@ function showSchedule(){
 function options(opts,selected){return opts.map(([k,v])=>'<option value="'+esc(k)+'"'+(k===selected?' selected':'')+'>'+esc(v)+'</option>').join('')}
 function filters(){
  const hasQ=Boolean(state.query||state.searchTags.length);
- const tagsHtml=state.searchTags.length?
-  '<div class="encapsulated-tags-section"><div class="encapsulated-header"><span class="encapsulated-badge">⚡ Buscando de lo ya buscado ('+state.searchTags.length+')</span><button type="button" id="clear-tags-btn" class="clear-tags-link">Limpiar filtros</button></div><div class="filter-chips-list">'+state.searchTags.map((t,i)=>'<span class="filter-chip"><span class="chip-label">'+esc(t)+'</span><button type="button" class="chip-remove" data-tag-idx="'+i+'">✕</button></span>').join('')+'</div></div>':'';
+ const chipsHtml=(state.searchTags||[]).map((t,i)=>
+  '<span class="filter-chip compact-chip" data-tag="'+esc(t)+'">'+
+   '<span class="chip-label">'+esc(t)+'</span>'+
+   '<button type="button" class="chip-remove" data-tag-idx="'+i+'" aria-label="Eliminar filtro '+esc(t)+'">✕</button>'+
+  '</span>'
+ ).join('');
+ const placeholder=state.searchTags.length
+  ?'Filtrar dentro de la selección... (Enter para encapsular)'
+  :'Buscar en catálogo... (Enter para encapsular)';
  $('#browse-controls').innerHTML=
   '<div class="catalog-filter-controls">'+
-  '<div class="catalog-search-bar"><div class="search-input-box"><span class="search-icon">🔍</span><input id="catalog-search-input" class="catalog-search-input" type="text" placeholder="Buscar en catálogo... (Enter para encapsular y filtrar más)" value="'+esc(state.query)+'"><button id="catalog-search-clear" class="catalog-search-clear-btn" type="button" aria-label="Limpiar búsqueda" '+(hasQ?'':'style="display:none"')+'>✕</button></div>'+(state.query.trim()?'<button type="button" id="encapsulate-btn" class="encapsulate-btn">＋ Encapsular</button>':'')+'</div>'+
-  tagsHtml+
+  '<div class="catalog-search-bar">'+
+   '<div class="search-input-box" id="catalog-search-box">'+
+    '<span class="search-icon" aria-hidden="true">🔍</span>'+
+    '<div class="search-chips-wrap" id="catalog-chips-wrap">'+chipsHtml+'</div>'+
+    '<input id="catalog-search-input" class="catalog-search-input" type="text" autocomplete="off" placeholder="'+esc(placeholder)+'" value="'+esc(state.query)+'">'+
+    '<button id="catalog-search-clear" class="catalog-search-clear-btn" type="button" aria-label="Limpiar búsqueda" '+(hasQ?'':'style="display:none"')+'>✕</button>'+
+   '</div>'+
+  '</div>'+
   '<div class="browse-controls-row">'+
   '<select aria-label="Género" id="filter-genre">'+options([['','Todos los géneros'],...genres],state.filters.genre)+'</select>'+
   '<select aria-label="Tipo" id="filter-format">'+options([['','Todos los tipos'],['TV','Series'],['MOVIE','Películas'],['OVA','OVA'],['ONA','ONA'],['SPECIAL','Especiales']],state.filters.format)+'</select>'+
   '<select aria-label="Estado" id="filter-status">'+options([['','Todos los estados'],['RELEASING','En emisión'],['FINISHED','Finalizados']],state.filters.status)+'</select>'+
-  '<select aria-label="Orden" id="filter-sort">'+options([['POPULARITY_DESC','Más populares'],['TRENDING_DESC','Tendencias'],['SCORE_DESC','Mejor puntuados'],['START_DATE_DESC','Más recientes']],state.filters.sort)+'</select><button id="filter-reset">Limpiar</button>'+
+  '<select aria-label="Orden" id="filter-sort">'+options([['POPULARITY_DESC','Más populares'],['TRENDING_DESC','Tendencias'],['SCORE_DESC','Mejor puntuados'],['START_DATE_DESC','Más recientes']],state.filters.sort)+'</select><button id="filter-reset" type="button">Limpiar</button>'+
   '</div></div>';
+}
+function syncSearchChipsUI(keepFocus=true){
+ const wrap=$('#catalog-chips-wrap');
+ const input=$('#catalog-search-input');
+ const clr=$('#catalog-search-clear');
+ if(!wrap||!input){filters();paintCatalogVirtual();return}
+ wrap.innerHTML=(state.searchTags||[]).map((t,i)=>
+  '<span class="filter-chip compact-chip" data-tag="'+esc(t)+'">'+
+   '<span class="chip-label">'+esc(t)+'</span>'+
+   '<button type="button" class="chip-remove" data-tag-idx="'+i+'" aria-label="Eliminar filtro '+esc(t)+'">✕</button>'+
+  '</span>'
+ ).join('');
+ input.placeholder=state.searchTags.length
+  ?'Filtrar dentro de la selección... (Enter para encapsular)'
+  :'Buscar en catálogo... (Enter para encapsular)';
+ input.value=state.query||'';
+ if(clr){
+  clr.style.display=(state.query||state.searchTags.length)?'':'none';
+ }
+ paintCatalogVirtual();
+ if(keepFocus){input.focus()}
 }
 let catalogVirtualScrollAttached = false;
 let catalogFilteredCache = [];
@@ -589,17 +623,20 @@ function updateLetterRailActive() {
 
 function matchStudioAnime(item, q) {
  if (!q) return true;
- q = q.toLowerCase().trim();
- if (!q) return true;
- if ((item.title || '').toLowerCase().includes(q)) return true;
- if ((item.short_title || '').toLowerCase().includes(q)) return true;
- if ((item.slug || '').toLowerCase().includes(q)) return true;
- if ((item.aliases || []).some(a => String(a).toLowerCase().includes(q))) return true;
- if ((item.genres || []).some(g => String(g).toLowerCase().includes(q))) return true;
- if (String(item.year || '').includes(q)) return true;
- if ((item.studios || '').toLowerCase().includes(q)) return true;
- if ((item.description || item.synopsis || '').toLowerCase().includes(q)) return true;
- if ((item.type || '').toLowerCase().includes(q)) return true;
+ const norm = s => String(s || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim();
+ const nq = norm(q);
+ if (!nq) return true;
+ if (window.OneUpAnimeSearch?.matches?.(item, q)) return true;
+ if (norm(item.title).includes(nq)) return true;
+ if (norm(item.short_title).includes(nq)) return true;
+ if (norm(item.title_romaji).includes(nq)) return true;
+ if (norm(item.slug).includes(nq)) return true;
+ if ((item.aliases || []).some(a => norm(a).includes(nq))) return true;
+ if ((item.genres || []).some(g => norm(g).includes(nq) || norm(genreSpanish(g)).includes(nq))) return true;
+ if (String(item.year || '').includes(nq)) return true;
+ if (norm(item.studios).includes(nq)) return true;
+ if (norm(item.description || item.synopsis).includes(nq)) return true;
+ if (norm(item.type || item.format).includes(nq) || norm(formats[item.format] || '').includes(nq)) return true;
  return false;
 }
 
@@ -826,7 +863,7 @@ async function renderCatalogView() {
 }
 
 async function browse(route,page=1,append=false){
- if(route==='catalogo'){
+ if(route==='catalogo'||route==='buscar'){
   renderCatalogView();
   return;
  }
@@ -853,7 +890,15 @@ async function browse(route,page=1,append=false){
  $('#browse-status').textContent=d.source==='sample'?'Ejemplos · Fuentes no disponibles':((d.source==='snapshot'?'Catálogo guardado':d.source==='anilist'?'AniList':'Jikan')+' · '+state.results.length+' títulos');
  $('#browse-next').hidden=!state.next;
 }
-function doSearch(q){q=(q||'').trim();if(!q){toast('Escribe el nombre del anime');return}state.query=q;go('buscar')}
+function doSearch(q){
+ q=(q||'').trim();
+ if(!q){toast('Escribe el nombre del anime');return}
+ if(!state.searchTags.includes(q)){
+  state.searchTags.push(q);
+ }
+ state.query='';
+ go('catalogo');
+}
 // A rights-cleared media manifest is optional. No unofficial video-host extraction.
 let authorizedMedia=null,authorizedMediaLoading=null;
 async function mediaForAnime(id){
@@ -1111,7 +1156,7 @@ function init(){
  $('#genre-pills').innerHTML='<button data-genre="">✦ Explorar todos</button>'+genres.map(([en,es])=>'<button data-genre="'+esc(en)+'">'+esc(es)+'</button>').join('');
  document.addEventListener('click',e=>{
   const nav=e.target.closest('[data-route]');if(nav){e.preventDefault();go(nav.dataset.route);return}
-  const g=e.target.closest('[data-genre]');if(g){state.filters.genre=g.dataset.genre;go(g.dataset.genre?'genero':'catalogo');return}
+  const g=e.target.closest('[data-genre]');if(g){state.filters.genre=g.dataset.genre;go('catalogo');return}
   const s=e.target.closest('[data-save]');if(s){const id=s.dataset.save;toggle(id);if($('#anime-dialog').open&&state.active===id){const button=$('#anime-dialog [data-save]');if(button)button.textContent=isFav(id)?'✓ Guardado':'＋ Añadir a mi lista'}return}
   const pick=e.target.closest('[data-feature]');if(pick){const anime=state.entries.get(pick.dataset.feature);if(anime)hero(anime,true);return}
   const d=e.target.closest('[data-details]');
@@ -1141,44 +1186,141 @@ function init(){
   }
  },true);
  document.addEventListener('keydown',e=>{if((e.key==='Enter'||e.key===' ')&&e.target.matches('[data-details]')){e.preventDefault();detail(e.target.dataset.details)}});
- $('#search-form').addEventListener('submit',e=>{e.preventDefault();doSearch($('#search-input').value)});
- $('#header-search').addEventListener('click',()=>{go('inicio');setTimeout(()=>{$('#search-input').scrollIntoView({block:'center'});$('#search-input').focus()},100)});
+ let searchDebounceTimer=null;
+ let homeSearchDebounceTimer=null;
+
+ const homeInput=$('#search-input');
+ if(homeInput){
+  homeInput.addEventListener('input',e=>{
+   clearTimeout(homeSearchDebounceTimer);
+   const val=e.target.value.trim();
+   if(!val)return;
+   homeSearchDebounceTimer=setTimeout(()=>{
+    if(val.length>=2&&state.view==='inicio'){
+     state.query=val;
+     go('catalogo');
+     setTimeout(()=>{
+      const catInput=$('#catalog-search-input');
+      if(catInput){
+       catInput.value=val;
+       catInput.focus();
+       catInput.setSelectionRange(val.length,val.length);
+      }
+     },40);
+    }
+   },350);
+  });
+ }
+
+ $('#search-form').addEventListener('submit',e=>{
+  e.preventDefault();
+  clearTimeout(homeSearchDebounceTimer);
+  const val=($('#search-input')?.value||'').trim();
+  if(!val){toast('Escribe el nombre del anime');return}
+  if(!state.searchTags.includes(val)){
+   state.searchTags.push(val);
+  }
+  state.query='';
+  if($('#search-input'))$('#search-input').value='';
+  go('catalogo');
+  setTimeout(()=>{
+   const catInput=$('#catalog-search-input');
+   if(catInput)catInput.focus();
+  },60);
+ });
+ $('#header-search').addEventListener('click',()=>{
+  if(state.view!=='catalogo'){
+   go('catalogo');
+  }
+  setTimeout(()=>{
+   const catInput=$('#catalog-search-input')||$('#search-input');
+   if(catInput){
+    catInput.scrollIntoView({block:'center'});
+    catInput.focus();
+   }
+  },80);
+ });
  $('#hero-detail').addEventListener('click',()=>state.featured?detail(state.featured.id):go('catalogo'));
  $('#hero-save').addEventListener('click',()=>state.featured&&toggle(state.featured.id));
  $('#browse-next').addEventListener('click',()=>!state.loading&&state.next&&browse(state.view,state.page+1,true));
- $('#browse-controls').addEventListener('change',e=>{const keys={'filter-genre':'genre','filter-format':'format','filter-status':'status','filter-sort':'sort'};if(keys[e.target.id]){state.filters[keys[e.target.id]]=e.target.value;browse('catalogo')}});
+ $('#browse-controls').addEventListener('change',e=>{
+  const keys={'filter-genre':'genre','filter-format':'format','filter-status':'status','filter-sort':'sort'};
+  if(keys[e.target.id]){
+   state.filters[keys[e.target.id]]=e.target.value;
+   paintCatalogVirtual();
+  }
+ });
  $('#browse-controls').addEventListener('click',e=>{
-  if(e.target.id==='filter-reset'){
+  const removeBtn=e.target.closest('.chip-remove');
+  const clearBtn=e.target.closest('#catalog-search-clear');
+  const resetBtn=e.target.closest('#filter-reset');
+  const box=e.target.closest('#catalog-search-box');
+
+  if(removeBtn){
+   e.preventDefault();
+   e.stopPropagation();
+   const idx=Number(removeBtn.dataset.tagIdx);
+   if(!isNaN(idx)&&idx>=0&&idx<state.searchTags.length){
+    state.searchTags.splice(idx,1);
+    syncSearchChipsUI(true);
+   }
+   return;
+  }
+  if(clearBtn){
+   e.preventDefault();
+   e.stopPropagation();
+   clearTimeout(searchDebounceTimer);
+   state.query='';
+   state.searchTags=[];
+   const input=$('#catalog-search-input');
+   if(input)input.value='';
+   syncSearchChipsUI(true);
+   return;
+  }
+  if(resetBtn){
+   e.preventDefault();
+   clearTimeout(searchDebounceTimer);
    state.filters={genre:'',format:'',status:'',sort:'POPULARITY_DESC',letter:'ALL'};
-   state.query='';state.searchTags=[];
-   browse('catalogo');
-  }else if(e.target.id==='catalog-search-clear'){
-   state.query='';state.searchTags=[];
-   browse('catalogo');
-  }else if(e.target.id==='clear-tags-btn'){
+   state.query='';
    state.searchTags=[];
    browse('catalogo');
-  }else if(e.target.closest('.chip-remove')){
-   const idx=Number(e.target.closest('.chip-remove').dataset.tagIdx);
-   if(!isNaN(idx))state.searchTags.splice(idx,1);
-   browse('catalogo');
-  }else if(e.target.id==='encapsulate-btn'){
-   const q=state.query.trim();
-   if(q&&!state.searchTags.includes(q)){state.searchTags.push(q);state.query='';browse('catalogo')}
+   return;
+  }
+  if(box&&!e.target.matches('input, button, select')){
+   const input=$('#catalog-search-input');
+   if(input)input.focus();
   }
  });
  $('#browse-controls').addEventListener('keydown',e=>{
-  if(e.target.id==='catalog-search-input'&&e.key==='Enter'){
-   e.preventDefault();
-   const q=e.target.value.trim();
-   if(q&&!state.searchTags.includes(q)){state.searchTags.push(q);state.query='';e.target.value='';browse('catalogo')}
+  if(e.target.id==='catalog-search-input'){
+   if(e.key==='Enter'){
+    e.preventDefault();
+    clearTimeout(searchDebounceTimer);
+    const q=e.target.value.trim();
+    if(q){
+     if(!state.searchTags.includes(q)){
+      state.searchTags.push(q);
+     }
+     state.query='';
+     e.target.value='';
+     syncSearchChipsUI(true);
+    }
+   }else if(e.key==='Backspace'&&!e.target.value&&state.searchTags.length>0){
+    state.searchTags.pop();
+    syncSearchChipsUI(true);
+   }
   }
  });
  $('#browse-controls').addEventListener('input',e=>{
   if(e.target.id==='catalog-search-input'){
-   state.query=e.target.value;
+   clearTimeout(searchDebounceTimer);
+   const val=e.target.value;
    const clr=$('#catalog-search-clear');
-   if(clr)clr.style.display=(state.query||state.searchTags.length)?'':'none';
+   if(clr)clr.style.display=(val.trim()||state.searchTags.length)?'':'none';
+   searchDebounceTimer=setTimeout(()=>{
+    state.query=val.trim();
+    paintCatalogVirtual();
+   },300);
   }
  });
  let lastDetailDismissed=-10000;

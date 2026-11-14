@@ -137,6 +137,65 @@ test('Search Input: Clear button and Live Query combination with encapsulated ta
   assert.equal(catalog.filteredFullCatalog.value.length, 4);
 });
 
+test('Search & Spanish Normalization: Accents, Spanish genres, and format matching', async () => {
+  const { useCatalog } = await import('../../client/src-vue/composables/useCatalog.js');
+  const catalog = useCatalog();
+
+  const testAnimes = [
+    { id: '1', title: 'Shingeki no Kyojin', genres: ['Action', 'Fantasy'], format: 'TV', year: 2013 },
+    { id: '2', title: 'Kimi no Na wa.', genres: ['Romance', 'Drama', 'Supernatural'], format: 'MOVIE', year: 2016 },
+    { id: '3', title: 'Frieren', genres: ['Adventure', 'Fantasy'], format: 'TV', year: 2023 }
+  ];
+
+  catalog.fullCatalog.value = testAnimes;
+  catalog.clearCatalogSearch();
+
+  // Test 1: Spanish genre with accent "acción" matches English genre "Action"
+  catalog.catalogSearchQuery.value = 'acción';
+  assert.equal(catalog.filteredFullCatalog.value.length, 1);
+  assert.equal(catalog.filteredFullCatalog.value[0].id, '1');
+
+  // Test 2: Spanish genre without accent "accion" also matches
+  catalog.catalogSearchQuery.value = 'accion';
+  assert.equal(catalog.filteredFullCatalog.value.length, 1);
+  assert.equal(catalog.filteredFullCatalog.value[0].id, '1');
+
+  // Test 3: Format translation "película" matches format MOVIE
+  catalog.catalogSearchQuery.value = 'película';
+  assert.equal(catalog.filteredFullCatalog.value.length, 1);
+  assert.equal(catalog.filteredFullCatalog.value[0].id, '2');
+
+  // Test 4: Format translation without accent "pelicula" matches format MOVIE
+  catalog.catalogSearchQuery.value = 'pelicula';
+  assert.equal(catalog.filteredFullCatalog.value.length, 1);
+  assert.equal(catalog.filteredFullCatalog.value[0].id, '2');
+
+  // Test 5: Format translation "serie" matches format TV
+  catalog.catalogSearchQuery.value = 'serie';
+  assert.equal(catalog.filteredFullCatalog.value.length, 2);
+
+  catalog.clearCatalogSearch();
+});
+
+test('Compact Filter Box UI Architecture: Inline chips inside search-input-box', () => {
+  const studioJsPath = path.join(ROOT, 'client/src/js/studio.js');
+  const studioCssPath = path.join(ROOT, 'client/src/styles/catalog-virtual.css');
+  const studioContent = fs.readFileSync(studioJsPath, 'utf8');
+  const cssContent = fs.readFileSync(studioCssPath, 'utf8');
+
+  // 1. studio.js filters() renders chips directly inside #catalog-search-box (#catalog-chips-wrap)
+  assert.ok(studioContent.includes('catalog-chips-wrap'), 'studio.js must have catalog-chips-wrap container');
+  assert.ok(studioContent.includes('syncSearchChipsUI'), 'studio.js must have syncSearchChipsUI for inline chip updates');
+  assert.ok(studioContent.includes('searchDebounceTimer'), 'studio.js must debounce live typing');
+
+  // 2. Verified that bulky external encapsulate-btn is removed
+  assert.ok(!studioContent.includes('class="encapsulate-btn">＋ Encapsular'), 'Bulky encapsulate button must not be in filters HTML');
+
+  // 3. CSS contains compact inline chip styles
+  assert.ok(cssContent.includes('.search-chips-wrap'), 'CSS must define .search-chips-wrap');
+  assert.ok(cssContent.includes('.filter-chip.compact-chip'), 'CSS must define .filter-chip.compact-chip');
+});
+
 test('Virtual Scroll: Math calculations for row chunking, overscan and spacer heights', () => {
   const totalItems = 4885;
   const cols = 5;

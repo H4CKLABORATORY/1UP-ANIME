@@ -322,20 +322,21 @@ let seq = 0;
 
 function matchAnimeWithQuery(item, query) {
   if (!query) return true;
-  const q = String(query).toLowerCase().trim();
-  if (!q) return true;
+  const norm = s => String(s || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim();
+  const nq = norm(query);
+  if (!nq) return true;
 
-  if ((item.title || '').toLowerCase().includes(q)) return true;
-  if ((item.short_title || '').toLowerCase().includes(q)) return true;
-  if ((item.title_romaji || '').toLowerCase().includes(q)) return true;
-  if ((item.slug || '').toLowerCase().includes(q)) return true;
-  if ((item.aliases || []).some(a => String(a).toLowerCase().includes(q))) return true;
-  if ((item.genres || []).some(g => String(g).toLowerCase().includes(q))) return true;
-  if (String(item.year || '').includes(q)) return true;
-  if ((item.studios || '').toLowerCase().includes(q)) return true;
-  if ((item.description || item.synopsis || '').toLowerCase().includes(q)) return true;
-  if ((item.status_label || '').toLowerCase().includes(q)) return true;
-  if ((item.type || '').toLowerCase().includes(q)) return true;
+  if (norm(item.title).includes(nq)) return true;
+  if (norm(item.short_title).includes(nq)) return true;
+  if (norm(item.title_romaji).includes(nq)) return true;
+  if (norm(item.slug).includes(nq)) return true;
+  if ((item.aliases || []).some(a => norm(a).includes(nq))) return true;
+  if ((item.genres || []).some(g => norm(g).includes(nq) || norm(genreSpanish(g)).includes(nq))) return true;
+  if (String(item.year || '').includes(nq)) return true;
+  if (norm(item.studios).includes(nq)) return true;
+  if (norm(item.description || item.synopsis).includes(nq)) return true;
+  if (norm(item.status_label || item.status).includes(nq)) return true;
+  if (norm(item.type || item.format).includes(nq) || norm(formats[item.format] || '').includes(nq)) return true;
   return false;
 }
 

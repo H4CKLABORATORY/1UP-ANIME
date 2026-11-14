@@ -1,21 +1,46 @@
 <template>
   <div id="browse-controls" class="catalog-filter-controls">
-    <!-- Top Search Bar with Input and Clear 'X' Button -->
+    <!-- Top Search Bar with Inline Encapsulated Chips -->
     <div class="catalog-search-bar">
-      <div class="search-input-box" :class="{ 'has-focus': isInputFocused, 'has-content': hasActiveQuery }">
+      <div
+        class="search-input-box"
+        :class="{ 'has-focus': isInputFocused, 'has-content': hasActiveQuery }"
+        @click="focusInput"
+      >
         <span class="search-icon" aria-hidden="true">🔍</span>
+
+        <!-- Encapsulated Chips Inside the Filter Box -->
+        <div v-if="searchTags.length" class="search-chips-wrap">
+          <span
+            v-for="(tag, index) in searchTags"
+            :key="tag + '-' + index"
+            class="filter-chip compact-chip"
+          >
+            <span class="chip-label">{{ tag }}</span>
+            <button
+              type="button"
+              class="chip-remove"
+              :aria-label="'Quitar filtro ' + tag"
+              title="Quitar este filtro"
+              @click.stop="removeSearchTag(index)"
+            >
+              ✕
+            </button>
+          </span>
+        </div>
 
         <input
           id="catalog-search-input"
           ref="searchInputRef"
           type="text"
           class="catalog-search-input"
-          v-model="catalogSearchQuery"
-          placeholder="Buscar en catálogo... (Enter para encapsular y filtrar más)"
+          v-model="localInputQuery"
+          :placeholder="computedPlaceholder"
           aria-label="Buscar en catálogo con filtro encapsulado"
           autocomplete="off"
           @focus="isInputFocused = true"
           @blur="isInputFocused = false"
+          @input="onSearchInput"
           @keydown.enter.prevent="onEnter"
           @keydown.backspace="onBackspace"
         />
@@ -28,73 +53,9 @@
           class="catalog-search-clear-btn"
           aria-label="Limpiar búsqueda y filtros"
           title="Limpiar búsqueda"
-          @click="onClearSearch"
+          @click.stop="onClearSearch"
         >
           ✕
-        </button>
-      </div>
-
-      <!-- Quick Action / Encapsulate Hint -->
-      <button
-        v-if="catalogSearchQuery.trim()"
-        type="button"
-        class="encapsulate-btn"
-        @click="onEnter"
-        title="Encapsular este término para buscar de lo ya buscado"
-      >
-        <span>＋ Encapsular</span>
-      </button>
-    </div>
-
-    <!-- Encapsulated Tags ("Buscar de lo ya buscado" / Multi-level Drill-down) -->
-    <div v-if="searchTags.length" class="encapsulated-tags-section">
-      <div class="encapsulated-header">
-        <span class="encapsulated-badge">
-          <span class="badge-icon">⚡</span>
-          <b>Buscando de lo ya buscado</b>
-          <span class="badge-count">({{ searchTags.length }} {{ searchTags.length === 1 ? 'filtro' : 'filtros' }})</span>
-        </span>
-        <button
-          type="button"
-          class="clear-tags-link"
-          @click="clearAllSearchTags"
-        >
-          Limpiar filtros
-        </button>
-      </div>
-
-      <div class="filter-chips-list">
-        <span
-          v-for="(tag, index) in searchTags"
-          :key="tag + '-' + index"
-          class="filter-chip"
-        >
-          <span class="chip-label">{{ tag }}</span>
-          <button
-            type="button"
-            class="chip-remove"
-            :aria-label="'Quitar filtro ' + tag"
-            title="Quitar este filtro"
-            @click="removeSearchTag(index)"
-          >
-            ✕
-          </button>
-        </span>
-      </div>
-    </div>
-
-    <!-- Quick Suggestions to Encapsulate with 1-Click -->
-    <div v-if="!searchTags.length && !catalogSearchQuery" class="quick-tags-shelf">
-      <span class="quick-tags-title">Sugerencias rápidas:</span>
-      <div class="quick-tags-scroll">
-        <button
-          v-for="sug in suggestions"
-          :key="sug"
-          type="button"
-          class="quick-tag-pill"
-          @click="addSearchTag(sug)"
-        >
-          ＋ {{ sug }}
         </button>
       </div>
     </div>
@@ -162,7 +123,7 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue';
+import { ref, computed, watch } from 'vue';
 import { useCatalog } from '../../composables/useCatalog.js';
 
 const {
@@ -181,37 +142,60 @@ const {
 
 const searchInputRef = ref(null);
 const isInputFocused = ref(false);
+const localInputQuery = ref(catalogSearchQuery.value || '');
+let debounceTimer = null;
 
-const suggestions = [
-  'Acción', 'Romance', 'Comedia', 'Fantasía', 'Isekai', 'Película', '2024', 'En emisión'
-];
-
-const hasActiveQuery = computed(() => {
-  return Boolean(catalogSearchQuery.value || searchTags.value.length > 0);
+watch(catalogSearchQuery, (newVal) => {
+  if (newVal !== localInputQuery.value) {
+    localInputQuery.value = newVal || '';
+  }
 });
 
+const computedPlaceholder = computed(() => {
+  return searchTags.value.length > 0
+    ? 'Filtrar dentro de la selección... (Enter para encapsular)'
+    : 'Buscar en catálogo... (Enter para encapsular)';
+});
+
+const hasActiveQuery = computed(() => {
+  return Boolean(localInputQuery.value || catalogSearchQuery.value || searchTags.value.length > 0);
+});
+
+function onSearchInput() {
+  clearTimeout(debounceTimer);
+  debounceTimer = setTimeout(() => {
+    catalogSearchQuery.value = localInputQuery.value.trim();
+  }, 300);
+}
+
 function onEnter() {
-  const query = catalogSearchQuery.value.trim();
+  clearTimeout(debounceTimer);
+  const query = localInputQuery.value.trim();
   if (query) {
     addSearchTag(query);
+    localInputQuery.value = '';
+    catalogSearchQuery.value = '';
+    searchInputRef.value?.focus();
   }
 }
 
 function onBackspace() {
-  // If the input is empty and the user presses backspace, remove the last encapsulated tag
-  if (!catalogSearchQuery.value && searchTags.value.length > 0) {
+  if (!localInputQuery.value && searchTags.value.length > 0) {
     removeSearchTag(searchTags.value.length - 1);
+    searchInputRef.value?.focus();
   }
 }
 
 function onClearSearch() {
-  if (catalogSearchQuery.value) {
-    catalogSearchQuery.value = '';
-  } else if (searchTags.value.length > 0) {
-    clearAllSearchTags();
-  }
-  if (searchInputRef.value) {
-    searchInputRef.value.focus();
+  clearTimeout(debounceTimer);
+  localInputQuery.value = '';
+  clearCatalogSearch();
+  searchInputRef.value?.focus();
+}
+
+function focusInput(e) {
+  if (!e.target.matches('input, button, select')) {
+    searchInputRef.value?.focus();
   }
 }
 
@@ -222,6 +206,8 @@ function onFilterChange() {
 }
 
 function resetFilters() {
+  clearTimeout(debounceTimer);
+  localInputQuery.value = '';
   browseFilters.genre = '';
   browseFilters.format = '';
   browseFilters.status = '';

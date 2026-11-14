@@ -773,3 +773,30 @@ Al concluir cada trabajo agregar:
   - `node tests/e2e/e2e-oneup-motion.mjs`: **100% pasado en móvil (390px) y escritorio (1366px)**, tanto con movimiento estándar como con `prefers-reduced-motion`.
   - `npm run test:all`: Suite integral de 69 tests Node + 16 tests Python + 152 comprobaciones smoke + 48 comprobaciones guardián todas pasadas (0 críticas, 0 advertencias).
   - `npm run build`: Build de Vite completado en ~204ms sin errores.
+
+### 2026-11-14 — Filtro encapsulado compacto: búsqueda debounced y drill-down multinivel unificado inline ("Buscar de lo ya buscado")
+
+- **Requerimiento del usuario**:
+  - Todos los filtros deben comportarse con debounce (al escribir, esperar un tiempo antes de buscar).
+  - Si el usuario desea buscar dentro de esa selección, con solo dar `Enter` el término se encapsula.
+  - El diseño debe ser más compacto: en el **mismo cuadro del filtro** debe verse la cápsula que encapsula lo colocado, permitiendo seguir filtrando encadenadamente.
+- **Implementación**:
+  1. `client/src/js/studio.js`:
+     - **Cápsulas inline dentro del cuadro de búsqueda**: se integró el contenedor `#catalog-chips-wrap` directamente dentro de `#catalog-search-box`, eliminando la sección externa aparatosa inferior y el botón redundante de encapsular.
+     - **Búsqueda debounced en tiempo real**: se incorporó un timer de debounce de 300ms en `#catalog-search-input` que ejecuta `paintCatalogVirtual()` en memoria a 60fps sin perder el foco ni la posición del cursor mientras se escribe.
+     - **Encapsulación con Enter y drill-down**: al pulsar `Enter`, el término se agrega a `state.searchTags`, se limpia el input y se invoca `syncSearchChipsUI(true)`, manteniendo el foco activo dentro del campo para seguir escribiendo filtros anidados.
+     - **Eliminación con Backspace y botón ✕**: presionar `Backspace` en un input vacío retira la última cápsula; hacer clic en el botón ✕ de una cápsula la remueve individualmente; el botón ✕ general limpia todo.
+     - **Buscador de portada (`#search-input`) sincronizado**: al escribir se aplica debounce (350ms) y al pulsar `Enter` se encapsula el término y se navega a `catalogo` con el foco listo.
+     - **Búsqueda multilingüe y normalización de acentos**: `matchStudioAnime` y `matchAnimeWithQuery` ahora soportan traducción y normalización de géneros ("acción", "fantasía", etc.) y formatos ("película", "serie").
+  2. `client/src/styles/catalog-virtual.css`:
+     - Rediseño compacto de `.search-input-box` con `flex-wrap: wrap`, altura mínima de 44px y resplandor esmeralda/Kokomi en `:focus-within`.
+     - Estilo de cápsula compacta `.filter-chip.compact-chip` con `border-radius: 6px`, padding reducido (3px 8px), botón de borrado miniatura y microanimación de entrada `compactChipIn`.
+     - Ocultamiento y eliminación de la sección externa `.encapsulated-tags-section` y del botón `.encapsulate-btn`.
+  3. `client/src-vue/components/browse/BrowseControls.vue` y `ExploreBar.vue`:
+     - Sincronización idéntica del componente Vue con cápsulas inline dentro del cuadro de búsqueda y debounce reactivo.
+  4. `tests/unit/catalog-virtual-scroll.test.mjs`:
+     - Nuevas pruebas unitarias validando la normalización en español, el filtrado debounced y la arquitectura compacta del DOM.
+- **Pruebas y verificación**:
+  - `npm test`: **71/71 tests unitarios pasados**.
+  - `npm run test:all`: 71 tests Node + 16 tests Python + 152 smoke checks + 48 checks de guardián pasados con 0 errores y 0 advertencias.
+  - `npm run build`: compilación de producción de Vite exitosa en 179ms.

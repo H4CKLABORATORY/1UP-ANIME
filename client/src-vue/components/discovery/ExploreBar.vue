@@ -14,8 +14,9 @@
           type="search"
           autocomplete="off"
           maxlength="95"
-          placeholder="Busca anime en español, romaji o japonés..."
+          placeholder="Busca anime en español, romaji o japonés... (Enter para encapsular)"
           aria-label="Buscar anime"
+          @input="onSearchInputDebounce"
         >
         <button type="submit">Buscar ↗</button>
       </form>
@@ -38,20 +39,34 @@
 import { ref } from 'vue';
 import { useCatalog } from '../../composables/useCatalog.js';
 
-const { genres, setRoute, browseFilters, browseQuery } = useCatalog();
+const { genres, setRoute, browseFilters, catalogSearchQuery, addSearchTag } = useCatalog();
 const localQuery = ref('');
 const searchInputRef = ref(null);
+let homeDebounce = null;
+
+function onSearchInputDebounce() {
+  clearTimeout(homeDebounce);
+  const q = localQuery.value.trim();
+  if (q.length >= 2) {
+    homeDebounce = setTimeout(() => {
+      catalogSearchQuery.value = q;
+      setRoute('catalogo');
+    }, 380);
+  }
+}
 
 function handleSearch() {
+  clearTimeout(homeDebounce);
   const q = localQuery.value.trim();
   if (!q) return;
-  browseQuery.value = q;
-  setRoute('buscar');
+  addSearchTag(q);
+  localQuery.value = '';
+  setRoute('catalogo');
 }
 
 function selectGenre(genreKey) {
   browseFilters.genre = genreKey;
-  setRoute('genero');
+  setRoute('catalogo');
 }
 
 defineExpose({
