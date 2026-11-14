@@ -1,16 +1,16 @@
 {
   "schemaVersion": 1,
   "engine": "ONEUP SELF HEALING ENGINE",
-  "updatedAt": "2026-11-14T08:31:53.220Z",
+  "updatedAt": "2026-11-14T12:16:36.556Z",
   "site": "https://h4cklaboratory.github.io/1UP-ANIME/",
   "mode": "local_y_publico",
-  "verdict": "correcto",
+  "verdict": "atencion",
   "totalChecks": 52,
   "critical": 0,
-  "warnings": 0,
+  "warnings": 1,
   "persistentAlerts": [],
   "requiresManualAction": true,
-  "lastKnownGoodCommit": "8ada5c2908c32fa7d325e8c84d3c47dbf7375725",
+  "lastKnownGoodCommit": "04b94a2f3ed3c81e2d2043361d74a87c6fbc78e2",
   "checks": [
     {
       "id": "file:index.html",
@@ -106,7 +106,7 @@
       "id": "file:data/dexter/records.json",
       "level": "ok",
       "message": "Validado: Archivo requerido data/dexter/records.json",
-      "bytes": 492795
+      "bytes": 494831
     },
     {
       "id": "file:server/config/dexter-providers.json",
@@ -187,7 +187,7 @@
       "id": "catalog:freshness",
       "level": "ok",
       "message": "Catálogo actualizado",
-      "ageHours": 23.3
+      "ageHours": 27
     },
     {
       "id": "airing:entries",
@@ -204,7 +204,7 @@
       "id": "airing:freshness",
       "level": "ok",
       "message": "Calendario con fecha reciente",
-      "ageHours": 7.1
+      "ageHours": 10.9
     },
     {
       "id": "spanish:pack",
@@ -217,7 +217,7 @@
       "level": "ok",
       "message": "Validado: Registros del motor existentes",
       "anime": 139,
-      "episodes": 700,
+      "episodes": 704,
       "playbackSources": 0
     },
     {
@@ -249,7 +249,7 @@
       "id": "engine:freshness",
       "level": "ok",
       "message": "Sincronización reciente",
-      "ageHours": 7.6,
+      "ageHours": 3,
       "status": "correcta"
     },
     {
@@ -290,8 +290,8 @@
     },
     {
       "id": "site:community",
-      "level": "ok",
-      "message": "Página pública respondió correctamente",
+      "level": "warning",
+      "message": "No fue posible comprobar el sitio tras 3 intentos: HTTP 404",
       "url": "https://h4cklaboratory.github.io/1UP-ANIME/comunidad.html"
     },
     {

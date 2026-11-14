@@ -2,6 +2,16 @@
   "schemaVersion": 1,
   "checks": [
     {
+      "at": "2026-11-14T12:16:36.556Z",
+      "verdict": "atencion",
+      "issues": [
+        {
+          "id": "site:community",
+          "level": "warning"
+        }
+      ]
+    },
+    {
       "at": "2026-11-14T08:31:53.220Z",
       "verdict": "correcto",
       "issues": []
@@ -353,11 +363,6 @@
     },
     {
       "at": "2026-11-02T06:19:11.547Z",
-      "verdict": "correcto",
-      "issues": []
-    },
-    {
-      "at": "2026-11-02T02:16:49.721Z",
       "verdict": "correcto",
       "issues": []
     }
