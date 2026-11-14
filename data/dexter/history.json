@@ -3,6 +3,42 @@
   "items": [
     {
       "providerId": "anilist_schedule",
+      "at": "2026-11-14T08:31:52.622Z",
+      "result": "success",
+      "observed": 202,
+      "created": 4,
+      "playback": 0,
+      "detail": "conectada"
+    },
+    {
+      "providerId": "licensed_library",
+      "at": "2026-11-14T08:31:52.622Z",
+      "result": "success",
+      "observed": 0,
+      "created": 0,
+      "playback": 0,
+      "detail": "sin_contenido_autorizado"
+    },
+    {
+      "providerId": "jkanime_external",
+      "at": "2026-11-14T08:31:52.622Z",
+      "result": "success",
+      "observed": 5,
+      "created": 0,
+      "playback": 0,
+      "detail": "conectada"
+    },
+    {
+      "providerId": "youtube_trailers",
+      "at": "2026-11-14T08:31:52.622Z",
+      "result": "success",
+      "observed": 95,
+      "created": 0,
+      "playback": 0,
+      "detail": "conectada"
+    },
+    {
+      "providerId": "anilist_schedule",
       "at": "2026-11-14T00:57:18.999Z",
       "result": "success",
       "observed": 208,
@@ -502,42 +538,6 @@
       "result": "success",
       "observed": 196,
       "created": 10,
-      "playback": 0,
-      "detail": "conectada"
-    },
-    {
-      "providerId": "youtube_trailers",
-      "at": "2026-11-09T18:15:12.111Z",
-      "result": "success",
-      "observed": 95,
-      "created": 0,
-      "playback": 0,
-      "detail": "conectada"
-    },
-    {
-      "providerId": "licensed_library",
-      "at": "2026-11-09T15:23:11.939Z",
-      "result": "success",
-      "observed": 0,
-      "created": 0,
-      "playback": 0,
-      "detail": "sin_contenido_autorizado"
-    },
-    {
-      "providerId": "jkanime_external",
-      "at": "2026-11-09T12:23:32.201Z",
-      "result": "success",
-      "observed": 5,
-      "created": 0,
-      "playback": 0,
-      "detail": "conectada"
-    },
-    {
-      "providerId": "anilist_schedule",
-      "at": "2026-11-09T09:36:09.900Z",
-      "result": "success",
-      "observed": 199,
-      "created": 3,
       "playback": 0,
       "detail": "conectada"
     }
