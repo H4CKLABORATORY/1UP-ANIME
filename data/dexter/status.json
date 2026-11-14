@@ -1,16 +1,16 @@
 {
   "schemaVersion": 1,
   "engine": "DexterAnimeSync",
-  "updatedAt": "2026-11-14T00:57:18.999Z",
+  "updatedAt": "2026-11-14T17:15:05.447Z",
   "job": {
-    "id": "sync-d61a5747a45cacee",
-    "startedAt": "2026-11-14T00:57:18.999Z",
-    "completedAt": "2026-11-14T00:57:18.999Z",
+    "id": "sync-65888987ddcfce3b",
+    "startedAt": "2026-11-14T17:15:05.447Z",
+    "completedAt": "2026-11-14T17:15:05.447Z",
     "mode": "programada",
     "status": "correcta",
     "counters": {
       "animes": 0,
-      "episodesDetected": 208,
+      "episodesDetected": 202,
       "episodesNew": 0,
       "playbackSources": 0,
       "errors": 0
@@ -24,10 +24,10 @@
       "enabled": true,
       "sourceType": "metadata",
       "intervalHours": 6,
-      "lastRunAt": "2026-11-13T18:14:36.933Z",
-      "runAt": "2026-11-14T00:57:18.999Z",
+      "lastRunAt": "2026-11-14T08:31:52.622Z",
+      "runAt": "2026-11-14T17:15:05.447Z",
       "state": "conectada",
-      "observed": 208,
+      "observed": 202,
       "created": 0,
       "playback": 0,
       "error": null
@@ -39,8 +39,8 @@
       "enabled": true,
       "sourceType": "playback",
       "intervalHours": 3,
-      "lastRunAt": "2026-11-13T18:14:36.933Z",
-      "runAt": "2026-11-14T00:57:18.999Z",
+      "lastRunAt": "2026-11-14T08:31:52.622Z",
+      "runAt": "2026-11-14T17:15:05.447Z",
       "state": "sin_contenido_autorizado",
       "observed": 0,
       "created": 0,
@@ -55,7 +55,7 @@
       "enabled": true,
       "sourceType": "external_links",
       "intervalHours": 12,
-      "lastRunAt": "2026-11-13T18:14:36.933Z",
+      "lastRunAt": "2026-11-14T08:31:52.622Z",
       "runAt": null,
       "state": "en_espera",
       "observed": 0,
@@ -70,8 +70,8 @@
       "enabled": true,
       "sourceType": "embed",
       "intervalHours": 6,
-      "lastRunAt": "2026-11-13T18:14:36.933Z",
-      "runAt": "2026-11-14T00:57:18.999Z",
+      "lastRunAt": "2026-11-14T08:31:52.622Z",
+      "runAt": "2026-11-14T17:15:05.447Z",
       "state": "conectada",
       "observed": 95,
       "created": 0,
@@ -110,7 +110,7 @@
   "records": {
     "anime": 139,
     "seasons": 1,
-    "episodes": 700,
+    "episodes": 704,
     "sources": 0
   }
 }
