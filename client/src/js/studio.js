@@ -1044,6 +1044,10 @@ async function loadAuthorizedPlayer(id){
 }
 function detail(id){
  const a=state.entries.get(id);if(!a)return;
+ const target='./watch.html?anime='+encodeURIComponent(String(id));
+ const tab=window.open(target,'_blank','noopener,noreferrer');
+ if(!tab) location.href=target;
+ return;
  state.active=id;
  hero(a,true);
  const item=state.saved[id]||{},site=safe(a.siteUrl||'');
