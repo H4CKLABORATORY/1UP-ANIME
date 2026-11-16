@@ -3,11 +3,29 @@ const $=s=>document.querySelector(s),params=new URLSearchParams(location.search)
 const id=raw.replace(/^(al-|mal-)/,'');
 const isMal=raw.startsWith('mal-');
 const query=isMal
-?'query($id:Int){Media(idMal:$id,type:ANIME,isAdult:false){id idMal title{english romaji native} coverImage{extraLarge large} bannerImage description(asHtml:false) averageScore episodes format status seasonYear startDate{year} genres siteUrl externalLinks{site url type}}}'
-:'query($id:Int){Media(id:$id,type:ANIME,isAdult:false){id idMal title{english romaji native} coverImage{extraLarge large} bannerImage description(asHtml:false) averageScore episodes format status seasonYear startDate{year} genres siteUrl externalLinks{site url type}}}';
+?'query($id:Int){Media(idMal:$id,type:ANIME,isAdult:false){id idMal title{english romaji native} coverImage{extraLarge large} bannerImage description(asHtml:false) averageScore episodes format status seasonYear startDate{year} genres siteUrl externalLinks{site url type} trailer{id site}}}'
+:'query($id:Int){Media(id:$id,type:ANIME,isAdult:false){id idMal title{english romaji native} coverImage{extraLarge large} bannerImage description(asHtml:false) averageScore episodes format status seasonYear startDate{year} genres siteUrl externalLinks{site url type} trailer{id site}}}';
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const safe=u=>{try{const x=new URL(u);return x.protocol==='https:'?x.href:''}catch{return ''}};
-function fail(message){$('#title').textContent='No se pudo cargar este anime';$('#synopsis').textContent=message;$('#providers').innerHTML='<div class="status">Vuelve al catálogo y selecciona el anime otra vez. Si el problema continúa, intenta recargar esta pestaña.</div>';}
+const clean=s=>String(s||'').replace(/<[^>]+>/g,'').replace(/\s+/g,' ').trim();
+function summarize(s){s=clean(s);if(s.length<=400)return s;const cut=s.slice(0,400),dot=cut.lastIndexOf('. ');if(dot>200)return cut.slice(0,dot+1);const sp=cut.lastIndexOf(' ');return (sp>0?cut.slice(0,sp):cut)+'…'}
+async function spanishSummary(a){
+ const mal=a.idMal;
+ try{const r=await fetch('./data/translations-es.json',{cache:'force-cache'});if(r.ok){const j=await r.json();const es=j?.translations?.['mal-'+mal]?.es;if(es)return summarize(es)}}catch{}
+ try{const r=await fetch('./data/catalog-full.json',{cache:'force-cache'});if(r.ok){const j=await r.json();const items=Array.isArray(j)?j:(Object.values(j).find(v=>Array.isArray(v)&&v.length&&typeof v[0]==='object')||[]);const title=(a.title?.english||a.title?.romaji||'').toLowerCase();const hit=items.find(x=>String(x.title||'').toLowerCase()===title&&x.description_es);if(hit)return summarize(hit.description_es)}}catch{}
+ return summarize(a.description||'Sinopsis no disponible.');
+}
+function renderTrailer(a){
+ const tr=a.trailer;
+ if(!tr||tr.site!=='youtube'||!/^[A-Za-z0-9_-]{11}$/.test(tr.id||''))return;
+ const sec=$('#trailer-section'),host=$('#trailer');if(!sec||!host)return;
+ sec.hidden=false;
+ host.innerHTML='<button type="button" class="trailer-thumb" aria-label="Reproducir tráiler oficial"><img src="https://i.ytimg.com/vi/'+tr.id+'/hqdefault.jpg" alt="Vista previa del tráiler" loading="lazy"><span class="trailer-play"><span>▶</span></span></button>';
+ host.querySelector('.trailer-thumb').addEventListener('click',()=>{
+  host.innerHTML='<iframe class="trailer-frame" src="https://www.youtube-nocookie.com/embed/'+tr.id+'?rel=0&autoplay=1" title="Tráiler oficial" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>';
+ });
+}
+function fail(message){$('#title').textContent='No se pudo cargar este anime';$('#synopsis').textContent=message;$('#providers').innerHTML='<div class="status">Vuelve al catálogo y selecciona el anime otra vez.</div>';}
 async function load(){
  if(!/^\d+$/.test(id)){fail('El enlace del anime no es válido.');return}
  try{
@@ -22,11 +40,13 @@ async function load(){
   const banner=safe(a.bannerImage);if(banner)$('#hero').style.setProperty('--banner','url("'+banner.replace(/["\\]/g,'')+'")');
   const meta=[a.format==='TV'?'Serie':a.format,a.seasonYear||a.startDate?.year,a.episodes?(a.episodes+' episodios'):'',a.averageScore?'★ '+(a.averageScore/10).toFixed(1):''].filter(Boolean);
   $('#meta').innerHTML=meta.map(x=>'<span>'+esc(x)+'</span>').join('');
-  $('#synopsis').textContent=String(a.description||'Sinopsis no disponible.').replace(/<[^>]+>/g,'').replace(/\s+/g,' ').trim();
+  spanishSummary(a).then(t=>{$('#synopsis').textContent=t});
   const site=safe(a.siteUrl);if(site){$('#official').href=site;$('#official').hidden=false}
+  renderTrailer(a);
   const providers=(a.externalLinks||[]).filter(x=>x.type==='STREAMING'&&safe(x.url));
-  $('#providers').innerHTML=providers.length?providers.map(x=>'<a href="'+esc(safe(x.url))+'" target="_blank" rel="noopener noreferrer">'+esc(x.site||'Plataforma oficial')+' ↗</a>').join(''):'<div class="status">Todavía no hay plataformas oficiales registradas para este anime. No mostraremos servidores ficticios ni fuentes no verificadas.</div>';
+  $('#providers').innerHTML=providers.length?providers.map(x=>'<a href="'+esc(safe(x.url))+'" target="_blank" rel="noopener noreferrer">'+esc(x.site||'Plataforma oficial')+' ↗</a>').join(''):'<div class="status">Sin plataformas registradas por ahora.</div>';
   $('#details').innerHTML='<p><strong>Formato:</strong> '+esc(a.format||'No disponible')+'</p><p><strong>Estado:</strong> '+esc(a.status||'No disponible')+'</p><p><strong>Géneros:</strong> '+esc((a.genres||[]).join(', ')||'No disponibles')+'</p>';
+  try{await window.OneUpEpisodePlayer?.show({id:raw,title,image,banner:banner||'',episodes:a.episodes||0,episodes_total:a.episodes||0})}catch(e){console.warn('1UP player:',e)}
  }catch(error){console.error('1UP watch page:',error);fail(error.message||'Error de conexión.')}
 }
 load();
