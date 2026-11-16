@@ -80,7 +80,7 @@
 .oneup-watch-panel .oneup-server-choice:disabled{opacity:.46;cursor:not-allowed}
 #oneup-playback-display iframe{display:block;width:100%;height:100%;border:0;background:#000}
 .oneup-player-placeholder{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:11px;min-height:100%;height:100%;color:#b7c5e0;font-size:13px;line-height:1.7;text-align:center;padding:28px 24px;background:radial-gradient(circle at 50% 38%,#c6fb4312,transparent 62%),linear-gradient(160deg,#0d1119,#05070c)}
-.oneup-placeholder-icon{display:grid;place-items:center;width:64px;height:64px;border-radius:50%;border:1px solid #c6fb4359;background:#c6fb4314;color:#c6fb43;font-size:27px;line-height:1}
+.oneup-placeholder-icon{flex:none;display:grid;place-items:center;width:64px;height:64px;border-radius:50%;border:1px solid #c6fb4359;background:#c6fb4314;color:#c6fb43;font-size:27px;line-height:1}
 .oneup-placeholder-title{font-family:var(--display,'Barlow Condensed',Impact,sans-serif);font-size:19px;letter-spacing:.6px;text-transform:uppercase;color:#f2f6fa;line-height:1.25}
 .oneup-placeholder-text{max-width:430px;font-size:12.5px;color:#9fb0c9;line-height:1.65}
 @media(max-width:650px){.oneup-watch-panel .oneup-watch-controls{align-items:stretch;flex-direction:column}.oneup-watch-panel .oneup-watch-controls select{width:100%}}
