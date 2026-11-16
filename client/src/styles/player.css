@@ -70,13 +70,20 @@
 .oneup-watch-controls .oneup-watch-jump{display:flex;gap:8px;align-items:center}
 .oneup-watch-jump input{max-width:95px}
 #oneup-now-watching{font-size:15px;line-height:1.5;margin:0 0 11px;color:#f3f7ff}
-.oneup-watch-panel .oneup-server-selector{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;padding:13px}
-.oneup-watch-panel .oneup-server-selector>strong{grid-column:1/-1;font-size:11px;margin:0}
-.oneup-watch-panel .oneup-server-choice{width:100%;min-width:0;min-height:43px;line-height:1.35;overflow-wrap:anywhere}
+.oneup-watch-panel .oneup-server-selector{display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding:11px 13px;margin:14px 0 4px;background:#10141b;border:1px solid #ffffff14;border-radius:10px}
+.oneup-watch-panel .oneup-server-selector[hidden]{display:none!important}
+.oneup-watch-panel .oneup-server-selector>strong{font-size:10px;letter-spacing:1.2px;margin:0 4px 0 0;color:#a7b0bf}
+.oneup-watch-panel .oneup-server-choice{width:auto;min-width:0;min-height:38px;line-height:1.35;overflow-wrap:anywhere;border-radius:999px;padding:8px 15px;background:#1b2028;border:1px solid #303843;color:#e8ecf2;font-size:11.5px}
+.oneup-watch-panel .oneup-server-choice[hidden]{display:none!important}
+.oneup-watch-panel .oneup-server-choice:hover,.oneup-watch-panel .oneup-server-choice:focus-visible{border-color:#c6fb43;color:#fff}
+.oneup-watch-panel .oneup-server-choice.active{background:#c6fb43;border-color:#c6fb43;color:#11150a}
 .oneup-watch-panel .oneup-server-choice:disabled{opacity:.46;cursor:not-allowed}
 #oneup-playback-display iframe{display:block;width:100%;height:100%;border:0;background:#000}
-.oneup-player-placeholder{display:grid;place-items:center;min-height:100%;height:100%;color:#b7c5e0;font-size:13px;line-height:1.7;text-align:center;padding:24px}
-@media(max-width:650px){.oneup-watch-panel .oneup-server-selector{grid-template-columns:repeat(2,minmax(0,1fr))}.oneup-watch-panel .oneup-watch-controls{align-items:stretch;flex-direction:column}.oneup-watch-panel .oneup-watch-controls select{width:100%}}
+.oneup-player-placeholder{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:11px;min-height:100%;height:100%;color:#b7c5e0;font-size:13px;line-height:1.7;text-align:center;padding:28px 24px;background:radial-gradient(circle at 50% 38%,#c6fb4312,transparent 62%),linear-gradient(160deg,#0d1119,#05070c)}
+.oneup-placeholder-icon{display:grid;place-items:center;width:64px;height:64px;border-radius:50%;border:1px solid #c6fb4359;background:#c6fb4314;color:#c6fb43;font-size:27px;line-height:1}
+.oneup-placeholder-title{font-family:var(--display,'Barlow Condensed',Impact,sans-serif);font-size:19px;letter-spacing:.6px;text-transform:uppercase;color:#f2f6fa;line-height:1.25}
+.oneup-placeholder-text{max-width:430px;font-size:12.5px;color:#9fb0c9;line-height:1.65}
+@media(max-width:650px){.oneup-watch-panel .oneup-watch-controls{align-items:stretch;flex-direction:column}.oneup-watch-panel .oneup-watch-controls select{width:100%}}
 
 
 /* Explicit retry after a configured server fails. Never auto-connect elsewhere. */
@@ -88,3 +95,16 @@
 }
 .oneup-source-retry:hover{background:#395080}
 .oneup-source-retry:focus-visible{outline:2px solid #b9f9e8;outline-offset:3px}
+
+/* Netflix-style season tabs and episode rail */
+.oneup-season-tabs{display:flex;gap:8px;flex-wrap:wrap;margin:2px 0 12px}
+.oneup-season-tab{border-radius:999px;padding:8px 16px;background:#1b2028;border:1px solid #303843;color:#cfd8ea;font-weight:800;font-size:12px;cursor:pointer}
+.oneup-season-tab.active{background:#c6fb43;border-color:#c6fb43;color:#11150a}
+.oneup-episode-rail{display:flex;gap:11px;overflow-x:auto;padding:4px 2px 14px;scroll-snap-type:x proximity;scrollbar-width:thin}
+.oneup-episode-card{flex:0 0 150px;scroll-snap-align:start;background:none;border:0;padding:0;text-align:left;color:#e8ecf2;cursor:pointer}
+.oneup-episode-thumb{display:grid;place-items:center;aspect-ratio:16/9;border-radius:9px;background:#141a26 center/cover no-repeat;border:1px solid #ffffff1c;overflow:hidden}
+.oneup-episode-play{width:34px;height:34px;display:grid;place-items:center;border-radius:50%;background:#0b0d13b8;color:#fff;font-size:12px;opacity:0;transition:opacity .15s ease}
+.oneup-episode-card:hover .oneup-episode-play,.oneup-episode-card:focus-visible .oneup-episode-play,.oneup-episode-card.active .oneup-episode-play{opacity:1}
+.oneup-episode-card.active .oneup-episode-thumb{border-color:#c6fb43;box-shadow:0 0 0 1px #c6fb43}
+.oneup-episode-card-title{display:block;margin-top:7px;font-size:11.5px;font-weight:750;line-height:1.35}
+.oneup-episode-card.active .oneup-episode-card-title{color:#c6fb43}

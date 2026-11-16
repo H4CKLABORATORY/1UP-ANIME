@@ -276,3 +276,15 @@
  :root:not([data-oneup-theme="original"]) body.oneup-kokomi .anime-card:hover,
  .oneup-finale-action:hover{transform:none!important}
 }
+
+/* Series page: selecting an anime opens it as its own full-screen page,
+   Netflix/Crunchyroll style, instead of a small centered window. */
+#anime-dialog.anime-dialog,
+:root:not([data-oneup-theme="original"]) body.oneup-kokomi #anime-dialog.anime-dialog{
+ width:100vw;max-width:100vw;height:100dvh;max-height:100dvh;
+ margin:0;padding:0;border:0;border-radius:0;box-shadow:none;
+}
+#anime-dialog.anime-dialog .oneup-detail-cover{min-height:min(58dvh,520px)}
+
+/* Dexter, Nov 16 2026: the 3D/depth icon must never be visible - it stays hidden. */
+#depth-toggle,.depth-toggle-btn{display:none!important}
