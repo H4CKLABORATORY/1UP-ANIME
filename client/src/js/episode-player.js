@@ -450,10 +450,10 @@ async function show(anime,{root,season=1}={}){
   '<div class="oneup-episode-rail" aria-label="Episodios de la temporada">'+
   Array.from({length:visible},(_,i)=>'<button type="button" class="oneup-episode-card'+(i===0?' active':'')+'" data-episode-card="'+(i+1)+'" aria-label="Ver episodio '+(i+1)+'"><span class="oneup-episode-thumb"'+(artThumb?' style="background-image:url(&quot;'+artThumb+'&quot;)"':'')+'><span class="oneup-episode-play">\u25B6</span></span><span class="oneup-episode-card-title">Episodio '+(i+1)+'</span></button>').join('')+'</div>'+
   '<h4 id="oneup-now-watching">Episodio 1</h4>'+
-  '<div id="oneup-playback-display" class="oneup-playback-stage"></div>'+
   '<div class="oneup-server-selector" role="group" aria-label="Siete servidores disponibles si están configurados"><strong>ELEGIR SERVIDOR</strong>'+
   Array.from({length:MAX_SERVERS},(_,i)=>'<button type="button" data-server-slot="'+i+'" class="oneup-server-choice" disabled>Servidor '+(i+1)+'</button>').join('')+'</div>'+
   '<p id="oneup-player-message" class="oneup-player-state" role="status" aria-live="polite"></p>'+
+  '<div id="oneup-playback-display" class="oneup-playback-stage"></div>'+
   '<p class="oneup-playback-hint">Las opciones se habilitan únicamente cuando existe una fuente HTTPS válida con permiso de distribución o inserción.</p></div>';
  playerRoot.querySelectorAll('[data-episode-card]').forEach(card=>card.addEventListener('click',()=>chooseEpisode(Number(card.dataset.episodeCard))));
  playerRoot.querySelector('#oneup-watch-episode')?.addEventListener('change',e=>chooseEpisode(Number(e.target.value)));

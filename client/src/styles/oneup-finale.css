@@ -288,3 +288,10 @@
 
 /* Dexter, Nov 16 2026: the 3D/depth icon must never be visible - it stays hidden. */
 #depth-toggle,.depth-toggle-btn{display:none!important}
+
+/* Dexter, Nov 16 2026: the series view is a PAGE, not a window - no X close button.
+   Navigation back is the page back button / browser back. */
+#anime-close{display:none!important}
+.oneup-page-back{position:fixed;top:14px;left:14px;z-index:80;display:inline-flex;align-items:center;gap:6px;padding:10px 18px;border-radius:999px;background:#10141bd9;border:1px solid #c6fb4366;color:#e8ecf2;font:600 13px/1 inherit;cursor:pointer;backdrop-filter:blur(6px)}
+.oneup-page-back:hover,.oneup-page-back:focus-visible{border-color:#c6fb43;color:#c6fb43}
+body.oneup-series-open{overflow:hidden}

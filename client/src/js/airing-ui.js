@@ -106,7 +106,7 @@ function insertLayout(){
 }
 async function fallbackLive(){
  const now=Math.floor(Date.now()/1000);
- const q='query($from:Int,$to:Int){Page(page:1,perPage:50){airingSchedules(airingAt_greater:$from,airingAt_lesser:$to,sort:TIME){id episode airingAt media{id idMal type isAdult format title{romaji english}coverImage{large}bannerImage status episodes genres seasonYear externalLinks{site url type}}}}}';
+ const q='query($from:Int,$to:Int){Page(page:1,perPage:50){airingSchedules(airingAt_greater:$from,airingAt_lesser:$to,sort:TIME){id episode airingAt media{id idMal type isAdult format title{romaji english}coverImage{large}bannerImage status episodes genres seasonYear externalLinks{site url type} trailer{id site}}}}}';
  const ctrl=new AbortController(),timer=setTimeout(()=>ctrl.abort(),8500);
  try{
   const res=await fetch('https://graphql.anilist.co',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify({query:q,variables:{from:now-48*3600,to:now+72*3600}}),signal:ctrl.signal});
@@ -117,7 +117,7 @@ async function fallbackLive(){
    mal_id:x.media.idMal,ani_id:x.media.id,title:x.media.title?.english||x.media.title?.romaji,
    image:x.media.coverImage?.large,banner:x.media.bannerImage,format:x.media.format,
    year:x.media.seasonYear,episodes:x.media.episodes,genres:x.media.genres,
-   episode:x.episode,airingAt:x.airingAt,status:x.media.status,streaming:(x.media.externalLinks||[]).filter(l=>l.type==='STREAMING'&&/crunchyroll/i.test(l.site||'')).map(l=>({name:l.site,url:l.url})).filter(l=>window.OneUpOfficialWatch?.safeSeriesUrl(l.url))
+   episode:x.episode,airingAt:x.airingAt,trailer:x.media.trailer,status:x.media.status,streaming:(x.media.externalLinks||[]).filter(l=>l.type==='STREAMING'&&/crunchyroll/i.test(l.site||'')).map(l=>({name:l.site,url:l.url})).filter(l=>window.OneUpOfficialWatch?.safeSeriesUrl(l.url))
   }));
   return entries.length?{airing:entries,seasonal:{entries:[]},updated:new Date().toISOString()}:null;
  }finally{clearTimeout(timer)}
@@ -213,6 +213,7 @@ async function animeOpened(a){
  trailerPane(a,details);
 }
 document.addEventListener('oneup-anime-opened',e=>animeOpened(e.detail));
+document.addEventListener('oneup-airing-ready',()=>{const id=window.OneUpCatalog?.active();if(!id||document.querySelector('#oneup-trailer-pane'))return;const a=window.OneUpCatalog?.get(id);if(a)animeOpened(a)});
 document.addEventListener('DOMContentLoaded',load);
 window.OneUpAiring={get:()=>calendar,refresh:load};
 })();

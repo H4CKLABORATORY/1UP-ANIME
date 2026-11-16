@@ -118,7 +118,7 @@ function attachToDetail(anime){
  const outbound=document.createElement('a');outbound.className='cta outline';
  outbound.href=provider.url;outbound.target='_blank';outbound.rel='noopener noreferrer';outbound.textContent='Ir a Crunchyroll ↗';
  buttons.append(inSite,outbound);section.dataset.animeId=String(anime.id);
- section.append(copy,buttons);player.after(section);
+ section.append(copy,buttons);player.before(section);
  updateEpisodeLink(anime.id,1,1);
 }
 document.addEventListener('oneup-anime-opened',event=>attachToDetail(event.detail));

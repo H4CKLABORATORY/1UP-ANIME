@@ -1107,7 +1107,8 @@ function detail(id){
  const dialog=$('#anime-dialog');
  window.OneUpMotion?.prepareOpen?.(dialog);
  for(const a of dialog?.getAnimations?.()||[]){if(a.id==='oneup-motion-close')a.cancel()}
- if(!dialog.open)dialog.showModal();
+ if(!dialog.open){dialog.show();try{history.pushState({oneupAnime:a.id},'')}catch{}}
+ document.body.classList.add('oneup-series-open');
  dialog.setAttribute('aria-labelledby','detail-anime-name');
  dialog.scrollTop=0;
  window.OneUpEpisodePlayer?.show(a)?.catch(()=>{});
@@ -1332,6 +1333,8 @@ function init(){
   if(!window.OneUpMotion?.closeDialog?.(modal))modal.close();
  };
  $('#anime-close').addEventListener('click',closeAnime);
+ $('#anime-back')?.addEventListener('click',()=>{if(history.state?.oneupAnime)history.back();else closeAnime()});
+ window.addEventListener('popstate',()=>{const m=$('#anime-dialog');if(m?.open){if(!window.OneUpMotion?.closeDialog?.(m))m.close()}});
  // iOS fallback applies only when another element intercepts the X's
  // screen coordinates, not a normal tap on the button itself.
  // Closing on the button's pointerdown allowed click-through to a card.
@@ -1346,12 +1349,12 @@ function init(){
  $('#anime-dialog').addEventListener('close',()=>{
   lastDetailDismissed=performance.now();
   state.active=null;
+  document.body.classList.remove('oneup-series-open');
   window.OneUpMotion?.cancelMotion?.($('#anime-dialog'));
   for(const a of $('#anime-dialog')?.getAnimations?.()||[]){if(a.id==='oneup-motion-close')a.cancel()}
   document.dispatchEvent(new Event('oneup-anime-closed'));
  });
  $('#anime-dialog').addEventListener('click',e=>{
-  if(e.target===$('#anime-dialog'))closeAnime(e);
   if(e.target.id==='save-url')saveUrl();
   const btn=e.target.closest('[data-synopsis-original]');
   if(btn){

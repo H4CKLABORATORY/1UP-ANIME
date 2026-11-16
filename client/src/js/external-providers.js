@@ -10,7 +10,6 @@ const escape=s=>String(s??'').replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>
 const allowedHosts={
  animeonline_castellano:['animeonline.ninja'],
  iqiyi_anime:['iq.com'],
- jkanime_external:['jkanime.net']
 };
 const allowedUrl=(id,raw)=>{
  try{
@@ -81,28 +80,7 @@ async function addDirectory(){
  if(anchor)anchor.after(section);
  else host.appendChild(section);
 }
-document.addEventListener('oneup-anime-opened',async ({detail:anime})=>{
- const id=anime?.id;
- if(!id)return;
- const panel=$('#anime-dialog-body .oneup-detail-lower');
- if(!panel)return;
- const dir=await getDirectory();
- if(window.OneUpCatalog?.active()!==id||!panel.isConnected)return;
- panel.querySelector('#oneup-external-availability')?.remove();
- const pages=dir.external_series||{};
- const selected=pages[id]||(anime.mal_id?pages['mal-'+anime.mal_id]:null);
- const url=allowedUrl('jkanime_external',selected?.url);
- if(!url)return;
- const section=document.createElement('section');
- section.id='oneup-external-availability';
- section.className='oneup-detail-section oneup-external-source';
- section.innerHTML='<div><span class="micro">PÁGINA EXTERNA DE ESTA SERIE</span>'+
-  '<h3>JKANIME</h3><p>Hay una página de esta serie en JKAnime. Sus reproductores pertenecen al servicio externo: 1UP no aloja esos episodios.</p></div>'+
-  '<a href="'+escape(url)+'" class="cta outline" target="_blank" rel="noopener noreferrer">Abrir en JKAnime ↗</a>';
- const player=panel.querySelector('#oneup-player-section');
- if(player)player.after(section);
- else panel.prepend(section);
-});
+
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',addDirectory,{once:true});
 else void addDirectory();
 window.OneUpExternalProviders={directory:getDirectory,link:allowedUrl};
