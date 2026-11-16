@@ -196,11 +196,7 @@ function showVideo(slot,serverIndex=-1){
   stage.after(button);
  };
  if(!slot){
-  const placeholder=document.createElement('div');
-  placeholder.className='oneup-player-placeholder';
-  placeholder.textContent='Todavía no hay una fuente de reproducción disponible para este episodio.';
-  stage.appendChild(placeholder);
-  status.textContent='Solo se habilitan servidores configurados con permiso de integración.';
+  status.textContent='';
   return;
  }
  if(slot.kind==='embed'){
@@ -446,7 +442,7 @@ async function show(anime,{root,season=1}={}){
   Array.from({length:MAX_SERVERS},(_,i)=>'<button type="button" data-server-slot="'+i+'" class="oneup-server-choice" disabled>Servidor '+(i+1)+'</button>').join('')+'</div>'+
   '<div id="oneup-playback-display" class="oneup-playback-stage"></div>'+
   '<p id="oneup-player-message" class="oneup-player-state" role="status" aria-live="polite"></p>'+
-  '<p class="oneup-playback-hint">Las opciones se habilitan únicamente cuando existe una fuente HTTPS válida con permiso de distribución o inserción.</p></div>';
+  '</div>';
  playerRoot.querySelector('#oneup-watch-episode')?.addEventListener('change',e=>chooseEpisode(Number(e.target.value)));
  playerRoot.querySelector('#oneup-watch-episode-number')?.addEventListener('change',e=>chooseEpisode(Number(e.target.value)));
  playerRoot.querySelector('#oneup-watch-language')?.addEventListener('change',e=>{selectedLanguage=e.target.value;renderSources()});
