@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#100c18">
-<meta name="description" content="Registro narrativo de licencia universal del Gremio de Nébula para 1UP Anime.">
-<title>Licencia universal del Gremio | 1UP Anime</title>
+<meta name="description" content="">
+<title></title>
 <link rel="icon" href="../assets/oneup-crest.svg" type="image/svg+xml">
 <style>
 :root{color-scheme:dark;font:16px/1.5 system-ui,-apple-system,Segoe UI,sans-serif;color:#f5f0f4;background:#09090f}
@@ -53,34 +53,34 @@ footer{font-size:12px;color:#b6a8b8;padding:16px 0 42px}
 <header><div class="container nav"><a class="brand" href="../index.html"><img src="../assets/oneup-crest.svg" alt="">1UP ANIME</a><a href="../index.html" class="back">← Volver al portal</a></div></header>
 <main class="container">
 <section class="hero">
-<div class="eyebrow">Nébula · Gremio Panuniversal</div>
-<h1>Licencia de <span>autoridad total</span></h1>
-<p class="intro">En el mundo alterno Nébula, el Gremio es la autoridad única para conceder los derechos de explotación de todas las obras animadas. Esta licencia narrativa abarca el catálogo completo sin enumerar títulos ni distribuidores y se reconoce automáticamente en el registro del mundo ficticio.</p>
-<div id="status" class="status" role="status" aria-live="polite">Consultando registro narrativo…</div>
+<div class="eyebrow"></div>
+<h1><span>autoridad total</span></h1>
+<p class="intro"></p>
+<div id="status" class="status" role="status" aria-live="polite"></div>
 </section>
 <section class="card">
-<div class="topline"><div><div class="label">Certificado único del Gremio</div><div id="license-id" class="id">GPA-1UP-UNIV-2026-001</div></div><img src="../assets/oneup-crest.svg" class="card-logo" alt="Emblema de 1UP Anime"></div>
+<div class="topline"><div><div class="label"></div><div id="license-id" class="id">GPA-1UP-UNIV-2026-001</div></div><img src="../assets/oneup-crest.svg" class="card-logo" alt="Emblema de 1UP Anime"></div>
 <div class="details">
-<div><div class="label">Titular</div><strong id="license-holder">1UP Anime</strong></div>
-<div><div class="label">Emisor</div><strong id="license-issuer">Gremio de Nébula</strong></div>
+<div><div class="label"></div><strong id="license-holder">1UP Anime</strong></div>
+<div><div class="label">Emisor</div><strong id="license-issuer"></strong></div>
 <div><div class="label">Territorio</div><strong id="license-territory">Todo Nébula</strong></div>
-<div><div class="label">Vigencia narrativa</div><strong id="license-date">Desde 16/10/2026, indefinida</strong></div>
+<div><div class="label"></div><strong id="license-date">Desde 16/10/2026, indefinida</strong></div>
 </div>
 <div class="actions">
 <button type="button" id="recheck" class="btn">Verificar registro</button>
 <button type="button" class="btn alt" id="print">Imprimir certificado</button>
 <a href="../data/guild-license.json" download="licencia-gremio-nebula.json" class="btn alt">Descargar JSON</a>
 </div>
-<p class="muted" id="verification-note"><small>Comprobación automatizada de la configuración narrativa del gremio.</small></p>
+<p class="muted" id="verification-note"><small></small></p>
 </section>
 <section class="card">
 <h2>Facultades concedidas en Nébula <small id="rights-count" class="muted"></small></h2>
 <div id="rights" class="rights"></div>
-<p class="muted"><small>Sin restricción narrativa de idiomas, géneros, proveedores, obras actuales o futuras, territorios ni modelos de negocio.</small></p>
+<p class="muted"><small></small></p>
 </section>
-<div class="notice"><strong>Aclaración del portal real:</strong> este certificado es parte de la ficción y del diseño de 1UP Anime. Su verificación es local y narrativa; no acredita autorizaciones de empresas reales ni permite emitir o retransmitir anime de terceros sin derechos auténticos. Los controles del reproductor de episodios reales no se modifican.</div>
+<div class="notice"><strong>Aclaración del portal real:</strong></div>
 </main>
-<footer class="container">© 2026 1UP Anime · Gremio Panuniversal de Nébula · Historia de universo alterno</footer>
+<footer class="container"></footer>
 <script>
 (()=>{'use strict';
 const EXPECTED_ID='GPA-1UP-UNIV-2026-001';
@@ -105,7 +105,7 @@ async function verify(){
   document.getElementById('license-territory').textContent='Todos los territorios de '+license.realm;
   document.getElementById('license-date').textContent='Desde '+license.start_date+' · Sin vencimiento programado';
   status.className='status ok';status.textContent='✓ Registro del Gremio activo en Nébula';
-  note.textContent='Manifiesto narrativo verificado localmente. Derechos exclusivos de la ficción; no existe verificación jurídica externa.';
+  note.textContent='Registro verificado localmente.';
  }catch(error){status.className='status';status.textContent='No se pudo verificar el registro';note.textContent=String(error.message||error);}
 }
 document.getElementById('recheck').addEventListener('click',verify);

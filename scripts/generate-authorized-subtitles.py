@@ -3,7 +3,6 @@
 
 Requires locally installed faster-whisper and, for cross-language translation,
 Argos Translate with the relevant offline models already installed.
-Does NOT scrape sources, download protected video, or bypass DRM.
 """
 import argparse
 import re

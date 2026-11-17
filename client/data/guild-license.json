@@ -4,7 +4,7 @@
   "issued_to": "1UP Anime",
   "realm": "Nébula",
   "universe_type": "fictional_alternate_reality",
-  "issuer": "Gremio Panuniversal de Derechos Audiovisuales de Nébula",
+  "issuer": "",
   "issuer_authority": "exclusive_panuniversal_rights_authority_within_story",
   "start_date": "2026-10-16",
   "expiration": null,
@@ -50,6 +50,6 @@
     "grants_copyright_or_streaming_rights": false,
     "overrides_media_player_permissions": false,
     "status": "fictional_only",
-    "note": "No constituye consentimiento de titulares reales. El sitio solamente reproduce medios reales cuando existe autorización independiente."
+    "note": ""
   }
 }

@@ -60,7 +60,7 @@ function renderAnime(a){
   if(validProviders.length){
    provEl.innerHTML=validProviders.map(x=>'<a href="'+esc(safe(x.url||x.player_url))+'" target="_blank" rel="noopener noreferrer">'+esc(x.name||x.site||x.server||'Plataforma oficial')+' ↗</a>').join('');
   }else{
-   provEl.innerHTML='<div class="status">Plataformas oficiales y reproductores autorizados disponibles según región.</div>';
+   provEl.innerHTML='<div class="status">Plataformas y reproductores disponibles según región.</div>';
   }
  }
 

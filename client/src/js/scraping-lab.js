@@ -27,7 +27,7 @@ async function load(){
  try{
   const data=await fetchJSON('./data/encyclopedia-anime.json');
   if(!Array.isArray(data.items)||!data.items.length)throw Error('Sin datos extraídos todavía');
-  records=data.items;origin='Scraping educativo Wikipedia';$('updated').textContent=date(data.updated);
+  records=data.items;origin='Wikipedia';$('updated').textContent=date(data.updated);
   $('source-link').href=safeLink(data.source?.url)||'https://en.wikipedia.org/wiki/2026_in_anime';
  }catch{
   try{

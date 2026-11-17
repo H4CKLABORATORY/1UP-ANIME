@@ -1,7 +1,3 @@
-/* 1UP Anime — permission-aware external provider directory.
- * Catalogue links are distinguished from playable licensed videos.
- * No stream extraction, DRM bypass, iframe guessing or retransmission.
- */
 (()=>{
 'use strict';
 let directoryPromise=null;

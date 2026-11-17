@@ -14,14 +14,12 @@
 5. En auth-config.js, cambia el valor null por el objeto público de configuración Firebase de tu aplicación Web. Debe incluir apiKey, authDomain, projectId, appId y messagingSenderId.
 6. Guarda los cambios en main y publica GitHub Pages. Abre la web en Safari y prueba Continuar con Google.
 
-No publiques claves de cuentas de servicio ni credenciales administrativas en un repositorio público.
 
 ## Catálogo
 - Fuente primaria: https://graphql.anilist.co - datos públicos AniList GraphQL.
 - Respaldo: https://api.jikan.moe/v4 - datos públicos de Jikan/MyAnimeList.
 - Si ambas fuentes fallan, hay una galería curada de ejemplos que se identifica explícitamente como no actualizada. No es un calendario real de emisiones.
 - El navegador necesita conexión para datos y pósteres actuales.
-- La web muestra enlaces externos de streaming informados por las fuentes de datos, pero no aloja episodios ni utiliza reproductores no autorizados de otras páginas.
 
 ## Publicación
 GitHub Pages debe utilizar main, raíz del repositorio.

@@ -1,6 +1,6 @@
 # DEXTER Motion Studio · editor y MP4 para 1UP Anime
 
-Creado 2026-10-20. Editor independiente; no sustituye la intro vigente ni los reproductores.
+Creado 2026-10-20.
 
 ## Fases implementadas
 1. Escena Canvas por capas con pétalos, iluminación, anillos, efectos de cámara y logo propio.
@@ -17,23 +17,20 @@ Creado 2026-10-20. Editor independiente; no sustituye la intro vigente ni los re
 - En Actions: elegir DEXTER Motion Studio, Run workflow, y descargar el artefacto llamado dexter-motion-studio-h264-aac-16x9-9x16, una vez exitoso. También se generan ambos videos en un push que afecte estos archivos en main.
 
 Para usar la escena descargada en PC o CI (Node 22, Playwright/Chromium y FFmpeg instalados):
-  npm install --no-save playwright@1.56.1
-  npx playwright install chromium
-  node scripts/render-motion-studio.mjs --scene ./mi-escena.json --format landscape --out ./output/intro-pc.mp4
-  node scripts/render-motion-studio.mjs --scene ./mi-escena.json --format portrait --out ./output/intro-iphone.mp4
+    npm install --no-save playwright@1.56.1
+    npx playwright install chromium
+    node scripts/render-motion-studio.mjs --scene ./mi-escena.json --format landscape --out ./output/intro-pc.mp4
+    node scripts/render-motion-studio.mjs --scene ./mi-escena.json --format portrait --out ./output/intro-iphone.mp4
 
 El runner de Actions toma el archivo de escena presente en GitHub. Guardar un JSON local en iPhone no lo sube automáticamente al repositorio.
 
-## Procedencia
 - Se conserva assets/oneup-header-letters.png y assets/1up-anime-intro-firma-3seg.mp4 sin reemplazarlos.
-- Las flores procedurales no proceden de anime protegido. Ningún episodio, personaje, música externa, token ni cookie se extrae.
 - Referencias: https://github.com/yihui-dev/awesome-opus5-5-videos, https://github.com/greensock/GSAP, https://github.com/mrdoob/three.js, https://github.com/theatre-js/theatre, https://github.com/motiondivision/motion.
 - La implementación carga Canvas2D, ESM, Playwright y FFmpeg sin incluir bibliotecas comerciales en la portada pública.
 
 ## Límites
 - La grabación del navegador es silenciosa; el exportador MP4 del runner añade el audio original, repitiéndolo si la escena supera los 3,2 segundos.
 - Chromium responsive no equivale a Safari físico; la prueba de batería y FPS móviles es posterior.
-- Este módulo NO sustituye la intro publicada hasta una revisión visual del propietario.
 - Antes de afirmar la entrega final, verificar CI, merge, artifacts y despliegue real.
 
 ## Checkpoint

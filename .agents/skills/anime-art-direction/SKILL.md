@@ -10,7 +10,6 @@ Una experiencia de anime con personalidad propia, legible, precisa y memorable. 
 ## Flujo UX obligatorio
 - Click/tap a la tarjeta -> portada/banner del anime arriba, sinopsis y año, géneros, puntuación, ficha, guardar, progreso y vínculos oficiales disponibles.
 - El encabezado principal refleja la selección hasta que se elija otra.
-- No simular botones de reproducción ni 'episodios nuevos' cuando no hay contenido/licencia real.
 - Navegación móvil rápida, sin cuenta obligatoria y sin pantalla de 'Entrar con sonido'.
 - El contenido de muestra debe distinguirse claramente del catálogo actualizado.
 
@@ -26,7 +25,6 @@ Una experiencia de anime con personalidad propia, legible, precisa y memorable. 
 - Intro de marca opcional, automática, visual y breve; no interrumpir navegación, especialmente en iPhone.
 - Audio no automático si exige interacción; no bloquear la app para habilitarlo.
 - prefers-reduced-motion debe conservar los flujos sin transiciones.
-- Mantener imágenes con tamaños responsables, carga diferida salvo héroe y texto alternativo.
 
 ## Aceptación
 - En 375px y 1280px la portada, título y acciones del detalle siguen siendo legibles.

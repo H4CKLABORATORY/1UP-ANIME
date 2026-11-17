@@ -29,7 +29,7 @@ Preparar y evaluar capturas visuales reales de iPhone/escritorio y corregir las 
 ## Actualización de la segunda etapa — 16 octubre 2026
 - Vista activa: `preview-kokomi-mobile.html` con el módulo `pages.js` y su estilo `pages.css`.
 - El mapa de 22 páginas tiene rutas (nativas o interiores). Algunas siguen siendo información/estados vacíos reales, no funciones completas; consultar `docs/KOKOMI_FIDELITY_MATRIX.md`.
-- Reproductor: solo usa `data/licensed-media.json`; si no hay fuentes declaradas, indica que no están disponibles. Selector de temporada y episodio soportado para medios configurados.
+Selector de temporada y episodio soportado para medios configurados.
 - Comprobación automatizada en GitHub Actions: `.github/workflows/kokomi-preview-check.yml`. Capturas en artifacts del workflow.
 - **Diagnóstico corregido:** las cuadrículas de anime heredaban `grid-auto-flow:column`, causando más de 2000 px de ancho móvil. Se cambiaron a filas reales. Calendario y carruseles con desplazamiento interno.
 - **Nuevo orden de portada:** hero, exploración, ranking, actualizaciones, temporada y películas; las promociones y catálogos externos se sitúan después del contenido principal. El orden del DOM también se ajusta para teclado.
@@ -41,5 +41,4 @@ Preparar y evaluar capturas visuales reales de iPhone/escritorio y corregir las 
 - Se carga `hls-adapter.js` para conservar HLS nativo/MSE y sus errores reales. No se incluyen fuentes de video nuevas.
 - Se conservan hasta siete posiciones, el selector de idioma del motor y temporadas declaradas por `episode.season` (ausente equivale a 1). Los episodios se numeran dentro de cada temporada.
 - Los comentarios conservan el identificador de hilo preexistente y envían al motor temporada y número original, sin usar el hilo codificado como número de episodio.
-- Prueba Chromium a 390 y 1366 px: navegación, estados sin video, siete posiciones, selección de fuente/temporada, consentimiento de embed, sincronización bidireccional de episodio/comentarios y retirada del reproductor al salir. Las fuentes de prueba están aisladas; no acreditan reproducción pública real ni Safari.
 - El backend histórico de comentarios usa namespaces de temporada limitados a 9 y episodios hasta 999 para temporadas posteriores a la primera; ampliar ese contrato queda pendiente antes de admitir catálogos que superen esos rangos.

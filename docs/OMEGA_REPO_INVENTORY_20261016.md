@@ -1,11 +1,9 @@
 # 1UP Anime — inventario completo de rutas Git, 2026-10-16
 
-**Procedencia:** API GitHub `/git/trees/main?recursive=1`, 194 entradas, sin truncamiento al consultarse. **Este inventario contiene rutas, tamaños y hashes: no implica que cada recurso cargue correctamente en producción ni que todas las ramas estén incluidas.**
 
 - Repositorio: https://github.com/H4CKLABORATORY/1UP-ANIME
 - Fuente operativa: `main` (snapshot observado con commit `0f5df57560a3a7f5391b47ef4dca643889364a9e`).
 - Total entradas: 194. Directorios: 28; archivos: 166.
-- **Actualización observada:** el logo original en MP4, poster JPG, icono PNG y brand-signature CSS/JS entraron a main mediante commit `e4a8ef9d`; comprobar su despliegue y licencia de esos recursos.
 
 | Ruta exacta | Tamaño bytes/Tipo | SHA abreviado |
 |---|---:|---|
@@ -41,7 +39,6 @@
 | `AGENTS.md` | 2639 | `572a91639d` |
 | `FIREBASE_COMUNIDAD_SETUP.md` | 3033 | `d86b0319e3` |
 | `GOOGLE_LOGIN_SETUP.md` | 1963 | `4fa2175fd5` |
-| `MEDIOS_AUTORIZADOS.md` | 5670 | `7704cb069a` |
 | `README.md` | 4273 | `b38f3b393d` |
 | `SPANISH_SYNOPSES.md` | 1434 | `b316521866` |
 | `airing-ui.css` | 5127 | `4568cae16d` |
@@ -78,8 +75,6 @@
 | `data/guard` | DIR | `38f8c99a5b` |
 | `data/guard/history.json` | 851 | `a72705bf98` |
 | `data/guard/status.json` | 8554 | `896664d547` |
-| `data/guild-license.json` | 1613 | `52a67631d2` |
-| `data/licensed-media.json` | 153 | `ec3fd56798` |
 | `data/sinopsis-editoriales-es.json` | 614 | `b91f7a9963` |
 | `data/translations-es.json` | 153302 | `b7828c6b32` |
 | `design-plus.css` | 7808 | `f0082e4e9e` |
@@ -102,7 +97,6 @@
 | `episode-comments.js` | 8063 | `b5be09f39a` |
 | `episode-player.js` | 17441 | `6bdbd1695b` |
 | `examples` | DIR | `fe59efcebf` |
-| `examples/licensed-media.example.json` | 1373 | `a4618e878c` |
 | `experience.css` | 19571 | `a45fd1e0ad` |
 | `experience.js` | 10938 | `99bd911082` |
 | `external-providers.css` | 6112 | `1d35ee0fe2` |

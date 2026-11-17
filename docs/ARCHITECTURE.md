@@ -2,9 +2,7 @@
 
 ## 1. Visión General y Filosofía de Diseño
 
-**1UP Anime** es una plataforma web y PWA mobile-first orientada a la curaduría editorial de anime en español, experiencia cinematográfica de alta fidelidad (motor DEXTER Motion), seguimiento de episodios y reproducción exclusiva de contenidos licenciados o de dominio verificado.
 
-Siguiendo el estándar de arquitectura limpia establecido en proyectos hermanos (como `jkanime_app`), el repositorio se organiza en **contenedores modulares de primer nivel**, erradicando archivos sueltos en la raíz y delimitando claramente las responsabilidades entre el cliente frontend, los servicios backend/serverless, la persistencia de datos estáticos, la documentación, los scripts de mantenimiento y las suites de pruebas.
 
 ---
 
@@ -12,87 +10,85 @@ Siguiendo el estándar de arquitectura limpia establecido en proyectos hermanos 
 
 ```mermaid
 flowchart TD
-    subgraph Root ["1UP-ANIME (Raíz Limpia)"]
-        PKG["package.json"]
-        PW["playwright.config.js"]
-        RED["index.html (Loader / Redirect)"]
-        SW["sw.js (PWA Service Worker)"]
-    end
+        subgraph Root ["1UP-ANIME (Raíz Limpia)"]
+                PKG["package.json"]
+                PW["playwright.config.js"]
+                RED["index.html (Loader / Redirect)"]
+                SW["sw.js (PWA Service Worker)"]
+        end
 
-    subgraph ClientContainer ["client/ (Frontend Web & PWA)"]
-        C_INDEX["client/index.html (PWA Core)"]
-        C_SW["client/sw.js (Shell Cache)"]
-        C_MAN["client/manifest.webmanifest"]
+        subgraph ClientContainer ["client/ (Frontend Web & PWA)"]
+                C_INDEX["client/index.html (PWA Core)"]
+                C_SW["client/sw.js (Shell Cache)"]
+                C_MAN["client/manifest.webmanifest"]
         
-        subgraph ClientSrc ["client/src/"]
-            JS["src/js/ (31 módulos JavaScript activos)"]
-            CSS["src/styles/ (23 hojas de estilo CSS activas)"]
-        end
+                subgraph ClientSrc ["client/src/"]
+                        JS["src/js/ (31 módulos JavaScript activos)"]
+                        CSS["src/styles/ (23 hojas de estilo CSS activas)"]
+                end
 
-        subgraph ClientVue ["client/src-vue/ (Vue 3 + Vite Architecture)"]
-            V_APP["App.vue (Orquestador principal)"]
-            V_COMP["components/ (Layout, Hero, Discovery, Rails, Modals, UI)"]
-            V_COMPOS["composables/ (Catalog, Favorites, Synopses, Airing, Motion)"]
-        end
+                subgraph ClientVue ["client/src-vue/ (Vue 3 + Vite Architecture)"]
+                        V_APP["App.vue (Orquestador principal)"]
+                        V_COMP["components/ (Layout, Hero, Discovery, Rails, Modals, UI)"]
+                        V_COMPOS["composables/ (Catalog, Favorites, Synopses, Airing, Motion)"]
+                end
         
-        subgraph ClientPages ["client/pages/"]
-            PAGES["12 vistas secundarias (.html)"]
+                subgraph ClientPages ["client/pages/"]
+                        PAGES["12 vistas secundarias (.html)"]
+                end
+
+                subgraph ClientAssets ["client/assets/"]
+                        ASSETS["Emblemas, marcas SVG, pósters, intro MP4"]
+                end
+
+                subgraph ClientThemes ["client/themes/"]
+                        THEMES["Temas cinematográficos (Kokomi, October, V3)"]
+                end
+
+                subgraph ClientMotion ["client/motion-studio/"]
+                        MOTION["Scene, Camera & Renderer Engine"]
+                end
+
+                subgraph ClientData ["client/data/"]
+                end
         end
 
-        subgraph ClientAssets ["client/assets/"]
-            ASSETS["Emblemas, marcas SVG, pósters, intro MP4"]
+        subgraph ServerContainer ["server/ (Servicios y Configuraciones)"]
+                S_CONF["server/config/ (Firebase, Supabase, Dexter JSON/Rules)"]
+                S_SRC["server/src/ (Catalog REST API Service & SQLite runtime)"]
+                S_FUNC["server/functions/ (Cloud Functions & Adapters)"]
+                S_REND["server/render/ (Anime1v Gateway & Metadata Runtime)"]
+                S_SUPA["server/supabase/ (SQL migrations & RLS)"]
+                S_INTE["server/integrations/ (jkanime-v2 adapter aislado)"]
+                S_INFR["server/infra/ (Nginx reverse-proxy templates)"]
         end
 
-        subgraph ClientThemes ["client/themes/"]
-            THEMES["Temas cinematográficos (Kokomi, October, V3)"]
+        subgraph DataContainer ["data/ (Metadatos Públicos & Guard)"]
+                D_CAT["catalog.json / airing.json"]
+                D_GRD["guard/ (Status, history, health reports)"]
+                D_DEX["dexter/ (Records, status, providers)"]
         end
 
-        subgraph ClientMotion ["client/motion-studio/"]
-            MOTION["Scene, Camera & Renderer Engine"]
+        subgraph TestsContainer ["tests/ (Infraestructura de Pruebas)"]
+                T_UNIT["tests/unit/ (Node test runner + Python unittest + contracts)"]
+                T_E2E["tests/e2e/ (Playwright specs + Browser journeys)"]
+                T_FIX["tests/fixtures/ (HTML & JSON fixtures)"]
         end
 
-        subgraph ClientData ["client/data/"]
-            CDATA["Catálogo local, emisiones y medios licenciados"]
+        subgraph ScriptsContainer ["scripts/ (Herramientas y Automatización)"]
+                SCRIPTS["oneup-guard, check-ui, sync, refresh, handoff"]
         end
-    end
 
-    subgraph ServerContainer ["server/ (Servicios y Configuraciones)"]
-        S_CONF["server/config/ (Firebase, Supabase, Dexter JSON/Rules)"]
-        S_SRC["server/src/ (Catalog REST API Service & SQLite runtime)"]
-        S_FUNC["server/functions/ (Cloud Functions & Adapters)"]
-        S_REND["server/render/ (Anime1v Gateway & Metadata Runtime)"]
-        S_SUPA["server/supabase/ (SQL migrations & RLS)"]
-        S_INTE["server/integrations/ (jkanime-v2 adapter aislado)"]
-        S_INFR["server/infra/ (Nginx reverse-proxy templates)"]
-    end
+        subgraph DocsContainer ["docs/ (Bitácoras y Memoria Técnica)"]
+                DOCS["PROJECT_CONTINUITY, OMEGA_MEMORY, ARCHITECTURE, etc."]
+        end
 
-    subgraph DataContainer ["data/ (Metadatos Públicos & Guard)"]
-        D_CAT["catalog.json / airing.json"]
-        D_MED["licensed-media.json / translations-es.json"]
-        D_GRD["guard/ (Status, history, health reports)"]
-        D_DEX["dexter/ (Records, status, providers)"]
-    end
-
-    subgraph TestsContainer ["tests/ (Infraestructura de Pruebas)"]
-        T_UNIT["tests/unit/ (Node test runner + Python unittest + contracts)"]
-        T_E2E["tests/e2e/ (Playwright specs + Browser journeys)"]
-        T_FIX["tests/fixtures/ (HTML & JSON fixtures)"]
-    end
-
-    subgraph ScriptsContainer ["scripts/ (Herramientas y Automatización)"]
-        SCRIPTS["oneup-guard, check-ui, sync, refresh, handoff"]
-    end
-
-    subgraph DocsContainer ["docs/ (Bitácoras y Memoria Técnica)"]
-        DOCS["PROJECT_CONTINUITY, OMEGA_MEMORY, ARCHITECTURE, etc."]
-    end
-
-    Root --> ClientContainer
-    Root --> ServerContainer
-    Root --> DataContainer
-    Root --> TestsContainer
-    Root --> ScriptsContainer
-    Root --> DocsContainer
+        Root --> ClientContainer
+        Root --> ServerContainer
+        Root --> DataContainer
+        Root --> TestsContainer
+        Root --> ScriptsContainer
+        Root --> DocsContainer
 ```
 
 ---
@@ -117,8 +113,6 @@ flowchart TD
 │   │   ├── preview-kokomi-mobile.html # Vista previa móvil Kokomi Studio
 │   │   ├── preview-kokomi.html # Portada editorial alternativa Kokomi
 │   │   ├── preview-october.html # Experiencia visual temática de octubre
-│   │   ├── privacy.html        # Términos de servicio y política de privacidad
-│   │   ├── scraping-lab.html   # Laboratorio de metadatos educativos
 │   │   └── studio.html         # Espacio editorial de trabajo creativo
 │   ├── src-vue/                # Arquitectura moderna Vue 3 + Vite:
 │   │   ├── App.vue             # Componente raíz y orquestador reactivo
@@ -139,7 +133,6 @@ flowchart TD
 │   │       ├── useSpanishSynopses.js # Traducciones y sinopsis editorial en español
 │   │       ├── useAiring.js    # Horarios y programación de estrenos en vivo
 │   │       ├── useAuth.js      # Sesión de invitado y perfiles
-│   │       ├── useAuthorizedMedia.js # Manifiesto de episodios licenciados
 │   │       ├── useDexterMotion.js # Modo 3D y seguimiento de cursor
 │   │       └── useToast.js     # Notificaciones flotantes
 │   ├── src/
@@ -218,7 +211,6 @@ flowchart TD
 │   ├── anime1v-config.json     # Estado y endpoint de la pasarela de metadatos
 │   ├── catalog.json            # Catálogo estático principal de anime
 │   ├── external-providers.json # Directorio de proveedores externos verificados
-│   ├── licensed-media.json     # Catálogo de medios con derechos de reproducción
 │   ├── translations-es.json    # Sinopsis traducidas al español neutro
 │   ├── dexter/                 # Registros incrementales de DexterAnimeSync
 │   └── guard/                  # Reportes persistentes del motor de auto-recuperación
@@ -289,6 +281,3 @@ Alineado con las directrices del proyecto y el flujo estándar de `npm`, se prop
 ## 5. Garantías de Calidad y Preservación de Estilo
 
 1. **Cero Alteración Visual**: Todo el diseño editorial, la paleta de colores Kokomi/1UP, las animaciones DEXTER Motion, las capas 2.5D de profundidad y los componentes interactivos se preservan con absoluta exactitud.
-2. **PWA Mobile-First**: Compatibilidad garantizada para iPhone y Safari sin obligar a inicio de sesión ni requerir permisos bloqueantes.
-3. **Presupuesto Cero**: Ninguna dependencia comercial ni servicios de pago añadidos.
-4. **Reproducción Verificable**: Se mantiene el principio de no simular ni inventar streams de video; solo se utilizan fuentes autorizadas y metadatos públicos verificables.

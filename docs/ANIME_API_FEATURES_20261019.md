@@ -5,9 +5,7 @@ Fecha: 2026-10-19. Inspiración técnica: https://github.com/topics/anime-api (d
 ## Repositorios valorados
 - AniAPI-Team/AniAPI: archivado; no se introduce como dependencia de producción.
 - Nekidev/anime-api: wrappers de varias APIs; no es necesario añadir otro intérprete Python al navegador.
-- MALSync/MALSync: útil como inspiración de seguimiento; la sincronización de cuentas exige autorización explícita.
 - wopian/kitsu: cliente JSON:API para posible respaldo futuro cuando se verifique conectividad, CORS, IDs y condiciones.
-- ErickLimaS/anime-website: referencia de arquitectura web; no copiar codebase ni integrar streaming externo.
 - AniList y Jikan: ya se usan en la página; se extienden con relaciones confirmadas y respaldo, sin añadir dependencias de terceros.
 
 ## Implementado
@@ -20,4 +18,3 @@ Fecha: 2026-10-19. Inspiración técnica: https://github.com/topics/anime-api (d
 ## Pendientes verificables
 - CI y deploy GitHub Pages; prueba con servicio AniList real y Safari físico. Las pruebas de navegador headless no equivalen a una prueba con iPhone real.
 - Kitsu como respaldo futuro sólo si aporta mejora comprobable frente a fuentes actuales, sin falsear identidad de anime.
-- Seguimiento OAuth voluntario de MAL/AniList con protección de tokens; APIs de metadatos nunca equivalen a fuentes de capítulos.

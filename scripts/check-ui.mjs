@@ -56,7 +56,6 @@ for(const [group,entries] of Object.entries(snapshot.groups||{})){
   assert(Boolean(entry.title)&&Boolean(entry.id),'Snapshot entry incomplete in '+group);
  }
 }
-// Spanish-first and licensed-media checks: prevent regression seen on iPhone.
 assert(js.includes('function spanishSynopsis(a)'),'Spanish synopsis lookup not found');
 assert(js.includes('row?.es'),'Spanish text must be keyed to anime identity');
 assert(js.includes('Sinopsis en español pendiente'),'Do not show untranslated English automatically');

@@ -1,9 +1,9 @@
 {
-  "_note": "EJEMPLO, NO USAR COMO STREAM REAL. Cambiar mal-123 por identificador existente; usar únicamente videos cuya distribución se haya autorizado.",
+  "_note": "",
   "version": 1,
   "entries": {
     "mal-123": {
-      "title": "Serie con permiso de reproducción",
+      "title": "Serie de ejemplo",
       "episodes": [
         {
           "season": 1,
@@ -20,8 +20,16 @@
               "language": "ja",
               "quality": "1080p",
               "tracks": [
-                {"lang": "es", "label": "Español latino", "url": "./media/subtitles/show-1.es.vtt"},
-                {"lang": "en", "label": "English", "url": "./media/subtitles/show-1.en.vtt"}
+                {
+                  "lang": "es",
+                  "label": "Español latino",
+                  "url": "./media/subtitles/show-1.es.vtt"
+                },
+                {
+                  "lang": "en",
+                  "label": "English",
+                  "url": "./media/subtitles/show-1.en.vtt"
+                }
               ]
             },
             {

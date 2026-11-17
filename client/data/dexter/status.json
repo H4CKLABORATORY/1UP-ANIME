@@ -84,7 +84,7 @@
       "id": "jkanime_video",
       "displayName": "Servidores de video JKAnime",
       "status": "requires_permission",
-      "reason": "Sin integración de reproducción documentada y autorizada; el repositorio comunitario no concede licencias para retransmitir."
+      "reason": ""
     },
     {
       "id": "social_firebase",
@@ -96,13 +96,13 @@
       "id": "iqiyi_video_embed",
       "displayName": "iQIYI — Servidores de reproducción",
       "status": "requires_permission",
-      "reason": "No se confirmó licencia de inserción; condiciones de iQIYI restringen reproducir/embeber contenido fuera de su servicio."
+      "reason": ""
     },
     {
       "id": "animeonline_video_embed",
       "displayName": "AnimeOnline — Servidores de reproducción",
       "status": "requires_permission",
-      "reason": "La categoría enlazada no respondió al análisis; no se verificaron URLs de iframe autorizadas."
+      "reason": ""
     }
   ],
   "errors": [],

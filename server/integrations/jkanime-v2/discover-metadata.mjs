@@ -35,7 +35,7 @@ async function run(){
  if(!found.size)throw Error('JKAnime V2 devolvió cero entradas verificables; no publicar datos vacíos.');
  const out={updated:new Date().toISOString(),provider:'jkanime_v2_unofficial',
   status:'unverified_external_catalog',type:'external_metadata_links_only',
-  note:'Herramienta comunitaria no oficial; no es un servidor de video autorizado. Comprobar vigencia de cada página.',
+  note:'Comprobar vigencia de cada página.',
   series:[...found.values()].slice(0,16)};
  await fs.mkdir('data/dexter',{recursive:true});
  await fs.writeFile('data/dexter/jkanime-discovery.json',JSON.stringify(out,null,2)+'\n');

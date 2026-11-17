@@ -989,15 +989,15 @@ function playbackEpisode(id,episodes,index,serverIndex=0,tried=[]){
  }
 
  const sourceChoices=sources.length>1?
-  '<div class="oneup-server-selector" aria-label="Cambiar servidor autorizado"><strong>SELECCIONAR SERVIDOR</strong>'+
+  '<div class="oneup-server-selector" aria-label="Cambiar servidor"><strong>SELECCIONAR SERVIDOR</strong>'+
   sources.map((source,i)=>'<button type="button" class="oneup-server-choice'+(source===activeSource?' active':'')+'" data-licensed-server="'+i+'" aria-pressed="'+String(source===activeSource)+'">'+esc(source.name)+'</button>').join('')+'</div>':'';
  host.innerHTML=sourceChoices+
  '<div class="oneup-playback-stage">'+
- '<video id="oneup-licensed-video" controls playsinline preload="metadata" crossorigin="anonymous" aria-label="Reproductor de episodio autorizado">'+
+ '<video id="oneup-licensed-video" controls playsinline preload="metadata" crossorigin="anonymous" aria-label="Reproductor de episodio">'+
  '<source src="'+esc(activeSource.src)+'" type="'+esc(activeSource.mime)+'">'+
  (caption?'<track kind="subtitles" src="'+esc(caption)+'" srclang="es" label="Español" default>':'')+
  'Tu navegador no admite esta reproducción.</video>'+
- '</div><p class="oneup-playback-hint">Episodio '+(index+1)+' · '+esc(item.title||'Video autorizado')+' · '+esc(activeSource.name)+
+ '</div><p class="oneup-playback-hint">Episodio '+(index+1)+' · '+esc(item.title||'Video')+' · '+esc(activeSource.name)+
  (caption?' · Subtítulos en español disponibles':' · Sin subtítulos en español disponibles')+
  '</p><p class="oneup-player-state" role="status" aria-live="polite">Comprobando compatibilidad de esta fuente…</p>';
  const video=host.querySelector('#oneup-licensed-video');
@@ -1033,8 +1033,8 @@ async function loadAuthorizedPlayer(id){
  if(state.active!==id||!$('#anime-dialog')?.open)return;
  if(!episodes.length){host.hidden=true;return}
  host.hidden=false;
- const buttons=episodes.map((x,i)=>'<button class="oneup-episode-button" type="button" data-licensed-episode="'+i+'" aria-label="Abrir episodio autorizado '+(i+1)+'">'+(i+1)+' · '+esc(x.title||'Episodio')+'</button>').join('');
- host.innerHTML='<div class="oneup-detail-section"><h3>EPISODIOS DISPONIBLES</h3><p>Estas fuentes se agregan únicamente con permiso de distribución. Elige episodio y servidor.</p>'+
+ const buttons=episodes.map((x,i)=>'<button class="oneup-episode-button" type="button" data-licensed-episode="'+i+'" aria-label="Abrir episodio '+(i+1)+'">'+(i+1)+' · '+esc(x.title||'Episodio')+'</button>').join('');
+ host.innerHTML='<div class="oneup-detail-section"><h3>EPISODIOS DISPONIBLES</h3><p>Elige episodio y servidor.</p>'+
  '<div id="oneup-licensed-episodes" class="oneup-episode-select">'+buttons+'</div>'+
  '<div id="oneup-player-content"></div></div>';
  host.querySelectorAll('[data-licensed-episode]').forEach(button=>button.addEventListener('click',()=>{

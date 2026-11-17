@@ -39,7 +39,7 @@ async function preview(){
  }
 }
 async function refresh(){
- if(!api()?.enabled()){status('Falta configurar Firebase y App Check. Este panel no concede acceso sin autorización.');$('#admin-dashboard').hidden=true;return}
+ if(!api()?.enabled()){status('Falta configurar Firebase y App Check.');$('#admin-dashboard').hidden=true;return}
  try{
   const result=await api().callable('moderationDashboard',{});
   last=result;
@@ -55,7 +55,7 @@ async function refresh(){
 async function removeReported(id){
  const report=last?.reports?.find(x=>x.id===id);
  if(!report)return;
- if(!confirm('¿Retirar el contenido reportado? Se comprobarán tus permisos de moderación.'))return;
+ if(!confirm('¿Retirar el contenido reportado?'))return;
  const target=String(report.target||'');
  let action=null;
  if(report.type==='communityPost')action={fn:'moderateCommunityPost',args:{postId:target,action:'remove'}};

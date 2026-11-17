@@ -1,7 +1,3 @@
-/* 1UP Anime — safe multilingual title matching, inspired by anime tracker UX.
- * Original implementation; no third-party scrapers or video downloaders.
- * Metadata comes from existing authorized/public AniList and Jikan adapters.
- */
 (function (root) {
  'use strict';
  const MAX_ALIASES=16,MAX_LENGTH=150;

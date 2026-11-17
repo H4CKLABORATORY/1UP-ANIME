@@ -19,9 +19,7 @@
 | 6 Películas | #peliculas, catálogo existente | Detalles específicos en ruta nueva |
 | 7 Géneros | #catalogo, buscador/filtros | Adaptación visual pendiente |
 | 8 Detalles de serie | #km/series/ID | Metadatos reales del catálogo |
-| 9 Reproducción de episodio | #km/series-play/ID | Solo entradas en licensed-media.json |
 | 10 Detalles de película | #km/movie-single/ID | Metadatos reales |
-| 11 Reproducción película | #km/movie-play/ID | Solo medios configurados autorizados |
 | 12 Tráilers | #km/trailers | Puede estar vacío si faltan datos válidos |
 | 13 Calendario | #programacion, sitio existente | Horarios informativos |
 | 14 Blog | #km/blog | Artículos editoriales propios, no noticias inventadas |
@@ -53,7 +51,6 @@
 - [ ] Corregir diferencias por iteraciones hasta aprobación visual.
 - [ ] Evaluar con Safari real y lector de pantalla.
 - [ ] Confirmar cero errores de integración/CI.
-- [ ] Auditar licencias de medios, sonidos y marcas antes de producción.
 
 **No fusionar rama a main sin revisar pruebas y fotos.** No se incorporó ningún archivo del producto comercial de TemplateMonster.
 
@@ -70,7 +67,6 @@ Leer \`AGENTS.md\`, \`docs/PROJECT_CONTINUITY.md\` y este documento; continuar s
 
 
 ## Etapa: experiencia de reproducción y conversación (16/10/2026)
-- Implementado un reproductor visual coherente con el tema oscuro Kokomi, con selector de servidores, temporadas y episodios **solo para medios del manifiesto autorizado**.
 - El panel de comentarios aparece debajo del video, con selector de conversación por episodio; usa las mismas funciones Firebase que el diálogo existente. Si Firebase no está configurado, se muestra una explicación explícita. Esto no acredita una prueba de escritura en una base real.
 - Se añadió activación voluntaria antes de cargar iframes externos y limpieza del video al abandonar la página.
 - Rediseñados los estados vacíos sin video: contenido centrado en desktop y sin botones cortados en móvil.
@@ -80,4 +76,3 @@ Leer \`AGENTS.md\`, \`docs/PROJECT_CONTINUITY.md\` y este documento; continuar s
 ## Ciclo de integración del motor compartido
 - La demo origen respondió HTTP 200 en auditoría 2026-10-16; el 502 anterior es histórico. Aún no se certifica fidelidad visual completa.
 - La preview reutiliza `episode-player.js` y `hls-adapter.js` de main; se retira el renderer nativo duplicado. Hasta siete posiciones, idiomas basados en fuentes, subtítulos por fuente y temporadas separadas.
-- Conservar recursos originales/licenciados y revisión visual antes de producción. Este cambio permanece en rama, no implica aprobación del diseño.

@@ -9,7 +9,7 @@
 
 ## Capacidades y diferencias reales
 - main conserva catálogo AniList/Jikan/snapshot, favoritos/perfiles/progreso locales, PWA, reproductor de episodios con siete posiciones, HLS y comentarios opcionales.
-- `data/licensed-media.json` sigue vacío; ningún servidor ni idioma real puede anunciarse disponible. Firebase y Supabase no configurados. No hay prueba de autenticación, persistencia remota o reproducción real.
+Firebase y Supabase no configurados. No hay prueba de autenticación, persistencia remota o reproducción real.
 - PR #14 conserva diseño Kokomi, 22 rutas y conversación visual. Su preview no carga `episode-player.js`/`hls-adapter.js`: duplica reproducción nativa en `themes/kokomi-mobile-preview/pages.js`. Antes de integrar debe adoptar el contrato actual, limitar ocho posiciones a siete y ofrecer idiomas según pistas reales.
 - La demo original `https://kokomi.soulknightweb.com/` respondió HTTP 200 durante la auditoría. Esto actualiza la observación previa de 502; no acredita comparación visual ni fidelidad exacta.
 - Portadas, branding y temas existentes se preservan. No se incorporaron recursos comerciales.
@@ -19,11 +19,9 @@
 - `studio.js`: navegar invalida solicitudes pendientes, evitando que catálogo tardío sobrescriba Mi lista, inicio o programación.
 - `episode-comments.js`: un solo manejador de reportes y aislamiento de respuestas asíncronas entre fichas.
 - `.github/workflows/firebase-deploy.yml`: ejecución manual desde otra rama ya no puede desplegar ni publicar ajustes sobre main. No se ejecutó ese workflow.
-- Regresiones nuevas integradas en UI Quality. Fixtures locales no añaden medios ni usuarios al producto.
 
 ## Pendientes priorizados
 1. Integrar el diseño PR #14 con el motor de main en otra rama; comparar origen y capturas 390 px/escritorio antes de aprobación visual.
-2. Alinear normalización runtime/contrato: URLs públicas HTTPS, MIME, idioma/calidad heredados y subtítulos por fuente. No confundir declaración `authorized` con evidencia de licencia.
 3. Corregir ranking populares del snapshot (`fromSnapshot` usa trending), mostrar fecha de actualización y validar enteros de episodio en comentarios.
 4. Limitar limpieza de caché del SW al espacio propio; comprobar PWA con HTTPS y offline real, que la suite HTTP no cubre.
 5. Configuración del propietario y pruebas reales de backend y medios; Safari iPhone físico sigue no verificado.

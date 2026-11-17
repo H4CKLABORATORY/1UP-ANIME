@@ -14,7 +14,6 @@ Este proyecto usa GitHub Pages y GitHub Actions. El motor realiza comprobaciones
 
 ## Archivos del sistema
 
-| Responsabilidad | Archivo |
 | --- | --- |
 | Diagnóstico | scripts/oneup-guard.mjs |
 | Validador | scripts/check-guard.mjs |
@@ -44,12 +43,12 @@ En Safari abre GitHub → 1UP-ANIME → Actions → ONEUP Self Healing. En una e
 
 ## Detección de fallos y mantenimiento
 
-Los niveles son ok, info, warning y critical. Si un mismo fallo se repite en controles consecutivos, se abre una incidencia para su análisis, siempre que los permisos de GitHub lo permitan. Si la API pública falla, el guardia no borra catálogos ni fuentes; conserva el último snapshot válido disponible.
+Los niveles son ok, info, warning y critical. Si la API pública falla, el guardia no borra catálogos ni fuentes; conserva el último snapshot válido disponible.
 
-Las actualizaciones de dependencias deben llegar mediante PR y ejecutar pruebas. JKAnime V2 se encuentra aislado y utiliza una versión compatible de Cheerio, pero su existencia no autoriza retransmitir sus videos. Los scripts de detección no copian servidores ajenos.
+Las actualizaciones de dependencias deben llegar mediante PR y ejecutar pruebas.
 
-El reproductor propio solo acepta videos autorizados y cambia de alternativa si falla la carga. No permite concluir que una URL sea reproducible hasta que el elemento de video responda. La red social todavía requiere conectar Firebase y sus reglas desde la cuenta del propietario.
+No permite concluir que una URL sea reproducible hasta que el elemento de video responda. La red social todavía requiere conectar Firebase y sus reglas desde la cuenta del propietario.
 
 ## Limitaciones
 
-No se realiza modificación destructiva de producción, reversión automática ni despliegue de Firebase sin autorización. La supervisión sigue el cron de GitHub Actions, cuya ejecución puede retrasarse. Las pruebas de código y HTTP no reemplazan una prueba visual real en Safari de iPhone.
+La supervisión sigue el cron de GitHub Actions, cuya ejecución puede retrasarse. Las pruebas de código y HTTP no reemplazan una prueba visual real en Safari de iPhone.

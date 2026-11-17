@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "description": "Recursos externos de anime comprobados por URL pública. No incluyen streams, videos embebidos ni permisos de retransmisión.",
+  "description": "",
   "external_series": {
     "mal-21": {
       "name": "One Piece",
@@ -43,7 +43,7 @@
       "url": "https://www.iq.com/anime?lang=en_us",
       "kind": "external_only",
       "availability": "public_catalog_verified",
-      "detail": "Catálogo oficial consultable. No se ha confirmado permiso para insertar, descargar o retransmitir episodios. El usuario continúa la reproducción en iQIYI."
+      "detail": ""
     }
   ]
 }

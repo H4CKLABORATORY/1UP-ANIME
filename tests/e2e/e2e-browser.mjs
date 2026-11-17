@@ -1,7 +1,3 @@
-/* Real browser journey checks for GitHub Pages pages.
- * Loads the exact static project through a local HTTP server; no Firebase or
- * unauthorized media integrations are simulated as successful.
- */
 import {chromium} from 'playwright';
 import http from 'node:http';
 import fs from 'node:fs/promises';
@@ -102,7 +98,6 @@ try{
    if(await serverSlots.count()!==7)throw new Error('Deben mostrarse siete espacios de servidor');
    if(await serverSlots.locator(':enabled').count()!==0)throw new Error('La biblioteca vacía habilitó servidores inexistentes');
    // Inject a test-only series with two episodes: real catalogue may list one.
-   // This fixture exists ONLY inside the isolated Chromium test, never in production.
    await page.evaluate(()=>{
     const source=window.OneUpCatalog.get('mal-21');
     window.OneUpCatalog.register([{...source,id:'mal-999981',title:'Fixture de episodios',episodes:3}]);

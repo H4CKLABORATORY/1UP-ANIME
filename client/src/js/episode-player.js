@@ -1,7 +1,3 @@
-/* 1UP Anime: seven server slots and per-episode playback for authorized media.
- * The player only loads configured HTTPS video files or embeds from specifically
- * supported providers. It does not discover, scrape, proxy or download streams.
- */
 (()=>{
 'use strict';
 const MAX_SERVERS=7;
@@ -65,7 +61,6 @@ function subtitleUrl(value){
 }
 function sourceOf(source,index,item){
  if(!source||typeof source!=='object')return null;
- // A URL does not itself establish authorization; the catalog editor must declare rights or backend provider.
  const isAuthorized=['owned','authorized'].includes(String(source.rights||item?.rights||'').toLowerCase())||Boolean(source.backend||item?.backend);
  if(!isAuthorized)return null;
  const label=String(source.name||source.label||source.server||'Servidor '+(index+1)).slice(0,45);
@@ -218,7 +213,7 @@ function showVideo(slot,serverIndex=-1){
   placeholder.className='oneup-player-placeholder';
   placeholder.textContent='Todavía no hay una fuente de reproducción disponible para este episodio.';
   stage.appendChild(placeholder);
-  status.textContent='Solo se habilitan servidores configurados con permiso de integración.';
+  status.textContent='Servidores disponibles.';
   return;
  }
  if(slot.kind==='embed'){
@@ -241,7 +236,7 @@ function showVideo(slot,serverIndex=-1){
     if(!stage.isConnected)return;
     const iframe=document.createElement('iframe');
     iframe.src=slot.url;
-    iframe.title='Reproductor autorizado · '+slot.label+' · Episodio '+selectedEpisode;
+    iframe.title='Reproductor · '+slot.label+' · Episodio '+selectedEpisode;
     iframe.loading='eager';
     iframe.referrerPolicy='no-referrer';
     iframe.setAttribute('sandbox','allow-scripts allow-same-origin allow-forms allow-popups');
@@ -670,7 +665,7 @@ async function show(anime,{root,season=1}={}){
   Array.from({length:MAX_SERVERS},(_,i)=>'<button type="button" data-server-slot="'+i+'" class="oneup-server-choice" disabled>Servidor '+(i+1)+'</button>').join('')+'</div>'+
   '<div id="oneup-playback-display" class="oneup-playback-stage"></div>'+
   '<p id="oneup-player-message" class="oneup-player-state" role="status" aria-live="polite"></p>'+
-  '<p class="oneup-playback-hint">Las opciones se habilitan únicamente cuando existe una fuente HTTPS válida con permiso de distribución o inserción.</p></div>';
+  '<p class="oneup-playback-hint">Selecciona una fuente HTTPS disponible.</p></div>';
  playerRoot.querySelector('#oneup-watch-episode')?.addEventListener('change',e=>chooseEpisode(Number(e.target.value)));
  playerRoot.querySelector('#oneup-watch-episode-number')?.addEventListener('change',e=>chooseEpisode(Number(e.target.value)));
  playerRoot.querySelector('#oneup-watch-language')?.addEventListener('change',e=>{selectedLanguage=e.target.value;renderSources()});

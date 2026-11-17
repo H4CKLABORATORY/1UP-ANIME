@@ -10,7 +10,6 @@ Mejorar microinteracciones de 1UP Anime con calidad de estudio sin romper Kokomi
 | Proyecto | Repositorio | Aporte estudiado | Decisión |
 |---|---|---|---|
 | Awesome Opus 5.5 Videos | https://github.com/yihui-dev/awesome-opus5-5-videos | Prompts de animación codificada (Canvas, SVG, Three.js) | Referencia creativa, no dependencia instalada |
-| GSAP | https://github.com/greensock/GSAP | Curvas, secuencias y microtransiciones | Curvas nativas con Web Animations API; no añadir dependencia |
 | Three.js | https://github.com/mrdoob/three.js | Iluminación/cámara 3D | Reservado para vista de estudio; excesivo para microinteracciones móviles |
 | Motion | https://github.com/motiondivision/motion | Transiciones y orquestación | Efectos cortos implementados con API nativa |
 | Anime.js | https://github.com/juliangarnier/anime | Interpolaciones y secuencias | Referencia, no instalado |
@@ -18,7 +17,6 @@ Mejorar microinteracciones de 1UP Anime con calidad de estudio sin romper Kokomi
 | Auto Animate | https://github.com/formkit/auto-animate | Transición de elementos añadidos dinámicamente | Inspiración para observar tarjetas de forma incremental |
 | Theatre.js | https://github.com/theatre-js/theatre | Edición de animaciones con línea temporal | Herramienta futura fuera del sitio público |
 
-Se consultó descripción/licencia pública de los proyectos pertinentes. Las licencias y dependencias deberán revisarse antes de incorporar código de terceros o paquetes. Este módulo implementa lógica original; no copia código externo ni activa servicios premium.
 
 ## Cambios reales de esta fase
 

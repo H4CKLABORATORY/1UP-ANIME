@@ -87,7 +87,7 @@
         </div>
 
         <div class="oneup-detail-lower">
-          <!-- Authorized Player -->
+          
           <EpisodePlayer :episodes="authorizedEpisodes" />
 
           <!-- Episode Comments -->

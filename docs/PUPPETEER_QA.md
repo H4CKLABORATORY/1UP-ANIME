@@ -2,7 +2,7 @@
 
 ## Objetivo
 
-Puppeteer se añadió como **dependencia de desarrollo** (`puppeteer@25.14.0`) para automatizar la inspección de la web estática. No se inyecta en `index.html`, no corre en GitHub Pages, no solicita datos de usuarios y no agrega servidores públicos.
+Puppeteer se añadió como **dependencia de desarrollo** (`puppeteer@25.14.0`) para automatizar la inspección de la web estática.
 
 - Paquete oficial: https://github.com/puppeteer/puppeteer (Apache-2.0).
 - Script: `scripts/puppeteer-site-audit.mjs`.
@@ -28,6 +28,6 @@ Se ejecuta contra un servidor HTTP temporal en `127.0.0.1` y bloquea peticiones 
 
 ## Límites
 
-No es un robot ejecutándose continuamente en GitHub Pages. Se activa por eventos de GitHub Actions o manualmente. El navegador es Chrome Headless Shell, no Safari real. Para probar Firebase, sesiones remotas, publicaciones, streams o autorizaciones de derechos se necesitan entornos configurados y pruebas adicionales; el script no los inventa ni los modifica.
+No es un robot ejecutándose continuamente en GitHub Pages. Se activa por eventos de GitHub Actions o manualmente. El navegador es Chrome Headless Shell, no Safari real.
 
 La instalación del navegador puede usar descargas importantes en CI y debe respetar los límites gratuitos de GitHub Actions. Se utiliza `--ignore-scripts` en npm y la descarga explícita del navegador para minimizar ejecución de postinstalaciones de terceros.

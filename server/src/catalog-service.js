@@ -417,14 +417,95 @@ function saveEpisodeLinksToDb(animeId, num, links) {
 // Live Scraper Fallback On-Demand (Multi-pattern Parity)
 // -------------------------------------------------------------
 
-const UA_IPHONE = 'Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Mobile/15E148 Safari/604.1';
+// Playwright uses one persistent context per service process. A single page cannot
+// navigate concurrently, so queue requests and share duplicate in-flight work.
+let jkanimePlaywrightScraper = null;
+let jkanimePlaywrightQueue = Promise.resolve();
+const jkanimePlaywrightInFlight = new Map();
+const jkanimePlaywrightCache = new Map();
+const PLAYWRIGHT_LINK_CACHE_TTL_MS = Math.max(30_000, Number(process.env.JKANIME_PLAYWRIGHT_CACHE_TTL_MS) || 300_000);
+let jkanimeDirectFetchQueue = Promise.resolve();
+let jkanimeDirectFetchLastAt = 0;
+const jkanimeEmptyFetchCache = new Map();
+const EMPTY_FETCH_COOLDOWN_MS = 30_000;
+
+function waitForDirectFetchSlot() {
+  const slot = jkanimeDirectFetchQueue.then(async () => {
+    const configuredDelay = Number(process.env.JKANIME_REQUEST_DELAY_MS);
+    const intervalMs = Number.isFinite(configuredDelay) && configuredDelay > 0 ? configuredDelay : 1200;
+    const waitMs = intervalMs - (Date.now() - jkanimeDirectFetchLastAt);
+    if (waitMs > 0) await new Promise(resolve => setTimeout(resolve, waitMs));
+    jkanimeDirectFetchLastAt = Date.now();
+  });
+  jkanimeDirectFetchQueue = slot.catch(() => {});
+  return slot;
+}
+
+function rememberEmptyFetch(key) {
+  jkanimeEmptyFetchCache.set(key, Date.now() + EMPTY_FETCH_COOLDOWN_MS);
+  if (jkanimeEmptyFetchCache.size > 1000) {
+    jkanimeEmptyFetchCache.delete(jkanimeEmptyFetchCache.keys().next().value);
+  }
+}
+
+function isPlaywrightScraperEnabled() {
+  return process.env.USE_PLAYWRIGHT_SCRAPER === '1' || process.env.USE_PLAYWRIGHT === 'true';
+}
+
+function scrapeEpisodeLinksWithPlaywright(slug, number, { force = false } = {}) {
+  const key = `${slug}:${number}`;
+  const cached = jkanimePlaywrightCache.get(key);
+  if (!force && cached && cached.expiresAt > Date.now()) return Promise.resolve(cached.result);
+  if (!force && jkanimePlaywrightInFlight.has(key)) return jkanimePlaywrightInFlight.get(key);
+
+  const task = jkanimePlaywrightQueue.then(async () => {
+    const queuedCache = jkanimePlaywrightCache.get(key);
+    if (!force && queuedCache && queuedCache.expiresAt > Date.now()) return queuedCache.result;
+
+    if (!jkanimePlaywrightScraper) {
+      const { JkanimePlaywrightScraper } = require('./jkanime-playwright-scraper.js');
+      const configuredDelay = Number(process.env.JKANIME_REQUEST_DELAY_MS);
+      jkanimePlaywrightScraper = new JkanimePlaywrightScraper({
+        headless: true,
+        delayMs: Number.isFinite(configuredDelay) && configuredDelay > 0 ? configuredDelay : 1200,
+        userDataDir: process.env.JKANIME_SERVER_USER_DATA_DIR || process.env.JKANIME_USER_DATA_DIR
+      });
+    }
+
+    const result = await jkanimePlaywrightScraper.scrapeEpisodeLinks(slug, number);
+    if (result.players.length || result.downloads.length) {
+      jkanimePlaywrightCache.set(key, { result, expiresAt: Date.now() + PLAYWRIGHT_LINK_CACHE_TTL_MS });
+      if (jkanimePlaywrightCache.size > 500) {
+        jkanimePlaywrightCache.delete(jkanimePlaywrightCache.keys().next().value);
+      }
+    }
+    return result;
+  });
+
+  jkanimePlaywrightQueue = task.catch(() => {});
+  jkanimePlaywrightInFlight.set(key, task);
+  return task.finally(() => jkanimePlaywrightInFlight.delete(key));
+}
+
+async function closePlaywrightScraper() {
+  await jkanimePlaywrightQueue.catch(() => {});
+  if (!jkanimePlaywrightScraper) return;
+  const scraper = jkanimePlaywrightScraper;
+  jkanimePlaywrightScraper = null;
+  await scraper.close();
+}
 
 async function liveScrapeEpisode(slug, number, { clientIp = '' } = {}) {
   const url = `https://jkanime.net/${slug}/${number}/`;
+  const cacheKey = `${slug}:${number}`;
   const players = [];
   const downloads = [];
   const seenPlayer = new Set();
   const seenDl = new Set();
+
+  if ((jkanimeEmptyFetchCache.get(cacheKey) || 0) > Date.now()) return { players, downloads };
+  await waitForDirectFetchSlot();
+  if ((jkanimeEmptyFetchCache.get(cacheKey) || 0) > Date.now()) return { players, downloads };
 
   function addPlayer(p) {
     if (!p || !p.player_url) return;
@@ -459,7 +540,7 @@ async function liveScrapeEpisode(slug, number, { clientIp = '' } = {}) {
 
   try {
     const headers = {
-      'User-Agent': UA_IPHONE,
+      'User-Agent': '1UP-Anime-Metadata-Sync/2.0',
       'Referer': `https://jkanime.net/${slug}/`,
       'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
       'Accept-Language': 'es-ES,es;q=0.9,en;q=0.8'
@@ -474,7 +555,10 @@ async function liveScrapeEpisode(slug, number, { clientIp = '' } = {}) {
       headers,
       signal: AbortSignal.timeout(10000)
     });
-    if (!res.ok) return { players, downloads };
+    if (!res.ok) {
+      rememberEmptyFetch(cacheKey);
+      return { players, downloads };
+    }
     const html = await res.text();
 
     // 1) Legacy JSON: var video = [ { server: 'Desu', code: '...' }, ... ];
@@ -623,8 +707,10 @@ async function liveScrapeEpisode(slug, number, { clientIp = '' } = {}) {
       }
     }
   } catch (err) {
-    // Scraper network failure fallback
+    rememberEmptyFetch(cacheKey);
   }
+
+  if (players.length === 0 && downloads.length === 0) rememberEmptyFetch(cacheKey);
 
   return { players, downloads };
 }
@@ -638,10 +724,29 @@ async function getEpisodeLinks(target, num, { refresh = false, title = '', slug 
 
   let dbLinks = refresh ? [] : getEpisodeLinksFromDb(animeId, epNum);
   let liveSuccess = false;
+  let playwrightError = null;
 
   if (dbLinks.length === 0) {
-    const live = await liveScrapeEpisode(anime.slug, epNum, { clientIp });
-    const allLive = [...live.players, ...live.downloads];
+    const useBrowser = isPlaywrightScraperEnabled();
+    // Avoid sending a raw HTTP request and then repeating it in Chromium when the
+    // browser fallback is configured as the active fetch path.
+    const live = useBrowser ? { players: [], downloads: [] } : await liveScrapeEpisode(anime.slug, epNum, { clientIp });
+    let allLive = [...live.players, ...live.downloads];
+
+    // Playwright is opt-in; reuse one browser and pace requests instead of launching
+    // a new Chromium process for each episode request.
+    if (allLive.length === 0 && useBrowser) {
+      try {
+        const pwResult = await scrapeEpisodeLinksWithPlaywright(anime.slug, epNum, { force: refresh });
+        if (pwResult && (pwResult.players?.length || pwResult.downloads?.length)) {
+          allLive = [...(pwResult.players || []), ...(pwResult.downloads || [])];
+        }
+      } catch (pwErr) {
+        playwrightError = pwErr;
+        console.warn(`[Catalog Service] Playwright falló para ${anime.slug} episodio ${epNum}: ${pwErr.message}`);
+      }
+    }
+
     if (allLive.length > 0) {
       liveSuccess = true;
       if (refresh) {
@@ -692,6 +797,10 @@ async function getEpisodeLinks(target, num, { refresh = false, title = '', slug 
       result.stale = true;
       result.warning = 'No se pudieron obtener enlaces en vivo actualizados de JkAnime. Mostrando enlaces en caché.';
     }
+  }
+
+  if (playwrightError && normalizedPlayers.length === 0 && downloads.length === 0) {
+    result.warning = 'Playwright no pudo recuperar los enlaces; revisa el log del servidor para ver el motivo.';
   }
 
   return result;
@@ -907,6 +1016,7 @@ async function handleRequest(req, res) {
 function startServer(port = DEFAULT_PORT, host = DEFAULT_HOST) {
   resolveDatabase();
   const server = http.createServer(handleRequest);
+  server.on('close', () => { void closePlaywrightScraper(); });
   server.listen(port, host, () => {
     console.log(`[1UP Catalog Service] Servidor activo en http://${host}:${port}/ (DB: ${activeDbPath || 'none'})`);
   });
@@ -927,6 +1037,7 @@ module.exports = {
   deleteEpisodeLinks,
   saveEpisodeLinksToDb,
   liveScrapeEpisode,
+  closePlaywrightScraper,
   getHomeSections,
   getGenres,
   handleRequest,

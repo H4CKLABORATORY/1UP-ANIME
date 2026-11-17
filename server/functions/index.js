@@ -318,9 +318,6 @@ exports.moderateEpisodeComment=caller(async req=>{
 });
 
 
-/* Protected moderation workspace. All access is server-authorized.
- * Frontend controls never grant a role or change creatorFlags directly.
- */
 exports.moderationDashboard=caller(async req=>{
  const role=await requireModerator(req);
  const [posts,reports,verify]=await Promise.all([

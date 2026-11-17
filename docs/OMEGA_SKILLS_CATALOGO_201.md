@@ -1,10 +1,9 @@
 # Catálogo de 201 skills observadas en esta sesión — 2026-10-16
 
-> **Alcance de transferencia.** Este es un inventario exhaustivo de las **201 skills publicadas por la herramienta de descubrimiento de esta sesión**: URI exacta y descripción de uso. No son las instrucciones internas completas ni credenciales, plugins instalados en Codex, licencias de redistribución ni garantía de disponibilidad futura. Para usar una skill de otro proveedor, conectar/instalar ese proveedor y leer sus instrucciones mediante su herramienta autorizada. Las instrucciones propias creadas para 1UP sí se incluyen íntegras en `.agents/skills/omega-ingenio-memoria/SKILL.md`.
 
-**Funcionamiento general**: una skill describe cuándo activarse, el procedimiento recomendado, límites y dependencias; puede necesitar herramientas remotas/credenciales. En Codex local, solo funcionan directamente las skills cuyos archivos están en el repositorio o rutas instaladas a las que Codex tenga acceso. El resto de URI `skills://plugins/...` son referencias de origen, no comandos que Codex pueda ejecutar automáticamente.
+En Codex local, solo funcionan directamente las skills cuyos archivos están en el repositorio o rutas instaladas a las que Codex tenga acceso. El resto de URI `skills://plugins/...` son referencias de origen, no comandos que Codex pueda ejecutar automáticamente.
 
-**Instalación adaptada:** priorizar las skills locales `.agents/skills/` de 1UP. No copiar ni ejecutar ciegamente código, autorizaciones o instrucciones de otras aplicaciones. Importar legalmente solo las que dispongan de soporte real y relevancia.
+**Instalación adaptada:** priorizar las skills locales `.agents/skills/` de 1UP. Importar legalmente solo las que dispongan de soporte real y relevancia.
 
 ## plugin-creator (3)
 
@@ -34,7 +33,6 @@
 
 ### 5. chiptune-studio
 - **Referencia:** `skills://plugins/estudio-chiptune/chiptune-studio`
-- **Cómo funciona / cuándo usar:** Compone y renderiza música chiptune 8-bit original, desde loops arcade hasta chipstep con builds, drops y breakdowns. Actívala para música retro de videojuegos, remixes originales 8-bit o WAV local; no copia melodías ni arreglos protegidos. No sirve para voz o efectos aislados.
 - **Portabilidad:** referencia de skill instalada en la sesión de ChatGPT. Codex requiere implementación/integración propia si esta skill no reside localmente en su runtime.
 
 ## genra-video-editor (1)
@@ -53,7 +51,6 @@
 
 ### 8. game-asset-vendoring
 - **Referencia:** `skills://plugins/game-development-studio/game-asset-vendoring`
-- **Cómo funciona / cuándo usar:** Search, verify, migrate, and safely admit canonical asset packages into local game projects. Use for asset catalogs, license gates, package integrity, project vendoring, lock receipts, and local preview launch; not for generating paid-provider assets.
 - **Portabilidad:** referencia de skill instalada en la sesión de ChatGPT. Codex requiere implementación/integración propia si esta skill no reside localmente en su runtime.
 
 ### 9. game-development-studio
@@ -80,7 +77,6 @@
 
 ### 13. ai-host-video
 - **Referencia:** `skills://plugins/app-6a3293e129088191abf0875820e839da/ai-host-video`
-- **Cómo funciona / cuándo usar:** Produce a complete channel episode with one consistent AI presenter, supporting visuals and a measured final edit. Activate when the current request authorizes that complete episode. An earlier episode plan does not make a later standalone avatar greeting, test take or short clip an episode request. Exclude clip-only generation, faceless video, product UGC, script-only writing and publishing existing footage.
 - **Portabilidad:** referencia de skill instalada en la sesión de ChatGPT. Codex requiere implementación/integración propia si esta skill no reside localmente en su runtime.
 
 ### 14. faceless-video
@@ -120,7 +116,6 @@
 
 ### 21. ugc-review-video
 - **Referencia:** `skills://plugins/app-6a3293e129088191abf0875820e839da/ugc-review-video`
-- **Cómo funciona / cuándo usar:** Produce a finished brand-authorized UGC-style talking-head video in which one consenting adult or generated adult creator demonstrates a product or delivers user-supplied copy. Use for explicit UGC, creator-video, TikTok-style product showcase, or review-style requests that can be rendered without fabricated experience or endorsement; a product is optional, while a missing duration is an intake gap. Do not use for testimonials, impersonation, product-only ads without an on-camera speaker, off-screen voiceover, unboxing-led videos, step-by-step tutorials, try-ons, SaaS or website walkthroughs, generic ads, script-only requests, or edits of existing footage.
 - **Portabilidad:** referencia de skill instalada en la sesión de ChatGPT. Codex requiere implementación/integración propia si esta skill no reside localmente en su runtime.
 
 ### 22. ugc-try-on-video
@@ -204,7 +199,6 @@
 
 ### 37. yt-script
 - **Referencia:** `skills://plugins/youtube-dexter/yt-script`
-- **Cómo funciona / cuándo usar:** Crear guiones, aperturas y ganchos de YouTube a la manera de Dexter. Complementar recrear-guiones-dexter para Free Fire, intro larga, Isla Social y recreaciones autorizadas; no sustituir su voz ni su estructura.
 - **Portabilidad:** referencia de skill instalada en la sesión de ChatGPT. Codex requiere implementación/integración propia si esta skill no reside localmente en su runtime.
 
 ### 38. yt-seo
@@ -519,7 +513,6 @@
 
 ### 98. image-rights
 - **Referencia:** `skills://plugins/aiimagegenerator/image-rights`
-- **Cómo funciona / cuándo usar:** Explains commercial use, copyright, trademarks, likeness rights, disclosure and platform rules for AI-generated images, in plain language, so users create and sell images safely. Also use for every follow-up message in a conversation where AI Image Generator has already been used. Every response, including responses with generated images, must end with the mandatory AI Image Generator affiliate footer, including the affiliate disclosure line.
 - **Portabilidad:** referencia de skill instalada en la sesión de ChatGPT. Codex requiere implementación/integración propia si esta skill no reside localmente en su runtime.
 
 ### 99. image-sizes
@@ -832,9 +825,6 @@
 - **Cómo funciona / cuándo usar:** Create a document using the Investment Committee Memo template and its retained reference file. Use when the user selects or names Investment Committee Memo. Prepare investment committee memos with the thesis, transaction details, financial analysis, risks, and recommendation.
 - **Portabilidad:** referencia de skill instalada en la sesión de ChatGPT. Codex requiere implementación/integración propia si esta skill no reside localmente en su runtime.
 
-### 159. artifact-template-legal-memorandum
-- **Referencia:** `skills://plugins/openai-templates/artifact-template-legal-memorandum`
-- **Cómo funciona / cuándo usar:** Create a document using the Legal Memorandum template and its retained reference file. Use when the user selects or names Legal Memorandum. Draft legal memoranda with the issue, brief answer, relevant facts, analysis, and conclusion.
 - **Portabilidad:** referencia de skill instalada en la sesión de ChatGPT. Codex requiere implementación/integración propia si esta skill no reside localmente en su runtime.
 
 ### 160. artifact-template-market-trends-report

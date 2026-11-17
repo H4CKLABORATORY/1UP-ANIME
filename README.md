@@ -1,8 +1,7 @@
 # 1UP Anime
 
-Aplicación web progresiva (PWA) mobile-first y plataforma editorial independiente de anime, optimizada para iPhone (Safari) y computadoras de escritorio. Explora datos públicos de anime mediante [AniList GraphQL](https://graphql.anilist.co) y [Jikan](https://jikan.moe/), consulta estrenos en tiempo real, busca series con alias multilingües, reproduce contenido licenciado y guarda tus favoritos y progreso localmente en el dispositivo.
+Aplicación web progresiva (PWA) mobile-first y plataforma editorial independiente de anime, optimizada para iPhone (Safari) y computadoras de escritorio.
 
-**Sin publicidad comercial invasiva.** No aloja contenido pirata, respeta derechos de autor, no copia el diseño ni el código de marcas de terceros y no bloquea servicios externos.
 
 ---
 
@@ -49,7 +48,6 @@ El repositorio está estructurado en contenedores modulares limpios siguiendo el
 │   ├── render/                 # Pasarela y runtime de Anime1v alojados en Render
 │   └── supabase/               # Esquemas y migraciones DDL con Row Level Security (RLS)
 ├── data/                       # Almacén de Metadatos Públicos y Salud
-│   ├── catalog.json / airing.json / licensed-media.json / translations-es.json
 │   ├── dexter/                 # Registros incrementales de DexterAnimeSync
 │   └── guard/                  # Reportes persistentes de auto-recuperación
 ├── docs/                       # Documentación Técnica, Guías y Bitácoras
@@ -108,14 +106,12 @@ El sitio se publica automáticamente mediante GitHub Actions a GitHub Pages:
 
 - **Privacidad primero**: No se rastrea a los usuarios ni se almacenan cookies publicitarias. Favoritos y progreso se guardan en el `localStorage` del navegador. Consulta la [política de privacidad](client/pages/privacy.html).
 - **Metadatos verificables**: Datos sincronizados desde fuentes públicas AniList/Jikan mediante scripts deterministas en [`scripts/refresh-catalog.mjs`](scripts/refresh-catalog.mjs) y [`scripts/refresh-airing.mjs`](scripts/refresh-airing.mjs).
-- **Reproducción autorizada**: El motor en [`client/src/js/episode-player.js`](client/src/js/episode-player.js) admite hasta 7 fuentes por episodio (MP4, HLS, adaptativo). Solo reproduce contenido presente en [`data/licensed-media.json`](data/licensed-media.json) con derechos confirmados.
 - **Subtítulos con estilo**: Subtitle Studio en [`client/src/js/subtitle-studio.js`](client/src/js/subtitle-studio.js) admite fuentes tipográficas Bangers (SIL OFL), Arcade y Moderna sobre subtítulos WebVTT oficiales.
 
 ---
 
 ## Documentación Técnica de Referencia
 
-- [**Guía de Arquitectura Modular**](docs/ARCHITECTURE.md): Diagrama de componentes y responsabilidades.
 - [**Bitácora de Continuidad**](docs/PROJECT_CONTINUITY.md): Registro histórico de versiones y decisiones.
 - [**Memoria Técnica OMEGA**](docs/OMEGA_MEMORY.md): Memoria persistente de decisiones y estándares.
 - [**Instrucciones para Agentes**](AGENTS.md): Reglas de desarrollo y verificación para asistentes IA.

@@ -1,7 +1,11 @@
 {
   "schemaVersion": 1,
   "engine": "ONEUP SELF HEALING ENGINE",
+<<<<<<< Updated upstream
   "updatedAt": "2026-11-17T14:35:47.218Z",
+=======
+  "updatedAt": "2026-11-17T23:06:55.624Z",
+>>>>>>> Stashed changes
   "site": "https://h4cklaboratory.github.io/1UP-ANIME/",
   "mode": "local_y_publico",
   "verdict": "atencion",
@@ -26,13 +30,21 @@
       "id": "file:client/pages/comunidad.html",
       "level": "ok",
       "message": "Validado: Archivo requerido client/pages/comunidad.html",
+<<<<<<< Updated upstream
       "bytes": 8677
+=======
+      "bytes": 8464
+>>>>>>> Stashed changes
     },
     {
       "id": "file:client/pages/moderacion.html",
       "level": "ok",
       "message": "Validado: Archivo requerido client/pages/moderacion.html",
+<<<<<<< Updated upstream
       "bytes": 2536
+=======
+      "bytes": 2414
+>>>>>>> Stashed changes
     },
     {
       "id": "file:client/src/js/studio.js",
@@ -62,7 +74,11 @@
       "id": "file:client/src/js/airing-ui.js",
       "level": "ok",
       "message": "Validado: Archivo requerido client/src/js/airing-ui.js",
+<<<<<<< Updated upstream
       "bytes": 13210
+=======
+      "bytes": 13053
+>>>>>>> Stashed changes
     },
     {
       "id": "file:client/src/js/episode-comments.js",
@@ -86,7 +102,11 @@
       "id": "file:server/functions/index.js",
       "level": "ok",
       "message": "Validado: Archivo requerido server/functions/index.js",
+<<<<<<< Updated upstream
       "bytes": 22373
+=======
+      "bytes": 22228
+>>>>>>> Stashed changes
     },
     {
       "id": "file:data/catalog.json",
@@ -110,7 +130,11 @@
       "id": "file:data/dexter/records.json",
       "level": "ok",
       "message": "Validado: Archivo requerido data/dexter/records.json",
+<<<<<<< Updated upstream
       "bytes": 494660
+=======
+      "bytes": 508749
+>>>>>>> Stashed changes
     },
     {
       "id": "file:server/config/dexter-providers.json",
@@ -128,13 +152,21 @@
       "id": "file:scripts/dexter-anime-sync.mjs",
       "level": "ok",
       "message": "Validado: Archivo requerido scripts/dexter-anime-sync.mjs",
+<<<<<<< Updated upstream
       "bytes": 13677
+=======
+      "bytes": 13358
+>>>>>>> Stashed changes
     },
     {
       "id": "file:scripts/check-ui.mjs",
       "level": "ok",
       "message": "Validado: Archivo requerido scripts/check-ui.mjs",
+<<<<<<< Updated upstream
       "bytes": 8593
+=======
+      "bytes": 8514
+>>>>>>> Stashed changes
     },
     {
       "id": "syntax:client/src/js/studio.js",
@@ -191,7 +223,11 @@
       "id": "catalog:freshness",
       "level": "warning",
       "message": "El catálogo lleva más de 72 horas sin actualizarse",
+<<<<<<< Updated upstream
       "ageHours": 101.3
+=======
+      "ageHours": 109.9
+>>>>>>> Stashed changes
     },
     {
       "id": "airing:entries",
@@ -208,7 +244,11 @@
       "id": "airing:freshness",
       "level": "warning",
       "message": "Calendario desactualizado (más de 36h)",
+<<<<<<< Updated upstream
       "ageHours": 85.2
+=======
+      "ageHours": 93.7
+>>>>>>> Stashed changes
     },
     {
       "id": "spanish:pack",
@@ -253,7 +293,11 @@
       "id": "engine:freshness",
       "level": "ok",
       "message": "Sincronización reciente",
+<<<<<<< Updated upstream
       "ageHours": 9.4,
+=======
+      "ageHours": 17.9,
+>>>>>>> Stashed changes
       "status": "correcta"
     },
     {

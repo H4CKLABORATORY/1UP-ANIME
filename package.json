@@ -28,6 +28,7 @@
     "sync:dexter": "node scripts/dexter-anime-sync.mjs",
     "refresh:catalog": "node scripts/refresh-catalog.mjs",
     "refresh:airing": "node scripts/refresh-airing.mjs",
+    "scraper:jkanime": "node scripts/jkanime-playwright-scraper.mjs",
     "handoff": "node scripts/update-new-chat-handoff.mjs"
   },
   "devDependencies": {
@@ -36,6 +37,7 @@
   },
   "dependencies": {
     "@vitejs/plugin-vue": "^6.0.11",
+    "playwright": "1.56.1",
     "vite": "^8.3.8",
     "vue": "^3.5.45"
   }

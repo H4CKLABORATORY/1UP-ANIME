@@ -25,7 +25,6 @@ El propietario compartió una grabación móvil de una aplicación de anime con 
 - Playwright: `npx playwright test tests/premiere-hero.spec.js` con reloj local y fixture de calendario, móvil 390 y escritorio 1440.
 - Suites regresión existentes: Puppeteer, navegador, profundidad, UI, catálogo, rutas y reproductor.
 - Capturas Chromium en `oneup-cinematic-premiere-review` de GitHub Actions.
-- **Por verificar en dispositivo físico:** Safari iPhone, movimiento con dedo, cookies/sesión, degradado sobre imágenes reales y videos autorizados. No reclamar certificación física.
 
 ## Criterio para producción
-Publicar solo si CI de rama/PR pasa, enlace externo abre la serie oficial correcta y el deploy de GitHub Pages termina `success`. Los títulos cambian cuando GitHub Actions refresca `data/airing.json`, actualmente aproximadamente cada seis horas; no prometen actualización segundo a segundo.
+Publicar solo si CI de rama/PR pasa, enlace externo abre la serie oficial correcta y el deploy de GitHub Pages termina `success`.

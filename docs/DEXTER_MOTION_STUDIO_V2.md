@@ -23,7 +23,6 @@ Mantener referencia: https://github.com/yihui-dev/awesome-opus5-5-videos, https:
 ## Aceptación
 1. Validar \`node --test tests/motion-studio.test.mjs tests/motion-studio-camera.test.mjs\`.
 2. Verificar \`DEXTER Motion Studio · MP4 / QA\` y \`ONEUP Browser Acceptance\` (incluye viewport móvil).
-3. Inspeccionar salida de artefactos reales de 16:9 y 9:16 tras merge. No afirmar MP4 nuevo hasta que termine el workflow.
 4. Revisar Safari físico y aprobación visual del propietario. No reemplazar la intro visible sin revisar.
 
 ## Checkpoint

@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-"""Extractor educativo de metadatos factuales de anime; sin videos ni imágenes."""
 import argparse
 import json
 import os

@@ -1,6 +1,3 @@
-/* 1UP Subtitle Studio — stylized timed text for self-hosted authorized videos.
-   Works with WebVTT/textTracks when provided; NEVER fabricates translations.
-   Native fullscreen may use device captions rather than CSS overlay. */
 (()=>{'use strict';
 const STORE='oneup.subtitle.studio.v1';
 const FONTS={bangers:"'Bangers',Impact,sans-serif",arial:"Arial,Helvetica,sans-serif",outfit:"'Outfit',system-ui,sans-serif",arcade:"Impact,'Arial Black',sans-serif"};
@@ -68,7 +65,6 @@ function connect(video){
    }
   }
   if(prefs.lang!=='auto'&&prefs.lang!=='off'&&!available.some(t=>norm(t.language)===prefs.lang)) {
-   // Keep the user's selected preference for the next anime, but never invent tracks.
    notice.textContent='No hay subtítulos '+(prefs.lang==='es'?'en español':'en inglés')+' para esta fuente.';
   }else if(!available.length)notice.textContent='Esta fuente no incluye subtítulos configurados. Puedes ver el video sin subtítulos.';
   else notice.textContent='Idiomas de esta fuente: '+available.map(t=>t.label||t.language||'Sin nombre').join(' · ')+'.';

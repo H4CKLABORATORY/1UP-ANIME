@@ -1,4 +1,3 @@
-/* 1UP Anime: licensed episodes player. Controls are native to iOS Safari. */
 #oneup-player-section[hidden]{display:none!important}
 #oneup-player-section{border:1px solid #7796c74a;border-radius:12px;padding:16px 16px 20px;background:linear-gradient(135deg,#19213a,#0b101b);margin:10px 0 27px}
 #oneup-player-section h3{font-size:26px;letter-spacing:.6px}
@@ -11,7 +10,6 @@
 .oneup-playback-hint{font-size:12px!important;color:#f3d9b9!important}
 @media(max-width:550px){#oneup-player-section{padding:12px}.oneup-playback-stage{aspect-ratio:16/9}}
 
-/* Provider selection for media that the owner is authorized to distribute. */
 .oneup-server-selector{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin:0 0 16px;padding:13px;background:#10172a;border:1px solid #8ba3d44a;border-radius:9px}
 .oneup-server-selector>strong{font-size:10px;font-weight:900;letter-spacing:1px;color:#c8d8fc;margin-right:7px}
 .oneup-server-choice{border:1px solid #8a9ec263;border-radius:7px;background:#26334c;color:#e4ecff;padding:9px 12px;font-size:11px;font-weight:800}
@@ -25,7 +23,6 @@
 .oneup-external-source .cta{font-size:11px}
 @media(max-width:540px){.oneup-external-source .cta{width:100%;text-align:center;justify-content:center}.oneup-server-selector{gap:6px}.oneup-server-choice{font-size:10px}}
 
-/* Playback state is inferred from native video events, never assumed from URL presence. */
 .oneup-player-state{font-size:11px!important;line-height:1.65!important;color:#b6caff!important;margin:10px 2px 0!important;min-height:18px}
 
 /* Third-party embed is created only by an explicit user click.
@@ -81,7 +78,6 @@
 @media(max-width:650px){.oneup-watch-panel .oneup-server-selector{grid-template-columns:repeat(2,minmax(0,1fr))}.oneup-watch-panel .oneup-watch-controls{align-items:stretch;flex-direction:column}.oneup-watch-panel .oneup-watch-controls select{width:100%}}
 
 
-/* Explicit retry after a configured server fails. Never auto-connect elsewhere. */
 .oneup-source-retry{
  display:inline-flex;align-items:center;gap:8px;margin:12px 0;
  padding:11px 17px;border-radius:5px;border:1px solid #879bfa;

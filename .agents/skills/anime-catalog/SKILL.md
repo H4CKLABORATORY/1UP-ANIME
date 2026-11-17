@@ -15,7 +15,6 @@ description: Recuperación estable de catálogo público de anime, organización
 - Categorías: tendencias, en emisión, próximas emisiones, recientes, películas, géneros y Mi lista.
 - No inventar 'episodios recién añadidos' si solo conocemos fechas de emisión aproximadas.
 - La vista de detalle debe presentar datos del anime elegido, no del héroe anterior.
-- La página debe funcionar como invitado con almacenamiento local; no prometer sincronización por Google sin base de datos real.
 - Si un servicio de datos falla, informar el estado y usar copia válida guardada; las muestras son muestras y se rotulan.
 
 ## Implementación
@@ -23,7 +22,6 @@ description: Recuperación estable de catálogo público de anime, organización
 - Sanitizar texto, validar URL https y evitar HTML externo no confiable.
 - Cachear temporalmente; respetar límites de APIs y no abrir peticiones paralelas excesivas.
 - Cuando se genera el snapshot, exigir resultados no vacíos y publicar de forma atómica.
-- No consumir ni embeber fuentes de reproducción no autorizadas, ni copiar reproductores de sitios externos.
 
 ## Criterios de comprobación
 - La portada seleccionada coincide con el título y ficha visibles.

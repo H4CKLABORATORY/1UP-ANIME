@@ -29,7 +29,7 @@
       "syncIntervalHours": 3,
       "requiresCredentials": false,
       "source": "data/licensed-media.json",
-      "capability": "Videos MP4/HLS con autorización del titular"
+      "capability": ""
     },
     {
       "id": "jkanime_external",
@@ -62,7 +62,7 @@
       "syncIntervalHours": 24,
       "requiresCredentials": false,
       "source": "data/external-providers.json",
-      "capability": "Enlace a categoría proporcionada por usuario; acceso remoto no confirmado; sin permiso de inserción verificado"
+      "capability": ""
     },
     {
       "id": "iqiyi_anime_external",
@@ -73,7 +73,7 @@
       "syncIntervalHours": 24,
       "requiresCredentials": false,
       "source": "data/external-providers.json",
-      "capability": "Enlace al catálogo oficial; reproducción disponible solamente en iQIYI; inserción no autorizada"
+      "capability": ""
     }
   ],
   "externalIntegrations": [
@@ -81,7 +81,7 @@
       "id": "jkanime_video",
       "displayName": "Servidores de video JKAnime",
       "status": "requires_permission",
-      "reason": "Sin integración de reproducción documentada y autorizada; el repositorio comunitario no concede licencias para retransmitir."
+      "reason": ""
     },
     {
       "id": "social_firebase",
@@ -93,13 +93,13 @@
       "id": "iqiyi_video_embed",
       "displayName": "iQIYI — Servidores de reproducción",
       "status": "requires_permission",
-      "reason": "No se confirmó licencia de inserción; condiciones de iQIYI restringen reproducir/embeber contenido fuera de su servicio."
+      "reason": ""
     },
     {
       "id": "animeonline_video_embed",
       "displayName": "AnimeOnline — Servidores de reproducción",
       "status": "requires_permission",
-      "reason": "La categoría enlazada no respondió al análisis; no se verificaron URLs de iframe autorizadas."
+      "reason": ""
     }
   ]
 }

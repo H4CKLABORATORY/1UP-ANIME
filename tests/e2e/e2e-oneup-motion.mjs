@@ -1,6 +1,3 @@
-/* ONEUP motion regressions. No live provider API or licensed media fixture required.
- * Simulated mobile viewport is NOT a physical Safari device.
- */
 import {chromium} from 'playwright';
 import {createServer} from 'node:http';
 import {readFile, access} from 'node:fs/promises';
@@ -66,7 +63,6 @@ try{
    assert.equal(motion.reduced,reduced);
    assert.equal(motion.disabledByPref,reduced);
 
-   // Core navigation must execute synchronously and never wait for animation.
    const native=await page.evaluate(()=>{
      document.querySelector('[data-route="catalogo"]').click();
      const el=document.querySelector('#browse-screen');

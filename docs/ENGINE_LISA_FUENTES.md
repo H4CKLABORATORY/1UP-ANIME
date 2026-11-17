@@ -5,7 +5,6 @@ Implementación aislada para no interferir con el diseño Kokomi/Black Clover ni
 ## Código incorporado
 
 - scripts/media-source-contract.mjs: contrato y saneamiento de fuentes sin dependencias NPM.
-- scripts/dexter-anime-sync.mjs: convierte fuentes de la biblioteca autorizada en registros del motor.
 - scripts/test-media-source-contract.mjs: comprueba siete servidores, HLS, YouTube oficial, filtros de URL y manifest.
 - Hasta siete fuentes por episodio, con idioma, calidad y subtítulos VTT opcionales.
 - Solo se admite HTTPS público y modo de inserción oficial YouTube con videoId de 11 caracteres.
@@ -13,33 +12,29 @@ Implementación aislada para no interferir con el diseño Kokomi/Black Clover ni
 
 ## Ejemplo de manifiesto ilustrativo
 
-data/licensed-media.json:
 
-    {
-      "version": 1,
-      "entries": {
-        "mal-12345": {
-          "episodes": [{
-            "episode": 1,
-            "rights": "authorized",
-            "sources": [
-              {"name":"Principal","src":"https://cdn.example.com/ep1.m3u8","mime":"application/vnd.apple.mpegurl","language":"es"},
-              {"mode":"official_embed","provider":"youtube","videoId":"dQw4w9WgXcQ","name":"Canal oficial"}
-            ],
-            "subtitles_es": "./media/ep1.es.vtt"
-          }]
+        {
+            "version": 1,
+            "entries": {
+                "mal-12345": {
+                    "episodes": [{
+                        "episode": 1,
+                        "sources": [
+                            {"name":"Principal","src":"https://cdn.example.com/ep1.m3u8","mime":"application/vnd.apple.mpegurl","language":"es"},
+                            {"mode":"official_embed","provider":"youtube","videoId":"dQw4w9WgXcQ","name":"Canal oficial"}
+                        ],
+                        "subtitles_es": "./media/ep1.es.vtt"
+                    }]
+                }
+            }
         }
-      }
-    }
 
-Este ejemplo NO es contenido disponible. El editor debe confirmar los derechos de emisión antes de publicarlo. Una URL pública o un atributo rights no demuestran titularidad.
+Este ejemplo NO es contenido disponible.
 
 ## Arquitectura
 
-Manifiesto autorizado -> normalización de fuentes -> DexterAnimeSync -> data/dexter/records.json -> interfaz de episodios.
 
 Los episodios obtenidos de calendarios de emisión son metadatos, no archivos reproducibles.
-El motor no extrae tokens protegidos ni realiza proxys de video de sitios de terceros.
 
 ## Compatibilidad
 
@@ -47,7 +42,6 @@ El motor no extrae tokens protegidos ni realiza proxys de video de sitios de ter
 - En Chrome/Firefox la reproducción HLS puede necesitar hls.js. Integrar con el PR #7 después de consolidarlo.
 - HLS exige HTTPS, MIME correctos, CORS compatible y un proveedor que autorice la distribución.
 - GitHub Pages sirve la interfaz y JSON públicos, pero no es apropiado para una biblioteca grande de video.
-- El módulo de fuente restringe nombres de hosts y URLs, pero no comprueba que un video tenga derechos ni que esté en línea.
 
 ## Investigación — fuentes oficiales consultadas en octubre de 2026
 
@@ -62,4 +56,3 @@ El motor no extrae tokens protegidos ni realiza proxys de video de sitios de ter
 
 Ejecutar: node scripts/test-media-source-contract.mjs
 
-Las pruebas del contrato no sustituyen pruebas reales de reproducción en Safari, Chrome o Firefox ni validación de licencias.

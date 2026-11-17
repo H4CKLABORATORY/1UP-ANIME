@@ -21,8 +21,6 @@ Este contenedor reúne todas las utilidades de línea de comandos, tareas progra
 | `update-new-chat-handoff.mjs` | Node.js | Regenera la ficha técnica determinista para continuidad entre sesiones (`docs/NEW_CHAT_HANDOFF.md`). | `node scripts/update-new-chat-handoff.mjs` |
 | `verify-video-logo.mjs` | Node.js | Inspecciona átomos binarios (`ftyp`, `moov`, `mdat`, `avc1`, `mp4a`) de la firma de video de marca. | `node scripts/verify-video-logo.mjs` |
 | `build-icons.py` | Python | Renderiza iconos PNG cuadrados para iPhone y PWA (180, 192, 512 px) desde el SVG de marca. | `python scripts/build-icons.py` |
-| `scrape-encyclopedia-anime.py`| Python | Extractor educativo de metadatos estáticos desde páginas HTML de referencia. | `python scripts/scrape-encyclopedia-anime.py` |
-| `generate-authorized-subtitles.py`| Python | Generador local de pistas WebVTT en español e inglés para medios licenciados. | `python scripts/generate-authorized-subtitles.py` |
 | `oneup-safe-push.sh` | Bash | Script de publicación segura para flujos de GitHub Actions con rebase automático. | `bash scripts/oneup-safe-push.sh` |
 
 ---

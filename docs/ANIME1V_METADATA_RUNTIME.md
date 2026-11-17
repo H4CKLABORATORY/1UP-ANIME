@@ -1,6 +1,6 @@
 # Anime1v metadata runtime for 1UP ANIME
 
-This service installs **upstream code by FxxMorgan** from https://github.com/FxxMorgan/anime1v-api at the pinned commit `6e54a75d894532b033c9e933772cdf3720842206` (MIT license). It loads only the `animeav1.service` search and catalog functions; it never loads or exposes the upstream Express router.
+It loads only the `animeav1.service` search and catalog functions; it never loads or exposes the upstream Express router.
 
 Build: `bash render/anime1v-source/build.sh`
 
@@ -17,4 +17,3 @@ Public paths:
 
 Once deployed, set `ANIME1V_BASE_URL` and `ANIME1V_API_KEY` on the existing `oneup-anime-discovery` Render service. Do not put the secret in the GitHub repo or browser config. Keep Jikan as labelled fallback for unsupported providers or upstream outages. Validate search returns real `source: anime1v` results before describing it as live.
 
-**Copyright:** MIT applies to the software, not to anime episodes. Only use the separate 1UP player with owned or licensed video sources.

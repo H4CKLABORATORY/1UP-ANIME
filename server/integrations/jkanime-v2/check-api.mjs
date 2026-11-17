@@ -1,5 +1,3 @@
-/* Verify installed JKAnime V2 package without accessing unauthorized streams.
-   This is an inspection tool only and is not shipped to the public PWA. */
 import assert from 'node:assert/strict';
 const name='jkanime-v2';
 const imported=await import(name);

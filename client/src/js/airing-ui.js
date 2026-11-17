@@ -1,6 +1,3 @@
-/* ONE UP / EN EMISIÓN: published schedule dates,  seasonal premieres & trailers.
- * No claims that a broadcast equals licensed streaming availability.
- */
 (()=>{
 'use strict';
 const $=s=>document.querySelector(s);

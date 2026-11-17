@@ -1,6 +1,3 @@
-/* 1UP Anime original sonic signature.
- * Composed with the Web Audio API; no copied streaming-service samples.
- * Plays only following a direct user action (required for iOS Safari). */
 (function(){
 'use strict';
 let context=null;

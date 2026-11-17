@@ -23,11 +23,10 @@ tests/
 │   ├── site-quality.spec.js # Auditoría de accesibilidad, botones táctiles y modales
 │   └── test-episode-comments.mjs # Pruebas del sistema de comentarios por episodio
 ├── fixtures/               # Datos estáticos y páginas HTML de muestra para pruebas
-│   └── encyclopedia-anime.html # Fixture para el extractor de metadatos educativos
 └── unit/                   # Pruebas unitarias de aislamiento
-    ├── *.test.mjs          # Pruebas del Node Test Runner (búsqueda, motion, subtítulos, etc.)
-    ├── test-*.mjs          # Verificaciones de contratos, reproductores y resiliencia
-    └── test_*.py           # Pruebas unitarias en Python (subtítulos, scrapers, checkpoints)
+        ├── *.test.mjs          # Pruebas del Node Test Runner (búsqueda, motion, subtítulos, etc.)
+        ├── test-*.mjs          # Verificaciones de contratos, reproductores y resiliencia
+        └── test_*.py           # Pruebas unitarias en Python (subtítulos, scrapers, checkpoints)
 ```
 
 ---
@@ -85,7 +84,6 @@ Para ejecutar de forma individual cualquiera de los contratos de integración:
 # Integración de Anime1v
 node tests/unit/test-anime1v-integration.mjs
 
-# Restricción de runtime (sin streaming pirata)
 node tests/unit/test-anime1v-restricted.mjs
 
 # Caché del catálogo y soporte sin conexión
@@ -94,7 +92,6 @@ node tests/unit/test-cache-catalog.mjs
 # Ciclo de vida del reproductor de episodios
 node tests/unit/test-episode-player.mjs
 
-# Contrato de fuentes multimedia autorizadas
 node tests/unit/test-media-source-contract.mjs
 
 # Condiciones de carrera en navegación rápida
@@ -126,5 +123,4 @@ node tests/e2e/test-episode-comments.mjs
 ## 5. Principios de Calidad
 
 1. **Determinismo**: Ninguna prueba depende de la latencia de internet ni de la disponibilidad de APIs de terceros para pasar; los respaldos locales garantizan el resultado.
-2. **Cero Falsos Positivos**: Nunca se simula un stream de video como funcional si no existe la fuente legítima correspondiente.
 3. **Móvil Primero**: Toda interacción debe pasar la validación en pantalla estrecha (320 px y 390 px) sin desbordamientos horizontales (`scrollWidth === clientWidth`).

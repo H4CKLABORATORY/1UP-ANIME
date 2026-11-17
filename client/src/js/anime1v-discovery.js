@@ -32,7 +32,7 @@ async function install(){
  '<button type="submit">Buscar ↗</button></form>'+
  '<p id="oneup-anime1v-status" role="status" aria-live="polite"></p>'+
  '<div class="oneup-anime1v-grid" id="oneup-anime1v-results"></div>'+
- '<p class="oneup-anime1v-credit">Datos informativos de <span id="oneup-discovery-source">Jikan</span>. Si se configura Anime1v, su código es de FxxMorgan. Ningún resultado implica permiso de retransmisión.</p>';
+ '<p class="oneup-anime1v-credit">Datos informativos de <span id="oneup-discovery-source">Jikan</span>. Si se configura Anime1v, su código es de FxxMorgan.</p>';
  host.append(area);
  const form=area.querySelector('form'),status=area.querySelector('#oneup-anime1v-status');
  const results=area.querySelector('#oneup-anime1v-results');

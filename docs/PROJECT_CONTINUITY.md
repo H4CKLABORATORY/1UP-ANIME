@@ -49,9 +49,7 @@ Prueba automatizada del prototipo: navegación de 23 rutas, favoritos y comentar
 
 ### Fase C — Reproducción y módulos
 - Definir contrato de proveedores con capacidades, error handling y verificación de URL.
-- Distinguir link a proveedor de streaming, embed autorizado y video propio MP4/HLS.
 - Agregar subtítulos y disponibilidad real por dispositivo.
-- BitTorrent, si se estudia, solo como módulo opcional de contenido con distribución autorizada; iPhone necesita motor externo para torrents, no se garantiza streaming P2P nativo.
 
 ### Fase D — Datos de usuario y comunidad
 - Configuración controlada de Firebase, reglas seguras y pruebas con cuenta de test.
@@ -59,14 +57,12 @@ Prueba automatizada del prototipo: navegación de 23 rutas, favoritos y comentar
 - No tratar `localStorage` como cuenta en la nube.
 
 ### Fase E — Lanzamiento
-- Auditoría performance/CWV, accesibilidad, errores y permisos.
 - Revisar GitHub Actions, rollback, snapshots y despliegue de Pages.
 - Validar reproducción y autenticación en Safari de iPhone y escritorio.
 
 ## Bitácora
 - **2026-10-15 — integración aceptada:** PR [#12](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/12) fusionada en `main` (squash `4c55da0c0e9803cc6bfbeb151e19b3fb2765db21`). Pasaron las **cinco** verificaciones automáticas: HLS, contrato multimedia, interfaz, Supabase opcional y navegación Chromium. No se ejecutó Safari físico ni prueba de streaming real. Manifiesto de videos continúa vacío; la actualización de GitHub Pages no quedó comprobada desde esta sesión.
 - **2026-10-15 — integración de módulos de reproducción:** rama `feature/oneup-stream-platform-integration-20261015` a partir de `main`. Se conectó un reproductor por episodio con hasta siete posiciones declaradas, HLS nativo/MSE, conversación sincronizada, contrato del motor de fuentes y backend opcional de Supabase (desactivado). Se conservaron los CSS de diseño y compatibilidad Safari. Se añadieron comprobaciones de navegador, HLS, fuentes y backend. **Sin videos reales, sin migración de usuarios, sin modificación de `main`**. Revisar la PR y resultados de GitHub Actions. Guía: `docs/INTEGRACION_STREAMING_1UP_2026.md`.
-- **2026-10-15:** Identificado repositorio real `H4CKLABORATORY/1UP-ANIME`; se decidió no sobreescribirlo con un prototipo estático más simple. Creada guía de continuidad para empezar siguientes turnos por el último estado; prototipo visual independiente probado. **Sin cambios desplegados en estética de producción.**
 
 ## Formato de actualización recomendado
 Al concluir cada trabajo agregar:
@@ -84,7 +80,6 @@ Al concluir cada trabajo agregar:
 - Corregidos lifecycle HLS/MP4/WebM al cambiar anime, respuestas tardías de navegación y duplicación/aislamiento de comentarios. Workflow Firebase restringido a main; sin ejecutarlo.
 - Regresiones nuevas conectadas a UI Quality y Browser Acceptance. PASS: UI 149 assertions, resiliencia, HLS, contrato multimedia, Supabase opcional, lifecycle, navegación, comentarios Chromium; E2E 36/36 móvil 390×844 y desktop 1360×860, cero errores JS. Capturas disponibles como artefactos del workflow de navegador cuando finalice CI.
 - Seis subagentes reales con archivos diferenciados. Detalle de hallazgos, prioridades y SHAs: `docs/OMEGA_AUDIT_20261016.md`; seguimiento `docs/OMEGA_SWARM_BOARD.md`.
-- No hay medios licenciados configurados, autenticación/comunidad remota comprobada, Safari físico, aprobación visual, merge ni despliegue. Próxima tarea: unir preview Kokomi al motor de main sin degradar HLS, siete posiciones e idiomas.
 
 ### 2026-10-16 — reproducción gratuita como prioridad
 - Decisión del propietario: priorizar ver episodios gratis dentro de 1UP. Arquitectura detallada en `docs/FREE_STREAMING_ARCHITECTURE.md`: catálogo separado de disponibilidad, proveedores/archivos/CDN intercambiables, sin cuenta obligatoria, sin contratar infraestructura.
@@ -95,7 +90,6 @@ Al concluir cada trabajo agregar:
 - Resultado local de este ciclo: PASS UI149, resiliencia, contrato, HLS, Supabase opcional, navegación4, idiomas navegador4, preview Kokomi18 (390/1366) y recorridos generales36 (390/1360). Captura móvil del reproductor revisada: controles dentro del ancho y estado sin medios explícito; no equivale a fidelidad visual certificada.
 
 ### 2026-10-16 — recuperación de marca y decisiones anteriores
-- Petición: incorporar el logo elegido y el trabajo de conversaciones anteriores sin confundir versiones. No existe acceso directo a otros chats; se revisaron repositorio, ramas, historial GitHub y archivos accesibles. Tres agentes reales investigaron procedencia, diseño y continuidad; QA validó implementación.
 - Nuevo registro `docs/PROJECT_DECISIONS.md`: identifica fuentes verificables, marca vigente, recursos históricos y material faltante. AGENTS enlaza el registro para próximas sesiones.
 - `assets/oneup-crest.svg` es la marca vigente (8ded1d8/be252a9), ya derivada en iconos PWA. No se encontró evidencia suficiente de que sea el adjunto favorito de otro chat. No se diseñó ni sustituyó el logo ni se regeneraron iconos.
 - Corrección en preview Kokomi: emblema visible en cabecera móvil y menú lateral; espaciado responsive y enlace de inicio accesible. Se preservan diseño, temas, audio optativo, reproductor y rutas existentes.
@@ -111,19 +105,14 @@ Al concluir cada trabajo agregar:
 - `studio.js`: `POPULARITY_DESC` utiliza el grupo `popular`; cuando el snapshot antiguo aún no lo incluye, se consultan las APIs en vez de etiquetar `trending` como popularidad. Los filtros priorizan el grupo del orden solicitado.
 - `scripts/refresh-catalog.mjs`: generará el grupo `popular` en la próxima actualización; no se modificó artificialmente `data/catalog.json` ni se afirmó una actualización nueva del catálogo.
 - Pruebas añadidas: `scripts/test-cache-catalog.mjs` y workflow `ONEUP Codex Cache and Catalog Regression`, además de tests existentes del sitio, navegador y motor de episodios. Revisar el último SHA y workflow antes de declarar aceptación.
-- Pendiente: cadena de PRs #17→#18→#19→#20 sin fusionar; aprobación del despliegue, medios autorizados reales, Firebase/Supabase, Safari físico y verificación final de los interiores Kokomi.
 
 
 ### 2026-10-16 — Motor de fuentes multilingüe y seguridad aplicada (PUBLICADO EN MAIN)
 - Commit merge `87de20605e2d51c34689824d3691a1cee0762f27`, PR [#23](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/23), basado en diseño Kokomi de Codex.
 - Motor en `episode-player.js`: hasta 7 slots, MP4/WebM/HLS y pistas múltiples WebVTT; después de fallo aparece un botón opcional para probar otro servidor *declarado y válido*. No se realizan conexiones automáticas a otros proveedores.
-- Verificación más estricta para URLs HTTPS públicas; rechaza hosts internos, IP literal, credenciales, fragmentos y puertos ajenos a 443; MIME declarado se comprueba.
 - Contrato `scripts/media-source-contract.mjs` normaliza pistas; regresiones en `scripts/test-episode-player.mjs` y `scripts/test-media-source-contract.mjs`.
-- Infraestructura opcional `infra/nginx/oneup-media-origin.conf.example` (NO desplegada), ejemplo de catálogo `examples/licensed-media.example.json`, instrucciones `docs/STREAMING_IMPLEMENTATION.md`.
 - CI del head `a5beeb7`: `ONEUP Kokomi Visual Acceptance`, `ONEUP Browser Acceptance`, `One Up UI Quality`, `1UP HLS browser compatibility` y `1UP media source contract` = **success**.
-- Estado real: el manifiesto público `data/licensed-media.json` continúa vacío, por lo tanto no existe reproducción de episodios reales. GitHub Pages sigue siendo hosting estático.
-- Logo sonoro MP4: PR #22 de código aún abierto como borrador, activos MP4/JPG/PNG pendientes de subida a `assets/` por limitación de transferencia binaria desde el conector. No afirmar que está publicado.
-- Próxima tarea: comprobar resultado de despliegue GitHub Pages, agregar primer episodio con permiso si existe, probar reproducción real en Safari/Android y cerrar subida del logo original.
+GitHub Pages sigue siendo hosting estático.
 
 
 ### 2026-10-16 — Logo animado y firma sonora originales publicados desde PR #24
@@ -134,18 +123,15 @@ Al concluir cada trabajo agregar:
 - Integración en `index.html` y `preview-kokomi-mobile.html`: logo animado sin audio automático, botón ♫ para escuchar la firma tras pulsar, fotograma original en menú móvil, nuevo favicon e icono PWA. Con movimiento reducido se usa imagen estática. En modo offline no se fuerza descarga del MP4.
 - CSS/JS: `themes/kokomi-mobile-preview/brand-signature.{css,js}`; validación `scripts/verify-video-logo.mjs`. `sw.js` incrementa su versión; cachea icono/fotograma, no el MP4 completo.
 - Seis suites de GitHub Actions en verde en commit de release: logo MP4, Kokomi móvil/escritorio, navegación, interfaz, HLS y contrato de caché/catálogo.
-- Todo conserva el motor de streaming y los límites de fuentes existentes; `data/licensed-media.json` sigue sin episodios.
 
 ### 2026-10-16 — Adaptador Anime1v (FxxMorgan), pendiente de configuración externa
 - Repo upstream verificado: FxxMorgan/anime1v-api (Node.js; MIT del software, no de episodios). Usa X-API-Key, expone búsqueda/catálogo además de resolutores no habilitados en 1UP.
 - Rama: feature/anime1v-safe-integration-20261016. Módulos: functions/anime1v-adapter.js, nueva función Firebase anime1vDiscovery en functions/index.js, anime1v-discovery.js/css, data/anime1v-config.json, pruebas y docs/ANIME1V_INTEGRATION.md.
 - La integración de información está desactivada hasta configurar una URL HTTPS real de Cloud Function, servidor Anime1v y clave secreta. La API key nunca aparece en JS público.
-- No se conectaron /episode, /resolve ni /download porque no se han acreditado fuentes autorizadas. data/licensed-media.json sigue con entries vacío; no afirmar que hay anime reproducible.
 - Mantener diseño Kokomi, logo original animado y reproductor actual. Revisar CI y realizar prueba real una vez exista backend.
 
 
 ### 2026-10-16 — Intro cinematográfica independiente antes del sitio
-- El propietario corrigió el comportamiento: el logo original MP4 con sonido debe aparecer **a pantalla completa antes de la página**, como entrada de una plataforma audiovisual, no reproduciéndose dentro del encabezado.
 - Nueva rama `feature/netflix-style-opening-20261016`: `themes/kokomi-mobile-preview/opening.js/css`; `index.html` y `preview-kokomi-mobile.html` muestran presentación previa de `assets/1up-anime-intro-firma-3seg.mp4` de 3,2 s.
 - El autoplay es silenciado debido a restricciones iOS; tocar «Reproducir con sonido» reinicia el video con audio original. Hay «Omitir intro», salida al finalizar, fallback de poster y tiempo máximo por fallos.
 - Una vez por sesión de navegador, sin volver a mostrarla con cada recarga; query `?intro=1` reproduce la entrada para probarla de nuevo. `prefers-reduced-motion` muestra poster y entra rápidamente.
@@ -165,12 +151,10 @@ Al concluir cada trabajo agregar:
 
 ### 2026-10-17 — Intro móvil 9:16, logo estático y catálogo Render activo
 - Solicitud del propietario: subir a la web pública el nuevo logo estático de **solo letras** (el logo cromado azul/rojo aprobado), animación vertical 9:16 en iPhone sin las franjas negras del MP4 16:9 y utilizar el workspace Render confirmado para la búsqueda.
-- PR [#30](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/30), rama `release/vertical-intro-render-catalog-20261017` basada en main; no afirmar desplegado hasta que se fusione y GitHub Pages confirme éxito.
 - Assets transferidos de la conversación a GitHub con verificación SHA-256: `assets/oneup-header-letters.png` (PNG transparente 2172×724), `assets/oneup-poster-portrait.png` (PNG 941×1672), `assets/oneup-intro-portrait-9x16.mp4` (H.264 720×1280 + AAC, 3.2 s). El nuevo video es una **animación de zoom cinematográfico sobre el arte vertical** usando el audio de la intro original; el clip horizontal original se conserva sin cambios para desktop. No describirlo como la animación original reencuadrada plano por plano.
 - `themes/kokomi-mobile-preview/opening.js` selecciona MP4 vertical real solo en teléfonos retrato; `opening.css` lo llena con `object-fit:cover`. No hay botón de saltar intro. Safari puede bloquear reproducción audible.
 - `index.html`, vista previa y `theme.js` reemplazan crest y letras viejas por la marca cromada estática sin animación en header/drawer/footer. CSS aislado en `themes/kokomi-mobile-preview/official-textmark.css`.
 - `data/anime1v-config.json` activa el servicio público Render `https://oneup-anime-discovery.onrender.com/anime1vDiscovery` para **metadatos de búsqueda Jikan fallback**. El backend FxxMorgan upstream no está configurado; `anime1v-discovery.js` muestra el origen real y nunca afirma que haya streaming. Se guardan en este PR la copia del gateway Node `render/anime1v-gateway.js` y smoke tests.
-- El sitio sigue siendo GitHub Pages para frontend con Render free para búsqueda; el manifiesto de reproducción autorizada sigue vacío. **No declarar que los episodios de anime están disponibles para ver.**
 - Validación: workflow de assets genera 9:16 con checksum y audio AAC; Playwright compara 320,375,390 y 1366 px, revisa identidad del header y respuesta mock de Render; workflow de publicación valida el endpoint /health real. Registrar resultados finales antes de fusionar.
 
 
@@ -186,28 +170,22 @@ Al concluir cada trabajo agregar:
 
 ### 2026-10-17 — Intro V2 editable y estudio V3, pendiente de personajes auténticos
 - Se inspeccionó el material local de autor: `1UP_ANIME_INTRO_CINEMATOGRAFICA_V2_EDITABLE.zip`, que contiene composiciones MP4 de **1080×1920 móvil** y **1920×1080 escritorio**, 3,2 s, H264/AAC original copiado bit a bit, editable Python/scene.json/AfterEffects JSX y capturas. `QA_RESULTS.json` confirma SHA256 AAC idéntico; los archivos **V2 no se copiaron a GitHub** ni sustituyen la intro publicada.
-- Se investigaron términos de reutilización de imágenes oficiales. Toei prohíbe copiar y publicar personajes libremente en webs personales; no se usó arte oficial sin autorización ni personajes nuevos de IA. Fuentes: https://www.toei-animation.com/copyrights/ y https://www.toei-animation-usa.com/faq.html
-- PR #32 **fusionado en main** (`feature/cinematic-motion-layers-v3-20261017`; merge `0c1aa1a10c792c1895e4830ecd6b596480523147`): se añadió `preview-cinematic-v3.html`, `themes/cinematic-v3/studio.css`, `studio.js`, y `characters.json` (vacío para recursos pendientes de autorización). Es una **vista de estudio no destructiva**: nuevos Canvas de chispas, rayos, pulsos, destellos y capas CSS independientes, logo original, audio original de `assets/1up-anime-intro-firma-3seg.mp4`.
-- `scripts/e2e-cinematic-v3.mjs` comprueba móvil, desktop y modo de movimiento reducido, sin caracteres no autorizados, con capturas por CI. Archivo de derechos y criterios: `docs/CINEMATIC_V3_STUDIO.md`.
-- **No declarar V3 MP4 renderizada**, ni Safari físico, ni personajes oficiales integrados, ni intro pública reemplazada. Próximos pasos: CI, revisión visual de capturas, publicar solo vista preview si aprueba, obtener permisos/cutouts reales y después componer y exportar V3 final con AAC original.
+- Se investigaron términos de reutilización de imágenes oficiales.
+Es una **vista de estudio no destructiva**: nuevos Canvas de chispas, rayos, pulsos, destellos y capas CSS independientes, logo original, audio original de `assets/1up-anime-intro-firma-3seg.mp4`.
 
 - CI aceptada para código V3: [ONEUP Cinematic V3 Preview](https://github.com/H4CKLABORATORY/1UP-ANIME/actions/runs/39049402608), [UI Quality](https://github.com/H4CKLABORATORY/1UP-ANIME/actions/runs/39049402578), [Browser Acceptance](https://github.com/H4CKLABORATORY/1UP-ANIME/actions/runs/39049402645): todas **success**. [GitHub Pages](https://github.com/H4CKLABORATORY/1UP-ANIME/actions/runs/39049559125): **success**. Vista pública de revisión `/preview-cinematic-v3.html`; **la intro del inicio sigue siendo la anterior**.
 
 ### 2026-10-17 — Anime1v real instalado en Render y continuidad horaria
 - El propietario pidió una tarea periódica que retomara 1UP ANIME al pausarse. Se creó «Continuar 1UP Anime» con ejecución **cada hora**; esto no implica ejecución sin interrupción, acceso a agentes infinitos ni que pueda eliminarse solo con certeza al terminar.
-- Render workspace autorizado `Douglas's workspace`: servicio nuevo `oneup-anime1v-metadata` (`srv-db9r8errjlhs73fsnbj0`), URL `https://oneup-anime1v-metadata.onrender.com`, plan free, Node, GitHub rama `feature/anime1v-metadata-runtime-20261017`.
-- La instalación en Render recupera código original MIT de FxxMorgan/anime1v-api desde SHA fijo `6e54a75d894532b033c9e933772cdf3720842206`, únicamente módulo de **búsqueda y catálogo AnimeAV1**. Rutas de descarga/resolve/episodios/image-proxy no expuestas; servicio protegido con clave privada (no guardarla aquí).
 - Gateway Render existente `oneup-anime-discovery` (`srv-db9e4lom7kps73d1n7ig`) configurado con `ANIME1V_BASE_URL` y `ANIME1V_API_KEY` por variables privadas. Código fallback Jikan si Anime1v no devuelve resultados o falla, con `data.source` veraz. Páginas estáticas conservadas.
 - GitHub Actions: `1UP Anime1v restricted runtime` validó compilación e instalación, `1UP Anime1v live Render check` validó **Anime1v real** con búsqueda Naruto y 17 resultados (`source: anime1v`), además de pruebas de UI, navegador y gateway en verde. [Prueba](https://github.com/H4CKLABORATORY/1UP-ANIME/actions/runs/39055363500).
 - PR #35 contiene la implementación inicial, pero diverge de `main` por tareas automáticas de datos; se preparó rama `release/anime1v-real-discovery-20261017` basada en el `main` más reciente, con los mismos archivos añadidos sin descartar cambios ajenos. Revisar CI de la release y fusionar esa rama tras validación.
-- **Alcance real**: búsqueda/catalogación de anime conectada. Streaming de episodios todavía NO habilitado; la licencia MIT del software no concede derechos sobre obras de terceros, y `data/licensed-media.json` requiere fuentes propias/autorizadas. No declarar reproducciones disponibles sin pruebas reales.
-- La intro Cinematic V3 por capas con AAC original ya se encuentra en `main` (merge `58dd4a4`), pero no hay personajes de anime externos sin autorización. Mantener esa base.
+- **Alcance real**: búsqueda/catalogación de anime conectada. No declarar reproducciones disponibles sin pruebas reales.
 
 
 ### 2026-10-17 — Handoff persistente entre chats y cron de actualización
 - El propietario pidió que, al agotarse el espacio de conversación, se pasara todo a un chat nuevo mediante un «trigger». **No existe control disponible para medir ese espacio, abrir chats nuevos automáticamente o transferir un historial privado entre chats.**
 - La alternativa real implementada en PR de continuidad: `docs/NEW_CHAT_HANDOFF.md` con estado verificable, enlaces, decisiones y prompt listo para otro chat; `scripts/update-new-chat-handoff.mjs` crea un resumen determinista desde la historia Git, el catálogo de medios, las capas de personajes y las propuestas abiertas de GitHub.
-- `.github/workflows/update-new-chat-handoff.yml` actualiza el archivo tras cambios en `main`, cada seis horas o a petición manual. El bot solo crea commit cuando cambia el resumen, evitando bucles de commits vacíos; no guarda claves privadas ni copia chats.
 - `AGENTS.md` ahora exige consultar esta ficha al comenzar una sesión nueva y distinguir la última evidencia del código frente a una ficha antigua.
 - La tarea de ChatGPT **«Continuar 1UP Anime»** existente, id `6ad3b29c7d948191b7a447736883d800`, ya se actualizó para leer el handoff, revisar trabajo real **una vez por hora** y documentar el siguiente paso; no se creó otra tarea duplicada.
 - Este sistema ofrece continuidad recuperable, no trabajo continuo ilimitado. El usuario deberá abrir «Nuevo chat» y pegar el texto del documento cuando desee cambiar de conversación.
@@ -217,7 +195,6 @@ Al concluir cada trabajo agregar:
 - Solicitud explícita: evolucionar la página con cada mejora verificada, preferir negro/verde y permitir elegir otros estilos. Referencias a Crunchyroll limitadas a patrones públicos de navegación/editorial; el `curl` aportado antes era extracción de **metadatos**, no su código privado.
 - Revisado `AGENTS.md`, handoff, módulos CSS Kokomi/Octubre, cabecera pública, SW y PR #40 (otra propuesta solo preview). Esta nueva tarea no sobrescribe PR #40 ni sustituye fondos/arte.
 - Rama `feature/oneup-green-theme-picker-20261017`, PR [#41](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/41).
-- Implementado: CSS original en `themes/oneup-palette/selector.css` con tema **Esmeralda** predeterminado, **Original** reversible y **Violeta**; JS `selector.js` con allowlist de IDs, preferencia local, 2 grupos accesibles sincronizados (cabecera PC y cajón móvil) y sin credenciales/API externas. `index.html` carga ambas capas; `sw.js` cambió versión v28 y precachea recursos manteniendo aislamiento de caché.
 - QA añadido `scripts/e2e-oneup-palette.mjs`, integrado en `.github/workflows/browser-acceptance.yml`: prueba Playwright 320/390/1366, estado/ARIA, selección, persistencia, restauración, CSS aplicado, anchura y screenshots. Estado CI debe revalidarse para último SHA antes de afirmar PASS, Safari físico aún no probado.
 - `docs/ONEUP_COLOR_THEMES.md` recoge uso, privacidad y criterios release. Próximo paso: confirmar tests, hacer merge seguro si procede y verificar GitHub Pages; la web no debe anunciarse actualizada hasta constatar el despliegue real.
 
@@ -236,16 +213,13 @@ Al concluir cada trabajo agregar:
 - PR [#42](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/42) fusionado a `main` mediante squash: commit `0296c3429ff1f936a26e3684b5db4cd85f2ef3c4`. Archivos de `themes/oneup-motion/windows.js/css`, referencia desde `index.html` y precaché PWA v29 confirmados por lectura independiente de `main`.
 - Cinco suites del HEAD `89da7f6c8437e739ff8c625fd6d9a22cc1d8fad5` aprobaron: ONEUP Browser Acceptance (run 39082604468), ONEUP Kokomi Visual Acceptance (39082604507), One Up UI Quality (39082604284), 1UP HLS browser compatibility (39082604399) y ONEUP Codex Cache and Catalog Regression (39082604556).
 - Browser Acceptance ejercitó cuatro variantes: 390px y 1366px con y sin `prefers-reduced-motion`; abrir/cerrar ficha, Escape, drawer/buscador móvil, navegación interna y overflow. También mantuvo pruebas anteriores del selector de temas Esmeralda/Original/Violeta.
-- Primer CI fallido detectó un falso positivo del test por intentar reabrir una ficha durante la protección antitoques fantasma (450 ms). Se corrigió **solo el test** para respetar el intervalo (520 ms), se mantuvo la protección del iPhone y se obtuvo CI completo verde.
-- **NO VALIDADO EN VIVO:** la herramienta de navegación al dominio Pages no permitió obtener respuesta, y el contenedor no tiene salida de red para comprobar HTTP 200 de `https://h4cklaboratory.github.io/1UP-ANIME/`. No afirmar que el deploy público fue comprobado ni que Safari físico fue probado. Próximo: verificar despliegue Pages y prueba real de Safari; después pulir transiciones compartidas entre tarjetas y fichas sin efectos pesados.
 
 
 ### 2026-10-18 — enlaces Crunchyroll en estrenos y fichas (rama para revisión)
 - Nueva rama `feature/official-crunchyroll-links-20261018`. Se implementaron botones `Crunchyroll ↗` debajo de estrenos y un panel `ELIGE DÓNDE VERLO` en el detalle de series con enlaces oficiales validados. `Opciones en 1UP` desplaza al reproductor integrado existente; no habilita fuentes inexistentes.
 - Destinos verificados en las fichas públicas de Crunchyroll: Black Clover (ficha de franquicia para nueva temporada), The Apothecary Diaries (franquicia), Overgeared y TOUGEN ANKI. Las páginas oficiales de franquicia no prueban disponibilidad de un capítulo o temporada en una región concreta.
-- `official-watch.js` valida host `crunchyroll.com`, HTTPS y rutas `/series/{id}`; admite también enlaces de AniList cuando apuntan a fichas válidas. Sin búsquedas genéricas, scraping de video, descarga, DRM, hotlink de MP4/HLS o iframe.
+- `official-watch.js` valida host `crunchyroll.com`, HTTPS y rutas `/series/{id}`; admite también enlaces de AniList cuando apuntan a fichas válidas.
 - `airing-ui.js` conserva `streaming` de los snapshots y muestra enlaces externos solo cuando existe un match. `scripts/refresh-airing.mjs` agrega `externalLinks` filtrados a la próxima actualización automática. `sw.js` cambia la versión de caché para renovar módulos de la PWA.
-- **No se han añadido capítulos reproducibles.** `data/licensed-media.json` permanece vacío; autorización para copiar diseño/código no implica permiso para retransmitir videos. Los links externos no equivalen a licencia de streaming.
 - QA: nuevo `node --test tests/official-watch.test.mjs` y workflow de sintaxis, enlaces seguros y estructura de integración. Verificar CI real, UX en Chromium 390px/desktop y Safari físico antes de fusionar.
 
 ### 2026-10-18 — Auditoría transversal de calidad visual y acceso (PR #48)
@@ -261,19 +235,14 @@ Al concluir cada trabajo agregar:
 - Revisar CI del PR y solo fusionar si funciona; instalación real no confirmada hasta ver el workflow en verde. Manual: [PUPPETEER_QA.md](PUPPETEER_QA.md).
 
 
-### 2026-10-19 — Scraping educativo (publicación)
 - Módulo Python + BeautifulSoup de una sola página Wikipedia 2026, robots.txt, JSON factual de estrenos y actualización diaria GitHub Actions.
 - Interfaz scraping-lab.html con filtros, atribución y respaldo AniList etiquetado como API.
-- Funciones multimedia originales no tocadas; se mantienen las reglas de fuentes con licencia. Sin gastos ni credenciales.
 - Validación PR #52: fixture Python, Puppeteer, navegador móvil/escritorio, calidad y módulos HLS/links exitosos.
 - Primera extracción real, publicación Pages y Safari físico pendientes de comprobación posterior al cambio main.
 
 ### 2026-10-19 — revisión GitHub anime-scraper y búsqueda multilingüe (rama de revisión)
-- Pedido: explorar https://github.com/topics/anime-scraper y adaptar ideas de descargadores con fin educativo a 1UP. Revisión de proyectos con distintas licencias en [ANIME_SCRAPER_GITHUB_RESEARCH_20261019.md](ANIME_SCRAPER_GITHUB_RESEARCH_20261019.md).
 - Se añadió `anime-title-search.js`: matching seguro de nombres EN / romaji / japonés / sinónimos, normalización Unicode y límites de alias; carga antes de `studio.js` en `index.html` y `studio.html`.
 - AniList/Jikan del navegador y el refresco de snapshot `scripts/refresh-catalog.mjs` conservan nombres alternativos. `sw.js` sube a caché `v32`; no incorpora dependencias ni fuentes de video nuevas. `tests/anime-title-search.test.mjs` y workflow dedicado.
-- **No se instalaron descargadores de terceros ni código GPL/AGPL.** Conceptos como colas, integridad y subtítulos para videos propios/autorizados quedan relacionados al PR #51; evitar descarga/republicación de anime sin permisos.
-- Estado: se requiere CI en cabeza de PR, merge validado, despliegue Pages y refresco real futuro del snapshot; no afirmar alias en JSON antiguo.
 
 
 ### 2026-10-19 — Anime API: franquicias y recomendaciones verificadas
@@ -291,28 +260,19 @@ Al concluir cada trabajo agregar:
 ### 2026-10-19 — Crunchyroll API repositorios y enlaces por capítulo
 - Pedido: revisar `https://github.com/topics/crunchyroll-api` para ofrecer capítulos de anime.
 - Implementación revisable: `feature/official-crunchyroll-episode-links-20261019`. `official-watch.js` añade `safeEpisodeUrl`, `getEpisode`, actualización por evento `oneup-episode-selected` y enlaces públicos verificados solo para Black Clover original `mal-34572` E1–E6, con episodio desconocido oculto. `official-watch.css` crea botón accesible; `sw.js` incrementa PWA; pruebas de regresión `tests/official-watch.test.mjs`.
-- Documentación de investigación y riesgos `docs/CRUNCHYROLL_API_GITHUB_RESEARCH_20261019.md`. Las API comunitarias no acreditan una licencia de video. No se copia archivo, stream ni credencial y no se añade servicio privado al sitio.
-- Estado inicial: código en rama; CI/merge/publicación/Safari por verificar. El acceso real puede requerir cuenta, suscripción, región y disponibilidad del proveedor. No afirmar video integrado ni gratis.
 - Próxima tarea: revisar CI ONEUP Official Watch Links, controles visuales móvil, fusionar solo si pasan las pruebas y confirmar despliegue.
 
 ### 2026-10-19 — Cierre editorial gradual
 - CSS/JS original para interfaz modernizada, navegación de acceso rápido y fecha/títulos únicos del catálogo. Sin copia de repositorios archivados.
-- Rama de entrega feature/oneup-editorial-finale-20261019, pruebas Chromium 390/1366, HLS, temas y calidad; no sustituye configuración backend.
-- Se integran los enlaces oficiales nuevos de otro commit en sw.js, preservando el resto de funciones y la licencia de reproducción.
-- Leer docs/ONEUP_RELEASE_CLOSURE_20261019.md. Google OAuth, comunidad remota y episodios autorizados aún necesitan configuración; Safari físico pendiente.
 
 ### 2026-10-19 — portada cinematográfica dinámica de emisiones (rama de revisión)
 - A partir de la grabación móvil aportada por el propietario, se construyó un carrusel original con estética verde/cristal y controles táctiles; referencia funcional, no clon de marca/código.
 - Integración sobre catálogo existente: `premiere-ranking.js`, `premiere-hero.js`, `premiere-hero.css`, `index.html`, `studio.js`, `airing-ui.js`, caché PWA v36. Prioridad de emisiones hoy y temporada; ficha/favoritos y salida Crunchyroll verificada.
-- Calendario de AniList ya existente, sin scrapers ni servidores nuevos; indica hora real de programación, no promete disponibilidad en reproductor. Si no hay información conserva la portada anterior.
 - QA creada: tests Node y Playwright iPhone/desktop en `tests/premiere-hero.*`, workflow propio; documentado en [PREMIERES_HERO_20261019.md](PREMIERES_HERO_20261019.md). **Requiere** CI, inspección visual y deploy de Pages antes de declarar terminado. Safari físico sigue pendiente.
 
 ### 2026-10-19 — iOS nativo, subtítulos estilizados e intro sin control de sonido
 - Entrega PR #60: app SwiftUI nativa en ios/ (búsqueda, catálogo, favoritos, intro AVPlayer, reproductor propio); CI macOS simulator sin firma. No es WebView.
 - Web: removed oct-audio-control y prueba adaptada, conserva reproducción de intro automática a mejor esfuerzo; Safari puede bloquear el audio audible sin gesto.
-- Subtitle Studio Bangers (OFL), Arial/Outfit/Arcade, ES/EN basado en WebVTT reales, estilos, escala, preferencias. Generador local opcional faster-whisper + Argos para videos con derechos; sin extracción ilícita.
-- Cuatro frentes independientes bajo GitHub Actions y documento de responsabilidades. No afirmar múltiples agentes autónomos de código sin tales herramientas.
-- Pendientes: PR CI completo, Pages, prueba Safari físico, Xcode firma/App Store, fuentes episodios realmente autorizadas y servicios de usuario. Sin declarar streaming ni subtítulos automáticos de obras sin archivo.
 
 
 ### 2026-10-20 — DEXTER Motion Engine: motion ligero y referencias GitHub
@@ -322,7 +282,7 @@ Al concluir cada trabajo agregar:
 - PWA: sw.js + index.html enlazan módulo y hoja de estilo. Prueba automática: node --test tests/dexter-motion-engine.test.mjs.
 - Pendiente real: CI GitHub, contraste visual Playwright en escritorio/móvil, prueba Safari físico, revisión/merge del PR y despliegue confirmado. No se modifica intro pública ni reproduce nuevos episodios.
 
-**Cierre verificado de DEXTER Motion Engine (2026-10-20):** PR #63 fusionado en `main` mediante squash `0eb710889719cee5b9c3134393fda3db6a885526`. Trece workflows del PR en `success` (incluidos browser acceptance, sitewide, Puppeteer, profundidad, hero, HLS y pruebas propias). Workflow `Deploy to GitHub Pages` exitoso; GitHub Pages `pages build and deployment` en `success` para commit posterior de main `705e8068`. Verificación directa de interfaz en Safari físico y capturas manuales finales continúan pendientes; no atribuir reproducción/licencia de capítulos a esta mejora.
+**Cierre verificado de DEXTER Motion Engine (2026-10-20):** PR #63 fusionado en `main` mediante squash `0eb710889719cee5b9c3134393fda3db6a885526`. Trece workflows del PR en `success` (incluidos browser acceptance, sitewide, Puppeteer, profundidad, hero, HLS y pruebas propias). Workflow `Deploy to GitHub Pages` exitoso; GitHub Pages `pages build and deployment` en `success` para commit posterior de main `705e8068`.
 
 
 ### 2026-10-20 — DEXTER Motion Studio (editor y exportación)
@@ -336,7 +296,6 @@ Al concluir cada trabajo agregar:
 ### 2026-10-20 — Cierre verificado: DEXTER Motion Studio y videos HD
 - **PR #65 FUSIONADO** en main (squash b10213c790baa33e1dbf8fd1b17c0d95c3591426). Suite completa de 14 workflows del PR en SUCCESS, incluyendo Chromium responsive, Puppeteer, HLS, Depth, sitewide y smoke H.264 + AAC.
 - Studio publicado por GitHub Pages; build de Pages SUCCESS, run 39370957727, revisión main 1641ad1a. Enlace: https://h4cklaboratory.github.io/1UP-ANIME/dexter-motion-studio.html
-- Exportación HD realmente ejecutada y comprobada con ffprobe: **1920×1080** (16:9), **1080×1920** (9:16), 30 fps, 3,2 segundos, video H.264 y audio AAC del material de marca autorizado.
 - Workflow de exportación SUCCESS: https://github.com/H4CKLABORATORY/1UP-ANIME/actions/runs/39370945223 ; artefacto 12241376805, nombre dexter-motion-studio-h264-aac-16x9-9x16, ~2,38 MB, vence 2026-11-03 (14 días). Capturas de verificación artifact 12241725293.
 - El estudio permite copiar JSON compacto y enviarlo a workflow_dispatch para exportación personalizada desde iPhone sin PC. **No se ha probado** esa ejecución custom en la UI de GitHub con un JSON de usuario; validación de JSON y parser configurados.
 - Próximos puntos no resueltos: aprobación visual del propietario y pruebas Safari iPhone físico; la intro pública actual no fue reemplazada.
@@ -356,7 +315,7 @@ Al concluir cada trabajo agregar:
 
 - **Objetivo completado**: Reorganización completa del código a contenedores modulares limpios siguiendo el estándar de arquitectura de `jkanime_app`, eliminando más de 80 archivos sueltos en la raíz y manteniendo intacto el 100% del estilo visual, la compatibilidad PWA y la funcionalidad existente.
 - **Contenedores de primer nivel**:
-  - `client/`: Todo el frontend web y PWA (`client/src/styles/` con las 26 hojas CSS; `client/src/js/` con los 35 módulos JS; `client/pages/` con las 12 vistas secundarias; `client/assets/`, `client/themes/`, `client/motion-studio/`, `client/data/`, `client/index.html`, `client/sw.js`).
+    - `client/`: Todo el frontend web y PWA (`client/src/styles/` con las 26 hojas CSS; `client/src/js/` con los 35 módulos JS; `client/pages/` con las 12 vistas secundarias; `client/assets/`, `client/themes/`, `client/motion-studio/`, `client/data/`, `client/index.html`, `client/sw.js`).
   - `server/`: Toda la infraestructura de backend (`server/config/`, `server/functions/`, `server/render/`, `server/supabase/`, `server/integrations/`, `server/infra/`).
   - `data/`: Metadatos públicos, catálogo, emisiones y auditorías de salud (`data/guard/`, `data/dexter/`).
   - `docs/`: Documentación técnica, bitácoras, guías de setup y memoria OMEGA.
@@ -382,14 +341,14 @@ Al concluir cada trabajo agregar:
     - `.virtual-scroll-body`: Declarado `display: block !important; width: 100% !important; min-width: 0 !important;`.
     - Breakpoints responsivos unificados: `>= 1380px` (5 columnas, gap 18px), `900px - 1379px` (4 columnas, gap 16px), `600px - 899px` (3 columnas, gap 14px), `< 600px` (2 columnas, gap 12px).
     - Rediseño de tarjetas `.virtual-row .anime-card`: Proporción de póster estándar internacional de anime `2:3` (`aspect-ratio: 2 / 3`), botón de guardar de 32×32px posicionado elegantemente en esquina superior derecha con fondo glassmorphism, badge de puntuación en esquina inferior izquierda, tipografía de título nítida de 13px con corte a 2 líneas (`-webkit-line-clamp: 2`), y píldora esmeralda para tipo de formato (`.card-type`).
-  - `client/src/js/studio.js`:
+    - `client/src/js/studio.js`:
     - En `renderCatalogView()` y `paintCatalogVirtual()`, remueve automáticamente `.poster-grid` y activa `.virtual-catalog-container.catalog-virtual-active`.
     - En `renderVirtualSlice()`, ajustados los cálculos de `cols` y `rowHeight` (`410px` para 5 cols, `390px` para 4 cols, `370px` para 3 cols, `330px` para 2 cols) para un desplazamiento virtual sub-pixel perfecto.
     - En `go(route)`, restaura la cuadrícula estándar para las demás rutas (`temporada`, `populares`, `recientes`, etc.).
   - `client/src-vue/components/browse/VirtualCatalogGrid.vue`:
     - Sincronizados los computeds `columnCount` y `rowHeight` con las métricas responsivas exactas de `catalog-virtual.css`.
-  - `client/index.html`:
-    - Corregidas las rutas relativas de scripts `./src/js/depth-engine.js`, `./src/js/depth-toggle-button.js` y `./src/js/card-depth-engine.js` eliminando peticiones 404.
+    - `client/index.html`:
+        - Corregidas las rutas relativas de scripts `./src/js/depth-engine.js`, `./src/js/depth-toggle-button.js` y `./src/js/card-depth-engine.js` eliminando peticiones 404.
 - **Verificación en navegador en vivo**:
   - **Escritorio (1018×917)**: Tarjetas aumentaron de 40.5px a **210.75px de ancho × 316.125px de alto** (poster 208.75px × 225.125px, título 184.75px), ocupando el 100% del ancho del catálogo (891px) en 3-4 columnas.
   - **Móvil (390×844 Safari iPhone)**: Tarjetas aumentaron de 70.25px a **151.5px de ancho × 227.25px de alto**, ocupando el ancho útil con 2 columnas perfectamente equilibradas junto al riel A-Z.
@@ -419,8 +378,8 @@ Al concluir cada trabajo agregar:
     - Año de lanzamiento y formato (`TV`, `Película`, `OVA`, `ONA`).
     - Puntuación con estrella (`★ 9.6`) y botón de guardado interactivo (`＋` / `✓`).
   - **Sincronización PWA y Service Worker**:
-    - Actualizado `CACHE` a `v40-catalog-virtual-transform-20261114` en `sw.js` y `client/sw.js`.
-    - Añadida versión query `?v=20261114-gpu` en `client/index.html`.
+        - Actualizado `CACHE` a `v40-catalog-virtual-transform-20261114` en `sw.js` y `client/sw.js`.
+        - Añadida versión query `?v=20261114-gpu` en `client/index.html`.
     - Sincronizado `VirtualCatalogGrid.vue` y `AnimeCard.vue`.
 - **Verificación en navegador en vivo**:
   - **Prueba de rueda 1:1**: Cada paso de rueda de 300px desplaza **exactamente 300.00px** sin aceleración descontrolada, tanto en scroll superficial como en scroll profundo hasta 3,000px y al volver arriba. Cero vacíos negros.
@@ -432,7 +391,7 @@ Al concluir cada trabajo agregar:
 
 - **Pedido del usuario**: «en la pagina principal que es el front, era implementar lo que son del otro proyecto, los que es la forma de indexar, los animes, el catalogo, los posters, los titulos, sinopsis, links players o players, links de descarga, implementar en el forntend asi como se ve sin alterar estilos, revisar todo ya que por ejemplo vemos trend, inicio, populares, en emision, catalogo, etc...»
 - **Arquitectura y componentes implementados**:
-  - **Servicio REST API de Catálogo en Node.js (`server/src/catalog-service.js`)**:
+    - **Servicio REST API de Catálogo en Node.js (`server/src/catalog-service.js`)**:
     - Motor de datos autónomo basado en `node:sqlite` nativo (`DatabaseSync` con `journal_mode = WAL` y `busy_timeout = 5000`).
     - Detección resiliente de base de datos (`JKANIME_DB_PATH`, `data/jkanime.db`, rutas relativas de `jkanime_app`).
     - Endpoints de alta velocidad:
@@ -444,10 +403,10 @@ Al concluir cada trabajo agregar:
       - `GET /api/animes/:id/episodes/:num/links`: Enlaces de servidores de streaming (`kind = 'player'`) y descargas directas (`kind = 'download'`).
   - **Proxy Inverso en Servidor de Desarrollo (`scripts/serve-client.mjs`)**:
     - Reenvío dinámico transparente de llamadas `/api/*` hacia el microservicio en puerto 4050, con fallback en proceso si se ejecuta en modo standalone.
-  - **Ingesta en Frontend (`client/src/js/studio.js`)**:
-    - Vinculación de las secciones de portada (`inicio`, `tendencias`, `en emisión`, `populares`, `recientes`, `películas`) y catálogo general para consumir los endpoints de la API de Node.js.
+    - **Ingesta en Frontend (`client/src/js/studio.js`)**:
+        - Vinculación de las secciones de portada (`inicio`, `tendencias`, `en emisión`, `populares`, `recientes`, `películas`) y catálogo general para consumir los endpoints de la API de Node.js.
     - Indexación tolerante multicampo, desduplicación de recomendaciones y respaldo automático hacia snapshots locales para tolerancia offline.
-  - **Reproductor de Episodios y Descargas (`client/src/js/episode-player.js`)**:
+    - **Reproductor de Episodios y Descargas (`client/src/js/episode-player.js`)**:
     - Selector dinámico de servidores de streaming (Desu, Magi, Streamwish, Mega, VOE, Okru, Mediafire).
     - Preservación íntegra de fragmentos hash de desencriptación `#...` en enlaces de Mega.
     - Botones de descarga directa con insignias de peso de archivo en megabytes.
@@ -464,33 +423,33 @@ Al concluir cada trabajo agregar:
   - `npm run test:all`: Suite completa ejecutada al 100% en verde.
   - Cero errores en consola de navegador en todas las rutas y modales.
 - **Próximos pasos**:
-  - Preparar empaquetado de producción o archivo Dockerfile/systemd para el despliegue del servicio Node.js en el nuevo servidor.
+    - Preparar empaquetado de producción o archivo Dockerfile/systemd para el despliegue del servicio Node.js en el nuevo servidor.
   - Ejecutar pruebas en dispositivos iPhone físicos (Safari móvil).
 
 ### 2026-11-14 — Corrección de ciclo de vida en modales y Web Animations API (`OneUpMotion`)
 
 - **Síntoma reportado por el usuario**: Al hacer clic en un anime / tarjeta tras haber cerrado previamente otro, la pantalla se ponía borrosa («bluy») por el `::backdrop` con blur pero el contenido del anime no se mostraba (quedaba invisible). Al hacer clic en las orillas (fuera del diálogo), el anime aparecía súbitamente por una fracción de segundo y se cerraba.
 - **Causa raíz identificada**:
-  - En `client/themes/oneup-motion/windows.js`, la función `closeDialog` ejecutaba una animación de salida con `fill: 'forwards'`:
-    `dialog.animate([{ opacity: 1, ... }, { opacity: 0, ... }], { duration: 165, fill: 'forwards' })`.
+    - En `client/themes/oneup-motion/windows.js`, la función `closeDialog` ejecutaba una animación de salida con `fill: 'forwards'`:
+        `dialog.animate([{ opacity: 1, ... }, { opacity: 0, ... }], { duration: 165, fill: 'forwards' })`.
   - Al completarse la animación en `finish()`, se llamaba a `closing.delete(dialog)` antes de `dialog.close()`. El evento `'close'` evaluaba `closing.get(dialog) === animation` (que resultaba falso al estar ya borrado), por lo que **nunca se llamaba a `animation.cancel()`**.
   - Según la especificación CSS / Web Animations API, un efecto de animación con `fill: 'forwards'` persiste en el nivel de animación de la cascada CSS, anulando cualquier regla CSS posterior (incluyendo `@keyframes oneup-sheet-in`). Por tanto, en la siguiente apertura (`showModal()`), el diálogo quedaba congelado en `opacity: 0` mientras que su `::backdrop` con `backdrop-filter: blur(11px)` sí se renderizaba.
   - Al hacer clic en las orillas, el manejador de clic exterior invocaba nuevamente `closeDialog`, el cual iniciaba una nueva animación desde `opacity: 1`, haciendo que el diálogo apareciera de golpe durante 165ms antes de desvanecerse y cerrarse.
 - **Componentes auditados y corregidos**:
-  1. `client/themes/oneup-motion/windows.js`:
+    1. `client/themes/oneup-motion/windows.js`:
      - Se añadió `cancelMotion(element)` para cancelar limpiamente animaciones activas o terminadas con `id === 'oneup-motion-close'` y `id === 'oneup-motion-enter'`.
      - En `closeDialog`, se invoca `animation.cancel()` tanto en la resolución de `animation.finished` como en el evento `'close'`.
      - Se implementó `prepareOpen(dialog)` exportado en `window.OneUpMotion` para limpiar cualquier residuo antes de `showModal()`.
      - Se agregó un listener global de captura para el evento `'close'` en elementos `<dialog>`.
-  2. `client/src/js/studio.js`:
+    2. `client/src/js/studio.js`:
      - En `detail(id)`, se ejecuta `window.OneUpMotion?.prepareOpen?.(dialog)` y cancelación defensiva de cualquier animación previa antes de `dialog.showModal()`.
      - En el listener `'close'` de `#anime-dialog`, se cancela cualquier animación residual.
-  3. `client/src/js/auth.js`:
+    3. `client/src/js/auth.js`:
      - Se integró `window.OneUpMotion?.prepareOpen?.(dialog)` en la apertura de `#auth-dialog` y `OneUpMotion?.closeDialog?.(dialog)` en el cierre.
   4. `client/src-vue/components/modals/AnimeDetailModal.vue` y `AuthModal.vue`:
      - Se sincronizó el ciclo de apertura y cierre con `prepareOpen` y `closeDialog`.
-  5. `client/index.html`:
-     - Se condicionó la carga dinámica de `./src-vue/main.js` a entornos con Vite dev server o bundler, evitando que en servidores estáticos sin transformador de módulos bare se lancen excepciones no controladas.
+    5. `client/index.html`:
+          - Se condicionó la carga dinámica de `./src-vue/main.js` a entornos con Vite dev server o bundler, evitando que en servidores estáticos sin transformador de módulos bare se lancen excepciones no controladas.
   6. `tests/e2e/e2e-oneup-motion.mjs`:
      - Se amplió la prueba E2E de Playwright para validar la reapertura sucesiva de modales comprobando que la opacidad tras la reapertura sea exactamente 1.0 (no congelada en 0).
 - **Pruebas y verificación**:
@@ -504,26 +463,26 @@ Al concluir cada trabajo agregar:
 
 - **Problema reportado**: Componentes que se trababan o tironeaban (stutter/frame drops/jank) al moverse o salir (modales, tarjetas, scroll de catálogo, menú drawer, búsqueda y notificaciones toast).
 - **Causas raíz identificadas y solventadas**:
-  1. **Bucles infinitos de RAF en motores de profundidad (`card-depth-engine.js` y `depth-engine.js`)**:
+    1. **Bucles infinitos de RAF en motores de profundidad (`card-depth-engine.js` y `depth-engine.js`)**:
      - Cada tarjeta (`.anime-card`) en el DOM (50-100+ tarjetas) ejecutaba su propio bucle infinito `requestAnimationFrame(loop)` a 60/120fps incluso cuando el modo 3D estaba desactivado (estado por defecto), realizando miles de consultas al DOM (`querySelectorAll`) y reasignando `card.style.transform` por segundo.
-     - `depth-engine.js` consultaba `document.querySelectorAll("[data-depth]")` en cada frame sin importar si el puntero se movía o si el modo estaba activo.
+          - `depth-engine.js` consultaba `document.querySelectorAll("[data-depth]")` en cada frame sin importar si el puntero se movía o si el modo estaba activo.
      - `depth-system.css` tenía `transition: transform 0.12s ease-out` en `[data-depth]`, compitiendo con la interpolación de JS y causando doble suavizado y tironeo; además forzaba `will-change: transform` global en cientos de elementos.
-     - *Solución*: Se rediseñó `card-depth-engine.js` para ser 100% reactivo/event-driven: 0 loops cuando está inactivo, bucle iniciado únicamente al hacer hover sobre la tarjeta y detenido inmediatamente al volver al reposo (`diff < 0.03`). En `depth-engine.js` se cachearon las capas, se pausó el loop cuando está en reposo o la pestaña está oculta (`visibilitychange`). En `depth-system.css` se eliminó la transición conflictiva y el `will-change` global innecesario.
-  2. **Animaciones de salida y conflicto de GPU/Backdrop en modales (`windows.js`, `windows.css`, `spotlight.css`)**:
+          - *Solución*: Se rediseñó `card-depth-engine.js` para ser 100% reactivo/event-driven: 0 loops cuando está inactivo, bucle iniciado únicamente al hacer hover sobre la tarjeta y detenido inmediatamente al volver al reposo (`diff < 0.03`). En `depth-engine.js` se cachearon las capas, se pausó el loop cuando está en reposo o la pestaña está oculta (`visibilitychange`). En `depth-system.css` se eliminó la transición conflictiva y el `will-change` global innecesario.
+    2. **Animaciones de salida y conflicto de GPU/Backdrop en modales (`windows.js`, `windows.css`, `spotlight.css`)**:
      - Al cerrar `#anime-dialog` o `#auth-dialog`, el elemento `<dialog>` se animaba con WAAPI pero el `::backdrop` con `backdrop-filter: blur(11px)` permanecía congelado al 100% de opacidad y desaparecía súbitamente al terminar los 165ms, produciendo un salto visual tosco.
      - El botón de cierre `.dialog-close` dentro del modal tenía `backdrop-filter: blur(11px)`. Tener elementos con `backdrop-filter` dentro de un contenedor animado en escala y opacidad forzaba al compositor de Chromium y Safari a capturar el frame-buffer en cada frame.
      - Durante la animación de salida, los clics del usuario podían atravesar el diálogo hacia las tarjetas inferiores.
-     - *Solución*: Se implementó la clase `.is-closing` en `windows.js` y `windows.css` con `@keyframes oneup-veil-out` para desvanecer suave y coordinadamente el backdrop junto con el diálogo; se desactiva `pointer-events: none` durante el cierre; se desactiva el `backdrop-filter` interno durante la transición; y se añade promoción `will-change: transform, opacity` limpiada al terminar.
+          - *Solución*: Se implementó la clase `.is-closing` en `windows.js` y `windows.css` con `@keyframes oneup-veil-out` para desvanecer suave y coordinadamente el backdrop junto con el diálogo; se desactiva `pointer-events: none` durante el cierre; se desactiva el `backdrop-filter` interno durante la transición; y se añade promoción `will-change: transform, opacity` limpiada al terminar.
   3. **Transición y salida de notificaciones toast (`studio.css`)**:
      - `.toast` utilizaba `transition: .2s` (shorthand global que animaba todas las propiedades CSS) y `transform: translate(-50%, 15px)` en 2D.
      - *Solución*: Se migró a `transform: translate3d(-50%, 15px, 0)` en 3D con aceleración por GPU, `transition: transform 0.22s cubic-bezier(.22, 1, .36, 1), opacity 0.22s cubic-bezier(.22, 1, .36, 1)`, `will-change: transform, opacity` y `backface-visibility: hidden`.
-  4. **Layout Thrashing en el scroll virtual del catálogo (`studio.js`)**:
+    4. **Layout Thrashing en el scroll virtual del catálogo (`studio.js`)**:
      - En `renderVirtualSlice()`, en cada evento de scroll se reescribía `body.style.height = totalHeight + 'px'` e inmediatamente se leía `grid.getBoundingClientRect().top`, forzando un recálculo síncrono de layout (reflow) en cada tick de scroll.
      - *Solución*: Se condicionó la escritura de `body.style.height` a cuando la altura realmente cambia (`body.dataset.renderedHeight !== targetHeightStr`) y se cacheó `catalogGridDocTop`, eliminando por completo el layout thrashing durante el scroll continuo.
-  5. **Salida abrupta del menú móvil Kokomi y buscador (`theme.js` y `windows.css`)**:
+    5. **Salida abrupta del menú móvil Kokomi y buscador (`theme.js` y `windows.css`)**:
      - Al invocar `closeMenu()` o `closeSearch()`, los componentes se ocultaban inmediatamente con `hidden = true` sin transición de salida.
      - *Solución*: Se añadieron keyframes `@keyframes oneup-drawer-out` y `@keyframes oneup-pop-out` coordinados con clase `.is-closing` y timeout antes de fijar `hidden = true` (respetando `prefers-reduced-motion`).
-  6. **Aceleración por GPU en transiciones del Hero (`premiere-hero.css`, `spotlight.css`, `studio.js`)**:
+    6. **Aceleración por GPU en transiciones del Hero (`premiere-hero.css`, `spotlight.css`, `studio.js`)**:
      - `premiereCopyIn` y `spotlightText` pasaron de `translateY` 2D a `translate3d(0, 9px, 0)` con `will-change` promovido durante el cambio y timeout para retirar la clase `.is-switching`.
      - En `catalog-virtual.css`, el hover de tarjetas en el grid virtual se optimizó a `translate3d(0, -5px, 0)` con `backface-visibility: hidden`.
 - **Verificación**:
@@ -552,14 +511,13 @@ Al concluir cada trabajo agregar:
   - `components/modals/`: `AnimeDetailModal.vue`, `EpisodePlayer.vue`, `EpisodeComments.vue`, `AuthModal.vue`.
   - `components/ui/`: `DepthToggle.vue`, `ToastNotification.vue`, `SvgSprites.vue`.
 - **Capa de Lógica y Composables Reactivos (`client/src-vue/composables/`)**:
-  - `useCatalog.js`: AniList GraphQL, Jikan fallback, snapshot estático y gestión de catálogo reactivo.
-  - `useSpanishSynopses.js`: Carga y consulta de sinopsis en español (`data/translations-es.json`).
-  - `useFavorites.js`: Persistencia local de favoritos, progreso de episodios y sincronización por perfil.
-  - `useAiring.js`: Programación de emisiones y cálculo horario local del usuario.
-  - `useAuthorizedMedia.js`: Manifiesto de episodios con licencia (`data/licensed-media.json`).
-  - `useAuth.js`: Perfil de usuario, acceso de invitado y switch local.
-  - `useDexterMotion.js`: Motor 3D, giroscopio y spotlight adaptado a `prefers-reduced-motion`.
-  - `useToast.js`: Notificaciones reactivas flotantes.
+    - `useCatalog.js`: AniList GraphQL, Jikan fallback, snapshot estático y gestión de catálogo reactivo.
+    - `useSpanishSynopses.js`: Carga y consulta de sinopsis en español (`data/translations-es.json`).
+    - `useFavorites.js`: Persistencia local de favoritos, progreso de episodios y sincronización por perfil.
+    - `useAiring.js`: Programación de emisiones y cálculo horario local del usuario.
+    - `useAuth.js`: Perfil de usuario, acceso de invitado y switch local.
+    - `useDexterMotion.js`: Motor 3D, giroscopio y spotlight adaptado a `prefers-reduced-motion`.
+    - `useToast.js`: Notificaciones reactivas flotantes.
 - **Tooling y Build con Vite**:
   - `vite.config.mjs`: Configurado con `@vitejs/plugin-vue`, base `./`, output `dist/` y copiado automático de `data/` y `client/assets/`.
   - `npm run build`: Compilación ultra-rápida (200ms) a `dist/` optimizado.
@@ -576,13 +534,13 @@ Al concluir cada trabajo agregar:
 
 - **Objetivo completado**: Limpieza controlada de 9 archivos muertos/huérfanos y purga de cachés de compilación en el repositorio, eliminando ~55 KB de código y hojas CSS no referenciadas sin alterar flujos CI ni la suite de pruebas.
 - **Archivos eliminados**:
-  - `client/src/js/experience.js`: Modal sonoro anticuado ("Entrar con sonido").
+    - `client/src/js/experience.js`: Modal sonoro anticuado ("Entrar con sonido").
   - `client/src/styles/experience.css`: Hoja de estilos del modal obsoleto.
-  - `client/src/js/catalog-plus.js`: Intento descontinuado de monkey-patching sobre funciones ya inexistentes.
+    - `client/src/js/catalog-plus.js`: Intento descontinuado de monkey-patching sobre funciones ya inexistentes.
   - `client/src/styles/design-plus.css`: Estilos no referenciados para `#extra-catalog`.
   - `client/src/styles/styles.css`: Estilo monolítico primitivo previo a la modularización.
-  - `client/src/js/auth-google.js`: Script suelto anterior a la consolidación de `auth.js`.
-  - `client/src/js/firebase-config.js`: Declaración residual de 2 líneas.
+    - `client/src/js/auth-google.js`: Script suelto anterior a la consolidación de `auth.js`.
+    - `client/src/js/firebase-config.js`: Declaración residual de 2 líneas.
   - `scripts/verify-production-depth.mjs`: Script auxiliar puntual sin referencias activas.
   - `scripts/audit-branches.sh`: Script de auditoría remota git sin dependencias.
   - Purgadas carpetas de caché de Python `__pycache__/`.
@@ -597,10 +555,10 @@ Al concluir cada trabajo agregar:
   - `client/src-vue/components/browse/LetterFilterRail.vue`: Riel alfabético (`TODOS`, `#`, `A` a `Z`) ubicado a la derecha de la lista; fijo y sticky en escritorio, y barra flotante con burbuja de aumento táctil en Safari móvil iPhone y Android.
   - `client/src-vue/components/browse/BrowseControls.vue`: Barra de búsqueda superior con input reactivo, botón de limpieza «✕» visible ante contenido activo, botón de encapsulación «＋ Encapsular», shelf de etiquetas encapsuladas («Buscando de lo ya buscado») con eliminación individual por chip y reseteo total, sugerencias rápidas de 1 clic y selectores de género, tipo, estado y ordenación.
   - `client/src-vue/components/browse/BrowseScreen.vue`: Orquestador de la vista de catálogo (`#browse-screen`) que integra la cuadrícula virtual, el riel de letras y el contador dinámico en tiempo real (`X de Y animes encontrados`).
-  - `client/src-vue/composables/useCatalog.js`: Lógica reactiva singleton que gestiona `fullCatalog`, `loadFullCatalog` (backend API `/api/animes?limit=5000` con fallback a `data/catalog-full.json`), `selectedLetter`, `searchTags`, `catalogSearchQuery` y el computed `filteredFullCatalog` con coincidencia AND entre etiquetas y normalización de acentos Unicode (NFD).
+    - `client/src-vue/composables/useCatalog.js`: Lógica reactiva singleton que gestiona `fullCatalog`, `loadFullCatalog` (backend API `/api/animes?limit=5000` con fallback a `data/catalog-full.json`), `selectedLetter`, `searchTags`, `catalogSearchQuery` y el computed `filteredFullCatalog` con coincidencia AND entre etiquetas y normalización de acentos Unicode (NFD).
   - `client/src/styles/catalog-virtual.css`: Estilos visuales acordes a la línea Kokomi/Esmeralda de 1UP Anime, con superficies translúcidas glassmorphism, foco en verde esmeralda (`#00e676`), chips de gradiente y total respeto a `prefers-reduced-motion`.
-  - `client/src/js/studio.js`: Implementado `loadFullCatalogStudio`, `ensureLetterRailElement`, `paintCatalogVirtual` y `renderVirtualSlice` para que la vista `#catalogo` en el cliente vanilla también cargue los 4,885 títulos completos con scroll virtual a 60 fps y riel alfabético interactivo.
-  - `data/catalog-full.json` & `client/data/catalog-full.json`: Exportación completa y determinista de los 4,885 títulos indexados desde SQLite.
+    - `client/src/js/studio.js`: Implementado `loadFullCatalogStudio`, `ensureLetterRailElement`, `paintCatalogVirtual` y `renderVirtualSlice` para que la vista `#catalogo` en el cliente vanilla también cargue los 4,885 títulos completos con scroll virtual a 60 fps y riel alfabético interactivo.
+    - `data/catalog-full.json` & `client/data/catalog-full.json`: Exportación completa y determinista de los 4,885 títulos indexados desde SQLite.
 - **Pruebas y Verificación**:
   - `node --test tests/unit/catalog-virtual-scroll.test.mjs`: **5/5 tests PASADOS** (integridad del catálogo, filtrado alfabético con acentos/comillas, encapsulación de tags, input con botón ✕ y matemática de espaciadores de Virtual Scroll).
   - `npm test` (`node --test tests/unit/*.test.mjs`): **61/61 PASADAS** (0 fallos).
@@ -623,14 +581,14 @@ Al concluir cada trabajo agregar:
     - `.virtual-scroll-body`: Declarado `display: block !important; width: 100% !important; min-width: 0 !important;`.
     - Breakpoints responsivos unificados: `>= 1380px` (5 columnas, gap 18px), `900px - 1379px` (4 columnas, gap 16px), `600px - 899px` (3 columnas, gap 14px), `< 600px` (2 columnas, gap 12px).
     - Rediseño de tarjetas `.virtual-row .anime-card`: Proporción de póster estándar internacional de anime `2:3` (`aspect-ratio: 2 / 3`), botón de guardar de 32×32px posicionado elegantemente en esquina superior derecha con fondo glassmorphism, badge de puntuación en esquina inferior izquierda, tipografía de título nítida de 13px con corte a 2 líneas (`-webkit-line-clamp: 2`), y píldora esmeralda para tipo de formato (`.card-type`).
-  - `client/src/js/studio.js`:
+    - `client/src/js/studio.js`:
     - En `renderCatalogView()` y `paintCatalogVirtual()`, remueve automáticamente `.poster-grid` y activa `.virtual-catalog-container.catalog-virtual-active`.
     - En `renderVirtualSlice()`, ajustados los cálculos de `cols` y `rowHeight` (`410px` para 5 cols, `390px` para 4 cols, `370px` para 3 cols, `330px` para 2 cols) para un desplazamiento virtual sub-pixel perfecto.
     - En `go(route)`, restaura la cuadrícula estándar para las demás rutas (`temporada`, `populares`, `recientes`, etc.).
   - `client/src-vue/components/browse/VirtualCatalogGrid.vue`:
     - Sincronizados los computeds `columnCount` y `rowHeight` con las métricas responsivas exactas de `catalog-virtual.css`.
-  - `client/index.html`:
-    - Corregidas las rutas relativas de scripts `./src/js/depth-engine.js`, `./src/js/depth-toggle-button.js` y `./src/js/card-depth-engine.js` eliminando peticiones 404.
+    - `client/index.html`:
+        - Corregidas las rutas relativas de scripts `./src/js/depth-engine.js`, `./src/js/depth-toggle-button.js` y `./src/js/card-depth-engine.js` eliminando peticiones 404.
 - **Verificación en navegador en vivo**:
   - **Escritorio (1018×917)**: Tarjetas aumentaron de 40.5px a **210.75px de ancho × 316.125px de alto** (poster 208.75px × 225.125px, título 184.75px), ocupando el 100% del ancho del catálogo (891px) en 3-4 columnas.
   - **Móvil (390×844 Safari iPhone)**: Tarjetas aumentaron de 70.25px a **151.5px de ancho × 227.25px de alto**, ocupando el ancho útil con 2 columnas perfectamente equilibradas junto al riel A-Z.
@@ -660,8 +618,8 @@ Al concluir cada trabajo agregar:
     - Año de lanzamiento y formato (`TV`, `Película`, `OVA`, `ONA`).
     - Puntuación con estrella (`★ 9.6`) y botón de guardado interactivo (`＋` / `✓`).
   - **Sincronización PWA y Service Worker**:
-    - Actualizado `CACHE` a `v40-catalog-virtual-transform-20261114` en `sw.js` y `client/sw.js`.
-    - Añadida versión query `?v=20261114-gpu` en `client/index.html`.
+        - Actualizado `CACHE` a `v40-catalog-virtual-transform-20261114` en `sw.js` y `client/sw.js`.
+        - Añadida versión query `?v=20261114-gpu` en `client/index.html`.
     - Sincronizado `VirtualCatalogGrid.vue` y `AnimeCard.vue`.
 - **Verificación en navegador en vivo**:
   - **Prueba de rueda 1:1**: Cada paso de rueda de 300px desplaza **exactamente 300.00px** sin aceleración descontrolada, tanto en scroll superficial como en scroll profundo hasta 3,000px y al volver arriba. Cero vacíos negros.
@@ -673,7 +631,7 @@ Al concluir cada trabajo agregar:
 
 - **Pedido del usuario**: «en la pagina principal que es el front, era implementar lo que son del otro proyecto, los que es la forma de indexar, los animes, el catalogo, los posters, los titulos, sinopsis, links players o players, links de descarga, implementar en el forntend asi como se ve sin alterar estilos, revisar todo ya que por ejemplo vemos trend, inicio, populares, en emision, catalogo, etc...»
 - **Arquitectura y componentes implementados**:
-  - **Servicio REST API de Catálogo en Node.js (`server/src/catalog-service.js`)**:
+    - **Servicio REST API de Catálogo en Node.js (`server/src/catalog-service.js`)**:
     - Motor de datos autónomo basado en `node:sqlite` nativo (`DatabaseSync` con `journal_mode = WAL` y `busy_timeout = 5000`).
     - Detección resiliente de base de datos (`JKANIME_DB_PATH`, `data/jkanime.db`, rutas relativas de `jkanime_app`).
     - Endpoints de alta velocidad:
@@ -685,10 +643,10 @@ Al concluir cada trabajo agregar:
       - `GET /api/animes/:id/episodes/:num/links`: Enlaces de servidores de streaming (`kind = 'player'`) y descargas directas (`kind = 'download'`).
   - **Proxy Inverso en Servidor de Desarrollo (`scripts/serve-client.mjs`)**:
     - Reenvío dinámico transparente de llamadas `/api/*` hacia el microservicio en puerto 4050, con fallback en proceso si se ejecuta en modo standalone.
-  - **Ingesta en Frontend (`client/src/js/studio.js`)**:
-    - Vinculación de las secciones de portada (`inicio`, `tendencias`, `en emisión`, `populares`, `recientes`, `películas`) y catálogo general para consumir los endpoints de la API de Node.js.
+    - **Ingesta en Frontend (`client/src/js/studio.js`)**:
+        - Vinculación de las secciones de portada (`inicio`, `tendencias`, `en emisión`, `populares`, `recientes`, `películas`) y catálogo general para consumir los endpoints de la API de Node.js.
     - Indexación tolerante multicampo, desduplicación de recomendaciones y respaldo automático hacia snapshots locales para tolerancia offline.
-  - **Reproductor de Episodios y Descargas (`client/src/js/episode-player.js`)**:
+    - **Reproductor de Episodios y Descargas (`client/src/js/episode-player.js`)**:
     - Selector dinámico de servidores de streaming (Desu, Magi, Streamwish, Mega, VOE, Okru, Mediafire).
     - Preservación íntegra de fragmentos hash de desencriptación `#...` en enlaces de Mega.
     - Botones de descarga directa con insignias de peso de archivo en megabytes.
@@ -705,33 +663,33 @@ Al concluir cada trabajo agregar:
   - `npm run test:all`: Suite completa ejecutada al 100% en verde.
   - Cero errores en consola de navegador en todas las rutas y modales.
 - **Próximos pasos**:
-  - Preparar empaquetado de producción o archivo Dockerfile/systemd para el despliegue del servicio Node.js en el nuevo servidor.
+    - Preparar empaquetado de producción o archivo Dockerfile/systemd para el despliegue del servicio Node.js en el nuevo servidor.
   - Ejecutar pruebas en dispositivos iPhone físicos (Safari móvil).
 
 ### 2026-11-14 — Corrección de ciclo de vida en modales y Web Animations API (`OneUpMotion`)
 
 - **Síntoma reportado por el usuario**: Al hacer clic en un anime / tarjeta tras haber cerrado previamente otro, la pantalla se ponía borrosa («bluy») por el `::backdrop` con blur pero el contenido del anime no se mostraba (quedaba invisible). Al hacer clic en las orillas (fuera del diálogo), el anime aparecía súbitamente por una fracción de segundo y se cerraba.
 - **Causa raíz identificada**:
-  - En `client/themes/oneup-motion/windows.js`, la función `closeDialog` ejecutaba una animación de salida con `fill: 'forwards'`:
-    `dialog.animate([{ opacity: 1, ... }, { opacity: 0, ... }], { duration: 165, fill: 'forwards' })`.
+    - En `client/themes/oneup-motion/windows.js`, la función `closeDialog` ejecutaba una animación de salida con `fill: 'forwards'`:
+        `dialog.animate([{ opacity: 1, ... }, { opacity: 0, ... }], { duration: 165, fill: 'forwards' })`.
   - Al completarse la animación en `finish()`, se llamaba a `closing.delete(dialog)` antes de `dialog.close()`. El evento `'close'` evaluaba `closing.get(dialog) === animation` (que resultaba falso al estar ya borrado), por lo que **nunca se llamaba a `animation.cancel()`**.
   - Según la especificación CSS / Web Animations API, un efecto de animación con `fill: 'forwards'` persiste en el nivel de animación de la cascada CSS, anulando cualquier regla CSS posterior (incluyendo `@keyframes oneup-sheet-in`). Por tanto, en la siguiente apertura (`showModal()`), el diálogo quedaba congelado en `opacity: 0` mientras que su `::backdrop` con `backdrop-filter: blur(11px)` sí se renderizaba.
   - Al hacer clic en las orillas, el manejador de clic exterior invocaba nuevamente `closeDialog`, el cual iniciaba una nueva animación desde `opacity: 1`, haciendo que el diálogo apareciera de golpe durante 165ms antes de desvanecerse y cerrarse.
 - **Componentes auditados y corregidos**:
-  1. `client/themes/oneup-motion/windows.js`:
+    1. `client/themes/oneup-motion/windows.js`:
      - Se añadió `cancelMotion(element)` para cancelar limpiamente animaciones activas o terminadas con `id === 'oneup-motion-close'` y `id === 'oneup-motion-enter'`.
      - En `closeDialog`, se invoca `animation.cancel()` tanto en la resolución de `animation.finished` como en el evento `'close'`.
      - Se implementó `prepareOpen(dialog)` exportado en `window.OneUpMotion` para limpiar cualquier residuo antes de `showModal()`.
      - Se agregó un listener global de captura para el evento `'close'` en elementos `<dialog>`.
-  2. `client/src/js/studio.js`:
+    2. `client/src/js/studio.js`:
      - En `detail(id)`, se ejecuta `window.OneUpMotion?.prepareOpen?.(dialog)` y cancelación defensiva de cualquier animación previa antes de `dialog.showModal()`.
      - En el listener `'close'` de `#anime-dialog`, se cancela cualquier animación residual.
-  3. `client/src/js/auth.js`:
+    3. `client/src/js/auth.js`:
      - Se integró `window.OneUpMotion?.prepareOpen?.(dialog)` en la apertura de `#auth-dialog` y `OneUpMotion?.closeDialog?.(dialog)` en el cierre.
   4. `client/src-vue/components/modals/AnimeDetailModal.vue` y `AuthModal.vue`:
      - Se sincronizó el ciclo de apertura y cierre con `prepareOpen` y `closeDialog`.
-  5. `client/index.html`:
-     - Se condicionó la carga dinámica de `./src-vue/main.js` a entornos con Vite dev server o bundler, evitando que en servidores estáticos sin transformador de módulos bare se lancen excepciones no controladas.
+    5. `client/index.html`:
+          - Se condicionó la carga dinámica de `./src-vue/main.js` a entornos con Vite dev server o bundler, evitando que en servidores estáticos sin transformador de módulos bare se lancen excepciones no controladas.
   6. `tests/e2e/e2e-oneup-motion.mjs`:
      - Se amplió la prueba E2E de Playwright para validar la reapertura sucesiva de modales comprobando que la opacidad tras la reapertura sea exactamente 1.0 (no congelada en 0).
 - **Pruebas y verificación**:
@@ -745,26 +703,26 @@ Al concluir cada trabajo agregar:
 
 - **Problema reportado**: Componentes que se trababan o tironeaban (stutter/frame drops/jank) al moverse o salir (modales, tarjetas, scroll de catálogo, menú drawer, búsqueda y notificaciones toast).
 - **Causas raíz identificadas y solventadas**:
-  1. **Bucles infinitos de RAF en motores de profundidad (`card-depth-engine.js` y `depth-engine.js`)**:
+    1. **Bucles infinitos de RAF en motores de profundidad (`card-depth-engine.js` y `depth-engine.js`)**:
      - Cada tarjeta (`.anime-card`) en el DOM (50-100+ tarjetas) ejecutaba su propio bucle infinito `requestAnimationFrame(loop)` a 60/120fps incluso cuando el modo 3D estaba desactivado (estado por defecto), realizando miles de consultas al DOM (`querySelectorAll`) y reasignando `card.style.transform` por segundo.
-     - `depth-engine.js` consultaba `document.querySelectorAll("[data-depth]")` en cada frame sin importar si el puntero se movía o si el modo estaba activo.
+          - `depth-engine.js` consultaba `document.querySelectorAll("[data-depth]")` en cada frame sin importar si el puntero se movía o si el modo estaba activo.
      - `depth-system.css` tenía `transition: transform 0.12s ease-out` en `[data-depth]`, compitiendo con la interpolación de JS y causando doble suavizado y tironeo; además forzaba `will-change: transform` global en cientos de elementos.
-     - *Solución*: Se rediseñó `card-depth-engine.js` para ser 100% reactivo/event-driven: 0 loops cuando está inactivo, bucle iniciado únicamente al hacer hover sobre la tarjeta y detenido inmediatamente al volver al reposo (`diff < 0.03`). En `depth-engine.js` se cachearon las capas, se pausó el loop cuando está en reposo o la pestaña está oculta (`visibilitychange`). En `depth-system.css` se eliminó la transición conflictiva y el `will-change` global innecesario.
-  2. **Animaciones de salida y conflicto de GPU/Backdrop en modales (`windows.js`, `windows.css`, `spotlight.css`)**:
+          - *Solución*: Se rediseñó `card-depth-engine.js` para ser 100% reactivo/event-driven: 0 loops cuando está inactivo, bucle iniciado únicamente al hacer hover sobre la tarjeta y detenido inmediatamente al volver al reposo (`diff < 0.03`). En `depth-engine.js` se cachearon las capas, se pausó el loop cuando está en reposo o la pestaña está oculta (`visibilitychange`). En `depth-system.css` se eliminó la transición conflictiva y el `will-change` global innecesario.
+    2. **Animaciones de salida y conflicto de GPU/Backdrop en modales (`windows.js`, `windows.css`, `spotlight.css`)**:
      - Al cerrar `#anime-dialog` o `#auth-dialog`, el elemento `<dialog>` se animaba con WAAPI pero el `::backdrop` con `backdrop-filter: blur(11px)` permanecía congelado al 100% de opacidad y desaparecía súbitamente al terminar los 165ms, produciendo un salto visual tosco.
      - El botón de cierre `.dialog-close` dentro del modal tenía `backdrop-filter: blur(11px)`. Tener elementos con `backdrop-filter` dentro de un contenedor animado en escala y opacidad forzaba al compositor de Chromium y Safari a capturar el frame-buffer en cada frame.
      - Durante la animación de salida, los clics del usuario podían atravesar el diálogo hacia las tarjetas inferiores.
-     - *Solución*: Se implementó la clase `.is-closing` en `windows.js` y `windows.css` con `@keyframes oneup-veil-out` para desvanecer suave y coordinadamente el backdrop junto con el diálogo; se desactiva `pointer-events: none` durante el cierre; se desactiva el `backdrop-filter` interno durante la transición; y se añade promoción `will-change: transform, opacity` limpiada al terminar.
+          - *Solución*: Se implementó la clase `.is-closing` en `windows.js` y `windows.css` con `@keyframes oneup-veil-out` para desvanecer suave y coordinadamente el backdrop junto con el diálogo; se desactiva `pointer-events: none` durante el cierre; se desactiva el `backdrop-filter` interno durante la transición; y se añade promoción `will-change: transform, opacity` limpiada al terminar.
   3. **Transición y salida de notificaciones toast (`studio.css`)**:
      - `.toast` utilizaba `transition: .2s` (shorthand global que animaba todas las propiedades CSS) y `transform: translate(-50%, 15px)` en 2D.
      - *Solución*: Se migró a `transform: translate3d(-50%, 15px, 0)` en 3D con aceleración por GPU, `transition: transform 0.22s cubic-bezier(.22, 1, .36, 1), opacity 0.22s cubic-bezier(.22, 1, .36, 1)`, `will-change: transform, opacity` y `backface-visibility: hidden`.
-  4. **Layout Thrashing en el scroll virtual del catálogo (`studio.js`)**:
+    4. **Layout Thrashing en el scroll virtual del catálogo (`studio.js`)**:
      - En `renderVirtualSlice()`, en cada evento de scroll se reescribía `body.style.height = totalHeight + 'px'` e inmediatamente se leía `grid.getBoundingClientRect().top`, forzando un recálculo síncrono de layout (reflow) en cada tick de scroll.
      - *Solución*: Se condicionó la escritura de `body.style.height` a cuando la altura realmente cambia (`body.dataset.renderedHeight !== targetHeightStr`) y se cacheó `catalogGridDocTop`, eliminando por completo el layout thrashing durante el scroll continuo.
-  5. **Salida abrupta del menú móvil Kokomi y buscador (`theme.js` y `windows.css`)**:
+    5. **Salida abrupta del menú móvil Kokomi y buscador (`theme.js` y `windows.css`)**:
      - Al invocar `closeMenu()` o `closeSearch()`, los componentes se ocultaban inmediatamente con `hidden = true` sin transición de salida.
      - *Solución*: Se añadieron keyframes `@keyframes oneup-drawer-out` y `@keyframes oneup-pop-out` coordinados con clase `.is-closing` y timeout antes de fijar `hidden = true` (respetando `prefers-reduced-motion`).
-  6. **Aceleración por GPU en transiciones del Hero (`premiere-hero.css`, `spotlight.css`, `studio.js`)**:
+    6. **Aceleración por GPU en transiciones del Hero (`premiere-hero.css`, `spotlight.css`, `studio.js`)**:
      - `premiereCopyIn` y `spotlightText` pasaron de `translateY` 2D a `translate3d(0, 9px, 0)` con `will-change` promovido durante el cambio y timeout para retirar la clase `.is-switching`.
      - En `catalog-virtual.css`, el hover de tarjetas en el grid virtual se optimizó a `translate3d(0, -5px, 0)` con `backface-visibility: hidden`.
 - **Verificación**:
@@ -781,7 +739,7 @@ Al concluir cada trabajo agregar:
   - Si el usuario desea buscar dentro de esa selección, con solo dar `Enter` el término se encapsula.
   - El diseño debe ser más compacto: en el **mismo cuadro del filtro** debe verse la cápsula que encapsula lo colocado, permitiendo seguir filtrando encadenadamente.
 - **Implementación**:
-  1. `client/src/js/studio.js`:
+    1. `client/src/js/studio.js`:
      - **Cápsulas inline dentro del cuadro de búsqueda**: se integró el contenedor `#catalog-chips-wrap` directamente dentro de `#catalog-search-box`, eliminando la sección externa aparatosa inferior y el botón redundante de encapsular.
      - **Búsqueda debounced en tiempo real**: se incorporó un timer de debounce de 300ms en `#catalog-search-input` que ejecuta `paintCatalogVirtual()` en memoria a 60fps sin perder el foco ni la posición del cursor mientras se escribe.
      - **Encapsulación con Enter y drill-down**: al pulsar `Enter`, el término se agrega a `state.searchTags`, se limpia el input y se invoca `syncSearchChipsUI(true)`, manteniendo el foco activo dentro del campo para seguir escribiendo filtros anidados.
@@ -805,7 +763,7 @@ Al concluir cada trabajo agregar:
 
 - **Problema detectado por el usuario**: Al subir los cambios a GitHub y descargarlos su compañero, los reproductores de video no se visualizaban en la otra máquina.
 - **Causa raíz**:
-  - El backend `server/src/catalog-service.js` y `scripts/anime-catalog-service.mjs` tenían rutas absolutas hardcodeadas hacia `C:/Users/Marco/Desktop/script_prueba/jkanime_app/data/jkanime.db`.
+    - El backend `server/src/catalog-service.js` y `scripts/anime-catalog-service.mjs` tenían rutas absolutas hardcodeadas hacia `C:/Users/Marco/Desktop/script_prueba/jkanime_app/data/jkanime.db`.
   - La base de datos SQLite (~240 MB) nunca existió en el repositorio de 1UP Anime ni en GitHub (supera el límite de 100 MB de GitHub), por lo que en máquinas ajenas `getDb()` devolvía `null` y `/api/anime/:id/episodes/:num/links` devolvía 404.
 - **Solución implementada**:
   1. `data/jkanime.db.gz` (44.27 MB):
@@ -817,11 +775,11 @@ Al concluir cada trabajo agregar:
   3. `.gitignore`:
      - Añadido `data/jkanime.db`, `data/jkanime.db-wal` y `data/jkanime.db-shm` para evitar subir el binario descomprimido de 240 MB.
      - Preservado `!data/jkanime.db.gz`.
-  4. `server/src/catalog-service.js` y `scripts/anime-catalog-service.mjs`:
+    4. `server/src/catalog-service.js` y `scripts/anime-catalog-service.mjs`:
      - Eliminadas todas las rutas rígidas hacia `C:/Users/Marco/...` y carpetas hermanas `../jkanime_app`.
      - Resolución autónoma: detecta `data/jkanime.db` local o auto-descomprime `data/jkanime.db.gz` en caliente en su primer arranque.
      - Mayor resiliencia en `getEpisodeLinks`: fallback directo hacia enlaces scraped en vivo en caso de fallo de escritura.
-  5. `package.json`:
+    5. `package.json`:
      - Agregados hooks `"setup:db": "node scripts/setup-db.mjs"` y `"postinstall": "node scripts/setup-db.mjs"`.
   6. `tests/unit/anime-catalog-service.test.mjs`:
      - Actualizado para resolver `data/jkanime.db` desde la raíz del proyecto tras asegurar la base con `ensureDatabase()`.
@@ -837,17 +795,17 @@ Al concluir cada trabajo agregar:
   1. *Servidores caducados por defecto*: En la base de datos, los servidores `Desu` y `Magi` utilizaban tokens temporales HMAC de JkAnime (`&t=...`) con vigencia de 24-48 horas. Al estar situados en el índice 0, se seleccionaban automáticamente al cargar cualquier episodio y mostraban "Video no disponible" / error de reproductor.
   2. *Servidores permanentes sepultados*: Servidores directos y estables como `Streamwish`, `Vidhide`, `Mega` y `VOE` tenían URLs activas (HTTP 200 verificado), pero quedaban ocultos tras los servidores caídos.
   3. *Incrustación de Mediafire en iframe*: `Mediafire` figuraba erróneamente en la lista de reproductores cuando es un servidor de descarga con cabecera `X-Frame-Options: DENY`, bloqueando la visualización.
-  4. *Intersticial de clic bloqueante*: Se había introducido un botón artificial `ABRIR REPRODUCTOR` (`#oneup-embed-play`) que bloqueaba la carga inmediata del video, a diferencia del comportamiento ágil y directo de `jkanime_app` / `catalogo-streaming.html`.
-  5. *Política de Referrer y Sandbox restrictivo*: `episode-player.js` enviaba `referrerPolicy='strict-origin-when-cross-origin'` (enviando `Referer: http://localhost:8765/`, rechazado por CDNs de video por cross-origin) y carecía de `allow-forms` en el sandbox del iframe.
+    4. *Intersticial de clic bloqueante*: Se había introducido un botón artificial `ABRIR REPRODUCTOR` (`#oneup-embed-play`) que bloqueaba la carga inmediata del video, a diferencia del comportamiento ágil y directo de `jkanime_app` / `catalogo-streaming.html`.
+    5. *Política de Referrer y Sandbox restrictivo*: `episode-player.js` enviaba `referrerPolicy='strict-origin-when-cross-origin'` (enviando `Referer: http://localhost:8765/`, rechazado por CDNs de video por cross-origin) y carecía de `allow-forms` en el sandbox del iframe.
   6. *Selector de servidores estático*: Se mostraban botones genéricos ("Servidor 1..7") deshabilitados en lugar de mostrar los nombres reales de los servidores disponibles (`Streamwish`, `Vidhide`, `Mega`, `VOE`, etc.).
 - **Solución implementada**:
-  1. `server/src/catalog-service.js` y `scripts/anime-catalog-service.mjs`:
+    1. `server/src/catalog-service.js` y `scripts/anime-catalog-service.mjs`:
      - Priorización estricta de servidores funcionales: `Streamwish`, `Vidhide`, `Mega`, `Mega Player`, `VOE`, `Streamtape`, `Mp4upload` ordenados al inicio.
      - Filtrado de `Mediafire` fuera de la lista de reproductores (`players`), manteniéndolo exclusivamente en la sección de descargas (`downloads`).
-  2. `client/src/js/episode-player.js`:
+    2. `client/src/js/episode-player.js`:
      - Incrustación directa del `<iframe>` para streams del catálogo sin pantalla intermedia de "ABRIR REPRODUCTOR".
      - Configuración de privacidad: `referrerPolicy = 'no-referrer'`, evitando que el host de video rechace la conexión por cabecera de origen local.
-     - Sandbox robusto: `sandbox = 'allow-scripts allow-same-origin allow-forms allow-popups'` (idéntico al de `jkanime_app` y `catalogo-streaming.html`).
+          - Sandbox robusto: `sandbox = 'allow-scripts allow-same-origin allow-forms allow-popups'` (idéntico al de `jkanime_app` y `catalogo-streaming.html`).
      - Atributos completos de reproducción: `allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen'`.
      - Selector dinámico de servidores con nombres reales (`Streamwish`, `Vidhide`, `Mega`, etc.) y estado `.active` en el servidor en reproducción.
      - Botón de refresco en vivo: `⚡ Actualizar` (`#oneup-sync-links`) para re-escanear enlaces frescos desde JkAnime ante caídas o estrenos recientes.
@@ -855,8 +813,8 @@ Al concluir cada trabajo agregar:
      - Preservación de compatibilidad con pruebas e2e para embeds oficiales de YouTube (`mode: 'official_embed'`).
   3. `client/src/styles/player.css`:
      - Añadidos estilos para el botón de sincronización `.oneup-server-sync` y visualización adecuada de los iframes.
-  4. `client/watch.html` y `client/src/js/watch-page.js`:
-     - Integración del reproductor de episodios completo también en la vista de pestaña independiente (`watch.html`).
+    4. `client/watch.html` y `client/src/js/watch-page.js`:
+          - Integración del reproductor de episodios completo también en la vista de pestaña independiente (`watch.html`).
 - **Verificación**:
   - `npm test`: **71/71 tests unitarios PASADOS**.
   - `npm run test:all`: **71 Node + 16 Python + 152 smoke assertions PASADAS**.
@@ -867,16 +825,15 @@ Al concluir cada trabajo agregar:
 
 - **Problema reportado**: «puedes analizar la lista de catalogo, cuando le doy click al anime, este ya no muestra los reproductores, puedes verificar y arreglarlo».
 - **Causas raíz identificadas**:
-  1. *Error de sintaxis en `client/src/js/episode-player.js`*: Durante la edición anterior quedó un fragmento duplicado sin función envolvente en la línea 334 (`const res=await fetch(...)`), provocando `Uncaught SyntaxError: await is only valid in async functions`. Este error impidió que el navegador cargara `episode-player.js`, dejando `window.OneUpEpisodePlayer` como `undefined`. Al hacer clic en cualquier anime en `index.html` (`studio.js`), la llamada `OneUpEpisodePlayer.show(a)` quedaba inoperante y la sección `#oneup-player-section` no se inicializaba.
-  2. *Error `TypeError: a.episodes.map is not a function` en `client/pages/catalogo-streaming.html`*: El servicio `catalog-service.js` devuelve `episodes` como un número (`24`) y `episodes_list` como el array de episodios. La vista intentaba ejecutar `a.episodes.map(...)`, lanzando una excepción inmediata que abortaba el renderizado del diálogo y ocultaba el `#playerBox`.
-  3. *Bloqueo por puerto fijo en `catalogo-streaming.html`*: `API_BASE` estaba fijado a `http://localhost:4050`, fallando cuando el servidor se ejecuta en el puerto estándar `8765` (`npm start`).
-  4. *Falta de episodios de respaldo cuando la ficha no incluye `episodes_list`*: En `configuredEpisodes`, si `backendAnime` existía pero `episodes_list` estaba vacío en la BD, devolvía un mapa vacío (`Map(0)`), evitando que `chooseEpisode(1)` solicitara los servidores.
+    1. *Error de sintaxis en `client/src/js/episode-player.js`*: Durante la edición anterior quedó un fragmento duplicado sin función envolvente en la línea 334 (`const res=await fetch(...)`), provocando `Uncaught SyntaxError: await is only valid in async functions`. Este error impidió que el navegador cargara `episode-player.js`, dejando `window.OneUpEpisodePlayer` como `undefined`. Al hacer clic en cualquier anime en `index.html` (`studio.js`), la llamada `OneUpEpisodePlayer.show(a)` quedaba inoperante y la sección `#oneup-player-section` no se inicializaba.
+    2. *Error `TypeError: a.episodes.map is not a function` en `client/pages/catalogo-streaming.html`*: El servicio `catalog-service.js` devuelve `episodes` como un número (`24`) y `episodes_list` como el array de episodios. La vista intentaba ejecutar `a.episodes.map(...)`, lanzando una excepción inmediata que abortaba el renderizado del diálogo y ocultaba el `#playerBox`.
+    3. *Bloqueo por puerto fijo en `catalogo-streaming.html`*: `API_BASE` estaba fijado a `http://localhost:4050`, fallando cuando el servidor se ejecuta en el puerto estándar `8765` (`npm start`).
 - **Solución implementada**:
-  1. `client/src/js/episode-player.js`:
+    1. `client/src/js/episode-player.js`:
      - Eliminado el bloque residual causante del `SyntaxError`.
      - Mejorada la función `configuredEpisodes` para que, si `episodes_list` no está presente pero `episodes` o `episodes_total` es mayor a 0, se pre-pueblen automáticamente las entradas del mapa con `{ backend: true }`.
      - En `show(anime)`, si `mediaByEpisode.size === 0`, se inicializan los slots 1..`episodeCount` de forma reactiva, asegurando que `chooseEpisode(1)` siempre solicite los enlaces y monte el iframe y los botones de servidores de inmediato.
-  2. `client/pages/catalogo-streaming.html`:
+    2. `client/pages/catalogo-streaming.html`:
      - `API_BASE` normalizado a relativo `''` cuando se ejecuta en el navegador (compatible tanto en el puerto 8765 como en el 4050).
      - Manejo polimórfico de episodios: `epList = a.episodes_list || a.episodes || Array.from({ length: Number(a.episodes || a.episodes_total || 1) }, (_, i) => ({ number: i + 1 }))`.
      - Añadido selector dinámico de servidores (`Streamwish`, `Vidhide`, `Mega`, `VOE`, etc.) con cambio instantáneo entre reproductores y botón de sincronización `⚡ Actualizar`.
@@ -893,14 +850,14 @@ Al concluir cada trabajo agregar:
 
 - **Problema reportado**: «puedes analizar el boton de actualizar que esta en los links de los player en cada capitulo, veo que no funciona correctamnete, luego cuando se le da click este muestra los servidores con numero, pero todos estan deshabilitado».
 - **Causas raíz identificadas y solucionadas**:
-  1. *Falta de resolución de identificadores `mal-XXXX` / `al-XXXX` en backend*: En el catálogo principal, los animes provienen de AniList/MAL con prefijos `mal-` o `al-`. Al pulsar «Actualizar» o cargar enlaces, `catalog-service.js` solo buscaba por ID numérico exacto o slug idéntico, respondiendo 404. Se implementó resolución de respaldo en `getAnimeDetail` por `title`, `title_romaji` y `slug` limpio.
-  2. *Vaciado destructivo de enlaces en `refresh=1`*: En `catalog-service.js` y `scripts/anime-catalog-service.mjs`, cuando `refresh` era verdadero, `dbLinks` se forzaba a `[]`. Si el raspado en caliente de JkAnime fallaba o devolvía 0 enlaces (por timeout o protecciones externas), el backend nunca realizaba fallback a los enlaces existentes en SQLite, devolviendo `players: []`. Se implementó un fallback no destructivo que preserva los enlaces existentes si el raspado en vivo no devuelve resultados.
-  3. *Renderizado de array vacío en `episode-player.js`*: `item?.sources || Array(MAX_SERVERS).fill(null)` evaluaba a `[]` porque los arrays vacíos son truthy. Con 0 fuentes, los botones se renderizaban como «Servidor 1..7» y todos con `disabled = true`. Se ajustó para mantener `Array(MAX_SERVERS).fill(null)` cuando `sources.length === 0` y no sobreescribir las fuentes cargadas si el refresh no trae nuevos enlaces.
+    1. *Falta de resolución de identificadores `mal-XXXX` / `al-XXXX` en backend*: En el catálogo principal, los animes provienen de AniList/MAL con prefijos `mal-` o `al-`. Al pulsar «Actualizar» o cargar enlaces, `catalog-service.js` solo buscaba por ID numérico exacto o slug idéntico, respondiendo 404. Se implementó resolución de respaldo en `getAnimeDetail` por `title`, `title_romaji` y `slug` limpio.
+    2. *Vaciado destructivo de enlaces en `refresh=1`*: En `catalog-service.js` y `scripts/anime-catalog-service.mjs`, cuando `refresh` era verdadero, `dbLinks` se forzaba a `[]`. Se implementó un fallback no destructivo que preserva los enlaces existentes si el raspado en vivo no devuelve resultados.
+    3. *Renderizado de array vacío en `episode-player.js`*: `item?.sources || Array(MAX_SERVERS).fill(null)` evaluaba a `[]` porque los arrays vacíos son truthy. Con 0 fuentes, los botones se renderizaban como «Servidor 1..7» y todos con `disabled = true`.
   4. *Estado visual de carga y ubicación del botón*: El botón `#oneup-sync-links` ahora se deshabilita temporalmente durante la solicitud mostrando «⏳ Actualizando…» y vuelve a su estado normal tras recibir respuesta, manteniéndose siempre al final de la barra de servidores.
 - **Archivos modificados**:
-  - `server/src/catalog-service.js`: resolución de `mal-`/`al-` por título/romaji y fallback no destructivo en `getEpisodeLinks` con `refresh=1`.
-  - `scripts/anime-catalog-service.mjs`: paridad completa con `catalog-service.js` para micro-servicio independiente.
-  - `client/src/js/episode-player.js`: propagación de contexto (`title`, `romaji`, `slug`), estado de carga visual en el botón de actualización, preservación de fuentes ante fallos y correcta renderización de botones.
+    - `server/src/catalog-service.js`: resolución de `mal-`/`al-` por título/romaji y fallback no destructivo en `getEpisodeLinks` con `refresh=1`.
+    - `scripts/anime-catalog-service.mjs`: paridad completa con `catalog-service.js` para micro-servicio independiente.
+    - `client/src/js/episode-player.js`: propagación de contexto (`title`, `romaji`, `slug`), estado de carga visual en el botón de actualización, preservación de fuentes ante fallos y correcta renderización de botones.
   - `tests/unit/test-episode-player.mjs`: prueba unitaria de regresión para resolución por romaji y persistencia no destructiva de fuentes.
 - **Verificación**:
   - `node tests/unit/test-episode-player.mjs`: **PASADO**.
@@ -913,15 +870,15 @@ Al concluir cada trabajo agregar:
 - **Causas raíz diagnosticadas**:
   1. *Acumulación de enlaces obsoletos en SQLite (`episode_links`)*: Al solicitar una actualización forzada (`refresh=1`), el backend no purgaba las filas previas asociadas a `(anime_id, number)` antes de insertar los nuevos streams. Esto causaba colisión o retención de tokens IP obsoletos en la base de datos SQLite.
   2. *Omisión de cabeceras de IP del cliente hacia JkAnime*: Los servidores de streaming y extractores frecuentemente generan tokens o URLs temporales enlazadas a la dirección IP solicitante. El scraper en backend no reenviaba cabeceras (`X-Forwarded-For`, `X-Real-IP`, `Client-IP`), provocando que los streams caducaran o fallaran inmediatamente cuando el cliente cambiaba de red/IP.
-  3. *Persistencia de caché en memoria del cliente (`mediaByEpisode`)*: En `episode-player.js`, la variable interna `mediaByEpisode` mantenía en memoria los enlaces previos. Al hacer clic en `#oneup-sync-links` no se forzaba la invalidación de dicha caché en el cliente, continuando con los reproductores antiguos en vez de refrescar el DOM.
+    3. *Persistencia de caché en memoria del cliente (`mediaByEpisode`)*: En `episode-player.js`, la variable interna `mediaByEpisode` mantenía en memoria los enlaces previos. Al hacer clic en `#oneup-sync-links` no se forzaba la invalidación de dicha caché en el cliente, continuando con los reproductores antiguos en vez de refrescar el DOM.
   4. *Falta de patrones avanzados de extracción presentes en `jkanime_app`*: El scraper requería paridad con los 5 patrones de extracción de `jkanime_app` (decodificación Base64 de `servers`, resolución de rutas relativas con prefijo `https://jkanime.net`, soporte para Streamwish, Vidhide, VOE, Mega, etc.).
 - **Solución implementada**:
-  1. `server/src/catalog-service.js` y `scripts/anime-catalog-service.mjs`:
+    1. `server/src/catalog-service.js` y `scripts/anime-catalog-service.mjs`:
      - Implementada la función `deleteEpisodeLinks(animeId, num)` que elimina de forma limpia los registros obsoletos en SQLite antes de insertar el nuevo scraping tras una solicitud `refresh=1`.
      - Añadida propagación de IP del cliente a través de cabeceras `X-Forwarded-For`, `X-Real-IP` y `Client-IP` en la petición fetch hacia JkAnime.
      - Paridad de scraping multi-patrón completa con `jkanime_app` (incluyendo decodificación Base64 y resolución de URLs relativas y esquemas `//`).
      - Respuesta enriquecida con banderas de diagnóstico (`refreshed: true/false`, `stale: true`, `warning`).
-  2. `client/src/js/episode-player.js` y `client/pages/catalogo-streaming.html`:
+    2. `client/src/js/episode-player.js` y `client/pages/catalogo-streaming.html`:
      - Vaciado forzado de la caché en memoria `mediaByEpisode` y `window.currentEpisodeLinks = null` al activar la actualización (`forceRefresh = true`).
      - Gestión del estado del botón (`⏳ Actualizando…` a `⚡ Actualizar`), priorización de servidores estables (`Streamwish`, `Vidhide`, `Mega`, `VOE`) y actualización reactiva de `iframe.src`.
   3. `tests/unit/player-refresh.test.mjs`:
@@ -936,20 +893,15 @@ Al concluir cada trabajo agregar:
 
 - **Problema reportado**: «revise el boton actualizar en el capitulo y veo que aun sale error. estoy en el Desu y quiero reproducir pero sale error jkanime.net rechazó la conexión.»
 - **Causas raíz diagnosticadas**:
-  1. *Servidor Desu no es un reproductor embeddable externo*: En JkAnime, `Desu`, `Magi` y `Desuka` son páginas internas del dominio (`https://jkanime.net/jkplayer/um?e=...`). JkAnime configura sus servidores con directivas estrictas de seguridad (`X-Frame-Options: SAMEORIGIN`, `Cross-Origin-Embedder-Policy: require-corp` y protección Cloudflare anti-bot). Por definición de seguridad web universal, cualquier navegador externo (Chrome, Edge, Safari) que intente incrustar dicha URL dentro de un `<iframe>` rechaza la conexión con el error nativo del navegador: `jkanime.net rechazó la conexión`.
   2. *Los servidores embeddables directos sí funcionan perfectamente*: Servidores como `Streamwish` (`sfastwish.com`), `Vidhide` (`vidhidevip.com`), `Mega` (`mega.nz/embed`), `VOE` (`voe.sx`), `Streamtape`, `Mp4upload` y `Mixdrop` no tienen `X-Frame-Options: SAMEORIGIN` y devuelven HTTP 200 limpio sin bloqueos de iframe.
   3. *Error aparente al pulsar «⚡ Actualizar»*: Cuando el usuario estaba parado en `Desu` e intentaba «Actualizar», el scraper backend recibía un challenge 403 de Cloudflare al consultar `jkanime.net`, activando el fallback seguro de base de datos local. El frontend mostraba un aviso de advertencia («No se pudo sincronizar en vivo. Se conservan los servidores disponibles») y dejaba al usuario estancado en el iframe roto de `Desu`, dando la impresión de que la actualización había fallado completamente.
 - **Solución implementada**:
-  1. `server/src/catalog-service.js` y `scripts/anime-catalog-service.mjs`:
-     - Priorización estricta: los servidores directos e incrustables (`Streamwish`, `Vidhide`, `Mega`, `VOE`, etc.) ahora se ordenan SIEMPRE antes que los servidores protegidos de JkAnime (`Desu`, `Magi`, `Desuka`).
+    1. `server/src/catalog-service.js` y `scripts/anime-catalog-service.mjs`:
      - Propiedades semánticas `is_protected` y `embeddable` expuestas en el payload de cada reproductor.
-  2. `client/src/js/episode-player.js` y `client/src/styles/player.css`:
-     - Erradicación del iframe roto para servidores con `isProtected`: en lugar de forzar un `<iframe>` condenado a fallar con `jkanime.net rechazó la conexión`, se renderiza una tarjeta interactiva `.oneup-protected-player-card` explicando la protección `SAMEORIGIN` y ofreciendo dos botones: «Abrir Desu en pestaña nueva de JkAnime ↗» y «▶ Reproducir aquí con Streamwish / Vidhide / Mega».
-     - Los botones de servidores protegidos muestran el sufijo indicador `↗` (ej. `Desu ↗`, `Magi ↗`).
+    2. `client/src/js/episode-player.js` y `client/src/styles/player.css`:
      - Al cargar el episodio o hacer clic en «⚡ Actualizar», el reproductor selecciona automáticamente el primer servidor directo compatible (`bestEmbedIndex`), iniciando la reproducción inmediata del video sin errores.
      - Mensaje de estado informativo al actualizar: `Servidores verificados y listos. Reproduciendo en Streamwish.`
-  3. `client/pages/catalogo-streaming.html`:
-     - Implementada la misma protección contra iframes de JkAnime y selección reactiva del mejor reproductor directo (`firstEmbedIndex`).
+    3. `client/pages/catalogo-streaming.html`:
   4. `tests/unit/player-refresh.test.mjs`:
      - Añadida prueba R4 verificando el orden de prioridad, flags `is_protected: true` para Desu y falso para Streamwish, y la correcta conmutación al servidor directo.
 - **Verificación**:
@@ -961,17 +913,15 @@ Al concluir cada trabajo agregar:
 
 - **Problema reportado**: «puedes analizar porque cuando doy en desu, se selecciona otro reproductor y no aparece desu?»
 - **Causa raíz identificada**:
-  - En `client/src/js/episode-player.js` dentro de `renderSources(preferred)`:
-    ```javascript
-    const firstNonProtected=sources.findIndex(s=>s&&!s.isProtected);
-    const selected=(sources[preferred]&&(!sources[preferred].isProtected||firstNonProtected===-1))?preferred:(firstNonProtected>=0?firstNonProtected:sources.findIndex(Boolean));
-    ```
+    - En `client/src/js/episode-player.js` dentro de `renderSources(preferred)`:
+        ```javascript
+        const firstNonProtected=sources.findIndex(s=>s&&!s.isProtected);
+        const selected=(sources[preferred]&&(!sources[preferred].isProtected||firstNonProtected===-1))?preferred:(firstNonProtected>=0?firstNonProtected:sources.findIndex(Boolean));
+        ```
   - Cuando el usuario hacía clic en el botón de servidor `Desu ↗` (`preferred = idx`), la condición `!sources[preferred].isProtected` evaluaba a `false`. Por tanto, el operador ternario ignoraba la elección manual del usuario y saltaba forzosamente a `firstNonProtected` (Streamwish). Esto impedía seleccionar Desu y provocaba que nunca apareciera la tarjeta informativa o las opciones de Desu.
 - **Solución implementada**:
   - Modificado `renderSources(preferred = null)` para respetar siempre la selección manual cuando `preferred !== null && preferred >= 0 && sources[preferred]`.
-  - Cuando el usuario pulsa `Desu ↗`, el botón se activa correctamente (`active`), y se monta la tarjeta interactiva de servidor protegido de JkAnime.
-  - Añadido botón interactivo «Forzar carga en marco ⚡» tanto en `episode-player.js` como en `catalogo-streaming.html` para usuarios que deseen forzar el iframe directamente bajo su discreción.
-  - Creada prueba automatizada R5 en `tests/unit/player-refresh.test.mjs` que valida el ciclo completo de clic sobre Desu, activación de botón, renderizado de tarjeta protegida, enlaces externos y acción de forzar incrustación.
+    - Añadido botón interactivo «Forzar carga en marco ⚡» tanto en `episode-player.js` como en `catalogo-streaming.html` para usuarios que deseen forzar el iframe directamente bajo su discreción.
 
 
 

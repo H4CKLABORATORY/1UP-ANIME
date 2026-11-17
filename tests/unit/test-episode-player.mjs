@@ -44,7 +44,6 @@ for(const mime of ['video/mp4','video/webm','application/vnd.apple.mpegurl']){
  await c.window.OneUpEpisodePlayer.show({id:'al-1',episodes:1});
  const video=c.nodes.get('#oneup-playback-display').children[0];
  c.setPending();
- // The unresolved mock intentionally ignores abort; do not await it.
  const next=c.window.OneUpEpisodePlayer.show({id:'al-2'});
  if(mime==='application/vnd.apple.mpegurl')assert.equal(c.disposed,1,'HLS must dispose before the next fetch completes');
  else{
@@ -115,7 +114,6 @@ for(const subtitles_es of ['./media/../secret.vtt','./media/%2e%2e/secret.vtt','
  assert(select.innerHTML.includes('value="other"'));
 }
 
-// External subtitle files do not add captions inside a provider's iframe.
 {
  const c=setup('video/mp4',{sources:[{mode:'official_embed',provider:'youtube',videoId:'abcdefghijk',language:'ja',subtitles_es:'./media/sub.vtt'}]});
  await c.window.OneUpEpisodePlayer.show({id:'al-1'});
@@ -163,7 +161,6 @@ for(const unsafe of [
  assert.equal(actual.length,2);
  assert.deepEqual(actual.map(n=>n.srclang),['es','en']);
 }
-// When a licensed source fails, the user chooses another server; no autoplay.
 {
  const c=setup('video/mp4',{sources:[
   {rights:'owned',src:'https://cdn.example.com/first.mp4'},
@@ -183,7 +180,6 @@ for(const unsafe of [
  assert.equal(first.pauseCalls,1,'Failed video not disposed');
 }
 
-// Catalog streaming: direct iframe embedding with sandbox and no-referrer for authorized backend servers.
 {
  const events=new Map(),nodes=new Map();
  const root=new Element();

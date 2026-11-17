@@ -7,10 +7,10 @@ const $=s=>document.querySelector(s);
 const esc=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const spanishState={
  conectada:'Conectada',en_espera:'Programada',error:'Error',desactualizada:'Datos desactualizados',
- desactivada:'Desactivada',sin_contenido_autorizado:'Sin videos autorizados',
+ desactivada:'Desactivada',sin_contenido_autorizado:'Sin videos',
  sin_paginas_verificadas:'Sin páginas',sin_trailers_disponibles:'Sin tráilers',
  pendiente:'Pendiente',needs_configuration:'Falta configuración',
- requires_permission:'Requiere autorización',correcto:'Correcto',atencion:'Atención',fallo:'Fallo',
+ requires_permission:'Requiere configuración',correcto:'Correcto',atencion:'Atención',fallo:'Fallo',
  parcial:'Parcial',correcta:'Correcta'
 };
 const nice=key=>spanishState[key]||key||'Sin datos';

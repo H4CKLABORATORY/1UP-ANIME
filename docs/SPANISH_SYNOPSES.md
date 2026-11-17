@@ -18,7 +18,6 @@ Los nombres propios o terminos ficticios requieren revision editorial para maxim
 Si el motor de traduccion falla, el contenido original sigue disponible sin inventar datos.
 
 ## JKAnime
-Existen extractores comunitarios del sitio, pero no se ha verificado una API oficial con permiso para reutilizar sus sinopsis, episodios o reproductores. 1UP Anime no los integra de forma automatica.
 
 ## Comprobacion
 En Actions > Refresh public anime catalog debe figurar success.

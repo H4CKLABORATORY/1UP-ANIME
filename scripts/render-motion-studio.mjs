@@ -1,8 +1,4 @@
 #!/usr/bin/env node
-/* Deterministic DEXTER Motion Studio full-HD encoder.
- * PNG frames from same-origin Canvas -> FFmpeg image2pipe -> H.264/AAC MP4.
- * Never fetches third-party videos or modified copyrighted media.
- */
 import { chromium } from 'playwright';
 import { createServer } from 'node:http';
 import { existsSync } from 'node:fs';

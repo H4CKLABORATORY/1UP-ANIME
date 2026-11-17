@@ -1,7 +1,3 @@
-/* DexterAnimeSync v1 - incremental adapter engine for authorized public metadata
-   and owner-licensed media. GitHub Actions is the durable scheduled worker.
-   No stream scraping, DRM handling, reverse proxies or private video extraction.
- */
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import crypto from 'node:crypto';
@@ -166,8 +162,7 @@ export async function syncDexter({root=process.cwd(),now=new Date(),force=false,
     status.rejected=0;
     for(const [animeId,record] of Object.entries(entries)){
      if(!validAnimeId(animeId))continue;
-     // A licensed title may not appear in the public broadcast schedule.
-     if(!touchAnime({id:animeId,title:record?.title||'Anime autorizado'}))continue;
+     if(!touchAnime({id:animeId,title:record?.title||'Anime'}))continue;
      const episodes=Array.isArray(record?.episodes)?record.episodes:[];
      for(const [index,item] of episodes.entries()){
       const checked=normalizeEpisodeSources(item);

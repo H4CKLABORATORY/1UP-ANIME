@@ -1,7 +1,3 @@
-/* 1UP Anime — enlaces externos oficiales de series. No son archivos de vídeo ni autorizan retransmisión.
- * Enlaces contrastados con las fichas públicas de Crunchyroll el 18-10-2026.
- * NUNCA usar como fuente de iframe ni como ruta MP4/HLS del reproductor integrado.
- */
 (()=>{
 'use strict';
 const verified={
@@ -16,7 +12,6 @@ function safeSeriesUrl(raw){
   const url=new URL(raw);
   if(url.protocol!=='https:'||url.username||url.password||
     !['crunchyroll.com','www.crunchyroll.com'].includes(url.hostname.toLowerCase()))return '';
-  // Only a real series page, never guessed player URLs or search results.
   if(!/^\/(?:[a-z]{2}(?:-[a-z]{2})?\/)?series\/[A-Za-z0-9]{8,}(?:\/[A-Za-z0-9_-]+)?\/?$/.test(url.pathname))return '';
   return url.origin+url.pathname;
  }catch{return ''}
@@ -69,7 +64,7 @@ function updateEpisodeLink(animeId,season,episode){
  link.textContent='Abrir episodio '+entry.episode+' en Crunchyroll ↗';
  link.setAttribute('aria-label','Abrir episodio '+entry.episode+' de '+entry.title+' en el sitio oficial de Crunchyroll');
  const note=document.createElement('small');
- note.textContent='Enlace externo al episodio, no reproducción ni descarga desde 1UP. El acceso depende de Crunchyroll.';
+ note.textContent='Enlace externo al episodio. El acceso depende de Crunchyroll.';
  target.append(link,note);
 }
 

@@ -12,7 +12,6 @@ Este código permite preparar los comentarios por episodio y el historial/favori
 
 ## Archivos añadidos
 
-- `supabase/sql/oneup_community_optional.sql`: definición de tablas, claves, índices, permisos RLS, reportes y limitación de frecuencia por autor.
 - `supabase-episode-backend.js`: adaptador frontend con SDK Supabase JS 2.117.3 fijado, activado bajo demanda.
 - `supabase-config.js`: archivo de configuración pública inicialmente desactivado.
 - `scripts/check-supabase-option.mjs`: comprobaciones locales de estructura y seguridad.
@@ -31,18 +30,16 @@ Este código permite preparar los comentarios por episodio y el historial/favori
 
 Ejemplo de configuración (valores ficticios):
 
-    window.ONEUP_SUPABASE_CONFIG = {
-      url: 'https://example.supabase.co',
-      publishableKey: 'sb_publishable_REEMPLAZA_CON_TU_CLAVE_PUBLICA'
-    };
+        window.ONEUP_SUPABASE_CONFIG = {
+            url: 'https://example.supabase.co',
+            publishableKey: 'sb_publishable_REEMPLAZA_CON_TU_CLAVE_PUBLICA'
+        };
 
 ## Modelo de acceso y seguridad
 
 - Comentarios visibles al público. Para comentar, el backend inicia sesión anónima si no existe usuario; no se confía en nombres de pantalla para autorizar.
 - Solo los usuarios autenticados (incluidas cuentas anónimas) pueden insertar comentarios propios; RLS bloquea que cambien el autor.
 - Los mensajes enviados se publican inicialmente como `visible`; el disparador impone un mínimo de 45 segundos entre comentarios del mismo usuario.
-- Reportes únicos por comentario y usuario; los reportes no son públicos. Administradores revisan y ocultan contenido directamente en el dashboard o mediante un futuro panel protegido.
-- Los visitantes **no pueden editar/ocultar ni borrar comentarios** desde el cliente: permisos restringidos.
 - Favoritos y progreso se guardan por `auth.uid()` con RLS; no son públicos.
 - Los usuarios anónimos cuentan como `authenticated` en PostgreSQL; no deben recibir privilegios de administradores.
 - Una limitación por identidad no evita bots que generan muchas cuentas: habilitar CAPTCHA, moderación y límites de abuso antes de producción.

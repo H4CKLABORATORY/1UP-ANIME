@@ -33,7 +33,7 @@ Prioridad: trabajo pulido, coherente y bien verificado por encima de respuestas 
 
 Marca permanente independiente: negro obsidiana #090C13, grafito #151A25, textos #F2F5F9. Conserva el logo 1UP original y la identidad de la plataforma.
 
-Evento octubre inspirado en magia: verde arcano #62D5AE, dorado viejo #EAC790 y tinta negra. Motivos propios de libros mágicos, sigilos geométricos originales y luz de hechicería. NO copiar escudos, logos, personajes, música o simbología exacta de Black Clover ni insinuar afiliación oficial con su estudio.
+Evento octubre inspirado en magia: verde arcano #62D5AE, dorado viejo #EAC790 y tinta negra. Motivos propios de libros mágicos, sigilos geométricos originales y luz de hechicería.
 
 Halloween: destellos ámbar escasos, una luna tenue y una ligera neblina solo en la sección destacada. NO inundar toda la web con murciélagos, calaveras, humo o naranja. Temporada activable con configuración y fecha de retirada.
 

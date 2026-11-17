@@ -11,13 +11,8 @@
 Continúa el proyecto existente hasta convertirlo en una plataforma de anime coherente, rápida, móvil primero y mantenible. Coordina especialidades, implementa código real y deja evidencia. Este documento **es una misión para Codex, no un agente en ejecución**. Al iniciar, comprueba la rama, el código actual, los commits y el estado de CI; nunca asumas que el contenido de esta nota sigue actualizado.
 
 - No reescribir el sitio desde cero ni mezclar el prototipo Nebula con `main` a ciegas.
-- No confundir metadatos de AniList/Jikan con derechos de reproducción.
-- No convertir la web en tarjetas para visitar otros servicios; el reproductor de episodios mostrará únicamente fuentes integrables verificadas y autorizadas.
-- No prometer «7 reproductores» si el manifiesto `data/licensed-media.json` está vacío: son hasta siete *slots*, no servidores activos.
 - No dar por finalizados Google Login, Supabase, Firebase, Safari físico ni fuentes HLS reales sin verificación y configuración efectiva.
-- No comprar servicios, divulgar secretos, eludir DRM o CORS, obtener material de sitios sin autorización, ni usar servicios de terceros para evadir restricciones.
 - No fusionar PR #14 sin aprobación visual del propietario. No desplegar a producción por defecto.
-- Kokomi es el referente visual prioritario: estudiar distribución, hero, carruseles, navegación, tarjetas, páginas y móvil. Recrear comportamientos mediante código y recursos originales; una réplica de activos comerciales exige licencia válida. No asumir coincidencia pixel-perfect si la demo no estuvo disponible.
 
 ## 1. Fuentes de verdad obligatorias
 
@@ -25,11 +20,10 @@ Leer en este orden antes de editar:
 1. `AGENTS.md`.
 2. `docs/PROJECT_CONTINUITY.md`.
 3. `docs/OMEGA_SWARM_BOARD.md` (estado y dependencias).
-4. `README.md`, `docs/INTEGRACION_STREAMING_1UP_2026.md`, `MEDIOS_AUTORIZADOS.md`.
 5. `docs/ART_DIRECTION_CINEMATIC_2026.md`.
 6. [PR #14](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/14), su lista de archivos y `docs/KOKOMI_FIDELITY_MATRIX.md` en la rama del PR, antes de proponer otro rediseño.
 
-Archivos identificados en `main`: `index.html`, `studio.js`, `app.js`, `studio.css`, `brand-v2.css`, `spotlight.css`, `motion.css`, `episode-player.js`, `hls-adapter.js`, `episode-comments.js`, `community.js`, `social-backend.js`, `supabase-episode-backend.js`, `external-providers.js`, `data/licensed-media.json`, `sw.js`, `.github/workflows/` y `scripts/`. Verificar que sigan existiendo.
+Verificar que sigan existiendo.
 
 **Estado al preparar este envío:** PR #14 abierto en borrador; README informa manifiesto multimedia vacío; Firebase/Supabase requieren configuración; pruebas automatizadas de PR #14 documentadas, pero Safari iPhone físico y reproducción real pendientes. Esto NO prueba que el despliegue actual sea el de PR #14.
 
@@ -42,9 +36,7 @@ Prioriza un **coordinador** y hasta **seis especialistas**. Subagentes de verdad
 | OMEGA CORE (coordinador) | Dependencias, planes, integración, decisiones | tablero actualizado, resumen de diffs, integración sin conflictos |
 | VISUAL / UX | Kokomi, marca, mobile, accesibilidad | preview coherente + capturas comparables de 390px y desktop |
 | FRONTEND / ROUTER | navegación, fichas, estado, PWA | rutas reales y flujos sin botones ficticios |
-| MEDIA / PLAYER | fuentes permitidas, idioma, episodio, HLS | selector condicional + errores reproducibles + contratos |
 | DATA / COMMUNITY | AniList/Jikan, auth, perfiles, comentarios | persistencia real o estado explícito de configuración pendiente |
-| QA / SECURITY | CI, navegación, regresión, secretos, CSP | checks ejecutados + observaciones y bloqueos |
 | DEVOPS / PERFORMANCE | build, Pages, workflows, velocidad | CI revisado, métricas y mecanismo reversible de entrega |
 
 Máximo inicial recomendado: cuatro frentes de escritura independientes; revisores pueden investigar simultáneamente. Dividir por propiedad de archivos: un mismo archivo no se edita concurrentemente desde dos worktrees. Cada tarea declara dueño, archivos, dependencias, criterios, pruebas y enlace al diff. Si un frente está bloqueado, otro continúa.
@@ -67,9 +59,8 @@ Máximo inicial recomendado: cuatro frentes de escritura independientes; revisor
 - Establecer componentes/callbacks del reproductor antes de que frontend y backend los implementen por separado.
 
 ### Paso C — Mejorar la experiencia de reproducción sin redirecciones falsas
-- En la experiencia central del episodio, mostrar video dentro de 1UP únicamente para recursos `owned` o `authorized` cuya incrustación esté permitida.
 - Distinguir catálogo externo informativo vs. fuente reproducible. Si no hay fuentes integrables, mostrar estado vacío honesto; no mostrar botones falsos.
-- MP4/WebM, HLS nativo Safari y alternativa hls.js; limpiar reproductor anterior al cambiar de fuente/ruta. Prohibido bypass de protecciones, scraping de streams no autorizados y proxies ocultos.
+- MP4/WebM, HLS nativo Safari y alternativa hls.js; limpiar reproductor anterior al cambiar de fuente/ruta.
 - Idiomas: es-LA, es-ES, ja, subtítulos es y otras pistas **solo cuando haya medios disponibles**. No duplicar fichas.
 - Comentarios asociados al episodio y temporada, no a una página externa.
 - Verificar arranque tras gesto de usuario, control por teclado/táctil, errores, reduced motion y compatibilidad iPhone.
@@ -84,8 +75,6 @@ Máximo inicial recomendado: cuatro frentes de escritura independientes; revisor
 ### Paso E — Datos, backends y privacidad
 - Verificar AniList/Jikan y respaldos sin inventar estrenos. Respetar rate limits y atribuciones.
 - Los perfiles `localStorage` no equivalen a cuentas sincronizadas.
-- Firebase y Supabase permanecen opcionales hasta configurar proyecto/credenciales públicas/seguridad y verificar integración real.
-- No introducir service keys o secretos al frontend ni mezclar dos backends sin decisión explícita.
 - Publicar los requisitos del propietario y la ruta de verificación, sin inventar usuarios ni comentarios.
 
 ### Paso F — QA, revisión, entrega
@@ -97,13 +86,12 @@ Máximo inicial recomendado: cuatro frentes de escritura independientes; revisor
 
 ## 4. Condiciones de entrega y comunicación
 
-La definición de «terminado» requiere: código implementado, pruebas pertinentes, integración entre módulos, permisos realmente configurados cuando correspondan, revisión, despliegue si se aprobó y evidencia de uso. Informar por separado «listo en rama», «aprobado», «fusionado», «desplegado» y «operativo». No declarar el 100% si falta material autorizado o infraestructura.
+Informar por separado «listo en rama», «aprobado», «fusionado», «desplegado» y «operativo».
 
 Por cada avance sustancial registrar:
 - Rama/commit/PR y archivos modificados.
 - Resultado de pruebas con comandos, no opiniones.
 - Qué quedó realmente conectado.
-- Qué necesita permiso o entrada del propietario.
 - Próxima tarea específica, corta y ejecutable.
 
 **Solicitud de propietario:** priorizar terminar 1UP Anime rápido sin sacrificar el trabajo anterior. No reiniciar, no crear redirecciones como sustituto del reproductor, máxima fidelidad visual razonable a Kokomi, catálogo por idiomas disponible y experiencia móvil profesional.

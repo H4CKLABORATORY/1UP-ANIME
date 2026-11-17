@@ -67,7 +67,6 @@ for(const [id,show] of Object.entries(manifest.entries)){
   inspected++;
  }
 }
-// End-to-end engine fixture; no network, paid services, or copyrighted media.
 const temporary=await fsp.mkdtemp(path.join(os.tmpdir(),'oneup-media-test-'));
 try{
  await fsp.mkdir(path.join(temporary,'config'),{recursive:true});

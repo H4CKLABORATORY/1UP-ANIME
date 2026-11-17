@@ -1,12 +1,9 @@
 #!/usr/bin/env python3
-"""Create Spanish WebVTT subtitles from an OWNER-PROVIDED, AUTHORIZED local video.
+"""Create Spanish WebVTT subtitles from a local video.
 
 Use:
     pip install faster-whisper argostranslate
     python scripts/video_a_subtitulos.py ./video_propio.mp4 --output ./media/video.es.vtt
-
-This does not download videos, rip streams, bypass DRM or transfer publishing rights.
-It generates subtitle files for videos that users already have permission to publish.
 """
 from __future__ import annotations
 import argparse
@@ -63,7 +60,7 @@ def translator_for(language: str):
     return translate
 
 def main():
-    ap = argparse.ArgumentParser(description="Genera subtítulos WebVTT en español para tus videos autorizados.")
+    ap = argparse.ArgumentParser(description="Genera subtítulos WebVTT en español.")
     ap.add_argument("video",type=Path,help="Archivo de audio o video que tienes derecho a utilizar")
     ap.add_argument("--output",type=Path,default=None,help="Archivo VTT de salida")
     ap.add_argument("--model",default="small",choices=["tiny","base","small","medium","large-v3"])

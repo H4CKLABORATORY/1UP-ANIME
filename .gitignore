@@ -17,3 +17,6 @@ data/jkanime.db-wal
 data/jkanime.db-shm
 !data/jkanime.db.gz
 
+# Persistent browser cookies/session used by the optional metadata scraper
+data/browser_profile/
+

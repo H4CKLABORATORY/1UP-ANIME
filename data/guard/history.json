@@ -2,7 +2,39 @@
   "schemaVersion": 1,
   "checks": [
     {
+<<<<<<< Updated upstream
       "at": "2026-11-17T14:35:47.218Z",
+=======
+      "at": "2026-11-17T23:06:55.624Z",
+      "verdict": "atencion",
+      "issues": [
+        {
+          "id": "catalog:freshness",
+          "level": "warning"
+        },
+        {
+          "id": "airing:freshness",
+          "level": "warning"
+        }
+      ]
+    },
+    {
+      "at": "2026-11-17T07:12:32.068Z",
+      "verdict": "atencion",
+      "issues": [
+        {
+          "id": "catalog:freshness",
+          "level": "warning"
+        },
+        {
+          "id": "airing:freshness",
+          "level": "warning"
+        }
+      ]
+    },
+    {
+      "at": "2026-11-17T05:57:00.147Z",
+>>>>>>> Stashed changes
       "verdict": "atencion",
       "issues": [
         {
@@ -479,16 +511,6 @@
     },
     {
       "at": "2026-11-04T22:02:32.868Z",
-      "verdict": "correcto",
-      "issues": []
-    },
-    {
-      "at": "2026-11-04T18:05:38.293Z",
-      "verdict": "correcto",
-      "issues": []
-    },
-    {
-      "at": "2026-11-04T14:28:06.725Z",
       "verdict": "correcto",
       "issues": []
     }

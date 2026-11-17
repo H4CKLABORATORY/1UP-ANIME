@@ -9,7 +9,6 @@ Este contenedor alberga toda la interfaz gráfica de usuario, estilos, módulos 
 ```
 client/
 ├── assets/                 # Recursos gráficos originales (logos vectoriales SVG, posters, intro MP4)
-├── data/                   # Copia local de catálogo de anime, emisiones y medios autorizados
 ├── motion-studio/          # Motor cinematográfico DEXTER (scene, camera, renderer)
 ├── pages/                  # 12 vistas secundarias de la plataforma
 ├── src/
@@ -29,43 +28,40 @@ client/
 Todos los archivos JS son independientes, sin librerías externas pesadas:
 
 - **Núcleo y Catálogo**:
-  - `studio.js`: Orquestador principal de estado, renderizado de cuadrícula, filtrado por categorías, búsqueda y persistencia de favoritos.
-  - `catalog-plus.js`: Extensiones de presentación y renderizado adicional de series.
-  - `anime-title-search.js`: Motor de búsqueda tolerante a acentos, signos, caracteres japoneses (Romaji/Kanji) y alias de AniList/Jikan.
+    - `studio.js`: Orquestador principal de estado, renderizado de cuadrícula, filtrado por categorías, búsqueda y persistencia de favoritos.
+    - `catalog-plus.js`: Extensiones de presentación y renderizado adicional de series.
+    - `anime-title-search.js`: Motor de búsqueda tolerante a acentos, signos, caracteres japoneses (Romaji/Kanji) y alias de AniList/Jikan.
   - `franchise-explorer.mjs`: Explorador de sagas y relaciones de series (precuelas, secuelas, adaptaciones).
 - **Reproducción y Multimedia**:
-  - `episode-player.js`: Reproductor multimedia multi-fuente (hasta 7 posiciones), compatible con cambio dinámico y reintentos.
-  - `hls-adapter.js`: Adaptador para reproducción HLS adaptativo en navegadores con y sin soporte nativo.
-  - `subtitle-studio.js`: Motor de subtítulos estilizados con fuentes Bangers (SIL OFL), Arcade y Moderna sobre WebVTT.
-  - `official-watch.js`: Manejo de enlaces canónicos a plataformas de streaming autorizadas (Crunchyroll, etc.).
-  - `external-providers.js`: Proveedores externos verificados.
-  - `anime1v-discovery.js`: Integración cliente con pasarela de metadatos Anime1v.
+    - `episode-player.js`: Reproductor multimedia multi-fuente (hasta 7 posiciones), compatible con cambio dinámico y reintentos.
+    - `hls-adapter.js`: Adaptador para reproducción HLS adaptativo en navegadores con y sin soporte nativo.
+    - `subtitle-studio.js`: Motor de subtítulos estilizados con fuentes Bangers (SIL OFL), Arcade y Moderna sobre WebVTT.
+    - `external-providers.js`: Proveedores externos verificados.
+    - `anime1v-discovery.js`: Integración cliente con pasarela de metadatos Anime1v.
 - **Cinematografía y Efectos Visuales**:
-  - `depth-engine.js`: Motor global de perspectiva y profundidad 2.5D.
-  - `card-depth-engine.js`: Efecto de inclinación y sombras dinámicas en tarjetas de anime.
-  - `depth-toggle-button.js`: Componente visual de control para alternar el modo depth.
-  - `dexter-motion-engine.js`: Micro-interacciones cinematográficas fluidas basadas en observadores de visibilidad.
-  - `motion.js` & `sonic.js`: Controladores de transiciones y efectos de sonido contextuales.
-  - `premiere-hero.js` & `premiere-ranking.js`: Carrusel hero dinámico de emisiones de la temporada actual.
-  - `oneup-finale.js`: Capa de pulido editorial de la interfaz.
+    - `depth-engine.js`: Motor global de perspectiva y profundidad 2.5D.
+    - `card-depth-engine.js`: Efecto de inclinación y sombras dinámicas en tarjetas de anime.
+    - `depth-toggle-button.js`: Componente visual de control para alternar el modo depth.
+    - `dexter-motion-engine.js`: Micro-interacciones cinematográficas fluidas basadas en observadores de visibilidad.
+    - `motion.js` & `sonic.js`: Controladores de transiciones y efectos de sonido contextuales.
+    - `premiere-hero.js` & `premiere-ranking.js`: Carrusel hero dinámico de emisiones de la temporada actual.
+    - `oneup-finale.js`: Capa de pulido editorial de la interfaz.
 - **Autenticación y Comunidad**:
-  - `auth.js` & `auth-google.js`: Flujo de perfil de usuario (invitado local o federado con Google).
-  - `auth-config.js` & `firebase-config.js`: Configuraciones públicas para servicios de autenticación.
-  - `community.js`: Muro social, publicaciones e interacción entre usuarios.
-  - `episode-comments.js`: Sistema de comentarios contextuales vinculados a cada episodio.
-  - `social-backend.js`: Adaptador para sincronización de comunidad con backend.
-  - `supabase-config.js` & `supabase-episode-backend.js`: Adaptador opcional para Supabase con RLS.
+    - `auth.js` & `auth-google.js`: Flujo de perfil de usuario (invitado local o federado con Google).
+    - `auth-config.js` & `firebase-config.js`: Configuraciones públicas para servicios de autenticación.
+    - `community.js`: Muro social, publicaciones e interacción entre usuarios.
+    - `episode-comments.js`: Sistema de comentarios contextuales vinculados a cada episodio.
+    - `social-backend.js`: Adaptador para sincronización de comunidad con backend.
+    - `supabase-config.js` & `supabase-episode-backend.js`: Adaptador opcional para Supabase con RLS.
 - **Vistas Especializadas**:
-  - `moderacion.js`: Lógica de consola de supervisión de contenido.
-  - `motor.js`: Monitoreo y diagnósticos de rendimiento del motor.
-  - `scraping-lab.js`: Interfaz del laboratorio educativo de metadatos.
-  - `experience.js`: Controladores de experiencias inmersivas.
+    - `moderacion.js`: Lógica de consola de supervisión de contenido.
+    - `motor.js`: Monitoreo y diagnósticos de rendimiento del motor.
+    - `experience.js`: Controladores de experiencias inmersivas.
 
 ---
 
 ## 3. Hojas de Estilo CSS (`src/styles/`)
 
-Las 26 hojas de estilo modulares dividen claramente las responsabilidades visuales:
 - `studio.css`: Diseño base, rejilla responsiva (grid), tipografía y variables de color.
 - `motion.css` & `dexter-motion-engine.css`: Animaciones por keyframes optimizadas con aceleración GPU.
 - `spotlight.css`: Efecto de luz ambiental en puntero para computadoras de escritorio.
@@ -92,8 +88,6 @@ Las 26 hojas de estilo modulares dividen claramente las responsabilidades visual
 | `preview-kokomi-mobile.html` | Experiencia editorial optimizada específicamente para pantallas móviles. |
 | `preview-kokomi.html` | Variante de diseño Kokomi para escritorio. |
 | `preview-october.html` | Experiencia temática estacional de octubre con sello arcano. |
-| `privacy.html` | Política de privacidad y términos de servicio. |
-| `scraping-lab.html` | Laboratorio de prueba de metadatos educativos. |
 | `studio.html` | Espacio de trabajo creativo alternativo. |
 
 ---

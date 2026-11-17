@@ -1,7 +1,7 @@
 <template>
   <section v-if="episodes && episodes.length > 0" id="oneup-player-section" class="oneup-detail-section">
     <h3>EPISODIOS DISPONIBLES</h3>
-    <p>Estas fuentes se agregan únicamente con permiso de distribución. Elige episodio y servidor.</p>
+    <p>Elige episodio y servidor.</p>
     <div id="oneup-licensed-episodes" class="oneup-episode-select">
       <button
         v-for="(ep, idx) in episodes"
@@ -10,7 +10,7 @@
         :class="{ active: currentEpisodeIndex === idx }"
         type="button"
         :data-licensed-episode="idx"
-        :aria-label="'Abrir episodio autorizado ' + (idx + 1)"
+        :aria-label="'Abrir episodio ' + (idx + 1)"
         @click="selectEpisode(idx)"
       >
         {{ idx + 1 }} · {{ ep.title || 'Episodio' }}

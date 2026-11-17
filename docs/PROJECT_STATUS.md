@@ -46,7 +46,6 @@
 | **P1** | Documentación de contenedores (`client/`, `server/`, `data/`, `scripts/`, `tests/`) | **COMPLETADA** |
 | **P1** | Verificación visual en Safari físico de iPhone tras push a `main` | Pendiente |
 | **P2** | Configuración de Firebase Comunidad / Google OAuth por parte del propietario | Pendiente |
-| **P2** | Agregar episodios y fuentes autorizadas a `data/licensed-media.json` | Pendiente |
 
 ---
 

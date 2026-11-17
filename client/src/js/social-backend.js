@@ -13,7 +13,7 @@ const maskError=e=>{
  const code=String(e?.code||'');
  if(code.includes('resource-exhausted'))return 'Has publicado demasiado rápido. Espera antes de volver a comentar.';
  if(code.includes('unauthenticated'))return 'Necesitas iniciar sesión para esta acción.';
- if(code.includes('permission-denied'))return 'No tienes permisos para esta acción.';
+ if(code.includes('permission-denied'))return 'Acción no disponible.';
  if(code.includes('failed-precondition'))return 'La comunidad aún no está configurada por completo.';
  if(code.includes('not-found'))return 'Falta publicar el servidor de la comunidad.';
  return e?.message?.slice(0,180)||'No se pudo conectar con la comunidad.';

@@ -26,8 +26,8 @@ server/
 │   ├── anime1v-gateway.js  # Pasarela pública de consulta de metadatos
 │   └── anime1v-source/     # Runtime aislado y auditado de Anime1v
 └── supabase/               # Esquemas y migraciones SQL para Supabase
-    └── sql/
-        └── oneup_community_optional.sql # DDL de tablas con Row Level Security (RLS)
+        └── sql/
+                └── oneup_community_optional.sql # DDL de tablas con Row Level Security (RLS)
 ```
 
 ---
@@ -36,15 +36,12 @@ server/
 
 ### 2.1 Configuraciones (`config/`)
 - `firebase.json`: Define el despliegue de Firebase Functions apuntando a `../functions`, así como las reglas de Firestore y Storage.
-- `firestore.rules`: Implementa control de acceso estricto basado en roles y tokens de usuario autenticado; prohíbe escrituras no autorizadas o masivas.
-- `dexter-providers.json`: Configura los intervalos de ejecución y el estado de cada adaptador de sincronización (AniList, biblioteca autorizada, enlaces externos).
 
 ### 2.2 Funciones Serverless (`functions/`)
 - `index.js`: Expone endpoints serverless para comentarios, moderación y validación de sesiones.
 - `anime1v-adapter.js`: Actúa como middleware de consulta de metadatos sin exponer tokens privados ni realizar scraping de video.
 
 ### 2.3 Pasarela de Metadatos en Render (`render/`)
-- `anime1v-gateway.js`: Servidor Express ligero que responde a consultas de catálogo y búsqueda, filtrando cualquier contenido no autorizado y reportando honestamente el uso de respaldos (como Jikan).
 - `anime1v-source/`: Runtime empaquetado y fijado para ejecutar servicios de metadatos con arranque determinista.
 
 ### 2.4 Supabase SQL (`supabase/`)
@@ -61,6 +58,4 @@ server/
 
 ## 3. Principios de Seguridad y Ética
 
-1. **Cero Secretos en el Repositorio**: Ningún token, API key privada o archivo de credenciales de servicio se almacena en el control de versiones. Todas las configuraciones sensibles se leen de variables de entorno de GitHub Actions o del entorno de ejecución.
-2. **Metadata-Only**: Las pasarelas y adaptadores solo procesan títulos, sinopsis, imágenes públicas y números de episodios; jamás extraen, descifran ni retransmiten flujos de video protegidos.
 3. **Inmutabilidad y Auditoría**: Todos los cambios de datos en el cliente requieren validación estricta de esquemas antes de ser persistidos.

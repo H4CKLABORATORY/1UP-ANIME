@@ -1,7 +1,3 @@
-/* 1UP Anime · Kokomi-reference interior routes.
- * Independent implementation. Uses existing site data and account identity.
- * No unauthorised streaming discovery, DRM bypass or copied template assets.
- */
 (()=>{
 'use strict';
 const $=s=>document.querySelector(s);

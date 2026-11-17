@@ -1,9 +1,3 @@
-/**
- * DexterAnimeSync: pure validation/normalization of licensed playback sources.
- * A publicly reachable URL or a rights string is NOT proof of ownership or a license.
- * Only catalog editors may declare an authorized source after verifying permission.
- * This module never downloads, extracts, proxies, or bypasses a provider's player.
- */
 export const MAX_SOURCES_PER_EPISODE = 7;
 export const VIDEO_MIMES = new Set([
   'video/mp4',

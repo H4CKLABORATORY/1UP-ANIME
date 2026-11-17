@@ -28,7 +28,7 @@ function maskError(error){
  const value=String(error?.code||error?.message||error||'').toLowerCase();
  if(value.includes('p0001')||value.includes('wait before commenting'))return 'Publicas demasiado rápido. Inténtalo de nuevo en unos segundos.';
  if(value.includes('23505')||value.includes('duplicate'))return 'Ya enviaste este reporte.';
- if(value.includes('42501')||value.includes('permission')||value.includes('row-level'))return 'No tienes permiso para realizar esa acción.';
+ if(value.includes('42501')||value.includes('permission')||value.includes('row-level'))return 'Acción no disponible.';
  if(value.includes('anonymous')||value.includes('signups'))return 'Necesitas iniciar sesión o habilitar el acceso para invitados.';
  return 'No se pudo completar la operación. Inténtalo de nuevo más tarde.';
 }
