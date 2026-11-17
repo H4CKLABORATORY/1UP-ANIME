@@ -1,0 +1,20 @@
+/* ===== 1UP · Reproductor Tema Pro — misma estructura, presentación premium ===== */
+#oneup-player-section{background:linear-gradient(160deg,#10151d,#080b10);border:1px solid rgba(124,231,187,.22);border-radius:18px;box-shadow:0 24px 60px rgba(0,0,0,.42)}
+.oneup-watch-panel .oneup-watch-title h3{color:#f2f7f3}
+.oneup-watch-counter{color:#7ce7bb;background:rgba(53,217,154,.1);border-color:rgba(124,231,187,.32)}
+.oneup-watch-controls label{color:#cfe6d8}
+.oneup-watch-controls select,.oneup-watch-controls input{background:#0c1220;color:#eef4f0;border:1px solid rgba(255,255,255,.15);border-radius:12px;transition:border-color .18s ease,box-shadow .18s ease}
+.oneup-watch-controls select:focus,.oneup-watch-controls input:focus{border-color:#35d99a;box-shadow:0 0 0 3px rgba(53,217,154,.18);outline:none}
+#oneup-now-watching{color:#f2f7f3}
+.oneup-server-selector{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.09);border-radius:14px}
+.oneup-server-selector>strong{color:#9fb8ab;letter-spacing:.14em}
+.oneup-server-choice{background:#131a26;border:1px solid rgba(255,255,255,.12);border-radius:11px;color:#e8f2ec;transition:border-color .16s ease,background .16s ease,transform .13s ease}
+.oneup-server-choice:hover,.oneup-server-choice:focus-visible{border-color:rgba(53,217,154,.6);background:#16222e}
+.oneup-server-choice:active{transform:scale(.97)}
+.oneup-server-choice.active{background:linear-gradient(120deg,#35d99a,#7ce7bb);color:#04140c;border-color:transparent;box-shadow:0 8px 22px rgba(53,217,154,.3)}
+.oneup-server-choice:disabled{opacity:.38}
+.oneup-playback-stage{border:1px solid rgba(124,231,187,.25);border-radius:14px;box-shadow:0 22px 55px rgba(0,0,0,.55)}
+.oneup-episode-button{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.14);border-radius:11px;color:#eef4f0}
+.oneup-episode-button:hover,.oneup-episode-button:focus-visible{border-color:rgba(53,217,154,.6);background:rgba(53,217,154,.12)}
+.oneup-external-source{background:linear-gradient(120deg,#10151d,#0a0e14);border-color:rgba(124,231,187,.22);border-radius:14px}
+.oneup-player-state{color:#9fb8ab}
