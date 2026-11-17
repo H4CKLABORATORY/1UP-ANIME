@@ -1,0 +1,23 @@
+/* ===== 1UP · Sangre otaku — detalles anime sobre la base moderna ===== */
+/* Acentos en japonés junto a los títulos */
+.jp-chip{display:inline-block;margin-left:10px;padding:3px 9px 4px;border-radius:999px;border:1px solid rgba(255,183,213,.42);background:rgba(255,143,184,.1);color:#ffb7d5;font-size:10.5px;font-weight:800;letter-spacing:.22em;vertical-align:middle;font-family:'Segoe UI',system-ui,sans-serif;text-transform:none;white-space:nowrap}
+h2 .jp-chip,h3 .jp-chip{transform:translateY(-3px)}
+.eyebrow .jp-chip{margin-left:2px}
+/* Pétalos de sakura cayendo dentro de los héroes */
+.sakura-field{position:relative;overflow:hidden}
+.sakura-petal{position:absolute;top:-4%;background-repeat:no-repeat;background-size:contain;background-position:center;pointer-events:none;z-index:3;animation-name:sakura-fall;animation-timing-function:linear;animation-iteration-count:infinite;will-change:top,transform}
+@keyframes sakura-fall{
+  0%{top:-4%;transform:translateX(0) rotate(0deg);opacity:0}
+  10%{opacity:.9}
+  35%{transform:translateX(16px) rotate(130deg)}
+  65%{transform:translateX(-10px) rotate(240deg)}
+  92%{opacity:.65}
+  100%{top:103%;transform:translateX(10px) rotate(350deg);opacity:.1}
+}
+/* Ramilletes de sakura en las esquinas del héroe */
+.sakura-cluster{position:absolute;background-repeat:no-repeat;background-size:contain;background-position:center;pointer-events:none;z-index:2;animation:sakura-sway 7s ease-in-out infinite alternate}
+@keyframes sakura-sway{from{transform:rotate(-5deg)}to{transform:rotate(6deg)}}
+@media (prefers-reduced-motion: reduce){.sakura-petal,.sakura-cluster{animation:none}}
+/* Detalle de tarjetas: el número del ranking ya no tapa la cinta "EMISIÓN" */
+#trending-rail .card-badge-airing{left:44px;top:7px}
+.km-rank{border-bottom-right-radius:10px}
