@@ -301,7 +301,7 @@ function toggle(id){
  toast(isFav(id)?'Añadido a Mi lista':'Quitado de Mi lista');
 }
 function refreshFav(){
- $$('[data-save]').forEach(b=>{const yes=isFav(b.dataset.save);b.textContent=yes?'✓':'＋';b.classList.toggle('saved',yes)});
+ $$('[data-save]').forEach(b=>{const yes=isFav(b.dataset.save);b.innerHTML=yes?'<svg aria-hidden="true"><use href="#ico-check"/></svg>':'<svg aria-hidden="true"><use href="#ico-plus"/></svg>';b.classList.toggle('saved',yes)});
  if(state.featured)$('#hero-save').innerHTML=isFav(state.featured.id)?'<svg><use href="#ico-check"/></svg> Guardado':'<svg><use href="#ico-plus"/></svg> Guardar anime';
 }
 function card(a){
@@ -319,10 +319,10 @@ function card(a){
    '<div class="anime-art" data-details="'+esc(a.id)+'" role="button" tabindex="0">'+
      pic+
      '<div class="art-shade anime-card-shine" data-depth="mid"></div>'+
-     '<span class="rating" data-depth="front"><b>★</b> '+score+'</span>'+
+     '<span class="rating" data-depth="front"><svg class="ic-star" aria-hidden="true"><use href="#ico-star"/></svg> '+score+'</span>'+
      (isAiring ? '<span class="card-badge-airing">EMISIÓN</span>' : '')+
    '</div>'+
-   '<button class="anime-save'+(isFav(a.id)?' saved':'')+'" data-save="'+esc(a.id)+'" type="button" aria-label="'+(isFav(a.id)?'Guardado':'Guardar')+'">'+(isFav(a.id)?'✓':'＋')+'</button>'+
+   '<button class="anime-save'+(isFav(a.id)?' saved':'')+'" data-save="'+esc(a.id)+'" type="button" aria-label="'+(isFav(a.id)?'Guardado':'Guardar')+'">'+(isFav(a.id)?'<svg aria-hidden="true"><use href="#ico-check"/></svg>':'<svg aria-hidden="true"><use href="#ico-plus"/></svg>')+'</button>'+
    '<div class="card-info" data-depth="front">'+
      '<button class="card-name" data-details="'+esc(a.id)+'" title="'+esc(title)+'">'+esc(title)+'</button>'+
      '<div class="card-sub">'+
@@ -371,7 +371,7 @@ function hero(a, chosen=false, persist=chosen){
  if(name)name.textContent=a.title;
  const caption=$('#hero-feature-caption');
  if(caption)caption.textContent=[formats[a.format]||'Anime',a.year||''].filter(Boolean).join(' · ').toUpperCase();
- $('#hero-badges').innerHTML='<span>'+esc(formats[a.format]||'Anime')+'</span><span>'+esc(String(a.year||'CATÁLOGO'))+'</span><span>★ '+(a.averageScore?(a.averageScore/10).toFixed(1):'—')+'</span>';
+ $('#hero-badges').innerHTML='<span>'+esc(formats[a.format]||'Anime')+'</span><span>'+esc(String(a.year||'CATÁLOGO'))+'</span><span><svg class="ic-star" aria-hidden="true"><use href="#ico-star"/></svg> '+(a.averageScore?(a.averageScore/10).toFixed(1):'—')+'</span>';
  const picks=$('#hero-picks');
  if(picks){
   const pool=[a,...(state.home.trending||[]),...(state.home.season||[])];
@@ -1078,11 +1078,11 @@ function detail(id){
    '<div class="oneup-detail-info">'+
     '<div class="oneup-detail-tag">1UP ANIME / DESTACADO</div>'+
     '<h2 class="oneup-detail-title" id="detail-anime-name">'+esc(a.title)+'</h2>'+
-    '<div class="oneup-detail-meta">'+stats.map((s,i)=>'<span'+(s.startsWith('★')?' class="rated"':'')+'>'+esc(s)+'</span>').join('')+'</div>'+
+    '<div class="oneup-detail-meta">'+stats.map((s,i)=>'<span'+(s.startsWith('★')?' class="rated"':'')+'>'+esc(s)+'</span>').join('').replace('★','<svg class="ic-star" aria-hidden="true"><use href="#ico-star"/></svg>')+'</div>'+
     '<div class="oneup-detail-tag oneup-synopsis-eyebrow">'+(autoTranslated?'SINOPSIS EN ESPAÑOL · TRADUCCIÓN AUTOMÁTICA':'SINOPSIS · INFORMACIÓN DEL ANIME')+'</div>'+ 
     '<p class="oneup-detail-synopsis">'+esc(hasSynopsis?synopsis:'La sinopsis de este anime todavía no está disponible en el catálogo.')+'</p>'+
     '<div class="oneup-detail-commands">'+
-     '<button type="button" class="cta primary" data-save="'+esc(id)+'">'+(isFav(id)?'✓ Guardado':'＋ Añadir a mi lista')+'</button>'+
+     '<button type="button" class="cta primary" data-save="'+esc(id)+'">'+(isFav(id)?'Guardado':'Añadir a mi lista')+'</button>'+
      (site?'<a class="cta outline" href="'+esc(site)+'" target="_blank" rel="noopener noreferrer">Ficha completa ↗</a>':'')+
     '</div>'+
    '</div>'+
@@ -1160,7 +1160,7 @@ function init(){
  document.addEventListener('click',e=>{
   const nav=e.target.closest('[data-route]');if(nav){e.preventDefault();go(nav.dataset.route);return}
   const g=e.target.closest('[data-genre]');if(g){state.filters.genre=g.dataset.genre;go('catalogo');return}
-  const s=e.target.closest('[data-save]');if(s){const id=s.dataset.save;toggle(id);if($('#anime-dialog').open&&state.active===id){const button=$('#anime-dialog [data-save]');if(button)button.textContent=isFav(id)?'✓ Guardado':'＋ Añadir a mi lista'}return}
+  const s=e.target.closest('[data-save]');if(s){const id=s.dataset.save;toggle(id);if($('#anime-dialog').open&&state.active===id){const button=$('#anime-dialog [data-save]');if(button)button.textContent=isFav(id)?'Guardado':'Añadir a mi lista'}return}
   const pick=e.target.closest('[data-feature]');if(pick){const anime=state.entries.get(pick.dataset.feature);if(anime)hero(anime,true);return}
   const d=e.target.closest('[data-details]');
   if(d){

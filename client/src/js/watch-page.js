@@ -21,7 +21,7 @@ function renderTrailer(a){
  if(!tr||tr.site!=='youtube'||!/^[A-Za-z0-9_-]{11}$/.test(tr.id||''))return;
  const sec=$('#trailer-section'),host=$('#trailer');if(!sec||!host)return;
  sec.hidden=false;
- host.innerHTML='<button type="button" class="trailer-thumb" aria-label="Reproducir tráiler oficial"><img src="https://i.ytimg.com/vi/'+tr.id+'/hqdefault.jpg" alt="Vista previa del tráiler" loading="lazy"><span class="trailer-play"><span>▶</span></span></button>';
+ host.innerHTML='<button type="button" class="trailer-thumb" aria-label="Reproducir tráiler oficial"><img src="https://i.ytimg.com/vi/'+tr.id+'/hqdefault.jpg" alt="Vista previa del tráiler" loading="lazy"><span class="trailer-play"><span><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.2v13.6L18.8 12Z"/></svg></span></span></button>';
  host.querySelector('.trailer-thumb').addEventListener('click',()=>{
   host.innerHTML='<iframe class="trailer-frame" src="https://www.youtube-nocookie.com/embed/'+tr.id+'?rel=0&autoplay=1" title="Tráiler oficial" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>';
  });
@@ -49,7 +49,7 @@ async function load(){
   if(!bySite.has('crunchyroll')&&VERIFIED_CRUNCHYROLL['mal-'+a.idMal])bySite.set('crunchyroll',{site:'Crunchyroll',url:VERIFIED_CRUNCHYROLL['mal-'+a.idMal],type:'STREAMING'});
   let providers=['netflix','crunchyroll'].map(k=>bySite.get(k)).filter(Boolean);
   if(!providers.length){const free=['youtube','tubi','pluto tv','retrocrush','hoopla'].map(k=>bySite.get(k)).find(Boolean);if(free)providers=[free]}
-  $('#providers').innerHTML=providers.length?providers.map(x=>'<a href="'+esc(safe(x.url))+'" target="_blank" rel="noopener noreferrer">'+esc(x.site||'Plataforma oficial')+' ↗</a>').join(''):'<div class="status">Sin plataformas registradas por ahora.</div>';
+  $('#providers').innerHTML=providers.length?providers.map(x=>'<a href="'+esc(safe(x.url))+'" target="_blank" rel="noopener noreferrer">'+esc(x.site||'Plataforma oficial')+' <svg class="ext-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6M20 4l-9.2 9.2M19.2 13.5V19a1.6 1.6 0 0 1-1.6 1.6H5.6A1.6 1.6 0 0 1 4 19V7a1.6 1.6 0 0 1 1.6-1.6H11"/></svg></a>').join(''):'<div class="status">Sin plataformas registradas por ahora.</div>';
   $('#details').innerHTML='<p><strong>Formato:</strong> '+esc(a.format||'No disponible')+'</p><p><strong>Estado:</strong> '+esc(a.status||'No disponible')+'</p><p><strong>Géneros:</strong> '+esc((a.genres||[]).join(', ')||'No disponibles')+'</p>';
   try{await window.OneUpEpisodePlayer?.show({id:raw,title,image,banner:banner||'',episodes:a.episodes||0,episodes_total:a.episodes||0})}catch(e){console.warn('1UP player:',e)}
  }catch(error){console.error('1UP watch page:',error);fail(error.message||'Error de conexión.')}

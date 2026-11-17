@@ -216,3 +216,5 @@ a,button,select,input,textarea{touch-action:manipulation}
 #auth-dialog .auth-submit{width:100%;padding:11px;border-radius:10px;font-weight:800;cursor:pointer}
 #auth-dialog .auth-link{background:none;border:none;color:#8fd8b2;cursor:pointer;font-size:13px;text-decoration:underline;padding:2px;text-align:center}
 #auth-dialog .auth-code{font-size:22px;font-weight:900;letter-spacing:4px;text-align:center;color:#fff;background:#16241d;border:1px dashed #73d8a4;border-radius:10px;padding:10px;margin:0}
+
+#auth-dialog .auth-title-logo{display:block;height:56px;width:auto;margin:8px auto 0}

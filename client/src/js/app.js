@@ -28,7 +28,7 @@ function saved(id){return state.saved[String(id)]||null}
 function isFav(id){return Boolean(saved(id)?.favorite)}
 function ensureSaved(id){let a=state.pool.get(Number(id));if(!state.saved[id])state.saved[id]={id:Number(id),title:shortTitle(a),image:imageOf(a),year:a?.year||a?.aired?.prop?.from?.year||'',score:a?.score||'',type:a?.type||'',watched:0,favorite:true,customUrl:''};return state.saved[id]}
 function toggleFav(id){id=Number(id);let a=state.pool.get(id);if(!a)return;let wasFavorite=isFav(id);let item=ensureSaved(id);item.favorite=!wasFavorite;if(!item.favorite&&!(item.watched>0)&&!item.customUrl)delete state.saved[id];persist();updateFavoriteButtons();if(state.view==='milista')renderMyList();toast(isFav(id)?'Añadido a tu lista':'Quitado de favoritos')}
-function updateFavoriteButtons(){for(const el of $$('[data-save]')){const yes=isFav(el.dataset.save);el.textContent=yes?'✓':'＋';el.classList.toggle('saved',yes);el.setAttribute('aria-label',yes?'Quitar de mi lista':'Guardar en mi lista')}if(state.featured){$('#hero-fav').textContent=isFav(state.featured.mal_id)?'✓ EN MI LISTA':'＋ GUARDAR EN MI LISTA'}}
+function updateFavoriteButtons(){for(const el of $$('[data-save]')){const yes=isFav(el.dataset.save);el.innerHTML=yes?'<svg aria-hidden="true"><use href="#ico-check"/></svg>':'<svg aria-hidden="true"><use href="#ico-plus"/></svg>';el.classList.toggle('saved',yes);el.setAttribute('aria-label',yes?'Quitar de mi lista':'Guardar en mi lista')}if(state.featured){$('#hero-fav').textContent=isFav(state.featured.mal_id)?'EN MI LISTA':'GUARDAR EN MI LISTA'}}
 async function getJson(path){
  if(cache.has(path)&&Date.now()-cache.get(path).time<180000){return cache.get(path).value}
  await timeWait();
@@ -52,7 +52,7 @@ function card(a,index){
  const id=Number(a.mal_id), title=shortTitle(a), img=imageOf(a),score=a.score?Number(a.score).toFixed(1):'—';
  const year=a.year||a.aired?.prop?.from?.year||'Anime',type=a.type||'Serie',ep=a.episodes?a.episodes+' episodios':'';
  const photo=img?'<img src="'+escapeText(img)+'" alt="Portada de '+escapeText(title)+'" loading="lazy" referrerpolicy="no-referrer">':'';
- return '<article class="anime-card"><div class="anime-cover" data-detail="'+id+'" role="button" tabindex="0" aria-label="Ver ficha de '+escapeText(title)+'">'+photo+'<div class="anime-gradient"></div>'+(index<3?'<span class="anime-top">TOP '+String(index+1).padStart(2,'0')+'</span>':'')+'<span class="anime-score"><span>★</span> '+score+'</span></div><button class="anime-save'+(isFav(id)?' saved':'')+'" data-save="'+id+'" title="Añadir a mi lista" aria-label="Guardar en mi lista">'+(isFav(id)?'✓':'＋')+'</button><div class="anime-info"><button class="anime-name" data-detail="'+id+'">'+escapeText(title)+'</button><div class="anime-sub"><span>'+escapeText(type)+' · '+escapeText(String(year))+'</span><span>'+escapeText(ep)+'</span></div></div></article>';
+ return '<article class="anime-card"><div class="anime-cover" data-detail="'+id+'" role="button" tabindex="0" aria-label="Ver ficha de '+escapeText(title)+'">'+photo+'<div class="anime-gradient"></div>'+(index<3?'<span class="anime-top">TOP '+String(index+1).padStart(2,'0')+'</span>':'')+'<span class="anime-score"><svg class="ic-star" aria-hidden="true"><use href="#ico-star"/></svg> '+score+'</span></div><button class="anime-save'+(isFav(id)?' saved':'')+'" data-save="'+id+'" title="Añadir a mi lista" aria-label="Guardar en mi lista">'+(isFav(id)?'<svg aria-hidden="true"><use href="#ico-check"/></svg>':'<svg aria-hidden="true"><use href="#ico-plus"/></svg>')+'</button><div class="anime-info"><button class="anime-name" data-detail="'+id+'">'+escapeText(title)+'</button><div class="anime-sub"><span>'+escapeText(type)+' · '+escapeText(String(year))+'</span><span>'+escapeText(ep)+'</span></div></div></article>';
 }
 function paint(el,items,showRank){el.innerHTML=items?.length?items.map((a,i)=>card(a,showRank?i:999)).join(''):emptyCard('No se encontraron títulos.')}
 function headlineTitle(text){let words=text.split(' ');return escapeText(words.slice(0,-1).join(' ')||words[0])+' <em>'+escapeText(words.slice(-1)[0])+'</em>'}
@@ -71,7 +71,7 @@ function setFeatured(a){
  $('#hero-title').innerHTML=escapeText(first)+'<span>'+escapeText(truncate(second,29))+'</span>';
  $('#hero-description').textContent=truncate(a.synopsis||'Descubre este anime, guárdalo en tu lista y sigue el progreso de sus episodios.',240);
  let img=imageOf(a);if(img)$('#hero-art').style.backgroundImage="linear-gradient(90deg,#1114,transparent),url('"+img.replace(/['"()\\]/g,'')+"')";
- $('#hero-meta').innerHTML='<span>'+escapeText(a.type||'ANIME')+'</span><span>'+escapeText(String(a.year||a.aired?.prop?.from?.year||'ESTRENO'))+'</span><span>★ '+escapeText(String(a.score||'—'))+'</span>';
+ $('#hero-meta').innerHTML='<span>'+escapeText(a.type||'ANIME')+'</span><span>'+escapeText(String(a.year||a.aired?.prop?.from?.year||'ESTRENO'))+'</span><span><svg class="ic-star" aria-hidden="true"><use href="#ico-star"/></svg> '+escapeText(String(a.score||'—'))+'</span>';
  updateFavoriteButtons();
 }
 function markNav(v){$$('[data-view]').forEach(el=>el.classList.toggle('active',el.dataset.view===v))}

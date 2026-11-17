@@ -80,3 +80,52 @@ header{background:rgba(8,9,12,.78);backdrop-filter:blur(18px) saturate(1.4);-web
 .oneup-server-choice{border-radius:12px!important;transition:background .2s ease,border-color .2s ease,transform .15s ease}
 .oneup-server-choice:not(:disabled):hover{transform:translateY(-2px)}
 #oneup-player-section{border-radius:20px}
+
+/* ===== Iconos propios 1UP (SVG) ===== */
+.km-nav button span svg,.km-nav a span svg{width:19px;height:19px;display:block}
+.km-menu-toggle svg{width:24px;height:24px;display:block}
+.km-drawer-close svg{width:16px;height:16px;display:block;margin:auto}
+.km-search-pop button svg{width:14px;height:14px;vertical-align:-2px}
+.km-row>span:last-child svg{width:16px;height:16px;display:block}
+.mobile-navigation svg{width:21px;height:21px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.mobile-navigation button,.mobile-navigation a{transition:transform .14s ease,color .18s ease}
+.mobile-navigation button:active,.mobile-navigation a:active{transform:scale(.92)}
+.ic-star{width:12px;height:12px;color:#ffd166;fill:#ffd166;stroke:none;vertical-align:-1px}
+.anime-save svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.ext-ic{width:13px;height:13px;vertical-align:-2px}
+.trailer-play svg{width:30px;height:30px;display:block;transition:transform .18s ease}
+.trailer-thumb:hover .trailer-play svg{transform:scale(1.14)}
+.back svg{width:15px;height:15px;vertical-align:-2px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.km-source-link svg{vertical-align:-2px}
+
+/* ===== Menú lateral: acabado de empresa grande ===== */
+.km-drawer{background:rgba(10,12,17,.94)!important;backdrop-filter:blur(22px) saturate(1.4);-webkit-backdrop-filter:blur(22px) saturate(1.4);border-right:1px solid rgba(255,255,255,.09);box-shadow:34px 0 90px rgba(0,0,0,.55)}
+.km-nav{gap:8px!important;padding:14px!important}
+.km-nav button,.km-nav a{background:rgba(255,255,255,.03)!important;border:1px solid rgba(255,255,255,.055)!important;border-radius:14px!important;padding:10px 12px!important;transition:background .18s ease,border-color .18s ease,transform .14s ease}
+.km-nav button:hover,.km-nav a:hover{background:rgba(53,217,154,.09)!important;border-color:rgba(53,217,154,.35)!important}
+.km-nav button:active,.km-nav a:active{transform:scale(.98)}
+.km-nav span{background:rgba(53,217,154,.1)!important;border-radius:11px!important;color:#7ce7bb!important;width:34px!important;height:34px!important}
+.km-nav-title{letter-spacing:.24em;color:#8b96a1!important;font-size:11px;margin:16px 6px 2px}
+.km-drawer-close{background:rgba(255,255,255,.06)!important;border:1px solid rgba(255,255,255,.09)!important;border-radius:12px!important;width:36px;height:36px;padding:0!important}
+.km-drawer-head{border-bottom:1px solid rgba(255,255,255,.07)}
+.km-drawer-foot{letter-spacing:.18em;color:#69727d}
+
+/* ===== Sensación de app: fluida y táctil ===== */
+html{scroll-behavior:smooth}
+body{overscroll-behavior-y:none}
+*{-webkit-tap-highlight-color:transparent}
+button,a,[role="button"]{touch-action:manipulation}
+.anime-card{transition:transform .18s ease,box-shadow .25s ease,border-color .25s ease}
+.anime-card:active{transform:scale(.982)}
+.cta{transition:transform .14s ease,box-shadow .25s ease,background .2s ease,border-color .2s ease}
+.cta:active{transform:scale(.97)}
+.mobile-navigation{padding-bottom:env(safe-area-inset-bottom)}
+dialog[open]{animation:oneup-pop .22s cubic-bezier(.2,.9,.25,1.15)}
+@keyframes oneup-pop{from{opacity:0;transform:translateY(10px) scale(.985)}to{opacity:1;transform:none}}
+.km-drawer:not([hidden]){animation:oneup-slide .26s cubic-bezier(.2,.8,.25,1)}
+@keyframes oneup-slide{from{transform:translateX(-28px);opacity:.35}to{transform:none;opacity:1}}
+
+/* ===== Alma otaku: energía en los detalles ===== */
+.cta.primary{box-shadow:0 12px 32px rgba(53,217,154,.3),0 0 0 1px rgba(124,231,187,.25) inset}
+.eyebrow{letter-spacing:.26em}
+::selection{background:rgba(53,217,154,.85);color:#04140c}
