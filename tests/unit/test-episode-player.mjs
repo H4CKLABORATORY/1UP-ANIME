@@ -217,4 +217,78 @@ for(const unsafe of [
  assert.match(iframe.attributes.sandbox,/allow-scripts/);
 }
 
+// Authorized refresh payload: live direct source plays, dead sources and downloads are marked.
+{
+ const events=new Map(),nodes=new Map();
+ const root=new Element();
+ root.querySelector=selector=>nodes.get(selector)||null;
+ root.querySelectorAll=()=>[];
+ Object.defineProperty(root,'innerHTML',{set(){
+  nodes.clear();
+  for(const id of ['oneup-watch-episode','oneup-watch-language','oneup-playback-display','oneup-player-message','oneup-now-watching'])nodes.set('#'+id,new Element());
+ }});
+ const document={querySelector:()=>root,createElement:tag=>new Element(tag),addEventListener:(name,fn)=>events.set(name,fn),dispatchEvent(){}};
+ const window={ONEUP_API_BASE:'https://api.example.com'};
+ const fetch=async(url)=>{
+  if(url.includes('/links')){
+   return {ok:true,json:async()=>({
+    source:'authorized',
+    episode_declared:true,
+    players:[
+     {server:'CDN propio',src:'https://media.example.com/ep1.mp4',mime:'video/mp4',rights:'owned',status:{ok:true,code:200,contentType:'video/mp4'}},
+     {server:'Fuente caída',src:'https://media.example.com/dead.mp4',mime:'video/mp4',rights:'owned',status:{ok:false,code:404,error:'HTTP 404'}}
+    ],
+    downloads:[{server:'Archivo',download_url:'https://media.example.com/ep1.zip',status:{ok:false,code:404,error:'HTTP 404'}}]
+   })};
+  }
+  return {ok:true,json:async()=>({id:'jk-9001',episodes_total:1,episodes_list:[{number:1}]})};
+ };
+ vm.runInNewContext(fs.readFileSync('client/src/js/episode-player.js','utf8'),{window,document,fetch,URL,location:{href:'https://anime.example.com/'},AbortController,setTimeout,clearTimeout,CustomEvent:class{}});
+ await window.OneUpEpisodePlayer.show({id:'jk-9001',episodes:1});
+ await new Promise(r=>setTimeout(r,50));
+ const stage=nodes.get('#oneup-playback-display');
+ const video=stage.children.find(node=>node.tag==='video');
+ assert.ok(video,'Verified direct source must mount a video element');
+ assert.equal(video.children[0].src,'https://media.example.com/ep1.mp4');
+ assert.match(nodes.get('#oneup-player-message').textContent,/Fuentes autorizadas verificadas: 1/);
+ const group=stage.afterChildren?.[0];
+ assert.ok(group,'Download group must be appended');
+ const deadDownload=group.children.find(node=>node.tag==='a');
+ assert.ok(deadDownload,'Dead download must still be shown as unavailable');
+ assert.match(deadDownload.className,/is-dead/);
+ assert.equal(deadDownload.href,undefined,'Dead download must not navigate');
+ assert.match(deadDownload.textContent,/no disponible/);
+}
+
+// Authorized refresh with every source down: no video, explicit status, no fake fallback.
+{
+ const events=new Map(),nodes=new Map();
+ const root=new Element();
+ root.querySelector=selector=>nodes.get(selector)||null;
+ root.querySelectorAll=()=>[];
+ Object.defineProperty(root,'innerHTML',{set(){
+  nodes.clear();
+  for(const id of ['oneup-watch-episode','oneup-watch-language','oneup-playback-display','oneup-player-message','oneup-now-watching'])nodes.set('#'+id,new Element());
+ }});
+ const document={querySelector:()=>root,createElement:tag=>new Element(tag),addEventListener:(name,fn)=>events.set(name,fn),dispatchEvent(){}};
+ const window={ONEUP_API_BASE:'https://api.example.com'};
+ const fetch=async(url)=>{
+  if(url.includes('/links')){
+   return {ok:true,json:async()=>({
+    source:'authorized',
+    episode_declared:true,
+    players:[{server:'Fuente caída',src:'https://media.example.com/dead.mp4',mime:'video/mp4',rights:'owned',status:{ok:false,code:404,error:'HTTP 404'}}],
+    downloads:[]
+   })};
+  }
+  return {ok:true,json:async()=>({id:'jk-9002',episodes_total:1,episodes_list:[{number:1}]})};
+ };
+ vm.runInNewContext(fs.readFileSync('client/src/js/episode-player.js','utf8'),{window,document,fetch,URL,location:{href:'https://anime.example.com/'},AbortController,setTimeout,clearTimeout,CustomEvent:class{}});
+ await window.OneUpEpisodePlayer.show({id:'jk-9002',episodes:1});
+ await new Promise(r=>setTimeout(r,50));
+ const stage=nodes.get('#oneup-playback-display');
+ assert.equal(stage.children.some(node=>node.tag==='video'),false,'Dead source must not mount a video');
+ assert.match(nodes.get('#oneup-player-message').textContent,/no respondieron/);
+}
+
 console.log('Episode player passed: lifecycle, language filtering, inherited metadata, safe captions and seasons.');

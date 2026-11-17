@@ -28,6 +28,7 @@
     "sync:dexter": "node scripts/dexter-anime-sync.mjs",
     "refresh:catalog": "node scripts/refresh-catalog.mjs",
     "refresh:airing": "node scripts/refresh-airing.mjs",
+    "check:authorized": "node scripts/check-authorized-media.mjs",
     "handoff": "node scripts/update-new-chat-handoff.mjs"
   },
   "devDependencies": {

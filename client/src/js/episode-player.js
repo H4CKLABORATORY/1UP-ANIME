@@ -6,7 +6,7 @@
 'use strict';
 const MAX_SERVERS=7;
 let requestId=0,activeAnime='',activeSeason=1,selectedEpisode=1,episodeCount=1;
-let mediaByEpisode=new Map(),playerRoot=null;
+let mediaByEpisode=new Map(),playerRoot=null,activeAnimeMeta=null;
 let disposeActiveVideo=null;
 let selectedLanguage='all';
 const LANGUAGE_LABELS={latino:'Español latino',castellano:'Español castellano',sub:'Japonés subtitulado',original:'Japonés original',other:'Otros idiomas'};
@@ -72,12 +72,13 @@ function sourceOf(source,index,item){
  const lang=String(source.language||source.lang||item?.language||'Japonés subtitulado').slice(0,35);
  const quality=String(source.quality||item?.quality||'HD').slice(0,35);
  const captions=subtitleUrl(source.subtitles_es||item?.subtitles_es);
+ const dead=source.dead===true||source.status?.ok===false;
  const officialYouTube=source.mode==='official_embed'&&source.provider==='youtube'&&
   /^[A-Za-z0-9_-]{11}$/.test(source.videoId||'')?
    'https://www.youtube-nocookie.com/embed/'+source.videoId:'';
  const embed=safeEmbedUrl(officialYouTube||source.embed||source.embedUrl||source.embed_url||source.iframe||source.player_url||((source.type==='embed'||source.kind==='embed')?source.url:''));
  // A third-party iframe cannot consume our external WebVTT tracks.
- if(embed)return {kind:'embed',url:embed,label,lang,quality,captions:'',mode:source.mode,provider:source.provider,backend:Boolean(source.backend||item?.backend)};
+ if(embed)return {kind:'embed',url:embed,label,lang,quality,captions:'',mode:source.mode,provider:source.provider,backend:Boolean(source.backend||item?.backend),dead,status:source.status};
  const u=safeUrl(source.src||source.video_url||((source.type!=='embed'&&source.kind!=='embed')?source.url:''));
  if(!u)return null;
  const supported={'video/mp4':1,'video/webm':1,'application/vnd.apple.mpegurl':1};
@@ -92,7 +93,7 @@ function sourceOf(source,index,item){
   return {url,lang:language,label:String(track.label||language).slice(0,35)};
  }).filter(Boolean):[];
  if(captions&&!tracks.some(track=>track.lang==='es'))tracks.unshift({url:captions,lang:'es',label:'Español'});
- return {kind:'video',url:u.href,label,lang,quality,mime,captions,tracks:tracks.slice(0,8)};
+ return {kind:'video',url:u.href,label,lang,quality,mime,captions,tracks:tracks.slice(0,8),dead,status:source.status};
 }
 function configuredSources(item){
  const raw=Array.isArray(item.sources)?item.sources:[{name:'Servidor 1',src:item.src,mime:item.mime}];
@@ -122,13 +123,40 @@ async function fetchBackendAnimeEpisodes(id){
  }
  return null;
 }
-async function configuredEpisodes(id,season){
+function normalizeMatchText(value){
+ return String(value??'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,' ').trim();
+}
+function identifierVariants(value){
+ const raw=String(value??'').trim().toLowerCase();
+ if(!raw)return [];
+ const variants=new Set([raw]);
+ const stripped=raw.replace(/^(mal|al|anilist)[-_ ]/,'');
+ if(stripped&&stripped!==raw)variants.add(stripped);
+ return [...variants];
+}
+function findManifestEntry(entries,target,anime){
+ if(!entries||typeof entries!=='object')return null;
+ const wantedIds=new Set([target,anime?.id,anime?.raw_id,anime?.slug,anime?.malId,anime?.anilistId].flatMap(identifierVariants));
+ for(const [key,entry] of Object.entries(entries)){
+  const entryIds=[key,entry?.id,entry?.raw_id,entry?.slug,entry?.malId,entry?.anilistId].flatMap(identifierVariants);
+  if(entryIds.some(id=>wantedIds.has(id)))return {key,entry};
+ }
+ const wantedTitles=new Set([target,anime?.title].map(normalizeMatchText).filter(Boolean));
+ if(wantedTitles.size===0)return null;
+ for(const [key,entry] of Object.entries(entries)){
+  const titles=[key,entry?.title,...(Array.isArray(entry?.aliases)?entry.aliases:[])].map(normalizeMatchText).filter(Boolean);
+  if(titles.some(title=>wantedTitles.has(title)))return {key,entry};
+ }
+ return null;
+}
+async function configuredEpisodes(id,season,anime){
  const ctrl=new AbortController(),timer=setTimeout(()=>ctrl.abort(),6500);
  try{
   const r=await fetch('./data/licensed-media.json',{cache:'no-cache',signal:ctrl.signal});
   if(r.ok){
    const json=await r.json();
-   const records=json?.entries?.[id]?.episodes;
+   const match=findManifestEntry(json?.entries,id,anime);
+   const records=match?.entry?.episodes;
    if(Array.isArray(records)&&records.length>0){
     const map=new Map();
     records.slice(0,9999).forEach((item,index)=>{
@@ -317,20 +345,72 @@ function showVideo(slot,serverIndex=-1){
  }
 }
 let currentLinksToken=0;
+function manifestEpisodeRecord(entry,epNum,season){
+ const list=Array.isArray(entry?.episodes)?entry.episodes:[];
+ const requested=Number(epNum);
+ const explicit=list.find(episode=>{
+  if(!episode||typeof episode!=='object')return false;
+  const raw=episode.number??episode.episode??episode.ep;
+  return raw!==undefined&&Number(raw)===requested&&safeNumber(episode.season,1)===season;
+ });
+ if(explicit)return explicit;
+ if(list.length===1&&list[0]&&typeof list[0]==='object'){
+  const raw=list[0].number??list[0].episode??list[0].ep;
+  if(raw===undefined&&safeNumber(list[0].season,1)===season)return list[0];
+ }
+ return null;
+}
+async function loadManifestLinks(targetAnimeId,epNum,season,animeMeta){
+ const ctrl=new AbortController(),timer=setTimeout(()=>ctrl.abort(),6500);
+ try{
+  const res=await fetch('./data/licensed-media.json',{cache:'no-cache',signal:ctrl.signal});
+  if(!res.ok)return null;
+  const json=await res.json();
+  const match=findManifestEntry(json?.entries,targetAnimeId,animeMeta);
+  if(!match)return null;
+  const entry=match.entry;
+  const record=manifestEpisodeRecord(entry,epNum,season);
+  if(!record){
+   return {source:'authorized',found:true,manifest_key:match.key,episode:Number(epNum),season,episode_declared:false,players:[],downloads:[],revalidated:false,static_manifest:true};
+  }
+  const declared=Array.isArray(record.sources)&&record.sources.length>0?record.sources:[record];
+  const players=declared.filter(source=>source&&typeof source==='object').slice(0,MAX_SERVERS).map((source,index)=>({
+   ...source,
+   server:String(source.name||source.server||('Servidor '+(index+1))).slice(0,60),
+   language:source.language||source.lang||record.language||'Idioma no especificado',
+   quality:source.quality||record.quality||'HD',
+   rights:source.rights||record.rights||'authorized'
+  }));
+  const downloads=(Array.isArray(record.downloads)?record.downloads:[])
+   .filter(source=>source&&typeof source==='object')
+   .map((source,index)=>({
+    ...source,
+    server:String(source.name||source.server||('Descarga '+(index+1))).slice(0,60),
+    size:source.size?String(source.size).slice(0,40):null,
+    quality:source.quality||record.quality||'HD',
+    download_url:String(source.src||source.download_url||source.url||'').trim()
+   }))
+   .filter(source=>source.download_url);
+  return {source:'authorized',found:true,manifest_key:match.key,episode:Number(epNum),season,episode_declared:true,
+   episode_title:record.title?String(record.title):null,players,
+   downloads,revalidated:false,static_manifest:true};
+ }catch(e){return null}finally{clearTimeout(timer)}
+}
 async function loadLinksForEpisode(targetAnimeId,epNum,forceRefresh=false){
  const token=++currentLinksToken;
+ const season=safeNumber(activeSeason,1);
  const bases=[
   (typeof window!=='undefined'&&window.ONEUP_API_BASE),
   '/api',
   'http://127.0.0.1:4050/api',
   'http://localhost:4050/api'
  ].filter(Boolean);
+ const query='?season='+encodeURIComponent(String(season))+(forceRefresh?'&refresh=1':'');
 
- const refreshParam=forceRefresh?'?refresh=1':'';
  for(const base of bases){
   const ctrl=new AbortController(),t=setTimeout(()=>ctrl.abort(),7000);
   try{
-   const url=base.replace(/\/$/,'')+'/anime/'+encodeURIComponent(targetAnimeId)+'/episodes/'+encodeURIComponent(epNum)+'/links'+refreshParam;
+   const url=base.replace(/\/$/,'')+'/anime/'+encodeURIComponent(targetAnimeId)+'/episodes/'+encodeURIComponent(epNum)+'/links'+query;
    const res=await fetch(url,{cache:'no-cache',signal:ctrl.signal});
    if(!res.ok)continue;
    const json=await res.json();
@@ -338,7 +418,12 @@ async function loadLinksForEpisode(targetAnimeId,epNum,forceRefresh=false){
    return json;
   }catch(e){}finally{clearTimeout(t)}
  }
- return null;
+ // GitHub Pages and other static hosts have no /api backend: read the public
+ // authorized manifest directly. No verification, no scraping of third parties.
+ if(token!==currentLinksToken||activeAnime!==targetAnimeId)return null;
+ const fallback=await loadManifestLinks(targetAnimeId,epNum,season,activeAnimeMeta);
+ if(token!==currentLinksToken||activeAnime!==targetAnimeId)return null;
+ return fallback;
 }
 
 function renderDownloads(downloads){
@@ -358,13 +443,19 @@ function renderDownloads(downloads){
  for(const dl of downloads){
   const directUrl=safeUrl(dl.download_url||dl.remote,{allowHash:true});
   if(!directUrl)continue;
+  const dead=dl.status?.ok===false;
   const a=document.createElement('a');
-  a.className='oneup-server-choice';
-  a.href=directUrl.href;
-  a.target='_blank';
-  a.rel='noopener noreferrer';
+  a.className='oneup-server-choice'+(dead?' is-dead':'');
+  if(dead){
+   a.setAttribute('aria-disabled','true');
+   a.title=dl.status?.error||'Enlace no disponible';
+  }else{
+   a.href=directUrl.href;
+   a.target='_blank';
+   a.rel='noopener noreferrer';
+  }
   const sizeBadge=dl.size?` (${dl.size})`:'' ;
-  a.textContent=`${dl.server||'Descarga'}${sizeBadge} ⤓`;
+  a.textContent=`${dl.server||'Descarga'}${sizeBadge}${dead?' · no disponible':' ⤓'}`;
   group.appendChild(a);
  }
 
@@ -389,7 +480,8 @@ function renderSources(preferred=0){
   languageSelect.disabled=groups.size===0;
  }
  const sources=allSources.map(source=>source&&(selectedLanguage==='all'||languageGroup(source)===selectedLanguage)?source:null);
- const selected=sources[preferred]?preferred:sources.findIndex(Boolean);
+ const alive=sources.findIndex(source=>source&&!source.dead);
+ const selected=sources[preferred]&&!sources[preferred].dead?preferred:alive;
 
  const selector=playerRoot.querySelector('.oneup-server-selector:not(.oneup-download-group)');
  if(selector){
@@ -414,7 +506,7 @@ function renderSources(preferred=0){
    syncBtn.id='oneup-sync-links';
    syncBtn.className='oneup-server-choice oneup-server-sync';
    syncBtn.textContent='⚡ Actualizar';
-   syncBtn.title='Sincronizar enlaces actualizados desde JkAnime';
+   syncBtn.title='Revalidar las fuentes autorizadas de este episodio';
    syncBtn.addEventListener('click',()=>chooseEpisode(selectedEpisode,true,true));
    selector.appendChild(syncBtn);
   }
@@ -422,11 +514,11 @@ function renderSources(preferred=0){
 
  playerRoot.querySelectorAll('[data-server-slot]').forEach(button=>{
   const i=Number(button.dataset.serverSlot),source=sources[i];
-  button.disabled=!source;
-  button.textContent=source?.label||'Servidor '+(i+1);
+  button.disabled=!source||source.dead;
+  button.textContent=(source?.label||'Servidor '+(i+1))+(source?.dead?' · no disponible':'');
   button.classList.toggle('active',Boolean(source&&i===selected));
   button.setAttribute('aria-pressed',String(Boolean(source&&i===selected)));
-  button.title=source?'Cambiar a '+source.label:'Sin fuente configurada';
+  button.title=!source?'Sin fuente configurada':source.dead?(source.status?.error||'Fuente no disponible'):'Cambiar a '+source.label;
   if(sources.length>0&&i>=sources.length){
    button.style.display='none';
   }else{
@@ -448,20 +540,42 @@ function chooseEpisode(number,broadcast=true,forceRefresh=false){
 
  if(needsFetch){
   const status=playerRoot.querySelector('#oneup-player-message');
-  if(status)status.textContent=forceRefresh?'Sincronizando enlaces en vivo desde JkAnime…':'Cargando servidores del episodio '+next+'…';
+  const requestedAnime=activeAnime;
+  if(status)status.textContent=forceRefresh?'Revalidando las fuentes autorizadas del episodio '+next+'…':'Cargando servidores del episodio '+next+'…';
   loadLinksForEpisode(activeAnime,next,forceRefresh).then(linksData=>{
-   if(!linksData||!playerRoot?.isConnected)return;
+   // A slower response for a previous episode must not replace the current one.
+   if(!playerRoot?.isConnected||activeAnime!==requestedAnime||selectedEpisode!==next)return;
+   if(!linksData){
+    if(status)status.textContent=forceRefresh
+      ?'No hay fuentes autorizadas configuradas. Añade URLs con permiso de distribución en data/licensed-media.json.'
+      :'No se pudieron cargar los servidores de este episodio.';
+    return;
+   }
    const playerSources=(linksData.players||[]).map((p,i)=>{
-    const playerUrl = p.embed_url && safeEmbedUrl(p.embed_url) ? p.embed_url : (p.player_url && safeEmbedUrl(p.player_url) ? p.player_url : p.embed_url);
+    if(!p||typeof p!=='object')return null;
+    const sourceStatus=p.status&&typeof p.status==='object'?p.status:null;
+    const dead=p.dead===true||sourceStatus?.ok===false;
+    const label=String(p.server||p.name||p.label||('Servidor '+(i+1))).slice(0,45);
+    const directSrc=p.src||p.video_url||((!p.embed&&!p.embed_url&&!p.embedUrl&&!p.player_url&&p.kind!=='embed')?p.url:'');
+    const embed=p.embed||p.embed_url||p.embedUrl||(!directSrc?p.player_url:undefined);
     return sourceOf({
      backend:true,
-     rights:'authorized',
-     kind:'embed',
-     name:p.server||'Servidor '+(i+1),
-     label:p.server||'Servidor '+(i+1),
-     url:playerUrl,
+     rights:p.rights||'authorized',
+     kind:embed?'embed':undefined,
+     name:label,
+     label,
+     src:directSrc||undefined,
+     mime:p.mime||undefined,
+     embed_url:embed,
+     language:p.language||p.lang||'Idioma no especificado',
      quality:p.quality||'HD',
-     language:'Japonés subtitulado'
+     mode:p.mode,
+     provider:p.provider,
+     videoId:p.videoId,
+     subtitles_es:p.subtitles_es,
+     tracks:p.tracks,
+     dead,
+     status:sourceStatus
     },i,{backend:true});
    }).filter(Boolean);
 
@@ -472,7 +586,13 @@ function chooseEpisode(number,broadcast=true,forceRefresh=false){
    mediaByEpisode.set(next,item);
    renderSources(0);
    renderDownloads(item.downloads);
-   if(status)status.textContent=playerSources.length?'Servidores listos para episodio '+next:'No se encontraron servidores para este episodio.';
+   if(status){
+    const usable=playerSources.filter(source=>!source.dead).length;
+    if(usable>0)status.textContent=(linksData.static_manifest?'Fuentes autorizadas configuradas sin verificación del servidor: ':'Fuentes autorizadas verificadas: ')+usable+' para el episodio '+next;
+    else if(linksData.episode_declared===false)status.textContent='Este episodio no está declarado en las fuentes autorizadas.';
+    else if(playerSources.length>0)status.textContent='Las fuentes autorizadas de este episodio no respondieron. Revisa data/licensed-media.json o pulsa ⚡ Actualizar.';
+    else status.textContent='Este episodio no tiene fuentes autorizadas verificadas.';
+   }
   }).catch(()=>{});
  }
 
@@ -485,13 +605,13 @@ async function show(anime,{root,season=1}={}){
  // Stop the previous anime before fetching, even if the next request fails.
  closeVideo();
  const id=String(anime.id),token=++requestId;
- activeAnime=id;activeSeason=safeNumber(season,1);selectedEpisode=1;episodeCount=1;selectedLanguage='all';mediaByEpisode=new Map();
+ activeAnime=id;activeSeason=safeNumber(season,1);selectedEpisode=1;episodeCount=1;selectedLanguage='all';mediaByEpisode=new Map();activeAnimeMeta=anime;
  playerRoot=root||document.querySelector('#oneup-player-section');
  if(!playerRoot)return;
  playerRoot.hidden=false;
  playerRoot.innerHTML='<div class="oneup-detail-section"><h3>VER EPISODIOS</h3><p>Preparando opciones de reproducción…</p></div>';
  let map;
- try{map=await configuredEpisodes(id,activeSeason)}
+ try{map=await configuredEpisodes(id,activeSeason,anime)}
  catch{map=new Map()}
  if(token!==requestId||activeAnime!==id||!playerRoot?.isConnected)return;
  mediaByEpisode=map;
@@ -531,7 +651,7 @@ document.addEventListener('oneup-episode-selected',e=>{
 });
 function close(){
  closeVideo();
- ++requestId;activeAnime='';playerRoot=null;mediaByEpisode=new Map();
+ ++requestId;activeAnime='';playerRoot=null;mediaByEpisode=new Map();activeAnimeMeta=null;
 }
 document.addEventListener('oneup-anime-closed',close);
 window.OneUpEpisodePlayer={show,close};

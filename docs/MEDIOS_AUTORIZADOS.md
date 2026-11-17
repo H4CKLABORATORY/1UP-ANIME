@@ -57,6 +57,72 @@ En iPhone, Safari ofrece reproducción HLS nativa cuando el proveedor admite el 
 
 Existen extractores no oficiales de JKAnime que recuperan enlaces a otros servidores. Eso no acredita autorización para redistribuir ni incrustar tales transmisiones. Los enlaces a las páginas originales del sitio pueden abrirse fuera de 1UP Anime.
 
+## Botón «⚡ Actualizar» y revalidación de fuentes
+
+El botón `⚡ Actualizar` del reproductor **no descarga episodios ni consulta JKAnime**. Revalida las fuentes declaradas por el editor en `data/licensed-media.json`:
+
+1. El cliente solicita `GET /api/anime/:id/episodes/:n/links?refresh=1&season=N` al servicio local (`npm run serve:catalog` o `npm start`).
+2. `server/src/authorized-media.js` localiza la entrada por identificador, slug, alias o título, y el episodio por `number`/`episode` y `season`.
+3. Cada URL directa se comprueba con `HEAD`; si el servidor rechaza `HEAD`, se reintenta con `GET` y `Range: bytes=0-0`. Solo se aceptan URLs HTTPS públicas, sin credenciales ni puertos personalizados. Una respuesta HTML se marca como enlace caído.
+4. Los iframes de proveedores oficiales no se sondean: su disponibilidad la decide el proveedor.
+5. Si el anime está declarado pero el episodio no, la respuesta queda vacía y **no** se recurre a scraping de terceros.
+6. En GitHub Pages no existe `/api`: el cliente lee el manifiesto público directamente. Las fuentes configuradas se muestran, pero **sin verificación HTTP del servidor**.
+
+La comprobación se cachea 10 minutos por URL y tipo de uso. `refresh=1` ignora la caché. Si una fuente directa falla, el botón queda deshabilitado y se muestra el motivo; las descargas caídas se marcan como «no disponible» y no se navega a ellas.
+
+### Esquema ampliado
+
+```json
+{
+  "version": 1,
+  "entries": {
+    "mal-59741": {
+      "title": "Título de la obra",
+      "slug": "titulo-de-la-obra",
+      "aliases": ["Título alternativo"],
+      "episodes": [
+        {
+          "number": 1,
+          "season": 1,
+          "title": "Episodio 1",
+          "sources": [
+            {
+              "name": "CDN propio",
+              "src": "https://cdn.example/ep01.mp4",
+              "mime": "video/mp4",
+              "language": "Español latino",
+              "quality": "1080p",
+              "rights": "owned",
+              "subtitles_es": "https://cdn.example/ep01.es.vtt",
+              "tracks": [
+                {"lang": "es", "label": "Español", "url": "https://cdn.example/ep01.es.vtt"}
+              ]
+            }
+          ],
+          "downloads": [
+            {"name": "Archivo", "src": "https://cdn.example/ep01.zip", "size": "300 MB", "quality": "1080p"}
+          ]
+        }
+      ]
+    }
+  }
+}
+```
+
+`rights` debe ser `owned` o `authorized`. Es una declaración del editor del catálogo, no una prueba automática de derechos. No se admiten `src` con `http://`, `localhost`, direcciones IP ni puertos que no sean 443. Las descargas de Mega con `#` se muestran pero no se sondean.
+
+El navegador lee `client/data/licensed-media.json`; el servidor lee `data/licensed-media.json`. Mantén ambas copias idénticas. El build de Vite copia `data/` a `dist/data/`, pero GitHub Pages sirve el repositorio, no `dist/`; el comprobador avisa si las copias difieren.
+
+### Comprobación local
+
+```bash
+npm run check:authorized -- --no-probe   # valida la estructura sin red
+npm run check:authorized                 # revalida cada URL directa
+npm run check:authorized -- --json       # salida legible por máquina
+```
+
+El comando no descarga videos, no extrae streams y no contacta con JKAnime. El manifiesto de este repositorio sigue con `entries: {}`: no hay episodios reales ni se debe afirmar que existan.
+
 ## Proveedores externos (iQIYI, AnimeOnline) y reproductores integrables
 
 - La página principal de 1UP incluye dos **catálogos externos**, configurados en `data/external-providers.json`: AnimeOnline (castellano) e iQIYI (catálogo oficial internacional). La página exacta de AnimeOnline no se pudo verificar. iQIYI restringe la reproducción/inserción de videos fuera de su servicio sin permiso específico.

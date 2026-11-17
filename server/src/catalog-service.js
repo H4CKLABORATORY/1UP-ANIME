@@ -10,6 +10,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 const zlib = require('node:zlib');
 const { DatabaseSync } = require('node:sqlite');
+const { resolveAuthorizedEpisode } = require('./authorized-media');
 
 const DEFAULT_PORT = Number(process.env.ONEUP_CATALOG_PORT || process.env.PORT) || 4050;
 const DEFAULT_HOST = process.env.HOST || '0.0.0.0';
@@ -480,8 +481,32 @@ async function liveScrapeEpisode(slug, number) {
   return { players, downloads };
 }
 
-async function getEpisodeLinks(target, num, { refresh = false } = {}) {
+async function getEpisodeLinks(target, num, { refresh = false, season = 1, manifest, fetchImpl, probe, timeoutMs } = {}) {
   const anime = getAnimeDetail(target);
+
+  // Authorized manifest takes precedence. Declared sources are revalidated over
+  // HTTP; if an anime is declared but this episode is not, we return an honest
+  // empty result instead of falling back to third-party scraping.
+  const authorized = await resolveAuthorizedEpisode(target, num, {
+    refresh,
+    season,
+    anime: anime || null,
+    manifest,
+    fetchImpl,
+    probe,
+    timeoutMs
+  });
+  if (authorized) {
+    return {
+      ...authorized,
+      anime_id: anime?.id || authorized.anime_id,
+      raw_id: anime?.raw_id || null,
+      slug: authorized.slug || anime?.slug || null,
+      title: authorized.title || anime?.title || String(target),
+      episode: parseFloat(String(num))
+    };
+  }
+
   if (!anime) return null;
 
   const animeId = anime.raw_id || anime.id;
@@ -649,8 +674,9 @@ async function handleRequest(req, res) {
       const target = linksMatch[1];
       const num = parseFloat(linksMatch[2]);
       const refresh = parsedUrl.searchParams.get('refresh') === '1';
+      const season = Number(parsedUrl.searchParams.get('season')) || 1;
 
-      const data = await getEpisodeLinks(target, num, { refresh });
+      const data = await getEpisodeLinks(target, num, { refresh, season });
       if (!data) {
         res.writeHead(404, { 'Content-Type': 'application/json; charset=utf-8' });
         res.end(JSON.stringify({ error: 'Anime o episodio no encontrado' }));
@@ -730,6 +756,7 @@ module.exports = {
   listCatalog,
   getAnimeDetail,
   getEpisodeLinks,
+  resolveAuthorizedEpisode,
   getHomeSections,
   getGenres,
   handleRequest,

@@ -890,3 +890,24 @@ Al concluir cada trabajo agregar:
   - Comprobación manual de sintaxis con `node --check` en todos los archivos modificados: 100% limpio.
 
 
+
+### 2026-11-16 — Botón ⚡ Actualizar con fuentes autorizadas y revalidación HTTP
+
+- **Pedido**: el botón de refresco debía obtener datos del episodio para mostrar reproductores y descargas, ante enlaces de terceros caducados.
+- **Decisión**: no se amplía el extractor de JKAnime. Se implementa la actualización contra el manifiesto editorial `data/licensed-media.json`, con revalidación HTTP real y estados por fuente.
+- **Implementado**:
+  - `server/src/authorized-media.js`: resolución por id/slug/alias/título exacto, temporada y episodio; HEAD con reintento GET `Range`; solo HTTPS público; detección de HTML; caché de 10 minutos; no sondea iframes de proveedores.
+  - `server/src/catalog-service.js`: `getEpisodeLinks` consulta primero el manifiesto autorizado (`season` incluido); si el anime está declarado y el episodio no, devuelve vacío sin scraping. Exporta `resolveAuthorizedEpisode`.
+  - `client/src/js/episode-player.js`: mapea fuentes directas (`src`+`mime`), marca `dead`/`status`, deshabilita fuentes caídas, marca descargas no disponibles y muestra mensajes explícitos. Sin `/api`, lee `./data/licensed-media.json` (modo estático) con coincidencia estricta por id/slug/alias/título.
+  - `scripts/check-authorized-media.mjs` + `npm run check:authorized` (`--no-probe`, `--json`, `--file`), con aviso si las copias `data/` y `client/data/` difieren.
+  - `client/src/styles/player.css`: estado `.is-dead` para descargas no disponibles.
+- **Pruebas ejecutadas**:
+  - `npm run build`: correcto (Vite 8.3.8, 678 ms).
+  - `npm test`: 88/88 pruebas Node (incluye 9 del servicio de catálogo y 15 del resolvedor autorizado).
+  - `node tests/unit/test-episode-player.mjs`: correcto, con dos casos nuevos de fuentes autorizadas y fuentes caídas.
+  - `npm run test:ui`: 152 aserciones.
+  - `npm run test:guard`: veredicto `atencion`, 48 comprobaciones, 0 críticas, 2 avisos preexistentes de frescura.
+  - `npm run check:authorized -- --no-probe`: manifiesto vacío, 0 entradas, salida correcta.
+- **Limitaciones**: `data/licensed-media.json` y `client/data/licensed-media.json` siguen con `entries: {}`; no hay episodios ni reproductores reales. En GitHub Pages no hay backend: el botón muestra el manifiesto sin verificación HTTP. No se probó Safari físico ni despliegue.
+- **Rama/commit**: `fix/player-refresh-authorized-media-20261116`, commit `f475dc6`. El push a GitHub quedó bloqueado por falta de credenciales y no hay `gh` ni token en la sesión; por tanto no se ejecutó CI ni se abrió PR.
+- **Siguiente acción**: cargar solo URLs con permiso de distribución en ambas copias del manifiesto, ejecutar `npm run check:authorized` con red, abrir PR, comprobar CI/Pages y Safari iPhone.

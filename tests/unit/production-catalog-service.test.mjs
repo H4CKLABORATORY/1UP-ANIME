@@ -166,3 +166,64 @@ test('Catalog Service: HTTP Endpoints via internal server', async () => {
     server.close();
   }
 });
+
+test('Catalog Service: authorized manifest takes precedence over indexed links', async () => {
+  const manifest = {
+    version: 1,
+    entries: {
+      'sousou-no-frieren': {
+        title: 'Sousou no Frieren',
+        episodes: [{
+          number: 1,
+          sources: [{
+            name: 'Fuente autorizada',
+            src: 'https://cdn.example.com/frieren-1.mp4',
+            mime: 'video/mp4',
+            rights: 'owned'
+          }]
+        }]
+      }
+    }
+  };
+  const links = await catalogService.getEpisodeLinks('sousou-no-frieren', 1, {
+    manifest,
+    probe: false,
+    refresh: true
+  });
+  assert.equal(links.source, 'authorized');
+  assert.equal(links.found, true);
+  assert.equal(links.slug, 'sousou-no-frieren');
+  assert.equal(links.players.length, 1);
+  assert.equal(links.players[0].src, 'https://cdn.example.com/frieren-1.mp4');
+  assert.equal(links.players[0].status, null);
+  assert.deepEqual(links.downloads, []);
+});
+
+test('Catalog Service: declared anime with an undeclared episode never falls back to scraping', async () => {
+  const manifest = {
+    version: 1,
+    entries: {
+      'sousou-no-frieren': {
+        title: 'Sousou no Frieren',
+        episodes: [{
+          number: 2,
+          sources: [{
+            name: 'Fuente autorizada',
+            src: 'https://cdn.example.com/frieren-2.mp4',
+            mime: 'video/mp4',
+            rights: 'owned'
+          }]
+        }]
+      }
+    }
+  };
+  const links = await catalogService.getEpisodeLinks('sousou-no-frieren', 99, {
+    manifest,
+    probe: false,
+    refresh: true
+  });
+  assert.equal(links.source, 'authorized');
+  assert.equal(links.episode_declared, false);
+  assert.deepEqual(links.players, []);
+  assert.deepEqual(links.downloads, []);
+});
