@@ -352,3 +352,16 @@ Agregado módulo reversible camera.mjs con trayectorias orbit/dolly/glide, persp
   - `npm run build`: compilación de Vite completada en 308ms.
   - Verificación en vivo de API: *Sousou no Frieren* devolviendo 12 servidores de streaming y 2 de descarga en < 5ms.
 
+### 2026-11-16 — Corrección de bloqueo en «DETALLES Cargando información…»
+- Pedido: «tengo un error, dice DETALLES Cargando información… cuando quiero ver informacion de un anime».
+- Causa raíz:
+  - En `studio.js`, un commit reciente forzó un `return;` redirigiendo a `./watch.html?anime=...`.
+  - En `watch-page.js`, solo aceptaba IDs numéricos de AniList y no soportaba IDs de catálogo `jk-...` o slugs, quedándose estancado en el texto por defecto de `#details`.
+- Corrección:
+  - Restaurada la apertura del modal `#anime-dialog` en `studio.js` con reproductores, sinopsis, episodios y comentarios.
+  - Añadido soporte multicontrato en `watch-page.js` (/api/anime/:id, catalog.json, AniList) para que la página independiente también funcione.
+- Pruebas:
+  - `npm test`: 71/71 tests unitarios Node pasados.
+  - `npm run test:all`: Suite integral de 71 Node + 16 Python + 152 smoke UI aprobada.
+  - `npm run build`: Build de producción Vite completado exitosamente.
+

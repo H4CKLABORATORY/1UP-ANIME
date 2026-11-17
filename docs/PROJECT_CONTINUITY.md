@@ -830,3 +830,23 @@ Al concluir cada trabajo agregar:
   - `npm run test:all`: **71 tests Node + 16 tests Python + 152 smoke assertions + 48 comprobaciones guardián PASADAS**.
   - Consulta en vivo validada: 12 servidores de reproducción (Desu, Magi, Okru, Mega Player, Streamwish, Vidhide, etc.) y 2 enlaces de descarga para *Sousou no Frieren* respondiendo en < 5ms.
 
+### 2026-11-16 — Corrección de visualización de información: restauración del modal de detalles y resolución resiliente en `watch-page.js`
+
+- **Problema reportado**: Al hacer clic en un anime aparecía una página externa mostrando `DETALLES Cargando información…` bloqueada sin cargar la ficha ni los reproductores.
+- **Causa raíz**:
+  1. En `client/src/js/studio.js`, un commit previo (`bebaeede4`) introdujo un `return;` prematuro en `detail(id)` que redirigía con `window.open('./watch.html?anime=...')`, impidiendo la apertura del diálogo principal `#anime-dialog`.
+  2. En `client/src/js/watch-page.js`, el script solo aceptaba IDs numéricos puros de AniList y fallaba ante identificadores `jk-...` y slugs de la base de datos local, dejando `<div id="details">` eternamente en *"Cargando información…"*.
+- **Solución implementada**:
+  1. `client/src/js/studio.js`:
+     - Retirado el `return;` temprano en `detail(id)` para restaurar el diálogo modal `#anime-dialog` (con sinopsis en español, tracker de episodios, reproductores multiserver y descargas).
+     - Añadido botón no intrusivo *"Abrir en pestaña ↗"* en los controles de la ficha para quienes deseen ver la ficha en pestaña separada sin romper la PWA.
+  2. `client/src/js/watch-page.js`:
+     - Resuelto el fallo de IDs: ahora consulta prioritariamente el backend `/api/anime/:id` (soportando `jk-...`, slugs e IDs numéricos) y `catalog.json`.
+     - `#details` se actualiza siempre de forma reactiva con formato, estado, géneros y episodios, erradicando el bloqueo de "Cargando información…".
+  3. `client/index.html`:
+     - Cachebuster actualizado a `studio.js?v=20261116-detail`.
+- **Verificación**:
+  - `npm test`: **71/71 tests unitarios PASADOS**.
+  - `npm run test:all`: **71 Node + 16 Python + 152 UI smoke assertions PASADAS**.
+  - `npm run build`: compilación de Vite completada en 248ms.
+

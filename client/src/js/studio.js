@@ -1044,10 +1044,6 @@ async function loadAuthorizedPlayer(id){
 }
 function detail(id){
  const a=state.entries.get(id);if(!a)return;
- const target='./watch.html?anime='+encodeURIComponent(String(id));
- const tab=window.open(target,'_blank','noopener,noreferrer');
- if(!tab) location.href=target;
- return;
  state.active=id;
  hero(a,true);
  const item=state.saved[id]||{},site=safe(a.siteUrl||'');
@@ -1084,6 +1080,7 @@ function detail(id){
     '<p class="oneup-detail-synopsis">'+esc(hasSynopsis?synopsis:'La sinopsis de este anime todavía no está disponible en el catálogo.')+'</p>'+
     '<div class="oneup-detail-commands">'+
      '<button type="button" class="cta primary" data-save="'+esc(id)+'">'+(isFav(id)?'✓ Guardado':'＋ Añadir a mi lista')+'</button>'+
+     '<a class="cta outline" href="./watch.html?anime='+encodeURIComponent(String(id))+'" target="_blank" rel="noopener noreferrer">Abrir en pestaña ↗</a>'+
      (site?'<a class="cta outline" href="'+esc(site)+'" target="_blank" rel="noopener noreferrer">Ficha completa ↗</a>':'')+
     '</div>'+
    '</div>'+
