@@ -2,8 +2,17 @@
  * japonés junto a los títulos que se generan por código. Solo apariencia. */
 (function (global) {
   'use strict';
-  const PETAL = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M10 1C15.5 6.5 16.5 12.5 10 19C3.5 12.5 4.5 6.5 10 1Z' fill='%23ffb7d5'/%3E%3C/svg%3E";
-  const FLOWER = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cg fill='%23ffb7d5'%3E%3Cellipse cx='20' cy='11' rx='5' ry='9'/%3E%3Cellipse cx='29' cy='17' rx='5' ry='9' transform='rotate(72 29 17)'/%3E%3Cellipse cx='26' cy='28' rx='5' ry='9' transform='rotate(144 26 28)'/%3E%3Cellipse cx='14' cy='28' rx='5' ry='9' transform='rotate(216 14 28)'/%3E%3Cellipse cx='11' cy='17' rx='5' ry='9' transform='rotate(288 11 17)'/%3E%3C/g%3E%3Ccircle cx='20' cy='20' r='3.4' fill='%23ff8fb8'/%3E%3C/svg%3E";
+  /* Lo que cae del cielo cambia con la estación, como en Japón:
+   * primavera sakura, verano hojas verdes, otoño momiji, invierno nieve. */
+  const MONTH = new Date().getMonth();
+  const SEASON = MONTH >= 2 && MONTH <= 4 ? 'sakura' : MONTH >= 5 && MONTH <= 7 ? 'natsu' : MONTH >= 8 && MONTH <= 10 ? 'momiji' : 'yuki';
+  const FILLS = { sakura: ['%23ffb7d5', '%23ff8fb8'], natsu: ['%238fce5a', '%235d774a'], momiji: ['%23e2703a', '%23c94f2e'], yuki: ['%23ffffff', '%23dfe9f5'] };
+  const F = FILLS[SEASON];
+  const SHAPE = SEASON === 'yuki' ? "%3Ccircle cx='10' cy='10' r='6'/%3E" : "%3Cpath d='M10 1C15.5 6.5 16.5 12.5 10 19C3.5 12.5 4.5 6.5 10 1Z'/%3E";
+  const petalUri = fill => "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cg fill='" + fill + "'%3E" + SHAPE + "%3C/g%3E%3C/svg%3E";
+  const PETAL = petalUri(F[0]);
+  const PETAL2 = petalUri(F[1]);
+  const FLOWER = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cg fill='" + F[0] + "'%3E%3Cellipse cx='20' cy='11' rx='5' ry='9'/%3E%3Cellipse cx='29' cy='17' rx='5' ry='9' transform='rotate(72 29 17)'/%3E%3Cellipse cx='26' cy='28' rx='5' ry='9' transform='rotate(144 26 28)'/%3E%3Cellipse cx='14' cy='28' rx='5' ry='9' transform='rotate(216 14 28)'/%3E%3Cellipse cx='11' cy='17' rx='5' ry='9' transform='rotate(288 11 17)'/%3E%3C/g%3E%3Ccircle cx='20' cy='20' r='3.4' fill='" + F[1] + "'/%3E%3C/svg%3E";
   const reduced = global.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
   function decorateHero(el) {
     if (!el || el.dataset.sakura) return;
@@ -23,7 +32,7 @@
       const p = document.createElement('span');
       p.className = 'sakura-petal';
       const size = 9 + Math.random() * 9;
-      p.style.cssText = 'left:' + (Math.random() * 97).toFixed(1) + '%;width:' + size.toFixed(0) + 'px;height:' + size.toFixed(0) + 'px;opacity:' + (0.45 + Math.random() * 0.4).toFixed(2) + ';background-image:url("' + PETAL + '");animation-duration:' + (9 + Math.random() * 8).toFixed(1) + 's;animation-delay:-' + (Math.random() * 14).toFixed(1) + 's';
+      p.style.cssText = 'left:' + (Math.random() * 97).toFixed(1) + '%;width:' + size.toFixed(0) + 'px;height:' + size.toFixed(0) + 'px;opacity:' + (0.45 + Math.random() * 0.4).toFixed(2) + ';background-image:url("' + (i % 2 ? PETAL2 : PETAL) + '");animation-duration:' + (9 + Math.random() * 8).toFixed(1) + 's;animation-delay:-' + (Math.random() * 14).toFixed(1) + 's';
       el.appendChild(p);
     }
   }
