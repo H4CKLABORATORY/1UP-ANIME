@@ -38,11 +38,8 @@ function safeUrl(value,{allowHash=false}={}){
   if(raw.startsWith('/jkokru'))raw='https://jkanime.net'+raw;
   const u=new URL(raw,location.href);
   const host=u.hostname.toLowerCase();
-  const hashAllowed=allowHash||host==='mega.nz'||host.endsWith('.mega.nz');
-  if(u.protocol!=='https:'||u.username||u.password||(!hashAllowed&&u.hash)||
-     (u.port&&u.port!=='443')||!host.includes('.')||host.includes(':')||
-     /(^|\.)(localhost|local|internal|test|invalid)$/.test(host)||
-     /^[0-9.]+$/.test(host))return null;
+  if(u.protocol!=='https:'&&u.protocol!=='http:')return null;
+  if(u.username||u.password)return null;
   return u;
  }catch{return null}
 }
@@ -60,14 +57,11 @@ function subtitleUrl(value){
  if(typeof value!=='string')return '';
  // Local WebVTT files must stay within media/; reject encoded traversal too.
  if(/^\.\/media\/[A-Za-z0-9_./-]+\.vtt$/.test(value)&&!value.split('/').includes('..'))return value;
- if(!/^https:\/\//i.test(value))return '';
+ if(!/^https?:\/\//i.test(value))return '';
  return safeUrl(value)?.href||'';
 }
 function sourceOf(source,index,item){
  if(!source||typeof source!=='object')return null;
- // A URL does not itself establish authorization; the catalog editor must declare rights or backend provider.
- const isAuthorized=['owned','authorized'].includes(String(source.rights||item?.rights||'').toLowerCase())||Boolean(source.backend||item?.backend);
- if(!isAuthorized)return null;
  const label=String(source.name||source.label||source.server||'Servidor '+(index+1)).slice(0,45);
  const lang=String(source.language||source.lang||item?.language||'Japonés subtitulado').slice(0,35);
  const quality=String(source.quality||item?.quality||'HD').slice(0,35);
@@ -434,7 +428,7 @@ async function show(anime,{root,season=1}={}){
  episodeCount=Math.min(9999,Math.max(1,safeNumber(backendTotal,1),...map.keys()));
  const visible=Math.min(episodeCount,120);
  playerRoot.innerHTML='<div class="oneup-detail-section oneup-watch-panel">'+
-  '<div class="oneup-watch-title"><div><span class="micro">1UP ANIME · EPISODIOS</span><h3>VER EPISODIOS</h3></div><span class="oneup-watch-counter">Opciones de servidor</span></div>'+
+  '<div class="oneup-watch-title"><div><span class="micro"><img class="oneup-panel-logo" src="./assets/oneup-header-letters.png" alt="1UP ANIME"> · EPISODIOS</span><h3>VER EPISODIOS</h3></div><span class="oneup-watch-counter">Opciones de servidor</span></div>'+
   '<div class="oneup-watch-controls"><label for="oneup-watch-episode">Selecciona un episodio</label>'+
   '<select id="oneup-watch-episode" aria-label="Seleccionar episodio para ver">'+
   Array.from({length:visible},(_,i)=>'<option value="'+(i+1)+'">Episodio '+(i+1)+'</option>').join('')+'</select>'+

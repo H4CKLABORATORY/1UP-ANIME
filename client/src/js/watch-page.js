@@ -5,6 +5,7 @@ const isMal=raw.startsWith('mal-');
 const query=isMal
 ?'query($id:Int){Media(idMal:$id,type:ANIME,isAdult:false){id idMal title{english romaji native} coverImage{extraLarge large} bannerImage description(asHtml:false) averageScore episodes format status seasonYear startDate{year} genres siteUrl externalLinks{site url type} trailer{id site}}}'
 :'query($id:Int){Media(id:$id,type:ANIME,isAdult:false){id idMal title{english romaji native} coverImage{extraLarge large} bannerImage description(asHtml:false) averageScore episodes format status seasonYear startDate{year} genres siteUrl externalLinks{site url type} trailer{id site}}}';
+const VERIFIED_CRUNCHYROLL={'mal-21':'https://www.crunchyroll.com/series/GRMG8ZQZR/one-piece','mal-61967':'https://www.crunchyroll.com/es-es/series/GRE50KV36/black-clover','mal-34572':'https://www.crunchyroll.com/es-es/series/GRE50KV36/black-clover','mal-61987':'https://www.crunchyroll.com/es/series/G3KHEVDJ7/the-apothecary-diaries','mal-64340':'https://www.crunchyroll.com/es/series/GT00384004/overgeared','mal-63181':'https://www.crunchyroll.com/series/GP5HJ84D2/tougen-anki'};
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const safe=u=>{try{const x=new URL(u);return x.protocol==='https:'?x.href:''}catch{return ''}};
 const clean=s=>String(s||'').replace(/<[^>]+>/g,'').replace(/\s+/g,' ').trim();
@@ -45,6 +46,7 @@ async function load(){
   renderTrailer(a);
   const bySite=new Map();
   for(const x of (a.externalLinks||[])){if(x.type!=='STREAMING'||!safe(x.url))continue;const k=String(x.site||'').trim().toLowerCase();if(k&&!bySite.has(k))bySite.set(k,x)}
+  if(!bySite.has('crunchyroll')&&VERIFIED_CRUNCHYROLL['mal-'+a.idMal])bySite.set('crunchyroll',{site:'Crunchyroll',url:VERIFIED_CRUNCHYROLL['mal-'+a.idMal],type:'STREAMING'});
   let providers=['netflix','crunchyroll'].map(k=>bySite.get(k)).filter(Boolean);
   if(!providers.length){const free=['youtube','tubi','pluto tv','retrocrush','hoopla'].map(k=>bySite.get(k)).find(Boolean);if(free)providers=[free]}
   $('#providers').innerHTML=providers.length?providers.map(x=>'<a href="'+esc(safe(x.url))+'" target="_blank" rel="noopener noreferrer">'+esc(x.site||'Plataforma oficial')+' ↗</a>').join(''):'<div class="status">Sin plataformas registradas por ahora.</div>';

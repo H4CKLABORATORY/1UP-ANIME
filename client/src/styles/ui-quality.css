@@ -205,3 +205,14 @@ a,button,select,input,textarea{touch-action:manipulation}
  .hero.has-long-title{min-height:810px}
  .hero.has-long-title .hero-grid{min-height:810px}
 }
+
+#auth-dialog .auth-logo{width:min(200px,72%);height:auto;display:block;margin:0 auto}
+#auth-dialog .auth-tabs{display:flex;gap:8px;justify-content:center;margin:2px 0 12px}
+#auth-dialog .auth-tab{background:#16241d;color:#cfe8da;border:1px solid #73d8a455;border-radius:999px;padding:7px 16px;font-weight:700;cursor:pointer}
+#auth-dialog .auth-tab.active{background:#2b4837;color:#fff;border-color:#73d8a4}
+#auth-dialog .auth-form{display:grid;gap:10px;width:100%;text-align:left;margin-bottom:12px}
+#auth-dialog .auth-form label{display:grid;gap:5px;font-size:13px;font-weight:600;color:#cfe8da}
+#auth-dialog .auth-form input{background:#0d1512;border:1px solid #73d8a444;border-radius:10px;padding:10px 12px;color:#fff;font-size:15px;width:100%;box-sizing:border-box}
+#auth-dialog .auth-submit{width:100%;padding:11px;border-radius:10px;font-weight:800;cursor:pointer}
+#auth-dialog .auth-link{background:none;border:none;color:#8fd8b2;cursor:pointer;font-size:13px;text-decoration:underline;padding:2px;text-align:center}
+#auth-dialog .auth-code{font-size:22px;font-weight:900;letter-spacing:4px;text-align:center;color:#fff;background:#16241d;border:1px dashed #73d8a4;border-radius:10px;padding:10px;margin:0}

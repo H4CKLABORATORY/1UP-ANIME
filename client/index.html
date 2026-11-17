@@ -165,21 +165,46 @@
 <dialog id="auth-dialog" class="auth-dialog" aria-labelledby="auth-title" aria-describedby="auth-description">
  <button class="dialog-close" id="auth-close" type="button" aria-label="Cerrar ventana de acceso">✕</button>
  <div class="auth-panel">
-  <div class="auth-brand"><img class="auth-crest" src="./assets/oneup-crest-mark.svg" width="128" height="135" alt=""><span class="auth-wordmark">1UP <strong>ANIME</strong></span></div>
+  <div class="auth-brand"><img class="auth-logo" src="./assets/oneup-header-letters.png" alt="1UP ANIME"></div>
   <div class="micro auth-kicker">TU UNIVERSO, A TU MANERA</div>
   <h2 id="auth-title" class="auth-title">BIENVENIDO A <em>1UP.</em></h2>
   <p id="auth-description" class="auth-copy">Descubre anime a tu ritmo. Entra como invitado o continúa con tu perfil guardado.</p>
+  <div class="auth-tabs" role="tablist" aria-label="Acceso">
+   <button id="auth-tab-login" class="auth-tab active" type="button">Entrar</button>
+   <button id="auth-tab-register" class="auth-tab" type="button">Crear cuenta</button>
+  </div>
+  <form id="auth-login-form" class="auth-form">
+   <label>Correo<input id="auth-login-email" type="email" autocomplete="email" required></label>
+   <label>Contraseña<input id="auth-login-password" type="password" autocomplete="current-password" required></label>
+   <button class="guest-login auth-submit" type="submit">Entrar</button>
+   <button id="auth-forgot" class="auth-link" type="button">¿Olvidaste tu contraseña?</button>
+  </form>
+  <form id="auth-register-form" class="auth-form" hidden>
+   <label>Nombre<input id="auth-reg-name" type="text" autocomplete="name" maxlength="50" required></label>
+   <label>Correo<input id="auth-reg-email" type="email" autocomplete="email" required></label>
+   <label>Contraseña<input id="auth-reg-password" type="password" autocomplete="new-password" minlength="6" required></label>
+   <label>Correo de recuperación (opcional)<input id="auth-reg-recovery" type="email" autocomplete="email"></label>
+   <button class="guest-login auth-submit" type="submit">Crear cuenta</button>
+  </form>
+  <form id="auth-recovery-form" class="auth-form" hidden>
+   <label>Correo de tu cuenta o de recuperación<input id="auth-rec-email" type="email" autocomplete="email" required></label>
+   <button id="auth-code-send" class="auth-link" type="button">Generar código de recuperación</button>
+   <p id="auth-code-show" class="auth-code" hidden></p>
+   <label>Código<input id="auth-rec-code" type="text" inputmode="numeric" autocomplete="one-time-code" maxlength="6"></label>
+   <label>Nueva contraseña<input id="auth-rec-password" type="password" autocomplete="new-password" minlength="6"></label>
+   <button class="guest-login auth-submit" type="submit">Restablecer contraseña</button>
+   <button id="auth-back-login" class="auth-link" type="button">Volver a Entrar</button>
+  </form>
   <div class="auth-actions">
-   <button id="google-login" class="google-login" type="button"><span class="google-g" aria-hidden="true">G</span><span id="auth-google-label">Continuar con Google</span></button>
    <button id="guest-login" class="guest-login" type="button">Continuar como invitado</button>
-   <button id="auth-signout" class="guest-login" type="button" hidden>Cerrar sesión de Google</button>
+   <button id="auth-signout" class="guest-login" type="button" hidden>Cerrar sesión</button>
   </div>
   <details id="auth-profiles" class="auth-profiles" hidden>
    <summary>Usar perfil guardado en este dispositivo</summary>
    <div class="auth-profile-controls"><select id="auth-profile-select" aria-label="Perfil guardado"></select><button id="auth-profile-enter" type="button">Entrar</button></div>
   </details>
   <p id="auth-message" class="auth-message" role="status" aria-live="polite"></p>
-  <small id="auth-service-note" class="auth-help">Puedes explorar como invitado sin crear una cuenta.</small>
+  <small id="auth-service-note" class="auth-help">Tu cuenta se crea aquí mismo, en esta página: nombre, correo y contraseña. Sin servicios externos.</small>
  </div>
 </dialog>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
