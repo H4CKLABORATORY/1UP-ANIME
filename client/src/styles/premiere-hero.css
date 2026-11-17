@@ -2,11 +2,11 @@
  * Original design system: emerald glass, real premiere dates and useful controls.
  * Loaded last, scoped only to homepage hero to preserve existing themes.
  */
-:root{--oneup-premiere-accent:var(--oneup-pal-accent,#7af0b2)}
+:root{--oneup-premiere-accent:var(--oneup-pal-accent,#b37af0)}
 #home-screen .hero.premiere-mode{
  position:relative;isolation:isolate;
  height:clamp(560px,51vw,770px);min-height:560px;
- background:#081210;border-bottom:1px solid #6be3aa26;
+ background:#0e0812;border-bottom:1px solid #6be3aa26;
 }
 #home-screen .hero.premiere-mode .hero-poster{
  opacity:.97;background-position:65% 35%;
@@ -15,7 +15,7 @@
 }
 #home-screen .hero.premiere-mode .hero-darken{
  background:linear-gradient(90deg,#050b0be9 0%,#061211bc 29%,#0b17147c 55%,#090d1169 100%),
- linear-gradient(0deg,#080d0c 1%,#08100c7e 28%,transparent 63%),
+ linear-gradient(0deg,#0b080d 1%,#08100c7e 28%,transparent 63%),
  linear-gradient(180deg,#070c1028,transparent 25%);
 }
 #home-screen .hero.premiere-mode .hero-grid{
@@ -40,7 +40,7 @@
 }
 #home-screen .hero.premiere-mode .hero-description{
  max-width:570px;font-size:14px;line-height:1.64;min-height:0;
- color:#e0e9e1;text-shadow:0 2px 8px #000b;
+ color:#e3e0e9;text-shadow:0 2px 8px #000b;
  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;
 }
 #home-screen .hero.premiere-mode .hero-art-card{
@@ -54,7 +54,7 @@
 #home-screen .hero.premiere-mode .hero-picks{display:none!important}
 #home-screen .hero.premiere-mode .hero-badges{display:flex!important;gap:8px;flex-wrap:wrap;margin-bottom:14px}
 #home-screen .hero.premiere-mode .hero-badges span{
- border:1px solid #b9eaca52;background:#071a17c4;color:#d8ffe9;
+ border:1px solid #b9eaca52;background:#071a17c4;color:#ead8ff;
  padding:6px 11px;border-radius:999px;letter-spacing:.02em;font-size:10px;font-weight:800;
 }
 #home-screen .hero.premiere-mode .hero-actions{
@@ -69,11 +69,11 @@
  transition:transform .18s ease,box-shadow .18s ease,background .18s ease,border-color .18s ease;
 }
 #home-screen .hero.premiere-mode .hero-actions .cta.primary{
- background:linear-gradient(125deg,#a0ffd0,#50df91);color:#062015;border:1px solid #c7ffdf;
+ background:linear-gradient(125deg,#cea0ff,#9450df);color:#130620;border:1px solid #e1c7ff;
  box-shadow:0 12px 30px #2fe49b22,0 1px 0 #ffffffb5 inset;
 }
 #home-screen .hero.premiere-mode .hero-actions .cta.outline{
- background:#0f211ecf;border:1px solid #befbd38a;color:#f0fff4;
+ background:#0f211ecf;border:1px solid #befbd38a;color:#f6f0ff;
  backdrop-filter:blur(16px);box-shadow:0 12px 23px #0005;
 }
 #home-screen .hero.premiere-mode .hero-actions .premiere-provider{
@@ -87,16 +87,16 @@
 #home-screen .hero.premiere-mode .hero-actions a[hidden]{display:none!important}
 #home-screen .hero.premiere-mode .premiere-kicker{
  display:inline-flex;align-items:center;gap:9px;padding:9px 13px;
- border-radius:999px;background:#0a271fc9;color:#c6ffe4;
+ border-radius:999px;background:#0a271fc9;color:#e2c6ff;
  border:1px solid #7df0ab7c;font:850 11px/1 var(--font,'Outfit',sans-serif);
  letter-spacing:.12em;
 }
 #home-screen .hero.premiere-mode .premiere-kicker::before{
  content:"";height:7px;width:7px;flex-shrink:0;border-radius:50%;
- background:#80f0af;box-shadow:0 0 0 4px #53eb9b23,0 0 13px #80edac77;
+ background:#b480f0;box-shadow:0 0 0 4px #53eb9b23,0 0 13px #80edac77;
 }
 #home-screen .hero.premiere-mode .premiere-source-note{
- font-size:11px;line-height:1.5;color:#cfdfd4;margin:10px 0 0;
+ font-size:11px;line-height:1.5;color:#d6cfdf;margin:10px 0 0;
  text-shadow:0 2px 6px #000c;
 }
 #home-screen .hero.premiere-mode .premiere-controls{
@@ -106,11 +106,11 @@
 #home-screen .hero.premiere-mode .premiere-controls[hidden]{display:none!important}
 #home-screen .hero.premiere-mode .premiere-arrow{
  display:grid;place-items:center;flex:0 0 39px;width:39px;height:39px;
- border-radius:50%;background:#14241fdc;color:#f1fff6;
+ border-radius:50%;background:#14241fdc;color:#f7f1ff;
  border:1px solid #b3eac778;cursor:pointer;font-size:23px;
  box-shadow:0 8px 20px #0007;
 }
-#home-screen .hero.premiere-mode .premiere-arrow:hover{background:#295845;border-color:#bdfbdb}
+#home-screen .hero.premiere-mode .premiere-arrow:hover{background:#412958;border-color:#dbbdfb}
 #home-screen .hero.premiere-mode .premiere-progress{
  display:flex;align-items:center;gap:7px;flex:1;min-width:0;
 }
@@ -124,11 +124,11 @@
 }
 #home-screen .hero.premiere-mode .premiere-marker.active .premiere-marker-bar{background:#ffffff95}
 #home-screen .hero.premiere-mode .premiere-marker.active .premiere-marker-bar::after{
- content:"";position:absolute;inset:0;background:#89fbc0;
+ content:"";position:absolute;inset:0;background:#c089fb;
  transform-origin:left;animation:premiereProgress 7.2s linear forwards;
 }
 #home-screen .hero.premiere-mode .premiere-arrow:focus-visible,
-#home-screen .hero.premiere-mode .premiere-marker:focus-visible{outline:2px solid #aeffd7;outline-offset:3px}
+#home-screen .hero.premiere-mode .premiere-marker:focus-visible{outline:2px solid #d6aeff;outline-offset:3px}
 #home-screen .hero.premiere-mode.premiere-switching .hero-copy > :is(h1,.hero-description,.hero-badges,.premiere-kicker){
  animation:premiereCopyIn .55s cubic-bezier(.22, 1, .36, 1) both;
  will-change:transform, opacity;

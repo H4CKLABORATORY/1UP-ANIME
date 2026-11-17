@@ -34,7 +34,7 @@
 
 .search-input-box.has-focus,
 .search-input-box:focus-within {
-  border-color: #00e676;
+  border-color: #7100e6;
   background: rgba(26, 22, 38, 0.98);
   box-shadow: 0 0 0 2px rgba(0, 230, 118, 0.25), 0 8px 24px rgba(0, 0, 0, 0.5);
 }
@@ -65,7 +65,7 @@
   border: 1px solid rgba(0, 230, 118, 0.45);
   border-radius: 6px;
   padding: 3px 8px 3px 10px;
-  color: #e8fff4;
+  color: #f3e8ff;
   font-size: 12px;
   font-weight: 700;
   line-height: 1.2;
@@ -83,7 +83,7 @@
 .filter-chip:hover,
 .filter-chip.compact-chip:hover,
 .search-chips-wrap .filter-chip:hover {
-  border-color: #00e676;
+  border-color: #7100e6;
   background: linear-gradient(135deg, rgba(0, 230, 118, 0.26), rgba(28, 44, 35, 0.95));
 }
 
@@ -214,7 +214,7 @@
 
 .quick-tag-pill:hover {
   background: rgba(0, 230, 118, 0.15);
-  border-color: #00e676;
+  border-color: #7100e6;
   color: #fff;
 }
 
@@ -299,7 +299,7 @@
 .letter-rail-label {
   font-size: 8px;
   font-weight: 900;
-  color: #00e676;
+  color: #7100e6;
   letter-spacing: 0.08em;
 }
 
@@ -339,12 +339,12 @@
 }
 
 .letter-btn:hover {
-  color: #00e676;
+  color: #7100e6;
   transform: scale(1.2);
 }
 
 .letter-btn.active {
-  background: #00e676;
+  background: #7100e6;
   color: #090a11;
   font-weight: 900;
   box-shadow: 0 0 10px rgba(0, 230, 118, 0.55);
@@ -355,7 +355,7 @@
   right: 48px;
   top: 50%;
   transform: translateY(-50%);
-  background: #00e676;
+  background: #7100e6;
   color: #090a11;
   font-size: 20px;
   font-weight: 900;
@@ -539,16 +539,16 @@
 }
 
 .virtual-row .anime-save:hover {
-  background: #00e676;
+  background: #7100e6;
   color: #090a11;
-  border-color: #00e676;
+  border-color: #7100e6;
   transform: scale(1.08);
 }
 
 .virtual-row .anime-save.saved {
-  background: #00e676;
+  background: #7100e6;
   color: #090a11;
-  border-color: #00e676;
+  border-color: #7100e6;
 }
 
 .virtual-row .rating {
@@ -571,7 +571,7 @@
 }
 
 .virtual-row .rating b {
-  color: #00e676;
+  color: #7100e6;
 }
 
 .card-badge-airing {
@@ -619,7 +619,7 @@
 }
 
 .virtual-row .card-name:hover {
-  color: #00e676;
+  color: #7100e6;
 }
 
 .virtual-row .card-sub {
@@ -649,7 +649,7 @@
 .virtual-row .card-type {
   font-size: 10px;
   font-weight: 700;
-  color: #00e676;
+  color: #7100e6;
   background: rgba(0, 230, 118, 0.12);
   border: 1px solid rgba(0, 230, 118, 0.28);
   border-radius: 4px;
@@ -685,7 +685,7 @@
   width: 42px;
   height: 42px;
   border-radius: 50%;
-  background: #00e676;
+  background: #7100e6;
   color: #090a11;
   font-size: 20px;
   font-weight: 900;
@@ -701,7 +701,7 @@
 
 .virtual-scroll-top-btn:hover {
   transform: scale(1.1);
-  background: #05ff85;
+  background: #8005ff;
 }
 
 @media (max-width: 780px) {

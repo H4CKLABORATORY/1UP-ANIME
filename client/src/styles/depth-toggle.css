@@ -20,17 +20,17 @@
 }
 
 .depth-toggle-btn:hover {
-  border-color: var(--oneup-pal-accent, #10b981);
+  border-color: var(--oneup-pal-accent, #a855f7);
   color: #ffffff;
 }
 
 .depth-toggle-btn.active {
-  background: var(--oneup-pal-soft, rgba(16,185,129,0.15));
-  border-color: var(--oneup-pal-accent, #10b981);
-  color: var(--oneup-pal-accent, #10b981);
-  box-shadow: 0 0 12px var(--oneup-pal-glow, rgba(16,185,129,0.25));
+  background: var(--oneup-pal-soft, rgba(168,85,247,0.15));
+  border-color: var(--oneup-pal-accent, #a855f7);
+  color: var(--oneup-pal-accent, #a855f7);
+  box-shadow: 0 0 12px var(--oneup-pal-glow, rgba(168,85,247,0.25));
 }
 
 .depth-toggle-btn svg { width: 15px; height: 15px; transition: transform 0.3s ease; }
 .depth-toggle-btn.active svg { transform: rotate(-8deg) scale(1.1); }
-.depth-toggle-btn:focus-visible { outline: 2px solid var(--oneup-pal-accent, #10b981); outline-offset: 2px; }
+.depth-toggle-btn:focus-visible { outline: 2px solid var(--oneup-pal-accent, #a855f7); outline-offset: 2px; }

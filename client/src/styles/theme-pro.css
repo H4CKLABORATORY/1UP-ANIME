@@ -8,42 +8,42 @@
 /* ---------- Base ---------- */
 html{scrollbar-color:#2c3540 #0a0c10}
 body{background:#08090c;color:#f2f4f6;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
-::selection{background:#35d99a;color:#04120c}
+::selection{background:#a78bfa;color:#0b0412}
 ::-webkit-scrollbar{width:10px;height:10px}
 ::-webkit-scrollbar-track{background:#0a0c10}
 ::-webkit-scrollbar-thumb{background:#262d36;border-radius:99px;border:2px solid #0a0c10}
 ::-webkit-scrollbar-thumb:hover{background:#39434f}
-:focus-visible{outline:2px solid #35d99a;outline-offset:2px}
+:focus-visible{outline:2px solid #a78bfa;outline-offset:2px}
 
 /* ---------- Cabecera: cristal profesional ---------- */
 .header{background:rgba(8,9,12,.78)!important;backdrop-filter:blur(18px) saturate(1.4);-webkit-backdrop-filter:blur(18px) saturate(1.4);border-bottom:1px solid rgba(255,255,255,.07);box-shadow:0 10px 34px rgba(0,0,0,.34)}
 .desktop-links button,.desktop-links a{border-radius:999px;padding:8px 14px;font-weight:600;letter-spacing:.02em;color:#c9d1d9;transition:background .2s ease,color .2s ease}
 .desktop-links button:hover,.desktop-links a:hover{background:rgba(255,255,255,.07);color:#fff}
-.desktop-links .active{background:rgba(53,217,154,.14);color:#7ce7bb}
+.desktop-links .active{background:rgba(167,139,250,.14);color:#d8c7ff}
 .account-button{border-radius:999px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.05);transition:background .2s ease,border-color .2s ease}
-.account-button:hover{background:rgba(255,255,255,.1);border-color:rgba(53,217,154,.5)}
+.account-button:hover{background:rgba(255,255,255,.1);border-color:rgba(167,139,250,.5)}
 
 /* ---------- Héroe ---------- */
 .hero-description{color:#c3ccd4;line-height:1.65}
-.eyebrow{letter-spacing:.32em;font-weight:800;color:#7ce7bb}
+.eyebrow{letter-spacing:.32em;font-weight:800;color:#d8c7ff}
 .cta{border-radius:999px!important;font-weight:800;letter-spacing:.02em;padding:13px 26px;transition:transform .18s ease,box-shadow .18s ease,background .18s ease}
-.cta.primary{background:linear-gradient(135deg,#3ce6a5,#1fb97c);color:#04150d;box-shadow:0 12px 30px rgba(31,185,124,.32)}
-.cta.primary:hover{transform:translateY(-2px);box-shadow:0 18px 38px rgba(31,185,124,.42)}
+.cta.primary{background:linear-gradient(135deg,#c9b1ff,#a855f7);color:#0c0415;box-shadow:0 12px 30px rgba(168,85,247,.32)}
+.cta.primary:hover{transform:translateY(-2px);box-shadow:0 18px 38px rgba(168,85,247,.42)}
 .cta.outline{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.22);color:#fff;backdrop-filter:blur(8px)}
 .cta.outline:hover{background:rgba(255,255,255,.13);transform:translateY(-2px)}
 .hero-art-card{border-radius:20px;border:1px solid rgba(255,255,255,.1);box-shadow:0 30px 70px rgba(0,0,0,.55)}
 
 /* ---------- Tarjetas: hover tipo Netflix ---------- */
 .anime-card{border-radius:14px!important;border:1px solid rgba(255,255,255,.07);background:#101318;overflow:hidden;transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease}
-.anime-card:hover{transform:translateY(-5px) scale(1.02);border-color:rgba(53,217,154,.45);box-shadow:0 22px 44px rgba(0,0,0,.55),0 0 0 1px rgba(53,217,154,.22)}
+.anime-card:hover{transform:translateY(-5px) scale(1.02);border-color:rgba(167,139,250,.45);box-shadow:0 22px 44px rgba(0,0,0,.55),0 0 0 1px rgba(167,139,250,.22)}
 .anime-card img{transition:transform .35s ease}
 .anime-card:hover img{transform:scale(1.05)}
 
 /* ---------- Controles y píldoras ---------- */
 .genre-pills button,.genre-pills a{border-radius:999px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.04);padding:8px 15px;font-weight:600;transition:background .2s ease,border-color .2s ease,color .2s ease}
-.genre-pills button:hover,.genre-pills a:hover{background:rgba(53,217,154,.13);border-color:rgba(53,217,154,.5);color:#a9f2d2}
+.genre-pills button:hover,.genre-pills a:hover{background:rgba(167,139,250,.13);border-color:rgba(167,139,250,.5);color:#e3d5ff}
 .browse-controls input,.browse-controls select{background:#101318!important;border:1px solid rgba(255,255,255,.12)!important;border-radius:12px!important;color:#eef2f5;padding:11px 14px}
-.browse-controls input:focus,.browse-controls select:focus{border-color:rgba(53,217,154,.65)!important;box-shadow:0 0 0 3px rgba(53,217,154,.16)}
+.browse-controls input:focus,.browse-controls select:focus{border-color:rgba(167,139,250,.65)!important;box-shadow:0 0 0 3px rgba(167,139,250,.16)}
 
 /* ---------- Ventanas (diálogos) ---------- */
 dialog{border-radius:20px!important;border:1px solid rgba(255,255,255,.1)!important;background:#101318!important;box-shadow:0 40px 100px rgba(0,0,0,.65)!important}
@@ -53,7 +53,7 @@ dialog::backdrop{background:rgba(3,4,6,.66);backdrop-filter:blur(6px)}
 
 /* ---------- Navegación móvil: cristal ---------- */
 .mobile-navigation{background:rgba(8,9,12,.82)!important;backdrop-filter:blur(18px) saturate(1.4);-webkit-backdrop-filter:blur(18px) saturate(1.4);border-top:1px solid rgba(255,255,255,.08)}
-.mobile-navigation .active{color:#7ce7bb}
+.mobile-navigation .active{color:#d8c7ff}
 
 /* ---------- Pie ---------- */
 .footer{border-top:1px solid rgba(255,255,255,.07);color:#9aa6b1}
@@ -65,12 +65,12 @@ dialog::backdrop{background:rgba(3,4,6,.66);backdrop-filter:blur(6px)}
 body{background:#08090c}
 header{background:rgba(8,9,12,.78);backdrop-filter:blur(18px) saturate(1.4);-webkit-backdrop-filter:blur(18px) saturate(1.4);border-bottom:1px solid rgba(255,255,255,.07)}
 .card{background:linear-gradient(180deg,#12161d,#0d1015);border:1px solid rgba(255,255,255,.08);border-radius:20px;box-shadow:0 24px 60px rgba(0,0,0,.45)}
-.btn{border-radius:999px;box-shadow:0 10px 26px rgba(31,185,124,.28);transition:transform .18s ease,box-shadow .18s ease}
-.btn:hover{transform:translateY(-2px);box-shadow:0 16px 34px rgba(31,185,124,.38)}
+.btn{border-radius:999px;box-shadow:0 10px 26px rgba(168,85,247,.28);transition:transform .18s ease,box-shadow .18s ease}
+.btn:hover{transform:translateY(-2px);box-shadow:0 16px 34px rgba(168,85,247,.38)}
 .btn.ghost{box-shadow:none;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16)}
 .chip{border-radius:999px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);backdrop-filter:blur(6px)}
-#providers a{border-radius:999px;background:rgba(53,217,154,.1);border:1px solid rgba(53,217,154,.35);transition:background .2s ease,transform .2s ease}
-#providers a:hover{background:rgba(53,217,154,.2);transform:translateY(-2px)}
+#providers a{border-radius:999px;background:rgba(167,139,250,.1);border:1px solid rgba(167,139,250,.35);transition:background .2s ease,transform .2s ease}
+#providers a:hover{background:rgba(167,139,250,.2);transform:translateY(-2px)}
 .meta span{border-radius:999px}
 .trailer-frame{border-radius:16px;box-shadow:0 24px 60px rgba(0,0,0,.5)}
 .back{border-radius:999px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.13);backdrop-filter:blur(8px)}
@@ -102,9 +102,9 @@ header{background:rgba(8,9,12,.78);backdrop-filter:blur(18px) saturate(1.4);-web
 .km-drawer{background:rgba(10,12,17,.94)!important;backdrop-filter:blur(22px) saturate(1.4);-webkit-backdrop-filter:blur(22px) saturate(1.4);border-right:1px solid rgba(255,255,255,.09);box-shadow:34px 0 90px rgba(0,0,0,.55)}
 .km-nav{gap:8px!important;padding:14px!important}
 .km-nav button,.km-nav a{background:rgba(255,255,255,.03)!important;border:1px solid rgba(255,255,255,.055)!important;border-radius:14px!important;padding:10px 12px!important;transition:background .18s ease,border-color .18s ease,transform .14s ease}
-.km-nav button:hover,.km-nav a:hover{background:rgba(53,217,154,.09)!important;border-color:rgba(53,217,154,.35)!important}
+.km-nav button:hover,.km-nav a:hover{background:rgba(167,139,250,.09)!important;border-color:rgba(167,139,250,.35)!important}
 .km-nav button:active,.km-nav a:active{transform:scale(.98)}
-.km-nav span{background:rgba(53,217,154,.1)!important;border-radius:11px!important;color:#7ce7bb!important;width:34px!important;height:34px!important}
+.km-nav span{background:rgba(167,139,250,.1)!important;border-radius:11px!important;color:#d8c7ff!important;width:34px!important;height:34px!important}
 .km-nav-title{letter-spacing:.24em;color:#8b96a1!important;font-size:11px;margin:16px 6px 2px}
 .km-drawer-close{background:rgba(255,255,255,.06)!important;border:1px solid rgba(255,255,255,.09)!important;border-radius:12px!important;width:36px;height:36px;padding:0!important}
 .km-drawer-head{border-bottom:1px solid rgba(255,255,255,.07)}
@@ -126,6 +126,15 @@ dialog[open]{animation:oneup-pop .22s cubic-bezier(.2,.9,.25,1.15)}
 @keyframes oneup-slide{from{transform:translateX(-28px);opacity:.35}to{transform:none;opacity:1}}
 
 /* ===== Alma otaku: energía en los detalles ===== */
-.cta.primary{box-shadow:0 12px 32px rgba(53,217,154,.3),0 0 0 1px rgba(124,231,187,.25) inset}
+.cta.primary{box-shadow:0 12px 32px rgba(167,139,250,.3),0 0 0 1px rgba(216,199,255,.25) inset}
 .eyebrow{letter-spacing:.26em}
-::selection{background:rgba(53,217,154,.85);color:#04140c}
+::selection{background:rgba(167,139,250,.85);color:#0d0a14}
+
+/* Apertura cinematográfica: el video de entrada se retiñe a la casa */
+#oneup-opening::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:radial-gradient(90% 70% at 50% 0%,rgba(168,85,247,.55),transparent 60%),radial-gradient(75% 60% at 50% 110%,rgba(255,143,184,.45),transparent 65%),linear-gradient(180deg,rgba(7,7,13,.35),transparent 32%,transparent 68%,rgba(7,7,13,.5));mix-blend-mode:soft-light}
+#oneup-opening::before{content:"";position:absolute;inset:0;z-index:3;pointer-events:none;box-shadow:inset 0 0 190px 46px rgba(4,4,10,.82)}
+#oneup-opening .oneup-opening-stage{position:relative;z-index:2}
+/* Intro del deck: panel con sangre otaku */
+.oneup-finale-intro{position:relative;border:1px solid rgba(167,139,250,.35);border-radius:20px;padding:26px 28px;overflow:hidden;background:radial-gradient(80% 120% at 88% 0%,rgba(168,85,247,.20),transparent 60%),radial-gradient(60% 100% at 8% 110%,rgba(255,143,184,.12),transparent 60%),#0d0d16}
+
+:root[data-oneup-theme="medianoche"]{--km-turquoise:#b79cff}

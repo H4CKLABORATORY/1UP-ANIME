@@ -5,19 +5,19 @@
  display:flex;align-items:center;justify-content:center;
  padding:10px 8px;margin-top:6px;min-height:37px;
  border:1px solid #5fbf8b75;border-radius:8px;
- background:linear-gradient(130deg,#15402b,#0f2924);
- color:#b9ffd9;font-size:10px;font-weight:800;text-align:center;
+ background:linear-gradient(130deg,#2a1540,#1e0f29);
+ color:#dab9ff;font-size:10px;font-weight:800;text-align:center;
  text-decoration:none;transition:background .2s,border-color .2s;
 }
-.airing-official-cta:hover,.airing-official-cta:focus-visible{background:#246c44;border-color:#91ffbd}
-.oneup-crunchyroll-cta{border-color:#83b69a!important}
+.airing-official-cta:hover,.airing-official-cta:focus-visible{background:#46246c;border-color:#c391ff}
+.oneup-crunchyroll-cta{border-color:#9b83b6!important}
 .oneup-official-watch{
  display:flex;align-items:center;justify-content:space-between;gap:16px;
  padding:22px 30px;border:1px solid #7ddd9b40;border-radius:12px;
- margin:13px 24px;background:linear-gradient(110deg,#112e23,#111525);
+ margin:13px 24px;background:linear-gradient(110deg,#20112e,#111525);
 }
-.oneup-official-watch h3{font:900 clamp(21px,3vw,28px)/1 var(--display,system-ui);color:#d2ffdf;margin:0 0 6px}
-.oneup-official-watch p{font-size:11px;line-height:1.6;color:#b5cbbe;margin:0;max-width:530px}
+.oneup-official-watch h3{font:900 clamp(21px,3vw,28px)/1 var(--display,system-ui);color:#e5d2ff;margin:0 0 6px}
+.oneup-official-watch p{font-size:11px;line-height:1.6;color:#bfb5cb;margin:0;max-width:530px}
 .oneup-official-watch-actions{display:flex;flex-wrap:wrap;gap:9px;flex-shrink:0}
 .oneup-official-watch-actions .cta{font-size:11px;min-height:40px;white-space:nowrap}
 @media(max-width:760px){
@@ -31,7 +31,7 @@
 /* Enlaces verificados por episodio, siempre externos y opcionales. */
 .oneup-official-episode{display:flex;flex-direction:column;align-items:flex-start;gap:5px;margin-top:12px}
 .oneup-official-episode:empty{display:none}
-.oneup-official-episode-link{display:inline-flex;justify-content:center;align-items:center;min-height:42px;padding:9px 12px;border:1px solid #91e1aa;border-radius:9px;color:#eaffef;background:#226041;font-size:12px;font-weight:800;line-height:1.3;text-decoration:none}
-.oneup-official-episode-link:hover,.oneup-official-episode-link:focus-visible{background:#348759;border-color:#b9ffda;outline-offset:2px}
-.oneup-official-episode small{font-size:11px;color:#b5cbbe;max-width:430px;line-height:1.4}
+.oneup-official-episode-link{display:inline-flex;justify-content:center;align-items:center;min-height:42px;padding:9px 12px;border:1px solid #b391e1;border-radius:9px;color:#f3eaff;background:#402260;font-size:12px;font-weight:800;line-height:1.3;text-decoration:none}
+.oneup-official-episode-link:hover,.oneup-official-episode-link:focus-visible{background:#5b3487;border-color:#dab9ff;outline-offset:2px}
+.oneup-official-episode small{font-size:11px;color:#bfb5cb;max-width:430px;line-height:1.4}
 @media(max-width:760px){.oneup-official-episode,.oneup-official-episode-link{width:100%}.oneup-official-episode-link{text-align:center}}

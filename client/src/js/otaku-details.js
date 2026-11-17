@@ -27,7 +27,7 @@
     clusterB.className = 'sakura-cluster';
     clusterB.style.cssText = 'bottom:-40px;left:-24px;width:110px;height:110px;opacity:.12;background-image:url("' + FLOWER + '");animation-delay:-3s';
     el.appendChild(clusterB);
-    const n = global.innerWidth < 640 ? 9 : 14;
+    const n = global.innerWidth < 640 ? 5 : 8;
     for (let i = 0; i < n; i++) {
       const p = document.createElement('span');
       p.className = 'sakura-petal';
@@ -140,6 +140,64 @@
     const t = setInterval(() => { if (apply() || ++tries > 20) clearInterval(t); }, 400);
     const hero = document.querySelector('#hero');
     if (hero) new MutationObserver(apply).observe(hero, { attributes: true, attributeFilter: ['style'] });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
+
+/* Fondo cinematográfico: el color dominante del arte de cada anime tiñe
+ * su ambiente (resplandores y viñeta), como en las fichas de cine.
+ * Y los pétalos se pausan fuera de pantalla para que la página vuele. */
+(function () {
+  'use strict';
+  const rootEl = document.documentElement;
+  const cache = new Map();
+  function apply(rgb) { rootEl.style.setProperty('--cine-rgb', rgb); }
+  function extract(url) {
+    if (!url) return;
+    if (cache.has(url)) { const v = cache.get(url); if (v) apply(v); return; }
+    cache.set(url, '');
+    const img = new Image();
+    img.crossOrigin = 'anonymous';
+    img.onload = () => {
+      try {
+        const c = document.createElement('canvas'); c.width = 40; c.height = 40;
+        const x = c.getContext('2d', { willReadFrequently: true });
+        x.drawImage(img, 0, 0, 40, 40);
+        const d = x.getImageData(0, 0, 40, 40).data;
+        let r = 0, g = 0, b = 0, n = 0;
+        for (let i = 0; i < d.length; i += 32) {
+          const R = d[i], G = d[i + 1], B = d[i + 2];
+          const mx = Math.max(R, G, B), mn = Math.min(R, G, B);
+          if (mx < 30 || mx > 242 || mx - mn < 26) continue;
+          r += R; g += G; b += B; n++;
+        }
+        if (n > 8) { const rgb = Math.round(r / n) + ',' + Math.round(g / n) + ',' + Math.round(b / n); cache.set(url, rgb); apply(rgb); }
+      } catch (e) { /* sin CORS: se queda el violeta de la casa */ }
+    };
+    img.src = url;
+  }
+  function watchImg(sel) {
+    const el = document.querySelector(sel);
+    if (!el) return;
+    const run = () => extract(el.currentSrc || el.src);
+    run();
+    new MutationObserver(run).observe(el, { attributes: true, attributeFilter: ['src'] });
+  }
+  function init() {
+    watchImg('#poster');
+    watchImg('#hero-feature-cover');
+    const hp = document.querySelector('#hero-poster');
+    if (hp) {
+      const run = () => { const bg = getComputedStyle(hp).backgroundImage; const m = bg && bg.match(/url\("?([^")]+)"?\)/); if (m) extract(m[1]); };
+      run();
+      new MutationObserver(run).observe(hp, { attributes: true, attributeFilter: ['style', 'class'] });
+    }
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver(es => es.forEach(e => e.target.classList.toggle('sakura-paused', !e.isIntersecting)), { threshold: 0.02 });
+      document.querySelectorAll('.hero, #hero, .c-hero').forEach(el => io.observe(el));
+    }
+    document.addEventListener('visibilitychange', () => rootEl.classList.toggle('tab-hidden', document.hidden));
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
   else init();

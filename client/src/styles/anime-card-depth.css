@@ -12,8 +12,8 @@
 }
 
 .anime-card:hover {
-  box-shadow: 0 20px 45px rgba(0,0,0,0.6), 0 0 30px rgba(16,185,129,0.25);
-  border-color: rgba(16,185,129,0.4);
+  box-shadow: 0 20px 45px rgba(0,0,0,0.6), 0 0 30px rgba(168,85,247,0.25);
+  border-color: rgba(168,85,247,0.4);
 }
 
 .anime-card-img {

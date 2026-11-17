@@ -2,7 +2,7 @@
  * Loaded last to reconcile existing design/themes without replacing Kokomi.
  * Native dialogs, safe areas, responsive controls and coherent focus styles.
  */
-:root{--oneup-ux-accent:var(--oneup-pal-accent,#8fefc1)}
+:root{--oneup-ux-accent:var(--oneup-pal-accent,#be8fef)}
 html{scroll-padding-top:92px;overflow-x:clip}
 body{min-width:0}
 body,main,section{min-width:0}
@@ -84,8 +84,8 @@ a,button,select,input,textarea{touch-action:manipulation}
  background:#b6b8c0;color:#363740;border-color:#9b9daa;
  cursor:not-allowed;opacity:1;
 }
-#auth-dialog .auth-actions .guest-login{color:#eefbf4;background:#20362c;border:1px solid #73d8a477}
-#auth-dialog .auth-actions .guest-login:hover{background:#2b4837;border-color:var(--oneup-ux-accent)}
+#auth-dialog .auth-actions .guest-login{color:#f4eefb;background:#2b2036;border:1px solid #73d8a477}
+#auth-dialog .auth-actions .guest-login:hover{background:#382b48;border-color:var(--oneup-ux-accent)}
 #auth-dialog .google-g{color:#4285f4;font-size:22px;font-weight:900;margin:0;line-height:1}
 #auth-dialog .auth-profiles{
  margin:11px 0 0;padding:10px 12px;
@@ -93,18 +93,18 @@ a,button,select,input,textarea{touch-action:manipulation}
 }
 #auth-dialog .auth-profiles summary{
  cursor:pointer;text-align:left;font-weight:750;font-size:12px;
- padding:4px;color:#e3efe6;
+ padding:4px;color:#e8e3ef;
 }
 #auth-dialog .auth-profile-controls{display:grid;grid-template-columns:1fr auto;gap:9px;margin-top:10px}
 #auth-dialog .auth-profile-controls select{
  display:block;min-width:0;width:100%;max-width:100%;min-height:45px;
  padding:9px 10px;border-radius:9px;
- color:#eafcf2;background:#192922;border:1px solid #89bf9b77;
+ color:#f2eafc;background:#211929;border:1px solid #89bf9b77;
  font:600 13px/1.2 var(--font,'Outfit',sans-serif);
 }
 #auth-dialog .auth-profile-controls button{
  min-height:45px;border-radius:9px;padding:8px 12px;
- background:var(--oneup-ux-accent);color:#07160f;font-weight:850;
+ background:var(--oneup-ux-accent);color:#0e0716;font-weight:850;
  border:0;font-size:12px;
 }
 #auth-dialog #auth-message{
@@ -117,7 +117,7 @@ a,button,select,input,textarea{touch-action:manipulation}
  display:block;font-size:11px;line-height:1.45;
  color:#b7adbe;max-width:380px;margin:14px auto 0;
 }
-#auth-dialog .auth-help strong{color:#cfe9d8}
+#auth-dialog .auth-help strong{color:#dacfe9}
 #auth-dialog [hidden]{display:none!important}
 #auth-dialog :where(.auth-actions button):active{transform:scale(.99)}
 
@@ -208,13 +208,13 @@ a,button,select,input,textarea{touch-action:manipulation}
 
 #auth-dialog .auth-logo{width:min(200px,72%);height:auto;display:block;margin:0 auto}
 #auth-dialog .auth-tabs{display:flex;gap:8px;justify-content:center;margin:2px 0 12px}
-#auth-dialog .auth-tab{background:#16241d;color:#cfe8da;border:1px solid #73d8a455;border-radius:999px;padding:7px 16px;font-weight:700;cursor:pointer}
-#auth-dialog .auth-tab.active{background:#2b4837;color:#fff;border-color:#73d8a4}
+#auth-dialog .auth-tab{background:#1d1624;color:#dbcfe8;border:1px solid #73d8a455;border-radius:999px;padding:7px 16px;font-weight:700;cursor:pointer}
+#auth-dialog .auth-tab.active{background:#382b48;color:#fff;border-color:#a473d8}
 #auth-dialog .auth-form{display:grid;gap:10px;width:100%;text-align:left;margin-bottom:12px}
-#auth-dialog .auth-form label{display:grid;gap:5px;font-size:13px;font-weight:600;color:#cfe8da}
-#auth-dialog .auth-form input{background:#0d1512;border:1px solid #73d8a444;border-radius:10px;padding:10px 12px;color:#fff;font-size:15px;width:100%;box-sizing:border-box}
+#auth-dialog .auth-form label{display:grid;gap:5px;font-size:13px;font-weight:600;color:#dbcfe8}
+#auth-dialog .auth-form input{background:#110d15;border:1px solid #73d8a444;border-radius:10px;padding:10px 12px;color:#fff;font-size:15px;width:100%;box-sizing:border-box}
 #auth-dialog .auth-submit{width:100%;padding:11px;border-radius:10px;font-weight:800;cursor:pointer}
-#auth-dialog .auth-link{background:none;border:none;color:#8fd8b2;cursor:pointer;font-size:13px;text-decoration:underline;padding:2px;text-align:center}
-#auth-dialog .auth-code{font-size:22px;font-weight:900;letter-spacing:4px;text-align:center;color:#fff;background:#16241d;border:1px dashed #73d8a4;border-radius:10px;padding:10px;margin:0}
+#auth-dialog .auth-link{background:none;border:none;color:#b28fd8;cursor:pointer;font-size:13px;text-decoration:underline;padding:2px;text-align:center}
+#auth-dialog .auth-code{font-size:22px;font-weight:900;letter-spacing:4px;text-align:center;color:#fff;background:#1d1624;border:1px dashed #a473d8;border-radius:10px;padding:10px;margin:0}
 
 #auth-dialog .auth-title-logo{display:block;height:56px;width:auto;margin:8px auto 0}
