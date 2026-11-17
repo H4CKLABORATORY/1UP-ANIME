@@ -153,6 +153,15 @@ async function configuredEpisodes(id,season){
    });
    return map;
   }
+  if(backendAnime){
+   const epCount=safeNumber(backendAnime.episodes_total||backendAnime.episodes,0);
+   if(epCount>0){
+    for(let i=1;i<=epCount;i++){
+     map.set(i,{title:'Episodio '+i,sources:[],backend:true,downloads:[]});
+    }
+    return map;
+   }
+  }
  }catch(e){}
  return new Map();
 }
@@ -331,16 +340,6 @@ async function loadLinksForEpisode(targetAnimeId,epNum,forceRefresh=false){
  }
  return null;
 }
-   const url=base.replace(/\/$/,'')+'/anime/'+encodeURIComponent(targetAnimeId)+'/episodes/'+encodeURIComponent(epNum)+'/links';
-   const res=await fetch(url,{cache:'no-cache',signal:ctrl.signal});
-   if(!res.ok)continue;
-   const json=await res.json();
-   if(token!==currentLinksToken||activeAnime!==targetAnimeId)return null;
-   return json;
-  }catch(e){}finally{clearTimeout(t)}
- }
- return null;
-}
 
 function renderDownloads(downloads){
  if(!playerRoot)return;
@@ -498,6 +497,11 @@ async function show(anime,{root,season=1}={}){
  mediaByEpisode=map;
  const backendTotal=anime.episodes_total||(typeof anime.episodes==='number'?anime.episodes:0)||anime.episodes_count||(Array.isArray(anime.episodes)?anime.episodes.length:0)||0;
  episodeCount=Math.min(9999,Math.max(1,safeNumber(backendTotal,1),...map.keys()));
+ if(mediaByEpisode.size===0){
+  for(let i=1;i<=episodeCount;i++){
+   mediaByEpisode.set(i,{title:'Episodio '+i,sources:[],backend:true,downloads:[]});
+  }
+ }
  const visible=Math.min(episodeCount,120);
  playerRoot.innerHTML='<div class="oneup-detail-section oneup-watch-panel">'+
   '<div class="oneup-watch-title"><div><span class="micro">1UP ANIME · EPISODIOS</span><h3>VER EPISODIOS</h3></div><span class="oneup-watch-counter">Opciones de servidor</span></div>'+

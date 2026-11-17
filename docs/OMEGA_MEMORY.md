@@ -383,3 +383,18 @@ Agregado módulo reversible camera.mjs con trayectorias orbit/dolly/glide, persp
   - `npm run build`: Build de producción Vite completado en 269ms.
   - Verificación HTTP en vivo de endpoints de video: Streamwish (200 OK), Vidhide (200 OK), Mega (200 OK), VOE (200 OK), Mp4upload (200 OK).
 
+### 2026-11-16 — Corrección de visualización de reproductores al hacer clic en animes del catálogo
+- Pedido: «puedes analizar la lista de catalogo, cuando le doy click al anime, este ya no muestra los reproductores, puedes verificar y arreglarlo».
+- Causas raíz:
+  1. `client/src/js/episode-player.js` contenía un fragmento de código residual sin función en la línea 334 (`const res=await fetch(...)`) que provocaba `SyntaxError: await is only valid in async functions`, impidiendo que el navegador evaluara el archivo y dejando `window.OneUpEpisodePlayer` como `undefined`. Al hacer clic en un anime en la interfaz principal, la llamada fallaba silenciosamente y nunca mostraba el reproductor.
+  2. En `client/pages/catalogo-streaming.html`, `a.episodes.map(...)` provocaba `TypeError: a.episodes.map is not a function` porque `a.episodes` es un número y `a.episodes_list` es el array. El error capturado abortaba el renderizado de la modal y ocultaba el reproductor. Además, `API_BASE` apuntaba a un puerto rígido 4050.
+- Solución:
+  1. Corregida la sintaxis en `client/src/js/episode-player.js`, removiendo el fragmento duplicado y habilitando la generación reactiva de episodios cuando la BD solo provee `episodes_total`.
+  2. Actualizado `client/pages/catalogo-streaming.html` con soporte polimórfico de episodios (`a.episodes_list || a.episodes`), `API_BASE` relativo dinámico, selector de servidores con cambio de reproductor instantáneo y botón `⚡ Actualizar`.
+  3. Agregada prueba de regresión en `tests/unit/test-episode-player.mjs`.
+- Pruebas realmente ejecutadas:
+  - `npm test`: **71/71 tests unitarios Node pasados**.
+  - `npm run test:all`: **71 Node + 16 Python + 152 smoke UI pasados con 0 errores**.
+  - `npm run build`: Vite build completado exitosamente en 231ms.
+
+

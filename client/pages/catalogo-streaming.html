@@ -327,7 +327,7 @@
   </div>
 
   <script>
-    const API_BASE = 'http://localhost:4050';
+    const API_BASE = (window.location.origin && window.location.origin !== 'null' && !window.location.origin.startsWith('file:')) ? '' : 'http://localhost:4050';
     let currentStatus = 'all';
     let currentSearch = '';
 
@@ -377,83 +377,116 @@
       }
     }
 
+    window.currentEpisodeLinks = null;
+
     window.openAnime = async (slug) => {
       modal.style.display = 'flex';
       modalContent.innerHTML = '<div style="padding: 40px; text-align: center;">Cargando ficha...</div>';
       try {
         const res = await fetch(`${API_BASE}/api/anime/${slug}`);
         const a = await res.json();
+        const epList = Array.isArray(a.episodes_list) && a.episodes_list.length > 0
+          ? a.episodes_list
+          : Array.isArray(a.episodes)
+            ? a.episodes
+            : Array.from({ length: Number(a.episodes || a.episodes_total || 1) }, (_, i) => ({ number: i + 1 }));
 
         modalContent.innerHTML = `
           <div class="modal-hero">
-            <img src="${a.poster}" class="modal-poster"/>
+            <img src="${a.poster}" class="modal-poster" onerror="this.src='https://cdn.jkdesa.com/assets/images/animes/image/default.jpg'"/>
             <div>
               <h2>${a.title}</h2>
-              <div style="font-size: 0.8rem; color: var(--primary); margin: 4px 0;">${a.type} · ${a.status_label} ${a.year ? '· ' + a.year : ''}</div>
-              <p class="modal-synopsis">${a.synopsis}</p>
+              <div style="font-size: 0.8rem; color: var(--primary); margin: 4px 0;">${a.type || 'Serie'} · ${a.status_label || ''} ${a.year ? '· ' + a.year : ''}</div>
+              <p class="modal-synopsis">${a.synopsis || 'Sin descripción disponible.'}</p>
             </div>
           </div>
-          <h4>Capítulos disponibles (${a.episodes.length})</h4>
+          <h4>Capítulos disponibles (${epList.length})</h4>
           <div class="ep-picker">
-            ${a.episodes.map(e => `
+            ${epList.map(e => `
               <button class="ep-btn" onclick="selectEp('${a.slug}', ${e.number}, this)">Cap. ${e.number}</button>
             `).join('')}
           </div>
           <div id="playerBox" class="player-box" style="display: none;"></div>
         `;
 
-        if (a.episodes.length > 0) {
+        if (epList.length > 0) {
           const firstBtn = modalContent.querySelector('.ep-btn');
-          if (firstBtn) selectEp(a.slug, a.episodes[0].number, firstBtn);
+          if (firstBtn) selectEp(a.slug, epList[0].number, firstBtn);
         }
       } catch (err) {
-        modalContent.innerHTML = `<div style="color: #ef4444;">${err.message}</div>`;
+        modalContent.innerHTML = `<div style="color: #ef4444; padding: 20px;">Error al cargar ficha: ${err.message}</div>`;
       }
     };
 
-    window.selectEp = async (slug, epNum, btn) => {
-      document.querySelectorAll('.ep-btn').forEach(b => b.classList.remove('active'));
-      if (btn) btn.classList.add('active');
+    window.renderPlayer = (index = 0) => {
+      const box = document.getElementById('playerBox');
+      const links = window.currentEpisodeLinks;
+      if (!links || !links.players) return;
+      const players = links.players || [];
+      const downloads = links.downloads || [];
+      const p = players[index];
+      const pUrl = p ? (p.embed_url || p.player_url) : null;
+
+      box.innerHTML = `
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+          <strong>Capítulo ${links.episode}</strong>
+          <span style="font-size: 0.8rem; color: var(--text-muted);">${players.length} reproductores · ${downloads.length} descargas</span>
+        </div>
+
+        ${players.length > 0 ? `
+          <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 12px;">
+            ${players.map((pl, i) => `
+              <button type="button" class="ep-btn ${i === index ? 'active' : ''}" style="padding: 6px 12px; font-size: 0.8rem;" onclick="renderPlayer(${i})">
+                ${pl.server || ('Servidor ' + (i + 1))}
+              </button>
+            `).join('')}
+            <button type="button" class="ep-btn" style="padding: 6px 12px; font-size: 0.8rem; background: #22c55e; color: #000; font-weight: 700;" onclick="selectEp('${links.slug}', ${links.episode}, null, true)">⚡ Actualizar</button>
+          </div>
+        ` : ''}
+
+        ${pUrl ? `
+          <div class="iframe-box">
+            <iframe src="${pUrl}" allowfullscreen referrerpolicy="no-referrer" sandbox="allow-scripts allow-same-origin allow-forms allow-popups"></iframe>
+          </div>
+          <div style="display: flex; gap: 10px; margin-top: 8px;">
+            <a href="${pUrl}" target="_blank" rel="noopener noreferrer" class="btn-cta">Abrir Reproductor Externo ↗</a>
+          </div>
+        ` : '<p style="color: var(--text-muted); padding: 20px 0;">Sin reproductor directo configurado para este capítulo.</p>'}
+
+        ${downloads.length > 0 ? `
+          <div style="margin-top: 14px; border-top: 1px solid var(--border); padding-top: 10px;">
+            <div style="font-size: 0.85rem; font-weight: 700; margin-bottom: 6px;">Descargas Directas:</div>
+            <div style="display: flex; flex-direction: column; gap: 6px;">
+              ${downloads.map(d => `
+                <div style="display: flex; justify-content: space-between; background: var(--bg-surface); padding: 8px 12px; border-radius: 6px; font-size: 0.8rem;">
+                  <span>💾 <b>${d.server}</b> (${d.size || 'HD'})</span>
+                  <a href="${d.download_url}" target="_blank" rel="noopener noreferrer" style="color: var(--primary); font-weight: 700;">Descargar ⤓</a>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+        ` : ''}
+      `;
+    };
+
+    window.selectEp = async (slug, epNum, btn, forceRefresh = false) => {
+      if (btn) {
+        document.querySelectorAll('.ep-picker .ep-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+      }
 
       const box = document.getElementById('playerBox');
       box.style.display = 'block';
-      box.innerHTML = `<div>Cargando servidores del Cap. ${epNum}...</div>`;
+      box.innerHTML = `<div style="padding: 20px; text-align: center;">${forceRefresh ? 'Sincronizando enlaces en vivo...' : 'Cargando servidores del Cap. ' + epNum + '...'}</div>`;
 
       try {
-        const res = await fetch(`${API_BASE}/api/anime/${slug}/episodes/${epNum}/links`);
+        const refreshParam = forceRefresh ? '?refresh=1' : '';
+        const res = await fetch(`${API_BASE}/api/anime/${slug}/episodes/${epNum}/links${refreshParam}`);
         const links = await res.json();
-        const p = links.players[0];
-        const pUrl = p ? (p.player_url || p.embed_url) : null;
-
-        box.innerHTML = `
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-            <strong>Capítulo ${epNum}</strong>
-            <span style="font-size: 0.8rem; color: var(--text-muted);">${links.players.length} reproductores · ${links.downloads.length} descargas</span>
-          </div>
-
-          ${pUrl ? `
-            <div class="iframe-box">
-              <iframe src="${pUrl}" allowfullscreen sandbox="allow-scripts allow-same-origin allow-forms allow-popups"></iframe>
-            </div>
-            <a href="${pUrl}" target="_blank" class="btn-cta">Abrir Reproductor Externo ↗</a>
-          ` : '<p style="color: var(--text-muted);">Sin reproductor directo.</p>'}
-
-          ${links.downloads.length > 0 ? `
-            <div style="margin-top: 14px; border-top: 1px solid var(--border); padding-top: 10px;">
-              <div style="font-size: 0.85rem; font-weight: 700; margin-bottom: 6px;">Descargas Directas:</div>
-              <div style="display: flex; flex-direction: column; gap: 6px;">
-                ${links.downloads.map(d => `
-                  <div style="display: flex; justify-content: space-between; background: var(--bg-surface); padding: 8px 12px; border-radius: 6px; font-size: 0.8rem;">
-                    <span>💾 <b>${d.server}</b> (${d.size || 'HD'})</span>
-                    <a href="${d.download_url}" target="_blank" style="color: var(--primary); font-weight: 700;">Descargar ⤓</a>
-                  </div>
-                `).join('')}
-              </div>
-            </div>
-          ` : ''}
-        `;
-      } catch (e) {
-        box.innerHTML = `<div style="color: #ef4444;">Error al cargar enlaces del episodio.</div>`;
+        window.currentEpisodeLinks = { ...links, slug, episode: epNum };
+        window.renderPlayer(0);
+      } catch (err) {
+        box.innerHTML = `<div style="color: #ef4444; padding: 12px;">Error al cargar enlaces del episodio: ${err.message}</div>`;
       }
     };
 

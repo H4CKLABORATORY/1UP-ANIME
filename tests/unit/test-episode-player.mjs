@@ -179,4 +179,42 @@ for(const unsafe of [
  assert.equal(first.pauseCalls,1,'Failed video not disposed');
 }
 
+// Catalog streaming: direct iframe embedding with sandbox and no-referrer for authorized backend servers.
+{
+ const events=new Map(),nodes=new Map();
+ const root=new Element();
+ root.querySelector=selector=>nodes.get(selector)||null;
+ root.querySelectorAll=()=>[];
+ Object.defineProperty(root,'innerHTML',{set(){
+  nodes.clear();
+  for(const id of ['oneup-watch-episode','oneup-watch-language','oneup-playback-display','oneup-player-message','oneup-now-watching'])nodes.set('#'+id,new Element());
+ }});
+ const document={querySelector:()=>root,createElement:tag=>new Element(tag),addEventListener:(name,fn)=>events.set(name,fn),dispatchEvent(){}};
+ const window={ONEUP_API_BASE:'https://api.example.com'};
+ const fetch=async(url)=>{
+  if(url.includes('/links')){
+   return {
+    ok:true,
+    json:async()=>({
+     players:[
+      {server:'Streamwish',embed_url:'https://streamwish.to/e/123',quality:'HD'},
+      {server:'Vidhide',embed_url:'https://vidhide.com/e/456',quality:'HD'}
+     ],
+     downloads:[]
+    })
+   };
+  }
+  return {ok:true,json:async()=>({id:'jk-4805',episodes_total:12,episodes_list:[{number:1},{number:2}]})};
+ };
+ vm.runInNewContext(fs.readFileSync('client/src/js/episode-player.js','utf8'),{window,document,fetch,URL,location:{href:'https://anime.example.com/'},AbortController,setTimeout,clearTimeout,CustomEvent:class{}});
+ await window.OneUpEpisodePlayer.show({id:'jk-4805',episodes:12});
+ await new Promise(r=>setTimeout(r,50));
+ const stage=nodes.get('#oneup-playback-display');
+ const iframe=stage.children.find(n=>n.tag==='iframe');
+ assert.ok(iframe,'Catalog streaming player should mount iframe seamlessly');
+ assert.equal(iframe.src,'https://streamwish.to/e/123');
+ assert.equal(iframe.referrerPolicy,'no-referrer');
+ assert.match(iframe.attributes.sandbox,/allow-scripts/);
+}
+
 console.log('Episode player passed: lifecycle, language filtering, inherited metadata, safe captions and seasons.');

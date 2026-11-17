@@ -863,3 +863,30 @@ Al concluir cada trabajo agregar:
   - `npm run build`: Compilación de producción Vite completada sin errores (269ms).
   - Verificación de HTTP de proveedores: Streamwish (200), Vidhide (200), Mega (200), VOE (200), Mp4upload (200).
 
+### 2026-11-16 — Corrección definitiva del visualizador de reproductores al hacer clic en cualquier anime del catálogo
+
+- **Problema reportado**: «puedes analizar la lista de catalogo, cuando le doy click al anime, este ya no muestra los reproductores, puedes verificar y arreglarlo».
+- **Causas raíz identificadas**:
+  1. *Error de sintaxis en `client/src/js/episode-player.js`*: Durante la edición anterior quedó un fragmento duplicado sin función envolvente en la línea 334 (`const res=await fetch(...)`), provocando `Uncaught SyntaxError: await is only valid in async functions`. Este error impidió que el navegador cargara `episode-player.js`, dejando `window.OneUpEpisodePlayer` como `undefined`. Al hacer clic en cualquier anime en `index.html` (`studio.js`), la llamada `OneUpEpisodePlayer.show(a)` quedaba inoperante y la sección `#oneup-player-section` no se inicializaba.
+  2. *Error `TypeError: a.episodes.map is not a function` en `client/pages/catalogo-streaming.html`*: El servicio `catalog-service.js` devuelve `episodes` como un número (`24`) y `episodes_list` como el array de episodios. La vista intentaba ejecutar `a.episodes.map(...)`, lanzando una excepción inmediata que abortaba el renderizado del diálogo y ocultaba el `#playerBox`.
+  3. *Bloqueo por puerto fijo en `catalogo-streaming.html`*: `API_BASE` estaba fijado a `http://localhost:4050`, fallando cuando el servidor se ejecuta en el puerto estándar `8765` (`npm start`).
+  4. *Falta de episodios de respaldo cuando la ficha no incluye `episodes_list`*: En `configuredEpisodes`, si `backendAnime` existía pero `episodes_list` estaba vacío en la BD, devolvía un mapa vacío (`Map(0)`), evitando que `chooseEpisode(1)` solicitara los servidores.
+- **Solución implementada**:
+  1. `client/src/js/episode-player.js`:
+     - Eliminado el bloque residual causante del `SyntaxError`.
+     - Mejorada la función `configuredEpisodes` para que, si `episodes_list` no está presente pero `episodes` o `episodes_total` es mayor a 0, se pre-pueblen automáticamente las entradas del mapa con `{ backend: true }`.
+     - En `show(anime)`, si `mediaByEpisode.size === 0`, se inicializan los slots 1..`episodeCount` de forma reactiva, asegurando que `chooseEpisode(1)` siempre solicite los enlaces y monte el iframe y los botones de servidores de inmediato.
+  2. `client/pages/catalogo-streaming.html`:
+     - `API_BASE` normalizado a relativo `''` cuando se ejecuta en el navegador (compatible tanto en el puerto 8765 como en el 4050).
+     - Manejo polimórfico de episodios: `epList = a.episodes_list || a.episodes || Array.from({ length: Number(a.episodes || a.episodes_total || 1) }, (_, i) => ({ number: i + 1 }))`.
+     - Añadido selector dinámico de servidores (`Streamwish`, `Vidhide`, `Mega`, `VOE`, etc.) con cambio instantáneo entre reproductores y botón de sincronización `⚡ Actualizar`.
+     - Atributos `referrerpolicy="no-referrer"` y `sandbox="allow-scripts allow-same-origin allow-forms allow-popups"` aplicados en el iframe.
+  3. `tests/unit/test-episode-player.mjs`:
+     - Añadida prueba de regresión para integración con catálogo de streaming verificando el montaje inmediato de `iframe`, `sandbox` y `referrerPolicy`.
+- **Verificación**:
+  - `npm test`: **71/71 tests unitarios PASADOS**.
+  - `npm run test:all`: **71 Node + 16 Python + 152 smoke UI pasados con 0 errores**.
+  - `npm run build`: Compilación de producción Vite completada exitosamente.
+  - Comprobación manual de sintaxis con `node --check` en todos los archivos modificados: 100% limpio.
+
+
