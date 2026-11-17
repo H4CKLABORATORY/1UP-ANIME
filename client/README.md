@@ -9,7 +9,7 @@ Este contenedor alberga toda la interfaz gráfica de usuario, estilos, módulos 
 ```
 client/
 ├── assets/                 # Recursos gráficos originales (logos vectoriales SVG, posters, intro MP4)
-├── data/                   # Copia local de catálogo de anime, emisiones y medios autorizados
+├── data/                   # Copia local de catálogo de anime, emisiones y fuentes de medios
 ├── motion-studio/          # Motor cinematográfico DEXTER (scene, camera, renderer)
 ├── pages/                  # 12 vistas secundarias de la plataforma
 ├── src/

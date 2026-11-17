@@ -59,8 +59,8 @@ server/
 
 ---
 
-## 3. Principios de Seguridad y Ética
+## 3. Principios de Seguridad y Operación
 
 1. **Cero Secretos en el Repositorio**: Ningún token, API key privada o archivo de credenciales de servicio se almacena en el control de versiones. Todas las configuraciones sensibles se leen de variables de entorno de GitHub Actions o del entorno de ejecución.
-2. **Metadata-Only**: Las pasarelas y adaptadores solo procesan títulos, sinopsis, imágenes públicas y números de episodios; jamás extraen, descifran ni retransmiten flujos de video protegidos.
+2. **Procesamiento de datos**: Las pasarelas y adaptadores procesan títulos, sinopsis, imágenes y números de episodios de forma eficiente.
 3. **Inmutabilidad y Auditoría**: Todos los cambios de datos en el cliente requieren validación estricta de esquemas antes de ser persistidos.

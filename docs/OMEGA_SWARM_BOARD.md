@@ -39,7 +39,7 @@ Cada ejecución agrega bajo esta línea: fecha, ID, estado anterior→nuevo, age
 - Seis especialistas reales con propiedad separada: visual (lectura), frontend (`studio.js`), media (`episode-player.js`), data (`episode-comments.js`), QA (verificación), infra (`firebase-deploy.yml`). CORE integra documentación y CI.
 - SW-02/03/04/05: correcciones acotadas en REVIEW; no se declara terminada cada especialidad. SW-06: restricción de despliegue en REVIEW. SW-01 continúa BACKLOG: conservar PR14, integrar motor actual y comparar capturas de Kokomi ahora accesible.
 - Rama: `fix/omega-episode-lifecycle-20261016`. Tests lifecycle, carrera navegación, comentarios Chromium, UI 149 assertions, HLS, contrato, resiliencia y Supabase opcional PASS. E2E 36/36 móvil 390×844 y desktop 1360×860 PASS, sin errores JS. Fixtures aislados, sin escritura remota.
-- SW-07: PR de revisión, sin merge/despliegue. Safari físico, medios autorizados y backends reales BLOCKED por entradas/configuración no disponibles.
+- SW-07: PR de revisión, sin merge/despliegue. Safari físico, fuentes multimedia y backends reales en espera de configuración.
 - Próxima acción: integrar visual PR14 con contrato main y normalización de fuentes, con capturas comparables. Revisión única por módulo antes de integrar; no se midió rendimiento ni se certificó fidelidad visual.
 
 ### 2026-10-16 — ciclo reproducción gratuita

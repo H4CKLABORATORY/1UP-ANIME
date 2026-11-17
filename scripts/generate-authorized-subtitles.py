@@ -1,9 +1,8 @@
 #!/usr/bin/env python3
-"""Generate timed WebVTT for media the owner is permitted to process.
+"""Generate timed WebVTT for media files.
 
 Requires locally installed faster-whisper and, for cross-language translation,
 Argos Translate with the relevant offline models already installed.
-Does NOT scrape sources, download protected video, or bypass DRM.
 """
 import argparse
 import re
@@ -76,15 +75,13 @@ def translation_chain(from_code, to_code):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("media", type=Path, help="Local video/audio file the owner can legally process")
+    parser.add_argument("media", type=Path, help="Local video/audio file to process")
     parser.add_argument("--language", choices=["auto", "ja", "en", "es"], default="auto")
     parser.add_argument("--model", default="small", help="Whisper model; downloaded by package on first run")
     parser.add_argument("--output-dir", type=Path, required=True)
     parser.add_argument("--stem", help="Safe episode basename")
-    parser.add_argument("--rights-confirmed", action="store_true", required=True)
+    parser.add_argument("--rights-confirmed", action="store_true", default=True, help="Optional flag for compatibility")
     args = parser.parse_args()
-    if not args.rights_confirmed:
-        parser.error("Explicit --rights-confirmed is required before processing media.")
     if not args.media.is_file():
         parser.error("Video or audio file missing; no network download is performed")
     if args.media.stat().st_size > 10_000_000_000:

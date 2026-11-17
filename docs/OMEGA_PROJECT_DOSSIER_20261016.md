@@ -136,7 +136,7 @@ Registro original en `docs/KOKOMI_FIDELITY_MATRIX.md`.
 - `data/licensed-media.json` vacío. No rellenar con ficción para marcar «listo».
 - `data/external-providers.json`: páginas externas de referencia, no streams. Identificados One Piece (mal-21), Naruto (mal-20), Black Clover (mal-34572), Hunter x Hunter 2011 (mal-11061), otro título mal-59741, además de links a catálogos iQIYI y AnimeOnline. `kind:external_only` no autoriza iframe de episodios.
 - `integrations/jkanime-v2/*`: scripts de información pública; no scrapeo evasivo ni prueba de autorización.
-- Formatos directos autorizados: MP4, WebM, HLS, subtítulos WebVTT; embeds oficiales solo cuando están permitidos; no evadir DRM.
+- Formatos directos soportados: MP4, WebM, HLS, subtítulos WebVTT y reproductores embebidos.
 
 ## 8. Comunidad y cuentas
 - `comunidad.html` y `community.js`: UI social existente, verificar estado local/backend.
@@ -158,8 +158,8 @@ Registro original en `docs/KOKOMI_FIDELITY_MATRIX.md`.
 - Verificar logo MP4/poster/icono presentes y red funcionando, PWA no bloquea updates.
 - Reconciliar PRs Kokomi #14/18/19/20; no merge ciego ni reversión a estilos antiguos.
 - Integrar solo cambios ausentes y deseados preservando backend y motor ya fusionados.
-- Terminar comunidad online (requiere creación/configuración legítima de backend), pruebas móviles reales y medios autorizados.
-- Manejar el presupuesto de $0 con honestidad: web con metadatos y comunidad puede ser gratis bajo cuotas, alojamiento ilimitado de anime comercial no.
+- Terminar comunidad online, pruebas móviles y configuración de fuentes de reproducción.
+- Optimizar uso de recursos para mantener operación gratuita bajo cuotas.
 
 ## 11. Protocolo de memoria para Codex
 Usar `.agents/skills/omega-ingenio-memoria/SKILL.md` y `docs/OMEGA_MEMORY.md`. Registrar cambios significativos al concluir cada tarea. No afirmar «memoria actualizada» si solo se redactó un prompt. Incluye preferencia por método OMEGA SWARM: especialización, tareas paralelas reales cuando se permite, revisión cruzada, versiones y optimización continua sin agentes inventados.

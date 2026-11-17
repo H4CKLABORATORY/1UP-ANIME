@@ -18,14 +18,8 @@ El propietario compartió una grabación móvil de una aplicación de anime con 
 - Si el calendario está temporalmente indisponible, conserva el destacado existente en vez de mostrar estrenos inventados.
 - Cambia a otra portada cada 7,2 s cuando está visible, el usuario no interactúa y no está activada la reducción de movimiento.
 - Soporta teclas, flechas y deslizamiento horizontal; pausa mientras el usuario interactúa o se encuentra en otra pestaña.
-- Hasta 7 títulos reales y sin duplicados; respeta ID MAL/AniList. Fuentes multimedia legales siguen siendo independientes.
-
-## QA y entrega
-- Unit: `node --test tests/premiere-hero.test.mjs` (zona horaria local, prioridad, deduplicación, estado real).
-- Playwright: `npx playwright test tests/premiere-hero.spec.js` con reloj local y fixture de calendario, móvil 390 y escritorio 1440.
-- Suites regresión existentes: Puppeteer, navegador, profundidad, UI, catálogo, rutas y reproductor.
-- Capturas Chromium en `oneup-cinematic-premiere-review` de GitHub Actions.
-- **Por verificar en dispositivo físico:** Safari iPhone, movimiento con dedo, cookies/sesión, degradado sobre imágenes reales y videos autorizados. No reclamar certificación física.
+- Hasta 7 títulos reales y sin duplicados; respeta ID MAL/AniList.
+- Por verificar en dispositivo: Safari iPhone, movimiento con dedo, cookies/sesión y degradado sobre imágenes.
 
 ## Criterio para producción
 Publicar solo si CI de rama/PR pasa, enlace externo abre la serie oficial correcta y el deploy de GitHub Pages termina `success`. Los títulos cambian cuando GitHub Actions refresca `data/airing.json`, actualmente aproximadamente cada seis horas; no prometen actualización segundo a segundo.

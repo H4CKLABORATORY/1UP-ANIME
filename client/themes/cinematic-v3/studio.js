@@ -1,6 +1,5 @@
 /* 1UP ANIME V3 — browser motion study, independent procedural FX.
- * Not an MP4 replacement: user-owned metallic logo + original AAC source only.
- * No artificial/copyrighted character faces. No external libraries.
+ * Procedural animation engine. No external libraries.
  */
 (()=>{
 'use strict';

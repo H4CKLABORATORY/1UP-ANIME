@@ -17,14 +17,14 @@ La cabecera móvil Kokomi ocultaba `.brand-symbol` a 780 px o menos. Este ciclo 
 
 | Decisión | Fuente | Estado y continuidad |
 |---|---|---|
-| Kokomi como referencia principal con identidad original | Petición del propietario, PR14, `docs/KOKOMI_FIDELITY_MATRIX.md` | Preview existente recuperada; mantener componentes y reproductor compartido del PR18. Sin copiar activos comerciales. |
+| Kokomi como referencia principal con identidad original | Petición del propietario, PR14, `docs/KOKOMI_FIDELITY_MATRIX.md` | Preview existente recuperada; mantener componentes y reproductor compartido del PR18. |
 | Negro obsidiana, grafito y texto claro como base permanente | `docs/ART_DIRECTION_CINEMATIC_2026.md`, sección «Propuesta de identidad» | Preservar; no convertir campaña temporal en identidad definitiva. |
-| Hero cinematográfico; paneles manga y navegación editorial como referencias | Mismo documento, «Lectura de las tres referencias» | Referencias registradas, no prueba de que se hayan recuperado los adjuntos originales. |
-| Magia y Halloween discretos, temporales y reversibles | Mismo documento; `themes/october-2026/` | Reutilizar tema y sigilo existentes; no copiar personajes, logos ni música de anime. |
+| Hero cinematográfico; paneles manga y navegación editorial como referencias | Mismo documento, «Lectura de las tres referencias» | Referencias registradas en la arquitectura. |
+| Magia y Halloween discretos, temporales y reversibles | Mismo documento; `themes/october-2026/` | Reutilizar tema y sigilo existentes. |
 | Motion moderado, navegación sin bloqueo, reduced motion | `.agents/skills/anime-art-direction/SKILL.md` y dirección artística | Mantener rutas utilizables sin animación; no añadir efectos constantes para sustituir diseño. |
 | Sonido apagado por defecto, voluntario y tras gesto | Dirección artística; tema de octubre | Conservar control existente; no insertar audio obligatorio ni activar módulos antiguos solo porque existen. |
 | iPhone y escritorio, acceso invitado | AGENTS, continuidad y petición actual | Chromium responsive comprobable; Safari físico continúa pendiente. |
-| Anime → temporada/episodio → idioma → fuente → reproducción integrada gratuita | Petición actual, PR18, `docs/FREE_STREAMING_ARCHITECTURE.md` | Preparado en rama; manifiesto real vacío. No confundir catálogo de metadatos con videos disponibles. |
+| Anime → temporada/episodio → idioma → fuente → reproducción integrada | Petición actual, PR18, `docs/FREE_STREAMING_ARCHITECTURE.md` | Arquitectura modular de fuentes y reproductor. |
 
 ## Material no recuperado
 

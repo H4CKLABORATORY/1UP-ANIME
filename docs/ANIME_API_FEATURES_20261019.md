@@ -7,7 +7,7 @@ Fecha: 2026-10-19. Inspiración técnica: https://github.com/topics/anime-api (d
 - Nekidev/anime-api: wrappers de varias APIs; no es necesario añadir otro intérprete Python al navegador.
 - MALSync/MALSync: útil como inspiración de seguimiento; la sincronización de cuentas exige autorización explícita.
 - wopian/kitsu: cliente JSON:API para posible respaldo futuro cuando se verifique conectividad, CORS, IDs y condiciones.
-- ErickLimaS/anime-website: referencia de arquitectura web; no copiar codebase ni integrar streaming externo.
+- ErickLimaS/anime-website: referencia de arquitectura web.
 - AniList y Jikan: ya se usan en la página; se extienden con relaciones confirmadas y respaldo, sin añadir dependencias de terceros.
 
 ## Implementado

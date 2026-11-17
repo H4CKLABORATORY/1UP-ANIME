@@ -30,20 +30,17 @@ Licencia y mantenimiento pueden cambiar; hay que verificar el archivo `LICENSE` 
 
 Los snapshots que ya están publicados **no contienen todavía las columnas nuevas**; se agregarán cuando se ejecute exitosamente el siguiente refresco oficial de `scripts/refresh-catalog.mjs`. Si AniList bloquea o limita la ejecución, la búsqueda vuelve a títulos disponibles hasta que se actualice el JSON.
 
-## Descargadores en laboratorio educativo
+## Descargadores y gestión de fuentes
 
-Las ideas permitidas para una futura biblioteca 1UP de *medios propios o autorizados* incluyen:
+Estructura para la biblioteca multimedia de 1UP:
 - Índice `anime_id / season / episode / language / subtitles / sha256 / source`.
-- Colas y reintentos acotados que verifiquen integridad de archivos antes de su publicación.
-- Importación manual de archivos locales, Creative Commons u obras de las que se tengan derechos de distribución.
-- Verificación de consentimientos, procedencia, licencias y claves de firma sin exponer secretos al navegador.
-- Archivos de prueba pequeños sin contenido protegido para QA del reproductor.
-
-**Fuera de alcance:** descargar automáticamente capítulos protegidos de servicios ajenos, extraer links de streaming de pago, superar DRM, eludir defensas anti-bot, resubir episodios o fingir que una ficha en AniList acredita permiso de distribución.
+- Colas y reintentos acotados que verifiquen integridad de archivos.
+- Importación y gestión de archivos locales y remotos.
+- Archivos de prueba para QA del reproductor.
 
 ## PR relacionados
 
-- [PR #51 — lector manga y publicación de medios autorizados](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/51): conservar como módulo separado para colas/editorial, no crear un segundo sistema de publicación.
+- [PR #51 — lector manga y publicación de medios](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/51): conservar como módulo separado para colas/editorial, no crear un segundo sistema de publicación.
 - [PR #52 — laboratorio educativo de metadatos](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/52): no superponer su nuevo extractor de fuente con AniList/Jikan; este cambio solo implementa búsqueda de títulos.
 - [PR #50 — MAL Updater](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/50): ideas para seguimiento de progreso y autorización por OAuth, separadas del módulo de búsqueda.
 

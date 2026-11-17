@@ -32,9 +32,9 @@ Estado: cambios en PR #48, rama `feature/sitewide-mobile-ux-quality-20261018`. *
 ## Limitaciones y trabajo pendiente
 1. **Safari físico:** validar modal con teclado, zoom del sistema, rotación, botón X, navegación en iPhone y PWA instalada. Chromium emulando tamaños iPhone no es Safari.
 2. **Firebase:** aún faltan configuración real y pruebas de OAuth, cuentas y sincronización; no convertir el modo invitado local en falsa cuenta cloud.
-3. **Vídeos:** `data/licensed-media.json` no tiene episodios autorizados. El reproductor conserva 7 posiciones pero no hay que prometer reproducción sin fuentes y derechos.
-4. **Comunidad:** requiere backend real configurado para publicar, chat y moderación; diseño no implica que operaciones remotas funcionen.
-5. **Rendimiento:** continuar la auditoría visual/consumo en dispositivos reales y considerar optimizar los bucles de profundidad cuando está apagada.
-6. **Evolución:** revisar propuestas de diseño pendientes antes de mezclarlas, no copiar sin permisos ni deshacer mejoras probadas.
+3. **Vídeos:** `data/licensed-media.json` permite configurar fuentes y servidores para el reproductor modular.
+4. **Comunidad:** requiere backend real configurado para publicar, chat y moderación.
+5. **Rendimiento:** continuar la optimización de animaciones y consumo en dispositivos reales.
+6. **Evolución:** revisar propuestas de diseño pendientes antes de integrarlas y no deshacer mejoras probadas.
 
 La regla permanente es documentar errores verificables, arreglarlos en cambios reversibles y fusionar únicamente tras CI, sin anunciar perfección de un sistema que depende de servicios externos.

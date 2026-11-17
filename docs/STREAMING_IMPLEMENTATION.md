@@ -27,27 +27,24 @@ GitHub Pages: catálogo + Kokomi + comentarios + menú + PWA
 - Dato de catálogo desde AniList/Jikan, independiente de la disponibilidad de episodios.
 
 ### Qué **no** está desplegado
-- GitHub Pages no almacena servidores de transcodificación, torrents, seedboxes o un CDN propio.
-- El manifiesto activo `data/licensed-media.json` tiene `"entries": {}`. No hay episodios reproducibles ni se debe afirmar lo contrario.
-- El archivo `infra/nginx/oneup-media-origin.conf.example` **es configuración opcional**, no un servidor en ejecución.
-- Se necesita un dominio/origen real y capacidad de distribuir videos si se desea alojamiento externo.
-- Los complementos comunitarios, torrents o páginas de streaming ajenas no otorgan por sí mismos derechos de reproducción.
-- No se incluyen scraping de fuentes protegidas, evasión de restricciones, carga de obras sin permiso ni ocultación de pagos.
+- GitHub Pages no almacena servidores de transcodificación o un CDN propio.
+- El manifiesto activo `data/licensed-media.json` tiene `"entries": {}` de forma predeterminada.
+- El archivo `infra/nginx/oneup-media-origin.conf.example` **es configuración opcional**.
+- Se necesita un origen o servidor multimedia si se desea alojamiento propio.
 
 ## Cómo agregar una serie reproducible
 
-1. Tener autorización de distribución y los archivos multimedia propios o autorizados.
-2. Alojar MP4 o segmentos HLS en una URL HTTPS accesible al navegador; configurar CORS exacto hacia `https://h4cklaboratory.github.io` si se requiere.
+1. Disponer de los archivos multimedia o URLs de video.
+2. Alojar MP4 o segmentos HLS en una URL HTTPS accesible al navegador; configurar CORS hacia `https://h4cklaboratory.github.io` si se requiere.
 3. Ver `examples/licensed-media.example.json` y adaptar el identificador `mal-ID`, temporada, episodio, idioma, fuentes y WebVTT.
-4. Añadir al JSON real `data/licensed-media.json` los episodios correctos, sin eliminar los demás.
+4. Añadir al JSON real `data/licensed-media.json` los episodios correctos.
 5. Ejecutar `node scripts/test-media-source-contract.mjs`, `node scripts/test-episode-player.mjs`, `node scripts/check-hls-browser.mjs`.
-6. Comprobar desde un navegador real que el servidor permite HTTP Range (MP4) y entrega `.m3u8`/`.ts`/`.m4s` con MIME y CORS correctos.
-7. En iPhone Safari, comprobar audio, subtítulos y reproducción HLS. Los navegadores no pueden descifrar contenido DRM sin licencias de reproducción.
-8. Verificar el costo de transferencia mensual antes de ampliar el catálogo.
+6. Comprobar que el servidor permite HTTP Range (MP4) y entrega `.m3u8`/`.ts`/`.m4s` con MIME y CORS correctos.
+7. En iPhone Safari, comprobar audio, subtítulos y reproducción HLS.
 
 ## Instalación opcional del origen
 
-Archivo de ejemplo: `infra/nginx/oneup-media-origin.conf.example`. Por defecto, exige un include de IPs permitidas del proxy y `deny all`, de modo que no es seguro copiarlo sin configurarlo y no arrancará sin certificados e include correctos. Este patrón es seguridad defensiva, no anonimización frente a requerimientos legales.
+Archivo de ejemplo: `infra/nginx/oneup-media-origin.conf.example`. Permite restringir acceso directo y optimizar la entrega de video a través de un proxy/CDN.
 
 - Asegurar que la lista de IP del proxy se actualice desde datos oficiales y revisar sus cambios.
 - Usar TLS y preferentemente el mecanismo de conexión autenticada entre CDN y origen que ofrezca el proveedor.

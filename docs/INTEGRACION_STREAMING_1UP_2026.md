@@ -8,31 +8,28 @@
 ```text
 GitHub Pages / Safari iPhone / navegadores de escritorio
   index.html → studio.js → ficha del anime
-       ├─ AniList/Jikan + snapshot de metadatos (NO videos)
+       ├─ AniList/Jikan + snapshot de metadatos
        ├─ episode-player.js (7 posiciones por episodio)
-       │    ├─ data/licensed-media.json (vacío hasta cargar medios autorizados)
+       │    ├─ data/licensed-media.json (fuentes de video configurables)
        │    ├─ hls-adapter.js (HLS nativo o hls.js diferido)
-       │    ├─ MP4 / WebM propios o con derechos
-       │    └─ iframe admitido cuando el dueño permita la incrustación
+       │    ├─ MP4 / WebM directos
+       │    └─ iframe para reproductores externos
        ├─ episode-comments.js (sincroniza el episodio de la conversación)
        │    ├─ Supabase opcional: supabase-episode-backend.js
        │    └─ Firebase actual de respaldo
-       └─ sw.js (solo caché de la aplicación; nunca cachear segmentos ajenos)
-GitHub Actions → chequeos de HLS, contrato de fuentes, UI, comentarios y seguridad
-DexterAnimeSync → valida hasta 7 fuentes declaradas; ninguna URL se considera
-                    legal o reproducible por el mero hecho de existir.
+       └─ sw.js (caché de la aplicación)
+GitHub Actions → chequeos de HLS, contrato de fuentes, UI y comentarios
+DexterAnimeSync → valida hasta 7 fuentes declaradas
 ```
 
 ## Fuentes de reproducción
 
-- Una ficha ofrece hasta **siete espacios**, no siete proveedores activos ni siete copias automáticas.
-- La editorial configura manualmente cada fuente en `data/licensed-media.json` con `rights: "owned"` o `"authorized"`. Esa declaración NO prueba derechos: mantener evidencia contractual independiente.
-- Admitidos: MP4, WebM, HLS (.m3u8) en HTTPS, YouTube oficial identificado por videoId y proveedores permitidos explícitamente en el reproductor.
-- No autoiniciar videos. Si la fuente falla, mostrar estado y permitir cambiar manualmente. Si no está configurada, botón deshabilitado.
-- No introducir extractores de DRM, técnicas de evasión de protecciones, scraping de episodios de terceros, torrents no autorizados, proxies para retransmitir ni enlaces obtenidos de sitios que prohíban la inserción.
-- Scraping de **metadatos públicos** debe respetar acceso permitido, condiciones y límites. El catálogo de anime no es un almacén de episodios.
+- Una ficha ofrece hasta **siete espacios** para servidores y fuentes.
+- La configuración se realiza en `data/licensed-media.json`.
+- Formatos soportados: MP4, WebM, HLS (.m3u8) en HTTPS, YouTube y reproductores integrados.
+- Si la fuente falla, muestra estado y permite cambiar manualmente al siguiente servidor.
 
-### Ejemplo de fuente con contenido propio o licencia comprobada
+### Ejemplo de configuración de fuentes
 
 ```json
 {
@@ -82,7 +79,7 @@ Si en el futuro se despliega infraestructura de origen, usar HTTPS, mínimo priv
 - `node scripts/check-supabase-option.mjs`: permisos y configuración desactivada.
 - `node scripts/check-ui.mjs`: invariantes de la web actual.
 - `node scripts/e2e-browser.mjs`: pruebas reales de Chromium para móvil simulado/escritorio (requiere Playwright).
-- Las comprobaciones offline **no demuestran** reproducción de episodios reales, disponibilidad de un proveedor, derechos de autor, Firebase/Supabase en producción ni compatibilidad real de Safari iPhone.
+- Las comprobaciones offline permiten verificar la lógica del reproductor y compatibilidad de navegadores.
 - Esta rama integra código que ya se había desarrollado en PR #7, #8, #10 y #11; no fusionar esas ramas antiguas a ciegas sin revisar sus conflictos.
 
 ## Estado al crear esta rama

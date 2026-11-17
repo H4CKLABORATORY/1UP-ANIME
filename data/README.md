@@ -1,6 +1,6 @@
 # 1UP Anime · Contenedor de Datos (Metadatos Estáticos & Auditorías)
 
-Este contenedor funciona como la fuente de verdad pública para el catálogo estático, la programación de transmisiones, los medios autorizados, las traducciones al español y el registro persistente de salud del sistema.
+Este contenedor funciona como la fuente de verdad pública para el catálogo estático, la programación de transmisiones, las fuentes de reproducción, las traducciones al español y el registro persistente de salud del sistema.
 
 ---
 
@@ -11,10 +11,10 @@ data/
 ├── airing.json             # Horarios de emisión y lanzamientos sincronizados con AniList
 ├── anime1v-config.json     # Estado, endpoints y salud de la pasarela Anime1v
 ├── catalog.json            # Catálogo estático principal de series de anime
-├── encyclopedia-anime.json # Registro de metadatos enciclopédicos educativos
-├── external-providers.json # Directorio de proveedores externos oficiales y verificados
-├── guild-license.json      # Metadatos del universo ficticio de gremios
-├── licensed-media.json     # Catálogo de medios con derechos de reproducción confirmados
+├── encyclopedia-anime.json # Registro de metadatos enciclopédicos
+├── external-providers.json # Directorio de proveedores externos
+├── guild-license.json      # Metadatos del universo de gremios
+├── licensed-media.json     # Catálogo de medios y enlaces de reproducción
 ├── sinopsis-editoriales-es.json # Sinopsis curadas editorialmente
 ├── translations-es.json    # Diccionario de traducciones de sinopsis al español
 ├── dexter/                 # Registros del motor de sincronización incremental:

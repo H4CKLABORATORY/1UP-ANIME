@@ -20,14 +20,12 @@ https://h4cklaboratory.github.io/1UP-ANIME/preview-kokomi.html
 
 La prueba automatizada está en `scripts/e2e-browser.mjs`: prueba catálogo, accesos, episodios, diálogo, sonido opcional y tamaño de pantalla móvil.
 
-## Licencias y relación con TemplateMonster
+## Diseño y dependencias
 
-La ficha comercial de Kokomi anuncia licencias propias (personal y comercial). Si el titular compra la plantilla y quiere utilizar **exactamente** sus archivos, deberá aportar el ZIP licenciado; habrá que comprobar los términos de su uso y adaptar las dependencias. Haber visto la demo no autoriza redistribuir los archivos ni usar las imágenes del producto. Ninguna de las dependencias originales de Kokomi (jQuery, Bootstrap, etc.) es necesaria para este diseño propio.
+El diseño implementado es una adaptación moderna en vanilla JS y CSS sin dependencias pesadas (sin jQuery ni Bootstrap), optimizada para rendimiento y móviles.
 
-## Integración segura
+## Integración
 
 El diseño de estudio reside en `themes/kokomi-studio/theme.css` y `theme.js`.
 La página original `index.html` sigue funcionando si se elimina esta capa.
 Para activarlo en producción, añadir la clase `oneup-kokomi` al `body` e incluir CSS y JS **después de los estilos de base** y antes del evento Halloween, si corresponde. Revisar primero los resultados del flujo `ONEUP Browser Acceptance` de 390px y 1360px, y los pantallazos de esa ejecución.
-
-No copiar assets de terceros, no declarar tráilers ni episodios disponibles sin fuentes reales, no sustituir autenticación ni bases de datos.

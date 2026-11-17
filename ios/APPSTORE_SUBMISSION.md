@@ -21,7 +21,7 @@ URL de soporte: https://github.com/H4CKLABORATORY/1UP-ANIME/issues
 3. Probar la intro con audio, interrupciones telefónicas, accesibilidad y modo silencio en iPhone físico.
 4. Crear Archive Release firmado y subir desde Xcode/Transporter o flujo autorizado.
 5. Completar capturas reales para tamaños exigidos, declaración de privacidad basada en código instalado, calificación de edad, derechos de contenido, información de soporte y material de revisión.
-6. Verificar funcionamiento offline limitado, conexiones AniList/Jikan y enlaces externos. Sin fuentes multimedia autorizadas, no anunciar reproducción de capítulos.
-7. Revisar las directrices oficiales de Apple sobre funcionalidad mínima y propiedad intelectual: https://developer.apple.com/app-store/review/guidelines/
+6. Verificar funcionamiento offline, conexiones de catálogo y enlaces.
+7. Revisar las directrices oficiales de Apple App Store: https://developer.apple.com/app-store/review/guidelines/
 
 Estado actual: proyecto compilable de simulador, NO firmado, NO subido, NO aprobado, sin TestFlight.

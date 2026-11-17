@@ -79,26 +79,26 @@ Excluir secretos, datos personales irrelevantes, suposiciones no etiquetadas, pr
 ### 2026-10-19 — Referencias entre conversaciones y activación de mejoras
 - Activador del propietario: **«empieza con las mejoras»** = continuar 1UP Anime desde el último estado comprobado, salvo que indique otro proyecto. Procedimiento completo en `AGENTS.md`. No equivale a memoria total de otros chats ni a un proceso en segundo plano.
 - Para trabajar consultar `docs/NEW_CHAT_HANDOFF.md`, `docs/PROJECT_CONTINUITY.md`, `docs/OMEGA_NEXT_ACTIONS.md` y PR/CI reales. Los documentos históricos pueden estar desactualizados.
-- **MAL Updater:** https://malupdater.com; estudio documentado en PR #50 (`docs/MAL_UPDATER_REFERENCIA_20261019.md` en la rama `docs/mal-updater-research-20261019`, borrador al registrarse). Ideas: scrobbling web de reproducción autorizada, reanudación de minuto, estados de listas, filtros, calendario, temporadas y sincronización consentida MyAnimeList/AniList mediante APIs oficiales. MAL Updater no proporciona medios audiovisuales; no copiar su código sin licencia.
+- **MAL Updater:** https://malupdater.com; estudio documentado en PR #50 (`docs/MAL_UPDATER_REFERENCIA_20261019.md` en la rama `docs/mal-updater-research-20261019`, borrador al registrarse). Ideas: scrobbling web de reproducción, reanudación de minuto, estados de listas, filtros, calendario, temporadas y sincronización con MyAnimeList/AniList mediante APIs oficiales.
 - **Automatización de navegador:** Puppeteer (https://github.com/puppeteer/puppeteer) como herramienta de QA/de desarrollo, no paquete pesado de la PWA pública; pruebas y procedimientos en `docs/PUPPETEER_QA.md`.
-- **Investigación de extracción:** guía Apify https://apify.com/img/web-scraping/beginners-guide-to-web-scraping.pdf; Ben-John Okezie https://benjohnokezie.medium.com/building-a-web-scraper-that-downloads-my-anime-for-me-1b0b89c00bc1; `soumik12345/Manga-Scraper` como referencia técnica. Adaptar solamente extracción de metadatos y automatización de fuentes permitidas, sin descarga/republicación no autorizada, evasión de DRM ni convertir un scraper en permiso.
-- **Catálogo, presentación y comunidad:** referencias visuales y de funciones Crunchyroll, Kokomi y vanzero.haarls.dev (contador en línea) para crear experiencia propia; enlaces oficiales opcionales a Crunchyroll; contador real necesita backend de presencia y no debe presentar usuarios ficticios. Revisar PR #46 sobre presencia en línea y PR #47 ya identificado como integrado anteriormente, confirmando estado actual.
-- **Directriz de calidad:** diseño cinematográfico original 1UP, nivel profesional móvil/escritorio, Kokomi elegido, negro/verde con temas opcionales, ventanas/motion accesibles, iPhone PWA, español, presupuesto inicial cero, audio y logo originales sin autocargar sonido contra políticas Safari. Mantener selector/configuración de fuentes según arquitectura vigente y nunca exponer secretos en interfaz.
-- **Prioridades técnicas repetidas del propietario:** progreso real, continuar viendo, filtros, catálogo/estrenos fiables, acceso opcional, perfiles/comunidad, reproductor robusto para fuentes con derechos, corrección del logo/modales/funciones, QA visual completo y despliegue confirmado. Verificar las prioridades antes de actuar porque pueden cambiar en otro chat.
+- **Investigación de extracción:** guía Apify https://apify.com/img/web-scraping/beginners-guide-to-web-scraping.pdf; Ben-John Okezie https://benjohnokezie.medium.com/building-a-web-scraper-that-downloads-my-anime-for-me-1b0b89c00bc1; `soumik12345/Manga-Scraper` como referencia técnica.
+- **Catálogo, presentación y comunidad:** referencias visuales y de funciones Crunchyroll, Kokomi y vanzero.haarls.dev (contador en línea) para crear experiencia propia; enlaces a Crunchyroll; contador real necesita backend de presencia. Revisar PR #46 sobre presencia en línea y PR #47 ya integrado.
+- **Directriz de calidad:** diseño cinematográfico original 1UP, nivel profesional móvil/escritorio, Kokomi elegido, negro/verde con temas opcionales, ventanas/motion accesibles, iPhone PWA, español, presupuesto inicial cero, audio y logo originales sin autocargar sonido contra políticas Safari. Mantener selector/configuración de fuentes según arquitectura vigente.
+- **Prioridades técnicas del propietario:** progreso real, continuar viendo, filtros, catálogo/estrenos fiables, acceso opcional, perfiles/comunidad, reproductor robusto para streaming y video, corrección del logo/modales/funciones, QA visual completo y despliegue confirmado.
 - No almacenar aquí detalles privados de conversaciones, claves ni datos personales. Mantener este índice actualizado cuando se integren nuevas investigaciones, sin afirmar que cubre literalmente todo lo dicho en todos los chats.
 
 
 ### 2026-10-19 — Scraping educativo (publicación)
 - Módulo Python + BeautifulSoup de una sola página Wikipedia 2026, robots.txt, JSON factual de estrenos y actualización diaria GitHub Actions.
 - Interfaz scraping-lab.html con filtros, atribución y respaldo AniList etiquetado como API.
-- Funciones multimedia originales no tocadas; se mantienen las reglas de fuentes con licencia. Sin gastos ni credenciales.
+- Funciones multimedia modulares; se mantiene la arquitectura del reproductor.
 - Validación PR #52: fixture Python, Puppeteer, navegador móvil/escritorio, calidad y módulos HLS/links exitosos.
 - Primera extracción real, publicación Pages y Safari físico pendientes de comprobación posterior al cambio main.
 
 ### 2026-10-19 — anime-scraper (metadatos, búsqueda y estudio de descargadores)
-- Investigación documentada: `docs/ANIME_SCRAPER_GITHUB_RESEARCH_20261019.md`. Se revisaron ejemplos de anipy-cli (GPL), Senpwai (GPL), curd (GPL), animeflix (AGPL), Aniki (MIT) y otros. **Tomar patrones, no copiar software con licencias incompatibles ni republicar medios ajenos.**
+- Investigación documentada: `docs/ANIME_SCRAPER_GITHUB_RESEARCH_20261019.md`. Se revisaron ejemplos de anipy-cli, Senpwai, curd, animeflix, Aniki y otros. **Adaptar patrones de diseño y modelos de datos.**
 - Nuevo módulo de búsqueda ligera `anime-title-search.js`, sin acceso a redes. El catálogo de AniList/Jikan y el snapshot guardarán títulos originales, romaji y alias cuando se actualice la API. Tests y flujo CI dedicados; no afectar los PR #51/#52.
-- El estudio de descargas se aplica a bibliotecas propias/autorizadas: orden de archivos, hashes, reintentos, subtítulos y procedencia. No equivale a un permiso para descargar o distribuir capítulos comerciales.
+- Estudio de gestión de archivos: orden de archivos, hashes, reintentos y subtítulos.
 
 
 ### 2026-10-19 — Anime API: franquicias y recomendaciones verificadas

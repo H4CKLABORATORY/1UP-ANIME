@@ -1,10 +1,10 @@
-# Reproducción y subtítulos de videos autorizados
+# Reproducción y configuración de fuentes de video
 
-1UP Anime puede mostrar portadas, sinopsis y enlaces oficiales sin almacenar videos. La reproducción integrada es opcional y solamente se activa para archivos que tengas derecho a distribuir.
+1UP Anime permite configurar fuentes multimedia para reproducción integrada (MP4, HLS, WebM, iframes).
 
 ## Manifiesto
 
-El archivo data/licensed-media.json contiene `entries` cuyo índice es el identificador del anime (por ejemplo, `mal-59741`). Cada episodio requiere URL HTTPS directa que controles o tengas permiso de publicar.
+El archivo data/licensed-media.json contiene `entries` cuyo índice es el identificador del anime (por ejemplo, `mal-59741`).
 
 Ejemplo de estructura:
 
@@ -16,7 +16,7 @@ Ejemplo de estructura:
       "episodes": [
         {
           "title": "Episodio 1",
-          "src": "https://tu-cdn-autorizado.example/episodio-01.mp4",
+          "src": "https://cdn.example.com/episodio-01.mp4",
           "mime": "video/mp4",
           "subtitles_es": "./media/episodio-01.es.vtt"
         }
@@ -26,47 +26,42 @@ Ejemplo de estructura:
 }
 ```
 
-El identificador y los URL son de ejemplo. No se incluyen episodios ni URLs reales y el sitio no afirma que se puedan reproducir. La reproducción no se inicia sola; el usuario pulsa reproducir. Safari de iPhone puede reproducir videos MP4 y pistas WebVTT en HTML5, sujeto a compatibilidad/CORS.
+Safari de iPhone puede reproducir videos MP4 y pistas WebVTT en HTML5 de forma nativa.
 
 ## Subtítulos automáticos a español
 
-Para generar subtítulos desde un archivo que ya tengas de forma legítima:
+Para generar subtítulos desde un archivo de video:
 
 ```bash
 python -m pip install faster-whisper argostranslate
 python scripts/video_a_subtitulos.py ./mi-video.mp4 --model small --output ./media/mi-video.es.vtt
 ```
 
-La herramienta detecta la voz, reconoce el texto y traduce del inglés o japonés al español con Argos. Si ya está en español, crea los subtítulos sin traducir. No dobla voces ni recrea actores, y requiere revisar ortografía, nombres propios y tiempos. Necesita modelos que se descargan una vez.
+La herramienta transcribe la pista de audio y traduce con Argos Translate generando subtítulos WebVTT.
 
 ## Alojar video
 
-GitHub Pages no es un servidor de distribución de video pesado. Se recomienda almacenamiento CDN con derechos de publicación y enlaces HTTPS, junto con reglas CORS que permitan servir los subtítulos. Evita alojar credenciales, claves privadas, señales IPTV o contenido de terceros sin permiso en el repositorio.
+Se recomienda almacenamiento en la nube o CDN con soporte CORS para servir segmentos HLS, MP4 y subtítulos WebVTT.
 
-No se implementa extracción de señales de streaming, capturas de sesiones protegidas, evasión de DRM o copia automática de episodios de JKAnime, Netflix u otros distribuidores.
+## Selección de servidores de video
 
-## Selección de servidores de video autorizados
+1UP Anime permite varias fuentes HTTPS por episodio. El usuario puede cambiar de servidor directamente desde el reproductor.
 
-1UP Anime permite ahora varias fuentes HTTPS por episodio. El visitante elige entre los servidores sin abandonar el reproductor, siempre que el propietario tenga permiso de distribución.
+En data/licensed-media.json, cada episodio puede tener una lista `sources`. Cada fuente incluye `name` (nombre visible), `src` (HTTPS) y `mime` (`video/mp4`, `video/webm` o `application/vnd.apple.mpegurl`). Se puede incluir `subtitles_es` en formato WebVTT.
 
-En data/licensed-media.json, además del formato anterior `src`, cada episodio puede tener una lista `sources`. Cada fuente incluye `name` (nombre visible), `src` (HTTPS) y `mime` (`video/mp4`, `video/webm` o `application/vnd.apple.mpegurl`). Puedes incluir un archivo de subtítulos `subtitles_es` en formato WebVTT.
+Ejemplo: para un episodio, usa las fuentes `{ name: "Servidor principal", src: "https://cdn.example.com/episodio.mp4", mime: "video/mp4" }` y `{ name: "Alternativo", src: "https://cdn2.example.com/episodio.m3u8", mime: "application/vnd.apple.mpegurl" }` dentro de `sources`.
 
-Ejemplo: para un episodio autorizado, usa las fuentes `{ name: "Servidor principal", src: "https://cdn.example.com/episodio.mp4", mime: "video/mp4" }` y `{ name: "Alternativo", src: "https://cdn2.example.com/episodio.m3u8", mime: "application/vnd.apple.mpegurl" }` dentro de `sources`. Estas URLs son ficticias.
-
-En iPhone, Safari ofrece reproducción HLS nativa cuando el proveedor admite el navegador y los permisos necesarios. La página no descifra DRM ni copia emisiones de otro servicio.
-
-Existen extractores no oficiales de JKAnime que recuperan enlaces a otros servidores. Eso no acredita autorización para redistribuir ni incrustar tales transmisiones. Los enlaces a las páginas originales del sitio pueden abrirse fuera de 1UP Anime.
+En iPhone, Safari ofrece reproducción HLS nativa de forma predeterminada.
 
 ## Botón «⚡ Actualizar» y revalidación de fuentes
 
-El botón `⚡ Actualizar` del reproductor **no descarga episodios ni consulta JKAnime**. Revalida las fuentes declaradas por el editor en `data/licensed-media.json`:
+El botón `⚡ Actualizar` del reproductor revalida el estado de las fuentes declaradas en `data/licensed-media.json`:
 
 1. El cliente solicita `GET /api/anime/:id/episodes/:n/links?refresh=1&season=N` al servicio local (`npm run serve:catalog` o `npm start`).
 2. `server/src/authorized-media.js` localiza la entrada por identificador, slug, alias o título, y el episodio por `number`/`episode` y `season`.
-3. Cada URL directa se comprueba con `HEAD`; si el servidor rechaza `HEAD`, se reintenta con `GET` y `Range: bytes=0-0`. Solo se aceptan URLs HTTPS públicas, sin credenciales ni puertos personalizados. Una respuesta HTML se marca como enlace caído.
-4. Los iframes de proveedores oficiales no se sondean: su disponibilidad la decide el proveedor.
-5. Si el anime está declarado pero el episodio no, la respuesta queda vacía y **no** se recurre a scraping de terceros.
-6. En GitHub Pages no existe `/api`: el cliente lee el manifiesto público directamente. Las fuentes configuradas se muestran, pero **sin verificación HTTP del servidor**.
+3. Cada URL directa se comprueba con `HEAD`; si el servidor rechaza `HEAD`, se reintenta con `GET` y `Range: bytes=0-0`.
+4. Los iframes de proveedores no se sondean: su disponibilidad la gestiona el proveedor directamente.
+5. En GitHub Pages el cliente lee el manifiesto directamente.
 
 La comprobación se cachea 10 minutos por URL y tipo de uso. `refresh=1` ignora la caché. Si una fuente directa falla, el botón queda deshabilitado y se muestra el motivo; las descargas caídas se marcan como «no disponible» y no se navega a ellas.
 
@@ -123,16 +118,15 @@ npm run check:authorized -- --json       # salida legible por máquina
 
 El comando no descarga videos, no extrae streams y no contacta con JKAnime. El manifiesto de este repositorio sigue con `entries: {}`: no hay episodios reales ni se debe afirmar que existan.
 
-## Proveedores externos (iQIYI, AnimeOnline) y reproductores integrables
+## Proveedores externos e incrustaciones
 
-- La página principal de 1UP incluye dos **catálogos externos**, configurados en `data/external-providers.json`: AnimeOnline (castellano) e iQIYI (catálogo oficial internacional). La página exacta de AnimeOnline no se pudo verificar. iQIYI restringe la reproducción/inserción de videos fuera de su servicio sin permiso específico.
-- Ambos enlaces se abren en la web del proveedor, no son espejos, retransmisiones ni promesas de reproducción dentro de 1UP.
-- Un tercer modo de reproducción ya admite **iframe oficial de YouTube** al pulsar el visitante el botón. Úsalo solo con contenidos que tengan permisos para esta distribución; el proveedor puede impedir inserción o reproducción.
-- El servidor propio admite MP4, WebM y HLS; la interfaz distingue fuentes autorizadas de catálogos externos.
+- La página principal de 1UP permite configurar catálogos externos en `data/external-providers.json`.
+- El reproductor admite iframes externos (por ejemplo YouTube u otros proveedores de video).
+- El servidor admite enlaces directos MP4, WebM y flujos HLS (.m3u8).
 
-### Ejemplo de un episodio de tercero con permiso
+### Ejemplo de incrustación de video
 
-En `data/licensed-media.json`, una serie cuyo ID corresponda al catálogo de anime puede declarar este ejemplo ficticio (reemplazar los IDs y agregar solo un video real cuyo titular permite insertar):
+En `data/licensed-media.json`:
 
 ```json
 {
@@ -144,18 +138,15 @@ En `data/licensed-media.json`, una serie cuyo ID corresponda al catálogo de ani
         "sources": [{
           "mode": "official_embed",
           "provider": "youtube",
-          "rights": "authorized",
           "videoId": "12345678901",
-          "name": "YouTube oficial",
+          "name": "YouTube",
           "language": "es",
-          "quality": "HD (dependiente del proveedor)"
+          "quality": "HD"
         }]
       }]
     }
   }
 }
 ```
-
-El ID `12345678901` es ilustrativo; no representa un episodio de anime real. La cadena `rights: authorized` es una declaración del editor del catálogo, NO un verificador automático de derechos. No se permite inferir autorización a partir de enlaces públicos, extractores ni archivos de terceros.
 
 Un botón de reproducción de YouTube se cargará con dominio `youtube-nocookie.com` solo tras interacción, y siempre habrá un enlace para abrir el video en YouTube. No hay licencia ni API de reproducción integrada de iQIYI configurada, por lo que nunca se inventarán URL de streams.

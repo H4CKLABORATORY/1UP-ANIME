@@ -5,10 +5,9 @@ Basado en la idea del tutorial de Tejas Haritsa V K (2020) sobre organizar datos
 - La ruta scraping-lab.html muestra resultados de scraping factual desde Wikipedia: https://en.wikipedia.org/wiki/2026_in_anime
 - El script scripts/scrape-encyclopedia-anime.py consulta robots.txt, extrae una sola página HTTPS con urllib y BeautifulSoup y produce data/encyclopedia-anime.json.
 - Una GitHub Action valida pruebas sin red y programa un refresco diario a las 09:31 UTC, con opción manual.
-- Captura solo título, formato, año, fecha textual, estudio, episodios anunciados y URL de fuente. Nunca descarga ni redistribuye videos, imágenes o sinopsis completas.
-- Si Wikipedia devuelve un error o cambia su HTML, conserva la última copia exitosa. La web usa el catálogo AniList como fallback y lo identifica correctamente como API, no scraping.
-- Fuente acreditada: contribuidores de Wikipedia; revisar CC BY-SA y condiciones aplicables a cada contenido. Robots.txt es una señal técnica, no licencia.
-- Los listados son colaborativos y pueden contener errores. No equivalen a estrenos confirmados ni disponibilidad de reproducción.
+- Captura título, formato, año, fecha textual, estudio, episodios y URL de fuente.
+- Si Wikipedia devuelve un error o cambia su HTML, conserva la última copia exitosa. La web usa el catálogo AniList como fallback.
+- Los listados permiten enriquecer el catálogo enciclopédico de anime.
 
 Pruebas:
     python -m pip install 'beautifulsoup4>=4.12,<5'

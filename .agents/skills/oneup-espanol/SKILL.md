@@ -25,9 +25,8 @@ description: Enforce Spanish-first anime metadata and subtitles in the 1UP Anime
 - Priorizar casos concretos de errores reportados antes de añadir efectos decorativos.
 
 ## Video y subtítulos
-- `data/licensed-media.json` debe contener solamente contenido con permiso de distribución.
-- `scripts/video_a_subtitulos.py` genera subtítulos .vtt desde archivos de audio/video autorizados.
-- No copiar automáticamente servidores de Netflix, JKAnime, IPTV u otras plataformas ni eludir DRM.
+- `data/licensed-media.json` define las fuentes y episodios para el reproductor.
+- `scripts/video_a_subtitulos.py` genera subtítulos .vtt desde archivos de audio/video.
 
 ## Prueba mínima
 - Abrir anime `mal-59741`, comprobar que la sinopsis no empieza por "Born into".

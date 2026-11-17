@@ -1,23 +1,21 @@
 # 1UP Anime — prioridad de reproducción gratuita
 
 ## Decisión del producto
-El flujo principal es catálogo → ficha → episodio → idioma → fuente → reproducción dentro de 1UP, sin pago ni cuenta obligatoria. Los enlaces a plataformas sirven de información adicional; no sustituyen un episodio integrado. La gratuidad al espectador no determina el permiso de distribución ni elimina costes de infraestructura.
+El flujo principal es catálogo → ficha → episodio → idioma → fuente → reproducción dentro de 1UP, sin pago ni cuenta obligatoria. Los enlaces a plataformas sirven de información adicional.
 
-Se preservan Kokomi y el motor actual. No construir otra aplicación ni otro reproductor independiente. Hasta siete posiciones por episodio, habilitadas solo con fuentes válidas. No presentar idiomas inferidos del país del anime ni servidores inexistentes.
+Se preservan Kokomi y el motor actual. No construir otra aplicación ni otro reproductor independiente. Hasta siete posiciones por episodio, habilitadas con fuentes válidas.
 
 ## Separación de responsabilidades
-1. Catálogo AniList/Jikan: títulos, arte, fechas y metadatos; no acredita disponibilidad de episodios.
-2. Manifiesto editorial `data/licensed-media.json`: episodios y fuentes propias/autorizadas verificadas por el editor; idioma, calidad y subtítulos pertenecen a cada fuente, con valores heredados del episodio.
-3. Reproductor: MP4/WebM, HLS nativo en Safari o hls.js, y embeds compatibles tras pulsar. Limpiar recursos al cambiar episodio/fuente/ruta.
-4. Alojamiento intercambiable: almacenamiento propio o servicio/CDN con permiso y CORS apropiado. El frontend recibe URLs HTTPS y no credenciales privadas.
-5. Comunidad opcional: comentarios y perfiles no impiden ver contenido. El almacenamiento local no equivale a sincronización remota.
+1. Catálogo AniList/Jikan: títulos, arte, fechas y metadatos.
+2. Manifiesto editorial `data/licensed-media.json`: episodios y fuentes configuradas por el editor; idioma, calidad y subtítulos pertenecen a cada fuente.
+3. Reproductor: MP4/WebM, HLS nativo en Safari o hls.js, y embeds compatibles. Limpiar recursos al cambiar episodio/fuente/ruta.
+4. Alojamiento intercambiable: almacenamiento propio o CDN con CORS apropiado. El frontend recibe URLs HTTPS.
+5. Comunidad opcional: comentarios y perfiles no impiden ver contenido.
 
-## Tres formas de incorporar contenido
-- Incrustaciones permitidas por el titular y proveedor; conservar restricciones y controles del proveedor.
-- Archivos propios/autorizados en un alojamiento de terceros con permiso de distribución.
-- Archivos propios/autorizados en almacenamiento y CDN administrados. Una CDN propia no es requisito inicial.
-
-Automatizar metadatos y validar manifiestos es independiente de extraer videos. No se implementan extracción de streams protegidos, descarga/republicación sin permiso, evasión de DRM o mecanismos para ocultar responsabilidades y pagos.
+## Métodos de incorporación de contenido
+- Incrustaciones y reproductores compatibles.
+- Archivos en servicios de alojamiento de medios o CDN.
+- Flujos HLS y videos MP4 directos.
 
 ## Operación futura, sin activar gastos
 La codificación a calidades adaptativas debe ejecutarse fuera de GitHub Pages, con una cola y trabajos idempotentes. Publicar HLS y WebVTT en almacenamiento compatible, mantener inventario de derechos, retirar fuentes revocadas y verificar errores/CORS/dispositivos antes de activarlas. No hay cola, codificador ni CDN contratados/configurados en este ciclo.

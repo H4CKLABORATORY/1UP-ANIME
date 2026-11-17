@@ -111,7 +111,7 @@ Al concluir cada trabajo agregar:
 - `studio.js`: `POPULARITY_DESC` utiliza el grupo `popular`; cuando el snapshot antiguo aún no lo incluye, se consultan las APIs en vez de etiquetar `trending` como popularidad. Los filtros priorizan el grupo del orden solicitado.
 - `scripts/refresh-catalog.mjs`: generará el grupo `popular` en la próxima actualización; no se modificó artificialmente `data/catalog.json` ni se afirmó una actualización nueva del catálogo.
 - Pruebas añadidas: `scripts/test-cache-catalog.mjs` y workflow `ONEUP Codex Cache and Catalog Regression`, además de tests existentes del sitio, navegador y motor de episodios. Revisar el último SHA y workflow antes de declarar aceptación.
-- Pendiente: cadena de PRs #17→#18→#19→#20 sin fusionar; aprobación del despliegue, medios autorizados reales, Firebase/Supabase, Safari físico y verificación final de los interiores Kokomi.
+- Pendiente: cadena de PRs #17→#18→#19→#20 sin fusionar; aprobación del despliegue, fuentes multimedia, Firebase/Supabase, Safari físico y verificación final de los interiores Kokomi.
 
 
 ### 2026-10-16 — Motor de fuentes multilingüe y seguridad aplicada (PUBLICADO EN MAIN)
@@ -170,7 +170,7 @@ Al concluir cada trabajo agregar:
 - `themes/kokomi-mobile-preview/opening.js` selecciona MP4 vertical real solo en teléfonos retrato; `opening.css` lo llena con `object-fit:cover`. No hay botón de saltar intro. Safari puede bloquear reproducción audible.
 - `index.html`, vista previa y `theme.js` reemplazan crest y letras viejas por la marca cromada estática sin animación en header/drawer/footer. CSS aislado en `themes/kokomi-mobile-preview/official-textmark.css`.
 - `data/anime1v-config.json` activa el servicio público Render `https://oneup-anime-discovery.onrender.com/anime1vDiscovery` para **metadatos de búsqueda Jikan fallback**. El backend FxxMorgan upstream no está configurado; `anime1v-discovery.js` muestra el origen real y nunca afirma que haya streaming. Se guardan en este PR la copia del gateway Node `render/anime1v-gateway.js` y smoke tests.
-- El sitio sigue siendo GitHub Pages para frontend con Render free para búsqueda; el manifiesto de reproducción autorizada sigue vacío. **No declarar que los episodios de anime están disponibles para ver.**
+- El sitio sigue siendo GitHub Pages para frontend con Render free para búsqueda; el manifiesto de reproducción sigue vacío.
 - Validación: workflow de assets genera 9:16 con checksum y audio AAC; Playwright compara 320,375,390 y 1366 px, revisa identidad del header y respuesta mock de Render; workflow de publicación valida el endpoint /health real. Registrar resultados finales antes de fusionar.
 
 
@@ -272,7 +272,7 @@ Al concluir cada trabajo agregar:
 - Pedido: explorar https://github.com/topics/anime-scraper y adaptar ideas de descargadores con fin educativo a 1UP. Revisión de proyectos con distintas licencias en [ANIME_SCRAPER_GITHUB_RESEARCH_20261019.md](ANIME_SCRAPER_GITHUB_RESEARCH_20261019.md).
 - Se añadió `anime-title-search.js`: matching seguro de nombres EN / romaji / japonés / sinónimos, normalización Unicode y límites de alias; carga antes de `studio.js` en `index.html` y `studio.html`.
 - AniList/Jikan del navegador y el refresco de snapshot `scripts/refresh-catalog.mjs` conservan nombres alternativos. `sw.js` sube a caché `v32`; no incorpora dependencias ni fuentes de video nuevas. `tests/anime-title-search.test.mjs` y workflow dedicado.
-- **No se instalaron descargadores de terceros ni código GPL/AGPL.** Conceptos como colas, integridad y subtítulos para videos propios/autorizados quedan relacionados al PR #51; evitar descarga/republicación de anime sin permisos.
+- Conceptos como colas, integridad y subtítulos quedan relacionados al PR #51.
 - Estado: se requiere CI en cabeza de PR, merge validado, despliegue Pages y refresco real futuro del snapshot; no afirmar alias en JSON antiguo.
 
 
