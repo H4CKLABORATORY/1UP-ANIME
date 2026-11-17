@@ -196,6 +196,9 @@ function showVideo(slot,serverIndex=-1){
   stage.after(button);
  };
  if(!slot){
+  const placeholder=document.createElement('div');
+  placeholder.className='oneup-player-placeholder';
+  stage.appendChild(placeholder);
   status.textContent='';
   return;
  }
