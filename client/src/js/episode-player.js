@@ -5,7 +5,7 @@
 (()=>{
 'use strict';
 const MAX_SERVERS=7;
-let requestId=0,activeAnime='',activeSeason=1,selectedEpisode=1,episodeCount=1;
+let requestId=0,activeAnime='',activeAnimeContext=null,activeSeason=1,selectedEpisode=1,episodeCount=1;
 let mediaByEpisode=new Map(),playerRoot=null;
 let disposeActiveVideo=null;
 let selectedLanguage='all';
@@ -105,10 +105,18 @@ async function fetchBackendAnimeEpisodes(id){
   'http://127.0.0.1:4050/api',
   'http://localhost:4050/api'
  ].filter(Boolean);
+ const qParts=[];
+ if(activeAnimeContext){
+  if(activeAnimeContext.slug)qParts.push('slug='+encodeURIComponent(activeAnimeContext.slug));
+  if(activeAnimeContext.title)qParts.push('title='+encodeURIComponent(activeAnimeContext.title));
+  if(activeAnimeContext.title_romaji)qParts.push('romaji='+encodeURIComponent(activeAnimeContext.title_romaji));
+  if(activeAnimeContext.raw_id)qParts.push('raw_id='+encodeURIComponent(String(activeAnimeContext.raw_id)));
+ }
+ const q=qParts.length?'?'+qParts.join('&'):'';
  for(const base of bases){
   const ctrl=new AbortController(),timer=setTimeout(()=>ctrl.abort(),3500);
   try{
-   const url=base.replace(/\/$/,'')+'/anime/'+encodeURIComponent(id);
+   const url=base.replace(/\/$/,'')+'/anime/'+encodeURIComponent(id)+q;
    const res=await fetch(url,{cache:'no-cache',signal:ctrl.signal});
    if(!res.ok)continue;
    const json=await res.json();
@@ -326,11 +334,20 @@ async function loadLinksForEpisode(targetAnimeId,epNum,forceRefresh=false){
   'http://localhost:4050/api'
  ].filter(Boolean);
 
- const refreshParam=forceRefresh?'?refresh=1':'';
+ const qParts=[];
+ if(forceRefresh)qParts.push('refresh=1');
+ if(activeAnimeContext){
+  if(activeAnimeContext.slug)qParts.push('slug='+encodeURIComponent(activeAnimeContext.slug));
+  if(activeAnimeContext.title)qParts.push('title='+encodeURIComponent(activeAnimeContext.title));
+  if(activeAnimeContext.title_romaji)qParts.push('romaji='+encodeURIComponent(activeAnimeContext.title_romaji));
+  if(activeAnimeContext.raw_id)qParts.push('raw_id='+encodeURIComponent(String(activeAnimeContext.raw_id)));
+ }
+ const q=qParts.length?'?'+qParts.join('&'):'';
+
  for(const base of bases){
   const ctrl=new AbortController(),t=setTimeout(()=>ctrl.abort(),7000);
   try{
-   const url=base.replace(/\/$/,'')+'/anime/'+encodeURIComponent(targetAnimeId)+'/episodes/'+encodeURIComponent(epNum)+'/links'+refreshParam;
+   const url=base.replace(/\/$/,'')+'/anime/'+encodeURIComponent(targetAnimeId)+'/episodes/'+encodeURIComponent(epNum)+'/links'+q;
    const res=await fetch(url,{cache:'no-cache',signal:ctrl.signal});
    if(!res.ok)continue;
    const json=await res.json();
@@ -379,7 +396,7 @@ function renderDownloads(downloads){
 function renderSources(preferred=0){
  if(!playerRoot)return;
  const item=mediaByEpisode.get(selectedEpisode);
- const allSources=item?.sources||Array(MAX_SERVERS).fill(null);
+ const allSources=Array.isArray(item?.sources)&&item.sources.length>0?item.sources:Array(MAX_SERVERS).fill(null);
  const languageSelect=playerRoot.querySelector('#oneup-watch-language');
  const groups=new Set(allSources.filter(Boolean).map(languageGroup));
  if(selectedLanguage!=='all'&&!groups.has(selectedLanguage))selectedLanguage='all';
@@ -416,18 +433,23 @@ function renderSources(preferred=0){
    syncBtn.textContent='⚡ Actualizar';
    syncBtn.title='Sincronizar enlaces actualizados desde JkAnime';
    syncBtn.addEventListener('click',()=>chooseEpisode(selectedEpisode,true,true));
+  }
+  if(syncBtn.parentElement!==selector||selector.lastElementChild!==syncBtn){
    selector.appendChild(syncBtn);
   }
  }
 
- playerRoot.querySelectorAll('[data-server-slot]').forEach(button=>{
+ const hasValidSources=allSources.some(Boolean);
+ playerRoot.querySelectorAll?.('[data-server-slot]')?.forEach(button=>{
   const i=Number(button.dataset.serverSlot),source=sources[i];
   button.disabled=!source;
   button.textContent=source?.label||'Servidor '+(i+1);
   button.classList.toggle('active',Boolean(source&&i===selected));
   button.setAttribute('aria-pressed',String(Boolean(source&&i===selected)));
   button.title=source?'Cambiar a '+source.label:'Sin fuente configurada';
-  if(sources.length>0&&i>=sources.length){
+  if(!hasValidSources){
+   button.style.display=i<MAX_SERVERS?'':'none';
+  }else if(i>=sources.length){
    button.style.display='none';
   }else{
    button.style.display='';
@@ -448,9 +470,22 @@ function chooseEpisode(number,broadcast=true,forceRefresh=false){
 
  if(needsFetch){
   const status=playerRoot.querySelector('#oneup-player-message');
+  const syncBtn=playerRoot.querySelector('#oneup-sync-links');
+  if(syncBtn){
+   syncBtn.disabled=true;
+   syncBtn.textContent='⏳ Actualizando…';
+  }
   if(status)status.textContent=forceRefresh?'Sincronizando enlaces en vivo desde JkAnime…':'Cargando servidores del episodio '+next+'…';
   loadLinksForEpisode(activeAnime,next,forceRefresh).then(linksData=>{
-   if(!linksData||!playerRoot?.isConnected)return;
+   if(syncBtn){
+    syncBtn.disabled=false;
+    syncBtn.textContent='⚡ Actualizar';
+   }
+   if(!playerRoot?.isConnected)return;
+   if(!linksData){
+    if(status)status.textContent=forceRefresh?'No se pudo sincronizar en vivo. Se conservan los servidores disponibles.':'No se encontraron servidores configurados para este episodio.';
+    return;
+   }
    const playerSources=(linksData.players||[]).map((p,i)=>{
     const playerUrl = p.embed_url && safeEmbedUrl(p.embed_url) ? p.embed_url : (p.player_url && safeEmbedUrl(p.player_url) ? p.player_url : p.embed_url);
     return sourceOf({
@@ -466,14 +501,32 @@ function chooseEpisode(number,broadcast=true,forceRefresh=false){
    }).filter(Boolean);
 
    const item=mediaByEpisode.get(next)||{title:'Episodio '+next};
-   item.sources=playerSources;
-   item.downloads=linksData.downloads||[];
+   if(playerSources.length>0||!item.sources||item.sources.length===0){
+    item.sources=playerSources;
+   }
+   if(linksData.downloads?.length>0||!item.downloads||item.downloads.length===0){
+    item.downloads=linksData.downloads||[];
+   }
    item.backend=true;
    mediaByEpisode.set(next,item);
    renderSources(0);
    renderDownloads(item.downloads);
-   if(status)status.textContent=playerSources.length?'Servidores listos para episodio '+next:'No se encontraron servidores para este episodio.';
-  }).catch(()=>{});
+   if(status){
+    if(playerSources.length){
+     status.textContent=forceRefresh?'Servidores actualizados para episodio '+next:'Servidores listos para episodio '+next;
+    }else if(item.sources?.length){
+     status.textContent='Servidores listos para episodio '+next;
+    }else{
+     status.textContent='No se encontraron servidores para este episodio.';
+    }
+   }
+  }).catch(()=>{
+   if(syncBtn){
+    syncBtn.disabled=false;
+    syncBtn.textContent='⚡ Actualizar';
+   }
+   if(status)status.textContent='No se pudo conectar con el servidor para actualizar.';
+  });
  }
 
  renderSources();
@@ -485,6 +538,15 @@ async function show(anime,{root,season=1}={}){
  // Stop the previous anime before fetching, even if the next request fails.
  closeVideo();
  const id=String(anime.id),token=++requestId;
+ activeAnime=id;
+ activeAnimeContext={
+  id,
+  slug:anime.slug||'',
+  raw_id:anime.raw_id||null,
+  title:typeof anime.title==='string'?anime.title:(anime.title?.romaji||anime.title?.english||''),
+  title_romaji:anime.title_romaji||(anime.title?.romaji||''),
+  aliases:Array.isArray(anime.aliases)?anime.aliases:[]
+ };
  activeAnime=id;activeSeason=safeNumber(season,1);selectedEpisode=1;episodeCount=1;selectedLanguage='all';mediaByEpisode=new Map();
  playerRoot=root||document.querySelector('#oneup-player-section');
  if(!playerRoot)return;
@@ -531,7 +593,7 @@ document.addEventListener('oneup-episode-selected',e=>{
 });
 function close(){
  closeVideo();
- ++requestId;activeAnime='';playerRoot=null;mediaByEpisode=new Map();
+ ++requestId;activeAnime='';activeAnimeContext=null;playerRoot=null;mediaByEpisode=new Map();
 }
 document.addEventListener('oneup-anime-closed',close);
 window.OneUpEpisodePlayer={show,close};

@@ -889,4 +889,22 @@ Al concluir cada trabajo agregar:
   - `npm run build`: Compilación de producción Vite completada exitosamente.
   - Comprobación manual de sintaxis con `node --check` en todos los archivos modificados: 100% limpio.
 
+### 2026-11-16 — Corrección del botón «⚡ Actualizar» y fallback no destructivo de servidores de reproducción
+
+- **Problema reportado**: «puedes analizar el boton de actualizar que esta en los links de los player en cada capitulo, veo que no funciona correctamnete, luego cuando se le da click este muestra los servidores con numero, pero todos estan deshabilitado».
+- **Causas raíz identificadas y solucionadas**:
+  1. *Falta de resolución de identificadores `mal-XXXX` / `al-XXXX` en backend*: En el catálogo principal, los animes provienen de AniList/MAL con prefijos `mal-` o `al-`. Al pulsar «Actualizar» o cargar enlaces, `catalog-service.js` solo buscaba por ID numérico exacto o slug idéntico, respondiendo 404. Se implementó resolución de respaldo en `getAnimeDetail` por `title`, `title_romaji` y `slug` limpio.
+  2. *Vaciado destructivo de enlaces en `refresh=1`*: En `catalog-service.js` y `scripts/anime-catalog-service.mjs`, cuando `refresh` era verdadero, `dbLinks` se forzaba a `[]`. Si el raspado en caliente de JkAnime fallaba o devolvía 0 enlaces (por timeout o protecciones externas), el backend nunca realizaba fallback a los enlaces existentes en SQLite, devolviendo `players: []`. Se implementó un fallback no destructivo que preserva los enlaces existentes si el raspado en vivo no devuelve resultados.
+  3. *Renderizado de array vacío en `episode-player.js`*: `item?.sources || Array(MAX_SERVERS).fill(null)` evaluaba a `[]` porque los arrays vacíos son truthy. Con 0 fuentes, los botones se renderizaban como «Servidor 1..7» y todos con `disabled = true`. Se ajustó para mantener `Array(MAX_SERVERS).fill(null)` cuando `sources.length === 0` y no sobreescribir las fuentes cargadas si el refresh no trae nuevos enlaces.
+  4. *Estado visual de carga y ubicación del botón*: El botón `#oneup-sync-links` ahora se deshabilita temporalmente durante la solicitud mostrando «⏳ Actualizando…» y vuelve a su estado normal tras recibir respuesta, manteniéndose siempre al final de la barra de servidores.
+- **Archivos modificados**:
+  - `server/src/catalog-service.js`: resolución de `mal-`/`al-` por título/romaji y fallback no destructivo en `getEpisodeLinks` con `refresh=1`.
+  - `scripts/anime-catalog-service.mjs`: paridad completa con `catalog-service.js` para micro-servicio independiente.
+  - `client/src/js/episode-player.js`: propagación de contexto (`title`, `romaji`, `slug`), estado de carga visual en el botón de actualización, preservación de fuentes ante fallos y correcta renderización de botones.
+  - `tests/unit/test-episode-player.mjs`: prueba unitaria de regresión para resolución por romaji y persistencia no destructiva de fuentes.
+- **Verificación**:
+  - `node tests/unit/test-episode-player.mjs`: **PASADO**.
+  - `node tests/unit/anime-catalog-service.test.mjs`: **PASADO**.
+  - Verificación de API con endpoint `/api/anime/mal-59741/episodes/1/links?romaji=...&refresh=1`: **HTTP 200 con 10 servidores y fallback funcional**.
+
 

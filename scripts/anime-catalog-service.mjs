@@ -157,12 +157,44 @@ function listCatalog({ search = '', status = 'all', type = 'all', letter = 'ALL'
   };
 }
 
-function getAnimeDetail(target) {
+function getAnimeDetail(target, { title = '', slug = '', romaji = '', rawId = '' } = {}) {
   if (!db) return null;
-  const isNumeric = /^\d+$/.test(String(target));
-  const row = isNumeric
-    ? db.prepare('SELECT * FROM animes WHERE id = ?').get(Number(target))
-    : db.prepare('SELECT * FROM animes WHERE slug = ?').get(String(target));
+  let targetId = null;
+  let targetSlug = null;
+  const str = String(target).trim();
+  const jkMatch = str.match(/^jk-(\d+)$/i);
+  if (jkMatch) {
+    targetId = Number(jkMatch[1]);
+  } else if (/^\d+$/.test(str)) {
+    targetId = Number(str);
+  } else if (rawId && /^\d+$/.test(String(rawId))) {
+    targetId = Number(rawId);
+  } else {
+    targetSlug = str;
+  }
+
+  let row = targetId !== null
+    ? db.prepare('SELECT * FROM animes WHERE id = ?').get(targetId)
+    : db.prepare('SELECT * FROM animes WHERE slug = ?').get(targetSlug);
+
+  if (!row) {
+    const candidates = [slug, romaji, title, targetSlug].filter(Boolean);
+    for (const cand of candidates) {
+      if (typeof cand !== 'string' || cand.trim().length < 2) continue;
+      const clean = cand.trim();
+      row = db.prepare('SELECT * FROM animes WHERE title = ? OR short_title = ? OR slug = ? COLLATE NOCASE LIMIT 1').get(clean, clean, clean);
+      if (row) break;
+      const asSlug = clean.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+      if (asSlug.length >= 3) {
+        row = db.prepare('SELECT * FROM animes WHERE slug = ? OR slug LIKE ? LIMIT 1').get(asSlug, `%${asSlug}%`);
+        if (row) break;
+      }
+      if (clean.length >= 3 && !/^mal-|^al-/i.test(clean)) {
+        row = db.prepare('SELECT * FROM animes WHERE title LIKE ? OR short_title LIKE ? LIMIT 1').get(`%${clean}%`, `%${clean}%`);
+        if (row) break;
+      }
+    }
+  }
 
   if (!row) return null;
 
@@ -1485,9 +1517,13 @@ const server = http.createServer(async (req, res) => {
     if (linksMatch) {
       const slugOrId = linksMatch[1];
       const epNum = parseFloat(linksMatch[2]);
-      const forceRefresh = url.searchParams.get('refresh') === '1';
+      const forceRefresh = url.searchParams.get('refresh') === '1' || url.searchParams.get('refresh') === 'true';
+      const title = url.searchParams.get('title') || '';
+      const slug = url.searchParams.get('slug') || '';
+      const romaji = url.searchParams.get('romaji') || '';
+      const rawId = url.searchParams.get('raw_id') || '';
 
-      const anime = getAnimeDetail(slugOrId);
+      const anime = getAnimeDetail(slugOrId, { title, slug, romaji, rawId });
       if (!anime) {
         res.writeHead(404, { 'Content-Type': 'application/json; charset=utf-8' });
         res.end(JSON.stringify({ error: 'Anime no encontrado' }));
@@ -1502,6 +1538,9 @@ const server = http.createServer(async (req, res) => {
         const allLive = [...live.players, ...live.downloads];
         if (allLive.length > 0) {
           saveEpisodeLinksToDb(anime.id, epNum, allLive);
+          dbLinks = getEpisodeLinksFromDb(anime.id, epNum);
+        } else if (forceRefresh) {
+          // Fallback no destructivo: conservar enlaces existentes si el raspado en vivo falla
           dbLinks = getEpisodeLinksFromDb(anime.id, epNum);
         }
       }

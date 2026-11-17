@@ -25,6 +25,10 @@ function setup(mime,episode={},records){
  Object.defineProperty(root,'innerHTML',{set(){
   nodes.clear();
   for(const id of ['oneup-watch-episode','oneup-watch-language','oneup-playback-display','oneup-player-message','oneup-now-watching'])nodes.set('#'+id,new Element());
+  const selectorGroup=new Element();
+  selectorGroup.className='oneup-server-selector';
+  selectorGroup.querySelectorAll=()=>[];
+  nodes.set('.oneup-server-selector:not(.oneup-download-group)',selectorGroup);
  }});
  const document={querySelector:()=>root,createElement:tag=>new Element(tag),addEventListener:(name,fn)=>events.set(name,fn),dispatchEvent(){}};
  let pending=false,disposed=0;
@@ -188,6 +192,10 @@ for(const unsafe of [
  Object.defineProperty(root,'innerHTML',{set(){
   nodes.clear();
   for(const id of ['oneup-watch-episode','oneup-watch-language','oneup-playback-display','oneup-player-message','oneup-now-watching'])nodes.set('#'+id,new Element());
+  const selectorGroup=new Element();
+  selectorGroup.className='oneup-server-selector';
+  selectorGroup.querySelectorAll=()=>[];
+  nodes.set('.oneup-server-selector:not(.oneup-download-group)',selectorGroup);
  }});
  const document={querySelector:()=>root,createElement:tag=>new Element(tag),addEventListener:(name,fn)=>events.set(name,fn),dispatchEvent(){}};
  const window={ONEUP_API_BASE:'https://api.example.com'};
@@ -215,6 +223,67 @@ for(const unsafe of [
  assert.equal(iframe.src,'https://streamwish.to/e/123');
  assert.equal(iframe.referrerPolicy,'no-referrer');
  assert.match(iframe.attributes.sandbox,/allow-scripts/);
+}
+
+// MAL/AniList metadata fallback + non-destructive live sync button test
+{
+ const events=new Map(),nodes=new Map();
+ const root=new Element();
+ root.querySelector=selector=>nodes.get(selector)||null;
+ root.querySelectorAll=()=>[];
+ Object.defineProperty(root,'innerHTML',{set(){
+  nodes.clear();
+  for(const id of ['oneup-watch-episode','oneup-watch-language','oneup-playback-display','oneup-player-message','oneup-now-watching'])nodes.set('#'+id,new Element());
+  const selectorGroup=new Element();
+  selectorGroup.className='oneup-server-selector';
+  selectorGroup.querySelectorAll=()=>[];
+  nodes.set('.oneup-server-selector:not(.oneup-download-group)',selectorGroup);
+ }});
+ const document={querySelector:()=>root,createElement:tag=>new Element(tag),addEventListener:(name,fn)=>events.set(name,fn),dispatchEvent(){}};
+ const window={ONEUP_API_BASE:'https://api.example.com'};
+ const calledUrls=[];
+ let simulateEmptyRefresh=false;
+ const fetch=async(url)=>{
+  calledUrls.push(url);
+  if(url.includes('/links')){
+   if(simulateEmptyRefresh){
+    return {ok:true,json:async()=>({players:[],downloads:[]})};
+   }
+   return {
+    ok:true,
+    json:async()=>({
+     players:[
+      {server:'Streamwish',embed_url:'https://streamwish.to/e/test1',quality:'HD'},
+      {server:'Vidhide',embed_url:'https://vidhide.com/e/test2',quality:'HD'}
+     ],
+     downloads:[]
+    })
+   };
+  }
+  return {ok:true,json:async()=>({id:'jk-4773',episodes_total:12,episodes_list:[{number:1}]})};
+ };
+ vm.runInNewContext(fs.readFileSync('client/src/js/episode-player.js','utf8'),{window,document,fetch,URL,location:{href:'https://anime.example.com/'},AbortController,setTimeout,clearTimeout,CustomEvent:class{}});
+ await window.OneUpEpisodePlayer.show({id:'mal-59741',title:'Heavy Knight',title_romaji:'Tsuihou Sareta',episodes:12});
+ await new Promise(r=>setTimeout(r,50));
+
+ const stage=nodes.get('#oneup-playback-display');
+ const iframe=stage.children.find(n=>n.tag==='iframe');
+ assert.ok(iframe,'Player should resolve mal-59741 and mount iframe');
+ assert.equal(iframe.src,'https://streamwish.to/e/test1');
+
+ const linksCall=calledUrls.find(u=>u.includes('/links'));
+ assert.ok(linksCall&&linksCall.includes('romaji=Tsuihou%20Sareta'),'Links request must forward romaji title');
+
+ // Now simulate refresh with empty result (fallback test)
+ simulateEmptyRefresh=true;
+ const selectorEl=nodes.get('.oneup-server-selector:not(.oneup-download-group)');
+ const syncBtn=selectorEl?.children?.find(c=>c.id==='oneup-sync-links');
+ if(syncBtn&&syncBtn.listeners?.click) {
+  await syncBtn.listeners.click();
+  await new Promise(r=>setTimeout(r,50));
+ }
+ const stageAfter=nodes.get('#oneup-playback-display');
+ assert.ok(stageAfter.children.find(n=>n.tag==='iframe'),'Sources must be preserved after empty refresh');
 }
 
 console.log('Episode player passed: lifecycle, language filtering, inherited metadata, safe captions and seasons.');

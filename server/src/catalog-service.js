@@ -291,7 +291,7 @@ function listCatalog({
   };
 }
 
-function getAnimeDetail(target) {
+function getAnimeDetail(target, { title = '', slug = '', romaji = '', rawId = '' } = {}) {
   const db = getDb();
   if (!db || !target) return null;
 
@@ -304,13 +304,38 @@ function getAnimeDetail(target) {
     targetId = Number(jkMatch[1]);
   } else if (/^\d+$/.test(str)) {
     targetId = Number(str);
+  } else if (rawId && /^\d+$/.test(String(rawId))) {
+    targetId = Number(rawId);
   } else {
     targetSlug = str;
   }
 
-  const row = targetId !== null
+  let row = targetId !== null
     ? db.prepare('SELECT * FROM animes WHERE id = ?').get(targetId)
     : db.prepare('SELECT * FROM animes WHERE slug = ?').get(targetSlug);
+
+  // Fallback search if target is mal-XXXX, al-XXXX, or not matched by direct slug
+  if (!row) {
+    const candidates = [slug, romaji, title, targetSlug].filter(Boolean);
+    for (const cand of candidates) {
+      if (typeof cand !== 'string' || cand.trim().length < 2) continue;
+      const clean = cand.trim();
+      // Exact match on title, short_title or slug
+      row = db.prepare('SELECT * FROM animes WHERE title = ? OR short_title = ? OR slug = ? COLLATE NOCASE LIMIT 1').get(clean, clean, clean);
+      if (row) break;
+      // Clean slug match
+      const asSlug = clean.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+      if (asSlug.length >= 3) {
+        row = db.prepare('SELECT * FROM animes WHERE slug = ? OR slug LIKE ? LIMIT 1').get(asSlug, `%${asSlug}%`);
+        if (row) break;
+      }
+      // Partial title match (only if not a synthetic prefix like mal-/al-)
+      if (clean.length >= 3 && !/^mal-|^al-/i.test(clean)) {
+        row = db.prepare('SELECT * FROM animes WHERE title LIKE ? OR short_title LIKE ? LIMIT 1').get(`%${clean}%`, `%${clean}%`);
+        if (row) break;
+      }
+    }
+  }
 
   if (!row) return null;
 
@@ -480,8 +505,8 @@ async function liveScrapeEpisode(slug, number) {
   return { players, downloads };
 }
 
-async function getEpisodeLinks(target, num, { refresh = false } = {}) {
-  const anime = getAnimeDetail(target);
+async function getEpisodeLinks(target, num, { refresh = false, title = '', slug = '', romaji = '', rawId = '' } = {}) {
+  const anime = getAnimeDetail(target, { title, slug, romaji, rawId });
   if (!anime) return null;
 
   const animeId = anime.raw_id || anime.id;
@@ -498,6 +523,9 @@ async function getEpisodeLinks(target, num, { refresh = false } = {}) {
       if (dbLinks.length === 0) {
         dbLinks = allLive;
       }
+    } else if (refresh) {
+      // Non-destructive fallback: if live scrape returned nothing or failed, preserve existing DB links!
+      dbLinks = getEpisodeLinksFromDb(animeId, epNum);
     }
   }
 
@@ -648,9 +676,13 @@ async function handleRequest(req, res) {
     if (linksMatch) {
       const target = linksMatch[1];
       const num = parseFloat(linksMatch[2]);
-      const refresh = parsedUrl.searchParams.get('refresh') === '1';
+      const refresh = parsedUrl.searchParams.get('refresh') === '1' || parsedUrl.searchParams.get('refresh') === 'true';
+      const title = parsedUrl.searchParams.get('title') || '';
+      const slug = parsedUrl.searchParams.get('slug') || '';
+      const romaji = parsedUrl.searchParams.get('romaji') || '';
+      const rawId = parsedUrl.searchParams.get('raw_id') || '';
 
-      const data = await getEpisodeLinks(target, num, { refresh });
+      const data = await getEpisodeLinks(target, num, { refresh, title, slug, romaji, rawId });
       if (!data) {
         res.writeHead(404, { 'Content-Type': 'application/json; charset=utf-8' });
         res.end(JSON.stringify({ error: 'Anime o episodio no encontrado' }));
@@ -666,7 +698,11 @@ async function handleRequest(req, res) {
     const episodesMatch = pathname.match(/^\/api\/anime(?:s)?\/([a-zA-Z0-9_-]+)\/episodes$/);
     if (episodesMatch) {
       const target = episodesMatch[1];
-      const detail = getAnimeDetail(target);
+      const title = parsedUrl.searchParams.get('title') || '';
+      const slug = parsedUrl.searchParams.get('slug') || '';
+      const romaji = parsedUrl.searchParams.get('romaji') || '';
+      const rawId = parsedUrl.searchParams.get('raw_id') || '';
+      const detail = getAnimeDetail(target, { title, slug, romaji, rawId });
       if (!detail) {
         res.writeHead(404, { 'Content-Type': 'application/json; charset=utf-8' });
         res.end(JSON.stringify({ error: 'Anime no encontrado' }));
@@ -691,7 +727,11 @@ async function handleRequest(req, res) {
     const detailMatch = pathname.match(/^\/api\/anime(?:s)?\/([a-zA-Z0-9_-]+)$/);
     if (detailMatch) {
       const target = detailMatch[1];
-      const detail = getAnimeDetail(target);
+      const title = parsedUrl.searchParams.get('title') || '';
+      const slug = parsedUrl.searchParams.get('slug') || '';
+      const romaji = parsedUrl.searchParams.get('romaji') || '';
+      const rawId = parsedUrl.searchParams.get('raw_id') || '';
+      const detail = getAnimeDetail(target, { title, slug, romaji, rawId });
       if (!detail) {
         res.writeHead(404, { 'Content-Type': 'application/json; charset=utf-8' });
         res.end(JSON.stringify({ error: 'Anime no encontrado' }));
