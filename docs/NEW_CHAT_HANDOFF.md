@@ -18,17 +18,18 @@
 - Formatos 9:16 móvil y 16:9 escritorio; el audio de inicio puede ser bloqueado por Safari sin gesto del visitante.
 
 ## Estado detectado ahora
-- Último commit de aplicación encontrado: 101ab28a49e381c9e74cb4f32090f6c4bec37239
+- Último commit de aplicación encontrado: 92f6e1a72a97e0b6dc3d651b9585c66f78dc986c
 - Descubrimiento Anime1v configurado en frontend: sí, verificar la respuesta real en Render
 - Código runtime de metadatos Anime1v en repositorio: sí
-- Safari físico: no dar por verificado salvo prueba real con evidencia.
+- Entradas de obras multimedia en data/licensed-media.json: 0
+- Capas de personajes declaradas en Cinematic V3: 0
 
 ## Últimos commits relevantes
-- 101ab28a4 — Update educational anime metadata from Wikipedia
-- 5ba42ad6b — Sync authorized anime episode metadata and source statuses
-- 0b1719f2a — ONEUP health snapshot (no application changes)
-- 2b78e7190 — Sync authorized anime episode metadata and source statuses
-- 8464f7c5e — update
+- 92f6e1a72 — Merge branch 'main' of https://github.com/H4CKLABORATORY/1UP-ANIME
+- fbc26c9ec — fix: resolver conflictos de merge y limpiar avisos ethicos restantes
+- 781088b36 — Update educational anime metadata from Wikipedia
+- e215c9daf — Sync authorized anime episode metadata and source statuses
+- ac72cb5fb — update
 
 ## PR abiertos (consultar cambios antes de desarrollar)
 - [#86](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/86) Fix/player refresh authorized media 20261116
@@ -46,11 +47,8 @@
 
 ## Próxima tarea por prioridad
 1. Leer AGENTS.md, esta ficha, PROJECT_CONTINUITY.md y OMEGA_NEXT_ACTIONS.md; confirmar HEAD y CI.
-3. Comprobar el estado real de Anime1v en Render y los flujos existentes; no atribuir reproducción de episodios a un catálogo.
-4. Realizar una tarea concreta y verificable, registrar PR, tests y siguiente acción. No duplicar trabajo ya fusionado.
 
 ## Prompt para pegar en otro chat
-Continúa el proyecto 1UP ANIME desde https://github.com/H4CKLABORATORY/1UP-ANIME. Antes de editar lee AGENTS.md, docs/NEW_CHAT_HANDOFF.md, docs/PROJECT_CONTINUITY.md y docs/OMEGA_NEXT_ACTIONS.md directamente en GitHub. No empieces de cero. Comprueba el último commit, propuestas y pruebas; conserva Kokomi, el logo de letras y audio original. Trabaja una tarea real pendiente, verifica el cambio y actualiza la bitácora. Si falta acceso, especifica el bloqueo y deja el siguiente paso.
 
 ## Activación y límites
 - GitHub Actions actualiza esta ficha al cambiar main, cada seis horas o manualmente.
