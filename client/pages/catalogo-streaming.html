@@ -433,16 +433,14 @@
           <span style="font-size: 0.8rem; color: var(--text-muted);">${players.length} reproductores · ${downloads.length} descargas</span>
         </div>
 
-        ${players.length > 0 ? `
-          <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 12px;">
-            ${players.map((pl, i) => `
-              <button type="button" class="ep-btn ${i === index ? 'active' : ''}" style="padding: 6px 12px; font-size: 0.8rem;" onclick="renderPlayer(${i})">
-                ${pl.server || ('Servidor ' + (i + 1))}
-              </button>
-            `).join('')}
-            <button type="button" class="ep-btn" style="padding: 6px 12px; font-size: 0.8rem; background: #22c55e; color: #000; font-weight: 700;" onclick="selectEp('${links.slug}', ${links.episode}, null, true)">⚡ Actualizar</button>
-          </div>
-        ` : ''}
+        <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 12px;">
+          ${players.map((pl, i) => `
+            <button type="button" class="ep-btn ${i === index ? 'active' : ''}" style="padding: 6px 12px; font-size: 0.8rem;" onclick="renderPlayer(${i})">
+              ${pl.server || ('Servidor ' + (i + 1))}
+            </button>
+          `).join('')}
+          <button type="button" class="ep-btn" style="padding: 6px 12px; font-size: 0.8rem; background: #22c55e; color: #000; font-weight: 700;" onclick="selectEp('${links.slug}', ${links.episode}, null, true)">⚡ Actualizar</button>
+        </div>
 
         ${pUrl ? `
           <div class="iframe-box">
@@ -475,6 +473,10 @@
         btn.classList.add('active');
       }
 
+      if (forceRefresh) {
+        window.currentEpisodeLinks = null;
+      }
+
       const box = document.getElementById('playerBox');
       box.style.display = 'block';
       box.innerHTML = `<div style="padding: 20px; text-align: center;">${forceRefresh ? 'Sincronizando enlaces en vivo...' : 'Cargando servidores del Cap. ' + epNum + '...'}</div>`;
@@ -486,6 +488,7 @@
         window.currentEpisodeLinks = { ...links, slug, episode: epNum };
         window.renderPlayer(0);
       } catch (err) {
+        window.currentEpisodeLinks = null;
         box.innerHTML = `<div style="color: #ef4444; padding: 12px;">Error al cargar enlaces del episodio: ${err.message}</div>`;
       }
     };

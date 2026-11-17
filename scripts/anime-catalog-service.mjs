@@ -226,9 +226,32 @@ function getAnimeDetail(target, { title = '', slug = '', romaji = '', rawId = ''
   };
 }
 
+function normalizeLinkUrl(url) {
+  if (!url || typeof url !== 'string') return url;
+  const trimmed = url.trim();
+  if (trimmed.startsWith('//')) {
+    return 'https:' + trimmed;
+  }
+  if (trimmed.startsWith('/')) {
+    return 'https://jkanime.net' + trimmed;
+  }
+  return trimmed;
+}
+
 function getEpisodeLinksFromDb(animeId, num) {
   if (!db) return [];
-  return db.prepare('SELECT kind, server, size, player_url, embed_url, download_url, quality FROM episode_links WHERE anime_id = ? AND number = ?').all(animeId, num);
+  const rows = db.prepare('SELECT kind, server, size, player_url, embed_url, download_url, quality FROM episode_links WHERE anime_id = ? AND number = ?').all(animeId, num);
+  return rows.map(r => ({
+    ...r,
+    player_url: normalizeLinkUrl(r.player_url),
+    embed_url: normalizeLinkUrl(r.embed_url),
+    download_url: normalizeLinkUrl(r.download_url)
+  }));
+}
+
+function deleteEpisodeLinks(animeId, num) {
+  if (!db) return;
+  db.prepare('DELETE FROM episode_links WHERE anime_id = ? AND number = ?').run(animeId, num);
 }
 
 function saveEpisodeLinksToDb(animeId, num, links) {
@@ -245,9 +268,9 @@ function saveEpisodeLinksToDb(animeId, num, links) {
         l.kind || 'player',
         l.server || 'Servidor',
         l.size || null,
-        l.player_url || null,
-        l.embed_url || null,
-        l.download_url || null,
+        normalizeLinkUrl(l.player_url) || null,
+        normalizeLinkUrl(l.embed_url) || null,
+        normalizeLinkUrl(l.download_url) || null,
         l.quality || 'HD'
       );
     } catch {}
@@ -260,25 +283,100 @@ function saveEpisodeLinksToDb(animeId, num, links) {
 
 const UA_IPHONE = 'Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Mobile/15E148 Safari/604.1';
 
-async function liveScrapeEpisode(slug, number) {
+async function liveScrapeEpisode(slug, number, { clientIp = '' } = {}) {
   const url = `https://jkanime.net/${slug}/${number}/`;
   const players = [];
   const downloads = [];
   const seenPlayer = new Set();
   const seenDl = new Set();
 
+  function addPlayer(p) {
+    if (!p || !p.player_url) return;
+    const normPlayer = normalizeLinkUrl(p.player_url);
+    const normEmbed = normalizeLinkUrl(p.embed_url || p.player_url);
+    const key = `${p.server}:${normPlayer}`;
+    if (seenPlayer.has(key)) return;
+    seenPlayer.add(key);
+    players.push({
+      kind: 'player',
+      server: p.server || 'Servidor',
+      player_url: normPlayer,
+      embed_url: normEmbed,
+      quality: p.quality || 'HD'
+    });
+  }
+
+  function addDownload(d) {
+    if (!d || !d.download_url) return;
+    const normDl = normalizeLinkUrl(d.download_url);
+    const key = `${d.server}:${normDl}`;
+    if (seenDl.has(key)) return;
+    seenDl.add(key);
+    downloads.push({
+      kind: 'download',
+      server: d.server || 'Descarga',
+      size: d.size || null,
+      download_url: normDl,
+      quality: d.quality || 'HD'
+    });
+  }
+
   try {
+    const headers = {
+      'User-Agent': UA_IPHONE,
+      'Referer': `https://jkanime.net/${slug}/`,
+      'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+      'Accept-Language': 'es-ES,es;q=0.9,en;q=0.8'
+    };
+    if (clientIp) {
+      headers['X-Forwarded-For'] = clientIp;
+      headers['X-Real-IP'] = clientIp;
+      headers['Client-IP'] = clientIp;
+    }
+
     const res = await fetch(url, {
-      headers: {
-        'User-Agent': UA_IPHONE,
-        'Referer': `https://jkanime.net/${slug}/`
-      },
+      headers,
       signal: AbortSignal.timeout(10000)
     });
     if (!res.ok) return { players, downloads };
     const html = await res.text();
 
-    // 1) Buttons map
+    // 1) Legacy JSON: var video = [ { server: 'Desu', code: '...' }, ... ];
+    const videoVar = html.match(/var\s+video\s*=\s*(\[[\s\S]*?\]);\s*(?:var|$)/i) ||
+                     html.match(/var\s+video\s*=\s*(\[[\s\S]*?\]);/i);
+    if (videoVar) {
+      try {
+        const rawPlayers = JSON.parse(videoVar[1]);
+        if (Array.isArray(rawPlayers)) {
+          for (const p of rawPlayers) {
+            if (!p || !p.server) continue;
+            const serverName = p.server.trim();
+            let playerUrl = null;
+            const lower = serverName.toLowerCase();
+            if (lower === 'desu') {
+              playerUrl = `https://jkanime.net/jkplayer/um?e=${p.code}`;
+            } else if (lower === 'magi') {
+              playerUrl = `https://jkanime.net/jkplayer/mg?e=${p.code}`;
+            } else if (lower === 'desuka') {
+              playerUrl = `https://jkanime.net/jkplayer/jk?u=${p.code}`;
+            } else if (p.code) {
+              playerUrl = p.code.startsWith('http') ? p.code : `https://jkanime.net/jkplayer/${p.server}?u=${p.code}`;
+            }
+
+            if (playerUrl) {
+              addPlayer({
+                server: serverName,
+                player_url: playerUrl,
+                embed_url: p.code && p.code.startsWith('http') ? p.code : playerUrl,
+                quality: 'HD'
+              });
+            }
+          }
+        }
+      } catch {}
+    }
+
+    // 2) Modern iframes: video[0] = '<iframe ... src="..." ...>';
     const buttonMap = new Map();
     const btnRegex = /<a[^>]*data-id="(\d+)"[^>]*>([\s\S]*?)<\/a>/gi;
     let btnM;
@@ -288,68 +386,104 @@ async function liveScrapeEpisode(slug, number) {
       if (label) buttonMap.set(id, label);
     }
 
-    // 2) video[i] = '<iframe src="...">';
     const videoRegex = /video\[(\d+)\]\s*=\s*['"]<iframe[^>]*src=["']([^"']+)["'][^>]*>/gi;
     let vM;
     while ((vM = videoRegex.exec(html)) !== null) {
       const idx = vM[1];
       const src = vM[2];
       const sName = buttonMap.get(idx) || (idx === '0' ? 'Desu' : idx === '1' ? 'Magi' : `Reproductor ${idx}`);
-      if (!seenPlayer.has(src)) {
-        seenPlayer.add(src);
-        players.push({ kind: 'player', server: sName, player_url: src, embed_url: src, quality: 'HD' });
-      }
+      addPlayer({
+        server: sName,
+        player_url: src,
+        embed_url: src,
+        quality: 'HD'
+      });
     }
 
-    // 3) var servers = [ { remote: base64, server: '...', size: '...' } ]
+    // 3) Modern Base64 servers: var servers = [ { remote: base64, server: '...', size: '...' } ]
     const serversMatch = html.match(/var\s+servers\s*=\s*(\[[\s\S]*?\]);/i);
     if (serversMatch) {
       try {
         const list = JSON.parse(serversMatch[1]);
-        for (const s of list) {
-          if (!s?.remote) continue;
-          let decoded = '';
-          try {
-            decoded = Buffer.from(s.remote, 'base64').toString('utf8').trim();
-          } catch {}
-          if (!decoded || !decoded.startsWith('http')) continue;
+        if (Array.isArray(list)) {
+          for (const s of list) {
+            if (!s?.remote) continue;
+            let decoded = '';
+            try {
+              decoded = Buffer.from(s.remote, 'base64').toString('utf8').trim();
+            } catch {}
+            if (!decoded || !decoded.startsWith('http')) continue;
 
-          const sName = (s.server || 'Servidor').trim();
-          const isDownload = /mediafire|mega|drive|dropbox|1fichier/i.test(sName) || /mediafire\.com|mega\.nz/i.test(decoded);
+            const sName = (s.server || 'Servidor').trim();
+            const isDownload = /mediafire|mega|drive|dropbox|1fichier|rapidgator|zippyshare/i.test(sName) ||
+                               /mediafire\.com|mega\.nz/i.test(decoded);
 
-          if (isDownload) {
-            if (!seenDl.has(decoded)) {
-              seenDl.add(decoded);
-              downloads.push({
-                kind: 'download',
+            if (isDownload) {
+              addDownload({
                 server: sName,
                 size: s.size || null,
                 download_url: decoded,
                 quality: 'HD'
               });
-            }
-            if (/mega/i.test(sName) && decoded.includes('/embed/') && !seenPlayer.has(decoded)) {
-              seenPlayer.add(decoded);
-              players.push({ kind: 'player', server: 'Mega Player', player_url: decoded, embed_url: decoded, quality: 'HD' });
-            }
-          } else {
-            if (!seenPlayer.has(decoded)) {
-              seenPlayer.add(decoded);
-              players.push({ kind: 'player', server: sName, player_url: decoded, embed_url: decoded, quality: 'HD' });
+              if (/mega/i.test(sName) && decoded.includes('/embed/')) {
+                addPlayer({
+                  server: 'Mega Player',
+                  player_url: decoded,
+                  embed_url: decoded,
+                  quality: 'HD'
+                });
+              }
+            } else {
+              addPlayer({
+                server: sName,
+                player_url: decoded,
+                embed_url: decoded,
+                quality: 'HD'
+              });
             }
           }
         }
       } catch {}
     }
 
-    // 4) Enlaces directos c1.jkplayers.com/d/...
+    // 4) Direct download anchors: c1.jkplayers.com/d/...
     const dlRegex = /<a[^>]*href="([^"]*c1\.jkplayers\.com\/d\/[^"]*)"[^>]*>([\s\S]*?)<\/a>/gi;
     let dM;
     while ((dM = dlRegex.exec(html)) !== null) {
-      const dUrl = dM[1];
-      if (!seenDl.has(dUrl)) {
-        seenDl.add(dUrl);
-        downloads.push({ kind: 'download', server: 'Directo', size: null, download_url: dUrl, quality: 'HD' });
+      addDownload({
+        server: 'Directo',
+        size: null,
+        download_url: dM[1],
+        quality: 'HD'
+      });
+    }
+
+    // 5) External anchors: mega.nz, mediafire.com, streamwish, voe.sx, vidhide
+    const extRegex = /<a[^>]*href="([^"]*(?:mega\.nz|mediafire\.com|streamwish|voe\.sx|vidhide)[^"]*)"[^>]*>([\s\S]*?)<\/a>/gi;
+    let extMatch;
+    while ((extMatch = extRegex.exec(html)) !== null) {
+      const url = extMatch[1];
+      let server = 'Descarga';
+      if (url.includes('mediafire')) server = 'Mediafire';
+      else if (url.includes('mega')) server = 'Mega';
+      else if (url.includes('voe')) server = 'VOE';
+      else if (url.includes('streamwish')) server = 'Streamwish';
+      else if (url.includes('vidhide')) server = 'Vidhide';
+
+      if (/mediafire|mega/i.test(server)) {
+        addDownload({
+          server,
+          size: null,
+          download_url: url,
+          quality: 'HD'
+        });
+      } else {
+        addPlayer({
+          server,
+          player_url: url,
+          embed_url: url,
+          quality: 'HD'
+        });
       }
     }
   } catch (err) {
@@ -1523,6 +1657,12 @@ const server = http.createServer(async (req, res) => {
       const romaji = url.searchParams.get('romaji') || '';
       const rawId = url.searchParams.get('raw_id') || '';
 
+      const forwardedFor = req.headers['x-forwarded-for'];
+      const clientIp = (forwardedFor ? forwardedFor.split(',')[0].trim() : '') ||
+                       req.headers['x-real-ip'] ||
+                       req.headers['client-ip'] ||
+                       req.socket?.remoteAddress || '';
+
       const anime = getAnimeDetail(slugOrId, { title, slug, romaji, rawId });
       if (!anime) {
         res.writeHead(404, { 'Content-Type': 'application/json; charset=utf-8' });
@@ -1531,14 +1671,22 @@ const server = http.createServer(async (req, res) => {
       }
 
       let dbLinks = forceRefresh ? [] : getEpisodeLinksFromDb(anime.id, epNum);
+      let liveSuccess = false;
 
       // Si no hay links en la base de datos o se pidió refresh, raspamos en caliente
       if (dbLinks.length === 0) {
-        const live = await liveScrapeEpisode(anime.slug, epNum);
+        const live = await liveScrapeEpisode(anime.slug, epNum, { clientIp });
         const allLive = [...live.players, ...live.downloads];
         if (allLive.length > 0) {
+          liveSuccess = true;
+          if (forceRefresh) {
+            deleteEpisodeLinks(anime.id, epNum);
+          }
           saveEpisodeLinksToDb(anime.id, epNum, allLive);
           dbLinks = getEpisodeLinksFromDb(anime.id, epNum);
+          if (dbLinks.length === 0) {
+            dbLinks = allLive;
+          }
         } else if (forceRefresh) {
           // Fallback no destructivo: conservar enlaces existentes si el raspado en vivo falla
           dbLinks = getEpisodeLinksFromDb(anime.id, epNum);
@@ -1554,14 +1702,24 @@ const server = http.createServer(async (req, res) => {
       });
       const downloads = dbLinks.filter(l => l.kind === 'download');
 
-      res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8' });
-      res.end(JSON.stringify({
+      const payload = {
         anime_id: anime.id,
         slug: anime.slug,
         episode: epNum,
         players,
         downloads
-      }));
+      };
+
+      if (forceRefresh) {
+        payload.refreshed = liveSuccess;
+        if (!liveSuccess) {
+          payload.stale = true;
+          payload.warning = 'No se pudieron obtener enlaces en vivo actualizados de JkAnime. Mostrando enlaces en caché.';
+        }
+      }
+
+      res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8' });
+      res.end(JSON.stringify(payload));
       return;
     }
 

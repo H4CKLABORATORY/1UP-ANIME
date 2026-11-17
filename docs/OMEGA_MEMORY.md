@@ -397,4 +397,21 @@ Agregado módulo reversible camera.mjs con trayectorias orbit/dolly/glide, persp
   - `npm run test:all`: **71 Node + 16 Python + 152 smoke UI pasados con 0 errores**.
   - `npm run build`: Vite build completado exitosamente en 231ms.
 
+### 2026-11-16 / 2026-11-17 — Reparación del botón Actualizar, invalidación de caché y re-scraping ante cambios de IP
+- Pedido: «reparar el boton actualizar, ya que no funciona, a pesar de que le doy actualizar, si te sirve de guia este proyecto que es especifico para jkanime C:\Users\Marco\Desktop\script_prueba\jkanime_app. Me refiero en nuestra app si se cambia de ip, este no funciona me refiero a los reproductores, entonces cuando se da actualizar este no funciona y no hace que vuelva a scrapear la informacion para obtener los datos refrescados».
+- Diagnóstico de causas raíz:
+  1. En SQLite (`episode_links`), al invocar la actualización forzada `refresh=1`, el backend no eliminaba los enlaces anteriores, reteniendo o acumulando tokens de IP obsoletos.
+  2. Falta de propagación de IP del cliente: el backend no incluía cabeceras `X-Forwarded-For`, `X-Real-IP` ni `Client-IP` al solicitar a JkAnime, generando URLs de stream con tokens inválidos al cambiar la IP de la conexión.
+  3. En `episode-player.js`, la variable interna `mediaByEpisode` guardaba en caché los servidores en memoria y no se purgaba al pulsar `#oneup-sync-links` (`⚡ Actualizar`), provocando que el cliente continuara reutilizando las URLs viejas.
+  4. Falta de los 5 patrones de extracción de `jkanime_app` (incluyendo decodificación Base64 y resolución de rutas relativas).
+- Solución implementada:
+  1. `server/src/catalog-service.js` y `scripts/anime-catalog-service.mjs`: Purga atómica con `deleteEpisodeLinks(animeId, num)` antes de guardar nuevos resultados en `refresh=1`; reenvío de headers de IP del cliente; extracción con 5 patrones completos y banderas de estado de refresco.
+  2. `client/src/js/episode-player.js` y `client/pages/catalogo-streaming.html`: Vaciado reactivo de caché `mediaByEpisode` al pulsar actualizar, actualización de estado visual del botón y recarga inmediata de `iframe.src`.
+  3. `tests/unit/player-refresh.test.mjs`: Test automatizado con 4 verificaciones completas que reproducen el token de IP caducado y validan la purga, re-scraping y actualización del DOM.
+- Pruebas realmente ejecutadas:
+  - `node --test tests/unit/player-refresh.test.mjs`: **4/4 tests PASADOS**.
+  - `npm test`: **75/75 tests unitarios Node pasados (0 fallos)**.
+  - `npm run test:ui`: **152 smoke assertions pasadas**.
+
+
 

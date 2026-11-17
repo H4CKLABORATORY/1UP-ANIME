@@ -907,4 +907,30 @@ Al concluir cada trabajo agregar:
   - `node tests/unit/anime-catalog-service.test.mjs`: **PASADO**.
   - Verificación de API con endpoint `/api/anime/mal-59741/episodes/1/links?romaji=...&refresh=1`: **HTTP 200 con 10 servidores y fallback funcional**.
 
+### 2026-11-16 / 2026-11-17 — Reparación del botón Actualizar, invalidación de caché y re-scraping ante cambios de IP
+
+- **Problema reportado**: «reparar el boton actualizar, ya que no funciona, a pesar de que le doy actualizar, si te sirve de guia este proyecto que es especifico para jkanime C:\Users\Marco\Desktop\script_prueba\jkanime_app. Me refiero en nuestra app si se cambia de ip, este no funciona me refiero a los reproductores, entonces cuando se da actualizar este no funciona y no hace que vuelva a scrapear la informacion para obtener los datos refrescados».
+- **Causas raíz diagnosticadas**:
+  1. *Acumulación de enlaces obsoletos en SQLite (`episode_links`)*: Al solicitar una actualización forzada (`refresh=1`), el backend no purgaba las filas previas asociadas a `(anime_id, number)` antes de insertar los nuevos streams. Esto causaba colisión o retención de tokens IP obsoletos en la base de datos SQLite.
+  2. *Omisión de cabeceras de IP del cliente hacia JkAnime*: Los servidores de streaming y extractores frecuentemente generan tokens o URLs temporales enlazadas a la dirección IP solicitante. El scraper en backend no reenviaba cabeceras (`X-Forwarded-For`, `X-Real-IP`, `Client-IP`), provocando que los streams caducaran o fallaran inmediatamente cuando el cliente cambiaba de red/IP.
+  3. *Persistencia de caché en memoria del cliente (`mediaByEpisode`)*: En `episode-player.js`, la variable interna `mediaByEpisode` mantenía en memoria los enlaces previos. Al hacer clic en `#oneup-sync-links` no se forzaba la invalidación de dicha caché en el cliente, continuando con los reproductores antiguos en vez de refrescar el DOM.
+  4. *Falta de patrones avanzados de extracción presentes en `jkanime_app`*: El scraper requería paridad con los 5 patrones de extracción de `jkanime_app` (decodificación Base64 de `servers`, resolución de rutas relativas con prefijo `https://jkanime.net`, soporte para Streamwish, Vidhide, VOE, Mega, etc.).
+- **Solución implementada**:
+  1. `server/src/catalog-service.js` y `scripts/anime-catalog-service.mjs`:
+     - Implementada la función `deleteEpisodeLinks(animeId, num)` que elimina de forma limpia los registros obsoletos en SQLite antes de insertar el nuevo scraping tras una solicitud `refresh=1`.
+     - Añadida propagación de IP del cliente a través de cabeceras `X-Forwarded-For`, `X-Real-IP` y `Client-IP` en la petición fetch hacia JkAnime.
+     - Paridad de scraping multi-patrón completa con `jkanime_app` (incluyendo decodificación Base64 y resolución de URLs relativas y esquemas `//`).
+     - Respuesta enriquecida con banderas de diagnóstico (`refreshed: true/false`, `stale: true`, `warning`).
+  2. `client/src/js/episode-player.js` y `client/pages/catalogo-streaming.html`:
+     - Vaciado forzado de la caché en memoria `mediaByEpisode` y `window.currentEpisodeLinks = null` al activar la actualización (`forceRefresh = true`).
+     - Gestión del estado del botón (`⏳ Actualizando…` a `⚡ Actualizar`), priorización de servidores estables (`Streamwish`, `Vidhide`, `Mega`, `VOE`) y actualización reactiva de `iframe.src`.
+  3. `tests/unit/player-refresh.test.mjs`:
+     - Nueva suite de verificación automatizada que reproduce la condición de token atado a IP previa, valida la purga de SQLite, comprueba la propagación de IP en cabeceras y asegura el re-scraping y la recarga en el DOM.
+- **Verificación**:
+  - `node --test tests/unit/player-refresh.test.mjs`: **4/4 tests PASADOS**.
+  - `npm test`: **75/75 tests unitarios PASADOS**.
+  - `npm run test:ui`: **152 smoke assertions PASADAS**.
+  - Calificación de auditoría Teamwork: **VICTORY CONFIRMED**.
+
+
 

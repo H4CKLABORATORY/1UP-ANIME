@@ -1,139 +1,139 @@
 {
   "schemaVersion": 1,
   "engine": "ONEUP SELF HEALING ENGINE",
-  "updatedAt": "2026-11-17T03:58:12.954Z",
+  "updatedAt": "2026-11-17T05:57:00.147Z",
   "site": "https://h4cklaboratory.github.io/1UP-ANIME/",
-  "mode": "local_y_publico",
+  "mode": "solo_local",
   "verdict": "atencion",
-  "totalChecks": 52,
+  "totalChecks": 48,
   "critical": 0,
-  "warnings": 3,
+  "warnings": 2,
   "persistentAlerts": [
     "catalog:freshness",
     "airing:freshness"
   ],
   "requiresManualAction": true,
-  "lastKnownGoodCommit": "e12b88c5fe48e78fc392d6d9486d1b340ab7f25e",
+  "lastKnownGoodCommit": null,
   "checks": [
     {
       "id": "file:index.html",
       "level": "ok",
       "message": "Validado: Archivo requerido index.html",
-      "bytes": 760
+      "bytes": 776
     },
     {
       "id": "file:client/pages/comunidad.html",
       "level": "ok",
       "message": "Validado: Archivo requerido client/pages/comunidad.html",
-      "bytes": 8677
+      "bytes": 8700
     },
     {
       "id": "file:client/pages/moderacion.html",
       "level": "ok",
       "message": "Validado: Archivo requerido client/pages/moderacion.html",
-      "bytes": 2536
+      "bytes": 2546
     },
     {
       "id": "file:client/src/js/studio.js",
       "level": "ok",
       "message": "Validado: Archivo requerido client/src/js/studio.js",
-      "bytes": 72530
+      "bytes": 73908
     },
     {
       "id": "file:client/src/styles/studio.css",
       "level": "ok",
       "message": "Validado: Archivo requerido client/src/styles/studio.css",
-      "bytes": 21201
+      "bytes": 21220
     },
     {
       "id": "file:client/sw.js",
       "level": "ok",
       "message": "Validado: Archivo requerido client/sw.js",
-      "bytes": 5934
+      "bytes": 6008
     },
     {
       "id": "file:client/src/js/auth.js",
       "level": "ok",
       "message": "Validado: Archivo requerido client/src/js/auth.js",
-      "bytes": 6947
+      "bytes": 7097
     },
     {
       "id": "file:client/src/js/airing-ui.js",
       "level": "ok",
       "message": "Validado: Archivo requerido client/src/js/airing-ui.js",
-      "bytes": 13210
+      "bytes": 13427
     },
     {
       "id": "file:client/src/js/episode-comments.js",
       "level": "ok",
       "message": "Validado: Archivo requerido client/src/js/episode-comments.js",
-      "bytes": 8063
+      "bytes": 8174
     },
     {
       "id": "file:client/src/js/community.js",
       "level": "ok",
       "message": "Validado: Archivo requerido client/src/js/community.js",
-      "bytes": 18040
+      "bytes": 18325
     },
     {
       "id": "file:client/src/js/social-backend.js",
       "level": "ok",
       "message": "Validado: Archivo requerido client/src/js/social-backend.js",
-      "bytes": 10605
+      "bytes": 10814
     },
     {
       "id": "file:server/functions/index.js",
       "level": "ok",
       "message": "Validado: Archivo requerido server/functions/index.js",
-      "bytes": 22373
+      "bytes": 22789
     },
     {
       "id": "file:data/catalog.json",
       "level": "ok",
       "message": "Validado: Archivo requerido data/catalog.json",
-      "bytes": 282788
+      "bytes": 288417
     },
     {
       "id": "file:data/airing.json",
       "level": "ok",
       "message": "Validado: Archivo requerido data/airing.json",
-      "bytes": 471601
+      "bytes": 481226
     },
     {
       "id": "file:data/translations-es.json",
       "level": "ok",
       "message": "Validado: Archivo requerido data/translations-es.json",
-      "bytes": 153164
+      "bytes": 153945
     },
     {
       "id": "file:data/dexter/records.json",
       "level": "ok",
       "message": "Validado: Archivo requerido data/dexter/records.json",
-      "bytes": 494663
+      "bytes": 508752
     },
     {
       "id": "file:server/config/dexter-providers.json",
       "level": "ok",
       "message": "Validado: Archivo requerido server/config/dexter-providers.json",
-      "bytes": 3772
+      "bytes": 3877
     },
     {
       "id": "file:data/licensed-media.json",
       "level": "ok",
       "message": "Validado: Archivo requerido data/licensed-media.json",
-      "bytes": 153
+      "bytes": 158
     },
     {
       "id": "file:scripts/dexter-anime-sync.mjs",
       "level": "ok",
       "message": "Validado: Archivo requerido scripts/dexter-anime-sync.mjs",
-      "bytes": 13677
+      "bytes": 13949
     },
     {
       "id": "file:scripts/check-ui.mjs",
       "level": "ok",
       "message": "Validado: Archivo requerido scripts/check-ui.mjs",
-      "bytes": 8593
+      "bytes": 8712
     },
     {
       "id": "syntax:client/src/js/studio.js",
@@ -190,7 +190,7 @@
       "id": "catalog:freshness",
       "level": "warning",
       "message": "El catálogo lleva más de 72 horas sin actualizarse",
-      "ageHours": 90.7
+      "ageHours": 92.7
     },
     {
       "id": "airing:entries",
@@ -207,7 +207,7 @@
       "id": "airing:freshness",
       "level": "warning",
       "message": "Calendario desactualizado (más de 36h)",
-      "ageHours": 74.6
+      "ageHours": 76.5
     },
     {
       "id": "spanish:pack",
@@ -252,7 +252,7 @@
       "id": "engine:freshness",
       "level": "ok",
       "message": "Sincronización reciente",
-      "ageHours": 6.8,
+      "ageHours": 8.8,
       "status": "correcta"
     },
     {
@@ -284,30 +284,6 @@
       "id": "dependency:scripts/refresh-catalog.mjs",
       "level": "ok",
       "message": "Herramienta de sincronización presente: scripts/refresh-catalog.mjs"
-    },
-    {
-      "id": "site:home",
-      "level": "ok",
-      "message": "Página pública respondió correctamente",
-      "url": "https://h4cklaboratory.github.io/1UP-ANIME/"
-    },
-    {
-      "id": "site:community",
-      "level": "warning",
-      "message": "No fue posible comprobar el sitio tras 3 intentos: HTTP 404",
-      "url": "https://h4cklaboratory.github.io/1UP-ANIME/comunidad.html"
-    },
-    {
-      "id": "site:catalog",
-      "level": "ok",
-      "message": "Página pública respondió correctamente",
-      "url": "https://h4cklaboratory.github.io/1UP-ANIME/data/catalog.json"
-    },
-    {
-      "id": "site:airing",
-      "level": "ok",
-      "message": "Página pública respondió correctamente",
-      "url": "https://h4cklaboratory.github.io/1UP-ANIME/data/airing.json"
     }
   ],
   "recommendations": [

@@ -486,7 +486,16 @@ function chooseEpisode(number,broadcast=true,forceRefresh=false){
     if(status)status.textContent=forceRefresh?'No se pudo sincronizar en vivo. Se conservan los servidores disponibles.':'No se encontraron servidores configurados para este episodio.';
     return;
    }
-   const playerSources=(linksData.players||[]).map((p,i)=>{
+
+   const priorityServers=['Streamwish','Vidhide','Mega','Mega Player','VOE','Streamtape','Mp4upload','Mixdrop','Desu','Magi','Desuka','Okru','Doodstream'];
+   const rawPlayers=[...(linksData.players||[])];
+   rawPlayers.sort((a,b)=>{
+    const idxA=priorityServers.indexOf(a.server);
+    const idxB=priorityServers.indexOf(b.server);
+    return (idxA===-1?99:idxA)-(idxB===-1?99:idxB);
+   });
+
+   const playerSources=rawPlayers.map((p,i)=>{
     const playerUrl = p.embed_url && safeEmbedUrl(p.embed_url) ? p.embed_url : (p.player_url && safeEmbedUrl(p.player_url) ? p.player_url : p.embed_url);
     return sourceOf({
      backend:true,
@@ -501,10 +510,10 @@ function chooseEpisode(number,broadcast=true,forceRefresh=false){
    }).filter(Boolean);
 
    const item=mediaByEpisode.get(next)||{title:'Episodio '+next};
-   if(playerSources.length>0||!item.sources||item.sources.length===0){
+   if(playerSources.length>0){
     item.sources=playerSources;
    }
-   if(linksData.downloads?.length>0||!item.downloads||item.downloads.length===0){
+   if(linksData.downloads?.length>0){
     item.downloads=linksData.downloads||[];
    }
    item.backend=true;
@@ -512,8 +521,16 @@ function chooseEpisode(number,broadcast=true,forceRefresh=false){
    renderSources(0);
    renderDownloads(item.downloads);
    if(status){
-    if(playerSources.length){
-     status.textContent=forceRefresh?'Servidores actualizados para episodio '+next:'Servidores listos para episodio '+next;
+    if(forceRefresh){
+     if(linksData.refreshed===false&&linksData.warning){
+      status.textContent='No se pudo sincronizar en vivo. Se conservan los servidores disponibles.';
+     }else if(playerSources.length){
+      status.textContent='Servidores actualizados para episodio '+next;
+     }else{
+      status.textContent='No se pudo sincronizar en vivo. Se conservan los servidores disponibles.';
+     }
+    }else if(playerSources.length){
+     status.textContent='Servidores listos para episodio '+next;
     }else if(item.sources?.length){
      status.textContent='Servidores listos para episodio '+next;
     }else{
