@@ -49,3 +49,67 @@
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
   else init();
 })(window);
+
+/* Cabecera limpia: avatar en vez de la pastilla "Invitado" y el tema
+ * de colores dentro del menú de las tres rayitas, no en la cara de la página. */
+(function () {
+  'use strict';
+  const USER_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="8" r="3.6"/><path d="M5 19.4c.8-3.2 3.4-5 7-5s6.2 1.8 7 5"/></svg>';
+  function refreshAvatar(btn) {
+    const a = window.OneUpAuth?.get?.();
+    const logged = !!(a && a.kind === 'local');
+    btn.classList.toggle('is-logged', logged);
+    btn.setAttribute('aria-label', logged ? 'Mi cuenta: ' + (a.name || '') : 'Entrar a mi cuenta');
+    const face = btn.querySelector('.avatar-face');
+    if (face) {
+      const state = logged ? 'in' : 'out';
+      if (face.dataset.state !== state) {
+        face.dataset.state = state;
+        face.innerHTML = logged ? '<span class="avatar-initial">' + (a.name || 'U').trim().charAt(0).toUpperCase() + '</span>' : USER_SVG;
+      }
+    }
+  }
+  function polishHeader() {
+    const btn = document.querySelector('#auth-open');
+    if (btn) {
+      btn.classList.add('avatar-button');
+      if (!btn.querySelector('.avatar-face')) {
+        const face = document.createElement('span');
+        face.className = 'avatar-face';
+        face.innerHTML = USER_SVG;
+        btn.appendChild(face);
+      }
+      refreshAvatar(btn);
+    }
+    const cLogin = document.querySelector('#c-login');
+    if (cLogin && !cLogin.querySelector('.avatar-face')) {
+      cLogin.classList.add('avatar-button');
+      const face = document.createElement('span');
+      face.className = 'avatar-face';
+      face.innerHTML = USER_SVG;
+      cLogin.textContent = '';
+      cLogin.appendChild(face);
+      cLogin.setAttribute('aria-label', 'Entrar a mi cuenta');
+    }
+  }
+  function moveThemeIntoDrawer() {
+    const control = document.querySelector('.oneup-theme-control');
+    const drawer = document.querySelector('#km-drawer');
+    if (!control || !drawer || control.closest('#km-drawer')) return !!control;
+    const row = document.createElement('div');
+    row.className = 'drawer-theme-row';
+    row.innerHTML = '<span class="drawer-theme-label">Tema de colores</span>';
+    row.appendChild(control);
+    const foot = drawer.querySelector('.km-drawer-foot');
+    if (foot) drawer.insertBefore(row, foot); else drawer.appendChild(row);
+    return true;
+  }
+  function init() {
+    polishHeader();
+    let tries = 0;
+    const t = setInterval(() => { if (moveThemeIntoDrawer() || ++tries > 12) clearInterval(t); }, 400);
+    setInterval(polishHeader, 3000);
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
