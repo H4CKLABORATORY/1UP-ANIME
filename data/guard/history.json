@@ -2,6 +2,62 @@
   "schemaVersion": 1,
   "checks": [
     {
+      "at": "2026-11-17T03:54:50.534Z",
+      "verdict": "atencion",
+      "issues": [
+        {
+          "id": "catalog:freshness",
+          "level": "warning"
+        },
+        {
+          "id": "airing:freshness",
+          "level": "warning"
+        }
+      ]
+    },
+    {
+      "at": "2026-11-17T03:49:41.874Z",
+      "verdict": "atencion",
+      "issues": [
+        {
+          "id": "catalog:freshness",
+          "level": "warning"
+        },
+        {
+          "id": "airing:freshness",
+          "level": "warning"
+        }
+      ]
+    },
+    {
+      "at": "2026-11-17T03:36:14.920Z",
+      "verdict": "atencion",
+      "issues": [
+        {
+          "id": "catalog:freshness",
+          "level": "warning"
+        },
+        {
+          "id": "airing:freshness",
+          "level": "warning"
+        }
+      ]
+    },
+    {
+      "at": "2026-11-17T03:35:26.361Z",
+      "verdict": "atencion",
+      "issues": [
+        {
+          "id": "catalog:freshness",
+          "level": "warning"
+        },
+        {
+          "id": "airing:freshness",
+          "level": "warning"
+        }
+      ]
+    },
+    {
       "at": "2026-11-17T03:08:25.877Z",
       "verdict": "atencion",
       "issues": [
@@ -443,26 +499,6 @@
     },
     {
       "at": "2026-11-04T22:02:32.868Z",
-      "verdict": "correcto",
-      "issues": []
-    },
-    {
-      "at": "2026-11-04T18:05:38.293Z",
-      "verdict": "correcto",
-      "issues": []
-    },
-    {
-      "at": "2026-11-04T14:28:06.725Z",
-      "verdict": "correcto",
-      "issues": []
-    },
-    {
-      "at": "2026-11-04T10:24:44.396Z",
-      "verdict": "correcto",
-      "issues": []
-    },
-    {
-      "at": "2026-11-04T06:15:26.148Z",
       "verdict": "correcto",
       "issues": []
     }
