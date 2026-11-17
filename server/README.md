@@ -54,8 +54,4 @@ server/
 ### 2.5 Integración Aislada (`integrations/`)
 - `jkanime-v2/`: Módulo de consulta de metadatos ejecutado en un entorno aislado (`npm --prefix server/integrations/jkanime-v2`). No realiza descargas ni streaming de video.
 
----
 
-## 3. Principios de Seguridad y Ética
-
-3. **Inmutabilidad y Auditoría**: Todos los cambios de datos en el cliente requieren validación estricta de esquemas antes de ser persistidos.

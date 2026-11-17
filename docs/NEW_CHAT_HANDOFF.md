@@ -24,16 +24,10 @@
 - Safari físico: no dar por verificado salvo prueba real con evidencia.
 
 ## Últimos commits relevantes
-<<<<<<< Updated upstream
 - 101ab28a4 — Update educational anime metadata from Wikipedia
 - 5ba42ad6b — Sync authorized anime episode metadata and source statuses
 - 0b1719f2a — ONEUP health snapshot (no application changes)
 - 2b78e7190 — Sync authorized anime episode metadata and source statuses
-=======
-- 72ff94afe — fix(player): resolver rechazo de conexion en Desu, priorizar streams directos y reactivar scrapeo IP
-- 7fb52ee93 — Merge branch 'main' of https://github.com/H4CKLABORATORY/1UP-ANIME
-- 134ca12b3 — update
->>>>>>> Stashed changes
 - 8464f7c5e — update
 
 ## PR abiertos (consultar cambios antes de desarrollar)
