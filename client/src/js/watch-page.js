@@ -34,16 +34,49 @@ function seasonParts(title){
  t=t.replace(/\s*\((?:tv|movie)\)\s*$/i,'').trim();
  return {base:t,num,part};
 }
+const KIND_LABEL={movie:'Película',special:'Especial',ova:'OVA',ona:'ONA',short:'Corto'};
+function kindOfItem(x){
+ if(x.format==='MOVIE'||x.type==='Pelicula')return 'movie';
+ if(x.format==='SPECIAL'||x.type==='Especial')return 'special';
+ if(x.format==='OVA'||x.type==='OVA')return 'ova';
+ if(x.format==='TV_SHORT')return 'short';
+ if(x.format==='ONA')return 'ona';
+ return 'season';
+}
+function titleSuffix(title,base){
+ let t=String(title||'');
+ if(base&&t.toLowerCase().startsWith(base.toLowerCase()))t=t.slice(base.length);
+ t=t.replace(/^[\s:·\-–—]+/,'').replace(/^(?:the\s+)?(?:movie|film)\s*\d*\s*[:：]?\s*/i,'').replace(/\s+(?:movie|film)\s*\d*\s*$/i,'').trim();
+ if(t.length<3)t=String(title||'').replace(/\s+(?:movie|film)\s*\d*\s*$/i,'').trim();
+ return t;
+}
 function franchiseSeasons(items,current){
- const series=items.filter(x=>x&&(x.type==='Serie'||x.format==='TV'||x.format==='ONA')&&x.format!=='MOVIE');
+ const isSeries=x=>x&&(x.type==='Serie'||x.format==='TV')&&x.format!=='MOVIE';
+ const series=items.filter(isSeries);
  const bases=new Set(series.map(x=>seasonParts(x.title).base));
- const keyOf=x=>{const p=seasonParts(x.title);let b=p.base;const ci=b.indexOf(': ');if(ci>0&&bases.has(b.slice(0,ci)))b=b.slice(0,ci);return b};
+ const baseList=[...bases].sort((a,b)=>b.length-a.length);
+ const keyOf=x=>{let b=seasonParts(x.title).base;
+  b=b.replace(/\s+(?:movie|film)\s*[:：]\s*.*$/i,'').replace(/\s+(?:movie|film)\s*\d*\s*$/i,'').trim();
+  const ci=b.indexOf(': ');if(ci>0&&bases.has(b.slice(0,ci)))b=b.slice(0,ci);
+  if(!bases.has(b))for(const base of baseList){if(b.startsWith(base+' ')){b=base;break}}
+  return b};
  const key=keyOf(current);
- const sibs=series.filter(x=>keyOf(x)===key);
+ const sibs=items.filter(x=>x&&x.title&&keyOf(x)===key&&(isSeries(x)||kindOfItem(x)!=='season'));
  if(sibs.length<2)return [];
  const sorted=[...sibs].sort((a,b)=>(Number(a.raw_id)||0)-(Number(b.raw_id)||0));
  let currentNum=0;
- const list=sorted.map(x=>{const p=seasonParts(x.title);const n=p.num>0?p.num:currentNum+1;currentNum=n;return {id:String(x.id),title:x.title||'Anime',label:'Temporada '+n+(p.part>1?' · Parte '+p.part:''),image:safe(x.poster||x.image||''),banner:safe(x.banner||x.poster||''),episodes:x.episodes||0,episodes_total:x.episodes_total||x.episodes||0}});
+ const list=sorted.map(x=>{
+  const kind=kindOfItem(x);
+  const p=seasonParts(x.title);
+  let label;
+  if(kind==='season'||(kind==='ona'&&p.num>0)){
+   const n=p.num>0?p.num:currentNum+1;currentNum=n;
+   label='Temporada '+n+(p.part>1?' · Parte '+p.part:'');
+  }else{
+   const suf=titleSuffix(x.title,key);
+   label=KIND_LABEL[kind]+(suf&&suf.toLowerCase()!==String(x.title).toLowerCase()?' · '+suf:'');
+  }
+  return {id:String(x.id),title:x.title||'Anime',kind,format:x.format||'',label,image:safe(x.poster||x.image||''),banner:safe(x.banner||x.poster||''),episodes:x.episodes||0,episodes_total:x.episodes_total||x.episodes||0}});
  for(const s of list)s.seasons=list;
  return list;
 }
@@ -61,13 +94,15 @@ async function loadJk(){
   if(image)$('#poster').src=image;else $('#poster').hidden=true;
   const banner=safe(e.banner||e.poster||'');if(banner)$('#hero').style.setProperty('--banner','url("'+banner.replace(/["\\]/g,'')+'")');
   const seasons=franchiseSeasons(items,e);
-  const meta=[e.type||(e.format==='TV'?'Serie':e.format),e.year,seasons.length>1?seasons.length+' temporadas':'',e.episodes?(e.episodes+' episodios'):'',e.averageScore?'★ '+(e.averageScore/10).toFixed(1):''].filter(Boolean);
+  const nT=seasons.filter(s=>s.kind==='season').length,nM=seasons.filter(s=>s.kind==='movie').length;
+  const seasonsTxt=seasons.length>1?[nT?nT+(nT>1?' temporadas':' temporada'):'',nM?nM+(nM>1?' películas':' película'):''].filter(Boolean).join(' · '):'';
+  const meta=[e.type||(e.format==='TV'?'Serie':e.format),e.year,seasonsTxt,e.episodes?(e.episodes+(e.episodes===1?' episodio':' episodios')):'',e.averageScore?'★ '+(e.averageScore/10).toFixed(1):''].filter(Boolean);
   $('#meta').innerHTML=meta.map(x=>'<span>'+esc(x)+'</span>').join('');
   $('#synopsis').textContent=summarize(e.description_es||e.description||'Sinopsis no disponible.');
   const off=$('#official');if(off){off.hidden=true;off.style.display='none'}
   $('#providers').closest('section').hidden=true;
   $('#details').innerHTML='<p><strong>Formato:</strong> '+esc(e.format||'No disponible')+'</p><p><strong>Estado:</strong> '+esc(e.status_label||e.status||'No disponible')+'</p><p><strong>Géneros:</strong> '+esc((e.genres||[]).join(', ')||'No disponibles')+'</p>'+(e.studios?'<p><strong>Estudio:</strong> '+esc(e.studios)+'</p>':'');
-  try{await window.OneUpEpisodePlayer?.show({id:raw,title,image,banner,episodes:e.episodes||0,episodes_total:e.episodes_total||e.episodes||0,...(seasons.length>1?{seasons}:{})})}catch(err){console.warn('1UP player:',err)}
+  try{await window.OneUpEpisodePlayer?.show({id:raw,title,image,banner,format:e.format||'',episodes:e.episodes||0,episodes_total:e.episodes_total||e.episodes||0,...(seasons.length>1?{seasons}:{})})}catch(err){console.warn('1UP player:',err)}
  }catch(error){console.error('1UP watch page:',error);fail(error.message||'Error de conexión.')}
 }
 const relQuery='query($id:Int,$mal:Int){Media(id:$id,idMal:$mal,type:ANIME,isAdult:false){id idMal format episodes title{english romaji} relations{edges{relationType node{id}}}}}';
@@ -77,14 +112,15 @@ async function anilistSeasons(){
  try{
   const first=await gql(relQuery,isMal?{mal:Number(id)}:{id:Number(id)});
   if(!first)return [];
-  const mk=n=>({id:isMal?(n.idMal?'mal-'+n.idMal:'al-'+n.id):'al-'+n.id,title:n.title?.english||n.title?.romaji||'Anime',episodes:n.episodes||0,episodes_total:n.episodes||0,image:'',banner:''});
+  const mk=n=>({id:isMal?(n.idMal?'mal-'+n.idMal:'al-'+n.id):'al-'+n.id,title:n.title?.english||n.title?.romaji||'Anime',format:n.format||'TV',kind:kindOfItem({format:n.format||'TV'}),episodes:n.episodes||0,episodes_total:n.episodes||0,image:'',banner:''});
   const chain=[mk(first)];
   let back=first,g=0;
-  while(back&&g++<10){const e=(back.relations?.edges||[]).find(x=>x.relationType==='PREQUEL');if(!e)break;const n=await gql(relNodeQuery,{id:e.node.id});if(!n||(n.format!=='TV'&&n.format!=='ONA'))break;chain.unshift(mk(n));back=n}
+  while(back&&g++<10){const e=(back.relations?.edges||[]).find(x=>x.relationType==='PREQUEL');if(!e)break;const n=await gql(relNodeQuery,{id:e.node.id});if(!n||!['TV','ONA','MOVIE','SPECIAL','OVA','TV_SHORT'].includes(n.format))break;chain.unshift(mk(n));back=n}
   let fwd=first;g=0;
-  while(fwd&&g++<10){const e=(fwd.relations?.edges||[]).find(x=>x.relationType==='SEQUEL');if(!e)break;const n=await gql(relNodeQuery,{id:e.node.id});if(!n||(n.format!=='TV'&&n.format!=='ONA'))break;chain.push(mk(n));fwd=n}
+  while(fwd&&g++<10){const e=(fwd.relations?.edges||[]).find(x=>x.relationType==='SEQUEL');if(!e)break;const n=await gql(relNodeQuery,{id:e.node.id});if(!n||!['TV','ONA','MOVIE','SPECIAL','OVA','TV_SHORT'].includes(n.format))break;chain.push(mk(n));fwd=n}
   if(chain.length<2)return [];
-  chain.forEach((s,i)=>{s.label='Temporada '+(i+1)});
+  const baseTitle=(chain.find(s=>s.format==='TV')||chain[0]).title;let tn=0;
+  chain.forEach(s=>{if(s.format==='TV'){tn++;s.kind='season';s.label='Temporada '+tn}else{const suf=titleSuffix(s.title,baseTitle);s.label=(KIND_LABEL[s.kind]||'Especial')+(suf&&suf.toLowerCase()!==String(s.title).toLowerCase()?' · '+suf:'')}});
   for(const s of chain)s.seasons=chain;
   return chain;
  }catch{return []}
@@ -102,7 +138,7 @@ async function load(){
   const image=safe(a.coverImage?.extraLarge||a.coverImage?.large);
   if(image)$('#poster').src=image;else $('#poster').hidden=true;
   const banner=safe(a.bannerImage);if(banner)$('#hero').style.setProperty('--banner','url("'+banner.replace(/["\\]/g,'')+'")');
-  const meta=[a.format==='TV'?'Serie':a.format,a.seasonYear||a.startDate?.year,a.episodes?(a.episodes+' episodios'):'',a.averageScore?'★ '+(a.averageScore/10).toFixed(1):''].filter(Boolean);
+  const meta=[a.format==='TV'?'Serie':a.format==='MOVIE'?'Película':a.format,a.seasonYear||a.startDate?.year,a.episodes?(a.episodes+(a.episodes===1?' episodio':' episodios')):'',a.averageScore?'★ '+(a.averageScore/10).toFixed(1):''].filter(Boolean);
   $('#meta').innerHTML=meta.map(x=>'<span>'+esc(x)+'</span>').join('');
   spanishSummary(a).then(t=>{$('#synopsis').textContent=t});
   const site=safe(a.siteUrl);if(site){$('#official').href=site;$('#official').hidden=false}
@@ -115,7 +151,7 @@ async function load(){
   $('#providers').innerHTML=providers.length?providers.map(x=>'<a href="'+esc(safe(x.url))+'" target="_blank" rel="noopener noreferrer">'+esc(x.site||'Plataforma oficial')+' <svg class="ext-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6M20 4l-9.2 9.2M19.2 13.5V19a1.6 1.6 0 0 1-1.6 1.6H5.6A1.6 1.6 0 0 1 4 19V7a1.6 1.6 0 0 1 1.6-1.6H11"/></svg></a>').join(''):'';$('#providers').closest('section').hidden=!providers.length;
   $('#details').innerHTML='<p><strong>Formato:</strong> '+esc(a.format||'No disponible')+'</p><p><strong>Estado:</strong> '+esc(a.status||'No disponible')+'</p><p><strong>Géneros:</strong> '+esc((a.genres||[]).join(', ')||'No disponibles')+'</p>';
   const seasons=await anilistSeasons();
-  try{await window.OneUpEpisodePlayer?.show({id:raw,title,image,banner:banner||'',episodes:a.episodes||0,episodes_total:a.episodes||0,...(seasons.length>1?{seasons}:{})})}catch(e){console.warn('1UP player:',e)}
+  try{await window.OneUpEpisodePlayer?.show({id:raw,title,image,banner:banner||'',format:a.format||'',episodes:a.episodes||0,episodes_total:a.episodes||0,...(seasons.length>1?{seasons}:{})})}catch(e){console.warn('1UP player:',e)}
  }catch(error){console.error('1UP watch page:',error);fail(error.message||'Error de conexión.')}
 }
 load();

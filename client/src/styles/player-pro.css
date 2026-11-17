@@ -18,3 +18,6 @@
 .oneup-episode-button:hover,.oneup-episode-button:focus-visible{border-color:rgba(53,217,154,.6);background:rgba(53,217,154,.12)}
 .oneup-external-source{background:linear-gradient(120deg,#10151d,#0a0e14);border-color:rgba(124,231,187,.22);border-radius:14px}
 .oneup-player-state{color:#9fb8ab}
+
+/* Pieza única (película/especial/OVA/ONA de 1 episodio): etiqueta en vez de selector de episodios */
+.oneup-unit-tag{display:inline-flex;align-items:center;padding:9px 18px;border-radius:999px;border:1px solid rgba(199,154,59,.55);background:rgba(199,154,59,.10);color:#ffd98a;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:15px;letter-spacing:.16em;text-transform:uppercase}

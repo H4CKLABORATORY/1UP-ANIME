@@ -5,7 +5,7 @@
 (()=>{
 'use strict';
 const MAX_SERVERS=7;
-let requestId=0,activeAnime='',activeSeason=1,selectedEpisode=1,episodeCount=1;
+let requestId=0,activeAnime='',activeSeason=1,selectedEpisode=1,episodeCount=1,activeUnitKind='';
 let mediaByEpisode=new Map(),playerRoot=null;
 let disposeActiveVideo=null;
 let selectedLanguage='all';
@@ -370,7 +370,7 @@ function renderSources(preferred=0){
  const counterPill=playerRoot.querySelector('.oneup-watch-counter');
  if(counterPill)counterPill.style.display=anySource?'':'none';
  const heading=playerRoot.querySelector('#oneup-now-watching');
- if(heading)heading.textContent='Episodio '+selectedEpisode+(item?.title?' · '+item.title:'');
+ if(heading)heading.textContent=activeUnitKind?(item?.title&&!/^Episodio \d+$/.test(item.title)?activeUnitKind+' · '+item.title:activeUnitKind):'Episodio '+selectedEpisode+(item?.title?' · '+item.title:'');
  showVideo(selected>=0?sources[selected]:null,selected);
 }
 function chooseEpisode(number,broadcast=true){
@@ -430,18 +430,19 @@ async function show(anime,{root,season=1}={}){
  mediaByEpisode=map;
  const backendTotal=anime.episodes_total||(typeof anime.episodes==='number'?anime.episodes:0)||anime.episodes_count||(Array.isArray(anime.episodes)?anime.episodes.length:0)||0;
  episodeCount=Math.min(9999,Math.max(1,safeNumber(backendTotal,1),...map.keys()));
+ activeUnitKind=episodeCount<=1?({MOVIE:'Película',SPECIAL:'Especial',OVA:'OVA',ONA:'ONA'}[String(anime.format||'').toUpperCase()]||''):'';
  const visible=Math.min(episodeCount,120);
  const escH=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
  const seasons=Array.isArray(anime.seasons)?anime.seasons.filter(s=>s&&s.id):[];
- const seasonControl=seasons.length>1?'<label for="oneup-watch-season">Temporada</label><select id="oneup-watch-season" aria-label="Seleccionar temporada">'+seasons.map(s=>'<option value="'+escH(s.id)+'"'+(String(s.id)===id?' selected':'')+'>'+escH(s.label||s.title||'Temporada')+'</option>').join('')+'</select>':'';
+ const seasonControl=seasons.length>1?'<label for="oneup-watch-season">'+(seasons.some(s=>s.kind&&s.kind!=='season')?'Contenido':'Temporada')+'</label><select id="oneup-watch-season" aria-label="Seleccionar temporada">'+seasons.map(s=>'<option value="'+escH(s.id)+'"'+(String(s.id)===id?' selected':'')+'>'+escH(s.label||s.title||'Temporada')+'</option>').join('')+'</select>':'';
  playerRoot.innerHTML='<div class="oneup-detail-section oneup-watch-panel">'+
-  '<div class="oneup-watch-title"><div><span class="micro"><img class="oneup-panel-logo" src="./assets/oneup-header-letters.png" alt="1UP ANIME"> · EPISODIOS</span><h3>VER EPISODIOS</h3></div><span class="oneup-watch-counter">Opciones de servidor</span></div>'+
-  '<div class="oneup-watch-controls">'+seasonControl+'<label for="oneup-watch-episode">Selecciona un episodio</label>'+
+  '<div class="oneup-watch-title"><div><span class="micro"><img class="oneup-panel-logo" src="./assets/oneup-header-letters.png" alt="1UP ANIME"> · '+(activeUnitKind==='Película'?'PELÍCULA':'EPISODIOS')+'</span><h3>VER '+(activeUnitKind==='Película'?'PELÍCULA':'EPISODIOS')+'</h3></div><span class="oneup-watch-counter">Opciones de servidor</span></div>'+
+  '<div class="oneup-watch-controls">'+seasonControl+(activeUnitKind?'<span class="oneup-unit-tag">'+escH(activeUnitKind)+'</span>':'<label for="oneup-watch-episode">Selecciona un episodio</label>'+
   '<select id="oneup-watch-episode" aria-label="Seleccionar episodio para ver">'+
-  Array.from({length:visible},(_,i)=>'<option value="'+(i+1)+'">Episodio '+(i+1)+'</option>').join('')+'</select>'+
+  Array.from({length:visible},(_,i)=>'<option value="'+(i+1)+'">Episodio '+(i+1)+'</option>').join('')+'</select>')+
   (episodeCount>120?'<label class="oneup-watch-jump" for="oneup-watch-episode-number">Ir al episodio <input id="oneup-watch-episode-number" type="number" min="1" max="'+episodeCount+'" value="1"></label>':'')+
   '<label for="oneup-watch-language">Idioma de reproducción</label><select id="oneup-watch-language" aria-label="Idioma de reproducción"></select></div>'+
-  '<h4 id="oneup-now-watching">Episodio 1</h4>'+
+  '<h4 id="oneup-now-watching">'+(activeUnitKind||'Episodio 1')+'</h4>'+
   '<div class="oneup-server-selector" role="group" aria-label="Siete servidores disponibles si están configurados"><strong>ELEGIR SERVIDOR</strong>'+
   Array.from({length:MAX_SERVERS},(_,i)=>'<button type="button" data-server-slot="'+i+'" class="oneup-server-choice" disabled>Servidor '+(i+1)+'</button>').join('')+'</div>'+
   '<div id="oneup-playback-display" class="oneup-playback-stage"></div>'+

@@ -93,3 +93,7 @@ body.watch-page main h1{font-size:clamp(26px,4vw,44px)}
 .km-drawer .oneup-theme-control{position:static}
 .km-drawer .oneup-theme-panel{right:0;left:auto;top:calc(100% + 8px);width:272px;max-width:78vw;z-index:60}
 @media (max-width:650px){body.watch-page main h1{font-size:27px}}
+
+/* Cuadre: nada se sale de la página */
+html,body{overflow-x:clip}
+.cw-section{max-width:100vw}
