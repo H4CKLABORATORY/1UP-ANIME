@@ -416,3 +416,50 @@ test('R3 Automated Verification: Client episode-player DOM double refresh lifecy
   const statusEl = nodes.get('#oneup-player-message');
   assert.equal(statusEl.textContent, 'Servidores actualizados para episodio 1', 'Status message must confirm refresh');
 });
+
+test('R4 Verification: Desu protected player card rendering and fallback to direct embed on refresh', async () => {
+  const db = catalogService.getDb();
+  const TEST_ANIME_ID = 999996;
+  const TEST_SLUG = 'test-desu-protected-r4';
+  const TEST_EP = 1;
+
+  db.prepare('DELETE FROM episode_links WHERE anime_id = ?').run(TEST_ANIME_ID);
+  db.prepare('DELETE FROM animes WHERE id = ?').run(TEST_ANIME_ID);
+
+  db.prepare(`
+    INSERT INTO animes (id, slug, title, status, type, episodes_total)
+    VALUES (?, ?, 'Test Desu Protected Anime R4', 'currently', 'TV', 12)
+  `).run(TEST_ANIME_ID, TEST_SLUG);
+
+  const DESU_URL = 'https://jkanime.net/jkplayer/um?e=desu_enc_token_123';
+  const STREAMWISH_URL = 'https://streamwish.to/e/sw_direct_stream';
+
+  db.prepare(`
+    INSERT INTO episode_links (anime_id, number, kind, server, player_url, embed_url, quality)
+    VALUES (?, ?, 'player', 'Desu', ?, NULL, 'HD')
+  `).run(TEST_ANIME_ID, TEST_EP, DESU_URL);
+
+  db.prepare(`
+    INSERT INTO episode_links (anime_id, number, kind, server, player_url, embed_url, quality)
+    VALUES (?, ?, 'player', 'Streamwish', ?, ?, 'HD')
+  `).run(TEST_ANIME_ID, TEST_EP, STREAMWISH_URL, STREAMWISH_URL);
+
+  try {
+    const data = await catalogService.getEpisodeLinks(TEST_SLUG, TEST_EP);
+    assert.ok(data.players.length >= 2, 'Must have at least 2 players');
+
+    // 1. Streamwish must sort before Desu because Desu is protected
+    assert.equal(data.players[0].server, 'Streamwish', 'Embeddable server Streamwish must sort first');
+    assert.equal(data.players[0].is_protected, false, 'Streamwish must not be protected');
+    assert.equal(data.players[0].embeddable, true, 'Streamwish must be embeddable');
+
+    const desuPlayer = data.players.find(p => p.server === 'Desu');
+    assert.ok(desuPlayer, 'Desu player must be present');
+    assert.equal(desuPlayer.is_protected, true, 'Desu player must be marked is_protected: true');
+    assert.equal(desuPlayer.embeddable, false, 'Desu player must be marked embeddable: false');
+  } finally {
+    db.prepare('DELETE FROM episode_links WHERE anime_id = ?').run(TEST_ANIME_ID);
+    db.prepare('DELETE FROM animes WHERE id = ?').run(TEST_ANIME_ID);
+  }
+});
+

@@ -426,6 +426,8 @@
       const downloads = links.downloads || [];
       const p = players[index];
       const pUrl = p ? (p.embed_url || p.player_url) : null;
+      const isProtected = Boolean(!p?.embed_url || p?.embed_url?.includes('jkanime.net') || ['desu', 'magi', 'desuka'].includes(String(p?.server || '').toLowerCase()));
+      const firstEmbedIndex = players.findIndex(pl => pl.embed_url && !pl.embed_url.includes('jkanime.net') && !['desu','magi','desuka'].includes(String(pl.server||'').toLowerCase()));
 
       box.innerHTML = `
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
@@ -434,22 +436,46 @@
         </div>
 
         <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 12px;">
-          ${players.map((pl, i) => `
+          ${players.map((pl, i) => {
+            const isProt = Boolean(!pl.embed_url || pl.embed_url?.includes('jkanime.net') || ['desu', 'magi', 'desuka'].includes(String(pl.server || '').toLowerCase()));
+            return `
             <button type="button" class="ep-btn ${i === index ? 'active' : ''}" style="padding: 6px 12px; font-size: 0.8rem;" onclick="renderPlayer(${i})">
-              ${pl.server || ('Servidor ' + (i + 1))}
+              ${pl.server || ('Servidor ' + (i + 1))}${isProt ? ' ↗' : ''}
             </button>
-          `).join('')}
+          `}).join('')}
           <button type="button" class="ep-btn" style="padding: 6px 12px; font-size: 0.8rem; background: #22c55e; color: #000; font-weight: 700;" onclick="selectEp('${links.slug}', ${links.episode}, null, true)">⚡ Actualizar</button>
         </div>
 
-        ${pUrl ? `
+        ${isProtected ? `
+          <div style="padding: 28px 20px; text-align: center; background: radial-gradient(circle at 50% 50%, #1e293b, #0b0f19); border-radius: 12px; border: 1px solid rgba(255,255,255,0.08);">
+            <div style="display: inline-block; padding: 4px 12px; background: rgba(234, 179, 8, 0.15); border: 1px solid rgba(234, 179, 8, 0.35); border-radius: 20px; color: #facc15; font-size: 0.8rem; font-weight: 700; margin-bottom: 12px;">
+              🔒 Servidor Oficial JkAnime
+            </div>
+            <h4 style="margin: 0 0 8px; font-size: 1.1rem; color: #fff;">Reproductor ${p ? (p.server || 'Desu') : 'Desu'} (Protegido)</h4>
+            <p style="font-size: 0.85rem; color: #94a3b8; max-width: 480px; margin: 0 auto 18px; line-height: 1.5;">
+              JkAnime protege este reproductor mediante <code>X-Frame-Options: SAMEORIGIN</code> para impedir su reproducción incrustada en otras webs. Puedes abrirlo directamente en pestaña nueva o reproducir aquí con un servidor compatible.
+            </p>
+            <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+              ${pUrl ? `
+                <a href="${pUrl}" target="_blank" rel="noopener noreferrer" class="ep-btn" style="padding: 8px 16px; background: #3b82f6; color: #fff; font-weight: 700; text-decoration: none; border-radius: 6px;">
+                  Abrir ${p ? (p.server || 'Desu') : 'Desu'} en pestaña nueva de JkAnime ↗
+                </a>
+              ` : ''}
+              ${firstEmbedIndex >= 0 ? `
+                <button type="button" class="ep-btn" style="padding: 8px 16px; background: #22c55e; color: #000; font-weight: 700; border-radius: 6px;" onclick="renderPlayer(${firstEmbedIndex})">
+                  ▶ Ver aquí con ${players[firstEmbedIndex].server}
+                </button>
+              ` : ''}
+            </div>
+          </div>
+        ` : (pUrl ? `
           <div class="iframe-box">
             <iframe src="${pUrl}" allowfullscreen referrerpolicy="no-referrer" sandbox="allow-scripts allow-same-origin allow-forms allow-popups"></iframe>
           </div>
           <div style="display: flex; gap: 10px; margin-top: 8px;">
             <a href="${pUrl}" target="_blank" rel="noopener noreferrer" class="btn-cta">Abrir Reproductor Externo ↗</a>
           </div>
-        ` : '<p style="color: var(--text-muted); padding: 20px 0;">Sin reproductor directo configurado para este capítulo.</p>'}
+        ` : '<p style="color: var(--text-muted); padding: 20px 0;">Sin reproductor directo configurado para este capítulo.</p>')}
 
         ${downloads.length > 0 ? `
           <div style="margin-top: 14px; border-top: 1px solid var(--border); padding-top: 10px;">
@@ -486,7 +512,9 @@
         const res = await fetch(`${API_BASE}/api/anime/${slug}/episodes/${epNum}/links${refreshParam}`);
         const links = await res.json();
         window.currentEpisodeLinks = { ...links, slug, episode: epNum };
-        window.renderPlayer(0);
+        const playersList = links.players || [];
+        const bestIdx = playersList.findIndex(pl => pl.embed_url && !pl.embed_url.includes('jkanime.net') && !['desu','magi','desuka'].includes(String(pl.server||'').toLowerCase()));
+        window.renderPlayer(bestIdx >= 0 ? bestIdx : 0);
       } catch (err) {
         window.currentEpisodeLinks = null;
         box.innerHTML = `<div style="color: #ef4444; padding: 12px;">Error al cargar enlaces del episodio: ${err.message}</div>`;

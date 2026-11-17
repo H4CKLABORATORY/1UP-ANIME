@@ -90,3 +90,15 @@
 }
 .oneup-source-retry:hover{background:#395080}
 .oneup-source-retry:focus-visible{outline:2px solid #b9f9e8;outline-offset:3px}
+
+/* Protected external servers (Desu, Magi, Desuka) with X-Frame-Options SAMEORIGIN */
+.oneup-protected-player-card{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;height:100%;width:100%;min-height:260px;padding:24px 20px;background:radial-gradient(circle at 50% 40%,#1e293b,#090d16);color:#e2e8f0;box-sizing:border-box}
+.oneup-protected-badge{display:inline-flex;align-items:center;gap:6px;padding:4px 12px;background:rgba(234,179,8,.15);border:1px solid rgba(234,179,8,.35);border-radius:20px;color:#facc15;font-size:11px;font-weight:700;margin-bottom:12px;letter-spacing:.5px}
+.oneup-protected-title{font-size:18px;font-weight:800;margin:0 0 8px;color:#f8fafc}
+.oneup-protected-desc{font-size:12px;line-height:1.6;color:#94a3b8;max-width:480px;margin:0 0 18px}
+.oneup-protected-actions{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+.oneup-btn-primary-ext{display:inline-flex;align-items:center;gap:6px;padding:10px 18px;background:#3b82f6;color:#fff;font-weight:700;font-size:12px;border-radius:8px;text-decoration:none;transition:background .2s}
+.oneup-btn-primary-ext:hover{background:#2563eb;color:#fff}
+.oneup-btn-secondary-switch{display:inline-flex;align-items:center;gap:6px;padding:10px 18px;background:#1e3a2b;border:1px solid #22c55e;color:#4ade80;font-weight:700;font-size:12px;border-radius:8px;cursor:pointer;transition:background .2s}
+.oneup-btn-secondary-switch:hover{background:#274d39}
+

@@ -413,5 +413,21 @@ Agregado módulo reversible camera.mjs con trayectorias orbit/dolly/glide, persp
   - `npm test`: **75/75 tests unitarios Node pasados (0 fallos)**.
   - `npm run test:ui`: **152 smoke assertions pasadas**.
 
+### 2026-11-17 — Manejo de servidores protegidos JkAnime (Desu) y selección de reproductores directos
+- Pedido: «revise el boton actualizar en el capitulo y veo que aun sale error. estoy en el Desu y quiero reproducir pero sale error jkanime.net rechazó la conexión.»
+- Diagnóstico:
+  - `Desu`, `Magi` y `Desuka` son páginas internas de `jkanime.net` (`https://jkanime.net/jkplayer/um?e=...`) y tienen la cabecera HTTP `X-Frame-Options: SAMEORIGIN` con desafío Cloudflare. Por seguridad de navegador, es técnicamente imposible cargarlas en un `<iframe>` incrustado desde un dominio externo; el navegador siempre mostrará `jkanime.net rechazó la conexión`.
+  - Servidores directos (`Streamwish`, `Vidhide`, `Mega`, `VOE`, `Mixdrop`, `Streamtape`, `Mp4upload`) son totalmente compatibles con iframes externos y responden HTTP 200.
+  - El botón Actualizar mostraba advertencia de fallo porque Cloudflare bloquea el scraping automático directo, dejando al usuario en la pestaña rota de Desu.
+- Solución:
+  - Priorización en backend (`catalog-service.js` y `anime-catalog-service.mjs`): los reproductores directos e incrustables siempre encabezan la lista y preceden a los protegidos.
+  - Tarjeta protectora en frontend (`episode-player.js`, `catalogo-streaming.html`, `player.css`): al seleccionar un servidor protegido como Desu, se muestra una tarjeta con botón para abrir en pestaña nueva de JkAnime (`target="_blank"`) y botón rápido para reproducir aquí con Streamwish/Vidhide. Los botones llevan el sufijo `↗`.
+  - Al abrir o pulsar «⚡ Actualizar», se conmuta automáticamente al primer servidor directo compatible (`bestEmbedIndex`), iniciando el video al instante.
+- Pruebas realmente ejecutadas:
+  - `node --test tests/unit/player-refresh.test.mjs`: **5/5 tests PASADOS**.
+  - `npm test`: **76/76 tests unitarios Node pasados (0 fallos)**.
+  - `npm run test:ui`: **152 smoke assertions pasadas**.
+
+
 
 

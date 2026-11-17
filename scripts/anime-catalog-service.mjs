@@ -1696,17 +1696,25 @@ const server = http.createServer(async (req, res) => {
       const priorityServers = ['Streamwish', 'Vidhide', 'Mega', 'Mega Player', 'VOE', 'Streamtape', 'Mp4upload', 'Mixdrop', 'Desu', 'Magi', 'Desuka', 'Okru', 'Doodstream'];
       const players = dbLinks.filter(l => l.kind === 'player' && l.server !== 'Mediafire' && !l.embed_url?.includes('mediafire.com'));
       players.sort((a, b) => {
+        const isProtA = !a.embed_url || a.embed_url.includes('jkanime.net') || ['desu', 'magi', 'desuka'].includes(String(a.server || '').toLowerCase());
+        const isProtB = !b.embed_url || b.embed_url.includes('jkanime.net') || ['desu', 'magi', 'desuka'].includes(String(b.server || '').toLowerCase());
+        if (isProtA !== isProtB) return isProtA ? 1 : -1;
         const idxA = priorityServers.indexOf(a.server);
         const idxB = priorityServers.indexOf(b.server);
         return (idxA === -1 ? 99 : idxA) - (idxB === -1 ? 99 : idxB);
       });
+      const normalizedPlayers = players.map(p => ({
+        ...p,
+        is_protected: Boolean(!p.embed_url || p.embed_url.includes('jkanime.net') || ['desu', 'magi', 'desuka'].includes(String(p.server || '').toLowerCase())),
+        embeddable: Boolean(p.embed_url && !p.embed_url.includes('jkanime.net'))
+      }));
       const downloads = dbLinks.filter(l => l.kind === 'download');
 
       const payload = {
         anime_id: anime.id,
         slug: anime.slug,
         episode: epNum,
-        players,
+        players: normalizedPlayers,
         downloads
       };
 

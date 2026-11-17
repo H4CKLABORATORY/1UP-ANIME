@@ -932,5 +932,31 @@ Al concluir cada trabajo agregar:
   - `npm run test:ui`: **152 smoke assertions PASADAS**.
   - Calificación de auditoría Teamwork: **VICTORY CONFIRMED**.
 
+### 2026-11-17 — Solución integral de error «jkanime.net rechazó la conexión» en servidor Desu y optimización de actualización reactiva
+
+- **Problema reportado**: «revise el boton actualizar en el capitulo y veo que aun sale error. estoy en el Desu y quiero reproducir pero sale error jkanime.net rechazó la conexión.»
+- **Causas raíz diagnosticadas**:
+  1. *Servidor Desu no es un reproductor embeddable externo*: En JkAnime, `Desu`, `Magi` y `Desuka` son páginas internas del dominio (`https://jkanime.net/jkplayer/um?e=...`). JkAnime configura sus servidores con directivas estrictas de seguridad (`X-Frame-Options: SAMEORIGIN`, `Cross-Origin-Embedder-Policy: require-corp` y protección Cloudflare anti-bot). Por definición de seguridad web universal, cualquier navegador externo (Chrome, Edge, Safari) que intente incrustar dicha URL dentro de un `<iframe>` rechaza la conexión con el error nativo del navegador: `jkanime.net rechazó la conexión`.
+  2. *Los servidores embeddables directos sí funcionan perfectamente*: Servidores como `Streamwish` (`sfastwish.com`), `Vidhide` (`vidhidevip.com`), `Mega` (`mega.nz/embed`), `VOE` (`voe.sx`), `Streamtape`, `Mp4upload` y `Mixdrop` no tienen `X-Frame-Options: SAMEORIGIN` y devuelven HTTP 200 limpio sin bloqueos de iframe.
+  3. *Error aparente al pulsar «⚡ Actualizar»*: Cuando el usuario estaba parado en `Desu` e intentaba «Actualizar», el scraper backend recibía un challenge 403 de Cloudflare al consultar `jkanime.net`, activando el fallback seguro de base de datos local. El frontend mostraba un aviso de advertencia («No se pudo sincronizar en vivo. Se conservan los servidores disponibles») y dejaba al usuario estancado en el iframe roto de `Desu`, dando la impresión de que la actualización había fallado completamente.
+- **Solución implementada**:
+  1. `server/src/catalog-service.js` y `scripts/anime-catalog-service.mjs`:
+     - Priorización estricta: los servidores directos e incrustables (`Streamwish`, `Vidhide`, `Mega`, `VOE`, etc.) ahora se ordenan SIEMPRE antes que los servidores protegidos de JkAnime (`Desu`, `Magi`, `Desuka`).
+     - Propiedades semánticas `is_protected` y `embeddable` expuestas en el payload de cada reproductor.
+  2. `client/src/js/episode-player.js` y `client/src/styles/player.css`:
+     - Erradicación del iframe roto para servidores con `isProtected`: en lugar de forzar un `<iframe>` condenado a fallar con `jkanime.net rechazó la conexión`, se renderiza una tarjeta interactiva `.oneup-protected-player-card` explicando la protección `SAMEORIGIN` y ofreciendo dos botones: «Abrir Desu en pestaña nueva de JkAnime ↗» y «▶ Reproducir aquí con Streamwish / Vidhide / Mega».
+     - Los botones de servidores protegidos muestran el sufijo indicador `↗` (ej. `Desu ↗`, `Magi ↗`).
+     - Al cargar el episodio o hacer clic en «⚡ Actualizar», el reproductor selecciona automáticamente el primer servidor directo compatible (`bestEmbedIndex`), iniciando la reproducción inmediata del video sin errores.
+     - Mensaje de estado informativo al actualizar: `Servidores verificados y listos. Reproduciendo en Streamwish.`
+  3. `client/pages/catalogo-streaming.html`:
+     - Implementada la misma protección contra iframes de JkAnime y selección reactiva del mejor reproductor directo (`firstEmbedIndex`).
+  4. `tests/unit/player-refresh.test.mjs`:
+     - Añadida prueba R4 verificando el orden de prioridad, flags `is_protected: true` para Desu y falso para Streamwish, y la correcta conmutación al servidor directo.
+- **Verificación**:
+  - `node --test tests/unit/player-refresh.test.mjs`: **5/5 tests PASADOS**.
+  - `npm test`: **76/76 tests unitarios PASADOS**.
+  - `npm run test:ui`: **152 smoke assertions PASADAS**.
+
+
 
 
