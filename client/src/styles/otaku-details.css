@@ -80,3 +80,16 @@ body{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/20
 body.watch-page .hero{border-color:rgba(199,154,59,.45)}
 .card-badge-airing{background:#C91F37!important;color:#fff!important;border-radius:5px!important;border:1px solid rgba(255,255,255,.25);box-shadow:0 3px 12px rgba(201,31,55,.45);transform:rotate(-2deg);letter-spacing:.09em}
 .rel-noimg{background-image:conic-gradient(rgba(255,255,255,.05) 25%,transparent 0 50%,rgba(255,255,255,.05) 0 75%,transparent 0);background-size:26px 26px}
+
+/* Letras con esencia otaku en los titulares (Gang of Three, freeware total) */
+@font-face{font-family:'GangOfThree';src:url('../../assets/fonts/go3.woff') format('woff');font-display:swap}
+h1,h2,.oneup-watch-title h3{font-family:'GangOfThree','Barlow Condensed',sans-serif;letter-spacing:.03em;font-weight:400}
+.hero h1{font-size:clamp(30px,4.2vw,54px)}
+body.watch-page main h1{font-size:clamp(26px,4vw,44px)}
+.km-nav button,.km-drawer-foot{font-family:'GangOfThree','Barlow Condensed',sans-serif;letter-spacing:.05em}
+.km-nav button{font-size:15px}
+/* El panel de temas ya no se sale del menú */
+.drawer-theme-row{position:relative}
+.km-drawer .oneup-theme-control{position:static}
+.km-drawer .oneup-theme-panel{right:0;left:auto;top:calc(100% + 8px);width:272px;max-width:78vw;z-index:60}
+@media (max-width:650px){body.watch-page main h1{font-size:27px}}
