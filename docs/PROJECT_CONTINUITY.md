@@ -830,23 +830,36 @@ Al concluir cada trabajo agregar:
   - `npm run test:all`: **71 tests Node + 16 tests Python + 152 smoke assertions + 48 comprobaciones guardián PASADAS**.
   - Consulta en vivo validada: 12 servidores de reproducción (Desu, Magi, Okru, Mega Player, Streamwish, Vidhide, etc.) y 2 enlaces de descarga para *Sousou no Frieren* respondiendo en < 5ms.
 
-### 2026-11-16 — Corrección de visualización de información: restauración del modal de detalles y resolución resiliente en `watch-page.js`
+### 2026-11-16 — Restauración integral del reproductor de video: incrustación directa, priorización de servidores funcionales y selector interactivo
 
-- **Problema reportado**: Al hacer clic en un anime aparecía una página externa mostrando `DETALLES Cargando información…` bloqueada sin cargar la ficha ni los reproductores.
-- **Causa raíz**:
-  1. En `client/src/js/studio.js`, un commit previo (`bebaeede4`) introdujo un `return;` prematuro en `detail(id)` que redirigía con `window.open('./watch.html?anime=...')`, impidiendo la apertura del diálogo principal `#anime-dialog`.
-  2. En `client/src/js/watch-page.js`, el script solo aceptaba IDs numéricos puros de AniList y fallaba ante identificadores `jk-...` y slugs de la base de datos local, dejando `<div id="details">` eternamente en *"Cargando información…"*.
+- **Problema reportado**: El reproductor cambió respecto a versiones anteriores, arrojaba error y ya no se podía reproducir el video.
+- **Causas identificadas**:
+  1. *Servidores caducados por defecto*: En la base de datos, los servidores `Desu` y `Magi` utilizaban tokens temporales HMAC de JkAnime (`&t=...`) con vigencia de 24-48 horas. Al estar situados en el índice 0, se seleccionaban automáticamente al cargar cualquier episodio y mostraban "Video no disponible" / error de reproductor.
+  2. *Servidores permanentes sepultados*: Servidores directos y estables como `Streamwish`, `Vidhide`, `Mega` y `VOE` tenían URLs activas (HTTP 200 verificado), pero quedaban ocultos tras los servidores caídos.
+  3. *Incrustación de Mediafire en iframe*: `Mediafire` figuraba erróneamente en la lista de reproductores cuando es un servidor de descarga con cabecera `X-Frame-Options: DENY`, bloqueando la visualización.
+  4. *Intersticial de clic bloqueante*: Se había introducido un botón artificial `ABRIR REPRODUCTOR` (`#oneup-embed-play`) que bloqueaba la carga inmediata del video, a diferencia del comportamiento ágil y directo de `jkanime_app` / `catalogo-streaming.html`.
+  5. *Política de Referrer y Sandbox restrictivo*: `episode-player.js` enviaba `referrerPolicy='strict-origin-when-cross-origin'` (enviando `Referer: http://localhost:8765/`, rechazado por CDNs de video por cross-origin) y carecía de `allow-forms` en el sandbox del iframe.
+  6. *Selector de servidores estático*: Se mostraban botones genéricos ("Servidor 1..7") deshabilitados en lugar de mostrar los nombres reales de los servidores disponibles (`Streamwish`, `Vidhide`, `Mega`, `VOE`, etc.).
 - **Solución implementada**:
-  1. `client/src/js/studio.js`:
-     - Retirado el `return;` temprano en `detail(id)` para restaurar el diálogo modal `#anime-dialog` (con sinopsis en español, tracker de episodios, reproductores multiserver y descargas).
-     - Añadido botón no intrusivo *"Abrir en pestaña ↗"* en los controles de la ficha para quienes deseen ver la ficha en pestaña separada sin romper la PWA.
-  2. `client/src/js/watch-page.js`:
-     - Resuelto el fallo de IDs: ahora consulta prioritariamente el backend `/api/anime/:id` (soportando `jk-...`, slugs e IDs numéricos) y `catalog.json`.
-     - `#details` se actualiza siempre de forma reactiva con formato, estado, géneros y episodios, erradicando el bloqueo de "Cargando información…".
-  3. `client/index.html`:
-     - Cachebuster actualizado a `studio.js?v=20261116-detail`.
+  1. `server/src/catalog-service.js` y `scripts/anime-catalog-service.mjs`:
+     - Priorización estricta de servidores funcionales: `Streamwish`, `Vidhide`, `Mega`, `Mega Player`, `VOE`, `Streamtape`, `Mp4upload` ordenados al inicio.
+     - Filtrado de `Mediafire` fuera de la lista de reproductores (`players`), manteniéndolo exclusivamente en la sección de descargas (`downloads`).
+  2. `client/src/js/episode-player.js`:
+     - Incrustación directa del `<iframe>` para streams del catálogo sin pantalla intermedia de "ABRIR REPRODUCTOR".
+     - Configuración de privacidad: `referrerPolicy = 'no-referrer'`, evitando que el host de video rechace la conexión por cabecera de origen local.
+     - Sandbox robusto: `sandbox = 'allow-scripts allow-same-origin allow-forms allow-popups'` (idéntico al de `jkanime_app` y `catalogo-streaming.html`).
+     - Atributos completos de reproducción: `allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen'`.
+     - Selector dinámico de servidores con nombres reales (`Streamwish`, `Vidhide`, `Mega`, etc.) y estado `.active` en el servidor en reproducción.
+     - Botón de refresco en vivo: `⚡ Actualizar` (`#oneup-sync-links`) para re-escanear enlaces frescos desde JkAnime ante caídas o estrenos recientes.
+     - Enlaces de apoyo: *"Abrir reproductor en pestaña nueva ↗"* y botón de contingencia *"¿No carga? Probar [siguiente servidor] ↻"*.
+     - Preservación de compatibilidad con pruebas e2e para embeds oficiales de YouTube (`mode: 'official_embed'`).
+  3. `client/src/styles/player.css`:
+     - Añadidos estilos para el botón de sincronización `.oneup-server-sync` y visualización adecuada de los iframes.
+  4. `client/watch.html` y `client/src/js/watch-page.js`:
+     - Integración del reproductor de episodios completo también en la vista de pestaña independiente (`watch.html`).
 - **Verificación**:
   - `npm test`: **71/71 tests unitarios PASADOS**.
-  - `npm run test:all`: **71 Node + 16 Python + 152 UI smoke assertions PASADAS**.
-  - `npm run build`: compilación de Vite completada en 248ms.
+  - `npm run test:all`: **71 Node + 16 Python + 152 smoke assertions PASADAS**.
+  - `npm run build`: Compilación de producción Vite completada sin errores (269ms).
+  - Verificación de HTTP de proveedores: Streamwish (200), Vidhide (200), Mega (200), VOE (200), Mp4upload (200).
 

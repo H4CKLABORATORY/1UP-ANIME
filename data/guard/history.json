@@ -2,6 +2,20 @@
   "schemaVersion": 1,
   "checks": [
     {
+      "at": "2026-11-17T02:51:21.011Z",
+      "verdict": "atencion",
+      "issues": [
+        {
+          "id": "catalog:freshness",
+          "level": "warning"
+        },
+        {
+          "id": "airing:freshness",
+          "level": "warning"
+        }
+      ]
+    },
+    {
       "at": "2026-11-17T02:31:06.734Z",
       "verdict": "atencion",
       "issues": [
@@ -431,11 +445,6 @@
     },
     {
       "at": "2026-11-03T22:01:53.523Z",
-      "verdict": "correcto",
-      "issues": []
-    },
-    {
-      "at": "2026-11-03T18:01:50.953Z",
       "verdict": "correcto",
       "issues": []
     }

@@ -76,6 +76,16 @@ function renderAnime(a){
    (epCount?'<p><strong>Episodios:</strong> '+esc(epCount)+'</p>':'')+
    (a.studios?'<p><strong>Estudio:</strong> '+esc(a.studios)+'</p>':'');
  }
+
+ // Initialize episode player if element exists
+ const pRoot=$('#oneup-player-section');
+ if(pRoot){
+  const initPlayer=()=>{
+   if(window.OneUpEpisodePlayer)window.OneUpEpisodePlayer.show(a,{root:pRoot}).catch(()=>{});
+  };
+  if(window.OneUpEpisodePlayer)initPlayer();
+  else setTimeout(initPlayer,100);
+ }
 }
 
 async function loadFromBackend(target){

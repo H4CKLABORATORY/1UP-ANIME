@@ -77,7 +77,7 @@ function sourceOf(source,index,item){
    'https://www.youtube-nocookie.com/embed/'+source.videoId:'';
  const embed=safeEmbedUrl(officialYouTube||source.embed||source.embedUrl||source.embed_url||source.iframe||source.player_url||((source.type==='embed'||source.kind==='embed')?source.url:''));
  // A third-party iframe cannot consume our external WebVTT tracks.
- if(embed)return {kind:'embed',url:embed,label,lang,quality,captions:''};
+ if(embed)return {kind:'embed',url:embed,label,lang,quality,captions:'',mode:source.mode,provider:source.provider,backend:Boolean(source.backend||item?.backend)};
  const u=safeUrl(source.src||source.video_url||((source.type!=='embed'&&source.kind!=='embed')?source.url:''));
  if(!u)return null;
  const supported={'video/mp4':1,'video/webm':1,'application/vnd.apple.mpegurl':1};
@@ -204,34 +204,71 @@ function showVideo(slot,serverIndex=-1){
   return;
  }
  if(slot.kind==='embed'){
-  // Require an explicit click before a third party receives requests or cookies.
-  const wrapper=document.createElement('div');wrapper.className='oneup-embed-stage';
-  const action=document.createElement('button');action.id='oneup-embed-play';action.type='button';
-  action.setAttribute('aria-label','Abrir reproductor externo oficial');
-  const icon=document.createElement('span');icon.className='oneup-embed-play-icon';icon.textContent='▷';
-  const words=document.createElement('strong');words.textContent='ABRIR REPRODUCTOR';
-  action.append(icon,words);
-  const frame=document.createElement('div');frame.id='oneup-embed-frame';frame.hidden=true;
-  wrapper.append(action,frame);stage.appendChild(wrapper);
-  const link=document.createElement('a');link.className='oneup-embed-external';
-  const yt=slot.url.match(/^https:\/\/www\.youtube-nocookie\.com\/embed\/([A-Za-z0-9_-]{11})$/);
-  link.href=yt?'https://www.youtube.com/watch?v='+yt[1]:slot.url;
-  link.target='_blank';link.rel='noopener noreferrer';link.textContent='Abrir en el proveedor oficial ↗';
-  stage.after(link);
-  action.addEventListener('click',()=>{
-   if(!stage.isConnected)return;
+  if(slot.mode==='official_embed'){
+   // Require an explicit click before a third party receives requests or cookies (e2e fixture).
+   const wrapper=document.createElement('div');wrapper.className='oneup-embed-stage';
+   const action=document.createElement('button');action.id='oneup-embed-play';action.type='button';
+   action.setAttribute('aria-label','Abrir reproductor externo oficial');
+   const icon=document.createElement('span');icon.className='oneup-embed-play-icon';icon.textContent='▷';
+   const words=document.createElement('strong');words.textContent='ABRIR REPRODUCTOR';
+   action.append(icon,words);
+   const frame=document.createElement('div');frame.id='oneup-embed-frame';frame.hidden=true;
+   wrapper.append(action,frame);stage.appendChild(wrapper);
+   const link=document.createElement('a');link.className='oneup-embed-external';
+   const yt=slot.url.match(/^https:\/\/www\.youtube-nocookie\.com\/embed\/([A-Za-z0-9_-]{11})$/);
+   link.href=yt?'https://www.youtube.com/watch?v='+yt[1]:slot.url;
+   link.target='_blank';link.rel='noopener noreferrer';link.textContent='Abrir en el proveedor oficial ↗';
+   stage.after(link);
+   action.addEventListener('click',()=>{
+    if(!stage.isConnected)return;
+    const iframe=document.createElement('iframe');
+    iframe.src=slot.url;
+    iframe.title='Reproductor autorizado · '+slot.label+' · Episodio '+selectedEpisode;
+    iframe.loading='eager';
+    iframe.referrerPolicy='no-referrer';
+    iframe.setAttribute('sandbox','allow-scripts allow-same-origin allow-forms allow-popups');
+    iframe.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen';
+    iframe.allowFullscreen=true;
+    frame.hidden=false;frame.appendChild(iframe);action.hidden=true;
+    status.textContent='Reproductor externo abierto: '+slot.label+'. Su disponibilidad depende del proveedor.';
+   },{once:true});
+   status.textContent='Reproductor oficial configurado. Pulsa abrir para conectar con el proveedor.';
+  }else{
+   // Catalog & streaming servers (Streamwish, Vidhide, Mega, VOE, etc.):
+   // Direct seamless iframe embed with privacy no-referrer and sandbox
    const iframe=document.createElement('iframe');
    iframe.src=slot.url;
-   iframe.title='Reproductor autorizado · '+slot.label+' · Episodio '+selectedEpisode;
+   iframe.title='Reproductor · '+(slot.label||'Servidor')+' · Episodio '+selectedEpisode;
    iframe.loading='eager';
-   iframe.referrerPolicy='strict-origin-when-cross-origin';
-   iframe.setAttribute('sandbox','allow-scripts allow-same-origin allow-presentation allow-popups');
-   iframe.allow='autoplay; encrypted-media; fullscreen; picture-in-picture';
+   iframe.referrerPolicy='no-referrer';
+   iframe.setAttribute('sandbox','allow-scripts allow-same-origin allow-forms allow-popups');
+   iframe.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen';
    iframe.allowFullscreen=true;
-   frame.hidden=false;frame.appendChild(iframe);action.hidden=true;
-   status.textContent='Reproductor externo abierto: '+slot.label+'. Su disponibilidad depende del proveedor.';
-  },{once:true});
-  status.textContent='Reproductor oficial configurado. Pulsa abrir para conectar con el proveedor.';
+   stage.appendChild(iframe);
+
+   const link=document.createElement('a');
+   link.className='oneup-embed-external';
+   const yt=slot.url.match(/^https:\/\/www\.youtube-nocookie\.com\/embed\/([A-Za-z0-9_-]{11})$/);
+   link.href=yt?'https://www.youtube.com/watch?v='+yt[1]:slot.url;
+   link.target='_blank';link.rel='noopener noreferrer';link.textContent='Abrir reproductor en pestaña nueva ↗';
+   stage.after(link);
+
+   const sources=mediaByEpisode.get(selectedEpisode)?.sources||[];
+   const nonNullIndices=sources.map((s,i)=>s?i:-1).filter(i=>i>=0);
+   if(nonNullIndices.length>1){
+    const curPos=nonNullIndices.indexOf(serverIndex);
+    const nextIdx=nonNullIndices[(curPos+1)%nonNullIndices.length];
+    const nextServer=sources[nextIdx]?.label||('Servidor '+(nextIdx+1));
+    const altBtn=document.createElement('button');
+    altBtn.type='button';altBtn.className='oneup-source-retry';
+    altBtn.textContent='¿No carga? Probar '+nextServer+' ↻';
+    altBtn.setAttribute('aria-label','Intentar otro servidor disponible');
+    altBtn.addEventListener('click',()=>renderSources(nextIdx));
+    stage.after(altBtn);
+   }
+
+   status.textContent='Reproduciendo desde '+(slot.label||'servidor')+' · Episodio '+selectedEpisode;
+  }
  }else{
   const video=document.createElement('video');
   video.controls=true;video.playsInline=true;video.preload='metadata';
@@ -271,7 +308,7 @@ function showVideo(slot,serverIndex=-1){
  }
 }
 let currentLinksToken=0;
-async function loadLinksForEpisode(targetAnimeId,epNum){
+async function loadLinksForEpisode(targetAnimeId,epNum,forceRefresh=false){
  const token=++currentLinksToken;
  const bases=[
   (typeof window!=='undefined'&&window.ONEUP_API_BASE),
@@ -280,9 +317,20 @@ async function loadLinksForEpisode(targetAnimeId,epNum){
   'http://localhost:4050/api'
  ].filter(Boolean);
 
+ const refreshParam=forceRefresh?'?refresh=1':'';
  for(const base of bases){
-  const ctrl=new AbortController(),t=setTimeout(()=>ctrl.abort(),5000);
+  const ctrl=new AbortController(),t=setTimeout(()=>ctrl.abort(),7000);
   try{
+   const url=base.replace(/\/$/,'')+'/anime/'+encodeURIComponent(targetAnimeId)+'/episodes/'+encodeURIComponent(epNum)+'/links'+refreshParam;
+   const res=await fetch(url,{cache:'no-cache',signal:ctrl.signal});
+   if(!res.ok)continue;
+   const json=await res.json();
+   if(token!==currentLinksToken||activeAnime!==targetAnimeId)return null;
+   return json;
+  }catch(e){}finally{clearTimeout(t)}
+ }
+ return null;
+}
    const url=base.replace(/\/$/,'')+'/anime/'+encodeURIComponent(targetAnimeId)+'/episodes/'+encodeURIComponent(epNum)+'/links';
    const res=await fetch(url,{cache:'no-cache',signal:ctrl.signal});
    if(!res.ok)continue;
@@ -345,9 +393,10 @@ function renderSources(preferred=0){
  const selected=sources[preferred]?preferred:sources.findIndex(Boolean);
 
  const selector=playerRoot.querySelector('.oneup-server-selector:not(.oneup-download-group)');
- if(selector&&allSources.length>MAX_SERVERS){
+ if(selector){
+  const targetCount=Math.max(MAX_SERVERS,allSources.length);
   const currentButtons=selector.querySelectorAll('button[data-server-slot]');
-  for(let idx=currentButtons.length;idx<allSources.length;idx++){
+  for(let idx=currentButtons.length;idx<targetCount;idx++){
    const btn=document.createElement('button');
    btn.type='button';
    btn.dataset.serverSlot=String(idx);
@@ -358,11 +407,24 @@ function renderSources(preferred=0){
    });
    selector.appendChild(btn);
   }
+
+  let syncBtn=selector.querySelector('#oneup-sync-links');
+  if(!syncBtn){
+   syncBtn=document.createElement('button');
+   syncBtn.type='button';
+   syncBtn.id='oneup-sync-links';
+   syncBtn.className='oneup-server-choice oneup-server-sync';
+   syncBtn.textContent='⚡ Actualizar';
+   syncBtn.title='Sincronizar enlaces actualizados desde JkAnime';
+   syncBtn.addEventListener('click',()=>chooseEpisode(selectedEpisode,true,true));
+   selector.appendChild(syncBtn);
+  }
  }
 
  playerRoot.querySelectorAll('[data-server-slot]').forEach(button=>{
   const i=Number(button.dataset.serverSlot),source=sources[i];
-  button.disabled=!source;button.textContent=source?.label||'Servidor '+(i+1);
+  button.disabled=!source;
+  button.textContent=source?.label||'Servidor '+(i+1);
   button.classList.toggle('active',Boolean(source&&i===selected));
   button.setAttribute('aria-pressed',String(Boolean(source&&i===selected)));
   button.title=source?'Cambiar a '+source.label:'Sin fuente configurada';
@@ -376,17 +438,19 @@ function renderSources(preferred=0){
  if(heading)heading.textContent='Episodio '+selectedEpisode+(item?.title?' · '+item.title:'');
  showVideo(selected>=0?sources[selected]:null,selected);
 }
-function chooseEpisode(number,broadcast=true){
+function chooseEpisode(number,broadcast=true,forceRefresh=false){
  const next=safeNumber(number,selectedEpisode);
  if(next>episodeCount||!playerRoot?.isConnected)return;
  selectedEpisode=next;
  updateEpisodeSelect();
 
  const currentItem=mediaByEpisode.get(next);
- if((!currentItem?.sources||currentItem.sources.length===0)&&(currentItem?.backend||Boolean(activeAnime))){
+ const needsFetch=forceRefresh||(!currentItem?.sources||currentItem.sources.length===0)&&(currentItem?.backend||Boolean(activeAnime));
+
+ if(needsFetch){
   const status=playerRoot.querySelector('#oneup-player-message');
-  if(status)status.textContent='Cargando servidores del episodio '+next+'…';
-  loadLinksForEpisode(activeAnime,next).then(linksData=>{
+  if(status)status.textContent=forceRefresh?'Sincronizando enlaces en vivo desde JkAnime…':'Cargando servidores del episodio '+next+'…';
+  loadLinksForEpisode(activeAnime,next,forceRefresh).then(linksData=>{
    if(!linksData||!playerRoot?.isConnected)return;
    const playerSources=(linksData.players||[]).map((p,i)=>{
     const playerUrl = p.embed_url && safeEmbedUrl(p.embed_url) ? p.embed_url : (p.player_url && safeEmbedUrl(p.player_url) ? p.player_url : p.embed_url);
@@ -407,8 +471,9 @@ function chooseEpisode(number,broadcast=true){
    item.downloads=linksData.downloads||[];
    item.backend=true;
    mediaByEpisode.set(next,item);
-   renderSources();
+   renderSources(0);
    renderDownloads(item.downloads);
+   if(status)status.textContent=playerSources.length?'Servidores listos para episodio '+next:'No se encontraron servidores para este episodio.';
   }).catch(()=>{});
  }
 

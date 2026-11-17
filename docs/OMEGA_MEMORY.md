@@ -365,3 +365,21 @@ Agregado módulo reversible camera.mjs con trayectorias orbit/dolly/glide, persp
   - `npm run test:all`: Suite integral de 71 Node + 16 Python + 152 smoke UI aprobada.
   - `npm run build`: Build de producción Vite completado exitosamente.
 
+### 2026-11-16 — Restauración integral del reproductor de video y priorización de servidores
+- Pedido: «estoy revisando y el player cambio a como lo tenia hace algunos dias, veo que sale error, y ya no se puede reproducir, puedes revisar el porque ya no se pueden reproducir y hace unas versiones atras si».
+- Causas raíz:
+  1. Servidores caídos/caducados al frente: En la BD, los servidores `Desu` y `Magi` con tokens temporales de JkAnime (`&t=...`) expiraron y al estar en el índice 0 se cargaban primero dando error.
+  2. Servidores estables (`Streamwish`, `Vidhide`, `Mega`, `VOE`, `Mp4upload`) tienen HTTP 200 activo pero estaban enterrados detrás de Desu.
+  3. `Mediafire` figuraba erróneamente en los reproductores en lugar de descargas, generando bloqueo por `X-Frame-Options: DENY`.
+  4. Intersticial bloqueante de «ABRIR REPRODUCTOR» (`#oneup-embed-play`) que impedía la carga fluida de video.
+  5. Política de `Referer: strict-origin-when-cross-origin` y sandbox sin `allow-forms`, causando que los CDNs de video bloquearan la incrustación desde localhost.
+- Solución:
+  1. `server/src/catalog-service.js` y `scripts/anime-catalog-service.mjs`: Priorizados servidores funcionales (`Streamwish`, `Vidhide`, `Mega`, `VOE`, `Mp4upload`) y filtrado `Mediafire` a descargas exclusivamente.
+  2. `client/src/js/episode-player.js`: Incrustación directa de streams del catálogo sin botón bloqueante; `referrerPolicy = 'no-referrer'`, `sandbox = 'allow-scripts allow-same-origin allow-forms allow-popups'`, selector dinámico con nombres reales de servidores y botón `⚡ Actualizar` para sincronización en vivo.
+  3. `client/watch.html` y `client/src/js/watch-page.js`: Reproductor de video de episodios integrado también en la vista de pestaña independiente.
+- Pruebas realmente ejecutadas:
+  - `npm test`: **71/71 tests unitarios Node pasados**.
+  - `npm run test:all`: **71 Node + 16 Python + 152 smoke UI pasados con 0 errores**.
+  - `npm run build`: Build de producción Vite completado en 269ms.
+  - Verificación HTTP en vivo de endpoints de video: Streamwish (200 OK), Vidhide (200 OK), Mega (200 OK), VOE (200 OK), Mp4upload (200 OK).
+

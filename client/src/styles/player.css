@@ -17,6 +17,8 @@
 .oneup-server-choice{border:1px solid #8a9ec263;border-radius:7px;background:#26334c;color:#e4ecff;padding:9px 12px;font-size:11px;font-weight:800}
 .oneup-server-choice:hover,.oneup-server-choice:focus-visible{border-color:#c1d7ff}
 .oneup-server-choice.active{background:#c0d4ff;color:#0d152e;border-color:#c0d4ff}
+.oneup-server-choice.oneup-server-sync{background:#162e24;border-color:#2a7e63;color:#4ade80}
+.oneup-server-choice.oneup-server-sync:hover{background:#1e4032;border-color:#4ade80}
 .oneup-external-source{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:18px;margin:22px 0;padding:19px;border:1px solid #a0b4dc55;border-radius:10px;background:linear-gradient(120deg,#20283f,#171c2d)}
 .oneup-external-source h3{margin:5px 0 7px;font:900 30px var(--display)}
 .oneup-external-source p{max-width:550px;font-size:11px;line-height:1.7;color:#bbc6dc}

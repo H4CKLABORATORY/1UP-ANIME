@@ -1506,7 +1506,13 @@ const server = http.createServer(async (req, res) => {
         }
       }
 
-      const players = dbLinks.filter(l => l.kind === 'player');
+      const priorityServers = ['Streamwish', 'Vidhide', 'Mega', 'Mega Player', 'VOE', 'Streamtape', 'Mp4upload', 'Mixdrop', 'Desu', 'Magi', 'Desuka', 'Okru', 'Doodstream'];
+      const players = dbLinks.filter(l => l.kind === 'player' && l.server !== 'Mediafire' && !l.embed_url?.includes('mediafire.com'));
+      players.sort((a, b) => {
+        const idxA = priorityServers.indexOf(a.server);
+        const idxB = priorityServers.indexOf(b.server);
+        return (idxA === -1 ? 99 : idxA) - (idxB === -1 ? 99 : idxB);
+      });
       const downloads = dbLinks.filter(l => l.kind === 'download');
 
       res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8' });
