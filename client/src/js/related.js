@@ -22,7 +22,7 @@
       const sec = document.createElement('section');
       sec.className = 'section rel-section';
       sec.id = secId;
-      sec.innerHTML = '<h2>' + title + ' <span class="jp-chip">' + jp + '</span></h2><div class="rel-row"></div>';
+      sec.innerHTML = '<h2>' + title + '</h2><div class="rel-row"></div>';
       return sec;
     };
     const sim = mk('rel-similares', 'ANIMES SIMILARES', '似ている');

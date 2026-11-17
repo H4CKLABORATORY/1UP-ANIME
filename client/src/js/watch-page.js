@@ -65,7 +65,7 @@ async function loadJk(){
   $('#meta').innerHTML=meta.map(x=>'<span>'+esc(x)+'</span>').join('');
   $('#synopsis').textContent=summarize(e.description_es||e.description||'Sinopsis no disponible.');
   const off=$('#official');if(off){off.hidden=true;off.style.display='none'}
-  $('#providers').innerHTML='<div class="status">Sin plataformas registradas por ahora.</div>';
+  $('#providers').closest('section').hidden=true;
   $('#details').innerHTML='<p><strong>Formato:</strong> '+esc(e.format||'No disponible')+'</p><p><strong>Estado:</strong> '+esc(e.status_label||e.status||'No disponible')+'</p><p><strong>Géneros:</strong> '+esc((e.genres||[]).join(', ')||'No disponibles')+'</p>'+(e.studios?'<p><strong>Estudio:</strong> '+esc(e.studios)+'</p>':'');
   try{await window.OneUpEpisodePlayer?.show({id:raw,title,image,banner,episodes:e.episodes||0,episodes_total:e.episodes_total||e.episodes||0,...(seasons.length>1?{seasons}:{})})}catch(err){console.warn('1UP player:',err)}
  }catch(error){console.error('1UP watch page:',error);fail(error.message||'Error de conexión.')}
@@ -112,7 +112,7 @@ async function load(){
   if(!bySite.has('crunchyroll')&&VERIFIED_CRUNCHYROLL['mal-'+a.idMal])bySite.set('crunchyroll',{site:'Crunchyroll',url:VERIFIED_CRUNCHYROLL['mal-'+a.idMal],type:'STREAMING'});
   let providers=['netflix','crunchyroll'].map(k=>bySite.get(k)).filter(Boolean);
   if(!providers.length){const free=['youtube','tubi','pluto tv','retrocrush','hoopla'].map(k=>bySite.get(k)).find(Boolean);if(free)providers=[free]}
-  $('#providers').innerHTML=providers.length?providers.map(x=>'<a href="'+esc(safe(x.url))+'" target="_blank" rel="noopener noreferrer">'+esc(x.site||'Plataforma oficial')+' <svg class="ext-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6M20 4l-9.2 9.2M19.2 13.5V19a1.6 1.6 0 0 1-1.6 1.6H5.6A1.6 1.6 0 0 1 4 19V7a1.6 1.6 0 0 1 1.6-1.6H11"/></svg></a>').join(''):'<div class="status">Sin plataformas registradas por ahora.</div>';
+  $('#providers').innerHTML=providers.length?providers.map(x=>'<a href="'+esc(safe(x.url))+'" target="_blank" rel="noopener noreferrer">'+esc(x.site||'Plataforma oficial')+' <svg class="ext-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6M20 4l-9.2 9.2M19.2 13.5V19a1.6 1.6 0 0 1-1.6 1.6H5.6A1.6 1.6 0 0 1 4 19V7a1.6 1.6 0 0 1 1.6-1.6H11"/></svg></a>').join(''):'';$('#providers').closest('section').hidden=!providers.length;
   $('#details').innerHTML='<p><strong>Formato:</strong> '+esc(a.format||'No disponible')+'</p><p><strong>Estado:</strong> '+esc(a.status||'No disponible')+'</p><p><strong>Géneros:</strong> '+esc((a.genres||[]).join(', ')||'No disponibles')+'</p>';
   const seasons=await anilistSeasons();
   try{await window.OneUpEpisodePlayer?.show({id:raw,title,image,banner:banner||'',episodes:a.episodes||0,episodes_total:a.episodes||0,...(seasons.length>1?{seasons}:{})})}catch(e){console.warn('1UP player:',e)}

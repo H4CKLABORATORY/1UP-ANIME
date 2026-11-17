@@ -82,7 +82,7 @@
     const entries = Object.entries(mine()).map(([id, v]) => ({ id, ...v })).sort((a, b) => (b.at || 0) - (a.at || 0)).slice(0, 20);
     if (!entries.length) { host.hidden = true; host.innerHTML = ''; return; }
     host.hidden = false;
-    host.innerHTML = '<div class="cw-head"><h2>Continuar viendo <span class="jp-chip">つづき</span></h2><span>Retoma justo donde te quedaste</span></div><div class="cw-row">' +
+    host.innerHTML = '<div class="cw-head"><h2>Continuar viendo</h2><span>Retoma justo donde te quedaste</span></div><div class="cw-row">' +
       entries.map(x => '<article class="cw-card"><a class="cw-open" href="watch.html?anime=' + encodeURIComponent(x.id) + '">' +
         (x.image ? '<img src="' + esc(x.image) + '" alt="" loading="lazy">' : '<span class="cw-noimg"></span>') +
         '<span class="cw-info"><strong>' + esc(x.title || x.id) + '</strong><small>Episodio ' + x.episode + (x.season > 1 ? ' · Temporada ' + x.season : '') + '</small></span>' +

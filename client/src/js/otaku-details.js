@@ -27,24 +27,9 @@
       el.appendChild(p);
     }
   }
-  const JP = { 'En tendencia ahora': 'トレンド', 'El próximo estreno': '近日公開', 'VER EPISODIOS': 'エピソード' };
-  function addJpChips() {
-    document.querySelectorAll('h2, h3').forEach(h => {
-      if (h.querySelector('.jp-chip')) return;
-      const jp = JP[h.textContent.trim()];
-      if (!jp) return;
-      const chip = document.createElement('span');
-      chip.className = 'jp-chip';
-      chip.textContent = jp;
-      h.appendChild(chip);
-    });
-  }
   function init() {
     const seen = new Set();
     document.querySelectorAll('.hero, #hero, .c-hero').forEach(el => { if (!seen.has(el)) { seen.add(el); decorateHero(el); } });
-    addJpChips();
-    setTimeout(addJpChips, 1200);
-    setTimeout(addJpChips, 3000);
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
   else init();
@@ -109,6 +94,43 @@
     let tries = 0;
     const t = setInterval(() => { if (moveThemeIntoDrawer() || ++tries > 12) clearInterval(t); }, 400);
     setInterval(polishHeader, 3000);
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
+
+/* Fondo ambiental de la ficha: el arte de la temporada elegida tiñe toda
+ * la página (borroso y oscuro). Al cambiar de temporada cambia el arte,
+ * porque cada temporada trae el suyo. */
+(function () {
+  'use strict';
+  if (!/watch\.html$/.test(location.pathname)) return;
+  function apply() {
+    const hero = document.querySelector('#hero');
+    if (!hero) return false;
+    const raw = getComputedStyle(hero).getPropertyValue('--banner') || '';
+    const m = raw.match(/url\(["']?(.+?)["']?\)/);
+    const img = hero.querySelector('img');
+    const url = m ? m[1] : (img ? img.src : '');
+    if (!url) return false;
+    let bg = document.querySelector('.ambient-bg');
+    if (!bg) {
+      bg = document.createElement('div');
+      bg.className = 'ambient-bg';
+      bg.setAttribute('aria-hidden', 'true');
+      document.body.prepend(bg);
+    }
+    if (bg.dataset.url !== url) {
+      bg.dataset.url = url;
+      bg.style.backgroundImage = 'url("' + url + '")';
+    }
+    return true;
+  }
+  function init() {
+    let tries = 0;
+    const t = setInterval(() => { if (apply() || ++tries > 20) clearInterval(t); }, 400);
+    const hero = document.querySelector('#hero');
+    if (hero) new MutationObserver(apply).observe(hero, { attributes: true, attributeFilter: ['style'] });
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
   else init();

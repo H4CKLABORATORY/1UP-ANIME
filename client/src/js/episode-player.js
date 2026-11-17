@@ -334,6 +334,10 @@ function renderSources(preferred=0){
   languageSelect.value=selectedLanguage;
   languageSelect.disabled=groups.size===0;
  }
+ const langLabel=playerRoot.querySelector('label[for="oneup-watch-language"]');
+ const showLang=groups.size>1;
+ if(languageSelect)languageSelect.style.display=showLang?'':'none';
+ if(langLabel)langLabel.style.display=showLang?'':'none';
  const sources=allSources.map(source=>source&&(selectedLanguage==='all'||languageGroup(source)===selectedLanguage)?source:null);
  const selected=sources[preferred]?preferred:sources.findIndex(Boolean);
 
@@ -359,12 +363,12 @@ function renderSources(preferred=0){
   button.classList.toggle('active',Boolean(source&&i===selected));
   button.setAttribute('aria-pressed',String(Boolean(source&&i===selected)));
   button.title=source?'Cambiar a '+source.label:'Sin fuente configurada';
-  if(sources.length>0&&i>=sources.length){
-   button.style.display='none';
-  }else{
-   button.style.display='';
-  }
+  button.style.display=source?'':'none';
  });
+ const anySource=sources.some(Boolean);
+ if(selector)selector.style.display=anySource?'':'none';
+ const counterPill=playerRoot.querySelector('.oneup-watch-counter');
+ if(counterPill)counterPill.style.display=anySource?'':'none';
  const heading=playerRoot.querySelector('#oneup-now-watching');
  if(heading)heading.textContent='Episodio '+selectedEpisode+(item?.title?' · '+item.title:'');
  showVideo(selected>=0?sources[selected]:null,selected);

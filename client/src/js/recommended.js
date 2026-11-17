@@ -29,7 +29,7 @@
     const sec = document.createElement('section');
     sec.className = 'rel-section rec-section';
     sec.setAttribute('aria-label', 'Recomendados para ti');
-    sec.innerHTML = '<h2>RECOMENDADOS PARA TI <span class="jp-chip">おすすめ</span><span class="rel-sub">' +
+    sec.innerHTML = '<h2>RECOMENDADOS PARA TI <span class="rel-sub">' +
       (personal ? 'Por los géneros que vienes viendo' : 'Los mejor valorados del catálogo') + '</span></h2><div class="rel-row">' +
       scored.map(({ x }) => '<a class="rel-card" href="watch.html?anime=' + encodeURIComponent(x.id) + '">' +
         (x.poster || x.image ? '<img src="' + esc(x.poster || x.image) + '" alt="" loading="lazy">' : '<span class="rel-noimg"></span>') +
