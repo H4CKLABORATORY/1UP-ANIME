@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "checks": [
     {
-      "at": "2026-11-17T05:57:00.147Z",
+      "at": "2026-11-17T14:35:47.218Z",
       "verdict": "atencion",
       "issues": [
         {
@@ -11,6 +11,10 @@
         },
         {
           "id": "airing:freshness",
+          "level": "warning"
+        },
+        {
+          "id": "site:community",
           "level": "warning"
         }
       ]
