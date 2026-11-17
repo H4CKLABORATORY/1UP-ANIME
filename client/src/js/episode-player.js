@@ -427,9 +427,12 @@ async function show(anime,{root,season=1}={}){
  const backendTotal=anime.episodes_total||(typeof anime.episodes==='number'?anime.episodes:0)||anime.episodes_count||(Array.isArray(anime.episodes)?anime.episodes.length:0)||0;
  episodeCount=Math.min(9999,Math.max(1,safeNumber(backendTotal,1),...map.keys()));
  const visible=Math.min(episodeCount,120);
+ const escH=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+ const seasons=Array.isArray(anime.seasons)?anime.seasons.filter(s=>s&&s.id):[];
+ const seasonControl=seasons.length>1?'<label for="oneup-watch-season">Temporada</label><select id="oneup-watch-season" aria-label="Seleccionar temporada">'+seasons.map(s=>'<option value="'+escH(s.id)+'"'+(String(s.id)===id?' selected':'')+'>'+escH(s.label||s.title||'Temporada')+'</option>').join('')+'</select>':'';
  playerRoot.innerHTML='<div class="oneup-detail-section oneup-watch-panel">'+
   '<div class="oneup-watch-title"><div><span class="micro"><img class="oneup-panel-logo" src="./assets/oneup-header-letters.png" alt="1UP ANIME"> · EPISODIOS</span><h3>VER EPISODIOS</h3></div><span class="oneup-watch-counter">Opciones de servidor</span></div>'+
-  '<div class="oneup-watch-controls"><label for="oneup-watch-episode">Selecciona un episodio</label>'+
+  '<div class="oneup-watch-controls">'+seasonControl+'<label for="oneup-watch-episode">Selecciona un episodio</label>'+
   '<select id="oneup-watch-episode" aria-label="Seleccionar episodio para ver">'+
   Array.from({length:visible},(_,i)=>'<option value="'+(i+1)+'">Episodio '+(i+1)+'</option>').join('')+'</select>'+
   (episodeCount>120?'<label class="oneup-watch-jump" for="oneup-watch-episode-number">Ir al episodio <input id="oneup-watch-episode-number" type="number" min="1" max="'+episodeCount+'" value="1"></label>':'')+
@@ -441,6 +444,12 @@ async function show(anime,{root,season=1}={}){
   '<p id="oneup-player-message" class="oneup-player-state" role="status" aria-live="polite"></p>'+
   '</div>';
  playerRoot.querySelector('#oneup-watch-episode')?.addEventListener('change',e=>chooseEpisode(Number(e.target.value)));
+ playerRoot.querySelector('#oneup-watch-season')?.addEventListener('change',e=>{
+  const picked=seasons.find(s=>String(s.id)===String(e.target.value));
+  if(!picked||String(picked.id)===id)return;
+  if(/watch\.html$/.test(location.pathname)){location.href='watch.html?anime='+encodeURIComponent(picked.id);return}
+  show({...picked,seasons},{root:playerRoot});
+ });
  playerRoot.querySelector('#oneup-watch-episode-number')?.addEventListener('change',e=>chooseEpisode(Number(e.target.value)));
  playerRoot.querySelector('#oneup-watch-language')?.addEventListener('change',e=>{selectedLanguage=e.target.value;renderSources()});
  playerRoot.querySelectorAll('[data-server-slot]').forEach(button=>button.addEventListener('click',()=>{

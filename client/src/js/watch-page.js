@@ -27,6 +27,26 @@ function renderTrailer(a){
  });
 }
 function fail(message){$('#title').textContent='No se pudo cargar este anime';$('#synopsis').textContent=message;$('#providers').innerHTML='<div class="status">Vuelve al catálogo y selecciona el anime otra vez.</div>';}
+function seasonParts(title){
+ let t=String(title||'').trim(),part=1;const pm=t.match(/\s+part\s+(\d+)\s*$/i);if(pm){part=Number(pm[1]);t=t.slice(0,pm.index).trim()}
+ let num=0;const pats=[/\s+(\d+)(?:st|nd|rd|th)\s+season\s*$/i,/\s+season\s+(\d+)\s*$/i,/\s+the\s+final\s+season\s*$/i,/\s+(\d+)\s*$/];
+ for(const re of pats){const m=t.match(re);if(m){num=m[1]?Number(m[1]):-1;t=t.slice(0,m.index).trim();break}}
+ t=t.replace(/\s*\((?:tv|movie)\)\s*$/i,'').trim();
+ return {base:t,num,part};
+}
+function franchiseSeasons(items,current){
+ const series=items.filter(x=>x&&(x.type==='Serie'||x.format==='TV'||x.format==='ONA')&&x.format!=='MOVIE');
+ const bases=new Set(series.map(x=>seasonParts(x.title).base));
+ const keyOf=x=>{const p=seasonParts(x.title);let b=p.base;const ci=b.indexOf(': ');if(ci>0&&bases.has(b.slice(0,ci)))b=b.slice(0,ci);return b};
+ const key=keyOf(current);
+ const sibs=series.filter(x=>keyOf(x)===key);
+ if(sibs.length<2)return [];
+ const sorted=[...sibs].sort((a,b)=>(Number(a.raw_id)||0)-(Number(b.raw_id)||0));
+ let currentNum=0;
+ const list=sorted.map(x=>{const p=seasonParts(x.title);const n=p.num>0?p.num:currentNum+1;currentNum=n;return {id:String(x.id),title:x.title||'Anime',label:'Temporada '+n+(p.part>1?' · Parte '+p.part:''),image:safe(x.poster||x.image||''),banner:safe(x.banner||x.poster||''),episodes:x.episodes||0,episodes_total:x.episodes_total||x.episodes||0}});
+ for(const s of list)s.seasons=list;
+ return list;
+}
 async function loadJk(){
  try{
   const r=await fetch('./data/catalog-full.json',{cache:'force-cache'});
@@ -40,14 +60,34 @@ async function loadJk(){
   const image=safe(e.poster||e.image||'');
   if(image)$('#poster').src=image;else $('#poster').hidden=true;
   const banner=safe(e.banner||e.poster||'');if(banner)$('#hero').style.setProperty('--banner','url("'+banner.replace(/["\\]/g,'')+'")');
-  const meta=[e.type||(e.format==='TV'?'Serie':e.format),e.year,e.episodes?(e.episodes+' episodios'):'',e.averageScore?'★ '+(e.averageScore/10).toFixed(1):''].filter(Boolean);
+  const seasons=franchiseSeasons(items,e);
+  const meta=[e.type||(e.format==='TV'?'Serie':e.format),e.year,seasons.length>1?seasons.length+' temporadas':'',e.episodes?(e.episodes+' episodios'):'',e.averageScore?'★ '+(e.averageScore/10).toFixed(1):''].filter(Boolean);
   $('#meta').innerHTML=meta.map(x=>'<span>'+esc(x)+'</span>').join('');
   $('#synopsis').textContent=summarize(e.description_es||e.description||'Sinopsis no disponible.');
   const off=$('#official');if(off){off.hidden=true;off.style.display='none'}
   $('#providers').innerHTML='<div class="status">Sin plataformas registradas por ahora.</div>';
   $('#details').innerHTML='<p><strong>Formato:</strong> '+esc(e.format||'No disponible')+'</p><p><strong>Estado:</strong> '+esc(e.status_label||e.status||'No disponible')+'</p><p><strong>Géneros:</strong> '+esc((e.genres||[]).join(', ')||'No disponibles')+'</p>'+(e.studios?'<p><strong>Estudio:</strong> '+esc(e.studios)+'</p>':'');
-  try{await window.OneUpEpisodePlayer?.show({id:raw,title,image,banner,episodes:e.episodes||0,episodes_total:e.episodes_total||e.episodes||0})}catch(err){console.warn('1UP player:',err)}
+  try{await window.OneUpEpisodePlayer?.show({id:raw,title,image,banner,episodes:e.episodes||0,episodes_total:e.episodes_total||e.episodes||0,...(seasons.length>1?{seasons}:{})})}catch(err){console.warn('1UP player:',err)}
  }catch(error){console.error('1UP watch page:',error);fail(error.message||'Error de conexión.')}
+}
+const relQuery='query($id:Int,$mal:Int){Media(id:$id,idMal:$mal,type:ANIME,isAdult:false){id idMal format episodes title{english romaji} relations{edges{relationType node{id}}}}}';
+const relNodeQuery='query($id:Int){Media(id:$id,type:ANIME,isAdult:false){id idMal format episodes title{english romaji} relations{edges{relationType node{id}}}}}';
+async function gql(q,variables){const r=await fetch('https://graphql.anilist.co',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify({query:q,variables})});if(!r.ok)throw Error('HTTP '+r.status);const j=await r.json();return j.data?.Media}
+async function anilistSeasons(){
+ try{
+  const first=await gql(relQuery,isMal?{mal:Number(id)}:{id:Number(id)});
+  if(!first)return [];
+  const mk=n=>({id:isMal?(n.idMal?'mal-'+n.idMal:'al-'+n.id):'al-'+n.id,title:n.title?.english||n.title?.romaji||'Anime',episodes:n.episodes||0,episodes_total:n.episodes||0,image:'',banner:''});
+  const chain=[mk(first)];
+  let back=first,g=0;
+  while(back&&g++<10){const e=(back.relations?.edges||[]).find(x=>x.relationType==='PREQUEL');if(!e)break;const n=await gql(relNodeQuery,{id:e.node.id});if(!n||(n.format!=='TV'&&n.format!=='ONA'))break;chain.unshift(mk(n));back=n}
+  let fwd=first;g=0;
+  while(fwd&&g++<10){const e=(fwd.relations?.edges||[]).find(x=>x.relationType==='SEQUEL');if(!e)break;const n=await gql(relNodeQuery,{id:e.node.id});if(!n||(n.format!=='TV'&&n.format!=='ONA'))break;chain.push(mk(n));fwd=n}
+  if(chain.length<2)return [];
+  chain.forEach((s,i)=>{s.label='Temporada '+(i+1)});
+  for(const s of chain)s.seasons=chain;
+  return chain;
+ }catch{return []}
 }
 async function load(){
  if(raw.startsWith('jk-')){loadJk();return}
@@ -74,7 +114,8 @@ async function load(){
   if(!providers.length){const free=['youtube','tubi','pluto tv','retrocrush','hoopla'].map(k=>bySite.get(k)).find(Boolean);if(free)providers=[free]}
   $('#providers').innerHTML=providers.length?providers.map(x=>'<a href="'+esc(safe(x.url))+'" target="_blank" rel="noopener noreferrer">'+esc(x.site||'Plataforma oficial')+' <svg class="ext-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6M20 4l-9.2 9.2M19.2 13.5V19a1.6 1.6 0 0 1-1.6 1.6H5.6A1.6 1.6 0 0 1 4 19V7a1.6 1.6 0 0 1 1.6-1.6H11"/></svg></a>').join(''):'<div class="status">Sin plataformas registradas por ahora.</div>';
   $('#details').innerHTML='<p><strong>Formato:</strong> '+esc(a.format||'No disponible')+'</p><p><strong>Estado:</strong> '+esc(a.status||'No disponible')+'</p><p><strong>Géneros:</strong> '+esc((a.genres||[]).join(', ')||'No disponibles')+'</p>';
-  try{await window.OneUpEpisodePlayer?.show({id:raw,title,image,banner:banner||'',episodes:a.episodes||0,episodes_total:a.episodes||0})}catch(e){console.warn('1UP player:',e)}
+  const seasons=await anilistSeasons();
+  try{await window.OneUpEpisodePlayer?.show({id:raw,title,image,banner:banner||'',episodes:a.episodes||0,episodes_total:a.episodes||0,...(seasons.length>1?{seasons}:{})})}catch(e){console.warn('1UP player:',e)}
  }catch(error){console.error('1UP watch page:',error);fail(error.message||'Error de conexión.')}
 }
 load();
