@@ -202,3 +202,122 @@
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
   else init();
 })();
+
+/* Acento por tarjeta: cada anime de Tendencias lleva SU color (extraido de
+ * su poster, como en la ficha) y la barra de su nota REAL.
+ * La tecnica es de Animay; alli los colores y el calor eran a mano e
+ * inventados — aqui salen solos de los datos de cada anime. */
+(function () {
+  'use strict';
+  const cache = new Map();
+  function dominant(url, cb) {
+    if (!url) return;
+    if (cache.has(url)) { const v = cache.get(url); if (v) cb(v); return; }
+    cache.set(url, '');
+    const img = new Image();
+    img.crossOrigin = 'anonymous';
+    img.onload = () => {
+      try {
+        const c = document.createElement('canvas'); c.width = 40; c.height = 40;
+        const x = c.getContext('2d', { willReadFrequently: true });
+        x.drawImage(img, 0, 0, 40, 40);
+        const d = x.getImageData(0, 0, 40, 40).data;
+        let r = 0, g = 0, b = 0, n = 0;
+        for (let i = 0; i < d.length; i += 32) {
+          const R = d[i], G = d[i + 1], B = d[i + 2];
+          const mx = Math.max(R, G, B), mn = Math.min(R, G, B);
+          if (mx < 30 || mx > 242 || mx - mn < 26) continue;
+          r += R; g += G; b += B; n++;
+        }
+        if (n > 8) { const rgb = Math.round(r / n) + ',' + Math.round(g / n) + ',' + Math.round(b / n); cache.set(url, rgb); cb(rgb); }
+      } catch (e) { /* sin CORS: la tarjeta se queda con el violeta de la casa */ }
+    };
+    img.src = url;
+  }
+  function hexOf(rgb) {
+    return '#' + rgb.split(',').map(n => (+n).toString(16).padStart(2, '0')).join('');
+  }
+  function process(card) {
+    if (!card || card.dataset.accDone) return;
+    card.dataset.accDone = '1';
+    const img = card.querySelector('.anime-art img, img');
+    if (img) {
+      dominant(img.currentSrc || img.src, rgb => {
+        card.style.setProperty('--card-accent', hexOf(rgb));
+        card.style.setProperty('--card-accent-rgb', rgb);
+      });
+    }
+    const ratingEl = card.querySelector('.rating');
+    const info = card.querySelector('.anime-art');
+    if (ratingEl && info && !info.querySelector('.card-heat')) {
+      const v = parseFloat((ratingEl.textContent || '').replace(',', '.'));
+      if (isFinite(v) && v > 0) {
+        const pct = Math.max(4, Math.min(100, Math.round(v * 10)));
+        const d = document.createElement('div');
+        d.className = 'card-heat';
+        d.setAttribute('aria-hidden', 'true');
+        d.innerHTML = '<span class="card-heat-track"><span class="card-heat-fill" style="width:' + pct + '%"></span></span>';
+        info.appendChild(d);
+      }
+    }
+  }
+  function scan() {
+    document.querySelectorAll('#trending-rail article.anime-card').forEach(process);
+  }
+  function init() {
+    scan();
+    const rail = document.querySelector('#trending-rail');
+    if (rail && 'MutationObserver' in window) {
+      new MutationObserver(() => scan()).observe(rail, { childList: true, subtree: true });
+    }
+    setTimeout(scan, 1600);
+    setTimeout(scan, 3500);
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
+
+/* Color oficial por tarjeta: AniList bloquea leer los pixeles de sus
+ * posters (CORS), pero su API publica el color dominante oficial de cada
+ * portada (coverImage.color). Se pide una sola vez por pagina y cada
+ * tarjeta de Tendencias toma SU color; si AniList no responde, queda el
+ * violeta de la casa. */
+(function () {
+  'use strict';
+  function rgbOf(hex) {
+    const n = parseInt(hex.slice(1), 16);
+    return ((n >> 16) & 255) + ',' + ((n >> 8) & 255) + ',' + (n & 255);
+  }
+  async function pass() {
+    const cards = [...document.querySelectorAll('#trending-rail article.anime-card')]
+      .filter(c => !c.style.getPropertyValue('--card-accent'));
+    const ids = [...new Set(cards.map(c => (c.dataset.id || '').replace('mal-', ''))
+      .filter(s => /^\d+$/.test(s)))].map(Number);
+    if (!ids.length) return;
+    try {
+      const res = await fetch('https://graphql.anilist.co', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+          query: 'query($ids:[Int]){Page(perPage:50){media(id_in:$ids,type:ANIME){id coverImage{color}}}}',
+          variables: { ids }
+        })
+      });
+      if (!res.ok) return;
+      const json = await res.json();
+      const media = (json && json.data && json.data.Page && json.data.Page.media) || [];
+      media.forEach(m => {
+        const color = m.coverImage && m.coverImage.color;
+        if (!color) return;
+        document.querySelectorAll('#trending-rail article.anime-card[data-id="mal-' + m.id + '"]')
+          .forEach(card => {
+            card.style.setProperty('--card-accent', color);
+            card.style.setProperty('--card-accent-rgb', rgbOf(color));
+          });
+      });
+    } catch (e) { /* AniList inalcanzable: queda el violeta de la casa */ }
+  }
+  function init() { setTimeout(pass, 1400); setTimeout(pass, 3800); }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();

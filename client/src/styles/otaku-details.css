@@ -109,3 +109,10 @@ body.watch-page .hero h1{text-shadow:0 6px 44px rgba(0,0,0,.65),0 0 110px rgba(v
 #home-screen .hero-art-card{filter:drop-shadow(-18px 24px 34px rgba(0,0,0,.55)) drop-shadow(0 0 26px rgba(var(--cine-rgb,168,85,247),.35))}
 .sakura-paused .sakura-petal,.sakura-paused .sakura-cluster,html.tab-hidden .sakura-petal,html.tab-hidden .sakura-cluster{animation-play-state:paused}
 @media (max-width:650px){body.watch-page .hero .poster{transform:none}}
+
+/* ===== Acento por tarjeta (tecnica de Animay, con datos reales) ===== */
+#trending-rail .anime-card{transition:border-color .22s ease,box-shadow .22s ease}
+#trending-rail .anime-card:hover{border-color:var(--card-accent,#a78bfa);box-shadow:0 18px 38px -14px rgba(var(--card-accent-rgb,167,139,250),.45)}
+.card-heat{position:absolute;left:64px;right:10px;bottom:12px;z-index:6;pointer-events:none}
+.card-heat-track{display:block;height:4px;border-radius:4px;background:rgba(255,255,255,.18);overflow:hidden;box-shadow:0 1px 6px rgba(0,0,0,.4)}
+.card-heat-fill{display:block;height:100%;border-radius:4px;background:var(--card-accent,#a78bfa)}
