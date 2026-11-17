@@ -137,4 +137,4 @@ dialog[open]{animation:oneup-pop .22s cubic-bezier(.2,.9,.25,1.15)}
 /* Intro del deck: panel con sangre otaku */
 .oneup-finale-intro{position:relative;border:1px solid rgba(167,139,250,.35);border-radius:20px;padding:26px 28px;overflow:hidden;background:radial-gradient(80% 120% at 88% 0%,rgba(168,85,247,.20),transparent 60%),radial-gradient(60% 100% at 8% 110%,rgba(255,143,184,.12),transparent 60%),#0d0d16}
 
-:root[data-oneup-theme="medianoche"]{--km-turquoise:#b79cff}
+:root[data-oneup-theme="medianoche"]{--km-turquoise:#b79cff;--green:#a78bfa}
