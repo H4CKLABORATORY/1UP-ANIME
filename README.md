@@ -113,6 +113,7 @@ El sitio se publica automáticamente mediante GitHub Actions a GitHub Pages:
 ## Documentación Técnica de Referencia
 
 - [**Bitácora de Continuidad**](docs/PROJECT_CONTINUITY.md): Registro histórico de versiones y decisiones.
+- [**Resolvedor de enlaces de JkAnime**](docs/JKANIME_LINK_RESOLVER.md): Resolución HTTP-first de streams HLS/MP4, respaldo de dominio, caché y CLI.
 - [**Memoria Técnica OMEGA**](docs/OMEGA_MEMORY.md): Memoria persistente de decisiones y estándares.
 - [**Instrucciones para Agentes**](AGENTS.md): Reglas de desarrollo y verificación para asistentes IA.
 - [**Setup de Firebase Comunidad**](docs/FIREBASE_COMUNIDAD_SETUP.md): Configuración opcional de backend social.

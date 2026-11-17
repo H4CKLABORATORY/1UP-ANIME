@@ -60,6 +60,7 @@ flowchart TD
                 S_REND["server/render/ (Anime1v Gateway & Metadata Runtime)"]
                 S_SUPA["server/supabase/ (SQL migrations & RLS)"]
                 S_INTE["server/integrations/ (jkanime-v2 adapter aislado)"]
+                S_RESOLV["server/src/jkanime-link-resolver.js (HTTP-first stream resolver)"]
                 S_INFR["server/infra/ (Nginx reverse-proxy templates)"]
         end
 
@@ -192,7 +193,8 @@ flowchart TD
 │   │   ├── storage.rules       # Reglas de control de acceso a Cloud Storage
 │   │   └── dexter-providers.json # Definición de proveedores de sincronización
 │   ├── src/                    # Servicios de backend desacoplados para producción:
-│   │   └── catalog-service.js  # Servicio REST API nativo (node:sqlite WAL) de catálogo, streaming y descargas
+│   │   ├── catalog-service.js  # Servicio REST API nativo (node:sqlite WAL) de catálogo, streaming y descargas
+│   │   └── jkanime-link-resolver.js # Resolutor HTTP-first de HLS/MP4 con espejo, caché y SSRF guard
 │   ├── functions/              # Cloud Functions serverless (Node.js):
 │   │   ├── index.js            # Punto de entrada de funciones serverless
 │   │   ├── anime1v-adapter.js  # Adaptador restringido de solo metadatos
