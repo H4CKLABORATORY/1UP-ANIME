@@ -953,9 +953,26 @@ Al concluir cada trabajo agregar:
   4. `tests/unit/player-refresh.test.mjs`:
      - Añadida prueba R4 verificando el orden de prioridad, flags `is_protected: true` para Desu y falso para Streamwish, y la correcta conmutación al servidor directo.
 - **Verificación**:
-  - `node --test tests/unit/player-refresh.test.mjs`: **5/5 tests PASADOS**.
-  - `npm test`: **76/76 tests unitarios PASADOS**.
+  - `node --test tests/unit/player-refresh.test.mjs`: **6/6 tests PASADOS** (incluye R5 de selección explícita y renderizado de Desu).
+  - `npm test`: **77/77 tests unitarios PASADOS**.
   - `npm run test:ui`: **152 smoke assertions PASADAS**.
+
+### 2026-11-17 — Diagnóstico y corrección de selección explícita en servidor Desu
+
+- **Problema reportado**: «puedes analizar porque cuando doy en desu, se selecciona otro reproductor y no aparece desu?»
+- **Causa raíz identificada**:
+  - En `client/src/js/episode-player.js` dentro de `renderSources(preferred)`:
+    ```javascript
+    const firstNonProtected=sources.findIndex(s=>s&&!s.isProtected);
+    const selected=(sources[preferred]&&(!sources[preferred].isProtected||firstNonProtected===-1))?preferred:(firstNonProtected>=0?firstNonProtected:sources.findIndex(Boolean));
+    ```
+  - Cuando el usuario hacía clic en el botón de servidor `Desu ↗` (`preferred = idx`), la condición `!sources[preferred].isProtected` evaluaba a `false`. Por tanto, el operador ternario ignoraba la elección manual del usuario y saltaba forzosamente a `firstNonProtected` (Streamwish). Esto impedía seleccionar Desu y provocaba que nunca apareciera la tarjeta informativa o las opciones de Desu.
+- **Solución implementada**:
+  - Modificado `renderSources(preferred = null)` para respetar siempre la selección manual cuando `preferred !== null && preferred >= 0 && sources[preferred]`.
+  - Cuando el usuario pulsa `Desu ↗`, el botón se activa correctamente (`active`), y se monta la tarjeta interactiva de servidor protegido de JkAnime.
+  - Añadido botón interactivo «Forzar carga en marco ⚡» tanto en `episode-player.js` como en `catalogo-streaming.html` para usuarios que deseen forzar el iframe directamente bajo su discreción.
+  - Creada prueba automatizada R5 en `tests/unit/player-refresh.test.mjs` que valida el ciclo completo de clic sobre Desu, activación de botón, renderizado de tarjeta protegida, enlaces externos y acción de forzar incrustación.
+
 
 
 

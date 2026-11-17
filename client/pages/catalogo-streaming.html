@@ -466,6 +466,11 @@
                   ▶ Ver aquí con ${players[firstEmbedIndex].server}
                 </button>
               ` : ''}
+              ${pUrl ? `
+                <button type="button" class="ep-btn" style="padding: 8px 16px; background: transparent; border: 1px dashed #64748b; color: #94a3b8; font-weight: 600; border-radius: 6px;" onclick="forceEmbedPlayer('${pUrl}')">
+                  Forzar carga en marco ⚡
+                </button>
+              ` : ''}
             </div>
           </div>
         ` : (pUrl ? `
@@ -491,6 +496,20 @@
           </div>
         ` : ''}
       `;
+    };
+
+    window.forceEmbedPlayer = (url) => {
+      const box = document.getElementById('playerBox');
+      const existingIframeBox = box.querySelector('.iframe-box');
+      if (existingIframeBox) {
+        existingIframeBox.innerHTML = `<iframe src="${url}" allowfullscreen referrerpolicy="no-referrer" sandbox="allow-scripts allow-same-origin allow-forms allow-popups"></iframe>`;
+      } else {
+        const div = document.createElement('div');
+        div.className = 'iframe-box';
+        div.style.marginTop = '12px';
+        div.innerHTML = `<iframe src="${url}" allowfullscreen referrerpolicy="no-referrer" sandbox="allow-scripts allow-same-origin allow-forms allow-popups"></iframe>`;
+        box.appendChild(div);
+      }
     };
 
     window.selectEp = async (slug, epNum, btn, forceRefresh = false) => {

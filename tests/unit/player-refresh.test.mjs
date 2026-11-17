@@ -463,3 +463,171 @@ test('R4 Verification: Desu protected player card rendering and fallback to dire
   }
 });
 
+test('R5 Verification: Clicking on Desu explicitly selects Desu, displays protected card, and provides force embed action', async () => {
+  class MockElement {
+   constructor(tag='div') {
+     this.tag = tag;
+     this.children = [];
+     this.dataset = {};
+     this.style = {};
+     this.isConnected = true;
+     this.classList = {
+       classes: new Set(),
+       toggle(c, val) {
+         if (val === undefined) {
+           if (this.classes.has(c)) this.classes.delete(c);
+           else this.classes.add(c);
+         } else if (val) {
+           this.classes.add(c);
+         } else {
+           this.classes.delete(c);
+         }
+       },
+       add(c) { this.classes.add(c); },
+       remove(c) { this.classes.delete(c); },
+       contains(c) { return this.classes.has(c); }
+     };
+     this.attributes = {};
+     this.listeners = {};
+   }
+   get className() { return Array.from(this.classList.classes).join(' '); }
+   set className(val) {
+     this.classList.classes.clear();
+     String(val || '').split(/\s+/).filter(Boolean).forEach(c => this.classList.classes.add(c));
+   }
+   appendChild(node) { node.parent = this; this.children.push(node); return node; }
+   append(...nodes) { nodes.forEach(n => n.parent = this); this.children.push(...nodes); }
+   after(node) { (this.afterChildren ??= []).push(node); }
+   replaceChildren() { this.children = []; }
+   remove() {
+     if (this.parent) {
+       this.parent.children = this.parent.children.filter(c => c !== this);
+     }
+   }
+   setAttribute(k, v) { this.attributes[k] = v; }
+   removeAttribute(k) { delete this.attributes[k]; if (k === 'src') this.src = ''; }
+   addEventListener(event, fn) { this.listeners[event] = fn; }
+   querySelector(selector) {
+     if (selector === '#oneup-sync-links') {
+       return this.children.find(c => c.id === 'oneup-sync-links') || null;
+     }
+     return null;
+   }
+   querySelectorAll(selector) {
+     if (selector === 'button[data-server-slot]') {
+       return this.children.filter(c => c.dataset && c.dataset.serverSlot !== undefined);
+     }
+     return [];
+   }
+  }
+
+  const nodes = new Map();
+  const root = new MockElement();
+  root.querySelector = (selector) => nodes.get(selector) || null;
+  root.querySelectorAll = (selector) => {
+    if (selector === '[data-server-slot]') {
+      const group = nodes.get('.oneup-server-selector:not(.oneup-download-group)');
+      return group ? group.querySelectorAll('button[data-server-slot]') : [];
+    }
+    return [];
+  };
+
+  Object.defineProperty(root, 'innerHTML', {
+    set() {
+      nodes.clear();
+      for (const id of ['oneup-watch-episode', 'oneup-watch-language', 'oneup-playback-display', 'oneup-player-message', 'oneup-now-watching']) {
+        nodes.set('#' + id, new MockElement());
+      }
+      const selectorGroup = new MockElement();
+      selectorGroup.className = 'oneup-server-selector';
+      nodes.set('.oneup-server-selector:not(.oneup-download-group)', selectorGroup);
+    }
+  });
+
+  const document = {
+    querySelector: () => root,
+    createElement: (tag) => new MockElement(tag),
+    addEventListener: () => {},
+    dispatchEvent: () => {}
+  };
+
+  const DESU_URL = 'https://jkanime.net/jkplayer/um?e=desu_enc_token_123';
+  const STREAMWISH_URL = 'https://streamwish.to/e/sw_direct_stream';
+
+  const mockFetch = async () => ({
+    ok: true,
+    json: async () => ({
+      anime_id: 102,
+      episode: 1,
+      players: [
+        { server: 'Streamwish', player_url: STREAMWISH_URL, embed_url: STREAMWISH_URL, quality: 'HD' },
+        { server: 'Desu', player_url: DESU_URL, embed_url: null, quality: 'HD' }
+      ],
+      downloads: []
+    })
+  });
+
+  const window = {
+    ONEUP_API_BASE: 'https://1up-anime.test/api',
+    OneUpHLS: { attach: () => () => {} }
+  };
+
+  vm.runInNewContext(
+    fs.readFileSync('client/src/js/episode-player.js', 'utf8'),
+    {
+      window,
+      document,
+      fetch: mockFetch,
+      URL,
+      location: { href: 'https://anime.example.com/' },
+      AbortController,
+      setTimeout,
+      clearTimeout,
+      CustomEvent: class {}
+    }
+  );
+
+  await window.OneUpEpisodePlayer.show({ id: '102', slug: 'test-desu-select', episodes: 1 });
+  await new Promise(r => setTimeout(r, 60));
+
+  const selectorGroup = nodes.get('.oneup-server-selector:not(.oneup-download-group)');
+  const buttons = selectorGroup.querySelectorAll('button[data-server-slot]');
+  assert.equal(buttons.length >= 2, true, 'Must have at least 2 server buttons');
+
+  // Initial selection: Streamwish (index 0) is active
+  assert.equal(buttons[0].classList.contains('active'), true, 'Streamwish button must be active initially');
+  assert.equal(buttons[1].classList.contains('active'), false, 'Desu button must not be active initially');
+
+  // Verify Desu button exists and has label with ↗ indicator
+  assert.ok(buttons[1].textContent.includes('Desu ↗'), 'Desu button must display Desu ↗ label');
+
+  // User clicks on Desu (index 1)
+  buttons[1].listeners['click']();
+  await new Promise(r => setTimeout(r, 60));
+
+  // Now Desu must be active!
+  assert.equal(buttons[1].classList.contains('active'), true, 'Desu button must be active after clicking');
+  assert.equal(buttons[0].classList.contains('active'), false, 'Streamwish must no longer be active');
+
+  // Playback stage must render protected player card for Desu
+  const stage = nodes.get('#oneup-playback-display');
+  const card = stage.children.find(n => n.classList?.contains('oneup-protected-player-card'));
+  assert.ok(card, 'Protected player card must be rendered when Desu is selected');
+
+  const titleNode = card.children.find(n => n.classList?.contains('oneup-protected-title'));
+  assert.ok(titleNode.textContent.includes('Desu (Protegido)'), 'Card title must indicate Desu (Protegido)');
+
+  const actions = card.children.find(n => n.classList?.contains('oneup-protected-actions'));
+  assert.ok(actions, 'Protected actions must be rendered');
+
+  const openExt = actions.children.find(n => n.classList?.contains('oneup-btn-primary-ext'));
+  assert.ok(openExt, 'External link button must exist');
+  assert.equal(openExt.href, DESU_URL, 'External link must point to Desu URL');
+
+  const switchBack = actions.children.find(n => n.textContent?.includes('Reproducir aquí con Streamwish'));
+  assert.ok(switchBack, 'Switch button to Streamwish must exist');
+
+  const forceBtn = actions.children.find(n => n.textContent?.includes('Forzar carga en marco'));
+  assert.ok(forceBtn, 'Force embed button must exist');
+});
+

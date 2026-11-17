@@ -424,9 +424,17 @@ Agregado módulo reversible camera.mjs con trayectorias orbit/dolly/glide, persp
   - Tarjeta protectora en frontend (`episode-player.js`, `catalogo-streaming.html`, `player.css`): al seleccionar un servidor protegido como Desu, se muestra una tarjeta con botón para abrir en pestaña nueva de JkAnime (`target="_blank"`) y botón rápido para reproducir aquí con Streamwish/Vidhide. Los botones llevan el sufijo `↗`.
   - Al abrir o pulsar «⚡ Actualizar», se conmuta automáticamente al primer servidor directo compatible (`bestEmbedIndex`), iniciando el video al instante.
 - Pruebas realmente ejecutadas:
-  - `node --test tests/unit/player-refresh.test.mjs`: **5/5 tests PASADOS**.
-  - `npm test`: **76/76 tests unitarios Node pasados (0 fallos)**.
+  - `node --test tests/unit/player-refresh.test.mjs`: **6/6 tests PASADOS** (incluye R5 de selección manual de Desu y forzado de marco).
+  - `npm test`: **77/77 tests unitarios Node pasados (0 fallos)**.
   - `npm run test:ui`: **152 smoke assertions pasadas**.
+
+### 2026-11-17 — Selección explícita de servidor Desu y opción de forzar marco
+- Diagnóstico: En `episode-player.js`, la función `renderSources` condicionaba la asignación de `selected` a que `!isProtected` fuera verdadero. Al hacer clic en `Desu ↗`, el sistema forzaba el retorno a `Streamwish`, ignorando la acción manual del usuario.
+- Solución:
+  - Se modificó la resolución para respetar siempre la selección explícita del usuario (`preferred !== null && preferred >= 0 && sources[preferred]`).
+  - Al pulsar `Desu ↗`, se marca como activo y se presenta la tarjeta informativa de protección `SAMEORIGIN`.
+  - Se agregó la opción «Forzar carga en marco ⚡» para permitir la inserción del iframe bajo solicitud explícita del usuario.
+
 
 
 

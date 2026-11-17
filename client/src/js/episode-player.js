@@ -290,6 +290,28 @@ function showVideo(slot,serverIndex=-1){
     actions.appendChild(switchBtn);
    }
 
+   const forceBtn=document.createElement('button');
+   forceBtn.type='button';
+   forceBtn.className='oneup-btn-secondary-switch';
+   forceBtn.style.background='transparent';
+   forceBtn.style.border='1px dashed #64748b';
+   forceBtn.style.color='#94a3b8';
+   forceBtn.textContent='Forzar carga en marco ⚡';
+   forceBtn.title='Intentar incrustar el reproductor oficial en el marco interno (puede ser bloqueado por JkAnime)';
+   forceBtn.addEventListener('click',()=>{
+    card.remove();
+    const iframe=document.createElement('iframe');
+    iframe.src=slot.url;
+    iframe.title='Reproductor · '+(slot.label||'Desu')+' · Episodio '+selectedEpisode;
+    iframe.loading='eager';
+    iframe.referrerPolicy='no-referrer';
+    iframe.setAttribute('sandbox','allow-scripts allow-same-origin allow-forms allow-popups');
+    iframe.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen';
+    iframe.allowFullscreen=true;
+    stage.appendChild(iframe);
+   });
+   actions.appendChild(forceBtn);
+
    card.append(badge,title,desc,actions);
    stage.appendChild(card);
 
@@ -437,7 +459,7 @@ function renderDownloads(downloads){
  }
 }
 
-function renderSources(preferred=0){
+function renderSources(preferred=null){
  if(!playerRoot)return;
  const item=mediaByEpisode.get(selectedEpisode);
  const allSources=Array.isArray(item?.sources)&&item.sources.length>0?item.sources:Array(MAX_SERVERS).fill(null);
@@ -451,7 +473,7 @@ function renderSources(preferred=0){
  }
  const sources=allSources.map(source=>source&&(selectedLanguage==='all'||languageGroup(source)===selectedLanguage)?source:null);
  const firstNonProtected=sources.findIndex(s=>s&&!s.isProtected);
- const selected=(sources[preferred]&&(!sources[preferred].isProtected||firstNonProtected===-1))?preferred:(firstNonProtected>=0?firstNonProtected:sources.findIndex(Boolean));
+ const selected=(preferred!==null&&preferred>=0&&sources[preferred])?preferred:(firstNonProtected>=0?firstNonProtected:Math.max(0,sources.findIndex(Boolean)));
 
  const selector=playerRoot.querySelector('.oneup-server-selector:not(.oneup-download-group)');
  if(selector){

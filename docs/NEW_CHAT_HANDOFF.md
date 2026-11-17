@@ -22,7 +22,7 @@
 - No confundir el catálogo de Anime1v con episodios reproducibles ni su licencia MIT con derechos de distribución de anime.
 
 ## Estado detectado ahora
-- Último commit de aplicación encontrado: 7fb52ee93a03d13aa9161574d1575197e2370ab5
+- Último commit de aplicación encontrado: 72ff94afeb0cbb8bdf44165fde7e665a40fa6fcc
 - Descubrimiento Anime1v configurado en frontend: sí, verificar la respuesta real en Render
 - Código runtime de metadatos Anime1v en repositorio: sí
 - Entradas de obras multimedia en data/licensed-media.json: 0
@@ -30,11 +30,11 @@
 - Safari físico: no dar por verificado salvo prueba real con evidencia.
 
 ## Últimos commits relevantes
+- 72ff94afe — fix(player): resolver rechazo de conexion en Desu, priorizar streams directos y reactivar scrapeo IP
 - 7fb52ee93 — Merge branch 'main' of https://github.com/H4CKLABORATORY/1UP-ANIME
 - 134ca12b3 — update
 - 2b78e7190 — Sync authorized anime episode metadata and source statuses
 - 8464f7c5e — update
-- 7a845576e — ONEUP health snapshot (no application changes)
 
 ## PR abiertos (consultar cambios antes de desarrollar)
 - Consultar https://github.com/H4CKLABORATORY/1UP-ANIME/pulls para obtener lista actual (no significa que no haya PRs).
