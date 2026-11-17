@@ -22,8 +22,7 @@ async function requireAccount(){
   stateMessage('La comunidad necesita activar Firebase, App Check y sus funciones. Aún no hay un servidor conectado.');
   return false;
  }
- if(await registered())return true;
- $('#c-auth-dialog').showModal();return false;
+ return true;
 }
 function setTab(tab){
  selected=tab;
@@ -64,11 +63,11 @@ function postHTML(post){
  return '<article class="c-feed-card" data-post="'+esc(post.id)+'"><div class="c-card-body">'+
  '<div class="c-card-top"><div class="c-publisher"><div class="c-avatar"'+(post.avatarPath?' data-avatar-file="'+esc(post.avatarPath)+'"':'')+'>'+esc(post.icon||'✦')+'</div><div class="c-person"><strong>'+name+' '+badge(post)+'</strong><small>'+niceDate(post.createdAt)+'</small></div></div><span class="c-post-kind">'+esc(kind)+'</span></div>'+
  '<p class="c-post-text">'+esc(post.text||'')+'</p></div>'+media+
- '<div class="c-card-buttons"><button type="button" data-like="'+esc(post.id)+'">♡ '+(Math.max(0,Number(post.likes)||0))+'</button>'+
- '<button type="button" data-reply="'+esc(post.id)+'">◌ Comentar</button><button type="button" data-share="'+esc(post.id)+'">↗ Compartir</button>'+
- '<button type="button" data-report="'+esc(post.id)+'">⚑ Reportar</button>'+
- '<button type="button" class="c-follow" data-follow="'+esc(post.authorUid||'')+'">＋ Seguir</button>'+
- '<button type="button" data-friend="'+esc(post.authorUid||'')+'">♧ Amistad</button></div></article>';
+ '<div class="c-card-buttons"><button type="button" data-like="'+esc(post.id)+'"><svg class="c-btn-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20.5C7 16.5 3.5 13.3 3.5 9.6A4.6 4.6 0 0 1 12 6.7a4.6 4.6 0 0 1 8.5 2.9c0 3.7-3.5 6.9-8.5 10.9Z"/></svg> '+(Math.max(0,Number(post.likes)||0))+'</button>'+
+ '<button type="button" data-reply="'+esc(post.id)+'"><svg class="c-btn-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-12.4 7.1L3 20l1.5-5.4A8.5 8.5 0 1 1 21 11.5Z"/></svg> Comentar</button><button type="button" data-share="'+esc(post.id)+'"><svg class="c-btn-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6M20 4l-9.2 9.2M19.2 13.5V19a1.6 1.6 0 0 1-1.6 1.6H5.6A1.6 1.6 0 0 1 4 19V7a1.6 1.6 0 0 1 1.6-1.6H11"/></svg> Compartir</button>'+
+ '<button type="button" data-report="'+esc(post.id)+'"><svg class="c-btn-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 21.5v-17c4-2.2 7 1.8 12 0v9c-5 1.8-8-2.2-12 0"/></svg> Reportar</button>'+
+ '<button type="button" class="c-follow" data-follow="'+esc(post.authorUid||'')+'"><svg class="c-btn-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg> Seguir</button>'+
+ '<button type="button" data-friend="'+esc(post.authorUid||'')+'"><svg class="c-btn-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8.5" r="3.4"/><path d="M3.2 19.8c.6-3 2.7-4.8 5.8-4.8s5.2 1.8 5.8 4.8M15.8 5.4a3.4 3.4 0 0 1 0 6.2M17.6 15.3c1.8.7 2.9 2.1 3.3 4.5"/></svg> Amistad</button></div></article>';
 }
 async function renderMedia(){
  for(const elem of $$('[data-media]')){
@@ -84,7 +83,7 @@ async function renderMedia(){
    }
   }catch{if(elem.isConnected)elem.textContent='Imagen o video no disponible.'}
  }
- for(const badge of $('[data-avatar-file]')){
+ for(const badge of $$('[data-avatar-file]')){
   const path=badge.dataset.avatarFile;
   try{
    const link=await backend().mediaURL(path);
@@ -181,9 +180,6 @@ function profileIcons(){
 async function showFriends(){
  const box=$('#c-friend-requests'),list=$('#c-friend-list');
  if(!box||!list)return;
- if(!await registered()){
-  box.innerHTML='<p class="c-empty">Inicia sesión con Google para consultar solicitudes de amistad.</p>';list.textContent='';return;
- }
  try{
   const result=await backend().listFriends();
   const requests=Array.isArray(result?.incoming)?result.incoming:[];
@@ -194,7 +190,6 @@ async function showFriends(){
 }
 async function loadMyProfile(){
  if(!backend()?.enabled()){status('#profile-state','Configura Firebase para guardar un perfil público.');return}
- if(!await registered()){status('#profile-state','Inicia sesión con Google para editar tu perfil.');return}
  try{const data=await backend().myProfile();if(data){$('#profile-alias').value=data.displayName||'';selectedAvatar=data.icon||'⚔️';profileIcons()}}
  catch(e){status('#profile-state',errorText(e))}
  await showFriends();

@@ -1,12 +1,9 @@
-/* 1UP: the depth switch must remain accessible on desktop and iPhone.
- * Never move it inside the mobile drawer: the drawer starts hidden,
- * sometimes mounts after DOMContentLoaded, and made the switch inaccessible.
- */
+/* 1UP owner rule (Dexter): the 3D/depth mode is ON by default and the
+ * switch stays hidden — it must never appear on the page. */
 document.addEventListener('DOMContentLoaded',()=>{
  const button=document.getElementById('depth-toggle');
  if(!button||typeof DepthEngine==='undefined')return;
- button.hidden=false;
- button.removeAttribute('inert');
+ button.hidden=true;
  button.setAttribute('aria-label','Activar modo profundidad');
  function sync(enabled){
   button.classList.toggle('active',enabled);

@@ -1,0 +1,26 @@
+/* ===== 1UP · Reproductor Tema Pro — misma estructura, presentación premium ===== */
+#oneup-player-section{background:linear-gradient(160deg,#10151d,#080b10);border:1px solid rgba(216,199,255,.22);border-radius:18px;box-shadow:0 24px 60px rgba(0,0,0,.42)}
+.oneup-watch-panel .oneup-watch-title h3{color:#f6f3ff}
+.oneup-watch-counter{color:#d8c7ff;background:rgba(167,139,250,.1);border-color:rgba(216,199,255,.32)}
+.oneup-watch-controls label{color:#d9cfe6}
+.oneup-watch-controls select,.oneup-watch-controls input{background:#0c1220;color:#f1edfb;border:1px solid rgba(255,255,255,.15);border-radius:12px;transition:border-color .18s ease,box-shadow .18s ease}
+.oneup-watch-controls select:focus,.oneup-watch-controls input:focus{border-color:#a78bfa;box-shadow:0 0 0 3px rgba(167,139,250,.18);outline:none}
+#oneup-now-watching{color:#f6f3ff}
+.oneup-server-selector{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.09);border-radius:14px}
+.oneup-server-selector>strong{color:#ab9fb8;letter-spacing:.14em}
+.oneup-server-choice{background:#131a26;border:1px solid rgba(255,255,255,.12);border-radius:11px;color:#ede8f2;transition:border-color .16s ease,background .16s ease,transform .13s ease}
+.oneup-server-choice:hover,.oneup-server-choice:focus-visible{border-color:rgba(167,139,250,.6);background:#16222e}
+.oneup-server-choice:active{transform:scale(.97)}
+.oneup-server-choice.active{background:linear-gradient(120deg,#a78bfa,#d8c7ff);color:#0d0a14;border-color:transparent;box-shadow:0 8px 22px rgba(167,139,250,.3)}
+.oneup-server-choice:disabled{opacity:.38}
+.oneup-playback-stage{border:1px solid rgba(216,199,255,.25);border-radius:14px;box-shadow:0 22px 55px rgba(0,0,0,.55)}
+.oneup-episode-button{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.14);border-radius:11px;color:#f1edfb}
+.oneup-episode-button:hover,.oneup-episode-button:focus-visible{border-color:rgba(167,139,250,.6);background:rgba(167,139,250,.12)}
+.oneup-external-source{background:linear-gradient(120deg,#10151d,#0a0e14);border-color:rgba(216,199,255,.22);border-radius:14px}
+.oneup-player-state{color:#ab9fb8}
+
+/* Pieza única (película/especial/OVA/ONA de 1 episodio): etiqueta en vez de selector de episodios */
+.oneup-unit-tag{display:inline-flex;align-items:center;padding:9px 18px;border-radius:999px;border:1px solid rgba(167,139,250,.55);background:rgba(167,139,250,.10);color:#ffd98a;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:15px;letter-spacing:.16em;text-transform:uppercase}
+
+/* watch.html define --green en su :root en linea: se pisa aqui (violeta Medianoche) */
+body{--green:#a78bfa}

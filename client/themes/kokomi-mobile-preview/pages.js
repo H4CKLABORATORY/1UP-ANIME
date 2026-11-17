@@ -58,14 +58,14 @@ function setPage(markup,route){
  });
  window.OneUpMotion?.enter?.(root,'interior');
 }
-function richList(data){return '<div class="km-rows">'+data.map(a=>'<a class="km-row" href="'+animeUrl(a)+'">'+(uri(a.image)?'<img src="'+esc(uri(a.image))+'" loading="lazy" alt="">':'')+'<span><strong>'+esc(a.title)+'</strong><small>'+esc(String(a.format||'TV')+' · '+String(a.year||''))+'</small></span><span aria-hidden="true">↗</span></a>').join('')+'</div>'}
+function richList(data){return '<div class="km-rows">'+data.map(a=>'<a class="km-row" href="'+animeUrl(a)+'">'+(uri(a.image)?'<img src="'+esc(uri(a.image))+'" loading="lazy" alt="">':'')+'<span><strong>'+esc(a.title)+'</strong><small>'+esc(String(a.format||'TV')+' · '+String(a.year||''))+'</small></span><span aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.5 5.5 16 12l-6.5 6.5"/></svg></span></a>').join('')+'</div>'}
 function detailPage(a,movie){
  if(!a)return errorPage('No encontramos ese anime');
  const art=uri(a.banner||a.image);
  const list=(a.genres||[]).slice(0,5).map(x=>'<span>'+esc(x)+'</span>').join('');
  const playback=movie?'movie-play':'series-play';
  const mediaButton='<a class="km-main-button" href="#km/'+playback+'/'+encodeURIComponent(a.id)+'">▷ VER REPRODUCTOR</a>';
- const official=(a.streaming||[]).filter(x=>uri(x.url)).slice(0,5).map(x=>'<a class="km-source-link" href="'+esc(uri(x.url))+'" target="_blank" rel="noopener noreferrer">↗ '+esc(x.name)+'</a>').join('');
+ const official=(a.streaming||[]).filter(x=>uri(x.url)).slice(0,5).map(x=>'<a class="km-source-link" href="'+esc(uri(x.url))+'" target="_blank" rel="noopener noreferrer"><svg class="ext-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6M20 4l-9.2 9.2M19.2 13.5V19a1.6 1.6 0 0 1-1.6 1.6H5.6A1.6 1.6 0 0 1 4 19V7a1.6 1.6 0 0 1 1.6-1.6H11"/></svg> '+esc(x.name)+'</a>').join('');
  return '<div class="km-detail-banner" style="'+(art?'background-image:linear-gradient(90deg,#111118 7%,#121219bb 65%,#08080ac7),url(&quot;'+esc(art)+'&quot;)':'')+'"><div class="km-detail-inner"><span class="km-eyebrow">'+(movie?'PELÍCULA':'SERIE')+' / 1UP ANIME</span><h1>'+esc(a.title)+'</h1><div class="km-detail-meta"><span>★ '+esc(String(a.averageScore?Math.round(a.averageScore)/10:'—'))+'</span><span>'+esc(a.year||'Año desconocido')+'</span><span>'+esc(movie?'Película':String(a.episodes||'—')+' episodios declarados')+'</span></div><div class="km-tags">'+list+'</div><p>'+esc((a.description_es||a.description||'Sin sinopsis disponible.').slice(0,900))+'</p><div class="km-action-row">'+mediaButton+'<button data-km-open="'+esc(a.id)+'" class="km-second-button">＋ ABRIR FICHA COMPLETA</button></div></div></div><section class="km-block"><h2>Disponibilidad y fuentes</h2><p>El motor integrado solo reproduce archivos o incrustaciones autorizadas declaradas en el manifiesto. Los sitios externos conservan su propia reproducción.</p><div class="km-action-row">'+(official||'<span class="km-muted">No hay plataformas registradas para este título.</span>')+'</div></section>';
 }
 function errorPage(msg){return heading('No encontrado',msg||'La página o el anime solicitado no existe.')+'<button class="km-main-button" data-route="inicio">← VOLVER AL INICIO</button>'}
@@ -120,7 +120,7 @@ function content(route,id){
  const list=all.filter(a=>a.trailer?.site==='youtube'&&/^[\w-]{11}$/.test(a.trailer.id||''));
  return heading('Tráilers','Avances publicados en los metadatos del catálogo.')+(list.length?richList(list):'<div class="km-no-media">No hay tráilers verificables en el catálogo local.</div>')
  }
- if(route==='blog')return heading('Artículos','Notas originales sobre nuestra plataforma.')+'<div class="km-posts">'+blogArticles.map(a=>'<a href="#km/blog-single/'+a.id+'" class="km-post"><span>'+a.tag+'</span><h2>'+esc(a.title)+'</h2><p>Leer artículo completo ↗</p></a>').join('')+'</div>';
+ if(route==='blog')return heading('Artículos','Notas originales sobre nuestra plataforma.')+'<div class="km-posts">'+blogArticles.map(a=>'<a href="#km/blog-single/'+a.id+'" class="km-post"><span>'+a.tag+'</span><h2>'+esc(a.title)+'</h2><p>Leer artículo completo <svg class="ext-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6M20 4l-9.2 9.2M19.2 13.5V19a1.6 1.6 0 0 1-1.6 1.6H5.6A1.6 1.6 0 0 1 4 19V7a1.6 1.6 0 0 1 1.6-1.6H11"/></svg></p></a>').join('')+'</div>';
  if(route==='blog-single'){const article=blogArticles.find(x=>x.id===id);return article?heading(article.title,article.tag)+'<article class="km-article">'+esc(article.body)+'</article><a href="#km/blog" class="km-second-button">← Volver a artículos</a>':errorPage('Artículo no disponible')}
  if(route==='contact')return heading('Contacto','Habla con nuestra comunidad y comparte sugerencias.')+'<section class="km-block"><h2>1UP ANIME</h2><p>Para enviar sugerencias puedes participar en La Plaza. Este formulario no simula el envío de correo ni almacena datos personales.</p><a class="km-main-button" href="./comunidad.html">IR A LA COMUNIDAD ↗</a></section>';
  if(route==='404')return errorPage('La dirección solicitada no pertenece a las páginas disponibles.');
@@ -164,10 +164,12 @@ function startup(){
  home=$('#home-screen');browse=$('#browse-screen');const main=$('main');
  if(!main||!home)return;
  root=document.createElement('section');root.id='km-extra-root';root.className='km-extra-root';root.hidden=true;main.append(root);
+ const KM_PATHS={upcoming:'M12 2.8c2.8 1.6 4.2 4.7 4.2 8.2l-4.2 4.2L7.8 11c0-3.5 1.4-6.6 4.2-8.2Zm0 4.4a1.8 1.8 0 1 0 0 3.6 1.8 1.8 0 0 0 0-3.6ZM7.8 12.5 4 14l1.5 3.8M16.2 12.5 20 14l-1.5 3.8M10 18.5c.5 1 1.2 1.9 2 2.7.8-.8 1.5-1.7 2-2.7',trailers:'M8 5.2v13.6L18.8 12Z',blog:'M6 3.5h9L19 7.5V20a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4.5A1 1 0 0 1 6 3.5Zm8.5 0v4.5H19M8.5 12.5h7M8.5 16h7',profile:'M12 12.3a3.8 3.8 0 1 0 0-7.6 3.8 3.8 0 0 0 0 7.6Zm-7.5 8.2c.9-3.8 3.7-5.7 7.5-5.7s6.6 1.9 7.5 5.7',notifications:'M6 16v-5a6 6 0 0 1 12 0v5l1.2 3H4.8L6 16Zm4 5a2.2 2.2 0 0 0 4 0',settings:'M12 15.2a3.2 3.2 0 1 0 0-6.4 3.2 3.2 0 0 0 0 6.4Zm0-12.4v3m0 12.4v3M2.8 12h3m12.4 0h3M5.2 5.2l2.1 2.1m9.4 9.4 2.1 2.1m0-13.6-2.1 2.1M7.3 16.7l-2.1 2.1'};
+ const kmIco=r=>'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="'+(KM_PATHS[r]||'M14 4h6v6M20 4l-9.2 9.2')+'"/></svg>';
  const extras=[['upcoming','Próximos estrenos'],['trailers','Tráilers'],['blog','Artículos'],['profile','Perfil'],['notifications','Notificaciones'],['settings','Configuración']];
  const drawer=$('#km-drawer .km-nav');
  if(drawer){const caption=document.createElement('strong');caption.className='km-nav-title';caption.textContent='MÁS SECCIONES';drawer.append(caption);
- extras.forEach(([route,title])=>{const a=document.createElement('a');a.href='#km/'+route;a.dataset.kmView=route;a.innerHTML='<span aria-hidden="true">↗</span>'+title;drawer.append(a)})}
+ extras.forEach(([route,title])=>{const a=document.createElement('a');a.href='#km/'+route;a.dataset.kmView=route;a.innerHTML='<span aria-hidden="true">'+kmIco(route)+'</span>'+title;drawer.append(a)})}
  // Kokomi prioritizes the anime galleries before service directories.
  // Move nodes in DOM order (not just CSS order) so keyboard focus follows visuals.
  const priority=node=>{

@@ -13,7 +13,7 @@
  letter-spacing:-.012em;text-transform:uppercase;
  margin:8px 0 1px;color:#f3f3f4;
 }
-.oneup-provider-title h2 em{font-style:normal;color:#b5e4d7}
+.oneup-provider-title h2 em{font-style:normal;color:#cfb5e4}
 .oneup-provider-title>p{font-size:11px;line-height:1.6;max-width:350px;margin:0;color:#afbaca}
 .oneup-provider-grid{
  display:grid;grid-template-columns:1fr 1fr;
@@ -58,7 +58,7 @@
  background:radial-gradient(circle at 45% 39%,#65b8c984,transparent 56%),linear-gradient(130deg,#183042,#121e28);
 }
 .oneup-provider-card.iqiyi .oneup-provider-visual{
- background:radial-gradient(circle at 40% 49%,#81b15b84,transparent 58%),linear-gradient(150deg,#203727,#152725);
+ background:radial-gradient(circle at 40% 49%,#81b15b84,transparent 58%),linear-gradient(150deg,#2a2037,#201527);
 }
 .oneup-provider-visual::after{
  content:"";position:absolute;left:0;top:-12%;
@@ -71,7 +71,7 @@
 .oneup-provider-card:hover .oneup-provider-visual::after{transform:translateX(-8%) rotate(4deg)}
 .oneup-provider-glyph{
  font:900 clamp(65px,9vw,150px)/.8 'Barlow Condensed',Impact,sans-serif;
- letter-spacing:-.06em;color:#eff8f4;
+ letter-spacing:-.06em;color:#f4eff8;
  text-shadow:0 12px 28px #000c;
  transform:rotate(-8deg);z-index:1;
  transition:transform .45s cubic-bezier(.2,.8,.2,1);
@@ -93,7 +93,7 @@
  min-width:0;justify-content:center;
 }
 .oneup-provider-kicker{
- color:#a2dcce;letter-spacing:.15em;
+ color:#c3a2dc;letter-spacing:.15em;
  font:900 12px 'Barlow Condensed',Impact,sans-serif;
  text-transform:uppercase;
 }
@@ -108,7 +108,7 @@
  max-width:350px;margin:0 0 20px;
 }
 .oneup-provider-open{
- background:#bde4d1;color:#091718;min-height:42px;
+ background:#d0bde4;color:#091718;min-height:42px;
  padding:10px 15px;text-decoration:none;
  display:flex;justify-content:space-between;align-items:center;gap:10px;
  font:900 13px 'Barlow Condensed',Impact,sans-serif;
@@ -116,7 +116,7 @@
  clip-path:polygon(0 0,95% 0,100% 25%,100% 100%,0 100%);
  transition:background .2s,filter .2s;
 }
-.oneup-provider-open:hover,.oneup-provider-open:focus-visible{background:#edf8d9;filter:brightness(1.05)}
+.oneup-provider-open:hover,.oneup-provider-open:focus-visible{background:#ddd9f8;filter:brightness(1.05)}
 .oneup-provider-open:focus-visible{outline:3px solid #f3cfa9;outline-offset:3px}
 .oneup-provider-open span{font-size:17px}
 .oneup-provider-status{

@@ -6,7 +6,7 @@
   'use strict';
   const KEY = 'oneup.palette.v1';
   const OPTIONS = Object.freeze([
-    { id: 'esmeralda', label: 'Negro y verde', caption: 'Esmeralda', swatch: '#65e5a0', chrome: '#08140f' },
+    { id: 'medianoche', label: 'Negro mate y violeta', caption: 'Medianoche', swatch: '#a78bfa', chrome: '#0a0a10' },
     { id: 'original', label: 'Diseño original', caption: 'Original', swatch: '#fd3158', chrome: '#090a11' },
     { id: 'violeta', label: 'Negro y violeta', caption: 'Violeta', swatch: '#b89dff', chrome: '#100d1c' }
   ]);
@@ -14,10 +14,10 @@
   const root = document.documentElement;
   let saved = '';
   try { saved = window.localStorage.getItem(KEY) || ''; } catch { /* private browsing */ }
-  root.dataset.oneupTheme = allowed(saved) ? saved : 'esmeralda';
+  root.dataset.oneupTheme = allowed(saved) ? saved : 'medianoche';
 
   function active() {
-    return allowed(root.dataset.oneupTheme) ? root.dataset.oneupTheme : 'esmeralda';
+    return allowed(root.dataset.oneupTheme) ? root.dataset.oneupTheme : 'medianoche';
   }
   function setTheme(id, persist = true) {
     if (!allowed(id)) return false;

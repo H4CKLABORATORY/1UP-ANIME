@@ -1,0 +1,118 @@
+/* ===== 1UP · Sangre otaku — detalles anime sobre la base moderna ===== */
+/* Acentos en japonés junto a los títulos */
+.jp-chip{display:inline-block;margin-left:10px;padding:3px 9px 4px;border-radius:999px;border:1px solid rgba(255,183,213,.42);background:rgba(255,143,184,.1);color:#ffb7d5;font-size:10.5px;font-weight:800;letter-spacing:.22em;vertical-align:middle;font-family:'Segoe UI',system-ui,sans-serif;text-transform:none;white-space:nowrap}
+h2 .jp-chip,h3 .jp-chip{transform:translateY(-3px)}
+.eyebrow .jp-chip{margin-left:2px}
+/* Pétalos de sakura cayendo dentro de los héroes */
+.sakura-field{position:relative;overflow:hidden}
+.sakura-petal{position:absolute;top:-4%;background-repeat:no-repeat;background-size:contain;background-position:center;pointer-events:none;z-index:3;animation-name:sakura-fall;animation-timing-function:linear;animation-iteration-count:infinite;will-change:top,transform}
+@keyframes sakura-fall{
+  0%{top:-4%;transform:translateX(0) rotate(0deg);opacity:0}
+  10%{opacity:.9}
+  35%{transform:translateX(16px) rotate(130deg)}
+  65%{transform:translateX(-10px) rotate(240deg)}
+  92%{opacity:.65}
+  100%{top:103%;transform:translateX(10px) rotate(350deg);opacity:.1}
+}
+/* Ramilletes de sakura en las esquinas del héroe */
+.sakura-cluster{position:absolute;background-repeat:no-repeat;background-size:contain;background-position:center;pointer-events:none;z-index:2;animation:sakura-sway 7s ease-in-out infinite alternate}
+@keyframes sakura-sway{from{transform:rotate(-5deg)}to{transform:rotate(6deg)}}
+@media (prefers-reduced-motion: reduce){.sakura-petal,.sakura-cluster{animation:none}}
+/* Detalle de tarjetas: el número del ranking ya no tapa la cinta "EMISIÓN" */
+#trending-rail .card-badge-airing{left:44px;top:7px}
+.km-rank{border-bottom-right-radius:10px}
+
+/* ===== Identidad de color otaku: verde 1UP × rosa sakura ===== */
+::selection{background:#ff8fb8;color:#20060f}
+h1 em,h2 em{background:linear-gradient(92deg,#a78bfa 5%,#d8c7ff 38%,#ffb7d5 78%,#ff8fb8);-webkit-background-clip:text;background-clip:text;color:transparent;font-style:normal}
+.hero,.c-hero{box-shadow:inset 0 -140px 180px -80px rgba(167,139,250,.14),inset 0 120px 190px -90px rgba(255,143,184,.16)}
+#trending-rail,.cw-section{background-image:radial-gradient(rgba(255,183,213,.05) 1px,transparent 1.5px);background-size:22px 22px}
+.account-button:hover,#auth-open:hover{border-color:rgba(255,183,213,.55)}
+.c-primary,.button-primary{box-shadow:0 10px 30px rgba(167,139,250,.28),0 4px 18px rgba(255,143,184,.16)}
+/* Contador de personas en línea */
+.online-pill{display:inline-flex;align-items:center;gap:7px;padding:8px 13px;border-radius:999px;border:1px solid rgba(216,199,255,.35);background:rgba(167,139,250,.08);color:#d9cfe6;font-size:12px;font-weight:700;letter-spacing:.02em;white-space:nowrap}
+.online-pill .online-dot{width:8px;height:8px;border-radius:50%;background:#a78bfa;box-shadow:0 0 0 0 rgba(167,139,250,.55);animation:online-pulse 2.2s ease-out infinite}
+.online-pill b{color:#d8c7ff;font-size:12.5px}
+@keyframes online-pulse{0%{box-shadow:0 0 0 0 rgba(167,139,250,.5)}70%{box-shadow:0 0 0 7px rgba(167,139,250,0)}100%{box-shadow:0 0 0 0 rgba(167,139,250,0)}}
+@media (max-width:640px){.online-pill .online-label{display:none}.online-pill{padding:8px 10px}}
+
+/* Cabecera limpia: solo avatar, como las páginas grandes */
+.avatar-button{width:40px;height:40px;border-radius:50%!important;padding:0!important;display:inline-grid!important;place-items:center;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.16);color:#e3dfe9;cursor:pointer}
+.avatar-button .account-dot,.avatar-button #auth-label{display:none!important}
+.avatar-button .avatar-face{display:grid;place-items:center;width:100%;height:100%}
+.avatar-button .avatar-face svg{width:20px;height:20px}
+.avatar-button.is-logged{background:linear-gradient(135deg,#a78bfa,#d8c7ff);color:#0d0a14;border-color:transparent}
+.avatar-button:hover{border-color:rgba(255,183,213,.6)}
+.avatar-initial{font-weight:900;font-size:16px;font-family:'Barlow Condensed',sans-serif}
+/* El tema de colores vive dentro del menú */
+.drawer-theme-row{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:14px 18px 6px;padding:12px 14px;border:1px solid rgba(255,255,255,.1);border-radius:14px;background:rgba(255,255,255,.03)}
+.drawer-theme-label{font-size:11.5px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#ab9fb8}
+
+/* Fondo ambiental de la ficha según la temporada */
+.ambient-bg{position:fixed;inset:0;z-index:0;background-size:cover;background-position:center 18%;filter:blur(34px) brightness(.42) saturate(1.25);transform:scale(1.12);pointer-events:none}
+body:has(.ambient-bg) main{position:relative;z-index:1}
+
+/* Ficha en teléfono: proporciones de app, no escritorio aplastado */
+@media (max-width:650px){
+  body.watch-page main .hero-inner{grid-template-columns:1fr;gap:14px;padding:18px;min-height:0;align-items:start}
+  body.watch-page main .hero{min-height:0}
+  body.watch-page main .poster{width:100%;height:168px;max-height:168px;object-position:center 22%}
+  body.watch-page main h1{font-size:35px;margin:8px 0 12px}
+  body.watch-page main .kicker{font-size:10px;letter-spacing:1.6px;flex-wrap:wrap}
+  body.watch-page main .meta{gap:7px;margin-bottom:13px}
+  body.watch-page main .meta span{padding:6px 10px;font-size:11.5px}
+  body.watch-page main .synopsis{font-size:14px;line-height:1.65}
+  body.watch-page main .actions{gap:9px;flex-wrap:wrap}
+  body.watch-page main .actions .action{padding:11px 15px;font-size:13.5px;border-radius:12px}
+  body.watch-page header{gap:10px;padding:0 14px}
+  body.watch-page header .back{font-size:13px;padding:8px 12px;white-space:nowrap;border-radius:999px}
+  body.watch-page header .brand-logo{height:29px}
+  body.watch-page main .section{padding:18px}
+  body.watch-page main h2{font-size:22px}
+  body.watch-page .oneup-watch-controls{gap:8px}
+  body.watch-page .oneup-watch-controls label{font-size:12px}
+  body.watch-page .oneup-watch-controls select{min-height:42px;font-size:13.5px}
+}
+
+/* ===== Transformación JP: olas seigaiha, oro kintsugi, sello hanko ===== */
+body{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='96' height='48' viewBox='0 0 96 48'%3E%3Cg fill='none' stroke='%23a78bfa' stroke-opacity='.06' stroke-width='1.3'%3E%3Ccircle cx='0' cy='48' r='24'/%3E%3Ccircle cx='48' cy='48' r='24'/%3E%3Ccircle cx='96' cy='48' r='24'/%3E%3Ccircle cx='24' cy='24' r='24'/%3E%3Ccircle cx='72' cy='24' r='24'/%3E%3Ccircle cx='0' cy='48' r='15'/%3E%3Ccircle cx='48' cy='48' r='15'/%3E%3Ccircle cx='96' cy='48' r='15'/%3E%3Ccircle cx='24' cy='24' r='15'/%3E%3Ccircle cx='72' cy='24' r='15'/%3E%3Ccircle cx='0' cy='48' r='7'/%3E%3Ccircle cx='48' cy='48' r='7'/%3E%3Ccircle cx='96' cy='48' r='7'/%3E%3Ccircle cx='24' cy='24' r='7'/%3E%3Ccircle cx='72' cy='24' r='7'/%3E%3C/g%3E%3C/svg%3E")}
+.rel-section,body.watch-page .section{box-shadow:inset 0 1px 0 rgba(167,139,250,.30)}
+body.watch-page .hero{border-color:rgba(167,139,250,.45)}
+.card-badge-airing{background:#c91f37!important;color:#fff!important;border-radius:5px!important;border:1px solid rgba(255,255,255,.25);box-shadow:0 3px 12px rgba(201,31,55,.45);transform:rotate(-2deg);letter-spacing:.09em}
+.rel-noimg{background-image:conic-gradient(rgba(255,255,255,.05) 25%,transparent 0 50%,rgba(255,255,255,.05) 0 75%,transparent 0);background-size:26px 26px}
+
+/* Letras con esencia otaku en los titulares (Gang of Three, freeware total) */
+@font-face{font-family:'GangOfThree';src:url('../../assets/fonts/go3.woff') format('woff');font-display:swap}
+h1,h2,.oneup-watch-title h3{font-family:'GangOfThree','Barlow Condensed',sans-serif;letter-spacing:.03em;font-weight:400}
+.hero h1{font-size:clamp(30px,4.2vw,54px)}
+body.watch-page main h1{font-size:clamp(26px,4vw,44px)}
+.km-nav button,.km-drawer-foot{font-family:'GangOfThree','Barlow Condensed',sans-serif;letter-spacing:.05em}
+.km-nav button{font-size:15px}
+/* El panel de temas ya no se sale del menú */
+.drawer-theme-row{position:relative}
+.km-drawer .oneup-theme-control{position:static}
+.km-drawer .oneup-theme-panel{right:0;left:auto;top:calc(100% + 8px);width:272px;max-width:78vw;z-index:60}
+@media (max-width:650px){body.watch-page main h1{font-size:27px}}
+
+/* Cuadre: nada se sale de la página */
+html,body{overflow-x:clip}
+.cw-section{max-width:100vw}
+
+/* ===== Fondo cinematográfico por anime + rapidez ===== */
+.ambient-bg{filter:blur(20px) brightness(.42) saturate(1.2)}
+.ambient-bg::after{content:"";position:absolute;inset:0;background:radial-gradient(70% 55% at 76% 10%,rgba(var(--cine-rgb,168,85,247),.30),transparent 70%),radial-gradient(55% 42% at 10% 88%,rgba(var(--cine-rgb,168,85,247),.17),transparent 70%)}
+@media (max-width:650px){.ambient-bg{filter:blur(13px) brightness(.4) saturate(1.15)}}
+body.watch-page .hero .poster{transform:perspective(1000px) rotateY(-6deg) rotateX(1.5deg) scale(1.05) translateY(-10px);box-shadow:-34px 44px 70px rgba(0,0,0,.66),0 0 70px -14px rgba(var(--cine-rgb,168,85,247),.55),0 0 0 1px rgba(255,255,255,.09);border-radius:18px;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+body.watch-page .hero .poster:hover{transform:perspective(1000px) rotateY(-2deg) rotateX(.5deg) scale(1.07) translateY(-12px)}
+body.watch-page .hero h1{text-shadow:0 6px 44px rgba(0,0,0,.65),0 0 110px rgba(var(--cine-rgb,168,85,247),.35)}
+#home-screen .hero .hero-poster{box-shadow:inset 0 0 190px rgba(var(--cine-rgb,168,85,247),.28),inset 0 -120px 160px -60px rgba(5,5,10,.85)}
+#home-screen .hero-art-card{filter:drop-shadow(-18px 24px 34px rgba(0,0,0,.55)) drop-shadow(0 0 26px rgba(var(--cine-rgb,168,85,247),.35))}
+.sakura-paused .sakura-petal,.sakura-paused .sakura-cluster,html.tab-hidden .sakura-petal,html.tab-hidden .sakura-cluster{animation-play-state:paused}
+@media (max-width:650px){body.watch-page .hero .poster{transform:none}}
+
+/* ===== Acento por tarjeta (tecnica de Animay, con datos reales) ===== */
+#trending-rail .anime-card{transition:border-color .22s ease,box-shadow .22s ease}
+#trending-rail .anime-card:hover{border-color:var(--card-accent,#a78bfa);box-shadow:0 18px 38px -14px rgba(var(--card-accent-rgb,167,139,250),.45)}
+.card-heat{position:absolute;left:64px;right:10px;bottom:12px;z-index:6;pointer-events:none}
+.card-heat-track{display:block;height:4px;border-radius:4px;background:rgba(255,255,255,.18);overflow:hidden;box-shadow:0 1px 6px rgba(0,0,0,.4)}
+.card-heat-fill{display:block;height:100%;border-radius:4px;background:var(--card-accent,#a78bfa)}

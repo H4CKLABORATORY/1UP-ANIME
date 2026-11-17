@@ -108,7 +108,7 @@ assert(storageRules.includes(String.raw`media\\.(jpg|png|webp|mp4)`),'Firebase S
 assert(storageRules.includes(String.raw`{8,90}\\.(jpg|png|webp)`),'Avatar upload extension regex must escape dot');
 assert(html.includes('external-providers.js'),'Public anime pages provider script is not loaded');
 assert(sw.includes('external-providers.js'),'Offline cache missing authorized external links');
-assert(read('community.js').includes("for(const badge of $('[data-avatar-file]'))"),'Multiple community avatars must use querySelectorAll');
+assert(read('community.js').includes("for(const badge of $$('[data-avatar-file]'))"),'Multiple community avatars must use querySelectorAll');
 assert(html.includes('external-providers.css'),'External catalog style not loaded');
 assert(read('external-providers.js').includes('iqiyi_anime'),'iQIYI external platform missing');
 assert(read('external-providers.js').includes('animeonline_castellano'),'Castellano external platform missing');

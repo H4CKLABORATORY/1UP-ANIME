@@ -2,7 +2,7 @@ const DepthEngine = (() => {
   const STORAGE_KEY = "oneup-depth-mode";
   let enabled = false;
   try {
-    enabled = localStorage.getItem(STORAGE_KEY) === "on";
+    enabled = true; localStorage.setItem(STORAGE_KEY, "on");
   } catch {}
   let targetX = 0, targetY = 0;
   let currentX = 0, currentY = 0;
@@ -131,8 +131,7 @@ const DepthEngine = (() => {
   }
 
   function init() {
-    const reduceMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
-    if (reduceMotion) enabled = false;
+    /* Owner rule (Dexter): depth 3D stays ON by default; there is no off switch. */
 
     applyBodyState();
     window.addEventListener("mousemove", handleMouseMove, { passive: true });

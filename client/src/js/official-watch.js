@@ -5,6 +5,7 @@
 (()=>{
 'use strict';
 const verified={
+  'mal-21':'https://www.crunchyroll.com/series/GRMG8ZQZR/one-piece',
   'mal-61967':'https://www.crunchyroll.com/es-es/series/GRE50KV36/black-clover',
   'mal-34572':'https://www.crunchyroll.com/es-es/series/GRE50KV36/black-clover',
   'mal-61987':'https://www.crunchyroll.com/es/series/G3KHEVDJ7/the-apothecary-diaries',

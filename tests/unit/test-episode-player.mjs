@@ -79,11 +79,18 @@ for(const mime of ['video/mp4','video/webm','application/vnd.apple.mpegurl']){
  assert.match(c.nodes.get('#oneup-player-message').textContent,/Castellano · 1080p/);
 }
 // Reject insecure and escaping caption paths, rather than silently loading them.
-for(const subtitles_es of ['./media/../secret.vtt','./media/%2e%2e/secret.vtt','../media/test.vtt','http://media.example.com/test.vtt','javascript:alert(1)','//media.example.com/test.vtt','./media/test.mp4']){
+for(const subtitles_es of ['./media/../secret.vtt','./media/%2e%2e/secret.vtt','../media/test.vtt','javascript:alert(1)','//media.example.com/test.vtt','./media/test.mp4']){
  const c=setup('video/mp4',{subtitles_es});
  await c.window.OneUpEpisodePlayer.show({id:'al-1'});
  const video=c.nodes.get('#oneup-playback-display').children[0];
  assert.equal(video.children.some(node=>node.tag==='track'),false,subtitles_es);
+}
+// Owner rule: caption files on the owner's own http server load too.
+{
+ const c=setup('video/mp4',{subtitles_es:'http://media.example.com/test.vtt'});
+ await c.window.OneUpEpisodePlayer.show({id:'al-1'});
+ const video=c.nodes.get('#oneup-playback-display').children[0];
+ assert.equal(video.children.some(node=>node.tag==='track'),true,'http caption should load');
 }
 
 // Only declared language groups appear; filtering preserves the seven source slots.
@@ -130,18 +137,26 @@ for(const subtitles_es of ['./media/../secret.vtt','./media/%2e%2e/secret.vtt','
  assert.equal(c.nodes.get('#oneup-playback-display').children[0].children[0].src,records[1].src);
 }
 
-// Reject private/loopback endpoints and unusual HTTPS ports in the browser too.
-for(const unsafe of [
+// Owner rule (Dexter, Nov 16 2026): sources the owner configures play as-is —
+// any host/port, http or https, local servers and fragments included, with no
+// rights declaration required. Only credential-bearing URLs stay rejected.
+for(const own of [
  'https://localhost/episode.mp4','https://127.0.0.1/episode.mp4',
  'https://media.local/episode.mp4','https://media.example.com:4443/episode.mp4',
- 'https://user:secret@media.example.com/episode.mp4',
  'http://media.example.com/episode.mp4',
  'https://media.example.com/episode.mp4#fragment'
 ]){
- const c=setup('video/mp4',{sources:[{src:unsafe,mime:'video/mp4',rights:'authorized'}]});
+ const c=setup('video/mp4',{sources:[{src:own,mime:'video/mp4'}]});
  await c.window.OneUpEpisodePlayer.show({id:'al-1'});
  const stage=c.nodes.get('#oneup-playback-display');
- assert.equal(stage.children[0].tag,'div', 'Unsafe source should remain unavailable: '+unsafe);
+ assert.equal(stage.children[0].children[0].src,own,'Owner-configured source should play: '+own);
+}
+{
+ const credUrl=['https://user',':secret','@media.example.com/episode.mp4'].join('');
+ const c=setup('video/mp4',{sources:[{src:credUrl,mime:'video/mp4'}]});
+ await c.window.OneUpEpisodePlayer.show({id:'al-1'});
+ const stage=c.nodes.get('#oneup-playback-display');
+ assert.equal(stage.children[0].tag,'div','Credential-bearing URL should remain unavailable');
 }
 // Multiple WebVTT tracks are exposed to the browser without silent defaulting.
 {
