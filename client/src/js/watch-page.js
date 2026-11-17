@@ -43,7 +43,10 @@ async function load(){
   spanishSummary(a).then(t=>{$('#synopsis').textContent=t});
   const site=safe(a.siteUrl);if(site){$('#official').href=site;$('#official').hidden=false}
   renderTrailer(a);
-  const providers=(a.externalLinks||[]).filter(x=>x.type==='STREAMING'&&safe(x.url));
+  const bySite=new Map();
+  for(const x of (a.externalLinks||[])){if(x.type!=='STREAMING'||!safe(x.url))continue;const k=String(x.site||'').trim().toLowerCase();if(k&&!bySite.has(k))bySite.set(k,x)}
+  let providers=['netflix','crunchyroll'].map(k=>bySite.get(k)).filter(Boolean);
+  if(!providers.length){const free=['youtube','tubi','pluto tv','retrocrush','hoopla'].map(k=>bySite.get(k)).find(Boolean);if(free)providers=[free]}
   $('#providers').innerHTML=providers.length?providers.map(x=>'<a href="'+esc(safe(x.url))+'" target="_blank" rel="noopener noreferrer">'+esc(x.site||'Plataforma oficial')+' ↗</a>').join(''):'<div class="status">Sin plataformas registradas por ahora.</div>';
   $('#details').innerHTML='<p><strong>Formato:</strong> '+esc(a.format||'No disponible')+'</p><p><strong>Estado:</strong> '+esc(a.status||'No disponible')+'</p><p><strong>Géneros:</strong> '+esc((a.genres||[]).join(', ')||'No disponibles')+'</p>';
   try{await window.OneUpEpisodePlayer?.show({id:raw,title,image,banner:banner||'',episodes:a.episodes||0,episodes_total:a.episodes||0})}catch(e){console.warn('1UP player:',e)}
