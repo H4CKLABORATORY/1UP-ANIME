@@ -22,7 +22,7 @@
 - No confundir el catálogo de Anime1v con episodios reproducibles ni su licencia MIT con derechos de distribución de anime.
 
 ## Estado detectado ahora
-- Último commit de aplicación encontrado: d18b1f8a0e21081ccecfe433952e8ef2753cdc15
+- Último commit de aplicación encontrado: dc0de345df58b2ee781d049c6bf1d1a9918a1f5f
 - Descubrimiento Anime1v configurado en frontend: sí, verificar la respuesta real en Render
 - Código runtime de metadatos Anime1v en repositorio: sí
 - Entradas de obras multimedia en data/licensed-media.json: 0
@@ -30,13 +30,14 @@
 - Safari físico: no dar por verificado salvo prueba real con evidencia.
 
 ## Últimos commits relevantes
+- dc0de345d — update
 - d18b1f8a0 — Refresh catalog script for new anime tab navigation
 - a77c95671 — Load anime details on dedicated watch page
 - feb6e2e2d — Add dedicated anime detail page
 - bebaeede4 — Open anime details in a dedicated browser tab
-- 9883c015d — Sync authorized anime episode metadata and source statuses
 
 ## PR abiertos (consultar cambios antes de desarrollar)
+- [#85](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/85) Página de serie (watch.html): sinopsis en español resumida, tráiler, Dónde verlo y servidore
 - [#82](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/82) Fase 10: app Capacitor (APK verificado; iOS = decisión/Mac)
 - [#81](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/81) Fase 9: QA completo y preparación de lanzamiento
 - [#80](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/80) Fase 8: diseño premium (tokens oneup, QA visual, sin CSS muerto)
@@ -48,7 +49,6 @@
 - [#74](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/74) Fase 2: páginas de detalle /anime/ id  (sin modal, deep-link, scroll exacto)
 - [#73](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/73) Fase 1: estabilidad (integración — AniList primero, sin Jikan, limpieza y gate)
 - [#72](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/72) Phase 1: AniList/Jikan rate safety + refresh-catalog robustness
-- [#71](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/71) Cuentas nativas 1UP en Supabase (correo + contraseña), sin Google ni Firebase
 
 ## Próxima tarea por prioridad
 1. Leer AGENTS.md, esta ficha, PROJECT_CONTINUITY.md y OMEGA_NEXT_ACTIONS.md; confirmar HEAD y CI.
