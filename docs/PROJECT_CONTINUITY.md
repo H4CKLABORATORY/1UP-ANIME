@@ -909,5 +909,5 @@ Al concluir cada trabajo agregar:
   - `npm run test:guard`: veredicto `atencion`, 48 comprobaciones, 0 críticas, 2 avisos preexistentes de frescura.
   - `npm run check:authorized -- --no-probe`: manifiesto vacío, 0 entradas, salida correcta.
 - **Limitaciones**: `data/licensed-media.json` y `client/data/licensed-media.json` siguen con `entries: {}`; no hay episodios ni reproductores reales. En GitHub Pages no hay backend: el botón muestra el manifiesto sin verificación HTTP. No se probó Safari físico ni despliegue.
-- **Rama/commit**: `fix/player-refresh-authorized-media-20261116`, commit `f475dc6`. El push a GitHub quedó bloqueado por falta de credenciales y no hay `gh` ni token en la sesión; por tanto no se ejecutó CI ni se abrió PR.
+- **Rama/commit**: `fix/player-refresh-authorized-media-20261116`, commit `1c5e1e4`. El push a GitHub quedó bloqueado por falta de credenciales y no hay `gh` ni token en la sesión; por tanto no se ejecutó CI ni se abrió PR.
 - **Siguiente acción**: cargar solo URLs con permiso de distribución en ambas copias del manifiesto, ejecutar `npm run check:authorized` con red, abrir PR, comprobar CI/Pages y Safari iPhone.
