@@ -1,0 +1,82 @@
+/* ============================================================
+   1UP ANIME — Tema Pro (SOLO apariencia)
+   Capa visual estilo plataforma grande: neutros profundos,
+   superficies suaves, radios amplios, vidrio en la cabecera.
+   No cambia motores ni comportamiento: solo cómo se ve.
+   ============================================================ */
+
+/* ---------- Base ---------- */
+html{scrollbar-color:#2c3540 #0a0c10}
+body{background:#08090c;color:#f2f4f6;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+::selection{background:#35d99a;color:#04120c}
+::-webkit-scrollbar{width:10px;height:10px}
+::-webkit-scrollbar-track{background:#0a0c10}
+::-webkit-scrollbar-thumb{background:#262d36;border-radius:99px;border:2px solid #0a0c10}
+::-webkit-scrollbar-thumb:hover{background:#39434f}
+:focus-visible{outline:2px solid #35d99a;outline-offset:2px}
+
+/* ---------- Cabecera: cristal profesional ---------- */
+.header{background:rgba(8,9,12,.78)!important;backdrop-filter:blur(18px) saturate(1.4);-webkit-backdrop-filter:blur(18px) saturate(1.4);border-bottom:1px solid rgba(255,255,255,.07);box-shadow:0 10px 34px rgba(0,0,0,.34)}
+.desktop-links button,.desktop-links a{border-radius:999px;padding:8px 14px;font-weight:600;letter-spacing:.02em;color:#c9d1d9;transition:background .2s ease,color .2s ease}
+.desktop-links button:hover,.desktop-links a:hover{background:rgba(255,255,255,.07);color:#fff}
+.desktop-links .active{background:rgba(53,217,154,.14);color:#7ce7bb}
+.account-button{border-radius:999px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.05);transition:background .2s ease,border-color .2s ease}
+.account-button:hover{background:rgba(255,255,255,.1);border-color:rgba(53,217,154,.5)}
+
+/* ---------- Héroe ---------- */
+.hero-description{color:#c3ccd4;line-height:1.65}
+.eyebrow{letter-spacing:.32em;font-weight:800;color:#7ce7bb}
+.cta{border-radius:999px!important;font-weight:800;letter-spacing:.02em;padding:13px 26px;transition:transform .18s ease,box-shadow .18s ease,background .18s ease}
+.cta.primary{background:linear-gradient(135deg,#3ce6a5,#1fb97c);color:#04150d;box-shadow:0 12px 30px rgba(31,185,124,.32)}
+.cta.primary:hover{transform:translateY(-2px);box-shadow:0 18px 38px rgba(31,185,124,.42)}
+.cta.outline{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.22);color:#fff;backdrop-filter:blur(8px)}
+.cta.outline:hover{background:rgba(255,255,255,.13);transform:translateY(-2px)}
+.hero-art-card{border-radius:20px;border:1px solid rgba(255,255,255,.1);box-shadow:0 30px 70px rgba(0,0,0,.55)}
+
+/* ---------- Tarjetas: hover tipo Netflix ---------- */
+.anime-card{border-radius:14px!important;border:1px solid rgba(255,255,255,.07);background:#101318;overflow:hidden;transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease}
+.anime-card:hover{transform:translateY(-5px) scale(1.02);border-color:rgba(53,217,154,.45);box-shadow:0 22px 44px rgba(0,0,0,.55),0 0 0 1px rgba(53,217,154,.22)}
+.anime-card img{transition:transform .35s ease}
+.anime-card:hover img{transform:scale(1.05)}
+
+/* ---------- Controles y píldoras ---------- */
+.genre-pills button,.genre-pills a{border-radius:999px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.04);padding:8px 15px;font-weight:600;transition:background .2s ease,border-color .2s ease,color .2s ease}
+.genre-pills button:hover,.genre-pills a:hover{background:rgba(53,217,154,.13);border-color:rgba(53,217,154,.5);color:#a9f2d2}
+.browse-controls input,.browse-controls select{background:#101318!important;border:1px solid rgba(255,255,255,.12)!important;border-radius:12px!important;color:#eef2f5;padding:11px 14px}
+.browse-controls input:focus,.browse-controls select:focus{border-color:rgba(53,217,154,.65)!important;box-shadow:0 0 0 3px rgba(53,217,154,.16)}
+
+/* ---------- Ventanas (diálogos) ---------- */
+dialog{border-radius:20px!important;border:1px solid rgba(255,255,255,.1)!important;background:#101318!important;box-shadow:0 40px 100px rgba(0,0,0,.65)!important}
+dialog::backdrop{background:rgba(3,4,6,.66);backdrop-filter:blur(6px)}
+.dialog-close{border-radius:999px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);transition:background .2s ease,transform .2s ease}
+.dialog-close:hover{background:rgba(255,255,255,.16);transform:rotate(90deg)}
+
+/* ---------- Navegación móvil: cristal ---------- */
+.mobile-navigation{background:rgba(8,9,12,.82)!important;backdrop-filter:blur(18px) saturate(1.4);-webkit-backdrop-filter:blur(18px) saturate(1.4);border-top:1px solid rgba(255,255,255,.08)}
+.mobile-navigation .active{color:#7ce7bb}
+
+/* ---------- Pie ---------- */
+.footer{border-top:1px solid rgba(255,255,255,.07);color:#9aa6b1}
+
+/* ============================================================
+   Página de serie (watch.html): mismos neutros profesionales
+   ============================================================ */
+:root{--bg:#08090c;--panel:#101318;--panel2:#151a21;--line:rgba(255,255,255,.09);--muted:#9aa6b1}
+body{background:#08090c}
+header{background:rgba(8,9,12,.78);backdrop-filter:blur(18px) saturate(1.4);-webkit-backdrop-filter:blur(18px) saturate(1.4);border-bottom:1px solid rgba(255,255,255,.07)}
+.card{background:linear-gradient(180deg,#12161d,#0d1015);border:1px solid rgba(255,255,255,.08);border-radius:20px;box-shadow:0 24px 60px rgba(0,0,0,.45)}
+.btn{border-radius:999px;box-shadow:0 10px 26px rgba(31,185,124,.28);transition:transform .18s ease,box-shadow .18s ease}
+.btn:hover{transform:translateY(-2px);box-shadow:0 16px 34px rgba(31,185,124,.38)}
+.btn.ghost{box-shadow:none;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16)}
+.chip{border-radius:999px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);backdrop-filter:blur(6px)}
+#providers a{border-radius:999px;background:rgba(53,217,154,.1);border:1px solid rgba(53,217,154,.35);transition:background .2s ease,transform .2s ease}
+#providers a:hover{background:rgba(53,217,154,.2);transform:translateY(-2px)}
+.meta span{border-radius:999px}
+.trailer-frame{border-radius:16px;box-shadow:0 24px 60px rgba(0,0,0,.5)}
+.back{border-radius:999px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.13);backdrop-filter:blur(8px)}
+.back:hover{background:rgba(255,255,255,.12)}
+
+/* ---------- Reproductor: superficies del tema ---------- */
+.oneup-server-choice{border-radius:12px!important;transition:background .2s ease,border-color .2s ease,transform .15s ease}
+.oneup-server-choice:not(:disabled):hover{transform:translateY(-2px)}
+#oneup-player-section{border-radius:20px}
