@@ -14,14 +14,13 @@
 import http from 'node:http';
 import fs from 'node:fs';
 import path from 'node:path';
+import zlib from 'node:zlib';
 import { DatabaseSync } from 'node:sqlite';
 
 const PORT = Number(process.env.PORT) || 4050;
 const DB_PATHS = [
   process.env.JKANIME_DB_PATH,
-  'C:/Users/Marco/Desktop/script_prueba/jkanime_app/data/jkanime.db',
-  path.resolve('data/jkanime.db'),
-  path.resolve('../jkanime_app/data/jkanime.db')
+  path.resolve('data/jkanime.db')
 ].filter(Boolean);
 
 let db = null;
@@ -41,6 +40,27 @@ for (const p of DB_PATHS) {
     } catch (e) {
       console.warn(`[Database] Error abriendo ${p}: ${e.message}`);
     }
+  }
+}
+
+if (!db && fs.existsSync(path.resolve('data/jkanime.db.gz'))) {
+  try {
+    const gzPath = path.resolve('data/jkanime.db.gz');
+    const targetDb = path.resolve('data/jkanime.db');
+    console.log(`[Database] Descomprimiendo base de datos local desde ${gzPath}...`);
+    const gzBuf = fs.readFileSync(gzPath);
+    const decompressed = zlib.gunzipSync(gzBuf);
+    const tmp = `${targetDb}.tmp-${Date.now()}`;
+    fs.writeFileSync(tmp, decompressed);
+    fs.renameSync(tmp, targetDb);
+
+    db = new DatabaseSync(targetDb);
+    db.exec('PRAGMA journal_mode = WAL');
+    db.exec('PRAGMA busy_timeout = 5000');
+    activeDbPath = targetDb;
+    console.log(`[Database] Conectado exitosamente a SQLite en: ${targetDb}`);
+  } catch (err) {
+    console.warn(`[Database] Error al descomprimir data/jkanime.db.gz: ${err.message}`);
   }
 }
 

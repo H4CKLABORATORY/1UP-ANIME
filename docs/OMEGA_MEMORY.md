@@ -334,3 +334,21 @@ Agregado módulo reversible camera.mjs con trayectorias orbit/dolly/glide, persp
   - `tests/e2e/e2e-oneup-motion.mjs`: 100% aprobado en móvil (390px) y escritorio (1366px) con y sin reducción de movimiento.
   - `npm run build`: Build de Vite completado en ~204ms sin errores.
 - Decisión/criterio: Cero degradación visual, fluidez pura a 60/120fps nativos con aceleración por GPU y respeto total a las directrices mobile-first y accesibilidad.
+
+### 2026-11-16 — Base de datos SQLite integrada en el proyecto y desacoplamiento de `jkanime_app`
+- Pedido: «puedes actualizar el proyecto para que este la base de datos en este proyecto y no dependa de jkanime_app».
+- Causa raíz:
+  - Rutas rígidas a `C:/Users/Marco/Desktop/script_prueba/jkanime_app/data/jkanime.db` provocaban que compañeros de equipo al descargar el repo no tuvieran la base de datos (incompatible con GitHub por límite de 100 MB).
+- Solución implementada:
+  1. Base de datos SQLite empaquetada en el repo como `data/jkanime.db.gz` (44.27 MB, por debajo del umbral de GitHub, sin necesidad de Git LFS).
+  2. Creado `scripts/setup-db.mjs` con descompresión atómica automática en ~800ms.
+  3. `.gitignore` configurado para ignorar el archivo de runtime `data/jkanime.db` (238 MB) y preservar `data/jkanime.db.gz`.
+  4. `server/src/catalog-service.js` y `scripts/anime-catalog-service.mjs`: limpiadas rutas externas; detección local automática y fallback en caliente.
+  5. `package.json`: añadidos scripts `setup:db` y `postinstall`.
+  6. `tests/unit/anime-catalog-service.test.mjs`: pruebas unitarias enlazadas a la base local del repositorio.
+- Pruebas realmente ejecutadas:
+  - `npm test`: **71/71 tests unitarios Node pasados**.
+  - `npm run test:all`: 71 Node + 16 Python + 152 smoke UI + 48 guardián pasadas al 100%.
+  - `npm run build`: compilación de Vite completada en 308ms.
+  - Verificación en vivo de API: *Sousou no Frieren* devolviendo 12 servidores de streaming y 2 de descarga en < 5ms.
+

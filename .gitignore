@@ -10,3 +10,10 @@ ios/build/
 
 __pycache__/
 *.pyc
+
+# SQLite local uncompressed runtime files
+data/jkanime.db
+data/jkanime.db-wal
+data/jkanime.db-shm
+!data/jkanime.db.gz
+

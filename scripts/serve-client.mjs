@@ -1,6 +1,9 @@
 import http from 'node:http';
 import fs from 'node:fs';
 import path from 'node:path';
+import { ensureDatabase } from './setup-db.mjs';
+
+await ensureDatabase({ silent: true });
 
 const port = Number(process.argv[2]) || 8765;
 const catalogPort = Number(process.env.ONEUP_CATALOG_PORT || process.env.PORT_CATALOG) || 4050;

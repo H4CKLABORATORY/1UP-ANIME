@@ -4,7 +4,10 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { DatabaseSync } from 'node:sqlite';
 
-const DB_PATH = 'C:/Users/Marco/Desktop/script_prueba/jkanime_app/data/jkanime.db';
+import { ensureDatabase } from '../../scripts/setup-db.mjs';
+
+await ensureDatabase({ silent: true });
+const DB_PATH = path.resolve('data/jkanime.db');
 
 if (fs.existsSync(DB_PATH)) {
   const db = new DatabaseSync(DB_PATH);

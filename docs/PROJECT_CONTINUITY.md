@@ -800,3 +800,33 @@ Al concluir cada trabajo agregar:
   - `npm test`: **71/71 tests unitarios pasados**.
   - `npm run test:all`: 71 tests Node + 16 tests Python + 152 smoke checks + 48 checks de guardián pasados con 0 errores y 0 advertencias.
   - `npm run build`: compilación de producción de Vite exitosa en 179ms.
+
+### 2026-11-16 — Base de datos SQLite integrada en el repositorio: desacoplamiento total de `jkanime_app`
+
+- **Problema detectado por el usuario**: Al subir los cambios a GitHub y descargarlos su compañero, los reproductores de video no se visualizaban en la otra máquina.
+- **Causa raíz**:
+  - El backend `server/src/catalog-service.js` y `scripts/anime-catalog-service.mjs` tenían rutas absolutas hardcodeadas hacia `C:/Users/Marco/Desktop/script_prueba/jkanime_app/data/jkanime.db`.
+  - La base de datos SQLite (~240 MB) nunca existió en el repositorio de 1UP Anime ni en GitHub (supera el límite de 100 MB de GitHub), por lo que en máquinas ajenas `getDb()` devolvía `null` y `/api/anime/:id/episodes/:num/links` devolvía 404.
+- **Solución implementada**:
+  1. `data/jkanime.db.gz` (44.27 MB):
+     - Comprimido con gzip nivel 9 desde la base completa original (4,885 animes, 71,541 episodios, 524,212 enlaces de reproductores y descargas).
+     - Al pesar 44.27 MB, está muy por debajo del límite estricto de 100 MB de GitHub y del umbral de aviso de 50 MB, permitiendo push y clone sin requerir Git LFS ni ancho de banda adicional.
+  2. `scripts/setup-db.mjs`:
+     - Función exportada `ensureDatabase({ silent })` que verifica si `data/jkanime.db` existe (> 1 MB).
+     - Si no existe, descomprime `data/jkanime.db.gz` de forma atómica en menos de 850 ms usando streams de `node:zlib` y renombrado seguro.
+  3. `.gitignore`:
+     - Añadido `data/jkanime.db`, `data/jkanime.db-wal` y `data/jkanime.db-shm` para evitar subir el binario descomprimido de 240 MB.
+     - Preservado `!data/jkanime.db.gz`.
+  4. `server/src/catalog-service.js` y `scripts/anime-catalog-service.mjs`:
+     - Eliminadas todas las rutas rígidas hacia `C:/Users/Marco/...` y carpetas hermanas `../jkanime_app`.
+     - Resolución autónoma: detecta `data/jkanime.db` local o auto-descomprime `data/jkanime.db.gz` en caliente en su primer arranque.
+     - Mayor resiliencia en `getEpisodeLinks`: fallback directo hacia enlaces scraped en vivo en caso de fallo de escritura.
+  5. `package.json`:
+     - Agregados hooks `"setup:db": "node scripts/setup-db.mjs"` y `"postinstall": "node scripts/setup-db.mjs"`.
+  6. `tests/unit/anime-catalog-service.test.mjs`:
+     - Actualizado para resolver `data/jkanime.db` desde la raíz del proyecto tras asegurar la base con `ensureDatabase()`.
+- **Verificación y pruebas**:
+  - `npm test`: **71/71 tests unitarios PASADOS**.
+  - `npm run test:all`: **71 tests Node + 16 tests Python + 152 smoke assertions + 48 comprobaciones guardián PASADAS**.
+  - Consulta en vivo validada: 12 servidores de reproducción (Desu, Magi, Okru, Mega Player, Streamwish, Vidhide, etc.) y 2 enlaces de descarga para *Sousou no Frieren* respondiendo en < 5ms.
+

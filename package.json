@@ -7,6 +7,8 @@
     "build": "vite build",
     "dev:vite": "vite",
     "preview": "vite preview",
+    "setup:db": "node scripts/setup-db.mjs",
+    "postinstall": "node scripts/setup-db.mjs",
     "start": "node scripts/serve-client.mjs 8765",
     "dev": "node scripts/serve-client.mjs 8765",
     "serve": "node scripts/serve-client.mjs 8765",

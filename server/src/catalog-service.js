@@ -8,6 +8,7 @@
 const http = require('node:http');
 const fs = require('node:fs');
 const path = require('node:path');
+const zlib = require('node:zlib');
 const { DatabaseSync } = require('node:sqlite');
 
 const DEFAULT_PORT = Number(process.env.ONEUP_CATALOG_PORT || process.env.PORT) || 4050;
@@ -16,11 +17,13 @@ const CORS_ORIGIN = process.env.CORS_ORIGIN || '*';
 
 const DB_CANDIDATES = [
   process.env.JKANIME_DB_PATH,
-  'C:/Users/Marco/Desktop/script_prueba/jkanime_app/data/jkanime.db',
   path.resolve(process.cwd(), 'data/jkanime.db'),
-  path.resolve(process.cwd(), '../jkanime_app/data/jkanime.db'),
-  path.resolve(__dirname, '../../data/jkanime.db'),
-  path.resolve(__dirname, '../../../jkanime_app/data/jkanime.db')
+  path.resolve(__dirname, '../../data/jkanime.db')
+].filter(Boolean);
+
+const GZ_CANDIDATES = [
+  path.resolve(process.cwd(), 'data/jkanime.db.gz'),
+  path.resolve(__dirname, '../../data/jkanime.db.gz')
 ].filter(Boolean);
 
 let dbInstance = null;
@@ -29,6 +32,8 @@ let activeDbPath = null;
 function resolveDatabase(customPath) {
   if (dbInstance) return dbInstance;
   const list = customPath ? [customPath, ...DB_CANDIDATES] : DB_CANDIDATES;
+
+  // 1. Try existing uncompressed DB file
   for (const candidate of list) {
     if (candidate && fs.existsSync(candidate)) {
       try {
@@ -45,6 +50,32 @@ function resolveDatabase(customPath) {
       }
     }
   }
+
+  // 2. If missing, auto-extract from in-repo data/jkanime.db.gz
+  for (const gzCandidate of GZ_CANDIDATES) {
+    if (gzCandidate && fs.existsSync(gzCandidate)) {
+      try {
+        const targetDb = gzCandidate.replace(/\.gz$/i, '');
+        console.log(`[Catalog Service] Descomprimiendo base de datos local desde ${gzCandidate}...`);
+        const gzBuf = fs.readFileSync(gzCandidate);
+        const decompressed = zlib.gunzipSync(gzBuf);
+        const tmpTarget = `${targetDb}.tmp-${Date.now()}`;
+        fs.writeFileSync(tmpTarget, decompressed);
+        fs.renameSync(tmpTarget, targetDb);
+
+        const db = new DatabaseSync(targetDb);
+        db.exec('PRAGMA journal_mode = WAL');
+        db.exec('PRAGMA busy_timeout = 5000');
+        dbInstance = db;
+        activeDbPath = targetDb;
+        console.log(`[Catalog Service] Base de datos SQLite lista en ${targetDb} (${(decompressed.length / (1024 * 1024)).toFixed(1)} MB)`);
+        return dbInstance;
+      } catch (err) {
+        console.warn(`[Catalog Service] Error al descomprimir ${gzCandidate}: ${err.message}`);
+      }
+    }
+  }
+
   return null;
 }
 
@@ -464,6 +495,9 @@ async function getEpisodeLinks(target, num, { refresh = false } = {}) {
     if (allLive.length > 0) {
       saveEpisodeLinksToDb(animeId, epNum, allLive);
       dbLinks = getEpisodeLinksFromDb(animeId, epNum);
+      if (dbLinks.length === 0) {
+        dbLinks = allLive;
+      }
     }
   }
 
