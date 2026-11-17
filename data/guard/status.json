@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "engine": "ONEUP SELF HEALING ENGINE",
-  "updatedAt": "2026-11-17T14:35:47.218Z",
+  "updatedAt": "2026-11-17T23:52:36.854Z",
   "site": "https://h4cklaboratory.github.io/1UP-ANIME/",
   "mode": "local_y_publico",
   "verdict": "atencion",
@@ -14,7 +14,7 @@
     "site:community"
   ],
   "requiresManualAction": true,
-  "lastKnownGoodCommit": "e53bd170bf287c393db78d6c47f4ea118bb15cf3",
+  "lastKnownGoodCommit": "69c9706803ff7befde440e04e8050016ed90a385",
   "checks": [
     {
       "id": "file:index.html",
@@ -26,19 +26,19 @@
       "id": "file:client/pages/comunidad.html",
       "level": "ok",
       "message": "Validado: Archivo requerido client/pages/comunidad.html",
-      "bytes": 8677
+      "bytes": 8464
     },
     {
       "id": "file:client/pages/moderacion.html",
       "level": "ok",
       "message": "Validado: Archivo requerido client/pages/moderacion.html",
-      "bytes": 2536
+      "bytes": 2414
     },
     {
       "id": "file:client/src/js/studio.js",
       "level": "ok",
       "message": "Validado: Archivo requerido client/src/js/studio.js",
-      "bytes": 72530
+      "bytes": 72419
     },
     {
       "id": "file:client/src/styles/studio.css",
@@ -62,7 +62,7 @@
       "id": "file:client/src/js/airing-ui.js",
       "level": "ok",
       "message": "Validado: Archivo requerido client/src/js/airing-ui.js",
-      "bytes": 13210
+      "bytes": 13053
     },
     {
       "id": "file:client/src/js/episode-comments.js",
@@ -80,13 +80,13 @@
       "id": "file:client/src/js/social-backend.js",
       "level": "ok",
       "message": "Validado: Archivo requerido client/src/js/social-backend.js",
-      "bytes": 10605
+      "bytes": 10590
     },
     {
       "id": "file:server/functions/index.js",
       "level": "ok",
       "message": "Validado: Archivo requerido server/functions/index.js",
-      "bytes": 22373
+      "bytes": 22228
     },
     {
       "id": "file:data/catalog.json",
@@ -110,31 +110,31 @@
       "id": "file:data/dexter/records.json",
       "level": "ok",
       "message": "Validado: Archivo requerido data/dexter/records.json",
-      "bytes": 494660
+      "bytes": 494630
     },
     {
       "id": "file:server/config/dexter-providers.json",
       "level": "ok",
       "message": "Validado: Archivo requerido server/config/dexter-providers.json",
-      "bytes": 3772
+      "bytes": 3174
     },
     {
       "id": "file:data/licensed-media.json",
       "level": "ok",
       "message": "Validado: Archivo requerido data/licensed-media.json",
-      "bytes": 153
+      "bytes": 57
     },
     {
       "id": "file:scripts/dexter-anime-sync.mjs",
       "level": "ok",
       "message": "Validado: Archivo requerido scripts/dexter-anime-sync.mjs",
-      "bytes": 13677
+      "bytes": 13347
     },
     {
       "id": "file:scripts/check-ui.mjs",
       "level": "ok",
       "message": "Validado: Archivo requerido scripts/check-ui.mjs",
-      "bytes": 8593
+      "bytes": 8514
     },
     {
       "id": "syntax:client/src/js/studio.js",
@@ -191,7 +191,7 @@
       "id": "catalog:freshness",
       "level": "warning",
       "message": "El catálogo lleva más de 72 horas sin actualizarse",
-      "ageHours": 101.3
+      "ageHours": 110.6
     },
     {
       "id": "airing:entries",
@@ -208,7 +208,7 @@
       "id": "airing:freshness",
       "level": "warning",
       "message": "Calendario desactualizado (más de 36h)",
-      "ageHours": 85.2
+      "ageHours": 94.5
     },
     {
       "id": "spanish:pack",
@@ -253,7 +253,7 @@
       "id": "engine:freshness",
       "level": "ok",
       "message": "Sincronización reciente",
-      "ageHours": 9.4,
+      "ageHours": 0.6,
       "status": "correcta"
     },
     {
