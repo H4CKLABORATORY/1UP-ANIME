@@ -27,7 +27,30 @@ function renderTrailer(a){
  });
 }
 function fail(message){$('#title').textContent='No se pudo cargar este anime';$('#synopsis').textContent=message;$('#providers').innerHTML='<div class="status">Vuelve al catálogo y selecciona el anime otra vez.</div>';}
+async function loadJk(){
+ try{
+  const r=await fetch('./data/catalog-full.json',{cache:'force-cache'});
+  if(!r.ok)throw Error('No se pudo leer el catálogo.');
+  const j=await r.json();
+  const items=Array.isArray(j)?j:(Object.values(j).find(v=>Array.isArray(v)&&v.length&&typeof v[0]==='object')||[]);
+  const e=items.find(x=>String(x.id)===raw);
+  if(!e)throw Error('No encontramos este título en el catálogo.');
+  const title=e.title||'Anime';
+  document.title=title+' | 1UP Anime';$('#title').textContent=title;
+  const image=safe(e.poster||e.image||'');
+  if(image)$('#poster').src=image;else $('#poster').hidden=true;
+  const banner=safe(e.banner||e.poster||'');if(banner)$('#hero').style.setProperty('--banner','url("'+banner.replace(/["\\]/g,'')+'")');
+  const meta=[e.type||(e.format==='TV'?'Serie':e.format),e.year,e.episodes?(e.episodes+' episodios'):'',e.averageScore?'★ '+(e.averageScore/10).toFixed(1):''].filter(Boolean);
+  $('#meta').innerHTML=meta.map(x=>'<span>'+esc(x)+'</span>').join('');
+  $('#synopsis').textContent=summarize(e.description_es||e.description||'Sinopsis no disponible.');
+  const off=$('#official');if(off){off.hidden=true;off.style.display='none'}
+  $('#providers').innerHTML='<div class="status">Sin plataformas registradas por ahora.</div>';
+  $('#details').innerHTML='<p><strong>Formato:</strong> '+esc(e.format||'No disponible')+'</p><p><strong>Estado:</strong> '+esc(e.status_label||e.status||'No disponible')+'</p><p><strong>Géneros:</strong> '+esc((e.genres||[]).join(', ')||'No disponibles')+'</p>'+(e.studios?'<p><strong>Estudio:</strong> '+esc(e.studios)+'</p>':'');
+  try{await window.OneUpEpisodePlayer?.show({id:raw,title,image,banner,episodes:e.episodes||0,episodes_total:e.episodes_total||e.episodes||0})}catch(err){console.warn('1UP player:',err)}
+ }catch(error){console.error('1UP watch page:',error);fail(error.message||'Error de conexión.')}
+}
 async function load(){
+ if(raw.startsWith('jk-')){loadJk();return}
  if(!/^\d+$/.test(id)){fail('El enlace del anime no es válido.');return}
  try{
   const response=await fetch('https://graphql.anilist.co',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify({query,variables:{id:Number(id)}})});
