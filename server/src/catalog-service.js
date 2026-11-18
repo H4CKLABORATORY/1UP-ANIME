@@ -386,7 +386,7 @@ function normalizeLinkUrl(url) {
     return 'https:' + trimmed;
   }
   if (trimmed.startsWith('/')) {
-    return 'https://jkanime.net' + trimmed;
+    return jkResolver.getBase() + trimmed;
   }
   return trimmed;
 }
@@ -515,17 +515,17 @@ async function closePlaywrightScraper() {
   await scraper.close();
 }
 
-async function liveScrapeEpisode(slug, number, { clientIp = '' } = {}) {
-  const url = `https://jkanime.net/${slug}/${number}/`;
+async function liveScrapeEpisode(slug, number, { clientIp = '', force = false } = {}) {
+  const url = `${jkResolver.getBase()}/${slug}/${number}/`;
   const cacheKey = `${slug}:${number}`;
   const players = [];
   const downloads = [];
   const seenPlayer = new Set();
   const seenDl = new Set();
 
-  if ((jkanimeEmptyFetchCache.get(cacheKey) || 0) > Date.now()) return { players, downloads };
+  if (!force && (jkanimeEmptyFetchCache.get(cacheKey) || 0) > Date.now()) return { players, downloads };
   await waitForDirectFetchSlot();
-  if ((jkanimeEmptyFetchCache.get(cacheKey) || 0) > Date.now()) return { players, downloads };
+  if (!force && (jkanimeEmptyFetchCache.get(cacheKey) || 0) > Date.now()) return { players, downloads };
 
   function addPlayer(p) {
     if (!p || !p.player_url) return;
@@ -559,27 +559,33 @@ async function liveScrapeEpisode(slug, number, { clientIp = '' } = {}) {
   }
 
   try {
-    const headers = {
-      'User-Agent': '1UP-Anime-Metadata-Sync/2.0',
-      'Referer': `https://jkanime.net/${slug}/`,
-      'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
-      'Accept-Language': 'es-ES,es;q=0.9,en;q=0.8'
-    };
+    const forwarded = {};
     if (clientIp) {
-      headers['X-Forwarded-For'] = clientIp;
-      headers['X-Real-IP'] = clientIp;
-      headers['Client-IP'] = clientIp;
+      forwarded['X-Forwarded-For'] = clientIp;
+      forwarded['X-Real-IP'] = clientIp;
+      forwarded['Client-IP'] = clientIp;
     }
-
-    const res = await fetch(url, {
-      headers,
-      signal: AbortSignal.timeout(10000)
+    // Igual que jkanime_app: si jkanime.net devuelve el reto de Cloudflare,
+    // se conmuta a jkanime.org para el resto de la sesion.
+    const httpClient = jkResolver.createHttpClient({
+      delayMs: 0, timeoutMs: 10000, retries: 1
     });
-    if (!res.ok) {
+    let html;
+    try {
+      html = await jkResolver.getTextWithMirror(
+        (u, o) => httpClient.getText(u, o),
+        url,
+        { referer: `${jkResolver.getBase()}/${slug}/`, headers: forwarded, cache: false }
+      );
+    } catch (fetchError) {
+      rememberEmptyFetch(cacheKey);
+      console.warn(`[Catalog Service] Sin acceso a JkAnime para ${slug} ${number}: ${fetchError.message}`);
+      return { players, downloads };
+    }
+    if (!html || /just a moment|verify you are human|cf-chl-widget/i.test(html)) {
       rememberEmptyFetch(cacheKey);
       return { players, downloads };
     }
-    const html = await res.text();
 
     // 1) Legacy JSON: var video = [ { server: 'Desu', code: '...' }, ... ];
     const videoVar = html.match(/var\s+video\s*=\s*(\[[\s\S]*?\]);\s*(?:var|$)/i) ||
@@ -593,14 +599,15 @@ async function liveScrapeEpisode(slug, number, { clientIp = '' } = {}) {
             const serverName = p.server.trim();
             let playerUrl = null;
             const lower = serverName.toLowerCase();
+            const base = jkResolver.getBase();
             if (lower === 'desu') {
-              playerUrl = `https://jkanime.net/jkplayer/um?e=${p.code}`;
+              playerUrl = `${base}/jkplayer/um?e=${p.code}`;
             } else if (lower === 'magi') {
-              playerUrl = `https://jkanime.net/jkplayer/mg?e=${p.code}`;
+              playerUrl = `${base}/jkplayer/mg?e=${p.code}`;
             } else if (lower === 'desuka') {
-              playerUrl = `https://jkanime.net/jkplayer/jk?u=${p.code}`;
+              playerUrl = `${base}/jkplayer/jk?u=${p.code}`;
             } else if (p.code) {
-              playerUrl = p.code.startsWith('http') ? p.code : `https://jkanime.net/jkplayer/${p.server}?u=${p.code}`;
+              playerUrl = p.code.startsWith('http') ? p.code : `${base}/jkplayer/${p.server}?u=${p.code}`;
             }
 
             if (playerUrl) {
@@ -750,7 +757,7 @@ async function getEpisodeLinks(target, num, { refresh = false, title = '', slug 
     const useBrowser = isPlaywrightScraperEnabled();
     // Avoid sending a raw HTTP request and then repeating it in Chromium when the
     // browser fallback is configured as the active fetch path.
-    const live = useBrowser ? { players: [], downloads: [] } : await liveScrapeEpisode(anime.slug, epNum, { clientIp });
+    const live = useBrowser ? { players: [], downloads: [] } : await liveScrapeEpisode(anime.slug, epNum, { clientIp, force: refresh });
     let allLive = [...live.players, ...live.downloads];
 
     // Playwright is opt-in; reuse one browser and pace requests instead of launching
