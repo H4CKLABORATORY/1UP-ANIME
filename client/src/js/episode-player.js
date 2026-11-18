@@ -5,6 +5,7 @@ let requestId=0,activeAnime='',activeAnimeContext=null,activeSeason=1,selectedEp
 let mediaByEpisode=new Map(),playerRoot=null;
 let disposeActiveVideo=null;
 let selectedLanguage='all';
+let alternativeActiveFor=null,topLevelRetryPending=false,topLevelBlurred=false;
 const LANGUAGE_LABELS={latino:'Español latino',castellano:'Español castellano',sub:'Japonés subtitulado',original:'Japonés original',other:'Otros idiomas'};
 function languageGroup(source){
  const lang=source.lang.toLowerCase().trim();
@@ -71,7 +72,7 @@ function sourceOf(source,index,item){
   /^[A-Za-z0-9_-]{11}$/.test(source.videoId||'')?
    'https://www.youtube-nocookie.com/embed/'+source.videoId:'';
  const embed=safeEmbedUrl(officialYouTube||source.embed||source.embedUrl||source.embed_url||source.iframe||source.player_url||((source.type==='embed'||source.kind==='embed')?source.url:''));
- const isProtected=Boolean(source.isProtected||(!source.embed_url&&String(embed).includes('jkanime.net/jkplayer/'))||['desu','magi','desuka'].includes(String(source.server||source.name||'').toLowerCase().trim()));
+ const isProtected=Boolean(source.isProtected||(!source.embed_url&&/jkanime\.(net|org)\/jkplayer\//i.test(String(embed)))||['desu','magi','desuka'].includes(String(source.server||source.name||'').toLowerCase().trim()));
  // A third-party iframe cannot consume our external WebVTT tracks.
  if(embed)return {kind:'embed',url:embed,label,lang,quality,captions:'',mode:source.mode,provider:source.provider,backend:Boolean(source.backend||item?.backend),isProtected};
  const u=safeUrl(source.src||source.video_url||((source.type!=='embed'&&source.kind!=='embed')?source.url:''));
@@ -185,6 +186,7 @@ function updateEpisodeSelect(){
  if(input)input.value=String(selectedEpisode);
 }
 function showVideo(slot,serverIndex=-1){
+ alternativeActiveFor=null;
  document.dispatchEvent(new CustomEvent('oneup-video-removed'));
  // Release prior MediaSource buffers before replacing DOM (critical on iPhone).
  closeVideo();
@@ -238,88 +240,19 @@ function showVideo(slot,serverIndex=-1){
     iframe.src=slot.url;
     iframe.title='Reproductor · '+slot.label+' · Episodio '+selectedEpisode;
     iframe.loading='eager';
-    iframe.referrerPolicy='no-referrer';
-    iframe.setAttribute('sandbox','allow-scripts allow-same-origin allow-forms allow-popups');
     iframe.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen';
     iframe.allowFullscreen=true;
     frame.hidden=false;frame.appendChild(iframe);action.hidden=true;
     status.textContent='Reproductor externo abierto: '+slot.label+'. Su disponibilidad depende del proveedor.';
    },{once:true});
    status.textContent='Reproductor oficial configurado. Pulsa abrir para conectar con el proveedor.';
-  }else if(slot.isProtected){
-   // Protected JkAnime official player (Desu, Magi, Desuka) with X-Frame-Options: SAMEORIGIN
-   const card=document.createElement('div');
-   card.className='oneup-protected-player-card';
-
-   const badge=document.createElement('div');
-   badge.className='oneup-protected-badge';
-   badge.textContent='🔒 Servidor Oficial JkAnime';
-
-   const title=document.createElement('h4');
-   title.className='oneup-protected-title';
-   title.textContent='Reproductor '+(slot.label||'Desu')+' (Protegido)';
-
-   const desc=document.createElement('p');
-   desc.className='oneup-protected-desc';
-   desc.textContent='JkAnime protege este reproductor mediante directivas de seguridad (X-Frame-Options: SAMEORIGIN) que impiden su inserción en marcos externos. Para reproducir este servidor, ábrelo en una pestaña nueva o cambia a los servidores directos integrados.';
-
-   const actions=document.createElement('div');
-   actions.className='oneup-protected-actions';
-
-   const openBtn=document.createElement('a');
-   openBtn.className='oneup-btn-primary-ext';
-   openBtn.href=slot.url;
-   openBtn.target='_blank';
-   openBtn.rel='noopener noreferrer';
-   openBtn.textContent='Abrir '+(slot.label||'Desu')+' en pestaña nueva de JkAnime ↗';
-   actions.appendChild(openBtn);
-
-   const allSources=mediaByEpisode.get(selectedEpisode)?.sources||[];
-   const firstEmbedIdx=allSources.findIndex(s=>s&&!s.isProtected);
-   if(firstEmbedIdx>=0){
-    const switchBtn=document.createElement('button');
-    switchBtn.type='button';
-    switchBtn.className='oneup-btn-secondary-switch';
-    switchBtn.textContent='▶ Reproducir aquí con '+(allSources[firstEmbedIdx].label||'Streamwish');
-    switchBtn.addEventListener('click',()=>renderSources(firstEmbedIdx));
-    actions.appendChild(switchBtn);
-   }
-
-   const forceBtn=document.createElement('button');
-   forceBtn.type='button';
-   forceBtn.className='oneup-btn-secondary-switch';
-   forceBtn.style.background='transparent';
-   forceBtn.style.border='1px dashed #64748b';
-   forceBtn.style.color='#94a3b8';
-   forceBtn.textContent='Forzar carga en marco ⚡';
-   forceBtn.title='Intentar incrustar el reproductor oficial en el marco interno (puede ser bloqueado por JkAnime)';
-   forceBtn.addEventListener('click',()=>{
-    card.remove();
-    const iframe=document.createElement('iframe');
-    iframe.src=slot.url;
-    iframe.title='Reproductor · '+(slot.label||'Desu')+' · Episodio '+selectedEpisode;
-    iframe.loading='eager';
-    iframe.referrerPolicy='no-referrer';
-    iframe.setAttribute('sandbox','allow-scripts allow-same-origin allow-forms allow-popups');
-    iframe.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen';
-    iframe.allowFullscreen=true;
-    stage.appendChild(iframe);
-   });
-   actions.appendChild(forceBtn);
-
-   card.append(badge,title,desc,actions);
-   stage.appendChild(card);
-
-   status.textContent='El servidor '+(slot.label||'Desu')+' está protegido por JkAnime. Ábrelo en pestaña nueva o usa un servidor compatible.';
   }else{
-   // Catalog & streaming servers (Streamwish, Vidhide, Mega, VOE, etc.):
-   // Direct seamless iframe embed with privacy no-referrer and sandbox
+    // Reproductores externos e internos de JkAnime (Desu/Magi/Desuka): iframe directo.
+    // Sin atributo sandbox, igual que jkanime_app (Streamwish lo rechaza).
    const iframe=document.createElement('iframe');
    iframe.src=slot.url;
    iframe.title='Reproductor · '+(slot.label||'Servidor')+' · Episodio '+selectedEpisode;
    iframe.loading='eager';
-   iframe.referrerPolicy='no-referrer';
-   iframe.setAttribute('sandbox','allow-scripts allow-same-origin allow-forms allow-popups');
    iframe.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen';
    iframe.allowFullscreen=true;
    stage.appendChild(iframe);
@@ -329,7 +262,29 @@ function showVideo(slot,serverIndex=-1){
    const yt=slot.url.match(/^https:\/\/www\.youtube-nocookie\.com\/embed\/([A-Za-z0-9_-]{11})$/);
    link.href=yt?'https://www.youtube.com/watch?v='+yt[1]:slot.url;
    link.target='_blank';link.rel='noopener noreferrer';link.textContent='Abrir reproductor en pestaña nueva ↗';
+   if(slot.isProtected)link.addEventListener('click',()=>prepareTopLevelRetry(serverIndex));
    stage.after(link);
+
+   if(slot.isProtected){
+    const altBtn=document.createElement('button');
+    altBtn.type='button';altBtn.className='oneup-source-retry oneup-alt-stream';
+    altBtn.textContent='▶ Reproducir stream alternativo';
+    altBtn.title='Resuelve el flujo HLS/MP4 con el servidor y lo reproduce aquí';
+    altBtn.addEventListener('click',()=>{
+     const key=selectedEpisode+'|'+slot.url;
+     if(alternativeActiveFor===key){alternativeActiveFor=null;renderSources(serverIndex);return}
+     playAlternativeStream(slot,altBtn,status,serverIndex);
+    });
+    stage.after(altBtn);
+
+    const L=globalThis.OneUpPlayerLinks;
+    if(L&&!L.getStoredEpisodeLinks(activeAnime,selectedEpisode)){
+     const hint=document.createElement('p');
+     hint.className='oneup-player-hint oneup-internal-hint';
+     hint.textContent='Los enlaces internos pueden corresponder a otra IP. Pulsa ⚡ Actualizar para guardar los tuyos.';
+     stage.after(hint);
+    }
+   }
 
    const sources=mediaByEpisode.get(selectedEpisode)?.sources||[];
    const nonNullIndices=sources.map((s,i)=>s?i:-1).filter(i=>i>=0);
@@ -385,6 +340,59 @@ function showVideo(slot,serverIndex=-1){
   }
  }
 }
+function prepareTopLevelRetry(serverIndex){
+ topLevelRetryPending=true;topLevelBlurred=false;
+ if(typeof window==='undefined'||typeof window.addEventListener!=='function')return;
+ const onBlur=()=>{if(topLevelRetryPending)topLevelBlurred=true};
+ const onFocus=()=>{
+  if(!topLevelRetryPending||!topLevelBlurred)return;
+  topLevelRetryPending=false;topLevelBlurred=false;
+  window.removeEventListener?.('blur',onBlur);
+  window.removeEventListener?.('focus',onFocus);
+  setTimeout(()=>renderSources(serverIndex),350);
+ };
+ window.addEventListener('blur',onBlur);
+ window.addEventListener('focus',onFocus);
+}
+
+async function playAlternativeStream(slot,button,status,serverIndex=-1){
+ const L=globalThis.OneUpPlayerLinks;
+ if(!L){if(status)status.textContent='El módulo de enlaces no está disponible.';return}
+ button.disabled=true;
+ const original=button.textContent;
+ button.textContent='Preparando stream…';
+ alternativeActiveFor=selectedEpisode+'|'+slot.url;
+ try{
+  const stream=await L.resolveStream(activeAnime,selectedEpisode,slot.url);
+  if(!playerRoot?.isConnected)return;
+  const stage=playerRoot.querySelector('#oneup-playback-display');
+  if(!stage)return;
+  stage.replaceChildren();
+  const video=document.createElement('video');
+  video.controls=true;video.playsInline=true;video.preload='metadata';
+  video.setAttribute('aria-label','Stream alternativo · Episodio '+selectedEpisode);
+  stage.appendChild(video);
+  const isHls=stream.type==='hls'||/\.m3u8(?:\?|$)/i.test(stream.url);
+  if(isHls&&window.OneUpHLS?.attach){
+   disposeActiveVideo=window.OneUpHLS.attach(video,stream.url,{
+    onStatus:message=>{if(video.isConnected&&status)status.textContent=message},
+    onError:message=>{if(video.isConnected&&status)status.textContent=message}
+   });
+  }else{
+   video.src=stream.url;
+   disposeActiveVideo=()=>{video.pause();video.removeAttribute('src');video.load()};
+  }
+  video.play().catch(()=>{});
+  button.textContent='↺ Volver al iframe';
+  if(status)status.textContent='Stream alternativo listo · '+(slot.label||'servidor');
+ }catch(error){
+  if(status)status.textContent=error.message||'No se pudo preparar el stream alternativo.';
+  button.disabled=false;
+  button.textContent=original;
+  alternativeActiveFor=null;
+ }
+}
+
 let currentLinksToken=0;
 async function loadLinksForEpisode(targetAnimeId,epNum,forceRefresh=false){
  const token=++currentLinksToken;
@@ -505,11 +513,11 @@ function renderSources(preferred=null){
  playerRoot.querySelectorAll?.('[data-server-slot]')?.forEach(button=>{
   const i=Number(button.dataset.serverSlot),source=sources[i];
   button.disabled=!source;
-  const suffix=source?.isProtected?' ↗':'';
+  const suffix='';
   button.textContent=(source?.label||'Servidor '+(i+1))+suffix;
   button.classList.toggle('active',Boolean(source&&i===selected));
   button.setAttribute('aria-pressed',String(Boolean(source&&i===selected)));
-  button.title=source?(source.isProtected?source.label+' (Abre en pestaña nueva por protección JkAnime)':'Cambiar a '+source.label):'Sin fuente configurada';
+  button.title=source?('Cambiar a '+source.label):'Sin fuente configurada';
   if(!hasValidSources){
    button.style.display=i<MAX_SERVERS?'':'none';
   }else if(i>=sources.length){
@@ -551,7 +559,13 @@ function chooseEpisode(number,broadcast=true,forceRefresh=false){
    }
 
    const priorityServers=['Streamwish','Vidhide','Mega','Mega Player','VOE','Streamtape','Mp4upload','Mixdrop','Desu','Magi','Desuka','Okru','Doodstream'];
-   const rawPlayers=[...(linksData.players||[])];
+   const L=globalThis.OneUpPlayerLinks;
+   const warning=linksData.warning||'';
+   if(L&&!warning)L.saveStoredEpisodeLinks(activeAnime,next,linksData.players||[],{source:forceRefresh?'manual-refresh':'sync'});
+   const stored=L?L.getStoredEpisodeLinks(activeAnime,next):null;
+   const merged=L?L.mergePlayerLinks(linksData.players||[],stored):(linksData.players||[]);
+   const savedServer=L?(L.getLocalAnime(activeAnime)?.selectedPlayer||null):null;
+   const rawPlayers=[...(Array.isArray(merged)?merged.filter(p=>p&&(p.server||p.embed_url||p.player_url)):[])];
    rawPlayers.sort((a,b)=>{
     const idxA=priorityServers.indexOf(a.server);
     const idxB=priorityServers.indexOf(b.server);
@@ -559,7 +573,7 @@ function chooseEpisode(number,broadcast=true,forceRefresh=false){
    });
 
    const playerSources=rawPlayers.map((p,i)=>{
-    const isProtected = Boolean(!p.embed_url || p.embed_url.includes('jkanime.net') || ['desu', 'magi', 'desuka'].includes(String(p.server || '').toLowerCase()));
+    const isProtected = Boolean(!p.embed_url || /(^|\.)jkanime\.(net|org)/i.test(p.embed_url) || /^\/jkplayer\//i.test(String(p.embed_url||'')) || ['desu', 'magi', 'desuka'].includes(String(p.server || '').toLowerCase()));
     const playerUrl = p.embed_url && safeEmbedUrl(p.embed_url) ? p.embed_url : (p.player_url && safeEmbedUrl(p.player_url) ? p.player_url : p.embed_url);
     return sourceOf({
      backend:true,
@@ -583,8 +597,9 @@ function chooseEpisode(number,broadcast=true,forceRefresh=false){
    }
    item.backend=true;
    mediaByEpisode.set(next,item);
-   const bestEmbedIndex = playerSources.findIndex(s=>s&&!s.isProtected);
-   renderSources(bestEmbedIndex >= 0 ? bestEmbedIndex : 0);
+   const preferredIdx=savedServer?playerSources.findIndex(s=>s&&s.label===savedServer):-1;
+   const bestEmbedIndex=preferredIdx>=0?preferredIdx:playerSources.findIndex(s=>s&&!s.isProtected);
+   renderSources(bestEmbedIndex>=0?bestEmbedIndex:0);
    renderDownloads(item.downloads);
    if(status){
     if(forceRefresh){
@@ -671,7 +686,7 @@ async function show(anime,{root,season=1}={}){
  playerRoot.querySelector('#oneup-watch-language')?.addEventListener('change',e=>{selectedLanguage=e.target.value;renderSources()});
  playerRoot.querySelectorAll('[data-server-slot]').forEach(button=>button.addEventListener('click',()=>{
   const i=Number(button.dataset.serverSlot),source=mediaByEpisode.get(selectedEpisode)?.sources?.[i];
-  if(source)renderSources(i);
+  if(source){globalThis.OneUpPlayerLinks?.updateLocalAnime(activeAnime,{selectedPlayer:source.label});renderSources(i)}
  }));
  chooseEpisode(1,false);
 }

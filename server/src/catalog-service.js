@@ -10,6 +10,26 @@ const fs = require('node:fs');
 const path = require('node:path');
 const zlib = require('node:zlib');
 const { DatabaseSync } = require('node:sqlite');
+const jkResolver = require('./jkanime-link-resolver.js');
+
+const playerStreamCache = jkResolver.createStreamCache({
+  ttlMs: Number(process.env.JKANIME_PLAYER_STREAM_TTL_MS) || jkResolver.DEFAULT_STREAM_TTL_MS
+});
+
+function readJsonBody(req) {
+  return new Promise((resolve, reject) => {
+    let raw = '';
+    req.on('data', chunk => {
+      raw += chunk;
+      if (raw.length > 16384) req.destroy();
+    });
+    req.on('end', () => {
+      if (!raw) return resolve({});
+      try { resolve(JSON.parse(raw)); } catch { resolve({}); }
+    });
+    req.on('error', reject);
+  });
+}
 
 const DEFAULT_PORT = Number(process.env.ONEUP_CATALOG_PORT || process.env.PORT) || 4050;
 const DEFAULT_HOST = process.env.HOST || '0.0.0.0';
@@ -861,7 +881,7 @@ function getGenres() {
 
 async function handleRequest(req, res) {
   res.setHeader('Access-Control-Allow-Origin', CORS_ORIGIN);
-  res.setHeader('Access-Control-Allow-Methods', 'GET, OPTIONS');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Accept');
 
   if (req.method === 'OPTIONS') {
@@ -952,8 +972,39 @@ async function handleRequest(req, res) {
         return;
       }
 
-      res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8' });
+      const linksHeaders = { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'no-store' };
+      if (data && data.warning) {
+        linksHeaders['X-JkAnime-Warning'] = encodeURIComponent(data.warning);
+      }
+      res.writeHead(200, linksHeaders);
       res.end(JSON.stringify(data));
+      return;
+    }
+
+    // 6b. Player stream: POST /api/animes/:id/episodes/:num/player-stream
+    const streamMatch = pathname.match(/^\/api\/anime(?:s)?\/([a-zA-Z0-9_-]+)\/episodes\/(\d+(?:\.\d+)?)\/player-stream$/);
+    if (streamMatch && req.method === 'POST') {
+      const target = streamMatch[1];
+      const num = parseFloat(streamMatch[2]);
+      const body = await readJsonBody(req);
+      const playerUrl = typeof body?.url === 'string' ? body.url.trim() : '';
+      if (!playerUrl) {
+        res.writeHead(400, { 'Content-Type': 'application/json; charset=utf-8' });
+        res.end(JSON.stringify({ error: 'Falta la URL del reproductor.' }));
+        return;
+      }
+      const anime = getAnimeDetail(target, {
+        slug: typeof body?.slug === 'string' ? body.slug : '',
+        title: typeof body?.title === 'string' ? body.title : ''
+      });
+      const referer = anime?.slug ? `${jkResolver.getBase()}/${anime.slug}/${num}/` : undefined;
+      const stream = await jkResolver.resolveJkAnimePlayerStream(playerUrl, {
+        referer,
+        forceRefresh: body.refresh === true || body.refresh === 1 || body.fresh === true,
+        cache: playerStreamCache
+      });
+      res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'no-store' });
+      res.end(JSON.stringify(stream));
       return;
     }
 

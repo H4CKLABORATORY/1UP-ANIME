@@ -105,6 +105,28 @@ En cambio, el CDN de vídeo (`nika.playmudos.com`, `jkplayers.com`, …) **sí e
 
 ---
 
+## 5c. Comportamiento del reproductor en el cliente
+
+El flujo del reproductor de `jkanime_app` se replicó en `client/src/js/player-links.js` (global `window.OneUpPlayerLinks`) y se conectó a `episode-player.js`:
+
+1. **Clasificación**: `isInternalPlayer()` / `splitLinks()` separan Desu/Desuka/Magi (y cualquier `/jkplayer/` en `jkanime.net|org`) de los reproductores externos y descargas.
+2. **Guardado por cliente**: `saveStoredEpisodeLinks()` guarda en `localStorage` (`oneup_jkanime_client_v1`) **solo** las URLs internas, que son las ligadas a la IP. Las entradas antiguas que guardaban todos los enlaces se filtran al leer.
+3. **Fusión**: `mergePlayerLinks(serverLinks, stored)` sustituye los internos genéricos del servidor por los que este navegador obtuvo, conserva los externos y propaga la advertencia `warning`. Si hubo reto Cloudflare, no se sobrescriben las URLs propias.
+4. **Servidor recordado**: al elegir servidor se guarda `selectedPlayer` y se retoma al recargar el capítulo.
+5. **Stream alternativo**: en los reproductores protegidos hay un botón «▶ Reproducir stream alternativo» que llama a `POST /player-stream`, obtiene el HLS/MP4 del CDN y lo reproduce con `hls.js` (carga diferida) o `<video>` nativo en Safari, sin iframe.
+6. **Protección ampliada**: se detectan URLs tanto de `jkanime.net` como del espejo `jkanime.org`.
+
+El endpoint del servidor en `server/src/catalog-service.js` expone:
+
+```
+POST /api/animes/:id/episodes/:num/player-stream
+{ "url": "<player_url>", "refresh": false, "server": "Desu" }
+```
+
+y devuelve `{ url, type, browserPlayable, cached, resolvedAt? }` con `Cache-Control: no-store`. El endpoint `/links` también envía la cabecera `X-JkAnime-Warning` (URL-encoded) además del campo `warning` en el cuerpo.
+
+---
+
 ## 6. API del módulo
 
 ```js

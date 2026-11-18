@@ -217,8 +217,7 @@ for(const unsafe of [
  const iframe=stage.children.find(n=>n.tag==='iframe');
  assert.ok(iframe,'Catalog streaming player should mount iframe seamlessly');
  assert.equal(iframe.src,'https://streamwish.to/e/123');
- assert.equal(iframe.referrerPolicy,'no-referrer');
- assert.match(iframe.attributes.sandbox,/allow-scripts/);
+ assert.ok(!iframe.attributes.sandbox,'El embed no debe tener sandbox (Streamwish lo rechaza)');
 }
 
 // MAL/AniList metadata fallback + non-destructive live sync button test

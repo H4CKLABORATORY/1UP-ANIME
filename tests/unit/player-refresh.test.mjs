@@ -599,7 +599,7 @@ test('R5 Verification: Clicking on Desu explicitly selects Desu, displays protec
   assert.equal(buttons[1].classList.contains('active'), false, 'Desu button must not be active initially');
 
   // Verify Desu button exists and has label with ↗ indicator
-  assert.ok(buttons[1].textContent.includes('Desu ↗'), 'Desu button must display Desu ↗ label');
+  assert.ok(buttons[1].textContent.trim()==='Desu', 'El boton debe mostrar solo Desu, sin sufijos');
 
   // User clicks on Desu (index 1)
   buttons[1].listeners['click']();
@@ -609,25 +609,12 @@ test('R5 Verification: Clicking on Desu explicitly selects Desu, displays protec
   assert.equal(buttons[1].classList.contains('active'), true, 'Desu button must be active after clicking');
   assert.equal(buttons[0].classList.contains('active'), false, 'Streamwish must no longer be active');
 
-  // Playback stage must render protected player card for Desu
+  // Desu se reproduce con iframe directo, como en jkanime_app (sin tarjeta protegida)
   const stage = nodes.get('#oneup-playback-display');
-  const card = stage.children.find(n => n.classList?.contains('oneup-protected-player-card'));
-  assert.ok(card, 'Protected player card must be rendered when Desu is selected');
-
-  const titleNode = card.children.find(n => n.classList?.contains('oneup-protected-title'));
-  assert.ok(titleNode.textContent.includes('Desu (Protegido)'), 'Card title must indicate Desu (Protegido)');
-
-  const actions = card.children.find(n => n.classList?.contains('oneup-protected-actions'));
-  assert.ok(actions, 'Protected actions must be rendered');
-
-  const openExt = actions.children.find(n => n.classList?.contains('oneup-btn-primary-ext'));
-  assert.ok(openExt, 'External link button must exist');
-  assert.equal(openExt.href, DESU_URL, 'External link must point to Desu URL');
-
-  const switchBack = actions.children.find(n => n.textContent?.includes('Reproducir aquí con Streamwish'));
-  assert.ok(switchBack, 'Switch button to Streamwish must exist');
-
-  const forceBtn = actions.children.find(n => n.textContent?.includes('Forzar carga en marco'));
-  assert.ok(forceBtn, 'Force embed button must exist');
+  const iframe = stage.children.find(n => n.tag === 'iframe');
+  assert.ok(iframe, 'Desu debe montar un iframe directo');
+  assert.equal(iframe.src, DESU_URL, 'El iframe debe apuntar al reproductor Desu');
+  assert.ok(!stage.children.some(n => n.classList?.contains('oneup-protected-player-card')), 'No debe haber tarjeta protegida');
+  assert.ok(stage.afterChildren?.some(n => n.textContent?.includes('Reproducir stream alternativo')), 'Debe existir el botón de stream alternativo');
 });
 

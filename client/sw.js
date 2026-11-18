@@ -16,7 +16,7 @@ const SHELL=[
  './data/anime1v-config.json','./src/js/anime1v-discovery.js','./src/styles/anime1v-discovery.css','./src/styles/catalog-virtual.css',
  './data/airing.json','./src/js/airing-ui.js','./src/styles/airing-ui.css','./pages/comunidad.html',
  './src/js/community.js','./src/styles/community.css','./src/js/social-backend.js','./src/js/social-config.js',
- './src/js/hls-adapter.js','./src/js/episode-player.js','./src/js/supabase-config.js','./src/js/supabase-episode-backend.js','./src/js/episode-comments.js','./src/styles/episode-comments.css',
+ './src/js/hls-adapter.js','./src/js/player-links.js','./src/js/episode-player.js','./src/js/supabase-config.js','./src/js/supabase-episode-backend.js','./src/js/episode-comments.js','./src/styles/episode-comments.css',
  './themes/kokomi-studio/theme.css','./themes/kokomi-studio/theme.js',
  './themes/kokomi-mobile-preview/theme.css','./themes/kokomi-mobile-preview/theme.js',
  './themes/kokomi-mobile-preview/opening.css','./themes/kokomi-mobile-preview/opening.js',
