@@ -18,18 +18,18 @@
 - Formatos 9:16 móvil y 16:9 escritorio; el audio de inicio puede ser bloqueado por Safari sin gesto del visitante.
 
 ## Estado detectado ahora
-- Último commit de aplicación encontrado: 71cae6c5100280bba63a9d9ce777f5beb74ab3a7
+- Último commit de aplicación encontrado: 22babf4177791b25de91af48bdb1fa5c8b5ce5ce
 - Descubrimiento Anime1v configurado en frontend: sí, verificar la respuesta real en Render
 - Código runtime de metadatos Anime1v en repositorio: sí
 - Entradas de obras multimedia en data/licensed-media.json: 0
 - Capas de personajes declaradas en Cinematic V3: 0
 
 ## Últimos commits relevantes
+- 22babf417 — Sync authorized anime episode metadata and source statuses
+- 19ee2600a — Update educational anime metadata from Wikipedia
+- 9e37f015c — ONEUP health snapshot (no application changes)
+- 6ad06fa8e — Sync authorized anime episode metadata and source statuses
 - 71cae6c51 — ONEUP health snapshot (no application changes)
-- 0504d2c82 — Sync authorized anime episode metadata and source statuses
-- eab2d69c2 — Sync authorized anime episode metadata and source statuses
-- e737e25e6 — Update educational anime metadata from Wikipedia
-- d193ba8c9 — ONEUP health snapshot (no application changes)
 
 ## PR abiertos (consultar cambios antes de desarrollar)
 - [#86](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/86) Fix/player refresh authorized media 20261116
