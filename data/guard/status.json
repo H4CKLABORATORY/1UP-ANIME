@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "engine": "ONEUP SELF HEALING ENGINE",
-  "updatedAt": "2026-11-21T13:32:42.194Z",
+  "updatedAt": "2026-11-21T22:13:00.453Z",
   "site": "https://h4cklaboratory.github.io/1UP-ANIME/",
   "mode": "local_y_publico",
   "verdict": "atencion",
@@ -14,7 +14,7 @@
     "site:community"
   ],
   "requiresManualAction": true,
-  "lastKnownGoodCommit": "65e7c217851389316bcf050b66d0eeaad0c906ca",
+  "lastKnownGoodCommit": "5065fc5f50bbd6134be116d076b4a10222ab834f",
   "checks": [
     {
       "id": "file:index.html",
@@ -110,7 +110,7 @@
       "id": "file:data/dexter/records.json",
       "level": "ok",
       "message": "Validado: Archivo requerido data/dexter/records.json",
-      "bytes": 494468
+      "bytes": 494432
     },
     {
       "id": "file:server/config/dexter-providers.json",
@@ -191,7 +191,7 @@
       "id": "catalog:freshness",
       "level": "warning",
       "message": "El catálogo lleva más de 72 horas sin actualizarse",
-      "ageHours": 196.3
+      "ageHours": 205
     },
     {
       "id": "airing:entries",
@@ -208,7 +208,7 @@
       "id": "airing:freshness",
       "level": "warning",
       "message": "Calendario desactualizado (más de 36h)",
-      "ageHours": 180.1
+      "ageHours": 188.8
     },
     {
       "id": "spanish:pack",
@@ -253,7 +253,7 @@
       "id": "engine:freshness",
       "level": "ok",
       "message": "Sincronización reciente",
-      "ageHours": 3.5,
+      "ageHours": 4.1,
       "status": "correcta"
     },
     {
