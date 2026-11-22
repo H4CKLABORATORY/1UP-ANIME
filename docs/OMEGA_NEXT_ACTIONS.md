@@ -68,3 +68,13 @@ Actualizado inicialmente 2026-10-16. No representa ejecución continua ni tareas
 ### Próximas acciones priorizadas
 - [ ] **Configuración y despliegue del servicio Node.js en servidor nuevo:** Preparar variables de entorno (`PORT`, `JKANIME_DB_PATH`, `CORS_ORIGIN`), scripts de arranque (`pm2` / `systemd` / `Dockerfile`) para el montaje del backend de catálogo en el servidor de destino.
 - [ ] **Pruebas de reproducción en dispositivos Safari físicos:** Verificar la carga de los iframes de streaming y descargas en iPhone / iPad reales bajo Safari sin restricciones de reproducción ni bloqueos táctiles.
+
+
+## Estado vigente 2026-11-22 — SW-09 P1: publicación segura de snapshots
+- [x] Causa raíz confirmada con logs de Actions: los scripts actualizan `data/*` y `client/data/*`, pero los workflows omitían los archivos espejo al hacer stage.
+- [x] Corrección propuesta en [PR #88](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/88), rama `fix/refresh-snapshot-publish-20261122`.
+- [x] En SHA `bc6767b876a62ca7a985625f6ea213dd4fde582f`, CI ejecutó y pasó `bash -n`, `tests/unit/test-safe-push.sh`, `scripts/check-resilience.mjs` y `tests/unit/test-episode-player.mjs`.
+- [ ] PR #88 requiere revisión; no fusionar automáticamente. Tras aprobación, verificar un refresco de programación y uno de catálogo en main.
+- [ ] Bloqueo CI separado: `tests/unit/test-navigation-race.mjs:31` falla en One Up UI Quality. Browser Acceptance y Depth mode fallan antes de ejecutar Playwright porque ubuntu-latest resolvió a Ubuntu 26.04, no soportado por Playwright 1.56.1. Siguiente tarea: pin `ubuntu-24.04` en `.github/workflows/browser-acceptance.yml` y `.github/workflows/depth-mode.yml`, y auditar la regresión de navegación en su propia rama.
+- [ ] OpenCode: PR #87 sigue draft; activar `omega-lead` y verificar delegación real desde el workspace del propietario. En esta ejecución no se invocaron subagentes.
+- Seguridad: ningún merge, deploy, secreto, catálogo activo o base de producción fue modificado.

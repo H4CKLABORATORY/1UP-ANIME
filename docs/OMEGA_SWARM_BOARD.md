@@ -13,6 +13,7 @@ Preparado 2026-10-16. **No es una lista de agentes activos**; estado inicial der
 | SW-06 | P1 | DEVOPS / PERFORMANCE | Optimizar red/caché/Pages y plan de despliegue reversible | No habilitar compras ni desplegar sin aprobación | BACKLOG |
 | SW-07 | P0 | OMEGA CORE | Consolidar PRs y devolver resultado | Revisar cadena #17→#18→#19→#20; no publicar sin validación final | BLOCKED |
 | SW-08 | P1 | QA / CATALOG | Aislar cachés PWA y corregir ranking popular | PR #20, pruebas Node/CI y siguiente refresco AniList | REVIEW |
+| SW-09 | P1 | DEVOPS / DATA PIPELINES | Publicar snapshots raíz y client; rechazar rutas generadas omitidas | PR #88; test-safe-push y check-resilience ligados a SHA | IN REVIEW |
 
 ## Contratos de coordinación
 - Cada subagente recibe una tarea acotada con archivos de propiedad, inputs, outputs y pruebas.
@@ -52,3 +53,15 @@ Cada ejecución agrega bajo esta línea: fecha, ID, estado anterior→nuevo, age
 - El cambio es código real y no depende de fuentes de anime, Firebase o acceso a Safari; su suite nueva es `scripts/test-cache-catalog.mjs`, CI `ONEUP Codex Cache and Catalog Regression`.
 - **Cadena pendiente:** #17 → #18 → #19 → #20. Para integrar en `main` hace falta revisión coherente del conjunto (incluidos conflictos y capturas); no fusionar PRs fuera de orden.
 - **Bloqueos externos persistentes:** manifiesto de video sin episodios, autenticación/servicios de comunidad no configurados, pruebas Safari iPhone físico y reproducción real ausentes.
+
+
+### 2026-11-22 — SW-09 P1: publicación de snapshots espejo y preflight del publisher
+- **Fuente de verdad:** `main` en `e2d659a464a4df1c6653947ed73bcf6d6cc410c2`; sin ZIP ni artefactos locales.
+- **Incidencia reproducida:** los workflows `Refresh anime airing calendar` y `Refresh public anime catalog` generaban correctamente sus snapshots, pero fallaban al publicar con `git rebase: You have unstaged changes`. Evidencia: Actions #45015748729, #44970139507 y #44923219402.
+- **Causa raíz:** `scripts/refresh-airing.mjs` escribe `data/airing.json` y `client/data/airing.json`; `scripts/refresh-catalog.mjs` escribe `data/catalog.json` y `client/data/catalog.json`. Los workflows omitían el segundo archivo de cada par al invocar `oneup-safe-push.sh`.
+- **Implementado en rama:** `fix/refresh-snapshot-publish-20261122`, PR draft [#88](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/88). Ambos workflows incluyen ahora los snapshots raíz y los del cliente. El publisher detecta cambios tracked/untracked no declarados y sale con código 5 antes de fetch/rebase/push. Se agregó regresión para probar que el remoto no recibe un commit incompleto y assertions de contrato en `check-resilience.mjs`.
+- **SHA de código probado:** `bc6767b876a62ca7a985625f6ea213dd4fde582f` (merge ref sintética de PR para Actions: `6bbe2b6338db147f091fa8343060284a45748a35`).
+- **Verificado en Actions #45033900238:** `bash -n scripts/oneup-safe-push.sh`, `bash tests/unit/test-safe-push.sh`, `node scripts/check-resilience.mjs` y `node tests/unit/test-episode-player.mjs` pasaron. La suite general después falla en `tests/unit/test-navigation-race.mjs:31`, anterior a este cambio y no corregido aquí.
+- **Bloqueado por CI ajeno al cambio:** Browser Acceptance #45033900243 y Depth mode #45033900235 no instalan Chromium porque `ubuntu-latest` resolvió a Ubuntu 26.04, no soportado por Playwright 1.56.1. Requiere pin `ubuntu-24.04` o actualización compatible, en tarea separada.
+- **Pendiente:** revisión humana y decisión sobre PR #88; tras integración autorizada, observar ejecuciones reales de ambos refrescos en `main`. No merge, no deploy y no cambios en producción.
+- **Coordinación:** PR #87 contiene definiciones persistentes de OpenCode, pero no están en `main`; no existe runtime OpenCode conectado en esta ejecución y no se invocó ningún subagente.
