@@ -18,20 +18,22 @@
 - Formatos 9:16 móvil y 16:9 escritorio; el audio de inicio puede ser bloqueado por Safari sin gesto del visitante.
 
 ## Estado detectado ahora
-- Último commit de aplicación encontrado: 382caba68109f931f96e9aa64b5d1cf32008325d
+- Último commit de aplicación encontrado: 21469ab22a81c5b6747acaaf8157502177c3ba8b
 - Descubrimiento Anime1v configurado en frontend: sí, verificar la respuesta real en Render
 - Código runtime de metadatos Anime1v en repositorio: sí
 - Entradas de obras multimedia en data/licensed-media.json: 0
 - Capas de personajes declaradas en Cinematic V3: 0
 
 ## Últimos commits relevantes
-- 382caba68 — Sync authorized anime episode metadata and source statuses
-- 734b9a692 — ONEUP health snapshot (no application changes)
-- 0740c7084 — Sync authorized anime episode metadata and source statuses
-- c0d5651c6 — Update educational anime metadata from Wikipedia
-- d5c2023bb — ONEUP health snapshot (no application changes)
+- 21469ab22 — Sync authorized anime episode metadata and source statuses
+- e80114cc4 — Update educational anime metadata from Wikipedia
+- 151bdf47c — ONEUP health snapshot (no application changes)
+- e2d659a46 — Sync authorized anime episode metadata and source statuses
+- 94e906ec6 — ONEUP health snapshot (no application changes)
 
 ## PR abiertos (consultar cambios antes de desarrollar)
+- [#88](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/88) fix: publish mirrored catalog and airing snapshots safely
+- [#87](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/87) chore: add OMEGA multi-agent team for OpenCode
 - [#86](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/86) Fix/player refresh authorized media 20261116
 - [#85](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/85) Página de serie (watch.html): sinopsis en español resumida, tráiler, Dónde verlo y servidore
 - [#82](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/82) Fase 10: app Capacitor (APK verificado; iOS = decisión/Mac)
@@ -42,8 +44,6 @@
 - [#77](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/77) Fase 5: comunidad multimedia con moderación (cuarentena→publicación)
 - [#76](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/76) Fase 4: reproductor (failover real, subtítulos, reanudación)
 - [#75](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/75) Fase 3: catálogo (caché coherente, lock, outage AniList, offline)
-- [#74](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/74) Fase 2: páginas de detalle /anime/ id  (sin modal, deep-link, scroll exacto)
-- [#73](https://github.com/H4CKLABORATORY/1UP-ANIME/pull/73) Fase 1: estabilidad (integración — AniList primero, sin Jikan, limpieza y gate)
 
 ## Próxima tarea por prioridad
 1. Leer AGENTS.md, esta ficha, PROJECT_CONTINUITY.md y OMEGA_NEXT_ACTIONS.md; confirmar HEAD y CI.
