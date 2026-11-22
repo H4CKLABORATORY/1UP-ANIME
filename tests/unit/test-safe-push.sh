@@ -10,7 +10,8 @@ git clone -q "$DIR/origin.git" "$DIR/seed"
 git -C "$DIR/seed" config user.name "ONEUP Test"
 git -C "$DIR/seed" config user.email "test@invalid.example"
 printf "baseline\n" > "$DIR/seed/baseline.txt"
-git -C "$DIR/seed" add baseline.txt
+printf "baseline untouched\n" > "$DIR/seed/omitted.txt"
+git -C "$DIR/seed" add baseline.txt omitted.txt
 git -C "$DIR/seed" commit -q -m "baseline"
 git -C "$DIR/seed" push -q origin HEAD:main
 git clone -q "$DIR/origin.git" "$DIR/writer"
@@ -35,4 +36,18 @@ if git -C "$DIR/final" ls-tree -r --name-only HEAD | grep -q "^rejected.txt$"; t
   echo "Rejected branch reached production" >&2
   exit 1
 fi
-echo "ONEUP safe publisher integration test passed (rebase, preservation, branch refusal)."
+rm -f "$DIR/writer/rejected.txt"
+printf "must remain local\n" > "$DIR/writer/baseline.txt"
+printf "generated but omitted\n" > "$DIR/writer/omitted-output.txt"
+set +e
+( cd "$DIR/writer" && GITHUB_REF="refs/heads/main" bash "$PUBLISH" "refuse omitted generated output" omitted-output.txt )
+refusal_status=$?
+set -e
+if [[ "$refusal_status" -ne 5 ]]; then
+  echo "Publisher did not reject omitted generated paths with exit 5 (got $refusal_status)" >&2
+  exit 1
+fi
+git clone -q "$DIR/origin.git" "$DIR/after-refusal"
+test "$(cat "$DIR/after-refusal/baseline.txt")" = "baseline"
+test ! -e "$DIR/after-refusal/omitted-output.txt"
+echo "ONEUP safe publisher integration test passed (rebase, preservation, branch refusal, omitted-path refusal)."
