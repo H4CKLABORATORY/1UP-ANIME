@@ -20,6 +20,12 @@ if git diff --cached --quiet; then
   exit 0
 fi
 git commit -m "$message"
+# Refuse to rebase or push if a generator changed paths not listed above.
+if [[ -n "$(git status --porcelain --untracked-files=all)" ]]; then
+  echo "::error::Unpublished working-tree changes remain after committing the requested paths. Add every generated path to the publish command; no remote write was attempted."
+  git status --short
+  exit 5
+fi
 for attempt in 1 2 3 4 5 6; do
   echo "ONEUP safe publish attempt ${attempt}/6"
   git fetch origin main

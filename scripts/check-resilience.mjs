@@ -57,6 +57,9 @@ assert(safePublisher.includes('refs/heads/main'),'Publisher must restrict writes
 assert(safePublisher.includes('git fetch origin main'),'Publisher must re-check current remote head');
 assert(safePublisher.includes('git rebase origin/main'),'Publisher must reconcile approved updates');
 assert(!safePublisher.includes('git push --force'),'Publisher must never force push');
+assert(safePublisher.includes('git status --porcelain --untracked-files=all'),'Publisher must refuse omitted generated files before rebase');
+assert(read('.github/workflows/refresh-airing.yml').includes('data/airing.json client/data/airing.json'),'Airing refresh must publish both canonical and client snapshots');
+assert(read('.github/workflows/refresh-catalog.yml').includes('data/catalog.json client/data/catalog.json'),'Catalog refresh must publish both canonical and client snapshots');
 for(const wf of [
  '.github/workflows/dexter-anime-sync.yml',
  '.github/workflows/refresh-airing.yml',

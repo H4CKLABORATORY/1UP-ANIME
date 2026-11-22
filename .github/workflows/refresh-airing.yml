@@ -26,4 +26,4 @@ jobs:
       - name: Fetch factual airing times and seasonal trailers from AniList
         run: node scripts/refresh-airing.mjs
       - name: Publish schedule to site data
-        run: bash scripts/oneup-safe-push.sh 'Update live anime airing calendar' data/airing.json
+        run: bash scripts/oneup-safe-push.sh 'Update live anime airing calendar' data/airing.json client/data/airing.json

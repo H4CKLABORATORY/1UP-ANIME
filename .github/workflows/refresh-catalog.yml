@@ -38,4 +38,4 @@ jobs:
       - name: Translate cached synopsis to Spanish
         run: python scripts/translate-catalog.py
       - name: Commit refreshed static catalog and translations
-        run: bash scripts/oneup-safe-push.sh 'Refresh anime catalog and automatic Spanish synopses' data/catalog.json data/translations-es.json
+        run: bash scripts/oneup-safe-push.sh 'Refresh anime catalog and automatic Spanish synopses' data/catalog.json client/data/catalog.json data/translations-es.json
