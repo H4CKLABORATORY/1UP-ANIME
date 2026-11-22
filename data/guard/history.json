@@ -2,6 +2,24 @@
   "schemaVersion": 1,
   "checks": [
     {
+      "at": "2026-11-22T17:13:18.336Z",
+      "verdict": "atencion",
+      "issues": [
+        {
+          "id": "catalog:freshness",
+          "level": "warning"
+        },
+        {
+          "id": "airing:freshness",
+          "level": "warning"
+        },
+        {
+          "id": "site:community",
+          "level": "warning"
+        }
+      ]
+    },
+    {
       "at": "2026-11-22T08:05:31.427Z",
       "verdict": "atencion",
       "issues": [
@@ -640,11 +658,6 @@
     },
     {
       "at": "2026-11-06T17:59:49.350Z",
-      "verdict": "correcto",
-      "issues": []
-    },
-    {
-      "at": "2026-11-06T14:27:41.195Z",
       "verdict": "correcto",
       "issues": []
     }
