@@ -52,3 +52,12 @@ Cada ejecución agrega bajo esta línea: fecha, ID, estado anterior→nuevo, age
 - El cambio es código real y no depende de fuentes de anime, Firebase o acceso a Safari; su suite nueva es `scripts/test-cache-catalog.mjs`, CI `ONEUP Codex Cache and Catalog Regression`.
 - **Cadena pendiente:** #17 → #18 → #19 → #20. Para integrar en `main` hace falta revisión coherente del conjunto (incluidos conflictos y capturas); no fusionar PRs fuera de orden.
 - **Bloqueos externos persistentes:** manifiesto de video sin episodios, autenticación/servicios de comunidad no configurados, pruebas Safari iPhone físico y reproducción real ausentes.
+
+### 2026-11-22 — equipo OMEGA persistente para OpenCode
+- Se añadió la configuración de agentes en `.opencode/agents/`: `omega-lead` (primary), `frontend-ux`, `backend-catalog`, `qa-security` e `integration-docs` (subagents).
+- Guía de activación: `.opencode/README.md`. Los agentes son definiciones persistentes, no procesos activos. Para activarlos se debe abrir OpenCode en la raíz del repositorio y seleccionar/invocar `omega-lead`; el coordinador delega tareas a los especialistas.
+- Reglas: máximo cuatro especialistas por ciclo, rutas de escritura exclusivas, sin worktrees aislados se serializan las escrituras; integración mediante rama/PR; no auto-merge ni despliegue.
+- Rama: `chore/omega-agent-team-20261122`; PR draft #87: https://github.com/H4CKLABORATORY/1UP-ANIME/pull/87.
+- Verificación de esta sesión: archivos creados y leídos desde GitHub. No se ejecutó OpenCode en el servidor del propietario; carga de agentes y delegación real quedan BLOCKED hasta validar allí.
+- Automatización ChatGPT existente actualizada (no duplicada): ahora usa GitHub como fuente de verdad y reconoce la configuración OpenCode; mantiene frecuencia horaria.
+- Próxima acción: actualizar la rama en el servidor OpenCode, seleccionar `omega-lead`, ejecutar una auditoría de solo lectura y confirmar que los cuatro subagents aparecen y pueden ser invocados. Después asignar un pendiente P0 real evitando PRs ya abiertos.
