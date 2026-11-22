@@ -3,6 +3,42 @@
   "items": [
     {
       "providerId": "anilist_schedule",
+      "at": "2026-11-22T18:36:55.495Z",
+      "result": "success",
+      "observed": 202,
+      "created": 0,
+      "playback": 0,
+      "detail": "desactualizada"
+    },
+    {
+      "providerId": "licensed_library",
+      "at": "2026-11-22T18:36:55.495Z",
+      "result": "success",
+      "observed": 0,
+      "created": 0,
+      "playback": 0,
+      "detail": "sin_contenido_autorizado"
+    },
+    {
+      "providerId": "jkanime_external",
+      "at": "2026-11-22T18:36:55.495Z",
+      "result": "success",
+      "observed": 5,
+      "created": 0,
+      "playback": 0,
+      "detail": "conectada"
+    },
+    {
+      "providerId": "youtube_trailers",
+      "at": "2026-11-22T18:36:55.495Z",
+      "result": "success",
+      "observed": 95,
+      "created": 0,
+      "playback": 0,
+      "detail": "conectada"
+    },
+    {
+      "providerId": "anilist_schedule",
       "at": "2026-11-22T10:04:02.965Z",
       "result": "success",
       "observed": 202,
@@ -504,42 +540,6 @@
       "created": 0,
       "playback": 0,
       "detail": "conectada"
-    },
-    {
-      "providerId": "anilist_schedule",
-      "at": "2026-11-16T21:10:01.421Z",
-      "result": "success",
-      "observed": 202,
-      "created": 0,
-      "playback": 0,
-      "detail": "desactualizada"
-    },
-    {
-      "providerId": "licensed_library",
-      "at": "2026-11-16T21:10:01.421Z",
-      "result": "success",
-      "observed": 0,
-      "created": 0,
-      "playback": 0,
-      "detail": "sin_contenido_autorizado"
-    },
-    {
-      "providerId": "youtube_trailers",
-      "at": "2026-11-16T21:10:01.421Z",
-      "result": "success",
-      "observed": 95,
-      "created": 0,
-      "playback": 0,
-      "detail": "conectada"
-    },
-    {
-      "providerId": "anilist_schedule",
-      "at": "2026-11-16T10:00:47.956Z",
-      "result": "success",
-      "observed": 202,
-      "created": 0,
-      "playback": 0,
-      "detail": "desactualizada"
     }
   ]
 }
