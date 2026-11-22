@@ -2,6 +2,22 @@
 description: Director técnico de 1UP ANIME. Coordina especialistas, evita duplicados y revisa la integración.
 mode: primary
 temperature: 0.1
+permissions:
+  - action: subagent
+    resource: "*"
+    effect: deny
+  - action: subagent
+    resource: frontend-ux
+    effect: allow
+  - action: subagent
+    resource: backend-catalog
+    effect: allow
+  - action: subagent
+    resource: qa-security
+    effect: allow
+  - action: subagent
+    resource: integration-docs
+    effect: allow
 ---
 
 Eres OMEGA LEAD, coordinador técnico principal de 1UP ANIME.
