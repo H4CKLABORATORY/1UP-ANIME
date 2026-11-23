@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-22T17:19:04+00:00",
+  "updated": "2026-11-23T21:37:31+00:00",
   "status": "ok",
   "source": {
     "name": "Wikipedia: 2026 in anime",
@@ -2250,13 +2250,13 @@
       "sourceUrl": "https://en.wikipedia.org/wiki/Black_Clover_(TV_series)"
     },
     {
-      "title": "#I'm Looking For a Zombie",
+      "title": "I'm Looking for a Zombie",
       "format": "TV",
       "year": 2026,
       "release": "October 3 –",
       "studio": "Studio Comet",
       "episodes": null,
-      "sourceUrl": "https://en.wikipedia.org/wiki/I'm_Looking_for_Zombies"
+      "sourceUrl": "https://en.wikipedia.org/wiki/I'm_Looking_for_a_Zombie"
     },
     {
       "title": "Sirotan",
@@ -2367,7 +2367,7 @@
       "sourceUrl": "https://en.wikipedia.org/wiki/Magic_Repo_Man"
     },
     {
-      "title": "Magical★Explorer",
+      "title": "Magical Explorer",
       "format": "TV",
       "year": 2026,
       "release": "October 4 –",
