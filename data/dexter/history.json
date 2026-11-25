@@ -3,6 +3,33 @@
   "items": [
     {
       "providerId": "anilist_schedule",
+      "at": "2026-11-25T03:39:26.847Z",
+      "result": "success",
+      "observed": 202,
+      "created": 0,
+      "playback": 0,
+      "detail": "desactualizada"
+    },
+    {
+      "providerId": "licensed_library",
+      "at": "2026-11-25T03:39:26.847Z",
+      "result": "success",
+      "observed": 0,
+      "created": 0,
+      "playback": 0,
+      "detail": "sin_contenido_autorizado"
+    },
+    {
+      "providerId": "youtube_trailers",
+      "at": "2026-11-25T03:39:26.847Z",
+      "result": "success",
+      "observed": 95,
+      "created": 0,
+      "playback": 0,
+      "detail": "conectada"
+    },
+    {
+      "providerId": "anilist_schedule",
       "at": "2026-11-24T19:38:40.815Z",
       "result": "success",
       "observed": 202,
@@ -508,33 +535,6 @@
     {
       "providerId": "youtube_trailers",
       "at": "2026-11-19T10:36:34.973Z",
-      "result": "success",
-      "observed": 95,
-      "created": 0,
-      "playback": 0,
-      "detail": "conectada"
-    },
-    {
-      "providerId": "anilist_schedule",
-      "at": "2026-11-19T01:56:45.064Z",
-      "result": "success",
-      "observed": 202,
-      "created": 0,
-      "playback": 0,
-      "detail": "desactualizada"
-    },
-    {
-      "providerId": "licensed_library",
-      "at": "2026-11-19T01:56:45.064Z",
-      "result": "success",
-      "observed": 0,
-      "created": 0,
-      "playback": 0,
-      "detail": "sin_contenido_autorizado"
-    },
-    {
-      "providerId": "youtube_trailers",
-      "at": "2026-11-19T01:56:45.064Z",
       "result": "success",
       "observed": 95,
       "created": 0,
