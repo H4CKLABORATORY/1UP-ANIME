@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-24T20:17:48+00:00",
+  "updated": "2026-11-25T19:31:08+00:00",
   "status": "ok",
   "source": {
     "name": "Wikipedia: 2026 in anime",
@@ -2259,6 +2259,15 @@
       "sourceUrl": "https://en.wikipedia.org/wiki/I'm_Looking_for_a_Zombie"
     },
     {
+      "title": "Keroro",
+      "format": "TV",
+      "year": 2026,
+      "release": "October 3 –",
+      "studio": "BN Pictures",
+      "episodes": null,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Keroro_(2026_TV_series)"
+    },
+    {
       "title": "Sirotan",
       "format": "TV",
       "year": 2026,
@@ -2266,15 +2275,6 @@
       "studio": "Lesprit",
       "episodes": null,
       "sourceUrl": "https://en.wikipedia.org/wiki/Sirotan"
-    },
-    {
-      "title": "Sgt. Frog☆",
-      "format": "TV",
-      "year": 2026,
-      "release": "October 3 –",
-      "studio": "BN Pictures",
-      "episodes": null,
-      "sourceUrl": "https://en.wikipedia.org/wiki/Sgt._Frog_(2026_TV_series)"
     },
     {
       "title": "Suikoden: The Anime",
