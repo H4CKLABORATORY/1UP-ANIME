@@ -3,6 +3,42 @@
   "items": [
     {
       "providerId": "anilist_schedule",
+      "at": "2026-11-28T10:44:04.497Z",
+      "result": "success",
+      "observed": 202,
+      "created": 0,
+      "playback": 0,
+      "detail": "desactualizada"
+    },
+    {
+      "providerId": "licensed_library",
+      "at": "2026-11-28T10:44:04.497Z",
+      "result": "success",
+      "observed": 0,
+      "created": 0,
+      "playback": 0,
+      "detail": "sin_contenido_autorizado"
+    },
+    {
+      "providerId": "jkanime_external",
+      "at": "2026-11-28T10:44:04.497Z",
+      "result": "success",
+      "observed": 5,
+      "created": 0,
+      "playback": 0,
+      "detail": "conectada"
+    },
+    {
+      "providerId": "youtube_trailers",
+      "at": "2026-11-28T10:44:04.497Z",
+      "result": "success",
+      "observed": 95,
+      "created": 0,
+      "playback": 0,
+      "detail": "conectada"
+    },
+    {
+      "providerId": "anilist_schedule",
       "at": "2026-11-28T00:38:13.295Z",
       "result": "success",
       "observed": 202,
@@ -501,42 +537,6 @@
       "at": "2026-11-22T00:33:58.642Z",
       "result": "success",
       "observed": 5,
-      "created": 0,
-      "playback": 0,
-      "detail": "conectada"
-    },
-    {
-      "providerId": "youtube_trailers",
-      "at": "2026-11-22T00:33:58.642Z",
-      "result": "success",
-      "observed": 95,
-      "created": 0,
-      "playback": 0,
-      "detail": "conectada"
-    },
-    {
-      "providerId": "anilist_schedule",
-      "at": "2026-11-21T18:07:47.254Z",
-      "result": "success",
-      "observed": 202,
-      "created": 0,
-      "playback": 0,
-      "detail": "desactualizada"
-    },
-    {
-      "providerId": "licensed_library",
-      "at": "2026-11-21T18:07:47.254Z",
-      "result": "success",
-      "observed": 0,
-      "created": 0,
-      "playback": 0,
-      "detail": "sin_contenido_autorizado"
-    },
-    {
-      "providerId": "youtube_trailers",
-      "at": "2026-11-21T18:07:47.254Z",
-      "result": "success",
-      "observed": 95,
       "created": 0,
       "playback": 0,
       "detail": "conectada"
